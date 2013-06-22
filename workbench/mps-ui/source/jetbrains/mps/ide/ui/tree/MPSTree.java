@@ -252,12 +252,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
-      @Override
-      public ActionGroup compute() {
-        return node.getActionGroup();
-      }
-    });
+    return null;
   }
 
   private void showPopup(int x, int y) {

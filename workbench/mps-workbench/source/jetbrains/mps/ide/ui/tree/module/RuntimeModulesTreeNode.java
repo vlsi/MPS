@@ -15,18 +15,10 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 public class RuntimeModulesTreeNode extends TextTreeNode {
   public RuntimeModulesTreeNode() {
     super("runtime");
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
   }
 }

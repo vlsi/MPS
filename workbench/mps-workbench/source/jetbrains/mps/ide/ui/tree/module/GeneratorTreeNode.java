@@ -54,12 +54,6 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
   }
 
   @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_GENERATOR_ACTIONS);
-  }
-
-
-  @Override
   public boolean isInitialized() {
     return myInitialized;
   }

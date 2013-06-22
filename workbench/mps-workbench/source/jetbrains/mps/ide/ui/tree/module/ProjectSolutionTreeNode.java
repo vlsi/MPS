@@ -52,11 +52,6 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_SOLUTION_ACTIONS);
-  }
-
-  @Override
   public String getModuleText() {
     String name = mySolution.getModuleName();
 

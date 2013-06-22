@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.*;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   private TransientModelsModule myTransientModule;
@@ -60,10 +58,5 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     if (getOperationContext().getModule() != null) {
       SModelsSubtree.create(this, getOperationContext());
     }
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
   }
 }

@@ -59,11 +59,6 @@ public class ProjectTreeNode extends TextTreeNode {
   }
 
   @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PROJECT_ACTIONS);
-  }
-
-  @Override
   public int getToggleClickCount() {
     return 2;
   }

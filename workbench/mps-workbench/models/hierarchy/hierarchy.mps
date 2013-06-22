@@ -4076,8 +4076,8 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pvwh.~ActionUtils%dgetGroup(java%dlang%dString)%cjetbrains%dmps%dworkbench%daction%dBaseGroup" resolveInfo="getGroup" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="pvwh.~ActionUtils" resolveInfo="ActionUtils" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5797068448049412304" nodeInfo="nn">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="pvwh.~CoreActionGroups" resolveInfo="CoreActionGroups" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="pvwh.~CoreActionGroups%dNODE_ACTIONS" resolveInfo="NODE_ACTIONS" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gcfa.~ProjectPaneActionGroups" resolveInfo="ProjectPaneActionGroups" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gcfa.~ProjectPaneActionGroups%dNODE_ACTIONS" resolveInfo="NODE_ACTIONS" />
               </node>
             </node>
           </node>

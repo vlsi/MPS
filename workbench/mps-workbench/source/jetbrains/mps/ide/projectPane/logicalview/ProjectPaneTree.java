@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHighlighter;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
@@ -133,7 +134,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
     return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
       @Override
       public ActionGroup compute() {
-        return node.getActionGroup();
+        return ProjectPaneActionGroups.getActionGroup(node);
       }
     });
   }

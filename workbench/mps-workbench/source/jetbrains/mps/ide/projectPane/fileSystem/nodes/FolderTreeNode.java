@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.actions.FolderActions_ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -69,7 +66,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     for (VirtualFile f : sortedFiles) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) &&
-          f.isDirectory()) {
+            f.isDirectory()) {
           this.add(createNode(myProject, f));
         }
       }
@@ -77,7 +74,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     for (VirtualFile f : sortedFiles) {
       if (f.exists()) {
         if (!FileTypeManager.getInstance().isFileIgnored(f.getName()) &&
-          !f.isDirectory()) {
+            !f.isDirectory()) {
 
           this.add(createNode(myProject, f));
         }
@@ -94,10 +91,5 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     } else {
       return new FileTreeNode(project, file);
     }
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(FolderActions_ActionGroup.ID);
   }
 }

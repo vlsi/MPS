@@ -15,25 +15,36 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.SortUtil;
+import jetbrains.mps.smodel.DependencyRecorder;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.workbench.action.CoreActionGroups;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
-import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.util.Condition;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
 
@@ -55,38 +66,38 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private Icon myIcon;
 
   public SModelTreeNode(SModel modelDescriptor,
-              String label,
-              @NotNull IOperationContext operationContext) {
+      String label,
+      @NotNull IOperationContext operationContext) {
     this(modelDescriptor, label, operationContext, true);
   }
 
   public SModelTreeNode(SModel modelDescriptor,
-              String label,
-              @NotNull IOperationContext operationContext,
-              Condition<SNode> condition) {
+      String label,
+      @NotNull IOperationContext operationContext,
+      Condition<SNode> condition) {
     this(modelDescriptor, label, operationContext, true, condition, 0);
   }
 
   public SModelTreeNode(SModel modelDescriptor,
-              String label,
-              IOperationContext operationContext,
-              boolean showLongName) {
+      String label,
+      IOperationContext operationContext,
+      boolean showLongName) {
     this(modelDescriptor, label, operationContext, showLongName, Condition.TRUE_CONDITION, 0);
   }
 
   public SModelTreeNode(SModel modelDescriptor,
-              String label,
-              IOperationContext operationContext,
-              int countNamePart) {
+      String label,
+      IOperationContext operationContext,
+      int countNamePart) {
     this(modelDescriptor, label, operationContext, false, Condition.TRUE_CONDITION, countNamePart);
   }
 
   public SModelTreeNode(SModel modelDescriptor,
-              String label,
-              IOperationContext operationContext,
-              boolean showLongName,
-              Condition<SNode> condition,
-              int countNamePart) {
+      String label,
+      IOperationContext operationContext,
+      boolean showLongName,
+      Condition<SNode> condition,
+      int countNamePart) {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
@@ -259,11 +270,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   @NotNull
   public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
     return new SNodeTreeNode(node, role, operationContext, condition);
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(CoreActionGroups.MODEL_ACTIONS);
   }
 
   @Override

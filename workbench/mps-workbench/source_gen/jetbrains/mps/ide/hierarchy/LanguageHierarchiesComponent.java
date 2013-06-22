@@ -28,7 +28,7 @@ import javax.swing.border.LineBorder;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.CoreActionGroups;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.util.Map;
@@ -214,7 +214,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   }
 
   private void processPopupMenu(MouseEvent e) {
-    BaseGroup group = ActionUtils.getGroup(CoreActionGroups.NODE_ACTIONS);
+    BaseGroup group = ActionUtils.getGroup(ProjectPaneActionGroups.NODE_ACTIONS);
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 

@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -62,11 +59,6 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     }
     setNodeIdentifier(myFile.getPath() != null ? myFile.getPath() : "");
     setColor(myProvider.getFileStatus(myFile).getColor());
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(AbstractFileActions_ActionGroup.ID);
   }
 
   public VirtualFile getFile() {

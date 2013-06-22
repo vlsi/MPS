@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 
 public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
@@ -64,11 +64,6 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     IFile descriptorFile = myDevKit.getDescriptorFile();
     assert descriptorFile != null;
     return descriptorFile.getPath();
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_DEVKIT_ACTIONS);
   }
 
   @Override

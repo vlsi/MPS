@@ -140,7 +140,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return false;
   }
 
-  public ActionGroup getActionGroup() {
+  /**
+   * This method is not called anymore (and so marked as final), the containing tree decides which groups to use on specific nodes.
+   * see ProjectPaneActionGroups.getActionGroup()
+   */
+  @Deprecated
+  public final ActionGroup getActionGroup() {
     return null;
   }
 

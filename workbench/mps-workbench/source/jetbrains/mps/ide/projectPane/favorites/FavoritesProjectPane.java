@@ -31,6 +31,7 @@ import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -258,7 +259,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
         @Override
         public ActionGroup compute() {
-          return node.getActionGroup();
+          return ProjectPaneActionGroups.getActionGroup(node);
         }
       });
     }

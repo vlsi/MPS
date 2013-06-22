@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -36,11 +33,6 @@ public class PropertyTreeNode extends TextTreeNode {
 
   public String getProperty() {
     return myProperty;
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ((ActionGroup) ActionManager.getInstance().getAction(PropertyNodeActions_ActionGroup.class.getName()));
   }
 
   @Override

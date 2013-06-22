@@ -20,8 +20,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.CoreActionGroups;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -41,11 +39,6 @@ public class PackageNode extends SNodeGroupTreeNode {
     } else {
       myName = name;
     }
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(CoreActionGroups.PACKAGE_ACTIONS);
   }
 
   @Override

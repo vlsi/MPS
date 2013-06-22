@@ -16,14 +16,11 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import com.intellij.icons.AllIcons.Nodes;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +49,5 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setErrorState(validate().isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS);
   }
 }
