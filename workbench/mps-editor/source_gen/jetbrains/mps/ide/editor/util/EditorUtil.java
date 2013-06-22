@@ -24,6 +24,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFileUtils;
+import java.awt.Dimension;
 import jetbrains.mps.util.MacroHelper;
 
 public class EditorUtil {
@@ -122,6 +123,7 @@ public class EditorUtil {
         });
       }
     });
+    button.setPreferredSize(new Dimension(20, 20));
     return button;
   }
 

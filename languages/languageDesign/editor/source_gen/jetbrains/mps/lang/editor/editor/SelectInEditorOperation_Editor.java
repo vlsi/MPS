@@ -85,6 +85,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
+    SelectInEditorOperation_editorContextActions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -169,6 +170,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gmlwwp_a3e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmlwwp_b3e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gmlwwp_c3e0(editorContext, node));
+    if (renderingCondition_gmlwwp_a3d4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_gmlwwp_d3e0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -184,7 +188,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    PositionSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
+    SelectionStartSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -195,7 +199,7 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    PositionSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
+    SelectionStartSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -208,6 +212,67 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setRole("selectionStart");
+    }
+    SelectInEditorOperation_selectionStartActions.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_gmlwwp_d3e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_gmlwwp_d3e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_gmlwwp_a3d4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gmlwwp_b3d4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gmlwwp_c3d4a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_gmlwwp_a3d4a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "selectionEnd", true) != null;
+  }
+
+  private EditorCell createConstant_gmlwwp_a3d4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    editorCell.setCellId("Constant_gmlwwp_a3d4a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    SelectionEndSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_gmlwwp_b3d4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selectionEnd:");
+    editorCell.setCellId("Constant_gmlwwp_b3d4a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    SelectionEndSelectorLabel_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_gmlwwp_c3d4a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("selectionEnd");
+    provider.setNoTargetText("<no selectionEnd>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("selectionEnd");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

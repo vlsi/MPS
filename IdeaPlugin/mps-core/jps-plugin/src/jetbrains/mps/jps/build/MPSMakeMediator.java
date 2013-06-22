@@ -168,8 +168,8 @@ public class MPSMakeMediator {
       @Override
       public IScript toScript(ScriptBuilder scriptBuilder) {
         scriptBuilder.withFacetNames(
-          new IFacet.Name("jetbrains.mps.build.reduced.ReportFiles"),
-          new IFacet.Name("jetbrains.mps.build.reduced.CollectHashes"));
+          new IFacet.Name("jetbrains.mps.make.reduced.ReportFiles"),
+          new IFacet.Name("jetbrains.mps.make.reduced.CollectHashes"));
         return scriptBuilder.toScript();
       }
     };

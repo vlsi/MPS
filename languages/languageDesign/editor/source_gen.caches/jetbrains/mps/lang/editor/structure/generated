@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8pw4letr5gca13gw7pzcy2xe9p2qaht">
+<dependencies version="2" modelHash="7qjroi1bqw0nfu1wpbwrw69p7w0lm45">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -216,6 +216,8 @@
     <dep root="4151393920415038203" />
     <dep root="4203201205844553978" />
     <dep root="4242538589859161874" />
+    <dep root="4323500428121233431" />
+    <dep root="4323500428136740385" />
     <dep root="4510086454722552739" />
     <dep root="4510086454726375946" />
     <dep root="4526149749187797167" />
@@ -265,7 +267,7 @@
   <source id="1071666914219" name="ConceptEditorDeclaration" hash="8yn9p407goj1djl16y3dbxp0r47x988">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1073389214265" name="EditorCellModel" hash="-15phl57ujcg91urc2ncgtcc6qsmk7xa">
+  <source id="1073389214265" name="EditorCellModel" hash="45y4phdxuj97p9bqltew2x9mwn4owo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1073389446423" name="CellModel_Collection" hash="4e5tvrdx5m6rvgdn27wc9iosf8ly0ae">
@@ -730,7 +732,7 @@
   <source id="1198489924438" name="CellModel_Block" hash="-b74vb2juosqxnhta03urj3udlx3eyfc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1201265905111" name="SelectOperation" hash="-a0ago6iklsyca6359nxm44mduvhhx21">
+  <source id="1201265905111" name="SelectOperation" hash="-10nzcr74ae4yexo9nrcrjipn5959ka7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1201266127262" name="SelectParameter" hash="as2yte1jahhcvtjeawmtb04umtifwcu">
@@ -1106,7 +1108,7 @@
   <source id="7033942394256351208" name="EditorComponentDeclarationReference" hash="ab4v3xc9x56r2x9ub8uk2cb8af8yo0s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3647146066980922272" name="SelectInEditorOperation" hash="-66111sqfqw27hgtfqncyjsvagt25r6z">
+  <source id="3647146066980922272" name="SelectInEditorOperation" hash="3wh8tqxqo9uj1wxr13k3321so5ftq8r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1948540814635886374" name="AbstractCellSelector" hash="els2qqb0i4b1linq747vjphvd0zbqv1">
@@ -1136,6 +1138,12 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3604384757217589208" name="PositionSelector" hash="3x4kshyarpb04ardgme4mvi7kcthe23">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4323500428121233431" name="EditorCellId" hash="-52fjc3qkesw8tnjo8hn62wp117idzta">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4323500428136740385" name="CellIdReferenceSelector" hash="ayjjlnq1iwyp3ngll5zzh7kq1pzcz5e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

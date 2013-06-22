@@ -29,8 +29,8 @@ public class EditorCellModel_Behavior {
   }
 
   public static String call_getCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    if (isNotEmpty_osnhy3_a0a0c(SPropertyOperations.getString(thisNode, "cellId"))) {
-      return SPropertyOperations.getString(thisNode, "cellId");
+    if (SLinkOperations.getTarget(thisNode, "id", true) != null && isNotEmpty_osnhy3_a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name"))) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name");
     }
     String defaultCellId = EditorCellModel_Behavior.call_getDefaultCellId_4539255030934103845(thisNode);
     if (defaultCellId != null) {
@@ -277,7 +277,7 @@ public class EditorCellModel_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_isCellIdInitialized_1229948571177", new Class[]{SNode.class}, new Object[]{});
   }
 
-  public static boolean isNotEmpty_osnhy3_a0a0c(String str) {
+  public static boolean isNotEmpty_osnhy3_a0a0a2(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -393,7 +393,6 @@
         <module file="${mps_home}/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" />
         <module file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
         <module file="${mps_home}/languages/util/uiLanguage/jetbrains.mps.uiLanguage.mpl" />
-        <module file="" />
       </chunk>
       <chunk bootstrap="true">
         <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" bootstrap="true" />
@@ -401,7 +400,6 @@
       </chunk>
       <chunk>
         <module file="${mps_home}/languages/core/core/solutions/pluginSolution/jetbrains.mps.lang.core.pluginSolution.msd" />
-        <module file="" />
         <module file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/jetbrains.mps.lang.script.pluginSolution.msd" />
         <module file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" />
         <module file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" />

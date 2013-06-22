@@ -833,6 +833,7 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractCellSelector_2162403111526915073(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IdSelector");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -848,11 +849,11 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
-            return "\"<custom cell ID>\"".startsWith(pattern);
+            return "\"<cell ID>\"".startsWith(pattern);
           }
 
           public String getDescriptionText(String pattern) {
-            return "specified cell ID";
+            return "with spdcified string cell id";
           }
 
           public String getMatchingText(String pattern) {
@@ -884,7 +885,7 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                return "predefined cell ID";
+                return SEnumOperations.getEnumMemberValue((item)) + " cell";
               }
             });
           }
@@ -910,7 +911,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "specified property declaration";
+            return "representing specified property declaration";
           }
 
           public String getMatchingText(String pattern) {
@@ -942,7 +943,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "node<PropertyDeclaration>";
+            return "representing property declaration specified by expression";
           }
 
           public String getMatchingText(String pattern) {
@@ -956,6 +957,43 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellId_4323500428127332368(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellId");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode cellId = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.EditorCellId", null);
+            SPropertyOperations.set(cellId, "name", pattern);
+            return cellId;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "custom cell id";
+          }
+
+          public String getMatchingText(String pattern) {
+            return ((pattern == null || pattern.length() == 0) ?
+              "\"id\"" :
+              pattern
+            );
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_EditorCellId_4323500428127345618(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getCurrentTargetNode() == null;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1948540814637841122(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -1050,5 +1088,52 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractCellSelector_3604384757222901473(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_PositionSelector_2701921320710615736(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PositionSelector"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode selectInEditorOperation = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
+        SLinkOperations.setTarget(selectInEditorOperation, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PositionSelector", null), true);
+        return SLinkOperations.getTarget(selectInEditorOperation, "selectionEnd", true);
+      }
+
+      public String getMatchingText(String pattern) {
+        return ",";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return "specify selection end position";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PositionSelector"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode selectInEditorOperation = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
+        SLinkOperations.setTarget(selectInEditorOperation, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PositionSelector", null), true);
+        return SLinkOperations.getTarget(selectInEditorOperation, "selectionEnd", true);
+      }
+
+      public String getMatchingText(String pattern) {
+        return "selectionEnd";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return "specify selection end position";
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_PositionSelector_2701921320710620070(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), "selectionEnd", true) == null;
   }
 }

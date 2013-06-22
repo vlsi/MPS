@@ -788,6 +788,10 @@
       <property name="name" nameId="tpck.1169194664001" value="bootstrap" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1787667533297081791" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="testGeneration" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4964617264469340766" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_BuildSourcePath" />

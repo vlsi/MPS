@@ -4,11 +4,6 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.apache.log4j.Priority;
 import com.intellij.icons.AllIcons;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
@@ -18,22 +13,9 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class JavaApplication_Kind implements ConfigurationType {
-  private static final Icon ICON = new _FunctionTypes._return_P0_E0<Icon>() {
-    public Icon invoke() {
-      SModule module = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)"));
-      if (module == null) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
-          LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
-        }
-        return null;
-      }
-      return AllIcons.RunConfigurations.Application;
-    }
-  }.invoke();
+  private static final Icon ICON = AllIcons.RunConfigurations.Application;
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public JavaApplication_Kind() {
@@ -71,6 +53,4 @@ public class JavaApplication_Kind implements ConfigurationType {
   public static JavaApplication_Kind getInstance() {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JavaApplication_Kind.class);
   }
-
-  protected static Logger LOG = LogManager.getLogger(JavaApplication_Kind.class);
 }

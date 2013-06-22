@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 
 import java.io.File;
@@ -59,9 +59,19 @@ public class PathManager {
     File root = new File(rootPath);
     root = root.getAbsoluteFile();
 
-    while ((!isMpsDir(root)) && (root.getParentFile() != null)) {
+    if (rootPath.endsWith(".jar")) {
+      // {mps_home}/lib
       root = root.getParentFile();
+      if (root != null) {
+        // {mps_home}
+        root = root.getParentFile();
+      }
+    } else {
+      while ((!isMpsDir(root)) && (root.getParentFile() != null)) {
+        root = root.getParentFile();
+      }
     }
+
 
     ourHomePath = root.getAbsolutePath();
     if (ourHomePath.equals("/")) {

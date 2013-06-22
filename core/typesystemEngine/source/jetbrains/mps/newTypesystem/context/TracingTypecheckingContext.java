@@ -25,8 +25,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * User: fyodor
  * Date: 11/7/12
  */
-public class TracingTypecheckingContext
-  extends SimpleTypecheckingContext<State, BaseTypechecking<State, SimpleTypecheckingComponent<State>>> {
+public class TracingTypecheckingContext extends TargetTypecheckingContext {
 
   public TracingTypecheckingContext(SNode node, TypeChecker typeChecker) {
     super(node, typeChecker);

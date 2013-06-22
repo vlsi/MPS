@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.view;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
+import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -183,10 +184,11 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public String getCaption() {
-    return mySearchQuery.getCaption();
+    return mySearchQuery == null ? "" : mySearchQuery.getCaption();
   }
 
   public Icon getIcon() {
+    if (mySearchQuery == null || mySearchQuery.getObjectHolder() == null) return Toolwindows.ToolWindowFind;
     return IconManager.getIconForIHolder(mySearchQuery.getObjectHolder());
   }
 
@@ -251,11 +253,14 @@ public abstract class UsagesView implements IExternalizeable {
     myButtonConfiguration.write(optionsXML, project);
     element.addContent(optionsXML);
 
+    //todo replace this with show-only tabs
+    if (myResultProvider == null) throw new CantSaveSomethingException();
     Element resultProviderXML = new Element(RESULT_PROVIDER);
     resultProviderXML.setAttribute(CLASS_NAME, myResultProvider.getClass().getName());
     myResultProvider.write(resultProviderXML, project);
     element.addContent(resultProviderXML);
 
+    if (mySearchQuery == null) throw new CantSaveSomethingException();
     Element queryXML = new Element(QUERY);
     mySearchQuery.write(queryXML, project);
     element.addContent(queryXML);

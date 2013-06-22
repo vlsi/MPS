@@ -129,7 +129,8 @@ public class ChildSubstituteActionsHelper {
 
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(childConcept);
     if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(childConcept));
+      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept == null ? "<null>" :
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(childConcept));
       return Collections.emptyList();
     }
 

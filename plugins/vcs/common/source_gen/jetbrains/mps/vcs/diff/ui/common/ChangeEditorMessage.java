@@ -319,7 +319,7 @@ __switch__:
     }).toGenericArray(EditorCell.class));
   }
 
-  public Bounds getBounds(EditorComponent editor) {
+  public Bounds getBounds(final EditorComponent editor) {
     if (myMessageTarget.getTarget() != MessageTargetEnum.DELETED_CHILD) {
       if (isIndirectRoot(editor)) {
         Rectangle r = getFirstPseudoLineBounds(editor);
@@ -329,18 +329,23 @@ __switch__:
       }
     } else {
       DeletedNodeMessageTarget cmt = ((DeletedNodeMessageTarget) myMessageTarget);
-      EditorCell cell = getCell(editor);
-      if (cell == null) {
+      final Wrappers._T<EditorCell> cell = new Wrappers._T<EditorCell>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          cell.value = getCell(editor);
+        }
+      });
+      if (cell.value == null) {
         return new Bounds(-1, -1);
       }
-      if (cmt.getRole().equals(cell.getRole())) {
-        if (hasChildrenWithDifferentNode(cell)) {
-          return getBoundsForChild((EditorCell_Collection) cell, cmt.getNextChildIndex());
+      if (cmt.getRole().equals(cell.value.getRole())) {
+        if (hasChildrenWithDifferentNode(cell.value)) {
+          return getBoundsForChild((EditorCell_Collection) cell.value, cmt.getNextChildIndex());
         } else {
           return getBoundsSuper(editor);
         }
       } else {
-        int y = cell.getY();
+        int y = cell.value.getY();
         return new Bounds(y, y + 1);
       }
     }
