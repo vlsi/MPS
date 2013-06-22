@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -32,7 +29,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -75,11 +71,6 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
   public Language getLanguage() {
     return myLanguage;
-  }
-
-  @Override
-  public ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS);
   }
 
   @Override
@@ -141,8 +132,8 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     TextTreeNode allModels = new AllModelsTreeNode();
-    allModels.setIcon(Icons.PROJECT_MODELS_ICON, false);
-    allModels.setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
+    allModels.setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
+    allModels.setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
     SModelsSubtree.create(allModels, getOperationContext());
     add(allModels);
   }

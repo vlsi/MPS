@@ -13,6 +13,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.tree.TreeNode;
 import com.intellij.openapi.actionSystem.Presentation;
@@ -64,7 +65,7 @@ public class QuickCreate_Action extends BaseAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(true);
+          ActionGroup group = ProjectPaneActionGroups.getQuickCreateGroup((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node")), true);
 
           if (group != null) {
             Presentation pres = new Presentation();

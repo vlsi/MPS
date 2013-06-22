@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.awt.Font;
 
@@ -34,7 +31,7 @@ public class ProjectTreeNode extends TextTreeNode {
 
     myProject = project;
 
-    setIcon(Icons.PROJECT_ICON);
+    setIcon(IdeIcons.PROJECT_ICON);
   }
 
   @Override
@@ -51,11 +48,6 @@ public class ProjectTreeNode extends TextTreeNode {
 
   public MPSProject getProject() {
     return myProject;
-  }
-
-  @Override
-  public ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS);
   }
 
   @Override

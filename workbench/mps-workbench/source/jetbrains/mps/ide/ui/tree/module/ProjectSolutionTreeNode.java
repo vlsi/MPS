@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private AbstractModule mySolution;
@@ -44,11 +43,6 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   @Override
   public AbstractModule getModule() {
     return mySolution;
-  }
-
-  @Override
-  public ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.SOLUTION_NEW_ACTIONS);
   }
 
   @Override

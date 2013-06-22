@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -39,11 +38,6 @@ public class PackageNode extends SNodeGroupTreeNode {
     } else {
       myName = name;
     }
-  }
-
-  @Override
-  public ActionGroup getQuickCreateGroup(boolean plain) {
-    return new CreateRootNodeGroup(plain);
   }
 
   @Override

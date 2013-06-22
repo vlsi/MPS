@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 public class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvider {
   private boolean myInitialized;
@@ -46,11 +43,6 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
 
   public Generator getGenerator() {
     return (Generator) getOperationContext().getModule();
-  }
-
-  @Override
-  public ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPaneActionGroups.GENERATOR_NEW_ACTIONS);
   }
 
   @Override

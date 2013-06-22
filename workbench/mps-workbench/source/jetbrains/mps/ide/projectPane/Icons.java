@@ -25,9 +25,6 @@ import javax.swing.Icon;
 
 public class Icons extends IdeIcons {
 
-  public static final Icon PROJECT_MODELS_ICON = MPSIcons.Nodes.ProjectModels;
-  public static final Icon PROJECT_MODELS_EXPANDED_ICON = MPSIcons.Nodes.ProjectModels;
-  public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModels;
 
   public static final Icon MINIMIZE_ICON = Actions.Minimize;
   public static final Icon CLOSE_ICON = Actions.CloseHovered;

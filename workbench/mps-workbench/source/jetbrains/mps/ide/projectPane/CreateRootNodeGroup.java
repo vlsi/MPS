@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui.tree.smodel;
+package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.FileEditorProvider;
 import com.intellij.ide.SelectInContext;
@@ -28,6 +28,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;

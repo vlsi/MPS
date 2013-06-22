@@ -272,11 +272,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return new SNodeTreeNode(node, role, operationContext, condition);
   }
 
-  @Override
-  public CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
-    return new CreateRootNodeGroup(plain);
-  }
-
   private String calculateText() {
     org.jetbrains.mps.openapi.model.SModelReference reference;
 

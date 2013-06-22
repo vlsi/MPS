@@ -16,17 +16,21 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.MutableTreeNode;
 import java.util.ArrayList;
@@ -94,11 +98,11 @@ public class SModelsSubtree {
       TestsTreeNode testsNode = new TestsTreeNode(operationContext);
       builder.fillNode(testsNode);
 
-      if (!dropMiddleNodes){
+      if (!dropMiddleNodes) {
         rootTreeNode.add(testsNode);
-      }else{
+      } else {
         Enumeration children = testsNode.children();
-        while (children.hasMoreElements()){
+        while (children.hasMoreElements()) {
           rootTreeNode.add((MutableTreeNode) children.nextElement());
         }
       }
@@ -114,16 +118,16 @@ public class SModelsSubtree {
       StubsTreeNode stubsNode = new StubsTreeNode(operationContext);
       builder.fillNode(stubsNode);
 
-      if (!dropMiddleNodes){
+      if (!dropMiddleNodes) {
         rootTreeNode.add(stubsNode);
-      }else{
+      } else {
         Enumeration children = stubsNode.children();
         List<MutableTreeNode> tmpList = new ArrayList<MutableTreeNode>();
-        while (children.hasMoreElements()){
+        while (children.hasMoreElements()) {
           tmpList.add((MutableTreeNode) children.nextElement());
         }
 
-        for (MutableTreeNode child:tmpList){
+        for (MutableTreeNode child : tmpList) {
           rootTreeNode.add(child);
         }
       }
@@ -178,8 +182,8 @@ public class SModelsSubtree {
     public StubsTreeNode(IOperationContext context) {
       super("stubs", context);
 
-      setIcon(Icons.PROJECT_MODELS_ICON, false);
-      setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
+      setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
+      setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
 
     @Override
@@ -197,8 +201,8 @@ public class SModelsSubtree {
     public TestsTreeNode(IOperationContext context) {
       super("tests", context);
 
-      setIcon(Icons.PROJECT_MODELS_ICON, false);
-      setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
+      setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
+      setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
 
     @Override

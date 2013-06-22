@@ -6,7 +6,7 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 
 public class SaveTransientModelsAction extends ToggleAction {
   public SaveTransientModelsAction() {
@@ -23,7 +23,7 @@ public class SaveTransientModelsAction extends ToggleAction {
     super.update(e);
     e.getPresentation().setVisible(e.getData(PlatformDataKeys.PROJECT) != null);
     if (e.getPlace().contains("Toolbar")) {
-      e.getPresentation().setIcon(Icons.TRANSIENT_MODELS_ICON);
+      e.getPresentation().setIcon(IdeIcons.TRANSIENT_MODELS_ICON);
     } else {
       e.getPresentation().setIcon(null);
     }

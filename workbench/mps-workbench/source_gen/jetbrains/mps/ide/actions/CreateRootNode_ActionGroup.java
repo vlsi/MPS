@@ -17,7 +17,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.ide.ui.tree.smodel.CreateRootNodeGroup;
+import jetbrains.mps.ide.projectPane.CreateRootNodeGroup;
 import org.jetbrains.annotations.Nullable;
 
 public class CreateRootNode_ActionGroup extends GeneratedActionGroup {

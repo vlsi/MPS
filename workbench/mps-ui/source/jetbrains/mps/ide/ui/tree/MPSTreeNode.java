@@ -149,7 +149,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
-  public ActionGroup getQuickCreateGroup(boolean plain) {
+  /**
+   * This method is not called anymore (and so marked as final), the containing tree decides which groups to use on specific nodes.
+   * see ProjectPaneActionGroups.getQuickCreateGroup()
+   */
+  @Deprecated
+  public final ActionGroup getQuickCreateGroup(boolean plain) {
     return null;
   }
 
