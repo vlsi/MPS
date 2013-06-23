@@ -18,10 +18,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.diff.DiffContent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -74,16 +77,17 @@ public class CompareTransientModels_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+      final SModel first = sortedModels.get(0);
+      final SModel second = sortedModels.get(1);
+      final String[] titles = ModelAccess.instance().runReadAction(new Computable<String[]>() {
+        public String[] compute() {
+          return new String[]{SModelOperations.getModelName(first), SModelOperations.getModelName(second)};
+        }
+      });
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final jetbrains.mps.smodel.SModel first = ((SModelBase) sortedModels.get(0)).getSModelInternal();
-          final jetbrains.mps.smodel.SModel second = ((SModelBase) sortedModels.get(1)).getSModelInternal();
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getModelName(), second.getReference().getModelName()).show();
-            }
-          });
+          new ModelDifferenceDialog(first, second, new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), (DiffContent[]) null, titles)).show();
         }
       });
     } catch (Throwable t) {

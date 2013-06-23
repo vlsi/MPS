@@ -99,6 +99,12 @@ import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.persistence.PersistenceUtil;
+import com.intellij.openapi.diff.DiffContent;
+import com.intellij.openapi.diff.SimpleContent;
+import com.intellij.openapi.diff.DiffRequest;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
@@ -691,11 +697,11 @@ __switch__:
                 }
                 pi.setText("Loading model before change");
 
-                final Wrappers._T<jetbrains.mps.smodel.SModel> beforeModel = new Wrappers._T<jetbrains.mps.smodel.SModel>();
+                final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
                 if (before == null) {
-                  beforeModel.value = new jetbrains.mps.smodel.SModel(myModel.getReference());
+                  beforeModel.value = new MergeTemporaryModel(myModel.getReference(), true);
                 } else {
-                  beforeModel.value = ModelPersistence.readModel(before.getContent(), false);
+                  beforeModel.value = PersistenceUtil.loadModel(before.getContent(), before.getFile().getFileType().getDefaultExtension());
                 }
 
                 if (pi.isCanceled()) {
@@ -704,7 +710,7 @@ __switch__:
 
                 pi.setText("Loading model after change");
                 assert after != null;
-                final jetbrains.mps.smodel.SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
+                final SModel afterModel = PersistenceUtil.loadModel(before.getContent(), before.getFile().getFileType().getDefaultExtension());
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
@@ -718,17 +724,19 @@ __switch__:
                   }
                 }));
 
-                final String[] titles = {(before == null ?
+                String[] titles = {(before == null ?
                   "<no revision>" :
                   before.getRevisionNumber().asString()
                 ), after.getRevisionNumber().asString()};
+                DiffContent[] diffContents = new DiffContent[]{new SimpleContent(before.getContent(), before.getFile().getFileType()), new SimpleContent(after.getContent(), after.getFile().getFileType())};
+                final DiffRequest diffRequest = new SimpleDiffRequest(project, diffContents, titles);
 
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     if (rootId.value == null) {
-                      new ModelDifferenceDialog(beforeModel.value, afterModel, project, titles[0], titles[1]).show();
+                      new ModelDifferenceDialog(beforeModel.value, afterModel, diffRequest).show();
                     } else {
-                      ModelDifferenceDialog.showRootDifference(beforeModel.value, afterModel, rootId.value, project, titles[0], titles[1], null);
+                      ModelDifferenceDialog.showRootDifference(beforeModel.value, afterModel, rootId.value, diffRequest, null);
                     }
                   }
                 });
@@ -737,12 +745,6 @@ __switch__:
               ApplicationManager.getApplication().invokeLater(new Runnable() {
                 public void run() {
                   VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + ve.getMessage(), MessageType.ERROR);
-                }
-              });
-            } catch (final ModelReadException e) {
-              ApplicationManager.getApplication().invokeLater(new Runnable() {
-                public void run() {
-                  VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot show diff: " + e.getMessage(), MessageType.ERROR);
                 }
               });
             }

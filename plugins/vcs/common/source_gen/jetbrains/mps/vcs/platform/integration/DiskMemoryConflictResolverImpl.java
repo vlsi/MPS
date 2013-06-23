@@ -23,10 +23,12 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import org.apache.log4j.Priority;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.persistence.PersistenceUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
+import com.intellij.openapi.diff.DiffContent;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.util.ModelVersion;
 import com.intellij.openapi.ui.TestDialog;
@@ -134,16 +136,9 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    jetbrains.mps.smodel.SModel onDisk = new jetbrains.mps.smodel.SModel(inMemory.getReference());
-    try {
-      onDisk = ModelPersistence.readModel(new FileDataSource(modelFile), false);
-    } catch (ModelReadException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("Could not read model", e);
-      }
-    }
+    SModel onDisk = PersistenceUtil.loadModel(modelFile);
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, ((SModelBase) inMemory).getSModelInternal(), project, "Filesystem version (Read-Only)", "Memory Version");
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, new SimpleDiffRequest(project, (DiffContent[]) null, new String[]{"Filesystem version (Read-Only)", "Memory Version"}));
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();

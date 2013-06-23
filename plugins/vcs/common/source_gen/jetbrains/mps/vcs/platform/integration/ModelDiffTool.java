@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.diff.DiffManager;
@@ -21,10 +21,10 @@ import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
 import org.apache.log4j.Logger;
@@ -74,20 +74,24 @@ public class ModelDiffTool implements DiffTool {
 
   private static SModel readModel(DiffContent content) throws ModelReadException {
     if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
-      final org.jetbrains.mps.openapi.model.SModel modelDescriptor = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
+      final SModel model = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
 
-      if (modelDescriptor != null) {
-        return ((SModelBase) modelDescriptor).getSModelInternal();
+      if (model != null) {
+        return model;
       }
     }
     try {
       byte[] bytes = content.getBytes();
+      FileType contentType = content.getContentType();
+      String ext = (contentType != null ?
+        contentType.getDefaultExtension() :
+        MPSExtentions.MODEL
+      );
       // for added/deleted models create empty model to compare with 
       if (bytes.length == 0) {
-        return new DefaultSModel(new SModelReference("", ""));
+        return new MergeTemporaryModel(new SModelReference("", ""), true);
       }
-
-      return ModelPersistence.readModel(new String(bytes, FileUtil.DEFAULT_CHARSET), false);
+      return PersistenceUtil.loadModel(new String(bytes, FileUtil.DEFAULT_CHARSET), ext);
     } catch (IOException ioe) {
       throw new ModelReadException("Couldn't read content: " + ioe.getMessage(), ioe);
     }
