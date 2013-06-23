@@ -17,10 +17,6 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
-import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import org.apache.log4j.Priority;
@@ -70,11 +66,8 @@ public class VcsActionsUtil {
           id.value = node.getNodeId();
         }
       });
-      String[] contentTitles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
-      FileType fileType = content.getFile().getFileType();
-      DiffRequest diffRequest = new SimpleDiffRequest(project, (DiffContent[]) null, contentTitles);
-
-      ModelDifferenceDialog.showRootDifference(oldModel, newModel.value, id.value, diffRequest, bounds);
+      String[] titles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
+      ModelDifferenceDialog.showRootDifference(project, oldModel, newModel.value, id.value, titles[0], titles[1], bounds, null);
     } catch (VcsException e) {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("", e);

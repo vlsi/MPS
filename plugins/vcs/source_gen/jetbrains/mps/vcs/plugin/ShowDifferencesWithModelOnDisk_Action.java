@@ -18,9 +18,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.persistence.PersistenceUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.diff.DiffContent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -81,7 +79,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
       final SModel diskModel = PersistenceUtil.loadModel(((FileDataSource) datasource).getFile());
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          new ModelDifferenceDialog(diskModel, ((SModel) MapSequence.fromMap(_params).get("model")), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), (DiffContent[]) null, new String[]{"Disk", "Memory"})).show();
+          new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), diskModel, ((SModel) MapSequence.fromMap(_params).get("model")), "Disk", "Memory", null).show();
         }
       });
     } catch (Throwable t) {

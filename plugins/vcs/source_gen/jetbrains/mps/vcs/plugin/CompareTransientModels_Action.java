@@ -22,9 +22,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.diff.DiffContent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -77,17 +75,15 @@ public class CompareTransientModels_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      final SModel first = sortedModels.get(0);
-      final SModel second = sortedModels.get(1);
+      final SModel[] models = (SModel[]) SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray();
       final String[] titles = ModelAccess.instance().runReadAction(new Computable<String[]>() {
         public String[] compute() {
-          return new String[]{SModelOperations.getModelName(first), SModelOperations.getModelName(second)};
+          return new String[]{SModelOperations.getModelName(models[0]), SModelOperations.getModelName(models[1])};
         }
       });
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          new ModelDifferenceDialog(first, second, new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), (DiffContent[]) null, titles)).show();
+          new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), models[0], models[1], titles[0], titles[1], null).show();
         }
       });
     } catch (Throwable t) {

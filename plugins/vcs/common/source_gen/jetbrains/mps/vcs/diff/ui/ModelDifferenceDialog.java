@@ -19,6 +19,7 @@ import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -32,7 +33,6 @@ import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.DiffManager;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -82,9 +82,9 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   private boolean myNewRegistered;
 
 
-  public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
-    super(diffRequest.getProject());
-    myProject = diffRequest.getProject();
+  public ModelDifferenceDialog(Project project, final SModel oldModel, final SModel newModel, String oldTitle, String newTitle, @Nullable DiffRequest diffRequest) {
+    super(project);
+    myProject = project;
     myOldRegistered = SNodeOperations.isRegistered(oldModel);
     myNewRegistered = SNodeOperations.isRegistered(newModel);
     myEditable = newModel instanceof EditableSModel && myNewRegistered;
@@ -104,7 +104,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         }
       }
     });
-    myContentTitles = diffRequest.getContentTitles();
+    myContentTitles = new String[]{oldTitle, newTitle};
     assert myContentTitles.length == 2;
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -124,7 +124,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     }
 
     myActionGroup = new DefaultActionGroup();
-    if (diffRequest.getContents() != null) {
+    if (diffRequest != null) {
       myActionGroup.add(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest, DiffManager.getInstance().getIdeaDiffTool()));
     }
 
@@ -311,8 +311,8 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myComponent.remove(myToolbar.getComponent());
   }
 
-  public static void showRootDifference(final SModel oldModel, final SModel newModel, final SNodeId rootId, DiffRequest diffRequest, @Nullable final Bounds scrollTo) {
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(oldModel, newModel, diffRequest);
+  public static void showRootDifference(Project project, final SModel oldModel, final SModel newModel, final SNodeId rootId, String oldTitle, String newTitile, @Nullable final Bounds scrollTo, DiffRequest diffRequest) {
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, oldModel, newModel, oldTitle, newTitile, diffRequest);
     dialog.setCurrentRoot(rootId);
     dialog.closeTreeComponent();
     ModelAccess.instance().runReadAction(new Runnable() {

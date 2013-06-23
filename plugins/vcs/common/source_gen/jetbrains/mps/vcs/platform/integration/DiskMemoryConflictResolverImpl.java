@@ -27,8 +27,6 @@ import jetbrains.mps.persistence.PersistenceUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
-import com.intellij.openapi.diff.DiffContent;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.util.ModelVersion;
 import com.intellij.openapi.ui.TestDialog;
@@ -138,7 +136,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
     SModel onDisk = PersistenceUtil.loadModel(modelFile);
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, new SimpleDiffRequest(project, (DiffContent[]) null, new String[]{"Filesystem version (Read-Only)", "Memory Version"}));
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, onDisk, inMemory, "Filesystem version (Read-Only)", "Memory Version", null);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();

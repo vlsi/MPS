@@ -724,7 +724,7 @@ __switch__:
                   }
                 }));
 
-                String[] titles = {(before == null ?
+                final String[] titles = {(before == null ?
                   "<no revision>" :
                   before.getRevisionNumber().asString()
                 ), after.getRevisionNumber().asString()};
@@ -734,9 +734,9 @@ __switch__:
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     if (rootId.value == null) {
-                      new ModelDifferenceDialog(beforeModel.value, afterModel, diffRequest).show();
+                      new ModelDifferenceDialog(project, beforeModel.value, afterModel, titles[0], titles[1], diffRequest).show();
                     } else {
-                      ModelDifferenceDialog.showRootDifference(beforeModel.value, afterModel, rootId.value, diffRequest, null);
+                      ModelDifferenceDialog.showRootDifference(project, beforeModel.value, afterModel, rootId.value, titles[0], titles[1], null, diffRequest);
                     }
                   }
                 });
