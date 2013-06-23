@@ -315,20 +315,24 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, oldModel, newModel, oldTitle, newTitile, diffRequest);
     dialog.setCurrentRoot(rootId);
     dialog.closeTreeComponent();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode node = newModel.getNode(rootId);
-        if (node == null) {
-          node = oldModel.getNode(rootId);
+    if (rootId == null) {
+      dialog.setTitle("Metadata difference for model");
+    } else {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SNode node = newModel.getNode(rootId);
+          if (node == null) {
+            node = oldModel.getNode(rootId);
+          }
+          String rootName = (node == null ?
+            "root" :
+            node.getPresentation()
+          );
+          dialog.setTitle("Difference for " + rootName);
+          dialog.myRootDifferencePane.navigateInitial(scrollTo);
         }
-        String rootName = (node == null ?
-          "root" :
-          node.getPresentation()
-        );
-        dialog.setTitle("Difference for " + rootName);
-        dialog.myRootDifferencePane.navigateInitial(scrollTo);
-      }
-    });
+      });
+    }
     dialog.show();
   }
 
