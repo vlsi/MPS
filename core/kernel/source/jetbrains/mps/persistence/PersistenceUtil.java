@@ -114,12 +114,12 @@ public class PersistenceUtil {
 
     @Override
     public void addListener(DataSourceListener listener) {
-      throw new UnsupportedOperationException();
+
     }
 
     @Override
     public void removeListener(DataSourceListener listener) {
-      throw new UnsupportedOperationException();
+
     }
 
     @Override
