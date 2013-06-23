@@ -101,7 +101,6 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="javax.swing.tree.TreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.StereotypeProvider" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="jetbrains.mps.ide.java.actions.ImportSourcesIntoModelUtils" />
@@ -111,6 +110,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.StereotypeProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
@@ -120,7 +120,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
