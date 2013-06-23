@@ -24,10 +24,9 @@ import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -50,7 +49,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -92,20 +90,15 @@ public class MergeModelsDialog extends DialogWrapper {
   private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
 
 
-  public MergeModelsDialog(SModel baseModel, SModel mineModel, SModel repositoryModel, DiffRequest request) {
+  public MergeModelsDialog(final SModel baseModel, final SModel mineModel, final SModel repoModel, DiffRequest request) {
     super(request.getProject(), true);
-    setTitle("Merging " + baseModel.getModelDescriptor().getModelName());
+    setTitle("Merging " + SModelOperations.getModelName(baseModel));
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
-    // temporary: create "normal" models 
-    final org.jetbrains.mps.openapi.model.SModel baseMD = new MergeTemporaryModel(baseModel, true);
-    final org.jetbrains.mps.openapi.model.SModel mineMD = new MergeTemporaryModel(mineModel, true);
-    final org.jetbrains.mps.openapi.model.SModel repoMD = new MergeTemporaryModel(repositoryModel, true);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myMergeSession = MergeSession.createMergeSession(baseMD, mineMD, repoMD);
+        myMergeSession = MergeSession.createMergeSession(baseModel, mineModel, repoModel);
         myInitialState = myMergeSession.getCurrentState();
       }
     });
@@ -120,9 +113,9 @@ public class MergeModelsDialog extends DialogWrapper {
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          org.jetbrains.mps.openapi.model.SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel(), "metadata_base", false);
-          org.jetbrains.mps.openapi.model.SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel(), "metadata_mine", false);
-          org.jetbrains.mps.openapi.model.SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel(), "metadata_repo", false);
+          SModel baseMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getBaseModel(), "metadata_base", false);
+          SModel mineMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getMyModel(), "metadata_mine", false);
+          SModel repoMetaModel = MetadataUtil.createMetadataModel(myMergeSession.getRepositoryModel(), "metadata_repo", false);
           myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
           DiffModelUtil.renameModelAndRegister(myMetadataMergeSession.getResultModel(), "result");
@@ -221,7 +214,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public SModel getResultModel() {
     return (myApplyChanges ?
-      as_3qqb0l_a0a0a0ib(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal() :
+      myMergeSession.getResultModel() :
       null
     );
   }
@@ -230,21 +223,20 @@ public class MergeModelsDialog extends DialogWrapper {
     if (!(myApplyChanges)) {
       return null;
     }
-    final org.jetbrains.mps.openapi.model.SModel resultModel = myMergeSession.getResultModel();
+    final SModel resultModel = myMergeSession.getResultModel();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffModelUtil.restoreModelName(resultModel);
         // fix??? 
-        for (org.jetbrains.mps.openapi.model.SModel m : new org.jetbrains.mps.openapi.model.SModel[]{myMergeSession.getMyModel(), myMergeSession.getRepositoryModel()}) {
+        for (SModel m : new SModel[]{myMergeSession.getMyModel(), myMergeSession.getRepositoryModel()}) {
           DiffModelUtil.fixModelReferences(resultModel, m.getReference());
         }
       }
     });
-    return as_3qqb0l_a0a3a53(resultModel, SModelBase.class).getSModelInternal();
+    return resultModel;
   }
 
   public void unregisterModels() {
-    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (myMetadataMergeSession != null) {
@@ -257,7 +249,6 @@ public class MergeModelsDialog extends DialogWrapper {
         DiffModelUtil.unregisterModel(myMergeSession.getRepositoryModel());
         DiffModelUtil.unregisterModel(myMergeSession.getMyModel());
         DiffModelUtil.unregisterModel(myMergeSession.getBaseModel());
-
       }
     });
   }
@@ -592,7 +583,7 @@ public class MergeModelsDialog extends DialogWrapper {
     }
 
     @Override
-    protected Iterable<org.jetbrains.mps.openapi.model.SModel> getModels() {
+    protected Iterable<SModel> getModels() {
       return Arrays.asList(myMergeSession.getBaseModel(), myMergeSession.getMyModel(), myMergeSession.getRepositoryModel());
     }
 
@@ -617,19 +608,5 @@ public class MergeModelsDialog extends DialogWrapper {
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
-  }
-
-  private static <T> T as_3qqb0l_a0a0a0ib(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_3qqb0l_a0a3a53(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 }

@@ -28,11 +28,13 @@ import jetbrains.mps.vfs.FileSystem;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.model.SModelBase;
 import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -109,7 +111,7 @@ public class TestMergeDialog {
       public void run() {
         MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, (SModel[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+            return new MergeModelsDialog(new MergeTemporaryModel(models[0], true), new MergeTemporaryModel(models[1], true), new MergeTemporaryModel(models[2], true), new SimpleDiffRequest(TestMergeDialog.ourProject, (SModel[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           }
         });
         try {
@@ -120,7 +122,7 @@ public class TestMergeDialog {
           e.printStackTrace();
         }
         dialog.show();
-        final SModel result = dialog.getResultModelWithFixedId();
+        final org.jetbrains.mps.openapi.model.SModel result = dialog.getResultModelWithFixedId();
         if (result == null) {
           dialog.close(0);
           System.exit(0);
@@ -133,7 +135,7 @@ public class TestMergeDialog {
               iFile.createNewFile();
             }
             try {
-              ModelPersistence.saveModel(result, new FileDataSource(iFile));
+              ModelPersistence.saveModel(as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(result, SModelBase.class).getSModelInternal(), new FileDataSource(iFile));
             } catch (IOException ex) {
               if (LOG.isEnabledFor(Priority.ERROR)) {
                 LOG.error("Cannot save model.", ex);
@@ -150,4 +152,11 @@ public class TestMergeDialog {
   }
 
   protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
+
+  private static <T> T as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
 }

@@ -13,17 +13,18 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.extapi.model.SModelBase;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 
 public class ModelMergeTool extends MergeTool {
@@ -45,16 +46,13 @@ public class ModelMergeTool extends MergeTool {
       }
       File backupFile = MergeBackupUtil.zipModel(request.getContents(), file);
       DiffContent[] contents = mrequest.getContents();
-      final SModel baseModel;
-      final SModel mineModel;
-      final SModel newModel;
-      try {
-        baseModel = ModelPersistence.readModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), false);
-        mineModel = ModelPersistence.readModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);
-        newModel = ModelPersistence.readModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), false);
-      } catch (ModelReadException e) {
+      String ext = file.getExtension();
+      SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext);
+      SModel mineModel = PersistenceUtil.loadModel(contents[MergeConstants.CURRENT].getBytes(), ext);
+      SModel newModel = PersistenceUtil.loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext);
+      if (baseModel == null || mineModel == null || newModel == null) {
         if (LOG_705910402.isEnabledFor(Priority.WARN)) {
-          LOG_705910402.warn("Couldn't read model, invoking text merge", e);
+          LOG_705910402.warn("Couldn't read model, invoking text merge");
         }
         super.show(request);
         return;
@@ -69,7 +67,7 @@ public class ModelMergeTool extends MergeTool {
       dialog.show();
       SModel resultModel = dialog.getResultModelWithFixedId();
       if (resultModel != null) {
-        String asString = ModelPersistence.modelToString(resultModel);
+        String asString = ModelPersistence.modelToString(as_7qvsj_a0a0a0a41a1a2(resultModel, SModelBase.class).getSModelInternal());
         resolved(mrequest, asString);
         MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
       }
@@ -110,4 +108,11 @@ public class ModelMergeTool extends MergeTool {
   }
 
   protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
+
+  private static <T> T as_7qvsj_a0a0a0a41a1a2(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
 }
