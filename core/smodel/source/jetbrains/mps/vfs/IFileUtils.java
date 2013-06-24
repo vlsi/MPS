@@ -26,7 +26,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class IFileUtils {
   private static final Logger LOG = LogManager.getLogger(IFileUtils.class);
@@ -90,6 +92,26 @@ public class IFileUtils {
     } finally {
       if (br!=null) { br.close(); }
     }
+  }
+
+  public static List<IFile> getAllFiles(IFile directory) {
+    if (!directory.isDirectory()) {
+      throw new IllegalArgumentException("Not a directory");
+    }
+    List<IFile> result = new ArrayList<IFile>();
+    collectFiles(directory, result);
+    return result;
+  }
+
+  private static void collectFiles(IFile dir, List<IFile> result) {
+    for (IFile child : dir.getChildren()) {
+      if (child.isDirectory()) {
+        collectFiles(child, result);
+      } else {
+        result.add(child);
+      }
+    }
+
   }
 }
 

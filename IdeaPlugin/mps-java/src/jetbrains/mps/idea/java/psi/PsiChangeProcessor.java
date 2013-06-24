@@ -3,6 +3,7 @@ package jetbrains.mps.idea.java.psi;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiCodeBlock;
+import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiField;
@@ -58,6 +59,8 @@ public class PsiChangeProcessor extends ReloadParticipant {
   @Override
   public void update(ProgressMonitor monitor) {
 
+    monitor.start("PSI update", 1);
+
     Runnable notify = new Runnable() {
       @Override
       public void run() {
@@ -86,6 +89,8 @@ public class PsiChangeProcessor extends ReloadParticipant {
 //    } else {
 //      ModelAccess.instance().runUndoTransparentCommand(notify);
 //    }
+
+    monitor.done();
   }
 
   @Override
@@ -199,7 +204,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
     if (elem == null || elem instanceof PsiWhiteSpace) {
       return false;
     }
-    if (elem instanceof PsiJavaFile) {
+    if (elem instanceof PsiJavaFile || elem instanceof PsiDirectory) {
       return true;
     }
     PsiElement e = elem;

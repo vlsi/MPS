@@ -25,6 +25,7 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.testFramework.LightVirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
@@ -53,6 +54,12 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
 
     private MyFileViewProvider(PsiManager manager, VirtualFile copy, boolean b, Language baseLanguage) {
       super(manager, copy, b, baseLanguage);
+    }
+
+    @NotNull
+    @Override
+    public Language getBaseLanguage() {
+      return MPSLanguage.INSTANCE;
     }
 
     @NotNull

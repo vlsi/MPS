@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MergeStringConcatenation_Intention implements IntentionFactory {
@@ -86,7 +88,7 @@ public class MergeStringConcatenation_Intention implements IntentionFactory {
       String left = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       String right = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       SPropertyOperations.set(stringLiteral, "value", left + right);
-      editorContext.selectAndSetCaret(stringLiteral, left.length() + 1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, stringLiteral, CellIdManager.createPropertyId("value"), left.length());
     }
 
     public IntentionDescriptor getDescriptor() {

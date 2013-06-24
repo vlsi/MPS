@@ -181,16 +181,21 @@
     <unitInfo nodeId="681855071694417235" fileName="TextModelDataSource.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" />
   </root>
   <root nodeRef="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)/681855071694743498">
-    <nodeInfo nodeId="6528405377109531132" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5552814383935428918" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5552814383935428923" fileName="TextPersistenceUtil.java" startLine="15" startPosition="46" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5552814383935428931" fileName="TextPersistenceUtil.java" startLine="16" startPosition="71" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694743500" fileName="TextPersistenceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPersistenceUtil#()V" />
-    <nodeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refByModule#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+    <nodeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refByModule#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
     <scopeInfo nodeId="681855071694743503" fileName="TextPersistenceUtil.java" startLine="11" startPosition="32" endLine="11" endPosition="32" />
-    <scopeInfo nodeId="681855071694743517" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="147" />
     <scopeInfo nodeId="681855071694743500" fileName="TextPersistenceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="681855071694743517" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="17" endPosition="82">
+      <varInfo nodeId="5552814383935428922" varName="modelId" />
+      <varInfo nodeId="5552814383935428917" varName="moduleId" />
+    </scopeInfo>
+    <scopeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="681855071694743519" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="681855071694743498" fileName="TextPersistenceUtil.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" />
+    <unitInfo nodeId="681855071694743498" fileName="TextPersistenceUtil.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" />
   </root>
 </debugInfo>
 

@@ -27,8 +27,6 @@ import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
@@ -287,11 +285,9 @@ public class ClassifierResolveUtils {
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
 
     if (javaImports == null) {
-      // This is probably too wide 
-      // <node> 
-      Collection<SModel> parentScopeModels = modelsPlusImported.getModels();
+      Iterable<SModel> parentScopeModels = modelsPlusImported.getModels();
       List<SModel> ms = ListSequence.fromList(new ArrayList<SModel>());
-      ListSequence.fromList(ms).addSequence(CollectionSequence.fromCollection(parentScopeModels));
+      ListSequence.fromList(ms).addSequence(Sequence.fromIterable(parentScopeModels));
       models = ms;
 
     } else {
@@ -329,7 +325,7 @@ public class ClassifierResolveUtils {
         ListSequence.fromList(javaImportedModels).addSequence(ListSequence.fromList(ms));
       }
       // adding our MPS module scope after java imports as backup 
-      ListSequence.fromList(javaImportedModels).addSequence(CollectionSequence.fromCollection(modelsPlusImported.getModels()));
+      ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(moduleScope.getModels()));
       models = javaImportedModels;
     }
 
@@ -344,8 +340,12 @@ public class ClassifierResolveUtils {
     // adding contextNodeModel in the beginning of sequence 
     // (but really all models with the same name as contextNodeModel, because 
     // we're talking about package names) 
+
     String contextNodeModelName = jetbrains.mps.util.SNodeOperations.getModelLongName(contextNodeModel);
     List<SModel> samePackageModels = SModelRepository.getInstance().getModelDescriptorsByModelName(contextNodeModelName);
+    ListSequence.fromList(samePackageModels).removeElement(contextNodeModel);
+    ListSequence.fromList(samePackageModels).insertElement(0, contextNodeModel);
+
     models = ListSequence.fromList(samePackageModels).concat(Sequence.fromIterable(models));
 
     for (SModel model : Sequence.fromIterable(models)) {
@@ -368,10 +368,7 @@ public class ClassifierResolveUtils {
       }
     }
 
-    // <node> 
-
     // try to use old logic 
-
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
 
@@ -384,7 +381,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a95a21(((AbstractModule) check_8z6r2b_a0a0a0hc0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<SModule> visibleModules = check_8z6r2b_a0a06a21(((AbstractModule) check_8z6r2b_a0a0a0ic0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -658,14 +655,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a95a21(AbstractModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a06a21(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static SModule check_8z6r2b_a0a0a0hc0m(SModel checkedDotOperand) {
+  private static SModule check_8z6r2b_a0a0a0ic0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

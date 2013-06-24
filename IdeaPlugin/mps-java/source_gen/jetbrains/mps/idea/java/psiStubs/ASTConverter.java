@@ -118,16 +118,18 @@ public class ASTConverter {
       ((jetbrains.mps.smodel.SNode) classifier.value).setId(JavaForeignIdBuilder.computeNodeId(x));
     }
 
+    final ASTConverter currConverter = addTypeParams(x, classifier.value);
+
     // class's super types and implemented ifaces 
     {
       SNode reallyClass = classifier.value;
       if (SNodeOperations.isInstanceOf(reallyClass, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         if (x.getSuperTypes().length > 0) {
-          SLinkOperations.setTarget(reallyClass, "superclass", resolveClass(x.getSuperTypes()[0]), true);
+          SLinkOperations.setTarget(reallyClass, "superclass", currConverter.resolveClass(x.getSuperTypes()[0]), true);
         }
         ListSequence.fromList(SLinkOperations.getTargets(reallyClass, "implementedInterface", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getImplementsListTypes())).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
-            return resolveClass(it);
+            return currConverter.resolveClass(it);
           }
         }));
 
@@ -142,13 +144,11 @@ public class ASTConverter {
       if (SNodeOperations.isInstanceOf(iface, "jetbrains.mps.baseLanguage.structure.Interface")) {
         ListSequence.fromList(SLinkOperations.getTargets(iface, "extendedInterface", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getSuperTypes())).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
-            return resolveClass(it);
+            return currConverter.resolveClass(it);
           }
         }));
       }
     }
-
-    final ASTConverter currConverter = addTypeParams(x, classifier.value);
 
     Sequence.fromIterable(Sequence.fromArray(x.getFields())).visitAll(new IVisitor<PsiField>() {
       public void visit(PsiField it) {

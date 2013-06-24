@@ -32,7 +32,7 @@ public class NewSolutionUITest extends NewDialogsUITestsBase {
     Project project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main project not found", project);
 
-    final NewSolutionDialog dialog = new NewSolutionDialog(project);
+    final NewSolutionDialog dialog = new NewSolutionDialog(project, null);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
