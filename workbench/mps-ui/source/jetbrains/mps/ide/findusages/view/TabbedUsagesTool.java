@@ -24,14 +24,12 @@ import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.reloading.ReloadAdapter;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
 
 public abstract class TabbedUsagesTool extends BaseProjectTool {
-  private static final Logger LOG = LogManager.getLogger(UsagesViewTool.class);
+
   private ContentManagerAdapter myContentListener;
   private ReloadAdapter myReloadHandler;
   private ContentManager myContentManager;

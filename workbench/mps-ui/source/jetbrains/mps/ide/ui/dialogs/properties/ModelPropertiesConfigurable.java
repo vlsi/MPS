@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.ui.dialogs.properties;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.IdeBorderFactory;
@@ -29,7 +28,6 @@ import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -40,7 +38,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
@@ -55,7 +53,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -68,6 +65,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -75,6 +73,7 @@ import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -186,7 +185,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected boolean confirmRemove(final Object value) {
       if (value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference) value;
-        if (!myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference) modelReference)) {
+        if (!myModelProperties.getImportedModelsRemoveCondition().met(modelReference)) {
           ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
               ProjectHelper.toIdeaProject(myProject), "Delete imported model",
               "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
@@ -262,12 +261,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       }).addExtraAction(myFindAnActionButton = new FindAnActionButton(importedModelsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          if (myInPlugin) {
-            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(",
-                Messages.getInformationIcon());
-            return;
-          }
-
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
           final IScope scope = new ModelsOnlyScope(myModelDescriptor);
@@ -308,8 +301,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               });
             }
           });
-          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent(
-              "jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
           usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
           forceCancelCloseDialog();
         }
@@ -392,12 +384,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected void findUsages(final Object value) {
-      if (myInPlugin) {
-        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(",
-            Messages.getInformationIcon());
-        return;
-      }
-
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
@@ -409,8 +395,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
         }
       });
-      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent(
-          "jetbrains.mps.ide.findusages.view.UsagesViewTool");
+      UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
       usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
       forceCancelCloseDialog();
     }
@@ -421,12 +406,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       return new FindAnActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          if (myInPlugin) {
-            Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(",
-                Messages.getInformationIcon());
-            return;
-          }
-
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
           final IScope scope = new ModelsOnlyScope(myModelDescriptor);
@@ -472,8 +451,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
               });
             }
           });
-          IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent(
-              "jetbrains.mps.ide.findusages.view.UsagesViewTool");
+          UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
           usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
           forceCancelCloseDialog();
         }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" file="DependenciesPanel.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" file="DependenciesPanel.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
@@ -20,13 +20,13 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyTree" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.ReferencesFinder" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.ReferencesView" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.TargetsView" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.ReferencesFinder" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.ReferencesView" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.TargetsView" />
     <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
@@ -40,14 +40,14 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.DependencyTree" file="DependencyTree.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" file="DependencyTree.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextMPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.NamespaceTextNode" />
@@ -64,7 +64,7 @@
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" file="DependencyViewerScope.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" file="DependencyViewerScope.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -77,7 +77,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.ReferencesFinder" file="ReferencesFinder.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.ReferencesFinder" file="ReferencesFinder.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -87,9 +87,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -105,14 +105,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.ReferencesView" file="ReferencesView.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.ReferencesView" file="ReferencesView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />
@@ -120,6 +119,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -127,7 +127,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.dependencyViewer.TargetsView" file="TargetsView.java">
+  <dependency className="jetbrains.mps.ide.platform.dependencyViewer.TargetsView" file="TargetsView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -140,8 +140,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />
@@ -154,6 +152,8 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;

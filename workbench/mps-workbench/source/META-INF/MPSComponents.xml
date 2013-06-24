@@ -142,10 +142,6 @@
       <skipForDummyProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
-      <skipForDummyProject/>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.messages.MessageViewLoggingHandler</implementation-class>
       <skipForDummyProject/>
     </component>

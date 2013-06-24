@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.dependencyViewer;
+package jetbrains.mps.ide.platform.dependencyViewer;
 
 import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.findusages.model.SearchResults;
