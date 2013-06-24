@@ -49,6 +49,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -223,16 +227,18 @@ public class MergeModelsDialog extends DialogWrapper {
     if (!(myApplyChanges)) {
       return null;
     }
-    final SModel resultModel = myMergeSession.getResultModel();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        DiffModelUtil.restoreModelName(resultModel);
-        // fix??? 
-        for (SModel m : new SModel[]{myMergeSession.getMyModel(), myMergeSession.getRepositoryModel()}) {
-          DiffModelUtil.fixModelReferences(resultModel, m.getReference());
-        }
+    SModel resultModel = ModelAccess.instance().runReadAction(new Computable<MergeTemporaryModel>() {
+      public MergeTemporaryModel compute() {
+        // copy to avoid problems with de-registration 
+        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_3qqb0l_a0a0a1a0a0a0a0b0jb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal());
+        return new MergeTemporaryModel(resModel, false);
       }
     });
+    DiffModelUtil.restoreModelName(resultModel);
+    // fix??? 
+    for (SModel m : new SModel[]{myMergeSession.getMyModel(), myMergeSession.getRepositoryModel()}) {
+      DiffModelUtil.fixModelReferences(resultModel, m.getReference());
+    }
     return resultModel;
   }
 
@@ -608,5 +614,12 @@ public class MergeModelsDialog extends DialogWrapper {
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
+  }
+
+  private static <T> T as_3qqb0l_a0a0a1a0a0a0a0b0jb(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }
