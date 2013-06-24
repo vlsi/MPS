@@ -67,6 +67,10 @@
       <skipForDummyProject/>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.platform.actions.AnalyzeDependenciesViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsComponent</implementation-class>
     </component>
   </project-components>

@@ -13,8 +13,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
@@ -22,6 +20,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.platform.actions.DependenciesUtil;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -71,7 +71,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AnalyzeDependencies_Tool tool = ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
       final DependencyViewerScope scope = new DependencyViewerScope();
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
@@ -86,7 +85,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
             }
           }
           if (scope.isEmpty()) {
-            SNode node = check_rkpdtm_a0a0c0a0a2a0(check_rkpdtm_a0a0a2a0a0c0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
+            SNode node = check_rkpdtm_a0a0c0a0a1a0(check_rkpdtm_a0a0a2a0a0b0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
             if (node != null) {
               scope.add(node);
             }
@@ -96,8 +95,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
       if (scope.isEmpty()) {
         return;
       }
-      tool.setContent(scope, ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      tool.openToolLater(true);
+      DependenciesUtil.openDependenciesTool(((Project) MapSequence.fromMap(_params).get("ideaProject")), scope, true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
@@ -107,14 +105,14 @@ public class AnalyzeDependencies_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(AnalyzeDependencies_Action.class);
 
-  private static SNode check_rkpdtm_a0a0c0a0a2a0(EditorCell checkedDotOperand) {
+  private static SNode check_rkpdtm_a0a0c0a0a1a0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static EditorCell check_rkpdtm_a0a0a2a0a0c0a(EditorComponent checkedDotOperand) {
+  private static EditorCell check_rkpdtm_a0a0a2a0a0b0a(EditorComponent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRootCell();
     }
