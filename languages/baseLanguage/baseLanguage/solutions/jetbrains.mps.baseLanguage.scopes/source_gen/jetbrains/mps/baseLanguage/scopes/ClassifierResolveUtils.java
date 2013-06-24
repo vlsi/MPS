@@ -228,7 +228,7 @@ public class ClassifierResolveUtils {
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
 
-    SModel contextNodeModel = (contextNode == null ?
+    final SModel contextNodeModel = (contextNode == null ?
       null :
       SNodeOperations.getModel(contextNode)
     );
@@ -279,19 +279,21 @@ public class ClassifierResolveUtils {
       }
     }
 
-    Iterable<SModel> models;
-
     SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
 
     if (javaImports == null) {
-      Iterable<SModel> parentScopeModels = modelsPlusImported.getModels();
-      List<SModel> ms = ListSequence.fromList(new ArrayList<SModel>());
-      ListSequence.fromList(ms).addSequence(Sequence.fromIterable(parentScopeModels));
-      models = ms;
+
+      return resolveNonSpecialSyntax(refText, contextNode);
+
+      // <node> 
+      // <node> 
+      // <node> 
+      // <node> 
+      // <node> 
 
     } else {
-      // walk thru single-type importrs 
+      // walk through single-type imports 
       // TODO static imports are not handled yet 
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -303,7 +305,7 @@ public class ClassifierResolveUtils {
         }
 
         String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
-        SNode cls = resolveFqName(fqName, moduleScope, contextNodeModel);
+        SNode cls = resolveFqName(fqName, moduleScope.getModels(), contextNodeModel);
         if (cls == null) {
           return null;
         }
@@ -311,65 +313,76 @@ public class ClassifierResolveUtils {
         return cls;
       }
 
+      // not found in single-type impors 
+
       // putting on-demand imports into model list 
       List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
+
+      // models with the same name as contextNodeModel (correspond to the same package in java) 
+      ListSequence.fromList(javaImportedModels).addElement(contextNodeModel);
+
+      String ourPkgName = SModelStereotype.withoutStereotype(contextNodeModel.getModelName());
+      ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, ourPkgName)).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
+          return it != contextNodeModel;
+        }
+      }));
+
       ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")));
+
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getBoolean(it, "onDemand");
         }
       })) {
         String pkgName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
-        // FIXME this ignores scope 
-        List<SModel> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
-        ListSequence.fromList(javaImportedModels).addSequence(ListSequence.fromList(ms));
+        ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, pkgName)));
       }
       // adding our MPS module scope after java imports as backup 
-      ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(moduleScope.getModels()));
-      models = javaImportedModels;
-    }
+      // <node> 
 
-    // let's see if its an fqName (i.e. starting with a package name) 
-    SNode c = resolveFqName(refText, moduleScope, contextNodeModel);
-    if ((c != null)) {
-      return c;
-    }
 
-    // finally, let's go through all appropriate models and see if there is such a root 
-
-    // adding contextNodeModel in the beginning of sequence 
-    // (but really all models with the same name as contextNodeModel, because 
-    // we're talking about package names) 
-
-    String contextNodeModelName = jetbrains.mps.util.SNodeOperations.getModelLongName(contextNodeModel);
-    List<SModel> samePackageModels = SModelRepository.getInstance().getModelDescriptorsByModelName(contextNodeModelName);
-    ListSequence.fromList(samePackageModels).removeElement(contextNodeModel);
-    ListSequence.fromList(samePackageModels).insertElement(0, contextNodeModel);
-
-    models = ListSequence.fromList(samePackageModels).concat(Sequence.fromIterable(models));
-
-    for (SModel model : Sequence.fromIterable(models)) {
-      // FIXME will be unnecessary when transient models live in a separate repository 
-      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (model.getModule() instanceof TransientModelsModule)) {
-        continue;
-      }
-
-      // TODO try to use some fast find support 
-      Iterable<? extends SNode> roots = model.getRootNodes();
-      for (SNode r : roots) {
-        if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      // go through models which correspond to java imported packages 
+      for (SModel model : ListSequence.fromList(javaImportedModels)) {
+        // FIXME will be unnecessary when transient models live in a separate repository 
+        if (!(model.equals(contextNodeModel)) && model instanceof SModel && (model.getModule() instanceof TransientModelsModule)) {
           continue;
         }
-        if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
-          // see if we can find a node for the whole refText, starting from here 
-          // if not we should return anyway 
-          return construct(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), tokenizer);
+
+        SNode theResult = null;
+        boolean wasResult = false;
+
+        // TODO try to use some fast find support 
+        Iterable<? extends SNode> roots = model.getRootNodes();
+        for (SNode r : roots) {
+          if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+            continue;
+          }
+          if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
+            if (theResult != null) {
+              // ambiguity 
+              return null;
+            }
+            theResult = construct(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), tokenizer);
+            wasResult = true;
+          }
+        }
+
+        // if it was null, we should return anyway 
+        if (wasResult) {
+          return theResult;
         }
       }
+
     }
 
     // try to use old logic 
     // try to resolve as fq name in current model 
+
+    if (1 > 0) {
+      return resolveNonSpecialSyntax(refText, contextNode);
+    }
+
     Iterable<SNode> result;
 
     result = resolveClassifierByFqName(SNodeOperations.getModel(contextNode), refText);
@@ -381,7 +394,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a06a21(((AbstractModule) check_8z6r2b_a0a0a0ic0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<SModule> visibleModules = check_8z6r2b_a0a24a21(((AbstractModule) check_8z6r2b_a0a0a0qb0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -465,7 +478,7 @@ public class ClassifierResolveUtils {
     return ListSequence.fromList(classes).skip(1);
   }
 
-  private static SNode construct(SNode base, StringTokenizer tokenizer) {
+  public static SNode construct(SNode base, StringTokenizer tokenizer) {
     SNode curr = base;
     while ((curr != null) && tokenizer.hasMoreTokens()) {
       final String tok = tokenizer.nextToken();
@@ -478,7 +491,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode resolveFqName(String refText, SearchScope moduleScope, SModel contextNodeModel) {
+  public static SNode resolveFqName(String refText, Iterable<SModel> models, SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
@@ -494,13 +507,12 @@ public class ClassifierResolveUtils {
     for (int p = k - 1; p >= 0; p--) {
 
       String pkgName = refText.substring(0, dotPositions[p]);
-      Iterable<SModel> models = getModelsByName(moduleScope, pkgName);
-
-      if (Sequence.fromIterable(models).isEmpty()) {
-        continue;
-      }
 
       for (SModel m : Sequence.fromIterable(models)) {
+
+        if (!(pkgName.equals(SModelStereotype.withoutStereotype(m.getModelName())))) {
+          continue;
+        }
 
         // FIXME will be unnecessary when transient models live in a separate repository 
         if (!(m.equals(contextNodeModel)) && m instanceof SModel && (m.getModule() instanceof TransientModelsModule)) {
@@ -568,7 +580,7 @@ public class ClassifierResolveUtils {
 
       if (SPropertyOperations.getBoolean(imp, "onDemand")) {
         String className = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
-        SNode containingClas = resolveFqName(className, moduleScope, null);
+        SNode containingClas = resolveFqName(className, moduleScope.getModels(), null);
         if ((containingClas == null)) {
           continue;
         }
@@ -585,7 +597,7 @@ public class ClassifierResolveUtils {
         final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value");
         String className = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
 
-        SNode containingClas = resolveFqName(className, moduleScope, null);
+        SNode containingClas = resolveFqName(className, moduleScope.getModels(), null);
         if ((containingClas == null)) {
           continue;
         }
@@ -606,7 +618,6 @@ public class ClassifierResolveUtils {
         }
 
         ListSequence.fromList(result).addElement(neededMember);
-
       }
     }
     return result;
@@ -655,14 +666,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a06a21(AbstractModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a24a21(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static SModule check_8z6r2b_a0a0a0ic0m(SModel checkedDotOperand) {
+  private static SModule check_8z6r2b_a0a0a0qb0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
