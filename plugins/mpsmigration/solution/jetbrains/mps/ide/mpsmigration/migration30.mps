@@ -117,7 +117,6 @@
   <import index="axj0" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" version="-1" implicit="yes" />
   <import index="b2mi" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" version="-1" implicit="yes" />
   <import index="iiw7" modelUID="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" version="-1" implicit="yes" />
-  <import index="9kw3" modelUID="f:merge_repo#r:a2ca46a2-8624-46b0-b4e7-377810fc3ad8(jetbrains.mps.ide.mpsmigration.migration30@repo)" version="-1" implicit="yes" />
   <import index="ubye" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)" version="-1" implicit="yes" />
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5487985028841902721" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="CheckLangForJavaStubModels" />
@@ -567,7 +566,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688805021" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688805022" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688805023" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.8418469470841179977" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="8418469470841179977" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -3374,7 +3373,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688792575" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688792576" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688792577" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.1719872688913296420" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="1719872688913296420" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15367,7 +15366,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5636695426879360429" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5636695426879360430" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="5636695426879360431" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.5636695426879360411" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="5636695426879360411" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15438,7 +15437,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688803805" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688803806" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688803807" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.1478877201356791038" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="1478877201356791038" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15492,7 +15491,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688807146" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688807147" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688807148" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.6941165737436787362" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="6941165737436787362" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15546,7 +15545,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688808511" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688808512" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688808513" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.7000238517768078574" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="7000238517768078574" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15600,7 +15599,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688796182" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688796183" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688796184" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.6785851103865251181" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="6785851103865251181" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15654,7 +15653,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688797954" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688797955" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688797956" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.9012587759412831852" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9012587759412831852" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15708,7 +15707,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688795088" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688795089" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688795090" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.5848582975480817268" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="5848582975480817268" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15762,7 +15761,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688799069" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688799070" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688799071" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.2026211637813057566" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="2026211637813057566" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15816,7 +15815,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688802535" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688802536" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688802537" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.7908823867874089340" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="7908823867874089340" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -15870,7 +15869,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688799995" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688799996" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688799997" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.4078974148625141898" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="4078974148625141898" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
@@ -24360,7 +24359,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4149358174688801170" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4149358174688801171" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4149358174688801172" nodeInfo="nn">
-                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="9kw3.2323617542423720911" resolveInfo="project" />
+                        <link role="member" roleId="tp4f.1205756909548" targetNodeId="2323617542423720911" resolveInfo="project" />
                       </node>
                     </node>
                   </node>
