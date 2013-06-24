@@ -710,7 +710,7 @@ __switch__:
 
                 pi.setText("Loading model after change");
                 assert after != null;
-                final SModel afterModel = PersistenceUtil.loadModel(before.getContent(), before.getFile().getFileType().getDefaultExtension());
+                final SModel afterModel = PersistenceUtil.loadModel(after.getContent(), after.getFile().getFileType().getDefaultExtension());
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
