@@ -131,10 +131,10 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1457992527037889663" nodeInfo="nn">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1457992527037889665" nodeInfo="nn">
                   <node role="operation" roleId="tpee.1197027833540" type="tgbt.GetToolInProjectOperation" typeId="tgbt.681855071694758165" id="1457992527037893039" nodeInfo="nn">
-                    <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="tprs.5102590037491954904" resolveInfo="AnalyzeDependencies" />
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1457992527037893082" nodeInfo="ng">
+                    <link role="tool" roleId="tgbt.681855071694758166" targetNodeId="tprs.5426495936043631345" resolveInfo="TodoViewer" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7158312448051368257" nodeInfo="ng">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="tool" />
-                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1457992527037893306" nodeInfo="nn">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7158312448051368374" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1457992527037893300" resolveInfo="tool" />
                       </node>
                     </node>
