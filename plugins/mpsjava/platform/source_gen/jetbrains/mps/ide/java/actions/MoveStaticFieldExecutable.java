@@ -37,7 +37,7 @@ public class MoveStaticFieldExecutable implements MoveStaticMemberExecutable {
           return;
         }
         jetbrains.mps.smodel.SNode node1 = ((jetbrains.mps.smodel.SNode) whereToMove);
-        if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((jetbrains.mps.smodel.SNode) whereToMove))) {
+        if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) whereToMove))) {
           return;
         }
 
