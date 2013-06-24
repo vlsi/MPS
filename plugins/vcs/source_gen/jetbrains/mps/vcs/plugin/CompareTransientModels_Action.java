@@ -75,15 +75,15 @@ public class CompareTransientModels_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel[] models = (SModel[]) SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray();
+      final SModel[] model = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray(new SModel[((List<SModel>) MapSequence.fromMap(_params).get("models")).size()]);
       final String[] titles = ModelAccess.instance().runReadAction(new Computable<String[]>() {
         public String[] compute() {
-          return new String[]{SModelOperations.getModelName(models[0]), SModelOperations.getModelName(models[1])};
+          return new String[]{SModelOperations.getModelName(model[0]), SModelOperations.getModelName(model[1])};
         }
       });
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), models[0], models[1], titles[0], titles[1], null).show();
+          new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), model[0], model[1], titles[0], titles[1], null).show();
         }
       });
     } catch (Throwable t) {
