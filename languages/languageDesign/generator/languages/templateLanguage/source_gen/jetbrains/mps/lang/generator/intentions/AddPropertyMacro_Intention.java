@@ -15,6 +15,8 @@ import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddPropertyMacro_Intention implements IntentionFactory {
@@ -88,7 +90,7 @@ public class AddPropertyMacro_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       // set caret 
-      editorContext.selectAndSetCaret(propertyMacro, 0);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, propertyMacro, SelectionManager.FIRST_CELL, 0);
       editorContext.openInspector();
     }
 

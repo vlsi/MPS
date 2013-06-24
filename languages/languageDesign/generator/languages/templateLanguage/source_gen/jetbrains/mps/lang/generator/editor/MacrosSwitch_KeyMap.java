@@ -12,6 +12,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
 
 public class MacrosSwitch_KeyMap extends KeyMapImpl {
@@ -133,7 +135,7 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode nodeMacro = QueriesUtil.addNodeMacro(node);
       // set caret 
-      editorContext.selectAndSetCaret(nodeMacro, 1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, nodeMacro, SelectionManager.FIRST_CELL, 1);
     }
 
     public String getKeyStroke() {
@@ -181,7 +183,7 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       // set caret 
-      editorContext.selectAndSetCaret(propertyMacro, 0);
+      SelectionUtil.selectCell(editorContext, propertyMacro, SelectionManager.FIRST_CELL);
       EditorInspector inspector = editorContext.getInspector();
       assert inspector != null;
       inspector.activate();
@@ -232,7 +234,7 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
       // set caret 
-      editorContext.selectAndSetCaret(referenceMacro, 2);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, referenceMacro, SelectionManager.FIRST_CELL, 2);
       EditorInspector inspector = editorContext.getInspector();
       assert inspector != null;
       inspector.activate();

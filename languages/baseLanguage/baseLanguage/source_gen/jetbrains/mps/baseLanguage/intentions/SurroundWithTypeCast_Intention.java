@@ -92,7 +92,7 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
       if (expectedType != null) {
         SelectionUtil.selectNode(editorContext, castExpression);
       } else {
-        editorContext.selectAndSetCaret(SLinkOperations.getTarget(SNodeOperations.cast(castExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), 2);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.CastExpression"), "leftParen", -1);
       }
     }
 

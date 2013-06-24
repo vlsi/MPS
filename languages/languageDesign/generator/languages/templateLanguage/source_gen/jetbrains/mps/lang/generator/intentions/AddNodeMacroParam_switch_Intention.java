@@ -21,6 +21,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
@@ -106,7 +108,7 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
       SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
       SLinkOperations.setTarget(switchMacro, "templateSwitch", myParameter, false);
       // set caret 
-      editorContext.selectAndSetCaret(switchMacro, 1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, switchMacro, SelectionManager.FIRST_CELL, 1);
     }
 
     public IntentionDescriptor getDescriptor() {

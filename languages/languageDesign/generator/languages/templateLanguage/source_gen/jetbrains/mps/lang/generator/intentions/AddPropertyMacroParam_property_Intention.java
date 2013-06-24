@@ -21,6 +21,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddPropertyMacroParam_property_Intention implements IntentionFactory {
@@ -132,7 +134,7 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(propertyValue, "body", true), "statement", true)).addElement(expressionStatement);
       SLinkOperations.setTarget(propertyMacro, "propertyValueFunction", propertyValue, true);
       // set caret 
-      editorContext.selectAndSetCaret(propertyMacro, 0);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, propertyMacro, SelectionManager.FIRST_CELL, 0);
     }
 
     public IntentionDescriptor getDescriptor() {

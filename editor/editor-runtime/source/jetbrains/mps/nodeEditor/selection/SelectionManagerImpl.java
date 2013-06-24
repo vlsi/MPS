@@ -257,6 +257,7 @@ public class SelectionManagerImpl implements SelectionManager {
             isLastPositionRequested = true;
           }
           if (isLastPositionRequested) {
+            isLastPositionRequested = false;
             caretPosition = 0;
           }
         }
