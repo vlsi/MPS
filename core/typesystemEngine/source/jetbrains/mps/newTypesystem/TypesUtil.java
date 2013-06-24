@@ -23,15 +23,19 @@ import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class TypesUtil {
 
@@ -108,9 +112,10 @@ public class TypesUtil {
     }
   }
 
-  public static List<SNode> getNodeReferents(SNode node) {
+  @NotNull
+  public static List<SNode> getNodeReferents(@NotNull SNode node) {
     final List<SNode> result = new ArrayList<SNode>();
-    for(SReference ref:node.getReferences()){
+    for (SReference ref : node.getReferences()) {
       result.add(ref.getTargetNode());
     }
     return result;
@@ -177,7 +182,7 @@ public class TypesUtil {
 
   public static SNode createRuntimeErrorType() {
     return SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType",
-      null, GlobalScope.getInstance(), false);
+        null, GlobalScope.getInstance(), false);
   }
 
 }
