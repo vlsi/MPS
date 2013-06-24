@@ -102,6 +102,12 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testMPS12640", true);
   }
 
+  @Test
+  public void testMPS17388() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testMPS17388", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void testDot() throws Exception {
@@ -177,6 +183,11 @@ public class NullableAnalyzer_Test extends BaseTransformationTest4 {
     public void testMPS12640() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("3177492234623156275"), "jetbrains.mps.lang.test.structure.NodeOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("3177492234623156241")});
+    }
+
+    public void testMPS17388() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6215810068353174462"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{this.getRealNodeById("6215810068353174436")});
     }
   }
 }
