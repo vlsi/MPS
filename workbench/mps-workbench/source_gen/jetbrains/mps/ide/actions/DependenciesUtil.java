@@ -6,9 +6,9 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
+import jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
+import jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 

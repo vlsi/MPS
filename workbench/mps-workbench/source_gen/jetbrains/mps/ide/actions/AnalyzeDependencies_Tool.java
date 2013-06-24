@@ -5,10 +5,10 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.tool.GeneratedTool;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
+import jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
+import jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
 
