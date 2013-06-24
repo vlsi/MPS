@@ -14,8 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.persistence.PersistenceUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
@@ -74,11 +74,12 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final jetbrains.mps.smodel.SModel memory = ((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal();
-      final jetbrains.mps.smodel.SModel disk = ModelPersistence.readModel((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource(), false);
+      DataSource datasource = ((SModel) MapSequence.fromMap(_params).get("model")).getSource();
+      assert datasource instanceof FileDataSource;
+      final SModel diskModel = PersistenceUtil.loadModel(((FileDataSource) datasource).getFile());
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          new ModelDifferenceDialog(disk, memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").show();
+          new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), diskModel, ((SModel) MapSequence.fromMap(_params).get("model")), "Disk", "Memory", null).show();
         }
       });
     } catch (Throwable t) {

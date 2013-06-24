@@ -7,17 +7,22 @@ import com.intellij.openapi.diff.DiffContent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.diff.SimpleContent;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 
 public class SimpleDiffRequest extends DiffRequest {
   private String[] myContentTitles;
   private DiffContent[] myContents;
+
+  public SimpleDiffRequest(@NotNull Project project, @Nullable DiffContent[] models, @NotNull String[] contentTitles) {
+    super(project);
+    myContentTitles = contentTitles;
+    myContents = models;
+  }
 
   public SimpleDiffRequest(@NotNull Project project, @Nullable SModel[] models, @NotNull String[] contentTitles) {
     super(project);
@@ -25,18 +30,6 @@ public class SimpleDiffRequest extends DiffRequest {
     if (models != null) {
       myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<SModel, SimpleContent>() {
         public SimpleContent select(SModel m) {
-          return new SimpleContent(ModelPersistence.modelToString(((SModelBase) m).getSModelInternal()), MPSFileTypeFactory.MPS_FILE_TYPE);
-        }
-      }).toGenericArray(SimpleContent.class);
-    }
-  }
-
-  public SimpleDiffRequest(@NotNull Project project, @Nullable jetbrains.mps.smodel.SModel[] models, @NotNull String[] contentTitles) {
-    super(project);
-    myContentTitles = contentTitles;
-    if (models != null) {
-      myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<jetbrains.mps.smodel.SModel, SimpleContent>() {
-        public SimpleContent select(jetbrains.mps.smodel.SModel m) {
           return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MPS_FILE_TYPE);
         }
       }).toGenericArray(SimpleContent.class);

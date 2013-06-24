@@ -5,14 +5,15 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JScrollPane;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,13 +38,13 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   private JScrollPane myScrollPane;
   private SModel myBaseModel;
 
-  public BaseVersionEditorComponent(final SRepository repository, final ChangeGroup changeGroup) {
+  public BaseVersionEditorComponent(SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    myBaseModel = CopyUtil.copyModel(baseModel);
+    jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
+    myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel), true);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.createModuleAndRegister(myBaseModel, null, ProjectHelper.getProject(repository), false);
+        DiffModelUtil.renameModelAndRegister(myBaseModel, null);
       }
     });
     final Wrappers._T<Bounds> verticalBounds = new Wrappers._T<Bounds>();
@@ -102,7 +103,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   public void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.unregisterModel(myBaseModel.getModelDescriptor(), getOperationContext().getProject());
+        DiffModelUtil.unregisterModel(myBaseModel);
       }
     });
     super.dispose();
@@ -110,5 +111,12 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public JScrollPane getScrollPane() {
     return myScrollPane;
+  }
+
+  private static <T> T as_i3w5ys_a0a0b0c(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

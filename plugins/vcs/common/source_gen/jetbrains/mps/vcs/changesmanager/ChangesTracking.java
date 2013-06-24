@@ -32,12 +32,12 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import org.apache.log4j.Priority;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
@@ -175,7 +175,7 @@ public class ChangesTracking {
     if (myDifference.getChangeSet() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (myDifference.getChangeSet().getNewModel().getModelDescriptor() != myModelDescriptor) {
+          if (myDifference.getChangeSet().getNewModel() != myModelDescriptor) {
             _force.value = true;
           }
         }
@@ -192,7 +192,7 @@ public class ChangesTracking {
     }
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     if (BaseVersionUtil.isAddedFileStatus(status) || ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
-      baseVersionModel.value = new SModel(myModelDescriptor.getReference());
+      baseVersionModel.value = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
     } else {
       Object content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {
@@ -204,22 +204,21 @@ public class ChangesTracking {
         return;
       }
       String ext = modelVFile.getExtension();
-      org.jetbrains.mps.openapi.model.SModel md = (content instanceof String ?
+      baseVersionModel.value = (content instanceof String ?
         PersistenceUtil.loadModel((String) content, ext) :
         PersistenceUtil.loadModel((byte[]) content, ext)
       );
-      if (md == null) {
+      if (baseVersionModel.value == null) {
         return;
       }
-      baseVersionModel.value = ((SModelBase) md).getSModelInternal();
 
-      if (Sequence.fromIterable(((Iterable<org.jetbrains.mps.openapi.model.SModel.Problem>) md.getProblems())).any(new IWhereFilter<org.jetbrains.mps.openapi.model.SModel.Problem>() {
-        public boolean accept(org.jetbrains.mps.openapi.model.SModel.Problem it) {
+      if (Sequence.fromIterable(((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())).any(new IWhereFilter<SModel.Problem>() {
+        public boolean accept(SModel.Problem it) {
           return it.isError();
         }
       })) {
         StringBuilder sb = new StringBuilder();
-        for (org.jetbrains.mps.openapi.model.SModel.Problem p : Sequence.fromIterable((Iterable<org.jetbrains.mps.openapi.model.SModel.Problem>) md.getProblems())) {
+        for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())) {
           sb.append((p.isError() ?
             "error: " :
             "warn: "
@@ -235,8 +234,9 @@ public class ChangesTracking {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
-            DiffTemporaryModule.setSModelId(baseVersionModel.value, "repository");
-            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, ((SModelBase) myModelDescriptor).getSModelInternal(), true);
+            // todo: check it is needed 
+            DiffModelUtil.renameModel(baseVersionModel.value, "repository");
+            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();
           }
@@ -589,7 +589,7 @@ public class ChangesTracking {
     }
 
     @Override
-    public void modelsReplaced(Set<org.jetbrains.mps.openapi.model.SModel> descriptors) {
+    public void modelsReplaced(Set<SModel> descriptors) {
       if (descriptors.contains(myModelDescriptor)) {
         scheduleFullUpdate();
       }

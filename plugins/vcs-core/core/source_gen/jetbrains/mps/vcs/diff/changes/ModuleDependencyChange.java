@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.extapi.model.SModelBase;
 
 public class ModuleDependencyChange extends DependencyChange {
   private SModuleReference myModuleReference;
@@ -53,29 +53,29 @@ public class ModuleDependencyChange extends DependencyChange {
   public static   enum DependencyType {
     USED_LANG("Used Language", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
-        ((SModelInternal) model).addLanguage(module);
+        ((SModelBase) model).addLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
-        ((SModelInternal) model).deleteLanguage(module);
+        ((SModelBase) model).deleteLanguage(module);
       }
     }),
     USED_DEVKIT("Used Devkit", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
-        ((SModelInternal) model).addDevKit(module);
+        ((SModelBase) model).addDevKit(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
-        ((SModelInternal) model).deleteDevKit(module);
+        ((SModelBase) model).deleteDevKit(module);
       }
     }),
     LANG_ENGAGED_ON_GENERATION("Language Engaged on Generation", new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
-        ((SModelInternal) model).addEngagedOnGenerationLanguage(module);
+        ((SModelBase) model).addEngagedOnGenerationLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, SModuleReference>() {
       public void invoke(SModel model, SModuleReference module) {
-        ((SModelInternal) model).removeEngagedOnGenerationLanguage(module);
+        ((SModelBase) model).removeEngagedOnGenerationLanguage(module);
       }
     });
 
