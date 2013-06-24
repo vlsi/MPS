@@ -17,14 +17,13 @@ public class AnalyzeDependenciesViewTool extends BaseProjectTool {
 
 
   public AnalyzeDependenciesViewTool(Project project) {
-    super(project, "DependenciesViewer", -1, AllIcons.Toolwindows.ToolWindowInspection, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Dependencies Viewer", -1, AllIcons.Toolwindows.ToolWindowInspection, ToolWindowAnchor.BOTTOM, false);
   }
 
 
 
   @Override
-  public void initComponent() {
-    super.initComponent();
+  protected void createTool() {
     myDependenciesPanel = new DependenciesPanel(this, getProject());
   }
 
