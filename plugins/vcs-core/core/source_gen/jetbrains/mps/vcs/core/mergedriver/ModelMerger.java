@@ -51,6 +51,8 @@ import org.apache.log4j.LogManager;
       MPSExtentions.MODEL :
       fileExt
     );
+    // todo: extensions do not work in merge driver, use other way to distinguish persistence 
+    ext = MPSExtentions.MODEL;
 
     if (LOG.isInfoEnabled()) {
       LOG.info("Reading models...");
