@@ -68,7 +68,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object ADD_EDITORS_LOCK = new Object();
 
   private static final Object PENDING_LOCK = new Object();
-  private static final int DEFAULT_GRACE_PERIOD = 200;
+  private static final int DEFAULT_GRACE_PERIOD = 50;
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;

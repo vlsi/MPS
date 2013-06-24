@@ -72,16 +72,16 @@ import java.util.*;
     Set<SNode> invalidatedNodes_A = new THashSet<SNode>();
     Set<SNode> invalidatedNodes_B = new THashSet<SNode>();
     Set<SNode> newNodesToInvalidate_A = new THashSet<SNode>();
-    Set<SNode> newNodesToInvalidate_B = new THashSet<SNode>();
     Set<SNode> currentNodesToInvalidate_A = getCurrentNodesToInvalidate();
-    Set<SNode> currentNodesToInvalidate_B = new THashSet<SNode>();
+    Set<SNode> nodesToInvalidate_B = new THashSet<SNode>();
 
     if (isCacheWasRebuilt()) {
       currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
     }
 
     //A means invalidated and type will be recalculated, B means invalidated but type not affected. A => B then.
-    while (!currentNodesToInvalidate_A.isEmpty() || !currentNodesToInvalidate_B.isEmpty()) {
+    boolean initial = true;
+    while (!currentNodesToInvalidate_A.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate_A) {
         if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
         boolean recalc = nodeToInvalidate.getModel() != null;
@@ -91,31 +91,23 @@ import java.util.*;
         if (nodes != null) {
           newNodesToInvalidate_A.addAll(nodes);
         }
+        // only actually changed nodes affect the to be invalidated "B"
         nodes = myNodesToDependentNodes_B.get(nodeToInvalidate);
         if (nodes != null) {
-          newNodesToInvalidate_B.addAll(nodes);
-        }
-      }
-
-      for (SNode nodeToInvalidate : currentNodesToInvalidate_B) {
-        if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
-        if (invalidatedNodes_B.contains(nodeToInvalidate)) continue;
-        invalidateNodeTypeSystem(nodeToInvalidate, false);
-        invalidatedNodes_B.add(nodeToInvalidate);
-        Set<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
-        if (nodes != null) {
-          newNodesToInvalidate_B.addAll(nodes);
-        }
-        nodes = myNodesToDependentNodes_B.get(nodeToInvalidate);
-        if (nodes != null) {
-          newNodesToInvalidate_B.addAll(nodes);
+          nodesToInvalidate_B.addAll(nodes);
         }
       }
       currentNodesToInvalidate_A = newNodesToInvalidate_A;
-      currentNodesToInvalidate_B = newNodesToInvalidate_B;
       newNodesToInvalidate_A = new THashSet<SNode>();
-      newNodesToInvalidate_B = new THashSet<SNode>();
     }
+
+    for (SNode nodeToInvalidate : nodesToInvalidate_B) {
+      if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
+      if (invalidatedNodes_B.contains(nodeToInvalidate)) continue;
+      invalidateNodeTypeSystem(nodeToInvalidate, false);
+      invalidatedNodes_B.add(nodeToInvalidate);
+    }
+
     result = !invalidatedNodes_A.isEmpty() || !invalidatedNodes_B.isEmpty();
     clearNodeTypes();
     setInvalidationResult(result);
