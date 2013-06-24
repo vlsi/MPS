@@ -332,7 +332,9 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypecheckingComponent());
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
       if (!event.isAdded()) return;
-      markDependentNodesForInvalidation(jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference()), myNonTypeSystemComponent);
+      SNode node = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference());
+      if (node == null) return;
+      markDependentNodesForInvalidation(node, myNonTypeSystemComponent);
     }
 
     @Override

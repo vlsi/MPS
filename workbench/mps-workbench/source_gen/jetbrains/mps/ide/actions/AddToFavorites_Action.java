@@ -9,7 +9,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.openapi.project.Project;
@@ -51,7 +50,7 @@ public class AddToFavorites_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSCommonDataKeys.TREE_NODES));
     if (MapSequence.fromMap(_params).get("treeNodes") == null) {
       return false;
     }

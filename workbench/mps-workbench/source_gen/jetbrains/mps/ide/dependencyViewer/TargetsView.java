@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import java.util.Enumeration;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
@@ -25,7 +25,7 @@ import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Collections;
 import javax.swing.Icon;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -137,7 +137,7 @@ public class TargetsView extends UsagesView {
 
     @Override
     public Icon getResultsIcon() {
-      return Icons.REFERENCE_ICON;
+      return IdeIcons.REFERENCE_ICON;
     }
 
     @Override

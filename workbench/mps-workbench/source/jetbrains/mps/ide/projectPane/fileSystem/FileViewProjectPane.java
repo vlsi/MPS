@@ -20,6 +20,8 @@ import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -37,7 +39,14 @@ import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
-import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vfs.VirtualFileCopyEvent;
+import com.intellij.openapi.vfs.VirtualFileEvent;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import com.intellij.openapi.vfs.VirtualFileMoveEvent;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -46,32 +55,45 @@ import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.*;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FolderTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JScrollPane;
+import javax.swing.Timer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -102,7 +124,8 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     super.addToolbarActions(actionGroup);
   }
 
-  protected FileViewProjectPane(final Project project, final ProjectView projectView, final MessageBus bus, @NotNull IdeDocumentHistory ideDocumentHistory, @NotNull FileEditorManager fileEditorManager) {
+  protected FileViewProjectPane(final Project project, final ProjectView projectView, final MessageBus bus, @NotNull IdeDocumentHistory ideDocumentHistory,
+      @NotNull FileEditorManager fileEditorManager) {
     super(project);
 
     myProject = project;
@@ -156,6 +179,21 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     }
     installListeners();
     myTree = new MPSTree() {
+      @Override
+      protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+        return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+          @Override
+          public ActionGroup compute() {
+            return ProjectPaneActionGroups.getActionGroup(node);
+          }
+        });
+      }
+
+      @Override
+      protected String getPopupMenuPlace() {
+        return ActionPlaces.FILEVIEW_POPUP;
+      }
+
       @Override
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;

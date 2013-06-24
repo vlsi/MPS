@@ -17,11 +17,11 @@ package jetbrains.mps.refactoring.framework;
 
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;

@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.messages.Icons;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;

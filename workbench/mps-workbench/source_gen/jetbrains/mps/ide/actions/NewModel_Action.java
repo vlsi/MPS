@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
@@ -26,9 +25,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.StereotypeProvider;
+import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.smodel.Generator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -98,7 +97,7 @@ public class NewModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }

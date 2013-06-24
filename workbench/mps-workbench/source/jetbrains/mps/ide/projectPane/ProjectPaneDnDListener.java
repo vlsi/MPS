@@ -18,9 +18,9 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -130,11 +130,11 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
         for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
           String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
-          SNodeAccessUtil.setProperty(sourceNode.o1, SModelTreeNode.PACK, fullTargetPack);
+          SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
           if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
             List<SNode> allAspects = SNodeUtil.findAllAspects(sourceNode.o1);
             for (SNode aspect : allAspects) {
-              SNodeAccessUtil.setProperty(aspect, SModelTreeNode.PACK, fullTargetPack);
+              SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
             }
           }
         }

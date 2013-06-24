@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -100,7 +99,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public ModelCheckerViewer checkModules(List<SModule> modules, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTaskForModules(modules, NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), IdeIcons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {

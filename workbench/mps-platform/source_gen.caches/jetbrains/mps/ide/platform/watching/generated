@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1grygngj6bkf37d48k8rei86v9iymyg">
+<dependencies version="2" modelHash="-1nb8fll459ggiovoze040y24cbpyb9p">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
@@ -108,7 +108,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ReloadSession.java" />
   </source>
-  <source id="4774203567222173397" name="ReloadManagerComponent" hash="62e36sy0zhpwsjw7vzpkk6bpyy5nmvc">
+  <source id="4774203567222173397" name="ReloadManagerComponent" hash="-81e7iwphjsm0lx7i9dl40gwoo336us">
     <dep root="4774203567222745031" />
     <dep root="4774203567223337882" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />

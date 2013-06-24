@@ -16,14 +16,14 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
-  private Project myProject;
+  protected final Project myProject;
   protected T myTreeNode;
   private DependencyRecorder<SNodeTreeNode> myDependencyRecorder;
 
@@ -243,7 +243,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
             nodesWithChangedPresentations.add(event.getNode());
 
-            if (SModelTreeNode.PACK.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getParent() == null) {
+            if (SNodeUtil.property_BaseConcept_virtualPackage.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getParent() == null) {
               nodesWithChangedPackages.add(event.getNode());
             }
           }

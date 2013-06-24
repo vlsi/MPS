@@ -13,7 +13,6 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.ide.projectView.ProjectView;
@@ -60,7 +59,7 @@ public class RemoveFromFavorites_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSCommonDataKeys.TREE_NODES));
     if (MapSequence.fromMap(_params).get("treeNodes") == null) {
       return false;
     }

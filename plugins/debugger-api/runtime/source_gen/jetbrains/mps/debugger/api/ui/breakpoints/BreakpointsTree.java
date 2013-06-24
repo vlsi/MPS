@@ -4,9 +4,9 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
 /*package*/ class BreakpointsTree extends AbstractBreakpointsTree {
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {

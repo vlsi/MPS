@@ -6,12 +6,12 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
-import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup;
+import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
@@ -59,8 +59,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowCellInExplorer_Action());
     addAction(new ShowGenerationTrace_Action());
     addAction(new ShowGenerationTraceback_Action());
-    addAction(new ShowModelRepository_Action());
-    addAction(new ShowModuleRepository_Action());
     addAction(new ShowNodeInExplorer_Action());
     addAction(new ShowStructure_Action());
     addAction(new ShowTypeSystemTraceIncremental_Action());
@@ -84,7 +82,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new NamespaceNewActionsEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
-    addGroup(new RepositoryToolsGroup_ActionGroup());
     addGroup(new ShowNodeIn_ActionGroup());
     addGroup(new StructureAdditions_ActionGroup());
     addGroup(new TraceActions_ActionGroup());
@@ -95,7 +92,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
-    insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
     insertGroupIntoAnother(LanguageNewActionsEx_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);

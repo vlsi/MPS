@@ -12,7 +12,6 @@ import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -56,7 +55,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }

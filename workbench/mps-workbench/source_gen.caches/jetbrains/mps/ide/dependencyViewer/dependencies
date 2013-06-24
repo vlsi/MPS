@@ -41,20 +41,20 @@
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dependencyViewer.DependencyTree" file="DependencyTree.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.NamespaceTextNode" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.TextMPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PackageNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextMPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.NamespaceTextNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.PackageNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -62,7 +62,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dependencyViewer.DependencyViewerScope" file="DependencyViewerScope.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -153,8 +153,8 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jdom.Element" />

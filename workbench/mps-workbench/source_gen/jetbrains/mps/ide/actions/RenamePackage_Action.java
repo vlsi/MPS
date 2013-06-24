@@ -8,10 +8,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
@@ -66,7 +65,7 @@ public class RenamePackage_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ppNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("ppNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("ppNode") == null) {
       return false;
     }

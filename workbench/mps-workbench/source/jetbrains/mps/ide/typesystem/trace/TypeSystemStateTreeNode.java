@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.typesystem.trace;
 
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;

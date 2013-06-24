@@ -57,7 +57,6 @@
     <classNode dependClassName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

@@ -82,7 +82,7 @@ public class DeleteModules_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    MapSequence.fromMap(_params).put("selSize", event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE));
     if (MapSequence.fromMap(_params).get("selSize") == null) {
       return false;
     }

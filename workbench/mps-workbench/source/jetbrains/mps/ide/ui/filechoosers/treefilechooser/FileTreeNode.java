@@ -17,7 +17,7 @@ package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
 

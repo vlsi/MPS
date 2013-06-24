@@ -22,8 +22,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTree.TreeState;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree.TreeState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 

@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
@@ -27,17 +24,22 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.Listener
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeGroupTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -173,13 +175,7 @@ public class SModelNodeListeners implements NodeListeners {
 
     @Override
     public boolean showPropertiesAndReferences() {
-      return showPropertiesAndReferences(myTreeNode);
-    }
-
-    private boolean showPropertiesAndReferences(SModelTreeNode node) {
-      Project project = node.getOperationContext().getProject();
-      return node.getTree() instanceof LogicalViewTree &&
-        ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).isShowPropertiesAndReferences();
+      return ProjectPane.getInstance(myProject).isShowPropertiesAndReferences();
     }
 
     private SNodeTreeNode findRootSNodeTreeNode(SNode node) {

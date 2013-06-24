@@ -56,7 +56,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
@@ -835,39 +834,6 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.ModelRepository_Tool" file="ModelRepository_Tool.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-    <classNode dependClassName="jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
-    <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" file="ModuleRepository_Tool.java">
-    <classNode dependClassName="com.intellij.icons.AllIcons" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.tools.CloseAction" />
-    <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" file="Mpsdevkit_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -926,12 +892,9 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ProjectNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ReloadAll_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.RenameLanguage_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.RepositoryToolsGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowGenerationTrace_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowModelRepository_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowModuleRepository_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowStructure_Action" />
@@ -970,8 +933,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Find_Usages_TabDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Intentions_TabDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ModelRepository_Tool" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NodeExplorer_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Refactorings_TabDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Structure_TabDescriptor" />
@@ -1025,14 +986,13 @@
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
@@ -1282,13 +1242,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.RepositoryToolsGroup_ActionGroup" file="RepositoryToolsGroup_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action" file="ShowCellInExplorer_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -1361,44 +1314,6 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.ShowModelRepository_Action" file="ShowModelRepository_Action.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ModelRepository_Tool" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.ShowModuleRepository_Action" file="ShowModuleRepository_Action.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ModuleRepository_Tool" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action" file="ShowNodeInExplorer_Action.java">

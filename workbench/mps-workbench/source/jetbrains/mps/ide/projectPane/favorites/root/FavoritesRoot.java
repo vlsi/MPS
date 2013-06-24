@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.classpath;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -23,9 +24,9 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.ClasspathCollector;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -33,7 +34,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.tools.BaseProjectTool;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -103,6 +103,11 @@ public class ClassPathViewerTool extends BaseProjectTool {
       }
 
       return root;
+    }
+
+    @Override
+    protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
+      return null;
     }
 
     private class ModuleTreeNode extends MPSTreeNode {

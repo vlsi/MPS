@@ -10,13 +10,12 @@ import jetbrains.mps.make.IMakeService;
 import javax.swing.tree.TreeNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -82,7 +81,7 @@ public class MakeNamespace_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ppNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    MapSequence.fromMap(_params).put("ppNodes", event.getData(MPSCommonDataKeys.TREE_NODES));
     if (MapSequence.fromMap(_params).get("ppNodes") == null) {
       return false;
     }

@@ -19,7 +19,6 @@ import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -41,28 +40,27 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.TreeHighlighterExtension;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.Hack;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
@@ -72,13 +70,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 @State(
-  name = "MPSProjectPane",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+    name = "MPSProjectPane",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$WORKSPACE_FILE$"
+        )
+    }
 )
 public class ProjectPane extends BaseLogicalViewProjectPane {
   private static final Logger LOG = LogManager.getLogger(ProjectPane.class);
@@ -91,7 +89,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   };
 
   private MyScrollPane myScrollPane;
-  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane,null,null,true);
+  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane, null, null, true);
 
   public static final String ID = ProjectViewPane.ID;
 
@@ -159,9 +157,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
-  public static ProjectPane getInstance (jetbrains.mps.project.Project mpsProject) {
+  public static ProjectPane getInstance(jetbrains.mps.project.Project mpsProject) {
     if (mpsProject instanceof MPSProject) {
-      return getInstance(((MPSProject)mpsProject).getProject());
+      return getInstance(((MPSProject) mpsProject).getProject());
     }
     return null;
   }
