@@ -238,131 +238,149 @@
     <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="34" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199214">
-    <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6030177200825199348" fileName="ModelMergeTool.java" startLine="37" startPosition="47" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199365" fileName="ModelMergeTool.java" startLine="39" startPosition="9" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="42" startPosition="57" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199374" fileName="ModelMergeTool.java" startLine="44" startPosition="9" endLine="45" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199384" fileName="ModelMergeTool.java" startLine="46" startPosition="7" endLine="47" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199392" fileName="ModelMergeTool.java" startLine="47" startPosition="78" endLine="48" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4922820837622223560" fileName="ModelMergeTool.java" startLine="48" startPosition="54" endLine="49" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199399" fileName="ModelMergeTool.java" startLine="49" startPosition="39" endLine="50" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199402" fileName="ModelMergeTool.java" startLine="50" startPosition="115" endLine="51" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199405" fileName="ModelMergeTool.java" startLine="51" startPosition="139" endLine="52" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="54" startPosition="56" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199455" fileName="ModelMergeTool.java" startLine="56" startPosition="9" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199458" fileName="ModelMergeTool.java" startLine="57" startPosition="28" endLine="58" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199459" fileName="ModelMergeTool.java" startLine="59" startPosition="7" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6030177200825199460" fileName="ModelMergeTool.java" startLine="60" startPosition="0" endLine="61" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199473" fileName="ModelMergeTool.java" startLine="63" startPosition="27" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199477" fileName="ModelMergeTool.java" startLine="66" startPosition="9" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6178613820546849349" fileName="ModelMergeTool.java" startLine="67" startPosition="20" endLine="68" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199483" fileName="ModelMergeTool.java" startLine="69" startPosition="32" endLine="70" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199490" fileName="ModelMergeTool.java" startLine="70" startPosition="132" endLine="71" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199494" fileName="ModelMergeTool.java" startLine="71" startPosition="37" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1493963027547820669" fileName="ModelMergeTool.java" startLine="73" startPosition="7" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199357" fileName="ModelMergeTool.java" startLine="75" startPosition="29" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199512" fileName="ModelMergeTool.java" startLine="81" startPosition="47" endLine="82" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199220" fileName="ModelMergeTool.java" startLine="85" startPosition="75" endLine="86" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199225" fileName="ModelMergeTool.java" startLine="86" startPosition="46" endLine="87" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199238" fileName="ModelMergeTool.java" startLine="90" startPosition="13" endLine="91" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="93" startPosition="59" endLine="94" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199267" fileName="ModelMergeTool.java" startLine="102" startPosition="85" endLine="103" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199310" fileName="ModelMergeTool.java" startLine="104" startPosition="65" endLine="105" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199326" fileName="ModelMergeTool.java" startLine="106" startPosition="5" endLine="107" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="110" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_705910402" />
-    <nodeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
-    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="41" startPosition="25" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="41" startPosition="25" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="53" startPosition="71" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="53" startPosition="71" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="92" startPosition="33" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="92" startPosition="33" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199281" fileName="ModelMergeTool.java" startLine="103" startPosition="64" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="112" startPosition="72" endLine="116" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199469" fileName="ModelMergeTool.java" startLine="61" startPosition="103" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199481" fileName="ModelMergeTool.java" startLine="68" startPosition="62" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199370" fileName="ModelMergeTool.java" startLine="40" startPosition="59" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="112" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_7qvsj_a0a0a0a41a1a2#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="4922820837620801541" fileName="ModelMergeTool.java" startLine="52" startPosition="144" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199236" fileName="ModelMergeTool.java" startLine="89" startPosition="25" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileFromMergeRequest#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="89" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6030177200825199230" fileName="ModelMergeTool.java" startLine="87" startPosition="63" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="85" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolved#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6030177200825199354" fileName="ModelMergeTool.java" startLine="38" startPosition="59" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="36" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <scopeInfo nodeId="6030177200825199341" fileName="ModelMergeTool.java" startLine="33" startPosition="27" endLine="33" endPosition="27" />
-    <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="42" startPosition="57" endLine="43" endPosition="41" />
-    <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="54" startPosition="56" endLine="55" endPosition="73" />
-    <scopeInfo nodeId="6030177200825199472" fileName="ModelMergeTool.java" startLine="63" startPosition="27" endLine="64" endPosition="27" />
-    <scopeInfo nodeId="6030177200825199355" fileName="ModelMergeTool.java" startLine="75" startPosition="0" endLine="76" endPosition="25">
+    <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6030177200825199348" fileName="ModelMergeTool.java" startLine="40" startPosition="47" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199365" fileName="ModelMergeTool.java" startLine="42" startPosition="9" endLine="43" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="45" startPosition="57" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199374" fileName="ModelMergeTool.java" startLine="47" startPosition="9" endLine="48" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3022075688545673004" fileName="ModelMergeTool.java" startLine="49" startPosition="7" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6304699360822125245" fileName="ModelMergeTool.java" startLine="50" startPosition="87" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6030177200825199384" fileName="ModelMergeTool.java" startLine="51" startPosition="0" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199392" fileName="ModelMergeTool.java" startLine="52" startPosition="84" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4922820837622223560" fileName="ModelMergeTool.java" startLine="53" startPosition="54" endLine="54" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6304699360822309882" fileName="ModelMergeTool.java" startLine="55" startPosition="66" endLine="56" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199399" fileName="ModelMergeTool.java" startLine="57" startPosition="7" endLine="58" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199402" fileName="ModelMergeTool.java" startLine="58" startPosition="121" endLine="59" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199405" fileName="ModelMergeTool.java" startLine="59" startPosition="145" endLine="60" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="62" startPosition="56" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199455" fileName="ModelMergeTool.java" startLine="64" startPosition="9" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199458" fileName="ModelMergeTool.java" startLine="65" startPosition="28" endLine="66" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199459" fileName="ModelMergeTool.java" startLine="67" startPosition="7" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6030177200825199460" fileName="ModelMergeTool.java" startLine="68" startPosition="0" endLine="69" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199473" fileName="ModelMergeTool.java" startLine="71" startPosition="27" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199477" fileName="ModelMergeTool.java" startLine="74" startPosition="9" endLine="75" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6178613820546849349" fileName="ModelMergeTool.java" startLine="75" startPosition="20" endLine="76" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3022075688545936720" fileName="ModelMergeTool.java" startLine="77" startPosition="32" endLine="78" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3022075688546118577" fileName="ModelMergeTool.java" startLine="78" startPosition="76" endLine="79" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3022075688546001051" fileName="ModelMergeTool.java" startLine="82" startPosition="72" endLine="83" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3022075688546063072" fileName="ModelMergeTool.java" startLine="84" startPosition="20" endLine="85" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199490" fileName="ModelMergeTool.java" startLine="88" startPosition="11" endLine="89" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199494" fileName="ModelMergeTool.java" startLine="89" startPosition="48" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1493963027547820669" fileName="ModelMergeTool.java" startLine="91" startPosition="7" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199357" fileName="ModelMergeTool.java" startLine="93" startPosition="29" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199512" fileName="ModelMergeTool.java" startLine="99" startPosition="47" endLine="100" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199220" fileName="ModelMergeTool.java" startLine="103" startPosition="75" endLine="104" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199225" fileName="ModelMergeTool.java" startLine="104" startPosition="46" endLine="105" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199238" fileName="ModelMergeTool.java" startLine="108" startPosition="13" endLine="109" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="111" startPosition="59" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199267" fileName="ModelMergeTool.java" startLine="120" startPosition="85" endLine="121" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199310" fileName="ModelMergeTool.java" startLine="122" startPosition="65" endLine="123" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199326" fileName="ModelMergeTool.java" startLine="124" startPosition="5" endLine="125" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="128" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_705910402" />
+    <nodeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeTool#()V" />
+    <nodeInfo nodeId="3022075688545900534" fileName="ModelMergeTool.java" startLine="84" startPosition="18" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="44" startPosition="31" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="44" startPosition="31" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6304699360822170710" fileName="ModelMergeTool.java" startLine="54" startPosition="89" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="61" startPosition="71" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="61" startPosition="71" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="110" startPosition="33" endLine="113" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="110" startPosition="33" endLine="113" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199281" fileName="ModelMergeTool.java" startLine="121" startPosition="64" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="130" startPosition="74" endLine="134" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199469" fileName="ModelMergeTool.java" startLine="69" startPosition="103" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3022075688544977756" fileName="ModelMergeTool.java" startLine="81" startPosition="29" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199370" fileName="ModelMergeTool.java" startLine="43" startPosition="108" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="130" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_7qvsj_a0a0a0a1a71a1a2#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="4922820837620801541" fileName="ModelMergeTool.java" startLine="60" startPosition="150" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2326809944826021690" fileName="ModelMergeTool.java" startLine="81" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6030177200825199236" fileName="ModelMergeTool.java" startLine="107" startPosition="25" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="119" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFileFromMergeRequest#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="2326809944825832855" fileName="ModelMergeTool.java" startLine="79" startPosition="18" endLine="88" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="107" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6030177200825199230" fileName="ModelMergeTool.java" startLine="105" startPosition="63" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199481" fileName="ModelMergeTool.java" startLine="76" startPosition="68" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="103" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolved#(Lcom/intellij/openapi/diff/impl/mergeTool/MergeRequestImpl;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6030177200825199354" fileName="ModelMergeTool.java" startLine="41" startPosition="59" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="39" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <scopeInfo nodeId="6030177200825199341" fileName="ModelMergeTool.java" startLine="36" startPosition="27" endLine="36" endPosition="27" />
+    <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="45" startPosition="57" endLine="46" endPosition="41" />
+    <scopeInfo nodeId="6304699360822170713" fileName="ModelMergeTool.java" startLine="55" startPosition="66" endLine="56" endPosition="40" />
+    <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="62" startPosition="56" endLine="63" endPosition="73" />
+    <scopeInfo nodeId="6030177200825199472" fileName="ModelMergeTool.java" startLine="71" startPosition="27" endLine="72" endPosition="27" />
+    <scopeInfo nodeId="3022075688544977759" fileName="ModelMergeTool.java" startLine="82" startPosition="72" endLine="83" endPosition="144" />
+    <scopeInfo nodeId="3022075688545900535" fileName="ModelMergeTool.java" startLine="84" startPosition="20" endLine="85" endPosition="86" />
+    <scopeInfo nodeId="6030177200825199355" fileName="ModelMergeTool.java" startLine="93" startPosition="0" endLine="94" endPosition="25">
       <varInfo nodeId="6030177200825199362" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199356" fileName="ModelMergeTool.java" startLine="75" startPosition="29" endLine="76" endPosition="25" />
-    <scopeInfo nodeId="6030177200825199511" fileName="ModelMergeTool.java" startLine="81" startPosition="47" endLine="82" endPosition="137" />
-    <scopeInfo nodeId="6030177200825199237" fileName="ModelMergeTool.java" startLine="90" startPosition="13" endLine="91" endPosition="80" />
-    <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="93" startPosition="59" endLine="94" endPosition="39" />
-    <scopeInfo nodeId="6030177200825199282" fileName="ModelMergeTool.java" startLine="104" startPosition="65" endLine="105" endPosition="71" />
-    <scopeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="41" startPosition="25" endLine="44" endPosition="9" />
-    <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="53" startPosition="71" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199482" fileName="ModelMergeTool.java" startLine="69" startPosition="32" endLine="72" endPosition="78">
-      <varInfo nodeId="6030177200825199484" varName="asString" />
-    </scopeInfo>
-    <scopeInfo nodeId="6030177200825199246" fileName="ModelMergeTool.java" startLine="92" startPosition="0" endLine="95" endPosition="11">
+    <scopeInfo nodeId="6030177200825199356" fileName="ModelMergeTool.java" startLine="93" startPosition="29" endLine="94" endPosition="25" />
+    <scopeInfo nodeId="6030177200825199511" fileName="ModelMergeTool.java" startLine="99" startPosition="47" endLine="100" endPosition="137" />
+    <scopeInfo nodeId="6030177200825199237" fileName="ModelMergeTool.java" startLine="108" startPosition="13" endLine="109" endPosition="80" />
+    <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="111" startPosition="59" endLine="112" endPosition="39" />
+    <scopeInfo nodeId="6030177200825199282" fileName="ModelMergeTool.java" startLine="122" startPosition="65" endLine="123" endPosition="71" />
+    <scopeInfo nodeId="6030177200825199338" fileName="ModelMergeTool.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199372" fileName="ModelMergeTool.java" startLine="44" startPosition="31" endLine="47" endPosition="9" />
+    <scopeInfo nodeId="6030177200825199452" fileName="ModelMergeTool.java" startLine="61" startPosition="71" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199246" fileName="ModelMergeTool.java" startLine="110" startPosition="0" endLine="113" endPosition="11">
       <varInfo nodeId="6030177200825199247" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199249" fileName="ModelMergeTool.java" startLine="92" startPosition="33" endLine="95" endPosition="11" />
-    <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="92" startPosition="33" endLine="95" endPosition="11" />
-    <scopeInfo nodeId="6030177200825199371" fileName="ModelMergeTool.java" startLine="41" startPosition="25" endLine="45" endPosition="65" />
-    <scopeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="6030177200825199249" fileName="ModelMergeTool.java" startLine="110" startPosition="33" endLine="113" endPosition="11" />
+    <scopeInfo nodeId="6030177200825199250" fileName="ModelMergeTool.java" startLine="110" startPosition="33" endLine="113" endPosition="11" />
+    <scopeInfo nodeId="6030177200825199371" fileName="ModelMergeTool.java" startLine="44" startPosition="31" endLine="48" endPosition="71" />
+    <scopeInfo nodeId="6030177200825199506" fileName="ModelMergeTool.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="6030177200825199509" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="112" startPosition="72" endLine="116" endPosition="6" />
-    <scopeInfo nodeId="4922820837620801544" fileName="ModelMergeTool.java" startLine="53" startPosition="71" endLine="58" endPosition="15" />
-    <scopeInfo nodeId="6030177200825199260" fileName="ModelMergeTool.java" startLine="102" startPosition="85" endLine="107" endPosition="16">
+    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="130" startPosition="74" endLine="134" endPosition="6" />
+    <scopeInfo nodeId="4922820837620801544" fileName="ModelMergeTool.java" startLine="61" startPosition="71" endLine="66" endPosition="15" />
+    <scopeInfo nodeId="2326809944826021692" fileName="ModelMergeTool.java" startLine="81" startPosition="29" endLine="86" endPosition="13" />
+    <scopeInfo nodeId="6030177200825199260" fileName="ModelMergeTool.java" startLine="120" startPosition="85" endLine="125" endPosition="16">
       <varInfo nodeId="6030177200825199268" varName="resultContent" />
     </scopeInfo>
-    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="4922820837623234680" fileName="ModelMergeTool.java" startLine="130" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="4922820837623234680" varName="o" />
       <varInfo nodeId="4922820837623234680" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199235" fileName="ModelMergeTool.java" startLine="89" startPosition="25" endLine="96" endPosition="9" />
-    <scopeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="101" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="2326809944826021690" fileName="ModelMergeTool.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199235" fileName="ModelMergeTool.java" startLine="107" startPosition="25" endLine="114" endPosition="9" />
+    <scopeInfo nodeId="6030177200825199257" fileName="ModelMergeTool.java" startLine="119" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="6030177200825199328" varName="mergeRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="89" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199219" fileName="ModelMergeTool.java" startLine="85" startPosition="75" endLine="98" endPosition="7">
+    <scopeInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="107" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199482" fileName="ModelMergeTool.java" startLine="77" startPosition="32" endLine="90" endPosition="95">
+      <varInfo nodeId="3022075688545936723" varName="resultContent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6030177200825199219" fileName="ModelMergeTool.java" startLine="103" startPosition="75" endLine="116" endPosition="7">
       <varInfo nodeId="6030177200825199226" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="85" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="6030177200825199216" fileName="ModelMergeTool.java" startLine="103" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="6030177200825199253" varName="req" />
       <varInfo nodeId="6030177200825199255" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199364" fileName="ModelMergeTool.java" startLine="39" startPosition="9" endLine="74" endPosition="32">
+    <scopeInfo nodeId="6030177200825199364" fileName="ModelMergeTool.java" startLine="42" startPosition="9" endLine="92" endPosition="32">
       <varInfo nodeId="6030177200825199385" varName="backupFile" />
       <varInfo nodeId="6030177200825199400" varName="baseModel" />
       <varInfo nodeId="6030177200825199393" varName="contents" />
       <varInfo nodeId="6030177200825199461" varName="dialog" />
       <varInfo nodeId="4922820837622223563" varName="ext" />
       <varInfo nodeId="6030177200825199366" varName="file" />
+      <varInfo nodeId="3022075688545673005" varName="iFile" />
       <varInfo nodeId="6030177200825199403" varName="mineModel" />
       <varInfo nodeId="6030177200825199406" varName="newModel" />
       <varInfo nodeId="6178613820546849350" varName="resultModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199347" fileName="ModelMergeTool.java" startLine="37" startPosition="47" endLine="77" endPosition="5">
+    <scopeInfo nodeId="6030177200825199347" fileName="ModelMergeTool.java" startLine="40" startPosition="47" endLine="95" endPosition="5">
       <varInfo nodeId="6030177200825199349" varName="mrequest" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="36" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6030177200825199342" fileName="ModelMergeTool.java" startLine="39" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="6030177200825199345" varName="request" />
     </scopeInfo>
-    <unitInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="62" startPosition="37" endLine="66" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$1" />
-    <unitInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="88" startPosition="45" endLine="98" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$2" />
-    <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="30" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
+    <unitInfo nodeId="6030177200825199471" fileName="ModelMergeTool.java" startLine="70" startPosition="37" endLine="74" endPosition="7" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$1" />
+    <unitInfo nodeId="2326809944826021690" fileName="ModelMergeTool.java" startLine="80" startPosition="49" endLine="88" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$2" />
+    <unitInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="106" startPosition="45" endLine="116" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$3" />
+    <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="33" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199525">
     <nodeInfo nodeId="6030177200825199528" fileName="ToolsApplicationComponent.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDiffTool" />

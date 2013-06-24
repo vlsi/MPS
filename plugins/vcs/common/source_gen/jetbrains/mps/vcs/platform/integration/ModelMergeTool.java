@@ -7,24 +7,27 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class ModelMergeTool extends MergeTool {
@@ -37,19 +40,24 @@ public class ModelMergeTool extends MergeTool {
   public void show(final DiffRequest request) {
     MergeRequestImpl mrequest = (MergeRequestImpl) request;
     try {
-      VirtualFile file = getFileFromMergeRequest(mrequest);
-      if (file == null) {
+      final Wrappers._T<VirtualFile> file = new Wrappers._T<VirtualFile>(getFileFromMergeRequest(mrequest));
+      if (file.value == null) {
         if (LOG_705910402.isEnabledFor(Priority.ERROR)) {
           LOG_705910402.error("No file");
         }
-        file = LocalFileSystem.getInstance().findFileByPath("/");
+        file.value = LocalFileSystem.getInstance().findFileByPath("/");
       }
-      File backupFile = MergeBackupUtil.zipModel(request.getContents(), file);
+      final IFile iFile = FileSystem.getInstance().getFileByPath(file.value.getPath());
+
+      File backupFile = MergeBackupUtil.zipModel(request.getContents(), file.value);
       DiffContent[] contents = mrequest.getContents();
-      String ext = file.getExtension();
-      SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext);
-      SModel mineModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), ext);
-      SModel newModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), ext);
+      final Wrappers._T<String> ext = new Wrappers._T<String>(file.value.getExtension());
+      if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
+        ext.value = MPSExtentions.MODEL;
+      }
+      SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext.value);
+      SModel mineModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), ext.value);
+      SModel newModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), ext.value);
       if (baseModel == null || mineModel == null || newModel == null) {
         if (LOG_705910402.isEnabledFor(Priority.WARN)) {
           LOG_705910402.warn("Couldn't read model, invoking text merge");
@@ -65,11 +73,21 @@ public class ModelMergeTool extends MergeTool {
         }
       });
       dialog.show();
-      SModel resultModel = dialog.getResultModelWithFixedId();
+      final SModel resultModel = dialog.getResultModelWithFixedId();
       if (resultModel != null) {
-        String asString = ModelPersistence.modelToString(as_7qvsj_a0a0a0a41a1a2(resultModel, SModelBase.class).getSModelInternal());
-        resolved(mrequest, asString);
-        MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
+        final Wrappers._T<String> resultContent = new Wrappers._T<String>();
+        // <node> 
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
+              resultContent.value = PersistenceUtil.savePerRootModel(resultModel, file.value.getExtension().equals(MPSExtentions.MODEL_HEADER));
+            } else {
+              resultContent.value = PersistenceUtil.saveModel(resultModel, ext.value);
+            }
+          }
+        });
+        resolved(mrequest, resultContent.value);
+        MergeBackupUtil.packMergeResult(backupFile, file.value.getName(), resultContent.value);
       }
       dialog.unregisterModels();
     } catch (IOException e) {
@@ -109,7 +127,7 @@ public class ModelMergeTool extends MergeTool {
 
   protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
 
-  private static <T> T as_7qvsj_a0a0a0a41a1a2(Object o, Class<T> type) {
+  private static <T> T as_7qvsj_a0a0a0a1a71a1a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
