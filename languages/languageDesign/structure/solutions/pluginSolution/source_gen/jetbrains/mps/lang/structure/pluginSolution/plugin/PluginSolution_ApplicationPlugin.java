@@ -26,7 +26,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MoveConcepts_Action());
     addAction(new MoveLinkUp_Action());
     addAction(new MoveProperyUp_Action());
-    addAction(new RemoveConceptProperties_Action());
     addAction(new RenameConcept_Action());
     addAction(new RenameLink_Action());
     addAction(new RenameProperty_Action());
