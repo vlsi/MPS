@@ -63,6 +63,10 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
+      <skipForDummyProject/>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
