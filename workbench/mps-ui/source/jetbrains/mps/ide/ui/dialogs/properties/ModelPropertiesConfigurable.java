@@ -220,13 +220,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           new ModelTableCellRender(getScope()) {
             @Override
             protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-              if (!StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference) modelReference)) {
+              if (!StateUtil.isAvailable(modelReference)) {
                 return DependencyCellState.NOT_AVALIABLE;
               }
-              if (!StateUtil.isInScope(myScope, (jetbrains.mps.smodel.SModelReference) modelReference)) {
+              if (!StateUtil.isInScope(myScope, modelReference)) {
                 return DependencyCellState.NOT_IN_SCOPE;
               }
-              if ((myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference) modelReference))) {
+              if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
                 return DependencyCellState.UNUSED;
               }
 

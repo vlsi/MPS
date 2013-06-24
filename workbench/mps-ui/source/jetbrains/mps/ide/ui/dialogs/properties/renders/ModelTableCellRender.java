@@ -36,7 +36,7 @@ public class ModelTableCellRender extends ColoredTableCellRenderer {
     setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
     if (value != null) {
       final SModelReference modelReference = (SModelReference) value;
-      ModelPresentation modelPresentation = new ModelPresentation((jetbrains.mps.smodel.SModelReference)modelReference);
+      ModelPresentation modelPresentation = new ModelPresentation(modelReference);
       setIcon(modelPresentation.doGetIcon());
       DependencyCellState cellState = getDependencyCellState(modelReference);
       append(modelPresentation.doGetPresentableText(), cellState.getTextAttributes());
