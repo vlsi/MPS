@@ -6,14 +6,15 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
 import com.intellij.openapi.project.ex.ProjectEx;
 import com.intellij.openapi.components.StorageScheme;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSExtentions;
 
 public class NewSolutionDialog extends DialogWrapper {
@@ -22,15 +23,17 @@ public class NewSolutionDialog extends DialogWrapper {
   private Solution myResult;
   private String myError = null;
   private NewSolutionSettings mySolutionSettings;
+  private String myVirtualFolder;
 
 
-  public NewSolutionDialog(Project project) {
+  public NewSolutionDialog(Project project, @Nullable String virtualFolder) {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("New Solution");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
 
     myProject = project;
+    myVirtualFolder = virtualFolder;
 
     init();
   }
@@ -46,15 +49,13 @@ public class NewSolutionDialog extends DialogWrapper {
           myProject.getProjectFile().getAbsolutePath()
         )) :
         null
-      )) {
+      ));
+      mySolutionSettings.setListener(new NewSolutionSettings.SolutionSettingsChangedListener() {
         @Override
-        protected void updateSolutionLocation() {
-          super.updateSolutionLocation();
-          if (mySolutionSettings != null) {
-            check();
-          }
+        public void changed() {
+          NewSolutionDialog.this.check();
         }
-      };
+      });
     }
     return mySolutionSettings;
   }
@@ -70,6 +71,7 @@ public class NewSolutionDialog extends DialogWrapper {
     NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         myResult = NewModuleUtil.createSolution(mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation(), (MPSProject) myProject);
+        ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
       }
     });
   }

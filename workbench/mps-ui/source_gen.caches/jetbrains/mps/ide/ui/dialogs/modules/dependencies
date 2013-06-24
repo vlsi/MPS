@@ -5,7 +5,9 @@
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
+    <classNode dependClassName="com.intellij.openapi.util.Comparing" />
     <classNode dependClassName="com.intellij.openapi.util.EmptyRunnable" />
+    <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
     <classNode dependClassName="com.intellij.ui.FieldPanel" />
     <classNode dependClassName="com.intellij.ui.InsertPathAction" />
     <classNode dependClassName="com.intellij.uiDesigner.core.GridLayoutManager" />
@@ -17,8 +19,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="javax.swing.event.CaretEvent" />
-    <classNode dependClassName="javax.swing.event.CaretListener" />
+    <classNode dependClassName="javax.swing.event.DocumentEvent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.Util" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
@@ -27,7 +28,9 @@
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
+    <classNode dependClassName="com.intellij.openapi.util.Comparing" />
     <classNode dependClassName="com.intellij.openapi.util.EmptyRunnable" />
+    <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
     <classNode dependClassName="com.intellij.ui.FieldPanel" />
     <classNode dependClassName="com.intellij.ui.InsertPathAction" />
     <classNode dependClassName="com.intellij.uiDesigner.core.GridLayoutManager" />
@@ -38,8 +41,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="javax.swing.event.CaretEvent" />
-    <classNode dependClassName="javax.swing.event.CaretListener" />
+    <classNode dependClassName="javax.swing.event.DocumentEvent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.Util" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>

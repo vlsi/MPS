@@ -50,10 +50,10 @@
     <classNode extendsClassName="jetbrains.mps.extapi.model.EditableSModelBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" file="TextPersistenceUtil.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
 </dependenciesRoot>

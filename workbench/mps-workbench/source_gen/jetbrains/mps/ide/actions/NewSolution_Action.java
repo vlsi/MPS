@@ -64,7 +64,7 @@ public class NewSolution_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
       dialog.show();
       final Solution s = dialog.getSolution();
       if (s == null) {
