@@ -33,8 +33,8 @@ public class MoveStaticMethodExecutable implements MoveStaticMemberExecutable {
         if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) target))) {
           return;
         }
-        jetbrains.mps.smodel.SNode node1 = ((jetbrains.mps.smodel.SNode) whereToMove);
-        if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((jetbrains.mps.smodel.SNode) whereToMove))) {
+        SNode node1 = ((SNode) whereToMove);
+        if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) whereToMove))) {
           return;
         }
 

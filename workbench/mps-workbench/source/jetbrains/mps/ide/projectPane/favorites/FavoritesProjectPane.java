@@ -17,6 +17,8 @@ package jetbrains.mps.ide.projectPane.favorites;
 
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
@@ -29,19 +31,21 @@ import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
-import jetbrains.mps.ide.projectPane.LogicalViewTree;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -52,13 +56,13 @@ import java.util.Comparator;
 import java.util.List;
 
 @State(
-  name = "Favorites",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+    name = "Favorites",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$WORKSPACE_FILE$"
+        )
+    }
 )
 public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   public static final String ID = "Favorites";
@@ -210,7 +214,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     return myProjectView;
   }
 
-  private class MyLogicalViewTree extends MPSTree implements LogicalViewTree {
+  private class MyLogicalViewTree extends MPSTree implements NodeNavigationProvider {
     @Override
     protected MPSTreeNode rebuild() {
       String subId = getSubId();
@@ -234,11 +238,6 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       return invisibleRoot;
     }
 
-    @Override
-    public void editNode(final SNode node, IOperationContext context, boolean focus) {
-      ModelAccess.assertLegalWrite();
-      FavoritesProjectPane.this.editNode(node, context, focus);
-    }
 
     @Override
     public Comparator<Object> getChildrenComparator() {
@@ -248,6 +247,35 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     @Override
     public boolean isAutoOpen() {
       return getProjectView().isAutoscrollToSource(getId());
+    }
+
+    @Override
+    protected String getPopupMenuPlace() {
+      return ActionPlaces.FAVORITES_VIEW_POPUP;
+    }
+
+    @Override
+    protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
+      return ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+        @Override
+        public ActionGroup compute() {
+          return ProjectPaneActionGroups.getActionGroup(node);
+        }
+      });
+    }
+
+    @Override
+    public void editNode(final SNodeTreeNode treeNode, final boolean wasClicked) {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          SNode node = treeNode.getSNode();
+          if (jetbrains.mps.util.SNodeOperations.isDisposed(node) || node.getModel() == null) {
+            return;
+          }
+          FavoritesProjectPane.this.editNode(node, treeNode.getOperationContext(), wasClicked);
+        }
+      });
     }
   }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 

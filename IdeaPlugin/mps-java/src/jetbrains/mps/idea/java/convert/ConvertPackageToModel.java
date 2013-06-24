@@ -6,6 +6,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.impl.scopes.ModuleWithDependentsScope;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiClass;
@@ -20,6 +23,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.newparser.JavaParser;
+import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
@@ -28,6 +32,8 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -35,6 +41,8 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -56,14 +64,14 @@ import java.util.Set;
 
 public class ConvertPackageToModel extends AnAction {
 
+  private static Logger LOG = Logger.getLogger("Convert java to mps");
+
   public ConvertPackageToModel() {
     super("Convert Java to MPS", "", null);
   }
 
   @Override
   public void actionPerformed(final AnActionEvent e) {
-
-    // TODO handle references from MPS to the java code being converted
 
     final PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
     final Module module = e.getData(LangDataKeys.MODULE);
@@ -72,22 +80,24 @@ public class ConvertPackageToModel extends AnAction {
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    VirtualFile dir = ((PsiDirectory) element).getVirtualFile();
-    IFile ifile = new IdeaFileSystemProvider().getFile(dir.getPath());
-    final DirParser dirParser = new DirParser(mpsModule, mpsProject, ifile);
+    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository());
+    final List<IFile> javaFiles = new ArrayList<IFile>();
+    collectJavaFiles((PsiDirectory) element, javaFiles);
 
-//    mpsProject.getRepository().getModelAccess().runWriteAction(new Runnable(){
-//      @Override
-//      public void run() {
-    try {
-      dirParser.parseDirs();
-    } catch (JavaParseException exc) {
-      throw new RuntimeException(exc);
-    } catch (IOException exc) {
-      throw new RuntimeException(exc);
-    }
-//      }
-//    });
+    ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
+      @Override
+      public void run(@NotNull final ProgressIndicator progressIndicator) {
+
+        try {
+          parser.convertToMps(javaFiles, new ProgressMonitorAdapter(progressIndicator));
+
+        } catch (JavaParseException exc) {
+          throw new RuntimeException(exc);
+        } catch (IOException exc) {
+          throw new RuntimeException(exc);
+        }
+      }
+    });
 
     // it was successful, so let's hack references that pointed to psi stubs and delete java files just converted
 
@@ -96,16 +106,19 @@ public class ConvertPackageToModel extends AnAction {
       @Override
       public void run() {
 
-        Set<PsiClass> psiClasses = getPsiClasses(dirParser.getSuccessfulFiles(), PsiManager.getInstance(e.getProject()));
+        Set<PsiClass> psiClasses = getPsiClasses(parser.getSuccessfulFiles(), PsiManager.getInstance(e.getProject()));
 
         Set<SNode> stubNodes = getStubNodes(psiClasses);
 //        Map<SNode, SNode> stubToMpsNodes = null;
 
         // this module and those which depend on it
-        GlobalSearchScope scope = new ModuleWithDependentsScope(module, false);
-        SearchScope mpsScope = new IdeaSearchScope(scope);
+//        GlobalSearchScope scope = new ModuleWithDependentsScope(module, false);
+        Set<SModel> excludeSet = new HashSet<SModel>(parser.getModels());
+        SearchScope mpsScope = new SearchScopeWithoutModels(module, excludeSet);
 
         Set<SNode> affectedNodes = new HashSet<SNode>();
+
+        boolean wasUnresolved = false;
 
         Set<SReference> references = FindUsagesFacade.getInstance().findUsages(mpsScope, stubNodes, null);
         for (SReference ref : references) {
@@ -119,14 +132,18 @@ public class ConvertPackageToModel extends AnAction {
           SModelReference newModelRef = null;
           String modelName = targetModelRef.getModelName();
           modelName = modelName.substring(0, modelName.indexOf('@'));
-          for (SModel model : dirParser.getAffectedModels()) {
+          for (SModel model : parser.getModels()) {
             if (modelName.equals(model.getModelName())) {
               newModelRef = model.getReference();
             }
           }
 
-          source.setReference(role, new DynamicReference(role, source, newModelRef, ((StaticReference) ref).getResolveInfo()));
+          if (newModelRef == null) {
+            wasUnresolved = true;
+            continue;
+          }
 
+          source.setReference(role, new DynamicReference(role, source, newModelRef, ((StaticReference) ref).getResolveInfo()));
 
           SModel sourceModel = source.getModel();
           // remove import
@@ -146,8 +163,12 @@ public class ConvertPackageToModel extends AnAction {
         // here more complicated logic can be written
         // e.g. not delete, but rather unmark as source dir -- in case if
         // the resulting model(s) don't fall into the same directory where java was
-        for (IFile file : dirParser.getSuccessfulFiles()) {
+        for (IFile file : parser.getSuccessfulFiles()) {
           file.delete();
+        }
+
+        if (wasUnresolved) {
+          LOG.error("could not resolve some references");
         }
 
         // we want psi stub models to be up-to-date with regard to those deletions
@@ -186,6 +207,19 @@ public class ConvertPackageToModel extends AnAction {
     return false;
   }
 
+  private void collectJavaFiles(PsiDirectory dir, List<IFile> result) {
+    for (PsiFile f : dir.getFiles()) {
+      if (f instanceof PsiJavaFile) {
+        VirtualFile vfile = f.getVirtualFile();
+        IFile ifile = new IdeaFileSystemProvider().getFile(vfile.getPath());
+        result.add(ifile);
+      }
+    }
+    for (PsiDirectory d : dir.getSubdirectories()) {
+      collectJavaFiles(d, result);
+    }
+  }
+
   private Set<PsiClass> getPsiClasses(List<IFile> javaFiles, PsiManager psiManager) {
     Set<PsiClass> result = new HashSet<PsiClass>();
     for (IFile javaIFile : javaFiles) {
@@ -212,7 +246,7 @@ public class ConvertPackageToModel extends AnAction {
   private void putStubNodes(PsiClass clas, Set<SNode> result) {
     putOneStubNode(clas, result);
 
-    for (PsiClass cl : clas.getAllInnerClasses()) {
+    for (PsiClass cl : clas.getInnerClasses()) {
       putStubNodes(cl, result);
     }
     for (PsiMethod m : clas.getMethods()) {
@@ -231,4 +265,6 @@ public class ConvertPackageToModel extends AnAction {
     if (node == null) return;
     result.add(node);
   }
+
+
 }

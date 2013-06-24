@@ -186,53 +186,55 @@
     <nodeInfo nodeId="4774203567245813123" fileName="ReloadManagerComponent.java" startLine="137" startPosition="15" endLine="138" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3594858679916847379" fileName="ReloadManagerComponent.java" startLine="143" startPosition="23" endLine="144" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5637031331334233797" fileName="ReloadManagerComponent.java" startLine="144" startPosition="56" endLine="145" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3594858679916763744" fileName="ReloadManagerComponent.java" startLine="145" startPosition="70" endLine="146" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3594858679918664000" fileName="ReloadManagerComponent.java" startLine="146" startPosition="74" endLine="147" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567227607019" fileName="ReloadManagerComponent.java" startLine="154" startPosition="51" endLine="155" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567224533806" fileName="ReloadManagerComponent.java" startLine="156" startPosition="5" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4774203567224581620" fileName="ReloadManagerComponent.java" startLine="161" startPosition="101" endLine="162" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567224581622" fileName="ReloadManagerComponent.java" startLine="162" startPosition="33" endLine="163" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567224725735" fileName="ReloadManagerComponent.java" startLine="165" startPosition="9" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4774203567227701491" fileName="ReloadManagerComponent.java" startLine="166" startPosition="0" endLine="167" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774203567227878042" fileName="ReloadManagerComponent.java" startLine="168" startPosition="25" endLine="169" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567227740487" fileName="ReloadManagerComponent.java" startLine="169" startPosition="31" endLine="170" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3594858679917895915" fileName="ReloadManagerComponent.java" startLine="171" startPosition="9" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4774203567236035904" fileName="ReloadManagerComponent.java" startLine="173" startPosition="27" endLine="174" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567236043140" fileName="ReloadManagerComponent.java" startLine="175" startPosition="9" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4774203567224912006" fileName="ReloadManagerComponent.java" startLine="180" startPosition="81" endLine="181" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2091137892354618557" fileName="ReloadManagerComponent.java" startLine="183" startPosition="13" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2091137892354519394" fileName="ReloadManagerComponent.java" startLine="185" startPosition="16" endLine="186" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567226594002" fileName="ReloadManagerComponent.java" startLine="193" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadSession" />
-    <nodeInfo nodeId="4774203567226695904" fileName="ReloadManagerComponent.java" startLine="196" startPosition="36" endLine="197" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567226710014" fileName="ReloadManagerComponent.java" startLine="198" startPosition="7" endLine="199" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567226846934" fileName="ReloadManagerComponent.java" startLine="199" startPosition="39" endLine="200" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567226875376" fileName="ReloadManagerComponent.java" startLine="203" startPosition="61" endLine="204" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4774203567226890536" fileName="ReloadManagerComponent.java" startLine="204" startPosition="35" endLine="205" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3594858679918489016" fileName="ReloadManagerComponent.java" startLine="205" startPosition="26" endLine="206" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567227004094" fileName="ReloadManagerComponent.java" startLine="209" startPosition="41" endLine="210" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774203567226983390" fileName="ReloadManagerComponent.java" startLine="210" startPosition="41" endLine="211" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567227063226" fileName="ReloadManagerComponent.java" startLine="215" startPosition="73" endLine="216" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567227107792" fileName="ReloadManagerComponent.java" startLine="217" startPosition="7" endLine="218" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774203567227124186" fileName="ReloadManagerComponent.java" startLine="218" startPosition="41" endLine="219" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567227076735" fileName="ReloadManagerComponent.java" startLine="219" startPosition="29" endLine="220" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3594858679918307067" fileName="ReloadManagerComponent.java" startLine="224" startPosition="36" endLine="225" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3594858679918450564" fileName="ReloadManagerComponent.java" startLine="228" startPosition="13" endLine="229" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3594858679918532751" fileName="ReloadManagerComponent.java" startLine="230" startPosition="42" endLine="231" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3594858679918742562" fileName="ReloadManagerComponent.java" startLine="233" startPosition="7" endLine="234" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3594858679918776133" fileName="ReloadManagerComponent.java" startLine="234" startPosition="41" endLine="235" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3594858679918458656" fileName="ReloadManagerComponent.java" startLine="235" startPosition="29" endLine="236" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774203567222173397" fileName="ReloadManagerComponent.java" startLine="240" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2091137892354507216" fileName="ReloadManagerComponent.java" startLine="185" startPosition="14" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3356342729950961164" fileName="ReloadManagerComponent.java" startLine="146" startPosition="26" endLine="147" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3594858679916763744" fileName="ReloadManagerComponent.java" startLine="148" startPosition="5" endLine="149" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3594858679918664000" fileName="ReloadManagerComponent.java" startLine="149" startPosition="74" endLine="150" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567227607019" fileName="ReloadManagerComponent.java" startLine="157" startPosition="51" endLine="158" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567224533806" fileName="ReloadManagerComponent.java" startLine="159" startPosition="5" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4774203567224581620" fileName="ReloadManagerComponent.java" startLine="164" startPosition="101" endLine="165" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567224581622" fileName="ReloadManagerComponent.java" startLine="165" startPosition="33" endLine="166" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567224725735" fileName="ReloadManagerComponent.java" startLine="168" startPosition="9" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4774203567227701491" fileName="ReloadManagerComponent.java" startLine="169" startPosition="0" endLine="170" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4774203567227878042" fileName="ReloadManagerComponent.java" startLine="171" startPosition="25" endLine="172" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567227740487" fileName="ReloadManagerComponent.java" startLine="172" startPosition="31" endLine="173" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3594858679917895915" fileName="ReloadManagerComponent.java" startLine="174" startPosition="9" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4774203567236035904" fileName="ReloadManagerComponent.java" startLine="176" startPosition="27" endLine="177" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567236043140" fileName="ReloadManagerComponent.java" startLine="178" startPosition="9" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4774203567224912006" fileName="ReloadManagerComponent.java" startLine="183" startPosition="81" endLine="184" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2091137892354618557" fileName="ReloadManagerComponent.java" startLine="186" startPosition="13" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2091137892354519394" fileName="ReloadManagerComponent.java" startLine="188" startPosition="16" endLine="189" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567226594002" fileName="ReloadManagerComponent.java" startLine="196" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadSession" />
+    <nodeInfo nodeId="4774203567226695904" fileName="ReloadManagerComponent.java" startLine="199" startPosition="36" endLine="200" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567226710014" fileName="ReloadManagerComponent.java" startLine="201" startPosition="7" endLine="202" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567226846934" fileName="ReloadManagerComponent.java" startLine="202" startPosition="39" endLine="203" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567226875376" fileName="ReloadManagerComponent.java" startLine="206" startPosition="61" endLine="207" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4774203567226890536" fileName="ReloadManagerComponent.java" startLine="207" startPosition="35" endLine="208" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3594858679918489016" fileName="ReloadManagerComponent.java" startLine="208" startPosition="26" endLine="209" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567227004094" fileName="ReloadManagerComponent.java" startLine="212" startPosition="41" endLine="213" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4774203567226983390" fileName="ReloadManagerComponent.java" startLine="213" startPosition="41" endLine="214" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567227063226" fileName="ReloadManagerComponent.java" startLine="218" startPosition="73" endLine="219" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567227107792" fileName="ReloadManagerComponent.java" startLine="220" startPosition="7" endLine="221" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4774203567227124186" fileName="ReloadManagerComponent.java" startLine="221" startPosition="41" endLine="222" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567227076735" fileName="ReloadManagerComponent.java" startLine="222" startPosition="29" endLine="223" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3594858679918307067" fileName="ReloadManagerComponent.java" startLine="227" startPosition="36" endLine="228" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3594858679918450564" fileName="ReloadManagerComponent.java" startLine="231" startPosition="13" endLine="232" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3594858679918532751" fileName="ReloadManagerComponent.java" startLine="233" startPosition="42" endLine="234" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3594858679918742562" fileName="ReloadManagerComponent.java" startLine="236" startPosition="7" endLine="237" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3594858679918776133" fileName="ReloadManagerComponent.java" startLine="237" startPosition="41" endLine="238" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3594858679918458656" fileName="ReloadManagerComponent.java" startLine="238" startPosition="29" endLine="239" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4774203567222173397" fileName="ReloadManagerComponent.java" startLine="243" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2091137892354507216" fileName="ReloadManagerComponent.java" startLine="188" startPosition="14" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4774203567222215630" fileName="ReloadManagerComponent.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <nodeInfo nodeId="4774203567222993656" fileName="ReloadManagerComponent.java" startLine="79" startPosition="12" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774203567239338679" fileName="ReloadManagerComponent.java" startLine="95" startPosition="22" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774203567229700674" fileName="ReloadManagerComponent.java" startLine="111" startPosition="34" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4774203567229700674" fileName="ReloadManagerComponent.java" startLine="111" startPosition="34" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774203567227572397" fileName="ReloadManagerComponent.java" startLine="153" startPosition="37" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774203567236009540" fileName="ReloadManagerComponent.java" startLine="172" startPosition="0" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774203567226625254" fileName="ReloadManagerComponent.java" startLine="195" startPosition="53" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774203567227049553" fileName="ReloadManagerComponent.java" startLine="214" startPosition="60" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3594858679918275854" fileName="ReloadManagerComponent.java" startLine="223" startPosition="64" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3356342729950942303" fileName="ReloadManagerComponent.java" startLine="145" startPosition="70" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4774203567227572397" fileName="ReloadManagerComponent.java" startLine="156" startPosition="37" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4774203567236009540" fileName="ReloadManagerComponent.java" startLine="175" startPosition="0" endLine="178" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4774203567226625254" fileName="ReloadManagerComponent.java" startLine="198" startPosition="53" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4774203567227049553" fileName="ReloadManagerComponent.java" startLine="217" startPosition="60" endLine="220" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3594858679918275854" fileName="ReloadManagerComponent.java" startLine="226" startPosition="64" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774203567223025539" fileName="ReloadManagerComponent.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
     <nodeInfo nodeId="4774203567223025548" fileName="ReloadManagerComponent.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
     <nodeInfo nodeId="4774203567222689890" fileName="ReloadManagerComponent.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadManagerComponent#(Lcom/intellij/openapi/project/ProjectManager;)V" />
@@ -240,34 +242,34 @@
     <nodeInfo nodeId="4774203567222993654" fileName="ReloadManagerComponent.java" startLine="79" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4774203567243108205" fileName="ReloadManagerComponent.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
     <nodeInfo nodeId="4774203567243108212" fileName="ReloadManagerComponent.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
-    <nodeInfo nodeId="4774203567224581612" fileName="ReloadManagerComponent.java" startLine="160" startPosition="68" endLine="164" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774203567227718595" fileName="ReloadManagerComponent.java" startLine="167" startPosition="71" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774203567224911999" fileName="ReloadManagerComponent.java" startLine="179" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="4774203567226671451" fileName="ReloadManagerComponent.java" startLine="209" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasUnemployed#()Z" />
+    <nodeInfo nodeId="4774203567224581612" fileName="ReloadManagerComponent.java" startLine="163" startPosition="68" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4774203567227718595" fileName="ReloadManagerComponent.java" startLine="170" startPosition="71" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4774203567224911999" fileName="ReloadManagerComponent.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="4774203567226671451" fileName="ReloadManagerComponent.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasUnemployed#()Z" />
     <nodeInfo nodeId="4774203567222215642" fileName="ReloadManagerComponent.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4774203567238822242" fileName="ReloadManagerComponent.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suspendReloads#()V" />
-    <nodeInfo nodeId="4774203567226023041" fileName="ReloadManagerComponent.java" startLine="203" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dismiss#(Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="3594858679918507174" fileName="ReloadManagerComponent.java" startLine="227" startPosition="76" endLine="232" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4774203567226023041" fileName="ReloadManagerComponent.java" startLine="206" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dismiss#(Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="3594858679918507174" fileName="ReloadManagerComponent.java" startLine="230" startPosition="76" endLine="235" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4774203567245684353" fileName="ReloadManagerComponent.java" startLine="133" startPosition="58" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4774203567224581605" fileName="ReloadManagerComponent.java" startLine="159" startPosition="25" endLine="165" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2091137892354488031" fileName="ReloadManagerComponent.java" startLine="177" startPosition="39" endLine="183" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567224581605" fileName="ReloadManagerComponent.java" startLine="162" startPosition="25" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2091137892354488031" fileName="ReloadManagerComponent.java" startLine="180" startPosition="39" endLine="186" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4774203567222215636" fileName="ReloadManagerComponent.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
     <nodeInfo nodeId="4774203567222993644" fileName="ReloadManagerComponent.java" startLine="76" startPosition="47" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774203567238855641" fileName="ReloadManagerComponent.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeReloads#()V" />
-    <nodeInfo nodeId="5637031331334112153" fileName="ReloadManagerComponent.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
-    <nodeInfo nodeId="4774203567225976011" fileName="ReloadManagerComponent.java" startLine="195" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="employ#()Ljetbrains/mps/ide/platform/watching/ReloadSession;" />
-    <nodeInfo nodeId="3594858679918350029" fileName="ReloadManagerComponent.java" startLine="226" startPosition="7" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4774203567226174417" fileName="ReloadManagerComponent.java" startLine="214" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnemployed#()Ljetbrains/mps/ide/platform/watching/ReloadSession;" />
+    <nodeInfo nodeId="4774203567225976011" fileName="ReloadManagerComponent.java" startLine="198" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="employ#()Ljetbrains/mps/ide/platform/watching/ReloadSession;" />
+    <nodeInfo nodeId="3594858679918350029" fileName="ReloadManagerComponent.java" startLine="229" startPosition="7" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4774203567226174417" fileName="ReloadManagerComponent.java" startLine="217" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnemployed#()Ljetbrains/mps/ide/platform/watching/ReloadSession;" />
     <nodeInfo nodeId="4774203567245517408" fileName="ReloadManagerComponent.java" startLine="132" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeNoReload#(Ljetbrains/mps/util/Computable;)null" />
     <nodeInfo nodeId="4774203567222993640" fileName="ReloadManagerComponent.java" startLine="76" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMakeService#(Ljetbrains/mps/make/IMakeService;)V" />
+    <nodeInfo nodeId="5637031331334112153" fileName="ReloadManagerComponent.java" startLine="142" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
     <nodeInfo nodeId="4774203567223025532" fileName="ReloadManagerComponent.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeListener" />
-    <nodeInfo nodeId="2091137892354453197" fileName="ReloadManagerComponent.java" startLine="176" startPosition="0" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2091137892354453197" fileName="ReloadManagerComponent.java" startLine="179" startPosition="0" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774203567227997083" fileName="ReloadManagerComponent.java" startLine="106" startPosition="40" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3594858679918255854" fileName="ReloadManagerComponent.java" startLine="223" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="waitForUnemployed#()Ljetbrains/mps/ide/platform/watching/ReloadSession;" />
+    <nodeInfo nodeId="3594858679918255854" fileName="ReloadManagerComponent.java" startLine="226" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="waitForUnemployed#()Ljetbrains/mps/ide/platform/watching/ReloadSession;" />
     <nodeInfo nodeId="4774203567223247710" fileName="ReloadManagerComponent.java" startLine="103" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runReload#(Ljava/lang/Class;Ljetbrains/mps/ide/platform/watching/ReloadAction;)V" />
-    <nodeInfo nodeId="4774203567224549458" fileName="ReloadManagerComponent.java" startLine="159" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4774203567224537147" fileName="ReloadManagerComponent.java" startLine="157" startPosition="0" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774203567224191030" fileName="ReloadManagerComponent.java" startLine="153" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="queueReloadSession#()V" />
+    <nodeInfo nodeId="4774203567224549458" fileName="ReloadManagerComponent.java" startLine="162" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4774203567224537147" fileName="ReloadManagerComponent.java" startLine="160" startPosition="0" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4774203567224191030" fileName="ReloadManagerComponent.java" startLine="156" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="queueReloadSession#()V" />
     <scopeInfo nodeId="4774203567223025544" fileName="ReloadManagerComponent.java" startLine="35" startPosition="62" endLine="36" endPosition="23" />
     <scopeInfo nodeId="4774203567223025553" fileName="ReloadManagerComponent.java" startLine="40" startPosition="62" endLine="41" endPosition="22" />
     <scopeInfo nodeId="4774203567222215635" fileName="ReloadManagerComponent.java" startLine="58" startPosition="31" endLine="59" endPosition="22" />
@@ -280,24 +282,25 @@
     <scopeInfo nodeId="4774203567243108211" fileName="ReloadManagerComponent.java" startLine="123" startPosition="58" endLine="124" endPosition="66" />
     <scopeInfo nodeId="4774203567243108218" fileName="ReloadManagerComponent.java" startLine="128" startPosition="61" endLine="129" endPosition="69" />
     <scopeInfo nodeId="4774203567245684355" fileName="ReloadManagerComponent.java" startLine="137" startPosition="15" endLine="138" endPosition="22" />
-    <scopeInfo nodeId="4774203567227572399" fileName="ReloadManagerComponent.java" startLine="154" startPosition="51" endLine="155" endPosition="13" />
-    <scopeInfo nodeId="4774203567236009542" fileName="ReloadManagerComponent.java" startLine="173" startPosition="27" endLine="174" endPosition="17" />
-    <scopeInfo nodeId="4774203567224912005" fileName="ReloadManagerComponent.java" startLine="180" startPosition="81" endLine="181" endPosition="73" />
-    <scopeInfo nodeId="2091137892354507217" fileName="ReloadManagerComponent.java" startLine="185" startPosition="16" endLine="186" endPosition="50" />
-    <scopeInfo nodeId="4774203567226625256" fileName="ReloadManagerComponent.java" startLine="196" startPosition="36" endLine="197" endPosition="63" />
-    <scopeInfo nodeId="4774203567227049555" fileName="ReloadManagerComponent.java" startLine="215" startPosition="73" endLine="216" endPosition="20" />
-    <scopeInfo nodeId="3594858679918275855" fileName="ReloadManagerComponent.java" startLine="224" startPosition="36" endLine="225" endPosition="20" />
-    <scopeInfo nodeId="3594858679918507176" fileName="ReloadManagerComponent.java" startLine="228" startPosition="13" endLine="229" endPosition="17" />
-    <scopeInfo nodeId="3594858679918507177" fileName="ReloadManagerComponent.java" startLine="230" startPosition="0" endLine="231" endPosition="89">
+    <scopeInfo nodeId="3356342729950942306" fileName="ReloadManagerComponent.java" startLine="146" startPosition="26" endLine="147" endPosition="13" />
+    <scopeInfo nodeId="4774203567227572399" fileName="ReloadManagerComponent.java" startLine="157" startPosition="51" endLine="158" endPosition="13" />
+    <scopeInfo nodeId="4774203567236009542" fileName="ReloadManagerComponent.java" startLine="176" startPosition="27" endLine="177" endPosition="17" />
+    <scopeInfo nodeId="4774203567224912005" fileName="ReloadManagerComponent.java" startLine="183" startPosition="81" endLine="184" endPosition="73" />
+    <scopeInfo nodeId="2091137892354507217" fileName="ReloadManagerComponent.java" startLine="188" startPosition="16" endLine="189" endPosition="50" />
+    <scopeInfo nodeId="4774203567226625256" fileName="ReloadManagerComponent.java" startLine="199" startPosition="36" endLine="200" endPosition="63" />
+    <scopeInfo nodeId="4774203567227049555" fileName="ReloadManagerComponent.java" startLine="218" startPosition="73" endLine="219" endPosition="20" />
+    <scopeInfo nodeId="3594858679918275855" fileName="ReloadManagerComponent.java" startLine="227" startPosition="36" endLine="228" endPosition="20" />
+    <scopeInfo nodeId="3594858679918507176" fileName="ReloadManagerComponent.java" startLine="231" startPosition="13" endLine="232" endPosition="17" />
+    <scopeInfo nodeId="3594858679918507177" fileName="ReloadManagerComponent.java" startLine="233" startPosition="0" endLine="234" endPosition="89">
       <varInfo nodeId="3594858679918507179" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3594858679918507183" fileName="ReloadManagerComponent.java" startLine="230" startPosition="42" endLine="231" endPosition="89" />
+    <scopeInfo nodeId="3594858679918507183" fileName="ReloadManagerComponent.java" startLine="233" startPosition="42" endLine="234" endPosition="89" />
     <scopeInfo nodeId="4774203567222689893" fileName="ReloadManagerComponent.java" startLine="51" startPosition="64" endLine="53" endPosition="39" />
     <scopeInfo nodeId="4774203567223462842" fileName="ReloadManagerComponent.java" startLine="64" startPosition="32" endLine="66" endPosition="27" />
     <scopeInfo nodeId="4774203567245684354" fileName="ReloadManagerComponent.java" startLine="134" startPosition="9" endLine="136" endPosition="34" />
-    <scopeInfo nodeId="4774203567224581619" fileName="ReloadManagerComponent.java" startLine="161" startPosition="101" endLine="163" endPosition="19" />
-    <scopeInfo nodeId="4774203567227718597" fileName="ReloadManagerComponent.java" startLine="168" startPosition="25" endLine="170" endPosition="17" />
-    <scopeInfo nodeId="4774203567226983392" fileName="ReloadManagerComponent.java" startLine="209" startPosition="41" endLine="211" endPosition="51">
+    <scopeInfo nodeId="4774203567224581619" fileName="ReloadManagerComponent.java" startLine="164" startPosition="101" endLine="166" endPosition="19" />
+    <scopeInfo nodeId="4774203567227718597" fileName="ReloadManagerComponent.java" startLine="171" startPosition="25" endLine="173" endPosition="17" />
+    <scopeInfo nodeId="4774203567226983392" fileName="ReloadManagerComponent.java" startLine="212" startPosition="41" endLine="214" endPosition="51">
       <varInfo nodeId="4774203567227004095" varName="rs" />
     </scopeInfo>
     <scopeInfo nodeId="4774203567222215630" fileName="ReloadManagerComponent.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
@@ -309,7 +312,7 @@
       <varInfo nodeId="4774203567229611084" varName="participant" />
     </scopeInfo>
     <scopeInfo nodeId="4774203567229700674" fileName="ReloadManagerComponent.java" startLine="111" startPosition="34" endLine="114" endPosition="7" />
-    <scopeInfo nodeId="4774203567226023044" fileName="ReloadManagerComponent.java" startLine="203" startPosition="61" endLine="206" endPosition="15" />
+    <scopeInfo nodeId="4774203567226023044" fileName="ReloadManagerComponent.java" startLine="206" startPosition="61" endLine="209" endPosition="15" />
     <scopeInfo nodeId="4774203567223025539" fileName="ReloadManagerComponent.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="4774203567223025542" varName="notification" />
     </scopeInfo>
@@ -329,67 +332,67 @@
     <scopeInfo nodeId="4774203567243108212" fileName="ReloadManagerComponent.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="4774203567243108216" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="5637031331334112154" fileName="ReloadManagerComponent.java" startLine="143" startPosition="23" endLine="147" endPosition="49">
-      <varInfo nodeId="5637031331334233798" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774203567224581611" fileName="ReloadManagerComponent.java" startLine="160" startPosition="68" endLine="164" endPosition="11" />
-    <scopeInfo nodeId="4774203567224911999" fileName="ReloadManagerComponent.java" startLine="179" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="4774203567224581611" fileName="ReloadManagerComponent.java" startLine="163" startPosition="68" endLine="167" endPosition="11" />
+    <scopeInfo nodeId="4774203567224911999" fileName="ReloadManagerComponent.java" startLine="182" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="4774203567224912002" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="4774203567226671451" fileName="ReloadManagerComponent.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
+    <scopeInfo nodeId="4774203567226671451" fileName="ReloadManagerComponent.java" startLine="212" startPosition="0" endLine="216" endPosition="0" />
     <scopeInfo nodeId="4774203567222215641" fileName="ReloadManagerComponent.java" startLine="62" startPosition="34" endLine="67" endPosition="5" />
     <scopeInfo nodeId="4774203567222215642" fileName="ReloadManagerComponent.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4774203567238822242" fileName="ReloadManagerComponent.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="4774203567238855644" fileName="ReloadManagerComponent.java" startLine="93" startPosition="31" endLine="98" endPosition="5">
       <varInfo nodeId="4774203567239255449" varName="count" />
     </scopeInfo>
-    <scopeInfo nodeId="4774203567225976014" fileName="ReloadManagerComponent.java" startLine="195" startPosition="53" endLine="200" endPosition="29" />
-    <scopeInfo nodeId="4774203567226023041" fileName="ReloadManagerComponent.java" startLine="203" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="4774203567225976014" fileName="ReloadManagerComponent.java" startLine="198" startPosition="53" endLine="203" endPosition="29" />
+    <scopeInfo nodeId="4774203567226023041" fileName="ReloadManagerComponent.java" startLine="206" startPosition="0" endLine="211" endPosition="0">
       <varInfo nodeId="4774203567226032397" varName="rs" />
     </scopeInfo>
-    <scopeInfo nodeId="3594858679918350033" fileName="ReloadManagerComponent.java" startLine="227" startPosition="76" endLine="232" endPosition="9" />
+    <scopeInfo nodeId="3594858679918350033" fileName="ReloadManagerComponent.java" startLine="230" startPosition="76" endLine="235" endPosition="9" />
     <scopeInfo nodeId="4774203567245517416" fileName="ReloadManagerComponent.java" startLine="133" startPosition="58" endLine="139" endPosition="5" />
-    <scopeInfo nodeId="4774203567224581605" fileName="ReloadManagerComponent.java" startLine="159" startPosition="25" endLine="165" endPosition="9">
+    <scopeInfo nodeId="4774203567224581605" fileName="ReloadManagerComponent.java" startLine="162" startPosition="25" endLine="168" endPosition="9">
       <varInfo nodeId="4774203567224581609" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4774203567226174420" fileName="ReloadManagerComponent.java" startLine="214" startPosition="60" endLine="220" endPosition="16">
+    <scopeInfo nodeId="4774203567226174420" fileName="ReloadManagerComponent.java" startLine="217" startPosition="60" endLine="223" endPosition="16">
       <varInfo nodeId="4774203567227107793" varName="rs" />
     </scopeInfo>
     <scopeInfo nodeId="4774203567222215636" fileName="ReloadManagerComponent.java" startLine="62" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="4774203567238855641" fileName="ReloadManagerComponent.java" startLine="93" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="5637031331334112153" fileName="ReloadManagerComponent.java" startLine="142" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="2091137892354453200" fileName="ReloadManagerComponent.java" startLine="177" startPosition="39" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="4774203567225976011" fileName="ReloadManagerComponent.java" startLine="195" startPosition="0" endLine="202" endPosition="0" />
+    <scopeInfo nodeId="5637031331334112154" fileName="ReloadManagerComponent.java" startLine="143" startPosition="23" endLine="150" endPosition="49">
+      <varInfo nodeId="5637031331334233798" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="2091137892354453200" fileName="ReloadManagerComponent.java" startLine="180" startPosition="39" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="4774203567225976011" fileName="ReloadManagerComponent.java" startLine="198" startPosition="0" endLine="205" endPosition="0" />
     <scopeInfo nodeId="4774203567222993643" fileName="ReloadManagerComponent.java" startLine="76" startPosition="47" endLine="84" endPosition="23" />
-    <scopeInfo nodeId="4774203567226174417" fileName="ReloadManagerComponent.java" startLine="214" startPosition="0" endLine="222" endPosition="0" />
+    <scopeInfo nodeId="4774203567226174417" fileName="ReloadManagerComponent.java" startLine="217" startPosition="0" endLine="225" endPosition="0" />
     <scopeInfo nodeId="4774203567245517408" fileName="ReloadManagerComponent.java" startLine="132" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="4774203567245517409" varName="computable" />
     </scopeInfo>
     <scopeInfo nodeId="4774203567222993640" fileName="ReloadManagerComponent.java" startLine="76" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="4774203567222993670" varName="ms" />
     </scopeInfo>
-    <scopeInfo nodeId="3594858679918255857" fileName="ReloadManagerComponent.java" startLine="223" startPosition="64" endLine="236" endPosition="16">
+    <scopeInfo nodeId="5637031331334112153" fileName="ReloadManagerComponent.java" startLine="142" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="3594858679918255857" fileName="ReloadManagerComponent.java" startLine="226" startPosition="64" endLine="239" endPosition="16">
       <varInfo nodeId="3594858679918742563" varName="rs" />
     </scopeInfo>
     <scopeInfo nodeId="4774203567223247713" fileName="ReloadManagerComponent.java" startLine="104" startPosition="112" endLine="119" endPosition="25">
       <varInfo nodeId="4774203567227955411" varName="rs" />
     </scopeInfo>
-    <scopeInfo nodeId="3594858679918255854" fileName="ReloadManagerComponent.java" startLine="223" startPosition="0" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="3594858679918255854" fileName="ReloadManagerComponent.java" startLine="226" startPosition="0" endLine="241" endPosition="0" />
     <scopeInfo nodeId="4774203567223247710" fileName="ReloadManagerComponent.java" startLine="103" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="4774203567223249891" varName="participantClass" />
       <varInfo nodeId="4774203567223290738" varName="reloadAction" />
     </scopeInfo>
-    <scopeInfo nodeId="4774203567224549462" fileName="ReloadManagerComponent.java" startLine="159" startPosition="25" endLine="187" endPosition="9">
+    <scopeInfo nodeId="4774203567224549462" fileName="ReloadManagerComponent.java" startLine="162" startPosition="25" endLine="190" endPosition="9">
       <varInfo nodeId="4774203567227701492" varName="rs" />
     </scopeInfo>
-    <scopeInfo nodeId="4774203567224549458" fileName="ReloadManagerComponent.java" startLine="159" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="4774203567224191033" fileName="ReloadManagerComponent.java" startLine="153" startPosition="37" endLine="189" endPosition="7" />
-    <scopeInfo nodeId="4774203567224191030" fileName="ReloadManagerComponent.java" startLine="153" startPosition="0" endLine="191" endPosition="0" />
-    <unitInfo nodeId="4774203567224911995" fileName="ReloadManagerComponent.java" startLine="178" startPosition="48" endLine="183" endPosition="11" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$3" />
+    <scopeInfo nodeId="4774203567224549458" fileName="ReloadManagerComponent.java" startLine="162" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="4774203567224191033" fileName="ReloadManagerComponent.java" startLine="156" startPosition="37" endLine="192" endPosition="7" />
+    <scopeInfo nodeId="4774203567224191030" fileName="ReloadManagerComponent.java" startLine="156" startPosition="0" endLine="194" endPosition="0" />
+    <unitInfo nodeId="4774203567224911995" fileName="ReloadManagerComponent.java" startLine="181" startPosition="48" endLine="186" endPosition="11" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$3" />
     <unitInfo nodeId="4774203567223025537" fileName="ReloadManagerComponent.java" startLine="33" startPosition="57" endLine="43" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$1" />
-    <unitInfo nodeId="4774203567224549456" fileName="ReloadManagerComponent.java" startLine="158" startPosition="22" endLine="189" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$2" />
-    <unitInfo nodeId="4774203567225906524" fileName="ReloadManagerComponent.java" startLine="192" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$ReloadSessionBroker" />
-    <unitInfo nodeId="4774203567222173397" fileName="ReloadManagerComponent.java" startLine="30" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
+    <unitInfo nodeId="4774203567224549456" fileName="ReloadManagerComponent.java" startLine="161" startPosition="22" endLine="192" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$2" />
+    <unitInfo nodeId="4774203567225906524" fileName="ReloadManagerComponent.java" startLine="195" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$ReloadSessionBroker" />
+    <unitInfo nodeId="4774203567222173397" fileName="ReloadManagerComponent.java" startLine="30" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/4774203567222745031">
     <nodeInfo nodeId="4774203567222745082" fileName="ReloadListener.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />

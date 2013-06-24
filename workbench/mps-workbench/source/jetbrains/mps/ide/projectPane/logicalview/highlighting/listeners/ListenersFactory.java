@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 
 public class ListenersFactory {
   public static NodeListeners createListenersFor(MPSTreeNode node) {
     if (node instanceof SModelTreeNode) {
       SModelTreeNode modelNode = (SModelTreeNode) node;
-      if (modelNode.getSModelDescriptor() == null) return null;
+      if (modelNode.getModel() == null) return null;
       return new SModelNodeListeners(modelNode);
     } else if (node instanceof ProjectModuleTreeNode){
       return new ModuleNodeListeners(((ProjectModuleTreeNode) node));

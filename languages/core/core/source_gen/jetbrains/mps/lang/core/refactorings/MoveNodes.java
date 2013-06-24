@@ -77,12 +77,11 @@ public class MoveNodes extends BaseLoggableRefactoring {
           }
           result.value = true;
         } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
-          for (SNode node : refactoringContext.getSelectedNodes()) {
-            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) || !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "rootable"))) {
-              return;
+          result.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).all(new IWhereFilter<SNode>() {
+            public boolean accept(SNode node) {
+              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable");
             }
-          }
-          result.value = true;
+          });
         }
       }
     });

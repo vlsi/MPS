@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.JOptionPane;
@@ -32,12 +31,19 @@ import jetbrains.mps.ide.java.actions.ImportSourcesIntoModelUtils;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import java.util.List;
+import com.intellij.openapi.util.Ref;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import java.io.IOException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.ide.StereotypeProvider;
+import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -106,7 +112,7 @@ public class NewModelFromSource_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
@@ -115,7 +121,7 @@ public class NewModelFromSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+      final ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
       if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code == JOptionPane.YES_OPTION) {
@@ -129,6 +135,7 @@ public class NewModelFromSource_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
+
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
       modelAccess.runReadAction(new Runnable() {
         public void run() {
@@ -136,43 +143,52 @@ public class NewModelFromSource_Action extends BaseAction {
           dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModelFromSource_Action.this.getNamespace(_params), stereotype, NewModelFromSource_Action.this.isStrict(_params));
         }
       });
+
       dialog.value.show();
       SModel result = dialog.value.getResult();
-      if (result != null) {
-        TreeFileChooser treeFileChooser = new TreeFileChooser();
-        treeFileChooser.setDirectoriesAreAlwaysVisible(true);
-        treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-        final SModel sModel = result;
-        File initial = ImportSourcesIntoModelUtils.getInitialDirectoryForImport((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), SNodeOperations.getModelLongName(sModel));
-        if (initial != null) {
-          treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
-        }
-        IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
-        if (resultFile != null) {
-          final DirParser dirParser = new DirParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")), FileSystem.getInstance().getFileByPath(resultFile.getPath()));
-          // we cannot take write action inside try, because it's implemented through 
-          // ... Runnable() { void run() } 
-          // Also I don't want to show error dialog while in write action 
-          final Wrappers._T<JavaParseException> parseException = new Wrappers._T<JavaParseException>(null);
-          modelAccess.runWriteAction(new Runnable() {
-            public void run() {
-              try {
-                dirParser.parseDirs();
-              } catch (JavaParseException e) {
-                parseException.value = e;
-              } catch (IOException e) {
-                // FIXME 
-                throw new RuntimeException(e);
-              }
-            }
-          });
-          if (parseException.value != null) {
-            JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.value.getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
-          }
-        }
-        SModel modelDescriptor = result;
-        ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
+
+      if (result == null) {
+        return;
       }
+
+      TreeFileChooser treeFileChooser = new TreeFileChooser();
+      treeFileChooser.setDirectoriesAreAlwaysVisible(true);
+      treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+      final SModel sModel = result;
+      File initial = ImportSourcesIntoModelUtils.getInitialDirectoryForImport((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), SNodeOperations.getModelLongName(sModel));
+      if (initial != null) {
+        treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
+      }
+      IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+      if (resultFile != null) {
+
+        IFileUtils.getAllFiles(FileSystem.getInstance().getFileByPath(resultFile.getPath()));
+        final MultipleFilesParser parser = new MultipleFilesParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+        final List<IFile> files = IFileUtils.getAllFiles(FileSystem.getInstance().getFileByPath(resultFile.getPath()));
+
+        final Ref<JavaParseException> parseException = new Ref<JavaParseException>();
+
+        ProgressManager.getInstance().run(new Task.Modal(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), "Converting Java to MPS", true) {
+          public void run(@NotNull ProgressIndicator progress) {
+            try {
+              parser.convertToMps(files, new ProgressMonitorAdapter(progress));
+            } catch (JavaParseException e) {
+              parseException.set(e);
+            } catch (IOException e) {
+              // FIXME this exception will be gone 
+              throw new RuntimeException(e);
+            }
+
+          }
+        });
+
+        if (!(parseException.isNull())) {
+          JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.get().getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
+        }
+      }
+      SModel modelDescriptor = result;
+      ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
+
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "NewModelFromSource", t);

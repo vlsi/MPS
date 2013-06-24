@@ -7,7 +7,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.project.Project;
 
 @State(name = "BreakpointViewSettings", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")

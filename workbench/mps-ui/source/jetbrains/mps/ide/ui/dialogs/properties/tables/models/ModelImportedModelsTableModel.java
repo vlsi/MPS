@@ -18,6 +18,9 @@ package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelProperties;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class ModelImportedModelsTableModel extends SimpleTableModel<SModelReference> {
 
   private final ModelProperties myModelProperties;
@@ -29,7 +32,11 @@ public class ModelImportedModelsTableModel extends SimpleTableModel<SModelRefere
 
   @Override
   public void init() {
-    myTableItems.addAll(myModelProperties.getImportedModels());
+    List<SModelReference> list = new LinkedList<SModelReference>();
+    for(SModelReference reference : myModelProperties.getImportedModels()) {
+      list.add(((jetbrains.mps.smodel.SModelReference)reference).update());
+    }
+    myTableItems.addAll(list);
   }
 
   @Override
@@ -43,7 +50,7 @@ public class ModelImportedModelsTableModel extends SimpleTableModel<SModelRefere
   public void apply() {
     myModelProperties.getImportedModels().clear();
     for (SModelReference reference : myTableItems) {
-      myModelProperties.getImportedModels().add((jetbrains.mps.smodel.SModelReference) reference);
+      myModelProperties.getImportedModels().add(reference);
     }
   }
 

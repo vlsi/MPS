@@ -15,8 +15,7 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.List;
 import javax.swing.tree.TreeNode;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -41,7 +40,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       NamespaceInternalActions_ActionGroup.this.removeAll();
-      List<TreeNode> selectedNodes = event.getData(MPSDataKeys.LOGICAL_VIEW_NODES);
+      List<TreeNode> selectedNodes = event.getData(MPSCommonDataKeys.TREE_NODES);
       if (selectedNodes == null) {
         return;
       }
@@ -52,7 +51,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       }
       if ((int) ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
-        DefaultActionGroup newGroup = node.createNewGroup();
+        DefaultActionGroup newGroup = NamespaceInternalActionsUtil.createNewGroup(node);
         if (newGroup != null) {
           NamespaceInternalActions_ActionGroup.this.add(newGroup);
           NamespaceInternalActions_ActionGroup.this.addSeparator();

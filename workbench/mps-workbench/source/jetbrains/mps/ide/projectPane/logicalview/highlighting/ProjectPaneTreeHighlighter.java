@@ -26,9 +26,9 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.Listener
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ListenersFactory.NodeListeners;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeNodeVisitor;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNodeListener;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 
 import java.util.HashMap;
 import java.util.Map;

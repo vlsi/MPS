@@ -17,7 +17,7 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.actionSystem.IdeActions;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
 public class TestToolbarPanel extends JPanel {
   private final TestTree myTree;

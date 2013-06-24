@@ -50,7 +50,7 @@ import jetbrains.mps.ide.navigation.ModelNavigatable;
 import jetbrains.mps.ide.navigation.ModuleNavigatable;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.TreeHighlighterExtension;
+import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

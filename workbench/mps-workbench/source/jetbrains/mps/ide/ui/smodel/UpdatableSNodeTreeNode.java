@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;

@@ -34,7 +34,7 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,8 +48,8 @@ public class GroupAdjuster {
   }
 
   public static void adjustTopLevelGroups(BaseApplicationPlugin idePlugin) {
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS, ActionPlace.PROJECT_PANE_SNODE);
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS, ActionPlace.PROJECT_PANE_SMODEL);
+    addPlace(ProjectPaneActionGroups.NODE_ACTIONS, ActionPlace.PROJECT_PANE_SNODE);
+    addPlace(ProjectPaneActionGroups.MODEL_ACTIONS, ActionPlace.PROJECT_PANE_SMODEL);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_MODULE_ACTIONS, ActionPlace.PROJECT_PANE_MODULE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_LANGUAGE_ACTIONS, ActionPlace.PROJECT_PANE_LANGUAGE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_DEVKIT_ACTIONS, ActionPlace.PROJECT_PANE_DEVKIT);
@@ -57,8 +57,8 @@ public class GroupAdjuster {
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_SOLUTION_ACTIONS, ActionPlace.PROJECT_PANE_SOLUTION);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_GENERATOR_ACTIONS, ActionPlace.PROJECT_PANE_GENERATOR);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS, ActionPlace.PROJECT_PANE_TRANSIENT_MODULES);
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_PACKAGE_ACTIONS, ActionPlace.PROJECT_PANE_PACKAGE);
-    addPlace(ProjectPaneActionGroups.PROJECT_PANE_NAMESPACE_ACTIONS, ActionPlace.PROJECT_PANE_NAMESPACE);
+    addPlace(ProjectPaneActionGroups.PACKAGE_ACTIONS, ActionPlace.PROJECT_PANE_PACKAGE);
+    addPlace(ProjectPaneActionGroups.NAMESPACE_ACTIONS, ActionPlace.PROJECT_PANE_NAMESPACE);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS, ActionPlace.PROJECT_PANE_RUNTIME_FOLDER);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS, ActionPlace.PROJECT_PANE_ACCESSORIES);
     addPlace(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS, ActionPlace.PROJECT_PANE_PROJECT);
@@ -114,7 +114,7 @@ public class GroupAdjuster {
     for (Project project : openProjects) {
       final IdeFrameImpl frame = WindowManagerEx.getInstanceEx().getFrame(project);
       if (frame != null) {
-        frame.updateView();;
+        frame.updateView();
       }
     }
     final IdeFrameImpl frame = WindowManagerEx.getInstanceEx().getFrame(null);

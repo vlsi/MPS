@@ -16,9 +16,8 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.ui.Timer;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;

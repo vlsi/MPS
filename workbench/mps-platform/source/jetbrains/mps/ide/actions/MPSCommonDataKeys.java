@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.ActionPlace;
 
+import javax.swing.tree.TreeNode;
 import java.awt.Frame;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -72,6 +73,14 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
   public static final DataKey<Frame> FRAME = DataKey.create("MPS_Frame");
   @Description(description = "scope")
   public static final DataKey<IScope> SCOPE = DataKey.create("MPS_IScope");
+
+  @Description(description = "node selected in the tree")
+  public static final DataKey<TreeNode> TREE_NODE = DataKey.create("MPS_TreeNode");
+  @Description(description = "nodes selected in the tree")
+  public static final DataKey<List<TreeNode>> TREE_NODES = DataKey.create("MPS_TreeNodes");
+  @Description(description = "number of selected items in the tree")
+  public static final DataKey<Integer> TREE_SELECTION_SIZE = DataKey.create("MPS_SelectedItemsNum");
+
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(ElementType.FIELD)

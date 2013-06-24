@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.actions.FileActions_ActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.Icon;
 
@@ -42,10 +39,5 @@ public class FileTreeNode extends AbstractFileTreeNode {
 
   private Icon getIcon() {
     return myFile.getFileType().getIcon();
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(FileActions_ActionGroup.ID);
   }
 }

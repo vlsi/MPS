@@ -24,6 +24,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -126,7 +128,10 @@ public class JavaPaster {
 
       // trying to resolve names when nodes are already in a model 
       JavaParser.tryResolveUnknowns(nodes);
-      JavaParser.tryResolveDynamicRefs(nodes);
+      MultipleFilesParser mfParser = new MultipleFilesParser(operationContext.getModule(), operationContext.getProject().getRepository());
+      mfParser.tryResolveRefs(nodes, featureKind, new EmptyProgressMonitor());
+
+      // <node> 
 
     } catch (JavaParseException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);

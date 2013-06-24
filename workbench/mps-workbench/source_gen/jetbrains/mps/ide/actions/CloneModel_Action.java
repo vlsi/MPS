@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.MPSProject;
@@ -72,7 +71,7 @@ public class CloneModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    MapSequence.fromMap(_params).put("selSize", event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE));
     if (MapSequence.fromMap(_params).get("selSize") == null) {
       return false;
     }

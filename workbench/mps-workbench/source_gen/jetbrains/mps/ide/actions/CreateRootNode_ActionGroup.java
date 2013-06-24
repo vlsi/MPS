@@ -15,10 +15,9 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
+import jetbrains.mps.ide.projectPane.CreateRootNodeGroup;
 import org.jetbrains.annotations.Nullable;
 
 public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
@@ -38,7 +37,7 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
 
   public void doUpdate(AnActionEvent event) {
     try {
-      List<SModel> models = MPSDataKeys.MODELS.getData(event.getDataContext());
+      List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
       if ((int) ListSequence.fromList(models).count() == 1 && !(ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly()))) {
         event.getPresentation().setVisible(false);
         return;

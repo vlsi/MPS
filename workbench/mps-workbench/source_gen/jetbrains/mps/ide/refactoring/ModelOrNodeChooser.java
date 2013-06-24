@@ -8,11 +8,11 @@ import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import javax.swing.JComponent;
 
 public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTargetChooser {

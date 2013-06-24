@@ -213,6 +213,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("selectionStart");
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    editorCell.getStyle().putAll(style);
     SelectInEditorOperation_selectionStartActions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -274,6 +277,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("selectionEnd");
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.AUTO_DELETABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

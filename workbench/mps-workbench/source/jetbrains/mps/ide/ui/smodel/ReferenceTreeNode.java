@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,11 +46,6 @@ public class ReferenceTreeNode extends TextTreeNode {
 
   public SReference getRef() {
     return myRef;
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ((ActionGroup) ActionManager.getInstance().getAction(ReferenceNodeActions_ActionGroup.class.getName()));
   }
 
   @Override

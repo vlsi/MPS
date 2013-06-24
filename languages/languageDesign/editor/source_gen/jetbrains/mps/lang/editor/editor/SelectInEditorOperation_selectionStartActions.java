@@ -28,7 +28,7 @@ public class SelectInEditorOperation_selectionStartActions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "selectionEnd", true) == null) {
-        SLinkOperations.setTarget(node, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PositionSelector", null), true);
+        SLinkOperations.setTarget(node, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
       }
     }
   }
