@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverrideImplementMethodAction {
   private Project myProject;
@@ -37,9 +38,9 @@ public class OverrideImplementMethodAction {
         return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
       }
     });
-    final SNode contextMethod = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    final SNode contextMember = ModelAccess.instance().runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
+        return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", true, false);
       }
     });
     final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
@@ -78,18 +79,20 @@ public class OverrideImplementMethodAction {
             }
           }).toListSequence();
 
-          OverrideImplementMethodsHelper helper = new OverrideImplementMethodsHelper(myProject, contextClass, contextMethod, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
+          OverrideImplementMethodsHelper helper = new OverrideImplementMethodsHelper(myProject, contextClass, contextMember, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());
           List<SNode> insertedMethods = helper.insertMethods(selection);
           if (insertedMethods.isEmpty()) {
             return;
           }
-          if (insertedMethods.size() == 1) {
-            myEditorContext.selectAfter(ListSequence.fromList(insertedMethods).first());
+          SNode firstMethod = ListSequence.fromList(insertedMethods).first();
+          SNode nodeToSelect;
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).isNotEmpty()) {
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).first();
           } else {
-            myEditorContext.select(ListSequence.fromList(insertedMethods).last());
-            myEditorContext.selectRange(ListSequence.fromList(insertedMethods).last(), ListSequence.fromList(insertedMethods).first());
+            nodeToSelect = firstMethod;
           }
-
+          myEditorContext.flushEvents();
+          myEditorContext.getSelectionManager().setSelection(nodeToSelect);
         }
       }, myProject);
     }
