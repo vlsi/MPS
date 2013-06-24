@@ -7,8 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.MPSExtentions;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.workbench.ModelUtil;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
@@ -16,7 +23,6 @@ import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import org.apache.log4j.Priority;
@@ -29,10 +35,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -51,13 +55,26 @@ public class VcsActionsUtil {
   private VcsActionsUtil() {
   }
 
-  public static void showRootDifference(SModel modelDescriptor, final SNode node, Project project, @Nullable Bounds bounds) {
+  public static void showRootDifference(SModel model, final SNode node, Project project, @Nullable Bounds bounds) {
     try {
-      VirtualFile file = ModelUtil.getVFilesByModelDescriptor(modelDescriptor).iterator().next();
-      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
-      VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
-      ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
-      SModel oldModel = PersistenceUtil.loadModel(content.getContent(), file.getExtension());
+      DataSource source = model.getSource();
+      IFile iFile = null;
+      if (source instanceof FileDataSource) {
+        iFile = ((FileDataSource) source).getFile();
+      } else if (source instanceof FilePerRootDataSource) {
+        String rootName = ModelAccess.instance().runReadAction(new Computable<String>() {
+          public String compute() {
+            return node.getName();
+          }
+        });
+        iFile = ((FilePerRootDataSource) source).getFile(rootName + "." + MPSExtentions.MODEL_ROOT);
+      }
+      VirtualFile vFile = VirtualFileUtils.getVirtualFile(iFile);
+      AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile);
+      VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(vFile);
+      ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, vFile);
+      // <node> 
+      SModel oldModel = PersistenceUtil.loadModel(content.getContent(), MPSExtentions.MODEL);
       final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {

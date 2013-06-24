@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -18,6 +19,10 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -42,13 +47,27 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource)) {
-      return false;
-    }
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile());
-    if (SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))) && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
-      FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
-      return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
+    DataSource dataSource = ((SModel) MapSequence.fromMap(_params).get("model")).getSource();
+    if (dataSource instanceof FileDataSource) {
+      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile());
+      if (SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))) && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
+        FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+        return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
+      }
+    } else if (dataSource instanceof FilePerRootDataSource) {
+      if (!(SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))))) {
+        return false;
+      }
+      String rootName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return ((SNode) MapSequence.fromMap(_params).get("node")).getName();
+        }
+      });
+      VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile(rootName + "." + MPSExtentions.MODEL_ROOT));
+      if (ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
+        FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+        return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
+      }
     }
     return false;
   }
