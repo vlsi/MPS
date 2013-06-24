@@ -78,7 +78,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
           result.value = true;
         } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
           for (SNode node : refactoringContext.getSelectedNodes()) {
-            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) || !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), "rootable"))) {
+            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) || !(SPropertyOperations.getBoolean(((SNode) SNodeOperations.getConceptDeclaration(node)), "rootable"))) {
               return;
             }
           }
