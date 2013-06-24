@@ -176,17 +176,17 @@ public class MultipleFilesParser {
       }, resolveProgress.subTask(1));
     }
 
-    if (FeatureKind.CLASS_CONTENT.equals(level)) {
+    if (FeatureKind.CLASS_CONTENT.equals(level) || FeatureKind.CLASS.equals(level)) {
       nodesResolveUpdatePass("field/method type refs", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
         public Iterable<SReference> invoke(SNode node) {
-          return getFieldAndMethodTypeRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          return getFieldAndMethodTypeRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
         }
       }, resolveProgress.subTask(1));
     }
 
     nodesResolveUpdatePass("all type refs", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {
-        return getVarTypeRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
+        return getVarTypeRefs(node);
       }
     }, resolveProgress.subTask(2));
 
@@ -413,8 +413,12 @@ public class MultipleFilesParser {
 
   private Iterable<SReference> getFieldAndMethodTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
+    Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ?
+      SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) :
+      Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))
+    );
 
-    for (SNode member : ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))) {
+    for (SNode member : Sequence.fromIterable(members)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(SLinkOperations.getTarget(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true))));
 
@@ -428,7 +432,7 @@ public class MultipleFilesParser {
         }
 
       } else if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-        ListSequence.fromList(refs).addSequence(Sequence.fromIterable(getFieldAndMethodTypeRefs(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.Classifier"))));
+        ListSequence.fromList(refs).addSequence(Sequence.fromIterable(getFieldAndMethodTypeRefs(member)));
       }
     }
 
