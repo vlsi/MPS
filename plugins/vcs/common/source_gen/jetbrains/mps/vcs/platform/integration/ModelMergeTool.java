@@ -16,6 +16,7 @@ import com.intellij.openapi.diff.DiffContent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -24,7 +25,6 @@ import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 
 public class ModelMergeTool extends MergeTool {
@@ -48,8 +48,8 @@ public class ModelMergeTool extends MergeTool {
       DiffContent[] contents = mrequest.getContents();
       String ext = file.getExtension();
       SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext);
-      SModel mineModel = PersistenceUtil.loadModel(contents[MergeConstants.CURRENT].getBytes(), ext);
-      SModel newModel = PersistenceUtil.loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext);
+      SModel mineModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), ext);
+      SModel newModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), ext);
       if (baseModel == null || mineModel == null || newModel == null) {
         if (LOG_705910402.isEnabledFor(Priority.WARN)) {
           LOG_705910402.warn("Couldn't read model, invoking text merge");
