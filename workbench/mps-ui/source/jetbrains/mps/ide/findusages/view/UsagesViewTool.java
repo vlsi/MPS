@@ -36,7 +36,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
-import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -64,7 +63,7 @@ import java.util.List;
         )
     }
 )
-public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element>, IUsagesViewTool {
+public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element> {
 
   private static final String VERSION_NUMBER = "0.9997";
   private static final String VERSION = "version";
@@ -109,8 +108,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   //---FIND USAGES STUFF----
 
-  @Override
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab,
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne,
+      final boolean forceNewTab,
       final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -286,7 +285,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     public UsagesView myUsagesView;
     // now it's not in use, but will be used to implement constructable finders
-    private FindUsagesOptions myOptions = new FindUsagesOptions();
+//    private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
       myUsagesView = new UsagesView(getProject(), myDefaultViewOptions) {
@@ -303,8 +302,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       createUsageView();
       myUsagesView.read(usageViewXML, project);
 
-      Element usageViewOptionsXML = element.getChild(USAGE_VIEW_OPTIONS);
-      myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
+//      Element usageViewOptionsXML = element.getChild(USAGE_VIEW_OPTIONS);
+//      myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
     }
 
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
@@ -316,9 +315,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       myUsagesView.write(usageViewXML, project);
       element.addContent(usageViewXML);
 
-      Element usageViewOptionsXML = new Element(USAGE_VIEW_OPTIONS);
-      myOptions.write(usageViewOptionsXML, project);
-      element.addContent(usageViewOptionsXML);
+//      Element usageViewOptionsXML = new Element(USAGE_VIEW_OPTIONS);
+//      myOptions.write(usageViewOptionsXML, project);
+//      element.addContent(usageViewOptionsXML);
     }
   }
 }
