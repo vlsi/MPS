@@ -16,21 +16,28 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.misc.hash.LinkedHashMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Collections;
+import java.util.Map;
 
 /**
  * evgeny, 3/6/13
@@ -94,6 +101,70 @@ public class PersistenceUtil {
     }
   }
 
+  public static String saveModel(final SModel model, String extension) {
+    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(extension);
+    if (factory == null || factory.isBinary()) {
+      return null;
+    }
+    try {
+      InMemoryStreamDataSource source = new InMemoryStreamDataSource();
+      factory.save(model, source);
+      return source.getContent(FileUtil.DEFAULT_CHARSET_NAME);
+    } catch (UnsupportedDataSourceException ex) {
+      ex.printStackTrace();
+    } catch (ModelSaveException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public static String savePerRootModel(final SModel model, String name) {
+    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+    if (factory == null || factory.isBinary()) {
+      return null;
+    }
+    try {
+      InMemoryMultiStreamDataSource source = new InMemoryMultiStreamDataSource();
+      factory.save(model, source);
+      return source.getContent(name, FileUtil.DEFAULT_CHARSET_NAME);
+    } catch (UnsupportedDataSourceException ex) {
+      ex.printStackTrace();
+    } catch (ModelSaveException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public static String savePerRootModel(final SModel model, boolean isHeader) {
+    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+    if (factory == null || factory.isBinary()) {
+      return null;
+    }
+    try {
+      InMemoryMultiStreamDataSource source = new InMemoryMultiStreamDataSource();
+      factory.save(model, source);
+      if (isHeader) {
+        return source.getContent(MPSExtentions.DOT_MODEL_HEADER, FileUtil.DEFAULT_CHARSET_NAME);
+      } else {
+        for (String name : source.getAvailableStreams()) {
+          if (name.equals(MPSExtentions.DOT_MODEL_HEADER)) continue;
+          return source.getContent(name, FileUtil.DEFAULT_CHARSET_NAME);
+        }
+      }
+    } catch (UnsupportedDataSourceException ex) {
+      ex.printStackTrace();
+    } catch (ModelSaveException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
   private static abstract class StreamDataSourceBase implements StreamDataSource {
 
     @NotNull
@@ -125,6 +196,121 @@ public class PersistenceUtil {
     @Override
     public long getTimestamp() {
       return 0;
+    }
+  }
+
+  private static class InMemoryStreamDataSource implements StreamDataSource {
+    private ByteArrayOutputStream myStream;
+
+    @Override
+    public InputStream openInputStream() throws IOException {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public OutputStream openOutputStream() throws IOException {
+      myStream = new ByteArrayOutputStream();
+      return myStream;
+    }
+
+    @NotNull
+    @Override
+    public String getLocation() {
+      return "in-memory";
+    }
+
+    @Override
+    public void addListener(DataSourceListener listener) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void removeListener(DataSourceListener listener) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public long getTimestamp() {
+      return 0;
+    }
+
+    @Override
+    public boolean isReadOnly() {
+      return false;
+    }
+
+    public String getContent(String charsetName) {
+      try {
+        return myStream.toString(charsetName);
+      } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+        return null;
+      }
+    }
+  }
+
+  private static class InMemoryMultiStreamDataSource implements MultiStreamDataSource {
+    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
+
+    @Override
+    public Iterable<String> getAvailableStreams() {
+      return myStreams.keySet();
+    }
+
+    @Override
+    public InputStream openInputStream(String name) throws IOException {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public OutputStream openOutputStream(String name) throws IOException {
+      ByteArrayOutputStream stream = new ByteArrayOutputStream();
+      myStreams.put(name, stream);
+      return stream;
+    }
+
+    @Override
+    public boolean delete(String name) {
+      throw new UnsupportedOperationException();
+    }
+
+    @NotNull
+    @Override
+    public String getLocation() {
+      return "in-memory";
+    }
+
+    @Override
+    public void addListener(DataSourceListener listener) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void removeListener(DataSourceListener listener) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public long getTimestamp() {
+      return 0;
+    }
+
+    @Override
+    public boolean isReadOnly() {
+      return false;
+    }
+
+    public String getContent(String name, String charsetName) {
+      try {
+        ByteArrayOutputStream stream = myStreams.get(name);
+        if (stream == null) {
+          return null;
+        }
+        return stream.toString(charsetName);
+      } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+        return null;
+      }
     }
   }
 }
