@@ -52,7 +52,7 @@ public class IfEqualsNullAll extends DataFlowConstructor {
         }
       }
     }
-    if (SLinkOperations.getTargets(node, "elsifClauses", true) != null) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isEmpty())) {
       for (SNode var : vars) {
         {
           Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
