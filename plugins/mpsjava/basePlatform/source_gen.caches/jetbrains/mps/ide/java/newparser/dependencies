@@ -317,6 +317,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.DirParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
