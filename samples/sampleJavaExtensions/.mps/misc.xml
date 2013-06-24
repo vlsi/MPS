@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="MPSProject">
-    <projectModules>
-      <modulePath path="$PROJECT_DIR$/languages/Constants/org.jetbrains.mps.samples.Constants.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/DecisionTable/org.jetbrains.mps.samples.DecisionTable.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/Money/org.jetbrains.mps.samples.Money.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/ParallelFor/org.jetbrains.mps.samples.ParallelFor.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/SampleExtensions/org.jetbrains.mps.samples.IfAndUnless.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/Build/org.jetbrains.mps.samples.Build.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/MoneyRuntime/org.jetbrains.mps.samples.MoneyRuntime.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/SampleJavaExtensions.sandbox/org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.msd" folder="" />
-    </projectModules>
-    <genConfs />
-  </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectVersion">
-    <option name="version" value="3.0" />
-  </component>
 </project>
 

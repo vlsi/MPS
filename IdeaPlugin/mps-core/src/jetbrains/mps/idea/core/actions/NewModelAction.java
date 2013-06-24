@@ -34,20 +34,24 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.lang.model.SourceVersion;
-import javax.swing.*;
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -128,16 +132,17 @@ public class NewModelAction extends AnAction {
       @Override
       protected void doOKAction() {
         final ModelTemplates template = ModelTemplates.valueOf(getKindCombo().getSelectedName());
-        final SModelFqName modelFqName = new SModelFqName(getNameField().getText().trim(), "");
-        if (!isModelNameValid(modelFqName)) {
+        final String modelName = getNameField().getText().trim();
+        if (!isModelNameValid(modelName)) {
           return;
         }
 
         SModel newModelDescriptor = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
-            // TODO create model in mySourceRoot
-            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelFqName.toString(), myModelRoot);
+            // TODO create model in myModelRoot/mySourceRoot, fix literal
+            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, myModelRoot/*,
+              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root")*/);
             template.preConfigure(descriptor, mySolution);
             descriptor.save();
             return descriptor;
@@ -153,24 +158,23 @@ public class NewModelAction extends AnAction {
         }
       }
 
-      private boolean isModelNameValid(SModelFqName modelFqName) {
-        String modelName = modelFqName.getLongName();
+      private boolean isModelNameValid(String modelName) {
         if (modelName.length() == 0) {
           showError(MPSBundle.message("create.new.model.dialog.error.empty.name"));
           return false;
         }
 
-        if (SModelRepository.getInstance().getModelDescriptor(modelFqName) != null) {
+        if (SModelRepository.getInstance().getModelDescriptor(modelName) != null) {
           showError(MPSBundle.message("create.new.model.dialog.error.model.exists", modelName));
           return false;
         }
 
-        if (modelName.lastIndexOf(".") == modelName.length()) {
+        if (modelName.endsWith(".")) {
           showError(MPSBundle.message("create.new.model.dialog.error.empty.short.name"));
           return false;
         }
 
-        if (!(SourceVersion.isName(modelName))) {
+        if (!(SourceVersion.isName(SModelStereotype.withoutStereotype(modelName)))) {
           showError(MPSBundle.message("create.new.model.dialog.error.invalid.java", modelName));
           return false;
         }
