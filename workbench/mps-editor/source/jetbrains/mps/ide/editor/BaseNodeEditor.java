@@ -201,11 +201,9 @@ public abstract class BaseNodeEditor implements Editor {
     if (!(state instanceof BaseEditorState)) return;
 
     final BaseEditorState s = (BaseEditorState) state;
-    if (s.myMemento == null) {
+    if (s.myMemento == null || myEditorComponent == null) {
       return;
     }
-    assert myEditorComponent != null;
-    assert myEditorComponent.getEditorContext() != null;
     final EditorContext editorContext = getEditorContext();
     executeInEDT(new PrioritizedTask(TaskType.EDITOR_MEMENTO, myType2TaskMap) {
       @Override
