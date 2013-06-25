@@ -7,11 +7,12 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Queue;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IGenericType_Behavior {
@@ -30,20 +31,31 @@ public class IGenericType_Behavior {
     return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions, expTrace);
   }
 
-  public static SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
-    QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(expanded, "jetbrains.mps.baseLanguage.structure.IGenericType", false, new String[]{})));
-    while (!(QueueSequence.fromQueue(queue).isEmpty())) {
-      SNode next = QueueSequence.fromQueue(queue).removeFirstElement();
-      SNode exNext = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), next, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
-      if (exNext != next) {
-        SNodeOperations.replaceWithAnother(next, SNodeOperations.copyNode(exNext));
-        for (SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(next, "jetbrains.mps.baseLanguage.structure.IGenericType", false, new String[]{}))) {
-          QueueSequence.fromQueue(queue).addLastElement(dsc);
+  public static SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, final Map<SNode, SNode> substitutions, final List<SNode> expTrace) {
+    IGenericType_Behavior.call_walkDescendants_8203593308483669984(thisNode, expanded, new _FunctionTypes._return_P2_E0<Boolean, SNode, Queue<SNode>>() {
+      public Boolean invoke(SNode desc, Queue<SNode> queue) {
+        if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          SNode next = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, ListSequence.fromListWithValues(new ArrayList<SNode>(), expTrace)});
+          if (next != desc) {
+            SNodeOperations.replaceWithAnother(desc, SNodeOperations.copyNode(next));
+            QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(desc)));
+          }
+          return false;
         }
+        return true;
+      }
+    });
+    return expanded;
+  }
+
+  public static void call_walkDescendants_8203593308483669984(SNode thisNode, SNode node, _FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super Queue<SNode>> walker) {
+    Queue<SNode> queue = QueueSequence.fromQueueWithValues(new LinkedList<SNode>(), SNodeOperations.getChildren(node));
+    while (QueueSequence.fromQueue(queue).isNotEmpty()) {
+      SNode child = QueueSequence.fromQueue(queue).removeFirstElement();
+      if (walker.invoke(child, queue)) {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(child)));
       }
     }
-    return expanded;
   }
 
   @Deprecated
