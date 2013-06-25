@@ -65,7 +65,9 @@ public class CommonPaths {
       }
     }, types);
     for (ClassType type : types) {
-      if (type == ClassType.OPENAPI) {
+      if (type == ClassType.ANNOTATIONS) {
+        addAnnotations(result);
+      } else if (type == ClassType.OPENAPI) {
         addOpenAPIJars(result);
       } else if (type == ClassType.CORE) {
         addCoreJars(result);
@@ -176,6 +178,10 @@ public class CommonPaths {
     addWorkbenchJars(result);
     addClasses(result, PathManager.getHomePath());
     return result;
+  }
+
+  private static void addAnnotations(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/annotations.jar");
   }
 
   private static void addOpenAPIJars(CompositeClassPathItem result) {

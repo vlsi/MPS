@@ -77,7 +77,7 @@ public class TypeVariableReference_Behavior {
           return MatchingUtil.matchNodes(thisNode, it);
         }
       })) {
-        return exp;
+        return thisNode;
       }
       if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         ListSequence.fromList(expTrace).addElement(thisNode);
