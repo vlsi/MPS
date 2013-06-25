@@ -13,13 +13,13 @@
   <dependency className="jetbrains.mps.samples.xmlLiterals.behavior.ElementMacro_BehaviorDescriptor" file="ElementMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.xml.behavior.Content_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlContent_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.xmlLiterals.behavior.TextMacro_BehaviorDescriptor" file="TextMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.xml.behavior.BaseText_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlText_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.xmlLiterals.behavior.XmlLiteral_BehaviorDescriptor" file="XmlLiteral_BehaviorDescriptor.java">

@@ -42,20 +42,28 @@ public class Person {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         Element simpleElement_jqm3zu_a0a0k = new Element("person");
-        Element simpleElement_jqm3zu_a0a0a0k = new Element("name");
-        Text text_jqm3zu_a0a0a0a0k = new Text(Person.this.getName());
-        simpleElement_jqm3zu_a0a0a0k.addContent(text_jqm3zu_a0a0a0a0k);
-        Element simpleElement_jqm3zu_b0a0a0k = new Element("lastName");
-        Text text_jqm3zu_a0b0a0a0k = new Text(Person.this.getLastName());
-        simpleElement_jqm3zu_b0a0a0k.addContent(text_jqm3zu_a0b0a0a0k);
-        Element simpleElement_jqm3zu_c0a0a0k = new Element("address");
-        Element elementMacro_jqm3zu_a0c0a0a0k = Person.this.getAddress().toXml();
-        simpleElement_jqm3zu_c0a0a0k.addContent(elementMacro_jqm3zu_a0c0a0a0k);
-        simpleElement_jqm3zu_a0a0a0k.addContent(simpleElement_jqm3zu_a0a0a0k);
-        simpleElement_jqm3zu_b0a0a0k.addContent(simpleElement_jqm3zu_b0a0a0k);
-        simpleElement_jqm3zu_c0a0a0k.addContent(simpleElement_jqm3zu_c0a0a0k);
+        Element simpleElement_jqm3zu_a0a0a01 = new Element("name");
+        Text text_jqm3zu_a0a0a0k = new Text(Person.this.getName());
+        simpleElement_jqm3zu_a0a0a01.addContent(text_jqm3zu_a0a0a0k);
+        Element simpleElement_jqm3zu_b0a0a01 = new Element("lastName");
+        Text text_jqm3zu_a1a0a0k = new Text(Person.this.getLastName());
+        simpleElement_jqm3zu_b0a0a01.addContent(text_jqm3zu_a1a0a0k);
+        Element simpleElement_jqm3zu_c0a0a01 = new Element("address");
+        Element elementMacro_jqm3zu_a2a0a0k = Person.this.getAddress().toXml();
+        simpleElement_jqm3zu_c0a0a01.addContent(elementMacro_jqm3zu_a2a0a0k);
+        simpleElement_jqm3zu_a0a0k.addContent(simpleElement_jqm3zu_a0a0a01);
+        simpleElement_jqm3zu_a0a0k.addContent(simpleElement_jqm3zu_b0a0a01);
+        simpleElement_jqm3zu_a0a0k.addContent(simpleElement_jqm3zu_c0a0a01);
         return simpleElement_jqm3zu_a0a0k;
       }
     }.invoke();
+  }
+
+  public static void main(String[] args) {
+    Person person = new Person();
+    person.setName("Joe");
+    person.setLastName("Davidson");
+    person.setAddress(new Address("Prague"));
+    System.out.println("Person: " + person.toXml().getChildren().get(1));
   }
 }

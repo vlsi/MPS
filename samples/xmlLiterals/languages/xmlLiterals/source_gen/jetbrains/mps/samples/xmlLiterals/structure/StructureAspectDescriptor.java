@@ -15,9 +15,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro").super_("jetbrains.mps.xml.structure.Content").parents("jetbrains.mps.xml.structure.Content").children(new String[]{"expression"}, new boolean[]{false}).alias("$${", "element macro").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent").children(new String[]{"expression"}, new boolean[]{false}).alias("$${", "element macro").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.TextMacro").super_("jetbrains.mps.xml.structure.BaseText").parents("jetbrains.mps.xml.structure.BaseText").children(new String[]{"expression"}, new boolean[]{false}).alias("${", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.TextMacro").super_("jetbrains.mps.core.xml.structure.XmlText").parents("jetbrains.mps.core.xml.structure.XmlText").children(new String[]{"expression"}, new boolean[]{false}).alias("${", "").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"element"}, new boolean[]{false}).alias("xml literal", "").staticScope(StaticScope.NONE).create();
       default:
