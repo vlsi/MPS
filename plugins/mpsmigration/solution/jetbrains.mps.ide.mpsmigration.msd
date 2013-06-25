@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.mpsmigration" uuid="0c495a8c-90c6-4330-9351-2acbf72e5bb8" pluginKind="PLUGIN_OTHER" compileInMPS="false">
+<solution name="jetbrains.mps.ide.mpsmigration" uuid="0c495a8c-90c6-4330-9351-2acbf72e5bb8" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mpsmigration/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
