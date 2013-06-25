@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.modelchecker;
 
 import jetbrains.mps.ide.generator.ModelValidator;
-import jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool_Tool;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
@@ -32,12 +32,7 @@ public class ModelValidatorAdapter implements ModelValidator {
 
   @Override
   public boolean check(@NotNull Project p, @NotNull IOperationContext operationContext, List<SModel> modelDescriptors, Runnable regenerationRunnable) {
-    ProjectPluginManager component = p.getComponent(ProjectPluginManager.class);
-    if (component == null) {
-      return true;
-    }
-
-    ModelCheckerTool_Tool tool = component.getTool(ModelCheckerTool_Tool.class);
+    ModelCheckerTool tool = ModelCheckerTool.getInstance(ProjectHelper.toIdeaProject(p));
     if (tool == null) {
       return true;
     }

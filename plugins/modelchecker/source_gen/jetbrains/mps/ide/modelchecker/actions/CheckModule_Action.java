@@ -17,7 +17,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
@@ -102,9 +101,9 @@ public class CheckModule_Action extends BaseAction {
       }
 
       if (modulesToCheck.size() > 1) {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) modulesToCheck), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) modulesToCheck), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(modulesToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModule(modulesToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

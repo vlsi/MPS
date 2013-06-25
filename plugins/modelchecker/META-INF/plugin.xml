@@ -33,6 +33,9 @@
   </application-components>
 
   <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool</implementation-class>
+    </component>
 
   </project-components>
 

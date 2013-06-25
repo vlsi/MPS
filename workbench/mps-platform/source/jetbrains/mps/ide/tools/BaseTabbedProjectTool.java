@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.plugins.tool;
+package jetbrains.mps.ide.tools;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -21,6 +21,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
+import jetbrains.mps.plugins.tool.IComponentDisposer;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -29,24 +30,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @deprecated Migrate all usages to {@link jetbrains.mps.ide.tools.BaseTabbedProjectTool}
+ * Replaces {@link jetbrains.mps.plugins.tool.GeneratedTabbedTool}.
  */
-@Deprecated
-public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
+public abstract class BaseTabbedProjectTool extends BaseProjectTool {
+
   private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();
   private boolean myContentRemovedListenerAdded = false;
 
-  protected GeneratedTabbedTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
+  protected BaseTabbedProjectTool(Project project, String id, int number, Icon icon,
+      ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
   @Override
-  public void init(Project project) {
-
-  }
-
-  @Override
-  public void dispose() {
+  protected void doUnregister() {
     getContentManager().removeAllContents(true);
   }
 
@@ -57,7 +54,7 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
   }
 
   public <T extends JComponent> void addTab(final T tabComponent, @NotNull String title, Icon icon,
-                                            final IComponentDisposer<T> tabDisposer) {
+      final IComponentDisposer<T> tabDisposer) {
     IDisposableTab tab = new IDisposableTab() {
       @Override
       public void disposeTab() {
@@ -103,7 +100,9 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
   }
 
   private void addContentRemovedListenerIfNeeded() {
-    if (myContentRemovedListenerAdded) { return; }
+    if (myContentRemovedListenerAdded) {
+      return;
+    }
 
     this.getContentManager().addContentManagerListener(new ContentManagerAdapter() {
       @Override
@@ -117,8 +116,15 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
     myContentRemovedListenerAdded = true;
   }
 
+  @Override
+  protected void createTool(boolean early) {
+    /* no-op */
+  }
+
   public interface IDisposableTab {
     void disposeTab();
+
     JComponent getComponent();
   }
+
 }
