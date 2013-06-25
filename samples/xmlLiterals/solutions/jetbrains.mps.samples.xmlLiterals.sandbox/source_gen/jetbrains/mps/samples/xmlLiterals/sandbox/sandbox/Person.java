@@ -58,12 +58,4 @@ public class Person {
       }
     }.invoke();
   }
-
-  public static void main(String[] args) {
-    Person person = new Person();
-    person.setName("Joe");
-    person.setLastName("Davidson");
-    person.setAddress(new Address("Prague"));
-    System.out.println("Person: " + person.toXml().getChildren().get(1));
-  }
 }

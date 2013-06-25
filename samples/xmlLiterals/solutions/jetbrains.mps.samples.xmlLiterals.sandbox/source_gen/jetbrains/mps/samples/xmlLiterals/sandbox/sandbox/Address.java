@@ -27,8 +27,4 @@ public class Address {
       }
     }.invoke();
   }
-
-  public static void main(String[] args) {
-    System.out.println("Address: " + new Address("Praha").toXml());
-  }
 }
