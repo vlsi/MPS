@@ -553,7 +553,7 @@ public class MultipleFilesParser {
   private Iterable<SReference> getVariableRefs(SNode node) {
     return ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.ParameterReference"}, false, new String[]{})).select(new ISelector<SNode, SReference>() {
       public SReference select(SNode it) {
-        return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+        return SNodeOperations.getReference(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
       }
     });
   }
