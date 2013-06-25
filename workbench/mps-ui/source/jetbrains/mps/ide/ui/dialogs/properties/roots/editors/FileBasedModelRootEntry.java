@@ -209,7 +209,11 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
   @Override
   public boolean isValid() {
-    return (new java.io.File(myFileBasedModelRoot.getContentRoot())).exists();
+    try {
+      return (new java.io.File(myFileBasedModelRoot.getContentRoot())).exists();
+    } catch (Exception e) {
+      return false;
+    }
   }
 
   @Override
