@@ -43,12 +43,13 @@ import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -425,6 +426,7 @@ public class MultipleFilesParser {
     final TypeChecker typeChecker = TypeChecker.getInstance();
 
     final List<SNode> toReplaceWithArrayLength = ListSequence.fromList(new ArrayList<SNode>());
+    final Map<SNode, SNode> enumConstRefs = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
     myModelAccess.runReadAction(new Runnable() {
       public void run() {
@@ -455,6 +457,51 @@ public class MultipleFilesParser {
           }
 
           progress.advance(1);
+
+          for (SNode caseExp : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SwitchCase", false, new String[]{})).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (SLinkOperations.getTarget(it, "expression", true) != null);
+            }
+          }).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return SLinkOperations.getTarget(it, "expression", true);
+            }
+          })) {
+            if (!(SNodeOperations.isInstanceOf(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+              continue;
+            }
+            SReference ref = SNodeOperations.getReference(SNodeOperations.cast(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+            if (!(ref instanceof DynamicReference)) {
+              continue;
+            }
+
+            final String enumConstName = ((DynamicReference) ref).getResolveInfo();
+
+            SNode scrutenee = SLinkOperations.getTarget(SNodeOperations.getAncestor(caseExp, "jetbrains.mps.baseLanguage.structure.SwitchStatement", false, false), "expression", true);
+            if ((scrutenee == null)) {
+              continue;
+            }
+
+            SNode scruteneeType = typeChecker.getTypeOf(scrutenee);
+            if (!(SNodeOperations.isInstanceOf(scruteneeType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+              continue;
+            }
+
+            SNode claz = SLinkOperations.getTarget(SNodeOperations.cast(scruteneeType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+            if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+            }
+
+            SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SPropertyOperations.getString(it, "name").equals(enumConstName);
+              }
+            });
+            SNode x = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+            SLinkOperations.setTarget(x, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+            SLinkOperations.setTarget(x, "enumConstantDeclaration", enumConst, false);
+
+            MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"), x);
+          }
         }
 
       }
@@ -464,6 +511,9 @@ public class MultipleFilesParser {
       public void run() {
         for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
           SNodeOperations.replaceWithNewChild(fieldRefOp, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+        }
+        for (IMapping<SNode, SNode> pair : MapSequence.fromMap(enumConstRefs)) {
+          SNodeOperations.replaceWithAnother(pair.key(), pair.value());
         }
       }
     });
