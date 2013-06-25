@@ -551,7 +551,7 @@ public class MultipleFilesParser {
 
 
   private Iterable<SReference> getVariableRefs(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).select(new ISelector<SNode, SReference>() {
+    return ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.ParameterReference"}, false, new String[]{})).select(new ISelector<SNode, SReference>() {
       public SReference select(SNode it) {
         return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
       }
@@ -720,11 +720,14 @@ public class MultipleFilesParser {
 
 
   private SModel registerModelForPackage(String fqName) {
+
+    // FIXME uses not our myRepository (SRepository doesn't have getModelsByName) 
     SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
     if (modelDescriptor != null) {
       if (!(Sequence.fromIterable(((Iterable<SModel>) myModule.getModels())).contains(modelDescriptor))) {
-        LOG.error("model with fq name " + fqName + " is not owned by module " + myModule.getModuleName());
-        return null;
+        // <node> 
+        // <node> 
+        return createModel(fqName);
       }
       // package is already present... 
       // maybe we shouldn't touch it then, maybe it should be an option 
