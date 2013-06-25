@@ -305,12 +305,21 @@ public class ClassifierResolveUtils {
         }
 
         String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
-        SNode cls = resolveFqName(fqName, moduleScope.getModels(), contextNodeModel);
-        if (cls == null) {
-          return null;
-        }
-        cls = construct(cls, tokenizer);
-        return cls;
+        // was 
+        // <node> 
+        // <node> 
+        // <node> 
+        // <node> 
+
+        // needed to uses nonStubPriority here because: 
+        // during java import in idea plugin we can stumble upon a psi stub model (the one being imported 
+        // and about to be deleted) before the newly created model (which is the right one) 
+
+        Iterable<SNode> matches = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), fqName);
+        return ((int) Sequence.fromIterable(matches).count() == 1 ?
+          construct(Sequence.fromIterable(matches).first(), tokenizer) :
+          null
+        );
       }
 
       // not found in single-type impors 
@@ -377,33 +386,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to use old logic 
-    // try to resolve as fq name in current model 
-
-    if (1 > 0) {
-      return resolveNonSpecialSyntax(refText, contextNode);
-    }
-
-    Iterable<SNode> result;
-
-    result = resolveClassifierByFqName(SNodeOperations.getModel(contextNode), refText);
-    if (Sequence.fromIterable(result).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(result).count() == 1 ?
-        Sequence.fromIterable(result).first() :
-        null
-      );
-    }
-
-    // try to resolve as fq name in current scope 
-    Iterable<SModule> visibleModules = check_8z6r2b_a0a24a21(((AbstractModule) check_8z6r2b_a0a0a0qb0m(SNodeOperations.getModel(contextNode)))).getVisibleModules();
-    result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }), refText);
-    return ((int) Sequence.fromIterable(result).count() == 1 ?
-      Sequence.fromIterable(result).first() :
-      null
-    );
+    return resolveNonSpecialSyntax(refText, contextNode);
 
   }
 
@@ -551,7 +534,12 @@ public class ClassifierResolveUtils {
 
     for (SModel candidate : Sequence.fromIterable(moduleScope.getModels())) {
       if (SModelStereotype.withoutStereotype(candidate.getReference().getModelName()).equals(name)) {
-        ListSequence.fromList(models).addElement(candidate);
+        // partial order: all models with stereotype after all models without it 
+        if ("".equals(SModelStereotype.getStereotype(candidate))) {
+          ListSequence.fromList(models).insertElement(0, candidate);
+        } else {
+          ListSequence.fromList(models).addElement(candidate);
+        }
       }
     }
 
@@ -660,20 +648,6 @@ public class ClassifierResolveUtils {
   }
 
   private static SModule check_8z6r2b_a0a0a3a3(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static IScope check_8z6r2b_a0a24a21(AbstractModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getScope();
-    }
-    return null;
-  }
-
-  private static SModule check_8z6r2b_a0a0a0qb0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
