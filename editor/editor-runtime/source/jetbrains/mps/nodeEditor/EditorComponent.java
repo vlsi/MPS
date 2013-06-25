@@ -3299,7 +3299,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (myModelDescriptorsWithListener.contains(descriptor)) {
           needToRebuild = true;
         }
-        if (myNode != null) {
+        if (myNode != null && myNode.getModel() != null) {
           assertModelNotDisposed();
           if (myNode.getModel().getReference().equals(descriptor.getReference())) {
             clearModelDisposedTrace();
