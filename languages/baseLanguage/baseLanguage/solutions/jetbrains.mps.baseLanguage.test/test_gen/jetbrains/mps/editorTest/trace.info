@@ -3290,52 +3290,124 @@
     <unitInfo nodeId="6778605776625957377" fileName="PriorityProblem_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityProblem_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6887089401948833622">
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="18" startPosition="57" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6887089401951507116" fileName="DeletePrefixCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletePrefixCaret_Test#()V" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeletePrefixCaret#()V" />
-    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="14" startPosition="35" endLine="14" endPosition="35" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="18" startPosition="57" endLine="20" endPosition="98" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="105">
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401951507116" fileName="DeletePrefixDecrementCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletePrefixDecrementCaret_Test#()V" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeletePrefixDecrementCaret#()V" />
+    <nodeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
       <varInfo nodeId="6887089401948833622" varName="editor" />
       <varInfo nodeId="6887089401948833622" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePrefixCaret_Test$TestBody" />
-    <unitInfo nodeId="6887089401948833622" fileName="DeletePrefixCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePrefixCaret_Test" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePrefixDecrementCaret_Test$TestBody" />
+    <unitInfo nodeId="6887089401948833622" fileName="DeletePrefixDecrementCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePrefixDecrementCaret_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6887089401948839819">
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6887089401951507091" fileName="DeletePostfixCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletePostfixCaret_Test#()V" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeletePostfixCaret#()V" />
-    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="18" startPosition="58" endLine="20" endPosition="99" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="105">
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401951507091" fileName="DeletePostfixIncrementCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletePostfixIncrementCaret_Test#()V" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeletePostfixIncrementCaret#()V" />
+    <nodeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="14" startPosition="45" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="18" startPosition="67" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
       <varInfo nodeId="6887089401948839819" varName="editor" />
       <varInfo nodeId="6887089401948839819" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePostfixCaret_Test$TestBody" />
-    <unitInfo nodeId="6887089401948839819" fileName="DeletePostfixCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePostfixCaret_Test" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePostfixIncrementCaret_Test$TestBody" />
+    <unitInfo nodeId="6887089401948839819" fileName="DeletePostfixIncrementCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePostfixIncrementCaret_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6887089401953600388">
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401953600407" fileName="DeletePostfixDecrementCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletePostfixDecrementCaret_Test#()V" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeletePostfixDecrementCaret#()V" />
+    <nodeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="14" startPosition="45" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="18" startPosition="67" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="6887089401953600388" varName="editor" />
+      <varInfo nodeId="6887089401953600388" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePostfixDecrementCaret_Test$TestBody" />
+    <unitInfo nodeId="6887089401953600388" fileName="DeletePostfixDecrementCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePostfixDecrementCaret_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6887089401953600715">
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401953600734" fileName="DeletePrefixIncrementCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeletePrefixIncrementCaret_Test#()V" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeletePrefixIncrementCaret#()V" />
+    <nodeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="6887089401953600715" varName="editor" />
+      <varInfo nodeId="6887089401953600715" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePrefixIncrementCaret_Test$TestBody" />
+    <unitInfo nodeId="6887089401953600715" fileName="DeletePrefixIncrementCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeletePrefixIncrementCaret_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6887089401953614954">
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="18" startPosition="56" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6887089401953614973" fileName="DeleteUnaryMinus_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteUnaryMinus_Test#()V" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeleteUnaryMinus#()V" />
+    <nodeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="14" startPosition="34" endLine="14" endPosition="34" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="18" startPosition="56" endLine="20" endPosition="97" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="6887089401953614954" varName="editor" />
+      <varInfo nodeId="6887089401953614954" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteUnaryMinus_Test$TestBody" />
+    <unitInfo nodeId="6887089401953614954" fileName="DeleteUnaryMinus_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteUnaryMinus_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7011073693661692260">
     <nodeInfo nodeId="7011073693661692260" fileName="SimpleUndoTest_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

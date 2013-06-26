@@ -4020,7 +4020,8 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(result, "expression", true), SelectionManager.FIRST_EDITABLE_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
