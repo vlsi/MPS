@@ -183,6 +183,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("VcsGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("VcsGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("VcsGroup", "EditorPopup_ActionGroupvcs", null);
+    insertInterfaceGroupIntoAnother("LocalHistory", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_idealocalhistory);
+    insertInterfaceGroupIntoAnother("LocalHistory", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_idealocalhistory);
+    insertInterfaceGroupIntoAnother("LocalHistory", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_idealocalhistory);
     insertInterfaceGroupIntoAnother("NavbarPopupMenu", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
     insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup", SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_contents);
     insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.ModelNewActions_ActionGroup", GeneratorNewActions_ActionGroup.ID, GeneratorNewActions_ActionGroup.LABEL_ID_newModel);

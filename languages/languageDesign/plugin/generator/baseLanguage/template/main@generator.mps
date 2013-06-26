@@ -67,7 +67,6 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
-  <import index="knb2" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.plugins.pluginparts.tool(MPS.Workbench/jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1203086899006" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GeneratedAction_Template" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
@@ -4441,7 +4440,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.1208528650020" resolveInfo="ToolType" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1209909501356" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="knb2.~GeneratedTool" resolveInfo="GeneratedTool" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2yea.~GeneratedTool" resolveInfo="GeneratedTool" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1209909504737" nodeInfo="ng" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1214489951990" nodeInfo="nn">
         <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />

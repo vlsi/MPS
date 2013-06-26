@@ -5,13 +5,13 @@ package jetbrains.mps.vcs.changesmanager.tree;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
@@ -22,9 +22,9 @@ import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 
 public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {

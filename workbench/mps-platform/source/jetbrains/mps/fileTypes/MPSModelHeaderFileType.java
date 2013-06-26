@@ -17,6 +17,7 @@ package jetbrains.mps.fileTypes;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,7 +45,7 @@ public class MPSModelHeaderFileType implements FileType {
   @NotNull
   @Override
   public String getDefaultExtension() {
-    return ".model";
+    return MPSExtentions.MODEL_HEADER;
   }
 
   @Nullable

@@ -8,8 +8,10 @@ import javax.swing.JCheckBox;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import java.awt.Insets;
 import javax.swing.JLabel;
-import javax.swing.event.CaretListener;
-import javax.swing.event.CaretEvent;
+import com.intellij.ui.DocumentAdapter;
+import javax.swing.event.DocumentEvent;
+import java.io.File;
+import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.ui.InsertPathAction;
@@ -18,7 +20,6 @@ import com.intellij.ui.FieldPanel;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import java.awt.Dimension;
-import java.io.File;
 import javax.swing.JComponent;
 
 public class NewLanguageSettings extends JPanel {
@@ -28,6 +29,11 @@ public class NewLanguageSettings extends JPanel {
   private JTextField myLanguageLocation;
   private JCheckBox myRuntimeSolution;
   private JCheckBox mySandboxSolution;
+
+  private boolean myLangLocationChangedByUser = false;
+  private boolean myLangLocationDocListenerEnabled = true;
+
+  private NewLanguageSettings.LangSettingsChangedListener myListener;
 
 
   public NewLanguageSettings() {
@@ -43,15 +49,32 @@ public class NewLanguageSettings extends JPanel {
     this.add(new JLabel("Language name:"), Util.getGridConstraints(0));
     myLanguageName = new JTextField("NewLanguage");
     myLanguageName.setName("Name");
-    myLanguageName.addCaretListener(new CaretListener() {
-      public void caretUpdate(CaretEvent p0) {
-        updateLanguageLocation();
+    myLanguageName.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent p0) {
+        if ((myProjectPath == null || myProjectPath.length() == 0)) {
+          return;
+        }
+        String path = myProjectPath + File.separator + "languages" + File.separator;
+        final String langName = getLanguageName();
+        if (!(Comparing.strEqual(langName, getLanguageLocation()))) {
+          path += langName;
+        }
+        if (!(myLangLocationChangedByUser)) {
+          setLanguageLocation(path);
+        }
       }
     });
     this.add(myLanguageName, Util.getGridConstraints(1));
 
     myLanguageLocation = new JTextField();
     myLanguageLocation.setName("Path");
+    myLanguageLocation.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent p0) {
+        if (myLangLocationDocListenerEnabled) {
+          myLangLocationChangedByUser = true;
+        }
+      }
+    });
     final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
     InsertPathAction.addTo(myLanguageLocation, descriptor);
     BrowseFilesListener listener = new BrowseFilesListener(myLanguageLocation, "Choose Language Location Folder", "", descriptor);
@@ -67,43 +90,31 @@ public class NewLanguageSettings extends JPanel {
 
     this.setPreferredSize(new Dimension(400, 100));
 
-    updateLanguageLocation();
-  }
-
-
-
-  protected void updateLanguageLocation() {
-    updateLanguageLocation(false);
-  }
-
-  protected void updateLanguageLocation(boolean force) {
-    if (myProjectPath == null) {
-      return;
-    }
-    String prefix = myProjectPath + File.separator + "languages" + File.separator;
-    if (isEmpty_so2aal_a0a0a2a21(myLanguageName.getText()) || isEmpty_so2aal_a0a0a2a21_0(myLanguageLocation.getText()) || myLanguageLocation.getText().startsWith(prefix) || force) {
-      myLanguageLocation.setText(prefix + myLanguageName.getText());
+    if (myProjectPath != null) {
+      setLanguageLocation(myProjectPath + File.separator + "languages" + File.separator + getLanguageName());
     }
   }
 
 
 
   public String getLanguageName() {
-    return myLanguageName.getText();
+    return myLanguageName.getText().trim();
   }
 
   public void setLanguageName(String languageName) {
     myLanguageName.setText(languageName);
-    updateLanguageLocation();
+    fireChaged();
   }
 
   public String getLanguageLocation() {
-    return myLanguageLocation.getText();
+    return myLanguageLocation.getText().trim();
   }
 
   public void setLanguageLocation(String languageLocation) {
+    myLangLocationDocListenerEnabled = false;
     myLanguageLocation.setText(languageLocation);
-    updateLanguageLocation();
+    myLangLocationDocListenerEnabled = true;
+    fireChaged();
   }
 
   public boolean isRuntimeSolutionNeeded() {
@@ -123,8 +134,26 @@ public class NewLanguageSettings extends JPanel {
   }
 
   public void setProjectPath(String projectPath) {
+    String oldProjectPath = myProjectPath;
     myProjectPath = projectPath;
-    updateLanguageLocation(true);
+    if ((oldProjectPath != null && oldProjectPath.length() > 0) && myLanguageLocation.getText().contains(oldProjectPath)) {
+      setLanguageLocation(myLanguageLocation.getText().replace(oldProjectPath, myProjectPath));
+    } else {
+      setLanguageLocation(myProjectPath + File.separator + "languages" + File.separator + getLanguageName());
+    }
+    fireChaged();
+  }
+
+
+
+  public void setListener(NewLanguageSettings.LangSettingsChangedListener listener) {
+    myListener = listener;
+  }
+
+  private void fireChaged() {
+    if (myListener != null) {
+      myListener.changed();
+    }
   }
 
 
@@ -133,11 +162,9 @@ public class NewLanguageSettings extends JPanel {
     return myLanguageName;
   }
 
-  public static boolean isEmpty_so2aal_a0a0a2a21(String str) {
-    return str == null || str.length() == 0;
-  }
 
-  public static boolean isEmpty_so2aal_a0a0a2a21_0(String str) {
-    return str == null || str.length() == 0;
+
+  public static interface LangSettingsChangedListener {
+    public void changed();
   }
 }

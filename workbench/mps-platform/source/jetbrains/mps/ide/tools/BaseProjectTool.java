@@ -36,7 +36,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   @Override
   public void projectOpened() {
     final MPSProjectMigrationComponent migrationState = getProject().getComponent(MPSProjectMigrationComponent.class);
-    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+    if (migrationState != null && migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
       migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
         @Override
         public void migrationFinished(Project mpsProject) {

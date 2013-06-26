@@ -214,7 +214,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   }
 
   private void processPopupMenu(MouseEvent e) {
-    BaseGroup group = ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS);
+    BaseGroup group = ActionUtils.getGroup(ProjectPaneActionGroups.NODE_ACTIONS);
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 

@@ -18,22 +18,21 @@ import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.DiffManager;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -42,9 +41,8 @@ import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
@@ -84,45 +82,51 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   private boolean myNewRegistered;
 
 
-  public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
-    super(diffRequest.getProject());
-    myProject = diffRequest.getProject();
-    myOldRegistered = SModelRepository.getInstance().getModelDescriptor(oldModel.getReference()) == oldModel.getModelDescriptor();
-    myNewRegistered = SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel.getModelDescriptor();
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && myNewRegistered;
-    final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
+  public ModelDifferenceDialog(Project project, final SModel oldModel, final SModel newModel, String oldTitle, String newTitle, @Nullable DiffRequest diffRequest) {
+    super(project);
+    myProject = project;
+    myOldRegistered = SNodeOperations.isRegistered(oldModel);
+    myNewRegistered = SNodeOperations.isRegistered(newModel);
+    myEditable = newModel instanceof EditableSModel && myNewRegistered;
+    final Wrappers._T<String> title = new Wrappers._T<String>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        title.value = SModelOperations.getModelName(oldModel);
+        if (isEmpty_vk52pz_a0b0a0a0a0g0v(title.value)) {
+          title.value = SModelOperations.getModelName(newModel);
+        }
+
         if (!(myNewRegistered)) {
-          DiffTemporaryModule.createModuleAndRegister(newModel, "new", p, false);
+          DiffModelUtil.renameModelAndRegister(newModel, "new");
         }
         if (!(myOldRegistered)) {
-          DiffTemporaryModule.createModuleAndRegister(oldModel, "old", p, false);
+          DiffModelUtil.renameModelAndRegister(oldModel, "old");
         }
       }
     });
-    myContentTitles = diffRequest.getContentTitles();
+    myContentTitles = new String[]{oldTitle, newTitle};
     assert myContentTitles.length == 2;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        setTitle("Difference for model: " + oldModel.getModelDescriptor().getModelName());
+        setTitle("Difference for model: " + title.value);
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
       }
     });
     if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
-          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
-          DiffTemporaryModule.createModuleAndRegister(newMetaModel, "new", p, myEditable);
-          DiffTemporaryModule.createModuleAndRegister(oldMetaModel, "old", p, false);
+          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel, "metadata_new", myEditable);
+          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel, "metadata_old", false);
           myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
         }
       });
     }
 
-    myActionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest, DiffManager.getInstance().getIdeaDiffTool()));
+    myActionGroup = new DefaultActionGroup();
+    if (diffRequest != null) {
+      myActionGroup.add(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest, DiffManager.getInstance().getIdeaDiffTool()));
+    }
 
     init();
 
@@ -133,24 +137,20 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             if (myMetadataChangeSet != null) {
-              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getOldModel().getModelDescriptor(), p);
-              DiffTemporaryModule.unregisterModel(myMetadataChangeSet.getNewModel().getModelDescriptor(), p);
+              MetadataUtil.dispose(myMetadataChangeSet.getOldModel());
+              MetadataUtil.dispose(myMetadataChangeSet.getNewModel());
             }
             if (!(myOldRegistered)) {
-              DiffTemporaryModule.unregisterModel(myChangeSet.getOldModel().getModelDescriptor(), p);
+              DiffModelUtil.unregisterModel(myChangeSet.getOldModel());
             }
             if (!(myNewRegistered)) {
-              DiffTemporaryModule.unregisterModel(myChangeSet.getNewModel().getModelDescriptor(), p);
+              DiffModelUtil.unregisterModel(myChangeSet.getNewModel());
             }
           }
         });
         getWindow().removeWindowListener(this);
       }
     });
-  }
-
-  public ModelDifferenceDialog(SModel oldModel, SModel newModel, Project project, String oldTitle, String newTitle) {
-    this(oldModel, newModel, new SimpleDiffRequest(project, new SModel[]{oldModel, newModel}, new String[]{oldTitle, newTitle}));
   }
 
 
@@ -270,7 +270,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
           myChangeSet
         );
         SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataChangeSet.getOldModel().getModelDescriptor()), null)).first().getNodeId() :
+          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() :
           rootId
         );
         if (myRootDifferencePane == null) {
@@ -311,24 +311,28 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myComponent.remove(myToolbar.getComponent());
   }
 
-  public static void showRootDifference(final SModel oldModel, final SModel newModel, final SNodeId rootId, Project project, String oldTitle, String newTitle, @Nullable final Bounds scrollTo) {
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(oldModel, newModel, project, oldTitle, newTitle);
+  public static void showRootDifference(Project project, final SModel oldModel, final SModel newModel, final SNodeId rootId, String oldTitle, String newTitile, @Nullable final Bounds scrollTo, DiffRequest diffRequest) {
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, oldModel, newModel, oldTitle, newTitile, diffRequest);
     dialog.setCurrentRoot(rootId);
     dialog.closeTreeComponent();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode node = newModel.getNode(rootId);
-        if (node == null) {
-          node = oldModel.getNode(rootId);
+    if (rootId == null) {
+      dialog.setTitle("Metadata difference for model");
+    } else {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SNode node = newModel.getNode(rootId);
+          if (node == null) {
+            node = oldModel.getNode(rootId);
+          }
+          String rootName = (node == null ?
+            "root" :
+            node.getPresentation()
+          );
+          dialog.setTitle("Difference for " + rootName);
+          dialog.myRootDifferencePane.navigateInitial(scrollTo);
         }
-        String rootName = (node == null ?
-          "root" :
-          node.getPresentation()
-        );
-        dialog.setTitle("Difference for " + rootName);
-        dialog.myRootDifferencePane.navigateInitial(scrollTo);
-      }
-    });
+      });
+    }
     dialog.show();
   }
 
@@ -453,5 +457,9 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
+  }
+
+  public static boolean isEmpty_vk52pz_a0b0a0a0a0g0v(String str) {
+    return str == null || str.length() == 0;
   }
 }

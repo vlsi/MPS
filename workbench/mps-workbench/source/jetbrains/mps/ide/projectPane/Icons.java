@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.icons.AllIcons.Actions;
-import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.General;
@@ -26,9 +25,6 @@ import javax.swing.Icon;
 
 public class Icons extends IdeIcons {
 
-  public static final Icon PROJECT_MODELS_ICON = MPSIcons.Nodes.ProjectModels;
-  public static final Icon PROJECT_MODELS_EXPANDED_ICON = MPSIcons.Nodes.ProjectModels;
-  public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModels;
 
   public static final Icon MINIMIZE_ICON = Actions.Minimize;
   public static final Icon CLOSE_ICON = Actions.CloseHovered;
@@ -38,6 +34,7 @@ public class Icons extends IdeIcons {
   public static final Icon PROPERTY_ICON = General.Block;
 
   public static final Icon PROP_AND_REF = getPropAndRefIcon();
+
   private static final Icon getPropAndRefIcon() {
     LayeredIcon layeredIcon = new LayeredIcon(2);
     layeredIcon.setIcon(PROPERTY_ICON, 0);
@@ -46,7 +43,4 @@ public class Icons extends IdeIcons {
   }
 
   public static final Icon STRONG_SUBTYPE_ICON = MPSIcons.Actions.ShowOnlyStrongSubtypes;
-
-  public static final Icon MODULE_GROUP_CLOSED = Nodes.ModuleGroup;
-  public static final Icon MODULE_GROUP_OPENED = Nodes.ModuleGroup;
 }

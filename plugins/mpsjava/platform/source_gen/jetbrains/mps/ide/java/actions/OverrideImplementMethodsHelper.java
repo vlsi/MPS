@@ -6,12 +6,12 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -29,35 +29,33 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class OverrideImplementMethodsHelper {
   private Project myProject;
   private SNode myClassConcept;
-  private SNode myContextMethod;
+  private SNode myContextMember;
   private boolean myRemoveAttributes;
   private boolean myInsertOverride;
   private boolean myNeedReturnKW;
 
-  public OverrideImplementMethodsHelper(Project project, SNode target, SNode contextMethod, boolean removeAttributes, boolean insertOverride, boolean needReturnKW) {
+  public OverrideImplementMethodsHelper(Project project, SNode target, SNode contextMember, boolean removeAttributes, boolean insertOverride, boolean needReturnKW) {
     this.myProject = project;
     this.myClassConcept = target;
-    this.myContextMethod = contextMethod;
+    this.myContextMember = contextMember;
     this.myRemoveAttributes = removeAttributes;
     this.myInsertOverride = insertOverride;
     this.myNeedReturnKW = needReturnKW;
   }
 
   public List<SNode> insertMethods(List<SNode> baseMethods) {
-    boolean insertion = myContextMethod != null && SNodeOperations.getParent(myContextMethod) == myClassConcept;
+    int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ?
+      ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 :
+      -1
+    );
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SNode method = SNodeOperations.cast(BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept}), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      if (insertion) {
-        int index = ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMethod);
-        if (index == -1) {
-          ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).addElement(method);
-        } else {
-          ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).insertElement(index, method);
-        }
+      if (index != -1) {
+        ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).insertElement(index++, method);
       } else {
         ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).addElement(method);
       }

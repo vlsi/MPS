@@ -143,6 +143,9 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   public void flush() {
     // synchronously commit all pending reload requests 
     ReloadSession session = myReloadSessionBroker.waitForUnemployed();
+    if (session == null) {
+      return;
+    }
     // Q: also do normal progressMonintor, as in real reload on timeout ? 
     session.doReload(new EmptyProgressMonitor());
   }

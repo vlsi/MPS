@@ -16,19 +16,19 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
-import jetbrains.mps.ide.projectPane.SModelsSubtree.StubsTreeNode;
-import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.AccessoriesModelTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode.AllModelsTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.AccessoriesModelTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectLanguageTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectLanguageTreeNode.AllModelsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
@@ -187,7 +187,7 @@ public abstract class ProjectTreeFindHelper {
     @Override
     public boolean met(MPSTreeNode object) {
       if (!super.met(object)) return false;
-      return !(object instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode);
+      return !(object instanceof ProjectModulesPoolTreeNode);
     }
   }
 

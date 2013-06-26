@@ -16,13 +16,14 @@
 package jetbrains.mps.ide.icons;
 
 import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.Diff;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.icons.AllIcons.Toolwindows;
 import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.ToolWindows;
-import com.intellij.icons.AllIcons.Actions;
 
 import javax.swing.Icon;
 
@@ -62,6 +63,10 @@ public class IdeIcons {
   public static final Icon GENERATOR_ICON = Nodes.Generator;
   public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
 
+  public static final Icon PROJECT_MODELS_ICON = MPSIcons.Nodes.ProjectModels;
+  public static final Icon PROJECT_MODELS_EXPANDED_ICON = MPSIcons.Nodes.ProjectModels;
+  public static final Icon TRANSIENT_MODELS_ICON = MPSIcons.Nodes.TransientModels;
+
   public static final Icon PROPERTIES_ICON = General.Settings;
   public static final Icon INSPECTOR_ICON = Toolwindows.ToolWindowInspection;
 
@@ -71,4 +76,7 @@ public class IdeIcons {
   public static final Icon CLOSED_FOLDER = AllIcons.Nodes.TreeClosed;
 
   public static final Icon REFERENCE_ICON = Actions.Forward;
+
+  public static final Icon MODULE_GROUP_CLOSED = AllIcons.Nodes.ModuleGroup;
+  public static final Icon MODULE_GROUP_OPENED = AllIcons.Nodes.ModuleGroup;
 }

@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class TestMethodTreeNode extends BaseTestTreeNode {
@@ -49,11 +47,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   @Override
   public boolean isLeaf() {
     return true;
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup");
   }
 
   @Override

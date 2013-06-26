@@ -3,14 +3,11 @@
   <persistence version="8" />
   <language namespace="a1896bc3-4f5b-4a31-b78b-b65514f8d0e5(jetbrains.mps.samples.xmlLiterals)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
-  <language namespace="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
   <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpjo" modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <import index="tpjh" modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" implicit="yes" />
   <import index="v5hn" modelUID="r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)" version="-1" implicit="yes" />
+  <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9152904044274358977" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Person" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9152904044274358978" nodeInfo="nn" />
@@ -164,63 +161,47 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9152904044274458173" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9152904044274458174" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9152904044274464619" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="v5hn.XmlLiteral" typeId="v5hn.9152904044274328259" id="9152904044274464620" nodeInfo="nn">
-            <node role="element" roleId="v5hn.9152904044274328260" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="9152904044274469589" nodeInfo="ng">
-              <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="9152904044274469591" nodeInfo="ng">
-                <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="9152904044274518018" nodeInfo="ng">
-                  <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="9152904044274518019" nodeInfo="ng">
-                    <property name="text" nameId="tpjo.1161373273669" value="name" />
-                  </node>
-                  <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="9152904044274518020" nodeInfo="ng">
-                    <node role="content" roleId="tpjo.1163629255661" type="v5hn.TextMacro" typeId="v5hn.9152904044274469601" id="7417816926334597241" nodeInfo="ng">
-                      <node role="expression" roleId="v5hn.9152904044274469602" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7417816926334597242" nodeInfo="nn">
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7417816926334597243" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9152904044274516033" resolveInfo="getName" />
-                        </node>
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7417816926334597244" nodeInfo="nn" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="7417816926334720627" nodeInfo="ng">
-                  <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="7417816926334720628" nodeInfo="ng">
-                    <property name="text" nameId="tpjo.1161373273669" value="lastName" />
-                  </node>
-                  <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="7417816926334720629" nodeInfo="ng">
-                    <node role="content" roleId="tpjo.1163629255661" type="v5hn.TextMacro" typeId="v5hn.9152904044274469601" id="7417816926334720631" nodeInfo="ng">
-                      <node role="expression" roleId="v5hn.9152904044274469602" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7417816926334720633" nodeInfo="nn">
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7417816926334720634" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7417816926334720610" resolveInfo="getLastName" />
-                        </node>
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7417816926334720635" nodeInfo="nn" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="9152904044274518193" nodeInfo="ng">
-                  <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="9152904044274518194" nodeInfo="ng">
-                    <property name="text" nameId="tpjo.1161373273669" value="address" />
-                  </node>
-                  <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="9152904044274518195" nodeInfo="ng">
-                    <node role="content" roleId="tpjo.1163629255661" type="v5hn.ElementMacro" typeId="v5hn.9152904044274518122" id="7417816926334645014" nodeInfo="ng">
-                      <node role="expression" roleId="v5hn.9152904044274518128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7417816926334645019" nodeInfo="nn">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7417816926334645016" nodeInfo="nn">
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7417816926334645017" nodeInfo="nn">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9152904044274541180" resolveInfo="getAddress" />
-                          </node>
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7417816926334645018" nodeInfo="nn" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7417816926334645023" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9152904044274518182" resolveInfo="toXml" />
-                        </node>
-                      </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5081393330032881552" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="v5hn.XmlLiteral" typeId="v5hn.9152904044274328259" id="5081393330032881550" nodeInfo="nn">
+            <node role="element" roleId="v5hn.9152904044274328260" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5081393330032881551" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="person" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="258516944915814363" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="name" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="v5hn.TextMacro" typeId="v5hn.9152904044274469601" id="258516944915814538" nodeInfo="ng">
+                  <node role="expression" roleId="v5hn.9152904044274469602" type="tpee.DotExpression" typeId="tpee.1197027756228" id="258516944915814881" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="258516944915814718" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="258516944915815004" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9152904044274516033" resolveInfo="getName" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="9152904044274518015" nodeInfo="ng">
-                <property name="text" nameId="tpjo.1161373273669" value="person" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="258516944915815077" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="lastName" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="v5hn.TextMacro" typeId="v5hn.9152904044274469601" id="258516944915815652" nodeInfo="ng">
+                  <node role="expression" roleId="v5hn.9152904044274469602" type="tpee.DotExpression" typeId="tpee.1197027756228" id="258516944915815880" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="258516944915815711" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="258516944915816003" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7417816926334720610" resolveInfo="getLastName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="258516944915815269" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="address" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="v5hn.ElementMacro" typeId="v5hn.9152904044274518122" id="258516944915816073" nodeInfo="ng">
+                  <node role="expression" roleId="v5hn.9152904044274518128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="258516944915816811" nodeInfo="nn">
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="258516944915817102" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9152904044274518182" resolveInfo="toXml" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="258516944915816470" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="258516944915816308" nodeInfo="nn" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="258516944915816593" nodeInfo="nn">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9152904044274541180" resolveInfo="getAddress" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -281,19 +262,15 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9152904044274518184" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9152904044274518185" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7417816926334720699" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="v5hn.XmlLiteral" typeId="v5hn.9152904044274328259" id="7417816926334720703" nodeInfo="nn">
-            <node role="element" roleId="v5hn.9152904044274328260" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="7417816926334720706" nodeInfo="ng">
-              <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="7417816926334720707" nodeInfo="ng">
-                <property name="text" nameId="tpjo.1161373273669" value="address" />
-              </node>
-              <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="7417816926334720708" nodeInfo="ng">
-                <node role="content" roleId="tpjo.1163629255661" type="v5hn.TextMacro" typeId="v5hn.9152904044274469601" id="7417816926334720711" nodeInfo="ng">
-                  <node role="expression" roleId="v5hn.9152904044274469602" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7417816926334720726" nodeInfo="nn">
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7417816926334720727" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7417816926334720717" resolveInfo="getAddressString" />
-                    </node>
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7417816926334720728" nodeInfo="nn" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5081393330032015854" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="v5hn.XmlLiteral" typeId="v5hn.9152904044274328259" id="5081393330032015852" nodeInfo="nn">
+            <node role="element" roleId="v5hn.9152904044274328260" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5081393330032015853" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="address" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="v5hn.TextMacro" typeId="v5hn.9152904044274469601" id="5081393330032076941" nodeInfo="ng">
+                <node role="expression" roleId="v5hn.9152904044274469602" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5081393330032077161" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="5081393330032077001" nodeInfo="nn" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5081393330032077282" nodeInfo="nn">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7417816926334720717" resolveInfo="getAddressString" />
                   </node>
                 </node>
               </node>

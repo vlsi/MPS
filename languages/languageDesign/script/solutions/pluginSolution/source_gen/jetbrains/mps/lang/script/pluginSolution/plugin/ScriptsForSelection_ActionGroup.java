@@ -15,11 +15,10 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
@@ -43,7 +42,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       ScriptsForSelection_ActionGroup.this.removeAll();
-      List<SModel> models = MPSDataKeys.MODELS.getData(event.getDataContext());
+      List<SModel> models = MPSCommonDataKeys.MODELS.getData(event.getDataContext());
       if ((int) ListSequence.fromList(models).count() == 1 && !(ListSequence.fromList(models).first() instanceof EditableSModel && !(ListSequence.fromList(models).first().isReadOnly()))) {
         event.getPresentation().setVisible(false);
         return;

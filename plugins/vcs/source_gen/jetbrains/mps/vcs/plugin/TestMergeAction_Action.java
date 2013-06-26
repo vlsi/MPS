@@ -20,11 +20,13 @@ import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.io.IOException;
 import org.apache.log4j.Logger;
@@ -81,22 +83,19 @@ public class TestMergeAction_Action extends BaseAction {
         public void run() {
           VirtualFile vFile = FileChooser.chooseFile(((Project) MapSequence.fromMap(_params).get("project")), descriptor);
 
-          String resString;
+          final String resFile;
           SModel[] zipped;
           try {
             zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
-            resString = File.createTempFile("mpstmp", ".result").getAbsolutePath();
+            resFile = File.createTempFile("mpstmp", ".result").getAbsolutePath();
           } catch (Exception e) {
             e.printStackTrace();
             return;
           }
 
-          final String resFile = resString;
-          final SModel[] models = zipped;
-
-          MergeModelsDialog dialog = new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), models, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+          MergeModelsDialog dialog = new MergeModelsDialog(new MergeTemporaryModel(zipped[0], true), new MergeTemporaryModel(zipped[1], true), new MergeTemporaryModel(zipped[2], true), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), zipped, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           dialog.show();
-          final SModel result = dialog.getResultModelWithFixedId();
+          final org.jetbrains.mps.openapi.model.SModel result = dialog.getResultModelWithFixedId();
           if (result != null) {
             ModelAccess.instance().runWriteAction(new Runnable() {
               @Override
@@ -106,7 +105,7 @@ public class TestMergeAction_Action extends BaseAction {
                   iFile.createNewFile();
                 }
                 try {
-                  ModelPersistence.saveModel(result, new FileDataSource(iFile));
+                  ModelPersistence.saveModel(as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(result, SModelBase.class).getSModelInternal(), new FileDataSource(iFile));
                 } catch (IOException e) {
                   if (LOG.isEnabledFor(Priority.ERROR)) {
                     LOG.error("Cannot save model.", e);
@@ -126,4 +125,11 @@ public class TestMergeAction_Action extends BaseAction {
   }
 
   protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
+
+  private static <T> T as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
 }

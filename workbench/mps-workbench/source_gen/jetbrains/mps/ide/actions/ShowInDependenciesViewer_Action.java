@@ -12,9 +12,9 @@ import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
@@ -60,7 +60,7 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }

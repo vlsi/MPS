@@ -15,6 +15,7 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup";
   public static final String LABEL_ID_new = ID + "new";
   public static final String LABEL_ID_ideaActions = ID + "ideaActions";
+  public static final String LABEL_ID_idealocalhistory = ID + "idealocalhistory";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public AbstractFileActions_ActionGroup() {
@@ -39,6 +40,12 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
       AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action");
       AbstractFileActions_ActionGroup.this.addParameterizedAction(new FileDelete_Action(new FileDeleteActionFixed()), PluginId.getId("jetbrains.mps.ide"), new FileDeleteActionFixed());
       AbstractFileActions_ActionGroup.this.addSeparator();
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_idealocalhistory);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

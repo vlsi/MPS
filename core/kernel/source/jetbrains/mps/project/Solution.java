@@ -55,6 +55,8 @@ public class Solution extends AbstractModule {
     Map<SModuleReference, ClasspathReader.ClassType> result = new HashMap<SModuleReference, ClasspathReader.ClassType>();
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("JDK",
         ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), ClasspathReader.ClassType.JDK);
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("Annotations",
+        ModuleId.fromString("3f233e7f-b8a6-46d2-a57f-795d56775243")), ClasspathReader.ClassType.ANNOTATIONS);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.OpenAPI",
         ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), ClasspathReader.ClassType.OPENAPI);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Core",

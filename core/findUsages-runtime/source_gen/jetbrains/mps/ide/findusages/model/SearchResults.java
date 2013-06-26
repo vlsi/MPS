@@ -52,9 +52,12 @@ public class SearchResults<T> implements UsagesList {
     for (SearchResult searchResult : mySearchResults) {
       Object resultObject = searchResult.getObject();
       if (resultObject instanceof SNode) {
-        result.add(((SNode) resultObject).getModel());
+        SModel model = ((SNode) resultObject).getModel();
+        if (model != null) {
+          result.add(model);
+        }
       } else
-      if (resultObject instanceof SModel) {
+      if (resultObject instanceof SModel && resultObject != null) {
         result.add((SModel) resultObject);
       }
     }

@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.typesystem.typeof_NodesShowable_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.typesystem.typeof_PrintNode_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.typesystem.typeof_PrintText_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.typesystem.typeof_RefsShowable_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.typesystem.typeof_UsagesExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
@@ -91,6 +92,19 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.console.blCommand.typesystem.typeof_PrintText_InferenceRule" file="typeof_PrintText_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.blCommand.typesystem.typeof_RefsShowable_InferenceRule" file="typeof_RefsShowable_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

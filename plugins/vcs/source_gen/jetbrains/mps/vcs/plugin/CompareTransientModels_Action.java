@@ -16,9 +16,10 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
@@ -74,16 +75,15 @@ public class CompareTransientModels_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      final SModel[] model = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray(new SModel[((List<SModel>) MapSequence.fromMap(_params).get("models")).size()]);
+      final String[] titles = ModelAccess.instance().runReadAction(new Computable<String[]>() {
+        public String[] compute() {
+          return new String[]{SModelOperations.getModelName(model[0]), SModelOperations.getModelName(model[1])};
+        }
+      });
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final jetbrains.mps.smodel.SModel first = ((SModelBase) sortedModels.get(0)).getSModelInternal();
-          final jetbrains.mps.smodel.SModel second = ((SModelBase) sortedModels.get(1)).getSModelInternal();
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getModelName(), second.getReference().getModelName()).show();
-            }
-          });
+          new ModelDifferenceDialog(((Project) MapSequence.fromMap(_params).get("project")), model[0], model[1], titles[0], titles[1], null).show();
         }
       });
     } catch (Throwable t) {

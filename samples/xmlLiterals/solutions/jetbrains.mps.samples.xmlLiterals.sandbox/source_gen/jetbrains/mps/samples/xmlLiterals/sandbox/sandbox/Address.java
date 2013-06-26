@@ -21,8 +21,8 @@ public class Address {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
         Element simpleElement_49w4x6_a0a0d = new Element("address");
-        Text text_49w4x6_a0a0a0d = new Text(Address.this.getAddressString());
-        simpleElement_49w4x6_a0a0d.addContent(text_49w4x6_a0a0a0d);
+        Text text_49w4x6_a0a0a3 = new Text(Address.this.getAddressString());
+        simpleElement_49w4x6_a0a0d.addContent(text_49w4x6_a0a0a3);
         return simpleElement_49w4x6_a0a0d;
       }
     }.invoke();

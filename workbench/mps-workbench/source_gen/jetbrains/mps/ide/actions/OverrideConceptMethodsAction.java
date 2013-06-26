@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverrideConceptMethodsAction {
   private Project myProject;
@@ -75,12 +76,15 @@ public class OverrideConceptMethodsAction {
           if (insertedMethods.isEmpty()) {
             return;
           }
-          if (insertedMethods.size() == 1) {
-            myEditorContext.selectAfter(ListSequence.fromList(insertedMethods).first());
+          SNode firstMethod = ListSequence.fromList(insertedMethods).first();
+          SNode nodeToSelect;
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).isNotEmpty()) {
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).first();
           } else {
-            myEditorContext.select(ListSequence.fromList(insertedMethods).last());
-            myEditorContext.selectRange(ListSequence.fromList(insertedMethods).last(), ListSequence.fromList(insertedMethods).first());
+            nodeToSelect = firstMethod;
           }
+          myEditorContext.flushEvents();
+          myEditorContext.getSelectionManager().setSelection(nodeToSelect);
         }
       }, myProject);
     }

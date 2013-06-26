@@ -34,7 +34,7 @@ import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
@@ -202,7 +202,7 @@ public class RootDifferencePane {
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel().getModelDescriptor()))) {
+    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel()))) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }

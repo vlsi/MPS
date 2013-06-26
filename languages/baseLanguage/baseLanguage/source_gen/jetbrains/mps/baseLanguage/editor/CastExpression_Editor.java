@@ -42,7 +42,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_k71s56_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_k71s56_a0a");
+    editorCell.setCellId("leftParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -72,7 +72,7 @@ public class CastExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_k71s56_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_k71s56_c0a");
+    editorCell.setCellId("rightParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     editorCell.getStyle().putAll(style);

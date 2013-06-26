@@ -63,10 +63,28 @@ public interface EditorContext {
 
   void select(SNode node, String cellId);
 
+  /**
+   * This method will be removed after MPS 3.0
+   *
+   * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
+   */
+  @Deprecated
   void selectBefore(SNode node);
 
+  /**
+   * This method will be removed after MPS 3.0
+   *
+   * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
+   */
+  @Deprecated
   void selectAfter(SNode node);
 
+  /**
+   * This method will be removed after MPS 3.0
+   *
+   * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
+   */
+  @Deprecated
   void selectAndSetCaret(SNode node, int position);
 
   EditorCell getSelectedCell();

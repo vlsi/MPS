@@ -13,6 +13,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -58,7 +59,7 @@ public class MigrateToSReferenceOpenAPI_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSReference();
+      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project")))).migrateSReference();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateToSReferenceOpenAPI", t);

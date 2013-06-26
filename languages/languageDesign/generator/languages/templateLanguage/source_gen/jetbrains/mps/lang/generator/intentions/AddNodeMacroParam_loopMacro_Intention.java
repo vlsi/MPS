@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddNodeMacroParam_loopMacro_Intention implements IntentionFactory {
@@ -115,7 +117,7 @@ public class AddNodeMacroParam_loopMacro_Intention implements IntentionFactory {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
       SLinkOperations.setTarget(loopMacro, "sourceNodesQuery", referentValue, true);
       // set caret 
-      editorContext.selectAndSetCaret(loopMacro, 1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, loopMacro, SelectionManager.FIRST_CELL, 1);
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -7,8 +7,10 @@ import javax.swing.JTextField;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import java.awt.Insets;
 import javax.swing.JLabel;
-import javax.swing.event.CaretListener;
-import javax.swing.event.CaretEvent;
+import com.intellij.ui.DocumentAdapter;
+import javax.swing.event.DocumentEvent;
+import java.io.File;
+import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.ui.InsertPathAction;
@@ -17,7 +19,6 @@ import com.intellij.ui.FieldPanel;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import java.awt.Dimension;
-import java.io.File;
 import javax.swing.JComponent;
 
 public class NewSolutionSettings extends JPanel {
@@ -25,6 +26,11 @@ public class NewSolutionSettings extends JPanel {
   private String myProjectPath;
   private JTextField mySolutionName;
   private JTextField mySolutionLocation;
+
+  private boolean mySolutionLocationChangedByUser = false;
+  private boolean mySolutionLocationDocListenerEnabled = true;
+
+  private NewSolutionSettings.SolutionSettingsChangedListener myListener;
 
 
   public NewSolutionSettings() {
@@ -38,15 +44,32 @@ public class NewSolutionSettings extends JPanel {
     this.add(new JLabel("Solution name:"), Util.getGridConstraints(0));
     mySolutionName = new JTextField("NewSolution");
     mySolutionName.setName("Name");
-    mySolutionName.addCaretListener(new CaretListener() {
-      public void caretUpdate(CaretEvent p0) {
-        updateSolutionLocation();
+    mySolutionName.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent p0) {
+        if ((myProjectPath == null || myProjectPath.length() == 0)) {
+          return;
+        }
+        String path = myProjectPath + File.separator + "solutions" + File.separator;
+        final String solutionName = getSolutionName();
+        if (!(Comparing.strEqual(solutionName, getSolutionLocation()))) {
+          path += solutionName;
+        }
+        if (!(mySolutionLocationChangedByUser)) {
+          setSolutionLocation(path);
+        }
       }
     });
     this.add(mySolutionName, Util.getGridConstraints(1));
 
     mySolutionLocation = new JTextField();
     mySolutionLocation.setName("Path");
+    mySolutionLocation.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent p0) {
+        if (mySolutionLocationDocListenerEnabled) {
+          mySolutionLocationChangedByUser = true;
+        }
+      }
+    });
     final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
     InsertPathAction.addTo(mySolutionLocation, descriptor);
     BrowseFilesListener listener = new BrowseFilesListener(mySolutionLocation, "Choose Solution Location Folder", "", descriptor);
@@ -56,49 +79,54 @@ public class NewSolutionSettings extends JPanel {
 
     this.setPreferredSize(new Dimension(400, 100));
 
-    updateSolutionLocation();
-  }
-
-
-
-  protected void updateSolutionLocation() {
-    updateSolutionLocation(false);
-  }
-
-  protected void updateSolutionLocation(boolean force) {
-    if (myProjectPath == null) {
-      return;
-    }
-    String prefix = myProjectPath + File.separator + "solutions" + File.separator;
-    if (isEmpty_mn6him_a0a0a2a9(mySolutionName.getText()) || isEmpty_mn6him_a0a0a2a9_0(mySolutionLocation.getText()) || mySolutionLocation.getText().startsWith(prefix) || force) {
-      mySolutionLocation.setText(prefix + mySolutionName.getText());
+    if (myProjectPath != null) {
+      setSolutionLocation(myProjectPath + File.separator + "solutions" + File.separator + getSolutionName());
     }
   }
-
-
 
   public String getSolutionName() {
-    return mySolutionName.getText();
+    return mySolutionName.getText().trim();
   }
 
   public void setSolutionName(String solutionName) {
     mySolutionName.setText(solutionName);
-    updateSolutionLocation();
+    fireChaged();
   }
 
   public String getSolutionLocation() {
-    return mySolutionLocation.getText();
+    return mySolutionLocation.getText().trim();
   }
 
   public void setSolutionLocation(String solutionLocation) {
+    mySolutionLocationDocListenerEnabled = false;
     mySolutionLocation.setText(solutionLocation);
-    updateSolutionLocation();
+    mySolutionLocationDocListenerEnabled = true;
+    fireChaged();
   }
 
   public void setProjectPath(String projectPath) {
+    String oldProjectPath = myProjectPath;
     myProjectPath = projectPath;
-    updateSolutionLocation(true);
+    if ((oldProjectPath != null && oldProjectPath.length() > 0) && mySolutionLocation.getText().contains(oldProjectPath)) {
+      setSolutionLocation(mySolutionLocation.getText().replace(oldProjectPath, myProjectPath));
+    } else {
+      setSolutionLocation(myProjectPath + File.separator + "solutions" + File.separator + getSolutionLocation());
+    }
+    fireChaged();
   }
+
+
+
+  public void setListener(NewSolutionSettings.SolutionSettingsChangedListener listener) {
+    myListener = listener;
+  }
+
+  private void fireChaged() {
+    if (myListener != null) {
+      myListener.changed();
+    }
+  }
+
 
 
 
@@ -106,11 +134,9 @@ public class NewSolutionSettings extends JPanel {
     return mySolutionName;
   }
 
-  public static boolean isEmpty_mn6him_a0a0a2a9(String str) {
-    return str == null || str.length() == 0;
-  }
 
-  public static boolean isEmpty_mn6him_a0a0a2a9_0(String str) {
-    return str == null || str.length() == 0;
+
+  public static interface SolutionSettingsChangedListener {
+    public void changed();
   }
 }

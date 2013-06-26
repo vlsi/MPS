@@ -2961,6 +2961,9 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1144186756096" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="(" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215087929380" resolveInfo="LeftParen" />
+          <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="5039685968151801703" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="leftParen" />
+          </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1144186756097" nodeInfo="ng">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1070534934091" />
@@ -2968,6 +2971,9 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1144186756098" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value=")" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215088010675" resolveInfo="RightParen" />
+          <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="5039685968153762616" nodeInfo="ng">
+            <property name="name" nameId="tpck.1169194664001" value="rightParen" />
+          </node>
         </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1237471292326" nodeInfo="nn" />
       </node>
@@ -11908,6 +11914,9 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1197028139380" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="." />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215096040201" resolveInfo="Dot" />
+        <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="5039685968158195608" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="dot" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1197028151463" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="3" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="847t9awcfvfxhry03edx6ua70jar3tu">
+<dependencies version="2" modelHash="-6skig64erfo1r3l2w0wq3d80p7i6qie">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <common hash="-4mikhp8uywqkn0io1j9xhlkolpu594t" />
   <source id="847291649004062081" name="CategoryKind" hash="cgb9974q3ewdus0tei6woye2yec6gtu">
@@ -13,7 +13,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SearchResult.java" />
   </source>
-  <source id="847291649004065516" name="SearchResults" hash="eqcxq3kc0lz3g9ygfuh7z6yg4nw0lay">
+  <source id="847291649004065516" name="SearchResults" hash="-aa5h8qzge0nzmbsy7qrytx2btdmve0b">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SearchResults.java" />
   </source>

@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Comparator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTreeBuilder;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -24,7 +24,7 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.common.LayoutUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.StandaloneMPSProject;
 
 public class LanguagesStep extends AbstractStep {

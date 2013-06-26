@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class replace_node_macro extends AbstractCellMenuComponent {
   public replace_node_macro() {
@@ -43,7 +45,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode macro = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
       SNodeOperations.replaceWithAnother(node, macro);
-      editorContext.selectAndSetCaret(macro, 1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, macro, SelectionManager.FIRST_CELL, 1);
       editorContext.openInspector();
     }
 

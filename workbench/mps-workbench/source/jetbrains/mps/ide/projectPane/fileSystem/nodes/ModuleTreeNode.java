@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
+import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.workbench.action.ActionUtils;
 
-public class ModuleTreeNode extends AbstractFileTreeNode {
+public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTreeNode {
   private final AbstractModule myModule;
 
   public ModuleTreeNode(Project project, AbstractModule m) {
@@ -45,12 +43,13 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
     }
   }
 
+  @Override
   public SModule getModule() {
     return myModule;
   }
 
   @Override
-  public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ModuleActions_ActionGroup.ID);
+  public String getModuleText() {
+    return getText();
   }
 }

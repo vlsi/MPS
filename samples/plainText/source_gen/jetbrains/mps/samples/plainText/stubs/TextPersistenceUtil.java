@@ -4,7 +4,7 @@ package jetbrains.mps.samples.plainText.stubs;
 
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.SModelFqName;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.smodel.SModelId;
 
 public class TextPersistenceUtil {
@@ -12,6 +12,8 @@ public class TextPersistenceUtil {
   }
 
   public static SModelReference refByModule(SModuleReference module) {
-    return new jetbrains.mps.smodel.SModelReference(new SModelFqName("text", "text"), SModelId.foreign(module.getModuleId().toString() + ":text"));
+    SModuleId moduleId = module.getModuleId();
+    SModelId modelId = SModelId.foreign(moduleId.toString() + ":text");
+    return new jetbrains.mps.smodel.SModelReference(module, modelId, "text@text");
   }
 }
