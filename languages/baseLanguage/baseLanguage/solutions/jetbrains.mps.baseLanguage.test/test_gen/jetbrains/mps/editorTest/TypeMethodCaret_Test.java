@@ -27,8 +27,9 @@ public class TypeMethodCaret_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("9032151315009630216", "");
+      final Editor editor = TestBody.this.initEditor("9032151315009630216", "3378334413599967885");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "publicstaticvoidmain(");
     }
   }
 }

@@ -4147,25 +4147,26 @@
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9032151315009630188">
     <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="18" startPosition="55" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="30" startPosition="80" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3378334413600016525" fileName="TypeMethodCaret_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeMethodCaret_Test#()V" />
     <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypeMethodCaret#()V" />
-    <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="14" startPosition="33" endLine="14" endPosition="33" />
     <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
     <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="18" startPosition="55" endLine="20" endPosition="96" />
     <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="29" startPosition="51" endLine="31" endPosition="93">
+    <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="78">
       <varInfo nodeId="9032151315009630188" varName="editor" />
       <varInfo nodeId="9032151315009630188" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
-    <unitInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="23" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.TypeMethodCaret_Test$TestBody" />
-    <unitInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TypeMethodCaret_Test" />
+    <scopeInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.TypeMethodCaret_Test$TestBody" />
+    <unitInfo nodeId="9032151315009630188" fileName="TypeMethodCaret_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TypeMethodCaret_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/9046977500687661863">
     <nodeInfo nodeId="9046977500687661863" fileName="MoveMethodToAnonymousClass_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
