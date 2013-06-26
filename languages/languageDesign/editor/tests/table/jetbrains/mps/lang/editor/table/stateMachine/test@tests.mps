@@ -1456,19 +1456,20 @@
         </node>
       </node>
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="7668835185988064542" nodeInfo="ng">
-        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064544" nodeInfo="ng" />
+        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064544" nodeInfo="ng">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7028565456872858699" nodeInfo="ng">
+            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="empty_state" />
+          </node>
+        </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="7668835185988064546" nodeInfo="ng">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="7668835185988064524" resolveInfo="e_1" />
         </node>
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064547" nodeInfo="ng">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064526" resolveInfo="s_0" />
-        </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7668835185988064548" nodeInfo="ng">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_jj4qz_a0a0" />
         </node>
       </node>
     </node>
