@@ -113,20 +113,11 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-models">
       <fileset dir="${mps_home}/plugins/console/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-console/lib/console.jar">
+    <jar destfile="${build.layout}/mps-console/lib/mps-console.jar">
       <fileset dir="${build.tmp}/java/out/consoleTool" />
       <zipfileset file="${mps_home}/plugins/console/jetbrains.mps.console.msd" prefix="modules/jetbrains.mps.console" />
       <zipfileset dir="${mps_home}/plugins/console" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.console" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-console-models" prefix="modules/jetbrains.mps.console/models" />
-    </jar>
-    <mkdir dir="${build.layout}/mps-console/tool" />
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-models1">
-      <fileset dir="${mps_home}/plugins/console/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-console/tool/jetbrains.mps.console.jar">
-      <zipfileset file="${mps_home}/plugins/console/jetbrains.mps.console.msd" prefix="modules/jetbrains.mps.console" />
-      <zipfileset dir="${mps_home}/plugins/console" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.console" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-console-models1" prefix="modules/jetbrains.mps.console/models" />
     </jar>
     <mkdir dir="${build.layout}/mps-console/lang" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.console.base.jar" />
