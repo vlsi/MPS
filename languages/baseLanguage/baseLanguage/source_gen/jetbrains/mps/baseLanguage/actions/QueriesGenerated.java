@@ -47,8 +47,8 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
@@ -1983,6 +1983,16 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "isSynchronized", "" + (SPropertyOperations.getBoolean(current, "synchronized")));
             SPropertyOperations.set(result, "isFinal", "" + (SPropertyOperations.getBoolean(current, "final")));
             return SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+          }
+
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(createdNode), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "leftParen", -1);
+            } else if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(createdNode), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "leftParen", -1);
+            }
+            return null;
           }
 
           public String getDescriptionText(String pattern) {
