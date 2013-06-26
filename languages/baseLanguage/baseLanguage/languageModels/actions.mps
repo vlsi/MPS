@@ -17672,8 +17672,8 @@
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="2859854489144513028" nodeInfo="nn">
                           <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="2859854489144513029" nodeInfo="nn" />
-                          <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="6887089401956800786" nodeInfo="ng">
-                            <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="tpen.3378334413600749299" resolveInfo="rightParen" />
+                          <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="6887089401959924178" nodeInfo="ng">
+                            <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="tpen.3378334413600749297" resolveInfo="leftParen" />
                           </node>
                           <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2859854489144513031" nodeInfo="nn">
                             <property name="value" nameId="tpee.1068580320021" value="-1" />

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -174,8 +176,22 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
         }
 
         newNode[0] = doSubstitute(context, pattern);
+        // similar to: IntellijentInputUtil.applyRigthTransform() logic
         if (context != null && newNode[0] != null) {
-          context.selectWRTFocusPolicy(newNode[0], true);
+          jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
+          if (editorComponent != null)
+          {
+            editorComponent.flushEvents();
+            EditorCell cell = editorComponent.findNodeCell(newNode[0]);
+            if (cell != null) {
+              EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
+              if (errorCell != null) {
+                editorComponent.changeSelectionWRTFocusPolicy(((jetbrains.mps.nodeEditor.cells.EditorCell) errorCell));
+              } else {
+                editorComponent.changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
+              }
+            }
+          }
         }
       }
     };
