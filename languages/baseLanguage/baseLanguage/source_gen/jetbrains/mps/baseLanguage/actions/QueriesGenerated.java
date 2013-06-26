@@ -1990,7 +1990,7 @@ public class QueriesGenerated {
             if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(createdNode), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "leftParen", -1);
             } else if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(createdNode), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "leftParen", -1);
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "rightParen", -1);
             }
             return null;
           }

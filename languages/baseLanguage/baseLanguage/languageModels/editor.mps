@@ -1527,7 +1527,7 @@
           <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
         </node>
         <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="3378334413600749299" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="leftParen" />
+          <property name="name" nameId="tpck.1169194664001" value="rightParen" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4139785272311776392" nodeInfo="nn">

@@ -303,7 +303,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_j4vm40_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("leftParen_1");
+    editorCell.setCellId("rightParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);

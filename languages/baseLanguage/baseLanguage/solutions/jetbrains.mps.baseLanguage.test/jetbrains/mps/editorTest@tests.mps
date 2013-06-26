@@ -12358,6 +12358,11 @@
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7888701088961278874" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="aaa" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6887089401956647471" nodeInfo="igu">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6887089401956647473" nodeInfo="in" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6887089401956647474" nodeInfo="nn" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6887089401956647475" nodeInfo="sn" />
+      </node>
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="7888701088961278879" nodeInfo="ngu">
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7888701088961812045" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
@@ -12678,7 +12683,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.UnaryMinus" typeId="tpee.8064396509828172209" id="6887089401953615381" nodeInfo="nn">
             <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6887089401953614962" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6887089401953614958" resolveInfo="a" />
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6887089401953616869" nodeInfo="ng">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6887089401956372640" nodeInfo="ng">
                 <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
                 <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                 <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -12701,11 +12706,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6887089401953614969" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6887089401953614970" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6887089401953614967" resolveInfo="a" />
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6887089401953614971" nodeInfo="ng">
-              <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6887089401956373544" nodeInfo="ng">
+              <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
               <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
               <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
             </node>
           </node>
