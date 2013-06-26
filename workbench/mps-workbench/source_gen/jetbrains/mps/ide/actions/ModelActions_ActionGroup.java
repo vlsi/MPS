@@ -19,6 +19,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_modelUsages = ID + "modelUsages";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_mpsvcs = ID + "mpsvcs";
+  public static final String LABEL_ID_idealocalhistory = ID + "idealocalhistory";
   public static final String LABEL_ID_ideavcs = ID + "ideavcs";
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_favorites = ID + "favorites";
@@ -84,6 +85,12 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RevertMemoryChanges_Action");
       {
         LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_mpsvcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ModelActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_idealocalhistory);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         ModelActions_ActionGroup.this.addAction(action);
