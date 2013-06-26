@@ -28,6 +28,10 @@ import javax.swing.JComponent;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @deprecated Migrate all usages to {@link jetbrains.mps.ide.tools.BaseTabbedProjectTool}
+ */
+@Deprecated
 public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
   private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();
   private boolean myContentRemovedListenerAdded = false;

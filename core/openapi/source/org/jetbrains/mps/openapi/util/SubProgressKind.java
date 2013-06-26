@@ -16,11 +16,28 @@
 package org.jetbrains.mps.openapi.util;
 
 /**
+ * Defines several types of propagation of textual information (task and step names) from sub-tasks into the outer monitor
+ *
  * Evgeny Gryaznov, 10/3/11
  */
 public enum SubProgressKind {
+  /**
+   * Task name gets appended to the outer task name in the progress dialog header using the '::' separator
+   * Steps are normally displayed in the progress dialog
+   */
   DEFAULT,
+  /**
+   * Replaces the outer task's task name with its own in the progress dialog header
+   * Steps are normally displayed in the progress dialog
+   */
   REPLACING,
+  /**
+   * Task name is displayed as a step in the progress dialog
+   * Steps are never displayed
+   */
   AS_COMMENT,
+  /**
+   * Neither task names nor steps are propagated
+   */
   IGNORED
 }

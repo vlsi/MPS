@@ -52,7 +52,9 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.util.Computable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -420,7 +422,13 @@ public abstract class UsagesView implements IExternalizeable {
             if (mySearchQuery.getScope() == null) return;
             final IHolder holder = mySearchQuery.getObjectHolder();
             if (!(holder instanceof VoidHolder)) {
-              if (holder.getObject() == null) return; //object was deleted
+              Object o = ModelAccess.instance().runReadAction(new Computable<Object>() {
+                @Override
+                public Object compute() {
+                  return holder.getObject();
+                }
+              });
+              if (o == null) return; //object was deleted
             }
 
             AnActionEvent event =
@@ -430,10 +438,20 @@ public abstract class UsagesView implements IExternalizeable {
                   @Override
                   public <T> T getData(@NotNull DataKey<T> key) {
                     if (key == MPSCommonDataKeys.CONTEXT_MODEL) {
-                      return (T) ((SNode) holder.getObject()).getModel();
+                      return (T) ((SNode) ModelAccess.instance().runReadAction(new Computable<Object>() {
+                        @Override
+                        public Object compute() {
+                          return holder.getObject();
+                        }
+                      })).getModel();
                     }
                     if (key == MPSCommonDataKeys.NODE) {
-                      return (T) holder.getObject();
+                      return (T) ModelAccess.instance().runReadAction(new Computable<Object>() {
+                        @Override
+                        public Object compute() {
+                          return holder.getObject();
+                        }
+                      });
                     }
                     return super.getData(key);
                   }
@@ -451,9 +469,15 @@ public abstract class UsagesView implements IExternalizeable {
           public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;
             if (mySearchQuery.getScope() == null) return;
-            IHolder holder = mySearchQuery.getObjectHolder();
+            final IHolder holder = mySearchQuery.getObjectHolder();
             if (!(holder instanceof VoidHolder)) {
-              if (holder.getObject() == null) return; //object was deleted
+              Object o = ModelAccess.instance().runReadAction(new Computable<Object>() {
+                @Override
+                public Object compute() {
+                  return holder.getObject();
+                }
+              });
+              if (o == null) return; //object was deleted
             }
             ProgressManager.getInstance().run(new Modal(myProject, getSearchProgressTitle(), true) {
               @Override

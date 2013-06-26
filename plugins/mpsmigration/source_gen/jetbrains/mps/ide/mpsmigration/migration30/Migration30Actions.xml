@@ -35,7 +35,7 @@
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_RemoveDirectCallProperty_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_RemoveDirectCallProperty_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" class="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action" class="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action"></action>
-    <group id="jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup" text="Migrations 3.0 (auto)" popup="true">
+    <group id="jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup" text="Migrations 3.0" popup="true">
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixJDKTools_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixMPSClasspath_Action" />
