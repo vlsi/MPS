@@ -28,13 +28,13 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings</implementation-class>
+      <implementation-class>jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings</implementation-class>
     </component>
   </application-components>
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.modelchecker.actions.ModelCheckerTool</implementation-class>
+      <implementation-class>jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool</implementation-class>
     </component>
 
   </project-components>
@@ -43,7 +43,7 @@
     <mps.LanguageLibrary dir="/solution" />
 
     <checkinHandlerFactory
-            implementation="jetbrains.mps.ide.modelchecker.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
+            implementation="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
     <mps.ModelValidator implementation="jetbrains.mps.ide.modelchecker.ModelValidatorAdapter"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

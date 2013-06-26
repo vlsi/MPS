@@ -11,7 +11,7 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.ide.modelchecker.actions.ModelCheckerExecutor;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.mpsmigration" uuid="0c495a8c-90c6-4330-9351-2acbf72e5bb8" pluginKind="PLUGIN_OTHER" compileInMPS="false">
+<solution name="jetbrains.mps.ide.mpsmigration" uuid="0c495a8c-90c6-4330-9351-2acbf72e5bb8" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mpsmigration/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
@@ -21,10 +21,12 @@
     <dependency reexport="false">fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)</dependency>
     <dependency reexport="false">f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)</dependency>
     <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.execution.configurations.deprecated)</dependency>
+    <dependency reexport="false">bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">e6951e3b-21e0-4d3c-9262-faf9500b3389(jetbrains.mps.ide.java.migration)</dependency>
     <dependency reexport="false">f33a6c9c-f660-4bdb-aecd-2d144c61f7d2(jetbrains.mps.ide.java.platform)</dependency>
     <dependency reexport="false">190bd57b-8f4d-4411-955f-e9cc0378366a(jetbrains.mps.ide.modelchecker)</dependency>
+    <dependency reexport="false">a381759b-acec-4e2e-8745-7bf905520fca(jetbrains.mps.ide.modelchecker.platform)</dependency>
     <dependency reexport="false">8d29d73f-ed99-4652-ae0a-083cdfe53c34(jetbrains.mps.ide.platform)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</dependency>

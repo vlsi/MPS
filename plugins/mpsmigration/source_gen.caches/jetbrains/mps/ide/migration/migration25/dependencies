@@ -154,8 +154,8 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MethodCallChecker" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerExecutor" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
@@ -181,7 +181,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerExecutor" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -304,9 +304,9 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.IModelCheckerFix" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -327,7 +327,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
+    <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.migration25.Migration25Actions" file="Migration25Actions.xml" />
   <dependency className="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action" file="MigrationScript_APIMigrationStandalone_Action.java">

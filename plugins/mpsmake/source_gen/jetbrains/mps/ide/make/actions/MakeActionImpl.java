@@ -40,7 +40,7 @@ public class MakeActionImpl {
     MakeSession session = new MakeSession(context, null, cleanMake) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
-        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, MakeActionImpl.this.context, ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes)), null)) {
+        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, MakeActionImpl.this.context, ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes)))) {
           // ok to go 
           scriptRunnable.run();
         } else {
