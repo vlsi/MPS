@@ -568,7 +568,11 @@ public class ClassifierResolveUtils {
 
       if (SPropertyOperations.getBoolean(imp, "onDemand")) {
         String className = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
-        SNode containingClas = resolveFqName(className, moduleScope.getModels(), null);
+        Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
+        SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
+          Sequence.fromIterable(classes).first() :
+          null
+        );
         if ((containingClas == null)) {
           continue;
         }
@@ -585,7 +589,12 @@ public class ClassifierResolveUtils {
         final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value");
         String className = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
 
-        SNode containingClas = resolveFqName(className, moduleScope.getModels(), null);
+        Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
+
+        SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
+          Sequence.fromIterable(classes).first() :
+          null
+        );
         if ((containingClas == null)) {
           continue;
         }
