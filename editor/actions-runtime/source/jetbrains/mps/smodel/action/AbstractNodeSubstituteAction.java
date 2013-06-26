@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.openapi.editor.EditorComponent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -31,7 +30,6 @@ import javax.swing.Icon;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
-
   private SNode mySourceNode;
   private Object myParameterObject;
   private SNode myOutputConcept;    // todo: this class is still too abstract to have 'output concept'
@@ -179,8 +177,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
         // similar to: IntellijentInputUtil.applyRigthTransform() logic
         if (context != null && newNode[0] != null) {
           jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
-          if (editorComponent != null)
-          {
+          if (editorComponent != null) {
             editorComponent.flushEvents();
             EditorCell cell = editorComponent.findNodeCell(newNode[0]);
             if (cell != null) {
