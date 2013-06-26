@@ -44,9 +44,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.StaticReference;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -425,8 +425,10 @@ public class MultipleFilesParser {
     progress.start("Code transforms", Sequence.fromIterable(nodes).count() + 1);
     final TypeChecker typeChecker = TypeChecker.getInstance();
 
+    // all this can be replaced by one map old -> new 
     final List<SNode> toReplaceWithArrayLength = ListSequence.fromList(new ArrayList<SNode>());
     final Map<SNode, SNode> enumConstRefs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    final Map<SNode, SNode> staticMethodQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
     myModelAccess.runReadAction(new Runnable() {
       public void run() {
@@ -502,6 +504,35 @@ public class MultipleFilesParser {
 
             MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"), x);
           }
+
+          for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{}))) {
+            SReference ref = SNodeOperations.getReference(localCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method"));
+            if (!(ref instanceof StaticReference)) {
+              continue;
+            }
+            SNode target = ref.getTargetNode();
+            if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
+              continue;
+            }
+
+            // now check whether it's in another class 
+            SNode thisClass = SNodeOperations.getAncestor(localCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+            SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+            // it should be ok to use ==, I think 
+            if (thisClass == thatClass) {
+              // same class, such local method call is ok in baseLanguage 
+              continue;
+            }
+
+            // different class, let's make this call non-local, but qualified 
+            SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+            SLinkOperations.setTarget(smc, "classConcept", thatClass, false);
+            SLinkOperations.setTarget(smc, "baseMethodDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+            for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true))) {
+              ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
+            }
+            MapSequence.fromMap(staticMethodQualifiers).put(localCall, smc);
+          }
         }
 
       }
@@ -513,6 +544,9 @@ public class MultipleFilesParser {
           SNodeOperations.replaceWithNewChild(fieldRefOp, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
         }
         for (IMapping<SNode, SNode> pair : MapSequence.fromMap(enumConstRefs)) {
+          SNodeOperations.replaceWithAnother(pair.key(), pair.value());
+        }
+        for (IMapping<SNode, SNode> pair : MapSequence.fromMap(staticMethodQualifiers)) {
           SNodeOperations.replaceWithAnother(pair.key(), pair.value());
         }
       }
