@@ -18,22 +18,26 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.util.ui.TextTransferrable;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -41,6 +45,7 @@ import javax.swing.JTree;
 import javax.swing.tree.TreePath;
 import java.awt.Point;
 import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.dnd.DropTargetDragEvent;
 import java.awt.dnd.DropTargetDropEvent;
@@ -69,7 +74,13 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
   @Override
   public void dragOver(DropTargetDragEvent dtde) {
-    dtde.acceptDrag(dtde.getDropAction());
+    MPSTreeNode target = getTargetTreeNode(dtde);
+    List<Pair<SNodeReference, String>> sourceNodes = getSourceNodes(dtde);
+
+    if (isDropTargetAcceptable(target, sourceNodes))
+      dtde.acceptDrag(dtde.getDropAction());
+    else
+      dtde.rejectDrag();
   }
 
   @Override
@@ -84,40 +95,19 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
   @Override
   public void drop(final DropTargetDropEvent dtde) {
-    Point point = dtde.getLocation();
-    final TreePath treePath = myTree.getPathForLocation(point.x, point.y);
-    if (treePath == null) {
+    final MPSTreeNode target = getTargetTreeNode(dtde);
+    final List<Pair<SNodeReference, String>> sourceNodes = getSourceNodes(dtde);
+
+    if (!isDropTargetAcceptable(target, sourceNodes)) {
       dtde.rejectDrop();
       return;
-    }
-
-    Object target = treePath.getLastPathComponent();
-    if (!(target instanceof MPSTreeNode)) {
-      dtde.rejectDrop();
-      return;
-    }
-
-    Object source = null;
-    try {
-      source = dtde.getTransferable().getTransferData(myDataFlavor);
-      if (!(source instanceof List) || ((List) source).isEmpty()) {
-        dtde.rejectDrop();
-        return;
-      }
-    } catch (UnsupportedFlavorException e) {
-      LOG.error(null, e);
-      dtde.rejectDrop();
-    } catch (IOException e) {
-      LOG.error(null, e);
-      dtde.rejectDrop();
     }
 
     dtde.acceptDrop(dtde.getDropAction());
 
-    final List<Pair<SNodeReference, String>> sourceNodes = (List<Pair<SNodeReference, String>>) source;
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     JFrame frame = WindowManager.getInstance().getFrame(project);
-    final String targetPackage = (getTargetVirtualPackage(treePath) == null) ? "" : getTargetVirtualPackage(treePath);
+    final String targetPackage = (getTargetVirtualPackage(target) == null) ? "" : getTargetVirtualPackage(target);
     String text = getConfirmLabel(sourceNodes.size(), targetPackage);
     int result = JOptionPane.showConfirmDialog(frame, text, "Move Nodes", JOptionPane.YES_NO_OPTION);
     if (result != JOptionPane.YES_OPTION) return;
@@ -125,7 +115,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       @Override
       public void run() {
-        SModel targetModel = getTargetModel(treePath);
+        SModel targetModel = getTargetModel(target);
         if (targetModel == null) return;
 
         for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
@@ -140,6 +130,56 @@ public class ProjectPaneDnDListener implements DropTargetListener {
         }
       }
     });
+  }
+
+  private List<Pair<SNodeReference, String>> getSourceNodes(DropTargetEvent dtde) {
+    try {
+      Object source = null;
+      if (dtde instanceof DropTargetDropEvent)
+        source = ((DropTargetDropEvent)dtde).getTransferable().getTransferData(myDataFlavor);
+      else if (dtde instanceof DropTargetDragEvent)
+        source = ((DropTargetDragEvent)dtde).getTransferable().getTransferData(myDataFlavor);
+      if (source instanceof List)  return (List<Pair<SNodeReference, String>>)source;
+    } catch (UnsupportedFlavorException e) {
+      LOG.error(null, e);
+    } catch (IOException e) {
+      LOG.error(null, e);
+    }
+    return null;
+  }
+
+  private MPSTreeNode getTargetTreeNode(DropTargetEvent dtde) {
+    Point point;
+    if (dtde instanceof DropTargetDropEvent)
+      point = ((DropTargetDropEvent)dtde).getLocation();
+    else if (dtde instanceof DropTargetDragEvent)
+      point = ((DropTargetDragEvent)dtde).getLocation();
+    else
+      return null;
+    final TreePath treePath = myTree.getPathForLocation(point.x, point.y);
+    if (treePath == null)  return null;
+    Object target = treePath.getLastPathComponent();
+    if (!(target instanceof MPSTreeNode))  return null;
+    return (MPSTreeNode)target;
+  }
+
+  private boolean isDropTargetAcceptable(MPSTreeNode treeNode, List<Pair<SNodeReference, String>> srcNodes) {
+    // check all nodes from the same model and drop target is folder in that model or model itself
+    SModelReference srcModelRef = null;
+    for (Pair<SNodeReference, String> srcNode : srcNodes) {
+      if (srcModelRef == null) {
+        srcModelRef = srcNode.o1.getModelReference();
+      } else if (!srcModelRef.equals(srcNode.o1.getModelReference())) {
+        return false;
+      }
+    }
+    if (srcModelRef == null) return false;  // empty list is not acceptable
+    if (treeNode instanceof SModelTreeNode) {
+      return srcModelRef.equals(((SModelTreeNode)treeNode).getModel().getReference());
+    } else if (treeNode instanceof SNodeGroupTreeNode) {
+      return srcModelRef.equals(((SNodeGroupTreeNode)treeNode).getModelReference());
+    }
+    return false;
   }
 
   private List<Pair<SNode, String>> getNodesToMove(@NotNull SModel targetModel, String virtualPackage, List<Pair<SNodeReference, String>> sourceNodes) {
@@ -163,8 +203,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     return (result == null) ? "" : result;
   }
 
-  private String getTargetVirtualPackage(TreePath target) {
-    MPSTreeNode node = (MPSTreeNode) target.getLastPathComponent();
+  private String getTargetVirtualPackage(MPSTreeNode node) {
     while (node != null && !(node instanceof PackageNode)) {
       node = (MPSTreeNode) node.getParent();
     }
@@ -175,19 +214,18 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     return null;
   }
 
-  private SModel getTargetModel(TreePath target) {
-    MPSTreeNode node = (MPSTreeNode) target.getLastPathComponent();
+  private SModel getTargetModel(MPSTreeNode node) {
     while (node != null && !(node instanceof SModelTreeNode)) {
       node = (MPSTreeNode) node.getParent();
     }
     if (node != null) {
-      return ((SModelTreeNode) node).getSModelDescriptor();
+      return ((SModelTreeNode) node).getModel();
     }
     return null;
   }
 
   private String getPackagePresentation(String name) {
-    return (name == null || name.isEmpty()) ? "<i>&lt;untitled&gt;</i>" : "'<b>" + name + "</b>'";
+    return (name == null || name.isEmpty()) ? "<i>&lt;root&gt;</i>" : "'<b>" + name + "</b>'";
   }
 
   private String getFullTargetPack(String targetPackage, String basePack) {

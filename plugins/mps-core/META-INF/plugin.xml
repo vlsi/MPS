@@ -25,6 +25,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages"/>
+    <!--since we are having core.properties here already-->
+    <mps.VisibleModuleMask mask="jetbrains\.mps\.core\.xml.*"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>
