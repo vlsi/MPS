@@ -21,20 +21,22 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
@@ -53,8 +55,8 @@ public class FinderNode extends BaseLeaf {
   }
 
   public String getTaskName() {
-    if (myFinder instanceof ReloadableFinder) {
-      return ((ReloadableFinder) myFinder).getFinder().getDescription();
+    if (myFinder instanceof IInterfacedFinder) {
+      return ((IInterfacedFinder) myFinder).getDescription();
     } else {
       return myFinder.getClass().getName();
     }
@@ -72,7 +74,7 @@ public class FinderNode extends BaseLeaf {
         @Override
         public SearchResults compute() {
           try {
-            SearchResults results = myFinder.find(query, monitor.subTask(1));
+            SearchResults results = myFinder.find(query, monitor.subTask(1, SubProgressKind.REPLACING));
             if (myFinder instanceof GeneratedFinder) {
               FinderUtils.sortNodeResultsByEditorPosition(results);
               monitor.advance(1);

@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class ModelCheckerIssueFinder implements IFinder {
   public ModelCheckerIssueFinder() {
@@ -53,7 +54,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       if (modules != null) {
         moduleChecker = new ModuleChecker();
         for (SModule module : ListSequence.fromList(modules)) {
-          moduleChecker.checkModule(module, monitor.subTask(1));
+          moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
           if (monitor.isCanceled()) {
             break;
           }
@@ -70,7 +71,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       monitor.advance(1);
 
       for (SModel modelDescriptor : ListSequence.fromList(modelDescriptors)) {
-        modelChecker.checkModel(modelDescriptor, monitor.subTask(1));
+        modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }

@@ -8,7 +8,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -37,33 +36,32 @@ public class ModelChecker {
     myOperationContext = operationContext;
   }
 
-  public void checkModel(final SModel modelDescriptor, final ProgressMonitor monitor) {
+  public void checkModel(final SModel model, final ProgressMonitor monitor) {
     final Wrappers._T<List<SpecificChecker>> specificCheckers = new Wrappers._T<List<SpecificChecker>>(mySpecificCheckers);
     if (specificCheckers.value == null) {
       specificCheckers.value = ModelCheckerSettings.getInstance().getSpecificCheckers();
     }
 
-    monitor.start("Checking " + SNodeOperations.getModelLongName(modelDescriptor), ListSequence.fromList(specificCheckers.value).count());
+    monitor.start("Checking " + model.getModelName(), ListSequence.fromList(specificCheckers.value).count());
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModule module = modelDescriptor.getModule();
+          SModule module = model.getModule();
           Project project = myOperationContext.getProject();
 
           if (module == null) {
             if (LOG.isEnabledFor(Priority.WARN)) {
-              LOG.warn("Module is null for " + SNodeOperations.getModelLongName(modelDescriptor) + " model");
+              LOG.warn("Module is null for " + model.getModelName() + " model");
             }
           }
           if (project == null) {
             if (LOG.isEnabledFor(Priority.WARN)) {
-              LOG.warn("Project is null for IOperationContext in " + SNodeOperations.getModelLongName(modelDescriptor) + " model");
+              LOG.warn("Project is null for IOperationContext in " + model.getModelName() + " model");
             }
           }
 
           if (module != null && project != null) {
             IOperationContext operationContext = new ModelChecker.ModelCheckerOperationContext(project, module);
-            SModel model = modelDescriptor;
 
             for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
               try {
@@ -71,7 +69,7 @@ public class ModelChecker {
                 myResults.getSearchResults().addAll(specificCheckerResults);
               } catch (Throwable t) {
                 if (LOG.isEnabledFor(Priority.ERROR)) {
-                  LOG.error("Error while " + SNodeOperations.getModelLongName(model) + " model checking", t);
+                  LOG.error("Error while " + model.getModelName() + " model checking", t);
                 }
               }
               if (monitor.isCanceled()) {
