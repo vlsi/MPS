@@ -3629,6 +3629,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4497978391706421674" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="CaretInStaticMethodCall" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Caret" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4497978391706445231" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="clazz" />
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4497978391706445233" nodeInfo="igu">
@@ -12389,6 +12390,23 @@
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7888701088961812154" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value="method" />
       </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="9032151315009630188" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Caret" />
+    <property name="name" nameId="tpck.1169194664001" value="TypeMethodCaret" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9032151315009630216" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="clazz" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="9032151315009673380" nodeInfo="igu">
+        <property name="name" nameId="tpck.1169194664001" value="main" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9032151315009673383" nodeInfo="sn" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9032151315009673360" nodeInfo="nn" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="9032151315009673374" nodeInfo="in" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9032151315009630217" nodeInfo="nn" />
     </node>
   </root>
 </model>
