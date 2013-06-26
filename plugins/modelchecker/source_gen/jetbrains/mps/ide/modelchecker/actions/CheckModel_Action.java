@@ -18,8 +18,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -109,9 +109,9 @@ public class CheckModel_Action extends BaseAction {
         }
       }
       if (modelsToCheck.size() > 1) {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(modelsToCheck, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModels(modelsToCheck, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(modelsToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModel(modelsToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

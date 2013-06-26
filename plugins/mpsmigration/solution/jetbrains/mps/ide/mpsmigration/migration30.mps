@@ -583,7 +583,7 @@
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8418469470841235721" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Migrations30" />
-    <property name="caption" nameId="tp4k.1204991940915" value="Migrations 3.0 (auto)" />
+    <property name="caption" nameId="tp4k.1204991940915" value="Migrations 3.0" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />

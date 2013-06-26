@@ -29,5 +29,5 @@ public interface ModelValidator {
 
   ExtensionPointName<ModelValidator> EP_NAME = ExtensionPointName.create("com.intellij.mps.ModelValidator");
 
-  boolean check(Project p, IOperationContext operationContext, List<SModel> modelDescriptors, Runnable regenerationRunnable);
+  boolean check(Project p, IOperationContext operationContext, List<SModel> modelDescriptors);
 }

@@ -35,19 +35,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.IFileUtils;
 import java.util.HashSet;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -165,15 +167,15 @@ public class MultipleFilesParser {
 
 
 
-  public void tryResolveRefs(Iterable<SNode> nodes, FeatureKind level, ProgressMonitor resolveProgress) {
-    resolveProgress.start("Resolving...", 10);
+  public void tryResolveRefs(Iterable<SNode> nodes, FeatureKind level, ProgressMonitor progress) {
+    progress.start("Resolving...", 10);
 
     if (FeatureKind.CLASS.equals(level)) {
       nodesResolveUpdatePass("top level refs", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
         public Iterable<SReference> invoke(SNode node) {
           return getTopLevelRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
-      }, resolveProgress.subTask(1));
+      }, progress.subTask(1));
     }
 
     if (FeatureKind.CLASS_CONTENT.equals(level) || FeatureKind.CLASS.equals(level)) {
@@ -181,20 +183,20 @@ public class MultipleFilesParser {
         public Iterable<SReference> invoke(SNode node) {
           return getFieldAndMethodTypeRefs(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
         }
-      }, resolveProgress.subTask(1));
+      }, progress.subTask(1));
     }
 
     nodesResolveUpdatePass("all type refs", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {
         return getVarTypeRefs(node);
       }
-    }, resolveProgress.subTask(2));
+    }, progress.subTask(2));
 
     nodesResolveUpdatePass("all variable refs", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {
         return getVariableRefs(node);
       }
-    }, resolveProgress.subTask(2));
+    }, progress.subTask(2));
 
     nodesResolveUpdatePass("all operands", nodes, new _FunctionTypes._return_P1_E0<ISequence<SReference>, SNode>() {
       public ISequence<SReference> invoke(SNode node) {
@@ -204,7 +206,7 @@ public class MultipleFilesParser {
           }
         });
       }
-    }, resolveProgress.subTask(2));
+    }, progress.subTask(2));
 
     nodesResolveUpdatePass("all operations", nodes, new _FunctionTypes._return_P1_E0<ISequence<SReference>, SNode>() {
       public ISequence<SReference> invoke(SNode node) {
@@ -228,16 +230,55 @@ public class MultipleFilesParser {
           }
         });
       }
-    }, resolveProgress.subTask(2));
+    }, progress.subTask(2));
 
-    // <node> 
+    nodesResolveUpdatePass("classifiers in static", nodes, new _FunctionTypes._return_P1_E0<List<SReference>, SNode>() {
+      public List<SReference> invoke(SNode node) {
+        List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
 
-    // <node> 
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{})).select(new ISelector<SNode, SReference>() {
+          public SReference select(SNode it) {
+            return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept"));
+          }
+        }));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{})).select(new ISelector<SNode, SReference>() {
+          public SReference select(SNode it) {
+            return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier"));
+          }
+        }));
 
+        return result;
+      }
+    }, progress.subTask(2));
 
-    // <node> 
+    nodesResolveUpdatePass("static member references", nodes, new _FunctionTypes._return_P1_E0<List<SReference>, SNode>() {
+      public List<SReference> invoke(SNode node) {
+        List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
 
-    resolveProgress.done();
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{})).select(new ISelector<SNode, SReference>() {
+          public SReference select(SNode it) {
+            return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration"));
+          }
+        }));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{})).select(new ISelector<SNode, SReference>() {
+          public SReference select(SNode it) {
+            return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
+          }
+        }));
+
+        return result;
+      }
+    }, progress.subTask(2));
+
+    nodesResolveUpdatePass("remaining references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
+      public Iterable<SReference> invoke(SNode node) {
+        return deepReferences(node);
+      }
+    }, progress.subTask(2));
+
+    codeTransformPass(nodes, progress.subTask(2));
+
+    progress.done();
   }
 
 
@@ -380,6 +421,109 @@ public class MultipleFilesParser {
 
 
 
+  private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
+    progress.start("Code transforms", Sequence.fromIterable(nodes).count() + 1);
+    final TypeChecker typeChecker = TypeChecker.getInstance();
+
+    final List<SNode> toReplaceWithArrayLength = ListSequence.fromList(new ArrayList<SNode>());
+    final Map<SNode, SNode> enumConstRefs = MapSequence.fromMap(new HashMap<SNode, SNode>());
+
+    myModelAccess.runReadAction(new Runnable() {
+      public void run() {
+        for (SNode node : Sequence.fromIterable(nodes)) {
+
+          for (SNode fieldRefOp : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{}))) {
+
+            SReference fieldRef = SNodeOperations.getReference(fieldRefOp, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
+            if (!(fieldRef instanceof DynamicReference && "length".equals((((DynamicReference) fieldRef).getResolveInfo())))) {
+              continue;
+            }
+
+            SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(fieldRefOp), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+
+            Iterable<SReference> operandRefs = SNodeOperations.getReferences(operand);
+            if (Sequence.fromIterable(operandRefs).any(new IWhereFilter<SReference>() {
+              public boolean accept(SReference it) {
+                return it instanceof DynamicReference;
+              }
+            })) {
+              continue;
+            }
+
+            SNode operandType = typeChecker.getTypeOf(operand);
+            if (SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+              ListSequence.fromList(toReplaceWithArrayLength).addElement(fieldRefOp);
+            }
+          }
+
+          progress.advance(1);
+
+          for (SNode caseExp : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SwitchCase", false, new String[]{})).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (SLinkOperations.getTarget(it, "expression", true) != null);
+            }
+          }).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return SLinkOperations.getTarget(it, "expression", true);
+            }
+          })) {
+            if (!(SNodeOperations.isInstanceOf(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+              continue;
+            }
+            SReference ref = SNodeOperations.getReference(SNodeOperations.cast(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+            if (!(ref instanceof DynamicReference)) {
+              continue;
+            }
+
+            final String enumConstName = ((DynamicReference) ref).getResolveInfo();
+
+            SNode scrutenee = SLinkOperations.getTarget(SNodeOperations.getAncestor(caseExp, "jetbrains.mps.baseLanguage.structure.SwitchStatement", false, false), "expression", true);
+            if ((scrutenee == null)) {
+              continue;
+            }
+
+            SNode scruteneeType = typeChecker.getTypeOf(scrutenee);
+            if (!(SNodeOperations.isInstanceOf(scruteneeType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+              continue;
+            }
+
+            SNode claz = SLinkOperations.getTarget(SNodeOperations.cast(scruteneeType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+            if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+            }
+
+            SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SPropertyOperations.getString(it, "name").equals(enumConstName);
+              }
+            });
+            SNode x = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+            SLinkOperations.setTarget(x, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+            SLinkOperations.setTarget(x, "enumConstantDeclaration", enumConst, false);
+
+            MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"), x);
+          }
+        }
+
+      }
+    });
+
+    runCommand("Code transforms", new Runnable() {
+      public void run() {
+        for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
+          SNodeOperations.replaceWithNewChild(fieldRefOp, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+        }
+        for (IMapping<SNode, SNode> pair : MapSequence.fromMap(enumConstRefs)) {
+          SNodeOperations.replaceWithAnother(pair.key(), pair.value());
+        }
+      }
+    });
+
+    progress.advance(1);
+    progress.done();
+  }
+
+
+
   private Iterable<SReference> getTopLevelRefs(SNode node) {
     final List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
@@ -457,9 +601,9 @@ public class MultipleFilesParser {
 
 
   private Iterable<SReference> getVariableRefs(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).select(new ISelector<SNode, SReference>() {
+    return ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.ParameterReference"}, false, new String[]{})).select(new ISelector<SNode, SReference>() {
       public SReference select(SNode it) {
-        return SNodeOperations.getReference(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+        return SNodeOperations.getReference(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
       }
     });
   }
@@ -626,11 +770,14 @@ public class MultipleFilesParser {
 
 
   private SModel registerModelForPackage(String fqName) {
+
+    // FIXME uses not our myRepository (SRepository doesn't have getModelsByName) 
     SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
     if (modelDescriptor != null) {
       if (!(Sequence.fromIterable(((Iterable<SModel>) myModule.getModels())).contains(modelDescriptor))) {
-        LOG.error("model with fq name " + fqName + " is not owned by module " + myModule.getModuleName());
-        return null;
+        // <node> 
+        // <node> 
+        return createModel(fqName);
       }
       // package is already present... 
       // maybe we shouldn't touch it then, maybe it should be an option 
