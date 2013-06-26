@@ -9,6 +9,9 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,11 +45,26 @@ public class ApiMigrationHelper {
   private IScope scope;
   private Set<SModule> scopeModules = SetSequence.fromSet(new HashSet<SModule>());
 
-  public ApiMigrationHelper(MPSProject p, Project ip, IScope scope) {
-    // todo: I think scope passed here is wrong. Should be ProjectScope from find usages 
+  public ApiMigrationHelper(MPSProject p, Project ip) {
     this.p = p;
     this.ip = ip;
-    this.scope = scope;
+    this.scope = new ProjectScope(p) {
+      @Override
+      protected void addModule(SModule module) {
+        if (module.isPackaged()) {
+          return;
+        }
+        super.addModule(module);
+      }
+
+      @Override
+      protected void addModel(SModel model) {
+        if (!(model instanceof EditableSModel) || ((EditableSModel) model).isReadOnly()) {
+          return;
+        }
+        super.addModel(model);
+      }
+    };
     SetSequence.fromSet(scopeModules).addSequence(ListSequence.fromList(p.getModulesWithGenerators()));
   }
 
