@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class TypeMethodCaret_Test extends BaseTransformationTest4 {
-  public TypeMethodCaret_Test() {
+public class DeletePostfixCaret_Test extends BaseTransformationTest4 {
+  public DeletePostfixCaret_Test() {
   }
 
   @Test
-  public void test_TypeMethodCaret() throws Throwable {
+  public void test_DeletePostfixCaret() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.TypeMethodCaret_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DeletePostfixCaret_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,9 +27,9 @@ public class TypeMethodCaret_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("9032151315009630216", "3378334413599967885");
+      final Editor editor = TestBody.this.initEditor("6887089401948839820", "6887089401948839829");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "publicstaticvoidmain()");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Delete_Action");
     }
   }
 }

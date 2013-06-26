@@ -3287,7 +3287,8 @@ __switch__:
         SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
         SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.LAST_CELL, -1);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -3939,7 +3940,8 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.FIRST_EDITABLE_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -3965,7 +3967,8 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.FIRST_EDITABLE_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
