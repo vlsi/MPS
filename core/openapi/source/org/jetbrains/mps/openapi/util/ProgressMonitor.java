@@ -28,7 +28,7 @@ package org.jetbrains.mps.openapi.util;
  * progress monitor. The subtask() method returns a new ProgressMonitor instance that should be handed over into the sub-task so it could report its progress.
  * Calling any method on the outer monitor, while its sub-task is active, detaches the sub-task monitor, considers the sub-task complete and ignores its further potential progress.
  *
- * <i>Good practise: Calling advance(0) on the outer monitor after the sub-task finishes is a safe way to ensure the sub-task's progress is reported into the progress dialog
+ * <i>Good practice: Calling advance(0) on the outer monitor after the sub-task finishes is a safe way to ensure the sub-task's progress is reported into the progress dialog
  * even when the sub-task's implementation doesn't use the sub-task's ProgressMonitor instance that you passed in.</i>
  *
  * A request to cancel an operation is signaled through the cancel() method. Activities should poll the monitor's isCanceled() method periodically and abort
