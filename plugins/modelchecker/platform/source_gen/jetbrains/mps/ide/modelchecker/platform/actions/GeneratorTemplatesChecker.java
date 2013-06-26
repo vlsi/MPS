@@ -11,9 +11,9 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -33,11 +33,10 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
     }
 
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    String title = "Checking " + SModelOperations.getModelName(model) + " for cross-templates references...";
     if (progressMonitor.isCanceled()) {
       return results;
     }
-    progressMonitor.start(title, 1);
+    progressMonitor.start("cross-templates references", 1);
 
     new TemplateModelScanner(model) {
       @Override

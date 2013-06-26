@@ -11,9 +11,9 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -38,11 +38,10 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       return results;
     }
 
-    String title = "Checking " + SModelOperations.getModelName(model) + " for bad references...";
     if (monitor.isCanceled()) {
       return results;
     }
-    monitor.start(title, 1);
+    monitor.start("illegal references", 1);
 
     if (LanguageAspect.STRUCTURE.is(model)) {
       for (SNode concept : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {

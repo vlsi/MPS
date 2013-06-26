@@ -14,8 +14,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -53,8 +53,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    String title = "Checking " + SModelOperations.getModelName(model) + " for wrong aspect dependencies...";
-    monitor.start(title, 1);
+    monitor.start("wrong aspect dependencies", 1);
 
     int modelKind = getModelKind(model, null);
     if (modelKind == OTHER) {

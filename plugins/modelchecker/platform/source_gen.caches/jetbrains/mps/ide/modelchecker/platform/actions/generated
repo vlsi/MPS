@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4hm3ormiur2ul7u60f95eyob6f3rnuq">
+<dependencies version="2" modelHash="37bs0e8u4ueuh8t9cxhjydqn1x47bhm">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
@@ -154,7 +154,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelCheckerExecutor.java" />
   </source>
-  <source id="3719390199793466458" name="ModelChecker" hash="-9tokarvjnc0ju1mh3xdiakoe0f50846">
+  <source id="3719390199793466458" name="ModelChecker" hash="-7ui7ms6ddatmx7oroni48gae79tbpar">
     <dep root="3719390199793466980" />
     <dep root="3719390199795290578" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -185,7 +185,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelCheckerIssue.java" />
   </source>
-  <source id="3719390199793467248" name="ConstraintsChecker" hash="5z4f6mu3098x725knwwz3dwly4uk7sx">
+  <source id="3719390199793467248" name="ConstraintsChecker" hash="99j630bha1l8ugp4wo8e3tb3dlsc041">
     <dep root="3719390199793466458" />
     <dep root="3719390199793466980" />
     <dep root="3719390199795290578" />
@@ -210,7 +210,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ConstraintsChecker.java" />
   </source>
-  <source id="3719390199793467569" name="ModelPropertiesChecker" hash="canuh58y8x4l7wp03bx166ya0rppb">
+  <source id="3719390199793467569" name="ModelPropertiesChecker" hash="a0fr74z1zk5macysefkluepgwl75mcw">
     <dep root="3719390199793466458" />
     <dep root="3719390199793466980" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -230,7 +230,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelPropertiesChecker.java" />
   </source>
-  <source id="3719390199793467711" name="UnavailableConceptsChecker" hash="-5h817q4h2mn1o7qcs8gk6djgied58uw">
+  <source id="3719390199793467711" name="UnavailableConceptsChecker" hash="afkgvqnqcriwafh8244q8ax7nvx6mla">
     <dep root="3719390199793466458" />
     <dep root="3719390199793466980" />
     <dep root="3719390199795290578" />
@@ -251,7 +251,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnavailableConceptsChecker.java" />
   </source>
-  <source id="3719390199793467799" name="UnresolvedReferencesChecker" hash="7g7f8fyvemub8sehmpr5xh1er8x4h2w">
+  <source id="3719390199793467799" name="UnresolvedReferencesChecker" hash="cz3xevafy5gjwt26fct2ypaw7gv3p9x">
     <dep root="3719390199793466458" />
     <dep root="3719390199793466980" />
     <dep root="3719390199795290578" />
@@ -362,7 +362,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModuleChecker.java" />
   </source>
-  <source id="3719390199795829457" name="SpecificModelChecker" hash="1tdhylvm2jd8h1nps4iplp5ufxgbozj">
+  <source id="3719390199795829457" name="SpecificModelChecker" hash="-czbpn7u7gddv2o3upzl804kaqsp1ix6">
     <dep root="3719390199793466980" />
     <dep root="3719390199795290578" />
     <dep root="3719390199795789011" />
@@ -384,7 +384,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SpecificModelChecker.java" />
   </source>
-  <source id="3719390199795829675" name="GeneratorTemplatesChecker" hash="8mwanzcfsm27y2y688l5urfshptwlkc">
+  <source id="3719390199795829675" name="GeneratorTemplatesChecker" hash="-d7dxwemzldoe8jygkxeysdpoi61d7x3">
     <dep root="3719390199793466458" />
     <dep root="3719390199793466980" />
     <dep root="3719390199795290578" />

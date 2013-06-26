@@ -11,8 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -37,8 +37,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
       return results;
     }
     final IScope scope = ((AbstractModule) model.getModule()).getScope();
-    String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
-    monitor.start(title, 1);
+    monitor.start("unresolved references", 1);
 
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
       if (monitor.isCanceled()) {
@@ -66,11 +65,11 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                SModuleReference moduleReference = check_xiru3y_a0b0a0f0a0f0c0g0b(check_xiru3y_a0a1a0a5a0a5a2a6a1(sm));
+                SModuleReference moduleReference = check_xiru3y_a0b0a0f0a0f0c0f0b(check_xiru3y_a0a1a0a5a0a5a2a5a1(sm));
                 if (moduleReference == null) {
                   return false;
                 }
-                SModule module = check_xiru3y_a0d0a0f0a0f0c0g0b(model);
+                SModule module = check_xiru3y_a0d0a0f0a0f0c0f0b(model);
                 if (module == null) {
                   return false;
                 }
@@ -87,21 +86,21 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return results;
   }
 
-  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(SModule checkedDotOperand) {
+  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0f0b(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a1a0a5a0a5a2a5a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0d0a0f0a0f0c0f0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

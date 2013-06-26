@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Logger;
@@ -65,7 +66,7 @@ public class ModelChecker {
 
             for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
               try {
-                List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1), operationContext);
+                List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT), operationContext);
                 myResults.getSearchResults().addAll(specificCheckerResults);
               } catch (Throwable t) {
                 if (LOG.isEnabledFor(Priority.ERROR)) {

@@ -12,8 +12,8 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,8 +42,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
     public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
       List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-      String title = "Checking " + SModelOperations.getModelName(model) + " for adapter usages...";
-      monitor.start(title, 1);
+      monitor.start("adapter usages", 1);
       for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
         if (monitor.isCanceled()) {
           break;

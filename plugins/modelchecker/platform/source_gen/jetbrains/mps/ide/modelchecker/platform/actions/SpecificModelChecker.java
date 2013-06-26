@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import java.util.Set;
@@ -51,9 +52,10 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    monitor.start("Checking " + SModelOperations.getModelName(model), ListSequence.fromList(myLanguageCheckers).count());
+    monitor.start("typesystem", ListSequence.fromList(myLanguageCheckers).count());
     for (final INodeChecker checker : myLanguageCheckers) {
-      monitor.step(checker.getCategory());
+      monitor.subTask(1, SubProgressKind.REPLACING).start(checker.getCategory(), 1);
+
       if (!(ModelCheckerSettings.getInstance().checkerIsOn(checker.getCategory()))) {
         continue;
       }
@@ -67,7 +69,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
             Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
               final IErrorReporter reporter = errorReporter;
-              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0d0d0f(check_7763bz_a0a1a1a0a0c0a0a3a3a5(errorReporter));
+              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0e0d0f(check_7763bz_a0a1a1a0a0c0a0a4a3a5(errorReporter));
               IModelCheckerFix fix = null;
               if (quickFix != null) {
                 fix = new IModelCheckerFix() {
@@ -89,14 +91,14 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     return results;
   }
 
-  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0d0d0f(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0e0d0f(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
 
-  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a3a3a5(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a4a3a5(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

@@ -42,7 +42,6 @@
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.GeneratorTemplatesChecker" file="GeneratorTemplatesChecker.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
@@ -91,6 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.project.ModuleContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler" file="ModelCheckerCheckinHandler.java">
@@ -455,6 +455,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
     <classNode extendsClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />
     <classNode extendsClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />
   </dependency>
@@ -479,7 +480,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.UnresolvedReferencesChecker" file="UnresolvedReferencesChecker.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />

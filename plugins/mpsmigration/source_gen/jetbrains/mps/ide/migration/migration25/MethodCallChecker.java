@@ -13,8 +13,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,8 +43,7 @@ public class MethodCallChecker extends SpecificChecker {
       return results;
     }
     final IScope scope = ((AbstractModule) model.getModule()).getScope();
-    String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references to method declaration...";
-    monitor.start(title, 1);
+    monitor.start("unresolved references to method declaration", 1);
 
     for (final SNode node : ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
       if (monitor.isCanceled()) {
@@ -85,7 +84,7 @@ public class MethodCallChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                check_lz161n_a1a0a5a0a7a1a6a1(((AbstractModule) check_lz161n_a0a0b0a0f0a0h0b0g0b_0(model)), sm);
+                check_lz161n_a1a0a5a0a7a1a5a1(((AbstractModule) check_lz161n_a0a0b0a0f0a0h0b0f0b_0(model)), sm);
                 return true;
               }
               return false;
@@ -98,28 +97,28 @@ public class MethodCallChecker extends SpecificChecker {
     return results;
   }
 
-  private static void check_lz161n_a1a0a5a0a7a1a6a1(AbstractModule checkedDotOperand, SModel sm) {
+  private static void check_lz161n_a1a0a5a0a7a1a5a1(AbstractModule checkedDotOperand, SModel sm) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
+      checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a5a1(check_lz161n_a0a0b0a0f0a0h0b0f0b(sm)), false);
     }
 
   }
 
-  private static SModuleReference check_lz161n_a0a1a0a5a0a7a1a6a1(SModule checkedDotOperand) {
+  private static SModuleReference check_lz161n_a0a1a0a5a0a7a1a5a1(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static SModule check_lz161n_a0a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
+  private static SModule check_lz161n_a0a0b0a0f0a0h0b0f0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModule check_lz161n_a0a0b0a0f0a0h0b0g0b_0(SModel checkedDotOperand) {
+  private static SModule check_lz161n_a0a0b0a0f0a0h0b0f0b_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
