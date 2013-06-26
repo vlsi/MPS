@@ -34,7 +34,7 @@ public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
             String modelName = it.getTargetSModelReference().getModelName();
             boolean oldModel = modelName.contains("MPS.Core") || modelName.contains("MPS.Platform") || modelName.contains("MPS.Workbench") || modelName.contains("MPS.Classpath");
             SModuleReference moduleReference = it.getTargetSModelReference().getModuleReference();
-            boolean oldModule = moduleReference != null && moduleReference.getModuleName().contains("MPS.Platform") && modelName.contains("com.intellij");
+            boolean oldModule = moduleReference != null && moduleReference.getModuleName().contains("MPS.Platform") && (modelName.contains("com.intellij") || modelName.contains("org.jetbrains"));
             return oldModel || oldModule;
           }
         }).isNotEmpty();
