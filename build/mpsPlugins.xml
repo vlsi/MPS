@@ -612,6 +612,7 @@
       <src>
         <pathelement path="${mps_home}/plugins/modelchecker/source" />
         <pathelement path="${mps_home}/plugins/modelchecker/source_gen" />
+        <path location="${mps_home}/plugins/modelchecker/platform/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -639,6 +640,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/modelchecker">
+      <fileset dir="${mps_home}/plugins/modelchecker/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/modelchecker/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/modelchecker/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
