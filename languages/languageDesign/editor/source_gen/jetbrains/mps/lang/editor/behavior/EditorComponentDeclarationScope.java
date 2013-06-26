@@ -5,8 +5,9 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.scope.ModelsScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collection;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -15,50 +16,40 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 /*package*/ class EditorComponentDeclarationScope extends FilteringScope {
-  private SNode myConteptDeclaration;
+  private SNode myConceptDeclaration;
 
   private EditorComponentDeclarationScope(final SModel model, SNode conceptDeclaration) {
-    super(new ModelPlusImportedScope(model, false, ((AbstractModule) model.getModule()).getScope(), "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration") {
-      private Collection<SModel> myModels;
-
-      @Override
-      public Collection<SModel> getModels() {
-        if (myModels == null) {
-          Set<SModel> editorModels = SetSequence.fromSet(new HashSet<SModel>());
-          if (model.getModule() instanceof Language) {
-            Language language = (Language) model.getModule();
-            SetSequence.fromSet(editorModels).addElement(LanguageAspect.EDITOR.get(language));
-            for (SModuleReference extendedLangRef : SetSequence.fromSet(language.getExtendedLanguageRefs())) {
-              SModule extendedLang = extendedLangRef.resolve(model.getRepository());
-              if (extendedLang instanceof Language) {
-                SetSequence.fromSet(editorModels).addElement(LanguageAspect.EDITOR.get((Language) extendedLang));
-              }
-            }
-          }
-          myModels = CollectionSequence.fromCollectionWithValues(new ArrayList<SModel>(), editorModels);
-        }
-        return myModels;
-      }
-    });
-    myConteptDeclaration = conceptDeclaration;
+    super(new ModelsScope(getModels(model), false, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
+    myConceptDeclaration = conceptDeclaration;
   }
 
   /*package*/ EditorComponentDeclarationScope(SNode editorComponent) {
     this(SNodeOperations.getModel(editorComponent), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
   }
 
+  private static Collection<SModel> getModels(SModel model) {
+    Set<SModel> editorModels = SetSequence.fromSet(new HashSet<SModel>());
+    if (model.getModule() instanceof Language) {
+      Language language = (Language) model.getModule();
+      SetSequence.fromSet(editorModels).addElement(LanguageAspect.EDITOR.get(language));
+      for (SModuleReference extendedLangRef : SetSequence.fromSet(language.getExtendedLanguageRefs())) {
+        SModule extendedLang = extendedLangRef.resolve(model.getRepository());
+        if (extendedLang instanceof Language) {
+          SetSequence.fromSet(editorModels).addElement(LanguageAspect.EDITOR.get((Language) extendedLang));
+        }
+      }
+    }
+    return editorModels;
+  }
+
   @Override
   public boolean isExcluded(SNode node) {
     SNode editorComponent = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
-    return editorComponent == null || SLinkOperations.getTarget(editorComponent, "overridenEditorComponent", true) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConteptDeclaration)));
+    return editorComponent == null || SLinkOperations.getTarget(editorComponent, "overridenEditorComponent", true) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConceptDeclaration)));
   }
 }
