@@ -119,5 +119,7 @@ public class ModelsScope extends Scope {
     return node.getPresentation();
   }
 
-
+  public Iterable<SModel> getModels() {
+    return myModels;
+  }
 }
