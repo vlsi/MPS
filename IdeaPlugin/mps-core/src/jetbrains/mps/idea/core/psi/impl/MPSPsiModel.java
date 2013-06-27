@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.psi.impl;
 import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.FileASTNode;
+import com.intellij.openapi.util.io.FileSystemUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
@@ -31,12 +32,17 @@ import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -339,7 +345,15 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         File file = new File(((FileDataSource) source).getFile().getPath());
         VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
         this.mySourceVirtualFile = vfile;
+      } else if(source instanceof FilePerRootDataSource) {
+        this.mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) source).getFolder()).findChild(MPSExtentions.DOT_MODEL_HEADER);
       }
+      /*MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          mySourceVirtualFile = ModelUtil.getFileByModel(myModelReference.resolve(MPSModuleRepository.getInstance()));
+        }
+      });*/
     }
   }
 

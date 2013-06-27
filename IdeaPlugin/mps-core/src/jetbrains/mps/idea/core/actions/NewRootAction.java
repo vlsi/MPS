@@ -145,7 +145,8 @@ public class NewRootAction extends AnAction {
         vFiles == null ||
         vFiles.length != 1 ||
         vFiles[0].isDirectory() ||
-        FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_FILE_TYPE) {
+        (FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_FILE_TYPE
+          && FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)) {
       return;
     }
 

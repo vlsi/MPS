@@ -30,7 +30,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -39,21 +38,21 @@ import jetbrains.mps.idea.core.projectView.edit.SNodeCutCopyProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodePasteProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
+import jetbrains.mps.idea.core.psi.impl.file.FilePerRootModelPsiFile;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -80,7 +79,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     }
     if (!(treeNode instanceof MPSPsiModelTreeNode)) return children;
 
-    MPSPsiModel psiModel = (MPSPsiModel) ((MPSPsiModelTreeNode) treeNode).getValue();
+    MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).getValue();
 
     List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>();
     for (PsiElement psiElement : psiModel.getChildren()) {
@@ -107,6 +106,26 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           int idx = updatedChildren.indexOf(child);
           updatedChildren.remove(idx);
           updatedChildren.add(idx, new MPSPsiModelTreeNode(treeNode.getProject(), psiModel, settings));
+        }
+      } else if(child instanceof PsiDirectoryNode) {
+        for (AbstractTreeNode innerChild : ((PsiDirectoryNode)child).getChildren()) {
+          if(!(innerChild instanceof PsiFileNode) || !(((PsiFileNode) innerChild).getValue() instanceof FilePerRootModelPsiFile))
+            continue;
+          PsiFile value = ((PsiFileNode) innerChild).getValue();
+          SModelReference modelReference = ((FileSourcePsiFile) value).getModelReference();
+
+          MPSPsiModel psiModel = mpsPsiProvider.getPsi(modelReference);
+
+          if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+
+          int idx = updatedChildren.indexOf(child);
+          updatedChildren.remove(idx);
+          final MPSPsiModelTreeNode perRootModelTreeNode = new MPSPsiModelTreeNode(treeNode.getProject(), psiModel, settings);
+          //final Collection<AbstractTreeNode> childrenWithotSelf = ((PsiDirectoryNode) child).getChildren();
+          //childrenWithotSelf.remove(innerChild);
+          //perRootModelTreeNode.getChildren().addAll(childrenWithotSelf);
+          updatedChildren.add(idx, perRootModelTreeNode);
+          break;
         }
       }
     }
@@ -253,7 +272,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     }
     MPSPsiModelTreeNode modelTreeNode = (MPSPsiModelTreeNode) treeNode;
     VirtualFile modelVFile = modelTreeNode.getVirtualFile();
-    if (modelVFile == null || modelVFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) return null;
+    if (modelVFile == null || (modelVFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && modelVFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)) return null;
     return modelVFile;
   }
 

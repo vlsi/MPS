@@ -29,6 +29,7 @@ import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.smodel.FilePerRootSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
@@ -75,7 +76,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       if (virtualFile instanceof LightVirtualFile) {
         virtualFile = ((LightVirtualFile)virtualFile).getOriginalFile();
       }
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) {
+      if (virtualFile == null || (virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE ) ) {
         return null;
       }
       final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
@@ -89,7 +90,9 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
             MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
             MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
 
-            return new FileSourcePsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName());
+            return descr instanceof FilePerRootSModel
+              ? new FilePerRootModelPsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName())
+              : new FileSourcePsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName());
           }
           return null;
         }

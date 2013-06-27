@@ -17,12 +17,14 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import java.io.File;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -71,10 +73,13 @@ public class SModelFileTracker implements CoreComponent {
 
   private void addModelToFileCache(SModel md) {
     DataSource source = md.getSource();
-    if (!(source instanceof FileDataSource)) return;
+    //TODO: add dependency to import FilePerRootDataSource
+    if (!(source instanceof FileDataSource) && !source.getClass().getCanonicalName().contains("FilePerRootDataSource")) return;
 
-    IFile file = ((FileDataSource) source).getFile();
-    myPathsToModelDescriptorMap.put(file.getPath(), md);
+    String file = source instanceof FileDataSource
+      ?  ((FileDataSource) source).getFile().getPath()
+      : (source.getLocation().replace("IdeaFile{file://","").replace("}","") + File.separator + MPSExtentions.DOT_MODEL_HEADER);
+    myPathsToModelDescriptorMap.put(file, md);
   }
 
   private void removeModelFromFileCache(SModel md) {

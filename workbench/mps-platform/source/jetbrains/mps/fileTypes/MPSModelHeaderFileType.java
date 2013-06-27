@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.fileTypes;
 
-import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.LanguageFileType;
+import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,9 +28,13 @@ import javax.swing.Icon;
 /**
  * evgeny, 6/6/13
  */
-public class MPSModelHeaderFileType implements FileType {
+public class MPSModelHeaderFileType extends LanguageFileType {
 
   public static final MPSModelHeaderFileType INSTANCE = new MPSModelHeaderFileType();
+
+  protected MPSModelHeaderFileType() {
+    super(MPSLanguage.INSTANCE);
+  }
 
   @NotNull
   @Override
@@ -52,11 +58,6 @@ public class MPSModelHeaderFileType implements FileType {
   @Override
   public Icon getIcon() {
     return FileIcons.MODEL_ICON;
-  }
-
-  @Override
-  public boolean isBinary() {
-    return false;
   }
 
   @Override
