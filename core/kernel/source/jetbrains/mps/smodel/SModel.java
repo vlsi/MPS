@@ -718,6 +718,7 @@ public class SModel implements SModelData {
   }
 
   private void markChanged() {
+    if (myModelDescriptor == null) return;
     org.jetbrains.mps.openapi.model.SModel model = getModelDescriptor();
     if (model instanceof EditableSModel) {
       ((EditableSModel) model).setChanged(true);
