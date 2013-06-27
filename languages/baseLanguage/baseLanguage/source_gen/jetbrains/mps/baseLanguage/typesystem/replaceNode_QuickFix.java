@@ -6,11 +6,12 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class makeArrayLenOperation_QuickFix extends QuickFix_Runtime {
-  public makeArrayLenOperation_QuickFix() {
+public class replaceNode_QuickFix extends QuickFix_Runtime {
+  public replaceNode_QuickFix() {
   }
 
   public void execute(SNode node) {
-    SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+    // FIXME split into specific quick fixes 
+    SNodeOperations.replaceWithAnother(node, ((SNode) replaceNode_QuickFix.this.getField("newNode;")[0]));
   }
 }
