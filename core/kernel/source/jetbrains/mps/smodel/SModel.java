@@ -566,7 +566,7 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) ModelChange.assertLegalChange(getModelDescriptor());
     if (importedLanguages().contains(ref)) return;
 
     if (ref.getModuleId() == null) {
