@@ -20,7 +20,6 @@
     <dependency reexport="false">774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</dependency>
     <dependency reexport="false">fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debugger.api.lang)</dependency>
     <dependency reexport="false">f3347d8a-0e79-4f35-8ac9-1574f25c986f(jetbrains.mps.execution.commands)</dependency>
-    <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.execution.configurations.deprecated)</dependency>
     <dependency reexport="false">bfbdd672-7ff5-403f-af4f-16da5226f34c(jetbrains.mps.findUsages.runtime)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">e6951e3b-21e0-4d3c-9262-faf9500b3389(jetbrains.mps.ide.java.migration)</dependency>
