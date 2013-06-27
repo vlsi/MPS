@@ -427,7 +427,7 @@ public class MultipleFilesParser {
 
           for (SNode swicthCase : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SwitchCase", false, new String[]{}))) {
             SNode subst = transformUnqualifedEnum(swicthCase, typeChecker);
-            if ((subst != null)) {
+            if ((subst == null)) {
               continue;
             }
             MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(SLinkOperations.getTarget(swicthCase, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), subst);
