@@ -29,7 +29,6 @@ import org.junit.runner.RunWith;
 @SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
     "jetbrains.mps.tests.TestModule_collections_trove_test",
     "jetbrains.mps.tests.TestModule_collections_unittest",
-    "jetbrains.mps.tests.TestModule_dates_unittest",
     "jetbrains.mps.tests.TestModule_internalCollections_test",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_closures_unittest",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_tests",
@@ -40,7 +39,6 @@ import org.junit.runner.RunWith;
     "jetbrains.mps.tests.TestModule_jetbrains_mps_build_tests",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_debugger_java_runtime_tests",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_graphLayout_test",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_ide_java_tests",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test",
@@ -57,7 +55,6 @@ import org.junit.runner.RunWith;
     "jetbrains.mps.tests.TestModule_jetbrains_mps_testRead",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
     "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_xml_tests"})
+    "jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels"})
 public class ModuleTestSuite extends TestSuite {
 }
