@@ -144,9 +144,11 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
     }
     if (breakpoint != null) {
       IBreakpointPropertiesUi ui = myKindToUi.get(breakpoint.getKind());
-      ui.setBreakpoint(breakpoint);
-      myPropertiesEditorPanel = ui.getMainComponent();
-      myMainPanel.add(myPropertiesEditorPanel, BorderLayout.SOUTH);
+      if (ui != null) {
+        ui.setBreakpoint(breakpoint);
+        myPropertiesEditorPanel = ui.getMainComponent();
+        myMainPanel.add(myPropertiesEditorPanel, BorderLayout.SOUTH);
+      }
     }
     myMainPanel.updateUI();
   }
