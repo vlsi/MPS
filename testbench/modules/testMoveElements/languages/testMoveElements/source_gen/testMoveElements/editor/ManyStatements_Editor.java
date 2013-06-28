@@ -68,17 +68,15 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_mtcnr8_b2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mtcnr8_c2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mtcnr8_d2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_mtcnr8_e2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_mtcnr8_e2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mtcnr8_f2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_mtcnr8_g2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_mtcnr8_h2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mtcnr8_g2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mtcnr8_h2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mtcnr8_i2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_mtcnr8_j2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mtcnr8_j2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mtcnr8_k2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_mtcnr8_l2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mtcnr8_l2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mtcnr8_m2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_mtcnr8_n2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_mtcnr8_o2a(editorContext, node));
     return editorCell;
   }
 
@@ -134,16 +132,25 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_e2a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mtcnr8_e2a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_mtcnr8_e2a");
+    editorCell.addEditorCell(this.createConstant_mtcnr8_a4c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mtcnr8_b4c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_mtcnr8_c4c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_mtcnr8_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statement");
-    editorCell.setCellId("Constant_mtcnr8_e2a");
+    editorCell.setCellId("Constant_mtcnr8_a4c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_f2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_b4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_mtcnr8_f2a");
+    editorCell.setCellId("Constant_mtcnr8_b4c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -152,8 +159,8 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_mtcnr8_g2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ManyStatements_Editor.statementListHandler_mtcnr8_g2a(node, "statement", editorContext);
+  private EditorCell createRefNodeList_mtcnr8_c4c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ManyStatements_Editor.statementListHandler_mtcnr8_c4c0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
     Style style = new StyleImpl();
@@ -165,8 +172,8 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class statementListHandler_mtcnr8_g2a extends RefNodeListHandler {
-    public statementListHandler_mtcnr8_g2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class statementListHandler_mtcnr8_c4c0 extends RefNodeListHandler {
+    public statementListHandler_mtcnr8_c4c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -201,16 +208,16 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_mtcnr8_h2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_f2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list1");
-    editorCell.setCellId("Constant_mtcnr8_h2a");
+    editorCell.setCellId("Constant_mtcnr8_f2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_i2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_mtcnr8_i2a");
+    editorCell.setCellId("Constant_mtcnr8_g2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -219,7 +226,7 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_mtcnr8_j2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mtcnr8_h2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list1");
     provider.setNoTargetText("<no list1>");
@@ -243,9 +250,9 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_k2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_i2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_mtcnr8_k2a");
+    editorCell.setCellId("Constant_mtcnr8_i2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
@@ -253,16 +260,16 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_l2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_j2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list2");
-    editorCell.setCellId("Constant_mtcnr8_l2a");
+    editorCell.setCellId("Constant_mtcnr8_j2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_m2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_k2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_mtcnr8_m2a");
+    editorCell.setCellId("Constant_mtcnr8_k2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -271,7 +278,7 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_mtcnr8_n2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mtcnr8_l2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list2");
     provider.setNoTargetText("<no list2>");
@@ -295,9 +302,9 @@ public class ManyStatements_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mtcnr8_o2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mtcnr8_m2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_mtcnr8_o2a");
+    editorCell.setCellId("Constant_mtcnr8_m2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

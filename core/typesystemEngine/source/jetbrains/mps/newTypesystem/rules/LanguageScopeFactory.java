@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.rules;
 
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -30,6 +31,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Date: 8/27/12
  */
 public class LanguageScopeFactory {
+
+  private static final Logger LOG = Logger.getLogger(LanguageScopeFactory.class);
 
   private static LanguageScopeFactory INSTANCE = new LanguageScopeFactory();
 
@@ -88,6 +91,10 @@ public class LanguageScopeFactory {
     BitSet nsBitSet = new BitSet(myBits.intValue());
     for (SModuleReference langRef: langs) {
       Language lng = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
+      if (lng == null || lng.getModuleDescriptor() == null) {
+        LOG.debug("language not found: "+langRef);
+        continue;
+      }
       updateNamespaceBit(nsBitSet, lng.getModuleDescriptor().getNamespace());
       for (SModuleReference mref : new LanguageDependenciesManager(lng).getAllExtendedLanguages()) {
         Language ext = ModuleRepositoryFacade.getInstance().getModule(mref, Language.class);

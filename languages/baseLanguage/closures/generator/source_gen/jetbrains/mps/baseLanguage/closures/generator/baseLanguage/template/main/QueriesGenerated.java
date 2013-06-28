@@ -1444,6 +1444,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder"), "value");
   }
 
+  public static boolean ifMacro_Condition_8662331813146364239(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
+  }
+
   public static boolean ifMacro_Condition_1215446294705(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
@@ -1801,6 +1805,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1207147314257(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_8662331813146353543(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first();
   }
 
   public static SNode sourceNodeQuery_1219934508829(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2366,7 +2374,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1219916707161(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "statement", true);
+    return (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation") ?
+      ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).skip(1) :
+      SLinkOperations.getTargets(_context.getNode(), "statement", true)
+    );
   }
 
   public static Iterable sourceNodesQuery_1215446400341(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

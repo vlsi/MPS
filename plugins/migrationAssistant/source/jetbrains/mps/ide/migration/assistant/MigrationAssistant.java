@@ -27,12 +27,14 @@ import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class MigrationAssistant extends AbstractProjectComponent {
 
@@ -72,9 +74,11 @@ public class MigrationAssistant extends AbstractProjectComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
-          if (md instanceof EditableSModel) {
-            ((EditableSModel) md).reloadFromSource();
+        for (SModule module : ProjectHelper.toMPSProject(myProject).getModulesWithGenerators()) {
+          for (SModel md : module.getModels()) {
+            if (md instanceof EditableSModel) {
+              ((EditableSModel) md).reloadFromSource();
+            }
           }
         }
       }

@@ -222,7 +222,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_j4vm40_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_j4vm40_k0");
+    editorCell.setCellId("leftParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -303,7 +303,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_j4vm40_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_j4vm40_m0");
+    editorCell.setCellId("rightParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);

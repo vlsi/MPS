@@ -13,7 +13,6 @@
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action"></action>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action"></action>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action"></action>
@@ -33,7 +32,6 @@
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ConvertActionParameterCondition_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_JavaAPIMigration_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_DebuggerMoved_Action" />
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" />
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" />

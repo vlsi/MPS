@@ -5,137 +5,21 @@ package jetbrains.mps.scope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collection;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
-import org.jetbrains.annotations.Nullable;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class ModelPlusImportedScope extends Scope {
-  private final SModel myModel;
-  private final boolean myRootsOnly;
-  private final IScope myModuleScope;
-  private final String myTargetConcept;
-  private Collection<SModel> myModels;
-
+public class ModelPlusImportedScope extends ModelsScope {
   public ModelPlusImportedScope(SModel model, boolean rootsOnly, IScope moduleScope, String targetConcept) {
-    this.myModel = model;
-    this.myRootsOnly = rootsOnly;
-    this.myModuleScope = moduleScope;
-    this.myTargetConcept = targetConcept;
+    super(getImportedModels(model, moduleScope), rootsOnly, targetConcept);
   }
 
-  public Collection<SModel> getModels() {
-    if (myModels == null) {
-      List<SModel> imported;
-      if (myModel == null) {
-        imported = Collections.emptyList();
-      } else {
-        imported = SModelOperations.allImportedModels(myModel, myModuleScope);
-        imported.add(0, myModel);
-      }
-      myModels = imported;
+  private static Collection<SModel> getImportedModels(SModel model, IScope moduleScope) {
+    if (model == null) {
+      return Collections.emptyList();
     }
-    return myModels;
-  }
-
-  @Override
-  public boolean contains(SNode node) {
-    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel());
-  }
-
-  @Override
-  public SNode resolve(SNode contextNode, String refText) {
-    Collection<SModel> models = getModels();
-    SNode result = null;
-    for (SModel model : models) {
-      if (model == null) {
-        continue;
-      }
-      Iterable<SNode> nodes;
-      String conceptToCheck;
-
-      if (myRootsOnly) {
-        nodes = model.getRootNodes();
-        conceptToCheck = myTargetConcept;
-      } else if (myTargetConcept != null) {
-        nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
-        conceptToCheck = null;
-      } else {
-        nodes = ((Iterable) new NodesIterable(model));
-        conceptToCheck = null;
-      }
-
-      for (SNode node : nodes) {
-        if (conceptToCheck != null && !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(conceptToCheck)))) {
-          continue;
-        }
-        String nodeRefText = getReferenceText(null, node);
-        if (nodeRefText == null || !(nodeRefText.equals(refText))) {
-          continue;
-        }
-
-        if (result == null) {
-          result = node;
-        } else {
-          // ambiguity 
-          return null;
-        }
-      }
-    }
-    return result;
-  }
-
-  @Override
-  public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-    Collection<SModel> models = getModels();
-    List<SNode> result = new ArrayList<SNode>();
-    for (SModel model : models) {
-      if (model == null) {
-        continue;
-      }
-      Iterable<SNode> nodes;
-      String conceptToCheck;
-
-      if (myRootsOnly) {
-        nodes = model.getRootNodes();
-        conceptToCheck = myTargetConcept;
-      } else if (myTargetConcept != null) {
-        nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
-        conceptToCheck = null;
-      } else {
-        nodes = ((Iterable) new NodesIterable(model));
-        conceptToCheck = null;
-      }
-
-      for (SNode node : nodes) {
-        if (conceptToCheck != null && !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(conceptToCheck)))) {
-          continue;
-        }
-        if ((prefix != null && prefix.length() > 0)) {
-          String refText = getReferenceText(null, node);
-          if (refText == null || !(refText.startsWith(prefix))) {
-            continue;
-          }
-        }
-        ListSequence.fromList(result).addElement(node);
-      }
-    }
-    return result;
-  }
-
-  @Override
-  public String getReferenceText(SNode contextNode, SNode node) {
-    String resolveInfo = SNodeOperations.getResolveInfo(node);
-    if ((resolveInfo != null && resolveInfo.length() > 0)) {
-      return resolveInfo;
-    }
-    return node.getPresentation();
+    List<SModel> models = SModelOperations.allImportedModels(model, moduleScope);
+    models.add(0, model);
+    return models;
   }
 }

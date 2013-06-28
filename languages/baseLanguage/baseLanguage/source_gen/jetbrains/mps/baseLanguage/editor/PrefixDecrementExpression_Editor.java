@@ -38,7 +38,7 @@ public class PrefixDecrementExpression_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
-    AbstractUnariOperationActions.setCellActions(editorCell, node, editorContext);
+    PrefixOperationActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -251,7 +251,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_359zr8_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_359zr8_g0");
+    editorCell.setCellId("leftParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -332,7 +332,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_359zr8_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_359zr8_i0");
+    editorCell.setCellId("rightParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);

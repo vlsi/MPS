@@ -58,7 +58,7 @@ public class PostfixIncrementExpression_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
-    AbstractUnariOperationActions.setCellActions(editorCell, node, editorContext);
+    PostfixOperationActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

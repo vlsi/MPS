@@ -24,7 +24,6 @@
     <dependency reexport="false">7a0c7a21-43a3-4bb4-b898-a819ebed44a5(closures.test)</dependency>
     <dependency reexport="false">fb186431-2788-490b-9e84-c2b84ef0ca77(collections_trove.test)</dependency>
     <dependency reexport="false">39a1a79d-8ae2-4e54-a86a-8f7b9e17e2fe(collections_unittest)</dependency>
-    <dependency reexport="false">d5e1eadc-0b90-46d3-ad09-aafe577e509d(dates_unittest)</dependency>
     <dependency reexport="false">b5660d3a-8a0d-4815-881b-7c884f61c9c7(internalCollections.test)</dependency>
     <dependency reexport="false">fa54094d-fc7a-4393-885f-13866cecf3f3(jetbrains.mps.baseLanguage.closures.unittest)</dependency>
     <dependency reexport="false">9cc656d8-ed07-4493-9531-69f1c9c308c5(jetbrains.mps.baseLanguage.math.tests)</dependency>
@@ -38,7 +37,6 @@
     <dependency reexport="false">7b15492d-a198-43e2-91e3-4a7e9116ce2b(jetbrains.mps.execution.impl.tests)</dependency>
     <dependency reexport="false">6cbb1052-4510-427f-926c-3476bfd7e801(jetbrains.mps.execution.impl.tests.sandbox)</dependency>
     <dependency reexport="false">50fc24f9-2bc9-4702-84ed-7f00cd088aca(jetbrains.mps.generator.tests)</dependency>
-    <dependency reexport="false">1cf9ab03-28e6-49cc-b765-555cd6dcfc28(jetbrains.mps.graphLayout.test)</dependency>
     <dependency reexport="false">c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)</dependency>
     <dependency reexport="false">b0d98700-54f0-4c39-a8e0-bb27733b8b38(jetbrains.mps.ide.vcs)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
@@ -70,7 +68,6 @@
     <dependency reexport="false">415bc577-86ca-46a6-b873-4670fd19e169(jetbrains.mps.traceInfo.test)</dependency>
     <dependency reexport="false">dc080be0-da6e-4885-aed0-7d999c120619(jetbrains.mps.traceInfo.testWeaving)</dependency>
     <dependency reexport="false">cdd4e8a8-17c1-4f16-b054-27e94948bd47(jetbrains.mps.transformation.test.inputModels)</dependency>
-    <dependency reexport="false">2f499867-d42a-4e31-a93d-33e16883e187(jetbrains.mps.xml.tests)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

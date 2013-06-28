@@ -566,7 +566,7 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(SModuleReference ref) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    if (myModelDescriptor != null) ModelChange.assertLegalChange(getModelDescriptor());
     if (importedLanguages().contains(ref)) return;
 
     if (ref.getModuleId() == null) {
@@ -718,6 +718,7 @@ public class SModel implements SModelData {
   }
 
   private void markChanged() {
+    if (myModelDescriptor == null) return;
     org.jetbrains.mps.openapi.model.SModel model = getModelDescriptor();
     if (model instanceof EditableSModel) {
       ((EditableSModel) model).setChanged(true);

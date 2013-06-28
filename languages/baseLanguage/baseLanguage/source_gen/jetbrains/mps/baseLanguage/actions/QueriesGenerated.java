@@ -47,7 +47,9 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -1983,6 +1985,16 @@ public class QueriesGenerated {
             return SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
           }
 
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(createdNode), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "leftParen", -1);
+            } else if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(createdNode), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "leftParen", -1);
+            }
+            return null;
+          }
+
           public String getDescriptionText(String pattern) {
             return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ?
               "static method" :
@@ -2047,6 +2059,12 @@ public class QueriesGenerated {
             }
             SPropertyOperations.set(result, "isFinal", "" + (SPropertyOperations.getBoolean(current, "final")));
             return SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+          }
+
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL);
+            return null;
           }
 
           public String getDescriptionText(String pattern) {
@@ -3240,10 +3258,11 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
+        final SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
         SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.LAST_CELL, -1);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -3268,7 +3287,8 @@ __switch__:
         SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
         SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.LAST_CELL, -1);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -3920,7 +3940,8 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.FIRST_EDITABLE_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -3946,7 +3967,8 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, result, SelectionManager.FIRST_EDITABLE_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -3998,7 +4020,8 @@ __switch__:
         SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
         SNodeOperations.replaceWithAnother(targetExpression, result);
         SLinkOperations.setTarget(result, "expression", targetExpression, true);
-        return result;
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(result, "expression", true), SelectionManager.FIRST_EDITABLE_CELL, 0);
+        return null;
       }
 
       public String getMatchingText(String pattern) {

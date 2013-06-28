@@ -240,18 +240,6 @@
       <directory url="file://$PROJECT_DIR$/languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/extensionMethod/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.geom/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.geom/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.graph/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.graph/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.layeredLayout/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.layeredLayout/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.orthogonalLayout/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.orthogonalLayout/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.planarization/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.planarization/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.test/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/test_gen" includeSubdirectories="true" />
@@ -320,16 +308,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests.data/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/tests/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/buildlanguage/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/buildlanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/generictasks/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/generictasks/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/property/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/property/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/xmlDeprecated/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-build-deprecated/languages/xmlDeprecated/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/languages/build.mps/generator/source_gen" includeSubdirectories="true" />
@@ -364,15 +342,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/runtime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/internal/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/runtime/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/runtime/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/unittest/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-dates/languages/dates/unittest/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-execution-deprecated/languages/deprecated/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-execution-deprecated/languages/deprecated/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/test_gen" includeSubdirectories="true" />
@@ -389,30 +358,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/gtext/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/gtext/runtime/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/gtext/runtime/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/gtext/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/gtext/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/gtext/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xml/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.webr.xml.sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xml/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlInternal/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlInternal/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/runtime/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/runtime/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlQuery/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlSchema/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xml/xmlSchema/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xmlUnitTest/languages/xmlUnitTest/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-xml-obsolete/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/test_gen" includeSubdirectories="true" />

@@ -167,10 +167,10 @@ class IntelligentNodeMover {
       Iterator<EditorCell> iterator = getCellIterator(anchorCell);
       while (iterator.hasNext()) {
         EditorCell next = iterator.next();
-        if (next.getSNode().equals(currentTarget) && next.getRole() != null && !next.isReferenceCell() && haveSimilarLink(currentTarget))  {
-          addAtBoundary(currentTarget);
-          return;
-        }
+//        if (next.getSNode().equals(currentTarget) && next.getRole() != null && next.getRole().equals(myRole) && !next.isReferenceCell() && haveSimilarLink(currentTarget))  {
+//          addAtBoundary(currentTarget);
+//          return;
+//        }
         if (tryPasteToCellAndChildren(next)) {
           return;
         }
@@ -213,7 +213,7 @@ class IntelligentNodeMover {
       return false;
     }
     final SNode levelNode = levelCell.getSNode();
-    return levelCell.isBig() && levelNode != null && haveSimilarLink(levelNode) &&
+    return levelNode != null && haveSimilarLink(levelNode) &&
         CellFinderUtil.findChildByCondition(levelCell,
             new Condition<EditorCell>() {
               @Override

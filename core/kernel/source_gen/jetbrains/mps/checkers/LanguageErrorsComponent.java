@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class LanguageErrorsComponent {
@@ -109,7 +110,7 @@ public class LanguageErrorsComponent {
     );
     String modelId = (ruleNode == null ?
       null :
-      ruleNode.getModel() + ""
+      check_29uvfh_a0a0c0s(ruleNode.getModel()) + ""
     );
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
@@ -340,6 +341,13 @@ public class LanguageErrorsComponent {
     public void modelRemoved(SModel descriptor) {
       processModelRemoved(descriptor);
     }
+  }
+
+  private static SModelReference check_29uvfh_a0a0c0s(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
   }
 
   private static IScope check_29uvfh_a0h0v(AbstractModule checkedDotOperand) {

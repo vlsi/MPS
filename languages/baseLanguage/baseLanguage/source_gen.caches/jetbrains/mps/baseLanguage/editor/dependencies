@@ -3207,7 +3207,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.PostfixDecrementExpression_Editor" file="PostfixDecrementExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PostfixOperationActions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -3225,7 +3225,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.PostfixIncrementExpression_Editor" file="PostfixIncrementExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PostfixOperationActions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -3241,9 +3241,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.PostfixOperationActions" file="PostfixOperationActions.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.PrefixDecrementExpression_Editor" file="PrefixDecrementExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PrefixOperationActions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -3261,7 +3272,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.PrefixIncrementExpression_Editor" file="PrefixIncrementExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PrefixOperationActions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
@@ -3276,6 +3287,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.editor.PrefixOperationActions" file="PrefixOperationActions.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.PrimitiveClassExpression_Editor" file="PrimitiveClassExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -4223,7 +4245,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.UnaryMinus_Editor" file="UnaryMinus_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.AbstractUnariOperationActions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PrefixOperationActions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />

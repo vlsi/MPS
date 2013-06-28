@@ -5,8 +5,19 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.scope.ModelsScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -17,8 +28,37 @@ public class EditorCellIdScope extends FilteringScope {
   private SNode myConceptDeclaration;
 
   public EditorCellIdScope(SModel model, SNode conceptDeclaration) {
-    super(new ModelPlusImportedScope(model, false, ((AbstractModule) model.getModule()).getScope(), "jetbrains.mps.lang.editor.structure.EditorCellId"));
+    super(new ModelsScope(getModels(model), false, "jetbrains.mps.lang.editor.structure.EditorCellId"));
     myConceptDeclaration = conceptDeclaration;
+  }
+
+
+
+  private static Iterable<SModel> getModels(SModel model) {
+    Iterable<Language> depLanguages = Sequence.fromIterable(((Iterable<SModule>) new GlobalModuleDependenciesManager(model.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))).ofType(Language.class);
+    return Sequence.fromIterable(withExtendedLanguages(depLanguages, model.getRepository())).select(new ISelector<Language, SModel>() {
+      public SModel select(Language it) {
+        return ((SModel) LanguageAspect.EDITOR.get(it));
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return it != null;
+      }
+    });
+  }
+
+  private static Iterable<Language> withExtendedLanguages(Iterable<Language> languages, SRepository repository) {
+    Set<Language> result = SetSequence.fromSet(new HashSet<Language>());
+    for (Language language : Sequence.fromIterable(languages)) {
+      SetSequence.fromSet(result).addElement(language);
+      for (SModuleReference extendedLangRef : SetSequence.fromSet(language.getExtendedLanguageRefs())) {
+        SModule extendedLang = extendedLangRef.resolve(repository);
+        if (extendedLang instanceof Language) {
+          SetSequence.fromSet(result).addElement(((Language) extendedLang));
+        }
+      }
+    }
+    return result;
   }
 
   @Override
