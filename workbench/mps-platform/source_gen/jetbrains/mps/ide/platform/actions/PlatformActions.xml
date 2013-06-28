@@ -1,5 +1,6 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action" class="jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action"></action>
     <action id="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" class="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
       <keyboard-shortcut first-keystroke="ctrl G" keymap="$default" />
     </action>
@@ -9,10 +10,16 @@
     <action id="jetbrains.mps.ide.platform.actions.core.Rename_Action" class="jetbrains.mps.ide.platform.actions.core.Rename_Action">
       <keyboard-shortcut first-keystroke="shift F6" keymap="$default" />
     </action>
+    <group id="AnalyzePlatform_ActionGroupother" />
     <group id="Code_ActionGroupstructure" />
     <group id="Code_ActionGroupoverrideImplement" />
     <group id="Code_ActionGroupcomments" />
     <group id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" text="Refactoring" popup="true"></group>
+    <group id="jetbrains.mps.ide.platform.actions.AnalyzePlatform_ActionGroup">
+      <reference ref="jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action" />
+      <reference ref="AnalyzePlatform_ActionGroupother" />
+      <add-to-group group-id="AnalyzeMenu" anchor="last" />
+    </group>
     <group id="jetbrains.mps.ide.platform.actions.GoToPlatform_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" />
       <add-to-group group-id="GoToMenu" anchor="last" />

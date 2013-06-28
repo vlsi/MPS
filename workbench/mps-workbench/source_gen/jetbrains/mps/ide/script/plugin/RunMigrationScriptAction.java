@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.ArrayList;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 
 public class RunMigrationScriptAction extends BaseAction implements DumbAware {
   private SNode myScript;
@@ -68,8 +67,8 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
       }
     }
     myModules = new ArrayList<SModule>();
-    if (e.getData(MPSDataKeys.MODULES) != null) {
-      for (SModule module : ListSequence.fromList(e.getData(MPSDataKeys.MODULES))) {
+    if (e.getData(MPSCommonDataKeys.MODULES) != null) {
+      for (SModule module : ListSequence.fromList(e.getData(MPSCommonDataKeys.MODULES))) {
         myModules.add(module);
       }
     }

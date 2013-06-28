@@ -16,7 +16,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.ide.actions.JavaStackTraceFilter;
+import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
@@ -50,7 +50,7 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-    console.addMessageFilter(new JavaStackTraceFilter(project));
+    console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
     {
       ProcessHandler _processHandler = new Java_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getRunParameters().getJavaRunParameters(), myRunConfiguration.getNode().getNodePointer());
       final ConsoleView _consoleView = console;

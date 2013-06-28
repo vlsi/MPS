@@ -13,7 +13,6 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -77,7 +76,7 @@ public class RunMigrationScripts_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
     return true;
   }
 
