@@ -4781,6 +4781,44 @@
     <unitInfo nodeId="7854901761081544282" fileName="MPS9119.java" startLine="18" startPosition="11" endLine="23" endPosition="5" unitName="jetbrains.mps.closures.test.MPS9119$1" />
     <unitInfo nodeId="7854901761081544254" fileName="MPS9119.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.closures.test.MPS9119" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)/8662331813148184763">
+    <nodeInfo nodeId="8662331813148184771" fileName="MPS_18030.java" startLine="15" startPosition="22" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662331813148184783" fileName="MPS_18030.java" startLine="22" startPosition="29" endLine="23" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8662331813148184782" fileName="MPS_18030.java" startLine="23" startPosition="14" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8662331813148184784" fileName="MPS_18030.java" startLine="24" startPosition="52" endLine="25" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8662331813148184792" fileName="MPS_18030.java" startLine="27" startPosition="33" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662331813148184796" fileName="MPS_18030.java" startLine="28" startPosition="22" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8662331813148184800" fileName="MPS_18030.java" startLine="31" startPosition="17" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662331813148184804" fileName="MPS_18030.java" startLine="32" startPosition="36" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662331813148184764" fileName="MPS_18030.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS_18030#()V" />
+    <nodeInfo nodeId="8662331813148184769" fileName="MPS_18030.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test#()V" />
+    <nodeInfo nodeId="8662331813148184790" fileName="MPS_18030.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Integer;" />
+    <nodeInfo nodeId="8662331813148184788" fileName="MPS_18030.java" startLine="25" startPosition="51" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662331813148184779" fileName="MPS_18030.java" startLine="22" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Subclass#(I)V" />
+    <scopeInfo nodeId="8662331813148184767" fileName="MPS_18030.java" startLine="10" startPosition="22" endLine="10" endPosition="22" />
+    <scopeInfo nodeId="8662331813148184770" fileName="MPS_18030.java" startLine="15" startPosition="22" endLine="16" endPosition="30" />
+    <scopeInfo nodeId="8662331813148184764" fileName="MPS_18030.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="8662331813148184791" fileName="MPS_18030.java" startLine="27" startPosition="33" endLine="29" endPosition="30" />
+    <scopeInfo nodeId="8662331813148184769" fileName="MPS_18030.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8662331813148184790" fileName="MPS_18030.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="8662331813148184782" fileName="MPS_18030.java" startLine="22" startPosition="29" endLine="33" endPosition="37">
+      <varInfo nodeId="8662331813148184782" varName="_k" />
+      <varInfo nodeId="8662331813148184785" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="8662331813148184779" fileName="MPS_18030.java" startLine="22" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8662331813148184808" varName="k" />
+    </scopeInfo>
+    <unitInfo nodeId="8662331813148184790" fileName="MPS_18030.java" startLine="26" startPosition="10" endLine="31" endPosition="7" unitName="jetbrains.mps.closures.test.MPS_18030$1" />
+    <unitInfo nodeId="8662331813148184778" fileName="MPS_18030.java" startLine="21" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.closures.test.MPS_18030$Subclass" />
+    <unitInfo nodeId="8662331813148184763" fileName="MPS_18030.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.closures.test.MPS_18030" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)/8662331813148184813">
+    <nodeInfo nodeId="8662331813148184820" fileName="MPS_18030_Test.java" startLine="8" startPosition="47" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8662331813148184816" fileName="MPS_18030_Test.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testBug#()V" />
+    <scopeInfo nodeId="8662331813148184819" fileName="MPS_18030_Test.java" startLine="8" startPosition="47" endLine="9" endPosition="27" />
+    <scopeInfo nodeId="8662331813148184816" fileName="MPS_18030_Test.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <unitInfo nodeId="8662331813148184813" fileName="MPS_18030_Test.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.closures.test.MPS_18030_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)/9188746615686005184">
     <nodeInfo nodeId="9188746615686005201" fileName="MPS7432.java" startLine="12" startPosition="79" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9188746615686005227" fileName="MPS7432.java" startLine="15" startPosition="28" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
