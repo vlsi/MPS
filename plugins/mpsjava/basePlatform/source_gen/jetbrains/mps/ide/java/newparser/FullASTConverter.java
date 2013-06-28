@@ -966,14 +966,15 @@ public class FullASTConverter extends ASTConverter {
     }
 
     SNode unkName = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnknownNameRef", null);
+    StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < tokens.length; i++) {
-      tokens[i] = new String(x.tokens[i]);
-      SNode tok = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
-      SPropertyOperations.set(tok, "value", tokens[i]);
-      ListSequence.fromList(SLinkOperations.getTargets(unkName, "token", true)).addElement(tok);
+      sb.append(x.tokens[i]);
+      sb.append('.');
     }
+    sb.deleteCharAt(sb.length() - 1);
 
+    SPropertyOperations.set(unkName, "tokens", sb.toString());
     return unkName;
   }
 
@@ -1030,11 +1031,14 @@ public class FullASTConverter extends ASTConverter {
           return null;
         }
 
+        StringBuilder sb = new StringBuilder();
         for (String tok : tokens) {
-          SNode tokNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
-          SPropertyOperations.set(tokNode, "value", tok);
-          ListSequence.fromList(SLinkOperations.getTargets(unkDotCall, "token", true)).addElement(tokNode);
+          sb.append(tok);
+          sb.append('.');
         }
+        sb.deleteCharAt(sb.length() - 1);
+
+        SPropertyOperations.set(unkDotCall, "tokens", sb.toString());
 
         result = unkDotCall;
         call = unkDotCall;

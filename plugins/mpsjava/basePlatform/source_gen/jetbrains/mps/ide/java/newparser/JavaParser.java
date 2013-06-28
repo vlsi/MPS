@@ -258,12 +258,11 @@ public class JavaParser {
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < toks.length; i++) {
-      String tok = new String(toks[i]);
-      SNode token = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
-      SPropertyOperations.set(token, "value", tok);
-      ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).addElement(token);
+      sb.append(toks[i]);
+      sb.append('.');
     }
-
+    sb.deleteCharAt(sb.length() - 1);
+    SPropertyOperations.set(imp, "tokens", sb.toString());
     return imp;
   }
 

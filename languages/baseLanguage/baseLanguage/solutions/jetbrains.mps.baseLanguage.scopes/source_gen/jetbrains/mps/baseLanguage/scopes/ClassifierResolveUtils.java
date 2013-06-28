@@ -300,11 +300,11 @@ public class ClassifierResolveUtils {
           return !(SPropertyOperations.getBoolean(it, "onDemand"));
         }
       })) {
-        if (!(token.equals(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value")))) {
+        if (!(token.equals(Tokens_Behavior.call_lastToken_1296023605440030462(imp)))) {
           continue;
         }
 
-        String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        String fqName = SPropertyOperations.getString(imp, "tokens");
         // was 
         // <node> 
         // <node> 
@@ -344,7 +344,7 @@ public class ClassifierResolveUtils {
           return SPropertyOperations.getBoolean(it, "onDemand");
         }
       })) {
-        String pkgName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        String pkgName = SPropertyOperations.getString(imp, "tokens");
         ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, pkgName)));
       }
       // adding our MPS module scope after java imports as backup 
@@ -567,7 +567,7 @@ public class ClassifierResolveUtils {
     })) {
 
       if (SPropertyOperations.getBoolean(imp, "onDemand")) {
-        String className = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        String className = SPropertyOperations.getString(imp, "tokens");
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
         SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
           Sequence.fromIterable(classes).first() :
@@ -586,8 +586,8 @@ public class ClassifierResolveUtils {
 
       } else {
 
-        final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value");
-        String className = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
+        final String memberName = Tokens_Behavior.call_lastToken_1296023605440030462(imp);
+        String className = Tokens_Behavior.call_withoutLastToken_6148840541591441572(imp);
 
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
 
@@ -628,7 +628,7 @@ public class ClassifierResolveUtils {
         return !(SPropertyOperations.getBoolean(it, "onDemand"));
       }
     })) {
-      if (SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(singleTypeImp, "token", true)).last(), "value").equals(name)) {
+      if (Tokens_Behavior.call_lastToken_1296023605440030462(singleTypeImp).equals(name)) {
         return true;
       }
     }
