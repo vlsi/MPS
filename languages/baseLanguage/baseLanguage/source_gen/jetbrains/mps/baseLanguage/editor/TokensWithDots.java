@@ -20,9 +20,17 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class TokensWithDots implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -84,9 +92,7 @@ public class TokensWithDots implements ConceptEditorComponent {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new TokensWithDots.Tokens_generic_cellMenu_ueckjp_a0a0()}));
       }
     }
 
@@ -100,6 +106,32 @@ public class TokensWithDots implements ConceptEditorComponent {
       BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
       editorCell.getStyle().putAll(style);
       return editorCell;
+    }
+  }
+
+  public static class Tokens_generic_cellMenu_ueckjp_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public Tokens_generic_cellMenu_ueckjp_a0a0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+
+      VisibleClassifiersScope searchScope = new VisibleClassifiersScope(node, IClassifiersSearchScope.ANYTHING, scope);
+
+      List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+
+      return list;
+
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
     }
   }
 }
