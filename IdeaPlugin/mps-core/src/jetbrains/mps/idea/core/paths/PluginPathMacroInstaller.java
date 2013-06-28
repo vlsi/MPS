@@ -18,7 +18,7 @@ package jetbrains.mps.idea.core.paths;
 
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.tool.builder.util.PathManager;
+import com.intellij.openapi.application.PathManager;
 import org.jetbrains.annotations.NotNull;
 
 public class PluginPathMacroInstaller implements ApplicationComponent {
