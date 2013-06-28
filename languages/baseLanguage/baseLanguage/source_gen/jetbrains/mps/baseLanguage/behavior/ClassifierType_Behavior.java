@@ -20,8 +20,8 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -225,6 +225,12 @@ public class ClassifierType_Behavior {
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
+    // recursion guard 
+    if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "classifier", false))) {
+      return;
+    }
+    MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, "classifier", false), SLinkOperations.getTarget(thisNode, "classifier", false));
+
     // for each declared TypeVar substitute its actual value 
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -237,7 +243,7 @@ public class ClassifierType_Behavior {
       // treat raw type as if all params were Object or the appropriate bound 
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
         MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
-          _quotation_createNode_hz3823_a0a0a1a2a81() :
+          _quotation_createNode_hz3823_a0a0a1a6a81() :
           SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
         ));
       }
@@ -410,7 +416,7 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a0a1a2a81() {
+  private static SNode _quotation_createNode_hz3823_a0a0a1a6a81() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
