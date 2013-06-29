@@ -5,7 +5,6 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
-import javax.swing.JPanel;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstance_Configuration> {
@@ -16,7 +15,7 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
   }
 
   @NotNull
-  public JPanel createEditor() {
+  public MpsSettingsEditorComponent createEditor() {
     return myMpsSettings.createEditor();
   }
 
