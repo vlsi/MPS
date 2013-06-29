@@ -51,4 +51,12 @@ public class MpsSettingsEditorComponent extends JPanel {
     myConfigurationPath.setText(configuration.expandPath(configuration.getConfigurationPath()));
     myProjectChooser.reset(configuration.getOpenCurrentProject(), configuration.expandPath(configuration.getProjectToOpen()));
   }
+
+  public void setEditable(boolean editable) {
+    myVmOptions.setEditable(editable);
+    myJrePath.setEditable(editable);
+    mySystemPath.setEditable(editable);
+    myConfigurationPath.setEditable(editable);
+    myProjectChooser.setEditable(editable);
+  }
 }

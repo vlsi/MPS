@@ -52,4 +52,8 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
   public Disposable getDisposableComponent() {
     return this.myField;
   }
+
+  public void setEditable(boolean editable) {
+    myField.setEditable(editable);
+  }
 }

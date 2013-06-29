@@ -54,4 +54,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
   public Tuples._2<Boolean, String> getValue() {
     return MultiTuple.<Boolean,String>from(myOpenCurrentProject.isSelected(), myProjectPath.getText());
   }
+
+  public void setEditable(boolean editable) {
+    myOpenCurrentProject.setEnabled(editable);
+    myProjectPath.setEditable(editable);
+  }
 }
