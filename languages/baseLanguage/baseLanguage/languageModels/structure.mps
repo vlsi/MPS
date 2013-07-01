@@ -3600,7 +3600,7 @@
     <property name="name" nameId="tpck.1169194664001" value="UnknownNameRef" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="unresolved" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1843920760191236331" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6528213125912070246" resolveInfo="Tokens" />
     </node>
