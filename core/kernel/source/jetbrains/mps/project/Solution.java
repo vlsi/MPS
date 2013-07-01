@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -94,7 +93,7 @@ public class Solution extends AbstractModule {
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(newDescriptor, reloadClasses);
+    assertCanChange();
 
     mySolutionDescriptor = newDescriptor;
 
@@ -108,14 +107,13 @@ public class Solution extends AbstractModule {
 
     setModuleReference(mp);
 
+    setChanged();
     reloadAfterDescriptorChange();
-
     fireChanged();
 
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
-
     dependenciesChanged();
   }
 
