@@ -41,9 +41,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * For each <code>SReference</code> with a "foreign" SNodeId creates a series of mappings
@@ -77,7 +75,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       protected void updateCollection(SModelReference modelRef, SReference sref, Collection<Pair<SNodeDescriptor, String>> collection) {
         SNode src = sref.getSourceNode();
         String role = sref.getRole();
-        SNodeDescriptor descriptor = SNodeDescriptor.fromModelReference(getSNodeName(src), src.getConcept().getId(), modelRef, src.getNodeId());
+        SNodeDescriptor descriptor = SNodeDescriptor.fromModelReference(getSNodeName(src), src.getConcept().getQualifiedName(), modelRef, src.getNodeId());
         collection.add(new Pair<SNodeDescriptor, String>(descriptor, role));
       }
 
