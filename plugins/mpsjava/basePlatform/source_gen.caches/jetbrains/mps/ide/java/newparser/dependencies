@@ -52,6 +52,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Expression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.FieldDeclaration" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Initializer" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Literal" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.MemberValuePair" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.MethodDeclaration" />
@@ -193,6 +194,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ForStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ForeachStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.IfStatement" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Initializer" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.InstanceOfExpression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.LabeledStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Literal" />

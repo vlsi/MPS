@@ -35,8 +35,10 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.Initializer;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
@@ -59,7 +61,6 @@ import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.UnaryExpression;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.ast.CaseStatement;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.AND_AND_Expression;
 import org.eclipse.jdt.internal.compiler.ast.OR_OR_Expression;
@@ -164,6 +165,31 @@ public class FullASTConverter extends ASTConverter {
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration x) throws JavaParseException {
     addBlock(SLinkOperations.getTarget(result, "body", true), x.declarationSourceStart, x.declarationSourceEnd);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatementsOf(x, SLinkOperations.getTarget(result, "body", true))));
+  }
+
+
+
+  @Override
+  public SNode  convertInitializer(Initializer x) throws JavaParseException {
+
+    SNode block = convertStatement(x.block);
+    if (block == null) {
+      return null;
+    }
+
+    SNode result;
+    if (flagSet(x.modifiers, ClassFileConstants.AccStatic)) {
+      SNode initCode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticInitializer", null);
+      SLinkOperations.setTarget(initCode, "statementList", SLinkOperations.getTarget(block, "statements", true), true);
+      result = initCode;
+
+    } else {
+      SNode initCode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
+      SLinkOperations.setTarget(initCode, "statementList", SLinkOperations.getTarget(block, "statements", true), true);
+      result = initCode;
+    }
+
+    return result;
   }
 
 
@@ -463,7 +489,7 @@ public class FullASTConverter extends ASTConverter {
       }
     })) {
       // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
-      result = _quotation_createNode_f46ocm_a0b0d0gb(init, forStatement);
+      result = _quotation_createNode_f46ocm_a0b0d0ib(init, forStatement);
     } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
@@ -1390,7 +1416,7 @@ public class FullASTConverter extends ASTConverter {
     }
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0b0d0gb(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_f46ocm_a0b0d0ib(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
