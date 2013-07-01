@@ -40,7 +40,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vwuy6a_a");
     editorCell.setBig(true);
-    editorCell.addKeyMap(new RegexpSequenceByEnter());
+    RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createComponent_vwuy6a_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vwuy6a_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vwuy6a_c0(editorContext, node));
