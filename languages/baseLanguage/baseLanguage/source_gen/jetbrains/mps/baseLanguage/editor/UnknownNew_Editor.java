@@ -16,8 +16,18 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UnknownNew_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -55,7 +65,7 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UnknownNew_Editor.UnknownNew_generic_cellMenu_lvgr57_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -64,6 +74,32 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class UnknownNew_generic_cellMenu_lvgr57_a0b0 extends AbstractCellMenuPart_Generic_Group {
+    public UnknownNew_generic_cellMenu_lvgr57_a0b0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      // todo remove deprecated usage (it was copied from elsewhere) 
+
+      VisibleClassifiersScope searchScope = new VisibleClassifiersScope(node, IClassifiersSearchScope.ANYTHING, scope);
+      List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
+      return list;
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNode choosen = parameterObject;
+      SPropertyOperations.set(node, "className", BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{}));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 
   private EditorCell createComponent_lvgr57_c0(EditorContext editorContext, SNode node) {

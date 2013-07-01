@@ -23,9 +23,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class UnknownQualifiedName implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -64,11 +71,12 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
 
-      VisibleClassifiersScope searchScope = new VisibleClassifiersScope(node, IClassifiersSearchScope.ANYTHING, scope);
-
-      List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
-
-      return list;
+      Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false, ((AbstractModule) SNodeOperations.getModel(node).getModule()).getScope());
+      return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+        }
+      }).toListSequence();
 
     }
 
@@ -77,6 +85,24 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNode choosen = parameterObject;
+      String className = BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
+
+      String tokens = SPropertyOperations.getString(node, "tokens");
+      int i = tokens.indexOf(".", 0);
+
+      while (i >= 0) {
+        // including dot at i 
+        SPropertyOperations.set(node, "tokens", className + tokens.substring(i));
+        if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), node, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
+          // done 
+          return;
+        }
+        i = tokens.indexOf(".", i + 1);
+      }
+
+      SPropertyOperations.set(node, "tokens", className);
+
     }
 
     public boolean isReferentPresentation() {
