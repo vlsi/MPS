@@ -32,7 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 
 public class UnknownQualifiedName implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -92,12 +92,15 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
       int i = tokens.indexOf(".", 0);
 
       while (i >= 0) {
+
         // including dot at i 
-        SPropertyOperations.set(node, "tokens", className + tokens.substring(i));
-        if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), node, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
+        String classNameToTry = className + tokens.substring(i);
+        if (ResolveUnknownUtil.findClass(node, classNameToTry) != null) {
           // done 
+          SPropertyOperations.set(node, "tokens", classNameToTry);
           return;
         }
+
         i = tokens.indexOf(".", i + 1);
       }
 
