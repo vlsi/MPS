@@ -399,13 +399,14 @@ public class MultipleFilesParser {
 
 
   private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
-    progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 3 + 1);
+    progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 4 + 1);
     final TypeChecker typeChecker = TypeChecker.getInstance();
 
     // all this can be replaced by one map old -> new 
     final List<SNode> toReplaceWithArrayLength = ListSequence.fromList(new ArrayList<SNode>());
     final Map<SNode, SNode> enumConstRefs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     final Map<SNode, SNode> staticMethodQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    final Map<SNode, SNode> staticFieldQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
 
     myModelAccess.runReadAction(new Runnable() {
       public void run() {
@@ -456,6 +457,17 @@ public class MultipleFilesParser {
           }
 
           progress.advance(1);
+
+          for (SNode varRef : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+            SNode exp = transformLocalNameRef(varRef);
+            if ((exp == null)) {
+              continue;
+            }
+            MapSequence.fromMap(staticFieldQualifiers).put(varRef, exp);
+          }
+
+
+          progress.advance(1);
         }
 
       }
@@ -472,6 +484,10 @@ public class MultipleFilesParser {
         for (IMapping<SNode, SNode> pair : MapSequence.fromMap(staticMethodQualifiers)) {
           SNodeOperations.replaceWithAnother(pair.key(), pair.value());
         }
+        for (IMapping<SNode, SNode> pair : MapSequence.fromMap(staticFieldQualifiers)) {
+          SNodeOperations.replaceWithAnother(pair.key(), pair.value());
+        }
+
       }
     });
 
@@ -634,6 +650,40 @@ public class MultipleFilesParser {
 
     return smc;
   }
+
+
+
+  private SNode transformLocalNameRef(SNode varRef) {
+    // it's either EnumConstReference or StaticFieldReference 
+
+    // FIXME share or re-use code with the corresponding NonTypesystemRule 
+
+    SReference ref = SNodeOperations.getReference(varRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+    if (!(ref instanceof StaticReference)) {
+      return null;
+    }
+    SNode target = ref.getTargetNode();
+    if (!(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+      return null;
+    }
+
+    // now check whether it's in another class 
+    SNode thisClass = SNodeOperations.getAncestor(varRef, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    // it should be ok to use ==, I think 
+    if (thisClass == thatClass) {
+      // same class, such local method call is ok in baseLanguage 
+      return null;
+    }
+
+    // different class, let's make this reference non-local, but qualified 
+    SNode sfr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+    SLinkOperations.setTarget(sfr, "classifier", thatClass, false);
+    SLinkOperations.setTarget(sfr, "variableDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), false);
+
+    return sfr;
+  }
+
 
 
 
