@@ -4791,9 +4791,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), "isStatic", "" + (true));
-        String cellId = editorContext.getSelectedCell().getCellId();
-        editorContext.flushEvents();
-        editorContext.select(_context.getSourceNode(), cellId);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "classKeyword", 0);
         return null;
       }
 
@@ -4817,9 +4815,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), "isFinal", "" + (true));
-        String cellId = editorContext.getSelectedCell().getCellId();
-        editorContext.flushEvents();
-        editorContext.select(_context.getSourceNode(), cellId);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "classKeyword", 0);
         return null;
       }
 
@@ -4843,9 +4839,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), "abstractClass", "" + (true));
-        String cellId = editorContext.getSelectedCell().getCellId();
-        editorContext.flushEvents();
-        editorContext.select(_context.getSourceNode(), cellId);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "classKeyword", 0);
         return null;
       }
 
@@ -4961,9 +4955,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SPropertyOperations.set(_context.getSourceNode(), "nonStatic", "" + (false));
-        String cellId = editorContext.getSelectedCell().getCellId();
-        editorContext.flushEvents();
-        editorContext.select(_context.getSourceNode(), cellId);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, _context.getSourceNode(), "interfaceKeyword", 0);
         return null;
       }
 
