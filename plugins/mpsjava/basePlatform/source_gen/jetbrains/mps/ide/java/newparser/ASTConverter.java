@@ -742,7 +742,9 @@ public class ASTConverter {
       if (typRef instanceof ArrayTypeReference && !(typRef instanceof ParameterizedSingleTypeReference)) {
         // it turns out this is an array, wrap base type in arraytype 
         // (in elicpse ParamSingleTypRef is subclass of ArrayTypRef) 
-        return buildArrayType(typ, ((ArrayTypeReference) typRef).dimensions());
+        ArrayTypeReference arrTypeRef = (ArrayTypeReference) typRef;
+        boolean vararg = flagSet(arrTypeRef.bits, ASTNode.IsVarArgs);
+        return buildArrayType(typ, arrTypeRef.dimensions(), vararg);
       } else {
         return typ;
       }
@@ -826,17 +828,32 @@ public class ASTConverter {
     SNode base = buildClassifierType(qname);
 
     if (typRef instanceof ArrayQualifiedTypeReference && !(typRef instanceof ParameterizedQualifiedTypeReference)) {
-      return buildArrayType(base, ((ArrayQualifiedTypeReference) typRef).dimensions());
+      ArrayQualifiedTypeReference arrTypeRef = (ArrayQualifiedTypeReference) typRef;
+      boolean vararg = flagSet(arrTypeRef.bits, ASTNode.IsVarArgs);
+      return buildArrayType(base, arrTypeRef.dimensions(), vararg);
     } else {
       return base;
     }
   }
 
-  protected SNode buildArrayType(SNode base, int dimensions) {
+  protected SNode buildArrayType(SNode base, int dimensions, boolean vararg) {
     SNode arrType = base;
-    for (int i = 0; i < dimensions; i++) {
-      arrType = _quotation_createNode_rbndtb_a0a0b0ib(arrType);
+
+    int until = (vararg ?
+      dimensions - 1 :
+      dimensions
+    );
+
+    for (int i = 0; i < until; i++) {
+      arrType = _quotation_createNode_rbndtb_a0a0e0ib(arrType);
     }
+
+    if (vararg) {
+      SNode varargType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableArityType", null);
+      SLinkOperations.setTarget(varargType, "componentType", arrType, true);
+      arrType = varargType;
+    }
+
     return arrType;
   }
 
@@ -1388,7 +1405,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0b0ib(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a0e0ib(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

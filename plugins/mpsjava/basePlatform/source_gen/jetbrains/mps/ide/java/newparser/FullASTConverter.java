@@ -668,7 +668,7 @@ public class FullASTConverter extends ASTConverter {
     if (x.initializer != null) {
 
       if (x.dimensions.length > 1) {
-        compType = buildArrayType(compType, x.dimensions.length - 1);
+        compType = buildArrayType(compType, x.dimensions.length - 1, false);
       }
 
       List<SNode> initializers = new ArrayList<SNode>();
