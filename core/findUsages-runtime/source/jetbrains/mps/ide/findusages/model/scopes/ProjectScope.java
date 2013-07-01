@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectScope extends FindUsagesScope {
   public ProjectScope(@NotNull Project project) {
-    for (SModule module : project.getModules()) {
+    for (SModule module : project.getModulesWithGenerators()) {
       addModule(module);
     }
   }
