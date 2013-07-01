@@ -3310,6 +3310,56 @@
     <unitInfo nodeId="6615429292103589151" fileName="RestoringSThintCell_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.RestoringSThintCell_Test$TestBody" />
     <unitInfo nodeId="6615429292103589151" fileName="RestoringSThintCell_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.RestoringSThintCell_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6736042903603947667">
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6736042903605141023" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceBinaryWithAssignment_Test#()V" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReplaceBinaryWithAssignment#()V" />
+    <nodeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="14" startPosition="45" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="18" startPosition="67" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6736042903603947667" varName="editor" />
+      <varInfo nodeId="6736042903603947667" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.ReplaceBinaryWithAssignment_Test$TestBody" />
+    <unitInfo nodeId="6736042903603947667" fileName="ReplaceBinaryWithAssignment_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.ReplaceBinaryWithAssignment_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6736042903605141119">
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="20" startPosition="67" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="21" startPosition="107" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6736042903605158071" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903605158081" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="34" startPosition="108" endLine="35" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903605158119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="35" startPosition="118" endLine="36" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceAssignmentWithBinary_Test#()V" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ReplaceAssignmentWithBinary#()V" />
+    <nodeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="16" startPosition="45" endLine="16" endPosition="45" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="20" startPosition="67" endLine="22" endPosition="108" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="31" startPosition="51" endLine="36" endPosition="118">
+      <varInfo nodeId="6736042903605141119" varName="editor" />
+      <varInfo nodeId="6736042903605141119" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.ReplaceAssignmentWithBinary_Test$TestBody" />
+    <unitInfo nodeId="6736042903605141119" fileName="ReplaceAssignmentWithBinary_Test.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.ReplaceAssignmentWithBinary_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6769498721974583566">
     <nodeInfo nodeId="6769498721974583566" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="18" startPosition="81" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6769498721974583566" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
