@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.scopes;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
@@ -12,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IScope;
@@ -22,7 +24,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.scope.ModelPlusImportedScope;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -54,7 +55,7 @@ public class ClassifierResolveUtils {
     return resolveWithSpecifiedTargetModelName(targetModelName, targetNodeFqName, SNodeOperations.getModel(contextNode));
   }
 
-  public static SNode resolveNonSpecialSyntax(@NotNull String classifierName, @NotNull SNode contextNode) {
+  public static SNode resolveNonSpecialSyntax(@NotNull String classifierName, @NotNull SNode contextNode, ModelPlusImportedScope modelPlusImported) {
     // try to resolve as nested name in current model 
     Iterable<SNode> result = resolveClassifierByNestedName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -77,11 +78,7 @@ public class ClassifierResolveUtils {
 
     // try to resolve as nested name in current scope 
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    for (SModel model : Sequence.fromIterable(visibleModules).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    })) {
+    for (SModel model : CollectionSequence.fromCollection(modelPlusImported.getModels())) {
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(resolveClassifierByNestedName(model, classifierName)));
     }
     if (ListSequence.fromList(res).isNotEmpty()) {
@@ -306,7 +303,7 @@ public class ClassifierResolveUtils {
 
     if (javaImports == null) {
 
-      return resolveNonSpecialSyntax(refText, contextNode);
+      return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
 
       // <node> 
       // <node> 
@@ -408,7 +405,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to use old logic 
-    return resolveNonSpecialSyntax(refText, contextNode);
+    return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
 
   }
 
