@@ -36352,7 +36352,7 @@
               <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2235632002330538700" resolveInfo="clas" />
             </node>
             <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2235632002330933674" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="Removing all java imports annotations" />
+              <property name="value" nameId="tpee.1070475926801" value="Java imports annotation is present" />
             </node>
             <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="2235632002330984367" nodeInfo="ng">
               <property name="applyImmediately" nameId="tpd4.1216127910019" value="true" />
@@ -36395,20 +36395,71 @@
           </node>
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="2235632002330933240" nodeInfo="nn">
-        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2235632002330965417" nodeInfo="nn">
-          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2235632002330538700" resolveInfo="clas" />
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4988876388990303959" nodeInfo="nn">
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4988876388990303962" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="2235632002330933240" nodeInfo="nn">
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2235632002330965417" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2235632002330538700" resolveInfo="clas" />
+            </node>
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2235632002330965404" nodeInfo="nn">
+              <property name="value" nameId="tpee.1070475926801" value="Unneeded java imports present" />
+            </node>
+            <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="2235632002331139627" nodeInfo="ng">
+              <property name="applyImmediately" nameId="tpd4.1216127910019" value="true" />
+              <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="2235632002330984372" resolveInfo="RemoveGivenJavaImports" />
+              <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="2235632002331139630" nodeInfo="ng">
+                <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="2235632002330984375" resolveInfo="toRemove" />
+                <node role="value" roleId="tpd4.1210784642750" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2235632002331139704" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2235632002331058589" resolveInfo="unneeded" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
-        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2235632002330965404" nodeInfo="nn">
-          <property name="value" nameId="tpee.1070475926801" value="Removing unneeded java imports" />
-        </node>
-        <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="2235632002331139627" nodeInfo="ng">
-          <property name="applyImmediately" nameId="tpd4.1216127910019" value="true" />
-          <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="2235632002330984372" resolveInfo="RemoveGivenJavaImports" />
-          <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="2235632002331139630" nodeInfo="ng">
-            <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="2235632002330984375" resolveInfo="toRemove" />
-            <node role="value" roleId="tpd4.1210784642750" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2235632002331139704" nodeInfo="nn">
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="4988876388990321276" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4988876388990369936" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4988876388990346806" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4988876388990324418" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4988876388990321359" nodeInfo="nn">
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2235632002330538700" resolveInfo="clas" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="4988876388990338180" nodeInfo="nn">
+                  <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="4988876388990342229" nodeInfo="ng">
+                    <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpee.6050519299856556786" resolveInfo="JavaImports" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4988876388990353273" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.28358707492429991" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetSizeOperation" typeId="tp2q.1162935959151" id="4988876388990421979" nodeInfo="nn" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4988876388990308035" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4988876388990305887" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2235632002331058589" resolveInfo="unneeded" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetSizeOperation" typeId="tp2q.1162935959151" id="4988876388990311677" nodeInfo="nn" />
+          </node>
+        </node>
+        <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4988876388990440324" nodeInfo="nn">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4988876388990440325" nodeInfo="sn">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4988876388990444315" nodeInfo="nn">
+              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4988876388990444329" nodeInfo="nn">
+                <property name="text" nameId="tpee.6329021646629104958" value="removing all imports at once" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="4988876388990444236" nodeInfo="nn">
+              <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4988876388990444237" nodeInfo="nn">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2235632002330538700" resolveInfo="clas" />
+              </node>
+              <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4988876388990444238" nodeInfo="nn">
+                <property name="value" nameId="tpee.1070475926801" value="Java imports annotation is present" />
+              </node>
+              <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="4988876388990444239" nodeInfo="ng">
+                <property name="applyImmediately" nameId="tpd4.1216127910019" value="true" />
+                <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="2235632002330965611" resolveInfo="RemoveAllJavaImports" />
+              </node>
             </node>
           </node>
         </node>

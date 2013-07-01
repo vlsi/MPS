@@ -94,7 +94,7 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
       // quick-fix 
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(clas, "Removing all java imports annotations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2235632002330933633", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(clas, "Java imports annotation is present", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2235632002330933633", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveAllJavaImports_QuickFix", true);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
@@ -105,13 +105,25 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
     // removing only those single-type imports that didn't get into retain set 
     // quick fix 
     Iterable<SNode> unneeded = Sequence.fromIterable(MapSequence.fromMap(importsByName).values()).subtract(SetSequence.fromSet(retain));
-    {
-      MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(clas, "Removing unneeded java imports", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2235632002330933240", null, errorTarget);
+    if (Sequence.fromIterable(unneeded).count() < ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))), "entries", true)).count()) {
       {
-        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveGivenJavaImports_QuickFix", true);
-        intentionProvider.putArgument("toRemove", unneeded);
-        _reporter_2309309498.addIntentionProvider(intentionProvider);
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(clas, "Unneeded java imports present", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2235632002330933240", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveGivenJavaImports_QuickFix", true);
+          intentionProvider.putArgument("toRemove", unneeded);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
+    } else {
+      // removing all imports at once 
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(clas, "Java imports annotation is present", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4988876388990444236", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveAllJavaImports_QuickFix", true);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
     }
   }
