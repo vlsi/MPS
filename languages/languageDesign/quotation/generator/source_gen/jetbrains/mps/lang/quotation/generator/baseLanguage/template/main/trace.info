@@ -1520,7 +1520,7 @@
     <unitInfo nodeId="1025590056396628814" fileName="TemplateQuotation__to__staticMethodCall.java" startLine="27" startPosition="0" endLine="656" endPosition="0" unitName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/1196351886726">
-    <nodeInfo nodeId="3180306201267234163" fileName="QueriesGenerated.java" startLine="47" startPosition="154" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3180306201267234163" fileName="QueriesGenerated.java" startLine="47" startPosition="154" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6497389703574369340" fileName="QueriesGenerated.java" startLine="51" startPosition="154" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6497389703574369350" fileName="QueriesGenerated.java" startLine="55" startPosition="154" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6497389703574369358" fileName="QueriesGenerated.java" startLine="56" startPosition="67" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3332,7 +3332,7 @@
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="99" startPosition="7" endLine="1438" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="38" startPosition="108" endLine="2185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1196351886726" fileName="TemplateQuotedNode__to__statementList.java" startLine="37" startPosition="0" endLine="2188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3180306201267234162" fileName="QueriesGenerated.java" startLine="47" startPosition="154" endLine="48" endPosition="58" />
+    <scopeInfo nodeId="3180306201267234162" fileName="QueriesGenerated.java" startLine="47" startPosition="154" endLine="48" endPosition="62" />
     <scopeInfo nodeId="6497389703574369339" fileName="QueriesGenerated.java" startLine="51" startPosition="154" endLine="52" endPosition="58" />
     <scopeInfo nodeId="6497389703574369247" fileName="QueriesGenerated.java" startLine="60" startPosition="154" endLine="61" endPosition="67" />
     <scopeInfo nodeId="3691177885151654309" fileName="QueriesGenerated.java" startLine="64" startPosition="154" endLine="65" endPosition="50" />

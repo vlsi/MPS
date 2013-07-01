@@ -77,21 +77,21 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    return node.getConcept().getConceptId().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    return node.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
 
   public static boolean isInstanceOfInterfaceConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
-    return node.getConcept().getConceptId().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+    return node.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
 
   public static boolean isInstanceOfAbstractConceptDeclaration(SNode node) {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
@@ -99,7 +99,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptProperty");
   }
 
@@ -115,7 +115,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration");
   }
 
@@ -195,7 +195,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
 
@@ -203,7 +203,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
@@ -215,7 +215,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
   }
 
@@ -223,7 +223,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
 
@@ -247,7 +247,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration");
   }
 
@@ -255,7 +255,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration");
   }
 
@@ -263,7 +263,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration");
   }
 
@@ -271,7 +271,7 @@ public class SNodeUtil {
     if (node == null) {
       return false;
     }
-    String conceptFqName = node.getConcept().getConceptId();
+    String conceptFqName = node.getConcept().getQualifiedName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.AggregationConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ReferenceConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptLink");
   }
 

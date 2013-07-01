@@ -27,7 +27,7 @@ public class GeneratorUtilEx {
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {
-    if (!(n.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator"))) {
+    if (!(n.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator"))) {
       // optimization 
       return false;
     }

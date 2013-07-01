@@ -185,7 +185,7 @@ public class IMethodCall_Behavior {
       {
         SNode nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1;
         nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IMethodCall_Behavior_fq0410_a0a5a2a1a1.getConcept().getQualifiedName()))) {
           return false;
         }
         {

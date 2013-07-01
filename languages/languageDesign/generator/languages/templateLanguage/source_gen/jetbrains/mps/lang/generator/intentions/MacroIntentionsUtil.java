@@ -103,7 +103,7 @@ public class MacroIntentionsUtil {
       {
         SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2;
         nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2.getConcept().getQualifiedName()))) {
           return false;
         }
         patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a3a2.getReferenceTarget("concept");
@@ -142,7 +142,7 @@ public class MacroIntentionsUtil {
       {
         SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c;
         nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0c.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -155,7 +155,7 @@ public class MacroIntentionsUtil {
             {
               SNode nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2;
               nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2 = childVar_MacroIntentionsUtil_iiuth6_a0a0a0a3a2;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2.getConcept().getQualifiedName()))) {
                 return false;
               }
               patternVar_concept = nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0a3a2.getReferenceTarget("concept");

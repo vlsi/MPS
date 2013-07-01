@@ -4460,7 +4460,7 @@
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8321617901826002785">
     <nodeInfo nodeId="8321617901826002817" fileName="GoToEditorDeclarationHelper.java" startLine="26" startPosition="30" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321617901826002828" fileName="GoToEditorDeclarationHelper.java" startLine="30" startPosition="36" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321617901826002844" fileName="GoToEditorDeclarationHelper.java" startLine="35" startPosition="31" endLine="36" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321617901826002844" fileName="GoToEditorDeclarationHelper.java" startLine="35" startPosition="31" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321617901826002854" fileName="GoToEditorDeclarationHelper.java" startLine="38" startPosition="7" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8321617901826002868" fileName="GoToEditorDeclarationHelper.java" startLine="40" startPosition="43" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321617901826002882" fileName="GoToEditorDeclarationHelper.java" startLine="45" startPosition="30" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4500,7 +4500,7 @@
     <scopeInfo nodeId="8321617901826002790" fileName="GoToEditorDeclarationHelper.java" startLine="20" startPosition="40" endLine="20" endPosition="40" />
     <scopeInfo nodeId="8321617901826002816" fileName="GoToEditorDeclarationHelper.java" startLine="26" startPosition="30" endLine="27" endPosition="62" />
     <scopeInfo nodeId="8321617901826002827" fileName="GoToEditorDeclarationHelper.java" startLine="30" startPosition="36" endLine="31" endPosition="31" />
-    <scopeInfo nodeId="8321617901826002843" fileName="GoToEditorDeclarationHelper.java" startLine="35" startPosition="31" endLine="36" endPosition="110" />
+    <scopeInfo nodeId="8321617901826002843" fileName="GoToEditorDeclarationHelper.java" startLine="35" startPosition="31" endLine="36" endPosition="114" />
     <scopeInfo nodeId="8321617901826002867" fileName="GoToEditorDeclarationHelper.java" startLine="40" startPosition="43" endLine="41" endPosition="18" />
     <scopeInfo nodeId="8321617901826002881" fileName="GoToEditorDeclarationHelper.java" startLine="45" startPosition="30" endLine="46" endPosition="99" />
     <scopeInfo nodeId="8321617901826002908" fileName="GoToEditorDeclarationHelper.java" startLine="53" startPosition="33" endLine="54" endPosition="28" />

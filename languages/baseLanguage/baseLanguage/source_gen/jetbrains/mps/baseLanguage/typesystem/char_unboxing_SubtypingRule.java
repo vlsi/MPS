@@ -51,7 +51,7 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
       {
         SNode nodeToMatch_char_unboxing_gnae0c_a0a;
         nodeToMatch_char_unboxing_gnae0c_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_char_unboxing_gnae0c_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_char_unboxing_gnae0c_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

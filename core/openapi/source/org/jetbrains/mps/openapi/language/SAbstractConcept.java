@@ -26,13 +26,10 @@ package org.jetbrains.mps.openapi.language;
  * This interface has been introduced to give MPS the ability to switch between different implementations w/o affecting users.
  */
 public interface SAbstractConcept {
-  /**
-   * This is a string used to identify a concept.
-   * Now we use fqName for that purpose, but it's planned to use id in future releases instead,
-   * so that the id does not change when we change concept's name.
-   */
-  String getConceptId();
 
+  /**
+   * The qualified name of the concept. Uniquely identifies this concept in its concept repository.
+   */
   String getQualifiedName();
 
   /**

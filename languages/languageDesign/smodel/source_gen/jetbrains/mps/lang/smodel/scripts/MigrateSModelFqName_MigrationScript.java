@@ -336,7 +336,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0_0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -349,7 +349,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_1;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_1 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a_1;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_1.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_1.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -362,7 +362,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0_0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a0_1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0_0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0_0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -397,7 +397,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_2;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_2 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a_2;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_2.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_2.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -442,7 +442,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -480,7 +480,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -493,7 +493,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -506,7 +506,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a0;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -541,7 +541,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_0;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a_0;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_0.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a_0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -588,7 +588,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1_0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -601,7 +601,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_1;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_1 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0b_1;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_1.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_1.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -614,7 +614,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1_0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a1_1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1_0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1_0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -649,7 +649,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_2;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_2 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0b_2;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_2.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_2.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -694,7 +694,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a1;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a1.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a1.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -732,7 +732,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a1.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -745,7 +745,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b = childVar_MigrateSModelFqName_s34syj_a0a0a0a0b;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -758,7 +758,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a1.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -793,7 +793,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_0;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0b_0;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_0.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0b_0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -840,7 +840,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2_0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -853,7 +853,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_1;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_1 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0c_1;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_1.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_1.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -866,7 +866,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2_0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a2_1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2_0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2_0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -901,7 +901,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_2;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_2 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0c_2;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_2.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_2.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -946,7 +946,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a2;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a2 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a2.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a2.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -984,7 +984,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a2.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -997,7 +997,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c = childVar_MigrateSModelFqName_s34syj_a0a0a0a0c;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1010,7 +1010,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a2;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a2.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1045,7 +1045,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_0;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0c_0;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_0.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0c_0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1093,7 +1093,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3_0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1116,7 +1116,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d_0;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0d_2;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d_0.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d_0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1129,7 +1129,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3_0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a3_1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3_0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3_0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1191,7 +1191,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a3;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a3 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a3.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a3.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1230,7 +1230,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a3.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1253,7 +1253,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d = childVar_MigrateSModelFqName_s34syj_a0a0a0a0d_0;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0d.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1266,7 +1266,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a3;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a3.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1331,7 +1331,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4_0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1354,7 +1354,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e_0;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0e_2;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e_0.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e_0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1367,7 +1367,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4_0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a4_1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4_0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4_0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1429,7 +1429,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a4;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a4 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a4.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a4.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1468,7 +1468,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.PlusExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a4.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1491,7 +1491,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e = childVar_MigrateSModelFqName_s34syj_a0a0a0a0e_0;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0e.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1504,7 +1504,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a4;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a4.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1568,7 +1568,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5_0;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1581,7 +1581,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_1;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_1 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0f_1;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_1.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_1.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1594,7 +1594,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5_0;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a5_1;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5_0.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5_0.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1629,7 +1629,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_2;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_2 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0f_2;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_2.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_2.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1674,7 +1674,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a5;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a5 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a5.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a1a0a0a5.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1712,7 +1712,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
       {
         SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5;
         nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a5.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -1725,7 +1725,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f = childVar_MigrateSModelFqName_s34syj_a0a0a0a0f;
-              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
@@ -1738,7 +1738,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
                   {
                     SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5;
                     nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0a5;
-                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5.getConcept().getConceptId()))) {
+                    if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0a5.getConcept().getQualifiedName()))) {
                       return false;
                     }
                     {
@@ -1773,7 +1773,7 @@ public class MigrateSModelFqName_MigrationScript extends BaseMigrationScript {
             {
               SNode nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_0;
               nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_0 = childVar_MigrateSModelFqName_s34syj_a0a0a0a0f_0;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_0.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_MigrateSModelFqName_s34syj_a0a0a0a0f_0.getConcept().getQualifiedName()))) {
                 return false;
               }
               {
