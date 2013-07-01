@@ -507,7 +507,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 245:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ThrowStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"throwable"}, new boolean[]{false}).alias("throw", "").staticScope(StaticScope.NONE).create();
       case 246:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.Tokens").interface_().children(new String[]{"token"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.Tokens").interface_().properties("tokens").create();
       case 247:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.TrimOperation").super_("jetbrains.mps.baseLanguage.structure.BaseStringOperation").parents("jetbrains.mps.baseLanguage.structure.BaseStringOperation").properties("trimKind").alias("trim", "trim white spaces, line breaks, tabs, etc.").staticScope(StaticScope.NONE).create();
       case 248:
