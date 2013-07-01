@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IScope;
@@ -78,7 +77,7 @@ public class ClassifierResolveUtils {
 
     // try to resolve as nested name in current scope 
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    for (SModel model : CollectionSequence.fromCollection(modelPlusImported.getModels())) {
+    for (SModel model : Sequence.fromIterable(modelPlusImported.getModels())) {
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(resolveClassifierByNestedName(model, classifierName)));
     }
     if (ListSequence.fromList(res).isNotEmpty()) {
