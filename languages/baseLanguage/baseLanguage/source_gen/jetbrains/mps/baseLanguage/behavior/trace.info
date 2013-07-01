@@ -261,7 +261,7 @@
   <unitInfo fileName="UnknownConsCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownConsCall_BehaviorDescriptor" />
   <unitInfo fileName="UnknownDotCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownDotCall_BehaviorDescriptor" />
   <unitInfo fileName="UnknownLocalCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownLocalCall_BehaviorDescriptor" />
-  <unitInfo fileName="UnknownNameRef_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_BehaviorDescriptor" />
+  <unitInfo fileName="UnknownNameRef_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNameRef_BehaviorDescriptor" />
   <unitInfo fileName="UnknownNew_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnknownNew_BehaviorDescriptor" />
   <unitInfo fileName="UnresolvedNameReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnresolvedNameReference_BehaviorDescriptor" />
   <unitInfo fileName="UnsignedRightShiftAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.UnsignedRightShiftAssignmentExpression_BehaviorDescriptor" />
