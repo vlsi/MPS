@@ -112,7 +112,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
           addToCache(child);
         }
 
-        String conceptFqName = root.getConcept().getId();
+        String conceptFqName = root.getConcept().getQualifiedName();
         add(conceptFqName, root);
       }
     });
@@ -127,8 +127,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
         removeFromCache(child);
       }
 
-      String conceptFqName = root.getConcept().getId();
-      remove(conceptFqName, root);
+      remove(root.getConcept().getQualifiedName(), root);
     } finally {
       NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
     }

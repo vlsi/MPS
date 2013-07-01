@@ -1919,7 +1919,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public boolean isReferentRequired(String role) {
     SLink link = getConcept().findLink(role);
     if (link == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getId());
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getQualifiedName());
       return false;
     }
 
@@ -2179,7 +2179,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public String getConceptFqName() {
-    return getConcept().getId();
+    return getConcept().getQualifiedName();
   }
 
   @NotNull

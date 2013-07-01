@@ -76,10 +76,10 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
           }
 
-          String conceptId = root.getConcept().getId();
-          if (conceptId.equals(SNodeUtil.concept_ConceptDeclaration)) {
+          String conceptName = root.getConcept().getQualifiedName();
+          if (conceptName.equals(SNodeUtil.concept_ConceptDeclaration)) {
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
-          } else if (conceptId.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+          } else if (conceptName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
             myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
           }
         }

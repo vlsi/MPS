@@ -91,7 +91,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     SConcept concept = getOutputSourceNode().getConcept();
     SLink link = concept.findLink(role);
     if (link == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + concept.getId());
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + concept.getQualifiedName());
       return false;
     }
 

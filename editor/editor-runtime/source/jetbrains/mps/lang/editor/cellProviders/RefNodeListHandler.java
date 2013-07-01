@@ -45,7 +45,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
       @Override
       public void run() {
         myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
-        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getId();
+        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
         SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
         if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {

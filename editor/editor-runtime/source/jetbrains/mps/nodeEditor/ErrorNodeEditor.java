@@ -41,7 +41,7 @@ public class ErrorNodeEditor implements ConceptEditor {
   public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
     collection.addEditorCell(new EditorCell_Error(editorContext, node, "Can't find an editor."));
-    collection.addEditorCell(new EditorCell_Error(editorContext, node, "Concept = " + node.getConcept().getId()));
+    collection.addEditorCell(new EditorCell_Error(editorContext, node, "Concept = " + node.getConcept().getQualifiedName()));
     return collection;
 
   }

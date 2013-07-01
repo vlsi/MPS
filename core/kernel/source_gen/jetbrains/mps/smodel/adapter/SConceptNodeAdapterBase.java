@@ -107,11 +107,6 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return myConcept;
   }
 
-  @Override
-  public String getId() {
-    return myConceptName;
-  }
-
   public void internalSetId(String id) {
     myConceptName = id;
   }

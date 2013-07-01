@@ -22,7 +22,7 @@ import jetbrains.mps.textGen.TextGenBuffer;
 public class DefaultTextGenDescriptor implements TextGenDescriptor {
   @Override
   public void doGenerateText(SNode node, TextGenBuffer buffer) {
-    buffer.append("<!TextGen not found for '" + node.getConcept().getId() + "'!>");
+    buffer.append("<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>");
   }
 
   @Override

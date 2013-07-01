@@ -33,15 +33,12 @@ public interface SAbstractConcept {
    */
   String getConceptId();
 
-  // TODO remove
-  String getId();
-
   String getQualifiedName();
 
   /**
    * The user visible name of the concept
    */
-  String getName();  //todo? rename to getPresentation or use getId
+  String getName();
 
   /**
    * The language that defines the concept

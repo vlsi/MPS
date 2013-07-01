@@ -40,8 +40,8 @@ public class SNodeOperations {
   }
 
   public static boolean isUnknown(SNode sNode) {
-    SModule language = MPSModuleRepository.getInstance().getModuleByFqName(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
-    return !(language instanceof Language) || ((Language) language).findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConcept().getId())) == null;
+    SModule language = MPSModuleRepository.getInstance().getModuleByFqName(sNode.getConcept().getLanguage().getQualifiedName());
+    return !(language instanceof Language) || ((Language) language).findConceptDeclaration(sNode.getConcept().getName()) == null;
   }
 
   public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {

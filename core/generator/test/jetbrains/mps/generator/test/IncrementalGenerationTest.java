@@ -46,7 +46,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
           SNode found = null;
           for(SNode md : root.getChildren("member")) {
-            if(md.getName().equals("testRename2") && md.getConcept().getId().equals("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+            if(md.getName().equals("testRename2") && md.getConcept().getQualifiedName().equals("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               found = md;
             }
           }

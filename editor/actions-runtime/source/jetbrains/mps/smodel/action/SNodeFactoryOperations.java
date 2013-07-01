@@ -119,7 +119,7 @@ public class SNodeFactoryOperations {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
         if (SModelSearchUtil.findPropertyDeclaration(((jetbrains.mps.smodel.SNode) newChild).getConceptDeclarationNode(), propertyName) == null) {
           // no such property in new child : don't copy the attribute
-          LOG.error("couldn't copy attribute " + NameUtil.shortNameFromLongName(attribute.getConcept().getId()) + " for property '" + propertyName + "' : so such property in concept " + NameUtil.shortNameFromLongName(newChild.getConcept().getId()), newChild);
+          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }
@@ -127,7 +127,7 @@ public class SNodeFactoryOperations {
         String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
         if (SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) newChild).getConceptDeclarationNode(), linkRole) == null) {
           // no such link in new child : don't copy the attribute
-          LOG.error("couldn't copy attribute " + NameUtil.shortNameFromLongName(attribute.getConcept().getId()) + " for link '" + linkRole + "' : so such link in concept " + NameUtil.shortNameFromLongName(newChild.getConcept().getId()), newChild);
+          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;
         }
       }

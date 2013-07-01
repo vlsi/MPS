@@ -440,7 +440,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------visiting registered intentions---------------
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
-    for (String conceptId : LanguageHierarchyCache.getAncestorsNames(node.getConcept().getId())) {
+    for (String conceptId : LanguageHierarchyCache.getAncestorsNames(node.getConcept().getQualifiedName())) {
       Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
       if (concept2FactoriesMap.containsKey(conceptId)) {
         for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
