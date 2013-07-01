@@ -11,8 +11,7 @@
   <depends>com.intellij.modules.mps</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.LanguageLibrary dir="/lang/"/>
-    <mps.LanguageLibrary dir="/tool/"/>
+    <mps.LanguageLibrary dir=""/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 
