@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -115,7 +116,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
+      SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
+      SelectionUtil.selectCell(editorContext, SNodeOperations.cast(resultNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "alias");
     }
 
     public boolean isReferentPresentation() {
