@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.language;
 /**
  * Represents an abstract meta-definition of node connections. These can express either references or containment relationships.
  */
-public interface SLink {
+public interface SAbstractLink {
 
   /**
    * The identifier of the link within the containing concept.
@@ -36,13 +36,7 @@ public interface SLink {
   boolean isReference();
 
   /**
-   * The maximum cardinality can be greater than 1.
-   * Always false for references, true or false for parent-child relationships.
-   */
-  boolean isMultiple();
-
-  /**
-   * For optional relationships cardinality can also be equal to 0.
+   * This link may contain no elements.
    */
   boolean isOptional();
 }

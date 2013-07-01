@@ -5,6 +5,9 @@ package jetbrains.mps.smodel.adapter;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
@@ -17,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import java.util.HashSet;
@@ -25,10 +29,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class SLanguageLanguageAdapter implements SLanguage {
+public class SLanguageAdapter implements SLanguage {
   private String myLanguage;
 
-  public SLanguageLanguageAdapter(@NotNull String language) {
+  public SLanguageAdapter(@NotNull String language) {
     this.myLanguage = language;
   }
 
@@ -44,7 +48,13 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
-    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getModule()).getRootNodes();
+    LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(myLanguage);
+    if (runtime == null) {
+      return Collections.emptySet();
+    }
+
+    // TODO rewrite using LanguageRuntime 
+    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
     List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -59,25 +69,42 @@ public class SLanguageLanguageAdapter implements SLanguage {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
       }
-    }).select(new ISelector<SNode, SInterfaceConceptNodeAdapter>() {
-      public SInterfaceConceptNodeAdapter select(SNode it) {
-        return new SInterfaceConceptNodeAdapter(NameUtil.nodeFQName(it));
+    }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
+      public SInterfaceConceptAdapter select(SNode it) {
+        return new SInterfaceConceptAdapter(NameUtil.nodeFQName(it));
       }
     }));
     return c;
   }
 
+  public Iterable<SEnumeration> getEnumerations() {
+    // TODO rewrite using LanguageRuntime 
+    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
+    List<SEnumeration> c = ListSequence.fromList(new ArrayList<SEnumeration>());
+    ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+      }
+    }).select(new ISelector<SNode, SEnumeration>() {
+      public SEnumeration select(SNode it) {
+        return SConceptRepository.getInstance().getEnumeration(NameUtil.nodeFQName(it));
+      }
+    }));
+    return c;
+
+  }
+
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
-    for (Language language : SetSequence.fromSet(getModule().getAllExtendedLanguages())) {
+    for (Language language : SetSequence.fromSet(getSourceModule().getAllExtendedLanguages())) {
       runtimes.addAll(language.getRuntimeModulesReferences());
     }
     return runtimes;
   }
 
   @Override
-  public Language getModule() {
+  public Language getSourceModule() {
     return (Language) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myLanguage));
   }
 
@@ -88,6 +115,6 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   @Override
   public boolean equals(Object object) {
-    return object instanceof SLanguageLanguageAdapter && myLanguage.equals(((SLanguageLanguageAdapter) object).myLanguage);
+    return object instanceof SLanguageAdapter && myLanguage.equals(((SLanguageAdapter) object).myLanguage);
   }
 }

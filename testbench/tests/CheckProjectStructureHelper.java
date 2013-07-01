@@ -28,6 +28,7 @@ import jetbrains.mps.testbench.ModelsExtractor;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.validation.ModelValidator;
@@ -38,7 +39,6 @@ import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -291,7 +291,7 @@ public class CheckProjectStructureHelper {
       }
 
       for (SReference ref : node.getReferences()) {
-        SLink link = concept.getLink(ref.getRole());
+        SAbstractLink link = concept.getLink(ref.getRole());
         if (link == null || !link.isReference()) {
           result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
@@ -299,7 +299,7 @@ public class CheckProjectStructureHelper {
 
       for (SNode child : node.getChildren()) {
         String role = child.getRoleInParent();
-        SLink link = concept.getLink(role);
+        SAbstractLink link = concept.getLink(role);
         if (link == null || link.isReference()) {
           result.add("unknown child role: `" + role + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }

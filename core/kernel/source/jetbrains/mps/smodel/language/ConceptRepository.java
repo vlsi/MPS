@@ -19,7 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -28,6 +29,8 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -39,8 +42,6 @@ import java.util.concurrent.ConcurrentMap;
  * evgeny, 10/12/12
  */
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
-  private static Logger LOG = LogManager.getLogger(ConceptRepository.class);
-
   private final ConcurrentMap<String, SAbstractConcept> myConcepts = new ConcurrentHashMap<String, SAbstractConcept>();
 
   @Override
@@ -61,6 +62,17 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     return sConcept;
   }
 
+  @Override
+  public SEnumeration getEnumeration(String qualifiedName) {
+    // TODO
+    return null;
+  }
+
+  @Override
+  public SLanguage getLanguage(String qualifiedName) {
+    return new SLanguageAdapter(qualifiedName);
+  }
+
   private void createConceptAdapter(String id) {
     String langName = NameUtil.namespaceFromConceptFQName(id);
     SModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
@@ -73,14 +85,14 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         for (SNode root : smd.getRootNodes()) {
           String conceptFQName = InternUtil.intern(modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name));
           if (conceptFQName.equals(SNodeUtil.concept_ConceptDeclaration)) {
-            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
+            myConcepts.putIfAbsent(conceptFQName, new SConceptAdapter(conceptFQName));
           }
 
           String conceptName = root.getConcept().getQualifiedName();
           if (conceptName.equals(SNodeUtil.concept_ConceptDeclaration)) {
-            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
+            myConcepts.putIfAbsent(conceptFQName, new SConceptAdapter(conceptFQName));
           } else if (conceptName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
+            myConcepts.putIfAbsent(conceptFQName, new SConceptAdapter(conceptFQName));
           }
         }
         if (myConcepts.containsKey(id)) return;
@@ -91,7 +103,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     // adding
     //LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
     id = InternUtil.intern(id);
-    myConcepts.putIfAbsent(id, new SConceptNodeAdapter(id));
+    myConcepts.putIfAbsent(id, new SConceptAdapter(id));
   }
 
   @Override

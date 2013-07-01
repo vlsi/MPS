@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel;
 
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.generator.TransientModelsModule;
@@ -25,7 +27,6 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -69,8 +70,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
-  public SLink getLink() {
-    return getSourceNode().getConcept().getLink(getRole());
+  public SReferenceLink getLink() {
+    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
   }
 
   @Override

@@ -23,7 +23,6 @@ import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -48,8 +47,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
@@ -76,6 +76,7 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -170,7 +171,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
       if (language != null) {
-        languages.add(new SLanguageLanguageAdapter(language.getModuleName()));
+        languages.add(ConceptRepository.getInstance().getLanguage(language.getModuleName()));
       }
     }
 
@@ -179,7 +180,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (devKit != null) {
         for (Language language : devKit.getAllExportedLanguages()) {
           if (language != null) {
-            languages.add(new SLanguageLanguageAdapter(language.getModuleName()));
+            languages.add(ConceptRepository.getInstance().getLanguage(language.getModuleName()));
           }
         }
       }
@@ -187,7 +188,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     if (BootstrapLanguages.coreLanguage() != null) {
       // todo: ???
-      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.CORE_NAMESPACE));
+      languages.add(ConceptRepository.getInstance().getLanguage(BootstrapLanguages.CORE_NAMESPACE));
     }
 
     return languages; // todo: maybe collect extended languages here

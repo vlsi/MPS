@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,19 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-
 /**
- * Represents a concept
+ * Containment links describe parent-child relationships.
  */
-public interface SConcept extends SAbstractConcept {
+public interface SContainmentLink extends SAbstractLink {
 
-  SConcept getSuperConcept();
+  /**
+   * Instance nodes can contain more than one element under this link.
+   */
+  boolean isMultiple();
 
-  Iterable<SInterfaceConcept> getSuperInterfaces();
+  /**
+   * The order of elements contained by such links can be changed without affecting the language semantics.
+   * The value is undefined for singular links.
+   */
+  boolean isUnordered();
 }

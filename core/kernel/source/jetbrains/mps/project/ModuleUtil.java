@@ -72,7 +72,7 @@ public class ModuleUtil {
     return new TranslatingSequence<SLanguage, Language>(module.getUsedLanguages(), new _return_P1_E0<Iterable<Language>, SLanguage>() {
       @Override
       public Iterable<Language> invoke(SLanguage language) {
-        return Collections.singleton((Language) language.getModule());
+        return Collections.singleton((Language) language.getSourceModule());
       }
     });
   }

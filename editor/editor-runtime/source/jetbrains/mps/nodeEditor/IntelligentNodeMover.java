@@ -27,9 +27,10 @@ import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
-import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
 
@@ -47,7 +48,7 @@ class IntelligentNodeMover {
   private SNode myCurrent;
   private SNode myParent;
   private String myRole;
-  private SLink myLink;
+  private SContainmentLink myLink;
 
   IntelligentNodeMover(EditorComponent component, boolean forward) {
     myComponent = component;
@@ -109,7 +110,8 @@ class IntelligentNodeMover {
       assert myParent != null && myRole != null;
 
       final SConcept acd = myParent.getConcept();
-      myLink = acd.getLink(myRole);
+      SAbstractLink link = acd.getLink(myRole);
+      myLink = link instanceof SContainmentLink ? (SContainmentLink) link : null;
 
       if (myLink == null) {
         LOG.error("Can't find a link " + myRole + " in concept " + acd.getName());
@@ -252,8 +254,8 @@ class IntelligentNodeMover {
 
   private boolean haveSimilarLink(SNode current) {
     for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept(), true)) {
-      SLink currentLink = concept.getLink(myLink.getRole());
-      if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
+      SAbstractLink currentLink = concept.getLink(myLink.getRole());
+      if (currentLink instanceof SContainmentLink && ((SContainmentLink) currentLink).isMultiple() && currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
         return true;
       }
     }

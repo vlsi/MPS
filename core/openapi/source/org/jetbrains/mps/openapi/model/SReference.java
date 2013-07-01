@@ -17,7 +17,7 @@ package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /**
  * Represents reference between nodes. Nodes are organized in AST with references going across the tree hierarchy
@@ -30,7 +30,7 @@ public interface SReference {
   /**
    * Gets the associated Link - an abstract meta-definition for the reference
    */
-  SLink getLink();
+  SReferenceLink getLink();
 
   SNode getSourceNode();
 

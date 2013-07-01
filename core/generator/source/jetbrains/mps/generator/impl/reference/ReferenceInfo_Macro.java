@@ -23,10 +23,10 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public abstract class ReferenceInfo_Macro extends ReferenceInfo {
@@ -89,7 +89,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   public boolean isRequired() {
     String role = getReferenceRole();
     SConcept concept = getOutputSourceNode().getConcept();
-    SLink link = concept.getLink(role);
+    SAbstractLink link = concept.getLink(role);
     if (link == null) {
       LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + concept.getQualifiedName());
       return false;

@@ -45,12 +45,12 @@ public interface SAbstractConcept {
   /**
    * Retrieves an associated link identified by the given role.
    */
-  SLink getLink(String role);
+  SAbstractLink getLink(String role);
 
   /**
    * Retrieves all links associated with the concept.
    */
-  Iterable<SLink> getLinks();
+  Iterable<SAbstractLink> getLinks();
 
   /**
    * Finds a concept's property by name

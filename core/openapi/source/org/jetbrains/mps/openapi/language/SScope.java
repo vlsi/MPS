@@ -19,6 +19,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Scope provides a set of nodes, visible in the particular context.
+ * It may also associate a unique textual representation with each node and is capable of resolving nodes by these strings.
+ */
 public interface SScope {
 
   /**
@@ -49,7 +53,7 @@ public interface SScope {
    * @return resolved element when reference text unambiguously identifies element, null otherwise
    */
   @Nullable
-  public abstract SNode resolve(SNode contextNode, @NotNull String refText);
+  public abstract SNode resolve(@NotNull String refText);
 
   /**
    * Creates textual reference for scope element. If element has no textual representation
@@ -62,6 +66,6 @@ public interface SScope {
    * @return reference text for the node element in the current scope
    */
   @Nullable
-  public abstract String getReferenceText(SNode contextNode, @NotNull SNode node);
+  public abstract String getReferenceText(@NotNull SNode node);
 
 }
