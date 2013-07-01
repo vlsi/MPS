@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3s6g3ku0a0pz80e926r911e9z7u15i3">
+<dependencies version="2" modelHash="9ilfgange54wwifpck1m39behid46s9">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.cellProviders(MPS.Editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.generator.internal(MPS.Editor/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -1044,7 +1044,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="_GenericDeclaration_TypeVariables_Component.java" />
   </source>
-  <source id="1109281376921" name="TypeVariableDeclaration_Editor" hash="adz6qk6goc5meax8vsuxo07dpcr854m">
+  <source id="1109281376921" name="TypeVariableDeclaration_Editor" hash="e4setwaujwor1j9ztoo4gygxtf59xdm">
     <dep root="1186415538255" />
     <dep root="1214997316768" />
     <dep root="5019026806746802173" />

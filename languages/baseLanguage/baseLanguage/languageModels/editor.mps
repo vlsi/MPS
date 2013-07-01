@@ -5024,6 +5024,9 @@
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1214997316768" resolveInfo="TypeVariableDeclaration_addBound" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="6181413376134737881" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1214997970620" nodeInfo="nn">
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
