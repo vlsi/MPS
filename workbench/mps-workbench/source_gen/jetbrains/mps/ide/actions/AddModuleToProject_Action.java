@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
 import org.apache.log4j.Logger;
@@ -59,7 +58,7 @@ public class AddModuleToProject_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
     if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }

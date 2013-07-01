@@ -57,8 +57,6 @@ public class MergeDriverMain {
     configureLog4j();
     MPSCore.getInstance().init();
     MPSPersistence.getInstance().init();
-    // hack: deleting nodes doesn't work now without ImmatureReferences initialized 
-    // <node> 
 
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     MergeDriverBackupUtil.setMergeBackupDirPath(systemPath + File.separator + "merge-backup");

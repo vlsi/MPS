@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="96x9mrr41lzwo57q6xex1upl2t2cvpt">
+<dependencies version="2" modelHash="3wzcogydqavb9l0jr1fb94jdnxot75e">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />
@@ -63,7 +63,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="c1xbedyalk4nw2czpsk8cfko8ym7qhu" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-15tz6c31ci6wk9c9hxckywzrmeormqi" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="e97331jkwmulqmze82i6ztnh7whvvsm" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
   <dep model="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" hash="e5z73g5n2vxpcbh66v3vk543v5s2zdy" />
   <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-5kctb7b7jnlp1h0duovrvgm0c42ily4" />
@@ -77,7 +77,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-2ytfmjyhyngzrkmkmbok6lzmq2qfbln" />
   <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="iad34v0paaaaokkadywwcqcja7n96u" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="24go6mlxqfa8vkywupfg1a2w2jd0abi" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" hash="-1rlet31jszxx3xj62w9zwmej7yxo6h" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" hash="b0pfw6jvr76x03tu9fhf0idppdv4aid" />
   <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" hash="-9ktbxwn30ev13vlh9sjfohzjl5cu64c" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-achotqmank8lbn0qyr9phfzza4hbi1t" />
   <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" hash="bmvxok65gbaet368cczjs0rvo3upthu" />
@@ -97,7 +97,7 @@
   <dep model="r:a1b1112d-dd34-4046-a6a3-811fd290d232(jetbrains.mps.execution.configurations.pluginSolution.plugin)" hash="c1fsoyk8khal315gj213td4jxeaiie7" />
   <dep model="r:a76f2576-36ee-41c5-a8e6-bb2264ed2331(jetbrains.mps.baseLanguage.execution.api.ui)" hash="3lvae0pf7x7ruel87x7q63myyw8vm8k" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-62qaz2stsu6b43rpef4dvmgdihcp789" />
-  <dep model="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)" hash="cr0kds4xgceyiwc396sgedo41dcg6pi" />
+  <dep model="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)" hash="47nap2bvcitd8253zwuuftdrhfls79n" />
   <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-3khy3ybi9j3b325qda4iltwaw0vj4ie" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="aoywaq1ew2203morpseql2gxmwetl9v" />
   <dep model="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" hash="-93grilwsm80tjl3596dn11bn7t1g52q" />
@@ -114,7 +114,7 @@
   <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" hash="11hkwu3uc1k6x7fy66fao5iwpregzpk" />
   <dep model="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)" hash="-7cynynwon5ow5dkbyowr0wsmiera9o2" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5wivjm735wrx1nbiz5js62dqixuwvq4" />
-  <common hash="-ab9nb0bcwybpym4n5gt50prge4ens75">
+  <common hash="-3pos5b61gdngrmefwhe7x2vlv777alm">
     <dep root="357096973092112028" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
@@ -189,7 +189,7 @@
     <file name="Plugin_PluginInitializer.java" />
     <file name="plugin.xml" />
   </source>
-  <source id="6062668769033909448" name="Java" hash="-bb0v9h3b8fgc0tf9j3vs4ks7kb0q6n3">
+  <source id="6062668769033909448" name="Java" hash="-4tfguihwcqrtw278k2zhy3znt073a7m">
     <dep root="357096973092112028" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -292,7 +292,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JavaApplication_Kind.java" />
   </source>
-  <source id="6062668769033909643" name="Java Executor" hash="-c9uolmszxd3l71l5a9g7hkde0j191de">
+  <source id="6062668769033909643" name="Java Executor" hash="-dzd9528mjiqy53r5vgouswu86poawof">
     <dep root="6062668769033909448" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
@@ -369,7 +369,7 @@
     <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <file name="Java_Producer.java" />
   </source>
-  <source id="6062668769034010588" name="JUnit Tests" hash="-5wfp91ryg0c1os2rvj6xieyx3wj0ujd">
+  <source id="6062668769034010588" name="JUnit Tests" hash="-4eka2jttqqgiwkm1cooa77hjqjre9rl">
     <dep root="357096973092112028" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
@@ -398,7 +398,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JUnitTests_Kind.java" />
   </source>
-  <source id="6062668769034010590" name="JUnit Tests" hash="-bqwd97rogayvqldgzqn8kx46kl7094w">
+  <source id="6062668769034010590" name="JUnit Tests" hash="-5fdbydpgh3ku7lnx1zoo4nbylh4gtvq">
     <dep root="357096973092112028" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
@@ -439,6 +439,7 @@
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
@@ -459,7 +460,7 @@
     <file name="JUnitTests_Configuration_Editor.java" />
     <file name="JUnitTests_Configuration_Factory.java" />
   </source>
-  <source id="6062668769034010900" name="JUnit Tests Executor" hash="-axrqqjivkizc51tfevv4tgxf5kxx9jc">
+  <source id="6062668769034010900" name="JUnit Tests Executor" hash="-8zw6zd2nk2h9rnvgg3ybw0riqzfqgeg">
     <dep root="6062668769034010590" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
@@ -511,7 +512,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JUnitTests_Configuration_RunProfileState.java" />
   </source>
-  <source id="6062668769034010995" name="JUnit Tests Producer" hash="2xpceaqjn5y70mbxxj8foww6endtv80">
+  <source id="6062668769034010995" name="JUnit Tests Producer" hash="-oe6ppjcneigt3c6p8igoqk0kbgy54d">
     <dep root="6062668769034010590" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />
@@ -556,7 +557,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JUnitTests_Producer.java" />
   </source>
-  <source id="6062668769034024112" name="MPS" hash="-6gm8anslanqa456cojhz9wzvsvfgkfh">
+  <source id="6062668769034024112" name="MPS" hash="-1etiq1pfpfbjwjk9rzk83mgr9duet12">
     <dep root="357096973092112028" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
@@ -585,7 +586,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MPS_Kind.java" />
   </source>
-  <source id="6062668769034024114" name="MPS Instance" hash="duz2ncmbszj1kc0xwo5a0qbfxp10rtl">
+  <source id="6062668769034024114" name="MPS Instance" hash="3rt1wner7iszd1ry7da72i9mkjvynau">
     <dep root="357096973092112028" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
@@ -647,7 +648,7 @@
     <file name="MPSInstance_Configuration_Editor.java" />
     <file name="MPSInstance_Configuration_Factory.java" />
   </source>
-  <source id="6062668769034024381" name="MPS Instance Executor" hash="-2h2u54qcb89vddno6ogotjwgsrz5vjm">
+  <source id="6062668769034024381" name="MPS Instance Executor" hash="36k9hjdwrfi5h2y66yrk3mrw2h7ktu2">
     <dep root="6062668769034024114" />
     <dep root="6062668769034024422" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
@@ -690,7 +691,7 @@
     <dep model="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)" />
     <file name="MPSInstance_Configuration_RunProfileState.java" />
   </source>
-  <source id="6062668769034024422" name="mps" hash="83go0yw6i34pth0k1a5evtgx5rljqkr">
+  <source id="6062668769034024422" name="mps" hash="ew9p6z4p4oixxu0w0ucp6gi11qdxp9u">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util(MPS.IDEA/com.intellij.util@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -713,7 +714,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Mps_Command.java" />
   </source>
-  <source id="6391517972808447555" name="Remote" hash="2fob81qje0eyapgnkg58prrobupgpeo">
+  <source id="6391517972808447555" name="Remote" hash="doufvpvcjwxb14ho040asjvcaze4wmq">
     <dep root="357096973092112028" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
@@ -790,7 +791,7 @@
     <file name="Remote_Configuration_Editor.java" />
     <file name="Remote_Configuration_Factory.java" />
   </source>
-  <source id="6391517972808447593" name="Remote Executor" hash="-eovtaft462zmohmuwmmeg781ata6sbo">
+  <source id="6391517972808447593" name="Remote Executor" hash="1d6bac72kbz6myc0a2kuksu75himp5z">
     <dep root="6391517972808447557" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
@@ -825,7 +826,7 @@
     <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" />
     <file name="Remote_Configuration_RunProfileState.java" />
   </source>
-  <source id="6391517972808447783" name="RemoteSettingsEditor" hash="-2yatnifbuyp6csdbnakdjo9y1cu6ypd">
+  <source id="6391517972808447783" name="RemoteSettingsEditor" hash="-4hpk9z0s9htodbpn51exj86kxc86u7r">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -841,7 +842,7 @@
     <dep model="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" />
     <file name="RemoteSettingsEditor.java" />
   </source>
-  <source id="357096973092112028" name="ProjectChooser" hash="dhzhwnnpuxtivicv0zk01lauy1achbq">
+  <source id="357096973092112028" name="ProjectChooser" hash="-24p07p9c7acxbuesq0bfeht7rwxs6i1">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />

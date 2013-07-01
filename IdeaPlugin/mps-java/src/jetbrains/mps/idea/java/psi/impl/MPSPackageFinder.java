@@ -27,6 +27,7 @@ import com.jgoodies.common.collect.ArrayListModel;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -69,7 +70,11 @@ public class MPSPackageFinder extends PsiElementFinder {
           if (module instanceof SolutionIdea
             && ((SolutionIdea) module).getIdeaModule().getProject().equals(myProject)) {
 
-            packages.add(new MPSPackage(MPSPsiProvider.getInstance(myProject).getPsi(model)));
+            MPSPsiModel psiModel = MPSPsiProvider.getInstance(myProject).getPsi(model);
+            if (psiModel == null) {
+              return null;
+            }
+            packages.add(new MPSPackage(psiModel));
           }
         }
 

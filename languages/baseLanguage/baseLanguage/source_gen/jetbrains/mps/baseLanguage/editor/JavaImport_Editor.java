@@ -10,6 +10,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -27,7 +31,7 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cbnorm_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_cbnorm_a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_cbnorm_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_cbnorm_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_cbnorm_c0(editorContext, node));
     return editorCell;
   }
@@ -41,8 +45,21 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_cbnorm_b0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.TokensWithDots");
+  private EditorCell createProperty_cbnorm_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("tokens");
+    provider.setNoTargetText("<no tokens>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_tokens");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

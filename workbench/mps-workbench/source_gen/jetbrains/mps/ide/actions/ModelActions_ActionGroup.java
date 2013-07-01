@@ -61,7 +61,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action");
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeDependencies_Action");
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.platform.actions.AnalyzeDependencies_Action");
       ModelActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_check);

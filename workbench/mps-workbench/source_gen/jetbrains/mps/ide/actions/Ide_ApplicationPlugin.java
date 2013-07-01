@@ -26,7 +26,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeClasspath_Action());
-    addAction(new AnalyzeDependencies_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());
     addAction(new CalcClassifiersInRootsStatistic_Action());
@@ -255,7 +254,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorPopupEx_Goto_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
-    insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzeMenu", null);
+    insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzePlatform_ActionGroupother", null);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_commonModule);

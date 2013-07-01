@@ -216,6 +216,8 @@ public class ResolveUnknownUtil {
     // or node<Classifier> if all tokens form a name class 
     // returns null if could not resolve 
 
+    String[] tokens = SPropertyOperations.getString(x, "tokens").split("\\.");
+
     SNode operand = null;
     int tokPos = 0;
 
@@ -236,7 +238,7 @@ public class ResolveUnknownUtil {
       SNode cls = classAndPos._0();
       tokPos = (int) classAndPos._1();
 
-      if (tokPos == (int) ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count()) {
+      if (tokPos == tokens.length) {
         // no tokens left, all of them form a class name 
         // done 
         return cls;
@@ -244,7 +246,7 @@ public class ResolveUnknownUtil {
       } else {
         // there is at least one token that must represent a static field (or enum constant) 
 
-        final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value");
+        final String memberName = tokens[tokPos];
         SNode mbEnumConst = null;
 
         if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
@@ -279,8 +281,8 @@ public class ResolveUnknownUtil {
     }
 
     // success. now the structure is determined, only need to put dynamic references to nodes 
-    while (tokPos < ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count()) {
-      SNode dotExpr = ResolveUnknownUtil.makeFieldDotExpression(operand, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
+    while (tokPos < tokens.length) {
+      SNode dotExpr = ResolveUnknownUtil.makeFieldDotExpression(operand, tokens[tokPos]);
       operand = dotExpr;
       tokPos++;
     }
@@ -306,7 +308,7 @@ public class ResolveUnknownUtil {
       return null;
     }
 
-    String name = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).first(), "value");
+    String name = Tokens_Behavior.call_firstToken_1296023605441710627(x);
 
     if (Sequence.fromIterable(scope.getAvailableElements(name)).isNotEmpty()) {
       // it's a variable 
@@ -323,15 +325,16 @@ public class ResolveUnknownUtil {
 
   public static Tuples._2<SNode, Integer> tryFindClass(SNode x) {
     StringBuilder sb = new StringBuilder();
+    String[] tokens = SPropertyOperations.getString(x, "tokens").split("\\.");
 
-    int[] dotPositions = new int[ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count()];
+    int[] dotPositions = new int[tokens.length];
     int lastDot = -1;
     int k = 0;
 
-    for (SNode tok : ListSequence.fromList(SLinkOperations.getTargets(x, "token", true))) {
-      sb.append(SPropertyOperations.getString(tok, "value"));
+    for (String tok : tokens) {
+      sb.append(tok);
       sb.append('.');
-      dotPositions[k] = lastDot + SPropertyOperations.getString(tok, "value").length() + 1;
+      dotPositions[k] = lastDot + tok.length() + 1;
       lastDot = dotPositions[k];
       k++;
     }

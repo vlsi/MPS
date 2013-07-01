@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import com.intellij.openapi.project.Project;
@@ -75,7 +74,7 @@ public class CheckModule_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;

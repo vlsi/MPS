@@ -18,6 +18,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ArrayLength_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -25,6 +26,7 @@ public class check_ArrayLength_NonTypesystemRule extends AbstractNonTypesystemRu
   }
 
   public void applyRule(final SNode fieldRefOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // FIXME: almost duplicate code with MultipleFilesParser 
     SReference fieldRef = SNodeOperations.getReference(fieldRefOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
     if (!(fieldRef instanceof DynamicReference && "length".equals((((DynamicReference) fieldRef).getResolveInfo())))) {
       return;
@@ -44,9 +46,10 @@ public class check_ArrayLength_NonTypesystemRule extends AbstractNonTypesystemRu
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(operand), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fieldRefOperation, "fixing length operation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2364881513287750350", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fieldRefOperation, "should be length operation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2364881513287750350", null, errorTarget);
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.makeArrayLenOperation_QuickFix", true);
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
+          intentionProvider.putArgument("newNode;", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", null));
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

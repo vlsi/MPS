@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -78,7 +77,7 @@ public class DeleteModules_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
     if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }

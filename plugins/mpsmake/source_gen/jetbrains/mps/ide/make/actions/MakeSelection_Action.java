@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -75,7 +74,7 @@ public class MakeSelection_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
     MapSequence.fromMap(_params).put("cmodel", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
     MapSequence.fromMap(_params).put("cmodule", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     return true;
   }

@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.io.File;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.ide.actions.JavaStackTraceFilter;
+import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
@@ -58,7 +58,7 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
     final Tuples._2<File, File> files = myRunConfiguration.prepareFilesToOpenAndToDelete(project);
 
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-    console.addMessageFilter(new JavaStackTraceFilter(project));
+    console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
     ProcessHandler process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getVmOptions()).setJrePath_String(myRunConfiguration.getJrePath()).setConfigurationPath_String(myRunConfiguration.expandPath(myRunConfiguration.getConfigurationPath())).setSystemPath_String(myRunConfiguration.expandPath(myRunConfiguration.getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(files._0());
     if (files._1() != null) {
       OutputRedirector.redirect(process, new ProcessAdapter() {
