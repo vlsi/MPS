@@ -45,7 +45,7 @@ public interface SAbstractConcept {
   /**
    * Retrieves an associated link identified by the given role.
    */
-  SLink findLink(String role);
+  SLink getLink(String role);
 
   /**
    * Retrieves all links associated with the concept.
@@ -55,7 +55,7 @@ public interface SAbstractConcept {
   /**
    * Finds a concept's property by name
    */
-  SProperty findProperty(String name);
+  SProperty getProperty(String name);
 
   /**
    * All properties

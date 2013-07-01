@@ -41,12 +41,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
   }
 
   @Override
-  public String getConceptId() {
-    return myConceptName;
-  }
-
-  @Override
-  public SLink findLink(String role) {
+  public SLink getLink(String role) {
     SNode ld = new ConceptAndSuperConceptsScope(getConcept().resolve(MPSModuleRepository.getInstance())).getLinkDeclarationByRole(role);
     return (ld == null ?
       null :
@@ -64,10 +59,10 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
   }
 
   @Override
-  public SProperty findProperty(final String name) {
+  public SProperty getProperty(final String name) {
     SNode prop = ListSequence.fromList((List<SNode>) SModelSearchUtil.getPropertyDeclarations(getConcept().resolve(MPSModuleRepository.getInstance()))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_vein7o_a0a0a0a0a0a0a8(SPropertyOperations.getString(it, "name"), name);
+        return eq_vein7o_a0a0a0a0a0a0a7(SPropertyOperations.getString(it, "name"), name);
       }
     });
     return (prop == null ?
@@ -111,7 +106,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     myConceptName = id;
   }
 
-  private static boolean eq_vein7o_a0a0a0a0a0a0a8(Object a, Object b) {
+  private static boolean eq_vein7o_a0a0a0a0a0a0a7(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

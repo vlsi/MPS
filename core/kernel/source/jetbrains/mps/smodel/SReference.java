@@ -70,7 +70,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Override
   public SLink getLink() {
-    return getSourceNode().getConcept().findLink(getRole());
+    return getSourceNode().getConcept().getLink(getRole());
   }
 
   @Override

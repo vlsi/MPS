@@ -285,13 +285,13 @@ public class CheckProjectStructureHelper {
       }
 
       for (String name : node.getPropertyNames()) {
-        if (concept.findProperty(name) == null) {
+        if (concept.getProperty(name) == null) {
           result.add("unknown property: `" + name + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
       }
 
       for (SReference ref : node.getReferences()) {
-        SLink link = concept.findLink(ref.getRole());
+        SLink link = concept.getLink(ref.getRole());
         if (link == null || !link.isReference()) {
           result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
@@ -299,7 +299,7 @@ public class CheckProjectStructureHelper {
 
       for (SNode child : node.getChildren()) {
         String role = child.getRoleInParent();
-        SLink link = concept.findLink(role);
+        SLink link = concept.getLink(role);
         if (link == null || link.isReference()) {
           result.add("unknown child role: `" + role + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }

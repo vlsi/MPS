@@ -20,7 +20,15 @@ package org.jetbrains.mps.openapi.language;
  */
 public interface SLink {
 
+  /**
+   * The identifier of the link within the containing concept.
+   */
   String getRole();
+
+  /**
+   * The root concept for the nodes behind this link.
+   */
+  SAbstractConcept getTargetConcept();
 
   /**
    * True for references, false for containment relationships.
@@ -37,6 +45,4 @@ public interface SLink {
    * For optional relationships cardinality can also be equal to 0.
    */
   boolean isOptional();
-
-  SAbstractConcept getTargetConcept();
 }

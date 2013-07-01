@@ -109,7 +109,7 @@ class IntelligentNodeMover {
       assert myParent != null && myRole != null;
 
       final SConcept acd = myParent.getConcept();
-      myLink = acd.findLink(myRole);
+      myLink = acd.getLink(myRole);
 
       if (myLink == null) {
         LOG.error("Can't find a link " + myRole + " in concept " + acd.getName());
@@ -252,7 +252,7 @@ class IntelligentNodeMover {
 
   private boolean haveSimilarLink(SNode current) {
     for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept(), true)) {
-      SLink currentLink = concept.findLink(myLink.getRole());
+      SLink currentLink = concept.getLink(myLink.getRole());
       if (currentLink != null && currentLink.isMultiple() && !currentLink.isReference() && currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
         return true;
       }
