@@ -170,7 +170,7 @@ public class FullASTConverter extends ASTConverter {
 
 
   @Override
-  public SNode  convertInitializer(Initializer x) throws JavaParseException {
+  public SNode convertInitializer(Initializer x) throws JavaParseException {
 
     SNode block = convertStatement(x.block);
     if (block == null) {

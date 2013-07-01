@@ -602,13 +602,13 @@ public class ASTConverter {
       }
     }
 
-    if (!(myOnlyStubs)) {
-      SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-      childConverter.handleMethodBody(result, x);
+    if (myOnlyStubs) {
+      // make a different stub statement list 'source code' ? 
+      SLinkOperations.setTarget(result, "body", _quotation_createNode_rbndtb_a0b0r0r(), true);
 
     } else {
-      // make a different stub statement list 'source code' ? 
-      SLinkOperations.setTarget(result, "body", _quotation_createNode_rbndtb_a0b0a71a71(), true);
+      SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+      childConverter.handleMethodBody(result, x);
     }
 
     {
@@ -1266,7 +1266,7 @@ public class ASTConverter {
     return null;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0b0a71a71() {
+  private static SNode _quotation_createNode_rbndtb_a0b0r0r() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StubStatementList", null, null, GlobalScope.getInstance(), false);
