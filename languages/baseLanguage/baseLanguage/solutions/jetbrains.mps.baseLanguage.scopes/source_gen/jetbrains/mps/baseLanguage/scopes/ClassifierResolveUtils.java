@@ -286,9 +286,6 @@ public class ClassifierResolveUtils {
 
     if (includeAncestors) {
       for (SNode ancestor : Sequence.fromIterable(getAncestors(contextNode))) {
-        if (token.equals(SPropertyOperations.getString(ancestor, "name"))) {
-          return construct(ancestor, tokenizer);
-        }
         for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(ancestor))) {
           if (token.equals(SPropertyOperations.getString(nested, "name"))) {
             return construct(nested, tokenizer);
