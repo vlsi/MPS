@@ -72,8 +72,8 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   }
 
   @Override
-  public SModel getSModel() {
-    return this;
+  public jetbrains.mps.smodel.SModel getSModel() {
+    return getSModelInternal();
   }
 
   @Override
@@ -187,8 +187,8 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
    */
   @Override
   @Deprecated
-  public SModelReference getSModelReference() {
-    return getReference();
+  public jetbrains.mps.smodel.SModelReference getSModelReference() {
+    return ((jetbrains.mps.smodel.SModelReference) getReference());
   }
 
   @Override

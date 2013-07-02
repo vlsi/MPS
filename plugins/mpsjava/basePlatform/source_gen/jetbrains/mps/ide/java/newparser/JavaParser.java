@@ -5,19 +5,19 @@ package jetbrains.mps.ide.java.newparser;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil;
 import java.util.Map;
 import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -52,11 +52,11 @@ public class JavaParser {
   public JavaParser.JavaParseResult parseCompilationUnit(String code) throws JavaParseException {
     // temp thing: peek at the package name 
     String pkg = peekPackage(code);
-    return parse(code, pkg, FeatureKind.CLASS, true);
+    return parse(code, pkg, FeatureKind.CLASS, null, true);
   }
 
   @NotNull
-  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, boolean recovery) throws JavaParseException {
+  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
@@ -115,7 +115,7 @@ public class JavaParser {
         ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, true, recovery);
         // type decl (inner), field, method 
         if (astNodes != null && astNodes.length > 0) {
-          resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
+          resultNodes = converter.convertClassContents(astNodes, context);
         }
 
         break;
