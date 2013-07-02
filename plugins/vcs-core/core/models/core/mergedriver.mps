@@ -100,7 +100,7 @@
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3342666646761693888" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="SVN_OPTION" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3342666646761693889" nodeInfo="nn" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8704175735096849659" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3342666646761693890" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3342666646761693891" nodeInfo="nn">
         <property name="value" nameId="tpee.1070475926801" value="--svn" />
@@ -109,7 +109,7 @@
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3342666646761693892" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="GIT_OPTION" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3342666646761693893" nodeInfo="nn" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8704175735096846463" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3342666646761693894" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3342666646761693895" nodeInfo="nn">
         <property name="value" nameId="tpee.1070475926801" value="--git" />
@@ -946,7 +946,7 @@
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3342666646761725461" resolveInfo="get" />
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3342666646761725454" resolveInfo="FileType" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735081539950" nodeInfo="nn">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="ft" />
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="filetype" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3342666646761693744" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3342666646761693745" resolveInfo="f" />
@@ -1024,7 +1024,7 @@
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8704175735085294496" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8704175735083144930" resolveInfo="ModelMerger" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735085300154" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="ft" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="filetype" />
                         </node>
                       </node>
                     </node>
@@ -1136,7 +1136,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8704175735081394865" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="ft" />
+        <property name="name" nameId="tpck.1169194664001" value="filetype" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8704175735081405361" nodeInfo="in" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3342666646761693813" nodeInfo="ir">
@@ -4446,7 +4446,7 @@
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3342666646761725633" resolveInfo="FileType" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8704175735089189250" nodeInfo="nn">
         <link role="classifier" roleId="tpee.1144433057691" targetNodeId="vsqk.~MPSExtentions" resolveInfo="MPSExtentions" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dDOT_MODEL_HEADER" resolveInfo="DOT_MODEL_HEADER" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dMODEL_HEADER" resolveInfo="MODEL_HEADER" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735079699791" nodeInfo="nn">
         <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?header\&quot;?" />
@@ -4561,10 +4561,6 @@
           <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3342666646761725629" resolveInfo="JAVA_DEPENDENCIES" />
           <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3342666646761725454" resolveInfo="FileType" />
         </node>
-        <node role="item" roleId="tpee.1188220173759" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8704175735086363048" nodeInfo="nn">
-          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8704175735079661311" resolveInfo="MODEL_HEADER" />
-          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3342666646761725454" resolveInfo="FileType" />
-        </node>
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8704175735085988298" nodeInfo="igu">
@@ -4595,6 +4591,10 @@
         </node>
         <node role="item" roleId="tpee.1188220173759" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8704175735086316136" nodeInfo="nn">
           <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8704175735079603693" resolveInfo="MODEL_ROOT" />
+          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3342666646761725454" resolveInfo="FileType" />
+        </node>
+        <node role="item" roleId="tpee.1188220173759" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8704175735086363048" nodeInfo="nn">
+          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8704175735079661311" resolveInfo="MODEL_HEADER" />
           <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3342666646761725454" resolveInfo="FileType" />
         </node>
         <node role="item" roleId="tpee.1188220173759" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8704175735086222400" nodeInfo="nn">
@@ -4707,7 +4707,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8704175735089568012" nodeInfo="nn">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8704175735089568013" nodeInfo="nn">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735089613151" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081543667" resolveInfo="ft" />
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081543667" resolveInfo="filetype" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8704175735089568015" nodeInfo="nn">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -4769,7 +4769,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8704175735082955198" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g4.~Set%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735082963510" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081543667" resolveInfo="ft" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081543667" resolveInfo="filetype" />
                   </node>
                 </node>
               </node>
@@ -4778,7 +4778,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="8704175735081964654" nodeInfo="nn">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8704175735081972596" nodeInfo="nn" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735081948968" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081543667" resolveInfo="ft" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081543667" resolveInfo="filetype" />
             </node>
           </node>
         </node>
@@ -5124,7 +5124,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8704175735081543667" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="ft" />
+        <property name="name" nameId="tpck.1169194664001" value="filetype" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8704175735081557689" nodeInfo="in" />
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8704175735082894249" nodeInfo="nn">
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="as9p.~Nullable" resolveInfo="Nullable" />

@@ -50,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" />
@@ -71,7 +72,6 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -206,6 +206,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -228,6 +229,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.StringsIO" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.ScriptGenerator" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />

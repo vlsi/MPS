@@ -17,6 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.vcs.core.mergedriver.MergeDriverMain;
 import java.io.IOException;
 
 /*package*/ class SvnInstaller extends AbstractInstaller {
@@ -147,7 +148,7 @@ import java.io.IOException;
       }
     }
 
-    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.SVN, myScriptFile, dryRun);
+    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, MergeDriverMain.NO_FILETYPE, ScriptGenerator.SVN, myScriptFile, dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
       return createScriptResult;
     }
