@@ -42,7 +42,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cqz3y2_a");
     editorCell.setBig(true);
-    editorCell.addKeyMap(new RegexpSequenceByEnter());
+    RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_cqz3y2_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cqz3y2_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cqz3y2_c0(editorContext, node));

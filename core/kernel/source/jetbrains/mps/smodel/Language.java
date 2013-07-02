@@ -240,7 +240,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(newDescriptor, reloadClasses);
+    assertCanChange();
 
     myLanguageDescriptor = newDescriptor;
 
@@ -248,6 +248,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         myLanguageDescriptor.getId());
     setModuleReference(reference);
 
+    setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
 
@@ -264,7 +265,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     dependenciesChanged();
-    setChanged();
   }
 
   public boolean isBootstrap() {

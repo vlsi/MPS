@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class _ClassConcept_Abstract_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,6 +28,11 @@ public class _ClassConcept_Abstract_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "abstractClass", "" + (false));
+      if (SPropertyOperations.getBoolean(node, "isFinal")) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "finalKeyword", 0);
+      } else {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "classKeyword", 0);
+      }
     }
   }
 }

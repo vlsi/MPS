@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class Classifier_StaticKeyWord {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,6 +29,18 @@ public class Classifier_StaticKeyWord {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "nonStatic", "" + (true));
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        if (SPropertyOperations.getBoolean(classConcept, "abstractClass")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "abstractKeyword", 0);
+        } else if (SPropertyOperations.getBoolean(classConcept, "isFinal")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "finalKeyword", 0);
+        } else {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "classKeyword", 0);
+        }
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Interface"), "interfaceKeyword", 0);
+      }
     }
   }
 }

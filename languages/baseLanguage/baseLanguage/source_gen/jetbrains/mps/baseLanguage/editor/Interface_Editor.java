@@ -96,7 +96,7 @@ public class Interface_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_4hcgjd_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface");
-    editorCell.setCellId("Constant_4hcgjd_d0");
+    editorCell.setCellId("interfaceKeyword");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");

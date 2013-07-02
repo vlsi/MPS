@@ -32,7 +32,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zeg0q_a");
     editorCell.setBig(true);
-    editorCell.addKeyMap(new RegexpSequenceByEnter());
+    RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     if (renderingCondition_zeg0q_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_zeg0q_a0(editorContext, node));
     }

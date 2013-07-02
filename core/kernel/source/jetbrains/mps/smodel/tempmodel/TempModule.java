@@ -48,7 +48,7 @@ public class TempModule extends AbstractModule implements SModule, MPSModuleOwne
     setModuleReference(reference);
     myDescriptor = new ModuleDescriptor();
     myDescriptor.getModelRootDescriptors().addAll(modelRoots);
-    setModuleDescriptor(myDescriptor, false);
+    dependenciesChanged();
 
     if (withSourceGen) {
       mySourceGen = createTempDirectory("TempModule_source_gen");
