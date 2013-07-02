@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import junit.framework.Assert;
 
 public class Sort_Test extends Util_Test {
   public void test_sortMethod() throws Exception {
@@ -114,5 +115,19 @@ public class Sort_Test extends Util_Test {
     }, true);
     this.assertIterableEquals(Arrays.asList("ABC", "X", "XYZ", "Y", "a", "abcd", "b", "cd", "xy"), l1);
     this.assertIterableEquals(Arrays.asList("abcd", "ABC", "XYZ", "cd", "xy", "X", "Y", "a", "b"), l2);
+  }
+
+  public void test_mps18105() throws Exception {
+    Iterable<Object> seq = ListSequence.fromListAndArray(new ArrayList<Object>(), "b", "c", "a");
+    Comparable last = Sequence.fromIterable(seq).select(new ISelector<Object, Comparable<?>>() {
+      public Comparable<?> select(Object it) {
+        return (Comparable<?>) it;
+      }
+    }).sort(new ISelector<Comparable<?>, Comparable<?>>() {
+      public Comparable<?> select(Comparable<?> a) {
+        return a;
+      }
+    }, true).last();
+    Assert.assertEquals("c", last);
   }
 }
