@@ -39,6 +39,7 @@ public class SNodeUtil {
   public static final String property_BaseConcept_alias = "alias";
   public static final String property_BaseConcept_shortDescription = "shortDescription";
   public static final String link_ReferenceMacro_AnnotationLink = "referenceMacro";
+  public static final String link_BaseConcept_smodelAttribute = "smodelAttribute";
   public static final String CPR_BaseConcept_alias = "alias";
   public static final String CPR_BaseConcept_abstract = "abstract";
 

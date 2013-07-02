@@ -4,6 +4,8 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -16,6 +18,19 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
   public SInterfaceConceptAdapter(@NotNull String conceptName) {
     super(conceptName);
   }
+
+
+
+  @Override
+  public SAbstractLink getLink(String role) {
+    // TODO fix all usages remove this hack 
+    if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(role)) {
+      return new SContainmentLinkAdapter(SNodeUtil.concept_BaseConcept, role);
+    }
+    return super.getLink(role);
+  }
+
+
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {

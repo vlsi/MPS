@@ -1042,6 +1042,16 @@
         <property name="value" nameId="tpee.1070475926801" value="referenceMacro" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6435559796485940120" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="link_BaseConcept_smodelAttribute" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6435559796485940121" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6435559796485940122" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="6435559796485944063" nodeInfo="nn">
+        <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+        <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpck.5169995583184591170" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8833246112936954839" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="CPR_BaseConcept_alias" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
