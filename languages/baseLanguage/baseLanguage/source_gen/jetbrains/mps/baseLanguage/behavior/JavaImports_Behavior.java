@@ -8,14 +8,15 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class JavaImports_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
-    // <node> 
-
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.core.structure.NodeAttribute", "virtual_getAttributed_3044950653914717013", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1107461130800"));
     return result;
@@ -24,5 +25,21 @@ public class JavaImports_Behavior {
 
   public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
     return "javaImports";
+  }
+
+  public static Iterable<SNode> call_staticOnDemand_5230012391903366883(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "static") && SPropertyOperations.getBoolean(it, "onDemand");
+      }
+    });
+  }
+
+  public static Iterable<SNode> call_staticSingleName_5230012391903395274(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "static") && !(SPropertyOperations.getBoolean(it, "onDemand"));
+      }
+    });
   }
 }

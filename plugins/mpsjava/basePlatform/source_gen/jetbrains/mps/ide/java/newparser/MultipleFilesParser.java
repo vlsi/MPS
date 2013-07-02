@@ -47,13 +47,8 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.typesystem.inference.RulesManager;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext;
-import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -438,16 +433,6 @@ public class MultipleFilesParser {
 
           progress.advance(1);
 
-          for (SNode swicthCase : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SwitchCase", false, new String[]{}))) {
-            SNode subst = transformUnqualifedEnum(swicthCase, typeChecker);
-            if ((subst == null)) {
-              continue;
-            }
-            MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(SLinkOperations.getTarget(swicthCase, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), subst);
-          }
-
-          progress.advance(1);
-
           for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{}))) {
             SNode smc = transformLocalCall(localCall);
             if ((smc == null)) {
@@ -458,14 +443,32 @@ public class MultipleFilesParser {
 
           progress.advance(1);
 
-          for (SNode varRef : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-            SNode exp = transformLocalNameRef(varRef);
-            if ((exp == null)) {
+          TypeChecker typeChecker = TypeChecker.getInstance();
+
+          for (SNode swicthCase : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.SwitchCase", false, new String[]{}))) {
+            SNode subst = transformUnqualifedEnumUnderSwitch(swicthCase, typeChecker);
+            if ((subst == null)) {
               continue;
             }
-            MapSequence.fromMap(staticFieldQualifiers).put(varRef, exp);
+            MapSequence.fromMap(enumConstRefs).put(SNodeOperations.cast(SLinkOperations.getTarget(swicthCase, "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), subst);
           }
 
+
+          progress.advance(1);
+
+          for (SNode varRef : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+            SNode exp = transformLocalNameRef(varRef);
+            if ((exp != null)) {
+              MapSequence.fromMap(staticFieldQualifiers).put(varRef, exp);
+              continue;
+            }
+
+            SNode subst = transformUnqualifedEnum(varRef);
+            if ((subst == null)) {
+              continue;
+            }
+            MapSequence.fromMap(enumConstRefs).put(varRef, subst);
+          }
 
           progress.advance(1);
         }
@@ -541,42 +544,101 @@ public class MultipleFilesParser {
 
 
 
-  private void typeSystemPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
-    progress.start("Applying checking rules", Sequence.fromIterable(nodes).count() + 1);
-    final TypeChecker typeChecker = TypeChecker.getInstance();
-    final RulesManager rulesManager = typeChecker.getRulesManager();
+  private SNode transformUnqualifedEnum(SNode varRef) {
+    // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
-    final Map<SNode, List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>> map = MapSequence.fromMap(new HashMap<SNode, List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>>());
+    if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(varRef), "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+      return null;
+    }
+    SReference ref = SNodeOperations.getReference(varRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+    if (!(ref instanceof DynamicReference)) {
+      return null;
+    }
 
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (SNode node : Sequence.fromIterable(nodes)) {
-          MapSequence.fromMap(map).put(node, rulesManager.getNonTypesystemRules(node));
-          progress.advance(1);
-        }
+    if (ref.getTargetNode() != null) {
+      return null;
+    }
+
+    SNode root = SNodeOperations.getContainingRoot(varRef);
+    if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      return null;
+    }
+    SNode javaImports = AttributeOperations.getAttribute(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
+    if ((javaImports == null)) {
+      return null;
+    }
+
+    // now we can try to search 
+    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
+
+    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
+    for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
+      if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
+        continue;
       }
-    });
 
-    runCommand("applying rules", new Runnable() {
-      public void run() {
-        for (SNode node : SetSequence.fromSet(MapSequence.fromMap(map).keySet())) {
-          for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> pair : ListSequence.fromList(MapSequence.fromMap(map).get(node))) {
-            // isApplicableStatus 
-            if (!(pair.o2.isApplicable())) {
-              continue;
-            }
-            pair.o1.applyRule(node, new TargetTypecheckingContext(node, typeChecker), pair.o2);
-          }
-        }
+      String enumClassCandidateName = BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_withoutLastToken_6148840541591441572", new Object[]{});
+      SNode enumClassCandidate = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, enumClassCandidateName});
+      if ((enumClassCandidate == null)) {
+        // seems like there is no need to continue 
+        // we had import of the form: import static <class>.<ourName> 
+        // if we meet <ourName> in java code then it must strictly reference this import, not any other 
+        return null;
       }
-    });
+      if (!(SNodeOperations.isInstanceOf(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+        return null;
+      }
 
-    progress.done();
+      // Q: maybe not findFirst, but rather fail if there are more than one... 
+      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+        }
+      });
+
+      if ((enumConst == null)) {
+        return null;
+      }
+
+      // success 
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+      return result;
+    }
+
+    for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
+      SNode claz = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, SPropertyOperations.getString(onDemandImport, "tokens")});
+      if ((claz == null)) {
+        continue;
+      }
+      if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+        continue;
+      }
+
+      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+        }
+      });
+      if ((enumConst == null)) {
+        continue;
+      }
+
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+      return result;
+    }
+
+    return null;
   }
 
 
 
-  private SNode transformUnqualifedEnum(SNode switchCase, TypeChecker typeChecker) {
+  private SNode transformUnqualifedEnumUnderSwitch(SNode switchCase, TypeChecker typeChecker) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
     SNode caseExp = SLinkOperations.getTarget(switchCase, "expression", true);
@@ -616,6 +678,7 @@ public class MultipleFilesParser {
 
     return enumConstRef;
   }
+
 
 
 
