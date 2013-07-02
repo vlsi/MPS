@@ -5,6 +5,7 @@ package jetbrains.mps.ide.java.newparser;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.util.Map;
@@ -13,17 +14,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -53,14 +52,7 @@ import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -71,6 +63,7 @@ public class MultipleFilesParser {
   private static final Logger LOG = LogManager.getLogger(MultipleFilesParser.class);
 
   private SModule myModule;
+  private SModel myModel;
   private SRepository myRepository;
   private ModelAccess myModelAccess;
 
@@ -87,6 +80,14 @@ public class MultipleFilesParser {
 
   public MultipleFilesParser(SModule module, SRepository repository) {
     myModule = module;
+    myRepository = repository;
+    myModelAccess = repository.getModelAccess();
+  }
+
+
+
+  public MultipleFilesParser(SModel model, SRepository repository) {
+    myModel = model;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }
@@ -122,46 +123,58 @@ public class MultipleFilesParser {
     parseProgress.done();
 
 
-    final Wrappers._int rootCount = new Wrappers._int(0);
+    int rootCount = 0;
 
     // now we attach the models and try to resolve      
 
-    runCommand("model creation pass", new Runnable() {
-      public void run() {
-        ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
+    if (myModel == null) {
+      runCommand("model creation pass", new Runnable() {
+        public void run() {
+          ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
-        for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
-          final SModel model = registerModelForPackage(pakage);
+          for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
+            final SModel model = registerModelForPackage(pakage);
 
-          if (model == null) {
-            continue;
+            if (model == null) {
+              continue;
+            }
+
+            ((SModelBase) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+
+            Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
+            SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode it) {
+                model.addRootNode(it);
+              }
+            });
+
+            ListSequence.fromList(myModels).addElement(model);
           }
 
-          ((SModelInternal) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-
-          Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
-          SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
-            public void visit(SNode it) {
-              model.addRootNode(it);
-            }
-          });
-
-          rootCount.value = rootCount.value + SetSequence.fromSet(roots).count();
-          ListSequence.fromList(myRoots).addSequence(SetSequence.fromSet(roots));
-          ListSequence.fromList(myModels).addElement(model);
-
+          for (SModel model : ListSequence.fromList(myModels)) {
+            JavaParser.tryResolveUnknowns(SModelOperations.getRoots(model, null));
+          }
 
         }
+      });
 
-        // should be cheap 
-        for (SModel model : ListSequence.fromList(myModels)) {
-          JavaParser.tryResolveUnknowns(SModelOperations.getRoots(model, null));
+    } else {
+      runCommand("attach roots pass", new Runnable() {
+        public void run() {
+
+          // todo maybe do something clever with packages <-> java imports 
+          // with regard to model where we put it all 
+          for (SNode root : ListSequence.fromList(myRoots)) {
+            // todo be more accurate with duplicates 
+            myModel.addRootNode(root);
+          }
+
+          JavaParser.tryResolveUnknowns(myRoots);
         }
+      });
+    }
 
-      }
-    });
-
-    myRootCount = rootCount.value;
+    myRootCount = rootCount;
 
     ProgressMonitor resolveProgress = progress.subTask(30);
 
@@ -323,12 +336,16 @@ public class MultipleFilesParser {
     }
 
     Iterable<SNode> roots = parseResult.getNodes();
+
     Set<SNode> classesInPackage = MapSequence.fromMap(classesPerPackage).get(pkg);
     if (classesInPackage == null) {
       classesInPackage = SetSequence.fromSet(new HashSet<SNode>(Sequence.fromIterable(roots).count()));
       MapSequence.fromMap(classesPerPackage).put(pkg, classesInPackage);
     }
     SetSequence.fromSet(classesInPackage).addSequence(Sequence.fromIterable(roots));
+
+    ListSequence.fromList(myRoots).addSequence(Sequence.fromIterable(roots));
+    myRootCount += Sequence.fromIterable(roots).count();
 
   }
 
@@ -932,90 +949,6 @@ public class MultipleFilesParser {
         MapSequence.fromMap(result).put(source.getReference(), nodeRefs);
       }
       ListSequence.fromList(nodeRefs).addElement((SReference) staticRef);
-    }
-  }
-
-
-
-  private void resolveReferences(SNode startNode, Map<SNodeReference, List<SReference>> result, int pass) {
-    final Queue<SNode> stack = QueueSequence.fromQueue(new LinkedList<SNode>());
-    QueueSequence.fromQueue(stack).addLastElement(startNode);
-
-    while (QueueSequence.fromQueue(stack).isNotEmpty()) {
-      SNode node = QueueSequence.fromQueue(stack).removeFirstElement();
-      SModel ourModel = node.getModel();
-      ListSequence.fromList(SNodeOperations.getChildren(node)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          QueueSequence.fromQueue(stack).addLastElement(it);
-        }
-      });
-
-      Iterable<? extends SReference> refs = node.getReferences();
-      List<SReference> newRefs = ListSequence.fromList(new ArrayList<SReference>());
-
-      for (final SReference ref : Sequence.fromIterable(refs)) {
-        if (!(ref instanceof DynamicReference)) {
-          continue;
-        }
-        // FIXME temp hack around typesystem looping when resolving certain dyn.references 
-
-        if (pass == 0) {
-          if (ref.getRole().equals("baseMethodDeclaration")) {
-            continue;
-          }
-          if (ref.getRole().equals("fieldDeclaration") || ref.getRole().equals("variableDeclaration")) {
-            continue;
-          }
-
-        } else if (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression")) {
-          if (Sequence.fromIterable(deepReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true))).any(new IWhereFilter<SReference>() {
-            public boolean accept(SReference it) {
-              SReference ref = it;
-              return ref instanceof DynamicReference;
-            }
-          })) {
-
-            continue;
-          }
-        }
-
-        SNode target = null;
-
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<SNode> future = executor.submit(new Callable<SNode>() {
-          public SNode call() throws Exception {
-            final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-            myModelAccess.runReadAction(new Runnable() {
-              public void run() {
-                result.value = ref.getTargetNode();
-              }
-            });
-            return result.value;
-          }
-        });
-
-        try {
-          target = future.get(1000, TimeUnit.MILLISECONDS);
-        } catch (TimeoutException e) {
-          System.out.println("Reference resolve timeout");
-          future.cancel(true);
-        } catch (Exception e) {
-          future.cancel(true);
-        }
-
-        if (target == null) {
-          continue;
-        }
-
-        SModelReference targetModel = target.getModel().getReference();
-
-        SReference staticRef = StaticReference.create(ref.getRole(), node, target.getModel().getReference(), target.getNodeId());
-        ListSequence.fromList(newRefs).addElement(staticRef);
-      }
-
-      if (ListSequence.fromList(newRefs).isNotEmpty()) {
-        MapSequence.fromMap(result).put(node.getReference(), newRefs);
-      }
     }
   }
 
