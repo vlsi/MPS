@@ -47,10 +47,10 @@ import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
-import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
-import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Wildcard;
+import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ArrayTypeReference;
+import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ArrayQualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Literal;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
@@ -684,33 +684,6 @@ public class ASTConverter {
 
   public SNode convertTypeReference(TypeReference typRef) {
     SNode result = convertTypeRef(typRef);
-
-    {
-      SNode cls = result;
-      if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        TypeReference[] typeArgs = null;
-        if (typRef instanceof ParameterizedQualifiedTypeReference) {
-          // FIXME hack: ignoring type args of intermediate classes; like A,B in Cl1.Cl2<A>.Cl3<B>.FinalClass<T> 
-          ParameterizedQualifiedTypeReference parQRef = (ParameterizedQualifiedTypeReference) typRef;
-          int last = parQRef.typeArguments.length - 1;
-          typeArgs = parQRef.typeArguments[last];
-
-        } else if (typRef instanceof ParameterizedSingleTypeReference) {
-          typeArgs = ((ParameterizedSingleTypeReference) typRef).typeArguments;
-        }
-
-        // handling type arguments 
-        if (typeArgs != null) {
-          for (TypeReference typArg : typeArgs) {
-            SNode argType = convertTypeReference(typArg);
-            if (argType != null) {
-              ListSequence.fromList(SLinkOperations.getTargets(cls, "parameter", true)).addElement(argType);
-            }
-          }
-        }
-      }
-    }
-
     return result;
   }
 
@@ -737,9 +710,12 @@ public class ASTConverter {
       }
       String unqualTyp = new String(typRef.token);
 
-      SNode typ = convertUnqualifiedType(unqualTyp);
+      SNode typ = convertUnqualifiedType(unqualTyp, typRef);
 
-      if (typRef instanceof ArrayTypeReference && !(typRef instanceof ParameterizedSingleTypeReference)) {
+      boolean isParamArrayType = typRef instanceof ParameterizedSingleTypeReference && ((ParameterizedSingleTypeReference) typRef).dimensions > 0;
+      boolean isArray = typRef instanceof ArrayTypeReference || isParamArrayType;
+
+      if (isArray) {
         // it turns out this is an array, wrap base type in arraytype 
         // (in elicpse ParamSingleTypRef is subclass of ArrayTypRef) 
         ArrayTypeReference arrTypeRef = (ArrayTypeReference) typRef;
@@ -752,7 +728,7 @@ public class ASTConverter {
 
   }
 
-  public SNode convertUnqualifiedType(String typ) {
+  public SNode convertUnqualifiedType(String typ, TypeReference typRef) {
     // first see if it's a primitive type 
     SNode primType = tryConvertPrimitiveType(typ);
     if ((primType != null)) {
@@ -766,7 +742,7 @@ public class ASTConverter {
     }
 
     // it must be a class name 
-    SNode base = buildClassifierType(typ);
+    SNode base = buildClassifierType(typ, typRef);
     return base;
   }
 
@@ -825,9 +801,12 @@ public class ASTConverter {
     }
     String qname = sb.toString();
 
-    SNode base = buildClassifierType(qname);
+    SNode base = buildClassifierType(qname, typRef);
 
-    if (typRef instanceof ArrayQualifiedTypeReference && !(typRef instanceof ParameterizedQualifiedTypeReference)) {
+    boolean isParamArrayType = typRef instanceof ParameterizedQualifiedTypeReference && ((ParameterizedQualifiedTypeReference) typRef).dimensions() > 0;
+    boolean isArray = typRef instanceof ArrayQualifiedTypeReference || isParamArrayType;
+
+    if (isArray) {
       ArrayQualifiedTypeReference arrTypeRef = (ArrayQualifiedTypeReference) typRef;
       boolean vararg = flagSet(arrTypeRef.bits, ASTNode.IsVarArgs);
       return buildArrayType(base, arrTypeRef.dimensions(), vararg);
@@ -857,10 +836,32 @@ public class ASTConverter {
     return arrType;
   }
 
-  public SNode buildClassifierType(String typ) {
+  public SNode buildClassifierType(String typ, TypeReference typRef) {
     SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SReference ref = new DynamicReference("classifier", cls, null, typ);
     cls.setReference("classifier", ref);
+
+    TypeReference[] typeArgs = null;
+
+    if (typRef instanceof ParameterizedQualifiedTypeReference) {
+      // FIXME hack: ignoring type args of intermediate classes; like A,B in Cl1.Cl2<A>.Cl3<B>.FinalClass<T> 
+      ParameterizedQualifiedTypeReference parQRef = (ParameterizedQualifiedTypeReference) typRef;
+      int last = parQRef.typeArguments.length - 1;
+      typeArgs = parQRef.typeArguments[last];
+
+    } else if (typRef instanceof ParameterizedSingleTypeReference) {
+      typeArgs = ((ParameterizedSingleTypeReference) typRef).typeArguments;
+    }
+
+    if (typeArgs != null) {
+      for (TypeReference typArg : typeArgs) {
+        SNode argType = convertTypeReference(typArg);
+        if (argType != null) {
+          ListSequence.fromList(SLinkOperations.getTargets(cls, "parameter", true)).addElement(argType);
+        }
+      }
+    }
+
     return cls;
   }
 

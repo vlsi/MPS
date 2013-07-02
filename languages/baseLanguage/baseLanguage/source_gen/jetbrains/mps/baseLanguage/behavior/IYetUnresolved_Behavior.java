@@ -12,6 +12,11 @@ public class IYetUnresolved_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  public static SNode call_findClass_5230012391932867419(SNode thisNode, SNode from, String className) {
+    // FIXME remove this: it's here only to give idea-compiled solutions access to language classes 
+    return ResolveUnknownUtil.findClass(from, className);
+  }
+
   @Deprecated
   public static _FunctionTypes._return_P0_E0<? extends SNode> call_evaluateSubst_8136348407761606764(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), thisNode, "virtual_evaluateSubst_8136348407761606764", new Object[]{});

@@ -359,7 +359,7 @@ public class ResolveUnknownUtil {
     SNode res = null;
 
     SNode contextClas = SNodeOperations.getAncestor(from, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
-    ClassifiersScope scope = new ClassifiersScope(SNodeOperations.getModel(from), contextClas, "jetbrains.mps.baseLanguage.structure.Classifier");
+    ClassifiersScope scope = new ClassifiersScope(SNodeOperations.getModel(from), contextClas, "jetbrains.mps.baseLanguage.structure.Classifier", true);
 
     SNode claz = scope.resolve(from, className);
     if ((claz == null)) {
