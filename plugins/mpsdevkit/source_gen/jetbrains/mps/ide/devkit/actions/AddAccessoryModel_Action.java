@@ -110,7 +110,7 @@ public class AddAccessoryModel_Action extends BaseAction {
           LanguageDescriptor descriptor;
           descriptor = language.getModuleDescriptor();
           descriptor.getAccessoryModels().add(result);
-          language.setLanguageDescriptor(descriptor, true);
+          language.setLanguageDescriptor(descriptor, false);
           IScope scope = language.getScope();
           if (scope.getModelDescriptor(result) == null) {
             int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + SModelStereotype.withoutStereotype(result.getModelName()) + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
