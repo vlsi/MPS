@@ -32,7 +32,9 @@ import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.ListIterator;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -424,22 +426,23 @@ public class ClassifierResolveUtils {
   }
 
   public static Iterable<SNode> getAncestors(SNode clas) {
-    List<SNode> classes = ListSequence.fromList(new ArrayList<SNode>());
+    final Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
-    ListSequence.fromList(classes).addElement(clas);
+    QueueSequence.fromQueue(queue).addLastElement(clas);
 
-    final ListIterator<SNode> iter = classes.listIterator();
-    while (iter.hasNext()) {
+    while (QueueSequence.fromQueue(queue).isNotEmpty()) {
 
-      SNode claz = iter.next();
+      SNode claz = QueueSequence.fromQueue(queue).removeFirstElement();
+      ListSequence.fromList(result).addElement(claz);
 
       if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        iter.add(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
+        QueueSequence.fromQueue(queue).addLastElement(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
 
       } else if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode supr = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
         if ((supr != null)) {
-          iter.add(supr);
+          QueueSequence.fromQueue(queue).addLastElement(supr);
         }
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -451,7 +454,7 @@ public class ClassifierResolveUtils {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            iter.add(it);
+            QueueSequence.fromQueue(queue).addLastElement(it);
           }
         });
 
@@ -466,14 +469,14 @@ public class ClassifierResolveUtils {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            iter.add(it);
+            QueueSequence.fromQueue(queue).addLastElement(it);
           }
         });
       }
 
     }
     // or just classes, doesn't really matter 
-    return ListSequence.fromList(classes).skip(1);
+    return ListSequence.fromList(result).skip(1);
   }
 
   public static SNode construct(SNode base, StringTokenizer tokenizer) {
