@@ -3731,42 +3731,74 @@
     <unitInfo nodeId="3493766494546492981" fileName="ParseDepth.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.ParseDepth" />
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3813618677921512923">
-    <nodeInfo nodeId="3813618677921583494" fileName="JavaConvertUtil.java" startLine="13" startPosition="72" endLine="14" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813618677921587623" fileName="JavaConvertUtil.java" startLine="14" startPosition="71" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677921591735" fileName="JavaConvertUtil.java" startLine="17" startPosition="52" endLine="18" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813618677921619418" fileName="JavaConvertUtil.java" startLine="18" startPosition="56" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3813618677921894078" fileName="JavaConvertUtil.java" startLine="22" startPosition="27" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813618677921619915" fileName="JavaConvertUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677921620582" fileName="JavaConvertUtil.java" startLine="27" startPosition="0" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3813618677921806931" fileName="JavaConvertUtil.java" startLine="33" startPosition="45" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3813618677921796070" fileName="JavaConvertUtil.java" startLine="34" startPosition="39" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3813618677921893594" fileName="JavaConvertUtil.java" startLine="21" startPosition="79" endLine="24" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3813618677921588363" fileName="JavaConvertUtil.java" startLine="16" startPosition="61" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3813618677921795247" fileName="JavaConvertUtil.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="3813618677921889834" fileName="JavaConvertUtil.java" startLine="20" startPosition="7" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3813618677921587803" fileName="JavaConvertUtil.java" startLine="15" startPosition="0" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3813618677921553567" fileName="JavaConvertUtil.java" startLine="13" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDirs#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="3813618677921893595" fileName="JavaConvertUtil.java" startLine="22" startPosition="27" endLine="23" endPosition="57" />
-    <scopeInfo nodeId="3813618677921588364" fileName="JavaConvertUtil.java" startLine="17" startPosition="52" endLine="19" endPosition="17" />
-    <scopeInfo nodeId="3813618677921795250" fileName="JavaConvertUtil.java" startLine="33" startPosition="45" endLine="35" endPosition="44" />
-    <scopeInfo nodeId="3813618677921889840" fileName="JavaConvertUtil.java" startLine="21" startPosition="79" endLine="24" endPosition="9" />
-    <scopeInfo nodeId="3813618677921795247" fileName="JavaConvertUtil.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+    <nodeInfo nodeId="3813618677921583494" fileName="JavaConvertUtil.java" startLine="17" startPosition="72" endLine="18" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813618677921587623" fileName="JavaConvertUtil.java" startLine="18" startPosition="66" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677921591735" fileName="JavaConvertUtil.java" startLine="21" startPosition="52" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813618677921619418" fileName="JavaConvertUtil.java" startLine="22" startPosition="54" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3813618677921894078" fileName="JavaConvertUtil.java" startLine="26" startPosition="27" endLine="27" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813618677921619915" fileName="JavaConvertUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677921620582" fileName="JavaConvertUtil.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3813618677921806931" fileName="JavaConvertUtil.java" startLine="37" startPosition="45" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3813618677921796070" fileName="JavaConvertUtil.java" startLine="38" startPosition="39" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3052931191599795723" fileName="JavaConvertUtil.java" startLine="44" startPosition="62" endLine="45" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3052931191599906172" fileName="JavaConvertUtil.java" startLine="47" startPosition="39" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3052931191599946704" fileName="JavaConvertUtil.java" startLine="50" startPosition="8" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3052931191599984118" fileName="JavaConvertUtil.java" startLine="52" startPosition="51" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3052931191600008979" fileName="JavaConvertUtil.java" startLine="54" startPosition="55" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3052931191599939973" fileName="JavaConvertUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3052931191599944450" fileName="JavaConvertUtil.java" startLine="58" startPosition="0" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3052931191599882806" fileName="JavaConvertUtil.java" startLine="59" startPosition="18" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677921893594" fileName="JavaConvertUtil.java" startLine="25" startPosition="79" endLine="28" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3052931191599905732" fileName="JavaConvertUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="3052931191599992023" fileName="JavaConvertUtil.java" startLine="53" startPosition="38" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3813618677921588363" fileName="JavaConvertUtil.java" startLine="20" startPosition="73" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3813618677921795247" fileName="JavaConvertUtil.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="3813618677921889834" fileName="JavaConvertUtil.java" startLine="24" startPosition="7" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3052931191599879756" fileName="JavaConvertUtil.java" startLine="45" startPosition="86" endLine="50" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3052931191599979564" fileName="JavaConvertUtil.java" startLine="51" startPosition="0" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3813618677921587803" fileName="JavaConvertUtil.java" startLine="19" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3813618677921553567" fileName="JavaConvertUtil.java" startLine="17" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openDirs#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3052931191600039401" fileName="JavaConvertUtil.java" startLine="44" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="onlyLeaves#(Ljava/lang/Iterable;)Ljava/util/List;" />
+    <scopeInfo nodeId="3813618677921893595" fileName="JavaConvertUtil.java" startLine="26" startPosition="27" endLine="27" endPosition="55" />
+    <scopeInfo nodeId="3052931191599905733" fileName="JavaConvertUtil.java" startLine="47" startPosition="39" endLine="48" endPosition="32" />
+    <scopeInfo nodeId="3052931191599992026" fileName="JavaConvertUtil.java" startLine="54" startPosition="55" endLine="55" endPosition="60" />
+    <scopeInfo nodeId="3813618677921588364" fileName="JavaConvertUtil.java" startLine="21" startPosition="52" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="3813618677921795250" fileName="JavaConvertUtil.java" startLine="37" startPosition="45" endLine="39" endPosition="44" />
+    <scopeInfo nodeId="3813618677921889840" fileName="JavaConvertUtil.java" startLine="25" startPosition="79" endLine="28" endPosition="9" />
+    <scopeInfo nodeId="3052931191599905732" fileName="JavaConvertUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="3052931191599905732" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813618677921795247" fileName="JavaConvertUtil.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3813618677921795962" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677921889834" fileName="JavaConvertUtil.java" startLine="20" startPosition="7" endLine="25" endPosition="7">
+    <scopeInfo nodeId="3052931191599979570" fileName="JavaConvertUtil.java" startLine="52" startPosition="51" endLine="56" endPosition="7">
+      <varInfo nodeId="3052931191599984119" varName="parent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813618677921889834" fileName="JavaConvertUtil.java" startLine="24" startPosition="7" endLine="29" endPosition="7">
       <varInfo nodeId="3813618677921889836" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677921587809" fileName="JavaConvertUtil.java" startLine="16" startPosition="61" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="3813618677921587803" fileName="JavaConvertUtil.java" startLine="15" startPosition="0" endLine="26" endPosition="5">
+    <scopeInfo nodeId="3052931191599979564" fileName="JavaConvertUtil.java" startLine="51" startPosition="0" endLine="57" endPosition="5">
+      <varInfo nodeId="3052931191599979566" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813618677921587809" fileName="JavaConvertUtil.java" startLine="20" startPosition="73" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="3813618677921587803" fileName="JavaConvertUtil.java" startLine="19" startPosition="0" endLine="30" endPosition="5">
       <varInfo nodeId="3813618677921587805" varName="entry" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677921553570" fileName="JavaConvertUtil.java" startLine="13" startPosition="72" endLine="28" endPosition="18">
+    <scopeInfo nodeId="3813618677921553570" fileName="JavaConvertUtil.java" startLine="17" startPosition="72" endLine="32" endPosition="18">
       <varInfo nodeId="3813618677921583497" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677921553567" fileName="JavaConvertUtil.java" startLine="13" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="3052931191599795356" fileName="JavaConvertUtil.java" startLine="44" startPosition="62" endLine="60" endPosition="0">
+      <varInfo nodeId="3052931191599879759" varName="dirs" />
+      <varInfo nodeId="3052931191599795726" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3813618677921553567" fileName="JavaConvertUtil.java" startLine="17" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="3813618677921553594" varName="filesAndDirs" />
     </scopeInfo>
-    <unitInfo nodeId="3813618677921512923" fileName="JavaConvertUtil.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaConvertUtil" />
+    <scopeInfo nodeId="3052931191600039401" fileName="JavaConvertUtil.java" startLine="44" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="3052931191599795578" varName="all" />
+    </scopeInfo>
+    <unitInfo nodeId="3052931191599905732" fileName="JavaConvertUtil.java" startLine="46" startPosition="111" endLine="50" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaConvertUtil$1" />
+    <unitInfo nodeId="3813618677921512923" fileName="JavaConvertUtil.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaConvertUtil" />
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/5646944109420325187">
     <nodeInfo nodeId="8048826103541422245" fileName="FeatureKind.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeatureKind#()V" />
