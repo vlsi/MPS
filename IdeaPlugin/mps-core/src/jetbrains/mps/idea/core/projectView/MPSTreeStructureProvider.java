@@ -106,9 +106,14 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           int idx = updatedChildren.indexOf(child);
           updatedChildren.remove(idx);
           updatedChildren.add(idx, new MPSPsiModelTreeNode(treeNode.getProject(), psiModel, settings));
+        } else if(value instanceof MPSPsiRootNode) {
+          if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+          int idx = updatedChildren.indexOf(child);
+          updatedChildren.remove(idx);
+          updatedChildren.add(idx, new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) value, settings));
         }
       } else if(child instanceof PsiDirectoryNode) {
-        for (AbstractTreeNode innerChild : ((PsiDirectoryNode)child).getChildren()) {
+        /*for (AbstractTreeNode innerChild : ((PsiDirectoryNode)child).getChildren()) {
           if(!(innerChild instanceof PsiFileNode) || !(((PsiFileNode) innerChild).getValue() instanceof FilePerRootModelPsiFile))
             continue;
           PsiFile value = ((PsiFileNode) innerChild).getValue();
@@ -126,7 +131,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           //perRootModelTreeNode.getChildren().addAll(childrenWithotSelf);
           updatedChildren.add(idx, perRootModelTreeNode);
           break;
-        }
+        }*/
       }
     }
 
@@ -252,7 +257,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     else if (treeNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
       VirtualFile virtualFile = fileNode.getVirtualFile();
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) return null;
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE || virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) return null;
 
       return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
     }

@@ -36,6 +36,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.FilePerRootSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
@@ -301,7 +302,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       MPSPsiRootNode rootNode = (MPSPsiRootNode) mpsPsiNode.getParent();
       assert rootNode.getParent() == this;
 
-      MPSPsiRootNode replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
+      MPSPsiRootNode replacementRoot = null;
+      if(sNode.getContainingRoot() == sNode && sNode.getModel().getSource() instanceof FilePerRootDataSource) {
+        final String name = extractName(sNode);
+        final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) sNode.getModel().getSource()).getFile(name + MPSExtentions.DOT_MODEL_ROOT));
+        rootNode = new MPSPsiRootNode(sNode.getNodeId(), name, getManager(), virtualFile);
+      } else {
+        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
+      }
       replaceChild(rootNode, replacementRoot);
       replacementRoot.addChildLast(replacement);
     } else {
@@ -332,7 +340,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       for (SNode root : model.getRootNodes()) {
         String rootName = null;
         rootName = extractName(root);
-        MPSPsiRootNode rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
+        MPSPsiRootNode rootNode = null;
+        if(model.getSource() instanceof FilePerRootDataSource) {
+          final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource)model.getSource()).getFile(rootName + MPSExtentions.DOT_MODEL_ROOT));
+          rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager(), virtualFile);
+        } else {
+          rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
+        }
+
         addChildLast(rootNode);
         rootNode.addChildLast(convert(root));
       }

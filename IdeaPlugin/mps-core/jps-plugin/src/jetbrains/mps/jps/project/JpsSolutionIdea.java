@@ -7,6 +7,7 @@ import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
@@ -69,6 +70,10 @@ public class JpsSolutionIdea extends Solution {
       DataSource source = m.getSource();
       if (source instanceof FileDataSource) {
         String p = ((FileDataSource) source).getFile().getPath();
+        p = FileUtil.toCanonicalPath(p);
+        map.put(p, m);
+      } else if(source instanceof FilePerRootDataSource) {
+        String p = ((FilePerRootDataSource) source).getFolder().getDescendant(".model").getPath();
         p = FileUtil.toCanonicalPath(p);
         map.put(p, m);
       }

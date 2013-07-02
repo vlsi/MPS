@@ -161,10 +161,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                 if (solution == null) return true;
 
                 String suffix = FileUtil.getExtension(file.getName());
-                if(!suffix.equals("model")) {
-                  ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
-                  if (modelFactory == null) return true;
-                }
+                ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
+                if (modelFactory == null) return true;
 
                 String path = FileUtil.toCanonicalPath(file.getPath());
                 SModel model = solution.getModelByPath(path);

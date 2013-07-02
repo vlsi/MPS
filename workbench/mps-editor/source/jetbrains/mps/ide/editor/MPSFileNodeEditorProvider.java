@@ -23,13 +23,22 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.EditorState;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware {
   private static final Logger LOG = LogManager.getLogger(MPSFileNodeEditorProvider.class);
@@ -38,13 +47,29 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
 
   @Override
   public boolean accept(@NotNull Project project, @NotNull VirtualFile file) {
-    return file instanceof MPSNodeVirtualFile;
+    return file instanceof MPSNodeVirtualFile || file.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE;
   }
 
   @Override
   @NotNull
-  public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile file) {
-    return new MPSFileNodeEditor(project, (MPSNodeVirtualFile) file);
+  public FileEditor createEditor(@NotNull Project project, @NotNull final VirtualFile file) {
+    MPSNodeVirtualFile mpsNodeVirtualFile = file instanceof MPSNodeVirtualFile
+      ? (MPSNodeVirtualFile) file
+      : ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
+      @Override
+      public MPSNodeVirtualFile compute() {
+        SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent().findChild(MPSExtentions.DOT_MODEL_HEADER)));
+        if(descr != null) {
+          for(SNode node : descr.getRootNodes()) {
+            if(node.getName().equals(file.getNameWithoutExtension())) {
+              return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+            }
+          }
+        }
+        return null;
+      }
+    });
+    return new MPSFileNodeEditor(project, mpsNodeVirtualFile);
   }
 
   @Override

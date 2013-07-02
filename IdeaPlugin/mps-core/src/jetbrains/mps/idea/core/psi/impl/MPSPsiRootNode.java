@@ -55,10 +55,16 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   private String myName;
 
   public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager) {
+    this(nodeId, name, manager, null);
+  }
+
+  public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager, @Nullable VirtualFile virtualFile) {
     super(manager);
     myNodeId = nodeId;
     myName = name;
-    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
+    myViewProvider = virtualFile == null
+      ? new SingleRootFileViewProvider(manager, new LightVirtualFile(), false)
+      : new SingleRootFileViewProvider(manager, virtualFile);
   }
 
   @Override
@@ -80,6 +86,8 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   @Nullable
   @Override
   public VirtualFile getVirtualFile() {
+    if(!(myViewProvider.getVirtualFile() instanceof LightVirtualFile))
+      return myViewProvider.getVirtualFile();
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference());
   }
 
@@ -147,6 +155,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   @Override
   public FileASTNode getNode() {
     return null;
+  }
+
+  @Override
+  public void navigate(boolean requestFocus) {
+    super.navigate(requestFocus);    //To change body of overridden methods use File | Settings | File Templates.
   }
 
   @Override
