@@ -38,7 +38,7 @@ public enum FileType {
 
   FileType(String suffix, String pattern) {
     mySuffix = suffix;
-    myPattern = Pattern.compile(pattern);
+    myPattern = Pattern.compile(pattern, Pattern.MULTILINE | Pattern.DOTALL);
   }
 
 

@@ -4648,10 +4648,20 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735086490092" resolveInfo="myPattern" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8704175735089013384" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgzx.~Pattern%dcompile(java%dlang%dString)%cjava%dutil%dregex%dPattern" resolveInfo="compile" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgzx.~Pattern" resolveInfo="Pattern" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgzx.~Pattern%dcompile(java%dlang%dString,int)%cjava%dutil%dregex%dPattern" resolveInfo="compile" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735089013547" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3342666646761725647" resolveInfo="pattern" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BitwiseOrExpression" typeId="tpee.1224500790866" id="5631511905535296537" nodeInfo="nn">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5631511905535328626" nodeInfo="nn">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lgzx.~Pattern" resolveInfo="Pattern" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lgzx.~Pattern%dDOTALL" resolveInfo="DOTALL" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1694585604618710651" nodeInfo="nn">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lgzx.~Pattern" resolveInfo="Pattern" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lgzx.~Pattern%dMULTILINE" resolveInfo="MULTILINE" />
+                </node>
               </node>
             </node>
           </node>

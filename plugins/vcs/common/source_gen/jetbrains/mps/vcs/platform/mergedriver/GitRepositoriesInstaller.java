@@ -135,7 +135,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
         public boolean accept(final FileType fname) {
           return ListSequence.fromList(lines).any(new IWhereFilter<String>() {
             public boolean accept(String line) {
-              return line.matches("\\s*" + fname.getSuffix() + ".+merge=mps\\s*");
+              return line.matches("\\s*" + fname.getSuffix().replace(".", "\\.") + "\\s.*merge=mps\\s*");
             }
           });
         }
@@ -143,7 +143,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
         public boolean accept(final FileType ext) {
           return ListSequence.fromList(lines).any(new IWhereFilter<String>() {
             public boolean accept(String line) {
-              return line.matches("\\s*\\*\\." + ext.getSuffix() + ".+merge=mps\\s*");
+              return line.matches("\\s*\\*\\." + ext.getSuffix() + "\\s.*merge=mps\\s*");
             }
           });
         }
@@ -154,7 +154,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
       for (FileType fname : FileType.BY_NAME) {
         boolean addNew = true;
         for (int i = 0; i < ListSequence.fromList(lines).count(); i++) {
-          if (ListSequence.fromList(lines).getElement(i).matches("\\s*" + fname.getSuffix() + ".*")) {
+          if (ListSequence.fromList(lines).getElement(i).matches("\\s*" + fname.getSuffix() + "\\s.*")) {
             if (ListSequence.fromList(lines).getElement(i).contains("merge=mps")) {
               if (dryRun) {
                 return AbstractInstaller.State.OUTDATED;
@@ -172,7 +172,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
       for (FileType ext : FileType.BY_EXT) {
         boolean addNew = true;
         for (int i = 0; i < ListSequence.fromList(lines).count(); i++) {
-          if (ListSequence.fromList(lines).getElement(i).matches("\\s*\\*\\." + ext.getSuffix() + ".*")) {
+          if (ListSequence.fromList(lines).getElement(i).matches("\\s*\\*\\." + ext.getSuffix() + "\\s.*")) {
             if (ListSequence.fromList(lines).getElement(i).contains("merge=mps")) {
               if (dryRun) {
                 return AbstractInstaller.State.OUTDATED;

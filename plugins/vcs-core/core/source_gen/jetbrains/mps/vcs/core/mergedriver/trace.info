@@ -736,7 +736,7 @@
     <nodeInfo nodeId="3342666646761725455" fileName="FileType.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
     <nodeInfo nodeId="8704175735086490092" fileName="FileType.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPattern" />
     <nodeInfo nodeId="3342666646761725637" fileName="FileType.java" startLine="39" startPosition="43" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761725641" fileName="FileType.java" startLine="40" startPosition="22" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761725641" fileName="FileType.java" startLine="40" startPosition="22" endLine="41" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761725657" fileName="FileType.java" startLine="46" startPosition="29" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8704175735089568012" fileName="FileType.java" startLine="53" startPosition="43" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8704175735089568023" fileName="FileType.java" startLine="57" startPosition="25" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -788,7 +788,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3342666646761725535" fileName="FileType.java" startLine="95" startPosition="31" endLine="96" endPosition="18" />
     <scopeInfo nodeId="3342666646761725602" fileName="FileType.java" startLine="97" startPosition="15" endLine="98" endPosition="37" />
-    <scopeInfo nodeId="3342666646761725636" fileName="FileType.java" startLine="39" startPosition="43" endLine="41" endPosition="41" />
+    <scopeInfo nodeId="3342666646761725636" fileName="FileType.java" startLine="39" startPosition="43" endLine="41" endPosition="77" />
     <scopeInfo nodeId="3342666646761725653" fileName="FileType.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="8704175735089568010" fileName="FileType.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="8704175735089568010" varName="t" />
