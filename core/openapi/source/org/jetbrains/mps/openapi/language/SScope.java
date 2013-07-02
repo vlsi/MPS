@@ -48,8 +48,7 @@ public interface SScope {
    * <p/>
    * Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText
    *
-   * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
-   * @param refText     reference text
+   * @param refText reference text
    * @return resolved element when reference text unambiguously identifies element, null otherwise
    */
   @Nullable
@@ -61,11 +60,9 @@ public interface SScope {
    * <p/>
    * Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node
    *
-   * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
-   * @param node        element from the current scope (contains(node) == true)
+   * @param node element from the current scope (contains(node) == true)
    * @return reference text for the node element in the current scope
    */
   @Nullable
   public abstract String getReferenceText(@NotNull SNode node);
-
 }
