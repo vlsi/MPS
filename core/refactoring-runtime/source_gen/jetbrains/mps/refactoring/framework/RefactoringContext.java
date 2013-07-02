@@ -32,8 +32,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.SAbstractConceptAdapter;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
@@ -301,7 +299,6 @@ public class RefactoringContext {
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
           SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
-          ((SAbstractConceptAdapter) SConceptRepository.getInstance().getConcept(oldFeatureName)).internalSetId(newFeatureName);
         }
       }
     }

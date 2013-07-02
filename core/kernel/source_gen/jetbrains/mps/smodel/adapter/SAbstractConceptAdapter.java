@@ -121,10 +121,4 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public SLanguage getLanguage() {
     return new SLanguageAdapter(NameUtil.namespaceFromConceptFQName(myConceptName));
   }
-
-
-
-  public void internalSetId(String id) {
-    myConceptName = id;
-  }
 }

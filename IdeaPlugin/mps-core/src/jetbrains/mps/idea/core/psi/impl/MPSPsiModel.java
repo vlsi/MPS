@@ -42,7 +42,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -355,7 +355,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
     // refs
     for (SReference ref : node.getReferences()) {
-      SLink link = ref.getLink();
+      SAbstractLink link = ref.getLink();
       SAbstractConcept linkTargetConcept = null;
       if (link != null) {
         linkTargetConcept = link.getTargetConcept();
