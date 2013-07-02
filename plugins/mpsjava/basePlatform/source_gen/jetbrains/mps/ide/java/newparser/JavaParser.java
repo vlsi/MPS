@@ -5,19 +5,19 @@ package jetbrains.mps.ide.java.newparser;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil;
 import java.util.Map;
 import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -31,13 +31,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class JavaParser {
   private static Logger LOG = LogManager.getLogger(JavaParser.class);
@@ -49,11 +52,11 @@ public class JavaParser {
   public JavaParser.JavaParseResult parseCompilationUnit(String code) throws JavaParseException {
     // temp thing: peek at the package name 
     String pkg = peekPackage(code);
-    return parse(code, pkg, FeatureKind.CLASS, true);
+    return parse(code, pkg, FeatureKind.CLASS, null, true);
   }
 
   @NotNull
-  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, boolean recovery) throws JavaParseException {
+  public JavaParser.JavaParseResult parse(String code, String pkg, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
     // in eclipse there is full recovery and statement recovery 
     // TODO use full recovery 
 
@@ -112,7 +115,7 @@ public class JavaParser {
         ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, true, recovery);
         // type decl (inner), field, method 
         if (astNodes != null && astNodes.length > 0) {
-          resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
+          resultNodes = converter.convertClassContents(astNodes, context);
         }
 
         break;
@@ -255,12 +258,11 @@ public class JavaParser {
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < toks.length; i++) {
-      String tok = new String(toks[i]);
-      SNode token = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
-      SPropertyOperations.set(token, "value", tok);
-      ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).addElement(token);
+      sb.append(toks[i]);
+      sb.append('.');
     }
-
+    sb.deleteCharAt(sb.length() - 1);
+    SPropertyOperations.set(imp, "tokens", sb.toString());
     return imp;
   }
 
@@ -334,8 +336,21 @@ public class JavaParser {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           @Override
           public void run() {
-            SNode theRightNode = subst.invoke();
+            final SNode theRightNode = subst.invoke();
             SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+
+            // FIXME maybe it's better to re-use auto model import 
+            Sequence.fromIterable(MultipleFilesParser.deepReferences(theRightNode)).where(new IWhereFilter<SReference>() {
+              public boolean accept(SReference it) {
+                return (SReference) it instanceof StaticReference;
+              }
+            }).visitAll(new IVisitor<SReference>() {
+              public void visit(SReference it) {
+                SModelReference targetModel = ((StaticReference) it).getTargetSModelReference();
+                ((SModelInternal) theRightNode.getModel()).addModelImport(targetModel, true);
+
+              }
+            });
           }
         });
 

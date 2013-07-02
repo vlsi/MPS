@@ -272,7 +272,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef((SModuleReference) moduleRef);
+    dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 

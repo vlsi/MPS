@@ -8,10 +8,31 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 
 public class UnknownQualifiedName implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -19,14 +40,76 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_rqmr32_a(editorContext, node);
+    return this.createProperty_rqmr32_a(editorContext, node);
   }
 
-  private EditorCell createComponent_rqmr32_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.TokensWithDots");
+  private EditorCell createProperty_rqmr32_a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("tokens");
+    provider.setNoTargetText("<no tokens>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_tokens");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UnknownQualifiedName.UnknownNameRef_generic_cellMenu_rqmr32_a0a()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
+  }
+
+  public static class UnknownNameRef_generic_cellMenu_rqmr32_a0a extends AbstractCellMenuPart_Generic_Group {
+    public UnknownNameRef_generic_cellMenu_rqmr32_a0a() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+
+      Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false, ((AbstractModule) SNodeOperations.getModel(node).getModule()).getScope());
+      return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+        }
+      }).toListSequence();
+
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNode choosen = parameterObject;
+      String className = BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
+
+      String tokens = SPropertyOperations.getString(node, "tokens");
+      int i = tokens.indexOf(".", 0);
+
+      while (i >= 0) {
+
+        // including dot at i 
+        String classNameToTry = className + tokens.substring(i);
+        if (ResolveUnknownUtil.findClass(node, classNameToTry) != null) {
+          // done 
+          SPropertyOperations.set(node, "tokens", classNameToTry);
+          return;
+        }
+
+        i = tokens.indexOf(".", i + 1);
+      }
+
+      SPropertyOperations.set(node, "tokens", className);
+
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 }

@@ -112,11 +112,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public boolean isSubConceptOf(SAbstractConcept concept) {
-    if (!(concept instanceof SAbstractConceptAdapter)) {
-      throw new IllegalArgumentException("not supported");
-    }
-
-    return SModelUtil.isAssignableConcept(myConceptName, ((SAbstractConceptAdapter) concept).myConceptName);
+    return SModelUtil.isAssignableConcept(myConceptName, concept.getQualifiedName());
   }
 
 
