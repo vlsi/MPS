@@ -43,7 +43,7 @@ public class AliasEditorComponent implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_c5ei8w_a");
+    editorCell.setCellId("ALIAS_EDITOR_COMPONENT");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);

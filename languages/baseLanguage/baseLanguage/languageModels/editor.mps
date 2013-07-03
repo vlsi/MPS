@@ -2331,8 +2331,8 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="6736042903603261497" nodeInfo="nn">
                       <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="6736042903603261534" nodeInfo="nn" />
-                      <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="6736042903603937404" nodeInfo="ng">
-                        <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="6736042903603883234" resolveInfo="alias" />
+                      <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="2213658240641121555" nodeInfo="ng">
+                        <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="tpco.2213658240640528871" resolveInfo="ALIAS_EDITOR_COMPONENT" />
                       </node>
                     </node>
                   </node>
@@ -2366,9 +2366,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6736042903603264297" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="alias" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1075310480286" nodeInfo="ng">
@@ -8592,8 +8589,8 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpc2.SelectInEditorOperation" typeId="tpc2.3647146066980922272" id="6736042903603946388" nodeInfo="nn">
                       <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="6736042903603946389" nodeInfo="nn" />
-                      <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="6736042903625616118" nodeInfo="ng">
-                        <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="6736042903603264297" resolveInfo="alias" />
+                      <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="2213658240640668380" nodeInfo="ng">
+                        <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="tpco.2213658240640528871" resolveInfo="ALIAS_EDITOR_COMPONENT" />
                       </node>
                     </node>
                   </node>
@@ -8633,9 +8630,6 @@
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="2886182022232400215" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
-        </node>
-        <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6736042903603883234" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="alias" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1166063955825" nodeInfo="ng">

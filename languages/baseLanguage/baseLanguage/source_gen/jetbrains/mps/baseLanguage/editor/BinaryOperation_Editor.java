@@ -115,7 +115,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
     public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
-      SelectionUtil.selectCell(editorContext, SNodeOperations.cast(resultNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "alias");
+      SelectionUtil.selectCell(editorContext, SNodeOperations.cast(resultNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "ALIAS_EDITOR_COMPONENT");
     }
 
     public boolean isReferentPresentation() {

@@ -160,6 +160,9 @@
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="5694771681056371077" nodeInfo="nn">
         <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
       </node>
+      <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="2213658240640528871" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="ALIAS_EDITOR_COMPONENT" />
+      </node>
     </node>
   </root>
 </model>
