@@ -5,6 +5,10 @@ package jetbrains.mps.vcs.platform.integration;
 import com.intellij.openapi.diff.impl.mergeTool.MergeTool;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import java.util.Set;
+import com.intellij.openapi.fileTypes.FileType;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -26,12 +30,12 @@ import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.jetbrains.annotations.Nullable;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = LogManager.getLogger(ModelMergeTool.class);
+  private static final Set<FileType> SUPPORTED_TYPES = SetSequence.fromSetAndArray(new HashSet<FileType>(), ModelDiffTool.DIFF_SUPPORTED_TYPES);
 
   public ModelMergeTool() {
   }
@@ -97,7 +101,21 @@ public class ModelMergeTool extends MergeTool {
 
   @Override
   public boolean canShow(DiffRequest request) {
-    return super.canShow(request) && request.getContents()[MergeConstants.ORIGINAL].getContentType() == MPSFileTypeFactory.MPS_FILE_TYPE;
+    if (!(super.canShow(request))) {
+      return false;
+    }
+    DiffContent[] contents = request.getContents();
+    if (contents.length != 3) {
+      return false;
+    }
+    FileType[] types = {contents[0].getContentType(), contents[1].getContentType(), contents[2].getContentType()};
+    if (!(SetSequence.fromSet(SUPPORTED_TYPES).contains(types[MergeConstants.ORIGINAL]))) {
+      return false;
+    }
+    if (types[MergeConstants.CURRENT] != null && types[MergeConstants.CURRENT] != types[MergeConstants.ORIGINAL] || types[MergeConstants.LAST_REVISION] != null && types[MergeConstants.LAST_REVISION] != types[MergeConstants.ORIGINAL]) {
+      return false;
+    }
+    return true;
   }
 
   private static void resolved(MergeRequestImpl req, final String result) {
@@ -127,7 +145,7 @@ public class ModelMergeTool extends MergeTool {
 
   protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
 
-  private static <T> T as_7qvsj_a0a0a0a1a71a1a2(Object o, Class<T> type) {
+  private static <T> T as_7qvsj_a0a0a0a1a71a1a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
