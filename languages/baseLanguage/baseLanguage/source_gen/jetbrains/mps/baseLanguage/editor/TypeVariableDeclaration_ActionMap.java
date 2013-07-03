@@ -8,10 +8,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class TypeVariableDeclaration_ActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new TypeVariableDeclaration_ActionMap.TypeVariableDeclaration_ActionMap_RIGHT_TRANSFORM(node));
+    editorCell.setAction(CellActionType.DELETE, new TypeVariableDeclaration_ActionMap.TypeVariableDeclaration_ActionMap_DELETE(node));
   }
 
   public static class TypeVariableDeclaration_ActionMap_RIGHT_TRANSFORM extends AbstractCellAction {
@@ -27,6 +30,24 @@ public class TypeVariableDeclaration_ActionMap {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.setNewChild(node, "bound", "jetbrains.mps.baseLanguage.structure.Type");
+    }
+  }
+
+  public static class TypeVariableDeclaration_ActionMap_DELETE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public TypeVariableDeclaration_ActionMap_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration")) {
+        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
+      }
     }
   }
 }
