@@ -263,8 +263,12 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-platform-models">
       <fileset dir="${mps_home}/workbench/mps-platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-ui-models">
+      <fileset dir="${mps_home}/workbench/mps-ui/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/lib/mps-platform.jar">
       <fileset dir="${build.tmp}/java/out/mps-platform" />
+      <fileset dir="${build.tmp}/java/out/mps-ui" />
       <fileset dir="${build.tmp}/java/out/mps-debugger" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.Platform/MPS.Platform.msd" prefix="modules/MPS.Platform" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Platform" includes="icons/**, resources/**" prefix="modules/MPS.Platform" />
@@ -273,12 +277,6 @@
       <zipfileset file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" prefix="modules/jetbrains.mps.ide.platform" />
       <zipfileset dir="${mps_home}/workbench/mps-platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.platform" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-platform-models" prefix="modules/jetbrains.mps.ide.platform/models" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-ui-models">
-      <fileset dir="${mps_home}/workbench/mps-ui/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
-    <jar destfile="${build.layout}/lib/mps-ui.jar">
-      <fileset dir="${build.tmp}/java/out/mps-ui" />
       <zipfileset file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" prefix="modules/jetbrains.mps.ide.ui" />
       <zipfileset dir="${mps_home}/workbench/mps-ui" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.ui" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-ui-models" prefix="modules/jetbrains.mps.ide.ui/models" />
