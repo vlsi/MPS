@@ -2334,6 +2334,9 @@
                       <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="2213658240641121555" nodeInfo="ng">
                         <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="tpco.2213658240640528871" resolveInfo="ALIAS_EDITOR_COMPONENT" />
                       </node>
+                      <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2213658240662828834" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1068580320021" value="-1" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -8591,6 +8594,9 @@
                       <node role="editorContext" roleId="tpc2.1948540814633499358" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="6736042903603946389" nodeInfo="nn" />
                       <node role="cellSelector" roleId="tpc2.1948540814635895774" type="tpc2.CellIdReferenceSelector" typeId="tpc2.4323500428136740385" id="2213658240640668380" nodeInfo="ng">
                         <link role="id" roleId="tpc2.4323500428136742952" targetNodeId="tpco.2213658240640528871" resolveInfo="ALIAS_EDITOR_COMPONENT" />
+                      </node>
+                      <node role="selectionStart" roleId="tpc2.3604384757217586546" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2213658240662831797" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1068580320021" value="-1" />
                       </node>
                     </node>
                   </node>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-609hu4rqyc0hayicnj0fsv0xn2nlzq6">
+<dependencies version="2" modelHash="9op84iabmy4z41994mvy3zakwzlmcw8">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.cellProviders(MPS.Editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.generator.internal(MPS.Editor/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -564,7 +564,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="StaticMethodCall_Editor.java" />
   </source>
-  <source id="1075310480281" name="BaseAssignmentExpression_Editor" hash="-5fpr2z0su2pgij25jduoidiot3e8qcb">
+  <source id="1075310480281" name="BaseAssignmentExpression_Editor" hash="91iu6apr7o9obse3r5ymbcrds27ol0q">
     <dep root="1186415538255" />
     <dep root="1194344707826" />
     <dep root="1194344968841" />
@@ -1524,7 +1524,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="DeleteParenthesis_Actions.java" />
   </source>
-  <source id="1166063928779" name="BinaryOperation_Editor" hash="-9l9uwfanyxacuk780sqlib7tpo2fqp7">
+  <source id="1166063928779" name="BinaryOperation_Editor" hash="-3rl8nwg9j86291nftumo0r2esh7f27k">
     <dep root="1140722264121" />
     <dep root="1140734304236" />
     <dep root="1140734681122" />
