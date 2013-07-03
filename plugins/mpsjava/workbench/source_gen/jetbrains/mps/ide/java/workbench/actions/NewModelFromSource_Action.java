@@ -23,9 +23,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
@@ -45,6 +42,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import java.io.IOException;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
@@ -140,21 +138,6 @@ public class NewModelFromSource_Action extends BaseAction {
 
       if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-
-      final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), NewModelFromSource_Action.this.getNamespace(_params), stereotype, NewModelFromSource_Action.this.isStrict(_params));
-        }
-      });
-
-      dialog.value.show();
-      SModel ignored = dialog.value.getResult();
-
-      if (ignored == null) {
         return;
       }
 
