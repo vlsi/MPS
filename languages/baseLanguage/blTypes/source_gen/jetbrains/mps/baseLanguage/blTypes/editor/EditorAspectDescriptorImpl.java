@@ -15,16 +15,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new BLArrayType_Editor());
-      case 1:
-        return Collections.<ConceptEditor>singletonList(new BarConcept_Editor());
-      case 2:
-        return Collections.<ConceptEditor>singletonList(new FooConcept_Editor());
-      case 3:
-        return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
-      case 4:
         return Collections.<ConceptEditor>singletonList(new PrimitiveTypeDescriptor_Editor());
-      case 5:
+      case 1:
         return Collections.<ConceptEditor>singletonList(new PrimitiveTypeRef_Editor());
       default:
     }
@@ -42,5 +34,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
 }

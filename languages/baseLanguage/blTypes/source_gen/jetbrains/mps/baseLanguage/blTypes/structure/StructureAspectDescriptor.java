@@ -14,21 +14,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("componentType").alias("array", "internal array type").create();
-      case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-      case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("bar").create();
-      case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"result", "param"}, new boolean[]{false, true}).alias("FUNCTION", "").create();
-      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"extends"}, new boolean[]{true}).create();
-      case 5:
+      case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("descriptor").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", "jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
 }
