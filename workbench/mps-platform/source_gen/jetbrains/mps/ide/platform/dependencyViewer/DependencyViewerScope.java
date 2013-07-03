@@ -140,7 +140,7 @@ public class DependencyViewerScope {
   }
 
   private <T> String getPresentation(Collection<T> list, String elementType) {
-    if ((int) CollectionSequence.fromCollection(list).count() == 0) {
+    if (CollectionSequence.fromCollection(list).isEmpty()) {
       return "";
     }
     if ((int) CollectionSequence.fromCollection(list).count() == 1) {

@@ -126,7 +126,7 @@
     <nodeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="77" startPosition="5" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205436827532" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205437054638" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="89" startPosition="78" endLine="90" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205437192440" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="91" startPosition="58" endLine="92" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205437192440" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="91" startPosition="49" endLine="92" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205437293412" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="92" startPosition="66" endLine="93" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205437296806" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="95" startPosition="51" endLine="96" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205437296810" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="96" startPosition="66" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -180,7 +180,7 @@
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="113" startPosition="48" endLine="114" endPosition="67" />
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1205437065527" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="91" startPosition="58" endLine="93" endPosition="15" />
+    <scopeInfo nodeId="1205437065527" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="91" startPosition="49" endLine="93" endPosition="15" />
     <scopeInfo nodeId="1205437296805" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="95" startPosition="51" endLine="97" endPosition="15" />
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1205436780371" fileName="ConvertTemplateDeclRefToInlineTemplate_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />

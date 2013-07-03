@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d3xkwxryrbbnohn2gtaowrnnnwr629">
+<dependencies version="2" modelHash="9bbumkjbta07g7t3f97yb66pd45m4es">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -80,13 +80,13 @@
   <source id="1232132203778" name="initialize_UnrestrictedFunctionType" hash="-3elhfs9jq3kvyg847rydbhwe3gn0p5i">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1232456330772" name="add_parameter_to_ClosureControlStatement" hash="-381du9zn8rrc56h3syq6oki0a8u5lnb">
+  <source id="1232456330772" name="add_parameter_to_ClosureControlStatement" hash="6ufhu4zh4nfk2etvqthnexop7ev5eia">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1235747431053" name="compact_invoke" hash="6cgtw894hmm0lvfuh3gjcr0d9yre5g2">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1236793984714" name="add_parameter_to_ControlClosure" hash="aj8gvu2ru9rl4048am694glvgqq7ll9">
+  <source id="1236793984714" name="add_parameter_to_ControlClosure" hash="-bv2zcyywcuyw7ooeg4yl7dcmr8tyd32">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="876385242039333158" name="initialize_ClosureLiteral" hash="-2j1n2m8vgm9glw1awlqv2tp2b1ejob2">

@@ -54,7 +54,7 @@ public class add_parameter_to_InternalClassifierType_Intention implements Intent
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (int) ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 
   public SNodeReference getIntentionNodeReference() {

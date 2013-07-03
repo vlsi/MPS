@@ -40,7 +40,7 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
           return false;
         }
         // not migrate usages with generator macroses etc! 
-        return (int) ListSequence.fromList(SNodeOperations.getChildren(node)).count() == 0;
+        return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty();
       }
 
       public void doUpdateInstanceNode(SNode node) {

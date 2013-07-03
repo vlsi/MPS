@@ -776,7 +776,7 @@
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="22" startPosition="75" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082537205635903145" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="107" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1082537205635903145" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="98" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtensionMethodDeclaration_Actions_RIGHT_TRANSFORM#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -785,7 +785,7 @@
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="15" startPosition="95" endLine="16" endPosition="154" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="22" startPosition="75" endLine="23" endPosition="25" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
-    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="107" endLine="32" endPosition="108" />
+    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="98" endLine="32" endPosition="108" />
     <scopeInfo nodeId="6513744873655832108" fileName="ExtensionMethodDeclaration_Actions.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6513744873655832108" varName="context" />
       <varInfo nodeId="6513744873655832108" varName="editorCell" />

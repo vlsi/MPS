@@ -20,7 +20,7 @@ public class check_UnlessStatement_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode us, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(us, "body", true), "statement", true)).count() == 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(us, "body", true), "statement", true)).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(us, "body", true), "Empty statement block", "r:7da49c71-e19f-4b55-806c-76b351ee48dd(org.jetbrains.mps.samples.IfAndUnless.typesystem)", "1608374556136064235", null, errorTarget);

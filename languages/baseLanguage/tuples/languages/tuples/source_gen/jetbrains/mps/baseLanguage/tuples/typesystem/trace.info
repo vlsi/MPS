@@ -892,7 +892,7 @@
     <unitInfo nodeId="1239722373118" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="22" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.typesystem.indexedTupleType_supertypeOf_namedTupleType_SubtypingRule" />
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1239881381603">
-    <nodeInfo nodeId="1239881405754" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="22" startPosition="350" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1239881405754" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="22" startPosition="341" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239881405754" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="23" startPosition="58" endLine="24" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239881381603" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="28" startPosition="46" endLine="29" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239881381603" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="33" startPosition="5" endLine="34" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -909,7 +909,7 @@
     <scopeInfo nodeId="1239881381603" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="28" startPosition="46" endLine="29" endPosition="72" />
     <scopeInfo nodeId="1239881381603" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="39" startPosition="30" endLine="40" endPosition="16" />
     <scopeInfo nodeId="1239881381603" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1239881405754" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="22" startPosition="350" endLine="24" endPosition="242">
+    <scopeInfo nodeId="1239881405754" fileName="check_NamedTupleType_NonTypesystemRule.java" startLine="22" startPosition="341" endLine="24" endPosition="242">
       <varInfo nodeId="1239881405754" varName="_reporter_2309309498" />
       <varInfo nodeId="1239881405754" varName="errorTarget" />
     </scopeInfo>
