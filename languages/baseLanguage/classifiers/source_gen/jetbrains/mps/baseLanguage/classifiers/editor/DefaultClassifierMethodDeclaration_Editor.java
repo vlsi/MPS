@@ -90,7 +90,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   }
 
   private static boolean renderingCondition_77c6be_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createRefNode_77c6be_e0(EditorContext editorContext, SNode node) {
@@ -226,7 +226,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   }
 
   private static boolean renderingCondition_77c6be_a9a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_77c6be_a9a(EditorContext editorContext, SNode node) {

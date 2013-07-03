@@ -6004,7 +6004,7 @@
     <nodeInfo nodeId="7651879834197417235" fileName="DirParser.java" startLine="122" startPosition="15" endLine="134" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5597927504164329809" fileName="DirParser.java" startLine="158" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5646944109420332308" fileName="DirParser.java" startLine="196" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="5597927504164329768" fileName="DirParser.java" startLine="156" startPosition="72" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5597927504164329768" fileName="DirParser.java" startLine="156" startPosition="73" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646944109420332247" fileName="DirParser.java" startLine="181" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerModelForPackage#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="7651879834197418050" fileName="DirParser.java" startLine="155" startPosition="38" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1023591392840703606" fileName="DirParser.java" startLine="56" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseDirs#()V" />
@@ -6108,7 +6108,7 @@
     <scopeInfo nodeId="5646944109420332308" fileName="DirParser.java" startLine="196" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="1023591392840705492" varName="packageName" />
     </scopeInfo>
-    <scopeInfo nodeId="7651879834197418051" fileName="DirParser.java" startLine="156" startPosition="72" endLine="170" endPosition="9" />
+    <scopeInfo nodeId="7651879834197418051" fileName="DirParser.java" startLine="156" startPosition="73" endLine="170" endPosition="9" />
     <scopeInfo nodeId="5646944109420332247" fileName="DirParser.java" startLine="181" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="5646944109420332250" varName="fqName" />
     </scopeInfo>

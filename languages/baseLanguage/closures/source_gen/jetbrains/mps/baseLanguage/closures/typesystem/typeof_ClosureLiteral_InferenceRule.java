@@ -213,7 +213,7 @@ with_allThrows:
       }
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
-    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).count() > 0 ?
+    SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).isNotEmpty() ?
       BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), closure, "virtual_getLastStatement_1239354409446", new Object[]{}) :
       null
     );

@@ -114,7 +114,7 @@ public class SubtreeChecker {
         for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           Instruction instruction;
           List<Instruction> instructions = program.getInstructionsFor(child);
-          if (ListSequence.fromList(instructions).count() > 0) {
+          if (ListSequence.fromList(instructions).isNotEmpty()) {
             instruction = program.getInstructionsFor(child).get(0);
           } else {
             continue;

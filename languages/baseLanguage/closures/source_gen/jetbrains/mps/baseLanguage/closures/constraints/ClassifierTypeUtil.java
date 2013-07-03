@@ -85,7 +85,7 @@ with_meet:
     SNode cType = ClassifierTypeUtil.coerceToClassifierTypeIgnoreParameters(type);
     if ((cType != null)) {
       List<SNode> params = SLinkOperations.getTargets(cType, "parameter", true);
-      if (params != null && ListSequence.fromList(params).count() > 0) {
+      if (params != null && ListSequence.fromList(params).isNotEmpty()) {
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
         for (SNode p : params) {
@@ -105,7 +105,7 @@ with_meet:
     SNode cType = ClassifierTypeUtil.coerceToClassifierTypeIgnoreParameters(type);
     if ((cType != null)) {
       List<SNode> params = SLinkOperations.getTargets(cType, "parameter", true);
-      if (params != null && ListSequence.fromList(params).count() > 0) {
+      if (params != null && ListSequence.fromList(params).isNotEmpty()) {
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(res, "classifier", SLinkOperations.getTarget(cType, "classifier", false), false);
         for (SNode p : params) {
@@ -175,7 +175,7 @@ with_meet:
   }
 
   private static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
-    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && ListSequence.fromList(actTypes).count() > 0) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && ListSequence.fromList(actTypes).isNotEmpty()) {
       int idx = 0;
       for (SNode tvd : vars) {
         if (tvd == SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) && idx < ListSequence.fromList(actTypes).count()) {

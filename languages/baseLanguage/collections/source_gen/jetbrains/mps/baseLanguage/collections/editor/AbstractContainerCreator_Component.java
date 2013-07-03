@@ -185,7 +185,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
   }
 
   private static boolean renderingCondition_jky4mt_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_jky4mt_a2a(EditorContext editorContext, SNode node) {

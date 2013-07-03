@@ -61,7 +61,7 @@ public class DefaultEditorBuilder {
     ListSequence.fromList(children).removeSequence(ListSequence.fromList(references));
 
     buildHeader(references);
-    if (Sequence.fromIterable(props).count() > 0 || ListSequence.fromList(children).count() > 0) {
+    if (Sequence.fromIterable(props).isNotEmpty() || ListSequence.fromList(children).isNotEmpty()) {
       addLabel("{");
       setMatchingLabel("body-brace");
       newLine();

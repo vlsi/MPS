@@ -218,7 +218,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1236960289987(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualParameter", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter", true)).count() > 0;
+    return (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualParameter", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter", true)).isNotEmpty();
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1235747446457(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {

@@ -46,7 +46,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
         ListSequence.fromList(myTableRows).addElement(row);
         MapSequence.fromMap(myRowToNodeMap).put(row, child);
       }
-      assert ListSequence.fromList(myTableRows).count() > 0;
+      assert ListSequence.fromList(myTableRows).isNotEmpty();
     }
     return myTableRows;
   }

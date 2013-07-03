@@ -26,7 +26,7 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
     if (SLinkOperations.getTarget(_quotation_createNode_gd2fo6_a0a1a1(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
       res = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
-      if (ListSequence.fromList(ptypes).count() > 0) {
+      if (ListSequence.fromList(ptypes).isNotEmpty()) {
         SNode elType = ListSequence.fromList(ptypes).getElement(0);
         ListSequence.fromList(res).addElement(_quotation_createNode_gd2fo6_a0a1a2a1a1(elType));
       }

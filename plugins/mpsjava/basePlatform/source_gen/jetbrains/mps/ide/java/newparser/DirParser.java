@@ -153,7 +153,7 @@ public class DirParser {
 
     // do model stuff 
     final String finalPkg = pkg.value;
-    if (pkg.value != null && ListSequence.fromList(roots).count() > 0) {
+    if (pkg.value != null && ListSequence.fromList(roots).isNotEmpty()) {
       myModelAccess.executeCommand(new Runnable() {
         @Override
         public void run() {

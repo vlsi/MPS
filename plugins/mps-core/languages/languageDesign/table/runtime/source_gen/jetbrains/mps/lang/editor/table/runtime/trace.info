@@ -846,7 +846,7 @@
     <nodeInfo nodeId="5076432847128339097" fileName="ChildrenTableModel.java" startLine="44" startPosition="116" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5076432847128339105" fileName="ChildrenTableModel.java" startLine="45" startPosition="89" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5076432847128339146" fileName="ChildrenTableModel.java" startLine="46" startPosition="59" endLine="47" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5076432847128339284" fileName="ChildrenTableModel.java" startLine="48" startPosition="7" endLine="49" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="5076432847128339284" fileName="ChildrenTableModel.java" startLine="48" startPosition="7" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="5076432847128339003" fileName="ChildrenTableModel.java" startLine="50" startPosition="5" endLine="51" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5076432847128339233" fileName="ChildrenTableModel.java" startLine="55" startPosition="39" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5076432847128339191" fileName="ChildrenTableModel.java" startLine="56" startPosition="33" endLine="57" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -886,7 +886,7 @@
     <scopeInfo nodeId="5076432847128338912" fileName="ChildrenTableModel.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5076432847128338915" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="5076432847128339027" fileName="ChildrenTableModel.java" startLine="42" startPosition="30" endLine="49" endPosition="60" />
+    <scopeInfo nodeId="5076432847128339027" fileName="ChildrenTableModel.java" startLine="42" startPosition="30" endLine="49" endPosition="61" />
     <scopeInfo nodeId="5076432847128338923" fileName="ChildrenTableModel.java" startLine="55" startPosition="39" endLine="63" endPosition="5">
       <varInfo nodeId="5076432847128339217" varName="newRowNode" />
       <varInfo nodeId="5076432847128339234" varName="rowCount" />

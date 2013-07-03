@@ -62,7 +62,7 @@ public class InlineMethodRefactoringAnalyzer {
 
   private String getOverridingErrors(List<SNode> overridingMethods) {
     StringBuffer errors = new StringBuffer();
-    if (overridingMethods != null && ListSequence.fromList(overridingMethods).count() > 0) {
+    if (overridingMethods != null && ListSequence.fromList(overridingMethods).isNotEmpty()) {
       errors.append("Inlined method overriden by this methods: ");
       for (SNode methodDeclaration : ListSequence.fromList(overridingMethods)) {
         errors.append(" ").append(SNodeOperations.getParent(methodDeclaration)).append(".").append(methodDeclaration);

@@ -204,7 +204,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_uj0cpq_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_uj0cpq_j0(EditorContext editorContext, SNode node) {

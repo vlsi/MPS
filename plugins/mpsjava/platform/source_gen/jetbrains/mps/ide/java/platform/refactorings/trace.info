@@ -1080,7 +1080,7 @@
     <nodeInfo nodeId="2034046503361591572" fileName="InlineMethodRefactoringAnalyzer.java" startLine="55" startPosition="16" endLine="56" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602808517" fileName="InlineMethodRefactoringAnalyzer.java" startLine="59" startPosition="7" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4507335185602808526" fileName="InlineMethodRefactoringAnalyzer.java" startLine="63" startPosition="69" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602808533" fileName="InlineMethodRefactoringAnalyzer.java" startLine="65" startPosition="92" endLine="66" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602808533" fileName="InlineMethodRefactoringAnalyzer.java" startLine="65" startPosition="93" endLine="66" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602808542" fileName="InlineMethodRefactoringAnalyzer.java" startLine="67" startPosition="80" endLine="68" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602808558" fileName="InlineMethodRefactoringAnalyzer.java" startLine="69" startPosition="7" endLine="70" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602808572" fileName="InlineMethodRefactoringAnalyzer.java" startLine="71" startPosition="5" endLine="72" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1127,7 +1127,7 @@
       <varInfo nodeId="4507335185602808601" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602808455" fileName="InlineMethodRefactoringAnalyzer.java" startLine="39" startPosition="67" endLine="44" endPosition="11" />
-    <scopeInfo nodeId="4507335185602808532" fileName="InlineMethodRefactoringAnalyzer.java" startLine="65" startPosition="92" endLine="70" endPosition="27" />
+    <scopeInfo nodeId="4507335185602808532" fileName="InlineMethodRefactoringAnalyzer.java" startLine="65" startPosition="93" endLine="70" endPosition="27" />
     <scopeInfo nodeId="4507335185602808449" fileName="InlineMethodRefactoringAnalyzer.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4507335185602808452" varName="indicator" />
     </scopeInfo>

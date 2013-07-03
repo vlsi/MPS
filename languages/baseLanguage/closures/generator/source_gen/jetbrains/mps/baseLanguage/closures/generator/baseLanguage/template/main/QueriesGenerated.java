@@ -1574,7 +1574,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1232624140224(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
-    return ListSequence.fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return ListSequence.fromList(stmts).isNotEmpty() && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
   public static boolean ifMacro_Condition_8665905049776863470(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2582,7 +2582,7 @@ public class QueriesGenerated {
         cstmt = StatementListUtil.nextSibling(lastStmt);
       } else {
         List<SNode> allstmts = (List<SNode>) SLinkOperations.getTargets(_context.getNode(), "statement", true);
-        cstmt = (ListSequence.fromList(allstmts).count() > 0 ?
+        cstmt = (ListSequence.fromList(allstmts).isNotEmpty() ?
           ListSequence.fromList(allstmts).getElement(0) :
           null
         );
@@ -2613,7 +2613,7 @@ public class QueriesGenerated {
       ListSequence.fromList(results).addElement(slist);
       Object data = new Integer[]{beginLabel, endLabel};
       Values.CLOSURE_DATA.set(_context, slist, data);
-    } while (stmts != null && ListSequence.fromList(stmts).count() > 0);
+    } while (stmts != null && ListSequence.fromList(stmts).isNotEmpty());
     return results;
   }
 

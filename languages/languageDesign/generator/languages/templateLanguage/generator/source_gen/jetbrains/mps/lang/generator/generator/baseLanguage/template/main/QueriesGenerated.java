@@ -2269,7 +2269,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1147906725605332270(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6210299652024797542(final IOperationContext operationContext, final IfMacroContext _context) {

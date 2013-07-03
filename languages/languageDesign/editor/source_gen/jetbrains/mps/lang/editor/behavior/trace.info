@@ -2746,7 +2746,7 @@
     <nodeInfo nodeId="2970389781192937480" fileName="DefaultEditorBuilder.java" startLine="60" startPosition="24" endLine="61" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2970389781192937485" fileName="DefaultEditorBuilder.java" startLine="61" startPosition="86" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2970389781192937486" fileName="DefaultEditorBuilder.java" startLine="62" startPosition="0" endLine="63" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2970389781192937491" fileName="DefaultEditorBuilder.java" startLine="64" startPosition="98" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2970389781192937491" fileName="DefaultEditorBuilder.java" startLine="64" startPosition="100" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2970389781192937494" fileName="DefaultEditorBuilder.java" startLine="65" startPosition="20" endLine="66" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2970389781192937497" fileName="DefaultEditorBuilder.java" startLine="66" startPosition="37" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2970389781192937499" fileName="DefaultEditorBuilder.java" startLine="67" startPosition="16" endLine="68" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3222,7 +3222,7 @@
     <scopeInfo nodeId="2970389781192938465" fileName="DefaultEditorBuilder.java" startLine="345" startPosition="0" endLine="379" endPosition="0">
       <varInfo nodeId="2970389781192938579" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="2970389781192937490" fileName="DefaultEditorBuilder.java" startLine="64" startPosition="98" endLine="101" endPosition="37">
+    <scopeInfo nodeId="2970389781192937490" fileName="DefaultEditorBuilder.java" startLine="64" startPosition="100" endLine="101" endPosition="37">
       <varInfo nodeId="2970389781192937504" varName="first" />
     </scopeInfo>
     <scopeInfo nodeId="2970389781192937613" fileName="DefaultEditorBuilder.java" startLine="108" startPosition="37" endLine="173" endPosition="20">

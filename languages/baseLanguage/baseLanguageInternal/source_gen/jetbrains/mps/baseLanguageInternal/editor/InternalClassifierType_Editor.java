@@ -50,7 +50,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_7zoim2_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private EditorCell createCollection_7zoim2_a0(EditorContext editorContext, SNode node) {

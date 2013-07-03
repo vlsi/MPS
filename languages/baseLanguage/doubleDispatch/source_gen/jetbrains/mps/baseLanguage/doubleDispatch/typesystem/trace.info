@@ -130,7 +130,7 @@
     <nodeInfo nodeId="7139749370069911108" fileName="DispatchGroup.java" startLine="128" startPosition="67" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8480956156622018209" fileName="DispatchGroup.java" startLine="131" startPosition="66" endLine="132" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6855443792548948815" fileName="DispatchGroup.java" startLine="134" startPosition="9" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3492563131411666515" fileName="DispatchGroup.java" startLine="136" startPosition="56" endLine="137" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3492563131411666515" fileName="DispatchGroup.java" startLine="136" startPosition="57" endLine="137" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3492563131411695790" fileName="DispatchGroup.java" startLine="137" startPosition="101" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7139749370069590482" fileName="DispatchGroup.java" startLine="139" startPosition="64" endLine="140" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7139749370069809506" fileName="DispatchGroup.java" startLine="141" startPosition="60" endLine="142" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -267,7 +267,7 @@
       <varInfo nodeId="7139749370070843164" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="3166734731675945707" fileName="DispatchGroup.java" startLine="153" startPosition="77" endLine="162" endPosition="9" />
-    <scopeInfo nodeId="6855443792548948818" fileName="DispatchGroup.java" startLine="136" startPosition="56" endLine="147" endPosition="29">
+    <scopeInfo nodeId="6855443792548948818" fileName="DispatchGroup.java" startLine="136" startPosition="57" endLine="147" endPosition="29">
       <varInfo nodeId="3492563131411666518" varName="unendedPaths" />
     </scopeInfo>
     <scopeInfo nodeId="3166734731675945704" fileName="DispatchGroup.java" startLine="153" startPosition="0" endLine="164" endPosition="0">
