@@ -385,7 +385,7 @@ public class MultipleFilesParser {
         for (SNode node : Sequence.fromIterable(nodes)) {
 
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-            progress.step(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+            progress.step("class: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
           }
 
           Iterable<SReference> refs = extractor.invoke(node);
@@ -397,6 +397,8 @@ public class MultipleFilesParser {
 
       }
     });
+
+    progress.step("updating references...");
 
     runCommand(name, new Runnable() {
       public void run() {
@@ -493,6 +495,8 @@ public class MultipleFilesParser {
       }
     });
 
+    progress.step("updating models...");
+
     runCommand("Code transforms", new Runnable() {
       public void run() {
         for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
@@ -556,6 +560,9 @@ public class MultipleFilesParser {
         }
       }
     });
+
+    progress.advance(1);
+    progress.done();
 
   }
 
@@ -905,7 +912,11 @@ public class MultipleFilesParser {
 
 
   private Iterable<SReference> getVariableRefs(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.LocalVariableReference", "jetbrains.mps.baseLanguage.structure.ParameterReference"}, false, new String[]{})).select(new ISelector<SNode, SReference>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
+      }
+    }).select(new ISelector<SNode, SReference>() {
       public SReference select(SNode it) {
         return SNodeOperations.getReference(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
       }

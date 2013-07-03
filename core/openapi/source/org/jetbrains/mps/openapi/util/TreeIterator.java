@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package org.jetbrains.mps.openapi.util;
 
 import java.util.Iterator;
 
 /**
- * Evgeny Gryaznov, 8/30/11
+ * Tree iterator traverses a n-ary tree in a way that a parent node is visited before its children and
+ * children are returned left-to-right.
  */
 public interface TreeIterator<T> extends Iterator<T> {
 

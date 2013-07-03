@@ -16,10 +16,10 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * A descriptor of a concept, which defines the category for nodes.
- * The descriptor is read-only, it's impossible to change the concept by invoking its methods.
- * SConcept (and SAbstractConcept) can be obtained by id from SConceptRepository.
- * note: the relationship between SNode and SConcept is very similar to relationship between an object and its Class object in Java
+ * A descriptor of a concept. Concepts define categories for AST nodes.
+ * The descriptor is read-only, so it is not possible to change the concept through its descriptor.
+ * SConcept (and SAbstractConcept) can be obtained by their ids from SConceptRepository.
+ * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
 public interface SAbstractConcept {
 

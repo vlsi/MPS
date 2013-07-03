@@ -401,7 +401,6 @@
   <dependency className="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" file="GetModelContentsFromSource_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
-    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptorFactory" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />

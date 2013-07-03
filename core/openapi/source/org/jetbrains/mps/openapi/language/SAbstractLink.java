@@ -26,7 +26,7 @@ public interface SAbstractLink {
   String getRole();
 
   /**
-   * The root concept for the nodes behind this link.
+   * The concept for the nodes that this link points to.
    */
   SAbstractConcept getTargetConcept();
 

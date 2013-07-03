@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import java.awt.Frame;
@@ -106,8 +105,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
 
       Project ideaProject = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject();
 
-      FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createMultipleJavaPathDescriptor();
-      descriptor = new FileChooserDescriptor(true, true, false, false, false, true);
+      FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, false, false, false, true);
       FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ideaProject, ((Frame) MapSequence.fromMap(_params).get("frame")));
 
       VirtualFile[] chosen = dialog.choose(null, ideaProject);

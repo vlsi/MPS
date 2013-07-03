@@ -39,11 +39,11 @@ public interface SReferenceLink extends SAbstractLink {
    * it where the reference will be placed.
    *
    * Example: while typing a new statement in the middle of a statement list, the context menu builds a scope before
-   * the statement has been created. However it shows all local variables defined up to this point in code. This is
-   * achived by passing the statement list as a context node, "statement" link as the second parameter and the index of
+   * the statement has been created, in order to offer, among other things, all local variables defined up to this point in code.
+   * This is achieved by passing the statement list as a context node, "statement" link as the second parameter and the index of
    * the statement within the statement list as the last parameter.
    *
-   * @param contextNode node containing the reference, or its nearest parent node (if source node is unavailable)
+   * @param contextNode the nearest ancestor of the node containing the reference
    * @param link        containment link in the contextNode
    * @param index       position within the link
    */

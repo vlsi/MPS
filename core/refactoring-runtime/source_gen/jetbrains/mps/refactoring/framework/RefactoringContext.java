@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -365,7 +365,7 @@ public class RefactoringContext {
       computeCaches();
     }
 
-    for (SNode node : new NodesIterable(model)) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
       String conceptFQName = node.getConcept().getQualifiedName();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {

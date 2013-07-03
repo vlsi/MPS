@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -99,7 +99,7 @@ public class InternalActionsUtils {
             }
             SModel model = SModelRepository.getInstance().getModelDescriptor(modelRef);
             if (model != null) {
-              for (SNode node : new NodesIterable(model)) {
+              for (SNode node : SNodeUtil.getDescendants(model)) {
                 try {
                   nodeCallback.invoke(node);
                 } catch (Throwable t) {
@@ -128,7 +128,7 @@ public class InternalActionsUtils {
     ProgressManager.getInstance().run(new Task.Modal(project, actionName, true) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
-        executeActionOnAllNodes(actionName, new ProgressMonitorAdapter(indicator), nodeCallback);
+        InternalActionsUtils.executeActionOnAllNodes(actionName, new ProgressMonitorAdapter(indicator), nodeCallback);
       }
     });
   }

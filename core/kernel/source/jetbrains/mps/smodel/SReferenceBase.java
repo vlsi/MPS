@@ -73,11 +73,6 @@ public abstract class SReferenceBase extends SReference {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
-    return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
-  }
-
-  @Override
   public final boolean makeIndirect() {
     return makeIndirect(false);
   }

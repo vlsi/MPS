@@ -1968,7 +1968,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.util.NodesIterable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>

@@ -312,8 +312,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.util.NodesIterable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>

@@ -81,7 +81,7 @@
     <nodeInfo nodeId="4642948870877886614" fileName="ModelAndImportedModelsScope.java" startLine="36" startPosition="12" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7396589207140093143" fileName="ModelAndImportedModelsScope.java" startLine="51" startPosition="49" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4642948870877886685" fileName="ModelAndImportedModelsScope.java" startLine="59" startPosition="13" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7396589207140427291" fileName="ModelAndImportedModelsScope.java" startLine="67" startPosition="57" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7396589207140427291" fileName="ModelAndImportedModelsScope.java" startLine="67" startPosition="64" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelAndImportedModelsScope#(Lorg/jetbrains/mps/openapi/model/SModel;ZLjetbrains/mps/smodel/IScope;)V" />
     <nodeInfo nodeId="2197509460969578522" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="35" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5871435193454872970" fileName="ModelAndImportedModelsScope.java" startLine="66" startPosition="18" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -110,7 +110,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4642948870877886587" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="85" endLine="28" endPosition="20" />
     <scopeInfo nodeId="2197509460969578524" fileName="ModelAndImportedModelsScope.java" startLine="51" startPosition="49" endLine="54" endPosition="11" />
-    <scopeInfo nodeId="5871435193454872972" fileName="ModelAndImportedModelsScope.java" startLine="67" startPosition="57" endLine="70" endPosition="15" />
+    <scopeInfo nodeId="5871435193454872972" fileName="ModelAndImportedModelsScope.java" startLine="67" startPosition="64" endLine="70" endPosition="15" />
     <scopeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4642948870877886581" varName="model" />
       <varInfo nodeId="4642948870877886583" varName="rootsOnly" />

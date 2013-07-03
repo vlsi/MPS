@@ -988,7 +988,7 @@
     <nodeInfo nodeId="4792031542972814599" fileName="RefactoringContext.java" startLine="359" startPosition="5" endLine="360" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972814613" fileName="RefactoringContext.java" startLine="364" startPosition="33" endLine="365" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065366481195592355" fileName="RefactoringContext.java" startLine="366" startPosition="5" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4792031542972814622" fileName="RefactoringContext.java" startLine="368" startPosition="49" endLine="369" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4792031542972814622" fileName="RefactoringContext.java" startLine="368" startPosition="56" endLine="369" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814628" fileName="RefactoringContext.java" startLine="369" startPosition="66" endLine="370" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814646" fileName="RefactoringContext.java" startLine="372" startPosition="94" endLine="373" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814653" fileName="RefactoringContext.java" startLine="373" startPosition="111" endLine="374" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1755,7 +1755,7 @@
       <varInfo nodeId="4792031542972814223" varName="newConceptFQName" />
       <varInfo nodeId="4792031542972814226" varName="newFeatureName" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972814621" fileName="RefactoringContext.java" startLine="368" startPosition="49" endLine="476" endPosition="7">
+    <scopeInfo nodeId="4792031542972814621" fileName="RefactoringContext.java" startLine="368" startPosition="56" endLine="476" endPosition="7">
       <varInfo nodeId="4792031542972814686" varName="allConceptFeatures" />
       <varInfo nodeId="4792031542972814623" varName="conceptFQName" />
       <varInfo nodeId="4792031542972814629" varName="exactConceptFeatures" />

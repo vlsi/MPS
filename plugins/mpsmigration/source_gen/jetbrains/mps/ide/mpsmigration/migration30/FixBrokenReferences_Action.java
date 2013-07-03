@@ -210,7 +210,7 @@ public class FixBrokenReferences_Action extends BaseAction {
 
   private static SNodeReference check_9fpjqh_a0a0a0a0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.toNodePointer();
+      return checkedDotOperand.getTargetNodeReference();
     }
     return null;
   }

@@ -69,7 +69,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -500,7 +500,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           int properties = 0;
           messageText.append("<html><body>");
           SModel model = myModelDescriptor;
-          for (SNode node : new NodesIterable(model)) {
+          for (SNode node : SNodeUtil.getDescendants(model)) {
             references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();
           }

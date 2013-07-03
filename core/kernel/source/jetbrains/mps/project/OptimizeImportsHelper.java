@@ -26,8 +26,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -150,7 +150,7 @@ public class OptimizeImportsHelper {
     for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
-    for (SNode node : new NodesIterable(modelDescriptor)) {
+    for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
       result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();

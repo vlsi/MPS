@@ -1,148 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/1366781238034254686">
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="45" startPosition="46" endLine="46" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="46" startPosition="54" endLine="47" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="47" startPosition="35" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="52" startPosition="32" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254873" fileName="GetModelContentsFromSource_Action.java" startLine="56" startPosition="87" endLine="57" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1366781238034254883" fileName="GetModelContentsFromSource_Action.java" startLine="58" startPosition="25" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254888" fileName="GetModelContentsFromSource_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="66" startPosition="7" endLine="67" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="67" startPosition="60" endLine="68" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="71" startPosition="45" endLine="72" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="73" startPosition="7" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="79" startPosition="53" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="81" startPosition="5" endLine="82" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="83" startPosition="60" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="85" startPosition="5" endLine="86" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="87" startPosition="62" endLine="88" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="89" startPosition="5" endLine="90" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="91" startPosition="60" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="94" startPosition="158" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="96" startPosition="5" endLine="97" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="98" startPosition="65" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="100" startPosition="5" endLine="101" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6651034018947924685" fileName="GetModelContentsFromSource_Action.java" startLine="105" startPosition="9" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6651034018947961294" fileName="GetModelContentsFromSource_Action.java" startLine="106" startPosition="0" endLine="107" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6651034018947622947" fileName="GetModelContentsFromSource_Action.java" startLine="107" startPosition="103" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6651034018947760905" fileName="GetModelContentsFromSource_Action.java" startLine="108" startPosition="0" endLine="109" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5946485222926061234" fileName="GetModelContentsFromSource_Action.java" startLine="109" startPosition="105" endLine="110" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6651034018947813986" fileName="GetModelContentsFromSource_Action.java" startLine="110" startPosition="84" endLine="111" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6651034018947826179" fileName="GetModelContentsFromSource_Action.java" startLine="111" startPosition="162" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677921227153" fileName="GetModelContentsFromSource_Action.java" startLine="112" startPosition="0" endLine="113" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2663747089696458871" fileName="GetModelContentsFromSource_Action.java" startLine="113" startPosition="62" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2663747089696488065" fileName="GetModelContentsFromSource_Action.java" startLine="115" startPosition="31" endLine="116" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663747089696473304" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="7" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677922077753" fileName="GetModelContentsFromSource_Action.java" startLine="118" startPosition="0" endLine="119" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813618677922282000" fileName="GetModelContentsFromSource_Action.java" startLine="120" startPosition="40" endLine="121" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6849154650481006094" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="7" endLine="123" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813618677922551428" fileName="GetModelContentsFromSource_Action.java" startLine="123" startPosition="119" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677924352675" fileName="GetModelContentsFromSource_Action.java" startLine="124" startPosition="0" endLine="125" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813618677924581839" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="63" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677924539173" fileName="GetModelContentsFromSource_Action.java" startLine="129" startPosition="15" endLine="130" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813618677924578415" fileName="GetModelContentsFromSource_Action.java" startLine="130" startPosition="86" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3813618677924612520" fileName="GetModelContentsFromSource_Action.java" startLine="132" startPosition="42" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3813618677924636451" fileName="GetModelContentsFromSource_Action.java" startLine="134" startPosition="35" endLine="135" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6651034018947866943" fileName="GetModelContentsFromSource_Action.java" startLine="138" startPosition="9" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="141" startPosition="45" endLine="142" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="147" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1366781238034254881" fileName="GetModelContentsFromSource_Action.java" startLine="57" startPosition="86" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="27" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="27" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="78" startPosition="95" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="82" startPosition="86" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="86" startPosition="100" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="90" startPosition="86" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="93" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="97" startPosition="97" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2663747089696332214" fileName="GetModelContentsFromSource_Action.java" startLine="114" startPosition="0" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3813618677922258470" fileName="GetModelContentsFromSource_Action.java" startLine="119" startPosition="92" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="140" startPosition="27" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="140" startPosition="27" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="65" startPosition="9" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="81" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="85" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="96" startPosition="5" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetModelContentsFromSource_Action#()V" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="56" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="89" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3813618677924578414" fileName="GetModelContentsFromSource_Action.java" startLine="128" startPosition="0" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="64" startPosition="89" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3813618677924499378" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="64" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3813618677924462494" fileName="GetModelContentsFromSource_Action.java" startLine="125" startPosition="198" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="78" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="96" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="52" startPosition="32" endLine="53" endPosition="16" />
-    <scopeInfo nodeId="1366781238034254882" fileName="GetModelContentsFromSource_Action.java" startLine="58" startPosition="25" endLine="59" endPosition="19" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="71" startPosition="45" endLine="72" endPosition="101" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="79" startPosition="53" endLine="80" endPosition="19" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="83" startPosition="60" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="87" startPosition="62" endLine="88" endPosition="19" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="91" startPosition="60" endLine="92" endPosition="19" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="94" startPosition="158" endLine="95" endPosition="19" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="98" startPosition="65" endLine="99" endPosition="19" />
-    <scopeInfo nodeId="2663747089696332217" fileName="GetModelContentsFromSource_Action.java" startLine="115" startPosition="31" endLine="116" endPosition="15" />
-    <scopeInfo nodeId="3813618677922258476" fileName="GetModelContentsFromSource_Action.java" startLine="120" startPosition="40" endLine="121" endPosition="112" />
-    <scopeInfo nodeId="3813618677924578417" fileName="GetModelContentsFromSource_Action.java" startLine="132" startPosition="0" endLine="133" endPosition="42">
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="44" startPosition="46" endLine="45" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="45" startPosition="54" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="46" startPosition="35" endLine="47" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="51" startPosition="32" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254873" fileName="GetModelContentsFromSource_Action.java" startLine="55" startPosition="87" endLine="56" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1366781238034254883" fileName="GetModelContentsFromSource_Action.java" startLine="57" startPosition="25" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254888" fileName="GetModelContentsFromSource_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="66" startPosition="60" endLine="67" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="45" endLine="71" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="72" startPosition="7" endLine="73" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="78" startPosition="53" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="80" startPosition="5" endLine="81" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="82" startPosition="60" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="86" startPosition="62" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="88" startPosition="5" endLine="89" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="90" startPosition="60" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="93" startPosition="158" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="95" startPosition="5" endLine="96" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="97" startPosition="65" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="99" startPosition="5" endLine="100" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6651034018947924685" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="9" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6651034018947961294" fileName="GetModelContentsFromSource_Action.java" startLine="105" startPosition="0" endLine="106" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6651034018947622947" fileName="GetModelContentsFromSource_Action.java" startLine="106" startPosition="103" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6651034018947760905" fileName="GetModelContentsFromSource_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6651034018947813986" fileName="GetModelContentsFromSource_Action.java" startLine="108" startPosition="106" endLine="109" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6651034018947826179" fileName="GetModelContentsFromSource_Action.java" startLine="109" startPosition="162" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677921227153" fileName="GetModelContentsFromSource_Action.java" startLine="110" startPosition="0" endLine="111" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2663747089696458871" fileName="GetModelContentsFromSource_Action.java" startLine="111" startPosition="62" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2663747089696488065" fileName="GetModelContentsFromSource_Action.java" startLine="113" startPosition="31" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663747089696473304" fileName="GetModelContentsFromSource_Action.java" startLine="115" startPosition="7" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677922077753" fileName="GetModelContentsFromSource_Action.java" startLine="116" startPosition="0" endLine="117" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813618677922282000" fileName="GetModelContentsFromSource_Action.java" startLine="118" startPosition="40" endLine="119" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6849154650481006094" fileName="GetModelContentsFromSource_Action.java" startLine="120" startPosition="7" endLine="121" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813618677922551428" fileName="GetModelContentsFromSource_Action.java" startLine="121" startPosition="119" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677924352675" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="0" endLine="123" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3813618677924581839" fileName="GetModelContentsFromSource_Action.java" startLine="125" startPosition="63" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677924539173" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="15" endLine="128" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3813618677924578415" fileName="GetModelContentsFromSource_Action.java" startLine="128" startPosition="86" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3813618677924612520" fileName="GetModelContentsFromSource_Action.java" startLine="130" startPosition="42" endLine="131" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3813618677924636451" fileName="GetModelContentsFromSource_Action.java" startLine="132" startPosition="35" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6651034018947866943" fileName="GetModelContentsFromSource_Action.java" startLine="136" startPosition="9" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="139" startPosition="45" endLine="140" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="145" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1366781238034254881" fileName="GetModelContentsFromSource_Action.java" startLine="56" startPosition="86" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="69" startPosition="27" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="69" startPosition="27" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="77" startPosition="95" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="81" startPosition="86" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="85" startPosition="100" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="89" startPosition="86" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="92" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="96" startPosition="97" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2663747089696332214" fileName="GetModelContentsFromSource_Action.java" startLine="112" startPosition="0" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3813618677922258470" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="92" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="138" startPosition="27" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="138" startPosition="27" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="64" startPosition="9" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="80" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="95" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GetModelContentsFromSource_Action#()V" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="88" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3813618677924578414" fileName="GetModelContentsFromSource_Action.java" startLine="126" startPosition="0" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="63" startPosition="89" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3813618677924499378" fileName="GetModelContentsFromSource_Action.java" startLine="125" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="63" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3813618677924462494" fileName="GetModelContentsFromSource_Action.java" startLine="123" startPosition="198" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="77" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="103" startPosition="96" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="103" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="51" startPosition="32" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="1366781238034254882" fileName="GetModelContentsFromSource_Action.java" startLine="57" startPosition="25" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="45" endLine="71" endPosition="101" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="78" startPosition="53" endLine="79" endPosition="19" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="82" startPosition="60" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="86" startPosition="62" endLine="87" endPosition="19" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="90" startPosition="60" endLine="91" endPosition="19" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="93" startPosition="158" endLine="94" endPosition="19" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="97" startPosition="65" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="2663747089696332217" fileName="GetModelContentsFromSource_Action.java" startLine="113" startPosition="31" endLine="114" endPosition="15" />
+    <scopeInfo nodeId="3813618677922258476" fileName="GetModelContentsFromSource_Action.java" startLine="118" startPosition="40" endLine="119" endPosition="112" />
+    <scopeInfo nodeId="3813618677924578417" fileName="GetModelContentsFromSource_Action.java" startLine="130" startPosition="0" endLine="131" endPosition="42">
       <varInfo nodeId="3813618677924578419" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677924578423" fileName="GetModelContentsFromSource_Action.java" startLine="132" startPosition="42" endLine="133" endPosition="42" />
-    <scopeInfo nodeId="3813618677924595428" fileName="GetModelContentsFromSource_Action.java" startLine="134" startPosition="0" endLine="135" endPosition="42">
+    <scopeInfo nodeId="3813618677924578423" fileName="GetModelContentsFromSource_Action.java" startLine="130" startPosition="42" endLine="131" endPosition="42" />
+    <scopeInfo nodeId="3813618677924595428" fileName="GetModelContentsFromSource_Action.java" startLine="132" startPosition="0" endLine="133" endPosition="42">
       <varInfo nodeId="3813618677924595429" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677924595431" fileName="GetModelContentsFromSource_Action.java" startLine="134" startPosition="35" endLine="135" endPosition="42" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="141" startPosition="45" endLine="142" endPosition="100" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="66" startPosition="7" endLine="68" endPosition="63">
+    <scopeInfo nodeId="3813618677924595431" fileName="GetModelContentsFromSource_Action.java" startLine="132" startPosition="35" endLine="133" endPosition="42" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="139" startPosition="45" endLine="140" endPosition="100" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="65" startPosition="7" endLine="67" endPosition="63">
       <varInfo nodeId="1366781238034254686" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="3813618677924578416" fileName="GetModelContentsFromSource_Action.java" startLine="129" startPosition="15" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="45" startPosition="46" endLine="48" endPosition="40" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="27" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="3813618677922258470" fileName="GetModelContentsFromSource_Action.java" startLine="119" startPosition="92" endLine="122" endPosition="7">
+    <scopeInfo nodeId="3813618677924578416" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="15" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="44" startPosition="46" endLine="47" endPosition="40" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="69" startPosition="27" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="3813618677922258470" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="92" endLine="120" endPosition="7">
       <varInfo nodeId="3813618677922258472" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="140" startPosition="0" endLine="143" endPosition="7">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="138" startPosition="0" endLine="141" endPosition="7">
       <varInfo nodeId="1366781238034254686" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="140" startPosition="27" endLine="143" endPosition="7" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="65" startPosition="9" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="0" endLine="74" endPosition="44">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="138" startPosition="27" endLine="141" endPosition="7" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="64" startPosition="9" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="69" startPosition="0" endLine="73" endPosition="44">
       <varInfo nodeId="1366781238034254686" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="70" startPosition="27" endLine="74" endPosition="44" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="81" startPosition="5" endLine="85" endPosition="5" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="85" startPosition="5" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="96" startPosition="5" endLine="100" endPosition="5" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1366781238034254872" fileName="GetModelContentsFromSource_Action.java" startLine="56" startPosition="87" endLine="61" endPosition="54">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="69" startPosition="27" endLine="73" endPosition="44" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="80" startPosition="5" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="95" startPosition="5" endLine="99" endPosition="5" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1366781238034254872" fileName="GetModelContentsFromSource_Action.java" startLine="55" startPosition="87" endLine="60" endPosition="54">
       <varInfo nodeId="1366781238034254874" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="56" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1366781238034254686" varName="_params" />
       <varInfo nodeId="1366781238034254686" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="89" startPosition="5" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="3813618677924499385" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="63" endLine="136" endPosition="11" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="64" startPosition="89" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="3813618677924499378" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="88" startPosition="5" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="3813618677924499385" fileName="GetModelContentsFromSource_Action.java" startLine="125" startPosition="63" endLine="134" endPosition="11" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="63" startPosition="89" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="3813618677924499378" fileName="GetModelContentsFromSource_Action.java" startLine="125" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="3813618677924499382" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="64" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="63" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1366781238034254686" varName="_params" />
       <varInfo nodeId="1366781238034254686" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="78" startPosition="95" endLine="101" endPosition="16" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="78" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="77" startPosition="95" endLine="100" endPosition="16" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="77" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="1366781238034254686" varName="_params" />
       <varInfo nodeId="1366781238034254686" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="105" startPosition="9" endLine="139" endPosition="0">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="9" endLine="137" endPosition="0">
       <varInfo nodeId="3813618677921227154" varName="chosen" />
       <varInfo nodeId="3813618677922077756" varName="chosenIFiles" />
       <varInfo nodeId="6651034018947760906" varName="descriptor" />
@@ -151,13 +150,13 @@
       <varInfo nodeId="6849154650481006097" varName="ifilesToParse" />
       <varInfo nodeId="3813618677924352676" varName="parser" />
     </scopeInfo>
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="96" endLine="144" endPosition="5" />
-    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="103" startPosition="96" endLine="142" endPosition="5" />
+    <scopeInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="103" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1366781238034254686" varName="_params" />
       <varInfo nodeId="1366781238034254686" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3813618677924499376" fileName="GetModelContentsFromSource_Action.java" startLine="126" startPosition="44" endLine="138" endPosition="7" unitName="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action$1" />
-    <unitInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="42" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" />
+    <unitInfo nodeId="3813618677924499376" fileName="GetModelContentsFromSource_Action.java" startLine="124" startPosition="44" endLine="136" endPosition="7" unitName="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action$1" />
+    <unitInfo nodeId="1366781238034254686" fileName="GetModelContentsFromSource_Action.java" startLine="41" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" />
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/202368237201627122">
     <nodeInfo nodeId="202368237201627122" fileName="ShowMembers_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
