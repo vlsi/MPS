@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b0v5lf0s9xg4jqxw1ca0jamy77qnx3x">
+<dependencies version="2" modelHash="-6ppo5wfk6epamycwai9wvwlx0h7n460">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.cellProviders(MPS.Editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.generator.internal(MPS.Editor/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -1046,7 +1046,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="_GenericDeclaration_TypeVariables_Component.java" />
   </source>
-  <source id="1109281376921" name="TypeVariableDeclaration_Editor" hash="e4setwaujwor1j9ztoo4gygxtf59xdm">
+  <source id="1109281376921" name="TypeVariableDeclaration_Editor" hash="b8lkwfhcd1k2egp6dxw7ey78w3wy1ky">
     <dep root="1186415538255" />
     <dep root="1214997316768" />
     <dep root="5019026806746802173" />
@@ -2346,7 +2346,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="ConceptFunctionAliased_Component.java" />
   </source>
-  <source id="1214997316768" name="TypeVariableDeclaration_addBound" hash="-2ralgeqebzieerfwc4aepr4zfdpx1op">
+  <source id="1214997316768" name="TypeVariableDeclaration_ActionMap" hash="-vcy2druc17kgc3us626locdi2e0f31">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -2354,7 +2354,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <file name="TypeVariableDeclaration_addBound.java" />
+    <file name="TypeVariableDeclaration_ActionMap.java" />
   </source>
   <source id="1215091382398" name="TypeVariableDeclaration_deleteBound" hash="-6s5rpvxrh9um483v5h7rwivw6spjd3v">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

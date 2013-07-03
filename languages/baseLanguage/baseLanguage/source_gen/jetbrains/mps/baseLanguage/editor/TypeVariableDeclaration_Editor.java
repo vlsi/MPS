@@ -55,7 +55,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, false);
     editorCell.getStyle().putAll(style);
-    TypeVariableDeclaration_addBound.setCellActions(editorCell, node, editorContext);
+    TypeVariableDeclaration_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

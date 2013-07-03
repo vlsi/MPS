@@ -5047,7 +5047,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1214997032054" nodeInfo="ng">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1214997316768" resolveInfo="TypeVariableDeclaration_addBound" />
+        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1214997316768" resolveInfo="TypeVariableDeclaration_ActionMap" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="6181413376134737881" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
@@ -13017,7 +13017,7 @@
     </node>
   </root>
   <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1214997316768" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="TypeVariableDeclaration_addBound" />
+    <property name="name" nameId="tpck.1169194664001" value="TypeVariableDeclaration_ActionMap" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1109279763828" resolveInfo="TypeVariableDeclaration" />
     <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="1214997350387" nodeInfo="ng">
