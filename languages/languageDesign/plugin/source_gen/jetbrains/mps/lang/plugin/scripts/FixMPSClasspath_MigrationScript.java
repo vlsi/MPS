@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.model.SModelId;
 
 public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
   public FixMPSClasspath_MigrationScript(IOperationContext operationContext) {
@@ -31,11 +31,15 @@ public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            String modelName = it.getTargetSModelReference().getModelName();
-            boolean oldModel = modelName.contains("MPS.Core") || modelName.contains("MPS.Platform") || modelName.contains("MPS.Workbench") || modelName.contains("MPS.Classpath");
-            SModuleReference moduleReference = it.getTargetSModelReference().getModuleReference();
-            boolean oldModule = moduleReference != null && (moduleReference.getModuleName().contains("MPS.Platform") || moduleReference.getModuleName().contains("MPS.Core")) && (modelName.contains("com.intellij") || modelName.contains("org.jetbrains"));
-            return oldModel || oldModule;
+            SModelId mid = it.getTargetSModelReference().getModelId();
+            if (!(mid instanceof jetbrains.mps.smodel.SModelId.ForeignSModelId)) {
+              return false;
+            }
+
+            String modelId = ((jetbrains.mps.smodel.SModelId.ForeignSModelId) mid).getId();
+
+            // core,editor,platform,workbench 
+            return modelId.contains("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea") || modelId.contains("1ed103c3-3aa6-49b7-9c21-6765ee11f224") || modelId.contains("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61") || modelId.contains("86441d7a-e194-42da-81a5-2161ec62a379");
           }
         }).isNotEmpty();
       }
