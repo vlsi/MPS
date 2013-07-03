@@ -13,6 +13,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,7 +22,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Common_Component implements ConceptEditorComponent {
@@ -54,7 +55,9 @@ public class Common_Component implements ConceptEditorComponent {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tf8r10_b0");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_tf8r10_a1a(editorContext, node));
+    if (renderingCondition_tf8r10_a0b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_tf8r10_a1a(editorContext, node));
+    }
     editorCell.addEditorCell(this.createCollection_tf8r10_b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tf8r10_c1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tf8r10_d1a(editorContext, node));
@@ -75,6 +78,10 @@ public class Common_Component implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_tf8r10_a0b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tf8r10_b0b0(editorContext, node));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_tf8r10_a0b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isCellIdInitialized_1229948571177", new Object[]{}));
   }
 
   private EditorCell createConstant_tf8r10_a0b0(EditorContext editorContext, SNode node) {
