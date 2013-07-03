@@ -23,7 +23,6 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.JDOMException;
@@ -33,9 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 
 public class FileMPSProject extends Project {
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
@@ -150,7 +146,6 @@ public class FileMPSProject extends Project {
   public static class ProjectDescriptor {
     private String name;
     private List<Path> myModulePaths = new ArrayList<Path>();
-    private List<BaseTestConfiguration> myTestConfigs = new ArrayList<BaseTestConfiguration>();
 
     public ProjectDescriptor(File file) {
       load(file);
@@ -184,9 +179,9 @@ public class FileMPSProject extends Project {
     }
 
     private void load(File file, Element root) {
-      FileMPSProject.ProjectDescriptor result_dkknya_a0a5o = this;
-      final String result_dkknya_a0a0a5o = file.getName();
-      result_dkknya_a0a5o.setName(result_dkknya_a0a0a5o);
+      FileMPSProject.ProjectDescriptor result_dkknya_a0a4o = this;
+      final String result_dkknya_a0a0a4o = file.getName();
+      result_dkknya_a0a4o.setName(result_dkknya_a0a0a4o);
 
       if (root == null) {
         return;
@@ -199,31 +194,12 @@ public class FileMPSProject extends Project {
       ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
-        Path result_dkknya_a1a9a0a5o = modulePath;
-        final String result_dkknya_a0a1a9a0a5o = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(file.getPath())).expandPath(moduleElement.getAttributeValue("path"));
-        result_dkknya_a1a9a0a5o.setPath(result_dkknya_a0a1a9a0a5o);
-        final String result_dkknya_a1a1a9a0a5o = moduleElement.getAttributeValue("folder");
-        result_dkknya_a1a9a0a5o.setMPSFolder(result_dkknya_a1a1a9a0a5o);
-        result_dkknya_a0a5o.addModule(modulePath);
-      }
-
-      for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
-        ModelsTestConfiguration tc = new ModelsTestConfiguration();
-        tc.setName(e.getAttributeValue("name"));
-        for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
-          tc.addModel(PersistenceFacade.getInstance().createModelReference(me.getAttributeValue("modelRef")));
-        }
-        result_dkknya_a0a5o.getTestConfigurations().add(tc);
-      }
-
-      for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
-        ModuleTestConfiguration tc = new ModuleTestConfiguration();
-        tc.setName(e.getAttributeValue("name"));
-        String moduleRef = e.getAttributeValue("moduleRef");
-        if (moduleRef != null) {
-          tc.setModuleRef(PersistenceFacade.getInstance().createModuleReference(moduleRef));
-          result_dkknya_a0a5o.getTestConfigurations().add(tc);
-        }
+        Path result_dkknya_a1a9a0a4o = modulePath;
+        final String result_dkknya_a0a1a9a0a4o = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(file.getPath())).expandPath(moduleElement.getAttributeValue("path"));
+        result_dkknya_a1a9a0a4o.setPath(result_dkknya_a0a1a9a0a4o);
+        final String result_dkknya_a1a1a9a0a4o = moduleElement.getAttributeValue("folder");
+        result_dkknya_a1a9a0a4o.setMPSFolder(result_dkknya_a1a1a9a0a4o);
+        result_dkknya_a0a4o.addModule(modulePath);
       }
     }
 
@@ -241,10 +217,6 @@ public class FileMPSProject extends Project {
 
     public void addModule(Path p) {
       myModulePaths.add(p);
-    }
-
-    public List<BaseTestConfiguration> getTestConfigurations() {
-      return myTestConfigs;
     }
   }
 }

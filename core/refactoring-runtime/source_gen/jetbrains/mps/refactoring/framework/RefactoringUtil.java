@@ -31,8 +31,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
-import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class RefactoringUtil {
   private static final Logger LOG = LogManager.getLogger(RefactoringUtil.class);
@@ -195,28 +196,21 @@ public class RefactoringUtil {
   public static Map<SModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
     Map<SModule, List<SModel>> result = new LinkedHashMap<SModule, List<SModel>>(extendingLangs.size() + 1);
-    result.put(language, RefactoringUtil.getLanguageModelsList(project, language));
+    result.put(language, RefactoringUtil.getLanguageModelsList(language));
     for (Language l : extendingLangs) {
       if (!(l.equals(language))) {
-        result.put(l, RefactoringUtil.getLanguageModelsList(project, l));
+        result.put(l, RefactoringUtil.getLanguageModelsList(l));
       }
     }
     return result;
   }
 
-  public static List<SModel> getLanguageModelsList(Project project, Language l) {
-    ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-    languageConfig.setModuleRef(l.getModuleReference());
-    try {
-      return languageConfig.getGenParams(project, true).getSModels();
-    } catch (IllegalGeneratorConfigurationException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  public static Map<SModule, List<SModel>> getLanguageModels(Project project, Language language) {
-    return Collections.<SModule,List<SModel>>singletonMap(language, RefactoringUtil.getLanguageModelsList(project, language));
-
+  public static List<SModel> getLanguageModelsList(Language l) {
+    return Sequence.fromIterable(Sequence.fromArray(l.getModels().toArray(new SModel[0]))).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
+      }
+    }).toListSequence();
   }
 
   public static   enum Applicability {

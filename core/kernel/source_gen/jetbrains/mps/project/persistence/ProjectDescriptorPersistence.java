@@ -11,18 +11,13 @@ import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.xml.XmlUtil;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import java.io.OutputStream;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.apache.log4j.Priority;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -48,36 +43,6 @@ public class ProjectDescriptorPersistence {
       ));
     }
     project.addContent(projectModules);
-
-    Element genConfs = new Element("genConfs");
-    for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
-      if (tc instanceof ModelsTestConfiguration) {
-        ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
-        Element genConfModels = new Element("genConfModels");
-        if (mgc.getName() != null) {
-          genConfModels.setAttribute("name", mgc.getName());
-        }
-        Element models = new Element("models");
-        for (SModelReference m : ListSequence.fromList(mgc.getModels())) {
-          XmlUtil.tagWithAttribute(models, "model", "modelRef", m.toString());
-        }
-        genConfModels.addContent(models);
-        genConfs.addContent(genConfModels);
-      }
-      if (tc instanceof ModuleTestConfiguration) {
-        ModuleTestConfiguration sgc = (ModuleTestConfiguration) tc;
-        Element genConfModule = new Element("genConfModule");
-        if (sgc.getName() != null) {
-          genConfModule.setAttribute("name", sgc.getName());
-        }
-        if (sgc.getModuleRef() != null) {
-          genConfModule.setAttribute("moduleRef", sgc.getModuleRef().toString());
-        }
-        genConfs.addContent(genConfModule);
-      }
-    }
-
-    project.addContent(genConfs);
     return project;
   }
 
@@ -118,25 +83,6 @@ public class ProjectDescriptorPersistence {
       final String result_jnk9az_a1a1a9a1a3 = moduleElement.getAttributeValue("folder");
       result_jnk9az_a1a9a1a3.setMPSFolder(result_jnk9az_a1a1a9a1a3);
       result_jnk9az_a1a3.addModule(modulePath);
-    }
-
-    for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
-      ModelsTestConfiguration tc = new ModelsTestConfiguration();
-      tc.setName(e.getAttributeValue("name"));
-      for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
-        tc.addModel(PersistenceFacade.getInstance().createModelReference(me.getAttributeValue("modelRef")));
-      }
-      result_jnk9az_a1a3.getTestConfigurations().add(tc);
-    }
-
-    for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
-      ModuleTestConfiguration tc = new ModuleTestConfiguration();
-      tc.setName(e.getAttributeValue("name"));
-      String moduleRef = e.getAttributeValue("moduleRef");
-      if (moduleRef != null) {
-        tc.setModuleRef(PersistenceFacade.getInstance().createModuleReference(moduleRef));
-        result_jnk9az_a1a3.getTestConfigurations().add(tc);
-      }
     }
   }
 
