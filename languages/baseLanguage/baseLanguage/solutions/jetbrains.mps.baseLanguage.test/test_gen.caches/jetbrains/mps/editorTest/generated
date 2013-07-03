@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-byzmqfshfobm2mlf46vrvw5kpawr1c8">
+<dependencies version="2" modelHash="-8dbmgm3l3h2mt4nd5ppshn57mo2is1e">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -36351,7 +36351,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="MethodAddGenericCaret_Test.java" />
   </source>
-  <source id="6736042903603947667" name="ReplaceBinaryWithAssignment" hash="drclhxexibgs4lw8g0syxww37sy1lgc">
+  <source id="6736042903603947667" name="ReplaceBinaryWithAssignment" hash="8r5lr1gxrqo2w0sxn0snqhj2q5uujnk">
     <dep root="1086097794003843976" />
     <dep root="1195975797953542959" />
     <dep root="1195975797953892764" />
@@ -36545,7 +36545,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ReplaceBinaryWithAssignment_Test.java" />
   </source>
-  <source id="6736042903605141119" name="ReplaceAssignmentWithBinary" hash="-d7849haaku8e4p9km67fzrcne7d8czc">
+  <source id="6736042903605141119" name="ReplaceAssignmentWithBinary" hash="-ev72njz88fxoj5xndm7imk8e576sxwe">
     <dep root="1086097794003843976" />
     <dep root="1195975797953542959" />
     <dep root="1195975797953892764" />
