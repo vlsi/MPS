@@ -21,7 +21,7 @@ package org.jetbrains.mps.openapi.language;
 public interface SContainmentLink extends SAbstractLink {
 
   /**
-   * Instance nodes can contain more than one element under this link.
+   * Instance nodes can contain more than one target element.
    */
   boolean isMultiple();
 

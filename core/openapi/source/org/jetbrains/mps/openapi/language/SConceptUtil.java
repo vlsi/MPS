@@ -19,8 +19,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * Semen Alperovich
- * 04 04, 2013
+ * A set of helper functions
  */
 public class SConceptUtil {
 
