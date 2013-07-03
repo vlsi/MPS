@@ -73,11 +73,6 @@ public class PostponedReference extends SReference {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
-    return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
-  }
-
-  @Override
   protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;

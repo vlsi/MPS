@@ -21,7 +21,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -131,7 +131,7 @@ public class LanguageUsagesFinder implements IFinder {
     if (!(SModelStereotype.isUserModel(modelDescriptor))) {
       return;
     }
-    for (SNode node : new NodesIterable(modelDescriptor)) {
+    for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
       if (SNodeOperations.getLanguage(node) == searchedLanguage) {
         searchResults.getSearchResults().add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
       }

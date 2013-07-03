@@ -19,9 +19,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelRepository;
@@ -78,7 +78,7 @@ public class MigrateCondition_Action extends BaseAction {
           return SModelStereotype.isUserModel(m) && !(m.isReadOnly());
         }
       })) {
-        for (SNode node : new NodesIterable(md)) {
+        for (SNode node : Sequence.fromIterable(SNodeUtil.getDescendants(md))) {
           for (SReference ref : Sequence.fromIterable(node.getReferences())) {
             if (!(ref instanceof jetbrains.mps.smodel.SReference)) {
               continue;

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -99,7 +98,7 @@ public class SModelOperations {
     for (SModel aModel : modelsList) {
       Iterable<SNode> nodes = (roots ?
         aModel.getRootNodes() :
-        new NodesIterable(aModel)
+        SNodeUtil.getDescendants(aModel)
       );
       if (concept == null) {
         resultNodes.addAll(IterableUtil.asList(nodes));
@@ -124,7 +123,7 @@ public class SModelOperations {
       return ((SModelInternal) model).getFastNodeFinder().getNodes(conceptFqName, true);
     }
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : new NodesIterable(model)) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
       result.add(node);
     }
     return result;

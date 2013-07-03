@@ -75,7 +75,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
-  public SNodeReference toNodePointer() {
+  public SNodeReference getTargetNodeReference() {
     return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
   }
 

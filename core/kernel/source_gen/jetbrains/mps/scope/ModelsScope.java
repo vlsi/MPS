@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.ArrayList;
@@ -49,7 +48,7 @@ public class ModelsScope extends Scope {
         nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) new NodesIterable(model));
+        nodes = ((Iterable) SNodeUtil.getDescendants(model));
         conceptToCheck = null;
       }
 
@@ -90,7 +89,7 @@ public class ModelsScope extends Scope {
         nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) new NodesIterable(model));
+        nodes = ((Iterable) SNodeUtil.getDescendants(model));
         conceptToCheck = null;
       }
 

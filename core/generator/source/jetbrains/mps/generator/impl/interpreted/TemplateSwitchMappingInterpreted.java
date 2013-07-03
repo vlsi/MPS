@@ -63,7 +63,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     }
 
     // proceed without resolving (at least for StaticReferences) 
-    return ref.toNodePointer();
+    return ref.getTargetNodeReference();
   }
 
   @Override
