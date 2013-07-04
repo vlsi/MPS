@@ -4,6 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -13,12 +14,12 @@ public class IStatable_Behavior {
   }
 
   @Deprecated
-  public static Iterable<Tuples._2<String, Integer>> call_getStat_7490254719527247609(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), thisNode, "virtual_getStat_7490254719527247609", new Object[]{});
+  public static Iterable<Tuples._2<String, Integer>> call_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), thisNode, "virtual_getStat_7490254719527247609", new Object[]{context});
   }
 
   @Deprecated
-  public static Iterable<Tuples._2<String, Integer>> callSuper_getStat_7490254719527247609(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.IStatable"), callerConceptFqName, "virtual_getStat_7490254719527247609", new Class[]{SNode.class}, new Object[]{});
+  public static Iterable<Tuples._2<String, Integer>> callSuper_getStat_7490254719527247609(SNode thisNode, String callerConceptFqName, ConsoleContext context) {
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.IStatable"), callerConceptFqName, "virtual_getStat_7490254719527247609", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
   }
 }

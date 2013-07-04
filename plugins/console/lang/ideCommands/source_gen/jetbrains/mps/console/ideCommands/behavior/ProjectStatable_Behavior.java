@@ -4,26 +4,47 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.console.tool.ConsoleContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ProjectStatable_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode) {
+  public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
 
-    // todo 
-    /*
-      ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()).size()));
-      ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", IterableUtil.asCollection(SModelRepository.getInstance().getModelDescriptors()).size()));
-    */
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(context.getProject().getModules()).size()));
+    Collection<SModule> asCollection = IterableUtil.asCollection(context.getProject().getModules());
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Non-packaged modules", CollectionSequence.fromCollection(asCollection).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return !(((SModule) it).isPackaged());
+      }
+    }).count()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", CollectionSequence.fromCollection(asCollection).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).count()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Editable models", CollectionSequence.fromCollection(asCollection).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(it.isReadOnly());
+      }
+    }).count()));
 
     return result;
   }

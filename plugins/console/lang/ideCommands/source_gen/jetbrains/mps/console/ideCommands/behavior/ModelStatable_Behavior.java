@@ -4,6 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.console.tool.ConsoleContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -20,7 +21,7 @@ public class ModelStatable_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode) {
+  public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     SModel model = SModelRepository.getInstance().getModelDescriptor(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "target", true), "fqName"));
     int references = 0;
     int properties = 0;

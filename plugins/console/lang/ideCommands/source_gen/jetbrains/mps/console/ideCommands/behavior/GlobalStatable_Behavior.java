@@ -4,6 +4,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.console.tool.ConsoleContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class GlobalStatable_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode) {
+  public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
 
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()).size()));

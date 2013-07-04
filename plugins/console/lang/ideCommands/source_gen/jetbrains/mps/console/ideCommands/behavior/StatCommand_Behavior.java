@@ -15,11 +15,12 @@ public class StatCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_757553790980855637(final SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         callback.run();
-        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getStat_7490254719527247609", new Object[]{}));
+
+        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getStat_7490254719527247609", new Object[]{c}));
       }
     });
 

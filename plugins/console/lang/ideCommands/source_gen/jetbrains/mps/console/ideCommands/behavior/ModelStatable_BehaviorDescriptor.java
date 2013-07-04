@@ -5,13 +5,14 @@ package jetbrains.mps.console.ideCommands.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.console.tool.ConsoleContext;
 
 public class ModelStatable_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatable_BehaviorDescriptor {
   public ModelStatable_BehaviorDescriptor() {
   }
 
-  public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode) {
-    return ModelStatable_Behavior.virtual_getStat_7490254719527247609(thisNode);
+  public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
+    return ModelStatable_Behavior.virtual_getStat_7490254719527247609(thisNode, context);
   }
 
   @Override
