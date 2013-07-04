@@ -78,7 +78,7 @@ public enum FileType {
       }
     }
     // try to get file type by the beginning of content 
-    char[] buf = new char[100];
+    char[] buf = new char[1000];
     Reader reader = null;
     try {
       reader = new InputStreamReader(new FileInputStream(file), FileUtil.DEFAULT_CHARSET);
