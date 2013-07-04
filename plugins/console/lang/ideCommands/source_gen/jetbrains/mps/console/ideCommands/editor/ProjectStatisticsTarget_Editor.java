@@ -8,20 +8,20 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
-public class ProjectStatable_Editor extends DefaultNodeEditor {
+public class ProjectStatisticsTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_46cigy_a(editorContext, node);
+    return this.createCollection_wwbxv3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_46cigy_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wwbxv3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_46cigy_a");
+    editorCell.setCellId("Collection_wwbxv3_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_46cigy_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_wwbxv3_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_46cigy_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_wwbxv3_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }

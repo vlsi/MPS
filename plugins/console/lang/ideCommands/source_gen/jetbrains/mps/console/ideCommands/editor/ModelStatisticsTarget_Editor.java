@@ -12,20 +12,20 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class ModelStatable_Editor extends DefaultNodeEditor {
+public class ModelStatisticsTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_j1dri2_a(editorContext, node);
+    return this.createCollection_lhmaef_a(editorContext, node);
   }
 
-  private EditorCell createCollection_j1dri2_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lhmaef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_j1dri2_a");
+    editorCell.setCellId("Collection_lhmaef_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNode_j1dri2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_lhmaef_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_j1dri2_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_lhmaef_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("target");
     provider.setNoTargetText("<no target>");

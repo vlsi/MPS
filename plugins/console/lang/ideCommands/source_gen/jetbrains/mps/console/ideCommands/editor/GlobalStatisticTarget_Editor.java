@@ -7,12 +7,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class GlobalStatable_Editor extends DefaultNodeEditor {
+public class GlobalStatisticTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_a1vkal_a(editorContext, node);
+    return this.createComponent_5usxef_a(editorContext, node);
   }
 
-  private EditorCell createComponent_a1vkal_a(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_5usxef_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     editorCell.setBig(true);
     return editorCell;
