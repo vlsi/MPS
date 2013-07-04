@@ -6439,7 +6439,9 @@
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6485876330532013536">
             <property name="text" nameId="tpee.6329021646629104958" value="this is a guard against the situation when our directory has been removed" />
           </node>
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.CommentPart" typeId="tpee.6329021646629104955" id="6485876330532259073" />
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6632570505818044053">
+            <property name="text" nameId="tpee.6329021646629104958" value="    " />
+          </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6485876330532352047">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6485876330532362216">

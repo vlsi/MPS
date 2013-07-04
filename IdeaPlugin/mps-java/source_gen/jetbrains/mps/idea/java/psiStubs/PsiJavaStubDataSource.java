@@ -36,7 +36,7 @@ public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener
 
   public void psiChanged(final PsiListener.PsiEvent event) {
 
-    // this is a guard against the situation when our directory has been removed <!TextGen not found for 'jetbrains.mps.baseLanguage.structure.CommentPart'!> 
+    // this is a guard against the situation when our directory has been removed      
     // we don't notify our listeners about anything in this case 
     // they should be removed anyways 
     if (!(myDirectory.isValid())) {
