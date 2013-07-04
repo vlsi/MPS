@@ -16,11 +16,14 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
 
@@ -35,14 +38,13 @@ public abstract class FavoritesRoot<T> {
   }
 
   public static FavoritesRoot createForTreeNode(MPSTreeNode treeNode) {
-    Object userObject = treeNode.getUserObject();
     Object o = null;
-    if (userObject instanceof SNode) {
-      o = new jetbrains.mps.smodel.SNodePointer((SNode) userObject);
-    } else if (userObject instanceof SModel) {
-      o = ((SModel) userObject).getReference();
-    } else if (userObject instanceof SModule) {
-      o = ((SModule) userObject).getModuleReference();
+    if (treeNode instanceof SNodeTreeNode) {
+      o = new jetbrains.mps.smodel.SNodePointer(((SNodeTreeNode) treeNode).getSNode());
+    } else if (treeNode instanceof SModelTreeNode) {
+      o = (((SModelTreeNode) treeNode).getModel()).getReference();
+    } else if (treeNode instanceof ProjectModuleTreeNode) {
+      o = (((ProjectModuleTreeNode) treeNode).getModule()).getModuleReference();
     }
     if (o != null) return createForValue(o);
     return null;

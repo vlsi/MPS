@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.favorites;
 
+import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -23,7 +24,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
-import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.ArrayUtil;
@@ -31,6 +31,7 @@ import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
@@ -102,7 +103,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
   @Override
   public Icon getIcon() {
-    return IconLoader.getIcon("/general/toolWindowFavorites.png");
+    return Toolwindows.ToolWindowFavorites;
   }
 
   @Override
@@ -113,7 +114,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
   @Override
   public JComponent createComponent() {
-    if (isComponentCreated()) return myScrollPane;
+    if (isComponentCreated()) {
+      rebuildTree();
+      return myScrollPane;
+    }
     myTree = new MyLogicalViewTree();
     myFavoritesListener = new MPSFavoritesListener() {
       @Override
@@ -140,21 +144,26 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         myFavoritesManager.addListener(myFavoritesListener);
 
         if (ArrayUtil.find(myFavoritesManager.getFavoriteNames(), listName) == -1) {
-          listName = null;
+          myProjectView.changeView(ProjectPane.ID);
+          return;
         }
         myProjectView.changeView(ID, listName);
       }
     };
     myFavoritesManager.addListener(myFavoritesListener);
     // Looks like thid method can be called from different threads
+    rebuildTree();
+
+    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
+    return myScrollPane;
+  }
+
+  private void rebuildTree() {
     if (ThreadUtils.isEventDispatchThread()) {
       getTree().rebuildNow();
     } else {
       getTree().rebuildLater();
     }
-
-    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
-    return myScrollPane;
   }
 
   @Override
