@@ -2150,7 +2150,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public void removeReference(org.jetbrains.mps.openapi.model.SReference referenceToRemove) {
+  public void removeReference(SReference referenceToRemove) {
     setReference(referenceToRemove.getRole(), null);
   }
 
