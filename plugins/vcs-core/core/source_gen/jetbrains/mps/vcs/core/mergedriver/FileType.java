@@ -17,8 +17,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public enum FileType {
-  MODEL_ROOT(MPSExtentions.MODEL_ROOT, ".*<model\\s[^>]*content=\"?root\"?"),
-  MODEL_HEADER(MPSExtentions.MODEL_HEADER, ".*<model\\s[^>]*content=\"?header\"?"),
+  MODEL_ROOT(MPSExtentions.MODEL_ROOT, ".*<model\\s[^>]*content=\"?root\"?.*"),
+  MODEL_HEADER(MPSExtentions.MODEL_HEADER, ".*<model\\s[^>]*content=\"?header\"?.*"),
   MODEL(MPSExtentions.MODEL, ".*<model[>\\s].*"),
   LANGUAGE(MPSExtentions.LANGUAGE, ".*<language[>\\s].*"),
   SOLUTION(MPSExtentions.SOLUTION, ".*<solution[>\\s].*"),

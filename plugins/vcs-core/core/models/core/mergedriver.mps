@@ -1023,8 +1023,24 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8704175735085294495" nodeInfo="nn">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8704175735085294496" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8704175735083144930" resolveInfo="ModelMerger" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8704175735085300154" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="filetype" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="3293282896103262689" nodeInfo="nn">
+                          <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3293282896103280421" nodeInfo="nn">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="filetype" />
+                          </node>
+                          <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3293282896103312217" nodeInfo="nn">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3293282896103289276" nodeInfo="nn">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3342666646761693732" resolveInfo="fileType" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3293282896103334104" nodeInfo="nn">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3342666646761725653" resolveInfo="getSuffix" />
+                            </node>
+                          </node>
+                          <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="3293282896103271582" nodeInfo="nn">
+                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3293282896103271585" nodeInfo="nn">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8704175735081394865" resolveInfo="filetype" />
+                            </node>
+                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3293282896103271584" nodeInfo="nn" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -4438,7 +4454,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dMODEL_ROOT" resolveInfo="MODEL_ROOT" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735079660073" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?root\&quot;?" />
+        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?root\&quot;?.*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="8704175735079661311" nodeInfo="ig">
@@ -4449,7 +4465,7 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="vsqk.~MPSExtentions%dMODEL_HEADER" resolveInfo="MODEL_HEADER" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8704175735079699791" nodeInfo="nn">
-        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?header\&quot;?" />
+        <property name="value" nameId="tpee.1070475926801" value=".*&lt;model\\s[^&gt;]*content=\&quot;?header\&quot;?.*" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3342666646761725608" nodeInfo="ig">

@@ -120,7 +120,10 @@ public class MergeDriverMain {
       case MODEL_HEADER:
       case MODEL_ROOT:
       case MODEL:
-        return new CompositeMerger(new ModelMerger(filetype), new SimpleMerger());
+        return new CompositeMerger(new ModelMerger((filetype != null ?
+          filetype :
+          fileType.getSuffix()
+        )), new SimpleMerger());
       case LANGUAGE:
       case SOLUTION:
       case DEVKIT:
