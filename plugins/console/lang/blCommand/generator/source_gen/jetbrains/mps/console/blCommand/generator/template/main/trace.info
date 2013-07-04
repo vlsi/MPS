@@ -31,6 +31,7 @@
     <nodeInfo nodeId="4417779018064998085" fileName="QueriesGenerated.java" startLine="22" startPosition="150" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4417779018064998079" fileName="QueriesGenerated.java" startLine="22" startPosition="150" endLine="23" endPosition="71" />
   </root>
+  <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/5191068651950828715" />
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.console.blCommand.generator.template.main@generator)/5336086527852812352">
     <nodeInfo nodeId="5336086527852935536" fileName="QueriesGenerated.java" startLine="58" startPosition="155" endLine="59" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5336086527852932032" fileName="QueriesGenerated.java" startLine="58" startPosition="155" endLine="59" endPosition="118" />
