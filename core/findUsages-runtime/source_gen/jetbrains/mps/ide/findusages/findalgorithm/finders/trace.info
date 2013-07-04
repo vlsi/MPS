@@ -284,7 +284,7 @@
     <nodeInfo nodeId="8267733531687412556" fileName="GeneratedFinder.java" startLine="89" startPosition="7" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8267733531687412563" fileName="GeneratedFinder.java" startLine="90" startPosition="47" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8267733531687412580" fileName="GeneratedFinder.java" startLine="92" startPosition="33" endLine="93" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8267733531687412514" fileName="GeneratedFinder.java" startLine="95" startPosition="12" endLine="96" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8267733531687412514" fileName="GeneratedFinder.java" startLine="95" startPosition="12" endLine="96" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8267733531687412592" fileName="GeneratedFinder.java" startLine="97" startPosition="5" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8267733531687412374" fileName="GeneratedFinder.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFinder#()V" />
     <nodeInfo nodeId="8267733531687412512" fileName="GeneratedFinder.java" startLine="95" startPosition="10" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -319,7 +319,7 @@
     <scopeInfo nodeId="8267733531687412466" fileName="GeneratedFinder.java" startLine="74" startPosition="45" endLine="75" endPosition="27" />
     <scopeInfo nodeId="8267733531687412548" fileName="GeneratedFinder.java" startLine="87" startPosition="35" endLine="88" endPosition="48" />
     <scopeInfo nodeId="8267733531687412579" fileName="GeneratedFinder.java" startLine="92" startPosition="33" endLine="93" endPosition="99" />
-    <scopeInfo nodeId="8267733531687412513" fileName="GeneratedFinder.java" startLine="95" startPosition="12" endLine="96" endPosition="192" />
+    <scopeInfo nodeId="8267733531687412513" fileName="GeneratedFinder.java" startLine="95" startPosition="12" endLine="96" endPosition="196" />
     <scopeInfo nodeId="8267733531687412374" fileName="GeneratedFinder.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8267733531687412445" fileName="GeneratedFinder.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="8267733531687412452" varName="_results" />

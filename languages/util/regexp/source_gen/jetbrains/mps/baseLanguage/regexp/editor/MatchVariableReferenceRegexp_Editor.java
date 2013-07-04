@@ -30,7 +30,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7j6yq4_a");
     editorCell.setBig(true);
-    editorCell.addKeyMap(new RegexpSequenceByEnter());
+    RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_7j6yq4_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7j6yq4_b0(editorContext, node));
     return editorCell;

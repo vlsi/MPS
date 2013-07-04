@@ -106,7 +106,7 @@
     <nodeInfo nodeId="1201426034216" fileName="PrepStatementUtil.java" startLine="184" startPosition="36" endLine="185" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1201379778550" fileName="PrepStatementUtil.java" startLine="186" startPosition="69" endLine="187" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201427229758" fileName="PrepStatementUtil.java" startLine="187" startPosition="122" endLine="188" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1201379922142" fileName="PrepStatementUtil.java" startLine="189" startPosition="225" endLine="190" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1201379922142" fileName="PrepStatementUtil.java" startLine="189" startPosition="226" endLine="190" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240926434555" fileName="PrepStatementUtil.java" startLine="191" startPosition="9" endLine="192" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240926434559" fileName="PrepStatementUtil.java" startLine="192" startPosition="66" endLine="193" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240926434566" fileName="PrepStatementUtil.java" startLine="193" startPosition="61" endLine="194" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -192,7 +192,7 @@
     <nodeInfo nodeId="1201380741194" fileName="PrepStatementUtil.java" startLine="197" startPosition="5" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1201265707551" fileName="PrepStatementUtil.java" startLine="208" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepYieldStatement#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;I)I" />
     <nodeInfo nodeId="1201390074597" fileName="PrepStatementUtil.java" startLine="68" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209326273840" fileName="PrepStatementUtil.java" startLine="147" startPosition="102" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1209326273840" fileName="PrepStatementUtil.java" startLine="147" startPosition="103" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1201364125681" fileName="PrepStatementUtil.java" startLine="164" startPosition="55" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1201390640643" fileName="PrepStatementUtil.java" startLine="240" startPosition="23" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1209326263197" fileName="PrepStatementUtil.java" startLine="146" startPosition="90" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -234,7 +234,7 @@
     <scopeInfo nodeId="1209565400035" fileName="PrepStatementUtil.java" startLine="75" startPosition="100" endLine="76" endPosition="139" />
     <scopeInfo nodeId="1201438240129" fileName="PrepStatementUtil.java" startLine="159" startPosition="258" endLine="160" endPosition="49" />
     <scopeInfo nodeId="1201426851230" fileName="PrepStatementUtil.java" startLine="171" startPosition="80" endLine="172" endPosition="112" />
-    <scopeInfo nodeId="1201379821227" fileName="PrepStatementUtil.java" startLine="189" startPosition="225" endLine="190" endPosition="35" />
+    <scopeInfo nodeId="1201379821227" fileName="PrepStatementUtil.java" startLine="189" startPosition="226" endLine="190" endPosition="35" />
     <scopeInfo nodeId="1210772091041" fileName="PrepStatementUtil.java" startLine="281" startPosition="134" endLine="282" endPosition="131" />
     <scopeInfo nodeId="1210772156762" fileName="PrepStatementUtil.java" startLine="285" startPosition="33" endLine="286" endPosition="53" />
     <scopeInfo nodeId="1201425527837" fileName="PrepStatementUtil.java" startLine="291" startPosition="33" endLine="292" endPosition="53" />
@@ -326,8 +326,8 @@
       <varInfo nodeId="1240926467092" varName="parentLabels" />
       <varInfo nodeId="1210772062394" varName="topIfStmt" />
     </scopeInfo>
-    <scopeInfo nodeId="1209326263198" fileName="PrepStatementUtil.java" startLine="147" startPosition="102" endLine="156" endPosition="7" />
-    <scopeInfo nodeId="1209326273840" fileName="PrepStatementUtil.java" startLine="147" startPosition="102" endLine="156" endPosition="7">
+    <scopeInfo nodeId="1209326263198" fileName="PrepStatementUtil.java" startLine="147" startPosition="103" endLine="156" endPosition="7" />
+    <scopeInfo nodeId="1209326273840" fileName="PrepStatementUtil.java" startLine="147" startPosition="103" endLine="156" endPosition="7">
       <varInfo nodeId="1209326273853" varName="eicls" />
     </scopeInfo>
     <scopeInfo nodeId="1201379745356" fileName="PrepStatementUtil.java" startLine="186" startPosition="69" endLine="195" endPosition="91">
@@ -480,7 +480,7 @@
     <unitInfo nodeId="1200861660719" fileName="PrepStatementUtil.java" startLine="14" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590339(jetbrains.mps.baseLanguage.closures.helper)/1201177809951">
-    <nodeInfo nodeId="1201177981141" fileName="StatementListUtil.java" startLine="14" startPosition="98" endLine="15" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1201177981141" fileName="StatementListUtil.java" startLine="14" startPosition="99" endLine="15" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201178123829" fileName="StatementListUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201178209698" fileName="StatementListUtil.java" startLine="20" startPosition="93" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1201178171366" fileName="StatementListUtil.java" startLine="21" startPosition="68" endLine="22" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -521,7 +521,7 @@
     <nodeInfo nodeId="1201178057348" fileName="StatementListUtil.java" startLine="22" startPosition="31" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1201177887437" fileName="StatementListUtil.java" startLine="20" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="selectStatementsUntilControlStatement#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="1201178246536" fileName="StatementListUtil.java" startLine="47" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isControlStatement#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="1201177958869" fileName="StatementListUtil.java" startLine="14" startPosition="98" endLine="15" endPosition="165" />
+    <scopeInfo nodeId="1201177958869" fileName="StatementListUtil.java" startLine="14" startPosition="99" endLine="15" endPosition="165" />
     <scopeInfo nodeId="1201178182834" fileName="StatementListUtil.java" startLine="24" startPosition="26" endLine="25" endPosition="26" />
     <scopeInfo nodeId="1201206370689" fileName="StatementListUtil.java" startLine="28" startPosition="39" endLine="29" endPosition="16" />
     <scopeInfo nodeId="1209569980426" fileName="StatementListUtil.java" startLine="31" startPosition="42" endLine="32" endPosition="54" />

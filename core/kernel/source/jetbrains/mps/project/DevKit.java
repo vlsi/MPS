@@ -56,7 +56,7 @@ public class DevKit extends AbstractModule {
   }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(descriptor, reloadClasses);
+    assertCanChange();
 
     myDescriptor = descriptor;
 
@@ -65,6 +65,7 @@ public class DevKit extends AbstractModule {
       setModuleReference(mp);
     }
 
+    setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
 

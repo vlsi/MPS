@@ -614,7 +614,7 @@
     <nodeInfo nodeId="259899023428632696" fileName="PathConverter.java" startLine="102" startPosition="38" endLine="103" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="259899023428632711" fileName="PathConverter.java" startLine="104" startPosition="14" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="259899023428632712" fileName="PathConverter.java" startLine="106" startPosition="7" endLine="107" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899006930" fileName="PathConverter.java" startLine="109" startPosition="59" endLine="110" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2617896750899006930" fileName="PathConverter.java" startLine="109" startPosition="50" endLine="110" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5551764612445857110" fileName="PathConverter.java" startLine="110" startPosition="175" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5551764612445857105" fileName="PathConverter.java" startLine="112" startPosition="5" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5551764612445855946" fileName="PathConverter.java" startLine="116" startPosition="76" endLine="117" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -681,7 +681,7 @@
     <scopeInfo nodeId="2617896750899006693" fileName="PathConverter.java" startLine="145" startPosition="44" endLine="146" endPosition="24" />
     <scopeInfo nodeId="2617896750899006915" fileName="PathConverter.java" startLine="152" startPosition="49" endLine="153" endPosition="21" />
     <scopeInfo nodeId="259899023428632561" fileName="PathConverter.java" startLine="67" startPosition="12" endLine="69" endPosition="148" />
-    <scopeInfo nodeId="5551764612445857109" fileName="PathConverter.java" startLine="109" startPosition="59" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="5551764612445857109" fileName="PathConverter.java" startLine="109" startPosition="50" endLine="111" endPosition="0" />
     <scopeInfo nodeId="5551764612445842264" fileName="PathConverter.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5551764612445842264" varName="it" />
     </scopeInfo>

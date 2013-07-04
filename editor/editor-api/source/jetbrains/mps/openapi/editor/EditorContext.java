@@ -61,6 +61,12 @@ public interface EditorContext {
 
   void selectRange(SNode first, SNode last);
 
+  /**
+   * This method will be removed after MPS 3.0
+   *
+   * @deprecated Use SelectionManager methods or .select operation from EditorLanguage instead
+   */
+  @Deprecated
   void select(SNode node, String cellId);
 
   /**

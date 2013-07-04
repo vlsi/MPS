@@ -36,7 +36,7 @@ public class MapSrcListMacro_Behavior {
       {
         SNode nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0;
         nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -49,7 +49,7 @@ public class MapSrcListMacro_Behavior {
             {
               SNode nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a;
               nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a = childVar_MapSrcListMacro_Behavior_wn5chh_a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
               patternVar_concept = nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0a.getReferenceTarget("concept");

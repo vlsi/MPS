@@ -47,14 +47,14 @@ public abstract class FindUsagesScope extends BaseScope implements SearchScope, 
     return myModels;
   }
 
-  final protected void addModule(SModule module) {
+  protected void addModule(SModule module) {
     myModules.add(module);
     for (SModel model : module.getModels()) {
       addModel(model);
     }
   }
 
-  final protected void addModel(SModel model) {
+  protected void addModel(SModel model) {
     myModels.add(model);
   }
 

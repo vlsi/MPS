@@ -41,7 +41,7 @@ public class ScopesTest_Behavior {
   }
 
   public static boolean isApplicable_5449224527592368025(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getReferences(node)).count() > 0 && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))) == null) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.test.structure.ScopesTest"));
+    return ListSequence.fromList(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))) == null) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.test.structure.ScopesTest"));
   }
 
   public static boolean isSimple_5449224527592395483(SNode node) {

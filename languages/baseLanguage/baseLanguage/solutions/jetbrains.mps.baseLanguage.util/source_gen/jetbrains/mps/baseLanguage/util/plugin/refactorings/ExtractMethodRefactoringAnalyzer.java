@@ -59,7 +59,7 @@ public class ExtractMethodRefactoringAnalyzer {
   }
 
   /*package*/ boolean hasExitPoints() {
-    return ListSequence.fromList(this.myInternalExitPoints).count() > 0;
+    return ListSequence.fromList(this.myInternalExitPoints).isNotEmpty();
   }
 
   private boolean isInside(SNode node) {

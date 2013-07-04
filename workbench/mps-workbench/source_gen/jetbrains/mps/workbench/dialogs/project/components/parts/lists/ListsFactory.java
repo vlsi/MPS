@@ -14,7 +14,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.project.Path;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import java.util.List;
 import org.jdesktop.observablecollections.ObservableCollections;
 import jetbrains.mps.smodel.IScope;
@@ -120,12 +119,6 @@ public final class ListsFactory {
         return result;
       }
       return ListsFactory.PATH_COMPARATOR.compare(o1, o2);
-    }
-  };
-  public static final ListsFactory.ListComparator<BaseTestConfiguration> GEN_CONF_COMPARATOR = new ListsFactory.ListComparator<BaseTestConfiguration>() {
-    @Override
-    public int compare(BaseTestConfiguration o1, BaseTestConfiguration o2) {
-      return o1.getName().compareTo(o2.getName());
     }
   };
   public static final ListsFactory.ListComparator<Comparable> COMPARABLE_COMPARATOR = new ListsFactory.ListComparator<Comparable>() {

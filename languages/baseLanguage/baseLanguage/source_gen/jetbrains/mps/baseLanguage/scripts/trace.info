@@ -2124,7 +2124,7 @@
     <nodeInfo nodeId="1080078754930817756" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="36" startPosition="66" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2752112839362109346" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="39" startPosition="57" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1080078754931273296" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="41" startPosition="9" endLine="42" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1080078754930818660" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="42" startPosition="59" endLine="43" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1080078754930818660" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="42" startPosition="59" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1080078754931326394" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="46" startPosition="52" endLine="47" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1080078754931327411" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="47" startPosition="128" endLine="48" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1080078754931282485" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="48" startPosition="205" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2242,7 +2242,7 @@
     <scopeInfo nodeId="7303989191360520947" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="102" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="7303989191360520947" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5207457905969551528" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="32" startPosition="59" endLine="43" endPosition="91" />
+    <scopeInfo nodeId="5207457905969551528" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="32" startPosition="59" endLine="43" endPosition="82" />
     <scopeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="32" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="5207457905969539560" varName="node" />
     </scopeInfo>

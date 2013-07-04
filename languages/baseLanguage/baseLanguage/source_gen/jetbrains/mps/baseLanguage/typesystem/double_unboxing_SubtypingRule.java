@@ -51,7 +51,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
       {
         SNode nodeToMatch_double_unboxing_31y3xb_a0a;
         nodeToMatch_double_unboxing_31y3xb_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_double_unboxing_31y3xb_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_double_unboxing_31y3xb_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

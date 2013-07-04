@@ -60,7 +60,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -79,7 +79,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       {
         SNode nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a;
         nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

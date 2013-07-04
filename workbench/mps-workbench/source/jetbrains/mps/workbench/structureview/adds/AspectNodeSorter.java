@@ -82,7 +82,7 @@ public class AspectNodeSorter implements Sorter {
 
           if (n1 == null || n2 == null) return 0;
 
-          return n1.getConcept().getConceptId().compareTo(n2.getConcept().getConceptId());
+          return n1.getConcept().getQualifiedName().compareTo(n2.getConcept().getQualifiedName());
         }
       });
     }

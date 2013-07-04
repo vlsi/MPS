@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.FlattenIterable;
 import java.util.Collection;
 import jetbrains.mps.project.Project;
@@ -33,7 +33,7 @@ public class CommandUtil {
       if (model.isReadOnly()) {
         continue;
       }
-      res.add(new NodesIterable(model));
+      res.add(SNodeUtil.getDescendants(model));
     }
     return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) res));
   }

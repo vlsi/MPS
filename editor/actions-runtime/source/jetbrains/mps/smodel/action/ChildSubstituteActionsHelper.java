@@ -92,7 +92,7 @@ public class ChildSubstituteActionsHelper {
       IOperationContext context) {
     // special case
     if (childConcept == SModelUtil.getBaseConcept()) {
-      if ((currentChild == null || currentChild.getConcept().getId().equals(SNodeUtil.concept_BaseConcept))) {
+      if ((currentChild == null || currentChild.getConcept().getQualifiedName().equals(SNodeUtil.concept_BaseConcept))) {
         ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
         List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>(allVisibleConcepts.size());

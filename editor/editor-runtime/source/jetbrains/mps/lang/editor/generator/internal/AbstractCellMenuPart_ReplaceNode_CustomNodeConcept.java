@@ -74,7 +74,8 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
           if (selectedCellId != null) {
             EditorCell toSelect = context.getEditorComponent().findCellWithId(result, selectedCellId);
             if (toSelect != null) {
-              context.select(result, selectedCellId);
+              context.flushEvents();
+              context.getSelectionManager().setSelection(toSelect);
               if (context.getSelectedCell() instanceof EditorCell_Label) {
                 context.getSelectedCell().end();
               }

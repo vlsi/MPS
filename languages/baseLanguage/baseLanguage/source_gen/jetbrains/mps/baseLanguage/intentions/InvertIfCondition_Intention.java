@@ -118,7 +118,7 @@ public class InvertIfCondition_Intention implements IntentionFactory {
       SNode newIfTrue;
       SNode newIfFalse;
       // Set new ifFalse 
-      if ((int) ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 0) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).isEmpty()) {
         newIfFalse = null;
       } else
       if ((int) ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {

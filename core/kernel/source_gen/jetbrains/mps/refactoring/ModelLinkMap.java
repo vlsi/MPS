@@ -88,7 +88,7 @@ public class ModelLinkMap {
     res |= move(myNodeTypeMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
         String modelName = SModelStereotype.withoutStereotype(newPtr.getModelReference().getModelName());
-        String name = NameUtil.shortNameFromLongName(node.getConcept().getConceptId());
+        String name = NameUtil.shortNameFromLongName(node.getConcept().getQualifiedName());
         ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
@@ -139,7 +139,7 @@ public class ModelLinkMap {
     boolean res = false;
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
-        String modelName = NameUtil.namespaceFromConceptFQName(node.getConcept().getConceptId());
+        String modelName = NameUtil.namespaceFromConceptFQName(node.getConcept().getQualifiedName());
         ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
       }
     });
@@ -212,7 +212,7 @@ public class ModelLinkMap {
         res = true;
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode node) {
-            String name = NameUtil.shortNameFromLongName(node.getConcept().getConceptId());
+            String name = NameUtil.shortNameFromLongName(node.getConcept().getQualifiedName());
             ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getModelName(), name));
           }
         });

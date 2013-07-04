@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Igor Alshannikov
@@ -36,9 +35,10 @@ public class SReferenceUtil {
   public static boolean isDynamicResolve(String role, SNode sourceNode) {
 //     return false;  // disable dynamic references
 
-    SNode link = new ConceptAndSuperConceptsScope(((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
+    SNode link = new ConceptAndSuperConceptsScope(
+        ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
     if (link == null) {
-      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getId() + "'", sourceNode);
+      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getQualifiedName() + "'", sourceNode);
       return false;
     }
 

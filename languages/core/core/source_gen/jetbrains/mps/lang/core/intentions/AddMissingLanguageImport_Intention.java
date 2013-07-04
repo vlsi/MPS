@@ -53,7 +53,7 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ((AbstractModule) node.getConcept().getLanguage().getModule()) == null;
+    return ((AbstractModule) node.getConcept().getLanguage().getSourceModule()) == null;
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -80,7 +80,7 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SModuleReference moduleRef = ((AbstractModule) node.getConcept().getLanguage().getModule()).getModuleReference();
+      SModuleReference moduleRef = ((AbstractModule) node.getConcept().getLanguage().getSourceModule()).getModuleReference();
       if (moduleRef == null) {
         return;
       }

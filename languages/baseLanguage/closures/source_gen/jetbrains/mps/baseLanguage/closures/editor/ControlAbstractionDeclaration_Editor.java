@@ -111,7 +111,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_4f8got_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_4f8got_a3a(EditorContext editorContext, SNode node) {

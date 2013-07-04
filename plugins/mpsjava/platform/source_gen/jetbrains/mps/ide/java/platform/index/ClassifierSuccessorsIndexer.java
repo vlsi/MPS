@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -95,7 +95,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         @Override
         public void run() {
           SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
-          for (final SNode nextNode : new NodesIterable(sModel)) {
+          for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
               if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
@@ -134,16 +134,16 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         }
 
         private boolean isInstanceOfClassConcept(SNode node) {
-          String conceptFQName = node.getConcept().getConceptId();
+          String conceptFQName = node.getConcept().getQualifiedName();
           return "jetbrains.mps.baseLanguage.structure.ClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.EnumClass".equals(conceptFQName) || "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase".equals(conceptFQName);
         }
 
         private boolean isInstanceOfAnonymousClassConcept(SNode node) {
-          return "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(node.getConcept().getConceptId());
+          return "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(node.getConcept().getQualifiedName());
         }
 
         private boolean isInstanceOfInterfaceConcept(SNode node) {
-          String conceptFQName = node.getConcept().getConceptId();
+          String conceptFQName = node.getConcept().getQualifiedName();
           return "jetbrains.mps.baseLanguage.structure.Interface".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.Annotation".equals(conceptFQName);
         }
       });

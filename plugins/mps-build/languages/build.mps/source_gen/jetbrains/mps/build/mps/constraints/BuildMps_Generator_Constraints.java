@@ -43,7 +43,7 @@ public class BuildMps_Generator_Constraints extends BaseConstraintsDescriptor {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMPSPlugin");
       }
-    }) || pnode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator"));
+    }) || pnode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator"));
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "5507251971038967783");

@@ -85,7 +85,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1x071y_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createProperty_1x071y_e0(EditorContext editorContext, SNode node) {
@@ -216,7 +216,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1x071y_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_1x071y_a8a(EditorContext editorContext, SNode node) {

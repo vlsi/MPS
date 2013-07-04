@@ -41,7 +41,7 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
 
   @Override
   public void conceptRead(SNode node, SNodeReference conceptPointer, StaticScope conceptScope, ConceptKind conceptKind) {
-    String name = node.getConcept().getConceptId();
+    String name = node.getConcept().getQualifiedName();
     storeAndCheckConsistency(myConceptsToPointers, name, conceptPointer);
     storeAndCheckConsistency(myConceptScope, name, conceptScope);
     storeAndCheckConsistency(myConceptKind, name, conceptKind);
@@ -49,19 +49,19 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
 
   @Override
   public void nodeRoleRead(SNode node, SNodeReference linkPointer, boolean unorderedRole) {
-    Tuples._2<String, String> key = MultiTuple.<String,String>from(node.getParent().getConcept().getConceptId(), node.getRoleInParent());
+    Tuples._2<String, String> key = MultiTuple.<String,String>from(node.getParent().getConcept().getQualifiedName(), node.getRoleInParent());
     storeAndCheckConsistency(myNodeRolesToPointers, key, linkPointer);
     storeAndCheckConsistency(myChildLinkToUnordered, key, unorderedRole);
   }
 
   @Override
   public void referenceRoleRead(SReference reference, SNodeReference linkPointer) {
-    storeAndCheckConsistency(myReferenceRolesToPointers, MultiTuple.<String,String>from(reference.getSourceNode().getConcept().getConceptId(), reference.getRole()), linkPointer);
+    storeAndCheckConsistency(myReferenceRolesToPointers, MultiTuple.<String,String>from(reference.getSourceNode().getConcept().getQualifiedName(), reference.getRole()), linkPointer);
   }
 
   @Override
   public void propertyNameRead(SNode node, String propertyName, SNodeReference propertyPointer) {
-    storeAndCheckConsistency(myPropertyNamesToPointers, MultiTuple.<String,String>from(node.getConcept().getConceptId(), propertyName), propertyPointer);
+    storeAndCheckConsistency(myPropertyNamesToPointers, MultiTuple.<String,String>from(node.getConcept().getQualifiedName(), propertyName), propertyPointer);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
 
   @Override
   public SNodeReference getConceptId(SNode node) {
-    return MapSequence.fromMap(myConceptsToPointers).get(node.getConcept().getConceptId());
+    return MapSequence.fromMap(myConceptsToPointers).get(node.getConcept().getQualifiedName());
   }
 
   @Override
@@ -80,7 +80,7 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
     if (roleInParent == null) {
       return null;
     }
-    return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(node.getParent().getConcept().getConceptId(), roleInParent));
+    return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(node.getParent().getConcept().getQualifiedName(), roleInParent));
   }
 
   @Override
@@ -117,12 +117,12 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
 
   @Override
   public SNodeReference getReferenceRoleId(SReference reference) {
-    return MapSequence.fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(reference.getSourceNode().getConcept().getConceptId(), reference.getRole()));
+    return MapSequence.fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(reference.getSourceNode().getConcept().getQualifiedName(), reference.getRole()));
   }
 
   @Override
   public SNodeReference getPropertyId(SNode node, String propertyName) {
-    return MapSequence.fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(node.getConcept().getConceptId(), propertyName));
+    return MapSequence.fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(node.getConcept().getQualifiedName(), propertyName));
   }
 
   @Override

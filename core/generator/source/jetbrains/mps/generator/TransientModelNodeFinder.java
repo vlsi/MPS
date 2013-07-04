@@ -119,7 +119,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   }
 
   private void addToCache(final SNode root) {
-    String conceptFqName = root.getConcept().getId();
+    String conceptFqName = root.getConcept().getQualifiedName();
     List<SNode> set = myNodes.get(conceptFqName);
     if (set == null) {
       set = new ArrayList<SNode>();

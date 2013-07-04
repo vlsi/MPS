@@ -53,10 +53,8 @@ public class StubModelsIndexer implements ApplicationComponent {
       ClassReader reader;
       try {
         reader = new ClassReader(bytes);
-      } catch (Throwable t) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
-          LOG.error("bytes length: " + bytes.length, t);
-        }
+      } catch (ArrayIndexOutOfBoundsException aoe) {
+        System.out.println("E");
         return Collections.emptyMap();
       }
       ASMClass ac = new ASMClass(reader);

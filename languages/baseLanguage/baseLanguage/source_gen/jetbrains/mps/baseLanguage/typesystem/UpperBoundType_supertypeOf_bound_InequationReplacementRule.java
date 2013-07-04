@@ -41,7 +41,7 @@ public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends 
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableSubtypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -73,7 +73,7 @@ public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends 
       {
         SNode nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a;
         nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.UpperBoundType".equals(nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

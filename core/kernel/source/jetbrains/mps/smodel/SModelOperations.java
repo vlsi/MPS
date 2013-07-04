@@ -15,27 +15,25 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
 import jetbrains.mps.MPSCore;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -75,17 +73,17 @@ public class SModelOperations {
       importedModels.add(sm.getReference());
     }
 
-    for (SNode node : new NodesIterable(model)) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) {
-        LOG.error("Can't find language " + NameUtil.namespaceFromConceptFQName(node.getConcept().getId()));
+        LOG.error("Can't find language " + node.getConcept().getLanguage().getQualifiedName());
         continue;
       }
       SModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
           if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
-            ((AbstractModule)module).addUsedLanguage(ref);
+            ((AbstractModule) module).addUsedLanguage(ref);
           }
         }
 
@@ -166,10 +164,9 @@ public class SModelOperations {
     return result;
   }
 
-  //todo rewrite using iterators
   public static Set<SModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<SModuleReference> result = new HashSet<SModuleReference>();
-    for (SNode node : new NodesIterable(model)) {
+    for (SNode node : SNodeUtil.getDescendants(model)) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) continue;
       result.add(lang.getModuleReference());
@@ -252,9 +249,8 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SNode node : new NodesIterable(sModel)) {
-      Iterable<? extends SReference> references = node.getReferences();
-      for (SReference reference : references) {
+    for (SNode node : SNodeUtil.getDescendants(sModel)) {
+      for (SReference reference : node.getReferences()) {
         SModelReference targetModel = reference.getTargetSModelReference();
         if (sModel.getReference().equals(targetModel)) continue;
         if (targetModel == null || result.contains(targetModel)) continue;

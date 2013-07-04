@@ -19,7 +19,7 @@ public class check_NamedTupleType_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode ntt, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((int) ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).count() == 0 || (int) ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "typeVariableDeclaration", true)).count())) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).isEmpty() || (int) ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "typeVariableDeclaration", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ntt, "Invalid parameter types count", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239881405754", null, errorTarget);
     }
@@ -31,7 +31,7 @@ public class check_NamedTupleType_NonTypesystemRule extends AbstractNonTypesyste
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

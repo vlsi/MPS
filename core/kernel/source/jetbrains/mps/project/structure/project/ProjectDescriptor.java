@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project.structure.project;
 
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -31,7 +29,6 @@ public class ProjectDescriptor {
 
   private String myName = "";
   private List<Path> myModules = new ArrayList<Path>();
-  private List<BaseTestConfiguration> myTestConfigurations = new ArrayList<BaseTestConfiguration>();
 
   public String getName() {
     return myName;
@@ -55,10 +52,6 @@ public class ProjectDescriptor {
 
   public void removeModule(String path) {
     remove(myModules, new Path(path), MODULE_BY_PATH_COMPARATOR);
-  }
-
-  public List<BaseTestConfiguration> getTestConfigurations() {
-    return myTestConfigurations;
   }
 
   private static <T> T add(List<T> list, T object, Comparator<T> comp) {

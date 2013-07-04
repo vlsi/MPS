@@ -150,9 +150,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition_6h6dhy_a6c0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6h6dhy_g2a(editorContext, node));
     }
-    if (renderingCondition_6h6dhy_a7c0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6h6dhy_h2a(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -389,7 +386,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6h6dhy_g2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered");
     editorCell.setCellId("Constant_6h6dhy_g2a");
     Style style = new StyleImpl();
     structure_StyleSheet.applyKeyword(style, editorCell);
@@ -399,20 +396,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_6h6dhy_a6c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "doNotGenerate");
-  }
-
-  private EditorCell createConstant_6h6dhy_h2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered");
-    editorCell.setCellId("Constant_6h6dhy_h2a");
-    Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_6h6dhy_a7c0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "unordered");
   }
 
@@ -422,13 +405,11 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6h6dhy_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6h6dhy_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6h6dhy_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6h6dhy_d0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_6h6dhy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered:");
     editorCell.setCellId("Constant_6h6dhy_a0");
     Style style = new StyleImpl();
     structure_StyleSheet.applyKeyword(style, editorCell);
@@ -438,37 +419,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createProperty_6h6dhy_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("doNotGenerate");
-    provider.setNoTargetText("<no doNotGenerate>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_doNotGenerate");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_6h6dhy_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered:");
-    editorCell.setCellId("Constant_6h6dhy_c0");
-    Style style = new StyleImpl();
-    structure_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_6h6dhy_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("unordered");
     provider.setNoTargetText("<no unordered>");

@@ -201,7 +201,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
         myLabel.setText(NO_CONCEPT_MESSAGE);
         myOpenConceptLabel.setVisible(false);
       } else {
-        myLabel.setText(node.getConcept().getId());
+        myLabel.setText(node.getConcept().getQualifiedName());
         myOpenConceptLabel.setVisible(true);
       }
     }

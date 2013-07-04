@@ -107,7 +107,7 @@ public class BinaryOperationUtil {
       return result;
     }
     Map<SNode, Boolean> operatorMap = getOverloadedOperators(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operators);
-    if ((int) MapSequence.fromMap(operatorMap).count() == 0) {
+    if (MapSequence.fromMap(operatorMap).isEmpty()) {
       return null;
     }
     result = MapSequence.fromMap(operatorMap).first().key();

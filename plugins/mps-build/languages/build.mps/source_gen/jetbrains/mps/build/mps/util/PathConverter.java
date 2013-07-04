@@ -106,7 +106,7 @@ public class PathConverter {
       }
       ListSequence.fromList(result).addElement(buildRelative(currPath, m, model));
     }
-    if ((int) ListSequence.fromList(result).count() == 0) {
+    if (ListSequence.fromList(result).isEmpty()) {
       throw new PathConverter.PathConvertException("source path (" + path + ") should be under working directory (" + workingDirectory + "), or any macros default directory");
 
     }

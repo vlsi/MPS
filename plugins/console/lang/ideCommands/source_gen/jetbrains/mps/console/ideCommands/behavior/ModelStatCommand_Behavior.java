@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import javax.swing.JOptionPane;
@@ -29,7 +29,7 @@ public class ModelStatCommand_Behavior {
         int properties = 0;
 
         final StringBuilder messageText = new StringBuilder();
-        for (SNode node : new NodesIterable(model)) {
+        for (SNode node : SNodeUtil.getDescendants(model)) {
           references += IterableUtil.asCollection(node.getReferences()).size();
           properties += SNodeOperations.getProperties(node).keySet().size();
         }

@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -24,7 +23,6 @@ import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -38,19 +36,16 @@ import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
-import org.jetbrains.mps.openapi.model.util.NodesIterator;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -655,14 +650,14 @@ public class SModel implements SModelData {
       SNode node = ((SNode) n1);
       SNodeReference ptrConcept = env.getConceptId(node);
       if (ptrConcept == null) {
-        LOG.warn("concept not found for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+        LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
       } else {
         result.add(ptrConcept.getModelReference());
       }
       for (String propname : node.getPropertyNames()) {
         SNodeReference ptrDecl = env.getPropertyId(node, propname);
         if (ptrDecl == null) {
-          LOG.warn("undeclared property: '" + propname + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeUtil.getDebugText(node));
         } else {
           result.add(ptrDecl.getModelReference());
         }
@@ -673,7 +668,7 @@ public class SModel implements SModelData {
         }
         SNodeReference ptrDecl = env.getReferenceRoleId(ref);
         if (ptrDecl == null) {
-          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
         } else {
           result.add(ptrDecl.getModelReference());
         }
@@ -682,7 +677,7 @@ public class SModel implements SModelData {
         SNodeReference ptrDecl = env.getNodeRoleId(child);
         if (ptrDecl == null) {
           LOG.warn(
-              "undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeUtil.getDebugText(
                   node));
         } else {
           result.add(ptrDecl.getModelReference());
@@ -1102,7 +1097,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
-    return new NodesIterable(getModelDescriptor());
+    return SNodeUtil.getDescendants(getModelDescriptor());
   }
 
   @Deprecated
@@ -1111,7 +1106,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
-    return new NodesIterator(getRootNodes().iterator());
+    return SNodeUtil.getDescendants(getModelDescriptor()).iterator();
   }
 
   @Deprecated

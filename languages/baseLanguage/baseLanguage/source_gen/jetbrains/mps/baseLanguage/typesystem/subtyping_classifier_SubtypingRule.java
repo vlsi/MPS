@@ -64,7 +64,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     }
     ListSequence.fromList(supertypes).addElement(clt);
     for (SNode supertype : supertypes) {
-      if (ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "parameter", true)).count() > 0) {
+      if (ListSequence.fromList(SLinkOperations.getTargets((SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "parameter", true)).isNotEmpty()) {
         SNode erasure = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
         for (SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);
@@ -81,7 +81,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

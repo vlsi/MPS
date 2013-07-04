@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementListUtil {
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(slist, "statement", true)).count() > 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(slist, "statement", true)).isNotEmpty()) {
       return selectStatementsUntilControlStatement(slist, ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(slist, "statement", true))).getElement(0));
     }
     return ListSequence.fromList(new ArrayList<SNode>());

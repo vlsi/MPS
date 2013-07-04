@@ -45,7 +45,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3180306201267234161(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getConcept().getConceptId();
+    return _context.getNode().getConcept().getQualifiedName();
   }
 
   public static Object propertyMacro_GetPropertyValue_6497389703574369338(final IOperationContext operationContext, final PropertyMacroContext _context) {

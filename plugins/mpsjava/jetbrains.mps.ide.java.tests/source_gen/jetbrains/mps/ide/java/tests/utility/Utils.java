@@ -64,7 +64,7 @@ public class Utils {
       JavaParser parser = new JavaParser();
       SModel mdl;
       mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
-      List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true).getNodes();
+      List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
       SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");

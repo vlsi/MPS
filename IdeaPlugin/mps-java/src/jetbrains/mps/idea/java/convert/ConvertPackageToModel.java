@@ -20,6 +20,7 @@ import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.search.GlobalSearchScope;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.newparser.JavaParser;
@@ -40,6 +41,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -116,19 +118,24 @@ public class ConvertPackageToModel extends AnAction {
         Set<SModel> excludeSet = new HashSet<SModel>(parser.getModels());
         SearchScope mpsScope = new SearchScopeWithoutModels(module, excludeSet);
 
-        Set<SNode> affectedNodes = new HashSet<SNode>();
+        List<SReference> referencesToFix = new ArrayList<SReference>();
 
         boolean wasUnresolved = false;
 
         Set<SReference> references = FindUsagesFacade.getInstance().findUsages(mpsScope, stubNodes, null);
         for (SReference ref : references) {
-          if (!(ref instanceof StaticReference)) continue;
+          if (!(ref instanceof StaticReference)) {
+            referencesToFix.add(ref);
+            continue;
+          }
 
           SNode source = ref.getSourceNode();
           String role = ref.getRole();
           SModelReference targetModelRef = ref.getTargetSModelReference();
+          SNode targetNode = ref.getTargetNode();
 
           // TODO need to make it more efficient (maintain this data in DirParser)
+
           SModelReference newModelRef = null;
           String modelName = targetModelRef.getModelName();
           modelName = modelName.substring(0, modelName.indexOf('@'));
@@ -143,21 +150,31 @@ public class ConvertPackageToModel extends AnAction {
             continue;
           }
 
-          source.setReference(role, new DynamicReference(role, source, newModelRef, ((StaticReference) ref).getResolveInfo()));
+          String resolveInfo = SNodeOperations.getResolveInfo(targetNode);
+          SReference tempDynamicRef = new DynamicReference(role, source, newModelRef, resolveInfo);
+          referencesToFix.add(tempDynamicRef);
+          source.setReference(role, tempDynamicRef);
 
           SModel sourceModel = source.getModel();
-          // remove import
-          // FIXME it breaks something in typesystem engine
-//          ((SModelInternal) sourceModel).deleteModelImport(targetModelRef);
-          ((SModelInternal) sourceModel).addModelImport(newModelRef, false);
-
-          affectedNodes.add(source);
+          ((SModelBase) sourceModel).deleteModelImport(targetModelRef);
+          ((SModelBase) sourceModel).addModelImport(newModelRef, false);
 
           // better create static references right away
           // changing reference to a static reference pointing to mps node
 //            SNode newTarget = stubToMpsNodes.get(stub);
 //            SReference newRef = StaticReference.create(role, source, newTarget.getModel().getReference(), newTarget.getNodeId());
 //            source.setReference(role, newRef);
+        }
+
+        for (SReference ref : referencesToFix) {
+          SNode target = ref.getTargetNode();
+          if (target == null) continue;
+
+          SNode source = ref.getSourceNode();
+          String role = ref.getRole();
+
+          SReference finalStaticRef = StaticReference.create(role, source, target, ((DynamicReference) ref).getResolveInfo());
+          source.setReference(role, finalStaticRef);
         }
 
         // here more complicated logic can be written
@@ -173,8 +190,6 @@ public class ConvertPackageToModel extends AnAction {
 
         // we want psi stub models to be up-to-date with regard to those deletions
         ReloadManager.getInstance().flush();
-
-        JavaParser.tryResolveDynamicRefs(affectedNodes);
       }
     });
   }

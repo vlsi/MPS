@@ -62,7 +62,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                 return;
               }
               SModel sModel = sandbox1;
-              String conceptFqName = sModel.getRootNodes().iterator().next().getConcept().getConceptId();
+              String conceptFqName = sModel.getRootNodes().iterator().next().getConcept().getQualifiedName();
               SModel structureModelDescriptor = (SModel) refactoringContext.getParameter(RenameConceptRefactoringTester.STRMD);
               result[0] = conceptFqName.equals(structureModelDescriptor.getReference().getModelName() + "." + newConceptName);
             } catch (Throwable t) {

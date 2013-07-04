@@ -30,7 +30,7 @@ public class collection_comparableWith_Collection_ComparisonRule extends Compari
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -62,7 +62,7 @@ public class collection_comparableWith_Collection_ComparisonRule extends Compari
       {
         SNode nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a;
         nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

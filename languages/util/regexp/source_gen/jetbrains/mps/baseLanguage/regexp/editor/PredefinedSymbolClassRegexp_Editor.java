@@ -45,7 +45,7 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new PredefinedSymbolClassRegexp_Editor._Inline_5lunhw_a0a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.addKeyMap(new RegexpSequenceByEnter());
+    RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -117,10 +117,10 @@ public class DependencyViewerScope {
 
   public String getPresentation() {
     StringBuilder sb = new StringBuilder();
-    if (CollectionSequence.fromCollection(myModules).count() > 0) {
+    if (CollectionSequence.fromCollection(myModules).isNotEmpty()) {
       sb.append(getPresentation(myModules, "module"));
     }
-    if (CollectionSequence.fromCollection(myModels).count() > 0) {
+    if (CollectionSequence.fromCollection(myModels).isNotEmpty()) {
       if (sb.length() > 0) {
         sb.append(" and ");
       }
@@ -130,7 +130,7 @@ public class DependencyViewerScope {
         sb.append(CollectionSequence.fromCollection(myModels).count() + " models");
       }
     }
-    if (CollectionSequence.fromCollection(myRoots).count() > 0) {
+    if (CollectionSequence.fromCollection(myRoots).isNotEmpty()) {
       if (sb.length() > 0) {
         sb.append(" and ");
       }
@@ -140,7 +140,7 @@ public class DependencyViewerScope {
   }
 
   private <T> String getPresentation(Collection<T> list, String elementType) {
-    if ((int) CollectionSequence.fromCollection(list).count() == 0) {
+    if (CollectionSequence.fromCollection(list).isEmpty()) {
       return "";
     }
     if ((int) CollectionSequence.fromCollection(list).count() == 1) {

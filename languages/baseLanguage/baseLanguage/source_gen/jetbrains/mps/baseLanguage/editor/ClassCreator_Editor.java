@@ -118,7 +118,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_53xyyk_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_53xyyk_a2a(EditorContext editorContext, SNode node) {

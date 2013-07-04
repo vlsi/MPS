@@ -21,13 +21,13 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -61,7 +61,7 @@ public final class BehaviorManager {
       return BehaviorReflection.invokeVirtual(returnType, node, methodName, parameters);
     } else {
       if (node != null) {
-        return (T) new InterpretedBehaviorDescriptor(node.getConcept().getId()).invoke(node, methodName, parameters);
+        return (T) new InterpretedBehaviorDescriptor(node.getConcept().getQualifiedName()).invoke(node, methodName, parameters);
       } else {
         return BehaviorReflection.defaultValue(returnType);
       }
@@ -107,7 +107,8 @@ public final class BehaviorManager {
     });
   }
 
-  private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, @NotNull String conceptFqName, boolean includeSelf, String methodName, Class[] parametersTypes, Object... parameters) {
+  private <T> T _invokeInternal(Class<T> returnType, @NotNull SNode node, @NotNull String conceptFqName, boolean includeSelf, String methodName,
+      Class[] parametersTypes, Object... parameters) {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (concept == null) {
       concept = SModelUtil.getBaseConcept();
@@ -144,6 +145,7 @@ public final class BehaviorManager {
       }
     }
 
-    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConcept().getId() + ", conceptNode == null: " + (concept == null));
+    throw new RuntimeException(
+        "Can't find a method " + methodName + " in a concept " + node.getConcept().getQualifiedName() + ", conceptNode == null: " + (concept == null));
   }
 }

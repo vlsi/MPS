@@ -121,7 +121,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_y68cfu_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_y68cfu_f0(EditorContext editorContext, SNode node) {

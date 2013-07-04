@@ -167,7 +167,7 @@ public class ConceptRegistry implements CoreComponent {
     if (node == null) {
       return NullSafeIllegalBehaviorDescriptor.INSTANCE;
     } else {
-      return getBehaviorDescriptor(node.getConcept().getId());
+      return getBehaviorDescriptor(node.getConcept().getQualifiedName());
     }
   }
 

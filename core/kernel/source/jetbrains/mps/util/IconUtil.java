@@ -35,7 +35,7 @@ public class IconUtil {
   public static Icon getIcon(final String path) {
     int stackFrameCount = 2;
     Class callerClass = Reflection.getCallerClass(stackFrameCount);
-    while (callerClass != null && callerClass.getClassLoader() == null) { // looks like a system class
+    while (callerClass != null && (callerClass.getClassLoader() == null || callerClass.equals(IconUtil.class))) { // looks like a system class
       callerClass = Reflection.getCallerClass(++stackFrameCount);
     }
     if (callerClass == null) {

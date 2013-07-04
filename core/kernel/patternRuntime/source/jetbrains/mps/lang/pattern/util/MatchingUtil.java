@@ -39,7 +39,7 @@ public class MatchingUtil {
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (!node1.getConcept().getId().equals(node2.getConcept().getId())) return false;
+    if (!node1.getConcept().getQualifiedName().equals(node2.getConcept().getQualifiedName())) return false;
 
     //properties
     final Set<String> propertyNames = new HashSet<String>();
@@ -112,7 +112,7 @@ public class MatchingUtil {
   }
 
   public static int hash(SNode node) {
-    int result = node.getConcept().getId().hashCode();
+    int result = node.getConcept().getQualifiedName().hashCode();
     for (SReference reference : node.getReferences()) {
       SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode != null) {

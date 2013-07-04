@@ -58,13 +58,14 @@
       <property name="name" nameId="tpck.1169194664001" value="sourceCardinality" />
       <link role="dataType" roleId="1082985295845" targetNodeId="1084197782722" resolveInfo="Cardinality" />
     </node>
-    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="3236994869861844876" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="doNotGenerate" />
-      <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="2395585628928459314" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="unordered" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="3236994869861844876" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="doNotGenerate" />
+      <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="1224240836180" id="6023578997238631538" nodeInfo="ig" />
     </node>
     <node role="linkDeclaration" roleId="1071489727083" type="tpce.LinkDeclaration" typeId="1071489288298" id="1071599698500" nodeInfo="ig">
       <property name="role" nameId="1071599776563" value="specializedLink" />

@@ -13,8 +13,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 0:
-        return new BLArrayType_Constraints();
-      case 1:
         return new PrimitiveTypeDescriptor_Constraints();
       default:
         // todo: illegal in some cases? 
@@ -22,5 +20,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor"};
 }

@@ -141,7 +141,7 @@ public class Generator extends AbstractModule {
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
-    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
+    assertCanChange();
 
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
@@ -149,6 +149,7 @@ public class Generator extends AbstractModule {
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
     getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
 
+    setChanged();
     dependenciesChanged();
   }
 

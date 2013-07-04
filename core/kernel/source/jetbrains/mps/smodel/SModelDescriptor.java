@@ -33,7 +33,7 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  SModel getSModel();
+  jetbrains.mps.smodel.SModel getSModel();
 
   @Deprecated
   /**
@@ -49,7 +49,7 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Replace with getReference() in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  SModelReference getSModelReference();
+  jetbrains.mps.smodel.SModelReference getSModelReference();
 
   @Deprecated
   /**

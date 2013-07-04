@@ -255,7 +255,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_2ojjgh_a2a(EditorContext editorContext, SNode node) {
@@ -480,7 +480,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
 
     private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
-      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
     }
   }
 

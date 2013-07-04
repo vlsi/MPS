@@ -53,8 +53,8 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
         StringBuilder result = new StringBuilder();
 
         result.append("model = ").append(node.getModel().getReference()).append("\n");
-        result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConcept().getId())).append("\n");
-        result.append("language = ").append(NameUtil.namespaceFromConceptFQName(node.getConcept().getId())).append("\n");
+        result.append("concept = ").append(node.getConcept().getName()).append("\n");
+        result.append("language = ").append(node.getConcept().getLanguage().getQualifiedName()).append("\n");
         result.append("ID = ").append(node.getNodeId().toString()).append("\n");
 
         result.append("\nReferences:");

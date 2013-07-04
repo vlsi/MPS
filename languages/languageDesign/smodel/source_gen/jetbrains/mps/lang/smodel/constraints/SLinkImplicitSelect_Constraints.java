@@ -88,7 +88,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
       {
         SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0;
         nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -101,7 +101,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             {
               SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
               nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
               patternVar_nodeType = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget("concept");
@@ -143,7 +143,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
       {
         SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0;
         nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -156,7 +156,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             {
               SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
               nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getConcept().getConceptId()))) {
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
               patternVar_nodeType = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getReferenceTarget("concept");

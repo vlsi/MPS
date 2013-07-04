@@ -55,7 +55,7 @@ public class supertypesOf_ClassifierType_Collection_SubtypingRule extends Subtyp
       {
         SNode nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a;
         nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
