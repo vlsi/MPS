@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="GlobalStatable_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.GlobalStatable_BehaviorDescriptor" />
+  <unitInfo fileName="IStatable_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.IStatable_BehaviorDescriptor" />
   <unitInfo fileName="ModelStatCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_BehaviorDescriptor" />
+  <unitInfo fileName="ModelStatable_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatable_BehaviorDescriptor" />
+  <unitInfo fileName="ProjectStatable_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatable_BehaviorDescriptor" />
   <unitInfo fileName="RebuildProjectCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
+  <unitInfo fileName="StatCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
   <unitInfo fileName="UnloadModelsCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134025442">
     <nodeInfo nodeId="9020890213748147039" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="133" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -37,6 +42,130 @@
       <varInfo nodeId="6224631407134040959" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_Behavior" />
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7490254719522983804">
+    <nodeInfo nodeId="7490254719526446555" fileName="StatCommand_Behavior.java" startLine="20" startPosition="25" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719527688600" fileName="StatCommand_Behavior.java" startLine="21" startPosition="23" endLine="22" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719526014467" fileName="StatCommand_Behavior.java" startLine="24" startPosition="7" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7490254719522983804" fileName="StatCommand_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7490254719526445971" fileName="StatCommand_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7490254719526445969" fileName="StatCommand_Behavior.java" startLine="18" startPosition="151" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719522983804" fileName="StatCommand_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
+    <scopeInfo nodeId="7490254719522983969" fileName="StatCommand_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="7490254719522983804" fileName="StatCommand_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="7490254719522983804" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719526445973" fileName="StatCommand_Behavior.java" startLine="20" startPosition="25" endLine="22" endPosition="251" />
+    <scopeInfo nodeId="7490254719526445971" fileName="StatCommand_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7490254719522984153" fileName="StatCommand_Behavior.java" startLine="18" startPosition="151" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7490254719522983804" fileName="StatCommand_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="7490254719522984147" varName="c" />
+      <varInfo nodeId="7490254719522984151" varName="callback" />
+      <varInfo nodeId="7490254719522984149" varName="console" />
+      <varInfo nodeId="7490254719522983804" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7490254719526445971" fileName="StatCommand_Behavior.java" startLine="19" startPosition="45" endLine="24" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_Behavior$1" />
+    <unitInfo nodeId="7490254719522983804" fileName="StatCommand_Behavior.java" startLine="14" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_Behavior" />
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7490254719527247598">
+    <nodeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="21" startPosition="136" endLine="22" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7490254719527247600" fileName="IStatable_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="179" />
+    <scopeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="21" startPosition="136" endLine="22" endPosition="314" />
+    <scopeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="7490254719527247598" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="7490254719527247598" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7490254719527247598" varName="callerConceptFqName" />
+      <varInfo nodeId="7490254719527247598" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7490254719527247598" fileName="IStatable_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.IStatable_Behavior" />
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7490254719527728257">
+    <nodeInfo nodeId="7490254719530442871" fileName="GlobalStatable_Behavior.java" startLine="19" startPosition="106" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7490254719530566006" fileName="GlobalStatable_Behavior.java" startLine="20" startPosition="113" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7490254719530442882" fileName="GlobalStatable_Behavior.java" startLine="21" startPosition="0" endLine="22" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719530654811" fileName="GlobalStatable_Behavior.java" startLine="22" startPosition="171" endLine="23" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719530543390" fileName="GlobalStatable_Behavior.java" startLine="23" startPosition="176" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7490254719530512427" fileName="GlobalStatable_Behavior.java" startLine="24" startPosition="0" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7490254719527728257" fileName="GlobalStatable_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7490254719527728257" fileName="GlobalStatable_Behavior.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7490254719527728259" fileName="GlobalStatable_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="7490254719527728257" fileName="GlobalStatable_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7490254719527728257" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719530442562" fileName="GlobalStatable_Behavior.java" startLine="19" startPosition="106" endLine="25" endPosition="18">
+      <varInfo nodeId="7490254719530442872" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719527728257" fileName="GlobalStatable_Behavior.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="7490254719527728257" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7490254719527728257" fileName="GlobalStatable_Behavior.java" startLine="15" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.GlobalStatable_Behavior" />
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7490254719527787127">
+    <nodeInfo nodeId="7490254719528436027" fileName="ModelStatable_Behavior.java" startLine="23" startPosition="106" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7490254719528626531" fileName="ModelStatable_Behavior.java" startLine="24" startPosition="163" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7490254719528626535" fileName="ModelStatable_Behavior.java" startLine="25" startPosition="23" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7490254719528626549" fileName="ModelStatable_Behavior.java" startLine="27" startPosition="56" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719528626558" fileName="ModelStatable_Behavior.java" startLine="28" startPosition="75" endLine="29" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719527918789" fileName="ModelStatable_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7490254719527919432" fileName="ModelStatable_Behavior.java" startLine="31" startPosition="113" endLine="32" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719528499586" fileName="ModelStatable_Behavior.java" startLine="32" startPosition="143" endLine="33" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719528541598" fileName="ModelStatable_Behavior.java" startLine="33" startPosition="122" endLine="34" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719528549289" fileName="ModelStatable_Behavior.java" startLine="34" startPosition="104" endLine="35" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719528496280" fileName="ModelStatable_Behavior.java" startLine="35" startPosition="104" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7490254719528266990" fileName="ModelStatable_Behavior.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7490254719527787127" fileName="ModelStatable_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7490254719528626545" fileName="ModelStatable_Behavior.java" startLine="26" startPosition="23" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7490254719527787127" fileName="ModelStatable_Behavior.java" startLine="23" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7490254719527787129" fileName="ModelStatable_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="7490254719527787127" fileName="ModelStatable_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="7490254719527787127" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719528626548" fileName="ModelStatable_Behavior.java" startLine="27" startPosition="56" endLine="29" endPosition="72" />
+    <scopeInfo nodeId="7490254719528626545" fileName="ModelStatable_Behavior.java" startLine="26" startPosition="23" endLine="30" endPosition="5">
+      <varInfo nodeId="7490254719528626546" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719527787137" fileName="ModelStatable_Behavior.java" startLine="23" startPosition="106" endLine="37" endPosition="18">
+      <varInfo nodeId="7490254719528436028" varName="model" />
+      <varInfo nodeId="7490254719528626536" varName="properties" />
+      <varInfo nodeId="7490254719528626532" varName="references" />
+      <varInfo nodeId="7490254719527918792" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719527787127" fileName="ModelStatable_Behavior.java" startLine="23" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="7490254719527787127" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7490254719527787127" fileName="ModelStatable_Behavior.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatable_Behavior" />
+  </root>
+  <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7490254719530699505">
+    <nodeInfo nodeId="7490254719530700279" fileName="ProjectStatable_Behavior.java" startLine="19" startPosition="106" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7490254719530752895" fileName="ProjectStatable_Behavior.java" startLine="20" startPosition="113" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7490254719530750649" fileName="ProjectStatable_Behavior.java" startLine="21" startPosition="0" endLine="22" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7490254719530700291" fileName="ProjectStatable_Behavior.java" startLine="23" startPosition="6" endLine="24" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719530700303" fileName="ProjectStatable_Behavior.java" startLine="24" startPosition="173" endLine="25" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719530700315" fileName="ProjectStatable_Behavior.java" startLine="26" startPosition="6" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7490254719530700316" fileName="ProjectStatable_Behavior.java" startLine="27" startPosition="0" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7490254719530699505" fileName="ProjectStatable_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7490254719530742710" fileName="ProjectStatable_Behavior.java" startLine="22" startPosition="12" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+    <nodeInfo nodeId="7490254719530699505" fileName="ProjectStatable_Behavior.java" startLine="19" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7490254719530699507" fileName="ProjectStatable_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="7490254719530699505" fileName="ProjectStatable_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="7490254719530699505" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719530699515" fileName="ProjectStatable_Behavior.java" startLine="19" startPosition="106" endLine="28" endPosition="18">
+      <varInfo nodeId="7490254719530700280" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719530699505" fileName="ProjectStatable_Behavior.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="7490254719530699505" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7490254719530699505" fileName="ProjectStatable_Behavior.java" startLine="15" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatable_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/8483375838963280017">
     <nodeInfo nodeId="9020890213748080562" fileName="ModelStatCommand_Behavior.java" startLine="24" startPosition="25" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

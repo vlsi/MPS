@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:12b75774-ad08-4482-bae3-756b26633092(jetbrains.mps.console.ideCommands.util)/7490254719530912336">
+    <nodeInfo nodeId="7490254719527463564" fileName="OutputUtils.java" startLine="11" startPosition="73" endLine="12" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719527667791" fileName="OutputUtils.java" startLine="12" startPosition="56" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7490254719527317396" fileName="OutputUtils.java" startLine="10" startPosition="99" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7490254719530912496" fileName="OutputUtils.java" startLine="10" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="printStat#(Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Iterable;)V" />
+    <scopeInfo nodeId="7490254719527317402" fileName="OutputUtils.java" startLine="11" startPosition="73" endLine="13" endPosition="27" />
+    <scopeInfo nodeId="7490254719527317396" fileName="OutputUtils.java" startLine="10" startPosition="99" endLine="14" endPosition="5">
+      <varInfo nodeId="7490254719527317398" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="7490254719530912499" fileName="OutputUtils.java" startLine="10" startPosition="99" endLine="14" endPosition="5" />
+    <scopeInfo nodeId="7490254719530912496" fileName="OutputUtils.java" startLine="10" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="7490254719530915382" varName="console" />
+      <varInfo nodeId="7490254719527423043" varName="table" />
+    </scopeInfo>
+    <unitInfo nodeId="7490254719530912336" fileName="OutputUtils.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.ideCommands.util.OutputUtils" />
+  </root>
+</debugInfo>
+
