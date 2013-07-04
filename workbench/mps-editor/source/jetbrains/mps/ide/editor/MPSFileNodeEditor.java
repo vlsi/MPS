@@ -118,7 +118,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @NotNull
   public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
-    if (!isDisposed()) {
+    if (!isDisposed() && myNodeEditor!= null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -161,7 +161,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public boolean isValid() {
-    return myFile.isValid() && myIsValid && !myDisposed;
+    return myFile!= null && myFile.isValid() && myIsValid && !myDisposed;
   }
 
   @Override

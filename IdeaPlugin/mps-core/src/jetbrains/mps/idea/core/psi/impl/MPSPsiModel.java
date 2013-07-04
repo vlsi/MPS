@@ -306,7 +306,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       if(sNode.getContainingRoot() == sNode && sNode.getModel().getSource() instanceof FilePerRootDataSource) {
         final String name = extractName(sNode);
         final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) sNode.getModel().getSource()).getFile(name + MPSExtentions.DOT_MODEL_ROOT));
-        rootNode = new MPSPsiRootNode(sNode.getNodeId(), name, getManager(), virtualFile);
+        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), name, getManager(), virtualFile);
       } else {
         replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
       }

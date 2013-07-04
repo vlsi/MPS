@@ -97,7 +97,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
 
             if(virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) {
               for (PsiElement element : psiModel.getChildren()) {
-                if(((MPSPsiRootNode)element).getVirtualFile().equals(virtualFile)) {
+                if(((MPSPsiRootNode)element).getVirtualFile().equals(virtualFile) || ((MPSPsiRootNode)element).getVirtualFile().getName().equals(virtualFile.getNameWithoutExtension())) {
                   return (MPSPsiRootNode)element;
                 }
               }

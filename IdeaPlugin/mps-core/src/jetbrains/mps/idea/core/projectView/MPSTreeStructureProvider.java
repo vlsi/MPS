@@ -113,7 +113,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           updatedChildren.add(idx, new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) value, settings));
         }
       } else if(child instanceof PsiDirectoryNode) {
-        /*for (AbstractTreeNode innerChild : ((PsiDirectoryNode)child).getChildren()) {
+        for (AbstractTreeNode innerChild : ((PsiDirectoryNode)child).getChildren()) {
           if(!(innerChild instanceof PsiFileNode) || !(((PsiFileNode) innerChild).getValue() instanceof FilePerRootModelPsiFile))
             continue;
           PsiFile value = ((PsiFileNode) innerChild).getValue();
@@ -121,7 +121,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
           MPSPsiModel psiModel = mpsPsiProvider.getPsi(modelReference);
 
-          if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+          /*if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
 
           int idx = updatedChildren.indexOf(child);
           updatedChildren.remove(idx);
@@ -129,9 +129,28 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           //final Collection<AbstractTreeNode> childrenWithotSelf = ((PsiDirectoryNode) child).getChildren();
           //childrenWithotSelf.remove(innerChild);
           //perRootModelTreeNode.getChildren().addAll(childrenWithotSelf);
-          updatedChildren.add(idx, perRootModelTreeNode);
+          updatedChildren.add(idx, perRootModelTreeNode);*/
+
+          if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+
+          int idx = updatedChildren.indexOf(child);
+          updatedChildren.remove(idx);
+          updatedChildren.add(idx, new PsiDirectoryNode(treeNode.getProject(), ((PsiDirectoryNode) child).getValue(), settings) {
+            @Override
+            public boolean canNavigate() { return true; }
+
+            @Override
+            public String getNavigateActionText(boolean focusEditor) {
+              return super.getNavigateActionText(focusEditor);    //To change body of overridden methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void navigate(boolean requestFocus) {
+              super.navigate(requestFocus);    //To change body of overridden methods use File | Settings | File Templates.
+            }
+          });
           break;
-        }*/
+        }
       }
     }
 

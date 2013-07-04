@@ -37,6 +37,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
@@ -141,12 +142,13 @@ public class NewRootAction extends AnAction {
 
     Module module = e.getData(LangDataKeys.MODULE);
     VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
+    VirtualFile perRootModelFile = null;
     if (module == null ||
         vFiles == null ||
         vFiles.length != 1 ||
-        vFiles[0].isDirectory() ||
+        (vFiles[0].isDirectory() && ((perRootModelFile = vFiles[0].findChild(MPSExtentions.DOT_MODEL_HEADER)) == null)) ||
         (FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_FILE_TYPE
-          && FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)) {
+          && (perRootModelFile == null || FileTypeRegistry.getInstance().getFileTypeByFile(perRootModelFile) != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) )) {
       return;
     }
 
@@ -167,7 +169,7 @@ public class NewRootAction extends AnAction {
         if (path.startsWith(sourceRoot)) {
           Solution solution = mpsFacet.getSolution();
           myOperationContext = new ModuleContext(solution, mpsProject);
-          myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
+          myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(perRootModelFile != null ? perRootModelFile.getPath() : vFiles[0].getPath()));
           if (myModelDescriptor != null) {
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
