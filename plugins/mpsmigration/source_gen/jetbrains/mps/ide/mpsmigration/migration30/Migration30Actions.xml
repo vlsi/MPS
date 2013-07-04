@@ -17,6 +17,9 @@
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeReferenceOpenAPI_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModel_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModel_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModule_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModule_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSNode_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSNode_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_EditorContext_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_EditorContext_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixJDKTools_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixJDKTools_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixMPSClasspath_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixMPSClasspath_Action"></action>
@@ -42,16 +45,19 @@
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action" />
-      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelOpenAPI_Action" />
-      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeIdOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeReferenceOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSNode_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelOpenAPI_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelIdOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelReferenceOpenAPI_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModel_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleReferenceOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleIdOpenAPI_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleOpenAPI_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModule_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateIModuleCastToAbstractModuleCast_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateClassifierMembersSModelUsages_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateClassifierMemberNodes_Action" />

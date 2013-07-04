@@ -26,6 +26,9 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
+  <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
+  <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
@@ -2357,6 +2360,73 @@
       </node>
     </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="3169279647024552634" nodeInfo="ng" />
+  </root>
+  <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1537259975113656611" nodeInfo="ng">
+    <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+    <property name="name" nameId="tpck.1169194664001" value="ISNode" />
+    <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
+    <property name="title" nameId="tp33.1177457669450" value="Migrate SNode to ISNode" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975113696937" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ec5l.~SNode" resolveInfo="SNode" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975113696941" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071432" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ec5l.~SNodeReference" resolveInfo="SNodeReference" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071438" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114146121" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ec5l.~SReference" resolveInfo="SReference" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114146130" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="cu2c.~SReference" resolveInfo="SReference" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="1537259975114146115" nodeInfo="ng" />
+  </root>
+  <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1537259975113916672" nodeInfo="ng">
+    <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+    <property name="name" nameId="tpck.1169194664001" value="ISModel" />
+    <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
+    <property name="title" nameId="tp33.1177457669450" value="Migrate SModel to ISModel" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975113916673" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975113917151" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071204" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071212" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="cu2c.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071440" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ec5l.~SModelReference" resolveInfo="SModelReference" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071448" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
+      </node>
+    </node>
+  </root>
+  <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1537259975114071251" nodeInfo="ng">
+    <property name="type" nameId="tp33.5299416737274925395" value="migration" />
+    <property name="name" nameId="tpck.1169194664001" value="ISModule" />
+    <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
+    <property name="title" nameId="tp33.1177457669450" value="Migrate IModule to SModule" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071252" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071428" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1537259975114071450" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="88zw.~SModuleReference" resolveInfo="SModuleReference" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="1537259975114071456" nodeInfo="ng">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="kqhl.~ModuleReference" resolveInfo="ModuleReference" />
+      </node>
+    </node>
   </root>
 </model>
 
