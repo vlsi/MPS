@@ -18,17 +18,17 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class RenameLanguageDialog extends RenameDialog {
   private JCheckBox myRegenerateLanguage;
@@ -93,26 +93,24 @@ public class RenameLanguageDialog extends RenameDialog {
         }
       });
       for (final Language l : langs) {
-        final Wrappers._T<GenParameters> params = new Wrappers._T<GenParameters>(null);
+        final List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
         modelAccess.runReadAction(new Runnable() {
           public void run() {
-            ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-            languageConfig.setModuleRef(l.getModuleReference());
-            languageConfig.setName("tmp");
-            try {
-              params.value = languageConfig.getGenParams(myProject, true);
-            } catch (IllegalGeneratorConfigurationException ignored) {
-            }
+            ListSequence.fromList(models).addSequence(Sequence.fromIterable(Sequence.fromArray(l.getModels().toArray(new SModel[0]))).where(new IWhereFilter<Object>() {
+              public boolean accept(Object it) {
+                return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
+              }
+            }));
           }
         });
-        if (params.value == null) {
+        if (models == null) {
           setErrorText("Rebuild configuration is invalid");
           return;
         }
         ModuleContext context = new ModuleContext(myLanguage, myProject);
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) params.value.getModelDescriptors())).resources(false));
+          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, models).resources(false));
         }
         //         GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
       }

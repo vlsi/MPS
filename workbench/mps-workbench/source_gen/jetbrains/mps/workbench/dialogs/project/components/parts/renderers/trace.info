@@ -296,25 +296,7 @@
     <unitInfo nodeId="1560298786499494573" fileName="ModuleRenderer.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer" />
   </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499494750" />
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499495877">
-    <nodeInfo nodeId="1560298786499495897" fileName="TestConfigListCellRenderer.java" startLine="15" startPosition="128" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495906" fileName="TestConfigListCellRenderer.java" startLine="16" startPosition="60" endLine="17" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499495880" fileName="TestConfigListCellRenderer.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestConfigListCellRenderer#()V" />
-    <nodeInfo nodeId="1560298786499495883" fileName="TestConfigListCellRenderer.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-    <scopeInfo nodeId="1560298786499495882" fileName="TestConfigListCellRenderer.java" startLine="11" startPosition="39" endLine="11" endPosition="39" />
-    <scopeInfo nodeId="1560298786499495880" fileName="TestConfigListCellRenderer.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1560298786499495896" fileName="TestConfigListCellRenderer.java" startLine="15" startPosition="128" endLine="17" endPosition="91">
-      <varInfo nodeId="1560298786499495898" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499495883" fileName="TestConfigListCellRenderer.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1560298786499495894" varName="cellHasFocus" />
-      <varInfo nodeId="1560298786499495890" varName="index" />
-      <varInfo nodeId="1560298786499495892" varName="isSelected" />
-      <varInfo nodeId="1560298786499495886" varName="list" />
-      <varInfo nodeId="1560298786499495888" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499495877" fileName="TestConfigListCellRenderer.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer" />
-  </root>
+  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499495877" />
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499498121">
     <nodeInfo nodeId="1560298786499498124" fileName="BooleanRenderer.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckBox" />
     <nodeInfo nodeId="1560298786499498130" fileName="BooleanRenderer.java" startLine="13" startPosition="28" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
