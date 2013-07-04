@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class IStatable_Behavior {
+public class IStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -20,6 +20,6 @@ public class IStatable_Behavior {
 
   @Deprecated
   public static Iterable<Tuples._2<String, Integer>> callSuper_getStat_7490254719527247609(SNode thisNode, String callerConceptFqName, ConsoleContext context) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.IStatable"), callerConceptFqName, "virtual_getStat_7490254719527247609", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget"), callerConceptFqName, "virtual_getStat_7490254719527247609", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
   }
 }

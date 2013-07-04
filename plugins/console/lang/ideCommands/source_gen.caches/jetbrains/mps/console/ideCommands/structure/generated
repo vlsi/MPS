@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bc7hgl65ivqoumeruulgskoojmf58w">
+<dependencies version="2" modelHash="4ozbwyse3gsshwyyct8tahgusmdzie">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
@@ -34,19 +34,19 @@
   <source id="8483375838963818242" name="RebuildProjectCommand" hash="-6advj01abqdf239ayx8akq9y82kkbd3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522540696" name="StatCommand" hash="-3i0b6cz3liqsns4e5ugavamr3jbsas0">
+  <source id="7490254719522540696" name="StatCommand" hash="dne7eufagrbkbd9ys5tp44huxpskzon">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522675890" name="IStatable" hash="-2nrom8zjrq2y0sqqxpznkmsnr70inas">
+  <source id="7490254719522675890" name="IStatisticsTarget" hash="-8yiby7mb7n28yjoz8t9db072qqi65wm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522675896" name="GlobalStatable" hash="-ehsbegwkcmg6gbvyar17nol9ebpd9wc">
+  <source id="7490254719522675896" name="GlobalStatisticTarget" hash="e59eccgs57swqze5uij1afve4s5g9uc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522676278" name="ProjectStatable" hash="34nurpe4npctcmz4u9wcefgni9yp24">
+  <source id="7490254719522676278" name="ProjectStatisticsTarget" hash="-8dle3dljgpht3fon6obvkj4aag2nuvn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719523007894" name="ModelStatable" hash="9jn7brhhzdr4w6rihf9keltdzeaj1fr">
+  <source id="7490254719523007894" name="ModelStatisticsTarget" hash="-2fdqs4q5zlto1juwdxta6vpu4lro0y8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

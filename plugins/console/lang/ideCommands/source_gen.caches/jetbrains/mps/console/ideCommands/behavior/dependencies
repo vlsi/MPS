@@ -3,10 +3,10 @@
   <dependency className="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.GlobalStatable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatable_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatable_Behavior" file="GlobalStatable_Behavior.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_Behavior" file="GlobalStatisticTarget_Behavior.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -29,21 +29,21 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatable_BehaviorDescriptor" file="GlobalStatable_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" file="GlobalStatisticTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.GlobalStatable_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.IStatable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.IStatable_Behavior" file="IStatable_Behavior.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_Behavior" file="IStatisticsTarget_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
@@ -57,7 +57,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.IStatable_BehaviorDescriptor" file="IStatable_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" file="IStatisticsTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -92,7 +92,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatable_Behavior" file="ModelStatable_Behavior.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_Behavior" file="ModelStatisticsTarget_Behavior.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -111,21 +111,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatable_BehaviorDescriptor" file="ModelStatable_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" file="ModelStatisticsTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.IStatable_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatable_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatable_Behavior" file="ProjectStatable_Behavior.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_Behavior" file="ProjectStatisticsTarget_Behavior.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -144,14 +144,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatable_BehaviorDescriptor" file="ProjectStatable_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" file="ProjectStatisticsTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.IStatable_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatable_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
-public class ModelStatable_Behavior {
+public class ModelStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
 

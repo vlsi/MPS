@@ -7,16 +7,16 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 
-public class ProjectStatable_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatable_BehaviorDescriptor {
-  public ProjectStatable_BehaviorDescriptor() {
+public class GlobalStatisticTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatisticsTarget_BehaviorDescriptor {
+  public GlobalStatisticTarget_BehaviorDescriptor() {
   }
 
   public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
-    return ProjectStatable_Behavior.virtual_getStat_7490254719527247609(thisNode, context);
+    return GlobalStatisticTarget_Behavior.virtual_getStat_7490254719527247609(thisNode, context);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.ideCommands.structure.ProjectStatable";
+    return "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget";
   }
 }

@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 
-public class ProjectStatable_Behavior {
+public class ProjectStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
 

@@ -13,7 +13,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 
-public class GlobalStatable_Behavior {
+public class GlobalStatisticTarget_Behavior {
   public static void init(SNode thisNode) {
   }
 
