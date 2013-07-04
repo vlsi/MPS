@@ -25,11 +25,8 @@ import jetbrains.mps.idea.java.psi.PsiListener.FSMove;
 import jetbrains.mps.idea.java.psi.PsiListener.FSRename;
 import jetbrains.mps.idea.java.psi.PsiListener.PsiEvent;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -68,6 +65,9 @@ public class PsiChangeProcessor extends ReloadParticipant {
           for (Entry<Project, PsiChangeData> e : changeData.entrySet()) {
             final Project project = e.getKey();
             final PsiChangeData change = e.getValue();
+
+            // we do update asynchronously, so we want to check if project is live yet
+            if (project.isDisposed()) continue;
 
             project.getComponent(PsiChangesWatcher.class).notifyListeners(change);
           }
@@ -111,7 +111,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
   /*package*/ void childAdded(final PsiTreeChangeEvent event) {
 
     if (!filter(event.getChild())) return;
-    PsiChangeData data = proj(event.getChild());
+    PsiChangeData data = projectData(event.getChild());
 
     PsiElement elem = event.getChild();
     if (elem instanceof PsiFileSystemItem) {
@@ -130,7 +130,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
     }
 
     // so, if fs item or passed filtering then proceed
-    PsiChangeData data = proj(event.getParent());
+    PsiChangeData data = projectData(event.getParent());
 
     PsiElement elem = event.getChild();
     if (elem instanceof PsiFileSystemItem) {
@@ -145,7 +145,7 @@ public class PsiChangeProcessor extends ReloadParticipant {
     // if both are uninteresting, only then ignore
     if (!filter(event.getOldChild()) && !filter(event.getNewChild())) return;
 
-    PsiChangeData data = proj(event.getNewChild());
+    PsiChangeData data = projectData(event.getNewChild());
     // todo Q: should we check if it's PsiFile?
     data.changed.add(event.getNewChild().getContainingFile());
   }
@@ -158,13 +158,13 @@ public class PsiChangeProcessor extends ReloadParticipant {
       return;
     }
 
-    PsiChangeData data = proj(event.getParent());
+    PsiChangeData data = projectData(event.getParent());
     data.changed.add(event.getParent().getContainingFile());
   }
 
   /*package*/ void childMoved(@NotNull PsiTreeChangeEvent event) {
     if (!filter(event.getChild())) return;
-    PsiChangeData data = proj(event.getChild());
+    PsiChangeData data = projectData(event.getChild());
 
     PsiElement elem = event.getChild();
     if (elem instanceof PsiFileSystemItem) {
@@ -183,13 +183,13 @@ public class PsiChangeProcessor extends ReloadParticipant {
       return;
     }
 
-    PsiChangeData data = proj(event.getElement());
+    PsiChangeData data = projectData(event.getElement());
 
     FSRename rename = new FSRename((PsiFileSystemItem) event.getElement(), (String) event.getOldValue());
     data.renamed.add(rename);
   }
 
-  private PsiChangeData proj(PsiElement subject) {
+  private PsiChangeData projectData(PsiElement subject) {
 
     Project project = subject.getProject();
     PsiChangeData data = changeData.get(project);
