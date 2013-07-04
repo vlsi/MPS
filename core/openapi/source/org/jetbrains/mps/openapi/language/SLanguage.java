@@ -24,10 +24,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 public interface SLanguage {
 
   /**
-   * The visual representation to show to the user
+   * The namespace of the language.
    */
-  String getPresentation();
-
   String getQualifiedName();
 
   /**

@@ -238,7 +238,7 @@ public class SNodeOperations {
     if (language == null) {
       return null;
     }
-    return ModuleRepositoryFacade.getInstance().getModule(language.getPresentation(), Language.class);
+    return ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {

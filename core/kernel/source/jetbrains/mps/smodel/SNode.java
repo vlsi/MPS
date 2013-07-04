@@ -2104,7 +2104,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public SModuleReference getConceptLanguage() {
-    return new jetbrains.mps.project.structure.modules.ModuleReference(getConcept().getLanguage().getPresentation());
+    return new jetbrains.mps.project.structure.modules.ModuleReference(getConcept().getLanguage().getQualifiedName());
   }
 
   @Deprecated
@@ -2123,7 +2123,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public String getLanguageNamespace() {
-    return getConcept().getLanguage().getPresentation();
+    return getConcept().getLanguage().getQualifiedName();
   }
 
   @NotNull

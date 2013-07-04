@@ -42,11 +42,6 @@ public class SLanguageAdapter implements SLanguage {
   }
 
   @Override
-  public String getPresentation() {
-    return myLanguage;
-  }
-
-  @Override
   public Iterable<SAbstractConcept> getConcepts() {
     LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(myLanguage);
     if (runtime == null) {
