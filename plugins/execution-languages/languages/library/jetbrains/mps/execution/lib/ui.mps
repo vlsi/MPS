@@ -6606,6 +6606,18 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eafp.~ListRemoveAction" resolveInfo="ListRemoveAction" />
       </node>
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="1895567659273847802" nodeInfo="ng">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="1895567659273847803" nodeInfo="ng">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="1895567659273847804" nodeInfo="ng">
+          <property name="text" nameId="m373.8970989240999019144" value="This class was split up without thinking, just to make something work quickly." />
+        </node>
+      </node>
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="1895567659273850698" nodeInfo="ng">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="1895567659273850699" nodeInfo="ng">
+          <property name="text" nameId="m373.8970989240999019144" value="TODO: refactor" />
+        </node>
+      </node>
+    </node>
   </root>
 </model>
 

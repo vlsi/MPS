@@ -35,6 +35,10 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 
+/**
+ * This class was split up without thinking, just to make something work quickly.
+ * TODO: refactor
+ */
 public abstract class ListPanel<T> extends JPanel {
   protected final Object myLock = new Object();
   private JList myListComponent;
