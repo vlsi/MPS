@@ -8,6 +8,7 @@ import com.intellij.openapi.application.PathManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.platform.util.PluginUtil;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.vcs.core.mergedriver.MergeDriverMain;
 import com.intellij.openapi.util.SystemInfo;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -54,7 +55,7 @@ import org.apache.log4j.LogManager;
       MergeDriverPacker.getInstance().pack(myProject);
     }
 
-    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
+    AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, MergeDriverMain.NO_FILETYPE, ScriptGenerator.GIT, myScriptFile, dryRun);
     if (createScriptResult != AbstractInstaller.State.INSTALLED) {
       return createScriptResult;
     }

@@ -24,8 +24,9 @@ public class MergeDriverMain {
   private static final String CONFLICT_END = ">>>>>>>";
   private static final String CONFLICT_SEPARATOR = "=======";
   public static final String LOG_PROPERTY = "mps.mergedriver.log";
-  private static final String SVN_OPTION = "--svn";
-  private static final String GIT_OPTION = "--git";
+  public static final String SVN_OPTION = "--svn";
+  public static final String GIT_OPTION = "--git";
+  public static final String NO_FILETYPE = "undefined";
 
   private MergeDriverMain() {
   }
@@ -34,21 +35,24 @@ public class MergeDriverMain {
     byte[] conflictStart = CONFLICT_START.getBytes();
     byte[] conflictEnd = CONFLICT_END.getBytes();
     byte[] conflictSeparator = CONFLICT_SEPARATOR.getBytes();
-    if (args.length < 4) {
-      System.err.println("Usage <merger> --<vcs> <base> <current> <other> " + "[<base name> <current name> <other name>]");
+    if (args.length < 5) {
+      System.err.println("Usage <merger> <filetype> --<vcs> <base> <current> <other> ");
       System.exit(2);
     }
-
-    File baseFile = new File(args[1]);
-    File currentFile = new File(args[2]);
-    File otherFile = new File(args[3]);
+    String filetype = args[0];
+    if (NO_FILETYPE.equals(filetype)) {
+      filetype = null;
+    }
+    File baseFile = new File(args[2]);
+    File currentFile = new File(args[3]);
+    File otherFile = new File(args[4]);
     boolean overwrite = false;
-    if (SVN_OPTION.equals(args[0])) {
-      if (args.length >= 7) {
-        conflictStart = (CONFLICT_START + " " + args[5]).getBytes();
-        conflictEnd = (CONFLICT_END + " " + args[6]).getBytes();
+    if (SVN_OPTION.equals(args[1])) {
+      if (args.length >= 8) {
+        conflictStart = (CONFLICT_START + " " + args[6]).getBytes();
+        conflictEnd = (CONFLICT_END + " " + args[7]).getBytes();
       }
-    } else if (GIT_OPTION.equals(args[0])) {
+    } else if (GIT_OPTION.equals(args[1])) {
       overwrite = true;
     } else {
       System.exit(2);
@@ -61,15 +65,15 @@ public class MergeDriverMain {
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     MergeDriverBackupUtil.setMergeBackupDirPath(systemPath + File.separator + "merge-backup");
     File[] files = {baseFile, currentFile, otherFile};
-    AbstractContentMerger merger = selectMerger(files);
+    AbstractContentMerger merger = selectMerger(filetype, files);
     if (merger == null) {
-      merger = (SVN_OPTION.equals(args[0]) ?
+      merger = (SVN_OPTION.equals(args[1]) ?
         new TextMerger() :
         new SimpleMerger()
       );
     }
 
-    boolean convertCRLF = GIT_OPTION.equals(args[0]) && !(hasCRLF(Sequence.fromIterable(Sequence.fromArray(files)).findFirst(new IWhereFilter<File>() {
+    boolean convertCRLF = GIT_OPTION.equals(args[1]) && !(hasCRLF(Sequence.fromIterable(Sequence.fromArray(files)).findFirst(new IWhereFilter<File>() {
       public boolean accept(File f) {
         return f != null;
       }
@@ -99,10 +103,10 @@ public class MergeDriverMain {
   }
 
   @Nullable
-  private static AbstractContentMerger selectMerger(File... files) {
+  private static AbstractContentMerger selectMerger(final String filetype, File... files) {
     FileType fileType = Sequence.fromIterable(Sequence.fromArray(files)).select(new ISelector<File, FileType>() {
       public FileType select(File f) {
-        return FileType.get(f);
+        return FileType.get(filetype, f);
       }
     }).findFirst(new IWhereFilter<FileType>() {
       public boolean accept(FileType f) {
@@ -113,8 +117,13 @@ public class MergeDriverMain {
       return null;
     }
     switch (fileType) {
+      case MODEL_HEADER:
+      case MODEL_ROOT:
       case MODEL:
-        return new CompositeMerger(new ModelMerger(), new SimpleMerger());
+        return new CompositeMerger(new ModelMerger((filetype != null ?
+          filetype :
+          fileType.getSuffix()
+        )), new SimpleMerger());
       case LANGUAGE:
       case SOLUTION:
       case DEVKIT:
