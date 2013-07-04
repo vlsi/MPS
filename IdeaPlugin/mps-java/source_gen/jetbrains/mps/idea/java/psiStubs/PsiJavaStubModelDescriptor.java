@@ -29,7 +29,6 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiImportStatementBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.psi.PsiImportStaticStatement;
-import java.util.StringTokenizer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.util.Consumer;
@@ -197,13 +196,8 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       SPropertyOperations.set(javaImport, "onDemand", "" + (imp.isOnDemand()));
       SPropertyOperations.set(javaImport, "static", "" + (imp instanceof PsiImportStaticStatement));
       String qName = imp.getImportReference().getQualifiedName();
-      StringTokenizer toks = new StringTokenizer(qName, ".");
-      while (toks.hasMoreTokens()) {
-        String tok = toks.nextToken();
-        SNode blToken = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
-        SPropertyOperations.set(blToken, "value", tok);
-        ListSequence.fromList(SLinkOperations.getTargets(javaImport, "token", true)).addElement(blToken);
-      }
+      SPropertyOperations.set(javaImport, "tokens", qName);
+
       ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).addElement(javaImport);
     }
     return javaImports;
