@@ -47,7 +47,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.util.Computable;
@@ -377,12 +376,18 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   //----stubs
 
 
+  @Deprecated
   public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
       return descriptor.getAdditionalJavaStubPaths();
     }
 
     return Collections.emptySet();
+  }
+
+  @Deprecated
+  public Collection<String> getStubPaths() {
+    return getStubPaths(getModuleDescriptor());
   }
 
   //----classpath
