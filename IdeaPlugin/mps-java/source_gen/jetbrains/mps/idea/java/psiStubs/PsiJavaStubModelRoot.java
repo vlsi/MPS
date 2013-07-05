@@ -131,7 +131,9 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
   private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, PsiDirectory dir) {
     PsiJavaStubDataSource ds = new PsiJavaStubDataSource(myIdeaModule, dir);
-    return new PsiJavaStubModelDescriptor(modelRef, ds);
+    PsiJavaStubModelDescriptor md = new PsiJavaStubModelDescriptor(modelRef, ds);
+    md.setModelRoot(this);
+    return md;
   }
 
   private SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {

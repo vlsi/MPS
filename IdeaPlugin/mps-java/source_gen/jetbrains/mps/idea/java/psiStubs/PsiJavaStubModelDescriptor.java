@@ -13,6 +13,8 @@ import java.util.HashMap;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
+import com.intellij.openapi.progress.NonCancelableSection;
+import com.intellij.openapi.progress.ProgressIndicatorProvider;
 import com.intellij.psi.PsiJavaFile;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -91,27 +93,38 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
 
   private void loadContents() {
+    // todo think why it's needed (otherwise we get ProcessCancelException) 
+    // in idea ce it's used only twice: and one case is switch from stubs to AST 
+    // maybe when traversing PSI we trigger parse (which would be very wrong) 
+    NonCancelableSection section = ProgressIndicatorProvider.startNonCancelableSectionIfSupported();
 
-    for (PsiJavaFile jf : myDataSource.getJavaFiles()) {
-      SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
+    try {
+      for (PsiJavaFile jf : myDataSource.getJavaFiles()) {
+        SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
 
-      ASTConverter converter = new ASTConverter(myMps2PsiMapper);
-      Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
+        ASTConverter converter = new ASTConverter(myMps2PsiMapper);
+        Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
 
-      for (PsiClass cls : jf.getClasses()) {
-        SNode node = converter.convertClass(cls);
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+        for (PsiClass cls : jf.getClasses()) {
+          SNode node = converter.convertClass(cls);
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+            AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+          }
+          // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
+          //  which is an error but none the less) 
+          myModel.addRootNode(node);
+          SetSequence.fromSet(roots).addElement(node.getNodeId());
         }
-        // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
-        //  which is an error but none the less) 
-        myModel.addRootNode(node);
-        SetSequence.fromSet(roots).addElement(node.getNodeId());
+
+        if (SetSequence.fromSet(roots).isNotEmpty()) {
+          MapSequence.fromMap(myRootsPerFile).put(jf.getName(), roots);
+        }
       }
 
-      if (SetSequence.fromSet(roots).isNotEmpty()) {
-        MapSequence.fromMap(myRootsPerFile).put(jf.getName(), roots);
-      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      section.done();
     }
   }
 
@@ -182,7 +195,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     }
 
     myModel.setModelDescriptor(this);
-    // Q: do I need to call it or since the descriptor stays the same noone cares? 
+    // Q: do I need to call it or since the descriptor stays the same no one cares? 
     myOldModel.dispose();
   }
 
