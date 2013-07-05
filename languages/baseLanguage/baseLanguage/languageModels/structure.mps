@@ -3557,6 +3557,9 @@
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="MethodDeclaration" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2090854201650331158" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8277080359323839091" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ITypeApplicable" />
