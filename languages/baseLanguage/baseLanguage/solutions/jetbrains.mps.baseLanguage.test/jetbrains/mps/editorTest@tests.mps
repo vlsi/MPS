@@ -11421,12 +11421,12 @@
         <property name="name" nameId="tpck.1169194664001" value="bar" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="801169956440189273" nodeInfo="in" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="801169956440189274" nodeInfo="nn">
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="801169956440189352" nodeInfo="ng">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6269753240085400978" nodeInfo="ng">
             <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
             <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
             <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
-            <property name="cellId" nameId="tp5g.1229194968595" value="ReadOnlyModelAccessor_c5ei8w_a" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="ALIAS_EDITOR_COMPONENT" />
           </node>
         </node>
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="801169956440189275" nodeInfo="sn" />
