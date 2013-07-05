@@ -102,7 +102,7 @@ public class ResolveUnknownUtil {
 
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       SNode decl = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SNode icall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
+      SNode icall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
       SLinkOperations.setTarget(icall, "baseMethodDeclaration", decl, false);
       call.value = icall;
     }
