@@ -8,10 +8,10 @@ import jetbrains.mps.console.tool.ConsoleContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.util.IterableUtil;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -25,19 +25,27 @@ public class ProjectStatisticsTarget_Behavior {
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
 
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(context.getProject().getModules()).size()));
-    Collection<SModule> asCollection = IterableUtil.asCollection(context.getProject().getModules());
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Non-packaged modules", CollectionSequence.fromCollection(asCollection).where(new IWhereFilter<SModule>() {
+    Collection<SModule> modules = IterableUtil.asCollection(context.getProject().getModules());
+    Collection<SModule> modulesWithGenerators = IterableUtil.asCollection(context.getProject().getModulesWithGenerators());
+
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(modules).size()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules with generators", IterableUtil.asCollection(modulesWithGenerators).size()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Non-packaged modules", CollectionSequence.fromCollection(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return !(((SModule) it).isPackaged());
       }
     }).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", CollectionSequence.fromCollection(asCollection).translate(new ITranslator2<SModule, SModel>() {
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", CollectionSequence.fromCollection(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
     }).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Editable models", CollectionSequence.fromCollection(asCollection).translate(new ITranslator2<SModule, SModel>() {
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models with generators", CollectionSequence.fromCollection(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).count()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Editable models", CollectionSequence.fromCollection(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
