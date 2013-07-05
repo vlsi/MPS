@@ -83,8 +83,9 @@ public class SNodeUtil {
       assert role != null;
       // old and new child can have the same node Id
       // thus it is important to remove old child first
-      nodeParent.insertChildBefore(role, replacer, node);
+      SNode anchor = node.getNextSibling();
       nodeParent.removeChild(node);
+      nodeParent.insertChildBefore(role, replacer, anchor);
     } else {
       nodeParent.removeChild(node);
     }
