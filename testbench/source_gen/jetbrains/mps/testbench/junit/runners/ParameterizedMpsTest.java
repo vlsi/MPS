@@ -72,14 +72,7 @@ public class ParameterizedMpsTest extends MpsTest {
     @Override
     protected String getName() {
       Object firstArg = fParameterList.get(fParameterSetNumber)[0];
-      if (firstArg instanceof String) {
-        return (String) firstArg;
-      }
-      String fname = String.valueOf(firstArg);
-      fname = fname.replaceAll("\\.\\w*$", "");
-      fname = fname.replaceAll("^.*\\/", "");
-      fname = fname.replaceAll("\\.", "_");
-      return String.format("%s", fname);
+      return String.format("%s", String.valueOf(firstArg));
     }
 
     @Override
