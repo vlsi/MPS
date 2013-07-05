@@ -12,9 +12,8 @@ import java.util.ArrayList;
 public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.ide.actions.CreateAspect_Action", getShortcut("ctrl alt N"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl B"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("ctrl N"), getShortcut("ctrl ENTER"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.NewElement_Action", getShortcut("ctrl N"), getShortcut("ctrl ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SafeDelete_Action", getShortcut("meta DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));

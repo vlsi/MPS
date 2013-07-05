@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.openapi.actionSystem.*;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -42,7 +41,6 @@ public abstract class AddAspectAction extends AnAction {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myCallback = callback;
-    setShortcutSet(ActionManager.getInstance().getAction(CreateAspect_Action.class.getName()).getShortcutSet());
   }
 
   @Override
@@ -53,7 +51,7 @@ public abstract class AddAspectAction extends AnAction {
   @Override
   public void update(AnActionEvent e) {
     SModel model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-    boolean enabled = model instanceof EditableSModel && !((EditableSModel) model).isReadOnly();
+    boolean enabled = model instanceof EditableSModel && !model.isReadOnly();
     e.getPresentation().setEnabled(enabled);
   }
 

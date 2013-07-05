@@ -15,7 +15,7 @@ public class EditorPopupEx_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      EditorPopupEx_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CreateAspect_Action");
+      EditorPopupEx_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewElement_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

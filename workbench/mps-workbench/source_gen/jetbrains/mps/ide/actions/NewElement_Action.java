@@ -9,12 +9,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.tree.TreeNode;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -23,13 +25,14 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class QuickCreate_Action extends BaseAction {
+public class NewElement_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public QuickCreate_Action() {
-    super("Quick Create...", "", ICON);
-    this.setIsAlwaysVisible(false);
+  public NewElement_Action() {
+    super("New...", "", ICON);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
+    this.addPlace(null);
   }
 
   @Override
@@ -42,7 +45,7 @@ public class QuickCreate_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "QuickCreate", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "NewElement", t);
       }
       this.disable(event.getPresentation());
     }
@@ -53,9 +56,7 @@ public class QuickCreate_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
+    MapSequence.fromMap(_params).put("group", event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP));
     return true;
   }
 
@@ -64,7 +65,10 @@ public class QuickCreate_Action extends BaseAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(true);
+          ActionGroup group = (((TreeNode) MapSequence.fromMap(_params).get("node")) != null ?
+            ProjectPaneActionGroups.getQuickCreateGroup((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node")), false) :
+            ((ActionGroup) MapSequence.fromMap(_params).get("group"))
+          );
 
           if (group != null) {
             Presentation pres = new Presentation();
@@ -80,10 +84,10 @@ public class QuickCreate_Action extends BaseAction {
       popup.value.showInBestPositionFor(event.getDataContext());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "QuickCreate", t);
+        LOG.error("User's action execute method failed. Action:" + "NewElement", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(QuickCreate_Action.class);
+  protected static Logger LOG = LogManager.getLogger(NewElement_Action.class);
 }

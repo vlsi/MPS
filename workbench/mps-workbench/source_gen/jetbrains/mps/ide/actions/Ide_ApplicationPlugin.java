@@ -39,8 +39,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyNodeName_Action());
     addAction(new CopyNodeReference_Action());
     addAction(new CopyNode_Action());
-    addAction(new CreateAspect_Action());
-    addAction(new CreateNewRoot_Action());
     addAction(new CutNode_Action());
     addAction(new DeleteFavoritesList_Action());
     addAction(new DeleteModels_Action());
@@ -69,6 +67,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ModuleProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
     addAction(new NewDirectory_Action());
+    addAction(new NewElement_Action());
     addAction(new NewFile_Action());
     addAction(new NewModel_Action());
     addAction(new NewRuntimeModule_Action());
@@ -81,7 +80,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PasteNode_Action());
     addAction(new PrintIScopeAndIModuleMethodsUsages_Action());
     addAction(new PrintNodePosition_Action());
-    addAction(new QuickCreate_Action());
     addAction(new RemoveAllBookmarks_Action());
     addAction(new RemoveFromFavorites_Action());
     addAction(new RemoveModuleFromProject_Action());
