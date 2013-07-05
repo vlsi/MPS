@@ -7,7 +7,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
+import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -42,7 +42,7 @@ public class JUnitTests_Producer {
     return creators;
   }
 
-  public static class ProducerPart_SModel_f2w1m9_a extends BaseConfigCreator<SModel> {
+  public static class ProducerPart_SModel_f2w1m9_a extends BaseMpsProducer<SModel> {
     public ProducerPart_SModel_f2w1m9_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -69,7 +69,7 @@ public class JUnitTests_Producer {
     }
   }
 
-  public static class ProducerPart_SModule_f2w1m9_b extends BaseConfigCreator<SModule> {
+  public static class ProducerPart_SModule_f2w1m9_b extends BaseMpsProducer<SModule> {
     public ProducerPart_SModule_f2w1m9_b(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -95,7 +95,7 @@ public class JUnitTests_Producer {
     }
   }
 
-  public static class ProducerPart_MPSProject_f2w1m9_c extends BaseConfigCreator<MPSProject> {
+  public static class ProducerPart_MPSProject_f2w1m9_c extends BaseMpsProducer<MPSProject> {
     public ProducerPart_MPSProject_f2w1m9_c(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -119,7 +119,7 @@ public class JUnitTests_Producer {
     }
   }
 
-  public static class ProducerPart_Node_f2w1m9_d extends BaseConfigCreator<SNode> {
+  public static class ProducerPart_Node_f2w1m9_d extends BaseMpsProducer<SNode> {
     public ProducerPart_Node_f2w1m9_d(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -151,7 +151,7 @@ public class JUnitTests_Producer {
     }
   }
 
-  public static class ProducerPart_Node_f2w1m9_e extends BaseConfigCreator<SNode> {
+  public static class ProducerPart_Node_f2w1m9_e extends BaseMpsProducer<SNode> {
     public ProducerPart_Node_f2w1m9_e(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -192,7 +192,7 @@ public class JUnitTests_Producer {
     }
   }
 
-  public static class ProducerPart_NlistITestCase_f2w1m9_f extends BaseConfigCreator<List<SNode>> {
+  public static class ProducerPart_NlistITestCase_f2w1m9_f extends BaseMpsProducer<List<SNode>> {
     public ProducerPart_NlistITestCase_f2w1m9_f(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -234,7 +234,7 @@ public class JUnitTests_Producer {
     }
   }
 
-  public static class ProducerPart_NlistITestMethod_f2w1m9_g extends BaseConfigCreator<List<SNode>> {
+  public static class ProducerPart_NlistITestMethod_f2w1m9_g extends BaseMpsProducer<List<SNode>> {
     public ProducerPart_NlistITestMethod_f2w1m9_g(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }

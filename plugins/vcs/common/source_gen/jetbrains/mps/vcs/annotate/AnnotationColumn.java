@@ -122,7 +122,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
-  private VirtualFile myModelVirtualFile;
+  private VirtualFile myVirtualFile;
   private EditableSModel myModel;
   private List<LineContent> myFileLineToContent;
   private Map<ModelChange, LineContent[]> myChangesToLineContents = MapSequence.fromMap(new HashMap<ModelChange, LineContent[]>());
@@ -133,7 +133,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private boolean myShowAdditionalInfo = false;
   private MessageBusConnection myMessageBusConnection;
 
-  public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, final AbstractVcs vcs, VirtualFile modelVirtualFile) {
+  public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, final AbstractVcs vcs, VirtualFile virtualFile) {
     super(leftEditorHighlighter);
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
@@ -204,7 +204,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
-    myModelVirtualFile = modelVirtualFile;
+    myVirtualFile = virtualFile;
     myModel = (EditableSModel) model;
     myVcs = vcs;
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
@@ -659,10 +659,10 @@ __switch__:
             try {
               Pair<CommittedChangeList, FilePath> pair = null;
               if (provider != null) {
-                pair = provider.getOneList(myModelVirtualFile, revisionNumber);
+                pair = provider.getOneList(myVirtualFile, revisionNumber);
               }
               FilePath targetPath = (check_5mnya_a0a0c0c0a0a0a0b0b0c54(pair) == null ?
-                new FilePathImpl(myModelVirtualFile) :
+                new FilePathImpl(myVirtualFile) :
                 check_5mnya_a0a2a2a0a0a0a1a1a2tb(pair)
               );
               CommittedChangeList cl = check_5mnya_a0d0c0a0a0a0b0b0c54(pair);

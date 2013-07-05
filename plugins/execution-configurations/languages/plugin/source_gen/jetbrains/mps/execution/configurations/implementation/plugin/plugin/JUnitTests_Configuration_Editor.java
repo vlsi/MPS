@@ -38,7 +38,6 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
   }
 
   public void resetEditorFrom(final JUnitTests_Configuration configuration) {
-    configuration.migrate();
     myJavaRunParameters.resetEditorFrom(configuration.getJavaRunParameters());
     myJUnitSettings.resetEditorFrom(configuration.getJUnitSettings());
   }

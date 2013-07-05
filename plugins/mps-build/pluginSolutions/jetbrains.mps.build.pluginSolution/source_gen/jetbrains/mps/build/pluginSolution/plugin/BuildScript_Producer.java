@@ -7,7 +7,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
+import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
@@ -26,7 +26,7 @@ public class BuildScript_Producer {
     return creators;
   }
 
-  public static class ProducerPart_Node_3e34ca_a extends BaseConfigCreator<SNode> {
+  public static class ProducerPart_Node_3e34ca_a extends BaseMpsProducer<SNode> {
     public ProducerPart_Node_3e34ca_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
