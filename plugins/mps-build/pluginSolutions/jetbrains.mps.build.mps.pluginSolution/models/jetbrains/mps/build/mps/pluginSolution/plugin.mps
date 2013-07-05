@@ -101,6 +101,7 @@
     <property name="name" nameId="tpck.1169194664001" value="ImportAllModulesFromFolder" />
     <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
     <property name="caption" nameId="tp4k.1205250923097" value="Import All Modules from Folder" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="6937807405124198154" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6937807405124198155" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5938312768539360256" nodeInfo="nn">
@@ -685,6 +686,7 @@
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6937807405124297516" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="IntentionsEx" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6937807405124297518" nodeInfo="ng">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6937807405124297519" nodeInfo="ng">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6937807405124198153" resolveInfo="ImportAllModulesFromFolder" />
@@ -696,6 +698,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8503529127541541729" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ImportModuleHelper" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8503529127541541730" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8503529127541542114" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -1206,7 +1209,7 @@
   <root type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968047816" nodeInfo="ng" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469654773" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModuleData" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree.data" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree.data" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469654780" nodeInfo="nn" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469654793" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655854" resolveInfo="NodeData" />
@@ -1509,7 +1512,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469654897" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModulesListData" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree.data" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree.data" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469654912" nodeInfo="nn" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469654960" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655854" resolveInfo="NodeData" />
@@ -1812,7 +1815,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469655024" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="NamespaceData" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree.data" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree.data" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655038" nodeInfo="nn" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469655051" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655854" resolveInfo="NodeData" />
@@ -2069,7 +2072,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469655134" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CheckBoxCellRenderrer" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655141" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469655196" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JPanel" resolveInfo="JPanel" />
@@ -2651,7 +2654,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469655376" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CheckBoxNamespaceNode" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655377" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469655387" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655412" resolveInfo="CheckBoxNode" />
@@ -2731,7 +2734,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469655412" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CheckBoxNode" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655471" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469655503" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mlq0.~MPSTreeNode" resolveInfo="MPSTreeNode" />
@@ -3013,7 +3016,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469655541" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CheckBoxTree" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655783" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469655851" nodeInfo="in">
@@ -3750,7 +3753,7 @@
   </root>
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="8722937377469655854" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="NodeData" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.checkboxTree" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.checkboxTree" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655890" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8722937377469655855" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -3828,7 +3831,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469655891" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AbstractStep" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469655985" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469655990" nodeInfo="in">
@@ -5013,7 +5016,7 @@
   </root>
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="8722937377469656070" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="IErrorHandler" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656077" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8722937377469656071" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -5029,7 +5032,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469656078" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="LanguagesStep" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656666" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469656706" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655891" resolveInfo="AbstractStep" />
@@ -6539,7 +6542,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469656716" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModelStep" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656717" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469656732" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469657199" resolveInfo="TwoOptionsStep" />
@@ -7160,7 +7163,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469656986" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SolutionStep" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469656993" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469657019" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469657199" resolveInfo="TwoOptionsStep" />
@@ -7686,7 +7689,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469657199" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TwoOptionsStep" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469657663" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469657692" nodeInfo="in">
@@ -8934,7 +8937,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469657759" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AbstractBuildGenerator" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui" />
     <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469658024" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8722937377469657760" nodeInfo="igu">
@@ -9692,7 +9695,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469658098" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="GenerateBuildWizard" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469658192" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469658224" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bktd.~AbstractWizard" resolveInfo="AbstractWizard" />
@@ -10090,7 +10093,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469658290" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BuildGeneratorImpl" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469658805" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8722937377469658806" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469657759" resolveInfo="AbstractBuildGenerator" />
@@ -15524,7 +15527,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8722937377469659230" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BuildGeneratorUtil" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8722937377469659231" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8722937377469659232" nodeInfo="igu">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8722937377469659233" nodeInfo="in" />
@@ -16152,7 +16155,7 @@
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8722937377469659497" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="GenerateBuildForProjectAction" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard" />
     <property name="caption" nameId="tp4k.1205250923097" value="Build Solution" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8722937377469659498" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -16262,7 +16265,7 @@
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8722937377469659543" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ProjectPaneProjectAddition" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8722937377469659544" nodeInfo="ng">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="8722937377469659545" nodeInfo="ng" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8722937377469659546" nodeInfo="ng">
@@ -16275,7 +16278,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2213834095232627418" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="DependencyStep" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="create.wizard.steps" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="wizard.ui.steps" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2213834095232627419" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2213834095232630401" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8722937377469655891" resolveInfo="AbstractStep" />

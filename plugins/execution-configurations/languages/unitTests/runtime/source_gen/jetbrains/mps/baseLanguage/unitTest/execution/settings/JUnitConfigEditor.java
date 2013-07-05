@@ -53,8 +53,8 @@ public class JUnitConfigEditor extends JPanel {
   private JPanel myModelPanel_iqjve6_f2a;
   private JLabel myComponent_iqjve6_c5c0;
   private ModelChooser myModelName_iqjve6_d5c0;
-  private ListPanel myTestCases_iqjve6_d0;
-  private ListPanel myTestMethods_iqjve6_e0;
+  private TestListPanel myTestCases_iqjve6_d0;
+  private TestListPanel myTestMethods_iqjve6_e0;
   private MPSProject myProject;
   private String myProjectName;
   private ButtonGroup myGroup;
@@ -315,8 +315,8 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ListPanel createComponent_iqjve6_d0() {
-    ListPanel component = new ListPanel();
+  private TestListPanel createComponent_iqjve6_d0() {
+    TestListPanel component = new TestListPanel();
     this.myTestCases_iqjve6_d0 = component;
     component.setLayout(new GridBagLayout());
     component.addActionListener(new ActionListener() {
@@ -327,8 +327,8 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ListPanel createComponent_iqjve6_e0() {
-    ListPanel component = new ListPanel();
+  private TestListPanel createComponent_iqjve6_e0() {
+    TestListPanel component = new TestListPanel();
     this.myTestMethods_iqjve6_e0 = component;
     component.setLayout(new GridBagLayout());
     component.addActionListener(new ActionListener() {

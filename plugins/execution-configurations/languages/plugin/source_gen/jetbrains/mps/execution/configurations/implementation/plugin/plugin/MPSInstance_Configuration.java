@@ -10,18 +10,8 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import jetbrains.mps.util.MacrosFactory;
-import java.io.File;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.util.FileUtil;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.JDOMException;
-import java.io.IOException;
-import jetbrains.mps.vfs.FileSystem;
 import org.apache.log4j.Priority;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -38,19 +28,20 @@ import org.apache.log4j.LogManager;
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
+  private MpsSettings_Configuration myMpsSettings = new MpsSettings_Configuration();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (isEmpty_uovwmm_a0a0a0b(this.getConfigurationPath())) {
-      throw new RuntimeConfigurationException("Configuration path is empty.");
-    }
-    if (isEmpty_uovwmm_a0b0a0b(this.getSystemPath())) {
-      throw new RuntimeConfigurationException("System path is empty.");
-    }
+    this.getMpsSettings().checkConfiguration();
   }
 
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
+    {
+      Element fieldElement = new Element("myMpsSettings");
+      myMpsSettings.writeExternal(fieldElement);
+      element.addContent(fieldElement);
+    }
   }
 
   @Override
@@ -59,116 +50,20 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
       throw new InvalidDataException("Cant read " + this + ": element is null.");
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
-  }
-
-  public String getVmOptions() {
-    return myState.myVmOptions;
-  }
-
-  public String getJrePath() {
-    return myState.myJrePath;
-  }
-
-  public String getSystemPath() {
-    return myState.mySystemPath;
-  }
-
-  public String getConfigurationPath() {
-    return myState.myConfigurationPath;
-  }
-
-  public boolean getOpenCurrentProject() {
-    return myState.myOpenCurrentProject;
-  }
-
-  public String getProjectToOpen() {
-    return myState.myProjectToOpen;
-  }
-
-  public void setVmOptions(String value) {
-    myState.myVmOptions = value;
-  }
-
-  public void setJrePath(String value) {
-    myState.myJrePath = value;
-  }
-
-  public void setSystemPath(String value) {
-    myState.mySystemPath = value;
-  }
-
-  public void setConfigurationPath(String value) {
-    myState.myConfigurationPath = value;
-  }
-
-  public void setOpenCurrentProject(boolean value) {
-    myState.myOpenCurrentProject = value;
-  }
-
-  public void setProjectToOpen(String value) {
-    myState.myProjectToOpen = value;
-  }
-
-  public String expandPath(String path) {
-    if ((path == null || path.length() == 0)) {
-      return path;
-    }
-    return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
-  }
-
-  public String shinkPath(String path) {
-    if ((path == null || path.length() == 0)) {
-      return path;
-    }
-    return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
-  }
-
-  public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
-    File projectFile = getProjectFile(project);
-    if (!(this.getOpenCurrentProject())) {
-      return MultiTuple.<File,File>from(projectFile, (File) null);
-    }
-
-    File temporalDir = FileUtil.createTmpDir();
-    File tmpProjectFile = new File(temporalDir, projectFile.getName());
-    FileUtil.copyFile(projectFile, tmpProjectFile);
-
-    // replace project macro 
-    try {
-      Document document = JDOMUtil.loadDocument(tmpProjectFile);
-      replacePathMacro(document.getRootElement(), project);
-      JDOMUtil.writeDocument(document, tmpProjectFile);
-      projectFile = tmpProjectFile;
-    } catch (JDOMException e) {
-      // ignore and hope for the best 
-    } catch (IOException e) {
-      // same as previous 
-    }
-
-    return MultiTuple.<File,File>from(projectFile, temporalDir);
-  }
-
-  private File getProjectFile(Project currentProject) {
-    if (this.getOpenCurrentProject()) {
-      return new File(currentProject.getProjectFilePath());
-    }
-    if (this.getProjectToOpen() != null) {
-      return new File(expandPath(this.getProjectToOpen()));
-    }
-    return null;
-  }
-
-  private void replacePathMacro(Element element, Project project) {
-    String path = "path";
-    String value = element.getAttributeValue(path);
-    if ((value != null && value.length() > 0)) {
-      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
-    }
-    for (Object child : element.getChildren()) {
-      if (child instanceof Element) {
-        replacePathMacro((Element) child, project);
+    {
+      Element fieldElement = element.getChild("myMpsSettings");
+      if (fieldElement != null) {
+        myMpsSettings.readExternal(fieldElement);
+      } else {
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Element " + "myMpsSettings" + " in " + this.getClass().getName() + " was null.");
+        }
       }
     }
+  }
+
+  public MpsSettings_Configuration getMpsSettings() {
+    return myMpsSettings;
   }
 
   @Override
@@ -177,6 +72,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     try {
       clone = createCloneTemplate();
       clone.myState = (MPSInstance_Configuration.MyState) myState.clone();
+      clone.myMpsSettings = (MpsSettings_Configuration) myMpsSettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -187,25 +83,12 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public class MyState {
-    public String myVmOptions;
-    public String myJrePath;
-    public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
-    public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
-    public boolean myOpenCurrentProject = false;
-    public String myProjectToOpen;
-
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
       MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
-      state.myVmOptions = myVmOptions;
-      state.myJrePath = myJrePath;
-      state.mySystemPath = mySystemPath;
-      state.myConfigurationPath = myConfigurationPath;
-      state.myOpenCurrentProject = myOpenCurrentProject;
-      state.myProjectToOpen = myProjectToOpen;
       return state;
     }
   }
@@ -237,7 +120,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
-    return new MPSInstance_Configuration_Editor();
+    return new MPSInstance_Configuration_Editor(myMpsSettings.getEditor());
   }
 
   @Override
@@ -246,12 +129,4 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   protected static Logger LOG = LogManager.getLogger(MPSInstance_Configuration.class);
-
-  public static boolean isEmpty_uovwmm_a0a0a0b(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_uovwmm_a0b0a0b(String str) {
-    return str == null || str.length() == 0;
-  }
 }

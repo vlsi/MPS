@@ -7,7 +7,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
+import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
@@ -29,7 +29,7 @@ public class Java_Producer {
     return creators;
   }
 
-  public static class ProducerPart_NodeClassConcept_d1i8dk_a extends BaseConfigCreator<SNode> {
+  public static class ProducerPart_NodeClassConcept_d1i8dk_a extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeClassConcept_d1i8dk_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -54,7 +54,7 @@ public class Java_Producer {
     }
   }
 
-  public static class ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b extends BaseConfigCreator<SNode> {
+  public static class ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
@@ -83,7 +83,7 @@ public class Java_Producer {
     }
   }
 
-  public static class ProducerPart_NodeIMainClass_d1i8dk_c extends BaseConfigCreator<SNode> {
+  public static class ProducerPart_NodeIMainClass_d1i8dk_c extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeIMainClass_d1i8dk_c(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
