@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2ksveh54wzegczpqqeijlek3dhmurb7">
+<dependencies version="2" modelHash="d7wcfj3o8qfi6c80d2ju57f8rhb1h35">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="-dbiaw8tn8w6h3jsnoee3deweamx6cps" />
-  <source id="6877931680625740132" name="Controller" hash="cocm3ivlya6kzyz9t6nkpkcn4dk63hn">
+  <source id="6877931680625740132" name="Controller" hash="-590p9hbi7wuoe68y6vmlb7rf1owdv8r">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Controller.java" />
   </source>
@@ -12,18 +12,18 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CommandChannel.java" />
   </source>
-  <source id="6877931680625740260" name="AbstractEvent" hash="6oenmr3uifxqp8y0z9qdat3r436b77b">
+  <source id="6877931680625740260" name="AbstractEvent" hash="-21yoe3g2896q215hbcmjwnwcgu38j2z">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractEvent.java" />
   </source>
   <source id="6877931680625740350" name="Event" hash="ej8bcx0iweqzlnxztzer8qawj4g963a">
     <file name="Event.java" />
   </source>
-  <source id="6877931680625740406" name="State" hash="8oncdgmle5ufysvnu70cux1glqw0ria">
+  <source id="6877931680625740406" name="State" hash="-e4dmo6hqponhvj4o7kzinf204t4isw3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="State.java" />
   </source>
-  <source id="6877931680625740838" name="StateMachine" hash="87rb4zq3cjtptwodzgm04bdjss7iqoc">
+  <source id="6877931680625740838" name="StateMachine" hash="-bjxmvr89f5aueslxkapwd6mgt4x2oo9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StateMachine.java" />
   </source>
@@ -34,7 +34,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StateMachineTest.java" />
   </source>
-  <source id="6877931680625741186" name="Notification" hash="-eewe7lgy8l9mlevkj3jgapjuzf2qcll">
+  <source id="6877931680625741186" name="Notification" hash="-e216fps10crxk7eh5c1bowvlzmiihw9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Notification.java" />
   </source>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="aak75nxn8hvpp70vteyjtk940wz2kkp">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="-blej114vmn1x77altjrmjlj22gb3pjg">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="akogu2kzphwdyzwlzf379a3n6tszbql" />
-  <source id="6877931680625740364" name="Test" hash="cvu9nsbulbjpw2zlh5xa93bq12kz1cr">
+  <source id="6877931680625740364" name="Test" hash="-csdyo823kmr4e7y1soks7xqe3xcg5z1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Test.java" />
   </source>

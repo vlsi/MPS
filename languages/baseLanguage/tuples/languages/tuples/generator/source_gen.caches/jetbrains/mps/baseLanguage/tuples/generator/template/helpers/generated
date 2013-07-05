@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2d4amc4zojvda5lgnfguh8hkg4jfelq">
+<dependencies version="2" modelHash="bf8724axcqm5x2dmcbp38bl4kpcdrqr">
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="c1xbedyalk4nw2czpsk8cfko8ym7qhu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-69flps24gvvu8nfxv4d8nfugpkc051v" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5fqxd7fcw96t2fj5bjsil5qbvnk0ekv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-48vxm6lpdyencmht9ofqk4s4yqtnzq5" />
   <common hash="co0dkvkfpqsubcx4hqggiuj8m5bwosn" />
   <source id="1241010420895" name="TupleDeclarationUtil" hash="-9yd4po082m8w0ywabfwmh29n6rnf34z">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
@@ -12,11 +12,11 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="TupleDeclarationUtil.java" />
   </source>
-  <source id="1241091679770" name="Keys" hash="-b7pxos3ukrmjq1d586sugivtr7li416">
+  <source id="1241091679770" name="Keys" hash="-d6r7yg3qhh7f4m3yjagbs9n4cax1c64">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Keys.java" />
   </source>
-  <source id="1241092045116" name="Values" hash="-c522chgzrvagdb2lkz07j4o8lphfi1z">
+  <source id="1241092045116" name="Values" hash="4e2t7yqvq88ym024csjkl039s560p1g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Values.java" />
   </source>

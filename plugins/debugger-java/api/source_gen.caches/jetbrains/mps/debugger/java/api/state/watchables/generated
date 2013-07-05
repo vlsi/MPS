@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="erio3aljnnrfotq1ngq36f2iunfb119">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="-e4lmal94kpc65rks5b97hsyzwcx7gom">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-9lqpdz89et5k2eknc40ijrjwqgz6ezt" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="6v02pfa0unztw4l7ywpem1d0wlxitap" />
   <common hash="-aa13zinfb7pb7yt1q76629g6659dmyb" />
-  <source id="3432969378036013923" name="JavaField" hash="-77w3cw14ppd3x8co7vony3m974lfbgz">
+  <source id="3432969378036013923" name="JavaField" hash="-5p3d19mujiihmx97ktrhy5fuo49xub1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <file name="JavaField.java" />
@@ -36,7 +36,7 @@
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <file name="JavaStaticField.java" />
   </source>
-  <source id="3432969378036014276" name="JavaLocalVariable" hash="-7wrug8a4hgnks8h7ttvh3jvbibf1we5">
+  <source id="3432969378036014276" name="JavaLocalVariable" hash="-bjfdmr2etqdzxqoleux20og39oqd09l">
     <dep root="4352118152439509012" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaLocalVariable.java" />

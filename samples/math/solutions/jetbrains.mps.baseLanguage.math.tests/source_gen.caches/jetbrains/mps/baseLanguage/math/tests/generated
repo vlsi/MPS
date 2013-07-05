@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8ml8upiefdn002zy9zzuf7775beu1i7">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="9rmq0rbkympuwtlxr6fghk07aszacqx">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="vbbkz149kw1jfhl6k6aq46tj0uq6s" />
-  <source id="1650644170366801770" name="IntervalTest" hash="-rlbjrzw55hsqe50uyk2u1w7yodadzn">
+  <source id="1650644170366801770" name="IntervalTest" hash="8016ipbn6p659km4pmolcq96ktg3pv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IntervalTest.java" />
   </source>

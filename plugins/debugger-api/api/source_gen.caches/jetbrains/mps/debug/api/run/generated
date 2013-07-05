@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bhair0leoj7y687c243s9qo3wyfqx22">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="-birva6bnu1axnhzcdutkwqjtme9821m">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="ary5rq69p19krke0xa62u1rxcnt8eu2" />
   <source id="4474271214082913232" name="IDebuggerConfiguration" hash="6e3l0um88iv5wofxsfq58oty7du9ky1">
     <file name="IDebuggerConfiguration.java" />
   </source>
-  <source id="4474271214082913266" name="DebuggerRunProfileState" hash="afvoihj5cqd0w34cpw8tp0hx2tfzvhr">
+  <source id="4474271214082913266" name="DebuggerRunProfileState" hash="5rwj7w80ofqb8zqrw5vjyh4pka829ku">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DebuggerRunProfileState.java" />
   </source>

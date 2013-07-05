@@ -173,7 +173,7 @@
   <unitInfo fileName="LoopLabelReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LoopLabelReference_BehaviorDescriptor" />
   <unitInfo fileName="LoopLabel_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LoopLabel_BehaviorDescriptor" />
   <unitInfo fileName="LowerBoundType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LowerBoundType_BehaviorDescriptor" />
-  <unitInfo fileName="MethodDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MethodDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="MethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="MinusAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MinusAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="MinusExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.MinusExpression_BehaviorDescriptor" />
   <unitInfo fileName="Modifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Modifier_BehaviorDescriptor" />

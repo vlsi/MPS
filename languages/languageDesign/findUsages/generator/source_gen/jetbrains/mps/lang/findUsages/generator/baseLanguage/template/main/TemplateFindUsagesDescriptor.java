@@ -338,10 +338,10 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                         environment.nodeCopied(context21, tnode22, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670199");
 
                         {
-                          final SNode tnode23 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
+                          final SNode tnode23 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a3a3a2a2a1a3a1a7a1a7a1a2);
-                            environment.nodeCopied(context21, tnode23, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670200");
+                            environment.nodeCopied(context21, tnode23, "tpl/r:00000000-0000-4000-0000-011c8959035c/4923130412073306082");
                             tnode23.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode23, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages(MPS.Core/jetbrains.mps.ide.findusages@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BaseFindUsagesDescriptor.add(jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder,java.lang.String):void")));
 
                             {
@@ -484,7 +484,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
   private static SNodePointer templateNode_a7jb2i_a0a0a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791670198");
   private static SNodePointer loopMacroRef_a7jb2i_a0a0a1a3a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791670240");
   private static SNodePointer templateNode_a7jb2i_a0a0a3a2a2a1a3a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791670199");
-  private static SNodePointer templateNode_a7jb2i_a0a0a1a3a3a2a2a1a3a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791670200");
+  private static SNodePointer templateNode_a7jb2i_a0a0a1a3a3a2a2a1a3a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "4923130412073306082");
   private static SNodePointer templateNode_a7jb2i_a0a0a1a4a1a3a3a2a2a1a3a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791670201");
   private static SNodePointer templateNode_a7jb2i_a0a0a1a3a1a4a1a3a3a2a2a1a3a1a7a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791738439");
   private static SNodePointer referenceMacro_a7jb2i_c0b0a0a0a0a0c0b0d0b0e0b0d0d0c0c0b0d0b0h0b0h0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791738441");

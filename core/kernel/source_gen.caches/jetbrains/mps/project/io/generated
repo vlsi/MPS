@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6ypj276n6vyk3jtrmuzldiv1wo3xtn1">
+<dependencies version="2" modelHash="-6gz52qc3tppglewlqezgyp3kt2v2ebk">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="6oytwvityzm5bzdwztttqikw69yk5ly" />
-  <source id="557142600900286111" name="DescriptorIOFacade" hash="-9pj04w0ydawkhq8nmp9znfccds4opl6">
+  <source id="557142600900286111" name="DescriptorIOFacade" hash="-4puhpkw7343gnqyzmbslf9jf2lt22nw">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DescriptorIOFacade.java" />

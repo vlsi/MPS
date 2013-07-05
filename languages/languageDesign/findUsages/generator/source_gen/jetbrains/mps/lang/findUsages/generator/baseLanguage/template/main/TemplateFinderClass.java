@@ -1400,11 +1400,11 @@ public class TemplateFinderClass implements TemplateDeclaration {
                               tnode99.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode99, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.start(java.lang.String,int):void")));
 
                               {
-                                final SNode tnode100 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
+                                final SNode tnode100 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a1a1a3a1a11a1a51a1a3);
-                                  environment.nodeCopied(context, tnode100, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530066");
-                                  environment.resolveInTemplateLater(tnode100, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530066"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839664529", "getDescription", context);
+                                  environment.nodeCopied(context, tnode100, "tpl/r:00000000-0000-4000-0000-011c8959035c/4923130412073258238");
+                                  environment.resolveInTemplateLater(tnode100, "baseMethodDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "4923130412073258238"), "tpl/r:00000000-0000-4000-0000-011c8959035c/1202839664529", "getDescription", context);
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode100));
@@ -1992,7 +1992,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
   private static SNodePointer templateNode_i5yf3w_a0a0a1a3a1a1a1a3a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530051");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a3a1a3a1a1a1a3a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530050");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a3a1a1a1a3a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530055");
-  private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a1a1a3a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530066");
+  private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a4a1a3a1a1a1a3a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "4923130412073258238");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a5a1a4a1a3a1a1a1a3a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530073");
   private static SNodePointer propertyMacro_i5yf3w_c0b0c0c0b0f0b0e0b0d0b0b0b0d0b0l0b0p0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530074");
   private static SNodePointer templateNode_i5yf3w_a0a0a1a4a1a11a1a51a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7810572934689530045");
