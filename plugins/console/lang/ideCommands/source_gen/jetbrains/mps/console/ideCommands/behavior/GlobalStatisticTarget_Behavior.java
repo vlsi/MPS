@@ -12,6 +12,11 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class GlobalStatisticTarget_Behavior {
   public static void init(SNode thisNode) {
@@ -24,5 +29,18 @@ public class GlobalStatisticTarget_Behavior {
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", IterableUtil.asCollection(SModelRepository.getInstance().getModelDescriptors()).size()));
 
     return result;
+  }
+
+  public static List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext c) {
+    Iterable<SModule> modules = IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules());
+    return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SNodeUtil.getDescendants(it);
+      }
+    }).toListSequence();
   }
 }

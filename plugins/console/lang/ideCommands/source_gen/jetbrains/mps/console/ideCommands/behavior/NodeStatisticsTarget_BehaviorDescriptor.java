@@ -8,20 +8,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class ModelStatisticsTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatisticsTarget_BehaviorDescriptor, INodeSetReference_BehaviorDescriptor {
-  public ModelStatisticsTarget_BehaviorDescriptor() {
+public class NodeStatisticsTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatisticsTarget_BehaviorDescriptor, INodeSetReference_BehaviorDescriptor {
+  public NodeStatisticsTarget_BehaviorDescriptor() {
   }
 
   public List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
-    return ModelStatisticsTarget_Behavior.virtual_getNodes_5207260697411458163(thisNode, context);
+    return NodeStatisticsTarget_Behavior.virtual_getNodes_5207260697411458163(thisNode, context);
   }
 
   public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
-    return ModelStatisticsTarget_Behavior.virtual_getStat_7490254719527247609(thisNode, context);
+    return NodeStatisticsTarget_Behavior.virtual_getStat_7490254719527247609(thisNode, context);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget";
+    return "jetbrains.mps.console.ideCommands.structure.NodeStatisticsTarget";
   }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ciqsgen3gc1wmiu07qtbuip33ihdiod">
+<dependencies version="2" modelHash="-d7w0yt056zmyxf6a96va4t9b2qg6oiy">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
@@ -9,6 +9,8 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="-dpgargh7wvbx60g2p10ey3a8z8qp0n3">
     <dep root="2087237500458009228" />
+    <dep root="2087237500458473003" />
+    <dep root="5207260697411458113" />
     <dep root="7490254719522540696" />
     <dep root="7490254719522675890" />
     <dep root="7490254719522675896" />
@@ -41,16 +43,22 @@
   <source id="7490254719522675890" name="IStatisticsTarget" hash="cc9ayctb4030c2jtqchpfb70c0g9blm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522675896" name="GlobalStatisticTarget" hash="b4cuhpncg412rpiy7t0vzl6yj0q3q13">
+  <source id="7490254719522675896" name="GlobalStatisticTarget" hash="8i7z3yjgndwqcgvyl2ppp8wxn9tq0yn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522676278" name="ProjectStatisticsTarget" hash="-145rkteqlieuraewyjizyb6j0zm3z3u">
+  <source id="7490254719522676278" name="ProjectStatisticsTarget" hash="-5186hoef04eo70jrykqkrynt7n5izpn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719523007894" name="ModelStatisticsTarget" hash="-10i0x0qyifmpqyuq77ad8sygmfz7ont">
+  <source id="7490254719523007894" name="ModelStatisticsTarget" hash="bq5oorywhw84fqf8np9gv24adf3o1vz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2087237500458009228" name="ShowBrokenReferences" hash="1xnr4ef39loxgx5fm5ahfgh02ty8ooh">
+  <source id="2087237500458009228" name="ShowBrokenReferences" hash="8fyizfaum8ihc6ff47lbvv6u3766uq1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2087237500458473003" name="NodeStatisticsTarget" hash="-1yjvzdq0l2outrwpwrwx72zsbzoo5rw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5207260697411458113" name="INodeSetReference" hash="aeozx18ie1qebowoeuf7fkp8wph251p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

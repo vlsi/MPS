@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ProjectStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
@@ -47,5 +48,18 @@ public class ProjectStatisticsTarget_Behavior {
     }).count()));
 
     return result;
+  }
+
+  public static List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
+    Collection<SModule> asCollection = IterableUtil.asCollection(context.getProject().getModules());
+    return CollectionSequence.fromCollection(asCollection).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SNodeUtil.getDescendants(it);
+      }
+    }).toListSequence();
   }
 }

@@ -25,10 +25,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
@@ -108,20 +104,6 @@ public class CommandUtil {
     String cName = NameUtil.nodeFQName(concept);
     SAbstractConcept c = SConceptRepository.getInstance().getConcept(cName);
     return FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(c), false, new EmptyProgressMonitor());
-  }
-
-
-
-  public static Collection<SReference> brokenReferences(SNode scopeSubTree) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(scopeSubTree, null, false, new String[]{})).translate(new ITranslator2<SNode, SReference>() {
-      public Iterable<SReference> translate(SNode it) {
-        return SNodeOperations.getReferences(it);
-      }
-    }).where(new IWhereFilter<SReference>() {
-      public boolean accept(SReference it) {
-        return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
-      }
-    }).toListSequence();
   }
 
 

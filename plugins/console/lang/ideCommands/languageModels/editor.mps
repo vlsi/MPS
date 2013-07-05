@@ -69,5 +69,12 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="2087237500458012117" nodeInfo="nn" />
     </node>
   </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2087237500458935420" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="stat" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="caxt.2087237500458473003" resolveInfo="NodeStatisticsTarget" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2087237500458937243" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="caxt.2087237500458473158" />
+    </node>
+  </root>
 </model>
 

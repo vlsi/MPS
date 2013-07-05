@@ -21,10 +21,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 2:
         return Collections.<ConceptEditor>singletonList(new ModelStatisticsTarget_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeStatisticsTarget_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor());
+        return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
       case 5:
+        return Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor());
+      case 6:
         return Collections.<ConceptEditor>singletonList(new StatCommand_Editor());
       default:
     }
@@ -42,5 +44,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelStatCommand", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.StatCommand"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelStatCommand", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.NodeStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.StatCommand"};
 }

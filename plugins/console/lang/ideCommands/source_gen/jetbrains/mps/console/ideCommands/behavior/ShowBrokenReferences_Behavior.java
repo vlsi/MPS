@@ -8,20 +8,33 @@ import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.console.blCommand.runtime.util.CommandUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class ShowBrokenReferences_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_757553790980855637(final SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         callback.run();
-        Collection<SReference> brokenReferences = CommandUtil.brokenReferences(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "scopeSubTree", true), "virtual_getTargetNode_3575813534625153815", new Object[]{}));
+
+        Collection<SReference> brokenReferences = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getNodes_5207260697411458163", new Object[]{c})).translate(new ITranslator2<SNode, SReference>() {
+          public Iterable<SReference> translate(SNode it) {
+            return SNodeOperations.getReferences(it);
+          }
+        }).where(new IWhereFilter<SReference>() {
+          public boolean accept(SReference it) {
+            return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
+          }
+        }).toListSequence();
         for (SReference ref : CollectionSequence.fromCollection(brokenReferences)) {
           console.addText("model id = " + ref.getTargetSModelReference());
           console.addNewLine();
