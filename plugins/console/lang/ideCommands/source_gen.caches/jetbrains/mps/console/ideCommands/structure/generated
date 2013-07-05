@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4ozbwyse3gsshwyyct8tahgusmdzie">
+<dependencies version="2" modelHash="-ciqsgen3gc1wmiu07qtbuip33ihdiod">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ar5rg4sgykttk0xr6ynoooewafaa239" />
@@ -8,6 +8,7 @@
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="1x9dak633fcjah3xn1rrab8ehzmxha6" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-6ygnwew9fsyml0umi7w20kwq5d46z7m" />
   <common hash="-dpgargh7wvbx60g2p10ey3a8z8qp0n3">
+    <dep root="2087237500458009228" />
     <dep root="7490254719522540696" />
     <dep root="7490254719522675890" />
     <dep root="7490254719522675896" />
@@ -25,7 +26,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="8483375838963280015" name="ModelStatCommand" hash="-5ezv5w7evmtbtal6n1et9a1j625gn01">
+  <source id="8483375838963280015" name="ModelStatCommand" hash="76f75y36nezckp9sh1uty2y1raeutta">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8483375838963817983" name="UnloadModelsCommand" hash="-e9ou0ufnh62snr3ya69744bwamms310">
@@ -34,19 +35,22 @@
   <source id="8483375838963818242" name="RebuildProjectCommand" hash="-6advj01abqdf239ayx8akq9y82kkbd3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522540696" name="StatCommand" hash="dne7eufagrbkbd9ys5tp44huxpskzon">
+  <source id="7490254719522540696" name="StatCommand" hash="ejexewcz7wejrqu2us8jmevul9qq71f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522675890" name="IStatisticsTarget" hash="-8yiby7mb7n28yjoz8t9db072qqi65wm">
+  <source id="7490254719522675890" name="IStatisticsTarget" hash="cc9ayctb4030c2jtqchpfb70c0g9blm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522675896" name="GlobalStatisticTarget" hash="e59eccgs57swqze5uij1afve4s5g9uc">
+  <source id="7490254719522675896" name="GlobalStatisticTarget" hash="b4cuhpncg412rpiy7t0vzl6yj0q3q13">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522676278" name="ProjectStatisticsTarget" hash="-8dle3dljgpht3fon6obvkj4aag2nuvn">
+  <source id="7490254719522676278" name="ProjectStatisticsTarget" hash="-145rkteqlieuraewyjizyb6j0zm3z3u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719523007894" name="ModelStatisticsTarget" hash="-2fdqs4q5zlto1juwdxta6vpu4lro0y8">
+  <source id="7490254719523007894" name="ModelStatisticsTarget" hash="-10i0x0qyifmpqyuq77ad8sygmfz7ont">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2087237500458009228" name="ShowBrokenReferences" hash="1xnr4ef39loxgx5fm5ahfgh02ty8ooh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

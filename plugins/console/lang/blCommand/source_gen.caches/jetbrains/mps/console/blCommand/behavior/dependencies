@@ -19,7 +19,6 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.PrintNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.PrintText_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.RefsShowable_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ShowBrokenReferences_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ShowStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.UsagesExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
@@ -100,32 +99,6 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.IShowable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.blCommand.behavior.ShowBrokenReferences_Behavior" file="ShowBrokenReferences_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.runtime.util.CommandUtil" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.blCommand.behavior.ShowBrokenReferences_BehaviorDescriptor" file="ShowBrokenReferences_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ShowBrokenReferences_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.blCommand.behavior.ShowStatement_BehaviorDescriptor" file="ShowStatement_BehaviorDescriptor.java">
