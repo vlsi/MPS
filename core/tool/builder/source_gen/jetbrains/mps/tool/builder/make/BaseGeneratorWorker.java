@@ -21,7 +21,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.Map;
 import java.io.File;
 import java.util.List;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.tool.builder.FileMPSProject;
 import java.util.Collections;
 import java.util.HashSet;
@@ -128,10 +127,6 @@ public class BaseGeneratorWorker extends MpsWorker {
     //  for each project 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
-      if (!(file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
-        continue;
-      }
-
       FileMPSProject p = new FileMPSProject(file);
       p.init(new FileMPSProject.ProjectDescriptor(file));
       makeProject();

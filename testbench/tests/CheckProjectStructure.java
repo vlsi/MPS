@@ -15,17 +15,20 @@
  */
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,15 +43,20 @@ import java.util.List;
 @WithSorting
 public class CheckProjectStructure {
   private static CheckProjectStructureHelper HELPER;
+//  private static Project ourProject;
 
   @Parameters
   public static List<Object[]> filePaths() {
+//    ourProject = ActiveEnvironment.get().openProject(new File("."));
+
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
     return HELPER.filePaths();
   }
 
   @AfterClass
   public static void cleanUp() {
+//    ActiveEnvironment.get().disposeProject(ourProject);
+
     HELPER.printStatistic();
   }
 
