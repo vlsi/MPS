@@ -31,8 +31,11 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -116,10 +119,10 @@ public class MPSEditorOpener {
         current = current.getParent();
       }
       assert false : "Containing root was not found for node: " + node.toString() +
-        ", top-level node: " + current +
-        ", isDisposed: " + jetbrains.mps.util.SNodeOperations.isDisposed(node) +
-        ", model: " + node.getModel() +
-        (node.getModel() != null ? ", modelDisposed: " + jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) : "");
+          ", top-level node: " + current +
+          ", isDisposed: " + jetbrains.mps.util.SNodeOperations.isDisposed(node) +
+          ", model: " + node.getModel() +
+          (node.getModel() != null ? ", modelDisposed: " + jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
     final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
@@ -132,18 +135,28 @@ public class MPSEditorOpener {
       getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor);
     }
 
+
+
+    final jetbrains.mps.openapi.editor.EditorComponent inspector = getInspectorComponent();
+    final jetbrains.mps.openapi.editor.EditorComponent editorComponent = nodeEditor.getCurrentEditorComponent();
+
     //select and its parents in editor and inspector(if exist)
     if (select) {
-      selectNodeParentInEditor(nodeEditor, node);
-      selectNodeParentInInspector(node, nodeEditor.getOperationContext());
+      selectNodeInComponent(node, editorComponent);
+      selectNodeInComponent(node, inspector);
     }
 
     //move focus if needed - to editor or to inspector
     if (focus) {
-      focus(nodeEditor, focusNeededInInspector(node));
+      focus(nodeEditor, focusNeededInInspector(node, inspector));
     }
 
     return nodeEditor;
+  }
+
+  private boolean focusNeededInInspector(SNode node, jetbrains.mps.openapi.editor.EditorComponent inspector) {
+    EditorCell nodeCell = inspector.findNodeCell(node, true);
+    return nodeCell != null && nodeCell != inspector.getRootCell();
   }
 
   private Editor openEditor(final SNode root, IOperationContext context, boolean focus) {
@@ -167,7 +180,8 @@ public class MPSEditorOpener {
     // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     // [++] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
-    assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodeReference: " + new jetbrains.mps.smodel.SNodePointer(baseNode).resolve(MPSModuleRepository.getInstance());
+    assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodeReference: " +
+        new jetbrains.mps.smodel.SNodePointer(baseNode).resolve(MPSModuleRepository.getInstance());
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
@@ -186,21 +200,6 @@ public class MPSEditorOpener {
 
   //----------util
 
-  private boolean focusNeededInInspector(SNode node) {
-    final InspectorTool inspectorTool = getInspector();
-    if (inspectorTool == null) return false;
-    jetbrains.mps.openapi.editor.EditorComponent inspector = inspectorTool.getInspector();
-    while (node != null) {
-      jetbrains.mps.openapi.editor.cells.EditorCell cellInInspector = inspector.findNodeCell(node);
-      if (cellInInspector != null) {
-        if (cellInInspector == inspectorTool.getInspector().getRootCell()) return false;
-        return true;
-      }
-      node = node.getParent();
-    }
-
-    return false;
-  }
 
   private void focus(Editor nodeEditor, boolean cellInInspector) {
     if (!cellInInspector) {
@@ -225,23 +224,42 @@ public class MPSEditorOpener {
     return myProject.getComponent(InspectorTool.class);
   }
 
+  private jetbrains.mps.openapi.editor.EditorComponent getInspectorComponent() {
+    final InspectorTool inspectorTool = getInspector();
+    if (inspectorTool == null) {
+      return null;
+    }
+    return inspectorTool.getInspector();
+  }
+
   private IdeFocusManager getFocusManager() {
     return IdeFocusManager.getInstance(myProject);
   }
 
-  private void selectNodeParentInInspector(final SNode node, IOperationContext context) {
-    final InspectorTool inspectorTool = getInspector();
-    if (inspectorTool == null) return;
-    final EditorComponent inspector = inspectorTool.getInspector();
-
-    SNode currentTargetNode = node;
-    while (currentTargetNode != null) {
-      EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
-      if (cellInInspector != null) {
-        inspector.changeSelection(cellInInspector);
+  private void selectNodeInComponent(SNode node, jetbrains.mps.openapi.editor.EditorComponent component) {
+    if (component == null) {
+      return;
+    }
+    SNode currentSelectionTarget = node;
+    while (currentSelectionTarget != null) {
+      EditorCell cell = component.findNodeCell(currentSelectionTarget, true);
+      if (cell != null) {
+        unfoldAllParentCells(cell);
+        component.changeSelection(cell);
         return;
       }
-      currentTargetNode = currentTargetNode.getParent();
+      currentSelectionTarget = currentSelectionTarget.getParent();
+    }
+
+    component.changeSelection(component.getRootCell());
+  }
+
+  private void unfoldAllParentCells(EditorCell cell) {
+    while (cell != null) {
+      if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).isFolded()) {
+        ((EditorCell_Collection) cell).unfold();
+      }
+      cell = cell.getParent();
     }
   }
 
@@ -254,25 +272,5 @@ public class MPSEditorOpener {
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
     inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
     return true;
-  }
-
-  //select parent node, which is in editor, or the whole root node if the node given is not visible at all
-  private void selectNodeParentInEditor(Editor nodeEditor, SNode node) {
-    SNode currentSelectionTarget = node;
-    jetbrains.mps.openapi.editor.EditorComponent component = nodeEditor.getCurrentEditorComponent();
-    if (component == null) {
-      return;
-    }
-
-    while (currentSelectionTarget != null) {
-      jetbrains.mps.openapi.editor.cells.EditorCell cell = component.findNodeCell(currentSelectionTarget);
-      if (cell != null) {
-        component.changeSelection(cell);
-        return;
-      }
-      currentSelectionTarget = currentSelectionTarget.getParent();
-    }
-
-    component.changeSelection(component.getRootCell());
   }
 }

@@ -1773,10 +1773,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   @Nullable
   public EditorCell findNodeCell(final SNode node) {
+    return findNodeCell(node, false);
+  }
+
+  @Override
+  @Nullable
+  public EditorCell findNodeCell(final SNode node, boolean findUnderFolded) {
     WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;
     EditorCell result = (EditorCell) weakReference.get();
-    if (result != null && (result.getRootParent() != getRootCell() || CellTraversalUtil.getFoldedParent(result) != null)) {
+    if (result != null && (result.getRootParent() != getRootCell() || (!findUnderFolded && CellTraversalUtil.getFoldedParent(result) != null))) {
       return null;
     }
     return result;

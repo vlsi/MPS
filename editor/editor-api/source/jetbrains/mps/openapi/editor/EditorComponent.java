@@ -48,6 +48,8 @@ public interface EditorComponent {
 
   EditorCell findNodeCell(SNode node);
 
+  EditorCell findNodeCell(SNode node, boolean findUnderFolded);
+
   EditorCell findCellWithId(SNode node, @NotNull String id);
 
   void scrollToNode(SNode node);
