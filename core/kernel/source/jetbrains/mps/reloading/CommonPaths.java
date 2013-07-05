@@ -17,10 +17,10 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.ClasspathReader.ClassType;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.PathManager;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -50,7 +50,7 @@ public class CommonPaths {
       LOG.error("Unexpected java version format " + JAVA_VERSION + ".");
       jdkVersion = 0;
     }
-    
+
     isToolsJarNeeded = !(isMac && jdkVersion < 7);
   }
 
@@ -79,8 +79,6 @@ public class CommonPaths {
         addIdeaJars(result);
       } else if (type == ClassType.PLATFORM) {
         addPlatformJars(result);
-      } else if (type == ClassType.UI) {
-        addUIJars(result);
       } else if (type == ClassType.WORKBENCH) {
         addWorkbenchJars(result);
       } else if (type == ClassType.TEST) {
@@ -174,7 +172,6 @@ public class CommonPaths {
     addEditorJars(result);
     addPlatformJars(result);
     addIdeaJars(result);
-    addUIJars(result);
     addWorkbenchJars(result);
     addClasses(result, PathManager.getHomePath());
     return result;
@@ -228,10 +225,6 @@ public class CommonPaths {
     addIfExists(result, "/lib/mps-platform.jar");
   }
 
-  private static void addUIJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-ui.jar");
-  }
-
   private static void addWorkbenchJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/junit-4.10.jar");
@@ -264,7 +257,7 @@ public class CommonPaths {
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {
-    for (String basePath: PathManager.getHomePaths()) {
+    for (String basePath : PathManager.getHomePaths()) {
       String fullPath = basePath + path.replace('/', File.separatorChar);
       if (!new File(fullPath).exists()) continue;
       try {

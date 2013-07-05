@@ -24,7 +24,7 @@ public class StructureModificationLog {
   }
 
   public int getLatestVersion(SModelReference modelRef) {
-    if ((int) ListSequence.fromList(myDataList).count() == 0) {
+    if (ListSequence.fromList(myDataList).isEmpty()) {
       return -1;
     }
     Map<SModelReference, Integer> deps = ListSequence.fromList(myDataList).last().getDependencies();

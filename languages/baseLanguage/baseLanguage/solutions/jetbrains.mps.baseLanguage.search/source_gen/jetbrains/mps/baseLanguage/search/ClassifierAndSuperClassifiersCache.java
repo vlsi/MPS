@@ -246,7 +246,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
         return;
       }
       SetSequence.fromSet(result).addElement(classifier);
-      if (typeParms != null && ListSequence.fromList(typeParms).count() > 0) {
+      if (typeParms != null && ListSequence.fromList(typeParms).isNotEmpty()) {
         Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
         for (SNode typeParm : typeParms) {
           if (!(typeVars.hasNext())) {

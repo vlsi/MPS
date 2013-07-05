@@ -30,7 +30,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
     }
     if (cmuInfo != null) {
       List<SNode> ccts = cmuInfo.getControlClosureTypes();
-      if (!(ListSequence.fromList(ccts).count() > 0)) {
+      if (!(ListSequence.fromList(ccts).isNotEmpty())) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccs, "Control method should accept at least one unrestricted closure", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232454232193", null, errorTarget);
       }
@@ -38,7 +38,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccs, "Must define a control closure", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232454314258", null, errorTarget);
       }
-      if (ListSequence.fromList(ccts).count() > 0) {
+      if (ListSequence.fromList(ccts).isNotEmpty()) {
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccs, "controlClosure", true);
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", 0, null);
@@ -81,7 +81,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

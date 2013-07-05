@@ -54,7 +54,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -240,7 +239,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
-    super.setModuleDescriptor(newDescriptor, reloadClasses);
+    assertCanChange();
 
     myLanguageDescriptor = newDescriptor;
 
@@ -248,6 +247,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         myLanguageDescriptor.getId());
     setModuleReference(reference);
 
+    setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
 
@@ -264,7 +264,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     dependenciesChanged();
-    setChanged();
   }
 
   public boolean isBootstrap() {
@@ -344,7 +343,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         }
 
         //if we haven't found a root concept, then try to find in any node in the model
-        for (SNode node : new NodesIterable(structureModel)) {
+        for (SNode node : org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(structureModel)) {
           String name = getConceptName(node);
           if (name == null) continue;
           myNameToConceptCache.putIfAbsent(name, node);

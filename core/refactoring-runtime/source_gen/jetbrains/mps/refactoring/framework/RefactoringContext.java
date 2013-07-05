@@ -32,13 +32,11 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -301,7 +299,6 @@ public class RefactoringContext {
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
           SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
-          ((SConceptNodeAdapterBase) SConceptRepository.getInstance().getConcept(oldFeatureName)).internalSetId(newFeatureName);
         }
       }
     }
@@ -368,8 +365,8 @@ public class RefactoringContext {
       computeCaches();
     }
 
-    for (SNode node : new NodesIterable(model)) {
-      String conceptFQName = node.getConcept().getConceptId();
+    for (SNode node : SNodeUtil.getDescendants(model)) {
+      String conceptFQName = node.getConcept().getQualifiedName();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {
         for (StructureModificationData.ConceptFeature conceptFeature : exactConceptFeatures) {
@@ -494,7 +491,7 @@ public class RefactoringContext {
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }
-      String conceptFQName = oldNode.getParent().getConcept().getConceptId();
+      String conceptFQName = oldNode.getParent().getConcept().getQualifiedName();
       switch (data.type) {
         case CHILD:
           modifier.addChildRoleChange(conceptFQName, data.oldValue, data.newValue);

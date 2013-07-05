@@ -328,7 +328,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a5a2a8 = SLinkOperations.getTarget(formalParam, "type", true);
             if (matchingNode_5ahx9e_a5a2a8 != null) {
-              matches_5ahx9e_a5a2a8 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a8.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+              matches_5ahx9e_a5a2a8 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a8.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
             }
           }
           if (matches_5ahx9e_a5a2a8) {
@@ -522,7 +522,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a0a5a61 = SNodeOperations.getParent(prevStatementList);
             if (matchingNode_5ahx9e_a0a5a61 != null) {
-              matches_5ahx9e_a0a5a61 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a0a5a61.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+              matches_5ahx9e_a0a5a61 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a0a5a61.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
           }
           if (matches_5ahx9e_a0a5a61) {
@@ -593,7 +593,7 @@ __switch__:
           {
             SNode matchingNode_5ahx9e_a1a6a91 = anc;
             if (matchingNode_5ahx9e_a1a6a91 != null) {
-              matches_5ahx9e_a1a6a91 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a6a91.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+              matches_5ahx9e_a1a6a91 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a6a91.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
             }
           }
           if (matches_5ahx9e_a1a6a91) {
@@ -611,7 +611,7 @@ __switch__:
             {
               SNode matchingNode_5ahx9e_b1a6a91 = anc;
               if (matchingNode_5ahx9e_b1a6a91 != null) {
-                matches_5ahx9e_b1a6a91 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a6a91.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+                matches_5ahx9e_b1a6a91 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a6a91.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
               }
             }
             if (matches_5ahx9e_b1a6a91) {

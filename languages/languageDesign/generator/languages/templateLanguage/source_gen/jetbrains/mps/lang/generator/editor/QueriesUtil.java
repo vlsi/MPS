@@ -138,7 +138,7 @@ public class QueriesUtil {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
       }
     });
-    return Sequence.fromIterable(ancestorTFs).count() > 0;
+    return Sequence.fromIterable(ancestorTFs).isNotEmpty();
   }
 
   public static void createTemplateFragment(final SNode node) {

@@ -25,7 +25,7 @@
     <nodeInfo nodeId="8306023725008093924" fileName="MoveConceptRefactoringTester.java" startLine="63" startPosition="120" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008093930" fileName="MoveConceptRefactoringTester.java" startLine="64" startPosition="34" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8306023725008093931" fileName="MoveConceptRefactoringTester.java" startLine="66" startPosition="15" endLine="67" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008093937" fileName="MoveConceptRefactoringTester.java" startLine="67" startPosition="39" endLine="68" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008093937" fileName="MoveConceptRefactoringTester.java" startLine="67" startPosition="39" endLine="68" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008093898" fileName="MoveConceptRefactoringTester.java" startLine="69" startPosition="35" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008093902" fileName="MoveConceptRefactoringTester.java" startLine="70" startPosition="34" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008093908" fileName="MoveConceptRefactoringTester.java" startLine="71" startPosition="32" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -51,7 +51,7 @@
       <varInfo nodeId="8306023725008093909" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="8306023725008093897" fileName="MoveConceptRefactoringTester.java" startLine="69" startPosition="35" endLine="72" endPosition="21" />
-    <scopeInfo nodeId="8306023725008093911" fileName="MoveConceptRefactoringTester.java" startLine="61" startPosition="17" endLine="68" endPosition="170">
+    <scopeInfo nodeId="8306023725008093911" fileName="MoveConceptRefactoringTester.java" startLine="61" startPosition="17" endLine="68" endPosition="174">
       <varInfo nodeId="8306023725008093932" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="5938312768536105060" fileName="MoveConceptRefactoringTester.java" startLine="42" startPosition="25" endLine="50" endPosition="89">
@@ -288,8 +288,8 @@
     <nodeInfo nodeId="8306023725008094606" fileName="RenameConceptRefactoringTester.java" startLine="60" startPosition="120" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008094612" fileName="RenameConceptRefactoringTester.java" startLine="61" startPosition="34" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8306023725008094613" fileName="RenameConceptRefactoringTester.java" startLine="63" startPosition="15" endLine="64" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094619" fileName="RenameConceptRefactoringTester.java" startLine="64" startPosition="39" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094629" fileName="RenameConceptRefactoringTester.java" startLine="65" startPosition="105" endLine="66" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094619" fileName="RenameConceptRefactoringTester.java" startLine="64" startPosition="39" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094629" fileName="RenameConceptRefactoringTester.java" startLine="65" startPosition="109" endLine="66" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8306023725008094638" fileName="RenameConceptRefactoringTester.java" startLine="66" startPosition="127" endLine="67" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008094581" fileName="RenameConceptRefactoringTester.java" startLine="68" startPosition="35" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8306023725008094585" fileName="RenameConceptRefactoringTester.java" startLine="69" startPosition="34" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

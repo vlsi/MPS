@@ -120,7 +120,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
         }
       }
     }
-    if ((int) ListSequence.fromList(existingIdeaConfigs).count() == 0) {
+    if (ListSequence.fromList(existingIdeaConfigs).isEmpty()) {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
       return null;
     } else if ((int) ListSequence.fromList(existingIdeaConfigs).count() == 1) {

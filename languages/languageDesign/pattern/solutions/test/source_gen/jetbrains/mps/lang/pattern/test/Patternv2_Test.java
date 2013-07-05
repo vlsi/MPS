@@ -68,7 +68,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
         {
           SNode nodeToMatch_v2_1fi_a0;
           nodeToMatch_v2_1fi_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_v2_1fi_a0.getConcept().getConceptId()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_v2_1fi_a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
@@ -84,7 +84,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_v2_1fi_b0a;
                 nodeToMatch_v2_1fi_b0a = childVar_v2_1fi_b0a;
-                if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_v2_1fi_b0a.getConcept().getConceptId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_v2_1fi_b0a.getConcept().getQualifiedName()))) {
                   return false;
                 }
                 {
@@ -97,7 +97,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                     {
                       SNode nodeToMatch_v2_1fi_a1a0;
                       nodeToMatch_v2_1fi_a1a0 = childVar_v2_1fi_a1a0;
-                      if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_v2_1fi_a1a0.getConcept().getConceptId()))) {
+                      if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_v2_1fi_a1a0.getConcept().getQualifiedName()))) {
                         return false;
                       }
                       {
@@ -110,7 +110,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                           {
                             SNode nodeToMatch_v2_1fi_a0b0a;
                             nodeToMatch_v2_1fi_a0b0a = childVar_v2_1fi_a0b0a;
-                            if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_v2_1fi_a0b0a.getConcept().getConceptId()))) {
+                            if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_v2_1fi_a0b0a.getConcept().getQualifiedName()))) {
                               return false;
                             }
                           }

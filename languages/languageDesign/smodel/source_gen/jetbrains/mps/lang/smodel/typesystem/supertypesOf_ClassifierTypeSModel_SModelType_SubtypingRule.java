@@ -51,7 +51,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
       {
         SNode nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a;
         nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeSModel_SModelType_khpv0q_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

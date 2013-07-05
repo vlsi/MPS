@@ -16,32 +16,22 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * A descriptor of a concept, which defines the category for nodes.
- * The descriptor is read-only, it's impossible to change the concept by invoking its methods.
- * SConcept (and SAbstractConcept) can be obtained by id from SConceptRepository.
- * There's only one instance of each concept, so that they can be tested for equality with "==". [not yet completed].
- * note: the relationship between SNode and SConcept is very similar to relationship between an object and its Class object in Java
- * This interface is not supposed to be implemented outside of MPS itself.
- * Moreover, it's prohibited to have 2 or more implementations available on the classpath at a time.
- * This interface has been introduced to give MPS the ability to switch between different implementations w/o affecting users.
+ * A descriptor of a concept. Concepts define categories for AST nodes.
+ * The descriptor is read-only, so it is not possible to change the concept through its descriptor.
+ * SConcept (and SAbstractConcept) can be obtained by their ids from SConceptRepository.
+ * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
 public interface SAbstractConcept {
+
   /**
-   * This is a string used to identify a concept.
-   * Now we use fqName for that purpose, but it's planned to use id in future releases instead,
-   * so that the id does not change when we change concept's name.
+   * The qualified name of the concept. Uniquely identifies this concept in its concept repository.
    */
-  String getConceptId();
-
-  // TODO remove
-  String getId();
-
   String getQualifiedName();
 
   /**
    * The user visible name of the concept
    */
-  String getName();  //todo? rename to getPresentation or use getId
+  String getName();
 
   /**
    * The language that defines the concept
@@ -51,17 +41,17 @@ public interface SAbstractConcept {
   /**
    * Retrieves an associated link identified by the given role.
    */
-  SLink findLink(String role);
+  SAbstractLink getLink(String role);
 
   /**
    * Retrieves all links associated with the concept.
    */
-  Iterable<SLink> getLinks();
+  Iterable<SAbstractLink> getLinks();
 
   /**
    * Finds a concept's property by name
    */
-  SProperty findProperty(String name);
+  SProperty getProperty(String name);
 
   /**
    * All properties

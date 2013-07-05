@@ -1379,7 +1379,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6408167411310620878(final IOperationContext operationContext, final IfMacroContext _context) {
-    _context.showErrorMessage(_context.getNode(), "cannot reduce fileset, unknown concept: " + _context.getNode().getConcept().getConceptId());
+    _context.showErrorMessage(_context.getNode(), "cannot reduce fileset, unknown concept: " + _context.getNode().getConcept().getQualifiedName());
     return false;
   }
 

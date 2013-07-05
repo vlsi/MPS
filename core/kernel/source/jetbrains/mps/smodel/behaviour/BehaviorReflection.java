@@ -66,11 +66,11 @@ public class BehaviorReflection {
   }
 
   public static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
   }
 
   public static Object invokeNonVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getId()).invokeStatic(concept, methodName, parameters);
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
   }
 
   public static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {

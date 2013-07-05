@@ -23,25 +23,26 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.testbench.CheckProjectStructureUtil;
 import jetbrains.mps.testbench.ModelsExtractor;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -277,7 +278,7 @@ public class CheckProjectStructureHelper {
   }
 
   private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
-    for (final SNode node : new NodesIterable(model)) {
+    for (final SNode node : org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
         result.add("unknown concept of node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
@@ -285,13 +286,13 @@ public class CheckProjectStructureHelper {
       }
 
       for (String name : node.getPropertyNames()) {
-        if (concept.findProperty(name) == null) {
+        if (concept.getProperty(name) == null) {
           result.add("unknown property: `" + name + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
       }
 
       for (SReference ref : node.getReferences()) {
-        SLink link = concept.findLink(ref.getRole());
+        SAbstractLink link = concept.getLink(ref.getRole());
         if (link == null || !link.isReference()) {
           result.add("unknown link role: `" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
@@ -299,7 +300,7 @@ public class CheckProjectStructureHelper {
 
       for (SNode child : node.getChildren()) {
         String role = child.getRoleInParent();
-        SLink link = concept.findLink(role);
+        SAbstractLink link = concept.getLink(role);
         if (link == null || link.isReference()) {
           result.add("unknown child role: `" + role + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         }
@@ -359,7 +360,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : new NodesIterable(sm)) {
+    for (SNode node : org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(sm)) {
 //      Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -368,7 +369,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : new NodesIterable(sm)) {
+    for (SNode node : org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(sm)) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;

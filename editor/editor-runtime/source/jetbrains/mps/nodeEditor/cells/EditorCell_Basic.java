@@ -494,7 +494,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode link = ((jetbrains.mps.smodel.SNode) node.getParent()).getLinkDeclaration(node.getRoleInParent());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
     String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
-    if (node.getConcept().getId().equals(concreteConceptFqName)) {
+    if (node.getConcept().getQualifiedName().equals(concreteConceptFqName)) {
       return null;
     }
     jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));

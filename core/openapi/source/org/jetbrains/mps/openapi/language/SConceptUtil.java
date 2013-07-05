@@ -15,24 +15,20 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 /**
- * Semen Alperovich
- * 04 04, 2013
+ * A set of helper functions
  */
 public class SConceptUtil {
+
   public static Set<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept, boolean includeBaseConcept) {
     Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
     if (concept == null) {
       return result;
     }
-    if(!includeBaseConcept && concept.getQualifiedName().equals("jetbrains.mps.lang.core.structure.BaseConcept")) {
+    if (!includeBaseConcept && concept.getQualifiedName().equals("jetbrains.mps.lang.core.structure.BaseConcept")) {
       return result;
     }
     result.add(concept);

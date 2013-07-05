@@ -133,7 +133,7 @@ public class DispatchGroup {
         }
       });
 
-      while (Sequence.fromIterable(paths).count() > 0) {
+      while (Sequence.fromIterable(paths).isNotEmpty()) {
         List<Iterator<SNode>> unendedPaths = ListSequence.fromList(new ArrayList<Iterator<SNode>>());
 
         for (Iterator<SNode> p : Sequence.fromIterable(paths)) {

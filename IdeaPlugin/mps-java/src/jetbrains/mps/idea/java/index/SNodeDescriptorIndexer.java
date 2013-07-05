@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.java.index;
 
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,6 +30,6 @@ import java.util.Collection;
   @Override
   protected void updateCollection(SModelReference modelRef, SNode node, Collection<SNodeDescriptor> descriptors) {
     String nodeName = getSNodeName(node);
-    descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getId(), modelRef, node.getNodeId()));
+    descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getQualifiedName(), modelRef, node.getNodeId()));
   }
 }

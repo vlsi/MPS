@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = LogManager.getLogger(ModelAndImportedModelsScope.class);
@@ -64,7 +64,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(SNodeOperations.getModelFastFinder(model).getNodes(isInstance.getConceptFqName(), true));
           } else {
-            for (SNode node : new NodesIterable(model)) {
+            for (SNode node : SNodeUtil.getDescendants(model)) {
               if (condition.met(node)) {
                 result.add(node);
               }

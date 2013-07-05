@@ -162,7 +162,7 @@ public class StubResolver {
             LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
           }
         }
-        if (ListSequence.fromList(resolved).count() > 0) {
+        if (ListSequence.fromList(resolved).isNotEmpty()) {
           SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++cnt;

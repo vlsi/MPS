@@ -37,6 +37,7 @@ import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.icons.MPSIcons.Small;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
@@ -48,6 +49,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -657,6 +659,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
           final List<?> actions = processor.getActions();
           myExcluded.addAll(actions);
           myExcluded.removeAll(processor.getSelectedActions());
+
+          //disable fast find usages
+          final Set<FindUsagesParticipant> participants = new HashSet<FindUsagesParticipant>();
+          participants.addAll(PersistenceRegistry.getInstance().getFindUsagesParticipants());
+          for (FindUsagesParticipant p:participants){
+            PersistenceRegistry.getInstance().removeFindUsagesParticipant(p);
+          }
+
           processor.addCallback(new Callback() {
             @Override
             public void startingAction(Object action) {
@@ -685,6 +695,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
               processor.removeCallback(this);
               indicator.setFraction(1.0);
               indicator.setText("Done");
+
+              //enable fast find usages
+              for (FindUsagesParticipant p:participants){
+                PersistenceRegistry.getInstance().addFindUsagesParticipant(p);
+              }
               fireStateChanged();
             }
 

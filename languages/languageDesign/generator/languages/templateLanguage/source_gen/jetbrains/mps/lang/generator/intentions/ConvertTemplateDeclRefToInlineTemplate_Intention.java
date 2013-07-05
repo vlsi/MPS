@@ -88,7 +88,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
 
     public void execute(final SNode node, final EditorContext editorContext) {
       List<SNode> TFs = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "template", false), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", true, new String[]{});
-      if ((int) ListSequence.fromList(TFs).count() == 0) {
+      if (ListSequence.fromList(TFs).isEmpty()) {
         JOptionPane.showMessageDialog(null, "No fragments found");
         return;
       }

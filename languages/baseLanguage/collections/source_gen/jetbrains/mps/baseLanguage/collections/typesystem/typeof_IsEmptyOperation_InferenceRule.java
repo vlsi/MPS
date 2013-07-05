@@ -29,7 +29,7 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
         {
           SNode matchingNode_sezqyh_a1a = parent;
           if (matchingNode_sezqyh_a1a != null) {
-            matches_sezqyh_a1a = SModelUtil_new.isAssignableConcept(matchingNode_sezqyh_a1a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.DotExpression");
+            matches_sezqyh_a1a = SModelUtil_new.isAssignableConcept(matchingNode_sezqyh_a1a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
           }
         }
         if (matches_sezqyh_a1a) {
@@ -54,7 +54,7 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

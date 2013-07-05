@@ -7,15 +7,20 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.JavaImports_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
+import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,61 +31,122 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
   public check_UnqualifiedEnumConstant_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode switchCase, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // FIXME: almost duplicate code with MultipleFilesParser 
-    SNode caseExp = SLinkOperations.getTarget(switchCase, "expression", true);
-    if (!(SNodeOperations.isInstanceOf(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+  public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // Q: is there a better way for this? 
+    if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(varRef), "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
       return;
     }
-    SReference ref = SNodeOperations.getReference(SNodeOperations.cast(caseExp, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
+
+
+
+    // FIXME: duplicate code with MultipleFilesParser 
+
+    SReference ref = SNodeOperations.getReference(varRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
     if (!(ref instanceof DynamicReference)) {
       return;
     }
+    if (ref.getTargetNode() != null) {
+      return;
+    }
 
+    SNode root = SNodeOperations.getContainingRoot(varRef);
+    if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      return;
+    }
+    SNode javaImports = AttributeOperations.getAttribute(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
+    if ((javaImports == null)) {
+      return;
+    }
+
+    // now we can try to search 
     final String enumConstName = ((DynamicReference) ref).getResolveInfo();
-
-    SNode scrutenee = SLinkOperations.getTarget(SNodeOperations.getAncestor(caseExp, "jetbrains.mps.baseLanguage.structure.SwitchStatement", false, false), "expression", true);
-    if ((scrutenee == null)) {
-      return;
-    }
-
-    SNode scruteneeType = TypeChecker.getInstance().getTypeOf(scrutenee);
-    if (!(SNodeOperations.isInstanceOf(scruteneeType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-      return;
-    }
-
-    SNode claz = SLinkOperations.getTarget(SNodeOperations.cast(scruteneeType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-    if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
-      return;
-    }
-
-    SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals(enumConstName);
+    for (SNode singleNameImport : Sequence.fromIterable(JavaImports_Behavior.call_staticSingleName_5230012391903395274(javaImports))) {
+      if (!(enumConstName.equals(Tokens_Behavior.call_lastToken_1296023605440030462(singleNameImport)))) {
+        continue;
       }
-    });
-    SNode qualifiedEnumRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-    SLinkOperations.setTarget(qualifiedEnumRef, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-    SLinkOperations.setTarget(qualifiedEnumRef, "enumConstantDeclaration", enumConst, false);
 
-    {
-      MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(caseExp, "unqualified enum constant", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3151797052697040971", null, errorTarget);
+      String enumClassCandidateName = Tokens_Behavior.call_withoutLastToken_6148840541591441572(singleNameImport);
+      SNode enumClassCandidate = ResolveUnknownUtil.findClass(varRef, enumClassCandidateName);
+      if ((enumClassCandidate == null)) {
+        // seems like there is no need to continue 
+        // we had import of the form: import static <class>.<ourName> 
+        // if we meet <ourName> in java code then it must strictly reference this import, not any other 
+        return;
+      }
+      if (!(SNodeOperations.isInstanceOf(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+        return;
+      }
+
+      // Q: maybe not findFirst, but rather fail if there are more than one... 
+      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+        }
+      });
+
+      if ((enumConst == null)) {
+        return;
+      }
+
+      // success 
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
       {
-        BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-        intentionProvider.putArgument("newNode;", qualifiedEnumRef);
-        _reporter_2309309498.addIntentionProvider(intentionProvider);
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(varRef, "Unqualified enum constant reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5230012391904188150", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
+          intentionProvider.putArgument("newNode;", result);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
       }
+      return;
+    }
+
+    for (SNode onDemandImport : Sequence.fromIterable(JavaImports_Behavior.call_staticOnDemand_5230012391903366883(javaImports))) {
+      SNode claz = ResolveUnknownUtil.findClass(varRef, SPropertyOperations.getString(onDemandImport, "tokens"));
+      if ((claz == null)) {
+        continue;
+      }
+      if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+        continue;
+      }
+
+      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+        }
+      });
+      if ((enumConst == null)) {
+        continue;
+      }
+
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(varRef, "Unqualified enum constant reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3151797052697040971", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
+          intentionProvider.putArgument("newNode;", result);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
+
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.SwitchCase";
+    return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

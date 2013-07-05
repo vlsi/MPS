@@ -184,6 +184,7 @@
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rkxj.8048826103541935122" resolveInfo="CLASS_STUB" />
                         <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rkxj.5646944109420325187" resolveInfo="FeatureKind" />
                       </node>
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4731776099751093975" nodeInfo="nn" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1218582063869330510" nodeInfo="nn">
                         <property name="value" nameId="tpee.1068580123138" value="true" />
                       </node>

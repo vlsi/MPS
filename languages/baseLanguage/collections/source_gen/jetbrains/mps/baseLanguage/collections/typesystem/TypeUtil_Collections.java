@@ -32,7 +32,7 @@ public class TypeUtil_Collections {
     }
     // ========== 
     // TEMP FIX FOR DNQ 1 
-    if ("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConcept().getConceptId())) {
+    if ("jetbrains.teamsys.dnq.structure.PListType".equals(type.getConcept().getQualifiedName())) {
       SNode classifierType = SNodeOperations.cast(jetbrains.mps.util.SNodeOperations.getChild(type, "classifierType"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       return _quotation_createNode_kv7ms9_a1a7a1(SNodeOperations.copyNode(classifierType));
     }

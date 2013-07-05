@@ -889,7 +889,7 @@ public class ChangesManagerTest {
 
     newModelDiff.value.setEnabled(true);
     waitForChangesManager();
-    Assert.assertTrue((int) ListSequence.fromList(check_4gxggu_a0a0l0gc(newModelDiff.value.getChangeSet())).count() == 0);
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a11a85(newModelDiff.value.getChangeSet())).isEmpty());
 
     checkRootStatuses();
 
@@ -1099,7 +1099,7 @@ public class ChangesManagerTest {
     return null;
   }
 
-  private static List<ModelChange> check_4gxggu_a0a0l0gc(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_4gxggu_a0a11a85(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

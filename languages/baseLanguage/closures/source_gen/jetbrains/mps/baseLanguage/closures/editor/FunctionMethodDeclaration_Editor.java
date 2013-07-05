@@ -167,7 +167,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_s8y0yt_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_s8y0yt_e0(EditorContext editorContext, SNode node) {
@@ -290,7 +290,7 @@ public class FunctionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_s8y0yt_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_s8y0yt_a8a(EditorContext editorContext, SNode node) {

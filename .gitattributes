@@ -16,3 +16,5 @@ trace.info text merge=mps
 *.mpl text merge=mps
 *.msd text merge=mps
 *.devkit text merge=mps
+*.mpsr text merge=mps
+*.model text merge=mps

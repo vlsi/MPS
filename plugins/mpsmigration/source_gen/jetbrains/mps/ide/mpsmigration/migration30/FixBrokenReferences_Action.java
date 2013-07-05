@@ -153,7 +153,7 @@ public class FixBrokenReferences_Action extends BaseAction {
       }
 
       // reporting: 
-      if (MapSequence.fromMap(unresolvedR).count() > 0) {
+      if (MapSequence.fromMap(unresolvedR).isNotEmpty()) {
         if (LOG.isEnabledFor(Priority.ERROR)) {
           LOG.error(MapSequence.fromMap(unresolvedR).count() + " distinct references were not resolved:");
         }
@@ -210,7 +210,7 @@ public class FixBrokenReferences_Action extends BaseAction {
 
   private static SNodeReference check_9fpjqh_a0a0a0a0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.toNodePointer();
+      return checkedDotOperand.getTargetNodeReference();
     }
     return null;
   }

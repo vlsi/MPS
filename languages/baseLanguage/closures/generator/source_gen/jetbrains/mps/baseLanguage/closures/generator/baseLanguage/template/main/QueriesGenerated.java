@@ -1532,12 +1532,12 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1201421585183(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
-    return (int) ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+    return ListSequence.fromList(stmts).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201421814921(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
-    return (int) ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+    return ListSequence.fromList(stmts).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201276700612(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1574,7 +1574,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1232624140224(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
-    return ListSequence.fromList(stmts).count() > 0 && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return ListSequence.fromList(stmts).isNotEmpty() && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
   public static boolean ifMacro_Condition_8665905049776863470(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2582,7 +2582,7 @@ public class QueriesGenerated {
         cstmt = StatementListUtil.nextSibling(lastStmt);
       } else {
         List<SNode> allstmts = (List<SNode>) SLinkOperations.getTargets(_context.getNode(), "statement", true);
-        cstmt = (ListSequence.fromList(allstmts).count() > 0 ?
+        cstmt = (ListSequence.fromList(allstmts).isNotEmpty() ?
           ListSequence.fromList(allstmts).getElement(0) :
           null
         );
@@ -2597,7 +2597,7 @@ public class QueriesGenerated {
         lastStmt = StatementListUtil.nextSibling(cstmt);
         while ((lastStmt != null)) {
           stmts = StatementListUtil.selectStatementsUntilControlStatement(_context.getNode(), lastStmt);
-          if ((int) ListSequence.fromList(stmts).count() == 0) {
+          if (ListSequence.fromList(stmts).isEmpty()) {
             cstmt = lastStmt;
             lastStmt = StatementListUtil.nextSibling(lastStmt);
           } else {
@@ -2613,7 +2613,7 @@ public class QueriesGenerated {
       ListSequence.fromList(results).addElement(slist);
       Object data = new Integer[]{beginLabel, endLabel};
       Values.CLOSURE_DATA.set(_context, slist, data);
-    } while (stmts != null && ListSequence.fromList(stmts).count() > 0);
+    } while (stmts != null && ListSequence.fromList(stmts).isNotEmpty());
     return results;
   }
 

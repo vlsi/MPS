@@ -23,7 +23,7 @@ public class HTMLElement_Behavior {
     SNode nodeToSelect = null;
     int caret = -1;
 
-    if ((int) Sequence.fromIterable(lines).count() == 0) {
+    if (Sequence.fromIterable(lines).isEmpty()) {
       SNode prev = SNodeOperations.getPrevSibling(thisNode);
       if (isNotEmpty_5xz1u8_a0b0h0b(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
         caret = SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();

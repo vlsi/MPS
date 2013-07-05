@@ -311,7 +311,7 @@ import jetbrains.mps.ide.messages.Icons;
 
     @Override
     public boolean isLeaf() {
-      return (int) ListSequence.fromList(myExtendedMessage).count() == 0;
+      return ListSequence.fromList(myExtendedMessage).isEmpty();
     }
 
     @Override

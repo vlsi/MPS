@@ -80,7 +80,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         SNode nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a;
         nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         patternVar_CONCEPT = nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a.getReferenceTarget("elementConcept");
@@ -119,7 +119,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       {
         SNode nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0;
         nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getConcept().getQualifiedName()))) {
           return false;
         }
         {

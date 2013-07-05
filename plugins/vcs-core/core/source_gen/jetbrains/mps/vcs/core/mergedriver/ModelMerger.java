@@ -7,13 +7,10 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Priority;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -32,8 +29,10 @@ import org.apache.log4j.LogManager;
 
 /*package*/ class ModelMerger extends SimpleMerger {
   private String myModelName;
+  private String myExtension;
 
-  /*package*/ ModelMerger() {
+  public ModelMerger(String extension) {
+    myExtension = extension;
   }
 
   @Override
@@ -44,15 +43,14 @@ import org.apache.log4j.LogManager;
     LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);
 
-    IFile file = FileSystem.getInstance().getFileByPath(baseContent.getFile().getPath());
-    String fileExt = FileUtil.getExtension(file.getPath());
-    boolean isPerRoot = FilePerRootDataSource.isPerRootPersistenceFile(file);
-    String ext = (isPerRoot ?
+    String ext = (myExtension == null ?
       MPSExtentions.MODEL :
-      fileExt
+      myExtension
     );
-    // todo: extensions do not work in merge driver, use other way to distinguish persistence 
-    ext = MPSExtentions.MODEL;
+    if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
+      // special support for per-root persistence 
+      ext = MPSExtentions.MODEL;
+    }
 
     if (LOG.isInfoEnabled()) {
       LOG.info("Reading models...");
@@ -111,8 +109,9 @@ import org.apache.log4j.LogManager;
           }
         } else {
           String resultString;
-          if (isPerRoot) {
-            resultString = PersistenceUtil.savePerRootModel(mergeSession.getResultModel(), fileExt.equals(MPSExtentions.MODEL_HEADER));
+          if (MPSExtentions.MODEL_HEADER.equals(myExtension) || MPSExtentions.MODEL_ROOT.equals(myExtension)) {
+            // special support for per-root persistence 
+            resultString = PersistenceUtil.savePerRootModel(mergeSession.getResultModel(), MPSExtentions.MODEL_HEADER.equals(myExtension));
           } else {
             resultString = PersistenceUtil.saveModel(mergeSession.getResultModel(), ext);
           }

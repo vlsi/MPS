@@ -38,7 +38,7 @@ public class CopyThisDown_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() > 0 && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).isNotEmpty() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

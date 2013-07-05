@@ -74,7 +74,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_vsmugd_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private EditorCell createRefNodeList_vsmugd_a0a0(EditorContext editorContext, SNode node) {

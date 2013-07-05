@@ -49,7 +49,7 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   @Override
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
     if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
-      LOG.error("couldn't set instance of " + newChild.getConcept().getId() +
+      LOG.error("couldn't set instance of " + newChild.getConcept().getQualifiedName() +
         " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + SNodeUtil.getDebugText(parentNode));
       return newChild;
     }

@@ -16,36 +16,29 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
-/**
- * evgeny, 10/12/12
- */
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
-  private static Logger LOG = LogManager.getLogger(ConceptRepository.class);
-
-  private final ConcurrentMap<String, SAbstractConcept> myConcepts = new ConcurrentHashMap<String, SAbstractConcept>();
 
   @Override
   public SConcept getInstanceConcept(String id) {
-    return (SConcept) SConceptRepository.getInstance().getConcept(id);
+    SAbstractConcept concept = getConcept(id);
+    if (concept instanceof SInterfaceConcept) {
+      return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
+    }
+    return (SConcept) concept;
   }
 
   @Override
@@ -53,45 +46,21 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     if (id == null) {
       return null;
     }
-    SAbstractConcept sConcept = myConcepts.get(id);
-    if (sConcept == null) {
-      createConceptAdapter(id);
-      sConcept = myConcepts.get(id);
-    }
-    return sConcept;
+    ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
+    if (desc instanceof IllegalConceptDescriptor) return null;
+
+    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapter(id) : new SConceptAdapter(id);
   }
 
-  private void createConceptAdapter(String id) {
-    String langName = NameUtil.namespaceFromConceptFQName(id);
-    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
-    if (module instanceof Language) {
-      Language lang = (Language) module;
-      SModel smd = lang.getStructureModelDescriptor();
-      if (smd != null) {
-        String modelFqName = SNodeOperations.getModelLongName(smd);
-        // optimization - loading all concepts from this model into myConcepts cache
-        for (SNode root : smd.getRootNodes()) {
-          String conceptFQName = InternUtil.intern(modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name));
-          if (conceptFQName.equals(SNodeUtil.concept_ConceptDeclaration)) {
-            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
-          }
+  @Override
+  public SEnumeration getEnumeration(String qualifiedName) {
+    // TODO
+    return null;
+  }
 
-          String conceptId = root.getConcept().getId();
-          if (conceptId.equals(SNodeUtil.concept_ConceptDeclaration)) {
-            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
-          } else if (conceptId.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-            myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
-          }
-        }
-        if (myConcepts.containsKey(id)) return;
-        // logging error if concept was not in concept model
-        //LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
-      }
-    }
-    // adding
-    //LOG.error("Creating a concept descriptor for a concept from a language not yet loaded " + id, new Throwable());
-    id = InternUtil.intern(id);
-    myConcepts.putIfAbsent(id, new SConceptNodeAdapter(id));
+  @Override
+  public SLanguage getLanguage(String qualifiedName) {
+    return new SLanguageAdapter(qualifiedName);
   }
 
   @Override
@@ -105,5 +74,64 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   @Override
   public void dispose() {
     INSTANCE = null;
+  }
+
+  private static class SInterfaceInstanceAdapter implements SConcept {
+
+    private final SInterfaceConcept target;
+
+    private SInterfaceInstanceAdapter(SInterfaceConcept target) {
+      this.target = target;
+    }
+
+    @Override
+    public String getQualifiedName() {
+      return target.getQualifiedName();
+    }
+
+    @Override
+    public String getName() {
+      return target.getName();
+    }
+
+    @Override
+    public SLanguage getLanguage() {
+      return target.getLanguage();
+    }
+
+    @Override
+    public SAbstractLink getLink(String role) {
+      return target.getLink(role);
+    }
+
+    @Override
+    public Iterable<SAbstractLink> getLinks() {
+      return target.getLinks();
+    }
+
+    @Override
+    public SProperty getProperty(String name) {
+      return target.getProperty(name);
+    }
+
+    @Override
+    public Iterable<SProperty> getProperties() {
+      return target.getProperties();
+    }
+
+    @Override
+    public boolean isSubConceptOf(SAbstractConcept concept) {
+      return target.isSubConceptOf(concept);
+    }
+
+    @Override
+    public SConcept getSuperConcept() {
+      return null;
+    }
+
+    @Override
+    public Iterable<SInterfaceConcept> getSuperInterfaces() {
+      return target.getSuperInterfaces();
+    }
   }
 }

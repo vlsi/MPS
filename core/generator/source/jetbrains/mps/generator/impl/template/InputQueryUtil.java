@@ -74,7 +74,7 @@ public class InputQueryUtil {
         return wrapAsList(newInputNode);
       }
 
-      if (requiredSourceNodesQuery.contains(nodeMacro.getConcept().getId())) {
+      if (requiredSourceNodesQuery.contains(nodeMacro.getConcept().getQualifiedName())) {
         generator.showErrorMessage(currentInputNode, nodeMacro, "couldn't get input nodes");
         throw new GenerationFailureException();
       }

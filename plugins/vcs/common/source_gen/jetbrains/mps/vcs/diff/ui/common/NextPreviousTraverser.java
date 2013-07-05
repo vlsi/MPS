@@ -280,7 +280,7 @@ public class NextPreviousTraverser {
 
   private static String check_mf966z_a0a0a2a0a0b0v(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getConceptId();
+      return checkedDotOperand.getQualifiedName();
     }
     return null;
   }

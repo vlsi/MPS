@@ -39,7 +39,8 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +53,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleAdapter;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleListener;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -184,8 +184,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return Collections.<SLanguage>singleton(
-        new SLanguageLanguageAdapter(BootstrapLanguages.PROJECT_NAMESPACE));
+    return Collections.singleton(
+        ConceptRepository.getInstance().getLanguage(BootstrapLanguages.PROJECT_NAMESPACE));
   }
 
   private void removeModel(SModel md) {
@@ -205,7 +205,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private static SModelFqName getModelFqName(SModule module) {
-    return new SModelFqName(PersistenceFacade.getInstance().createModuleReference(MODULE_REF).getModuleName(), "module." + module.getModuleName(), SModelStereotype.getStubStereotypeForId("project"));
+    return new SModelFqName(PersistenceFacade.getInstance().createModuleReference(MODULE_REF).getModuleName(), "module." + module.getModuleName(),
+        SModelStereotype.getStubStereotypeForId("project"));
   }
 
   private static SModelReference getSModelReference(SModule module) {

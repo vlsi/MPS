@@ -55,7 +55,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
       {
         SNode nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a;
         nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {

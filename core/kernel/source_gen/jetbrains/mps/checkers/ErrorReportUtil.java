@@ -26,6 +26,9 @@ public class ErrorReportUtil {
       if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors") && BehaviorReflection.invokeVirtual(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Object[]{_node.value})) {
         return false;
       }
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.Attribute")) {
+        return true;
+      }
       if (ListSequence.fromList(AttributeOperations.getAttributeList(parent, new IAttributeDescriptor.AllAttributes())).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode attr) {
           return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors") && BehaviorReflection.invokeVirtual(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Object[]{_node.value}) && attr != _node.value;

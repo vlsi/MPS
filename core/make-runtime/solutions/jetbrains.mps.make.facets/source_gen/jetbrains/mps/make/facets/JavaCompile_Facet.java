@@ -117,7 +117,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                   return SModuleOperations.isCompileInMps(it);
                 }
               }).distinct());
-              if ((int) SetSequence.fromSet(toCompile).count() == 0) {
+              if (SetSequence.fromSet(toCompile).isEmpty()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();

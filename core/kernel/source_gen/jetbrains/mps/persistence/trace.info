@@ -12,20 +12,20 @@
     <nodeInfo nodeId="4026014303452493327" fileName="LightModelEnvironmentInfoImpl.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChildLinkToUnordered" />
     <nodeInfo nodeId="4026014303452493361" fileName="LightModelEnvironmentInfoImpl.java" startLine="33" startPosition="55" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4026014303452493373" fileName="LightModelEnvironmentInfoImpl.java" startLine="35" startPosition="12" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4026014303452493395" fileName="LightModelEnvironmentInfoImpl.java" startLine="43" startPosition="121" endLine="44" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4026014303452493403" fileName="LightModelEnvironmentInfoImpl.java" startLine="44" startPosition="51" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4026014303452493395" fileName="LightModelEnvironmentInfoImpl.java" startLine="43" startPosition="121" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4026014303452493403" fileName="LightModelEnvironmentInfoImpl.java" startLine="44" startPosition="55" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4026014303452493408" fileName="LightModelEnvironmentInfoImpl.java" startLine="45" startPosition="73" endLine="46" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4026014303452493413" fileName="LightModelEnvironmentInfoImpl.java" startLine="46" startPosition="65" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4026014303452493429" fileName="LightModelEnvironmentInfoImpl.java" startLine="51" startPosition="91" endLine="52" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4026014303452493445" fileName="LightModelEnvironmentInfoImpl.java" startLine="52" startPosition="137" endLine="53" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4026014303452493429" fileName="LightModelEnvironmentInfoImpl.java" startLine="51" startPosition="91" endLine="52" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4026014303452493445" fileName="LightModelEnvironmentInfoImpl.java" startLine="52" startPosition="141" endLine="53" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4026014303452493450" fileName="LightModelEnvironmentInfoImpl.java" startLine="53" startPosition="70" endLine="54" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4026014303452493464" fileName="LightModelEnvironmentInfoImpl.java" startLine="58" startPosition="83" endLine="59" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4026014303452493490" fileName="LightModelEnvironmentInfoImpl.java" startLine="63" startPosition="97" endLine="64" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4026014303452493464" fileName="LightModelEnvironmentInfoImpl.java" startLine="58" startPosition="83" endLine="59" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4026014303452493490" fileName="LightModelEnvironmentInfoImpl.java" startLine="63" startPosition="97" endLine="64" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4026014303452493508" fileName="LightModelEnvironmentInfoImpl.java" startLine="68" startPosition="62" endLine="69" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4026014303452493524" fileName="LightModelEnvironmentInfoImpl.java" startLine="73" startPosition="50" endLine="74" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4026014303452493524" fileName="LightModelEnvironmentInfoImpl.java" startLine="73" startPosition="50" endLine="74" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4026014303452493539" fileName="LightModelEnvironmentInfoImpl.java" startLine="78" startPosition="51" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4026014303452493550" fileName="LightModelEnvironmentInfoImpl.java" startLine="80" startPosition="31" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4026014303452493552" fileName="LightModelEnvironmentInfoImpl.java" startLine="82" startPosition="5" endLine="83" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4026014303452493552" fileName="LightModelEnvironmentInfoImpl.java" startLine="82" startPosition="5" endLine="83" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4026014303452493571" fileName="LightModelEnvironmentInfoImpl.java" startLine="87" startPosition="49" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4026014303452493579" fileName="LightModelEnvironmentInfoImpl.java" startLine="88" startPosition="62" endLine="89" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4026014303452493599" fileName="LightModelEnvironmentInfoImpl.java" startLine="97" startPosition="48" endLine="98" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -34,8 +34,8 @@
     <nodeInfo nodeId="4026014303452493626" fileName="LightModelEnvironmentInfoImpl.java" startLine="102" startPosition="160" endLine="103" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4026014303452493642" fileName="LightModelEnvironmentInfoImpl.java" startLine="109" startPosition="50" endLine="110" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4026014303452493650" fileName="LightModelEnvironmentInfoImpl.java" startLine="110" startPosition="62" endLine="111" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4026014303452493670" fileName="LightModelEnvironmentInfoImpl.java" startLine="119" startPosition="66" endLine="120" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4026014303452493693" fileName="LightModelEnvironmentInfoImpl.java" startLine="124" startPosition="72" endLine="125" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4026014303452493670" fileName="LightModelEnvironmentInfoImpl.java" startLine="119" startPosition="66" endLine="120" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4026014303452493693" fileName="LightModelEnvironmentInfoImpl.java" startLine="124" startPosition="72" endLine="125" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4026014303452493710" fileName="LightModelEnvironmentInfoImpl.java" startLine="129" startPosition="57" endLine="130" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4026014303452493718" fileName="LightModelEnvironmentInfoImpl.java" startLine="133" startPosition="33" endLine="134" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4026014303452493340" fileName="LightModelEnvironmentInfoImpl.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LightModelEnvironmentInfoImpl#()V" />
@@ -65,14 +65,14 @@
     <scopeInfo nodeId="4026014303452493343" fileName="LightModelEnvironmentInfoImpl.java" startLine="29" startPosition="42" endLine="29" endPosition="42" />
     <scopeInfo nodeId="4026014303452493360" fileName="LightModelEnvironmentInfoImpl.java" startLine="33" startPosition="55" endLine="34" endPosition="102" />
     <scopeInfo nodeId="4026014303452493372" fileName="LightModelEnvironmentInfoImpl.java" startLine="35" startPosition="12" endLine="36" endPosition="50" />
-    <scopeInfo nodeId="4026014303452493463" fileName="LightModelEnvironmentInfoImpl.java" startLine="58" startPosition="83" endLine="59" endPosition="178" />
-    <scopeInfo nodeId="4026014303452493489" fileName="LightModelEnvironmentInfoImpl.java" startLine="63" startPosition="97" endLine="64" endPosition="153" />
+    <scopeInfo nodeId="4026014303452493463" fileName="LightModelEnvironmentInfoImpl.java" startLine="58" startPosition="83" endLine="59" endPosition="182" />
+    <scopeInfo nodeId="4026014303452493489" fileName="LightModelEnvironmentInfoImpl.java" startLine="63" startPosition="97" endLine="64" endPosition="157" />
     <scopeInfo nodeId="4026014303452493507" fileName="LightModelEnvironmentInfoImpl.java" startLine="68" startPosition="62" endLine="69" endPosition="101" />
-    <scopeInfo nodeId="4026014303452493523" fileName="LightModelEnvironmentInfoImpl.java" startLine="73" startPosition="50" endLine="74" endPosition="91" />
+    <scopeInfo nodeId="4026014303452493523" fileName="LightModelEnvironmentInfoImpl.java" startLine="73" startPosition="50" endLine="74" endPosition="95" />
     <scopeInfo nodeId="4026014303452493549" fileName="LightModelEnvironmentInfoImpl.java" startLine="80" startPosition="31" endLine="81" endPosition="18" />
     <scopeInfo nodeId="4026014303452493609" fileName="LightModelEnvironmentInfoImpl.java" startLine="99" startPosition="25" endLine="100" endPosition="19" />
-    <scopeInfo nodeId="4026014303452493669" fileName="LightModelEnvironmentInfoImpl.java" startLine="119" startPosition="66" endLine="120" endPosition="171" />
-    <scopeInfo nodeId="4026014303452493692" fileName="LightModelEnvironmentInfoImpl.java" startLine="124" startPosition="72" endLine="125" endPosition="142" />
+    <scopeInfo nodeId="4026014303452493669" fileName="LightModelEnvironmentInfoImpl.java" startLine="119" startPosition="66" endLine="120" endPosition="175" />
+    <scopeInfo nodeId="4026014303452493692" fileName="LightModelEnvironmentInfoImpl.java" startLine="124" startPosition="72" endLine="125" endPosition="146" />
     <scopeInfo nodeId="4026014303452493709" fileName="LightModelEnvironmentInfoImpl.java" startLine="129" startPosition="57" endLine="130" endPosition="63" />
     <scopeInfo nodeId="4026014303452493717" fileName="LightModelEnvironmentInfoImpl.java" startLine="133" startPosition="33" endLine="134" endPosition="24" />
     <scopeInfo nodeId="4026014303452493340" fileName="LightModelEnvironmentInfoImpl.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
@@ -110,7 +110,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4026014303452493365" fileName="LightModelEnvironmentInfoImpl.java" startLine="137" startPosition="66" endLine="141" endPosition="6" />
     <scopeInfo nodeId="4026014303452493354" fileName="LightModelEnvironmentInfoImpl.java" startLine="32" startPosition="82" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="4026014303452493538" fileName="LightModelEnvironmentInfoImpl.java" startLine="78" startPosition="51" endLine="83" endPosition="150">
+    <scopeInfo nodeId="4026014303452493538" fileName="LightModelEnvironmentInfoImpl.java" startLine="78" startPosition="51" endLine="83" endPosition="154">
       <varInfo nodeId="4026014303452493540" varName="roleInParent" />
     </scopeInfo>
     <scopeInfo nodeId="4026014303452493419" fileName="LightModelEnvironmentInfoImpl.java" startLine="50" startPosition="0" endLine="56" endPosition="0">

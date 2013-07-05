@@ -129,7 +129,7 @@ public class NodePresentationUtil {
     }
 
     if (node.getModel() != null && node.getParent() == null) {
-      return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + NameUtil.compactModelName(node.getModel().getReference()) + ")";
+      return node.getConcept().getName() + " (" + NameUtil.compactModelName(node.getModel().getReference()) + ")";
     }
 
     return node.getRoleInParent() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
@@ -141,7 +141,7 @@ public class NodePresentationUtil {
       return alias;
     }
 
-    return NameUtil.shortNameFromLongName(node.getConcept().getId());
+    return node.getConcept().getName();
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {

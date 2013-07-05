@@ -32,7 +32,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class UnknownQualifiedName implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -85,23 +86,38 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNode choosen = parameterObject;
-      String className = BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
+      SNode chosen = parameterObject;
+      String className = BehaviorReflection.invokeVirtual(String.class, chosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
 
       String tokens = SPropertyOperations.getString(node, "tokens");
       int i = tokens.indexOf(".", 0);
 
       while (i >= 0) {
 
-        // including dot at i 
-        String classNameToTry = className + tokens.substring(i);
-        if (ResolveUnknownUtil.findClass(node, classNameToTry) != null) {
-          // done 
-          SPropertyOperations.set(node, "tokens", classNameToTry);
+        String remaining = tokens.substring(i + 1);
+        int nextDot = tokens.indexOf(".", i + 1);
+
+        final String memberCandidateName = (nextDot > 0 ?
+          tokens.substring(i + 1, nextDot) :
+          remaining
+        );
+
+        if (Sequence.fromIterable(Members.visibleStaticFields(chosen, node)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return memberCandidateName.equals(SPropertyOperations.getString(it, "name"));
+          }
+        }).isNotEmpty() || Sequence.fromIterable(Members.visibleEnumConstants(chosen)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return memberCandidateName.equals(SPropertyOperations.getString(it, "name"));
+          }
+        }).isNotEmpty()) {
+
+          // found 
+          SPropertyOperations.set(node, "tokens", className + "." + remaining);
           return;
         }
 
-        i = tokens.indexOf(".", i + 1);
+        i = nextDot;
       }
 
       SPropertyOperations.set(node, "tokens", className);

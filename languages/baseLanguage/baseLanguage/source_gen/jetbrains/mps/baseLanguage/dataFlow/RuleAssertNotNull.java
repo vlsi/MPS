@@ -37,7 +37,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
       {
         SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a;
         nodeToMatch_RuleAssertNotNull_7fbm30_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
         {
@@ -123,7 +123,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
         {
           SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0;
           nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getConcept().getConceptId()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
@@ -150,7 +150,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
               {
                 SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a_0;
                 nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a_0 = childVar_RuleAssertNotNull_7fbm30_a0a0a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a_0.getConcept().getConceptId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a_0.getConcept().getQualifiedName()))) {
                   return false;
                 }
               }
@@ -183,7 +183,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
         {
           SNode nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0;
           nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getConcept().getConceptId()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
@@ -196,7 +196,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
               {
                 SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a;
                 nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a = childVar_RuleAssertNotNull_7fbm30_a0b0a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a.getConcept().getConceptId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a.getConcept().getQualifiedName()))) {
                   return false;
                 }
               }

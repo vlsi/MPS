@@ -101,7 +101,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
           @Nullable
           @Override
           public Object getData(@NonNls String key) {
-            if (PlatformDataKeys.FILE_EDITOR.is(key)) {
+            if (PlatformDataKeys.FILE_EDITOR.equals(key)) {
               return myCommandFileEditor;
             }
             return super.getData(key);
@@ -219,7 +219,6 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
   @Override
   protected void doRegister() {
     super.doRegister();
-    getToolWindow().setSplitMode(true, null);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ConsoleTool.this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());

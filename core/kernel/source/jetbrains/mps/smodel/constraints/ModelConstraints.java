@@ -75,7 +75,7 @@ public class ModelConstraints {
     IOperationContext context = getOperationContext(getModule(node));
 
     while (currentNode != null) {
-      ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConcept().getId());
+      ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConcept().getQualifiedName());
 
       if (!descriptor.canBeAncestor(currentNode, childNode, childConcept, context, checkingNodeContext)) {
         return false;
@@ -90,7 +90,7 @@ public class ModelConstraints {
   public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     ModelAccess.assertLegalRead();
 
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConcept().getId());
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConcept().getQualifiedName());
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
@@ -141,7 +141,7 @@ public class ModelConstraints {
   private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
     SNode scopeReference = ((jetbrains.mps.smodel.SNode) referenceNode).getLinkDeclaration(role);
     if (scopeReference == null) {
-      return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
+      return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getQualifiedName() + "'");
     }
     SNode concept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
 

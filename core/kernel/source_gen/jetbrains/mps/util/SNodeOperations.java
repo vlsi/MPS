@@ -32,7 +32,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
@@ -239,7 +238,7 @@ public class SNodeOperations {
     if (language == null) {
       return null;
     }
-    return ModuleRepositoryFacade.getInstance().getModule(language.getPresentation(), Language.class);
+    return ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {
@@ -349,7 +348,7 @@ public class SNodeOperations {
   }
 
   public static int nodesCount(SModel model) {
-    return IterableUtil.asCollection(new NodesIterable(model)).size();
+    return IterableUtil.asCollection(SNodeUtil.getDescendants(model)).size();
   }
 
   public static boolean isRegistered(SModel model) {

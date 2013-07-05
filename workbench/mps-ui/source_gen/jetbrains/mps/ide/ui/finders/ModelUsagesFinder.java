@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
@@ -45,7 +45,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        for (SNode node : new NodesIterable(modelDescriptor)) {
+        for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -71,7 +71,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(scopeModel))) {
           continue;
         }
-        for (SNode node : new NodesIterable(descriptor)) {
+        for (SNode node : SNodeUtil.getDescendants(descriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;

@@ -85,7 +85,7 @@ public class WriteHelper {
 
   public String genType(@NotNull SNode node) {
     // return fqName prefixed with "." if we can't find model or name of concept 
-    String fqName = node.getConcept().getConceptId();
+    String fqName = node.getConcept().getQualifiedName();
     SNodeReference conceptPointer = myEnv.getConceptId(node);
     if (conceptPointer == null) {
       return MODEL_SEPARATOR_CHAR + fqName;

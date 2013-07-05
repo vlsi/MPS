@@ -69,8 +69,8 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.util.NodesIterable" />
     <classNode extendsClassName="com.intellij.util.indexing.DataIndexer" />
     <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndexExtension" />
     <classNode extendsClassName="com.intellij.util.indexing.InputFilter" />

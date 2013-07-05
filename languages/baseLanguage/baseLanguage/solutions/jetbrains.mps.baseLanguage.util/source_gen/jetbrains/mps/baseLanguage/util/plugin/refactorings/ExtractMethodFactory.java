@@ -26,7 +26,7 @@ public class ExtractMethodFactory {
     if (SNodeOperations.isInstanceOf(ListSequence.fromList(parameteres.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       return new ExtractMethodFromExpressionRefactoring(parameteres);
     }
-    if (ListSequence.fromList(parameteres.getAnalyzer().getOutputVariables()).count() > 0) {
+    if (ListSequence.fromList(parameteres.getAnalyzer().getOutputVariables()).isNotEmpty()) {
       return new ExtractMethodWithOutputVariable(parameteres);
     }
     SNode containerType = parameteres.getAnalyzer().getExtractMethodReafactoringProcessor().getContainerReturnType();
@@ -55,7 +55,7 @@ public class ExtractMethodFactory {
         return "Too many output variables.";
       }
     } else {
-      if (ListSequence.fromList(analyzer.getOutputVariables()).count() > 0) {
+      if (ListSequence.fromList(analyzer.getOutputVariables()).isNotEmpty()) {
         return "Too many output variables.";
       }
       if (!(analyzer.isReturnExpressionsNotChangedInStatements() || analyzer.isAlwaysReturns())) {

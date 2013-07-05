@@ -91,7 +91,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_tbgpz7_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_tbgpz7_e0(EditorContext editorContext, SNode node) {

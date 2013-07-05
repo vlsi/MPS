@@ -476,7 +476,7 @@
     <nodeInfo nodeId="1178899307565" fileName="Distinct_Test.java" startLine="122" startPosition="32" endLine="123" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205788081005" fileName="Distinct_Test.java" startLine="127" startPosition="45" endLine="128" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1205788095326" fileName="Distinct_Test.java" startLine="128" startPosition="36" endLine="129" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205788113915" fileName="Distinct_Test.java" startLine="129" startPosition="54" endLine="130" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205788113915" fileName="Distinct_Test.java" startLine="129" startPosition="54" endLine="130" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1224596675996" fileName="Distinct_Test.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
     <nodeInfo nodeId="1224596676110" fileName="Distinct_Test.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" />
     <nodeInfo nodeId="1224596675914" fileName="Distinct_Test.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
@@ -539,7 +539,7 @@
     <scopeInfo nodeId="1224596675969" fileName="Distinct_Test.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="1224596675969" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1205788070348" fileName="Distinct_Test.java" startLine="127" startPosition="45" endLine="130" endPosition="72">
+    <scopeInfo nodeId="1205788070348" fileName="Distinct_Test.java" startLine="127" startPosition="45" endLine="130" endPosition="63">
       <varInfo nodeId="1205788081006" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="1178899243341" fileName="Distinct_Test.java" startLine="37" startPosition="18" endLine="41" endPosition="5">

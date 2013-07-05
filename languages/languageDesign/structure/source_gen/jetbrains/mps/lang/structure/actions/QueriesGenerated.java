@@ -144,27 +144,4 @@ public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LinkDeclaration_2395585628936781430(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "unordered"));
   }
-
-  public static List<SubstituteAction> sideTransform_ActionsFactory_LinkDeclaration_2395585628936990501(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(_context.getSourceNode(), "doNotGenerate", "" + (true));
-        return _context.getSourceNode();
-      }
-
-      public String getMatchingText(String pattern) {
-        return "-G";
-      }
-
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-    });
-    return result;
-  }
-
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LinkDeclaration_2395585628936990515(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "doNotGenerate"));
-  }
 }

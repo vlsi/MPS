@@ -36,7 +36,7 @@ public class check_CallPrivateFunction_NonTypesystemRule extends AbstractNonType
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(privateFunctionCall, "wrong number of parameters", "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1234529496730", null, errorTarget);
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).isNotEmpty()) {
       for (SNode actual : actualArguments) {
         typeCheckingContext.addDependencyForCurrent(actual);
       }
@@ -49,7 +49,7 @@ public class check_CallPrivateFunction_NonTypesystemRule extends AbstractNonType
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

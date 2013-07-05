@@ -88,7 +88,7 @@ public class MethodModel {
     text.append(" ");
     text.append(this.getName());
     text.append("(");
-    if (ListSequence.fromList(this.getParametersNames()).count() > 0) {
+    if (ListSequence.fromList(this.getParametersNames()).isNotEmpty()) {
       text.append("\n");
       boolean first = true;
       for (String parameter : ListSequence.fromList(this.getParametersNames())) {
@@ -101,7 +101,7 @@ public class MethodModel {
     }
     text.append(")");
     //  Add throw intems 
-    if (ListSequence.fromList(this.getThrowItems()).count() > 0) {
+    if (ListSequence.fromList(this.getThrowItems()).isNotEmpty()) {
       text.append("throws\n");
       boolean first = true;
       for (String exception : ListSequence.fromList(this.getThrowItems())) {

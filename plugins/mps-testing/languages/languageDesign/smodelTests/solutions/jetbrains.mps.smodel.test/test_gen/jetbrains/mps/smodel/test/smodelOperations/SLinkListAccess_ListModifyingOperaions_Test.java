@@ -168,7 +168,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
     public void test_removeFromOriginalContainerOnAdd() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isNotEmpty());
       SNode toBeMoved = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806423212"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(toBeMoved));
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(toBeMoved);
@@ -180,7 +180,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
     public void test_remove() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isNotEmpty());
       SNode toBeRemoved = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).first();
       Assert.assertNotNull(toBeRemoved);
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), SNodeOperations.getParent(toBeRemoved));
@@ -272,7 +272,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
     public void test_clear() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 0);
+      Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isNotEmpty());
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).clear();
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).isEmpty());
     }

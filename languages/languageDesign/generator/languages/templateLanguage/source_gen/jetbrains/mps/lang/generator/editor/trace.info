@@ -14989,7 +14989,7 @@
     <nodeInfo nodeId="1216154550441" fileName="QueriesUtil.java" startLine="130" startPosition="5" endLine="131" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1216154588251" fileName="QueriesUtil.java" startLine="131" startPosition="287" endLine="132" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876797782" fileName="QueriesUtil.java" startLine="137" startPosition="39" endLine="138" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205859683728" fileName="QueriesUtil.java" startLine="140" startPosition="7" endLine="141" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205859683728" fileName="QueriesUtil.java" startLine="140" startPosition="7" endLine="141" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205869156671" fileName="QueriesUtil.java" startLine="144" startPosition="63" endLine="145" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7376433222636453999" fileName="QueriesUtil.java" startLine="145" startPosition="250" endLine="146" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1227876799931" fileName="QueriesUtil.java" startLine="148" startPosition="39" endLine="149" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -15109,7 +15109,7 @@
     <scopeInfo nodeId="1205880088339" fileName="QueriesUtil.java" startLine="168" startPosition="46" endLine="173" endPosition="7">
       <varInfo nodeId="1205880088341" varName="modelAccessor" />
     </scopeInfo>
-    <scopeInfo nodeId="1205859565512" fileName="QueriesUtil.java" startLine="135" startPosition="62" endLine="141" endPosition="58">
+    <scopeInfo nodeId="1205859565512" fileName="QueriesUtil.java" startLine="135" startPosition="62" endLine="141" endPosition="59">
       <varInfo nodeId="1205859679049" varName="ancestorTFs" />
     </scopeInfo>
     <scopeInfo nodeId="1205879788732" fileName="QueriesUtil.java" startLine="178" startPosition="0" endLine="184" endPosition="0">

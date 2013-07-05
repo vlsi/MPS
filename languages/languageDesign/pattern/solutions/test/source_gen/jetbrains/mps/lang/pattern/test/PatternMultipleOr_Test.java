@@ -67,7 +67,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
         {
           SNode nodeToMatch_MultipleOr_qy0uft_a0;
           nodeToMatch_MultipleOr_qy0uft_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_MultipleOr_qy0uft_a0.getConcept().getConceptId()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_MultipleOr_qy0uft_a0.getConcept().getQualifiedName()))) {
             return false;
           }
           {
@@ -80,7 +80,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_MultipleOr_qy0uft_a0a;
                 nodeToMatch_MultipleOr_qy0uft_a0a = childVar_MultipleOr_qy0uft_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_MultipleOr_qy0uft_a0a.getConcept().getConceptId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_MultipleOr_qy0uft_a0a.getConcept().getQualifiedName()))) {
                   return false;
                 }
               }
@@ -158,7 +158,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
           {
             SNode nodeToMatch_MultipleOr_qy0uft_a0a0a;
             nodeToMatch_MultipleOr_qy0uft_a0a0a = nodeToMatch;
-            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a0a0a.getConcept().getConceptId()))) {
+            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a0a0a.getConcept().getQualifiedName()))) {
               return false;
             }
             {
@@ -185,7 +185,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0a0a0_0;
                   nodeToMatch_MultipleOr_qy0uft_a0a0a0_0 = childVar_MultipleOr_qy0uft_a0a0a0_0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0a0a0_0.getConcept().getConceptId()))) {
+                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0a0a0_0.getConcept().getQualifiedName()))) {
                     return false;
                   }
                 }
@@ -218,7 +218,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
           {
             SNode nodeToMatch_MultipleOr_qy0uft_a1a0a;
             nodeToMatch_MultipleOr_qy0uft_a1a0a = nodeToMatch;
-            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a1a0a.getConcept().getConceptId()))) {
+            if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a1a0a.getConcept().getQualifiedName()))) {
               return false;
             }
             {
@@ -231,7 +231,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0b0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0b0a0 = childVar_MultipleOr_qy0uft_a0b0a0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0b0a0.getConcept().getConceptId()))) {
+                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0b0a0.getConcept().getQualifiedName()))) {
                     return false;
                   }
                 }
@@ -278,7 +278,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
           {
             SNode nodeToMatch_MultipleOr_qy0uft_a2a0a;
             nodeToMatch_MultipleOr_qy0uft_a2a0a = nodeToMatch;
-            if (!("jetbrains.mps.baseLanguage.structure.AndExpression".equals(nodeToMatch_MultipleOr_qy0uft_a2a0a.getConcept().getConceptId()))) {
+            if (!("jetbrains.mps.baseLanguage.structure.AndExpression".equals(nodeToMatch_MultipleOr_qy0uft_a2a0a.getConcept().getQualifiedName()))) {
               return false;
             }
             {
@@ -300,7 +300,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0c0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0c0a0 = childVar_MultipleOr_qy0uft_a0c0a0_0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a0c0a0.getConcept().getConceptId()))) {
+                  if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a0c0a0.getConcept().getQualifiedName()))) {
                     return false;
                   }
                   {
@@ -313,7 +313,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                       {
                         SNode nodeToMatch_MultipleOr_qy0uft_a0a2a0a;
                         nodeToMatch_MultipleOr_qy0uft_a0a2a0a = childVar_MultipleOr_qy0uft_a0a2a0a;
-                        if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0a2a0a.getConcept().getConceptId()))) {
+                        if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0a2a0a.getConcept().getQualifiedName()))) {
                           return false;
                         }
                       }
@@ -363,7 +363,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
           {
             SNode nodeToMatch_MultipleOr_qy0uft_a3a0a;
             nodeToMatch_MultipleOr_qy0uft_a3a0a = nodeToMatch;
-            if (!("jetbrains.mps.baseLanguage.structure.AndExpression".equals(nodeToMatch_MultipleOr_qy0uft_a3a0a.getConcept().getConceptId()))) {
+            if (!("jetbrains.mps.baseLanguage.structure.AndExpression".equals(nodeToMatch_MultipleOr_qy0uft_a3a0a.getConcept().getQualifiedName()))) {
               return false;
             }
             {
@@ -385,7 +385,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0d0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0d0a0 = childVar_MultipleOr_qy0uft_a0d0a0_0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a0d0a0.getConcept().getConceptId()))) {
+                  if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_MultipleOr_qy0uft_a0d0a0.getConcept().getQualifiedName()))) {
                     return false;
                   }
                   {
@@ -398,7 +398,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                       {
                         SNode nodeToMatch_MultipleOr_qy0uft_a0a3a0a;
                         nodeToMatch_MultipleOr_qy0uft_a0a3a0a = childVar_MultipleOr_qy0uft_a0a3a0a;
-                        if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0a3a0a.getConcept().getConceptId()))) {
+                        if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_MultipleOr_qy0uft_a0a3a0a.getConcept().getQualifiedName()))) {
                           return false;
                         }
                       }

@@ -29,11 +29,11 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.DataInput;
@@ -41,9 +41,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * For each <code>SReference</code> with a "foreign" SNodeId creates a series of mappings
@@ -77,13 +75,13 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       protected void updateCollection(SModelReference modelRef, SReference sref, Collection<Pair<SNodeDescriptor, String>> collection) {
         SNode src = sref.getSourceNode();
         String role = sref.getRole();
-        SNodeDescriptor descriptor = SNodeDescriptor.fromModelReference(getSNodeName(src), src.getConcept().getId(), modelRef, src.getNodeId());
+        SNodeDescriptor descriptor = SNodeDescriptor.fromModelReference(getSNodeName(src), src.getConcept().getQualifiedName(), modelRef, src.getNodeId());
         collection.add(new Pair<SNodeDescriptor, String>(descriptor, role));
       }
 
       @Override
       protected void getObjectsToIndex(SModel sModel, Consumer<SReference> consumer) {
-        for (SNode sNode : new NodesIterable(sModel)) {
+        for (SNode sNode : SNodeUtil.getDescendants(sModel)) {
           for (SReference sref : sNode.getReferences()) {
             consumer.consume(sref);
           }

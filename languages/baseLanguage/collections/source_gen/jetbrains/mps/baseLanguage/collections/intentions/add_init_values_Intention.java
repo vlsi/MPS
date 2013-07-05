@@ -55,7 +55,7 @@ public class add_init_values_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).count() == 0 && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isEmpty() && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
   }
 
   public SNodeReference getIntentionNodeReference() {

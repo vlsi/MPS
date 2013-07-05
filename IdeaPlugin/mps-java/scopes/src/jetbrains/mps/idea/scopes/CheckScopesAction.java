@@ -66,7 +66,7 @@ public class CheckScopesAction extends AnAction {
 
         SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
         for (SNode root : descriptor.getRootNodes()) {
-          if (LanguageHierarchyCache.isAssignable(root.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          if (LanguageHierarchyCache.isAssignable(root.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
             PsiClass clazz = getPsiClass(myProject, root);
             if (clazz == null) {
               LOG.warn("PsiClass is null for root node: " + root);

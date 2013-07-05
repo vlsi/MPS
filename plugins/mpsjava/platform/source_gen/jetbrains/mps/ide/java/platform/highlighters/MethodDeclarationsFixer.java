@@ -213,7 +213,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         myMethodDeclsToCheckedMethodCalls.put(newTargetPointer, nodeSet);
       }
       nodeSet.add(methodCallPointer);
-      Pair<String, String> key = new Pair<String, String>(newTarget.getConcept().getConceptId(), methodName);
+      Pair<String, String> key = new Pair<String, String>(newTarget.getConcept().getQualifiedName(), methodName);
       Set<SNodeReference> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
       if (nodesByNameAndConcept == null) {
         nodesByNameAndConcept = new HashSet<SNodeReference>();
@@ -330,7 +330,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodeReference> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getConceptId(), method.getName()));
+    Set<SNodeReference> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getQualifiedName(), method.getName()));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }

@@ -43,7 +43,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       return;
     }
 
-    if (!((int) ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).count() == 0 || (int) ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).isEmpty() || (int) ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(creator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1216200944338", null, errorTarget);
@@ -127,7 +127,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

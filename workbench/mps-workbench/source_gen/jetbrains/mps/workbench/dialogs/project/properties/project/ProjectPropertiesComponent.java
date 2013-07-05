@@ -23,8 +23,6 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModuleP
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import com.intellij.ui.IdeBorderFactory;
-import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -97,55 +95,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     return panel;
   }
 
-  public JComponent createTestConfigList() {
-    final JBList list = new JBList(new ProjectPropertiesComponent.TestConfigListModel());
-
-    list.setCellRenderer(new TestConfigListCellRenderer());
-    list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-    ToolbarDecorator decorator = ToolbarDecorator.createDecorator(list);
-    decorator.setAddAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton button) {
-        TestConfigurationDialog dialog = new TestConfigurationDialog(myProject, null);
-        dialog.show();
-        BaseTestConfiguration config = dialog.getResult();
-        if (config == null) {
-          return;
-        }
-
-        ((ProjectPropertiesComponent.TestConfigListModel) list.getModel()).addTestConfig(config);
-      }
-    }).setRemoveAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton button) {
-        ((ProjectPropertiesComponent.TestConfigListModel) list.getModel()).removeTestConfig(list.getSelectedValue());
-      }
-    }).disableUpAction().disableDownAction().setEditAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton button) {
-        Object value = list.getSelectedValue();
-        if (value == null) {
-          return;
-        }
-        TestConfigurationDialog dialog = new TestConfigurationDialog(myProject, (BaseTestConfiguration) value);
-        dialog.show();
-        BaseTestConfiguration config = dialog.getResult();
-        if (config == null) {
-          return;
-        }
-        ((ProjectPropertiesComponent.TestConfigListModel) list.getModel()).removeTestConfig(value);
-        ((ProjectPropertiesComponent.TestConfigListModel) list.getModel()).addTestConfig(config);
-      }
-    });
-    decorator.setPreferredSize(new Dimension(300, 150));
-
-    JPanel panel = decorator.createPanel();
-    panel.setBorder(IdeBorderFactory.createTitledBorder("Test Configurations", false));
-    return panel;
-  }
-
-
 
 
   @Override
@@ -158,7 +107,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     this.setLayout(new GridLayoutManager(rowCount, 1));
     this.setAutoscrolls(false);
     this.add(createProjectModulesList(), getGridConstraints(rowIndex++, true));
-    this.add(createTestConfigList(), getGridConstraints(rowIndex++, true));
     for (ProjectPrefsExtraPanel extraPanel : myExtraPanels) {
       this.add(extraPanel.getComponent(), getGridConstraints(rowIndex++, false));
     }
@@ -199,7 +147,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
 
 
-
   private class PathsListModel extends AbstractListModel {
     public PathsListModel() {
     }
@@ -229,43 +176,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     public void removePath(Object path) {
       int i = myProperties.getModules().indexOf(path);
       myProperties.getModules().remove(path);
-      fireIntervalRemoved(this, i, i);
-    }
-  }
-
-
-
-  private class TestConfigListModel extends AbstractListModel {
-    public TestConfigListModel() {
-    }
-
-
-
-    @Override
-    public int getSize() {
-      return myProperties.getTestConfigurations().size();
-    }
-
-    @Override
-    public Object getElementAt(int i) {
-      return myProperties.getTestConfigurations().get(i);
-    }
-
-    public List<BaseTestConfiguration> getTestConfigs() {
-      return myProperties.getTestConfigurations();
-    }
-
-    public void addTestConfig(BaseTestConfiguration testConfiguration) {
-      myProperties.getTestConfigurations().add(testConfiguration);
-      myProperties.testConfigsChanged();
-      int i = myProperties.getTestConfigurations().indexOf(testConfiguration);
-      fireIntervalAdded(this, i, i);
-    }
-
-    public void removeTestConfig(Object testConfig) {
-      int i = myProperties.getTestConfigurations().indexOf(testConfig);
-      myProperties.getTestConfigurations().remove(testConfig);
-      myProperties.testConfigsChanged();
       fireIntervalRemoved(this, i, i);
     }
   }

@@ -19,14 +19,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public abstract class BaseConceptDescriptor implements ConceptDescriptor {
-  private Set<String> propertyNamesSet;
-  private Set<String> referenceNamesSet;
-  private Set<String> childrenNamesSet;
-
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
     return getAncestorsNames().contains(toConceptFqName);
@@ -34,26 +29,17 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
 
   @Override
   public boolean hasProperty(String name) {
-    if (propertyNamesSet == null) {
-      propertyNamesSet = new HashSet<String>(getPropertyNames());
-    }
-    return propertyNamesSet.contains(name);
+    return getPropertyNames().contains(name);
   }
 
   @Override
   public boolean hasReference(String name) {
-    if (referenceNamesSet == null) {
-      referenceNamesSet = new HashSet<String>(getReferenceNames());
-    }
-    return referenceNamesSet.contains(name);
+    return getReferenceNames().contains(name);
   }
 
   @Override
   public boolean hasChild(String name) {
-    if (childrenNamesSet == null) {
-      childrenNamesSet = new HashSet<String>(getReferenceNames());
-    }
-    return childrenNamesSet.contains(name);
+    return getChildrenNames().contains(name);
   }
 
   @Override

@@ -30,7 +30,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
         {
           SNode matchingNode_q6q799_a1a = SLinkOperations.getTarget(classifierType, "classifier", false);
           if (matchingNode_q6q799_a1a != null) {
-            matches_q6q799_a1a = SModelUtil_new.isAssignableConcept(matchingNode_q6q799_a1a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+            matches_q6q799_a1a = SModelUtil_new.isAssignableConcept(matchingNode_q6q799_a1a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
           }
         }
         if (matches_q6q799_a1a) {
@@ -47,7 +47,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

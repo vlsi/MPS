@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -26,8 +25,8 @@ import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -39,12 +38,14 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
 
-  protected  boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name){
+  @Override
+  protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
     node.hasProperty(name); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
     String property_internal = node.getProperty(name);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
+  @Override
   public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
     if (MPSCore.getInstance().isMergeDriverMode()) return node.getProperty(name);
 
@@ -54,7 +55,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getProperty(name);
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(
+          name);
       Object getterValue = descriptor.getValue(node, GlobalScope.getInstance());
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
@@ -65,6 +67,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     }
   }
 
+  @Override
   public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String propertyValue) {
     Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> threadSet = ourPropertySettersInProgress.get();
     Pair<org.jetbrains.mps.openapi.model.SNode, String> pair = new Pair<org.jetbrains.mps.openapi.model.SNode, String>(node, propertyName);
@@ -75,7 +78,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       return;
     }
 
-    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getProperty(propertyName);
+    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(
+        propertyName);
     threadSet.add(pair);
     try {
       descriptor.setValue(node, propertyValue, GlobalScope.getInstance());
@@ -86,6 +90,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     }
   }
 
+  @Override
   public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     org.jetbrains.mps.openapi.model.SModel model = node.getModel();
     if (model == null || !((jetbrains.mps.smodel.SModelInternal) model).canFireEvent()) {
@@ -102,7 +107,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       return;
     }
 
-    ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId()).getReference(role);
+    ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getReference(
+        role);
 
     if (descriptor instanceof IllegalReferenceConstraintsDescriptor) {
       node.setReferenceTarget(role, target);
@@ -123,6 +129,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
 
+  @Override
   public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry.Not yet used
     node.setReference(role, reference);

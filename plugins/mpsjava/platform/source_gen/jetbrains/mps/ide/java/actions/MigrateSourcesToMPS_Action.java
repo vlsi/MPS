@@ -13,15 +13,22 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.project.MPSProject;
+import java.util.List;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ide.java.newparser.JavaConvertUtil;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import javax.swing.JOptionPane;
-import java.awt.Frame;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -31,7 +38,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
   public MigrateSourcesToMPS_Action() {
     super("Migrate Sources to MPS", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -88,21 +95,31 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
         return;
       }
 
-      DirParser dirParser = new DirParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+      List<IFile> sourcePaths = ListSequence.fromList(new ArrayList<IFile>());
       for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
-        dirParser.addDirectory(FileSystem.getInstance().getFileByPath(path));
+        ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
       }
-      try {
-        dirParser.parseDirs();
-      } catch (JavaParseException e) {
-        // TODO think how to handle these 
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), e.getMessage(), "Error while importing java code", JOptionPane.ERROR_MESSAGE);
-        throw new RuntimeException(e);
-      }
+
+      final MultipleFilesParser parser = new MultipleFilesParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+      final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(sourcePaths)).toListSequence();
+
+      ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
+        public void run(@NotNull ProgressIndicator indicator) {
+
+          try {
+            parser.convertToMps(filesToParse, new ProgressMonitorAdapter(indicator));
+
+          } catch (JavaParseException e) {
+            throw new RuntimeException(e);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        }
+      });
 
       moduleDescr.getSourcePaths().clear();
 
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      // <node> 
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);

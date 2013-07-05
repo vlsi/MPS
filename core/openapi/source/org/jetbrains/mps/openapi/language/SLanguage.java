@@ -19,21 +19,21 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
- * Represents a language
+ * Represents a deployed language
  */
 public interface SLanguage {
 
   /**
-   * The visual representation to show to the user
+   * The namespace of the language.
    */
-  String getPresentation();
-
   String getQualifiedName();
 
   /**
    * All concepts defined in the language
    */
   Iterable<SAbstractConcept> getConcepts();
+
+  Iterable<SEnumeration> getEnumerations();
 
   /**
    * All the runtime dependencies that a language needs after generation to run the generated code.
@@ -46,5 +46,5 @@ public interface SLanguage {
    * the definition of a concept for a used language element.
    * It may be null.
    */
-  SModule getModule();
+  SModule getSourceModule();
 }

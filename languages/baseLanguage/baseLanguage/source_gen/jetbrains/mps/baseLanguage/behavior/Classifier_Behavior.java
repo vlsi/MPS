@@ -141,7 +141,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(thisNode)).count() > 0;
+    return Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(thisNode)).isNotEmpty();
   }
 
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
@@ -722,7 +722,7 @@ public class Classifier_Behavior {
       {
         SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
         nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getConceptId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getQualifiedName()))) {
           return false;
         }
         {
