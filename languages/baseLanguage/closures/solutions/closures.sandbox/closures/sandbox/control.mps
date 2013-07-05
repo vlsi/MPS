@@ -290,7 +290,7 @@
                                 <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6995834834764375807" nodeInfo="nn">
                                   <property name="value" nameId="tpee.1068580320021" value="0" />
                                 </node>
-                                <node role="array" roleId="tpee.1173175590490" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6995834834764375792" nodeInfo="nn">
+                                <node role="array" roleId="tpee.1173175590490" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118614124" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
                                 </node>
                               </node>
@@ -303,7 +303,7 @@
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="613856071337212533" nodeInfo="nn">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dwait()%cvoid" resolveInfo="wait" />
                                   </node>
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6995834834764375721" nodeInfo="nn">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118646208" nodeInfo="nn">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
                                   </node>
                                 </node>
@@ -341,7 +341,7 @@
                           </node>
                         </node>
                       </node>
-                      <node role="actualParameter" roleId="tp2c.1229629947873" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="613856071337217134" nodeInfo="nn">
+                      <node role="actualParameter" roleId="tp2c.1229629947873" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118646431" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
                       </node>
                     </node>
@@ -350,7 +350,7 @@
               </node>
             </node>
           </node>
-          <node role="actualParameter" roleId="tp2c.1229629947873" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="613856071337217128" nodeInfo="nn">
+          <node role="actualParameter" roleId="tp2c.1229629947873" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118598338" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
           </node>
         </node>
@@ -384,7 +384,7 @@
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="613856071337212592" nodeInfo="nn">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dnotifyAll()%cvoid" resolveInfo="notifyAll" />
                           </node>
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6995834834764375726" nodeInfo="nn">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118657213" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
                           </node>
                         </node>
@@ -409,14 +409,14 @@
                       <node role="index" roleId="tpee.1173175577737" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6995834834764375842" nodeInfo="nn">
                         <property name="value" nameId="tpee.1068580320021" value="0" />
                       </node>
-                      <node role="array" roleId="tpee.1173175590490" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6995834834764375835" nodeInfo="nn">
+                      <node role="array" roleId="tpee.1173175590490" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118641427" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node role="actualParameter" roleId="tp2c.1229629947873" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="613856071337217176" nodeInfo="nn">
+              <node role="actualParameter" roleId="tp2c.1229629947873" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118641390" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="613856071337217113" resolveInfo="LOCK" />
               </node>
             </node>

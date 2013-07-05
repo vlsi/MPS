@@ -71,10 +71,10 @@
               <node role="componentType" roleId="cx9y.1238852204892" type="tpee.StringType" typeId="tpee.1225271177708" id="3354566406403963755" nodeInfo="in" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="3354566406403963756" nodeInfo="nn">
-              <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="3354566406403963757" nodeInfo="nn">
+              <node role="component" roleId="cx9y.1238853845806" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118649813" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970299109" resolveInfo="MESSAGE" />
               </node>
-              <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="3354566406403963758" nodeInfo="nn">
+              <node role="component" roleId="cx9y.1238853845806" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118652104" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970299109" resolveInfo="MESSAGE" />
               </node>
             </node>

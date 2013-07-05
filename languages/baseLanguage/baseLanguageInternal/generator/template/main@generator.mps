@@ -210,7 +210,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="99767819676012196" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp68.99767819676010097" resolveInfo="ExtractToConstantRefExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="99767819676012213" nodeInfo="ng">
-        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="99767819676012216" nodeInfo="nn">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118641278" nodeInfo="nn">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="99767819676012223" nodeInfo="nn">
             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
             <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="99767819676012224" nodeInfo="nn">

@@ -833,7 +833,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6896005762093561415" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6896005762093561416" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="6896005762093561417" nodeInfo="nn">
-            <node role="array" roleId="tpee.1173175590490" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="6896005762093561444" nodeInfo="nn">
+            <node role="array" roleId="tpee.1173175590490" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118614169" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6896005762093561423" resolveInfo="hexDigit" />
             </node>
             <node role="index" roleId="tpee.1173175577737" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6896005762093561419" nodeInfo="nn">

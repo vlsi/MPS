@@ -868,7 +868,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9118878263582143859" resolveInfo="newReference" />
                       </node>
                       <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9118878263582143937" nodeInfo="nn">
-                        <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="9118878263582143939" nodeInfo="nn">
+                        <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118641304" nodeInfo="nn">
                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143940" nodeInfo="ng">
                             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
                             <property name="label" nameId="tp3r.6489343236075007666" value="LocalStaticFieldReference" />

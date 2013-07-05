@@ -138,7 +138,7 @@
             <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
             <link role="classifier" roleId="tpee.1170346070688" targetNodeId="joql.~MockProjectEx" resolveInfo="MockProjectEx" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="joql.~MockProjectEx%d&lt;init&gt;(com%dintellij%dopenapi%dDisposable)" resolveInfo="MockProjectEx" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="7314351270975557827" nodeInfo="nn">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118645336" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975557776" resolveInfo="myParentDisposable" />
             </node>
             <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7314351270975557786" nodeInfo="igu">
@@ -261,7 +261,7 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7314351270975557831" nodeInfo="nn">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7314351270975557832" nodeInfo="nn">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jrby.~MPSProject%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject)" resolveInfo="MPSProject" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="7314351270975557833" nodeInfo="nn">
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118645317" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975557780" resolveInfo="ourProject" />
           </node>
         </node>

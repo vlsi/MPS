@@ -9342,7 +9342,7 @@
                   </node>
                 </node>
               </node>
-              <node role="instance" roleId="tp68.1174317636233" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4237952634722647477" nodeInfo="nn">
+              <node role="instance" roleId="tp68.1174317636233" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120196149" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="247710080512637651" resolveInfo="tuple" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4237952634722647478" nodeInfo="nn">
@@ -9507,7 +9507,7 @@
                   </node>
                 </node>
               </node>
-              <node role="instance" roleId="tp68.1174317636233" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4237952634722647550" nodeInfo="nn">
+              <node role="instance" roleId="tp68.1174317636233" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120200385" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="247710080512637651" resolveInfo="tuple" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4237952634722647563" nodeInfo="nn">
@@ -10051,7 +10051,7 @@
                 </node>
               </node>
               <node role="returnType" roleId="tp68.1174313653259" type="tpee.VoidType" typeId="tpee.1068581517677" id="4237952634722665846" nodeInfo="in" />
-              <node role="instance" roleId="tp68.1174317636233" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4237952634722665847" nodeInfo="nn">
+              <node role="instance" roleId="tp68.1174317636233" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120243795" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="247710080512637651" resolveInfo="tuple" />
               </node>
             </node>

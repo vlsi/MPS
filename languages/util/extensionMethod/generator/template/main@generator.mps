@@ -68,7 +68,7 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5431167396203696827" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uigu.1973189701690850247" resolveInfo="ExtensionStaticFieldReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5431167396203698383" nodeInfo="ng">
-        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="5431167396203698387" nodeInfo="nn">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118638363" nodeInfo="nn">
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5431167396203698388" nodeInfo="nn">
             <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
             <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="5431167396203698389" nodeInfo="nn">

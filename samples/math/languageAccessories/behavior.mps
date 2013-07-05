@@ -1678,7 +1678,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2705856473428697973" resolveInfo="node" />
                     </node>
                   </node>
-                  <node role="array" roleId="tpee.1173175590490" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2705856473428697972" nodeInfo="nn">
+                  <node role="array" roleId="tpee.1173175590490" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118614143" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2705856473428695571" resolveInfo="operations" />
                   </node>
                 </node>

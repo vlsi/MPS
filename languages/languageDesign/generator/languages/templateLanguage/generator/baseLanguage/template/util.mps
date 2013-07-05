@@ -132,7 +132,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_TransientObjectAccess" typeId="tpf3.1217894033795" id="8285036680620283533" nodeInfo="nn">
                 <node role="userKey" roleId="tpf3.1217890689512" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="8285036680620283534" nodeInfo="nn">
-                  <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8285036680620283537" nodeInfo="nn">
+                  <node role="component" roleId="cx9y.1238853845806" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118614119" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8285036680620277770" resolveInfo="KEY" />
                   </node>
                   <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8285036680620283536" nodeInfo="nn">
@@ -231,7 +231,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_TransientObjectAccess" typeId="tpf3.1217894033795" id="8285036680620283585" nodeInfo="nn">
                 <node role="userKey" roleId="tpf3.1217890689512" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="8285036680620283586" nodeInfo="nn">
-                  <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8285036680620283590" nodeInfo="nn">
+                  <node role="component" roleId="cx9y.1238853845806" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118646273" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8285036680620277770" resolveInfo="KEY" />
                   </node>
                   <node role="component" roleId="cx9y.1238853845806" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8285036680620283588" nodeInfo="nn">

@@ -1015,7 +1015,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5041115067675810144" nodeInfo="nn">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8d8y.~Disposer" resolveInfo="Disposer" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8d8y.~Disposer%ddispose(com%dintellij%dopenapi%dDisposable)%cvoid" resolveInfo="dispose" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810145" nodeInfo="nn">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120262996" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810062" resolveInfo="myEditor" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810146" nodeInfo="nn">
                 <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -1447,7 +1447,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5041115067675810449" nodeInfo="nn">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6mw5.~XmlSerializer" resolveInfo="XmlSerializer" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6mw5.~XmlSerializer%dserialize(java%dlang%dObject)%corg%djdom%dElement" resolveInfo="serialize" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810450" nodeInfo="nn">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120209537" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810574" resolveInfo="myState" />
                 </node>
               </node>
@@ -1489,7 +1489,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675810466" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675810467" nodeInfo="nn">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810468" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120223545" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810581" resolveInfo="myTemplate" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810469" nodeInfo="nn">
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -1618,7 +1618,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5041115067675810510" nodeInfo="nn">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6mw5.~XmlSerializer" resolveInfo="XmlSerializer" />
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6mw5.~XmlSerializer%ddeserializeInto(java%dlang%dObject,org%djdom%dElement)%cvoid" resolveInfo="deserializeInto" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810511" nodeInfo="nn">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120203284" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810574" resolveInfo="myState" />
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5041115067675810512" nodeInfo="nn">
@@ -1684,7 +1684,7 @@
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="9132506094562633461" nodeInfo="sn">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675810536" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675810537" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810538" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120223412" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810581" resolveInfo="myTemplate" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810539" nodeInfo="nn">
                         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -1821,7 +1821,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5041115067675810604" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675810605" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675810606" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810607" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120180082" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810574" resolveInfo="myState" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5041115067675810608" nodeInfo="nn">
@@ -1861,7 +1861,7 @@
             </node>
             <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5041115067675810625" nodeInfo="ng">
               <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675810626" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810627" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120243661" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810581" resolveInfo="myTemplate" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810628" nodeInfo="nn">
                     <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -1968,7 +1968,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810661" resolveInfo="value" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675810675" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810676" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120251529" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810574" resolveInfo="myState" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5041115067675810677" nodeInfo="nn">
@@ -2242,7 +2242,7 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5041115067675810805" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5041115067675810309" resolveInfo="clone" />
                     </node>
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810806" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120331995" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810574" resolveInfo="myState" />
                     </node>
                   </node>
@@ -2261,7 +2261,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5041115067675810811" nodeInfo="nn">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5041115067675810812" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675810813" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810814" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120198733" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810581" resolveInfo="myTemplate" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810815" nodeInfo="nn">
                         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -2479,7 +2479,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675810320" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5041115067675810321" nodeInfo="nn">
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675810322" nodeInfo="nn">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810323" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120211212" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810282" resolveInfo="myPersistentProperty" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810324" nodeInfo="nn">
                         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -2531,7 +2531,7 @@
             </node>
             <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5041115067675810344" nodeInfo="nn">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5041115067675810345" nodeInfo="nn" />
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810346" nodeInfo="nn">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120352595" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810282" resolveInfo="myPersistentProperty" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810347" nodeInfo="nn">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -2612,7 +2612,7 @@
               <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5041115067675810383" nodeInfo="ng">
                 <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675810384" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5041115067675810385" nodeInfo="nn">
-                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675810386" nodeInfo="nn">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120307331" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675810282" resolveInfo="myPersistentProperty" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675810387" nodeInfo="nn">
                         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -3070,7 +3070,7 @@
     <property name="name" nameId="tpck.1169194664001" value="reduce_ConstructorParameterReference" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811033" nodeInfo="nn">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120211107" nodeInfo="nn">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5041115067675811034" nodeInfo="ng" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811035" nodeInfo="nn">
         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -3099,7 +3099,7 @@
     <property name="name" nameId="tpck.1169194664001" value="reduce_ConstructorParameterReferenceInEditor" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066561" resolveInfo="TemplateParameterReference" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811046" nodeInfo="nn">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120218370" nodeInfo="nn">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5041115067675811047" nodeInfo="ng" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811048" nodeInfo="nn">
         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -3463,7 +3463,7 @@
               </node>
             </node>
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5041115067675811176" nodeInfo="nn">
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811186" nodeInfo="nn">
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120229295" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675811127" resolveInfo="myEditor" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811187" nodeInfo="nn">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -3519,7 +3519,7 @@
               </node>
             </node>
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5041115067675811203" nodeInfo="nn">
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811213" nodeInfo="nn">
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120289894" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675811124" resolveInfo="myField" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811214" nodeInfo="nn">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -3766,7 +3766,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5041115067675811277" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalNewExpression" typeId="tp68.1173996401517" id="5041115067675811278" nodeInfo="nn">
               <property name="fqClassName" nameId="tp68.1173996588177" value="PersistentConfigurationTemplate" />
-              <node role="actualArgument" roleId="tp68.319021450862590135" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811279" nodeInfo="nn">
+              <node role="actualArgument" roleId="tp68.319021450862590135" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120307405" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675811262" resolveInfo="myTemplate" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="5041115067675811280" nodeInfo="nn">
                   <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="5041115067675811281" nodeInfo="nn">
@@ -3890,7 +3890,7 @@
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5041115067675811337" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811338" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120333323" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675811265" resolveInfo="myConfiguration" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811339" nodeInfo="nn">
                       <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -3949,7 +3949,7 @@
                     </node>
                   </node>
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811365" nodeInfo="nn">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120264968" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675811262" resolveInfo="myTemplate" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="5041115067675811366" nodeInfo="nn">
                     <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="5041115067675811367" nodeInfo="nn">
@@ -4021,7 +4021,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="203908296139451872" nodeInfo="nn">
             <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="203908296139451876" nodeInfo="nn">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="203908296139451879" nodeInfo="nn" />
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="203908296139451875" nodeInfo="nn">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120315229" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="203908296139451854" resolveInfo="myEditorEx" />
               </node>
             </node>
@@ -4031,7 +4031,7 @@
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073245167" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5041115067675811314" resolveInfo="getEditor" />
                   </node>
-                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="203908296139451883" nodeInfo="nn">
+                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120295914" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="203908296139451854" resolveInfo="myEditorEx" />
                   </node>
                 </node>
@@ -4039,7 +4039,7 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="203908296139451899" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="203908296139451900" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120294155" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="203908296139451854" resolveInfo="myEditorEx" />
             </node>
           </node>
@@ -4145,7 +4145,7 @@
                   </node>
                 </node>
               </node>
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811429" nodeInfo="nn">
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120250071" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5041115067675811386" resolveInfo="myField" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811430" nodeInfo="nn">
                   <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -4322,7 +4322,7 @@
     <property name="name" nameId="tpck.1169194664001" value="reduce_EditorExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066588" resolveInfo="EditorExpression" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811491" nodeInfo="nn">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120323976" nodeInfo="nn">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5041115067675811492" nodeInfo="ng" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811493" nodeInfo="nn">
         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
@@ -4526,7 +4526,7 @@
     <property name="name" nameId="tpck.1169194664001" value="reduce_EditorPropertyReference" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="fb9u.946964771156066611" resolveInfo="EditorPropertyReference" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5041115067675811567" nodeInfo="nn">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120323656" nodeInfo="nn">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="5041115067675811568" nodeInfo="ng" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="5041115067675811569" nodeInfo="nn">
         <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />

@@ -318,7 +318,7 @@
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8083368042256392853" nodeInfo="nn">
                   <property name="value" nameId="tpee.5279705229678483899" value="1.0f" />
                 </node>
-                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="8083368042256392831" nodeInfo="nn">
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118641266" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8083368042256392478" resolveInfo="constant" />
                 </node>
               </node>
