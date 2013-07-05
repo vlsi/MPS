@@ -53,7 +53,7 @@ public class CheckProjectStructure {
 
   @AfterClass
   public static void cleanUp() {
-    ActiveEnvironment.get().disposeProject(ourProject);
+//    ActiveEnvironment.get().disposeProject(ourProject);
 
     HELPER.printStatistic();
   }
