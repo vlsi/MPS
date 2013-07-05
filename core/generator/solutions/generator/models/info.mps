@@ -217,7 +217,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2243001920226359811" nodeInfo="in">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3736427613779562251" resolveInfo="GeneratorPathsComponent.MyGeneratedCacheInfo" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2243001920226359812" nodeInfo="nn">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073294407" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3736427613779562295" resolveInfo="lookupCacheInfo" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2243001920226359836" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2243001920226359804" resolveInfo="cachesDir" />

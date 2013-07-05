@@ -1338,7 +1338,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970299784" resolveInfo="mySuccessExpected" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllSetElementsOperation" typeId="tp2q.1226592602759" id="8128243960970299831" nodeInfo="nn">
-              <node role="argument" roleId="tp2q.1226592623721" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8552960886532766021" nodeInfo="nn">
+              <node role="argument" roleId="tp2q.1226592623721" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073295229" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8552960886532766006" resolveInfo="selectNames" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8552960886532766022" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970299774" resolveInfo="success" />
@@ -1353,7 +1353,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970299790" resolveInfo="myFailExpected" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllSetElementsOperation" typeId="tp2q.1226592602759" id="8128243960970299834" nodeInfo="nn">
-              <node role="argument" roleId="tp2q.1226592623721" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8552960886532766023" nodeInfo="nn">
+              <node role="argument" roleId="tp2q.1226592623721" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073220125" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8552960886532766006" resolveInfo="selectNames" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8552960886532766024" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8128243960970299779" resolveInfo="failed" />

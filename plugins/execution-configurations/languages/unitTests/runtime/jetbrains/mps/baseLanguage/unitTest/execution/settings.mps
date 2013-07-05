@@ -4952,7 +4952,7 @@
                                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2774990161568307904" nodeInfo="in">
                                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
                                 </node>
-                                <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2774990161568307905" nodeInfo="nn">
+                                <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412071521376" nodeInfo="nn">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6062668769034855288" resolveInfo="stringToPointer" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2774990161568307906" nodeInfo="nn">
                                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="6062668769034855388" resolveInfo="pointerString" />
@@ -5147,7 +5147,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6062668769034855472" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6062668769034855473" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="caseNodeWrapper" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="6062668769034855475" nodeInfo="nn">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412071498323" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6062668769034855552" resolveInfo="getTestCase" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6062668769034855476" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6062668769034855454" resolveInfo="caseName" />

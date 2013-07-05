@@ -3739,7 +3739,7 @@
           <property name="name" nameId="tpck.1169194664001" value="Concept" />
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1206099011161" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1206099012398" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412071508277" nodeInfo="nn">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1178287490309" resolveInfo="equate_inputNodeConcept" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1206099012399" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1178287490310" resolveInfo="op" />
@@ -3909,7 +3909,7 @@
                   </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1222429361005" nodeInfo="nn">
                     <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1222431831971" nodeInfo="ng">
-                      <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1222431831972" nodeInfo="nn">
+                      <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412071460900" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1222429456639" resolveInfo="leastCommonSuperconcept" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1222431835832" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1222431769040" resolveInfo="concepts" />

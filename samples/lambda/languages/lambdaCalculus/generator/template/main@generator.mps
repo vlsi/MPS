@@ -717,7 +717,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="391739495267627087" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5066394162984555688" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1079359253376" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="5066394162984555687" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412071498427" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="391739495267627118" resolveInfo="eval" />
                 </node>
               </node>

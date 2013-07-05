@@ -78,7 +78,7 @@
                       <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8250748122682269358" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8250748122682269352" resolveInfo="res" />
                       </node>
-                      <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8250748122682269371" nodeInfo="nn">
+                      <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073245434" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8250748122682269364" resolveInfo="getName" />
                       </node>
                     </node>

@@ -119,7 +119,7 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6hd6.~FindUsagesOptions" resolveInfo="FindUsagesOptions" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="28859145781927666" nodeInfo="nn" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="28859145781927667" nodeInfo="nn">
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073262827" nodeInfo="nn">
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="28859145781927752" resolveInfo="createDefaultSearchOptions" />
       </node>
     </node>
@@ -192,7 +192,7 @@
                 <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5345717287656008526" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="28859145781927706" resolveInfo="finders" />
                 </node>
-                <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5345717287656008527" nodeInfo="nn">
+                <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073271094" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5345717287655999198" resolveInfo="createDefaultFindersOption" />
                 </node>
                 <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5345717287656008512" nodeInfo="nn">
@@ -711,7 +711,7 @@
                   <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="28859145781927900" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="28859145781927664" resolveInfo="myDefaultOptions" />
                   </node>
-                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="28859145781927901" nodeInfo="nn">
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073284226" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="28859145781927752" resolveInfo="createDefaultSearchOptions" />
                   </node>
                 </node>
