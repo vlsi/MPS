@@ -14,7 +14,7 @@
     <scopeInfo nodeId="7865129668867016164" fileName="QueriesGenerated.java" startLine="110" startPosition="150" endLine="111" endPosition="30" />
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369584138">
-    <nodeInfo nodeId="8923957828369629349" fileName="QueriesGenerated.java" startLine="26" startPosition="152" endLine="27" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3130664751519218280" fileName="QueriesGenerated.java" startLine="26" startPosition="152" endLine="27" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4697196167065973044" fileName="QueriesGenerated.java" startLine="30" startPosition="152" endLine="31" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8923957828369629275" fileName="QueriesGenerated.java" startLine="26" startPosition="152" endLine="27" endPosition="189" />
     <scopeInfo nodeId="4697196167065973043" fileName="QueriesGenerated.java" startLine="30" startPosition="152" endLine="31" endPosition="178" />
