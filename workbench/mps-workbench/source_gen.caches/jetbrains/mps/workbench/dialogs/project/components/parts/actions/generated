@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="45nkiibrrontraj9kpym8wuamw84x00">
+<dependencies version="2" modelHash="-25px63h3kz1jjtqmr8852agvdno4xkr">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="-1azyd7gcsjvecc86bcpy6ze7dhf6r7t" />
@@ -7,7 +7,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListAddAction.java" />
   </source>
-  <source id="1560298786499490464" name="BaseAddAction" hash="-3z7mel5jnr34w95ap64huacxbn3rq0d">
+  <source id="1560298786499490464" name="BaseAddAction" hash="9c8p985v8km0nbmmihchthy152zg8r5">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseAddAction.java" />
@@ -16,7 +16,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TableAddAction.java" />
   </source>
-  <source id="1560298786499493338" name="ListRemoveAction" hash="7fkovoby58i4vn318dvn8q57x811vq0">
+  <source id="1560298786499493338" name="ListRemoveAction" hash="azrp5emn4pzsj4a8jamtfk2yok0vtxm">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListRemoveAction.java" />
@@ -25,7 +25,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseValidatedAction.java" />
   </source>
-  <source id="1560298786499495342" name="TableRemoveAction" hash="e1ikmvxojk890l6mpu32q29k73txo23">
+  <source id="1560298786499495342" name="TableRemoveAction" hash="-66kpn9g7341uwpbvgemw3451co8z1gm">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TableRemoveAction.java" />

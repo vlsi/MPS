@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-84vnvfitknf9ddhc7rkcucujm5mqj7e">
+<dependencies version="2" modelHash="8v3b18kkcohjww7w5l1mcup4p63ati">
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5wztusfdyr282w5guu9yrxp8h1a5nsj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
   <dep model="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" hash="-4lb9gmvoqfjeoiazsba2i6msyptbcwu" />
   <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" hash="y2q5cddsqs5syau1vemum1w6ertem9" />
   <common hash="-1ful7cz1cpwgd6x97pnheoa6lkb4ame" />
-  <source id="1197668662570" name="QueriesUtil" hash="-27cdwvm6nx3k0qzrpw2j195ekgf9uq2">
+  <source id="1197668662570" name="QueriesUtil" hash="-34661e1cgumnqxs7e9o4rx5pebvocpn">
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" />

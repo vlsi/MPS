@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aeqx7364jzw289es3e4bye5scjao2ox">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="3ufygskomwsbyhgecoht1jp34ipmj9l" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-4lgmeq738nky6w80atbecag8odytj68" />
+<dependencies version="2" modelHash="-a0hpoyuvagciwvg54i6a9b6uumro2d6">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-1up6ckhm3votvdk6jog8x46oncgcahr" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="71eiz5g3x4yswp9gryi6l40xw36apmq" />
   <common hash="d678ncf1lffvybgb77me6zmhid0i2bi" />
-  <source id="3197704031717961581" name="ActionsTest" hash="-26t2j8e8oh6utxffb1f52zf18jkd3b4" dependsOnNodes="true">
+  <source id="3197704031717961581" name="ActionsTest" hash="8gq7yc636gk6il99zcchstyk8tk3gfj" dependsOnNodes="true">
     <dep root="4484885613884465103" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />

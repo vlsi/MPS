@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="53yjr9bwypo0swthvq1gismv562jn2t">
+<dependencies version="2" modelHash="8yqub6wjf2t4hum38zxur9ryhn986zu">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
-  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-cyopts4w539q019q8n3m1z90an8epkw" />
+  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-eb3z26yxypwyt0zjq1x7nundirlrbpb" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-44t3toybnb9211axv4pm9g9qi6cvxj" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-ckaodtt4l5se5ht7gribpngasvig6zx" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-7awaq033a3kgl89pbjkeqgdywogljba" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-bboisjogq0poae0rvab5r5j1y6xf9uy" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-8wx90atsrz6mr5u7x3yy86b7dkgggv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="clepnxheclaota61nm2kcvt8qnf6uu7" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5wztusfdyr282w5guu9yrxp8h1a5nsj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)" hash="-cbdivihhvtm75ydfikw7dr34cxn16iy" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
+  <dep model="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)" hash="9yc4gh9174ci66g9778fzjmwbjnbk4z" />
   <dep model="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" hash="-abxwf0dcv658xc7ij3l8m9wp54tz4mc" />
   <dep model="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)" hash="brt4wzo3hmlqvpj8pj4emciiukywxnk" />
   <dep model="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" hash="-cqkkqklio7faxa3jajk2dx24g1xf39y" />
-  <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="-54n7ge7yti7m38k8pt9lxg03kwyhoc" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-9mw75b7w8pjr90vzi0xtbc52vji9hxt" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-e4b90lt6abspjittb5q36698hy8rd95" />
+  <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="-9990hbnvw4nye5wygfn9wugosqsb4yd" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-2r27ofdt48zjgzurzbv2dgmx5tzp8v7" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="-3r7ca1q63cdv3u81f1pd3766ud7u7h">
     <dep root="1189697446192" />
     <dep root="1189763875182" />
@@ -64,13 +64,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1189697446192" name="OldRefactoringClass" hash="2b0nwzk2p7u0tw6b24etzcndt7z0etu">
+  <source id="1189697446192" name="OldRefactoringClass" hash="-1uhopv1a799vc9cy3wjprd3pmgrm4md">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1189763875182" name="Assignment_to_put" hash="-dvitd2hb8pleqpwb4jp9kcs4traodk3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1189764622534" name="ArgumentReference_to_get" hash="1shrr6s2k1y5i3fbd9k21h2b74r4sy4">
+  <source id="1189764622534" name="ArgumentReference_to_get" hash="4qx40wtcllbvg0t0ishe1k3xpta9tn4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1197382724363" name="reduce_UpdateModelByDefaultOperation" hash="-5o99imd8fpq041w3ktcoa9okhoiov7u">
@@ -130,7 +130,7 @@
   <source id="478744034994708493" name="operations" hash="-eo7zhdrq24duc3lk7is7gtfbvhplxjv">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="478744034994714389" name="deprecated" hash="-1650dzsumy2hgc0r3aqau93bmdryrhg">
+  <source id="478744034994714389" name="deprecated" hash="-a8npe93kcsjtxxmxm0bi1uzxz6iv7w1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="478744034994714390" name="environment" hash="-4s0uh04apz1ommjzhwif5wq0df0zftf">
@@ -139,7 +139,7 @@
   <source id="478744034994714408" name="updateOperations" hash="6uz01golj2n79i5cl0t4aghhelb21bn">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="478744034994714482" name="RefactoringClass" hash="-3ckq0g23lulvgizwazrg82bp5u0a5i4">
+  <source id="478744034994714482" name="RefactoringClass" hash="-9gt53fwlqos8h1iwaglqblfrzokimlb">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="478744034994715795" name="refactoring" hash="aex487lm1usr80cq892x8td0non6xu4">

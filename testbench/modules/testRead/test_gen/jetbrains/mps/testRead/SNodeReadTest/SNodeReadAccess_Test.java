@@ -319,12 +319,12 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       this.addNodeById("8150353254540236423");
       this.addNodeById("8150353254540236549");
       this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("4195712261513781536"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+      SNode sNode = SNodeOperations.cast(this.getNodeById("4265636116363098320"), "jetbrains.mps.baseLanguage.structure.VariableReference");
 
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.setReference("localVariableDeclaration", SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("4195712261513781536"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")));
+      sNode.setReference("localVariableDeclaration", SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("4265636116363098320"), "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")));
 
       this.assertMethod("public void jetbrains.mps.smodel.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)", listener.getResults().o1);
     }
@@ -333,7 +333,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       this.addNodeById("8150353254540236423");
       this.addNodeById("8150353254540236549");
       this.addNodeById("4195712261513743410");
-      SNode sNode = SNodeOperations.cast(this.getNodeById("4195712261513781536"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+      SNode sNode = SNodeOperations.cast(this.getNodeById("4265636116363098320"), "jetbrains.mps.baseLanguage.structure.VariableReference");
 
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);

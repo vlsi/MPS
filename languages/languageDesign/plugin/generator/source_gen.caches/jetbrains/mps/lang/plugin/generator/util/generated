@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="142f2ice8pmmam2urmo19xbv7nek6x2">
+<dependencies version="2" modelHash="-9csqitl8i5qsovzyflf7ub0b5c6mzmc">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="-a4jujlrhwlpv7ei4h7lvcb89to4mrhi" />
-  <source id="5755638771828834259" name="PluginNameUtils" hash="-6tb0dm82wjge10d7592i4a2ngrldsf9">
+  <source id="5755638771828834259" name="PluginNameUtils" hash="-d15rx4n2wxsq3om192hlkzrnn07bcuf">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PluginNameUtils.java" />
   </source>

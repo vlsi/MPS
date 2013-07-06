@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ddex0nobw5bsy9u8ijh900m33qnrki6">
+<dependencies version="2" modelHash="-6r1sgzc06r6ndopcxjdxwrrxpdiddkq">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="-8plgydn289dfeoy2pzhskd5fa0ooipd" />
-  <source id="6374450524837363737" name="ValueDouble" hash="48d1gzcmj6wzhil5k39lcqanhqkl0am">
+  <source id="6374450524837363737" name="ValueDouble" hash="c1g5mo28bt2yhqio3wf78v3c6psb1ca">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValueDouble.java" />
   </source>
-  <source id="6374450524837363794" name="ValueQuantity" hash="bvva2zj2v3paxk1l2tlgpes4e2w23wm">
+  <source id="6374450524837363794" name="ValueQuantity" hash="-9mqyv8n8v6g91topn90g2p3s146q0b7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValueQuantity.java" />
   </source>
@@ -14,7 +14,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PostingRule_Formula.java" />
   </source>
-  <source id="6374450524837363871" name="MoneyAdapter" hash="b3dtxc6l86nxmkp0m0hj5r7e85e9ioe">
+  <source id="6374450524837363871" name="MoneyAdapter" hash="-3c6oeiz4hn39z41nr5zqbkuzk7wob0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyAdapter.java" />
   </source>
@@ -22,7 +22,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyAddOperation.java" />
   </source>
-  <source id="6374450524837363964" name="UsageDouble" hash="-2q4d5javija780h8zaqwyrcdvxh2s2w">
+  <source id="6374450524837363964" name="UsageDouble" hash="-cmqy73l4nrnniqj7c2zt3bqo1i1sl8n">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="UsageDouble.java" />
   </source>
@@ -33,7 +33,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyMultiplyOperation.java" />
   </source>
-  <source id="6374450524837364067" name="UsageQuantity" hash="qcdtgc2oahtelwjo9dcnmn63sfrgeu">
+  <source id="6374450524837364067" name="UsageQuantity" hash="-dxxq360ft2p9gam50k28tq2wm9o5kr4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="UsageQuantity.java" />
   </source>
@@ -44,7 +44,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="QuantityGreaterThanOperation.java" />
   </source>
-  <source id="6374450524837364180" name="FeeMoney" hash="7kvij6iglshcrz11c03canimuy87rr">
+  <source id="6374450524837364180" name="FeeMoney" hash="8j2d8juwo1uoex3c5g446ebbgi12fj3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FeeMoney.java" />
   </source>

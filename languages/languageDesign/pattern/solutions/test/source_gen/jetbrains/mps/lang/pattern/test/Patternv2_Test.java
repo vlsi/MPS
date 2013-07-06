@@ -222,7 +222,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
       quotedNode_7.addChild("rightExpression", quotedNode_11);
-      quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
+      quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
       quotedNode_7.addChild("leftExpression", quotedNode_12);
       quotedNode_3.addChild("condition", quotedNode_7);
       quotedNode_1.addChild("statement", quotedNode_3);

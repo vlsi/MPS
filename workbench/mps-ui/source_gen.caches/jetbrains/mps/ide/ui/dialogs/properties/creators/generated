@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d9ptiezu7lj85mx2bv356x8ius37j7o">
+<dependencies version="2" modelHash="9tj81hhuper2unacoihdzz2tverquho">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -41,11 +41,11 @@
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="ddqsp0uiuytdupurkyqzjip1p2z36b7" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8nth2puax45vwthd0o36vis2hby8eud" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="eg89rhe5yknsj92cnxo3f5ojywl3gnf" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-180iv5yj88fhj6aohba5tak6b997svw" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8kl264jggjxpmfxay14z7cicvvn9un3" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
   <common hash="-7530ovo1x58zny1bo1mmfr748fts3ih" />
-  <source id="3995997045458364219" name="DependencyChooser" hash="-460rsvfi6sc2to172isex3a12fe67ww">
+  <source id="3995997045458364219" name="DependencyChooser" hash="1fidefs8zg6qj67osdgqb8epwanm026">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -77,7 +77,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DependencyChooser.java" />
   </source>
-  <source id="3995997045458364308" name="DevKitChooser" hash="3mp3o19eyle9ykvhdowu398kgajbl9m">
+  <source id="3995997045458364308" name="DevKitChooser" hash="-7pmubfemnlcwpxh83ofovpl3to7s3lq">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -111,7 +111,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DevKitChooser.java" />
   </source>
-  <source id="3995997045458364358" name="GeneratorChooser" hash="-bnrmb7kr2j7cj0ajl2c2uavzfcrsn16">
+  <source id="3995997045458364358" name="GeneratorChooser" hash="520x0833dwu4ml2teeye4orwocsknu0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -127,7 +127,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GeneratorChooser.java" />
   </source>
-  <source id="3995997045458364408" name="LanguageChooser" hash="8ovwdb2vi5oxhg2qbkqiomuwsxrc3np">
+  <source id="3995997045458364408" name="LanguageChooser" hash="-cv1ew6jb7dqzyt64hn2w92uoyh3k1oj">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -164,7 +164,7 @@
   <source id="3995997045458364458" name="MappingRuleCreator" hash="2t3xmp833qk5jvq7symjmrb1qsb46ct">
     <file name="MappingRuleCreator.java" />
   </source>
-  <source id="3995997045458364472" name="ModelChooser" hash="6cdl1c2jkgwgrhb6wza2muxfd4a6r3t">
+  <source id="3995997045458364472" name="ModelChooser" hash="-7y2cxtuo7e1mqhwznfgc456xtx6m690">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -196,7 +196,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelChooser.java" />
   </source>
-  <source id="3995997045458364529" name="SolutionChooser" hash="-7rjsc2b5fa8w8rr0g7livfsdkge6lvy">
+  <source id="3995997045458364529" name="SolutionChooser" hash="-6v74jzsx7iaitsb0sxawubu0u8d34nr">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -232,7 +232,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SolutionChooser.java" />
   </source>
-  <source id="3995997045458364579" name="StubRootChooser" hash="-5865x2vf15bwpzcb7iz4hdl10a7wjc0">
+  <source id="3995997045458364579" name="StubRootChooser" hash="-9f2r0h51xsobfz9rqkl9qz7g19s8us">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -252,7 +252,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StubRootChooser.java" />
   </source>
-  <source id="1012869868274853609" name="LanguageOrDevKitChooser" hash="-wb4hfjd40vkptwwe536yfvzs2aqv25">
+  <source id="1012869868274853609" name="LanguageOrDevKitChooser" hash="dj5y5s9lbeaq3hfbowonb2c45f2fhyg">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -287,7 +287,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LanguageOrDevKitChooser.java" />
   </source>
-  <source id="4975765301568271854" name="LDSChooser" hash="9rsq8u74jaek3ejw0l1lak5jaxn5q8n">
+  <source id="4975765301568271854" name="LDSChooser" hash="-e7h02ztvyhrr05nbsemz9r0dxuq01me">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />
@@ -324,7 +324,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LDSChooser.java" />
   </source>
-  <source id="343121271899319920" name="SolutionOrLangChooser" hash="-801nd5p27vzcqpfs8rxcaxcf12md0qe">
+  <source id="343121271899319920" name="SolutionOrLangChooser" hash="-bo5t5k3upu2upal6rxvf1luist7p4yw">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.concurrency(MPS.IDEA/com.intellij.concurrency@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.lang(MPS.IDEA/com.intellij.lang@java_stub)" />

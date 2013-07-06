@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6ectj1al3l8ibq63puucngs3fvxftf0">
+<dependencies version="2" modelHash="-bxndpbuadaji3jokj6vgxt4uy0ongi8">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
@@ -41,36 +41,36 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="aumxb375hryoj342z68nrzgvgr4jzbz" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="3wcjihptc0j89iqquc2ic5it3i0ubj6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-wb1u76p46887dz9vwa6rzd4g937623" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5wztusfdyr282w5guu9yrxp8h1a5nsj" />
-  <dep model="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)" hash="53yjr9bwypo0swthvq1gismv562jn2t" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
+  <dep model="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)" hash="8yqub6wjf2t4hum38zxur9ryhn986zu" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-142wbmg1uqs2tdphevb8ixrdwx6p65o" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8nth2puax45vwthd0o36vis2hby8eud" />
-  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-be7959lkkpzu1vv0vgnq8o38l85r4xa" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8kl264jggjxpmfxay14z7cicvvn9un3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="9sw0yiprustsb9spasemk0j3udhnvlx" />
   <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="iad34v0paaaaokkadywwcqcja7n96u" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="3xakpaoch5bk4dwr6fzwigt84qw13qv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <dep model="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" hash="-i846qnfqbf0rch5dm2bnyiayx57zgj" />
-  <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" hash="-z3fn6v44qh9krqkvexs5icnuhzlpfk" />
-  <dep model="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)" hash="730je7hol8cha8l9hoj50ss1fijeu94" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-a0djd0v06l9iyaxdbqj0xxyncvb180y" />
-  <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-9rxunt2fr7dctibhweps75m06suv2u" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="7q0aq7xl9sh1ix0qqf1zcklv298rduj" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-9mw75b7w8pjr90vzi0xtbc52vji9hxt" />
+  <dep model="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" hash="9wpgq72m33ivbbcb9ims67mpp9byuws" />
+  <dep model="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)" hash="-cojb6l5k5t50av4fdovg06oil56i2rp" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="-10w4ydu163ifyjbzh328ql2qphx44z8" />
+  <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-2ceur5du3yqthf3v7ik0o02nnkxfnjg" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="2we6q7a5rocoqs7csaoyhfemlfeuuro" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-2r27ofdt48zjgzurzbv2dgmx5tzp8v7" />
   <dep model="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" hash="-93grilwsm80tjl3596dn11bn7t1g52q" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2te9zcwr0xtinv0zm3xquqs5me3u63x" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" hash="-6skig64erfo1r3l2w0wq3d80p7i6qie" />
-  <dep model="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" hash="4xm9ks05z4jknk385ihx9wgg6ve600a" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-e4b90lt6abspjittb5q36698hy8rd95" />
-  <dep model="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)" hash="69mzltgw83ng78yi43r9tzuot304zq4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="eg89rhe5yknsj92cnxo3f5ojywl3gnf" />
+  <dep model="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" hash="exa3epq3w0agyoo47o5yr8qod6qtoar" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
+  <dep model="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)" hash="-bzb78c9wxbwwzqfx95vv6vxilme2ud7" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
   <common hash="5qycae06ee645hqsho15zd2uenbnwq2" />
   <source id="2899596005953728721" name="Migrations25" hash="cufuimei8b4ure2ymzmyqz16tp4dyei">
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3805125895591795071" name="AddSourcesToModelRoots" hash="d6tiwkknp8m742riofp8je6ihl6mkk9">
+  <source id="3805125895591795071" name="AddSourcesToModelRoots" hash="-5pbkpxh4f8ipc6ysiec45a2hehztt06">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -192,7 +192,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MovePluginsOutOfLanguages_Action.java" />
   </source>
-  <source id="8004978336432944889" name="PluginMoveHelper" hash="efr7ssm8w1m0qoiy0w3qki2gls29vg9">
+  <source id="8004978336432944889" name="PluginMoveHelper" hash="8pk9xmoyd850gq63boju36hepwbg8z4">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
@@ -283,7 +283,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CorrectIconsAfterPluginMove_Action.java" />
   </source>
-  <source id="975723688157231916" name="AddPluginDependencies" hash="-1agrddva643ffm8169k8njklymwo3rs">
+  <source id="975723688157231916" name="AddPluginDependencies" hash="2hjzqi494w5q1822as1kyjhvbrjddap">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -348,7 +348,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddPluginDependencies_Action.java" />
   </source>
-  <source id="2761153619454586633" name="MigrationScript_ConvertActionParameterCondition" hash="-828cp0kct7hqnjri0duo24iwnomxq4d">
+  <source id="2761153619454586633" name="MigrationScript_ConvertActionParameterCondition" hash="-3ecywvulmetjf524511zbqqtygfj127">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -395,7 +395,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_ConvertActionParameterCondition_Action.java" />
   </source>
-  <source id="2761153619454568093" name="MigrationScript_ResolveBrokenRefs" hash="-8dod8cv8y83oc1sv6ce3ksb21m26ly5">
+  <source id="2761153619454568093" name="MigrationScript_ResolveBrokenRefs" hash="-epo7eg7n3jqtqlzywl9abapkt9k7ls1">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -442,7 +442,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_ResolveBrokenRefs_Action.java" />
   </source>
-  <source id="7450649563959262367" name="OptimizeImportsInProject" hash="-2ej19rdvfmr0aw1bbvbfao6errxj48m">
+  <source id="7450649563959262367" name="OptimizeImportsInProject" hash="coe59773wq02u7maign4ne23r71wlv7">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -507,7 +507,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="OptimizeImportsInProject_Action.java" />
   </source>
-  <source id="6735645123418936327" name="ExecuteModelCheckerFixes" hash="bw1xwv1n3qzlog69q38uxppndqsoxea">
+  <source id="6735645123418936327" name="ExecuteModelCheckerFixes" hash="-6tnjt3tvh6fu7dw5fzaughxk5akx84p">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -553,7 +553,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExecuteModelCheckerFixes_Action.java" />
   </source>
-  <source id="2761153619454568020" name="MigrationScript_SplitMPSClasspath" hash="dtcdlyi4dn4v2goxahdh74szfi0lm45">
+  <source id="2761153619454568020" name="MigrationScript_SplitMPSClasspath" hash="-bdoq10s3g5ghc5eouu7vongrefuxfpl">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -600,7 +600,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_SplitMPSClasspath_Action.java" />
   </source>
-  <source id="9164503229271455483" name="FixMissingImportsInProject" hash="-2bf9sd6ajaozvj5w6eupyfrscmrutb">
+  <source id="9164503229271455483" name="FixMissingImportsInProject" hash="-9ca1he9w9ss44lu9tg4j34npuv5qecl">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -673,7 +673,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="OptionalMigrations_ActionGroup.java" />
   </source>
-  <source id="2761153619454599624" name="MigrationScript_APIMigration" hash="-n3wsrg5rd67h73mzdosy2attnsmzxp">
+  <source id="2761153619454599624" name="MigrationScript_APIMigration" hash="ckjtrd8s1q1ig28039g31swnrk7pw3a">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -720,7 +720,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_APIMigration_Action.java" />
   </source>
-  <source id="1828409047608281136" name="MigrationScript_DebuggerMoved" hash="biftnvrrg7o3zoilxagwhvkc5bo2se8">
+  <source id="1828409047608281136" name="MigrationScript_DebuggerMoved" hash="-d4qotuuksivbusugjgxzb2xk0xcszx3">
     <dep root="175734484443895487" />
     <dep root="1828409047608306784" />
     <dep root="1855937925843851060" />
@@ -767,7 +767,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_DebuggerMoved_Action.java" />
   </source>
-  <source id="1828409047608306784" name="MigrationScript_RemoveKeystrokes" hash="1nfysd9a8xwfk0d8osbw25rcetotgyp">
+  <source id="1828409047608306784" name="MigrationScript_RemoveKeystrokes" hash="8xrc7cgfi780jydn2y1yu79rboin1pt">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1855937925843851060" />
@@ -814,7 +814,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_RemoveKeystrokes_Action.java" />
   </source>
-  <source id="2794305603016265047" name="MigrationScript_JavaAPIMigration" hash="-2yhi80009fo17gpxx203e2eofayl980">
+  <source id="2794305603016265047" name="MigrationScript_JavaAPIMigration" hash="4tlgcalrbbsge36gd13eammixwc9hbs">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -861,7 +861,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_JavaAPIMigration_Action.java" />
   </source>
-  <source id="647205717978882603" name="ExecuteJavaModelCheckerFixes" hash="-8sabh7ld54w1u57tyh6yp5ba4dpwj3m">
+  <source id="647205717978882603" name="ExecuteJavaModelCheckerFixes" hash="-3xlozp6yeky7t6rzme91k3ul83k74jo">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -908,7 +908,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ExecuteJavaModelCheckerFixes_Action.java" />
   </source>
-  <source id="495581478240917296" name="MethodCallChecker" hash="de7256v2u9hxr4l98qmxdq78x0ylu65">
+  <source id="495581478240917296" name="MethodCallChecker" hash="-2ccconrks0fbdv02zlghr4f81z9v3ko">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -935,7 +935,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MethodCallChecker.java" />
   </source>
-  <source id="9065176582222574567" name="UpdateRefactoringVersions" hash="dhobi5a51ssf5l959ro5yihgonz3e8">
+  <source id="9065176582222574567" name="UpdateRefactoringVersions" hash="23sudjymhy8buhiwothgzviclnoma6x">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -998,7 +998,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UpdateRefactoringVersions_Action.java" />
   </source>
-  <source id="5504981337052461925" name="OptimizeProjectImports" hash="-35vwibv8bwfcyc63mgn9qhxf00dacf0">
+  <source id="5504981337052461925" name="OptimizeProjectImports" hash="-kyiohqks9h87mrpdd3dadwisy4shok">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -1052,7 +1052,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="OptimizeProjectImports_Action.java" />
   </source>
-  <source id="8534969608023778839" name="MigrationScript_APIMigrationStandalone" hash="-65m6etkcs0pud5nwd59mimfg2l8zmkt">
+  <source id="8534969608023778839" name="MigrationScript_APIMigrationStandalone" hash="8y7va2nd5jx60bk8zd5qaj3znlczq98">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -1099,7 +1099,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_APIMigrationStandalone_Action.java" />
   </source>
-  <source id="5948516512857665272" name="UpgradePersistence" hash="7r7s46rwgzyzace8cbgedll0slelj5b">
+  <source id="5948516512857665272" name="UpgradePersistence" hash="19rfkp8jbkovtaks8wca0rbgc3wlbnk">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -1142,7 +1142,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UpgradePersistence_Action.java" />
   </source>
-  <source id="902710015953231731" name="AddExtendedLanguagesAsUsed" hash="5qsbmqxq5iz7jshbepo3ylqc89hctjr">
+  <source id="902710015953231731" name="AddExtendedLanguagesAsUsed" hash="dnvs8q4k5rui869d267rgkjfjy8nak0">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -1204,7 +1204,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddExtendedLanguagesAsUsed_Action.java" />
   </source>
-  <source id="724344822235451876" name="AddGenerationSupportLanguages" hash="-exax3aamsl1jimrj5ndc3q9xhl3b1pn">
+  <source id="724344822235451876" name="AddGenerationSupportLanguages" hash="-93ei6laxpk8afeeu8ba0mlu20iuain5">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
@@ -1267,7 +1267,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="AddGenerationSupportLanguages_Action.java" />
   </source>
-  <source id="175734484443895487" name="ImportModelsWithUsedClassifiers" hash="-ekgcijelvdubnbggqvq60qed7ju54g3">
+  <source id="175734484443895487" name="ImportModelsWithUsedClassifiers" hash="-3p5k0nhttcxsnp4nwlz32x6rqh7k5ff">
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />
     <dep root="1855937925843851060" />
@@ -1331,7 +1331,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ImportModelsWithUsedClassifiers_Action.java" />
   </source>
-  <source id="6104662726362995667" name="FixModelLanguages" hash="bi50rn35z66i72wz3538su0q9h88ggh">
+  <source id="6104662726362995667" name="FixModelLanguages" hash="d3bx7ivmpzbzbpgwf92jwvi5a2axu8y">
     <dep root="175734484443895487" />
     <dep root="1828409047608281136" />
     <dep root="1828409047608306784" />

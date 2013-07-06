@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7xt0x2gdrlu5rfqjfqaw2w3hqjnltu6">
+<dependencies version="2" modelHash="-9hgrtl5ws6wyjh0uw1glcz27g0vdsdt">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="-61w61818o57lwh9y2kie1fuggesy17f" />
-  <source id="3840741013873804939" name="Currency" hash="-6any2eeq78lq7lgnogicu9k8spsb3o0">
+  <source id="3840741013873804939" name="Currency" hash="-d6txhghkvusnfovip2a6u7ys7z60ayp">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Currency.java" />
   </source>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6eiu8j0eiymp4f0vscfzi3e7wdiy3ft">
+<dependencies version="2" modelHash="3id0vjotdhs1bwbmka9llo7xaa4hbva">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-e4b90lt6abspjittb5q36698hy8rd95" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="-53uxysl02rhhcnhm9j6gz7rs8i5nk34" />
-  <source id="5522183980949036968" name="ToolTip" hash="-a5nnvbcww8ltff8b46fcpb9shri2d7d">
+  <source id="5522183980949036968" name="ToolTip" hash="-4fsf5feayfraremg8089rd7tzwxw921">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ToolTip.java" />
   </source>
-  <source id="1657638272963062314" name="ToolTipData" hash="-ejlwt2gvguad1pw32q3oowrlclzkcau">
+  <source id="1657638272963062314" name="ToolTipData" hash="4f82de5vnstr7mm9ji5zlwmugqfvi7">
     <dep root="5522183980949036968" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ToolTipData.java" />
   </source>
-  <source id="1657638272963439183" name="MPSToolTipManager" hash="dv64vu10podg7jqdiza833ip3u3s22d">
+  <source id="1657638272963439183" name="MPSToolTipManager" hash="4uzy6yslw7j820hcm52lvtu55hb1f00">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />

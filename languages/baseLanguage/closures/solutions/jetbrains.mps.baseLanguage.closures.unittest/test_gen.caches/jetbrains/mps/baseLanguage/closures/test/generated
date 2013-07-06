@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-40xvfb6qttupgtuzqs0h3l6pq0kk8h9">
+<dependencies version="2" modelHash="6nasg4h1hyfo8xp5uuuyzt1fxewlbyb">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5wztusfdyr282w5guu9yrxp8h1a5nsj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-4lgmeq738nky6w80atbecag8odytj68" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-8qlemu9vs5tptoub54yxd1p76nach1v" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="71eiz5g3x4yswp9gryi6l40xw36apmq" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="k2asnrm0bp54a59ydvf9uvey4wmonw" />
   <common hash="3xhhf99h0t1s7gpdewrl2zanzde0p65" />
-  <source id="1227886714745" name="ClosureDataFlow" hash="5z04aweuxb4086p52o58y2teah1rk2x" dependsOnNodes="true">
+  <source id="1227886714745" name="ClosureDataFlow" hash="28c0kmsor6aglfn469605s14cl6y67i" dependsOnNodes="true">
     <dep root="1227886714783" />
     <dep root="4402508398720854500" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -14,7 +14,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ClosureDataFlow_Test.java" />
   </source>
-  <source id="1227886714783" name="ClosureLiteralDataFlow" hash="-62oanmhtumf31oucsmrtsu93hjfdslp" dependsOnNodes="true">
+  <source id="1227886714783" name="ClosureLiteralDataFlow" hash="-c41zi1ejd3376c4o8xd4ug15qn21fie" dependsOnNodes="true">
     <dep root="1227886714745" />
     <dep root="4402508398720854500" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

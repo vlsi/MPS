@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7jo800jlw0ywg7sa28c6lhsyqiugpgi">
+<dependencies version="2" modelHash="dm75q7vc5em4qh6zjrvka04g9q7s08c">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="cqktnaos3r0s99f4k9b7f1jycpqb04r" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8nth2puax45vwthd0o36vis2hby8eud" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8kl264jggjxpmfxay14z7cicvvn9un3" />
   <common hash="-4lyzera2rs9lxiro8vl1t7uqfyxbank">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
@@ -25,7 +25,7 @@
   <source id="3812443517665722868" name="DelayedException" hash="40c1w3awapoagibm017erla3i41gwu0">
     <file name="DelayedException.java" />
   </source>
-  <source id="3812443517665722916" name="YieldingIterator" hash="30fwqpxyoa0z8xch40nn09o5u8ldpuq">
+  <source id="3812443517665722916" name="YieldingIterator" hash="85xc6fylxjupm5tvtu3rk9m4am5brej">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="YieldingIterator.java" />
   </source>

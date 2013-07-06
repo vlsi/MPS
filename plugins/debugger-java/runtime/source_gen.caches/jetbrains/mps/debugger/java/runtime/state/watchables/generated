@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6w7gj7j2ebi7li0cd5rt5lba2qxy0nj">
+<dependencies version="2" modelHash="-by4qakot7512ewffpebdt7yjrlaotqi">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="b6f59t293haekb6irskuqs1h67va1v0" />
-  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="-4mkn2fwvy2cuz1bpop9lssl7h7htxcq" />
+  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="aokzyd0v3k495bfgkgtunm8bhv5blv6" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="6v02pfa0unztw4l7ywpem1d0wlxitap" />
   <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" hash="-exgoxw1dx11vw6474k8lu7dvfd57t3v" />
   <common hash="8lk3b9u4f4zvz00jlbbqmkk1abl2n5x" />
@@ -40,7 +40,7 @@
     <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" />
     <file name="JavaExceptionWatchable.java" />
   </source>
-  <source id="3187167456722821378" name="EventWatchablesCreator" hash="3w22uy6025qa8tpz7xxm8dsptrrjsk2">
+  <source id="3187167456722821378" name="EventWatchablesCreator" hash="-djqa1q3j5ybyit90a2xjz48dielea1t">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EventWatchablesCreator.java" />
   </source>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1310u00wf0m0e5o6by0k45nfo4jndft">
+<dependencies version="2" modelHash="-9wnstioahkouc78a3wbg3nl8ly6czf">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="3y4y4rpghxhnrmyb2n88lmih77iuyr7" />
-  <source id="8307544070813664740" name="MultiplyOperation" hash="bw4goi1hhgt1xzd9abyere9bkonqiqb">
+  <source id="8307544070813664740" name="MultiplyOperation" hash="dwqsdba6n2irlhwfxzv7ux320vlgqhl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MultiplyOperation.java" />
   </source>
