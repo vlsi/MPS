@@ -1988,7 +1988,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4195712261513744298" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5m.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8544442072477391529" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="localVariableDeclaration" />
+                <property name="value" nameId="tpee.1070475926801" value="variableDeclaration" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4195712261513781910" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="4195712261513781899" nodeInfo="nn">
@@ -1996,8 +1996,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetReferenceOperation" typeId="tp25.3609773094169249792" id="4195712261513781916" nodeInfo="nn">
                   <node role="linkQualifier" roleId="tp25.3609773094169252180" type="tp25.OperationParm_LinkQualifier" typeId="tp25.5168775467716640652" id="4195712261513781917" nodeInfo="ng">
-                    <node role="linkQualifier" roleId="tp25.5168775467716640653" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="4195712261513781921" nodeInfo="ng">
-                      <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.1070568296581" />
+                    <node role="linkQualifier" roleId="tp25.5168775467716640653" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="681263092145535712" nodeInfo="ng">
+                      <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.1068581517664" />
                     </node>
                   </node>
                 </node>
