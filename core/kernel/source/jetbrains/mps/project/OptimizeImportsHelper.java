@@ -105,6 +105,7 @@ public class OptimizeImportsHelper {
     Result result = new Result();
     for (SModel modelDescriptor : modelsToOptimize) {
       if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
+        // todo: looks like WTF
         result.add(collectModelDependencies(modelDescriptor));
       } else {
         result.add(optimizeModelImports_internal(modelDescriptor));
@@ -155,14 +156,14 @@ public class OptimizeImportsHelper {
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();
         if (!modelDescriptor.getReference().equals(mr)) {
-          result.myUsedModels.add(mr);
+          result.addUsedModel(mr);
         }
       }
     }
     // add auto imports as dependencies
     result.myUsedLanguages.addAll(ModelsAutoImportsManager.getAutoImportedLanguages(modelDescriptor.getModule(), modelDescriptor));
     for (org.jetbrains.mps.openapi.model.SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
-      result.myUsedModels.add(model.getReference());
+      result.addUsedModel(model.getReference());
     }
 
     return result;
@@ -293,6 +294,14 @@ public class OptimizeImportsHelper {
       myReport = myReport + addition.myReport + "\n";
       myUsedLanguages.addAll(addition.myUsedLanguages);
       myUsedModels.addAll(addition.myUsedModels);
+    }
+
+    public void addUsedModel(SModelReference ref) {
+      if (ref == null) {
+        // todo: ? can be in case of DynamicReference in stubs
+        return;
+      }
+      myUsedModels.add(ref);
     }
   }
 }
