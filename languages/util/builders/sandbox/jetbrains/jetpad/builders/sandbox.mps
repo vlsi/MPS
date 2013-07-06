@@ -311,7 +311,7 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="pmg0.AsBuilderStatement" typeId="pmg0.7802271442981707292" id="8009360033695026871" nodeInfo="nn">
-          <node role="expression" roleId="pmg0.7802271442981707295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8009360033695026875" nodeInfo="nn">
+          <node role="expression" roleId="pmg0.7802271442981707295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363086757" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8009360033695026866" resolveInfo="n" />
           </node>
           <node role="body" roleId="pmg0.4797501453849924252" type="tpee.StatementList" typeId="tpee.1068580123136" id="8009360033695026874" nodeInfo="sn">
@@ -381,12 +381,12 @@
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6185317612116086062" nodeInfo="nn">
                       <property name="value" nameId="tpee.1068580320021" value="100" />
                     </node>
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6185317612116086058" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363087835" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6185317612116086053" resolveInfo="i" />
                     </node>
                   </node>
                   <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="6185317612116086064" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6185317612116086065" nodeInfo="nn">
+                    <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363072497" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6185317612116086053" resolveInfo="i" />
                     </node>
                   </node>

@@ -61,7 +61,7 @@
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="5487985028841901775" resolveInfo="component" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841901792" nodeInfo="nn">
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363068828" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841901780" resolveInfo="metaLevel" />
             </node>
           </node>

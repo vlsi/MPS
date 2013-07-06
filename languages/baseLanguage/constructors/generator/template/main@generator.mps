@@ -456,7 +456,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7451562887563468833" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1070534934092" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363109339" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="606143069297167353" resolveInfo="l" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="7451562887563468834" nodeInfo="nn">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="7451562887563468835" nodeInfo="nn">
@@ -722,7 +722,7 @@
             <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="7738355964682458421" nodeInfo="nn">
               <property name="fqClassName" nameId="tp68.1173992483054" value="classFQName" />
               <property name="methodName" nameId="tp68.1173992444083" value="methodName" />
-              <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7738355964682460841" nodeInfo="nn">
+              <node role="actualArgument" roleId="tp68.319021450862604085" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363073338" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7738355964682458415" resolveInfo="l" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="7738355964682834052" nodeInfo="nn">
                   <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7738355964682834053" nodeInfo="nn">
