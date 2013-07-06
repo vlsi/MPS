@@ -25,6 +25,7 @@
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="y596" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(jetbrains.mps.openapi.editor.selection@java_stub)" version="-1" />
   <import index="jxum" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.selection(jetbrains.mps.nodeEditor.selection@java_stub)" version="-1" />
+  <import index="557t" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.messageTargets(MPS.Editor/jetbrains.mps.nodeEditor.messageTargets@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
@@ -1802,6 +1803,14 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="1205937519437173019" nodeInfo="ng">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="y597.~SelectionManager" resolveInfo="SelectionManager" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.FQNameClassifierSpecification" typeId="tp33.5434557751112207835" id="1205937519437223672" nodeInfo="ng">
+        <property name="classifierFQName" nameId="tp33.5434557751112752962" value="jetbrains.mps.nodeEditor.selection.SelectionManager" />
+        <property name="smodelReference" nameId="tp33.5434557751113468451" value="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.selection(MPS.Editor/jetbrains.mps.nodeEditor.selection@java_stub)" />
+        <property name="snodeId" nameId="tp33.8915466921781754528" value="~SelectionManager" />
       </node>
     </node>
   </root>
