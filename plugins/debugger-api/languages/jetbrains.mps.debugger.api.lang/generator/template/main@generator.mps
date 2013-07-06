@@ -442,7 +442,7 @@
                                   <property name="severity" nameId="tpib.1167245565795" value="warn" />
                                   <property name="hasException" nameId="tpib.1167228628751" value="true" />
                                   <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="4030433165041918992" nodeInfo="nn">
-                                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4030433165041918996" nodeInfo="nn">
+                                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151777713" nodeInfo="nn">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="933053558709993740" resolveInfo="debuggableNode" />
                                     </node>
                                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4030433165041918981" nodeInfo="nn">
@@ -694,7 +694,7 @@
                                     <property name="severity" nameId="tpib.1167245565795" value="warn" />
                                     <property name="hasException" nameId="tpib.1167228628751" value="true" />
                                     <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7796501636717933358" nodeInfo="nn">
-                                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7796501636717933359" nodeInfo="nn">
+                                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151771440" nodeInfo="nn">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7796501636717933325" resolveInfo="debuggableNode" />
                                       </node>
                                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7796501636717933360" nodeInfo="nn">

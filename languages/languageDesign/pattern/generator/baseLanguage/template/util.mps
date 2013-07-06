@@ -34,12 +34,12 @@
               <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109253875" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8288845019109253876" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150340846" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8288845019109252778" resolveInfo="genContext" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputListByLabelAndInput" typeId="tpf3.1221156564099" id="8288845019109253877" nodeInfo="nn">
                 <link role="label" roleId="tpf3.1221156564101" targetNodeId="tp3u.1215479326412" resolveInfo="patternVarField" />
-                <node role="inputNode" roleId="tpf3.1221156564104" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8288845019109253878" nodeInfo="nn">
+                <node role="inputNode" roleId="tpf3.1221156564104" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151338182" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8288845019109252780" resolveInfo="var" />
                 </node>
               </node>
@@ -76,7 +76,7 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp3t.1136720037777" resolveInfo="PatternExpression" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109253850" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8288845019109253851" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151555303" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8288845019109252780" resolveInfo="var" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="8288845019109253852" nodeInfo="nn">
@@ -94,7 +94,7 @@
             <property name="name" nameId="tpck.1169194664001" value="patternClass" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8288845019109253867" nodeInfo="in" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109253868" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8288845019109253869" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151602121" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8288845019109252778" resolveInfo="genContext" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="8288845019109253870" nodeInfo="nn">

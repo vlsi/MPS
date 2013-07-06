@@ -235,7 +235,7 @@
                                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1229707001508" nodeInfo="nn">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp2n.1229630702383" resolveInfo="isControlMethod" />
                                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp2n.1229630689134" resolveInfo="ControlMethodUtil" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1229707001511" nodeInfo="nn">
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150310912" nodeInfo="nn">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229707001504" resolveInfo="smd" />
                                     </node>
                                   </node>
@@ -343,7 +343,7 @@
                                       <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1229707121334" nodeInfo="nn">
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp2n.1229630702383" resolveInfo="isControlMethod" />
                                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp2n.1229630689134" resolveInfo="ControlMethodUtil" />
-                                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1229707121335" nodeInfo="nn">
+                                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151399221" nodeInfo="nn">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229707121330" resolveInfo="smd" />
                                         </node>
                                       </node>

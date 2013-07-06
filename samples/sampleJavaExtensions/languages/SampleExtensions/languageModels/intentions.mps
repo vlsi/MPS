@@ -233,7 +233,7 @@
                             <node role="index" roleId="tp2q.1225621960341" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="917166302016112155" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="917166302016112102" resolveInfo="index" />
                             </node>
-                            <node role="element" roleId="tp2q.1225621943565" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="917166302016112156" nodeInfo="nn">
+                            <node role="element" roleId="tp2q.1225621943565" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151609815" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="917166302016112145" resolveInfo="it" />
                             </node>
                           </node>

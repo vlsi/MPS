@@ -90,7 +90,7 @@
               <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7344646339284604309" nodeInfo="nn">
                 <property name="value" nameId="tpee.1068580320021" value="5" />
               </node>
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7344646339284604305" nodeInfo="nn">
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151298366" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7344646339283099547" resolveInfo="a" />
               </node>
             </node>

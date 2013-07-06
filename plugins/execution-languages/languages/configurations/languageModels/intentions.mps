@@ -169,7 +169,7 @@
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8401208354348497304" nodeInfo="nn">
                               <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.4366236229294139631" />
                             </node>
-                            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8401208354348486293" nodeInfo="nn">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151791752" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8401208354348486295" resolveInfo="it" />
                             </node>
                           </node>

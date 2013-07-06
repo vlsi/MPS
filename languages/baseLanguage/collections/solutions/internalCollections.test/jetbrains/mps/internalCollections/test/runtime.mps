@@ -48,7 +48,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2391321168245786074" resolveInfo="myList" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="2391321168245786090" nodeInfo="nn">
-              <node role="argument" roleId="tp2q.1160666822012" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2391321168245786092" nodeInfo="nn">
+              <node role="argument" roleId="tp2q.1160666822012" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151777610" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2391321168245498477" resolveInfo="list" />
               </node>
             </node>

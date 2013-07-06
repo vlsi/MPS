@@ -359,7 +359,7 @@
                           </node>
                           <node role="initializer" roleId="tpee.1068431790190" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6235310215814089098" nodeInfo="nn">
                             <link role="concept" roleId="tp25.1140138128738" targetNodeId="uigu.1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
-                            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6235310215814089097" nodeInfo="nn">
+                            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151472105" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6235310215814037991" resolveInfo="node" />
                             </node>
                           </node>

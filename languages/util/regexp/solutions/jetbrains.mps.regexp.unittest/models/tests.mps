@@ -1521,7 +1521,7 @@
                 </node>
               </node>
             </node>
-            <node role="inputExpression" roleId="tpfo.6129327962763255289" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2588298302278368471" nodeInfo="nn">
+            <node role="inputExpression" roleId="tpfo.6129327962763255289" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150323589" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2588298302278368436" resolveInfo="searchin" />
             </node>
           </node>
@@ -1550,7 +1550,7 @@
                   </node>
                 </node>
               </node>
-              <node role="inputExpression" roleId="tpfo.6129327962763255289" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2588298302278369372" nodeInfo="nn">
+              <node role="inputExpression" roleId="tpfo.6129327962763255289" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151579381" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2588298302278368436" resolveInfo="searchin" />
               </node>
             </node>

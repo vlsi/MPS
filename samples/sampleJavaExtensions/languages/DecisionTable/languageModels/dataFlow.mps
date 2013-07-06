@@ -34,7 +34,7 @@
               <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6590643739750329915" nodeInfo="nn">
                 <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6590643739750329916" nodeInfo="sn">
                   <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="6590643739750329919" nodeInfo="nn">
-                    <node role="codeFor" roleId="tp41.1206454079161" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6590643739750329921" nodeInfo="nn">
+                    <node role="codeFor" roleId="tp41.1206454079161" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150338994" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6590643739750329917" resolveInfo="it" />
                     </node>
                   </node>
@@ -59,7 +59,7 @@
               <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6590643739750329928" nodeInfo="nn">
                 <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6590643739750329929" nodeInfo="sn">
                   <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="6590643739750329930" nodeInfo="nn">
-                    <node role="codeFor" roleId="tp41.1206454079161" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6590643739750329931" nodeInfo="nn">
+                    <node role="codeFor" roleId="tp41.1206454079161" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151618350" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6590643739750329932" resolveInfo="it" />
                     </node>
                   </node>
@@ -84,7 +84,7 @@
               <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="6590643739750329940" nodeInfo="nn">
                 <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6590643739750329941" nodeInfo="sn">
                   <node role="statement" roleId="tpee.1068581517665" type="tp41.EmitCodeForStatement" typeId="tp41.1206454052847" id="6590643739750329942" nodeInfo="nn">
-                    <node role="codeFor" roleId="tp41.1206454079161" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6590643739750329943" nodeInfo="nn">
+                    <node role="codeFor" roleId="tp41.1206454079161" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151785538" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6590643739750329944" resolveInfo="it" />
                     </node>
                   </node>
