@@ -2826,14 +2826,14 @@
                                                     <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6766696848723486194" nodeInfo="nn">
                                                       <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6766696848723486195" nodeInfo="sn">
                                                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6766696848723486196" nodeInfo="nn">
-                                                          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6766696848723486197" nodeInfo="nn">
+                                                          <node role="expression" roleId="tpee.1068581517676" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4995188888373743871" nodeInfo="nn">
                                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6766696848723486182" resolveInfo="variableDeclaration" />
                                                           </node>
                                                         </node>
                                                       </node>
                                                       <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6766696848723486198" nodeInfo="nn">
                                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6766696848723486199" nodeInfo="nn">
-                                                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6766696848723486200" nodeInfo="nn">
+                                                          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4995188888373743938" nodeInfo="nn">
                                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6766696848723486182" resolveInfo="variableDeclaration" />
                                                           </node>
                                                           <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6766696848723486201" nodeInfo="nn">
@@ -3787,7 +3787,7 @@
                                                         <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6283201779507549847" nodeInfo="nn">
                                                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6283201779507549848" nodeInfo="nn">
                                                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6283201779507549849" nodeInfo="nn">
-                                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6283201779507549850" nodeInfo="nn">
+                                                              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4995188888373743885" nodeInfo="nn">
                                                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6283201779507549825" resolveInfo="blockStatement" />
                                                               </node>
                                                               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6283201779507549851" nodeInfo="nn">

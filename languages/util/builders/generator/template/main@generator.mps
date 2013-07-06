@@ -271,7 +271,7 @@
                                   <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="5867364036373952062" nodeInfo="nn" />
                                   <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="5867364036373952063" nodeInfo="nn">
                                     <link role="label" roleId="tpf3.1216860049628" targetNodeId="7057666463730728197" resolveInfo="builderVar" />
-                                    <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5867364036373952064" nodeInfo="nn">
+                                    <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4995188888373743928" nodeInfo="nn">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5867364036373952050" resolveInfo="context" />
                                     </node>
                                   </node>
@@ -456,7 +456,7 @@
                               <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="5867364036373950628" nodeInfo="nn" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="5867364036373950629" nodeInfo="nn">
                                 <link role="label" roleId="tpf3.1216860049628" targetNodeId="7057666463730728197" resolveInfo="builderVar" />
-                                <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5867364036373950630" nodeInfo="nn">
+                                <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4995188888373743926" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5867364036373950614" resolveInfo="parentBuilder" />
                                 </node>
                               </node>
@@ -541,7 +541,7 @@
                         <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1301175864894276296" nodeInfo="nn" />
                         <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="1301175864894276301" nodeInfo="nn">
                           <link role="label" roleId="tpf3.1216860049628" targetNodeId="7057666463730728197" resolveInfo="builderVar" />
-                          <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1031052612292832485" nodeInfo="nn">
+                          <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4995188888373743881" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1301175864894276289" resolveInfo="builder" />
                           </node>
                         </node>
