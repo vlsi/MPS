@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c8c2us7qjc1489obeue4hvb6h9tpwbo">
+<dependencies version="2" modelHash="-e526bkqkkfpvta47f6xn4p8whostcu7">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-achotqmank8lbn0qyr9phfzza4hbi1t" />
-  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-9lqpdz89et5k2eknc40ijrjwqgz6ezt" />
-  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="-e4lmal94kpc65rks5b97hsyzwcx7gom" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="el1e6yihwlubomwei3c2i0no0gprq7s" />
+  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-deoxbzgg8qm9or7rs3a6e7y8x6i9qud" />
+  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="ac2nc25v6tjwdp4rfz01ysnrene2af3" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="6v02pfa0unztw4l7ywpem1d0wlxitap" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6h3tybhwm2gac0mij59vhwmpzhilcyn" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5lr5rrypi6083nfy87dzcasbi6sii76" />
   <common hash="16zdu5yr5gqqvs5zz1f4spyemf6lz01" />
-  <source id="3432969378036014408" name="ValueWrapper" hash="awlceao1qbkqmbdbcclxv17lzo00xc4">
+  <source id="3432969378036014408" name="ValueWrapper" hash="-81oeax2mafv6fpqvv7vkbfyyihtvtjl">
     <dep root="3432969378036013922" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <file name="ValueWrapper.java" />
   </source>
-  <source id="3432969378036014521" name="JavaThread" hash="-49ihanfc9lp30re20hraspdliw6ioz8">
+  <source id="3432969378036014521" name="JavaThread" hash="eqdoseyc35pzz64ot0vmizlcyjhdkgw">
     <dep root="3432969378036013921" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -30,15 +30,15 @@
     <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
     <file name="JavaThread.java" />
   </source>
-  <source id="3432969378036013921" name="ProxyForJava" hash="84kf1egco2amgg1lcfkpp6hp45s7b5m">
+  <source id="3432969378036013921" name="ProxyForJava" hash="2q24t39zv2ssy1f0qthevtxerl069o8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProxyForJava.java" />
   </source>
-  <source id="3432969378036013922" name="JavaValue" hash="-7mauk9wrhg1cbf89ynwtycsfjbr2uka">
+  <source id="3432969378036013922" name="JavaValue" hash="-1iwmqedmotk9vrccjp7ebhj8ni0yaj6">
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <file name="JavaValue.java" />
   </source>
-  <source id="3432969378036016687" name="JavaStackFrame" hash="a773mzhejtg6c9gjar83c87nipcbtq7">
+  <source id="3432969378036016687" name="JavaStackFrame" hash="-byp94osat0alfxgrcjcx8lzw22uu5px">
     <dep root="3432969378036013921" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -51,10 +51,10 @@
   <source id="3432969378036017270" name="ValueWrapperFactory" hash="4l72hy97diytn6vpegv4rm0c1v2hap5">
     <file name="ValueWrapperFactory.java" />
   </source>
-  <source id="4838833313499239213" name="ValueUtil" hash="1gs5dj2ixx1g87m53bg4vkoh9zzslcg">
+  <source id="4838833313499239213" name="ValueUtil" hash="-bqani1mpzynfu06v9dzhtu8j3xd38wu">
     <file name="ValueUtil.java" />
   </source>
-  <source id="4209988649465089935" name="JavaLocation" hash="-4hnbuksog0pg1mx1ywzf9irgcmpw7o5">
+  <source id="4209988649465089935" name="JavaLocation" hash="5x9igu4q5k2jp4otd23qdl3hpb5w1wh">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaLocation.java" />
   </source>

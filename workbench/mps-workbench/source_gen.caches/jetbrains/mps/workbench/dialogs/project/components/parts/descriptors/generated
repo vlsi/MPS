@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1nkaqhg5flgi720l9p8mzhyhp1x8ipz">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="-lk0qdk9c4z817f68an4jhl57qmtgzu">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="-ek58jjv630jxrdyqxw7kl3j17ztx764" />
   <source id="1560298786499489453" name="EditableStringDescriptor" hash="c5dio0j7wq0i9nl9c1fh8jk7wvp7hi">
     <file name="EditableStringDescriptor.java" />
@@ -14,10 +14,10 @@
   <source id="1560298786499493471" name="ModuleDescriptor" hash="-5fpmf8qyjzrrxcivkbeckjd6t3xubhi">
     <file name="ModuleDescriptor.java" />
   </source>
-  <source id="1560298786499494704" name="ManagerDescriptor" hash="-9r3fd8d1vo1ui0mnouo6h3fdatpv2ut">
+  <source id="1560298786499494704" name="ManagerDescriptor" hash="-242zxklck71ieiviaswnucisz63ocd3">
     <file name="ManagerDescriptor.java" />
   </source>
-  <source id="1560298786499495292" name="DepDescriptor" hash="d1a69s4to8m8tecrijoovvjwh3rtw7y">
+  <source id="1560298786499495292" name="DepDescriptor" hash="amca3x05duaue6thxytsqw1q0tkmfsn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DepDescriptor.java" />
   </source>

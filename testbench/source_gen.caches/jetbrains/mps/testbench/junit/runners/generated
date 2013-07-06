@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4c09hd4yhghgxfkb6ftu3re06i9z05c">
+<dependencies version="2" modelHash="4vaf0ylon217dnee7xrj1anli297dgo">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -33,15 +33,15 @@
   <dep model="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" hash="9dpsds30aleyoxj2inntdhjvyno30ds" />
   <dep model="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" hash="ew9lvvp77jta7rexo7pjawuc85r2ciq" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2te9zcwr0xtinv0zm3xquqs5me3u63x" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6h3tybhwm2gac0mij59vhwmpzhilcyn" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5lr5rrypi6083nfy87dzcasbi6sii76" />
   <common hash="8pd3n2xtd54szuo6fgzrnxpi3mk0wlp" />
-  <source id="935017990628671531" name="ParameterizedMpsTest" hash="-dfxrj51ki6dwy78r3xjjrbm6koat43w">
+  <source id="935017990628671531" name="ParameterizedMpsTest" hash="1vj2bridpvek9zxh483x1r7x1utx71u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ParameterizedMpsTest.java" />
   </source>
-  <source id="1036071220598694533" name="ModuleSymbolicSuite" hash="-edrn77g5t3ufal893n2p2r8l7gt4pp3">
+  <source id="1036071220598694533" name="ModuleSymbolicSuite" hash="41t0z3ywcq4weyzbb05b0b2lpwfjbhm">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
@@ -51,7 +51,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleSymbolicSuite.java" />
   </source>
-  <source id="6791703723376742374" name="MakeRunner" hash="depbnryn5gkoouf07emxtqx52qm9sfp">
+  <source id="6791703723376742374" name="MakeRunner" hash="-ad7alyqyzpzvq0tr7910uzcli2asi0n">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" />
@@ -69,7 +69,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MpsTest.java" />
   </source>
-  <source id="1209415647739046624" name="MPSOpenProjectRunner" hash="ctg2oohr48035ghhgtd41i900lbaskz">
+  <source id="1209415647739046624" name="MPSOpenProjectRunner" hash="-al07gwq9hb0btf98123u668o1dgwk4z">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -83,7 +83,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MPSOpenProjectRunner.java" />
   </source>
-  <source id="6219666460876673637" name="DisposeMPSStatement" hash="-cy3wyk6pyona0cuetxvkre0pyazysom">
+  <source id="6219666460876673637" name="DisposeMPSStatement" hash="-b1fgalzlpbyx7j2ib22hx9vsluw6ed">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

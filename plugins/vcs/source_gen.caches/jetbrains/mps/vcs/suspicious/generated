@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-706owrtcvmmtm6vtao8sotsbinsr91w">
+<dependencies version="2" modelHash="-53d3rjkurzxw34z4a00srjv82msela3">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs(MPS.IDEA/com.intellij.openapi.vcs@java_stub)" />
@@ -17,10 +17,10 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-95x4rx9580t60zleliynucdwubtiw8m" />
-  <dep model="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" hash="djrthj8fxwgoh4jafz1p0519xgm6tro" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6h3tybhwm2gac0mij59vhwmpzhilcyn" />
+  <dep model="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" hash="6hz8k76ckcp15pyerm0ugn191fd8y7m" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5lr5rrypi6083nfy87dzcasbi6sii76" />
   <common hash="4luqmo6h72ltfbcyzle32g3vv31pqrx" />
-  <source id="4707157387247635635" name="BaseTaskQueue" hash="-3bbjc08s887idl7krzv37vho1f2rv5m">
+  <source id="4707157387247635635" name="BaseTaskQueue" hash="-99hos1xm21z41gnissw493zsxfspizq">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -29,11 +29,11 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="BaseTaskQueue.java" />
   </source>
-  <source id="4707157387247635742" name="TaskQueue" hash="ecw15gxvc03cxdqu3skbczykh2uqpzb">
+  <source id="4707157387247635742" name="TaskQueue" hash="-11e0wpozh3zmib6f9eeu2xy36ukzz8t">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TaskQueue.java" />
   </source>
-  <source id="4093906047203395592" name="SuspiciousModelIndex" hash="-9ot6zdtc9vkcbuimzazg6lmem5v8zwf">
+  <source id="4093906047203395592" name="SuspiciousModelIndex" hash="emsx6e7rdc9rd37b5t36w6v6o7xr615">
     <dep root="4093906047203396099" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs(MPS.IDEA/com.intellij.openapi.vcs@java_stub)" />
@@ -54,11 +54,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Conflictable.java" />
   </source>
-  <source id="4093906047203396155" name="ConflictableModelAdapter" hash="3tm7arpaaf27tkno0qkgl876xapinu7">
+  <source id="4093906047203396155" name="ConflictableModelAdapter" hash="-e4irqfwcu6vo4hobnwinukiz7a6vorx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConflictableModelAdapter.java" />
   </source>
-  <source id="4093906047203396210" name="ConflictableModuleAdapter" hash="-p1wbsplcmgamn1emfen6ibhfxrh47s">
+  <source id="4093906047203396210" name="ConflictableModuleAdapter" hash="6um9bvjm7pybn27v1vmkf4figsjx30m">
     <dep root="4093906047203396099" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

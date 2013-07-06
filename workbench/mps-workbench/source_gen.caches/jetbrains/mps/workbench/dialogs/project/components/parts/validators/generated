@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5cp9l8a312gn6yc6ivk0nz4nm4c1hdw">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="2w61gv21d9dg0xhq9hv2dv7iceuiupw">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="-eo17r8cxm2x9b5hkeu4cnln9f6idhng" />
   <source id="1560298786499493318" name="Validator" hash="-4li7x4qbx0ugvcxbotu0s1impacvbhl">
     <file name="Validator.java" />
@@ -9,7 +9,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleValidator.java" />
   </source>
-  <source id="1560298786499498197" name="ModelValidator" hash="-eb2xr84pybsz6ywpp7p4bj41bqwe39n">
+  <source id="1560298786499498197" name="ModelValidator" hash="-8kc50900bgcfdcvoc78bxuhdb2sz0g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelValidator.java" />
   </source>

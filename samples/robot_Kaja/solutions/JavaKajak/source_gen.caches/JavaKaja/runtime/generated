@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7bbaf9nljfpwrzaeul1bbo11v2l391d">
+<dependencies version="2" modelHash="96cdwxwgbev6uaelmder2wt31gvxhip">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <common hash="ejggumus109hxbctcdwujstsuz8i68x" />
-  <source id="3308300503039473785" name="KajaFrame" hash="c8exolabygdb2v87bvnvzf1vofvqqew">
+  <source id="3308300503039473785" name="KajaFrame" hash="-5l9n16qz3kupaq81mb9tnbtd7b16rx7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -13,11 +13,11 @@
   <source id="3308300503039569134" name="Direction" hash="-qvf3jgyy1kd3q78pdvcrrzrfk44ky9">
     <file name="Direction.java" />
   </source>
-  <source id="3308300503039569160" name="Cell" hash="6f87hwobw0wpeuvipjqru9rnzxxrh8a">
+  <source id="3308300503039569160" name="Cell" hash="t6uw2lzvf1y29y4r5ihi0tszi4q1k6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Cell.java" />
   </source>
-  <source id="1904811872814056520" name="VisualCell" hash="86zp4ivdqhvhbrlypd0xntmgszs3d4n">
+  <source id="1904811872814056520" name="VisualCell" hash="dqs8o7n4lwxf1xt80yb3ydcr0fyyzre">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

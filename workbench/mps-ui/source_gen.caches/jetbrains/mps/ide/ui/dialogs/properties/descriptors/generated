@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-33c6zabemzfd7e9h9c5pgwex2taypza">
+<dependencies version="2" modelHash="-awq97v4afqdxbzd4jr8abyv77zioqdd">
   <common hash="15sxrs0w0bzc5jkw11832069d7h2v6h" />
-  <source id="3995997045458428838" name="ColumnDescriptor" hash="1ejtxfai2a63mb6qvco9j0h9cpso2dc">
+  <source id="3995997045458428838" name="ColumnDescriptor" hash="-1d4k73k6dcdd19zdfwb69anlgiuws6n">
     <file name="ColumnDescriptor.java" />
   </source>
   <source id="3995997045458428896" name="VoidColumnDescriptor" hash="481j1s3cqar39rgu8yhwzbtr8ft6bg7">
@@ -10,7 +10,7 @@
   <source id="3995997045458428924" name="RuleTypeDescriptor" hash="easydqgez23h1k5n6p08usko1zuc34j">
     <file name="RuleTypeDescriptor.java" />
   </source>
-  <source id="3995997045458428954" name="PriorityRuleDescriptor" hash="79p38kzxqw2y0icrulms6u6vdnvtu1c">
+  <source id="3995997045458428954" name="PriorityRuleDescriptor" hash="-ebm443a0u6y6gffcxsvwj4q6i8cxpeq">
     <file name="PriorityRuleDescriptor.java" />
   </source>
 </dependencies>

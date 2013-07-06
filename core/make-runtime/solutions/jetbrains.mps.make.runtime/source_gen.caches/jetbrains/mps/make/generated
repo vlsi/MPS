@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-fxw90nee3thba5s0j3q1qe0tomylzk">
+<dependencies version="2" modelHash="cnrqiizhehmdn69mio0kpxzu7zeove8">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
   <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" hash="a5h93nuoh92rfbvnb4w9h69ckv1nm2" />
   <common hash="-6h8n4nys634tl27l8b59ga7p5kdlmo3" />
-  <source id="2082624981609760242" name="IMakeService" hash="3e3oexcfkgtx5yxkpkvajvfqqfnksg2">
+  <source id="2082624981609760242" name="IMakeService" hash="e6ziecuhrzr3hl78sgiz43t290wbkdz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IMakeService.java" />
   </source>
-  <source id="8695426379435232461" name="MakeSession" hash="-ae4jdzi5abgsvc8mhi8w6obw7zs6owk">
+  <source id="8695426379435232461" name="MakeSession" hash="9g8vs2kol15cbk9ax7qf7y61860vdtg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MakeSession.java" />
   </source>
-  <source id="8464977774479999203" name="MakeNotification" hash="-d0dqodo1p1xyjrklp4bcc26wgonrv9d">
+  <source id="8464977774479999203" name="MakeNotification" hash="a3vpyd0epnni8ufmd9k1encxaj6bz9v">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MakeNotification.java" />
   </source>

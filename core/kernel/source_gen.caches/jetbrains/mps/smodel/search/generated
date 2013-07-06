@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-43i0bhlr1g3iyh679jv3081z8ildxl4">
+<dependencies version="2" modelHash="-ab64e7za6oqhaqdf3rcpi4n54no93rm">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.cache(MPS.Core/jetbrains.mps.cache@java_stub)" />
@@ -13,11 +13,11 @@
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-48vxm6lpdyencmht9ofqk4s4yqtnzq5" />
   <common hash="102u8eleo2dj2g3s3v22vrms2jwf83y" />
-  <source id="4642948870877886449" name="SimpleSearchScope" hash="-epnt4w6ljjmwl0dtfrljbkxsyntjj3x">
+  <source id="4642948870877886449" name="SimpleSearchScope" hash="8mgv7xbhjhq1clgud5fwiqry9ut0zo9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SimpleSearchScope.java" />
   </source>
-  <source id="4642948870877886557" name="ModelAndImportedModelsScope" hash="adqtcr083ys5aannq4kwg39mpwpktfs">
+  <source id="4642948870877886557" name="ModelAndImportedModelsScope" hash="9v3dk5l756m0abrri0lyjnr3i7gm2rz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelAndImportedModelsScope.java" />
   </source>
@@ -25,22 +25,22 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="UndefinedSearchScope.java" />
   </source>
-  <source id="4642948870877886822" name="ModelNodesSearchScope" hash="77i2lbb27z903h3f365kza3n2ztpxr6">
+  <source id="4642948870877886822" name="ModelNodesSearchScope" hash="-4i2ypom9cxtwda5fty7jizaqf7t4yma">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelNodesSearchScope.java" />
   </source>
-  <source id="4642948870877886852" name="SubnodesSearchScope" hash="-bd26d1tbbuuc547cxhw9hgzqep5u29y">
+  <source id="4642948870877886852" name="SubnodesSearchScope" hash="-5e9cl6xovfj58njj3v4fqhzlu39v2qf">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SubnodesSearchScope.java" />
   </source>
-  <source id="4642948870877886891" name="AbstractSearchScope" hash="-638z46f146t9wy41usfk679rucenf0p">
+  <source id="4642948870877886891" name="AbstractSearchScope" hash="dpqse3ezjxorp1wu3pzdvlfr0p13jkc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractSearchScope.java" />
   </source>
-  <source id="4642948870877887054" name="SearchScopeWithNode" hash="7w95oublny53mfxmr84m5bzrytem48v">
+  <source id="4642948870877887054" name="SearchScopeWithNode" hash="-bb6c2h11v8ldtrq0p35lojr63n79ql">
     <file name="SearchScopeWithNode.java" />
   </source>
-  <source id="4642948870877887076" name="NodeListChildrenSearchScope" hash="ac3guehnqo94kxi5e127eit3xzjmsab">
+  <source id="4642948870877887076" name="NodeListChildrenSearchScope" hash="-ahvq4wi36z9y3srodoo0r1ygfln9tau">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodeListChildrenSearchScope.java" />
@@ -52,7 +52,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EmptySearchScope.java" />
   </source>
-  <source id="4642948870877889221" name="ISearchScope" hash="4n8cevfg8s3vliuvn4lgs4bda1q7pnw">
+  <source id="4642948870877889221" name="ISearchScope" hash="35qo7s5hilzog20jdgjpv4j8lme5s96">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -60,25 +60,25 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="ISearchScope.java" />
   </source>
-  <source id="4642948870877889272" name="IsInstanceCondition" hash="-b6b0ha5mo6bso06sp6xbho05pwiu2ok">
+  <source id="4642948870877889272" name="IsInstanceCondition" hash="-3bbfi67zziwqvvllunhwwmppzrz5s8d">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IsInstanceCondition.java" />
   </source>
-  <source id="5889278117585265292" name="SModelSearchUtil" hash="105iy61qvj65492w8vqz8kqhcctb72t">
+  <source id="5889278117585265292" name="SModelSearchUtil" hash="-3e5j9i19zsv6v4k90ypyuogawl964un">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SModelSearchUtil.java" />
   </source>
-  <source id="8484262519286281120" name="ConceptAndSuperConceptsScope" hash="-9es60sgskgw5e52dfs63kshoptxe1af">
+  <source id="8484262519286281120" name="ConceptAndSuperConceptsScope" hash="37k4uv1fzl3cfz351ph2legedovhcmh">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConceptAndSuperConceptsScope.java" />
   </source>
-  <source id="8484262519286299121" name="ConceptAndSuperConceptsCache" hash="-6qxv69wvqcj0xjr6fevbklavezhmvxq">
+  <source id="8484262519286299121" name="ConceptAndSuperConceptsCache" hash="5pvjw74y0r8qw81d1ygq757fknznz52">
     <dep root="8484262519286305935" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.search(MPS.Core/jetbrains.mps.smodel.search@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConceptAndSuperConceptsCache.java" />
   </source>
-  <source id="8484262519286305935" name="Datasets" hash="2at8i3vp8whw0coereoxwm74ujk01zr">
+  <source id="8484262519286305935" name="Datasets" hash="8x2vcqc2xqlbsyq91xifwlitfyspu3m">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.cache(MPS.Core/jetbrains.mps.cache@java_stub)" />

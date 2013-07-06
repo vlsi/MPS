@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="345rtb41ldsphlvqt15lc99kpgbilir">
+<dependencies version="2" modelHash="b0nb75xlzb8jnmmty9m5ma1vgawfyuj">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -10,9 +10,9 @@
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-48vxm6lpdyencmht9ofqk4s4yqtnzq5" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-95x4rx9580t60zleliynucdwubtiw8m" />
-  <dep model="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" hash="-43i0bhlr1g3iyh679jv3081z8ildxl4" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="dy9a9wi9mlxioisq4k4dic1uhrsk49c" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6h3tybhwm2gac0mij59vhwmpzhilcyn" />
+  <dep model="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" hash="-ab64e7za6oqhaqdf3rcpi4n54no93rm" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2cnsp7okt1sspb0ng5xaabwicersoye" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5lr5rrypi6083nfy87dzcasbi6sii76" />
   <common hash="-8oamsppiq5z6dw7kj8nyuzk1l0w9vxi" />
   <source id="3734116213129862372" name="Scope" hash="b42u595aq3xn08tyf3m7qd5hwuhvsiq">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -27,7 +27,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Scope.java" />
   </source>
-  <source id="8401916545537277014" name="SimpleRoleScope" hash="29c417ovoyrcstgp36jypkomoajvkwf">
+  <source id="8401916545537277014" name="SimpleRoleScope" hash="-301wfioye8o4740qvp6svoub6mmoi0p">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -36,7 +36,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SimpleRoleScope.java" />
   </source>
-  <source id="8401916545537277021" name="CompositeScope" hash="-c9zyp536unu0a7q0hbz29dcyceuksj7">
+  <source id="8401916545537277021" name="CompositeScope" hash="-bqls0tb9ndepebnagx2qmano7w2vmk4">
     <dep root="3734116213129862372" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -45,7 +45,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CompositeScope.java" />
   </source>
-  <source id="8401916545537281524" name="ScopeAdapter" hash="bv5vg9uol2ykkmp2f6t926ah05r7ier">
+  <source id="8401916545537281524" name="ScopeAdapter" hash="e3566y0ccdp5y2ld96zvvhmekcojyoi">
     <dep root="3734116213129862372" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -63,11 +63,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EmptyScope.java" />
   </source>
-  <source id="7712479415687661167" name="ErrorScope" hash="29be4kgeuocogfk0t4gz0hlkzwja0kx">
+  <source id="7712479415687661167" name="ErrorScope" hash="63cz4a0h130v116gy6280gu9hgnvl41">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ErrorScope.java" />
   </source>
-  <source id="5452980714151229091" name="DelegatingScope" hash="9glml0w38e09dp33byvp1vs2lnkz52e">
+  <source id="5452980714151229091" name="DelegatingScope" hash="-8gzfb5jjo1cpiwtdxv3rbcw938fucl9">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DelegatingScope.java" />
@@ -85,7 +85,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FilteringScope.java" />
   </source>
-  <source id="7149567160619391740" name="FilteringByNameScope" hash="bigtc8x6wt72zmd41l5qvfzfxvisc7i">
+  <source id="7149567160619391740" name="FilteringByNameScope" hash="7ekscdw7ngds6btmnvorf2881xk7nhd">
     <dep root="3734116213129862372" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -100,7 +100,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FilteringByNameScope.java" />
   </source>
-  <source id="5455284157994035575" name="ListScope" hash="-6rtyafserk45ix2ya4ltr6btkz5yrsi">
+  <source id="5455284157994035575" name="ListScope" hash="badi5y2x8bh2ysc2e0ak111j2fokmhy">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -109,7 +109,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="ListScope.java" />
   </source>
-  <source id="16879048186085434" name="ModelsScope" hash="-5z2ip908t9i6hz17urkdhvchb2mkyr9">
+  <source id="16879048186085434" name="ModelsScope" hash="cyjz0efb7mzbmjb686dki70391btufa">
     <dep root="3734116213129862372" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

@@ -3571,7 +3571,7 @@
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="219" startPosition="25" endLine="220" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="220" startPosition="109" endLine="221" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="221" startPosition="129" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="223" startPosition="23" endLine="224" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="223" startPosition="23" endLine="224" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="225" startPosition="29" endLine="226" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="226" startPosition="117" endLine="227" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="227" startPosition="133" endLine="228" endPosition="349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3696,7 +3696,7 @@
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="299" startPosition="112" endLine="307" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="314" startPosition="120" endLine="322" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="174" startPosition="133" endLine="183" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="224" startPosition="143" endLine="233" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="224" startPosition="133" endLine="233" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="240" startPosition="138" endLine="249" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="327" startPosition="11" endLine="341" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992412775" fileName="TemplateRootCustom.java" startLine="36" startPosition="0" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

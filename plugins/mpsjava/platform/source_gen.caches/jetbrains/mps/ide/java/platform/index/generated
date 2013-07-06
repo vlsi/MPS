@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-37b0fn5oloyct1o1kbckkn8au2ok3xf">
+<dependencies version="2" modelHash="9rknpci86jboeqdlsygnta25yskv3qi">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.psi.search(MPS.IDEA/com.intellij.psi.search@java_stub)" />
@@ -14,10 +14,10 @@
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-1lugkap5r9645u9hztq33busleneuk2" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-48vxm6lpdyencmht9ofqk4s4yqtnzq5" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-2te9zcwr0xtinv0zm3xquqs5me3u63x" />
-  <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="-7c1td2tnt9z4rcnqttp1euh1ao52a9c" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6h3tybhwm2gac0mij59vhwmpzhilcyn" />
+  <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="4m2hwma1t3j9gx06q4bukrh096f67pz" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5lr5rrypi6083nfy87dzcasbi6sii76" />
   <common hash="5xod6vnnx4e66oomgi5kw6gvkya67g1" />
-  <source id="4183391441819863852" name="ClassifierSuccessorsFinder" hash="81xexowmyakcxt04kscs67rsltqoc42">
+  <source id="4183391441819863852" name="ClassifierSuccessorsFinder" hash="-9sczeg5wo9dumdchz4eawsd1czjjihv">
     <dep root="4183391441819864496" />
     <dep root="4183391441819864880" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
@@ -36,7 +36,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClassifierSuccessorsFinder.java" />
   </source>
-  <source id="4183391441819864496" name="ClassifierSuccessorsIndexer" hash="8e4aqy6l1atr0ul7lcrg6o5oh1dm8xa">
+  <source id="4183391441819864496" name="ClassifierSuccessorsIndexer" hash="b0nhjl4n1n7ibrng6g31u7r1zy0a7si">
     <dep root="4183391441819864880" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -50,7 +50,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ClassifierSuccessorsIndexer.java" />
   </source>
-  <source id="4183391441819864880" name="GlobalSNodeId" hash="-6xdpdjbtda8cxcv31s6d9yf68dl4p6j">
+  <source id="4183391441819864880" name="GlobalSNodeId" hash="76egzyq7rskuzfptq28eb0nppstkyou">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <file name="GlobalSNodeId.java" />
@@ -61,7 +61,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GlobalSNodeIdDescriptor.java" />
   </source>
-  <source id="4183391441819865189" name="ListExternalizer" hash="-cme8mqydhisur9803awgofscj1cg9u8">
+  <source id="4183391441819865189" name="ListExternalizer" hash="-8rowhrantfdi9eo5qmti36qx7sb8h1b">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
