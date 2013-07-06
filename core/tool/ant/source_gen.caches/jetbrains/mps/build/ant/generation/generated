@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2ew7adyw7gqxk77fuqkibg9d13et1ho">
+<dependencies version="2" modelHash="-b0j3kij9p5ajk2017k696oej3jh5fnx">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
-  <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" hash="6eo2s554jazvezfqidgjcf1edlea5cl" />
-  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="6ko366di7101wmgv2s41xmj8iimdnn6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
+  <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" hash="dxjdemqc0yw6pq7u0kxdaijarih6q5w" />
+  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="cwz12qxauapaz3uyc37cjueldlzmaih" />
   <common hash="66ok0pl00zp72s773dbmvepnkgf1u5m" />
-  <source id="9096318311151691260" name="Chunk" hash="6ncxwumck53hq302zf0fs22v69oy8j0">
+  <source id="9096318311151691260" name="Chunk" hash="b7wd3k17f4umq1w3klml7lmyc246i73">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Chunk.java" />
   </source>
-  <source id="9096318311151864960" name="ModuleChunkPart" hash="-64i56uohus1kds2a27u8i78no7tl3ez">
+  <source id="9096318311151864960" name="ModuleChunkPart" hash="b8qndm7u34qn0iovft70a2qehqia1o4">
     <file name="ModuleChunkPart.java" />
   </source>
-  <source id="4263887295358464059" name="GenerateTask" hash="-9l2w03e3canirh8yipcxwxa2opf0fb">
+  <source id="4263887295358464059" name="GenerateTask" hash="166j46yuvpbm6zumhbtno0ubcd9ft0y">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
     <file name="GenerateTask.java" />
   </source>
-  <source id="978600701689990961" name="Plugin" hash="2xtmieyj9l82qv1mbx0vei1tm4eiv27">
+  <source id="978600701689990961" name="Plugin" hash="bcw20t9itvce8be481uvj6tely809lv">
     <file name="Plugin.java" />
   </source>
-  <source id="861826518923203126" name="GenTestTask" hash="8ymh8sd1idvah6trjzaq6zg7mtyuwaq">
+  <source id="861826518923203126" name="GenTestTask" hash="-cbzhqsd9p3i2zyjh8qlkgvfvgz5o7s3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />

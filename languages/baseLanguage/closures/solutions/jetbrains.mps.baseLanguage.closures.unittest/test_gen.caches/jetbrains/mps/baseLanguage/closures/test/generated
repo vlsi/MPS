@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-er3iji12oqmlr6og869mo4v4hqvgqba">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5fqxd7fcw96t2fj5bjsil5qbvnk0ekv" />
+<dependencies version="2" modelHash="-40xvfb6qttupgtuzqs0h3l6pq0kk8h9">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-5wztusfdyr282w5guu9yrxp8h1a5nsj" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-4lgmeq738nky6w80atbecag8odytj68" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-e7b80cik395ob1knnyv2p6h2tvnqx40" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-8qlemu9vs5tptoub54yxd1p76nach1v" />
   <common hash="3xhhf99h0t1s7gpdewrl2zanzde0p65" />
-  <source id="1227886714745" name="ClosureDataFlow" hash="e29wvsxlsqwiyeoyzmzn43fh0stt53y" dependsOnNodes="true">
+  <source id="1227886714745" name="ClosureDataFlow" hash="5z04aweuxb4086p52o58y2teah1rk2x" dependsOnNodes="true">
     <dep root="1227886714783" />
     <dep root="4402508398720854500" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

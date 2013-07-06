@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bn5moo6eut858o2m2irqdlsm8ympcg9">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
+<dependencies version="2" modelHash="-eoghjffy6wupa1a0k62rgqipts6wtq2">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="5yny85ye96yfobgha33zc58dwozvoex" />
-  <source id="5015601397718077769" name="SourceRevision" hash="-3tq8bdmyit9df5gc3bn8nuvk650qzbz">
+  <source id="5015601397718077769" name="SourceRevision" hash="e6h68tld1nrd70m02perryl580qks6p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SourceRevision.java" />
   </source>
-  <source id="5015601397718560603" name="ExtendedDefaultVcsRootPolicy" hash="-2xavq7bct21d6x1stry43w11kch3141">
+  <source id="5015601397718560603" name="ExtendedDefaultVcsRootPolicy" hash="8zommmq6ljlztdqevjgeh2m9bkf69at">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ExtendedDefaultVcsRootPolicy.java" />
   </source>

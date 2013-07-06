@@ -123,10 +123,10 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                             // TODO validate child 
                           }
                           {
-                            final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                            final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a1a1a6a1a5a3a1a3a4a1a2);
-                              environment.nodeCopied(context3, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782066");
+                              environment.nodeCopied(context3, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151605602");
                               environment.resolve(new ReferenceResolver() {
                                 public Object resolve(SNode outputNode, TemplateContext context) {
                                   return QueriesGenerated.referenceMacro_GetReferent_429601079676782068(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode11, referenceMacro_g27wod_c0b0a0a0a0a0c0b0e0b0b0b0g0b0f0d0b0d0e0b0c, "variableDeclaration", context, environment.getGenerator()));
@@ -490,10 +490,10 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   // TODO validate child 
                                 }
                                 {
-                                  final SNode tnode38 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                                  final SNode tnode38 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a4a1a3a1a3);
-                                    environment.nodeCopied(context29, tnode38, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787135");
+                                    environment.nodeCopied(context29, tnode38, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151530187");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
                                         return QueriesGenerated.referenceMacro_GetReferent_429601079676787138(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode38, referenceMacro_g27wod_c0b0a0a0a0a0c0b0e0b0f0b0e0b0d0d0c0c0b0e0b0d0b0d, "variableDeclaration", context, environment.getGenerator()));
@@ -1274,10 +1274,10 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                 environment.nodeCopied(context83, tnode90, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787199");
 
                                 {
-                                  final SNode tnode91 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                                  final SNode tnode91 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a8a1a3a1a3);
-                                    environment.nodeCopied(context83, tnode91, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787205");
+                                    environment.nodeCopied(context83, tnode91, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151356958");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
                                         return QueriesGenerated.referenceMacro_GetReferent_429601079676787208(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode91, referenceMacro_g27wod_c0b0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0i0b0d0b0d, "variableDeclaration", context, environment.getGenerator()));
@@ -1451,10 +1451,10 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                 environment.nodeCopied(context94, tnode101, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787535");
 
                                 {
-                                  final SNode tnode102 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                                  final SNode tnode102 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a9a1a3a1a3);
-                                    environment.nodeCopied(context94, tnode102, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787536");
+                                    environment.nodeCopied(context94, tnode102, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905150310987");
                                     environment.resolve(new ReferenceResolver() {
                                       public Object resolve(SNode outputNode, TemplateContext context) {
                                         return QueriesGenerated.referenceMacro_GetReferent_429601079676787538(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode102, referenceMacro_g27wod_c0b0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0j0b0d0b0d, "variableDeclaration", context, environment.getGenerator()));
@@ -1723,10 +1723,10 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                         environment.nodeCopied(context105, tnode117, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787970");
 
                         {
-                          final SNode tnode118 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                          final SNode tnode118 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a5a3a2a2a1a01a1a3a1a3);
-                            environment.nodeCopied(context105, tnode118, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787971");
+                            environment.nodeCopied(context105, tnode118, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151608284");
                             environment.resolve(new ReferenceResolver() {
                               public Object resolve(SNode outputNode, TemplateContext context) {
                                 return QueriesGenerated.referenceMacro_GetReferent_429601079676787973(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode118, referenceMacro_g27wod_c0b0a0a0a0a0c0b0d0b0f0d0c0c0b0k0b0d0b0d, "variableDeclaration", context, environment.getGenerator()));
@@ -1943,10 +1943,10 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                           // TODO validate child 
                                         }
                                         {
-                                          final SNode tnode133 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+                                          final SNode tnode133 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3);
-                                            environment.nodeCopied(context124, tnode133, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789931");
+                                            environment.nodeCopied(context124, tnode133, "tpl/r:00000000-0000-4000-0000-011c8959034c/3021153905151612451");
                                             environment.resolve(new ReferenceResolver() {
                                               public Object resolve(SNode outputNode, TemplateContext context) {
                                                 return QueriesGenerated.referenceMacro_GetReferent_429601079676789933(environment.getOperationContext(), new ReferenceMacroContext(context.getInput(), tnode133, referenceMacro_g27wod_c0b0a0a0a0a0c0b0e0b0f0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d, "variableDeclaration", context, environment.getGenerator()));
@@ -2433,7 +2433,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
   private static SNodePointer ifMacroRef_g27wod_a0a0a1a6a1a5a3a1a3a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676782079");
   private static SNodePointer templateNode_g27wod_a0a0a1a1a1a6a1a5a3a1a3a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676782064");
   private static SNodePointer templateNode_g27wod_a0a0a1a3a1a1a1a6a1a5a3a1a3a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "6966417881647349927");
-  private static SNodePointer templateNode_g27wod_a0a0a1a4a1a1a1a6a1a5a3a1a3a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676782066");
+  private static SNodePointer templateNode_g27wod_a0a0a1a4a1a1a1a6a1a5a3a1a3a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3021153905151605602");
   private static SNodePointer referenceMacro_g27wod_c0b0a0a0a0a0c0b0e0b0b0b0g0b0f0d0b0d0e0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676782067");
   private static SNodePointer conseq_g27wod_a0a0a0b0b0g0b0f0d0b0d0e0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676782082");
   private static SNodePointer templateNode_g27wod_a0a0a2a0b0b0g0b0f0d0b0d0e0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676782084");
@@ -2460,7 +2460,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
   private static SNodePointer propertyMacro_g27wod_c0b0c0c0b0e0b0e0b0d0d0c0c0b0e0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786578");
   private static SNodePointer templateNode_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a4a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786661");
   private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a4a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786666");
-  private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a4a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787135");
+  private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a4a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3021153905151530187");
   private static SNodePointer referenceMacro_g27wod_c0b0a0a0a0a0c0b0e0b0f0b0e0b0d0d0c0c0b0e0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787137");
   private static SNodePointer loopMacroRef_g27wod_a0a0a1a5a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786278");
   private static SNodePointer templateNode_g27wod_a0a0a3a2a2a1a5a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786255");
@@ -2515,7 +2515,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
   private static SNodePointer templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a8a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786875");
   private static SNodePointer propertyMacro_g27wod_c0b0c0c0b0e0b0e0b0d0d0c0c0b0i0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676786876");
   private static SNodePointer templateNode_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a8a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787199");
-  private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a8a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787205");
+  private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a8a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3021153905151356958");
   private static SNodePointer referenceMacro_g27wod_c0b0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0i0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787207");
   private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a8a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787203");
   private static SNodePointer loopMacroRef_g27wod_a0a0a1a9a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787548");
@@ -2527,7 +2527,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
   private static SNodePointer templateNode_g27wod_a0a0a1a4a1a4a1a3a3a2a2a1a9a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787525");
   private static SNodePointer propertyMacro_g27wod_c0b0c0c0b0e0b0e0b0d0d0c0c0b0j0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787526");
   private static SNodePointer templateNode_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a9a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787535");
-  private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a9a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787536");
+  private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a1a9a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3021153905150310987");
   private static SNodePointer referenceMacro_g27wod_c0b0a0a0a0a0c0b0d0b0f0b0e0b0d0d0c0c0b0j0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787537");
   private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a1a9a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787547");
   private static SNodePointer loopMacroRef_g27wod_a0a0a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787984");
@@ -2544,7 +2544,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
   private static SNodePointer templateNode_g27wod_a0a0a1a4a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787869");
   private static SNodePointer templateNode_g27wod_a0a0a1a4a1a4a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676788773");
   private static SNodePointer templateNode_g27wod_a0a0a1a5a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787970");
-  private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787971");
+  private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3021153905151608284");
   private static SNodePointer referenceMacro_g27wod_c0b0a0a0a0a0c0b0d0b0f0d0c0c0b0k0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787972");
   private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676788769");
   private static SNodePointer templateNode_g27wod_a0a0a1a3a1a4a1a5a3a2a2a1a01a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676787982");
@@ -2561,7 +2561,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
   private static SNodePointer propertyMacro_g27wod_c0b0c0c0b0e0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789802");
   private static SNodePointer templateNode_g27wod_a0a0a1a5a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789926");
   private static SNodePointer templateNode_g27wod_a0a0a1a3a1a5a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789929");
-  private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789931");
+  private static SNodePointer templateNode_g27wod_a0a0a1a4a1a5a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "3021153905151612451");
   private static SNodePointer referenceMacro_g27wod_c0b0a0a0a0a0c0b0e0b0f0b0e0b0d0d0c0c0e0d0c0c0b0l0b0d0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789932");
   private static SNodePointer copySrcListMacro_g27wod_a0a0a1a21a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676845657");
   private static SNodePointer loopMacroRef_g27wod_a0a0a1a31a1a3a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676789066");

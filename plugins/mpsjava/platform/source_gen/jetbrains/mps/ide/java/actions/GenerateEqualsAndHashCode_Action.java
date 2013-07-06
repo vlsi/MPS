@@ -256,7 +256,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     if (quotedNode_22 != null) {
       quotedNode_17.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_22));
     }
-    quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_17.addChild("rightExpression", quotedNode_23);
     quotedNode_11.addChild("condition", quotedNode_17);
     quotedNode_8.addChild("statement", quotedNode_11);
@@ -270,7 +270,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_12.addChild("ifTrue", quotedNode_18);
     quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.OrExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_25.addChild("leftExpression", quotedNode_31);
     quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_25.addChild("rightExpression", quotedNode_32);
@@ -286,7 +286,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_33.addChild("operation", quotedNode_38);
     quotedNode_26.addChild("leftExpression", quotedNode_33);
     quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_39 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_34.addChild("operand", quotedNode_39);
     quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_40.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_40, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object.getClass():java.lang.Class")));
@@ -307,7 +307,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_35, "classifier", (SNode) parameter_4);
     quotedNode_28.addChild("type", quotedNode_35);
-    quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
+    quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_28.addChild("expression", quotedNode_36);
     quotedNode_20.addChild("initializer", quotedNode_28);
     quotedNode_14.addChild("localVariableDeclaration", quotedNode_20);

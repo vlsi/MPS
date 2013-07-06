@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-81xubj396hk4xnrwerly356crbnbeiq">
+<dependencies version="2" modelHash="-2xi89pt06dipdysyo45atb88ke4ea5b">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.navigation(MPS.Editor/jetbrains.mps.openapi.navigation@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -7,30 +7,30 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-95x4rx9580t60zleliynucdwubtiw8m" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="el1e6yihwlubomwei3c2i0no0gprq7s" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8nth2puax45vwthd0o36vis2hby8eud" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="3xakpaoch5bk4dwr6fzwigt84qw13qv" />
   <common hash="-dlp70j157q2tk6ckth0eh3blm30i2z5" />
-  <source id="4282822416100096601" name="WriteBlock" hash="8l01lkrxypvjghetnbvicrkhmh8ehem">
+  <source id="4282822416100096601" name="WriteBlock" hash="-84aqrmdg4ql8bbqyvmceakxztp2iusj">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="WriteBlock.java" />
   </source>
-  <source id="4282822416100096467" name="InstructionWrapper" hash="8ri7cop5qhxpb2ivacp1srm20kxzpno">
+  <source id="4282822416100096467" name="InstructionWrapper" hash="bczksptvjz6sv2t6qy7u4wkddbb9f65">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="InstructionWrapper.java" />
   </source>
-  <source id="4282822416100096810" name="GraphCreator" hash="6viabciwyu9yx7ie4sh55fbdu29uc3w">
+  <source id="4282822416100096810" name="GraphCreator" hash="-3jjmjmdir3dsothm2geqtsip1lzhevo">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GraphCreator.java" />
   </source>
-  <source id="4282822416100096982" name="SimpleBlock" hash="-7tguuzggrh5kpraxr4n961c92z8ovfr">
+  <source id="4282822416100096982" name="SimpleBlock" hash="-dn75w9fmvqul1tovm82w8f2ccsagevf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SimpleBlock.java" />
   </source>
-  <source id="4282822416100097099" name="AbstractBlock" hash="-bv3giyfujagdei0hdmb0l4mxqn11jvd">
+  <source id="4282822416100097099" name="AbstractBlock" hash="-eteprah3hho1u1qberamcfcbnrvtqr1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -41,7 +41,7 @@
   <source id="4282822416100097565" name="IInstruction" hash="-91w0b9xrsu6ccg9owpx93wghtua7gvt">
     <file name="IInstruction.java" />
   </source>
-  <source id="4282822416100097580" name="ControlFlowGraph" hash="-7hmf9ise31emy3ld1eublt9x8ux9klu">
+  <source id="4282822416100097580" name="ControlFlowGraph" hash="-6az4fshx2nhmzzf93t06g9zuae16ast">
     <dep root="4282822416100100761" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -56,21 +56,21 @@
   <source id="4282822416100096466" name="IBlockListener" hash="-8tdm6z6nuq03qyxltoyx42x95lyg8qz">
     <file name="IBlockListener.java" />
   </source>
-  <source id="4282822416100098971" name="ReturnBlock" hash="-b4yutnrbcucufamq7fj9mkynyupg4z4">
+  <source id="4282822416100098971" name="ReturnBlock" hash="dtfnsfght7924155kv28trmm3j5wyx0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ReturnBlock.java" />
   </source>
-  <source id="4282822416100099297" name="ArrowHead" hash="-a5uwietwxqmlo5xriy03x4jvorn7543">
+  <source id="4282822416100099297" name="ArrowHead" hash="7m93s5pp2pjgr35o8wrhs3mr4deizyj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ArrowHead.java" />
   </source>
-  <source id="4282822416100099402" name="AltBlock" hash="-55ikfnx78ng16y46gxhgjbvgh4dr7yb">
+  <source id="4282822416100099402" name="AltBlock" hash="dust1kykhpavwexmsoorqbwju7laci">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AltBlock.java" />
   </source>
-  <source id="4282822416100099480" name="ShowCFGDialog" hash="dwy12cap3y5kmgx5rw49vqlf0eex4v4">
+  <source id="4282822416100099480" name="ShowCFGDialog" hash="-48qhsz4ermavd1pgo71vletvdeqchkz">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.navigation(MPS.Editor/jetbrains.mps.openapi.navigation@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -80,25 +80,25 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="ShowCFGDialog.java" />
   </source>
-  <source id="4282822416100099790" name="ProgramWrapper" hash="-8qfd6nhoelcjoo21lje5herm64of9ds">
+  <source id="4282822416100099790" name="ProgramWrapper" hash="-1wmskg0fbd5rczc5y8hfoa8m0ti4c6e">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProgramWrapper.java" />
   </source>
-  <source id="4282822416100099867" name="LineDirection" hash="eurav9zqmj1xi9myejmbgw4y3c6bnq8">
+  <source id="4282822416100099867" name="LineDirection" hash="-1j76orwfnj5l8z4z0tkxq4g88wxhd1u">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="LineDirection.java" />
   </source>
-  <source id="4282822416100100062" name="JumpBlock" hash="amnl8sajua3hvdfqbmo209xzm88nr61">
+  <source id="4282822416100100062" name="JumpBlock" hash="-bzdom0donxt7mvszz3j9zrmez98632k">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JumpBlock.java" />
   </source>
-  <source id="4282822416100100136" name="FreeZone" hash="-6l55dpu6ilmzss77d0trxv219b51iay">
+  <source id="4282822416100100136" name="FreeZone" hash="4vvieqzq78rcvbo7q3qzcoa746gvr3z">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FreeZone.java" />
   </source>
-  <source id="4282822416100100468" name="ReadBlock" hash="-4ayrgisafiaz9kp6pp6gpjsixf1fpao">
+  <source id="4282822416100100468" name="ReadBlock" hash="9rn348ltz352ebcn7zqrzsep44xnou1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ReadBlock.java" />
@@ -106,12 +106,12 @@
   <source id="4282822416100100546" name="IProgram" hash="d28uffqcl4p2posm7xiswrmz4beg21d">
     <file name="IProgram.java" />
   </source>
-  <source id="4282822416100100567" name="ArrowHeadDirection" hash="762m0ekd8k0tj2g3793xhjezeg4n6cp">
+  <source id="4282822416100100567" name="ArrowHeadDirection" hash="-gzzkcnesj1c2g8irwv14f8hfznd1hy">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ArrowHeadDirection.java" />
   </source>
-  <source id="4282822416100100761" name="Line" hash="3zct51008cqa19brgswzs74t09m4zxc">
+  <source id="4282822416100100761" name="Line" hash="-a6d2jakmh87c365ecnj45bilgm0xprd">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Line.java" />
   </source>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bjcnph0g5sp5sieevrb682np3pl0r6h">
+<dependencies version="2" modelHash="7nteasbzqch8s2fa7dlpjwl8unhaqxy">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
-  <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" hash="2ljibdocomm2u5yur7mpjykp5siexvo" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
+  <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" hash="-7lp00k631z7gufscymngxtc2pqoc3vt" />
   <common hash="-8p7xhpslbrvtxu3w1je1wakehlf94p8" />
-  <source id="3102837338444216503" name="ObjectValueProxy" hash="-5ow2misdn69zt7titzwns1y6nbkudog">
+  <source id="3102837338444216503" name="ObjectValueProxy" hash="2h0r2lj6q5w9bgtaknd1q7v33vrtv3b">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" />
     <file name="ObjectValueProxy.java" />
   </source>
-  <source id="3102837338444216799" name="NullValueProxy" hash="377pthdf951q9hx9rpk9nzt80cl6st1">
+  <source id="3102837338444216799" name="NullValueProxy" hash="5ri0w1shaltsfujhpqqez4zeevyf20e">
     <file name="NullValueProxy.java" />
   </source>
-  <source id="3102837338444216936" name="ArrayValueProxy" hash="19f816xlbs26wt9434kuakcni6k1x0i">
+  <source id="3102837338444216936" name="ArrayValueProxy" hash="2j8liwq3yuo6vs6ijdnzi4kd9oltz1i">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" />
     <file name="ArrayValueProxy.java" />
   </source>
-  <source id="3102837338444217168" name="MirrorUtilImpl" hash="-7lbqbdj8ao5xbxrhie4mcnxn69ii5rm">
+  <source id="3102837338444217168" name="MirrorUtilImpl" hash="sapsbfvv94hnvo86led4hh6ppm2z1g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" />
     <file name="MirrorUtilImpl.java" />

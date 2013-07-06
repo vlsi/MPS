@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8r9dexx1irbfhvwh4saxjivh6k2pbaq">
+<dependencies version="2" modelHash="dhwb35wj44ufc506ka01689xciofkv0">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="15mjw3qikskmufrobbswpi8m7cntoco" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="6oytwvityzm5bzdwztttqikw69yk5ly" />
-  <source id="557142600900286111" name="DescriptorIOFacade" hash="83hmelji62okq9v4wdmorerxqm9iros">
+  <source id="557142600900286111" name="DescriptorIOFacade" hash="2mu0eng1bwf841oowovj29b5b2mbmgu">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DescriptorIOFacade.java" />
@@ -14,13 +14,13 @@
   <source id="557142600900532740" name="DescriptorIOProvider" hash="45mrvagzepdcy6n2p9029zq1k8wr4dj">
     <file name="DescriptorIOProvider.java" />
   </source>
-  <source id="557142600900539533" name="StandardDescriptorIOProvider" hash="cxo30l2u6kve3o6mmfjeyf4p74hs4ah">
+  <source id="557142600900539533" name="StandardDescriptorIOProvider" hash="-3n4d8tbu7fopviw0cqsgr40fi5ril6p">
     <file name="StandardDescriptorIOProvider.java" />
   </source>
   <source id="3323419009397486857" name="IdeaDescriptorIOProvider" hash="2d1bi9hzng6xj15fm7pr6d4cptfwn6o">
     <file name="IdeaDescriptorIOProvider.java" />
   </source>
-  <source id="9081946191808704816" name="DescriptorIOException" hash="-9c176nc3dg39dgxlaeh38754cc045z9">
+  <source id="9081946191808704816" name="DescriptorIOException" hash="-2wup1nghbhwi0xrl9cylaoywq7bn2rb">
     <file name="DescriptorIOException.java" />
   </source>
 </dependencies>
