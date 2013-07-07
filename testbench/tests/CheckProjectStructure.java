@@ -17,6 +17,7 @@
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.Order;
+import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
@@ -43,11 +44,13 @@ import java.util.List;
 @WithSorting
 public class CheckProjectStructure {
   private static CheckProjectStructureHelper HELPER;
-//  private static Project ourProject;
+  private static Project ourContextProject;
 
   @Parameters
   public static List<Object[]> filePaths() {
-//    ourProject = ActiveEnvironment.get().openProject(new File("."));
+//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
+
+//    ourContextProject = ContextProjextSupport.getContextProject();
 
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
     return HELPER.filePaths();
