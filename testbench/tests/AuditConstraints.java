@@ -14,21 +14,31 @@
  * limitations under the License.
  */
 
+import jetbrains.mps.checkers.LanguageChecker;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.testbench.ModelsExtractor;
 import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import jetbrains.mps.testbench.suites.CheckingTestStatistic;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(ParameterizedMpsTest.class)
 @PreloadAllModules
@@ -83,7 +93,13 @@ public class AuditConstraints {
 
   @Test
   public void checkConstraints() {
-    List<String> errors = CheckProjectStructureHelper.checkConstraints(handle, ourStatistic);
+    SModuleReference moduleReference = handle.getDescriptor().getModuleReference();
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + handle.getFile().getPath() + " was not loaded", module);
+
+    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
+    List<String> errors = CheckProjectStructureHelper.applyChecker(new LanguageChecker(), models, ourStatistic);
+
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 }

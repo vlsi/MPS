@@ -163,24 +163,6 @@ public class CheckProjectStructureHelper {
     return checkModules(modules);
   }
 
-  public static List<String> checkTypeSystem(ModulesMiner.ModuleHandle moduleHandle, CheckingTestStatistic statistic) {
-    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
-
-    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
-    return applyChecker(new TypesystemChecker(), models, statistic);
-  }
-
-  public static List<String> checkConstraints(ModulesMiner.ModuleHandle moduleHandle, CheckingTestStatistic statistic) {
-    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
-
-    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
-    return applyChecker(new LanguageChecker(), models, statistic);
-  }
-
   public static String formatErrors(List<String> errors) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -301,7 +283,7 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  private static List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
+  public static List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
