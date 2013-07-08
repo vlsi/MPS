@@ -478,6 +478,18 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel" file="PluginsListPanel.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.execution.lib.ui.ListPanel" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectChooser" file="ProjectChooser.java">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
