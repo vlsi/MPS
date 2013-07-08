@@ -28,10 +28,10 @@ import java.util.HashSet;
 import java.io.InputStream;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.io.IOException;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.io.IOException;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -146,6 +146,11 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
           continue;
         }
         String code = readInputStream(is);
+        try {
+          is.close();
+        } catch (IOException e) {
+          LOG.warning("failed to close file " + fileName, e);
+        }
 
         JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, null, true);
         if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
@@ -181,6 +186,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
       }
     }
   }
+
 
   private static final int BUFSIZE = 65536;
 
@@ -230,7 +236,16 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     }
   }
 
+
+
   protected SModel getCurrentModelInternal() {
+    return myModel;
+  }
+
+
+
+  @Deprecated
+  public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = createModel();
       myModel.setModelDescriptor(this);
@@ -238,14 +253,13 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     return myModel;
   }
 
-  @Deprecated
-  public SModel getSModelInternal() {
-    return getCurrentModelInternal();
-  }
+
 
   public boolean isLoaded() {
     return myModel != null;
   }
+
+
 
   public void reloadFromDiskSafe() {
     changed(getSource(), getSource().getAvailableStreams());

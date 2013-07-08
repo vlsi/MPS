@@ -15,7 +15,6 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -93,11 +92,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
     IFile path = FileSystem.getInstance().getFileByPath(myPath);
     Set<SModel> models = getModels(path, "");
     // TODO this is probably wrong... models should be registered elsewhere 
-    SetSequence.fromSet(models).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel it) {
-        register(it);
-      }
-    });
+    // <node> 
     return models;
   }
 
