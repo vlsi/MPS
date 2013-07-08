@@ -10,15 +10,6 @@ import java.util.ArrayList;
 import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.make.MPSCompilationResult;
 import org.junit.runner.notification.Failure;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import javax.swing.SwingUtilities;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import java.lang.reflect.InvocationTargetException;
 
 public class MakeRunner extends Runner {
@@ -44,52 +35,12 @@ public class MakeRunner extends Runner {
       notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
     }
 
-    // why we need it? because some classes loaded before maker - LanguageRuntime and typesystem classes 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().reloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
-      }
-    });
-
-    // Danya: added re-load of all changed (or new) models after make. 
-    // The problem was: I had a stub model whose source was the classes_gen dir 
-    // of a module. That classes_gen got populated only during make. But by that time 
-    // model repository had already been filled and obviosly it didn't have those stub models 
-    // as there were no class files there at the moment yet. 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (SModule mod : MPSModuleRepository.getInstance().getAllModules()) {
-          if (!(mod instanceof AbstractModule)) {
-            continue;
-          }
-          ((AbstractModule) mod).updateModelsSet();
-        }
-      }
-    });
-
-    if (ActiveEnvironment.get().hasIdeaInstance()) {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          @Override
-          public void run() {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              @Override
-              public void run() {
-                LocalFileSystem.getInstance().refresh(false);
-              }
-            });
-          }
-        });
-      } catch (InterruptedException e) {
-        notifier.fireTestFailure(new Failure(myDescription, e));
-      } catch (InvocationTargetException e) {
-        notifier.fireTestFailure(new Failure(myDescription, e));
-      }
-    } else {
-      // todo: ? 
-      // update all stubs? or whaaaat? or maybe everything what depends on make should listen core MakeService? 
-      // btw Danya's comment about stubs updating 
+    try {
+      MpsTestsSupport.reloadAllAfterMake();
+    } catch (InterruptedException e) {
+      notifier.fireTestFailure(new Failure(myDescription, e));
+    } catch (InvocationTargetException e) {
+      notifier.fireTestFailure(new Failure(myDescription, e));
     }
 
     notifier.fireTestFinished(myDescription);

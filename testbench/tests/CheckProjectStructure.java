@@ -27,6 +27,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,12 +43,13 @@ public class CheckProjectStructure {
   private static Project ourContextProject;
 
   @Parameters
-  public static List<Object[]> modules() {
+  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
 //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
     ourContextProject = ContextProjextSupport.getContextProject();
 
     // todo: exception in case of failed compilation?
     MpsTestsSupport.makeAllInCreatedEnvironment();
+    MpsTestsSupport.reloadAllAfterMake();
 
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
     return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
