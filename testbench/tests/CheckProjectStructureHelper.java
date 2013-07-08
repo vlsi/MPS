@@ -158,7 +158,7 @@ public class CheckProjectStructureHelper {
     } else {
       type = "unknown";
     }
-    return module.getModuleName() + "[" + type + "]";
+    return module.getModuleName() + " [" + type + "]";
   }
 
   public List<String> checkReferences(SModule module) {
