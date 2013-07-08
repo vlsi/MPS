@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class TypeVariableDeclaration_ActionMap {
@@ -45,8 +47,9 @@ public class TypeVariableDeclaration_ActionMap {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration")) {
-        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
+      SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
+      if (ListSequence.fromList(SLinkOperations.getTargets(parent, "typeVariableDeclaration", true)).isEmpty()) {
+        SelectionUtil.selectCell(editorContext, SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.GenericDeclaration"), "TYPE_VARIABLES_ANCHOR");
       }
     }
   }
