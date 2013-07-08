@@ -16497,11 +16497,17 @@
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8227093612175570786" nodeInfo="ng">
           <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="8524659923334108611" resolveInfo="mps_home" />
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8227093612175570787" nodeInfo="nn">
-            <property name="head" nameId="3ior.8618885170173601779" value="build" />
+            <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
             <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8227093612175570788" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+              <property name="head" nameId="3ior.8618885170173601779" value="mps-build" />
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8227093612175570789" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.ide.build.msd" />
+                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6057022384929657252" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="mpsBuild" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6057022384929658013" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.ide.build.msd" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
