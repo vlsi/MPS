@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2864z4biqkhyteukihrch2spxsb332u">
+<dependencies version="2" modelHash="d1y9xu08p8oac0fwkxscjpdqllq4gbu">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />
@@ -377,7 +377,7 @@
     <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <file name="Java_Producer.java" />
   </source>
-  <source id="6062668769034010588" name="JUnit Tests" hash="-4eka2jttqqgiwkm1cooa77hjqjre9rl">
+  <source id="6062668769034010588" name="JUnit Tests" hash="-fg33w6637aeayjki8lgzl849sdiuov">
     <dep root="357096973092112028" />
     <dep root="468375730750988347" />
     <dep root="6062668769033909448" />
@@ -408,7 +408,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JUnitTests_Kind.java" />
   </source>
-  <source id="6062668769034010590" name="JUnit Tests" hash="3v78yxsipsqpkjmrf0qofye3bkza0js">
+  <source id="6062668769034010590" name="JUnit Tests" hash="-3wdjzzqpgij1e4uz7hu2exvlrofqpyv">
     <dep root="357096973092112028" />
     <dep root="468375730750988347" />
     <dep root="6062668769033909448" />
@@ -469,7 +469,7 @@
     <file name="JUnitTests_Configuration_Editor.java" />
     <file name="JUnitTests_Configuration_Factory.java" />
   </source>
-  <source id="6062668769034010900" name="JUnit Tests Executor" hash="-2fctp5xv9tv29n5vbpswzeitt2mpekf">
+  <source id="6062668769034010900" name="JUnit Tests Executor" hash="-78ji6w5rqn3xgo7w4pq8lvlg5vq1twp">
     <dep root="6062668769034010590" />
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
@@ -525,7 +525,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JUnitTests_Configuration_RunProfileState.java" />
   </source>
-  <source id="6062668769034010995" name="JUnit Tests Producer" hash="-5ueq88avytswlfqwayun5fa0cljicnn">
+  <source id="6062668769034010995" name="JUnit Tests Producer" hash="a02dwn3ysfqkdudczfqgcuk7i1kqfl0">
     <dep root="6062668769034010590" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />

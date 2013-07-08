@@ -990,7 +990,7 @@
   </root>
   <root type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="6062668769034010588" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="JUnit Tests" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit" />
     <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="5108813241792100544" nodeInfo="ng">
       <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5108813241792136413" nodeInfo="nn">
         <link role="classifier" roleId="tpee.1144433057691" targetNodeId="zxm1.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
@@ -1000,7 +1000,7 @@
   </root>
   <root type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="6062668769034010590" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="JUnit Tests" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit" />
     <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="6062668769034010588" resolveInfo="JUnit Tests" />
     <node role="methods" roleId="fb9u.946964771156066339" type="fb9u.PersistentConfigurationMethod" typeId="fb9u.946964771156066331" id="6062668769034642254" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getTestsToMake" />
@@ -1243,7 +1243,7 @@
   <root type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6062668769034010900" nodeInfo="ng">
     <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
     <property name="canDebug" nameId="uhxm.6226796386650281949" value="true" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit" />
     <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
     <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="6062668769034010590" resolveInfo="JUnit Tests" />
     <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.ExecuteConfiguration_Function" typeId="uhxm.6139196002333163564" id="6062668769034010901" nodeInfo="nn">
@@ -1482,7 +1482,7 @@
     </node>
   </root>
   <root type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="6062668769034010995" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="junit" />
     <node role="produce" roleId="uhxm.4366236229294149036" type="uhxm.RunConfigurationProducerPart" typeId="uhxm.4366236229294149030" id="6062668769034010996" nodeInfo="ng">
       <node role="source" roleId="uhxm.7301162575811113551" type="uhxm.SModelSource" typeId="uhxm.4482357619022381603" id="4482357619022396096" nodeInfo="ng" />
       <node role="create" roleId="uhxm.3642991921657904774" type="uhxm.Create_ConceptFunction" typeId="uhxm.4366236229294149059" id="6062668769034010997" nodeInfo="nn">
