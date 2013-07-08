@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
-import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,7 +36,6 @@ import java.util.List;
  */
 
 @RunWith(ParameterizedMpsTest.class)
-@PreloadAllModules
 @WithMake
 @WithSorting
 public class CheckProjectStructure {
@@ -50,10 +46,10 @@ public class CheckProjectStructure {
   public static List<Object[]> filePaths() {
 //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
 
-//    ourContextProject = ContextProjextSupport.getContextProject();
+    ourContextProject = ContextProjextSupport.getContextProject();
 
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
-    return HELPER.filePaths();
+    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
   }
 
   @AfterClass
@@ -64,37 +60,37 @@ public class CheckProjectStructure {
   }
 
   // main part
-  private ModuleHandle handle;
+  private SModule module;
 
-  public CheckProjectStructure(String testName, ModuleHandle handle) {
-    this.handle = handle;
+  public CheckProjectStructure(String testName, SModule module) {
+    this.module = module;
   }
 
   @Test
   @Order(1)
   public void checkReferences() {
-    List<String> errors = HELPER.check(handle);
+    List<String> errors = HELPER.checkReferences(module);
     Assert.assertTrue("Reference errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(2)
   public void checkStructure() {
-    List<String> errors = HELPER.checkStructure(handle);
+    List<String> errors = HELPER.checkStructure(module);
     Assert.assertTrue("Structure errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(3)
   public void checkGenerationStatus() {
-    List<String> errors = HELPER.checkGenerationStatus(handle);
+    List<String> errors = HELPER.checkGenerationStatus(module);
     Assert.assertTrue("Try to regenerate models:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(4)
   public void checkModuleProperties() {
-    List<String> errors = HELPER.checkModule(handle);
+    List<String> errors = HELPER.checkModule(module);
     Assert.assertTrue("Module property or dependency errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
   }
 }

@@ -22,7 +22,9 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.testbench.CheckProjectStructureUtil;
 import jetbrains.mps.testbench.ModelsExtractor;
@@ -30,7 +32,6 @@ import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -117,6 +118,26 @@ public class CheckProjectStructureHelper {
     return res;
   }
 
+  public static List<Object[]> createParamtersFromModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
+    ArrayList<Object[]> res = new ArrayList<Object[]>();
+    for (SModule module : modules) {
+      if (excludedModules.contains(module.getModuleName())) {
+        continue;
+      }
+
+      res.add(new Object[]{getDescription(module), module});
+    }
+
+    Collections.sort(res, new Comparator<Object[]>() {
+      @Override
+      public int compare(Object[] o1, Object[] o2) {
+        return ((String) o1[0]).compareTo((String) o2[0]);
+      }
+    });
+    return res;
+
+  }
+
   private static String getDescription(ModuleHandle handle) {
     if (handle.getFile().getName().endsWith(".mpl")) {
       return handle.getDescriptor().getNamespace() + " [lang]";
@@ -126,41 +147,36 @@ public class CheckProjectStructureHelper {
     return handle.getFile().getName() + " - " + handle.getDescriptor().getNamespace();
   }
 
-  public List<String> check(ModulesMiner.ModuleHandle moduleHandle) {
-    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+  private static String getDescription(SModule module) {
+    String type;
+    if (module instanceof Language) {
+      type = "lang";
+    } else if (module instanceof Solution) {
+      type = "solution";
+    } else if (module instanceof DevKit) {
+      type = "devkit";
+    } else {
+      type = "unknown";
+    }
+    return module.getModuleName() + "[" + type + "]";
+  }
 
+  public List<String> checkReferences(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
-
     return checkModels(models);
   }
 
-  public List<String> checkStructure(ModulesMiner.ModuleHandle moduleHandle) {
-    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
-
+  public List<String> checkStructure(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
-
     return checkStructure(models);
   }
 
-  public List<String> checkGenerationStatus(ModulesMiner.ModuleHandle moduleHandle) {
-    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
-
+  public List<String> checkGenerationStatus(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
-
     return checkModelsGenerationStatus(models);
   }
 
-  public List<String> checkModule(ModulesMiner.ModuleHandle moduleHandle) {
-    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
-
+  public List<String> checkModule(SModule module) {
     List<SModule> modules = new ArrayList<SModule>();
     modules.add(module);
     if (module instanceof Language) {
@@ -267,7 +283,7 @@ public class CheckProjectStructureHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModule sm : modules) {
-          StringBuilder errorMessages = checkModule(sm);
+          StringBuilder errorMessages = checkModuleInternal(sm);
           if (errorMessages.length() > 0) {
             errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
           }
@@ -391,7 +407,7 @@ public class CheckProjectStructureHelper {
     return errorMessages;
   }
 
-  private StringBuilder checkModule(final SModule module) {
+  private StringBuilder checkModuleInternal(final SModule module) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
