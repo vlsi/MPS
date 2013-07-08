@@ -251,7 +251,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 117:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Property_SetOperation").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").children(new String[]{"value"}, new boolean[]{false}).alias("set", "").staticScope(StaticScope.NONE).create();
       case 118:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ReadConceptReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("conceptDeclaration").alias("read concept", "concept reference").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ReadConceptReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("conceptDeclaration").alias("read concept", "concept reference").staticScope(StaticScope.NONE).create();
       case 119:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.RefConcept_Reference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.smodel.structure.IRefConceptArg").references("conceptDeclaration").staticScope(StaticScope.NONE).create();
       case 120:

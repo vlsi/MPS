@@ -2015,6 +2015,9 @@
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="8278380780105843856" nodeInfo="ig">
       <property name="comment" nameId="tpce.1225118933224" value="never ever use" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1706452255240670499" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="559557797393017698" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
