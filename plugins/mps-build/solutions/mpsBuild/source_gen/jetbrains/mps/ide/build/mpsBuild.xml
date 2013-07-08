@@ -369,13 +369,13 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.startup#3885435385580635037" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup#3885435385580635037.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/build-solution-models">
-      <fileset dir="${mps_home}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-solutions-mpsBuild-models">
+      <fileset dir="${mps_home}/plugins/mps-build/solutions/mpsBuild/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.ide.build.jar">
-      <zipfileset file="${mps_home}/build/solution/jetbrains.mps.ide.build.msd" prefix="modules/jetbrains.mps.ide.build" />
-      <zipfileset dir="${mps_home}/build/solution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/build-solution-models" prefix="modules/jetbrains.mps.ide.build/models" />
+      <zipfileset file="${mps_home}/plugins/mps-build/solutions/mpsBuild/jetbrains.mps.ide.build.msd" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset dir="${mps_home}/plugins/mps-build/solutions/mpsBuild" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-solutions-mpsBuild-models" prefix="modules/jetbrains.mps.ide.build/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -479,7 +479,7 @@
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" />
       </chunk>
       <chunk>
-        <module file="${mps_home}/build/solution/jetbrains.mps.ide.build.msd" />
+        <module file="${mps_home}/plugins/mps-build/solutions/mpsBuild/jetbrains.mps.ide.build.msd" />
       </chunk>
     </generate>
   </target>
@@ -907,6 +907,6 @@
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/generator/source_gen" />
-    <delete dir="${mps_home}/build/solution/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/solutions/mpsBuild/source_gen" />
   </target>
 </project>
