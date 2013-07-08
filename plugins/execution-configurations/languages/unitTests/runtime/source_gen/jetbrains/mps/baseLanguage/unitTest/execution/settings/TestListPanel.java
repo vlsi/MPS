@@ -46,14 +46,6 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     return element.getCachedFqName();
   }
 
-  @Override
-  protected String getListTitle() {
-    return (this.myIsTestMethods ?
-      "Methods" :
-      "Classes"
-    );
-  }
-
   public void init(List<ITestNodeWrapper> nodes, final boolean isTestMethods) {
     myIsTestMethods = isTestMethods;
     super.init(nodes);

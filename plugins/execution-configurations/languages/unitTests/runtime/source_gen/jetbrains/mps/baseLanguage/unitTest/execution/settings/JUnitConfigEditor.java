@@ -28,10 +28,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class JUnitConfigEditor extends JPanel {
@@ -474,11 +476,11 @@ public class JUnitConfigEditor extends JPanel {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (ITestNodeWrapper testMethod : editorMethodList) {
-              testMethods.add(TestUtils.pointerToString(testMethod.getNodePointer()));
+              testMethods.add(PointerUtils.pointerToString(testMethod.getNodePointer()));
             }
 
             for (ITestNodeWrapper testCase : editorTestCasesList) {
-              testCases.add(TestUtils.pointerToString(testCase.getNodePointer()));
+              testCases.add(PointerUtils.pointerToString(testCase.getNodePointer()));
             }
 
             if (editorModel != null) {

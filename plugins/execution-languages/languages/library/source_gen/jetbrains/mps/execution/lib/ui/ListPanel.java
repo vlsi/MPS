@@ -58,8 +58,6 @@ public abstract class ListPanel<T> extends JPanel {
 
   protected abstract String getFqName(T element);
 
-  protected abstract String getListTitle();
-
   protected abstract void collectCandidates();
 
   public void addItem(T item) {

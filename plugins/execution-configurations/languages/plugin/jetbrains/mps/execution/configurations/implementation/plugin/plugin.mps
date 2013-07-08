@@ -18,7 +18,7 @@
   <language namespace="ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)" />
   <import index="4dtg" modelUID="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" version="-1" />
   <import index="xk9i" modelUID="r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)" version="1" />
-  <import index="awpe" modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" version="1" />
+  <import index="awpe" modelUID="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" version="2" />
   <import index="dgv4" modelUID="r:a76f2576-36ee-41c5-a8e6-bb2264ed2331(jetbrains.mps.baseLanguage.execution.api.ui)" version="0" />
   <import index="go48" modelUID="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)" version="5" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
@@ -30,7 +30,7 @@
   <import index="sfqd" modelUID="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)" version="9" />
   <import index="tpe5" modelUID="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" version="-1" />
   <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" version="-1" />
-  <import index="tty3" modelUID="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)" version="2" />
+  <import index="tty3" modelUID="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)" version="3" />
   <import index="d2gh" modelUID="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)" version="6" />
   <import index="44uo" modelUID="r:40062e7d-2d40-4964-a55f-255e1fee23d7(jetbrains.mps.debugger.java.runtime.configurations.remote)" version="-1" />
   <import index="eva" modelUID="r:a1b1112d-dd34-4046-a6a3-811fd290d232(jetbrains.mps.execution.configurations.pluginSolution.plugin)" version="-1" />
@@ -1922,9 +1922,9 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034011173" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6062668769034011174" nodeInfo="nn">
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034874032" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tty3.6062668769034855439" resolveInfo="nodeToCloneableList" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tty3.6062668769034855273" resolveInfo="TestUtils" />
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5133679254727472004" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="awpe.5133679254727507998" resolveInfo="nodeToCloneableList" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="awpe.5133679254727507894" resolveInfo="PointerUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363075731" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6062668769034011130" resolveInfo="method" />
                 </node>
@@ -2144,9 +2144,9 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034011254" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6062668769034011255" nodeInfo="nn">
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034874037" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tty3.6062668769034855439" resolveInfo="nodeToCloneableList" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tty3.6062668769034855273" resolveInfo="TestUtils" />
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5133679254727472003" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="awpe.5133679254727507998" resolveInfo="nodeToCloneableList" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="awpe.5133679254727507894" resolveInfo="PointerUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363098171" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6062668769034011207" resolveInfo="testNode" />
                 </node>
@@ -2290,9 +2290,9 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034011314" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6062668769034011315" nodeInfo="nn">
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034874046" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tty3.6062668769034855416" resolveInfo="nodesToCloneableList" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tty3.6062668769034855273" resolveInfo="TestUtils" />
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5133679254727471521" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="awpe.5133679254727507975" resolveInfo="nodesToCloneableList" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="awpe.5133679254727507894" resolveInfo="PointerUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="6062668769034874047" nodeInfo="nn" />
               </node>
               <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034011318" nodeInfo="nn">
@@ -2374,9 +2374,9 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034011345" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6062668769034011346" nodeInfo="nn">
-              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034874043" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tty3.6062668769034855416" resolveInfo="nodesToCloneableList" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tty3.6062668769034855273" resolveInfo="TestUtils" />
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5133679254727471520" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="awpe.5133679254727507975" resolveInfo="nodesToCloneableList" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="awpe.5133679254727507894" resolveInfo="PointerUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Source_ConceptFunctionParameter" typeId="uhxm.3642991921657904775" id="6062668769034874044" nodeInfo="nn" />
               </node>
               <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034011349" nodeInfo="nn">
@@ -2425,7 +2425,7 @@
     <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="6062668769034024112" resolveInfo="MPS" />
     <node role="persistentProperty" roleId="fb9u.946964771156066595" type="fb9u.PersistentPropertyDeclaration" typeId="fb9u.946964771156066585" id="468375730751052069" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="myMpsSettings" />
-      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentConfigurationType" typeId="fb9u.946964771156066557" id="468375730751052510" nodeInfo="in">
+      <node role="type" roleId="tpee.5680397130376446158" type="fb9u.TemplatePersistentConfigurationType" typeId="fb9u.946964771156066557" id="5133679254728228303" nodeInfo="in">
         <link role="persistentConfiguration" roleId="fb9u.946964771156066333" targetNodeId="468375730750988347" resolveInfo="MpsSettings" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="468375730751052521" nodeInfo="nn">
