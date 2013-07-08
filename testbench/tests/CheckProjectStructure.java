@@ -17,8 +17,8 @@
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
@@ -36,17 +36,18 @@ import java.util.List;
  */
 
 @RunWith(ParameterizedMpsTest.class)
-@WithMake
 @WithSorting
 public class CheckProjectStructure {
   private static CheckProjectStructureHelper HELPER;
   private static Project ourContextProject;
 
   @Parameters
-  public static List<Object[]> filePaths() {
+  public static List<Object[]> modules() {
 //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
-
     ourContextProject = ContextProjextSupport.getContextProject();
+
+    // todo: exception in case of failed compilation?
+    MpsTestsSupport.makeAllInCreatedEnvironment();
 
     HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
     return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
