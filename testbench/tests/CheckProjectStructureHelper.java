@@ -67,23 +67,9 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  private final Set<String> myDisabledModules;
-  private final CheckingTestStatistic myCheckingTestStatistic;
-
-  public CheckProjectStructureHelper(Set<String> disabledModules, CheckingTestStatistic checkingTestStatistic) {
-    myDisabledModules = disabledModules;
-    myCheckingTestStatistic = checkingTestStatistic;
-  }
-
-  public static Set<IFile> getExcludeSet() {
-    Set<IFile> copy = new HashSet<IFile>();
-    copy.addAll(excludeSet);
-    return copy;
-  }
-
-  public List<Object[]> filePaths() {
+  public static List<Object[]> filePaths(Set<String> disabledModules) {
     List<ModuleHandle> moduleHandles =
-        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), getExcludeSet(),
+        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), excludeSet,
             false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
@@ -93,7 +79,7 @@ public class CheckProjectStructureHelper {
         continue;
       }
 
-      if (myDisabledModules.contains(moduleHandle.getDescriptor().getModuleReference().getModuleName())) {
+      if (disabledModules.contains(moduleHandle.getDescriptor().getModuleReference().getModuleName())) {
         continue;
       }
 
@@ -152,22 +138,22 @@ public class CheckProjectStructureHelper {
     return module.getModuleName() + " [" + type + "]";
   }
 
-  public List<String> checkReferences(SModule module) {
+  public static List<String> checkReferences(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
     return checkModels(models);
   }
 
-  public List<String> checkStructure(SModule module) {
+  public static List<String> checkStructure(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
     return checkStructure(models);
   }
 
-  public List<String> checkGenerationStatus(SModule module) {
+  public static List<String> checkGenerationStatus(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
     return checkModelsGenerationStatus(models);
   }
 
-  public List<String> checkModule(SModule module) {
+  public static List<String> checkModule(SModule module) {
     List<SModule> modules = new ArrayList<SModule>();
     modules.add(module);
     if (module instanceof Language) {
@@ -177,25 +163,25 @@ public class CheckProjectStructureHelper {
     return checkModules(modules);
   }
 
-  public List<String> checkTypeSystem(ModulesMiner.ModuleHandle moduleHandle) {
+  public static List<String> checkTypeSystem(ModulesMiner.ModuleHandle moduleHandle, CheckingTestStatistic statistic) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
     Collection<SModel> models = new ModelsExtractor(module, false).getModels();
-    return applyChecker(new TypesystemChecker(), models);
+    return applyChecker(new TypesystemChecker(), models, statistic);
   }
 
-  public List<String> checkConstraints(ModulesMiner.ModuleHandle moduleHandle) {
+  public static List<String> checkConstraints(ModulesMiner.ModuleHandle moduleHandle, CheckingTestStatistic statistic) {
     SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
     Collection<SModel> models = new ModelsExtractor(module, false).getModels();
-    return applyChecker(new LanguageChecker(), models);
+    return applyChecker(new LanguageChecker(), models, statistic);
   }
 
-  public String formatErrors(List<String> errors) {
+  public static String formatErrors(List<String> errors) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
     for (String er : errors) {
@@ -206,7 +192,7 @@ public class CheckProjectStructureHelper {
   }
 
   // Private
-  private List<String> checkModelsGenerationStatus(final Iterable<SModel> models) {
+  private static List<String> checkModelsGenerationStatus(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -239,7 +225,7 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private List<String> checkStructure(final Iterable<SModel> models) {
+  private static List<String> checkStructure(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -252,7 +238,7 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private List<String> checkModels(final Iterable<SModel> models) {
+  private static List<String> checkModels(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -269,7 +255,7 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private List<String> checkModules(final Iterable<SModule> modules) {
+  private static List<String> checkModules(final Iterable<SModule> modules) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -315,7 +301,7 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  private List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModel> models) {
+  private static List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -335,12 +321,12 @@ public class CheckProjectStructureHelper {
                 if (reporter.reportError().startsWith("a class should have")) continue;
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
-                myCheckingTestStatistic.reportError();
+                statistic.reportError();
                 errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) +
                     " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
-                myCheckingTestStatistic.reportWarning();
+                statistic.reportWarning();
               }
             }
           }
@@ -351,7 +337,7 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private StringBuilder checkModel(final SModel sm) {
+  private static StringBuilder checkModel(final SModel sm) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
@@ -398,7 +384,7 @@ public class CheckProjectStructureHelper {
     return errorMessages;
   }
 
-  private StringBuilder checkModuleInternal(final SModule module) {
+  private static StringBuilder checkModuleInternal(final SModule module) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {

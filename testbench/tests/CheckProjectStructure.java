@@ -41,7 +41,6 @@ import java.util.List;
 @WithSorting
 public class CheckProjectStructure {
   private static CheckingTestStatistic ourStatistic;
-  private static CheckProjectStructureHelper HELPER;
   private static Project ourContextProject;
 
   @Parameters
@@ -55,7 +54,6 @@ public class CheckProjectStructure {
     MpsTestsSupport.makeAllInCreatedEnvironment();
     MpsTestsSupport.reloadAllAfterMake();
 
-    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet(), ourStatistic);
     return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
   }
 
@@ -75,28 +73,28 @@ public class CheckProjectStructure {
   @Test
   @Order(1)
   public void checkReferences() {
-    List<String> errors = HELPER.checkReferences(module);
-    Assert.assertTrue("Reference errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckProjectStructureHelper.checkReferences(module);
+    Assert.assertTrue("Reference errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(2)
   public void checkStructure() {
-    List<String> errors = HELPER.checkStructure(module);
-    Assert.assertTrue("Structure errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckProjectStructureHelper.checkStructure(module);
+    Assert.assertTrue("Structure errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(3)
   public void checkGenerationStatus() {
-    List<String> errors = HELPER.checkGenerationStatus(module);
-    Assert.assertTrue("Try to regenerate models:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckProjectStructureHelper.checkGenerationStatus(module);
+    Assert.assertTrue("Try to regenerate models:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(4)
   public void checkModuleProperties() {
-    List<String> errors = HELPER.checkModule(module);
-    Assert.assertTrue("Module property or dependency errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckProjectStructureHelper.checkModule(module);
+    Assert.assertTrue("Module property or dependency errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 }

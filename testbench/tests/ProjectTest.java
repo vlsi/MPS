@@ -54,7 +54,7 @@ public class ProjectTest {
 
   @Parameters
   public static List<Object[]> FIXTURES() {
-    return (new CheckProjectStructureHelper(Collections.<String>emptySet(), new CheckingTestStatistic())).filePaths();
+    return CheckProjectStructureHelper.filePaths(Collections.<String>emptySet());
   }
 
   // main part

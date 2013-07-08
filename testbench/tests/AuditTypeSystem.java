@@ -35,13 +35,11 @@ import java.util.List;
 @WithSorting
 public class AuditTypeSystem {
   private static CheckingTestStatistic ourStatistic;
-  private static CheckProjectStructureHelper HELPER;
 
   @Parameters
   public static List<Object[]> filePaths() {
     ourStatistic = new CheckingTestStatistic();
-    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet(), ourStatistic);
-    return HELPER.filePaths();
+    return CheckProjectStructureHelper.filePaths(Collections.<String>emptySet());
   }
 
   @AfterClass
@@ -58,7 +56,7 @@ public class AuditTypeSystem {
 
   @Test
   public void checkTypeSystem() {
-    List<String> errors = HELPER.checkTypeSystem(handle);
-    Assert.assertTrue("Type system errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckProjectStructureHelper.checkTypeSystem(handle, ourStatistic);
+    Assert.assertTrue("Type system errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 }

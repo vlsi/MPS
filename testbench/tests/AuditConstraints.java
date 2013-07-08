@@ -62,13 +62,11 @@ public class AuditConstraints {
   }
 
   private static CheckingTestStatistic ourStatistic;
-  private static CheckProjectStructureHelper HELPER;
 
   @Parameters
   public static List<Object[]> filePaths() {
     ourStatistic = new CheckingTestStatistic();
-    HELPER = new CheckProjectStructureHelper(DISABLED_MODULES, ourStatistic);
-    return HELPER.filePaths();
+    return CheckProjectStructureHelper.filePaths(DISABLED_MODULES);
   }
 
   @AfterClass
@@ -85,7 +83,7 @@ public class AuditConstraints {
 
   @Test
   public void checkConstraints() {
-    List<String> errors = HELPER.checkConstraints(handle);
-    Assert.assertTrue("Constraints and scopes errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckProjectStructureHelper.checkConstraints(handle, ourStatistic);
+    Assert.assertTrue("Constraints and scopes errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
 }
