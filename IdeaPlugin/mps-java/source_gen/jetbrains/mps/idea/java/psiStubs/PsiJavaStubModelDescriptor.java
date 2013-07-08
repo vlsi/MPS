@@ -65,11 +65,13 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
   @Override
   public void attach(SRepository repository) {
+    super.attach(repository);
     myDataSource.addListener(this);
   }
 
   @Override
   public void dispose() {
+    super.dispose();
     myDataSource.removeListener(this);
   }
 
