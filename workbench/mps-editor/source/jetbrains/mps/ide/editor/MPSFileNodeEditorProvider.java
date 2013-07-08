@@ -58,7 +58,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
       : ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
       @Override
       public MPSNodeVirtualFile compute() {
-        SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent().findChild(MPSExtentions.DOT_MODEL_HEADER)));
+        SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
         if(descr != null) {
           for(SNode node : descr.getRootNodes()) {
             if(node.getName().equals(file.getNameWithoutExtension())) {

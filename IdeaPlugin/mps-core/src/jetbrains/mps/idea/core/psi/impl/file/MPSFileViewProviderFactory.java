@@ -31,8 +31,6 @@ import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.FilePerRootSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
@@ -78,12 +76,11 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       final VirtualFile virtualFile = getVirtualFile() instanceof LightVirtualFile ? ((LightVirtualFile)getVirtualFile()).getOriginalFile() : getVirtualFile();
       if (virtualFile == null ||
         (virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE
-          //&& virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE
           && virtualFile.getFileType() != MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) ) {
         return null;
       }
       final IFile modelFile = virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE
-        ? FileSystem.getInstance().getFileByPath(virtualFile.getParent().findChild(MPSExtentions.DOT_MODEL_HEADER).getPath())
+        ? FileSystem.getInstance().getFileByPath(virtualFile.getParent().getPath())
         : FileSystem.getInstance().getFileByPath(virtualFile.getPath());
 
       PsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<PsiFile>() {
@@ -104,9 +101,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
               return null;
             }
 
-            return descr instanceof FilePerRootSModel
-              ? new FilePerRootModelPsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName())
-              : new FileSourcePsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName());
+            return new FileSourcePsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName());
           }
           return null;
         }

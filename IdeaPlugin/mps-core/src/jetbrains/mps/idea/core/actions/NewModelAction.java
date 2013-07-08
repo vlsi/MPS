@@ -141,8 +141,8 @@ public class NewModelAction extends AnAction {
           @Override
           public SModel compute() {
             // TODO create model in myModelRoot/mySourceRoot, fix literal
-            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, myModelRoot,
-              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
+            EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, myModelRoot/*,
+              PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root")*/);
             template.preConfigure(descriptor, mySolution);
             descriptor.save();
             return descriptor;

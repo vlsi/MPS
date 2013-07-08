@@ -25,6 +25,7 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtilCore;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -33,6 +34,10 @@ import com.intellij.psi.PsiFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.edit.SNodeCutCopyProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
@@ -41,9 +46,9 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
-import jetbrains.mps.idea.core.psi.impl.file.FilePerRootModelPsiFile;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -54,6 +59,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -113,24 +119,8 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           updatedChildren.add(idx, new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) value, settings));
         }
       } else if(child instanceof PsiDirectoryNode) {
-        for (AbstractTreeNode innerChild : ((PsiDirectoryNode)child).getChildren()) {
-          if(!(innerChild instanceof PsiFileNode) || !(((PsiFileNode) innerChild).getValue() instanceof FilePerRootModelPsiFile))
-            continue;
-          PsiFile value = ((PsiFileNode) innerChild).getValue();
-          SModelReference modelReference = ((FileSourcePsiFile) value).getModelReference();
-
-          MPSPsiModel psiModel = mpsPsiProvider.getPsi(modelReference);
-
-          /*if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
-
-          int idx = updatedChildren.indexOf(child);
-          updatedChildren.remove(idx);
-          final MPSPsiModelTreeNode perRootModelTreeNode = new MPSPsiModelTreeNode(treeNode.getProject(), psiModel, settings);
-          //final Collection<AbstractTreeNode> childrenWithotSelf = ((PsiDirectoryNode) child).getChildren();
-          //childrenWithotSelf.remove(innerChild);
-          //perRootModelTreeNode.getChildren().addAll(childrenWithotSelf);
-          updatedChildren.add(idx, perRootModelTreeNode);*/
-
+        final SModel perRootModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) child).getVirtualFile()));
+        if(perRootModel != null) {
           if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
 
           int idx = updatedChildren.indexOf(child);
@@ -140,16 +130,20 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
             public boolean canNavigate() { return true; }
 
             @Override
-            public String getNavigateActionText(boolean focusEditor) {
-              return super.getNavigateActionText(focusEditor);    //To change body of overridden methods use File | Settings | File Templates.
-            }
+            public String getNavigateActionText(boolean focusEditor) { return MPSBundle.message("open.model.properties.action"); }
 
             @Override
             public void navigate(boolean requestFocus) {
-              super.navigate(requestFocus);    //To change body of overridden methods use File | Settings | File Templates.
+              MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(perRootModel, ProjectHelper.toMPSProject(myProject), true);
+              final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
+              SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                  dialog.show();
+                }
+              });
             }
           });
-          break;
         }
       }
     }

@@ -49,134 +49,134 @@ import java.util.*;
  */
 public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
-    private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
+  private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
 
-    protected MPSModuleLevelBuilder() {
-        super(BuilderCategory.SOURCE_GENERATOR);
+  protected MPSModuleLevelBuilder() {
+    super(BuilderCategory.SOURCE_GENERATOR);
+  }
+
+  @NotNull
+  @Override
+  public String getPresentableName() {
+    return MPSMakeConstants.BUILDER_ID;
+  }
+
+  @Override
+  public void buildStarted(final CompileContext context) {
+    context.addBuildListener(new BuildListener() {
+      @Override
+      public void filesGenerated(Collection<Pair<String, String>> paths) {
+      }
+
+      @Override
+      public void filesDeleted(Collection<String> paths) {
+        refreshComponent.removed(paths);
+      }
+    });
+  }
+
+  @Override
+  public void buildFinished(CompileContext context) {
+    Collection<String> filesToRefresh = refreshComponent.getFilesToRefresh();
+    if (!filesToRefresh.isEmpty()) {
+      for (String file : filesToRefresh) {
+        context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_GENERATED, file));
+      }
+      context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_REFRESH, ""));
     }
+    JpsMPSRepositoryFacade.getInstance().dispose();
+  }
 
-    @NotNull
-    @Override
-    public String getPresentableName() {
-        return MPSMakeConstants.BUILDER_ID;
-    }
-
-    @Override
-    public void buildStarted(final CompileContext context) {
-        context.addBuildListener(new BuildListener() {
-            @Override
-            public void filesGenerated(Collection<Pair<String, String>> paths) {
-            }
-
-            @Override
-            public void filesDeleted(Collection<String> paths) {
-                refreshComponent.removed(paths);
-            }
-        });
-    }
-
-    @Override
-    public void buildFinished(CompileContext context) {
-        Collection<String> filesToRefresh = refreshComponent.getFilesToRefresh();
-        if (!filesToRefresh.isEmpty()) {
-            for (String file : filesToRefresh) {
-                context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_GENERATED, file));
-            }
-            context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_REFRESH, ""));
+  @Override
+  public ExitCode build(final CompileContext compileContext,
+                        ModuleChunk moduleChunk,
+                        DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
+                        final OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
+    ExitCode status = ExitCode.NOTHING_DONE;
+    try {
+      boolean isMPSChunk = false;
+      for (JpsModule jpsModule : moduleChunk.getModules()) {
+        JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
+        if (extension != null) {
+          isMPSChunk = true;
+          break;
         }
-        JpsMPSRepositoryFacade.getInstance().dispose();
-    }
+      }
 
-    @Override
-    public ExitCode build(final CompileContext compileContext,
-                          ModuleChunk moduleChunk,
-                          DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
-                          final OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
-        ExitCode status = ExitCode.NOTHING_DONE;
-        try {
-            boolean isMPSChunk = false;
-            for (JpsModule jpsModule : moduleChunk.getModules()) {
-                JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
-                if (extension != null) {
-                    isMPSChunk = true;
-                    break;
-                }
-            }
-
-            if (!isMPSChunk) {
-                return status;
-            }
-
-            JpsMPSRepositoryFacade.getInstance().init(compileContext);
-
-            final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
-            if (toMake.isEmpty()) {
-                return status;
-            }
-
-            Collection<SModel> sModels = new ArrayList<SModel>(toMake.keySet());
-            MPSCompilerContext context = new MPSCompilerContext(compileContext) {
-                @Override
-                public void fileCreated(File newFile, SModel sourceModel, boolean isUnchanged) throws IOException {
-                    assert sourceModel.getSource() instanceof FileDataSource;
-                    final String sourcePath = FileUtil.toSystemIndependentName(((FileDataSource) sourceModel.getSource()).getFile().getPath());
-                    if (!isUnchanged) {
-                        // mark dirty to re-compile
-                        FSOperations.markDirty(compileContext, newFile);
-
-                        // refresh virtual file in IDEA
-                        refreshComponent.refresh(newFile.getPath());
-                    }
-                    outputConsumer.registerOutputFile(toMake.get(sourceModel), newFile, Collections.singletonList(sourcePath));
-                }
-
-                @Override
-                public void reportProgress(String message) {
-                    compileContext.processMessage(new ProgressMessage(message));
-                }
-            };
-
-//            MPSCompiler compiler = new MPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, context);
-            MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, context, refreshComponent, outputConsumer);
-            boolean success = makeMediator.build();
-            if (success) {
-                status = ExitCode.OK;
-            }
-
-        } catch (Exception ex) {
-            throw new ProjectBuildException(ex);
-        }
-
-        if (MPSCompilerUtil.isTracingMode()) {
-            compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "<simple warning to show Messages tool>"));
-        }
+      if (!isMPSChunk) {
         return status;
+      }
+
+      JpsMPSRepositoryFacade.getInstance().init(compileContext);
+
+      final Map<SModel, ModuleBuildTarget> toMake = collectChangedModels(compileContext, dirtyFilesHolder);
+      if (toMake.isEmpty()) {
+        return status;
+      }
+
+      Collection<SModel> sModels = new ArrayList<SModel>(toMake.keySet());
+      MPSCompilerContext context = new MPSCompilerContext(compileContext) {
+        @Override
+        public void fileCreated(File newFile, SModel sourceModel, boolean isUnchanged) throws IOException {
+          assert sourceModel.getSource() instanceof FileDataSource;
+          final String sourcePath = FileUtil.toSystemIndependentName(((FileDataSource) sourceModel.getSource()).getFile().getPath());
+          if (!isUnchanged) {
+            // mark dirty to re-compile
+            FSOperations.markDirty(compileContext, newFile);
+
+            // refresh virtual file in IDEA
+            refreshComponent.refresh(newFile.getPath());
+          }
+          outputConsumer.registerOutputFile(toMake.get(sourceModel), newFile, Collections.singletonList(sourcePath));
+        }
+
+        @Override
+        public void reportProgress(String message) {
+          compileContext.processMessage(new ProgressMessage(message));
+        }
+      };
+
+//      MPSCompiler compiler = new MPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, context);
+      MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, context, refreshComponent, outputConsumer);
+      boolean success = makeMediator.build();
+      if (success) {
+        status = ExitCode.OK;
+      }
+
+    } catch (Exception ex) {
+      throw new ProjectBuildException(ex);
     }
 
-    private Map<SModel, ModuleBuildTarget> collectChangedModels(final CompileContext compileContext, DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder) throws IOException {
-        final Map<SModel, ModuleBuildTarget> toCompile = new LinkedHashMap<SModel, ModuleBuildTarget>();
-        dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
-            public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor sourceRoot) throws IOException {
-                JpsSolutionIdea solution = JpsMPSRepositoryFacade.getInstance().getSolution(target.getModule());
-                if (solution == null) return true;
-
-                String suffix = FileUtil.getExtension(file.getName());
-                if(!suffix.equals("model")) {
-                ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
-                if (modelFactory == null) return true;
-                }
-
-                String path = FileUtil.toCanonicalPath(file.getPath());
-                SModel model = solution.getModelByPath(path);
-                if (model == null) {
-                    compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot find MPS model for " + path));
-                    return true;
-                }
-
-                toCompile.put(model, target);
-                return true;
-            }
-        });
-        return toCompile;
+    if (MPSCompilerUtil.isTracingMode()) {
+      compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "<simple warning to show Messages tool>"));
     }
+    return status;
+  }
+
+  private Map<SModel, ModuleBuildTarget> collectChangedModels(final CompileContext compileContext, DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder) throws IOException {
+    final Map<SModel, ModuleBuildTarget> toCompile = new LinkedHashMap<SModel, ModuleBuildTarget>();
+    dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
+      public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor sourceRoot) throws IOException {
+        JpsSolutionIdea solution = JpsMPSRepositoryFacade.getInstance().getSolution(target.getModule());
+        if (solution == null) return true;
+
+        String suffix = FileUtil.getExtension(file.getName());
+        if(!suffix.equals("model")) {
+          ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(suffix);
+          if (modelFactory == null) return true;
+        }
+
+        String path = FileUtil.toCanonicalPath(file.getPath());
+        SModel model = solution.getModelByPath(path);
+        if (model == null) {
+          compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot find MPS model for " + path));
+          return true;
+        }
+
+        toCompile.put(model, target);
+        return true;
+      }
+    });
+    return toCompile;
+  }
 }

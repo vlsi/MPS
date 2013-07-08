@@ -82,7 +82,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
       return ModelAccess.instance().runReadAction(new Computable<Icon>(){
         @Override
         public Icon compute() {
-          SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent().findChild(MPSExtentions.DOT_MODEL_HEADER)));
+          SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
           if(descr == null) return null;
 
           for (SNode node : descr.getRootNodes()) {
