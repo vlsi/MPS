@@ -638,10 +638,11 @@ public class SNodeOperations {
       return null;
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
+      String message = "Can't cast node: " + node.getNodeId().toString() + ", concept: " + node.getConcept().getQualifiedName() + " to concept: " + castTo;
       if (ourCastsEnabled) {
-        throw new NodeCastException("Can't cast " + node.getConcept().getQualifiedName() + " to " + castTo);
+        throw new NodeCastException(message);
       } else {
-        LOG.warning("Can't cast " + node.getConcept().getQualifiedName() + " to " + castTo);
+        LOG.warning(message);
       }
     }
     return node;
@@ -662,10 +663,11 @@ public class SNodeOperations {
       return null;
     }
     if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
+      String message = "Can't cast concept: " + node.getNodeId().toString() + ", FQName: " + NameUtil.nodeFQName(node) + " to concept: " + castTo;
       if (ourCastsEnabled) {
-        throw new NodeCastException("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
+        throw new NodeCastException(message);
       } else {
-        LOG.warning("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
+        LOG.warning(message);
       }
     }
     return node;
