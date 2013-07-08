@@ -7,5 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface ConsoleStream {
   public void addText(String text);
   public void addNode(SNode node);
+  public void addAction(Runnable action);
   public void addNewLine();
 }
