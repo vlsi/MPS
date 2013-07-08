@@ -13,7 +13,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7926701909975931624" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsBootstrapCore" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBootstrapCore.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="2488570609613325907" nodeInfo="ng">
       <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
     </node>
@@ -10198,7 +10198,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsWorkbench" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsWorkbench.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="2488570609613335114" nodeInfo="ng">
       <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
     </node>
@@ -11819,7 +11819,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsPlugin" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPlugin.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099739" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
@@ -12749,7 +12749,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsDistribution" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDistribution.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4301118715654497534" nodeInfo="ng">
       <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4301118715654559059" nodeInfo="nn">
         <property name="head" nameId="3ior.8618885170173601779" value="build" />
@@ -13727,7 +13727,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mps" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mps.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6275906111973436107" nodeInfo="ng">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
@@ -14357,7 +14357,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsTroveCollections" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsTroveCollections.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="2488570609613344039" nodeInfo="ng">
       <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
     </node>
@@ -14615,7 +14615,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsPlugins" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPlugins.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6391307088354381144" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
@@ -15971,7 +15971,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsBuild" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBuild.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_IdeaPlugin" typeId="kdzh.6592112598314498932" id="6592112598314738250" nodeInfo="ng">
       <property name="id" nameId="kdzh.6592112598314498927" value="jetbrains.mps.build" />
       <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="2298500495078764368" nodeInfo="ng">
@@ -16513,7 +16513,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsVcs" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsVcs.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1545517825663017279" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
@@ -16766,7 +16766,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsPluginDist" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPluginDist.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8658995123701267518" nodeInfo="ng">
       <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8658995123701321875" nodeInfo="nn">
         <property name="head" nameId="3ior.8618885170173601779" value="IdeaPlugin" />
@@ -16795,7 +16795,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsDebuggerPlugin" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDebuggerPlugin.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="6361939271669730875" nodeInfo="ng">
       <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="7181125477683264500" resolveInfo="IDEA" />
       <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="6361939271669730876" nodeInfo="ng">
@@ -18535,7 +18535,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsExecutionPlugin" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsExecutionPlugin.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="4301118715654684530" nodeInfo="ng">
       <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="7181125477683264500" resolveInfo="IDEA" />
       <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4301118715654684531" nodeInfo="ng">
@@ -20294,7 +20294,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6503539749405386437" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsCore" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsCore.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="2488570609613572305" nodeInfo="ng">
       <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
     </node>
@@ -20659,7 +20659,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsBuildUI" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBuildUI.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="8227093612176368029" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
     </node>
@@ -20932,7 +20932,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsPluginTests" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPluginTests.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6977615362525485149" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
@@ -21360,7 +21360,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsConnectorPlugin" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsConnectorPlugin.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="5970299968953452773" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
     </node>
@@ -21513,7 +21513,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsDevKit" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDevKit.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="5548512857136492223" nodeInfo="ng">
       <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="7181125477683264500" resolveInfo="IDEA" />
       <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5548512857136492224" nodeInfo="ng">
@@ -22746,7 +22746,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsStandalone" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsStandalone.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="1392391688312941966" nodeInfo="ng">
       <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="7181125477683264500" resolveInfo="IDEA" />
       <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1392391688312941967" nodeInfo="ng">
@@ -22933,7 +22933,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsMakePlugin" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsMakePlugin.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6265574260762011004" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
@@ -23038,7 +23038,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsJava" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsJava.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="5903960679215880968" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps-java-common" />
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="5903960679215880971" nodeInfo="ng">
@@ -23367,7 +23367,7 @@
     <property name="name" nameId="tpck.1169194664001" value="mpsTesting" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsTesting.xml" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8425685440562730407" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
     </node>
