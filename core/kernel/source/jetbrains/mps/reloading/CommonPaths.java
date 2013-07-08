@@ -223,6 +223,7 @@ public class CommonPaths {
 
   private static void addPlatformJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-platform.jar");
+    addIfExists(result, "/lib/mps-icons.jar");
   }
 
   private static void addWorkbenchJars(CompositeClassPathItem result) {
