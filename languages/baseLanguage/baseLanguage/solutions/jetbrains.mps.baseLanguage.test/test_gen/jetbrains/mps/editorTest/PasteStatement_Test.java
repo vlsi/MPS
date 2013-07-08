@@ -29,8 +29,8 @@ public class PasteStatement_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1236160248682577254", "1236160248682577265");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.CopyNode_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.PasteNode_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
+      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }
 }

@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class PasteToSingle_Test extends BaseTransformationTest4 {
@@ -31,11 +29,10 @@ public class PasteToSingle_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1236160248682578134", "1236160248682578145");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.CopyNode_Action");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
       BaseEditorTestBody.typeString(editorComponent, "return ");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.PasteNode_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.End_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }
 }
