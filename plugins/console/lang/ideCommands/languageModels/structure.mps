@@ -129,5 +129,10 @@
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5207260697411458113" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="INodeSetReference" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6147624293055082932" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="TestActionCommand" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="test action" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
+  </root>
 </model>
 
