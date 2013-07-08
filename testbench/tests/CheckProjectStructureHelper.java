@@ -28,7 +28,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.testbench.CheckProjectStructureUtil;
 import jetbrains.mps.testbench.ModelsExtractor;
-import jetbrains.mps.testbench.PerformanceMessenger;
+import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -68,20 +68,11 @@ public class CheckProjectStructureHelper {
   }
 
   private final Set<String> myDisabledModules;
+  private final CheckingTestStatistic myCheckingTestStatistic;
 
-  private static long myErrors = 0;
-  private static long myWarnings = 0;
-
-  public CheckProjectStructureHelper(Set<String> disabledModules) {
+  public CheckProjectStructureHelper(Set<String> disabledModules, CheckingTestStatistic checkingTestStatistic) {
     myDisabledModules = disabledModules;
-  }
-
-  public void printStatistic() {
-    PerformanceMessenger.getInstance().report("auditErrors", getNumErrors());
-    PerformanceMessenger.getInstance().report("auditWarnings", getNumWarnings());
-    PerformanceMessenger.getInstance().generateReport();
-    System.out.println(getNumErrors() + " errors total");
-    System.out.println(getNumWarnings() + " warnings total");
+    myCheckingTestStatistic = checkingTestStatistic;
   }
 
   public static Set<IFile> getExcludeSet() {
@@ -344,12 +335,12 @@ public class CheckProjectStructureHelper {
                 if (reporter.reportError().startsWith("a class should have")) continue;
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
-                myErrors++;
+                myCheckingTestStatistic.reportError();
                 errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) +
                     " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
-                myWarnings++;
+                myCheckingTestStatistic.reportWarning();
               }
             }
           }
@@ -423,13 +414,4 @@ public class CheckProjectStructureHelper {
     }
     return errorMessages;
   }
-
-  public long getNumErrors() {
-    return myErrors;
-  }
-
-  public long getNumWarnings() {
-    return myWarnings;
-  }
-
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
+import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -33,17 +34,19 @@ import java.util.List;
 @WithMake
 @WithSorting
 public class AuditTypeSystem {
+  private static CheckingTestStatistic ourStatistic;
   private static CheckProjectStructureHelper HELPER;
 
   @Parameters
   public static List<Object[]> filePaths() {
-    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
+    ourStatistic = new CheckingTestStatistic();
+    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet(), ourStatistic);
     return HELPER.filePaths();
   }
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.printStatistic();
+    ourStatistic.printStatistic();
   }
 
   // main part

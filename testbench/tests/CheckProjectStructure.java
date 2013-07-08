@@ -20,6 +20,7 @@ import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
+import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -39,11 +40,14 @@ import java.util.List;
 @RunWith(ParameterizedMpsTest.class)
 @WithSorting
 public class CheckProjectStructure {
+  private static CheckingTestStatistic ourStatistic;
   private static CheckProjectStructureHelper HELPER;
   private static Project ourContextProject;
 
   @Parameters
   public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
+    ourStatistic = new CheckingTestStatistic();
+
 //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
     ourContextProject = ContextProjextSupport.getContextProject();
 
@@ -51,15 +55,14 @@ public class CheckProjectStructure {
     MpsTestsSupport.makeAllInCreatedEnvironment();
     MpsTestsSupport.reloadAllAfterMake();
 
-    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet());
+    HELPER = new CheckProjectStructureHelper(Collections.<String>emptySet(), ourStatistic);
     return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
   }
 
   @AfterClass
   public static void cleanUp() {
 //    ActiveEnvironment.get().disposeProject(ourProject);
-
-    HELPER.printStatistic();
+    ourStatistic.printStatistic();
   }
 
   // main part

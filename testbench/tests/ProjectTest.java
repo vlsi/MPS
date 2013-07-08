@@ -20,6 +20,7 @@ import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
+import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
@@ -53,7 +54,7 @@ public class ProjectTest {
 
   @Parameters
   public static List<Object[]> FIXTURES() {
-    return (new CheckProjectStructureHelper(Collections.<String>emptySet())).filePaths();
+    return (new CheckProjectStructureHelper(Collections.<String>emptySet(), new CheckingTestStatistic())).filePaths();
   }
 
   // main part
