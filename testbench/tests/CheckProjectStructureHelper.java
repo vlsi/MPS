@@ -19,8 +19,6 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Solution;
@@ -28,8 +26,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.testbench.CheckProjectStructureUtil;
 import jetbrains.mps.testbench.ModelsExtractor;
 import jetbrains.mps.testbench.suites.CheckingTestStatistic;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -42,54 +38,14 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class CheckProjectStructureHelper {
-  private static final String[] excludes = new String[]{"IdeaPlugin"};
-  private static final Set<IFile> excludeSet = new HashSet<IFile>();
-
-  static {
-    String mpsDir = System.getProperty("user.dir");
-    for (String e : excludes) {
-      excludeSet.add(FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e));
-    }
-  }
-
-  public static List<Object[]> filePaths(Set<String> disabledModules) {
-    List<ModuleHandle> moduleHandles =
-        ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), excludeSet,
-            false);
-
-    ArrayList<Object[]> res = new ArrayList<Object[]>();
-    for (ModuleHandle moduleHandle : moduleHandles) {
-      if (moduleHandle.getFile().getName().endsWith(".iml")) {
-        // temporary ignore .iml files
-        continue;
-      }
-
-      if (disabledModules.contains(moduleHandle.getDescriptor().getModuleReference().getModuleName())) {
-        continue;
-      }
-
-      res.add(new Object[]{getDescription(moduleHandle), moduleHandle});
-    }
-
-    Collections.sort(res, new Comparator<Object[]>() {
-      @Override
-      public int compare(Object[] o1, Object[] o2) {
-        return ((String) o1[0]).compareTo((String) o2[0]);
-      }
-    });
-    return res;
-  }
-
   public static List<Object[]> createParamtersFromModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (SModule module : modules) {
@@ -108,15 +64,6 @@ public class CheckProjectStructureHelper {
     });
     return res;
 
-  }
-
-  private static String getDescription(ModuleHandle handle) {
-    if (handle.getFile().getName().endsWith(".mpl")) {
-      return handle.getDescriptor().getNamespace() + " [lang]";
-    } else if (handle.getFile().getName().endsWith(".msd")) {
-      return handle.getDescriptor().getNamespace() + " [solution]";
-    }
-    return handle.getFile().getName() + " - " + handle.getDescriptor().getNamespace();
   }
 
   private static String getDescription(SModule module) {
