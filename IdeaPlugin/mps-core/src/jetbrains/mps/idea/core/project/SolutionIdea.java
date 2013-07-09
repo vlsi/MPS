@@ -49,6 +49,7 @@ import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -110,10 +111,10 @@ public class SolutionIdea extends Solution {
         @Override
         public void run() {
           Messages.showErrorDialog(myModule.getProject(),
-              "There are more than one different SDKs used in modules with MPS facets.\n" +
-                  "Trying to use " + e.getRequestedSdk().getName() +
-                  " while " + e.getCurrentSdk().getName() + " is already used." + "\n",
-              "Multiple SDKs not supported in MPS plugin"
+            "There are more than one different SDKs used in modules with MPS facets.\n" +
+              "Trying to use " + e.getRequestedSdk().getName() +
+              " while " + e.getCurrentSdk().getName() + " is already used." + "\n",
+            "Multiple SDKs not supported in MPS plugin"
           );
         }
       });
@@ -252,7 +253,16 @@ public class SolutionIdea extends Solution {
   public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     // we do not add a dependency into solution, we add dependency to idea module instead
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
+
+    SModule sModule = moduleRef.resolve(MPSModuleRepository.getInstance()); // FIXME module repo
+
+    if (sModule instanceof SolutionIdea) {
+      // we add dependency between idea modules
+      Module otherIdeaModule = ((SolutionIdea) sModule).getIdeaModule();
+      modifiableModel.addModuleOrderEntry(otherIdeaModule);
+    } else {
+      ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
+    }
     modifiableModel.commit();
   }
 
@@ -407,7 +417,7 @@ public class SolutionIdea extends Solution {
         @Override
         protected boolean accept(OrderEntry orderEntry) {
           return orderEntry instanceof LibraryOrderEntry && ((LibraryOrderEntry) orderEntry).getLibrary().getRootProvider() == wrapper
-              || orderEntry instanceof JdkOrderEntry;
+            || orderEntry instanceof JdkOrderEntry;
         }
       };
       ModuleRootManager.getInstance(myModule).orderEntries().forEach(processor);
