@@ -29,6 +29,8 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.psi.PsiImportStatementBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.psi.PsiImportStaticStatement;
@@ -105,8 +107,6 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     NonCancelableSection section = ProgressIndicatorProvider.startNonCancelableSectionIfSupported();
 
     try {
-      // todo !!! synchronize: copyModel and myModel=... 
-
       for (PsiJavaFile jf : myDataSource.getJavaFiles()) {
         SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
 
@@ -144,68 +144,80 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   }
 
   @Override
-  public void changed(DataSource source, final PsiJavaStubEvent event) {
+  public synchronized void changed(DataSource source, final PsiJavaStubEvent event) {
+
+    // locking could possibly be made more fine-grained 
 
     // already attached, but not createModel'd yet? 
     if (myModel == null) {
       return;
     }
 
+    myModel.setModelDescriptor(null);
     SModel myModelCopy = CopyUtil.copyModel(myModel);
     SModel myOldModel = myModel;
     myModel = myModelCopy;
 
-    for (PsiJavaFile file : event.removed()) {
-      myMps2PsiMapper.clearFile(file.getName());
-    }
+    try {
+      for (PsiJavaFile file : event.removed()) {
+        myMps2PsiMapper.clearFile(file.getName());
+      }
 
-    for (PsiListener.FSRename rename : event.renamed()) {
-      String oldName = rename.oldName;
-      myMps2PsiMapper.clearFile(oldName);
-    }
+      for (PsiListener.FSRename rename : event.renamed()) {
+        String oldName = rename.oldName;
+        myMps2PsiMapper.clearFile(oldName);
+      }
 
-    for (PsiJavaFile file : event.needReparse()) {
-      if (!(file.isValid())) {
-        // going upwards and trying to find the valid file with this filename... 
-        // it should probably be removed, looks like a hack 
-        String name = file.getName();
-        for (PsiFile f : file.getParent().getFiles()) {
-          if (name.equals(f.getName()) && f instanceof PsiJavaFile) {
-            file = (PsiJavaFile) f;
-            break;
+      for (PsiJavaFile file : event.needReparse()) {
+        if (!(file.isValid())) {
+          // going upwards and trying to find the valid file with this filename... 
+          // it should probably be removed, looks like a hack 
+          String name = file.getName();
+          for (PsiFile f : file.getParent().getFiles()) {
+            if (name.equals(f.getName()) && f instanceof PsiJavaFile) {
+              file = (PsiJavaFile) f;
+              break;
+            }
           }
         }
-      }
-      // it's still not valid 
-      if (!(file.isValid())) {
-        continue;
-      }
-
-      myMps2PsiMapper.clearFile(file.getName());
-
-      SNode javaImports = getImports(file.getImportList().getAllImportStatements());
-      ASTConverter converter = new ASTConverter(myMps2PsiMapper);
-
-      Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
-
-      for (PsiClass cls : file.getClasses()) {
-        SNode node = converter.convertClass(cls);
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-          AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+        // it's still not valid 
+        if (!(file.isValid())) {
+          continue;
         }
 
-        myModel.addRootNode(node);
-        SetSequence.fromSet(roots).addElement(node.getNodeId());
-      }
-      if (SetSequence.fromSet(roots).isNotEmpty()) {
-        MapSequence.fromMap(myRootsPerFile).put(file.getName(), roots);
+        myMps2PsiMapper.clearFile(file.getName());
+
+        SNode javaImports = getImports(file.getImportList().getAllImportStatements());
+        ASTConverter converter = new ASTConverter(myMps2PsiMapper);
+
+        Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
+
+        for (PsiClass cls : file.getClasses()) {
+          SNode node = converter.convertClass(cls);
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+            AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+          }
+
+          myModel.addRootNode(node);
+          SetSequence.fromSet(roots).addElement(node.getNodeId());
+        }
+        if (SetSequence.fromSet(roots).isNotEmpty()) {
+          MapSequence.fromMap(myRootsPerFile).put(file.getName(), roots);
+        }
+
       }
 
+      myModel.setModelDescriptor(this);
+
+      // Q: do I need to call it or since the descriptor stays the same no one cares? 
+      for (SNode node : Sequence.fromIterable(myOldModel.getRootNodes())) {
+        myOldModel.removeRoot(node);
+      }
+      myOldModel.dispose();
+
+    } catch (ProcessCanceledException cancel) {
+      System.out.println("psi change cancled");
     }
-
-    myModel.setModelDescriptor(this);
-    // Q: do I need to call it or since the descriptor stays the same no one cares? 
-    myOldModel.dispose();
   }
 
 
