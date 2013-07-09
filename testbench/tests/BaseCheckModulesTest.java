@@ -19,6 +19,7 @@ import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import jetbrains.mps.testbench.suites.CheckingTestStatistic;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
@@ -32,6 +33,10 @@ import java.util.Set;
 public class BaseCheckModulesTest {
   private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
+
+  public BaseCheckModulesTest(String testName, SModule module) {
+    // should be overriden
+  }
 
   @Parameters
   public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {

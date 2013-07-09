@@ -36,6 +36,7 @@ public class ProjectTest extends BaseCheckModulesTest {
   private boolean needGeneration;
 
   public ProjectTest(String testName, final SModule module) {
+    super(testName, module);
     this.methods.addAll(METHODS);
     token = ModelAccess.instance().runReadAction(new Computable<Token>() {
       @Override

@@ -25,6 +25,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   private SModule module;
 
   public CheckProjectStructure(String testName, SModule module) {
+    super(testName, module);
     this.module = module;
   }
 
