@@ -87,10 +87,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
     return true;
   }
 
@@ -170,7 +166,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getTypecheckingContextOwner(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode(), new ITypechecking.Computation<Iterable<Pair<IntentionExecutable, SNode>>>() {
       @Override
       public Iterable<Pair<IntentionExecutable, SNode>> compute(TypeCheckingContext context) {
-        return IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+        return IntentionsManager.getInstance().getAvailableIntentions(query, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedNodes().get(0), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
       }
     });
   }
