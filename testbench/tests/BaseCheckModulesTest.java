@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
@@ -25,7 +28,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -39,14 +45,14 @@ public class BaseCheckModulesTest {
   }
 
   @Parameters
-  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
+  public static List<Object[]> createParametersFromModules() throws InvocationTargetException, InterruptedException {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation?
     // MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)?
     // can be extended with right modules set
-    return modules(Collections.<String>emptySet());
+    return createTestParametersFromModules(parameterModules());
   }
 
-  public static List<Object[]> modules(Set<String> excludedModules) throws InvocationTargetException, InterruptedException {
+  public static Iterable<? extends SModule> parameterModules() throws InvocationTargetException, InterruptedException {
     ourStatistic = new CheckingTestStatistic();
 
 //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
@@ -56,7 +62,31 @@ public class BaseCheckModulesTest {
     MpsTestsSupport.makeAllInCreatedEnvironment();
     MpsTestsSupport.reloadAllAfterMake();
 
-    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), excludedModules);
+    return ourContextProject.getModules();
+  }
+
+  public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
+    ArrayList<Object[]> res = new ArrayList<Object[]>();
+    for (SModule module : modules) {
+      res.add(new Object[]{getDescription(module), module});
+    }
+    Collections.sort(res, new Comparator<Object[]>() {
+      @Override
+      public int compare(Object[] o1, Object[] o2) {
+        return ((String) o1[0]).compareTo((String) o2[0]);
+      }
+    });
+    return res;
+  }
+
+  public static Set<SModule> excludeModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
+    Set<SModule> result = new HashSet<SModule>();
+    for (SModule module : modules) {
+      if (!excludedModules.contains(module.getModuleName())) {
+        result.add(module);
+      }
+    }
+    return result;
   }
 
   public static Project getContextProject() {
@@ -71,5 +101,20 @@ public class BaseCheckModulesTest {
   public static void cleanUp() {
 //    ActiveEnvironment.get().disposeProject(ourContextProject);
     ourStatistic.printStatistic();
+  }
+
+  // utils
+  private static String getDescription(SModule module) {
+    String type;
+    if (module instanceof Language) {
+      type = "lang";
+    } else if (module instanceof Solution) {
+      type = "solution";
+    } else if (module instanceof DevKit) {
+      type = "devkit";
+    } else {
+      type = "unknown";
+    }
+    return module.getModuleName() + " [" + type + "]";
   }
 }

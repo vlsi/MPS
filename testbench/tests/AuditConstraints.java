@@ -30,6 +30,7 @@ import java.util.Set;
 
 public class AuditConstraints extends BaseCheckModulesTest {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
+
   static {
     // obsolete modules
     DISABLED_MODULES.add("jetbrains.mps.ui.unittest");
@@ -57,7 +58,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
 
   @Parameters
   public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
-    return BaseCheckModulesTest.modules(DISABLED_MODULES);
+    return createTestParametersFromModules(excludeModules(parameterModules(), DISABLED_MODULES));
   }
 
   private SModule myModule;

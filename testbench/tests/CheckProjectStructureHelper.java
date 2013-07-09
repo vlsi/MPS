@@ -19,9 +19,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.testbench.CheckProjectStructureUtil;
 import jetbrains.mps.testbench.ModelsExtractor;
@@ -40,46 +38,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
 public class CheckProjectStructureHelper {
-  public static List<Object[]> createParamtersFromModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
-    ArrayList<Object[]> res = new ArrayList<Object[]>();
-    for (SModule module : modules) {
-      if (excludedModules.contains(module.getModuleName())) {
-        continue;
-      }
-
-      res.add(new Object[]{getDescription(module), module});
-    }
-
-    Collections.sort(res, new Comparator<Object[]>() {
-      @Override
-      public int compare(Object[] o1, Object[] o2) {
-        return ((String) o1[0]).compareTo((String) o2[0]);
-      }
-    });
-    return res;
-
-  }
-
-  private static String getDescription(SModule module) {
-    String type;
-    if (module instanceof Language) {
-      type = "lang";
-    } else if (module instanceof Solution) {
-      type = "solution";
-    } else if (module instanceof DevKit) {
-      type = "devkit";
-    } else {
-      type = "unknown";
-    }
-    return module.getModuleName() + " [" + type + "]";
-  }
-
   public static List<String> checkReferences(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
     return checkModels(models);
