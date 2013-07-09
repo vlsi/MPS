@@ -64,10 +64,9 @@ public class OurAuditConstraints extends AuditConstraints {
   @AfterClass
   public static void cleanUp() {
     ContextProjextSupport.setContextProjectPath(ourPreviousProjectPath);
-
   }
 
-  public OurAuditConstraints(String testName, SModule module) {
-    super(testName, module);
+  public OurAuditConstraints(SModule module) {
+    super(module);
   }
 }

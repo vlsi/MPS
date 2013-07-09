@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
@@ -40,8 +37,10 @@ public class BaseCheckModulesTest {
   private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
 
-  public BaseCheckModulesTest(String testName, SModule module) {
-    // should be overriden
+  protected final SModule myModule;
+
+  public BaseCheckModulesTest(SModule module) {
+    this.myModule = module;
   }
 
   @Parameters
@@ -66,12 +65,12 @@ public class BaseCheckModulesTest {
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (SModule module : modules) {
-      res.add(new Object[]{getDescription(module), module});
+      res.add(new Object[]{module});
     }
     Collections.sort(res, new Comparator<Object[]>() {
       @Override
       public int compare(Object[] o1, Object[] o2) {
-        return ((String) o1[0]).compareTo((String) o2[0]);
+        return String.valueOf(o1[0]).compareTo(String.valueOf(o2[0]));
       }
     });
     return res;
@@ -99,20 +98,5 @@ public class BaseCheckModulesTest {
   public static void cleanUp() {
 //    ActiveEnvironment.get().disposeProject(ourContextProject);
     ourStatistic.printStatistic();
-  }
-
-  // utils
-  private static String getDescription(SModule module) {
-    String type;
-    if (module instanceof Language) {
-      type = "lang";
-    } else if (module instanceof Solution) {
-      type = "solution";
-    } else if (module instanceof DevKit) {
-      type = "devkit";
-    } else {
-      type = "unknown";
-    }
-    return module.getModuleName() + " [" + type + "]";
   }
 }

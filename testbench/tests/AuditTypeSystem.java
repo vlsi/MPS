@@ -25,11 +25,8 @@ import java.util.Collection;
 import java.util.List;
 
 public class AuditTypeSystem extends BaseCheckModulesTest {
-  private SModule myModule;
-
-  public AuditTypeSystem(String testName, SModule module) {
-    super(testName, module);
-    myModule = module;
+  public AuditTypeSystem(SModule module) {
+    super(module);
   }
 
   @Test

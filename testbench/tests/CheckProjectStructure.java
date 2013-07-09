@@ -22,38 +22,35 @@ import org.junit.Test;
 import java.util.List;
 
 public class CheckProjectStructure extends BaseCheckModulesTest {
-  private SModule module;
-
-  public CheckProjectStructure(String testName, SModule module) {
-    super(testName, module);
-    this.module = module;
+  public CheckProjectStructure(SModule module) {
+    super(module);
   }
 
   @Test
   @Order(1)
   public void checkReferences() {
-    List<String> errors = CheckingTestsUtil.checkReferences(module);
+    List<String> errors = CheckingTestsUtil.checkReferences(myModule);
     Assert.assertTrue("Reference errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(2)
   public void checkStructure() {
-    List<String> errors = CheckingTestsUtil.checkStructure(module);
+    List<String> errors = CheckingTestsUtil.checkStructure(myModule);
     Assert.assertTrue("Structure errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(3)
   public void checkGenerationStatus() {
-    List<String> errors = CheckingTestsUtil.checkGenerationStatus(module);
+    List<String> errors = CheckingTestsUtil.checkGenerationStatus(myModule);
     Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(4)
   public void checkModuleProperties() {
-    List<String> errors = CheckingTestsUtil.checkModule(module);
+    List<String> errors = CheckingTestsUtil.checkModule(myModule);
     Assert.assertTrue("Module property or dependency errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 }

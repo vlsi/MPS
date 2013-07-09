@@ -25,11 +25,8 @@ import java.util.Collection;
 import java.util.List;
 
 public class AuditConstraints extends BaseCheckModulesTest {
-  private SModule myModule;
-
-  public AuditConstraints(String testName, SModule module) {
-    super(testName, module);
-    myModule = module;
+  public AuditConstraints(SModule module) {
+    super(module);
   }
 
   @Test
