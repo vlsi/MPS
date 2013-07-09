@@ -85,14 +85,14 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
     final Project project = psiTarget.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
 
-    if (DumbService.getInstance(project).isDumb()) {
-      return;
-    }
-
     ModelAccess.instance().runReadAction(new Runnable() {
 
       @Override
       public void run() {
+
+        if (DumbService.getInstance(project).isDumb()) {
+          return;
+        }
 
         // if MPSReferenceSearch is item to mps-core, it will be MPS2PsiMapperUtil.getNodeId
         final SNode targetNode = getNodeForElement(psiTarget);
