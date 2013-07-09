@@ -15,13 +15,10 @@
  */
 
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
-import jetbrains.mps.testbench.suites.CheckingTestStatistic;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.ProjectTestHelper;
@@ -36,20 +33,26 @@ import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 @RunWith(ParameterizedMpsTest.class)
-@PreloadAllModules
-@WithMake
 @WithSorting
 public class ProjectTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
 
-  private static Project mpsProject;
+  private static Project ourContextProject;
 
   @Parameters
-  public static List<Object[]> FIXTURES() {
-    return CheckProjectStructureHelper.filePaths(Collections.<String>emptySet());
+  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
+    //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
+    ourContextProject = ContextProjextSupport.getContextProject();
+
+    // todo: exception in case of failed compilation?
+    MpsTestsSupport.makeAllInCreatedEnvironment();
+    MpsTestsSupport.reloadAllAfterMake();
+
+    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
   }
 
   // main part
@@ -57,32 +60,23 @@ public class ProjectTest {
   private Token token;
   private boolean needGeneration;
 
-  public ProjectTest(String testName, final ModuleHandle handle) {
-    initProjectIfNeeded();
+  public ProjectTest(String testName, final SModule module) {
     this.methods.addAll(METHODS);
     token = ModelAccess.instance().runReadAction(new Computable<Token>() {
       @Override
       public Token compute() {
-        return ProjectTestHelper.getToken(MPSModuleRepository.getInstance().getModule(handle.getDescriptor().getModuleReference().getModuleId()), mpsProject);
+        return ProjectTestHelper.getToken(module, ourContextProject);
       }
     });
     needGeneration = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SModule module = MPSModuleRepository.getInstance().getModule(handle.getDescriptor().getModuleReference().getModuleId());
         for (org.jetbrains.mps.openapi.model.SModel descriptor : module.getModels()) {
           if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
         }
         return false;
       }
     });
-  }
-
-  private static void initProjectIfNeeded() {
-    if (mpsProject == null) {
-      mpsProject = ActiveEnvironment.get().createDummyProject();
-//    mpsProject = environment.openProject(new File(System.getProperty("user.dir")));
-    }
   }
 
   @Rule
