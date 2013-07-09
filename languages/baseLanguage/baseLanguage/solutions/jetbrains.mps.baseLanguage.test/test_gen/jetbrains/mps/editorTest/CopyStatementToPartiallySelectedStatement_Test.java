@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class AddStatementToBlock_Test extends BaseTransformationTest4 {
-  public AddStatementToBlock_Test() {
+public class CopyStatementToPartiallySelectedStatement_Test extends BaseTransformationTest4 {
+  public CopyStatementToPartiallySelectedStatement_Test() {
   }
 
   @Test
-  public void test_AddStatementToBlock() throws Throwable {
+  public void test_CopyStatementToPartiallySelectedStatement() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddStatementToBlock_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.CopyStatementToPartiallySelectedStatement_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,10 +27,12 @@ public class AddStatementToBlock_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8777381699079423281", "8777381699079423291");
+      final Editor editor = TestBody.this.initEditor("8777381699079285185", "8777381699079285195");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
 
     }
