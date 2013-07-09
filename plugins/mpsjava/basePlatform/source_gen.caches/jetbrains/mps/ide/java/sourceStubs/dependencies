@@ -68,7 +68,6 @@
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.Util" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

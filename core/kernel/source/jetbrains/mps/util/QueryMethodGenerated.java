@@ -159,7 +159,7 @@ public class QueryMethodGenerated implements CoreComponent {
       if (e.getCause() instanceof IllegalModelChangeError) {
         throw (IllegalModelChangeError) e.getCause();
       }
-      LOG.error(e.getCause());
+      LOG.error(e,e);
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
     return result;

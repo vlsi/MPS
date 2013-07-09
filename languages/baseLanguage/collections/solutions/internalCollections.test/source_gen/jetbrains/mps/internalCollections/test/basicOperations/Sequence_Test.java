@@ -19,6 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Sequence_Test extends Util_Test {
   public void test_sequenceMethods() throws Exception {
@@ -557,6 +558,14 @@ __switch__:
         return it == (int) fff;
       }
     }));
+  }
+
+  public void test_mps18138() throws Exception {
+    Iterable<? extends Iterable<Integer>> sosoi = Sequence.fromIterable(Sequence.fromArray(new int[][]{})).select(new ISelector<int[], ISequence<Integer>>() {
+      public ISequence<Integer> select(int[] it) {
+        return ArrayUtils.fromIntegerArray(it);
+      }
+    });
   }
 
   public Iterable<Integer> abc(final int j) {

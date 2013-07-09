@@ -18,14 +18,14 @@
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz/MPS ${mpsBootstrapCore.version}" />
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz/MPS ${mpsBootstrapCore.version}/bin" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz/MPS ${mpsBootstrapCore.version}/bin">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz_f755" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz_f755">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.sh" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
@@ -46,13 +46,13 @@
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}" />
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="crlf" />
       </filterchain>
@@ -61,7 +61,7 @@
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin/mac" />
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin/mac/Contents" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin/mac/Contents">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/Info.plist.xml" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/Info.plist.xml" />
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="\$version\$" replace="${mpsBootstrapCore.version}" flags="" />
@@ -75,14 +75,14 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.sh" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.bat" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.bat" />
       <filterchain>
         <fixcrlf eol="crlf" />
       </filterchain>
@@ -120,7 +120,7 @@
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip/MPS ${mpsBootstrapCore.version}.app" />
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip/MPS ${mpsBootstrapCore.version}.app/Contents" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip/MPS ${mpsBootstrapCore.version}.app/Contents">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/Info.plist.xml" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/Info.plist.xml" />
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="\$version\$" replace="${mpsBootstrapCore.version}" flags="" />
@@ -134,7 +134,7 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip/MPS ${mpsBootstrapCore.version}.app/bin" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip/MPS ${mpsBootstrapCore.version}.app/bin">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
@@ -146,7 +146,7 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755">
-      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.sh" />
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>

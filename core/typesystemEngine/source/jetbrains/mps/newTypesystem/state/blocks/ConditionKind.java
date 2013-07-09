@@ -56,10 +56,10 @@ public enum ConditionKind {
   CONCRETE {
     @Override
     public List<SNode> getUnresolvedInputs(SNode node, State state) {
-      if (node == null) {
+      SNode representative = state.getRepresentative(node);
+      if (node == null || representative == null) {
         return new LinkedList<SNode>();
       }
-      SNode representative = state.getRepresentative(node);
       if (HUtil.isRuntimeTypeVariable(representative)) {
         return Arrays.asList(representative);
       }

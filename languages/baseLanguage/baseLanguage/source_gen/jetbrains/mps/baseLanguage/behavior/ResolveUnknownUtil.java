@@ -120,7 +120,7 @@ public class ResolveUnknownUtil {
   }
 
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveNew(final SNode x) {
-    SNode typ = findClass(x, SPropertyOperations.getString(x, "className"));
+    final SNode typ = findClass(x, SPropertyOperations.getString(x, "className"));
     if ((typ == null)) {
       return null;
     }
@@ -128,24 +128,45 @@ public class ResolveUnknownUtil {
       return null;
     }
 
-    final SNode cons = ResolveUnknownUtil.findConstructor(SNodeOperations.cast(typ, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.getTargets(x, "actualArgument", true));
-    if ((cons == null)) {
-      return null;
-    }
-
     return new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
-        SNode create = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
 
-        reattachMethodArguments(x, create);
-        for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(x, "typeArgument", true))) {
-          SNodeOperations.detachNode(arg);
-          ListSequence.fromList(SLinkOperations.getTargets(create, "typeParameter", true)).addElement(arg);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        SNode creator;
+
+        SNode cons = ResolveUnknownUtil.findConstructor(SNodeOperations.cast(typ, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.getTargets(x, "actualArgument", true));
+
+        if ((cons == null)) {
+
+          // we can't use default constructor in this case 
+          if (ListSequence.fromList(SLinkOperations.getTargets(x, "actualArgument", true)).isNotEmpty()) {
+            return null;
+          }
+
+          SNode defaultConsCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultClassCreator", null);
+          SLinkOperations.setTarget(defaultConsCreator, "classifier", typ, false);
+          for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(x, "typeArgument", true))) {
+            SNodeOperations.detachNode(arg);
+            ListSequence.fromList(SLinkOperations.getTargets(defaultConsCreator, "typeParameter", true)).addElement(arg);
+          }
+
+          creator = defaultConsCreator;
+
+        } else {
+
+          SNode classCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
+
+          reattachMethodArguments(x, classCreator);
+          for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(x, "typeArgument", true))) {
+            SNodeOperations.detachNode(arg);
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(arg);
+          }
+
+          SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", cons, false);
+          creator = classCreator;
         }
 
-        SLinkOperations.setTarget(create, "baseMethodDeclaration", cons, false);
-        SLinkOperations.setTarget(result, "creator", create, true);
+        SLinkOperations.setTarget(result, "creator", creator, true);
         return result;
       }
     };

@@ -88,7 +88,7 @@ public class DataFlowManager implements CoreComponent {
             DataFlowBuilders builders = buildersClass.newInstance();
             builders.install(this);
           } catch (Throwable t) {
-            LOG.error(null, t);
+            LOG.error(t, t);
           }
         }
       }

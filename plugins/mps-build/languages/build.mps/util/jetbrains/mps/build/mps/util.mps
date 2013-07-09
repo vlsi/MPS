@@ -14538,7 +14538,7 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7316240245138670539" resolveInfo="report" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7316240245138669617" nodeInfo="nn">
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7316240245138669618" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="unsatisfied dependency: " />
+                        <property name="value" nameId="tpee.1070475926801" value="dependency on a module not visible from current build project: " />
                       </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316240245138669619" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316240245138669620" nodeInfo="nn">

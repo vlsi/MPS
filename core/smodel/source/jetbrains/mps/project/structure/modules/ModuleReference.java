@@ -35,8 +35,8 @@ public final class ModuleReference implements SModuleReference {
    * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModuleReference(String)}
    */
   @Deprecated
-  public static SModuleReference fromString(String text) {
-    return parseReference(text);
+  public static ModuleReference fromString(String text) {
+    return ((ModuleReference) parseReference(text));
   }
 
   private final String myModuleName;

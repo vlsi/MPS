@@ -2,7 +2,6 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/build/solution/jetbrains.mps.ide.build.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/analyzers/solutions/sandbox/jetbrains.mps.lang.dataFlow.analyzers.sandbox.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="core.devkits" />
@@ -230,6 +229,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/jetbrains.mps.build.mps.pluginSolution.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/jetbrains.mps.build.pluginSolution.msd" folder="platform.build" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-build/solutions/mpsBuild/jetbrains.mps.ide.build.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.properties/jetbrains.mps.core.properties.mpl" folder="core.languages.properties" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.properties/sandbox/jetbrains.mps.core.properties.sandbox.msd" folder="core.languages.properties" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" folder="core.languages.xml" />

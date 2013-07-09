@@ -12,7 +12,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="3474133302908391407" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsExecution" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsExecution.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="3474133302908391411" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
     </node>
@@ -276,7 +276,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5833628797344916224" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsEditor" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsEditor.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="5833628797344916228" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
     </node>
@@ -803,7 +803,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7210153263370654627" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsBaseLanguage" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBaseLanguage.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="7210153263370654629" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
@@ -974,7 +974,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="3197190366568000187" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsBuild" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBuild.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="3197190366568000188" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
     </node>
@@ -1082,7 +1082,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="617882099353312053" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsGenerator" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsGenerator.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="617882099353312054" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
     </node>
@@ -1371,7 +1371,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="617882099353331886" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsJava" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsJava.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="617882099353331887" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
     </node>
@@ -1515,7 +1515,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4074183641147971049" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsSModel" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsSModel.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="4074183641147971050" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
     </node>
@@ -1749,7 +1749,7 @@
   <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6238501899265293051" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="mpsActions" />
     <property name="fileName" nameId="3ior.4915877860348071612" value="mpsActions.xml" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
+    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../../../" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6238501899265293052" nodeInfo="ng">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
