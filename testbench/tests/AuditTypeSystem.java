@@ -14,41 +14,45 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.ModelsExtractor;
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
+import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
-
 @RunWith(ParameterizedMpsTest.class)
-@PreloadAllModules
-@WithMake
 @WithSorting
 public class AuditTypeSystem {
   private static CheckingTestStatistic ourStatistic;
+  private static Project ourContextProject;
 
   @Parameters
-  public static List<Object[]> filePaths() {
+  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
     ourStatistic = new CheckingTestStatistic();
-    return CheckProjectStructureHelper.filePaths(Collections.<String>emptySet());
+
+//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
+    ourContextProject = ContextProjextSupport.getContextProject();
+
+    // todo: exception in case of failed compilation?
+    MpsTestsSupport.makeAllInCreatedEnvironment();
+    MpsTestsSupport.reloadAllAfterMake();
+
+    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
   }
 
   @AfterClass
@@ -57,19 +61,15 @@ public class AuditTypeSystem {
   }
 
   // main part
-  private ModuleHandle handle;
+  private SModule myModule;
 
-  public AuditTypeSystem(String testName, ModuleHandle handle) {
-    this.handle = handle;
+  public AuditTypeSystem(String testName, SModule module) {
+    myModule = module;
   }
 
   @Test
   public void checkTypeSystem() {
-    SModuleReference moduleReference = handle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + handle.getFile().getPath() + " was not loaded", module);
-
-    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
+    Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
     List<String> errors = CheckProjectStructureHelper.applyChecker(new TypesystemChecker(), models, ourStatistic);
 
     Assert.assertTrue("Type system errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
