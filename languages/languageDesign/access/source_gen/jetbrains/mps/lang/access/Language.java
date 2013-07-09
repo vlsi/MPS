@@ -15,7 +15,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)";
-  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.closures"};
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.baseLanguage.closures", "jetbrains.mps.baseLanguage"};
   private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
