@@ -32,6 +32,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.MakeNodePointers_BeforeTask" file="MakeNodePointers_BeforeTask.java">
+    <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.InterruptedException" />

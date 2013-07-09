@@ -29,28 +29,30 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 6:
         return Collections.<ConceptEditor>singletonList(new ConsoleType_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor());
+        return Collections.<ConceptEditor>singletonList(new EnvironmentExpression_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new NodeListSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new NodeSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeListSource_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeSource_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor());
       case 17:
-        return Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor());
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor());
       case 18:
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor());
+      case 19:
         return Collections.<ConceptEditor>singletonList(new StartProcessHandlerStatement_Editor());
       default:
     }
@@ -90,7 +92,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b0a1 = new String[]{"jetbrains.mps.execution.configurations.editor.ComplexCanRunAndDebug", "jetbrains.mps.execution.configurations.editor.SimpleCanRunAndDebug"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }
