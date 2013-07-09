@@ -15,11 +15,6 @@
  */
 
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
@@ -28,34 +23,14 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.*;
 import org.junit.rules.TestWatchman;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-@RunWith(ParameterizedMpsTest.class)
-@WithSorting
-public class ProjectTest {
+public class ProjectTest extends BaseCheckModulesTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
 
-  private static Project ourContextProject;
-
-  @Parameters
-  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
-    //    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
-    ourContextProject = ContextProjextSupport.getContextProject();
-
-    // todo: exception in case of failed compilation?
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
-
-    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
-  }
-
-  // main part
   private List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
   private Token token;
   private boolean needGeneration;
@@ -65,7 +40,7 @@ public class ProjectTest {
     token = ModelAccess.instance().runReadAction(new Computable<Token>() {
       @Override
       public Token compute() {
-        return ProjectTestHelper.getToken(module, ourContextProject);
+        return ProjectTestHelper.getToken(module, getContextProject());
       }
     });
     needGeneration = ModelAccess.instance().runReadAction(new Computable<Boolean>() {

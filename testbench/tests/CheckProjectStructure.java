@@ -14,51 +14,14 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.Order;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
-import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized.Parameters;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collections;
 import java.util.List;
 
-@RunWith(ParameterizedMpsTest.class)
-@WithSorting
-public class CheckProjectStructure {
-  private static CheckingTestStatistic ourStatistic;
-  private static Project ourContextProject;
-
-  @Parameters
-  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
-    ourStatistic = new CheckingTestStatistic();
-
-//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
-    ourContextProject = ContextProjextSupport.getContextProject();
-
-    // todo: exception in case of failed compilation?
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
-
-    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
-  }
-
-  @AfterClass
-  public static void cleanUp() {
-//    ActiveEnvironment.get().disposeProject(ourProject);
-    ourStatistic.printStatistic();
-  }
-
-  // main part
+public class CheckProjectStructure extends BaseCheckModulesTest {
   private SModule module;
 
   public CheckProjectStructure(String testName, SModule module) {

@@ -14,53 +14,17 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.ModelsExtractor;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
-import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized.Parameters;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
-@RunWith(ParameterizedMpsTest.class)
-@WithSorting
-public class AuditTypeSystem {
-  private static CheckingTestStatistic ourStatistic;
-  private static Project ourContextProject;
-
-  @Parameters
-  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
-    ourStatistic = new CheckingTestStatistic();
-
-//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
-    ourContextProject = ContextProjextSupport.getContextProject();
-
-    // todo: exception in case of failed compilation?
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
-
-    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), Collections.<String>emptySet());
-  }
-
-  @AfterClass
-  public static void cleanUp() {
-    ourStatistic.printStatistic();
-  }
-
-  // main part
+public class AuditTypeSystem extends BaseCheckModulesTest {
   private SModule myModule;
 
   public AuditTypeSystem(String testName, SModule module) {
@@ -70,7 +34,7 @@ public class AuditTypeSystem {
   @Test
   public void checkTypeSystem() {
     Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
-    List<String> errors = CheckProjectStructureHelper.applyChecker(new TypesystemChecker(), models, ourStatistic);
+    List<String> errors = CheckProjectStructureHelper.applyChecker(new TypesystemChecker(), models, getStatistic());
 
     Assert.assertTrue("Type system errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }

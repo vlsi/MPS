@@ -15,39 +15,20 @@
  */
 
 import jetbrains.mps.checkers.LanguageChecker;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.testbench.ModelsExtractor;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
-import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.assertNotNull;
-
-@RunWith(ParameterizedMpsTest.class)
-@WithSorting
-public class AuditConstraints {
+public class AuditConstraints extends BaseCheckModulesTest {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {
     // obsolete modules
@@ -74,29 +55,11 @@ public class AuditConstraints {
     DISABLED_MODULES.add("jetbrains.mps.build.tests");
   }
 
-  private static CheckingTestStatistic ourStatistic;
-  private static Project ourContextProject;
-
   @Parameters
   public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
-    ourStatistic = new CheckingTestStatistic();
-
-//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
-    ourContextProject = ContextProjextSupport.getContextProject();
-
-    // todo: exception in case of failed compilation?
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
-
-    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), DISABLED_MODULES);
+    return BaseCheckModulesTest.modules(DISABLED_MODULES);
   }
 
-  @AfterClass
-  public static void cleanUp() {
-    ourStatistic.printStatistic();
-  }
-
-  // main part
   private SModule myModule;
 
   public AuditConstraints(String testName, SModule module) {
@@ -106,7 +69,7 @@ public class AuditConstraints {
   @Test
   public void checkConstraints() {
     Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
-    List<String> errors = CheckProjectStructureHelper.applyChecker(new LanguageChecker(), models, ourStatistic);
+    List<String> errors = CheckProjectStructureHelper.applyChecker(new LanguageChecker(), models, getStatistic());
 
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
   }
