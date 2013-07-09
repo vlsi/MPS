@@ -29,6 +29,10 @@ public class CopyStatementToPartiallySelectedStatement_Test extends BaseTransfor
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8777381699079285185", "8777381699079285195");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveUp_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");

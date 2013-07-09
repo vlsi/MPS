@@ -74,7 +74,7 @@ public class NodePaster {
       return;
     }
     SNode lastNode = pasteTargets.get(pasteTargets.size() - 1);
-    pasteToParent(lastNode, lastNode.getRoleInParent(), PastePlaceHint.DEFAULT);
+    pasteToParent(lastNode, lastNode.getRoleInParent(), PastePlaceHint.DEFAULT, true);
     for (SNode node : pasteTargets) {
       if (node.getModel() != null) {
         node.delete();
@@ -95,7 +95,7 @@ public class NodePaster {
       }
     }
     SNode lastNode = pasteTargets.get(pasteTargets.size() - 1);
-    return canPasteToTarget(lastNode.getParent(), lastNode.getRoleInParent(), pasteTargets.size() == 1);
+    return canPasteToParent(lastNode, lastNode.getRoleInParent(), true);
   }
 
 
@@ -106,7 +106,7 @@ public class NodePaster {
     if (status == PASTE_TO_TARGET) {
       pasteToTarget(pasteTarget, null, role_, PastePlaceHint.DEFAULT);
     } else if (status == PASTE_TO_PARENT) {
-      pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT);
+      pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT, false);
     } else if (status == PASTE_TO_ROOT) {
       for (SNode pasteNode : myPasteNodes) {
         pasteTarget.getModel().addRootNode(pasteNode);
@@ -138,14 +138,14 @@ public class NodePaster {
   }
 
   public boolean canPasteRelative(SNode anchorNode) {
-    return canPasteToParent(anchorNode, anchorNode.getRoleInParent());
+    return canPasteToParent(anchorNode, anchorNode.getRoleInParent(), false);
   }
 
   public void pasteRelative(SNode anchorNode, PastePlaceHint placeHint) {
     if (anchorNode.getParent() == null) {
       pasteAsRoots(anchorNode.getModel());
     } else {
-      pasteToParent(anchorNode, anchorNode.getRoleInParent(), placeHint);
+      pasteToParent(anchorNode, anchorNode.getRoleInParent(), placeHint, false);
     }
   }
 
@@ -175,7 +175,7 @@ public class NodePaster {
       }
     }
 
-    if (canPasteToParent(pasteTarget, role_)) {
+    if (canPasteToParent(pasteTarget, role_, false)) {
       return PASTE_TO_PARENT;
     }
 
@@ -235,14 +235,14 @@ public class NodePaster {
     return node;
   }
 
-  private boolean canPasteToParent(SNode anchorNode, String role) {
-    NodeAndRole nodeAndRole = getActualAnchorNode(anchorNode, role);
+  private boolean canPasteToParent(SNode anchorNode, String role, boolean exactly) {
+    NodeAndRole nodeAndRole = getActualAnchorNode(anchorNode, role, exactly);
     return (nodeAndRole != null && nodeAndRole.myNode != null);
   }
 
-  private void pasteToParent(SNode pasteTarget, String role, PastePlaceHint placeHint) {
+  private void pasteToParent(SNode pasteTarget, String role, PastePlaceHint placeHint, boolean exactly) {
     SNode actualPasteTarget;
-    NodeAndRole nodeAndRole = getActualAnchorNode(pasteTarget, role);
+    NodeAndRole nodeAndRole = getActualAnchorNode(pasteTarget, role, exactly);
     SNode actualAnchorNode = nodeAndRole.myNode;
     String actualRole = nodeAndRole.myRole;
     actualPasteTarget = actualAnchorNode.getParent();
@@ -252,16 +252,19 @@ public class NodePaster {
     pasteToTarget(actualPasteTarget, actualAnchorNode, actualRole, placeHint);
   }
 
-  public NodeAndRole getActualAnchorNode(SNode firstAnchorNode, String firstRole) {
+  public NodeAndRole getActualAnchorNode(SNode firstAnchorNode, String firstRole, boolean exactly) {
     String role = firstRole;
     SNode anchorNode = firstAnchorNode;
     while (anchorNode != null) {
       SNode container = anchorNode.getParent();
       if (container == null) {
-        break;
+        return null;
       }
       if (canPasteToTarget(container, role, firstAnchorNode == anchorNode)) {
         return new NodeAndRole(anchorNode, role);
+      }
+      if (exactly) {
+        break;
       }
       anchorNode = container;
       role = anchorNode.getRoleInParent();
