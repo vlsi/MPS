@@ -20,7 +20,8 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ContextProjextSupport {
-  public static String MODULES_ROOT_PROPERTY = "modules.root";
+  public static String MODULES_ROOT_PROPERTY = "mps.junit.modules.root";
+  public static String PROJECT_PATH_PROPERTY = "mps.junit.project";
 
 
   public static Project getContextProject() {
