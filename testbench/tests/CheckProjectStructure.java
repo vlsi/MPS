@@ -32,11 +32,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * User: fyodor
- * Date: Aug 27, 2010
- */
-
 @RunWith(ParameterizedMpsTest.class)
 @WithSorting
 public class CheckProjectStructure {

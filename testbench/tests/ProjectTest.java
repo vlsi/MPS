@@ -38,11 +38,6 @@ import org.junit.runners.model.TestClass;
 
 import java.util.*;
 
-
-/**
- * User: fyodor
- * Date: Aug 19, 2010
- */
 @RunWith(ParameterizedMpsTest.class)
 @PreloadAllModules
 @WithMake
