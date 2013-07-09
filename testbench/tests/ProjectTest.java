@@ -91,10 +91,4 @@ public class ProjectTest extends BaseCheckModulesTest {
     List<String> diffReport = ProjectTestHelper.getDiffReport(token);
     Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
   }
-
-  //  @Test
-  @Order(4)
-  public void testProject() throws Exception {
-    ProjectTestHelper.test(token);
-  }
 }

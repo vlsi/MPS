@@ -62,31 +62,27 @@ import java.io.PrintWriter;
 
 public class ProjectTestHelper {
   public static ProjectTestHelper.Token getToken(SModule module, Project project) {
-    return new ProjectTestHelper.PrivToken(module, project);
+    return new ProjectTestHelper.Token(module, project);
   }
 
   public static boolean build(ProjectTestHelper.Token tok) {
-    return ((ProjectTestHelper.PrivToken) tok).build();
+    return tok.build();
   }
 
   public static void cleanUp(ProjectTestHelper.Token tok) {
-    ((ProjectTestHelper.PrivToken) tok).cleanUp();
-  }
-
-  public static void test(ProjectTestHelper.Token tok) {
-    // todo: ? 
+    tok.cleanUp();
   }
 
   public static List<String> buildErrors(ProjectTestHelper.Token tok) {
-    return ((ProjectTestHelper.PrivToken) tok).buildErrors();
+    return tok.buildErrors();
   }
 
   public static List<String> buildWarns(ProjectTestHelper.Token tok) {
-    return ((ProjectTestHelper.PrivToken) tok).buildWarns();
+    return tok.buildWarns();
   }
 
   public static List<String> getDiffReport(ProjectTestHelper.Token tok) {
-    return ((ProjectTestHelper.PrivToken) tok).diff();
+    return tok.diff();
   }
 
   private static ScriptBuilder defaultScriptBuilder() {
@@ -125,12 +121,7 @@ public class ProjectTestHelper {
     })).resources(false);
   }
 
-  public static abstract class Token {
-    public Token() {
-    }
-  }
-
-  private static class PrivToken extends ProjectTestHelper.Token {
+  public static class Token {
     private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies");
     private final Project project;
     private final SModule module;
@@ -138,7 +129,7 @@ public class ProjectTestHelper {
     private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
     private final ProjectTestHelper.MyMessageHandler myMessageHandler = new ProjectTestHelper.MyMessageHandler();
 
-    public PrivToken(SModule module, Project project) {
+    public Token(SModule module, Project project) {
       this.module = module;
       this.project = project;
       File tmpDir;
@@ -185,9 +176,9 @@ public class ProjectTestHelper {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           IOperationContext context = new ProjectOperationContext(project);
-          IScript scr = defaultScriptBuilder().toScript();
+          IScript scr = ProjectTestHelper.defaultScriptBuilder().toScript();
           try {
-            result.value = new TestMakeService(context, myMessageHandler).make(null, collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
+            result.value = new TestMakeService(context, myMessageHandler).make(null, ProjectTestHelper.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
           } catch (InterruptedException ignore) {
           } catch (ExecutionException ignore) {
           }
