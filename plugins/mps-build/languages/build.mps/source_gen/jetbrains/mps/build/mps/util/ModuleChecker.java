@@ -551,7 +551,7 @@ public class ModuleChecker {
       String targetName = moduleRef.getModuleName();
       resolved.value = SNodeOperations.as(myVisibleModules.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
       if (resolved.value == null) {
-        report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
+        report("dependency on a module not visible from current build project: " + dep.getModuleRef().toString(), myOriginalModule);
         continue;
       }
 
