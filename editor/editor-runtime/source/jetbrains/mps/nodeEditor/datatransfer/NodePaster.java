@@ -69,6 +69,36 @@ public class NodePaster {
     paste(pasteTarget, pasteTarget.getRoleInParent(), pasteEnv);
   }
 
+  public void pasteWithRemove(List<SNode> pasteTargets) {
+    if (pasteTargets.isEmpty()) {
+      return;
+    }
+    SNode lastNode = pasteTargets.get(pasteTargets.size() - 1);
+    pasteToParent(lastNode, lastNode.getRoleInParent(), PastePlaceHint.DEFAULT);
+    for (SNode node : pasteTargets) {
+      if (node.getModel() != null) {
+        node.delete();
+      }
+    }
+  }
+
+
+  public boolean canPasteWithRemove(List<SNode> pasteTargets) {
+    if (pasteTargets.isEmpty()) {
+      return false;
+    }
+    SNode firstNode = pasteTargets.get(0);
+    String role = firstNode.getRoleInParent();
+    for (SNode node : pasteTargets) {
+      if (!node.getRoleInParent().equals(role)) {
+        return false;
+      }
+    }
+    SNode lastNode = pasteTargets.get(pasteTargets.size() - 1);
+    return canPasteToTarget(lastNode.getParent(), lastNode.getRoleInParent(), pasteTargets.size() == 1);
+  }
+
+
   private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv) {
     String role_ = role != null ? role : pasteTarget.getRoleInParent();
     int status = canPaste(pasteTarget, role_, pasteEnv);
