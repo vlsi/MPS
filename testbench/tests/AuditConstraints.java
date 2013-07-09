@@ -17,11 +17,14 @@
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.testbench.ModelsExtractor;
+import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import jetbrains.mps.testbench.suites.CheckingTestStatistic;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,7 +36,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -41,8 +46,6 @@ import java.util.Set;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(ParameterizedMpsTest.class)
-@PreloadAllModules
-@WithMake
 @WithSorting
 public class AuditConstraints {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
@@ -72,11 +75,20 @@ public class AuditConstraints {
   }
 
   private static CheckingTestStatistic ourStatistic;
+  private static Project ourContextProject;
 
   @Parameters
-  public static List<Object[]> filePaths() {
+  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
     ourStatistic = new CheckingTestStatistic();
-    return CheckProjectStructureHelper.filePaths(DISABLED_MODULES);
+
+//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
+    ourContextProject = ContextProjextSupport.getContextProject();
+
+    // todo: exception in case of failed compilation?
+    MpsTestsSupport.makeAllInCreatedEnvironment();
+    MpsTestsSupport.reloadAllAfterMake();
+
+    return CheckProjectStructureHelper.createParamtersFromModules(ourContextProject.getModules(), DISABLED_MODULES);
   }
 
   @AfterClass
@@ -85,19 +97,15 @@ public class AuditConstraints {
   }
 
   // main part
-  private ModuleHandle handle;
+  private SModule myModule;
 
-  public AuditConstraints(String testName, ModuleHandle handle) {
-    this.handle = handle;
+  public AuditConstraints(String testName, SModule module) {
+    myModule = module;
   }
 
   @Test
   public void checkConstraints() {
-    SModuleReference moduleReference = handle.getDescriptor().getModuleReference();
-    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    assertNotNull("module " + handle.getFile().getPath() + " was not loaded", module);
-
-    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
+    Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
     List<String> errors = CheckProjectStructureHelper.applyChecker(new LanguageChecker(), models, ourStatistic);
 
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
