@@ -19,7 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiClassType;
+import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiSubstitutor;
+import com.intellij.psi.PsiType;
 import com.intellij.psi.impl.source.PsiImmediateClassType;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -39,7 +41,6 @@ public class MPSPsiStringType extends MPSPsiNode implements ComputesPsiType<PsiC
   public PsiClassType getPsiType() {
     // we don't cache it to avoid possible subtle bugs, when JDK is changed or something
     Project project = getProject();
-    PsiClass claz = JavaPsiFacade.getInstance(project).findClass("java.lang.String", GlobalSearchScope.allScope(project));
-    return new PsiImmediateClassType(claz, PsiSubstitutor.EMPTY);
+    return PsiType.getJavaLangString(PsiManager.getInstance(project), GlobalSearchScope.allScope(project));
   }
 }

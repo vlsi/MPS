@@ -59,7 +59,7 @@ public class NonJavaMPSType extends PsiType {
 
   @Override
   public <A> A accept(@NotNull PsiTypeVisitor<A> visitor) {
-    return visitor.visitType(this); // unsatisfactory default
+    return visitor.visitPrimitiveType(PsiType.NULL);
   }
 
   @Nullable
