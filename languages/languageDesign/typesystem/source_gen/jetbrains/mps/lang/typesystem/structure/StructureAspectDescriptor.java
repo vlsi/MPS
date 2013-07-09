@@ -75,7 +75,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong").super_("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement").parents("jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement").alias(":~~:", "strong comparability").staticScope(StaticScope.NONE).create();
       case 30:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement").super_("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").parents("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").properties("direction").alias(":==:", "typesystem equation").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement").super_("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").parents("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement").alias(":==:", "typesystem equation").staticScope(StaticScope.NONE).create();
       case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement").super_("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement").parents("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement").alias(":>=:", "weak subtyping").staticScope(StaticScope.NONE).create();
       case 32:

@@ -122,10 +122,6 @@
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":==:" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1193662477920" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="direction" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1193662402729" resolveInfo="EquationDirection_Enum" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174660718586" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
