@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.extapi.model.GeneratableSModel;
@@ -41,7 +42,45 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-public class CheckProjectStructureHelper {
+public class CheckingTestsUtil {
+  // AuditConstraints/TypeSystem utils
+  public static List<String> applyChecker(final INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModel sm : models) {
+          if (!SModelStereotype.isUserModel(sm)) continue;
+          if (SModelStereotype.isGeneratorModel(sm)) continue;
+          ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
+          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm, null)) {
+            Set<IErrorReporter> errorReporters = null;
+            try {
+              errorReporters = checker.getErrors(root, operationContext);
+            } catch (IllegalStateException e) {
+              errors.add(e.getMessage());
+            }
+            for (IErrorReporter reporter : errorReporters) {
+              if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
+                if (reporter.reportError().startsWith("a class should have")) continue;
+                SNode node = reporter.getSNode();
+                if (!CheckProjectStructureUtil.filterIssue(node)) continue;
+                statistic.reportError();
+                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) +
+                    " root: " + node.getContainingRoot() + " node: " + node);
+              }
+              if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
+                statistic.reportWarning();
+              }
+            }
+          }
+
+        }
+      }
+    });
+    return errors;
+  }
+
+  // CheckProjectStructure utils
   public static List<String> checkReferences(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
     return checkModels(models);
@@ -185,42 +224,6 @@ public class CheckProjectStructureHelper {
         }
       }
     }
-  }
-
-  public static List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
-    final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SModel sm : models) {
-          if (!SModelStereotype.isUserModel(sm)) continue;
-          if (SModelStereotype.isGeneratorModel(sm)) continue;
-          ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
-          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm, null)) {
-            Set<IErrorReporter> errorReporters = null;
-            try {
-              errorReporters = checker.getErrors(root, operationContext);
-            } catch (IllegalStateException e) {
-              errors.add(e.getMessage());
-            }
-            for (IErrorReporter reporter : errorReporters) {
-              if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
-                if (reporter.reportError().startsWith("a class should have")) continue;
-                SNode node = reporter.getSNode();
-                if (!CheckProjectStructureUtil.filterIssue(node)) continue;
-                statistic.reportError();
-                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) +
-                    " root: " + node.getContainingRoot() + " node: " + node);
-              }
-              if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
-                statistic.reportWarning();
-              }
-            }
-          }
-
-        }
-      }
-    });
-    return errors;
   }
 
   private static StringBuilder checkModel(final SModel sm) {

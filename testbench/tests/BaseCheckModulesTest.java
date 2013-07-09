@@ -45,7 +45,7 @@ public class BaseCheckModulesTest {
   }
 
   @Parameters
-  public static List<Object[]> createParametersFromModules() throws InvocationTargetException, InterruptedException {
+  public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation?
     // MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)?
     // can be extended with right modules set

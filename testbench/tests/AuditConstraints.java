@@ -57,7 +57,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
   }
 
   @Parameters
-  public static List<Object[]> modules() throws InvocationTargetException, InterruptedException {
+  public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     return createTestParametersFromModules(excludeModules(parameterModules(), DISABLED_MODULES));
   }
 
@@ -71,8 +71,8 @@ public class AuditConstraints extends BaseCheckModulesTest {
   @Test
   public void checkConstraints() {
     Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
-    List<String> errors = CheckProjectStructureHelper.applyChecker(new LanguageChecker(), models, getStatistic());
+    List<String> errors = CheckingTestsUtil.applyChecker(new LanguageChecker(), models, getStatistic());
 
-    Assert.assertTrue("Constraints and scopes errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
+    Assert.assertTrue("Constraints and scopes errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 }

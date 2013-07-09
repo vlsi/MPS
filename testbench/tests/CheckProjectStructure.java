@@ -32,28 +32,28 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Test
   @Order(1)
   public void checkReferences() {
-    List<String> errors = CheckProjectStructureHelper.checkReferences(module);
-    Assert.assertTrue("Reference errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckingTestsUtil.checkReferences(module);
+    Assert.assertTrue("Reference errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(2)
   public void checkStructure() {
-    List<String> errors = CheckProjectStructureHelper.checkStructure(module);
-    Assert.assertTrue("Structure errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckingTestsUtil.checkStructure(module);
+    Assert.assertTrue("Structure errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(3)
   public void checkGenerationStatus() {
-    List<String> errors = CheckProjectStructureHelper.checkGenerationStatus(module);
-    Assert.assertTrue("Try to regenerate models:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckingTestsUtil.checkGenerationStatus(module);
+    Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
   @Test
   @Order(4)
   public void checkModuleProperties() {
-    List<String> errors = CheckProjectStructureHelper.checkModule(module);
-    Assert.assertTrue("Module property or dependency errors:\n" + CheckProjectStructureHelper.formatErrors(errors), errors.isEmpty());
+    List<String> errors = CheckingTestsUtil.checkModule(module);
+    Assert.assertTrue("Module property or dependency errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 }
