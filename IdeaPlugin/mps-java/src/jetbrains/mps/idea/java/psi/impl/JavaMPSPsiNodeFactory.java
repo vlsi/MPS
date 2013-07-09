@@ -78,6 +78,24 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiClassifierType(id, concept, containingRole);
       }
     });
+    factories.put("jetbrains.mps.baseLanguage.structure.PrimitiveType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiPrimitiveType(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.StringType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiStringType(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.ArrayType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiArrayType(id, concept, containingRole);
+      }
+    });
     factories.put("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
@@ -126,12 +144,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiField(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.PrimitiveType", new NodeCreator() {
-      @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiPrimitiveType(id, concept, containingRole);
-      }
-    });
+
 
     RefCreator dotBasedRefCreator = new RefCreator() {
       @Override
