@@ -4,10 +4,10 @@ package jetbrains.mps.testbench.junit.runners;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import java.io.File;
 import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
-import java.io.File;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -25,12 +25,28 @@ public class ContextProjextSupport {
 
 
   public static Project getContextProject() {
-    Project project = getProjectFromDirectoryWithModules();
+    Project project = getProjectFromProjectPath();
+    if (project != null) {
+      return project;
+    }
+
+    project = getProjectFromDirectoryWithModules();
     if (project != null) {
       return project;
     }
 
     throw new IllegalStateException("can't load context project");
+  }
+
+
+
+  @Nullable
+  private static Project getProjectFromProjectPath() {
+    if (System.getProperty(PROJECT_PATH_PROPERTY) == null) {
+      return null;
+    }
+    // todo: check currently opened projects 
+    return ActiveEnvironment.get().openProject(new File(System.getProperty(PROJECT_PATH_PROPERTY)));
   }
 
 

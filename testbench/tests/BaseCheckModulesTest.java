@@ -54,8 +54,6 @@ public class BaseCheckModulesTest {
 
   public static Iterable<? extends SModule> parameterModules() throws InvocationTargetException, InterruptedException {
     ourStatistic = new CheckingTestStatistic();
-
-//    ourContextProject = ActiveEnvironment.get().openProject(new File("."));
     ourContextProject = ContextProjextSupport.getContextProject();
 
     // todo: exception in case of failed compilation?
