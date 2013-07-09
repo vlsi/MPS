@@ -135,15 +135,12 @@
     <classNode dependClassName="java.lang.annotation.Target" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.OrderComparator" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MakeRunner" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Runner" />
-    <classNode dependClassName="org.junit.runner.manipulation.Sortable" />
-    <classNode dependClassName="org.junit.runner.manipulation.Sorter" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="java.lang.annotation.Annotation" />

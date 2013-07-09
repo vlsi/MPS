@@ -16,7 +16,6 @@
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
 import jetbrains.mps.testbench.suites.CheckingTestStatistic;
@@ -30,7 +29,6 @@ import java.util.List;
 import java.util.Set;
 
 @RunWith(ParameterizedMpsTest.class)
-@WithSorting
 public class BaseCheckModulesTest {
   private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
