@@ -245,9 +245,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public SNode getSelectedSNode() {
-    MPSTreeNodeEx selectedTreeNode = getSelectedTreeNode(MPSTreeNodeEx.class);
-    if (selectedTreeNode == null) return null;
-    return selectedTreeNode.getSNode();
+    List<SNode> result = getSelectedSNodes();
+    if (result.size() != 1) return null;
+    return result.get(0);
   }
 
   public List<SNode> getSelectedSNodes() {
