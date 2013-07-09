@@ -32,6 +32,7 @@ public abstract class BaseConcept_BehaviorDescriptor extends CompiledBehaviorDes
     return BaseConcept_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
+  @Deprecated
   public boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return BaseConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
   }

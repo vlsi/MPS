@@ -60,6 +60,7 @@ public class ClassConcept_Behavior {
     return extendsClassifiers;
   }
 
+  @Deprecated
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return (ClassConcept_Behavior.call_getMainMethod_1213877355884(thisNode) != null);
   }

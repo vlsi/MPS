@@ -72,6 +72,7 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
   }
 
+  @Deprecated
   public boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return ClassConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
   }
