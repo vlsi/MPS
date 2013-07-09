@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -114,6 +115,7 @@ public class TypesUtil {
 
   @NotNull
   public static List<SNode> getNodeReferents(@NotNull SNode node) {
+    if (node == null) return Collections.emptyList();
     final List<SNode> result = new ArrayList<SNode>();
     for (SReference ref : node.getReferences()) {
       result.add(ref.getTargetNode());
