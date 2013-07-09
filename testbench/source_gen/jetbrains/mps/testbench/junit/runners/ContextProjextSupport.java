@@ -4,8 +4,8 @@ package jetbrains.mps.testbench.junit.runners;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import java.io.File;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,6 +39,26 @@ public class ContextProjextSupport {
   }
 
 
+
+  /**
+   * Do not forget set previous context project path after your test!
+   * 
+   * @return previous context project path
+   */
+  @Nullable
+  public static File setContextProjectPath(@Nullable File projectPath) {
+    // todo: create methods like this for modules.root 
+    String previous = System.getProperty(PROJECT_PATH_PROPERTY);
+    if (projectPath != null) {
+      System.setProperty(PROJECT_PATH_PROPERTY, projectPath.getAbsolutePath());
+    } else {
+      System.clearProperty(PROJECT_PATH_PROPERTY);
+    }
+    return (previous != null ?
+      new File(previous) :
+      null
+    );
+  }
 
   @Nullable
   private static Project getProjectFromProjectPath() {

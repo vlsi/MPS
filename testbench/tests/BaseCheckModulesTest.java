@@ -49,10 +49,10 @@ public class BaseCheckModulesTest {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation?
     // MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)?
     // can be extended with right modules set
-    return createTestParametersFromModules(parameterModules());
+    return createTestParametersFromModules(contextModules());
   }
 
-  public static Iterable<? extends SModule> parameterModules() throws InvocationTargetException, InterruptedException {
+  public static Iterable<? extends SModule> contextModules() throws InvocationTargetException, InterruptedException {
     ourStatistic = new CheckingTestStatistic();
     ourContextProject = ContextProjextSupport.getContextProject();
 
