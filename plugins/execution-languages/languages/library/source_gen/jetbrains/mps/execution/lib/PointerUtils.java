@@ -15,6 +15,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.ArrayList;
 
 public class PointerUtils {
   public static final String POINTER_SEPARATOR = "%";
@@ -38,15 +39,23 @@ public class PointerUtils {
     return value.value;
   }
 
-  public static ClonableList nodesToCloneableList(List<SNode> nodes) {
-    return new ClonableList(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
+  public static ClonableList<String> nodesToCloneableList(List<SNode> nodes) {
+    return new ClonableList<String>(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return PointerUtils.pointerToString(new SNodePointer(it));
       }
     }).toListSequence());
   }
 
-  public static ClonableList nodeToCloneableList(SNode node) {
-    return new ClonableList(PointerUtils.pointerToString(new SNodePointer(node)));
+  public static ClonableList<String> nodeToCloneableList(SNode node) {
+    return new ClonableList<String>(PointerUtils.pointerToString(new SNodePointer(node)));
+  }
+
+  public static List<SNodeReference> clonableListToNodes(ClonableList<String> clonableList) {
+    List<SNodeReference> list = ListSequence.fromList(new ArrayList<SNodeReference>());
+    for (String string : ListSequence.fromList(clonableList)) {
+      ListSequence.fromList(list).addElement(stringToPointer(string));
+    }
+    return list;
   }
 }

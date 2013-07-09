@@ -47,6 +47,7 @@ public abstract class ListPanel<T> extends JPanel {
   private ListPanel.MyAbstractListModel myListModel;
   private Project myProject;
   private final String myTitle;
+  private boolean isEditable = true;
 
   public ListPanel(String title) {
     myTitle = title;
@@ -124,10 +125,12 @@ public abstract class ListPanel<T> extends JPanel {
     }
   }
 
-
-
   public void setProject(Project project) {
     myProject = project;
+  }
+
+  public void setEditable(boolean editable) {
+    isEditable = editable;
   }
 
   private class MyAbstractListModel extends AbstractListModel {
@@ -182,6 +185,12 @@ public abstract class ListPanel<T> extends JPanel {
       ListPanel.this.myListModel.fireSomethingChanged();
       return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value);
     }
+
+    @Override
+    public void update(AnActionEvent event) {
+      event.getPresentation().setEnabled(isEditable);
+      super.update(event);
+    }
   }
 
   private class MyListRemoveAction extends ListRemoveAction {
@@ -210,6 +219,12 @@ public abstract class ListPanel<T> extends JPanel {
       }
       ListPanel.this.myListComponent.updateUI();
       ListPanel.this.myListModel.fireSomethingChanged();
+    }
+
+    @Override
+    public void update(AnActionEvent event) {
+      event.getPresentation().setEnabled(isEditable);
+      super.update(event);
     }
   }
 }

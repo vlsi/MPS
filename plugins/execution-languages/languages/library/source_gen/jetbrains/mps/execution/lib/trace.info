@@ -502,71 +502,88 @@
     <unitInfo nodeId="1977878056377381335" fileName="Node_Configuration_Editor.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/5133679254727507894">
-    <nodeInfo nodeId="5133679254727507895" fileName="PointerUtils.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="POINTER_SEPARATOR" />
-    <nodeInfo nodeId="5133679254727507911" fileName="PointerUtils.java" startLine="24" startPosition="65" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727507913" fileName="PointerUtils.java" startLine="26" startPosition="5" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5133679254727507921" fileName="PointerUtils.java" startLine="27" startPosition="60" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727507934" fileName="PointerUtils.java" startLine="31" startPosition="79" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5133679254727507943" fileName="PointerUtils.java" startLine="34" startPosition="25" endLine="35" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133679254727507969" fileName="PointerUtils.java" startLine="37" startPosition="7" endLine="38" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727507986" fileName="PointerUtils.java" startLine="43" startPosition="38" endLine="44" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727508000" fileName="PointerUtils.java" startLine="49" startPosition="62" endLine="50" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727507906" fileName="PointerUtils.java" startLine="23" startPosition="75" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5133679254727507998" fileName="PointerUtils.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeToCloneableList#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/execution/lib/ClonableList;" />
-    <nodeInfo nodeId="5133679254727507937" fileName="PointerUtils.java" startLine="32" startPosition="64" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133679254727507978" fileName="PointerUtils.java" startLine="41" startPosition="70" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727507975" fileName="PointerUtils.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodesToCloneableList#(Ljava/util/List;)Ljetbrains/mps/execution/lib/ClonableList;" />
-    <nodeInfo nodeId="5133679254727507899" fileName="PointerUtils.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="stringToPointer#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="5133679254727507931" fileName="PointerUtils.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="pointerToString#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5133679254727507910" fileName="PointerUtils.java" startLine="24" startPosition="65" endLine="25" endPosition="18" />
-    <scopeInfo nodeId="5133679254727507942" fileName="PointerUtils.java" startLine="34" startPosition="25" endLine="35" endPosition="229" />
-    <scopeInfo nodeId="5133679254727507985" fileName="PointerUtils.java" startLine="43" startPosition="38" endLine="44" endPosition="66" />
-    <scopeInfo nodeId="5133679254727507999" fileName="PointerUtils.java" startLine="49" startPosition="62" endLine="50" endPosition="82" />
-    <scopeInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <nodeInfo nodeId="5133679254727507895" fileName="PointerUtils.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="POINTER_SEPARATOR" />
+    <nodeInfo nodeId="5133679254727507911" fileName="PointerUtils.java" startLine="25" startPosition="65" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727507913" fileName="PointerUtils.java" startLine="27" startPosition="5" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5133679254727507921" fileName="PointerUtils.java" startLine="28" startPosition="60" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727507934" fileName="PointerUtils.java" startLine="32" startPosition="79" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5133679254727507943" fileName="PointerUtils.java" startLine="35" startPosition="25" endLine="36" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727507969" fileName="PointerUtils.java" startLine="38" startPosition="7" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727507986" fileName="PointerUtils.java" startLine="44" startPosition="38" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727508000" fileName="PointerUtils.java" startLine="50" startPosition="70" endLine="51" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5647974406689069127" fileName="PointerUtils.java" startLine="54" startPosition="93" endLine="55" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5647974406689070782" fileName="PointerUtils.java" startLine="56" startPosition="63" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5647974406689101983" fileName="PointerUtils.java" startLine="58" startPosition="5" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727507906" fileName="PointerUtils.java" startLine="24" startPosition="75" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5133679254727507998" fileName="PointerUtils.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeToCloneableList#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/execution/lib/ClonableList;" />
+    <nodeInfo nodeId="5647974406689069019" fileName="PointerUtils.java" startLine="55" startPosition="87" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5133679254727507937" fileName="PointerUtils.java" startLine="33" startPosition="64" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727507978" fileName="PointerUtils.java" startLine="42" startPosition="78" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727507975" fileName="PointerUtils.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodesToCloneableList#(Ljava/util/List;)Ljetbrains/mps/execution/lib/ClonableList;" />
+    <nodeInfo nodeId="5647974406689059575" fileName="PointerUtils.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="clonableListToNodes#(Ljetbrains/mps/execution/lib/ClonableList;)Ljava/util/List;" />
+    <nodeInfo nodeId="5133679254727507899" fileName="PointerUtils.java" startLine="23" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="stringToPointer#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="5133679254727507931" fileName="PointerUtils.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="pointerToString#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5133679254727507910" fileName="PointerUtils.java" startLine="25" startPosition="65" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="5133679254727507942" fileName="PointerUtils.java" startLine="35" startPosition="25" endLine="36" endPosition="229" />
+    <scopeInfo nodeId="5133679254727507985" fileName="PointerUtils.java" startLine="44" startPosition="38" endLine="45" endPosition="66" />
+    <scopeInfo nodeId="5133679254727507999" fileName="PointerUtils.java" startLine="50" startPosition="70" endLine="51" endPosition="90" />
+    <scopeInfo nodeId="5647974406689069022" fileName="PointerUtils.java" startLine="56" startPosition="63" endLine="57" endPosition="70" />
+    <scopeInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5133679254727507984" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727507998" fileName="PointerUtils.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="5133679254727507998" fileName="PointerUtils.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="5133679254727508009" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727507905" fileName="PointerUtils.java" startLine="23" startPosition="75" endLine="28" endPosition="48">
+    <scopeInfo nodeId="5647974406689069019" fileName="PointerUtils.java" startLine="55" startPosition="87" endLine="58" endPosition="5">
+      <varInfo nodeId="5647974406689069020" varName="string" />
+    </scopeInfo>
+    <scopeInfo nodeId="5133679254727507905" fileName="PointerUtils.java" startLine="24" startPosition="75" endLine="29" endPosition="48">
       <varInfo nodeId="5133679254727507914" varName="split" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727507977" fileName="PointerUtils.java" startLine="41" startPosition="70" endLine="46" endPosition="25" />
-    <scopeInfo nodeId="5133679254727507933" fileName="PointerUtils.java" startLine="31" startPosition="79" endLine="38" endPosition="23">
+    <scopeInfo nodeId="5133679254727507977" fileName="PointerUtils.java" startLine="42" startPosition="78" endLine="47" endPosition="25" />
+    <scopeInfo nodeId="5647974406689059578" fileName="PointerUtils.java" startLine="54" startPosition="93" endLine="59" endPosition="16">
+      <varInfo nodeId="5647974406689069130" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="5133679254727507933" fileName="PointerUtils.java" startLine="32" startPosition="79" endLine="39" endPosition="23">
       <varInfo nodeId="5133679254727507935" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727507975" fileName="PointerUtils.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="5133679254727507975" fileName="PointerUtils.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5133679254727507996" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727507899" fileName="PointerUtils.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="5647974406689059575" fileName="PointerUtils.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5647974406689060915" varName="clonableList" />
+    </scopeInfo>
+    <scopeInfo nodeId="5133679254727507899" fileName="PointerUtils.java" startLine="23" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5133679254727507901" varName="pointerString" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727507931" fileName="PointerUtils.java" startLine="31" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="5133679254727507931" fileName="PointerUtils.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5133679254727507972" varName="pointer" />
     </scopeInfo>
-    <unitInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="33" startPosition="45" endLine="37" endPosition="5" unitName="jetbrains.mps.execution.lib.PointerUtils$1" />
-    <unitInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="42" startPosition="68" endLine="46" endPosition="5" unitName="jetbrains.mps.execution.lib.PointerUtils$2" />
-    <unitInfo nodeId="5133679254727507894" fileName="PointerUtils.java" startLine="19" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.lib.PointerUtils" />
+    <unitInfo nodeId="5133679254727507941" fileName="PointerUtils.java" startLine="34" startPosition="45" endLine="38" endPosition="5" unitName="jetbrains.mps.execution.lib.PointerUtils$1" />
+    <unitInfo nodeId="5133679254727507984" fileName="PointerUtils.java" startLine="43" startPosition="76" endLine="47" endPosition="5" unitName="jetbrains.mps.execution.lib.PointerUtils$2" />
+    <unitInfo nodeId="5133679254727507894" fileName="PointerUtils.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.lib.PointerUtils" />
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/5133679254727508012">
     <nodeInfo nodeId="5133679254727508013" fileName="ClonableList.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />
     <nodeInfo nodeId="5133679254727508021" fileName="ClonableList.java" startLine="14" startPosition="25" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="5133679254727508032" fileName="ClonableList.java" startLine="18" startPosition="38" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727508032" fileName="ClonableList.java" startLine="18" startPosition="38" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133679254727508042" fileName="ClonableList.java" startLine="22" startPosition="41" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="5133679254727508053" fileName="ClonableList.java" startLine="27" startPosition="27" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727508066" fileName="ClonableList.java" startLine="32" startPosition="21" endLine="33" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727508077" fileName="ClonableList.java" startLine="37" startPosition="30" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5133679254727508098" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133679254727508113" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727508053" fileName="ClonableList.java" startLine="27" startPosition="27" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727508066" fileName="ClonableList.java" startLine="32" startPosition="21" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727508077" fileName="ClonableList.java" startLine="37" startPosition="30" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727508098" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727508113" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508130" fileName="ClonableList.java" startLine="52" startPosition="68" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5133679254727508139" fileName="ClonableList.java" startLine="53" startPosition="63" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133679254727508150" fileName="ClonableList.java" startLine="54" startPosition="85" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5133679254727508139" fileName="ClonableList.java" startLine="53" startPosition="63" endLine="54" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727508150" fileName="ClonableList.java" startLine="54" startPosition="84" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5830001343568748228" fileName="ClonableList.java" startLine="58" startPosition="28" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508017" fileName="ClonableList.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#()V" />
     <nodeInfo nodeId="5133679254727508025" fileName="ClonableList.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#(Ljava/util/List;)V" />
     <nodeInfo nodeId="5133679254727508038" fileName="ClonableList.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#(null)V" />
+    <nodeInfo nodeId="5830001343568747993" fileName="ClonableList.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#()Ljava/util/List;" />
     <nodeInfo nodeId="5133679254727508050" fileName="ClonableList.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)null" />
     <nodeInfo nodeId="5133679254727508064" fileName="ClonableList.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
     <nodeInfo nodeId="5133679254727508075" fileName="ClonableList.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#(I)null" />
@@ -574,13 +591,14 @@
     <nodeInfo nodeId="5133679254727508107" fileName="ClonableList.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Inull)null" />
     <nodeInfo nodeId="5133679254727508125" fileName="ClonableList.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/lib/ClonableList;" />
     <scopeInfo nodeId="5133679254727508020" fileName="ClonableList.java" startLine="14" startPosition="25" endLine="15" endPosition="52" />
-    <scopeInfo nodeId="5133679254727508031" fileName="ClonableList.java" startLine="18" startPosition="38" endLine="19" endPosition="24" />
+    <scopeInfo nodeId="5133679254727508031" fileName="ClonableList.java" startLine="18" startPosition="38" endLine="19" endPosition="19" />
     <scopeInfo nodeId="5133679254727508041" fileName="ClonableList.java" startLine="22" startPosition="41" endLine="23" endPosition="67" />
-    <scopeInfo nodeId="5133679254727508052" fileName="ClonableList.java" startLine="27" startPosition="27" endLine="28" endPosition="64" />
-    <scopeInfo nodeId="5133679254727508065" fileName="ClonableList.java" startLine="32" startPosition="21" endLine="33" endPosition="54" />
-    <scopeInfo nodeId="5133679254727508076" fileName="ClonableList.java" startLine="37" startPosition="30" endLine="38" endPosition="69" />
-    <scopeInfo nodeId="5133679254727508097" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="68" />
-    <scopeInfo nodeId="5133679254727508112" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="72" />
+    <scopeInfo nodeId="5133679254727508052" fileName="ClonableList.java" startLine="27" startPosition="27" endLine="28" endPosition="59" />
+    <scopeInfo nodeId="5133679254727508065" fileName="ClonableList.java" startLine="32" startPosition="21" endLine="33" endPosition="49" />
+    <scopeInfo nodeId="5133679254727508076" fileName="ClonableList.java" startLine="37" startPosition="30" endLine="38" endPosition="64" />
+    <scopeInfo nodeId="5133679254727508097" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="63" />
+    <scopeInfo nodeId="5133679254727508112" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="67" />
+    <scopeInfo nodeId="5830001343568747996" fileName="ClonableList.java" startLine="58" startPosition="28" endLine="59" endPosition="18" />
     <scopeInfo nodeId="5133679254727508017" fileName="ClonableList.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="5133679254727508025" fileName="ClonableList.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="5133679254727508026" varName="inner" />
@@ -591,6 +609,7 @@
     <scopeInfo nodeId="5133679254727508129" fileName="ClonableList.java" startLine="52" startPosition="68" endLine="55" endPosition="18">
       <varInfo nodeId="5133679254727508131" varName="result" />
     </scopeInfo>
+    <scopeInfo nodeId="5830001343568747993" fileName="ClonableList.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="5133679254727508050" fileName="ClonableList.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5133679254727508060" varName="index" />
     </scopeInfo>
@@ -607,7 +626,7 @@
       <varInfo nodeId="5133679254727508121" varName="object" />
     </scopeInfo>
     <scopeInfo nodeId="5133679254727508125" fileName="ClonableList.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="5133679254727508012" fileName="ClonableList.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.execution.lib.ClonableList" />
+    <unitInfo nodeId="5133679254727508012" fileName="ClonableList.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.lib.ClonableList" />
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/8278380780105768314">
     <nodeInfo nodeId="6072045827976706427" fileName="NodeByConcept_Configuration.java" startLine="31" startPosition="5" endLine="32" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

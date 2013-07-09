@@ -58,7 +58,9 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
         Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
         synchronized (myLock) {
           ListSequence.fromList(myCandidates).clear();
-          ListSequence.fromList(myCandidates).addSequence(SetSequence.fromSet(usages));
+          for (SNode node : SetSequence.fromSet(usages)) {
+            ListSequence.fromList(myCandidates).addElement(new SNodePointer(node));
+          }
         }
       }
     });
