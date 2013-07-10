@@ -47,9 +47,9 @@
   <import index="z8de" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(org.jetbrains.mps.openapi.util@java_stub)" version="-1" />
   <import index="9d7a" modelUID="f:java_stub#9cff0c7f-34fe-4409-aace-1680a0beef14#jetbrains.mps.idea.java.psi(jetbrains.mps.idea.java.psi@java_stub)" version="-1" />
   <import index="6nhn" modelUID="f:java_stub#~MPS-core#jetbrains.mps.extapi.model(jetbrains.mps.extapi.model@java_stub)" version="-1" />
-  <import index="6gxb" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.progress(IDEA IC/com.intellij.openapi.progress@java_stub)" version="-1" />
-  <import index="ajxo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" version="-1" />
   <import index="miij" modelUID="f:java_stub#~MPS-core#jetbrains.mps.smodel.loading(MPS-core/jetbrains.mps.smodel.loading@java_stub)" version="-1" />
+  <import index="6gxb" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="ajxo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -89,6 +89,8 @@
   <import index="j7po" modelUID="f:java_stub#~MPS-core#jetbrains.mps.vfs(MPS-core/jetbrains.mps.vfs@java_stub)" version="-1" implicit="yes" />
   <import index="6nho" modelUID="f:java_stub#~MPS-core#jetbrains.mps.extapi.model(MPS-core/jetbrains.mps.extapi.model@java_stub)" version="-1" implicit="yes" />
   <import index="s13f" modelUID="f:java_stub#~MPS-core#org.jetbrains.mps.openapi.model(MPS-core/org.jetbrains.mps.openapi.model@java_stub)" version="-1" implicit="yes" />
+  <import index="6gxc" modelUID="f:java_stub#~IDEA IC#com.intellij.openapi.progress(IDEA IC/com.intellij.openapi.progress@java_stub)" version="-1" implicit="yes" />
+  <import index="ajxp" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3118313698925873538">
       <property name="name" nameId="tpck.1169194664001" value="PsiJavaStubModelDescriptor" />
@@ -133,11 +135,11 @@
       <property name="name" nameId="tpck.1169194664001" value="LOG" />
       <property name="isFinal" nameId="tpee.1176718929932" value="false" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6632570505821145872">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ajxo.~Logger" resolveInfo="Logger" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ajxp.~Logger" resolveInfo="Logger" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6632570505821205133">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Logger%dgetLogger(java%dlang%dClass)%corg%dapache%dlog4j%dLogger" resolveInfo="getLogger" />
-        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ajxo.~Logger" resolveInfo="Logger" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxp.~Logger%dgetLogger(java%dlang%dClass)%corg%dapache%dlog4j%dLogger" resolveInfo="getLogger" />
+        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ajxp.~Logger" resolveInfo="Logger" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="6632570505821247903">
           <link role="classifier" roleId="tpee.1116615189566" targetNodeId="3118313698925873538" resolveInfo="PsiJavaStubModelDescriptor" />
         </node>
@@ -581,11 +583,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6632570505820222348">
             <property name="name" nameId="tpck.1169194664001" value="section" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6632570505820222349">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6gxb.~NonCancelableSection" resolveInfo="NonCancelableSection" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6gxc.~NonCancelableSection" resolveInfo="NonCancelableSection" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6632570505820185832">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6gxb.~ProgressIndicatorProvider" resolveInfo="ProgressIndicatorProvider" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6gxb.~ProgressIndicatorProvider%dstartNonCancelableSectionIfSupported()%ccom%dintellij%dopenapi%dprogress%dNonCancelableSection" resolveInfo="startNonCancelableSectionIfSupported" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6gxc.~ProgressIndicatorProvider" resolveInfo="ProgressIndicatorProvider" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6gxc.~ProgressIndicatorProvider%dstartNonCancelableSectionIfSupported()%ccom%dintellij%dopenapi%dprogress%dNonCancelableSection" resolveInfo="startNonCancelableSectionIfSupported" />
             </node>
           </node>
         </node>
@@ -829,7 +831,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6632570505820995656" resolveInfo="LOG" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6632570505821318734">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Category%derror(java%dlang%dObject,java%dlang%dThrowable)%cvoid" resolveInfo="error" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxp.~Category%derror(java%dlang%dObject,java%dlang%dThrowable)%cvoid" resolveInfo="error" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6632570505821326984">
                       <property name="value" nameId="tpee.1070475926801" value="could not build stub model for code PSI: you may not be able to reference java code from MPS" />
                     </node>
@@ -849,7 +851,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6632570505820222348" resolveInfo="section" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6632570505820365906">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6gxb.~NonCancelableSection%ddone()%cvoid" resolveInfo="done" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6gxc.~NonCancelableSection%ddone()%cvoid" resolveInfo="done" />
                 </node>
               </node>
             </node>
@@ -934,6 +936,22 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4055355515237801520" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5604354651274618795">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5604354651274618796">
+            <property name="name" nameId="tpck.1169194664001" value="oldModelDescriptor" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5604354651274618793">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2d.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5604354651274618797">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5604354651274618798">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4489382664561166473" resolveInfo="myModel" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5604354651274618799">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModel%dgetModelDescriptor()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="300395514909354533">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="300395514909364928">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="300395514909354532">
@@ -947,7 +965,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4055355515237822640">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4055355515237822641">
-            <property name="name" nameId="tpck.1169194664001" value="myModelCopy" />
+            <property name="name" nameId="tpck.1169194664001" value="modelCopy" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4055355515237863855">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~CopyUtil%dcopyModel(jetbrains%dmps%dsmodel%dSModel)%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="copyModel" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2d.~CopyUtil" resolveInfo="CopyUtil" />
@@ -962,7 +980,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4055355515239693685">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4055355515239693686">
-            <property name="name" nameId="tpck.1169194664001" value="myOldModel" />
+            <property name="name" nameId="tpck.1169194664001" value="oldModel" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4055355515239769872">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4489382664561166473" resolveInfo="myModel" />
             </node>
@@ -974,7 +992,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4055355515239801339">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4055355515239823710">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4055355515239834141">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515237822641" resolveInfo="myModelCopy" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515237822641" resolveInfo="modelCopy" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4055355515239801338">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4489382664561166473" resolveInfo="myModel" />
@@ -1453,13 +1471,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="300395514911408954">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="300395514911408953">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6nho.~SModelDescriptorStub%dnotifyModelReplaced(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cvoid" resolveInfo="notifyModelReplaced" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="300395514911723118">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="300395514911436534">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="myOldModel" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="300395514911742162">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModel%dgetModelDescriptor()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
-              </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5604354651274644186">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5604354651274618796" resolveInfo="oldModelDescriptor" />
             </node>
           </node>
         </node>
@@ -1515,7 +1528,7 @@
               </node>
               <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="300395514910961930">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="300395514910941689">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="myOldModel" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="oldModel" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="300395514910987299">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
@@ -1537,7 +1550,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="300395514910740890">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="300395514910749653">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="300395514910740889">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="myOldModel" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="oldModel" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="300395514910778390">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModel%dremoveRootNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="removeRootNode" />
@@ -1559,7 +1572,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModel%ddispose()%cvoid" resolveInfo="dispose" />
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4055355515239977780">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="myOldModel" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4055355515239693686" resolveInfo="oldModel" />
                 </node>
               </node>
             </node>

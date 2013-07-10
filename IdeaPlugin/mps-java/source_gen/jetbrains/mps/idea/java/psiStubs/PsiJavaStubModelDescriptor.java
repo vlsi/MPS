@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
@@ -164,10 +165,11 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       return;
     }
 
+    SModelDescriptor oldModelDescriptor = myModel.getModelDescriptor();
     myModel.setModelDescriptor(null);
-    SModel myModelCopy = CopyUtil.copyModel(myModel);
-    SModel myOldModel = myModel;
-    myModel = myModelCopy;
+    SModel modelCopy = CopyUtil.copyModel(myModel);
+    SModel oldModel = myModel;
+    myModel = modelCopy;
 
     for (PsiJavaFile file : event.removed()) {
       myMps2PsiMapper.clearFile(file.getName());
@@ -220,7 +222,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     myModel.setModelDescriptor(this);
 
     MPSModuleRepository.getInstance().invalidateCaches();
-    notifyModelReplaced(myOldModel.getModelDescriptor());
+    notifyModelReplaced(oldModelDescriptor);
 
     // FIXME must not be needed 
     // <node> 
