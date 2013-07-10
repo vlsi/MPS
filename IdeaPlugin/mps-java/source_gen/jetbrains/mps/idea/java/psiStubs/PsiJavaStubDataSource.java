@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiFileSystemItem;
 
-public class PsiJavaStubDataSource extends DataSourceBase implements PsiListener {
+public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHolder, PsiListener {
   private final Object LOCK = new Object();
   private Module myModule;
   private PsiDirectory myDirectory;

@@ -44,7 +44,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
   private SModelReference myModelRef;
   private SModel myModel;
-  private PsiJavaStubDataSource myDataSource;
+  private JavaFilesHolder myDataSource;
 
   private Map<String, Set<SNodeId>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNodeId>>());
   private Map<String, Set<SNodeId>> myAllNodesPerFile = MapSequence.fromMap(new HashMap<String, Set<SNodeId>>());
@@ -52,7 +52,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   private PsiJavaStubModelDescriptor.MyMps2PsiMapper myMps2PsiMapper = new PsiJavaStubModelDescriptor.MyMps2PsiMapper();
 
 
-  public PsiJavaStubModelDescriptor(SModelReference modelRef, PsiJavaStubDataSource dataSource) {
+  public PsiJavaStubModelDescriptor(SModelReference modelRef, JavaFilesHolder dataSource) {
     super(modelRef, dataSource);
     myModelRef = modelRef;
     myDataSource = dataSource;
@@ -60,7 +60,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
   @Override
   @NotNull
-  public PsiJavaStubDataSource getSource() {
+  public JavaFilesHolder getSource() {
     return myDataSource;
   }
 

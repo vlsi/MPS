@@ -1,10 +1,7 @@
 package jetbrains.mps.idea.sourceStubs;
 
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.project.ModelRootContributor;
-import jetbrains.mps.idea.java.psiStubs.EclipseJavaStubModelRoot;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -19,21 +16,8 @@ public class JavaSourceModelRootContributor implements ModelRootContributor {
 
   @Override
   public Iterable<ModelRoot> getModelRoots(Module module) {
-    List<ModelRoot> modelRoots = new ArrayList<ModelRoot>();
-
-    // should there be a way to switch from ui?
-    if (true) {
-      modelRoots.add(new PsiJavaStubModelRoot(module));
-
-    } else {
-      for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots(false)) {
-        String path = sourceRoot.getPath();
-        EclipseJavaStubModelRoot modelRoot = new EclipseJavaStubModelRoot();
-        modelRoot.setPath(path);
-        modelRoots.add(modelRoot);
-      }
-    }
-
+    List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(1);
+    modelRoots.add(new PsiJavaStubModelRoot(module));
     return modelRoots;
   }
 
