@@ -6215,7 +6215,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="5133679254725649087" nodeInfo="nn">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xk9i.1895567659272474680" resolveInfo="ListPanel" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5133679254725683056" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Plugins to deploy" />
+            <property name="value" nameId="tpee.1070475926801" value="Plugins To Deploy" />
           </node>
         </node>
       </node>
