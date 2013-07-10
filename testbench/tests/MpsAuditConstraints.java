@@ -26,7 +26,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class OurAuditConstraints extends AuditConstraints {
+public class MpsAuditConstraints extends AuditConstraints {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {
     // obsolete modules
@@ -68,7 +68,7 @@ public class OurAuditConstraints extends AuditConstraints {
     ContextProjextSupport.setContextProjectPath(ourPreviousProjectPath);
   }
 
-  public OurAuditConstraints(SModule module) {
+  public MpsAuditConstraints(SModule module) {
     super(module);
   }
 }
