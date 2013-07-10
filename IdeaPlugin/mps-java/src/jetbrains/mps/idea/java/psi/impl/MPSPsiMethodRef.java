@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -71,7 +72,14 @@ public class MPSPsiMethodRef extends MPSPsiJavaRef {
             }
             SNodeId newTargetId = new Foreign(newTargetIdString);
 
-            ((StaticReference) sref).setTargetNodeId(newTargetId);
+            String role = sref.getRole();
+            SNode source = sref.getSourceNode();
+            SModelReference modelRef = sref.getTargetSModelReference();
+
+            SReference newRef = StaticReference.create(role, source, modelRef, newTargetId);
+
+//            ((StaticReference) sref).setTargetNodeId(newTargetId);
+            source.setReference(role, newRef);
 
           } else if (sref instanceof DynamicReference) {
             ((DynamicReference) sref).setResolveInfo(newName);

@@ -52,8 +52,6 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   private String myName;
   private Map<String, String> myProperties;
 
-  private boolean isCopy = false;
-
   public MPSPsiNode(SNodeId id, String concept, String containingRole) {
     myId = id;
     myConcept = concept;
@@ -95,12 +93,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return getContainingRoot();
   }
 
-  @Override
-  public MPSPsiNode copy() {
-    MPSPsiNode clone = (MPSPsiNode) clone();
-    clone.isCopy = true;
-    return clone;
-  }
+
 
   void setProperty(String key, String value) {
     // TODO
@@ -111,21 +104,8 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     myProperties.put(key, value);
   }
 
-  // Used for changing name from idea through PSI (in refactorings)
-  protected void setNameProperty(final String name) {
-    setProperty("name", name);
-
-    if (!isCopy) {
-      // really modifying the model
-      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-        @Override
-        public void run() {
-          SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
-          if (node == null) return;
-          node.setProperty("name", name);
-        }
-      }, new MPSProject(getProject()));
-    }
+  protected void setNameProperty(String value) {
+    setProperty("name", value);
   }
 
   protected <T extends PsiElement> T getReferenceTarget(String role, @NotNull Class<T> aClass) {

@@ -21,9 +21,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.Nullable;
@@ -51,8 +53,13 @@ public class MPSNavBarExtension implements NavBarModelExtension{
       if (file == null) return null;
       return file.getParent();
     }
+    if(psiElement instanceof MPSPsiRootNode
+      && ((MPSPsiRootNode) psiElement).getVirtualFile() != null
+      && ((MPSPsiRootNode) psiElement).getVirtualFile().getFileType().equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE)) {
+      return psiElement.getParent().getParent();
+    }
     if (psiElement instanceof MPSPsiNodeBase) {
-      return ((MPSPsiNodeBase) psiElement).getParent();
+      return psiElement.getParent();
     }
 
     return null;

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Fallback type for MPS things, which don't a type in Java
+ * Fallback type for MPS things, which don't have a corresponding type in Java
  * @author danilla 3/1/13
  */
 public class NonJavaMPSType extends PsiType {
@@ -34,17 +34,17 @@ public class NonJavaMPSType extends PsiType {
 
   @Override
   public String getPresentableText() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return "non-Java type";
   }
 
   @Override
   public String getCanonicalText() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return getPresentableText();
   }
 
   @Override
   public String getInternalCanonicalText() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return getPresentableText();
   }
 
   @Override
@@ -54,12 +54,12 @@ public class NonJavaMPSType extends PsiType {
 
   @Override
   public boolean equalsToText(@NonNls String text) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
   }
 
   @Override
   public <A> A accept(@NotNull PsiTypeVisitor<A> visitor) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return visitor.visitPrimitiveType(PsiType.NULL);
   }
 
   @Nullable

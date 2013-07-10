@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.psi.PsiImportStatementBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.psi.PsiImportStaticStatement;
@@ -105,8 +106,6 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     NonCancelableSection section = ProgressIndicatorProvider.startNonCancelableSectionIfSupported();
 
     try {
-      // todo !!! synchronize: copyModel and myModel=... 
-
       for (PsiJavaFile jf : myDataSource.getJavaFiles()) {
         SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
 
@@ -144,13 +143,16 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   }
 
   @Override
-  public void changed(DataSource source, final PsiJavaStubEvent event) {
+  public synchronized void changed(DataSource source, final PsiJavaStubEvent event) {
+
+    // locking could possibly be made more fine-grained 
 
     // already attached, but not createModel'd yet? 
     if (myModel == null) {
       return;
     }
 
+    myModel.setModelDescriptor(null);
     SModel myModelCopy = CopyUtil.copyModel(myModel);
     SModel myOldModel = myModel;
     myModel = myModelCopy;
@@ -204,8 +206,16 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     }
 
     myModel.setModelDescriptor(this);
-    // Q: do I need to call it or since the descriptor stays the same no one cares? 
-    myOldModel.dispose();
+
+    MPSModuleRepository.getInstance().invalidateCaches();
+    notifyModelReplaced(myOldModel.getModelDescriptor());
+
+    // FIXME must not be needed 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+
   }
 
 

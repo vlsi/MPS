@@ -41,9 +41,22 @@ public class MPSPsiPrimitiveType extends MPSPsiNode implements ComputesPsiType<P
   }
 
   private static final Map<String, PsiPrimitiveType> map = new HashMap<String, PsiPrimitiveType>();
+
   static {
-    // FIXME de-hardcode both concepts and psi primitive type strings
-    map.put("jetbrains.mps.baseLanguage.structure.IntegerType", PsiType.INT);
+    // FIXME de-hardcode
     map.put("jetbrains.mps.baseLanguage.structure.VoidType", PsiType.VOID);
+
+    map.put("jetbrains.mps.baseLanguage.structure.IntegerType", PsiType.INT);
+    map.put("jetbrains.mps.baseLanguage.structure.LongType", PsiType.LONG);
+    map.put("jetbrains.mps.baseLanguage.structure.ShortType", PsiType.SHORT);
+    map.put("jetbrains.mps.baseLanguage.structure.ByteType", PsiType.BYTE);
+
+    map.put("jetbrains.mps.baseLanguage.structure.CharType", PsiType.CHAR);
+
+    map.put("jetbrains.mps.baseLanguage.structure.DoubleType", PsiType.DOUBLE);
+    map.put("jetbrains.mps.baseLanguage.structure.FloatType", PsiType.FLOAT);
+
+    map.put("jetbrains.mps.baseLanguage.structure.BooleanType", PsiType.BOOLEAN);
   }
+
 }
