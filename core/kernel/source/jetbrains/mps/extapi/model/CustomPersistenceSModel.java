@@ -110,6 +110,16 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   }
 
   @Override
+  protected void doUnload() {
+    final jetbrains.mps.smodel.SModel oldSModel = myModel;
+
+    if (oldSModel != null) {
+      oldSModel.setModelDescriptor(null);
+      myModel = null;
+    }
+  }
+
+  @Override
   protected void reloadContents() {
     ModelAccess.assertLegalWrite();
 
@@ -178,7 +188,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.<Problem>singleton(
-          new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : "Cannot load. I/O problem: " + myCause.getMessage(), null, true));
+          new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : "Cannot load. I/O problem: " + myCause.getMessage(), null,
+              true));
     }
   }
 }

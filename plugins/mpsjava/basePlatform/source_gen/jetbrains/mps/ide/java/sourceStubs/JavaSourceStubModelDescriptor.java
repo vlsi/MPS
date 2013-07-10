@@ -35,6 +35,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implements MultiStreamDataSourceListener {
 
@@ -257,6 +258,18 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
   public boolean isLoaded() {
     return myModel != null;
+  }
+
+  @Override
+  public void unload() {
+    ModelAccess.assertLegalWrite();
+
+    SModel oldModel = myModel;
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+      myModel = null;
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    }
   }
 
 

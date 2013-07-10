@@ -451,9 +451,6 @@
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/solutions/org.jetbrains.mps.stateMachine.sadbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/multipleProjections/solutions/org.jetbrains.mps.stateMachine.sadbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/plainText/solutions/sample/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/plainText/solutions/sample/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/plainText/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaAndOr/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/robot_Kaja/languages/KajaSceneConstruction/generator/source_gen" includeSubdirectories="true" />

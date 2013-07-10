@@ -644,7 +644,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/multipleProjections/solutions/org.jetbrains.mps.stateMachine.sadbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaSceneConstruction/generator/source_gen" isTestSource="false" />
@@ -740,8 +739,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/multipleProjections/languages/org.jetbrains.mps.stateMachine/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/multipleProjections/solutions/org.jetbrains.mps.stateMachine.sadbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/solutions/sample/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaSceneConstruction/classes_gen" />
