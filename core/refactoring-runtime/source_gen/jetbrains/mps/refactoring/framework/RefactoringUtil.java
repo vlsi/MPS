@@ -164,6 +164,9 @@ public class RefactoringUtil {
   }
 
   private static boolean isApplicableToEntities(String refactoringName, IRefactoringTarget target, Collection entities) {
+    if (!(target.allowMultipleTargets()) && entities.size() > 1) {
+      return false;
+    }
     for (Object entity : entities) {
       boolean applicable;
       try {
