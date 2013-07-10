@@ -58,6 +58,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.io.File;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,18 +85,22 @@ public class NewRootAction extends AnAction {
         @Override
         public SModel compute() {
           ModelRoot useModelRoot = null;
+          String useSourceRoot = null;
           for (ModelRoot root : myOperationContext.getModule().getModelRoots()) {
             if (!(root instanceof DefaultModelRoot)) continue;
             DefaultModelRoot modelRoot = (DefaultModelRoot) root;
             for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
               if (virtualFiles[0].getPath().startsWith(sourceRoot)) {
-                useModelRoot = root; break;
+                useModelRoot = root;
+                useSourceRoot = sourceRoot.endsWith(File.separator) ? sourceRoot : sourceRoot + File.separator;
+                break;
               }
             }
           }
           if(useModelRoot == null) return null;
 
-          EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(virtualFiles[0].getName(), useModelRoot,
+          final String modelName = virtualFiles[0].getPath().replace(useSourceRoot,"").replace(File.separator, ".");
+          EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, useModelRoot,
             PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
           descriptor.save();
           return descriptor;
