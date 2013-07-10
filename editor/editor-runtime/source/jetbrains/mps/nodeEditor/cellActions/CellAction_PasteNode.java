@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
@@ -217,29 +216,8 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
             // set selection
             editorComponent.flushEvents();
-            EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
-            if (nodeCell == null) return; // after 'set reference'?
-
-            EditorCell_Label labelCell = CellFinderUtil.findChildByClass(nodeCell, EditorCell_Label.class, true);
-            if (labelCell != null) {
-              editorComponent.changeSelection(labelCell);
-            }
-
-            if (pasteNodes.size() == 1) {
-              editorComponent.pushSelection(nodeCell);
-            } else {
-              SNode firstNodeToSelect = pasteNodes.get(0);
-              SNode lastNodeToSelect = null;
-              for (int i = pasteNodes.size() - 1; i > 0 && lastNodeToSelect == null; i--) {
-                if (pasteNodes.get(i).getParent() == firstNodeToSelect.getParent()) {
-                  lastNodeToSelect = pasteNodes.get(i);
-                }
-              }
-              if (lastNodeToSelect != null) {
-                SelectionManager selectionManager = editorComponent.getSelectionManager();
-                selectionManager.pushSelection(selectionManager.createRangeSelection(firstNodeToSelect, lastNodeToSelect));
-              }
-            }
+            SNode lastNode = pasteNodes.get(pasteNodes.size() - 1);
+            editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
           }
         }, context.getOperationContext().getProject());
 
