@@ -308,7 +308,7 @@ __switch__:
       }
     }.invoke(editor.getRootCell());
 
-    if (Sequence.fromIterable(leafCells).isEmpty()) {
+    if (Sequence.fromIterable(leafCells).first() == null) {
       return new Rectangle();
     }
     final int firstCellY = Sequence.fromIterable(leafCells).first().getY();
