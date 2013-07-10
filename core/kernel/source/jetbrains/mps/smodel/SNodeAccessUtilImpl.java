@@ -92,13 +92,6 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    org.jetbrains.mps.openapi.model.SModel model = node.getModel();
-    if (model == null || !((jetbrains.mps.smodel.SModelInternal) model).canFireEvent()) {
-      //todo[Mihail Muhin]: why?
-      node.setReferenceTarget(role, target);
-      return;
-    }
-
     // invoke custom referent set event handler
     Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
     Pair<org.jetbrains.mps.openapi.model.SNode, String> pair = new Pair<org.jetbrains.mps.openapi.model.SNode, String>(node, role);

@@ -232,6 +232,12 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
   protected void doUnregister() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
+        if (myHistEditor != null) {
+          myHistEditor.dispose();
+        }
+        if (myCommandEditor != null) {
+          myCommandEditor.dispose();
+        }
         TemporaryModels.getInstance().dispose(myModel);
       }
     });
@@ -312,7 +318,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
           final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
           final SNode res = _quotation_createNode_xg3v07_a0g0a0a2dc();
-          final SearchScope scope = (myScopeCombo.getSelectedItem() == PROJECT_SCOPE ?
+          final SearchScope scope = (myScopeCombo.getSelectedItem() == ConsoleTool.PROJECT_SCOPE ?
             new ProjectScope(myProject) :
             GlobalScope.getInstance()
           );
