@@ -14,12 +14,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
-import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.ui.components.JBLabel;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.progress.ProgressManager;
@@ -88,11 +88,10 @@ public abstract class ListPanel<T> extends JPanel {
     AnAction add = new ListPanel.MyListAddAction(myListComponent);
     AnAction remove = new ListPanel.MyListRemoveAction(this.myListComponent);
 
-    this.setBorder(new TitledBorder(myTitle));
-
     DefaultActionGroup group = ActionUtils.groupFromActions(add, remove);
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-    this.add(toolbar.getComponent(), BorderLayout.WEST);
+    this.add(new JBLabel(myTitle + ":"), BorderLayout.NORTH);
+    this.add(toolbar.getComponent(), BorderLayout.EAST);
 
     JScrollPane comp = ScrollPaneFactory.createScrollPane(myListComponent);
     comp.doLayout();
