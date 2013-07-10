@@ -53,7 +53,7 @@
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-      <test name="CheckProjectStructure"/>
+      <test name="jetbrains.mps.testbench.junit.suites.CheckProjectStructure"/>
       <formatter type="xml"/>
       <classpath>
         <fileset dir="${mps_build_home}/lib">

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
+import jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.*;

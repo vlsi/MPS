@@ -15,6 +15,7 @@
  */
 
 import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.suites.AuditConstraints;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.runners.Parameterized.Parameters;
