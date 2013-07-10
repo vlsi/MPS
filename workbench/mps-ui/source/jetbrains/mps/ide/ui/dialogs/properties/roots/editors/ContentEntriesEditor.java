@@ -68,7 +68,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -84,6 +86,7 @@ public class ContentEntriesEditor implements Disposable {
   protected JPanel myEditorsListPanel;
   protected JBPanel myEditorPanel;
   private JBPanel myMainPanel;
+  private String myDefaultFolder;
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
@@ -108,7 +111,16 @@ public class ContentEntriesEditor implements Disposable {
         PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
         Modules.AddContentEntry) {
       @Override
-      public void actionPerformed(AnActionEvent e) {
+      public void actionPerformed(final AnActionEvent e) {
+        if(list.size() == 1) {
+          MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              list.get(0).actionPerformed(e);
+            }
+          });
+          return;
+        }
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
             new BaseListPopupStep<AddContentEntryAction>(null, list) {
               @Override
@@ -131,7 +143,7 @@ public class ContentEntriesEditor implements Disposable {
                 return doFinalStep(new Runnable() {
                   @Override
                   public void run() {
-                    selectedValue.actionPerformed(null);
+                    selectedValue.actionPerformed(e);
                   }
                 });
               }
@@ -236,8 +248,8 @@ public class ContentEntriesEditor implements Disposable {
     myModuleDescriptor.getModelRootDescriptors().addAll(getDescriptors());
   }
 
-  private ArrayList<ModelRootDescriptor> getDescriptors() {
-    ArrayList<ModelRootDescriptor> descriptors = new ArrayList<ModelRootDescriptor>();
+  private List<ModelRootDescriptor> getDescriptors() {
+    List<ModelRootDescriptor> descriptors = new LinkedList<ModelRootDescriptor>();
     for (ModelRootEntryContainer container : myModelRootEntries) {
       Memento memento = new MementoImpl();
       container.getModelRoot().save(memento);
@@ -246,12 +258,25 @@ public class ContentEntriesEditor implements Disposable {
     return descriptors;
   }
 
+  public Collection<ModelRoot> getModelRoots() {
+    List<ModelRoot> modelRoots = new LinkedList<ModelRoot>();
+    for (ModelRootEntryContainer container : myModelRootEntries) {
+      modelRoots.add(container.getModelRoot());
+    }
+    return modelRoots;
+  }
+
   public JComponent getComponent() {
     return myMainPanel;
   }
 
   @Override
   public void dispose() {
+  }
+
+  /** Set default folder for FileBasedModel root content dir if module is not in repository yet */
+  public final void setDefaultFolder(String defaultFolder) {
+    myDefaultFolder = defaultFolder;
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
@@ -282,13 +307,12 @@ public class ContentEntriesEditor implements Disposable {
     }
 
     private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
-      String contentRoot = "";
-      SModule module = MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId());
+      String contentRoot = myDefaultFolder != null ? myDefaultFolder : "";
+      SModule module = MPSModuleRepository.getInstance().getModule(myModuleDescriptor.getId());
       if (module instanceof AbstractModule) {
-        contentRoot = ((AbstractModule) module).getModuleSourceDir().getPath();
-      } else {
-        // todo: ?
-        contentRoot = "";
+        contentRoot = ((AbstractModule) module).getModuleSourceDir() == null
+            ? ((AbstractModule) module).getDescriptorFile().getParent().getPath()
+            : ((AbstractModule) module).getModuleSourceDir().getPath();
       }
 
       Set<String> strings = new HashSet<String>();

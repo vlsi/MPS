@@ -25,36 +25,41 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtilCore;
+import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.edit.SNodeCutCopyProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.idea.core.projectView.edit.SNodePasteProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -80,7 +85,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     }
     if (!(treeNode instanceof MPSPsiModelTreeNode)) return children;
 
-    MPSPsiModel psiModel = (MPSPsiModel) ((MPSPsiModelTreeNode) treeNode).getValue();
+    MPSPsiModel psiModel = ((MPSPsiModelTreeNode) treeNode).getValue();
 
     List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>();
     for (PsiElement psiElement : psiModel.getChildren()) {
@@ -107,6 +112,38 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           int idx = updatedChildren.indexOf(child);
           updatedChildren.remove(idx);
           updatedChildren.add(idx, new MPSPsiModelTreeNode(treeNode.getProject(), psiModel, settings));
+        } else if(value instanceof MPSPsiRootNode) {
+          if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+          int idx = updatedChildren.indexOf(child);
+          updatedChildren.remove(idx);
+          updatedChildren.add(idx, new MPSPsiElementTreeNode(treeNode.getProject(), (MPSPsiRootNode) value, settings));
+        }
+      } else if(child instanceof PsiDirectoryNode) {
+        final SModel perRootModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) child).getVirtualFile()));
+        if(perRootModel != null) {
+          if (updatedChildren == null) updatedChildren = new ArrayList<AbstractTreeNode>(children);
+
+          int idx = updatedChildren.indexOf(child);
+          updatedChildren.remove(idx);
+          updatedChildren.add(idx, new PsiDirectoryNode(treeNode.getProject(), ((PsiDirectoryNode) child).getValue(), settings) {
+            @Override
+            public boolean canNavigate() { return true; }
+
+            @Override
+            public String getNavigateActionText(boolean focusEditor) { return MPSBundle.message("open.model.properties.action"); }
+
+            @Override
+            public void navigate(boolean requestFocus) {
+              MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(perRootModel, ProjectHelper.toMPSProject(myProject), true);
+              final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
+              SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                  dialog.show();
+                }
+              });
+            }
+          });
         }
       }
     }
@@ -233,7 +270,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     else if (treeNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
       VirtualFile virtualFile = fileNode.getVirtualFile();
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) return null;
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE || virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) return null;
 
       return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
     }
@@ -253,7 +290,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     }
     MPSPsiModelTreeNode modelTreeNode = (MPSPsiModelTreeNode) treeNode;
     VirtualFile modelVFile = modelTreeNode.getVirtualFile();
-    if (modelVFile == null || modelVFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) return null;
+    if (modelVFile == null || (modelVFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && modelVFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)) return null;
     return modelVFile;
   }
 

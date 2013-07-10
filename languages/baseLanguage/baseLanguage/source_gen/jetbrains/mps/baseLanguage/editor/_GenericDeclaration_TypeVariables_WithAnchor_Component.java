@@ -13,6 +13,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.IScope;
 
 public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -27,7 +30,9 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_525l3g_a");
     editorCell.addEditorCell(this.createConstant_525l3g_a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_525l3g_b0(editorContext, node));
+    if (renderingCondition_525l3g_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createComponent_525l3g_b0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -36,7 +41,13 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     editorCell.setCellId("TYPE_VARIABLES_ANCHOR");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, _GenericDeclaration_TypeVariables_WithAnchor_Component._StyleParameter_QueryFunction_525l3g_a1a0((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
     style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     editorCell.getStyle().putAll(style);
@@ -44,8 +55,16 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     return editorCell;
   }
 
+  private static boolean _StyleParameter_QueryFunction_525l3g_a1a0(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
+  }
+
   private EditorCell createComponent_525l3g_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_525l3g_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
 }

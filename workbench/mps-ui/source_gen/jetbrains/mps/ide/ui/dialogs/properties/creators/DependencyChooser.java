@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
@@ -24,7 +24,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
     final Wrappers._T<Iterable<SModuleReference>> allModuleRefs = new Wrappers._T<Iterable<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = new FilteredGlobalScope().getVisibleModules();
+        Iterable<SModule> modules = GlobalScope.getInstance().getModules();
         allModuleRefs.value = Sequence.fromIterable(modules).select(new ISelector<SModule, SModuleReference>() {
           public SModuleReference select(SModule it) {
             return it.getModuleReference();

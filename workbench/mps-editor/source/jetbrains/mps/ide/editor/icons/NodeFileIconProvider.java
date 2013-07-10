@@ -21,9 +21,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DefaultIconDeferrer;
 import com.intellij.ui.IconDeferrer;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFileTracker;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -69,6 +74,21 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
           SNode node = nodeFile.getNode();
           if (node != null) {
             return IconManager.getIconWithoutAdditionalPart(node);
+          }
+          return null;
+        }
+      });
+    } else if(file.getFileType().equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE)) {
+      return ModelAccess.instance().runReadAction(new Computable<Icon>(){
+        @Override
+        public Icon compute() {
+          SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
+          if(descr == null) return null;
+
+          for (SNode node : descr.getRootNodes()) {
+            if(node.getName().equals(file.getNameWithoutExtension())) {
+              return IconManager.getIconFor(node, true);
+            }
           }
           return null;
         }

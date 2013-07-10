@@ -20,6 +20,7 @@ import com.intellij.lang.Language;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.FileViewProviderFactory;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
@@ -29,6 +30,7 @@ import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
@@ -71,23 +73,33 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
 
     @Override
     protected PsiFile createFile() {
-      VirtualFile virtualFile = getVirtualFile();
-      if (virtualFile instanceof LightVirtualFile) {
-        virtualFile = ((LightVirtualFile)virtualFile).getOriginalFile();
-      }
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) {
+      final VirtualFile virtualFile = getVirtualFile() instanceof LightVirtualFile ? ((LightVirtualFile)getVirtualFile()).getOriginalFile() : getVirtualFile();
+      if (virtualFile == null ||
+        (virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE
+          && virtualFile.getFileType() != MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) ) {
         return null;
       }
-      final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+      final IFile modelFile = virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE
+        ? FileSystem.getInstance().getFileByPath(virtualFile.getParent().getPath())
+        : FileSystem.getInstance().getFileByPath(virtualFile.getPath());
 
-      FileSourcePsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<FileSourcePsiFile>() {
+      PsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<PsiFile>() {
         @Override
-        public FileSourcePsiFile compute() {
+        public PsiFile compute() {
           SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
           if(descr != null) {
             // force loading the model and updating the PSI tree at this time
             MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
             MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
+
+            if(virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) {
+              for (PsiElement element : psiModel.getChildren()) {
+                if(((MPSPsiRootNode)element).getVirtualFile().equals(virtualFile) || ((MPSPsiRootNode)element).getVirtualFile().getName().equals(virtualFile.getNameWithoutExtension())) {
+                  return (MPSPsiRootNode)element;
+                }
+              }
+              return null;
+            }
 
             return new FileSourcePsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName());
           }

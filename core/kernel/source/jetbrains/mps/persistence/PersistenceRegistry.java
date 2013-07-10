@@ -296,6 +296,8 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
         return new RelativePathSModelId(text);
       }
     });
+
+    setModelFactory(MPSExtentions.MODEL_HEADER, new FilePerRootModelPersistence());
   }
 
   @Override
