@@ -34,9 +34,16 @@ import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.ant.execution.Ant_Command;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import org.apache.log4j.Priority;
-import com.intellij.execution.ExecutionManager;
+import com.intellij.execution.Executor;
 import com.intellij.execution.executors.DefaultRunExecutor;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.execution.ui.RunContentDescriptor;
+import com.intellij.execution.ui.actions.CloseAction;
+import com.intellij.execution.ExecutionManager;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Logger;
@@ -122,7 +129,26 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
-          ExecutionManager.getInstance(projectFinal).getContentManager().showRunContent(DefaultRunExecutor.getRunExecutorInstance(), new RunContentDescriptor(console, process.value, console.getComponent(), "Deploy plugins"));
+          Executor executor = DefaultRunExecutor.getRunExecutorInstance();
+
+          DefaultActionGroup group = new DefaultActionGroup();
+          JPanel consolePanel = new JPanel(new BorderLayout());
+          consolePanel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent(), BorderLayout.WEST);
+          consolePanel.add(console.getComponent(), BorderLayout.CENTER);
+          // this is hell 
+          RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins") {
+            @Override
+            public boolean isContentReuseProhibited() {
+              return true;
+            }
+          };
+
+          group.add(ActionManager.getInstance().getAction("Stop"));
+          group.addSeparator();
+          // <node> 
+          group.add(new CloseAction(executor, descriptor, projectFinal));
+
+          ExecutionManager.getInstance(projectFinal).getContentManager().showRunContent(executor, descriptor);
         }
       }, ModalityState.NON_MODAL);
       int exitCode = ProcessHandlerBuilder.startAndWait(process.value);
