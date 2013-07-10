@@ -401,7 +401,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public String toString() {
-    return getModuleDescriptor().getNamespace();
+    return getModuleDescriptor().getNamespace() + " [lang]";
   }
 
   public LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {

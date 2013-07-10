@@ -156,10 +156,11 @@ public class Solution extends AbstractModule {
 
   public String toString() {
     String namespace = mySolutionDescriptor.getNamespace();
-    if (namespace != null && namespace.length() != 0) return namespace;
-    assert myDescriptorFile != null;
-    namespace = myDescriptorFile.getName();
-    return namespace;
+    if (namespace == null || namespace.length() == 0) {
+      assert myDescriptorFile != null;
+      namespace = myDescriptorFile.getName();
+    }
+    return namespace + " [solution]";
   }
 
   public SolutionKind getKind() {

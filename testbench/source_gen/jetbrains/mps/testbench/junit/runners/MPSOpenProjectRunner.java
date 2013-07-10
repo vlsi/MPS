@@ -21,7 +21,7 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 
 public class MPSOpenProjectRunner extends Runner {
-  private static String PROPERTY_PROJECT_NAME = "mps.junit.project";
+  private static String PROPERTY_PROJECT_NAME = ContextProjextSupport.PROJECT_PATH_PROPERTY;
   private static String PROPERTY_PREFIX_PATH_MACRO = "mps.junit.pathmacro.";
   protected static Project ourMPSProject;
   private Description myDescription;

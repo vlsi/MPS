@@ -178,7 +178,7 @@ public class DevKit extends AbstractModule {
   }
 
   public String toString() {
-    return getName();
+    return getName() + " [devkit]";
   }
 
   public boolean isHidden() {

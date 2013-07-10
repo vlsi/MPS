@@ -8,9 +8,6 @@ import java.util.List;
 import jetbrains.mps.tool.environment.Environment;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runner.notification.RunNotifier;
-import org.junit.runner.manipulation.Sortable;
-import org.junit.runner.manipulation.Sorter;
-import jetbrains.mps.testbench.junit.OrderComparator;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.junit.runner.Description;
@@ -22,7 +19,6 @@ import java.lang.annotation.ElementType;
 public abstract class MpsTest extends ParentRunner<Runner> {
   private List<Runner> children;
   private final boolean withWatching;
-  private final boolean withSorting;
   private final Environment createdEnv;
 
 
@@ -41,20 +37,12 @@ public abstract class MpsTest extends ParentRunner<Runner> {
     }
 
     withWatching = klass.getAnnotation(MpsTest.WithoutWatching.class) == null;
-    // todo: remove withSorting annotation? 
-    withSorting = klass.getAnnotation(MpsTest.WithSorting.class) != null;
   }
 
   protected abstract List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws Throwable;
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    if (withSorting) {
-      if (runner instanceof Sortable) {
-        ((Sortable) runner).sort(new Sorter(new OrderComparator()));
-      }
-    }
-
     if (withWatching) {
       WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
       try {
@@ -110,10 +98,5 @@ public abstract class MpsTest extends ParentRunner<Runner> {
   @Target(value = {ElementType.TYPE})
   public @interface SuiteClassSymbols {
     String[] value();
-  }
-
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(value = {ElementType.TYPE})
-  public @interface WithSorting {
   }
 }

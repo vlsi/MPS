@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,26 +14,19 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithSorting;
-import jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest;
+import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.suites.AuditConstraints;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@RunWith(ParameterizedMpsTest.class)
-@PreloadAllModules
-@WithMake
-@WithSorting
-public class AuditConstraints {
+public class MpsAuditConstraints extends AuditConstraints {
   private static final Set<String> DISABLED_MODULES = new HashSet<String>();
   static {
     // obsolete modules
@@ -60,29 +53,22 @@ public class AuditConstraints {
     DISABLED_MODULES.add("jetbrains.mps.build.tests");
   }
 
-  private static CheckProjectStructureHelper HELPER;
+  private static File ourPreviousProjectPath;
 
   @Parameters
-  public static List<Object[]> filePaths() {
-    HELPER = new CheckProjectStructureHelper(DISABLED_MODULES);
-    return HELPER.filePaths();
+  public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
+    ourPreviousProjectPath = ContextProjextSupport.setContextProjectPath(new File("."));
+    initTestEnvironment(false);
+
+    return createTestParametersFromModules(excludeModules(getContextProject().getModules(), DISABLED_MODULES));
   }
 
   @AfterClass
   public static void cleanUp() {
-    HELPER.printStatistic();
+    ContextProjextSupport.setContextProjectPath(ourPreviousProjectPath);
   }
 
-  // main part
-  private ModuleHandle handle;
-
-  public AuditConstraints(String testName, ModuleHandle handle) {
-    this.handle = handle;
-  }
-
-  @Test
-  public void checkConstraints() {
-    List<String> errors = HELPER.checkConstraints(handle);
-    Assert.assertTrue("Constraints and scopes errors:\n" + HELPER.formatErrors(errors), errors.isEmpty());
+  public MpsAuditConstraints(SModule module) {
+    super(module);
   }
 }

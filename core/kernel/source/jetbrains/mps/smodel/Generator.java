@@ -171,7 +171,7 @@ public class Generator extends AbstractModule {
   }
 
   public String toString() {
-    return getAlias();
+    return getAlias() + " [generator]";
   }
 
   @Override
