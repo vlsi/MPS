@@ -42,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ContextProjextSupport" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ParameterizedMpsTest" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.AfterClass" />

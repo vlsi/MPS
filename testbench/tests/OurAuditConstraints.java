@@ -58,8 +58,9 @@ public class OurAuditConstraints extends AuditConstraints {
   @Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     ourPreviousProjectPath = ContextProjextSupport.setContextProjectPath(new File("."));
+    initTestEnvironment(false);
 
-    return createTestParametersFromModules(excludeModules(contextModules(), DISABLED_MODULES));
+    return createTestParametersFromModules(excludeModules(getContextProject().getModules(), DISABLED_MODULES));
   }
 
   @AfterClass
