@@ -70,7 +70,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
 
   public ConsoleTool(Project project) {
-    super(project, "Console", -1, IconContainer.ICON_d0a91, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Console", -1, IconContainer.ICON_c0a0ec, ToolWindowAnchor.BOTTOM, false);
   }
 
 
@@ -289,6 +289,10 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     ListSequence.fromList(SLinkOperations.getTargets(getLastResultLine(), "part", true)).addElement(n);
   }
 
+  @Override
+  public void addAction(Runnable action) {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
 
 
   public void addNewLine() {
@@ -302,7 +306,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
     private jetbrains.mps.project.Project myProject;
 
     public ExecuteAction(jetbrains.mps.project.Project project) {
-      super("Execute", "Execute last command", IconContainer.ICON_c0a1dc);
+      super("Execute", "Execute last command", IconContainer.ICON_c0a0ec);
       ExecuteAction.this.myProject = project;
     }
 
@@ -310,7 +314,6 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           myCursor = null;
-          TemporaryModels.getInstance().addMissingModuleImports(myModel);
           final SNode lastCmd = SLinkOperations.getTarget(myCommandRoot, "command", true);
           if ((lastCmd == null)) {
             return;
@@ -341,6 +344,11 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "target", ((SNode) node), false);
             }
 
+            @Override
+            public void addAction(Runnable action) {
+              //To change body of implemented methods use File | Settings | File Templates.
+            }
+
             public void addNewLine() {
               checkResultAvailable();
               SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
@@ -368,7 +376,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", IconContainer.ICON_c0a0fc);
+      super("Clear", "Clear console window", IconContainer.ICON_c0a0ec);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -381,7 +389,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", IconContainer.ICON_c0a0hc);
+      super("Prev", "Previous command", IconContainer.ICON_c0a0ec);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -409,7 +417,7 @@ public class ConsoleTool extends BaseProjectTool implements ConsoleStream {
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", IconContainer.ICON_c0a0jc);
+      super("Next", "Next command", IconContainer.ICON_c0a0ec);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
