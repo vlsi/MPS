@@ -6733,13 +6733,6 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~StringBuilder" resolveInfo="StringBuilder" />
       </node>
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="9170334376386467033" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376386467052" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="true" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="jetbrains.mps.smodel" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9170334376387282945" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModelsExtractor" />
@@ -7059,7 +7052,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9170334376387736848" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="9170334376387736890" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376387736844" resolveInfo="AuditTypeSystem" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376386357070" resolveInfo="BaseCheckModulesTest" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9170334376387736850" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9170334376387736846" resolveInfo="module" />
           </node>
@@ -7161,48 +7154,6 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9170334376387736879" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="9170334376387736880" nodeInfo="in" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="9170334376387736881" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736882" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="jetbrains.mps.testbench.ModelsExtractor" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736883" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736884" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.jetbrains.mps.openapi.model.SModel" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736885" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.jetbrains.mps.openapi.module.SModule" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736886" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.junit.Assert" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736887" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.junit.Test" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736888" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="java.util.Collection" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387736889" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="java.util.List" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9170334376387816357" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AuditConstraints" />
@@ -7226,7 +7177,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9170334376387816365" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="9170334376387816407" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376387816361" resolveInfo="AuditConstraints" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376386357070" resolveInfo="BaseCheckModulesTest" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9170334376387816367" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9170334376387816363" resolveInfo="module" />
           </node>
@@ -7254,7 +7205,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9170334376387816376" nodeInfo="nn">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9170334376387816380" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="^" resolveInfo="getModels" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376387283013" resolveInfo="getModels" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9170334376387819472" nodeInfo="nn">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9170334376387822820" nodeInfo="nn">
@@ -7328,48 +7279,6 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9170334376387816396" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="9170334376387816397" nodeInfo="in" />
     </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.JavaImports" typeId="tpee.6050519299856556786" id="9170334376387816398" nodeInfo="ng">
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816399" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="jetbrains.mps.checkers.LanguageChecker" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816400" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="jetbrains.mps.testbench.ModelsExtractor" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816401" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.jetbrains.mps.openapi.model.SModel" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816402" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.jetbrains.mps.openapi.module.SModule" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816403" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.junit.Assert" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816404" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="org.junit.Test" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816405" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="java.util.Collection" />
-      </node>
-      <node role="entries" roleId="tpee.28358707492429991" type="tpee.JavaImport" typeId="tpee.28358707492436943" id="9170334376387816406" nodeInfo="ng">
-        <property name="onDemand" nameId="tpee.28358707492436944" value="false" />
-        <property name="static" nameId="tpee.5574384225470059890" value="false" />
-        <property name="tokens" nameId="tpee.1843920760191311250" value="java.util.List" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9170334376387870447" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="CheckProjectStructure" />
@@ -7393,7 +7302,7 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9170334376387870455" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="9170334376387870549" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376387870451" resolveInfo="CheckProjectStructure" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9170334376386357070" resolveInfo="BaseCheckModulesTest" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9170334376387870457" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9170334376387870453" resolveInfo="module" />
           </node>
