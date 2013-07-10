@@ -100,5 +100,18 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="351968380916616960" nodeInfo="nn" />
     </node>
   </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1111629987770987262" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1111629987770987206" resolveInfo="ActionsResultPart" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1111629987770987301" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="action" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1111629987770987310" nodeInfo="nn">
+        <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
+      </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnderlinedStyleClassItem" typeId="tpc2.1186414999511" id="1111629987770987311" nodeInfo="nn">
+        <property name="underlined" nameId="tpc2.1214316229833" value="2" />
+      </node>
+    </node>
+  </root>
 </model>
 

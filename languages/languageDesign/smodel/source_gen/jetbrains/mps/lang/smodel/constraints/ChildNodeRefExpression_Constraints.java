@@ -14,14 +14,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescriptor {
@@ -49,19 +44,7 @@ public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescripto
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode parentTarget = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getReferenceNode(), "parent", true), "virtual_getTargetNode_3575813534625153815", new Object[]{});
-              Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(parentTarget)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-                }
-              }).select(new ISelector<SNode, SNode>() {
-                public SNode select(SNode it) {
-                  return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-                }
-              });
-              return new NamedElementsScope(children);
-            }
+            return new NamedElementsScope(AbstractNodeRefExpression_Behavior.call_getPossibleTargetNodes_5207260697408415741(SLinkOperations.getTarget(_context.getReferenceNode(), "parent", true)));
           }
         };
       }

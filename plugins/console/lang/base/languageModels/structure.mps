@@ -129,5 +129,17 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6852607286009167343" resolveInfo="HistoryItem" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1111629987770987206" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
+    <property name="name" nameId="tpck.1169194664001" value="ActionsResultPart" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1111629987770987237" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="closureId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1111629987770987235" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
+    </node>
+  </root>
 </model>
 
