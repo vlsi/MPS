@@ -44,15 +44,16 @@ import jetbrains.mps.util.FileUtil;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.resources.IResource;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.messages.IMessageHandler;
@@ -94,6 +95,11 @@ public class GenerationResult {
 
 
   private void build() {
+    if (!(needsGeneration(module))) {
+      isSucessful = true;
+      return;
+    }
+
     // <node> 
     final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.getDefaults();
     boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
@@ -273,7 +279,18 @@ public class GenerationResult {
     myMessageHandler.cleanUp();
   }
 
-
+  private static boolean needsGeneration(final SModule module) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        for (SModel descriptor : module.getModels()) {
+          if (SNodeOperations.isGeneratable(descriptor)) {
+            return true;
+          }
+        }
+        return false;
+      }
+    });
+  }
 
   private static ScriptBuilder defaultScriptBuilder() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));

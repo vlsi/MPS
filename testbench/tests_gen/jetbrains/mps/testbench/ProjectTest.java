@@ -9,10 +9,6 @@ import org.junit.runners.model.TestClass;
 import org.junit.Test;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.util.SNodeOperations;
 import org.junit.Rule;
 import org.junit.rules.TestWatchman;
 import jetbrains.mps.testbench.junit.Order;
@@ -23,22 +19,11 @@ public class ProjectTest extends BaseCheckModulesTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
   private List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
   private GenerationResult generationResult;
-  private boolean needGeneration;
 
   public ProjectTest(final SModule module) {
     super(module);
+    // todo: introduce @ParameterBefore, @ParameterAfter annotation for that? 
     this.methods.addAll(METHODS);
-    needGeneration = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        for (SModel descriptor : module.getModels()) {
-          if (SNodeOperations.isGeneratable(descriptor)) {
-            return true;
-          }
-        }
-        return false;
-      }
-    });
   }
 
   @Rule
@@ -55,16 +40,7 @@ public class ProjectTest extends BaseCheckModulesTest {
   @Test
   @Order(value = 1)
   public void buildModule() throws Exception {
-    if (!(needGeneration)) {
-      return;
-    }
-
-    generationResult = ModelAccess.instance().runReadAction(new Computable<GenerationResult>() {
-      @Override
-      public GenerationResult compute() {
-        return GenerationResult.generateModule(myModule, BaseCheckModulesTest.getContextProject());
-      }
-    });
+    generationResult = GenerationResult.generateModule(myModule, BaseCheckModulesTest.getContextProject());
 
     if (!(generationResult.isBuildSucessful())) {
       List<String> errors = generationResult.buildErrors();
@@ -77,9 +53,6 @@ public class ProjectTest extends BaseCheckModulesTest {
   @Test
   @Order(value = 2)
   public void diffModule() throws Exception {
-    if (!(needGeneration)) {
-      return;
-    }
     List<String> diffReport = generationResult.diff();
     Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
   }
