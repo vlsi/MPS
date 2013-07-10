@@ -40,7 +40,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -98,7 +97,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       protected void startListening(SModel model) {
         for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
           if (aspect.is(model) && model instanceof EditableSModel) {
-            ((EditableSModel)model).addChangeListener(this);
+            ((EditableSModel) model).addChangeListener(this);
             model.addModelListener(this);
             return;
           }
@@ -108,7 +107,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       @Override
       protected void stopListening(SModel model) {
         if (model instanceof EditableSModel) {
-          ((EditableSModel)model).removeChangeListener(this);
+          ((EditableSModel) model).removeChangeListener(this);
           model.removeModelListener(this);
         }
       }
@@ -283,7 +282,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         hash = ModelDigestUtil.hash(new FileDataSource(descriptorFile), true);
 
         BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
-        for (LanguageAspect aspect: HASHED_LANGUAGE_ASPECTS) {
+        for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
           final EditableSModelDescriptor aspModel = aspect.get(myModule);
           if (aspModel != null && !aspModel.isChanged() && aspModel instanceof GeneratableSModel) {
             modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));

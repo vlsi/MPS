@@ -221,11 +221,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
-  public void unload() {
-
-  }
-
-  @Override
   public void addModelListener(SModelListener l) {
     myModelListeners.add(l);
   }

@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
  * evgeny, 6/6/13
  */
 public abstract class LazyEditableSModelBase extends EditableSModelBase {
-
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
     protected ModelLoadResult doLoad(ModelLoadingState state, @Nullable LazySModel current) {
@@ -54,11 +53,11 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
     }
   };
 
-
   public LazyEditableSModelBase(@NotNull SModelReference modelReference,
       @NotNull DataSource source) {
     super(modelReference, source);
   }
+
 
   public final ModelLoadingState getLoadingState() {
     return myModel.getState();
@@ -95,10 +94,20 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
     return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
 
-
   @Override
   protected final LazySModel getCurrentModelInternal() {
     return myModel.getModel(null);
+  }
+
+
+  @Override
+  protected void doUnload() {
+    final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
+
+    if (oldSModel != null) {
+      oldSModel.setModelDescriptor(null);
+      myModel.replaceWith(null, ModelLoadingState.NOT_LOADED);
+    }
   }
 
   /**

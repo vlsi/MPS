@@ -34,8 +34,9 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
 
   @Override
   public final jetbrains.mps.smodel.SModel getSModelInternal() {
-    if (mySModel != null) {
-      return mySModel;
+    SModel copy = mySModel;
+    if (copy != null) {
+      return copy;
     }
     synchronized (this) {
       if (mySModel == null) {
@@ -63,5 +64,17 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
       model.dispose();
     }
     clearListeners();
+  }
+
+  @Override
+  public synchronized void unload() {
+    ModelAccess.assertLegalWrite();
+
+    jetbrains.mps.smodel.SModel oldModel = mySModel;
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+      mySModel = null;
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    }
   }
 }

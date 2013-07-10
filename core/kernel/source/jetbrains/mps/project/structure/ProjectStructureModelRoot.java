@@ -176,6 +176,18 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
     }
 
     @Override
+    public void unload() {
+      ModelAccess.assertLegalWrite();
+
+      jetbrains.mps.smodel.SModel oldModel = myModel;
+      if (oldModel != null) {
+        oldModel.setModelDescriptor(null);
+        myModel = null;
+        fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+      }
+    }
+
+    @Override
     public void reloadFromDiskSafe() {
       ModelAccess.assertLegalWrite();
       if (getSource().getTimestamp() == -1) {

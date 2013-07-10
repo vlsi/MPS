@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class BaseStubModelDescriptor extends ReloadableSModelBase implements Cloneable {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(BaseStubModelDescriptor.class));
@@ -64,6 +63,18 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
   @Override
   public boolean isLoaded() {
     return mySModel != null;
+  }
+
+  @Override
+  public synchronized void unload() {
+    ModelAccess.assertLegalWrite();
+
+    jetbrains.mps.smodel.SModel oldModel = mySModel;
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+      mySModel = null;
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    }
   }
 
   @Override
