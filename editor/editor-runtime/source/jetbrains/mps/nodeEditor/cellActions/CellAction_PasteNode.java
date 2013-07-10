@@ -74,7 +74,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
         break;
       }
     }
-    boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
+    boolean needToConvert = pasteNodes == null || pasteNodes.isEmpty();
+
+    boolean canPasteWithRemove = !needToConvert && !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
     if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
         (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
       EditorCell selectedCell = getCellToPasteTo(context.getSelectedCell());
@@ -85,7 +87,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       if (selectedNode == null || jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
         return false;
       }
-      if (pasteNodes == null || pasteNodes.isEmpty()) {
+      if (needToConvert) {
         return CopyPasteUtil.isConversionAvailable(selectedNode.getModel(), selectedNode);
       }
 
@@ -150,7 +152,8 @@ public class CellAction_PasteNode extends AbstractCellAction {
     final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modelToPaste.getModelId()) != null;
 
     PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(modelToPaste);
-    if (data == null || data.getNodes().isEmpty()) {
+    final boolean needToConvert = (data == null || data.getNodes().isEmpty());
+    if (needToConvert) {
       data = CopyPasteUtil.getConvertedFromClipboard(modelToPaste, context.getOperationContext().getProject());
       if (data == null || data.getNodes().isEmpty()) return;
     }
@@ -181,7 +184,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
             NodePaster nodePaster = new NodePaster(pasteNodes);
             boolean disposed = checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
-            boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
+            boolean canPasteWithRemove = !needToConvert && !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
             if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
                 (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
               EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
