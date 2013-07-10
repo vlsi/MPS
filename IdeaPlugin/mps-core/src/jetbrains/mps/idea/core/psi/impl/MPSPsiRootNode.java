@@ -107,11 +107,6 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
     return false;
   }
 
-  @Override
-  public boolean isValid() {
-    return true;
-  }
-
   @Nullable
   @Override
   public PsiDirectory getParent() {

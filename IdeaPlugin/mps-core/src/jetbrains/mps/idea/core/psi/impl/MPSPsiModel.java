@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.psi.impl;
 import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.FileASTNode;
+import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.util.io.FileSystemUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -32,9 +33,11 @@ import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FilePerRootSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -55,6 +58,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.Icon;
@@ -118,7 +122,18 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   public boolean isValid() {
-    return true;
+    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final Ref<Boolean> result = new Ref<Boolean>(false);
+
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SModel model = myModelReference.resolve(repository);
+        result.set(model != null);
+      }
+    });
+
+    return result.get();
   }
 
   @Override
