@@ -20,6 +20,7 @@ import com.intellij.navigation.ColoredItemPresentation;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.editor.colors.CodeInsightColors;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Iconable;
 import com.intellij.psi.EmptySubstitutor;
 import com.intellij.psi.HierarchicalMethodSignature;
@@ -51,10 +52,15 @@ import com.intellij.ui.RowIcon;
 import com.intellij.util.IncorrectOperationException;
 import com.intellij.util.PlatformIcons;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -64,6 +70,9 @@ import java.util.List;
  */
 
 public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
+
+  // used during java refactorings
+  private boolean isCopy = false;
 
   public MPSPsiMethod(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
@@ -175,10 +184,37 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
     return getModifierList().hasModifierProperty(name);
   }
 
+  // java refactoring support
+  @Override
+  public MPSPsiMethod copy() {
+    MPSPsiMethod clone = (MPSPsiMethod) clone();
+    clone.isCopy = true;
+    return clone;
+  }
+
   @Override
   public PsiElement setName(@NonNls @NotNull final String name) throws IncorrectOperationException {
     // todo: assert that we're in idea command
+
     setNameProperty(name);
+
+    if (isCopy) return this;
+
+    Project project = getProject();
+    final MPSProject mpsProject = project.getComponent(MPSProject.class);
+    MoveRenameBatch batch = project.getComponent(MoveRenameBatch.class);
+
+    final SNodeReference nodeRef = getSNodeReference();
+
+    batch.scheduleNodeUpdate(new Runnable() {
+      @Override
+      public void run() {
+        SNode node = nodeRef.resolve(mpsProject.getRepository());
+        if (node == null) return;
+        node.setProperty("name", name);
+      }
+    });
+
     return this;
   }
 

@@ -43,6 +43,8 @@ public class MoveRenameBatch implements ProjectComponent {
   private Project myProject;
   private Object myCommand;
   private CommandListener myCommandListener;
+  // generic updaters, not tied to references, used at least for updating method names
+  private List<Runnable> nodeUpdaters = new ArrayList<Runnable>();
   // reference -> update code
   private Map<SReferencePtr, Runnable> sreferenceUpdaters = new HashMap<SReferencePtr, Runnable>();
   private Map<SReferencePtr, Runnable> prefixReferenceUpdaters = new HashMap<SReferencePtr, Runnable>();
@@ -118,6 +120,10 @@ public class MoveRenameBatch implements ProjectComponent {
       @Override
       public void run() {
 
+        for (Runnable upd : nodeUpdaters) {
+          upd.run();
+        }
+
         for (Runnable upd : sreferenceUpdaters.values()) {
           upd.run();
         }
@@ -132,6 +138,10 @@ public class MoveRenameBatch implements ProjectComponent {
       }
     }, ProjectHelper.toMPSProject(myProject));
 
+  }
+
+  public void scheduleNodeUpdate(Runnable r) {
+    nodeUpdaters.add(r);
   }
 
   public void scheduleNormalRefUpdate(SNodeReference source, String role, Runnable r) {
