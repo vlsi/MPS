@@ -4,6 +4,7 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -18,7 +19,11 @@ public class ErrorReportUtil {
 
   public static boolean shouldReportError(SNode node) {
     final Wrappers._T<SNode> _node = new Wrappers._T<SNode>(node);
-    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(_node.value.getModel()))) {
+    SModel model = _node.value.getModel();
+    if (model == null) {
+      return false;
+    }
+    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(model))) {
       return false;
     }
     SNode parent = _node.value;
