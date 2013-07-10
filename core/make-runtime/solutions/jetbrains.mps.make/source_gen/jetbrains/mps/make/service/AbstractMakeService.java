@@ -48,7 +48,7 @@ public abstract class AbstractMakeService implements IMakeService {
 
     protected final Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
       final Wrappers._T<Iterable<? extends Iterable<? extends IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<? extends IResource>>>();
-      final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
+      final Wrappers._T<Iterable<? extends Iterable<String>>> usedLangs = new Wrappers._T<Iterable<? extends Iterable<String>>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           final ModulesClusterizer mcr = new ModulesClusterizer();
