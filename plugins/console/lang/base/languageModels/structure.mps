@@ -141,5 +141,8 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
     </node>
   </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8517397753921951830" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ActionHolder" />
+  </root>
 </model>
 

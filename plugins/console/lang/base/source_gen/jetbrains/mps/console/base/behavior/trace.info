@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ActionHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ActionHolder_BehaviorDescriptor" />
   <unitInfo fileName="ActionsResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ActionsResultPart_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CommandHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
@@ -154,6 +155,27 @@
       <varInfo nodeId="757553790980855631" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="757553790980855631" fileName="Command_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_Behavior" />
+  </root>
+  <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/8517397753921951854">
+    <nodeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="15" startPosition="71" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="20" startPosition="104" endLine="21" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="8517397753921952016" fileName="ActionHolder_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="15" startPosition="71" endLine="16" endPosition="114" />
+    <scopeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="20" startPosition="104" endLine="21" endPosition="245" />
+    <scopeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="8517397753921951854" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="8517397753921951854" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="8517397753921951854" varName="callerConceptFqName" />
+      <varInfo nodeId="8517397753921951854" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8517397753921951854" fileName="ActionHolder_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ActionHolder_Behavior" />
   </root>
 </debugInfo>
 
