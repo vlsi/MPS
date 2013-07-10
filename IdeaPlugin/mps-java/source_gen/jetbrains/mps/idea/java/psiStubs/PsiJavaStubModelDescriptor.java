@@ -14,6 +14,8 @@ import java.util.HashMap;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import com.intellij.openapi.progress.NonCancelableSection;
 import com.intellij.openapi.progress.ProgressIndicatorProvider;
 import com.intellij.psi.PsiJavaFile;
@@ -98,6 +100,16 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
   }
 
 
+
+  public void unload() {
+    ModelAccess.assertLegalWrite();
+    SModel oldModel = myModel;
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+      myModel = null;
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    }
+  }
 
   private void loadContents(SModel into) {
     // todo think why it's needed (otherwise we get ProcessCancelException) 
