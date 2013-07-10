@@ -45,7 +45,6 @@ public class ModelRootEntryPersistence {
   private void init() {
 
     addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, new FileBasedModelRootEntryFactory());
-    addModelRootEntry(PersistenceRegistry.OBSOLETE_MODEL_ROOT, new SModelRootEntryFactory());
   }
 
   public void addModelRootEntry(String type, @NotNull ModelRootEntryFactory factory) {

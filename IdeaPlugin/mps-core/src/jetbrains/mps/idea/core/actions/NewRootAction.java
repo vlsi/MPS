@@ -21,13 +21,11 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.fileTypes.FileTypeRegistry;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -37,7 +35,9 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -49,8 +49,10 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -65,6 +67,7 @@ public class NewRootAction extends AnAction {
   private Project myProject;
   private IOperationContext myOperationContext;
   private Map<String, SNodeReference> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SNodeReference>();
+  private boolean myNewModel = false;
 
   public NewRootAction() {
     super(MPSBundle.message("new.root.action"), null, IdeIcons.DEFAULT_ROOT_ICON);
@@ -72,6 +75,37 @@ public class NewRootAction extends AnAction {
 
   @Override
   public void actionPerformed(AnActionEvent e) {
+    if(myModelDescriptor == null && myNewModel) {
+      final VirtualFile[] virtualFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
+      if(virtualFiles.length != 1 || !virtualFiles[0].isDirectory())
+        return;
+
+      myModelDescriptor = (EditableSModelDescriptor)ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+        @Override
+        public SModel compute() {
+          ModelRoot useModelRoot = null;
+          for (ModelRoot root : myOperationContext.getModule().getModelRoots()) {
+            if (!(root instanceof DefaultModelRoot)) continue;
+            DefaultModelRoot modelRoot = (DefaultModelRoot) root;
+            for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+              if (virtualFiles[0].getPath().startsWith(sourceRoot)) {
+                useModelRoot = root; break;
+              }
+            }
+          }
+          if(useModelRoot == null) return null;
+
+          EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(virtualFiles[0].getName(), useModelRoot,
+            PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
+          descriptor.save();
+          return descriptor;
+        }
+      }, ProjectHelper.toMPSProject(myProject));
+    }
+
+    if(myModelDescriptor == null)
+      return;
+
     if(myConceptFqNameToNodePointerMap.isEmpty()) {
       ImportHelper.addLanguageImport(myProject, myModelDescriptor.getModule(),
         myModelDescriptor.getModule().getModel(myModelDescriptor.getModelId()), null);
@@ -143,9 +177,7 @@ public class NewRootAction extends AnAction {
     VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
     if (module == null ||
         vFiles == null ||
-        vFiles.length != 1 ||
-        vFiles[0].isDirectory() ||
-        FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_FILE_TYPE) {
+        vFiles.length != 1) {
       return;
     }
 
@@ -183,6 +215,8 @@ public class NewRootAction extends AnAction {
                 }
               }
             });
+          } else {
+            myNewModel = true;
           }
           return;
         }
@@ -191,6 +225,6 @@ public class NewRootAction extends AnAction {
   }
 
   public boolean isEnabled() {
-    return myOperationContext != null && myModelDescriptor != null && myProject != null;
+    return myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;
   }
 }

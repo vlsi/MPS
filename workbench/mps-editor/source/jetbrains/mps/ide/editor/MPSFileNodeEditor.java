@@ -20,27 +20,32 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.fileEditor.DocumentsEditor;
+import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
+import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.fileEditor.FileEditorState;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 
@@ -113,7 +118,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @NotNull
   public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
-    if (!isDisposed()) {
+    if (!isDisposed() && myNodeEditor!= null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -156,7 +161,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public boolean isValid() {
-    return myFile.isValid() && myIsValid && !myDisposed;
+    return myFile!= null && myFile.isValid() && myIsValid && !myDisposed;
   }
 
   @Override

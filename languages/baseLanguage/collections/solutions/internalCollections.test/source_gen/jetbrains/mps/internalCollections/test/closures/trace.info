@@ -1551,9 +1551,9 @@
     <nodeInfo nodeId="1205687039732" fileName="Sort_Test.java" startLine="20" startPosition="40" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205687052916" fileName="Sort_Test.java" startLine="23" startPosition="14" endLine="24" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205693992437" fileName="Sort_Test.java" startLine="27" startPosition="55" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205694004157" fileName="Sort_Test.java" startLine="30" startPosition="40" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205694004157" fileName="Sort_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205693992447" fileName="Sort_Test.java" startLine="33" startPosition="6" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205751769127" fileName="Sort_Test.java" startLine="36" startPosition="39" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205751769127" fileName="Sort_Test.java" startLine="36" startPosition="46" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1205751784981" fileName="Sort_Test.java" startLine="39" startPosition="6" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1205693992463" fileName="Sort_Test.java" startLine="40" startPosition="55" endLine="41" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205738190893" fileName="Sort_Test.java" startLine="41" startPosition="82" endLine="42" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1583,8 +1583,8 @@
     <nodeInfo nodeId="3448064161400264147" fileName="Sort_Test.java" startLine="127" startPosition="52" endLine="128" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3448064161400266506" fileName="Sort_Test.java" startLine="130" startPosition="20" endLine="131" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205687027624" fileName="Sort_Test.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
     <nodeInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="1205738230334" fileName="Sort_Test.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Integer;" />
     <nodeInfo nodeId="3343985444902960344" fileName="Sort_Test.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljava/lang/Integer;" />
@@ -1619,8 +1619,8 @@
     <nodeInfo nodeId="599357942184268166" fileName="Sort_Test.java" startLine="100" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_alsoSort#()V" />
     <nodeInfo nodeId="1205737327889" fileName="Sort_Test.java" startLine="46" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_sortOperationInternal#()V" />
     <scopeInfo nodeId="1205687027625" fileName="Sort_Test.java" startLine="20" startPosition="40" endLine="21" endPosition="27" />
-    <scopeInfo nodeId="1205694004156" fileName="Sort_Test.java" startLine="30" startPosition="40" endLine="31" endPosition="27" />
-    <scopeInfo nodeId="1205751769126" fileName="Sort_Test.java" startLine="36" startPosition="39" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="1205694004156" fileName="Sort_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="27" />
+    <scopeInfo nodeId="1205751769126" fileName="Sort_Test.java" startLine="36" startPosition="46" endLine="37" endPosition="18" />
     <scopeInfo nodeId="1205737614821" fileName="Sort_Test.java" startLine="49" startPosition="40" endLine="50" endPosition="27" />
     <scopeInfo nodeId="1205738230335" fileName="Sort_Test.java" startLine="55" startPosition="40" endLine="56" endPosition="27" />
     <scopeInfo nodeId="3343985444902960347" fileName="Sort_Test.java" startLine="60" startPosition="40" endLine="61" endPosition="27" />

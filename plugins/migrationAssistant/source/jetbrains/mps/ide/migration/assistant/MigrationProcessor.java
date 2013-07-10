@@ -91,11 +91,16 @@ public class MigrationProcessor extends AbstractProjectComponent {
         SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {
-            if (cmd) {
-              cmdRunnable.run();
-            } else {
-              ModelAccess.instance().runWriteActionInCommand(cmdRunnable);
-            }
+            DumbService.getInstance(myProject).runWhenSmart(new Runnable() {
+              @Override
+              public void run() {
+                if (cmd) {
+                  cmdRunnable.run();
+                } else {
+                  ModelAccess.instance().runWriteActionInCommand(cmdRunnable);
+                }
+              }
+            });
           }
         });
         try {
@@ -190,32 +195,27 @@ public class MigrationProcessor extends AbstractProjectComponent {
     @Override
     public void run() {
       try {
-        DumbService.getInstance(myProject).runWhenSmart(new Runnable() {
-          @Override
-          public void run() {
-            fireStartingAction(myAction);
-            AnActionEvent event =
-                new AnActionEvent(null, DataManager.getInstance().getDataContext(myComponent), ActionPlaces.UNKNOWN,
-                    myAction.getTemplatePresentation(),
-                    ActionManager.getInstance(), 0);
-            boolean success = false;
-            try {
-              myAction.update(event);
-              if (myAction.getTemplatePresentation().isEnabled()) {
-                myAction.actionPerformed(event);
-                success = true;
-              }
-            } catch (Exception e) {
-              LOG.error(null, e);
-            } finally {
-              if (success) {
-                fireFinishedAction(myAction);
-              } else {
-                fireFailedAction(myAction);
-              }
-            }
+        fireStartingAction(myAction);
+        AnActionEvent event =
+            new AnActionEvent(null, DataManager.getInstance().getDataContext(myComponent), ActionPlaces.UNKNOWN,
+                myAction.getTemplatePresentation(),
+                ActionManager.getInstance(), 0);
+        boolean success = false;
+        try {
+          myAction.update(event);
+          if (myAction.getTemplatePresentation().isEnabled()) {
+            myAction.actionPerformed(event);
+            success = true;
           }
-        });
+        } catch (Exception e) {
+          LOG.error(null, e);
+        } finally {
+          if (success) {
+            fireFinishedAction(myAction);
+          } else {
+            fireFailedAction(myAction);
+          }
+        }
       } finally {
         myLatch.countDown();
       }

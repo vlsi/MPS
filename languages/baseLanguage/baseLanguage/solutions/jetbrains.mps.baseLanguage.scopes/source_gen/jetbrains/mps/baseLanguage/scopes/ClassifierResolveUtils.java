@@ -248,10 +248,13 @@ public class ClassifierResolveUtils {
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
 
-    final SModel contextNodeModel = (contextNode == null ?
-      null :
-      SNodeOperations.getModel(contextNode)
-    );
+    final SModel contextNodeModel = SNodeOperations.getModel(contextNode);
+
+    SNode ourClass = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    if ((ourClass == null)) {
+      // no class outside, just use simple old logic 
+      return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
+    }
 
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");
     if (!(tokenizer.hasMoreTokens())) {
@@ -261,18 +264,18 @@ public class ClassifierResolveUtils {
 
     assert token != null;
 
-    if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-      if (token.equals(SPropertyOperations.getString(contextNode, "name"))) {
-        return construct(contextNode, tokenizer);
+    if (!(SNodeOperations.isInstanceOf(ourClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+      if (token.equals(SPropertyOperations.getString(ourClass, "name"))) {
+        return construct(ourClass, tokenizer);
       }
     }
-    for (SNode nestedClas : Sequence.fromIterable(getImmediateNestedClassifiers(contextNode))) {
+    for (SNode nestedClas : Sequence.fromIterable(getImmediateNestedClassifiers(ourClass))) {
       if (token.equals(SPropertyOperations.getString(nestedClas, "name"))) {
         return construct(nestedClas, tokenizer);
       }
     }
 
-    for (SNode enclosingClass : Sequence.fromIterable(getPathToRoot(contextNode))) {
+    for (SNode enclosingClass : Sequence.fromIterable(getPathToRoot(ourClass))) {
       if (SNodeOperations.isInstanceOf(enclosingClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
         continue;
       }
@@ -287,7 +290,7 @@ public class ClassifierResolveUtils {
     }
 
     if (includeAncestors) {
-      for (SNode ancestor : Sequence.fromIterable(getAncestors(contextNode))) {
+      for (SNode ancestor : Sequence.fromIterable(getAncestors(ourClass))) {
         for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(ancestor))) {
           if (token.equals(SPropertyOperations.getString(nested, "name"))) {
             return construct(nested, tokenizer);
@@ -296,18 +299,12 @@ public class ClassifierResolveUtils {
       }
     }
 
-    SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
+    SNode root = Sequence.fromIterable(getPathToRoot(ourClass)).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
 
     if (javaImports == null) {
 
       return resolveNonSpecialSyntax(refText, contextNode, modelsPlusImported);
-
-      // <node> 
-      // <node> 
-      // <node> 
-      // <node> 
-      // <node> 
 
     } else {
       // walk through single-type imports 

@@ -26,14 +26,14 @@ public class Sort_Test extends Util_Test {
 
   public void test_toComparableVar() throws Exception {
     ISequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
-    ISelector<String, ? extends Comparable<?>> length = new ISelector<String, Integer>() {
-      public Integer select(String it) {
+    ISelector<String, ? extends Comparable<?>> length = new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
         return it.length();
       }
     };
     ISequence<String> test = input.sort(length, false);
-    ISelector<String, ? extends Comparable<?>> itself = new ISelector<String, String>() {
-      public String select(String it) {
+    ISelector<String, ? extends Comparable<?>> itself = new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
         return it;
       }
     };

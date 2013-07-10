@@ -173,7 +173,7 @@ public class JavaParser {
         // javadoc 
         SNode doc = MapSequence.fromMap(javadocs).get(comment[0]);
 
-        List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1] + 1));
+        List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1]));
         for (String text : ListSequence.fromList(lines)) {
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
           SNode part = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
