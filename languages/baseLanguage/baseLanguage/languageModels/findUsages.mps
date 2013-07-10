@@ -3338,6 +3338,15 @@
         </node>
       </node>
     </node>
+    <node role="isUsedByDefault" roleId="tp3b.100784871544251463" type="tp3b.IsUsedByDefault" typeId="tp3b.100784871586155151" id="1201891175715955537" nodeInfo="ng">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1201891175715955538" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1201891175716009230" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1201891175716009229" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root type="tp3b.FinderDeclaration" typeId="tp3b.1197044488845" id="1216392046439" nodeInfo="ng">
     <property name="description" nameId="tp3b.1197385993272" value="Implemented Interfaces" />

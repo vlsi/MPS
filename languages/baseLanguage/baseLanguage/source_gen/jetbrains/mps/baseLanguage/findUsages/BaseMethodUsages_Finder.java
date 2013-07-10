@@ -22,6 +22,11 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   }
 
   @Override
+  public boolean isUsedByDefault(SNode node) {
+    return true;
+  }
+
+  @Override
   public String getDescription() {
     return "Base Method Usages";
   }
