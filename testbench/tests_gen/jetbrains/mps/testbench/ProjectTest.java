@@ -22,18 +22,12 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 public class ProjectTest extends BaseCheckModulesTest {
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
   private List<FrameworkMethod> methods = new ArrayList<FrameworkMethod>();
-  private ProjectTestHelper.Token token;
+  private GenerationResult generationResult;
   private boolean needGeneration;
 
   public ProjectTest(final SModule module) {
     super(module);
     this.methods.addAll(METHODS);
-    token = ModelAccess.instance().runReadAction(new Computable<ProjectTestHelper.Token>() {
-      @Override
-      public ProjectTestHelper.Token compute() {
-        return ProjectTestHelper.getToken(module, BaseCheckModulesTest.getContextProject());
-      }
-    });
     needGeneration = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
@@ -53,7 +47,7 @@ public class ProjectTest extends BaseCheckModulesTest {
     public void finished(FrameworkMethod method) {
       methods.remove(method);
       if (methods.size() == 0) {
-        ProjectTestHelper.cleanUp(token);
+        generationResult.cleanUp();
       }
     }
   };
@@ -64,10 +58,18 @@ public class ProjectTest extends BaseCheckModulesTest {
     if (!(needGeneration)) {
       return;
     }
-    if (!(ProjectTestHelper.build(token))) {
-      List<String> errors = ProjectTestHelper.buildErrors(token);
+
+    generationResult = ModelAccess.instance().runReadAction(new Computable<GenerationResult>() {
+      @Override
+      public GenerationResult compute() {
+        return GenerationResult.generateModule(myModule, BaseCheckModulesTest.getContextProject());
+      }
+    });
+
+    if (!(generationResult.isBuildSucessful())) {
+      List<String> errors = generationResult.buildErrors();
       Assert.assertTrue("Build errors:\n" + IterableUtils.join(errors, "\n"), errors.isEmpty());
-      List<String> warns = ProjectTestHelper.buildWarns(token);
+      List<String> warns = generationResult.buildWarns();
       Assert.assertTrue("Build warnings:\n" + IterableUtils.join(warns, "\n"), warns.isEmpty());
     }
   }
@@ -78,7 +80,7 @@ public class ProjectTest extends BaseCheckModulesTest {
     if (!(needGeneration)) {
       return;
     }
-    List<String> diffReport = ProjectTestHelper.getDiffReport(token);
+    List<String> diffReport = generationResult.diff();
     Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
   }
 }

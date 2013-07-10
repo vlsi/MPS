@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.testbench.MessageFeedbackStrategy" file="MessageFeedbackStrategy.java">
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.messages.Message" />
-    <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.ProjectTest" file="ProjectTest.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.testbench.ProjectTestHelper" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.Order" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.Assert" />
-    <classNode dependClassName="org.junit.Rule" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="org.junit.rules.TestWatchman" />
-    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
-    <classNode dependClassName="org.junit.runners.model.TestClass" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.testbench.ProjectTestHelper" file="ProjectTestHelper.java">
+  <dependency className="jetbrains.mps.testbench.GenerationResult" file="GenerationResult.java">
     <classNode dependClassName="difflib.DiffUtils" />
     <classNode dependClassName="difflib.Patch" />
     <classNode dependClassName="java.io.BufferedReader" />
@@ -97,6 +68,35 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.MessageFeedbackStrategy" file="MessageFeedbackStrategy.java">
+    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
+    <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
+    <classNode dependClassName="jetbrains.mps.messages.Message" />
+    <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.ProjectTest" file="ProjectTest.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.testbench.GenerationResult" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.Order" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Rule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="org.junit.rules.TestWatchman" />
+    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
+    <classNode dependClassName="org.junit.runners.model.TestClass" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.TestMakeService" file="TestMakeService.java">
     <classNode dependClassName="java.lang.Boolean" />
