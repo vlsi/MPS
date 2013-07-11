@@ -56,12 +56,7 @@ public class ScopesTest {
 
   public static Project initTestEnvironmentAndLoadContextProject() throws InvocationTargetException, InterruptedException {
     MpsTestsSupport.initEnv(false);
-
-    Project contextProject = ContextProjextSupport.getContextProject();
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
-
-    return contextProject;
+    return ContextProjextSupport.getContextProject();
   }
 
 

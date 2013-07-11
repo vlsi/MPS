@@ -43,10 +43,7 @@ public class ProjectTest {
 
   public static void initTestEnvironment() throws InvocationTargetException, InterruptedException {
     MpsTestsSupport.initEnv(false);
-
     ourContextProject = ContextProjextSupport.getContextProject();
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
   }
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {

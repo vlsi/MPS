@@ -24,6 +24,11 @@ public class ContextProjextSupport {
   public static String PROJECT_PATH_PROPERTY = "mps.junit.project";
 
 
+  /**
+   * 
+   * 
+   * @return compiled and reloaded context mps project
+   */
   public static Project getContextProject() {
     Project project = getProjectFromProjectPath();
     if (project != null) {
@@ -66,7 +71,7 @@ public class ContextProjextSupport {
       return null;
     }
     // todo: check currently opened projects 
-    return ActiveEnvironment.get().openProject(new File(System.getProperty(PROJECT_PATH_PROPERTY)));
+    return firstTimeOpened(ActiveEnvironment.get().openProject(new File(System.getProperty(PROJECT_PATH_PROPERTY))));
   }
 
 
@@ -89,7 +94,7 @@ public class ContextProjextSupport {
       }
     });
 
-    return project;
+    return firstTimeOpened(project);
   }
 
 
@@ -108,5 +113,18 @@ public class ContextProjextSupport {
         return !(it.getFile().getName().endsWith(".iml"));
       }
     }).toListSequence();
+  }
+
+
+
+  private static Project firstTimeOpened(Project project) {
+    // todo: check result of making, throw checked MakeException 
+    MpsTestsSupport.makeAllInCreatedEnvironment();
+    try {
+      MpsTestsSupport.reloadAllAfterMake();
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+    return project;
   }
 }

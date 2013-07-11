@@ -43,9 +43,6 @@ public class BaseCheckModulesTest {
 
     ourStatistic = new CheckingTestStatistic();
     ourContextProject = ContextProjextSupport.getContextProject();
-    // todo: exception in case of failed compilation? 
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-    MpsTestsSupport.reloadAllAfterMake();
   }
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
