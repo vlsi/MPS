@@ -20,7 +20,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public ExecuteActionAttachedToCurrentNode_Action() {
-    super("Execute Action", "", ICON);
+    super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -61,7 +61,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BehaviorReflection.invokeVirtual(Void.class, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_execute_8517397753922085153", new Object[]{});
+      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.console.base.structure.ActionHolder")), "virtual_execute_8517397753922085153", new Object[]{});
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ExecuteActionAttachedToCurrentNode", t);

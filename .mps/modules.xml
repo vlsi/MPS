@@ -183,6 +183,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommandRuntime/jetbrains.mps.console.blCommand.runtime.msd" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/lang/editorActions/jetbrains.mps.console.editorActions.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/migration/jetbrains.mps.console.migration.mpl" folder="platform.console" />
@@ -329,7 +330,6 @@
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/jetbrains.mps.samples.xmlLiterals.sandbox.msd" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.console.editorActions/jetbrains.mps.console.editorActions.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/jetbrains.mps.testbench.suite.pluginSolution.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="tests" />
