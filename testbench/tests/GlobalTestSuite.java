@@ -16,14 +16,10 @@
 
 import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
 import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.WithIdeaInstance;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.WithMake;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
 
 @RunWith(SuiteMpsTest.class)
-@WithIdeaInstance
-@WithMake
 @SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
     "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
     "jetbrains.mps.dataFlow.lang.ProgramTest",

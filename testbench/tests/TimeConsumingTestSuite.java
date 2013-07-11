@@ -15,16 +15,10 @@
  */
 
 import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.PreloadAllModules;
 import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.WithIdeaInstance;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.WithMake;
 import org.junit.runner.RunWith;
 
 @RunWith(SuiteMpsTest.class)
-@WithIdeaInstance
-@PreloadAllModules
-@WithMake
 @SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
 public class TimeConsumingTestSuite {
 }

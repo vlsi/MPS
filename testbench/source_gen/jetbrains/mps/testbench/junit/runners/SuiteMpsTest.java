@@ -7,6 +7,7 @@ import org.junit.runner.Runner;
 import java.util.List;
 import jetbrains.mps.tool.environment.Environment;
 import org.junit.runners.model.RunnerBuilder;
+import jetbrains.mps.make.MPSCompilationResult;
 import org.junit.runners.model.InitializationError;
 import java.util.ArrayList;
 import org.junit.runner.notification.RunNotifier;
@@ -20,25 +21,22 @@ import java.lang.annotation.ElementType;
 
 public class SuiteMpsTest extends ParentRunner<Runner> {
   private List<Runner> children;
-  private final boolean withWatching;
   private final Environment createdEnv;
 
 
   public SuiteMpsTest(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass);
 
-    createdEnv = MpsTestsSupport.initEnv(klass.getAnnotation(SuiteMpsTest.WithIdeaInstance.class) != null);
+    createdEnv = MpsTestsSupport.initEnv(true);
 
-    if (klass.getAnnotation(SuiteMpsTest.PreloadAllModules.class) != null) {
-      MpsTestsSupport.loadAllModulesIntoRepository();
-    }
+    MpsTestsSupport.loadAllModulesIntoRepository();
 
     children = builder.runners(klass, SuiteMpsTest.getAnnotatedClasses(klass));
-    if (klass.getAnnotation(SuiteMpsTest.WithMake.class) != null) {
-      children = MakeRunner.withMakeRunner(getTestClass(), children);
+    MPSCompilationResult compilationResult = MpsTestsSupport.makeAllInCreatedEnvironment();
+    if (compilationResult != null && compilationResult.getErrors() > 0) {
+      throw new Exception("Compilation errors: " + compilationResult);
     }
-
-    withWatching = klass.getAnnotation(SuiteMpsTest.WithoutWatching.class) == null;
+    MpsTestsSupport.reloadAllAfterMake();
   }
 
 
@@ -65,16 +63,12 @@ public class SuiteMpsTest extends ParentRunner<Runner> {
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    if (withWatching) {
-      WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
-      try {
-        runner.run(runNotifier);
-      } finally {
-        PerformanceMessenger.getInstance().generateReport();
-        runNotifier.dispose();
-      }
-    } else {
-      runner.run(notifier);
+    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
+    try {
+      runner.run(runNotifier);
+    } finally {
+      PerformanceMessenger.getInstance().generateReport();
+      runNotifier.dispose();
     }
 
     if (runner == children.get(children.size() - 1) && createdEnv != null) {
@@ -92,29 +86,6 @@ public class SuiteMpsTest extends ParentRunner<Runner> {
   }
 
 
-
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(value = {ElementType.TYPE})
-  public @interface WithIdeaInstance {
-  }
-
-  /**
-   * Preload all modules from {user.dir}, do not use!
-   */
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(value = {ElementType.TYPE})
-  public @interface PreloadAllModules {
-  }
-
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(value = {ElementType.TYPE})
-  public @interface WithMake {
-  }
-
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(value = {ElementType.TYPE})
-  public @interface WithoutWatching {
-  }
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
