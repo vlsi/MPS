@@ -30,6 +30,7 @@
     <dependency reexport="false">19cb79b5-ebc3-43ce-9f4c-d4bdce7013ab(jetbrains.mps.baseLanguage.regexp.unittest)</dependency>
     <dependency reexport="false">9c8b4b95-5d89-4201-ad78-0b2db3a22768(jetbrains.mps.baseLanguage.test)</dependency>
     <dependency reexport="false">993e3b08-9f44-43cf-b983-e474ac66855b(jetbrains.mps.baseLanguage.tuples.test)</dependency>
+    <dependency reexport="false">83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)</dependency>
     <dependency reexport="false">444220d9-055e-44dd-a551-ed91c97d5067(jetbrains.mps.baseLanguage.unitTest.sandbox)</dependency>
     <dependency reexport="false">e60b351d-8d80-4c13-8ad4-3e4759e2a3ea(jetbrains.mps.baseLanguage.unittest)</dependency>
     <dependency reexport="false">39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.build.tests)</dependency>
@@ -73,6 +74,7 @@
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
+    <usedLanguage>f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</usedLanguage>
     <usedLanguage>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguage>
     <usedLanguage>63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)</usedLanguage>
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>

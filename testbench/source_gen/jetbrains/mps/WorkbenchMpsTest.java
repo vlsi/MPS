@@ -23,9 +23,8 @@ public class WorkbenchMpsTest {
 
   @AfterClass
   public static void cleanup() {
-    if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
-    }
+    // todo: if we dispose IdeaEnv we can't create it again =( so we should but we can't dispose CREATED_ENV here 
+    // <node> 
   }
 
   public static Project openProject(File projectFile) {

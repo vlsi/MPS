@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -88,6 +89,20 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public boolean isReadOnly() {
     return getSource().isReadOnly();
   }
+
+  @Override
+  public final void unload() {
+    save();
+    if (needsReloading()) {
+      throw new IllegalStateException("cannot unload model in a conflicting state");
+    }
+    if (getCurrentModelInternal() == null) return;
+
+    doUnload();
+    fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+  }
+
+  protected abstract void doUnload();
 
   @Override
   public void reloadFromSource() {

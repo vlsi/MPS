@@ -291,6 +291,12 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     public void eventFired(SModelEvent event) {
       myEvents.add(event);
     }
+
+    @Override
+    public void beforeModelDisposed(SModel sm) {
+      ((SModelInternal) sm).removeModelListener(this);
+      clear();
+    }
   }
 
   private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {

@@ -14,47 +14,43 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
-import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
+import jetbrains.mps.tests.*;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-@RunWith(SuiteMpsTest.class)
-@WithIdeaInstance
-@PreloadAllModules
-@WithMake
-@SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
-    "jetbrains.mps.tests.TestModule_collections_trove_test",
-    "jetbrains.mps.tests.TestModule_collections_unittest",
-    "jetbrains.mps.tests.TestModule_internalCollections_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_closures_unittest",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_math_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_tuples_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_unittest",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_build_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_debugger_java_runtime_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_generator_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_ide_java_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_multiple_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_extension_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_pattern_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_smodel_unittest",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_traceable_operations_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_make_tests",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_smodel_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_testActions",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_testRead",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_test",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving",
-    "jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels"})
+// todo: !!!should be WatchingSuite!!!
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+    TestModule_closures_test.class,
+    TestModule_collections_trove_test.class,
+    TestModule_collections_unittest.class,
+    TestModule_internalCollections_test.class,
+    TestModule_jetbrains_mps_baseLanguage_closures_unittest.class,
+    TestModule_jetbrains_mps_baseLanguage_math_tests.class,
+    TestModule_jetbrains_mps_baseLanguage_regexp_unittest.class,
+    TestModule_jetbrains_mps_baseLanguage_test.class,
+    TestModule_jetbrains_mps_baseLanguage_tuples_test.class,
+    TestModule_jetbrains_mps_baseLanguage_unittest.class,
+    TestModule_jetbrains_mps_build_tests.class,
+    TestModule_jetbrains_mps_debugger_java_runtime_tests.class,
+    TestModule_jetbrains_mps_generator_tests.class,
+    TestModule_jetbrains_mps_ide_java_tests.class,
+    TestModule_jetbrains_mps_kernel_tests.class,
+    TestModule_jetbrains_mps_lang_actions_test.class,
+    TestModule_jetbrains_mps_lang_editor_multiple_tests.class,
+    TestModule_jetbrains_mps_lang_editor_table_tests.class,
+    TestModule_jetbrains_mps_lang_editor_tests.class,
+    TestModule_jetbrains_mps_lang_extension_tests.class,
+    TestModule_jetbrains_mps_lang_pattern_test.class,
+    TestModule_jetbrains_mps_lang_smodel_unittest.class,
+    TestModule_jetbrains_mps_lang_traceable_operations_test.class,
+    TestModule_jetbrains_mps_make_tests.class,
+    TestModule_jetbrains_mps_smodel_test.class,
+    TestModule_jetbrains_mps_testActions.class,
+    TestModule_jetbrains_mps_testRead.class,
+    TestModule_jetbrains_mps_traceInfo_test.class,
+    TestModule_jetbrains_mps_traceInfo_testWeaving.class,
+    TestModule_jetbrains_mps_transformation_test_inputModels.class})
 public class ModuleTestSuite extends TestSuite {
 }

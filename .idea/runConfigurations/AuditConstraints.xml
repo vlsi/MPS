@@ -5,7 +5,7 @@
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="PACKAGE_NAME" value="" />
-    <option name="MAIN_CLASS_NAME" value="AuditConstraints" />
+    <option name="MAIN_CLASS_NAME" value="MpsAuditConstraints" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <option name="VM_PARAMETERS" value="-ea -Xss1024k -Xmx2048m -XX:NewSize=384m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -client " />

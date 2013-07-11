@@ -288,6 +288,11 @@ public class TransientModelsModule extends AbstractModule {
       }
     }
 
+    @Override
+    protected void doUnload() {
+      unloadModel();
+    }
+
     private boolean unloadModel() {
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getSModelReference());

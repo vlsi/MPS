@@ -27,6 +27,8 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
@@ -159,6 +161,14 @@ public class IdeaEnvironment implements Environment {
     SetSequence.fromSet(openedProjects).addElement(project);
     return project;
   }
+
+
+
+  public Iterable<Project> openedProjects() {
+    return ListSequence.fromListWithValues(new ArrayList<Project>(), openedProjects);
+  }
+
+
 
   public void disposeProject(final Project project) {
     ((MPSProject) project).projectClosed();

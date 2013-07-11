@@ -26,12 +26,18 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import static jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.getModel;
 import static jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.testOnProjectCopy;
@@ -143,6 +149,23 @@ public class RefactoringTest extends WorkbenchMpsTest {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
     languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
     l.setLanguageDescriptor(languageDescriptor, false);
+  }
+
+  @BeforeClass
+  public static void setup() {
+    closeAllProjects();
+  }
+
+  @AfterClass
+  public static void cleanup() {
+    closeAllProjects();
+  }
+
+  private static void closeAllProjects() {
+    List<Project> openedProjects = new ArrayList<Project>(IterableUtil.asCollection(ActiveEnvironment.get().openedProjects()));
+    for (Project p : openedProjects) {
+      ActiveEnvironment.get().disposeProject(p);
+    }
   }
 }
 

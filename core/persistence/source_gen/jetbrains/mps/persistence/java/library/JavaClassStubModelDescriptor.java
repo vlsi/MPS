@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -27,7 +28,6 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
@@ -65,6 +65,18 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   @Override
   public boolean isLoaded() {
     return myModel != null;
+  }
+
+  @Override
+  public void unload() {
+    ModelAccess.assertLegalWrite();
+
+    SModel oldModel = myModel;
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+      myModel = null;
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    }
   }
 
   private SModel createModel() {

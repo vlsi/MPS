@@ -19,14 +19,18 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.AbstractModule;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.classloading.ClassLoaderManager;
 
 public class MpsTestsSupport {
   private static Environment CREATED_ENV = null;
@@ -86,6 +90,54 @@ public class MpsTestsSupport {
     MPSCompilationResult result = MpsTestsSupport.makeAllInCreatedEnvironment();
     createdEnv.disposeEnvironment();
     return result;
+  }
+
+
+
+  public static void reloadAllAfterMake() throws InterruptedException, InvocationTargetException {
+    // todo: merge this method with making method? 
+
+    // why we need it? because some classes loaded before maker - LanguageRuntime and typesystem classes 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
+      }
+    });
+
+    // Danya: added re-load of all changed (or new) models after make. 
+    // The problem was: I had a stub model whose source was the classes_gen dir 
+    // of a module. That classes_gen got populated only during make. But by that time 
+    // model repository had already been filled and obviosly it didn't have those stub models 
+    // as there were no class files there at the moment yet. 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        for (SModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+          if (!(mod instanceof AbstractModule)) {
+            continue;
+          }
+          ((AbstractModule) mod).updateModelsSet();
+        }
+      }
+    });
+
+    if (ActiveEnvironment.get().hasIdeaInstance()) {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+              LocalFileSystem.getInstance().refresh(false);
+            }
+          });
+        }
+      });
+    } else {
+      // todo: ? 
+      // update all stubs? or whaaaat? or maybe everything what depends on make should listen core MakeService? 
+      // btw Danya's comment about stubs updating 
+    }
   }
 
 

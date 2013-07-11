@@ -309,6 +309,9 @@ public class GeneratorPrioritiesTree {
   }
 
   public static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer() {
+    return getCheckboxTreeCellRenderer(true);
+  }
+  public static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer(final boolean withCheckboxes) {
     return new CheckboxTreeCellRenderer() {
       @Override
       public void customizeRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
@@ -323,6 +326,7 @@ public class GeneratorPrioritiesTree {
           renderer.setIcon(checkedTreeNode.getIcon());
 
           checkBox.setSelected(checkedTreeNode.isChecked());
+          checkBox.setVisible(withCheckboxes);
 
           if(checkedTreeNode.equals(tree.getModel().getRoot())) {
             if(!GeneratorPrioritiesTree.setCheckedUnder(checkedTreeNode))

@@ -90,7 +90,7 @@ public class ModulesCluster {
     }).toListSequence();
   }
 
-  private Iterable<Iterable<SModuleReference>> compact(List<List<SModuleReference>> order) {
+  private Iterable<? extends Iterable<SModuleReference>> compact(List<List<SModuleReference>> order) {
     final Wrappers._T<Iterable<SModuleReference>> prev = new Wrappers._T<Iterable<SModuleReference>>(null);
     return ListSequence.fromList(order).concat(Sequence.fromIterable(Sequence.<List<SModuleReference>>singleton(null))).translate(new ITranslator2<List<SModuleReference>, Iterable<SModuleReference>>() {
       public Iterable<Iterable<SModuleReference>> translate(final List<SModuleReference> cycle) {

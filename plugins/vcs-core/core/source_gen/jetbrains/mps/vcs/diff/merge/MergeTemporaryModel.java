@@ -67,6 +67,10 @@ public class MergeTemporaryModel extends EditableSModelBase {
     throw new UnsupportedOperationException();
   }
 
+  protected void doUnload() {
+    throw new UnsupportedOperationException();
+  }
+
   @Override
   public boolean isReadOnly() {
     return myReadOnly;

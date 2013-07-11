@@ -185,12 +185,7 @@
     <scopeInfo nodeId="4246614868164057769" fileName="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="4246614868164057769" fileName="TestModule_jetbrains_mps_samples_secretCompartment_runtime.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_samples_secretCompartment_runtime" />
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4246614868164057772">
-    <nodeInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_testbench#()V" />
-    <scopeInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="12" startPosition="47" endLine="12" endPosition="47" />
-    <scopeInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="4246614868164057772" fileName="TestModule_jetbrains_mps_testbench.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_testbench" />
-  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4246614868164057772" />
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4246614868164094814">
     <nodeInfo nodeId="4246614868164094814" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_unittest#()V" />
     <scopeInfo nodeId="4246614868164094814" fileName="TestModule_jetbrains_mps_baseLanguage_unittest.java" startLine="12" startPosition="59" endLine="12" endPosition="59" />

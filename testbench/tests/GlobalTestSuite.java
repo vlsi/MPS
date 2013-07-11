@@ -14,40 +14,39 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
+import jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-@RunWith(SuiteMpsTest.class)
-@WithIdeaInstance
-@WithMake
-@SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
-    "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
-    "jetbrains.mps.dataFlow.lang.ProgramTest",
-    "jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest",
-    "jetbrains.mps.dataFlow.lang.ReachingDefinitionsTest",
-    "jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest",
-    "jetbrains.mps.diff.DiffTestCase",
-    "jetbrains.mps.ide.blame.command.YouTrackURLTest",
-    "jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest",
-    "jetbrains.mps.ide.messages.MessageViewListModelTest",
-    "jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest",
-    "jetbrains.mps.make.TestMakeOnRealProject",
-    "jetbrains.mps.project.DependenciesTests",
-    "jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase",
-    "jetbrains.mps.make.dependencies.GraphTestCase",
-    "jetbrains.mps.packaged.PackagedLanguageTest",
-    "jetbrains.mps.refactoring.RefactoringTest",
-    "jetbrains.mps.vcs.DiskMemoryConflictsTest",
-//  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest", [temporarily disabled]
-    "jetbrains.mps.vcs.diff.merge.MergeCoreTest",
-    "jetbrains.mps.vfs.VfsTest",
-    "jetbrains.mps.ide.test.blame.command.AffectedVersionTest",
-    "jetbrains.mps.workbench.ProjectCreationTest",
-    "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest",
-    "jetbrains.mps.smodel.language.ExtensionRegistryTest"})
+// todo: !!!should be WatchingSuite!!!
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+    InitializedVariablesAnalysisTest.class,
+    jetbrains.mps.dataFlow.lang.LivenessAnalysisTest.class,
+    jetbrains.mps.dataFlow.lang.ProgramTest.class,
+    jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest.class,
+    jetbrains.mps.dataFlow.lang.ReachingDefinitionsTest.class,
+    jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest.class,
+    jetbrains.mps.diff.DiffTestCase.class,
+    jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
+    jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
+    jetbrains.mps.ide.messages.MessageViewListModelTest.class,
+    jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest.class,
+    jetbrains.mps.make.TestMakeOnRealProject.class,
+    jetbrains.mps.project.DependenciesTests.class,
+    jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
+    jetbrains.mps.make.dependencies.GraphTestCase.class,
+    jetbrains.mps.packaged.PackagedLanguageTest.class,
+    jetbrains.mps.refactoring.RefactoringTest.class,
+    jetbrains.mps.vcs.DiskMemoryConflictsTest.class,
+//  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled]
+    jetbrains.mps.vcs.diff.merge.MergeCoreTest.class,
+    jetbrains.mps.vfs.VfsTest.class,
+    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
+    jetbrains.mps.workbench.ProjectCreationTest.class,
+    jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
+    jetbrains.mps.smodel.language.ExtensionRegistryTest.class
+})
 public class GlobalTestSuite extends TestSuite {
 }

@@ -148,7 +148,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     Language editorLanguage = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.lang.editor", Language.class);
     assertNotNull(editorLanguage);
 
-    String[] usedLanguageStrings = new String[]{baseLanguage.toString(), editorLanguage.toString()};
+    String[] usedLanguageStrings = new String[]{baseLanguage.getModuleReference().toString(), editorLanguage.getModuleReference().toString()};
     Language[] usedLanguages = new Language[]{baseLanguage, editorLanguage};
 
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();

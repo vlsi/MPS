@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.util.PathUtil;
 import java.io.File;
 import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.testbench.junit.runners.MPSOpenProjectRunner;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -83,7 +82,7 @@ public class DefaultTestSuite {
   }
 
   private static String getProjectPath(Class<?> testClass) throws InitializationError {
-    MPSOpenProjectRunner.MPSProject mpsProject = testClass.getAnnotation(MPSOpenProjectRunner.MPSProject.class);
+    DefaultTestSuite.MPSProject mpsProject = testClass.getAnnotation(DefaultTestSuite.MPSProject.class);
     if (mpsProject != null) {
       return mpsProject.value();
     }
@@ -221,4 +220,15 @@ public class DefaultTestSuite {
   }
 
 
+
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(value = {ElementType.TYPE})
+  public @interface MPSProject {
+    /**
+     * 
+     * 
+     * @return path to MPS project
+     */
+    String value();
+  }
 }

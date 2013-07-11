@@ -20,13 +20,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.CheckboxTree;
+import com.intellij.ui.CheckboxTreeBase.CheckPolicy;
+import com.intellij.ui.CheckedTreeNode;
 import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SpeedSearchBase;
 import com.intellij.ui.SpeedSearchComparator;
 import com.intellij.ui.TableUtil;
@@ -111,10 +116,12 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
@@ -123,8 +130,11 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.EventObject;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -916,7 +926,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myTable = new JBTable();
       myTable.setSelectionBackground(myTable.getSelectionBackground().darker());
       myTable.setAutoscrolls(true);
-      myTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+      myTable.getTableHeader().setReorderingAllowed(false);
 
 
       myPrioritiesTableModel = new GenPrioritiesTableModel();
@@ -941,30 +951,56 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               myMappings.put(mapping, myCurrentTree);
             }
 
+            CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
+            rootNode = column == 0 ? (CheckedTreeNode)rootNode.getFirstChild() : rootNode;
+            allChildrenChecked(rootNode);
+            noCheckedChildren(rootNode);
+
+            CheckboxTree checkboxTree = new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(false), rootNode, new CheckPolicy(true, true, false, true));
+            checkboxTree.setRootVisible(true);
+
+            GeneratorPrioritiesTree.expandAllRows(checkboxTree);
+
             table.setRowHeight(
-                row, Math.max(myCurrentTree.getTree().getPreferredSize().height + 10, table.getRowHeight(row))
+                row, Math.max(checkboxTree.getPreferredSize().height + 10, table.getRowHeight(row))
             );
-            TableColumn tableColumn = table.getColumnModel().getColumn(column);
-            tableColumn.setResizable(true);
-            tableColumn.setPreferredWidth(
-                Math.max(table.getColumnModel().getColumn(column).getWidth(), myCurrentTree.getTree().getPreferredSize().width)
-            );
-            tableColumn.setResizable(false);
 
-            myCurrentTree.getTree().setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+            checkboxTree.setBackground(hasFocus ? table.getSelectionBackground().darker() : isSelected ? table.getSelectionBackground() : table.getBackground());
 
-            if (hasFocus && table.isRowSelected(row)) {
-              SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                  table.editCellAt(row, column);
-                }
-              });
-            }
-
-            return myCurrentTree.getTreePanel();
+            return checkboxTree;
           }
           return null;
+        }
+
+        private boolean allChildrenChecked(CheckedTreeNode node) {
+          List<CheckedTreeNode> children = Collections.list(node.children());
+          boolean allChildrenChecked = true;
+          for (int i = 0; i < children.size(); i++) {
+            CheckedTreeNode child = children.get(i);
+            if (!allChildrenChecked(child) || !child.isChecked()) {
+              allChildrenChecked = false;
+            }
+          }
+          if(allChildrenChecked && node.isChecked()) {
+            for (int i = 0; i < children.size(); i++) {
+              CheckedTreeNode child = children.get(i);
+              node.remove(child);
+              child.removeFromParent();
+            }
+          }
+          return allChildrenChecked;
+        }
+
+        private boolean noCheckedChildren(CheckedTreeNode node) {
+          List<CheckedTreeNode> children = Collections.list(node.children());
+          for (int i = 0; i < children.size(); i++) {
+            CheckedTreeNode child = children.get(i);
+            if (noCheckedChildren(child) && !child.isChecked()) {
+              node.remove(child);
+              child.removeFromParent();
+            }
+          }
+          return node.isLeaf();
         }
       });
 
@@ -972,13 +1008,61 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         private GeneratorPrioritiesTree myCurrentTree = null;
 
         @Override
-        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        public boolean isCellEditable(EventObject e) {
+          return e != null && e instanceof MouseEvent && ((MouseEvent) e).getClickCount() >= 2;
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, int row, int column) {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
             myCurrentTree = new GeneratorPrioritiesTree((GeneratorDescriptor) myModuleDescriptor, mapping, column == 0);
 
-            return myCurrentTree.getTreePanel();
+            final DialogWrapper dialogWrapper = new DialogWrapper(ProjectHelper.toIdeaProject(myProject)) {
+              {
+                init();
+              }
+              @Nullable
+              @Override
+              protected JComponent createCenterPanel() {
+                final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myCurrentTree.getTreePanel(), true);
+                final Dimension preferredSize = myCurrentTree.getTreePanel().getPreferredSize();
+                if(preferredSize.getHeight() > 600) preferredSize.setSize(preferredSize.getWidth(), 600);
+                scrollPane.setPreferredSize(preferredSize);
+                return scrollPane;
+              }
+
+              @Nullable
+              @Override
+              public JComponent getPreferredFocusedComponent() {
+                return myCurrentTree.getTreePanel();
+              }
+
+              @Override
+              protected void doOKAction() {
+                table.editingStopped(new ChangeEvent(this));
+                table.revalidate();
+                table.repaint();
+                super.doOKAction();
+              }
+
+              @Override
+              public void doCancelAction() {
+                //myCurrentTree = null;
+                table.editingCanceled(new ChangeEvent(this));
+                super.doCancelAction();
+              }
+            };
+
+            SwingUtilities.invokeLater(new Runnable() {
+              @Override
+              public void run() {
+                dialogWrapper.show();
+              }
+            });
+
+            return myTable.getCellRenderer(row,column).getTableCellRendererComponent(table, value, isSelected, true, row, column);
           }
           return null;
         }
@@ -993,6 +1077,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       TableColumn column = myTable.getColumnModel().getColumn(1);
       column.setMaxWidth(50);
+      column.setMinWidth(column.getMaxWidth());
       column.setResizable(false);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(myTable);

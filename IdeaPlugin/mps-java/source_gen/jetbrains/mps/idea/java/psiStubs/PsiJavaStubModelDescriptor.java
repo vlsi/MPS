@@ -14,6 +14,8 @@ import java.util.HashMap;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import com.intellij.openapi.progress.NonCancelableSection;
 import com.intellij.openapi.progress.ProgressIndicatorProvider;
 import com.intellij.psi.PsiJavaFile;
@@ -26,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
@@ -99,6 +102,16 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
 
 
 
+  public void unload() {
+    ModelAccess.assertLegalWrite();
+    SModel oldModel = myModel;
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+      myModel = null;
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+    }
+  }
+
   private void loadContents(SModel into) {
     // todo think why it's needed (otherwise we get ProcessCancelException) 
     // in idea ce it's used only twice: and one case is switch from stubs to AST 
@@ -152,10 +165,11 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
       return;
     }
 
+    SModelDescriptor oldModelDescriptor = myModel.getModelDescriptor();
     myModel.setModelDescriptor(null);
-    SModel myModelCopy = CopyUtil.copyModel(myModel);
-    SModel myOldModel = myModel;
-    myModel = myModelCopy;
+    SModel modelCopy = CopyUtil.copyModel(myModel);
+    SModel oldModel = myModel;
+    myModel = modelCopy;
 
     for (PsiJavaFile file : event.removed()) {
       myMps2PsiMapper.clearFile(file.getName());
@@ -208,7 +222,7 @@ public class PsiJavaStubModelDescriptor extends SModelBase implements PsiJavaStu
     myModel.setModelDescriptor(this);
 
     MPSModuleRepository.getInstance().invalidateCaches();
-    notifyModelReplaced(myOldModel.getModelDescriptor());
+    notifyModelReplaced(oldModelDescriptor);
 
     // FIXME must not be needed 
     // <node> 

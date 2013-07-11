@@ -14,17 +14,12 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.MpsTest.PreloadAllModules;
-import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
+import jetbrains.mps.PersistenceTest;
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-@RunWith(SuiteMpsTest.class)
-@WithIdeaInstance
-@PreloadAllModules
-@WithMake
-@SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
+// todo: !!!should be WatchingSuite!!!
+@RunWith(Suite.class)
+@Suite.SuiteClasses({PersistenceTest.class})
 public class TimeConsumingTestSuite {
 }
