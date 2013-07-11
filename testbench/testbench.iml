@@ -68,7 +68,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="mps-ant" />
+    <orderEntry type="module" module-name="mps-ant" exported="" />
     <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="make-facets" scope="RUNTIME" />
     <orderEntry type="module" module-name="environment" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ew9lvvp77jta7rexo7pjawuc85r2ciq">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-bj3r7xrkx1tokdu56absbnx3f3f389" />
+<dependencies version="2" modelHash="7xvckw17jw57tu7g1vconzrvtpahvwb">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="9exjxpbv2jwuhwcvr9pdjx7bdjify43" />
   <source id="5294483648489405947" name="TestMain" hash="2vce118ook97mjlr3a7n3d7vr1igje3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -9,7 +9,7 @@
   <source id="5294483648489409013" name="MPSLaunch" hash="3con8wpie69n3atzfiyob3e8x4cxh2m">
     <file name="MPSLaunch.java" />
   </source>
-  <source id="694564436393193873" name="WorkbenchMpsTest" hash="-4m2zuvlh0xyrv4b12p3q6vdipszd2gw">
+  <source id="694564436393193873" name="WorkbenchMpsTest" hash="9oza5j78b92n4l0bsnz8rt9auppltie">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="WorkbenchMpsTest.java" />
   </source>
