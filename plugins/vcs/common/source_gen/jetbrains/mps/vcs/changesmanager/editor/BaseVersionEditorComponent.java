@@ -53,7 +53,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
         SNode baseRooot = myBaseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
         editNode(baseRooot);
 
-        setBackground(CARET_ROW_COLOR);
+        setBackground(EditorComponent.CARET_ROW_COLOR);
 
         Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
           public Iterable<ChangeEditorMessage> translate(ModelChange ch) {

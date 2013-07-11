@@ -17,8 +17,6 @@ import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
@@ -29,11 +27,14 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
@@ -119,19 +120,15 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public EditorCell getCell(final EditorComponent editor) {
-    final Wrappers._T<EditorCell> cell = new Wrappers._T<EditorCell>(super.getCell(editor));
-    if (cell.value != null && cell.value.isBig() && !(isDirectCell(cell.value))) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SNode node = getNode();
-          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-            cell.value = CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
-          }
-        }
-      });
+  public EditorCell getCell(EditorComponent editor) {
+    EditorCell cell = getCell(editor);
+    if (cell != null && cell.isBig() && !(isDirectCell(cell))) {
+      SNode node = getNode();
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+        cell = CellFinder.getCellForProperty(editor, node, NAME_PROPERTY);
+      }
     }
-    return cell.value;
+    return cell;
   }
 
   @Override
@@ -329,23 +326,22 @@ __switch__:
       }
     } else {
       DeletedNodeMessageTarget cmt = ((DeletedNodeMessageTarget) myMessageTarget);
-      final Wrappers._T<EditorCell> cell = new Wrappers._T<EditorCell>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          cell.value = getCell(editor);
+      EditorCell cell = ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+        public EditorCell compute() {
+          return getCell(editor);
         }
       });
-      if (cell.value == null) {
+      if (cell == null) {
         return new Bounds(-1, -1);
       }
-      if (cmt.getRole().equals(cell.value.getRole())) {
-        if (hasChildrenWithDifferentNode(cell.value)) {
-          return getBoundsForChild((EditorCell_Collection) cell.value, cmt.getNextChildIndex());
+      if (cmt.getRole().equals(cell.getRole())) {
+        if (hasChildrenWithDifferentNode(cell)) {
+          return getBoundsForChild((EditorCell_Collection) cell, cmt.getNextChildIndex());
         } else {
           return getBoundsSuper(editor);
         }
       } else {
-        int y = cell.value.getY();
+        int y = cell.getY();
         return new Bounds(y, y + 1);
       }
     }
