@@ -132,7 +132,7 @@ public class EditorCellModel_Behavior {
 
   public static int call_getFontSize_1221216397365(SNode thisNode) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem");
-    if ((firstItem == null)) {
+    if ((firstItem == null) || !(firstItem.hasProperty("value"))) {
       return EditorSettings.getInstance().getDefaultEditorFont().getSize();
     }
     return SPropertyOperations.getInteger(firstItem, "value");
