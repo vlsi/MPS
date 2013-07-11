@@ -112,6 +112,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     FileStatusManager.getInstance(myRegistry.getProject()).removeFileStatusListener(myFileStatusListener);
     myTree.removeTreeNodeListener(myTreeNodeListener);
     myMap.removeListener(myFeatureListener);
+    myQueue.dispose();
   }
 
   private void registerNodeRecursively(@NotNull MPSTreeNode node) {
