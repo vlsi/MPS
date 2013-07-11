@@ -26,7 +26,11 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
@@ -44,7 +48,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.Icon;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.icons.IconManager;
@@ -106,7 +109,8 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
       SModel deployScriptModel = deployScript.value._0();
 
       MakeSession session = new MakeSession(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), null, true);
-      if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      boolean generationSuccessful = IMakeService.INSTANCE.get().openNewSession(session);
+      if (generationSuccessful) {
         Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), Sequence.<SModel>singleton(deployScriptModel)).resources(false));
         IResult result = null;
         try {
@@ -115,15 +119,26 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
         } catch (InterruptedException ignore) {
         } catch (ExecutionException ignore) {
         }
-        if (result == null || !(result.isSucessful())) {
-          FileUtil.delete(deployScriptFile.getParentFile());
-          return false;
+        generationSuccessful &= (result != null) && result.isSucessful();
+      }
+
+      final SModule deployScriptModule = deployScriptModel.getModule();
+      FileUtil.delete(new File(((AbstractModule) deployScriptModule).getOutputPath().getPath().replace("/", File.separator)));
+      FileUtil.delete(new File(FileGenerationUtil.getCachesDir(((AbstractModule) deployScriptModule).getOutputPath()).getPath().replace("/", File.separator)));
+
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          MPSModuleRepository.getInstance().unregisterModule(deployScriptModule, ProjectHelper.toMPSProject(projectFinal));
         }
+      });
+
+      if (!(generationSuccessful)) {
+        FileUtil.delete(deployScriptFile.getParentFile());
+        return false;
       }
 
       final ConsoleView console = ConsoleCreator.createConsoleView(project, false);
       console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
-
 
       final Wrappers._T<ProcessHandler> process = new Wrappers._T<ProcessHandler>();
       try {
@@ -172,6 +187,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
 
       // oh, wow 
       FileUtil.copyDir(new File(deployScriptFile.getParentFile(), "build" + File.separator + "artifacts" + File.separator + "deploy"), myDeployLocation);
+      // 4th time 
       FileUtil.delete(deployScriptFile.getParentFile());
 
       return true;

@@ -116,7 +116,7 @@ public class DeployScriptCreator {
     private final File myBaseDir;
 
     private TempModuleWithDescriptorFile() {
-      super(Collections.<ModelRootDescriptor>emptySet(), true, true);
+      super(Collections.<ModelRootDescriptor>emptySet(), true, false);
       myBaseDir = FileUtil.createTmpDir();
       myDescriptorFile = new File(myBaseDir, "module.msd");
     }
