@@ -27,16 +27,23 @@ import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex;
 import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
+import jetbrains.mps.idea.java.util.ClassUtil;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -94,7 +101,9 @@ public class MPSJavaClassFinder extends PsiElementFinder {
     });
   }
 
-  /** read access required */
+  /**
+   * read access required
+   */
   private void findMPSClasses(PsiPackage psiPackage, Consumer<SNode> consumer, GlobalSearchScope scope) {
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     String key = psiPackage.getQualifiedName();
@@ -102,11 +111,34 @@ public class MPSJavaClassFinder extends PsiElementFinder {
     collectNodes(consumer, values);
   }
 
-  /** read access required */
+  /**
+   * read access required
+   */
   private void findMPSClasses(String qname, Consumer<SNode> consumer, GlobalSearchScope scope) {
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSFQNameJavaClassIndex.ID, qname, scope);
     collectNodes(consumer, values);
+
+    // fallback for values not yet in index
+    SearchScope mpsSearchScope = new IdeaSearchScope(scope);
+    for (SModel model : mpsSearchScope.getModels()) {
+      boolean changed = model instanceof EditableSModel && ((EditableSModel) model).isChanged();
+      if (!changed) continue;
+
+      String packageName = model.getModelName();
+      if (!qname.startsWith(packageName + ".")) continue;
+
+      FastNodeFinder fastFinder = ((SModelInternal) model).getFastNodeFinder();
+      List<SNode> classes = fastFinder.getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
+
+      if (classes.isEmpty()) continue;
+
+      for (SNode claz : classes) {
+        if (qname.equals(ClassUtil.getClassFQName(claz))) {
+          consumer.consume(claz);
+        }
+      }
+    }
   }
 
   private void collectNodes(Consumer<SNode> consumer, List<Collection<SNodeDescriptor>> values) {
