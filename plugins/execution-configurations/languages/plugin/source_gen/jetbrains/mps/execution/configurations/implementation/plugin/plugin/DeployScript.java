@@ -12,13 +12,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.io.File;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.MakeSession;
@@ -47,6 +44,7 @@ public class DeployScript {
   private final Project myProject;
   private final Set<SModel> myModelsToMake = SetSequence.fromSet(new HashSet<SModel>());
   private final String myDeployScriptPath;
+  private final String myArtifactsPath;
 
 
   public DeployScript(Project project, List<SNodeReference> plugins) {
@@ -56,18 +54,15 @@ public class DeployScript {
 
     SModel model = TemporaryModels.getInstance().create(false, TempModuleOptions.forExistingModule(myModule));
     SetSequence.fromSet(myModelsToMake).addElement(model);
-    ListSequence.fromList(plugins).visitAll(new IVisitor<SNodeReference>() {
-      public void visit(SNodeReference it) {
-        SetSequence.fromSet(myModelsToMake).addElement(SNodeOperations.getModelFromNodeReference(((SNodePointer) it)));
-      }
-    });
+    // tmp disable, need to check generation status and generate dependencies 
+    // <node> 
 
     SNode deployScriptNode = DeployScriptCreator.createDeployScript(myProject, plugins, myModule.getBaseDirectory());
     model.addRootNode(deployScriptNode);
     myDeployScriptPath = new File(myModule.getBaseDirectory(), BehaviorReflection.invokeNonVirtual(String.class, deployScriptNode, "jetbrains.mps.build.structure.BuildProject", "call_getOutputFileName_4915877860351551360", new Object[]{})).getAbsolutePath();
+    myArtifactsPath = new File(new File(new File(myModule.getBaseDirectory(), "build"), "artifacts"), SPropertyOperations.getString(deployScriptNode, "name")).getAbsolutePath();
 
     SModelOperations.validateLanguagesAndImports(model, true, true);
-
   }
 
 
@@ -97,8 +92,8 @@ public class DeployScript {
 
 
 
-  public File getArtifactsDir() {
-    return new File(new File(myDeployScriptPath).getParentFile(), "build" + File.separator + "artifacts" + File.separator + "deploy");
+  public String getArtifactsPath() {
+    return myArtifactsPath;
   }
 
 
@@ -124,6 +119,7 @@ public class DeployScript {
     private TemporalModuleWithDescriptorFile() {
       super(Collections.<ModelRootDescriptor>emptySet(), true, false);
       myBaseDir = FileUtil.createTmpDir();
+      // just anything 
       myDescriptorFile = new File(myBaseDir, "module.msd");
     }
 

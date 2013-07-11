@@ -146,7 +146,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
         return false;
       }
 
-      FileUtil.copyDir(script.value.getArtifactsDir(), myDeployLocation);
+      FileUtil.copyDir(new File(script.value.getArtifactsPath()), myDeployLocation);
       script.value.dispose();
 
       return true;
