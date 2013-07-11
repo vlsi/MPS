@@ -4,21 +4,23 @@ package jetbrains.mps.console.blCommand.runtime.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import java.util.List;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.FlattenIterable;
 import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -28,14 +30,43 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
-    List<Iterable<SNode>> res = new ArrayList<Iterable<SNode>>();
-    for (SModel model : Sequence.fromIterable(scope.getModels())) {
-      if (model.isReadOnly()) {
-        continue;
+    return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) Sequence.fromIterable(allModels(scope)).select(new ISelector<SModel, Iterable<SNode>>() {
+      public Iterable<SNode> select(SModel it) {
+        return SNodeUtil.getDescendants(it);
       }
-      res.add(SNodeUtil.getDescendants(model));
-    }
-    return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) res));
+    }).toListSequence()));
+  }
+
+
+
+  public static Iterable<SReference> allReferences(SearchScope scope) {
+    return Sequence.fromIterable(allNodes(scope)).translate(new ITranslator2<SNode, SReference>() {
+      public Iterable<SReference> translate(SNode it) {
+        return SNodeOperations.getReferences(it);
+      }
+    });
+  }
+
+
+
+  public static Iterable<SModel> allModels(SearchScope scope) {
+    Iterable<SModel> allModels = scope.getModels();
+    return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(it.isReadOnly());
+      }
+    });
+  }
+
+
+
+  public static Iterable<SModule> allModules(SearchScope scope) {
+    Iterable<SModule> allModules = scope.getModules();
+    return Sequence.fromIterable(allModules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return !(it.isReadOnly());
+      }
+    });
   }
 
 
@@ -105,4 +136,6 @@ public class CommandUtil {
     SAbstractConcept c = SConceptRepository.getInstance().getConcept(cName);
     return FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(c), false, new EmptyProgressMonitor());
   }
+
+
 }
