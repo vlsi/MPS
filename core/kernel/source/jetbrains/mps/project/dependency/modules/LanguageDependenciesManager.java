@@ -24,18 +24,10 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class LanguageDependenciesManager {
-//  private MyModuleWatcher myModuleWatcher;
-
-//  private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
-//  private volatile Set<SModuleReference> myCachedDeps;
-//  a one-time synchronization helper for the cache
-//  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
-
   private final Language myLanguage;
 
   public LanguageDependenciesManager(Language language) {
     myLanguage = language;
-//    myModuleWatcher = new MyModuleWatcher();
   }
 
   public void collectAllExtendedLanguages(Set<Language> result) {
@@ -56,102 +48,21 @@ public class LanguageDependenciesManager {
       result.add(lang.getModuleReference());
     }
     return result;
-
-//    if (myInvalidatedFlag.compareAndSet(true, false)) {
-//      // lazy initialization
-//      myModuleWatcher.clear();
-//
-//      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-//      THashSet<Language> langs = new THashSet<Language>();
-//      collectAllExtendedLanguages(langs);
-//
-//      for (Language lang: langs) {
-//        myModuleWatcher.watchLanguage(lang);
-//        result.add(lang.getModuleReference());
-//      }
-//      this.myCachedDeps = Collections.unmodifiableSet(result);
-//      myCacheInitGuard.countDown();
-//    }
-//
-//    while(true) {
-//      try {
-//        myCacheInitGuard.await();
-//        break;
-//      } catch (InterruptedException e) {}
-//    }
-//    return myCachedDeps;
   }
 
-//  public void dispose() {
-//    if (myModuleWatcher != null) {
-//      myModuleWatcher.dispose();
-//      this.myModuleWatcher = null;
-//    }
-//  }
+  public static Set<Language> getAllExtendedLanguages(Language language) {
+    // todo: LinkedHashSet?
+    THashSet<Language> langs = new THashSet<Language>();
+    new LanguageDependenciesManager(language).collectAllExtendedLanguages(langs);
+    return langs;
+  }
 
-//  private void invalidate() {
-//    myInvalidatedFlag.set(true);
-//  }
-
-//  private class MyModuleWatcher extends ModuleRepositoryAdapter {
-//
-//    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
-//
-//    private MyModuleWatcher() {
-//      registerSelf();
-//    }
-//
-//    @Override
-//    public void moduleRemoved(SModule module) {
-//      invalidateIfWatching(module);
-//    }
-//
-//    @Override
-//    public void moduleInitialized(SModule module) {
-//      invalidateIfWatching(module);
-//    }
-//
-//    @Override
-//    public void moduleChanged(SModule module) {
-//      invalidateIfWatching(module);
-//    }
-//
-//    @Override
-//    public void repositoryChanged() {
-//      invalidate();
-//      unregisterSelf();
-//    }
-//
-//    private void watchDevKit (DevKit devKit) {
-//      myWatchedModules.add(devKit);
-//    }
-//
-//    private void watchLanguage (Language language) {
-//      myWatchedModules.add(language);
-//    }
-//
-//    private void invalidateIfWatching (SModule module) {
-//      if (myWatchedModules.contains(module)) {
-//        invalidate();
-//        unregisterSelf();
-//      }
-//    }
-//
-//    private void clear () {
-//      myWatchedModules.clear();
-//    }
-//
-//    private void dispose() {
-//      clear();
-//      unregisterSelf();
-//    }
-//
-//    private void registerSelf() {
-//      MPSModuleRepository.getInstance().addModuleRepositoryListener(this);
-//    }
-//
-//    private void unregisterSelf() {
-//      MPSModuleRepository.getInstance().removeModuleRepositoryListener(this);
-//    }
-//  }
+  public static Set<SModuleReference> getAllExtendedLanguageReferences(Language language) {
+    // todo: LinkedHashSet?
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+    for (Language lang : getAllExtendedLanguages(language)) {
+      result.add(lang.getModuleReference());
+    }
+    return result;
+  }
 }
