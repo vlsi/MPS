@@ -951,10 +951,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               myMappings.put(mapping, myCurrentTree);
             }
 
-            final CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
+            CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
+            rootNode = column == 0 ? (CheckedTreeNode)rootNode.getFirstChild() : rootNode;
+            allChildrenChecked(rootNode);
             noCheckedChildren(rootNode);
 
-            CheckboxTree checkboxTree = new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(), rootNode, new CheckPolicy(true, true, false, true));
+            CheckboxTree checkboxTree = new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(false), rootNode, new CheckPolicy(true, true, false, true));
             checkboxTree.setRootVisible(true);
 
             GeneratorPrioritiesTree.expandAllRows(checkboxTree);
@@ -968,6 +970,25 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             return checkboxTree;
           }
           return null;
+        }
+
+        private boolean allChildrenChecked(CheckedTreeNode node) {
+          List<CheckedTreeNode> children = Collections.list(node.children());
+          boolean allChildrenChecked = true;
+          for (int i = 0; i < children.size(); i++) {
+            CheckedTreeNode child = children.get(i);
+            if (!allChildrenChecked(child) || !child.isChecked()) {
+              allChildrenChecked = false;
+            }
+          }
+          if(allChildrenChecked && node.isChecked()) {
+            for (int i = 0; i < children.size(); i++) {
+              CheckedTreeNode child = children.get(i);
+              node.remove(child);
+              child.removeFromParent();
+            }
+          }
+          return allChildrenChecked;
         }
 
         private boolean noCheckedChildren(CheckedTreeNode node) {
