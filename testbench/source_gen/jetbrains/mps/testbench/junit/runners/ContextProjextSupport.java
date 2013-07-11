@@ -5,7 +5,9 @@ package jetbrains.mps.testbench.junit.runners;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
 import java.io.File;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
+import java.io.IOException;
 import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.ModelAccess;
@@ -70,8 +72,19 @@ public class ContextProjextSupport {
     if (System.getProperty(PROJECT_PATH_PROPERTY) == null) {
       return null;
     }
-    // todo: check currently opened projects 
-    return firstTimeOpened(ActiveEnvironment.get().openProject(new File(System.getProperty(PROJECT_PATH_PROPERTY))));
+
+    File projectToOpen = new File(System.getProperty(PROJECT_PATH_PROPERTY));
+    try {
+      for (Project project : Sequence.fromIterable(ActiveEnvironment.get().openedProjects())) {
+        if (project.getProjectFile() != null && project.getProjectFile().getCanonicalPath().equals(projectToOpen.getCanonicalPath())) {
+          return project;
+        }
+      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
+    return firstTimeOpened(ActiveEnvironment.get().openProject(projectToOpen));
   }
 
 

@@ -18,6 +18,8 @@ interface Environment {
   public Project openProject(File projectFile);
   public Project createDummyProject();
 
+  public Iterable<Project> openedProjects();
+
   public void disposeProject(Project project);
   public void disposeEnvironment();
 }

@@ -26,6 +26,8 @@ import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.File;
 import jetbrains.mps.tool.builder.FileMPSProject;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class MpsEnvironment implements Environment {
   private final Set<Project> openedProjects = SetSequence.fromSet(new HashSet<Project>());
@@ -98,12 +100,23 @@ public class MpsEnvironment implements Environment {
   public Project openProject(File projectFile) {
     FileMPSProject project = new FileMPSProject(projectFile);
     project.init(new FileMPSProject.ProjectDescriptor(projectFile));
+    SetSequence.fromSet(openedProjects).addElement(project);
     return project;
   }
 
   public Project createDummyProject() {
-    return EnvironmentUtils.createDummyFileProject();
+    Project project = EnvironmentUtils.createDummyFileProject();
+    SetSequence.fromSet(openedProjects).addElement(project);
+    return project;
   }
+
+
+
+  public Iterable<Project> openedProjects() {
+    return ListSequence.fromListWithValues(new ArrayList<Project>(), openedProjects);
+  }
+
+
 
   public void disposeProject(final Project project) {
     project.dispose();
