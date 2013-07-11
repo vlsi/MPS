@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.MpsTest.SuiteClassSymbols;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithIdeaInstance;
-import jetbrains.mps.testbench.junit.runners.MpsTest.WithMake;
 import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
+import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.SuiteClassSymbols;
+import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.WithIdeaInstance;
+import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.WithMake;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
 
