@@ -1,8 +1,0 @@
-<components>
-  <actions>
-    <action id="jetbrains.mps.console.editorActions.actions.ExecuteActionAttachedToCurrentNode_Action" class="jetbrains.mps.console.editorActions.actions.ExecuteActionAttachedToCurrentNode_Action"></action>
-    <group id="jetbrains.mps.console.editorActions.actions.ConsoleEditorActions_ActionGroup">
-      <reference ref="jetbrains.mps.console.editorActions.actions.ExecuteActionAttachedToCurrentNode_Action" />
-    </group>
-  </actions>
-</components>

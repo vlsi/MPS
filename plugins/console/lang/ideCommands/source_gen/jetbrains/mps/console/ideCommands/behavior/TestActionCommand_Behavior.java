@@ -17,14 +17,9 @@ public class TestActionCommand_Behavior {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         callback.run();
-
-        console.addAction(new Runnable() {
-          public void run() {
-            new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                JOptionPane.showMessageDialog(null, "Test");
-              }
-            }.invoke();
+        console.addAction(new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+            JOptionPane.showMessageDialog(null, "Test");
           }
         });
       }

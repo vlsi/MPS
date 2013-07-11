@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:8771cffb-ce70-4df3-be97-623986f1b2a8(jetbrains.mps.console.editorActions.actions)/3257040239264480619">
+  <root nodeRef="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)/3257040239264480619">
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteActionAttachedToCurrentNode_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteActionAttachedToCurrentNode_Action.java" startLine="22" startPosition="54" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteActionAttachedToCurrentNode_Action.java" startLine="23" startPosition="47" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -77,10 +77,52 @@
       <varInfo nodeId="3257040239264480619" varName="_params" />
       <varInfo nodeId="3257040239264480619" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3257040239264480619" fileName="ExecuteActionAttachedToCurrentNode_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.console.editorActions.actions.ExecuteActionAttachedToCurrentNode_Action" />
+    <unitInfo nodeId="3257040239264480619" fileName="ExecuteActionAttachedToCurrentNode_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" />
   </root>
-  <root nodeRef="r:8771cffb-ce70-4df3-be97-623986f1b2a8(jetbrains.mps.console.editorActions.actions)/3257040239264853769">
-    <unitInfo nodeId="3257040239264853769" fileName="ConsoleActions.xml" startLine="1" startPosition="0" endLine="8" endPosition="13" unitName="jetbrains.mps.console.editorActions.actions.ConsoleActions" />
+  <root nodeRef="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)/3257040239264853769">
+    <unitInfo nodeId="3257040239264853769" fileName="ConsoleActions.xml" startLine="1" startPosition="0" endLine="9" endPosition="13" unitName="jetbrains.mps.console.actions.ConsoleActions" />
+  </root>
+  <root nodeRef="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)/3257040239274145603">
+    <nodeInfo nodeId="3257040239274145605" fileName="ClosureHoldingNodeUtil.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myInstance" />
+    <nodeInfo nodeId="3257040239274145609" fileName="ClosureHoldingNodeUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allActions" />
+    <nodeInfo nodeId="3257040239274145616" fileName="ClosureHoldingNodeUtil.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="keyGenerator" />
+    <nodeInfo nodeId="3257040239274145623" fileName="ClosureHoldingNodeUtil.java" startLine="22" startPosition="36" endLine="23" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239274145631" fileName="ClosureHoldingNodeUtil.java" startLine="23" startPosition="89" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239274145642" fileName="ClosureHoldingNodeUtil.java" startLine="30" startPosition="29" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239274145650" fileName="ClosureHoldingNodeUtil.java" startLine="32" startPosition="5" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3257040239274145657" fileName="ClosureHoldingNodeUtil.java" startLine="38" startPosition="72" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3257040239274145659" fileName="ClosureHoldingNodeUtil.java" startLine="39" startPosition="40" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3257040239274145665" fileName="ClosureHoldingNodeUtil.java" startLine="40" startPosition="44" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239274145672" fileName="ClosureHoldingNodeUtil.java" startLine="41" startPosition="58" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239274145688" fileName="ClosureHoldingNodeUtil.java" startLine="47" startPosition="60" endLine="48" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3257040239274145702" fileName="ClosureHoldingNodeUtil.java" startLine="53" startPosition="42" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239274145640" fileName="ClosureHoldingNodeUtil.java" startLine="29" startPosition="54" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3257040239274145686" fileName="ClosureHoldingNodeUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClosure#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+    <nodeInfo nodeId="3257040239274145700" fileName="ClosureHoldingNodeUtil.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeClosure#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3257040239274145620" fileName="ClosureHoldingNodeUtil.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClosureHoldingNodeUtil#()V" />
+    <nodeInfo nodeId="3257040239274145638" fileName="ClosureHoldingNodeUtil.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/console/actions/ClosureHoldingNodeUtil;" />
+    <nodeInfo nodeId="3257040239274145655" fileName="ClosureHoldingNodeUtil.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="register#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <scopeInfo nodeId="3257040239274145641" fileName="ClosureHoldingNodeUtil.java" startLine="30" startPosition="29" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="3257040239274145687" fileName="ClosureHoldingNodeUtil.java" startLine="47" startPosition="60" endLine="48" endPosition="98" />
+    <scopeInfo nodeId="3257040239274145701" fileName="ClosureHoldingNodeUtil.java" startLine="53" startPosition="42" endLine="54" endPosition="30" />
+    <scopeInfo nodeId="3257040239274145622" fileName="ClosureHoldingNodeUtil.java" startLine="22" startPosition="36" endLine="24" endPosition="39" />
+    <scopeInfo nodeId="3257040239274145686" fileName="ClosureHoldingNodeUtil.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="3257040239274145697" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3257040239274145700" fileName="ClosureHoldingNodeUtil.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="3257040239274145709" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3257040239274145620" fileName="ClosureHoldingNodeUtil.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="3257040239274145639" fileName="ClosureHoldingNodeUtil.java" startLine="29" startPosition="54" endLine="33" endPosition="22" />
+    <scopeInfo nodeId="3257040239274145656" fileName="ClosureHoldingNodeUtil.java" startLine="38" startPosition="72" endLine="42" endPosition="53">
+      <varInfo nodeId="3257040239274145660" varName="id" />
+    </scopeInfo>
+    <scopeInfo nodeId="3257040239274145638" fileName="ClosureHoldingNodeUtil.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3257040239274145655" fileName="ClosureHoldingNodeUtil.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3257040239274145682" varName="closure" />
+      <varInfo nodeId="3257040239274145680" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="3257040239274145603" fileName="ClosureHoldingNodeUtil.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
   </root>
 </debugInfo>
 

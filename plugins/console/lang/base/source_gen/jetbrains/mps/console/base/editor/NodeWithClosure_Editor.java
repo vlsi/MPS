@@ -13,14 +13,14 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
-public class ActionsResultPart_Editor extends DefaultNodeEditor {
+public class NodeWithClosure_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_qdro3z_a(editorContext, node);
+    return this.createConstant_e9km58_a(editorContext, node);
   }
 
-  private EditorCell createConstant_qdro3z_a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_e9km58_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action");
-    editorCell.setCellId("Constant_qdro3z_a");
+    editorCell.setCellId("Constant_e9km58_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));

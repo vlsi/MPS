@@ -16,27 +16,27 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ActionHolder").interface_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ActionsResultPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.CommandResultPart").properties("closureId").create();
-      case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Command").interface_().create();
-      case 3:
+      case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.HistoryItem").children(new String[]{"command"}, new boolean[]{false}).create();
-      case 4:
+      case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResult").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.Result", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"line"}, new boolean[]{true}).create();
-      case 5:
+      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResultLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"part"}, new boolean[]{true}).create();
-      case 6:
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.CommandResultPart").interface_().parents("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").create();
-      case 7:
+      case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.GeneratedCommand").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.Command").abstract_().create();
-      case 8:
+      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.History").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"item"}, new boolean[]{true}).create();
-      case 9:
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.HistoryItem").interface_().create();
-      case 10:
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.InterpretedCommand").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.Command").abstract_().create();
-      case 11:
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeResultPart").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.CommandResultPart").references("target").create();
+      case 11:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeWithClosure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.CommandResultPart", "jetbrains.mps.console.base.structure.ActionHolder").properties("closureId").create();
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.Result").interface_().parents("jetbrains.mps.console.base.structure.HistoryItem").create();
       case 13:
@@ -46,5 +46,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.base.structure.ActionHolder", "jetbrains.mps.console.base.structure.ActionsResultPart", "jetbrains.mps.console.base.structure.Command", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.CommandResultPart", "jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.Result", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.base.structure.ActionHolder", "jetbrains.mps.console.base.structure.Command", "jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.CommandResultPart", "jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.HistoryItem", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.Result", "jetbrains.mps.console.base.structure.TextResultPart"};
 }

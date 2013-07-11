@@ -105,11 +105,17 @@
       <zipfileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
     <mkdir dir="${build.layout}/mps-console" />
-    <mkdir dir="${build.layout}/mps-console/META-INF" />
-    <copy todir="${build.layout}/mps-console/META-INF">
-      <fileset file="${mps_home}/plugins/console/META-INF/plugin.xml" />
-    </copy>
     <mkdir dir="${build.layout}/mps-console/lib" />
+    <mkdir dir="${build.tmp}/default/mps-console.jar" />
+    <mkdir dir="${build.tmp}/default/mps-console.jar/META-INF" />
+    <copy todir="${build.tmp}/default/mps-console.jar/META-INF">
+      <fileset file="${mps_home}/plugins/console/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-models">
       <fileset dir="${mps_home}/plugins/console/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
@@ -118,6 +124,7 @@
       <zipfileset file="${mps_home}/plugins/console/jetbrains.mps.console.msd" prefix="modules/jetbrains.mps.console" />
       <zipfileset dir="${mps_home}/plugins/console" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.console" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-console-models" prefix="modules/jetbrains.mps.console/models" />
+      <fileset dir="${build.tmp}/default/mps-console.jar" />
     </jar>
     <mkdir dir="${build.layout}/mps-console/lang" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.console.base.jar" />

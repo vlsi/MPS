@@ -48,6 +48,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -329,9 +331,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "target", ((SNode) node), false);
             }
 
-            public void addAction(Runnable action) {
+            public void addAction(_FunctionTypes._void_P0_E0 action) {
               checkResultAvailable();
-              // todo 
+              SNode result = _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2yb();
+              ClosureHoldingNodeUtil.getInstance().register(result, action);
+              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(result);
             }
 
             public void addNewLine() {
@@ -489,5 +493,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2yb() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosure", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }
