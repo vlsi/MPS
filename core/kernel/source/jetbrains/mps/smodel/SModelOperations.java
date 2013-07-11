@@ -127,7 +127,7 @@ public class SModelOperations {
 
       if (language != null) {
         languages.add(language);
-        new LanguageDependenciesManager(language).collectAllExtendedLanguages(languages);
+        languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(language));
       }
     }
 
@@ -136,7 +136,7 @@ public class SModelOperations {
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
           if (languages.add(l)) {
-            new LanguageDependenciesManager(l).collectAllExtendedLanguages(languages);
+            languages.addAll(LanguageDependenciesManager.getAllExtendedLanguages(l));
           }
         }
       }

@@ -123,12 +123,7 @@ public abstract class KeymapHandler<E> {
         Language l = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
         if (l == null) continue;
 
-        Set<Language> ext = new LinkedHashSet<Language>();
-        new LanguageDependenciesManager(l).collectAllExtendedLanguages(ext);
-
-        for (Language le : ext) {
-          importedAndExtendedLanguages.add(le.getModuleReference());
-        }
+        importedAndExtendedLanguages.addAll(LanguageDependenciesManager.getAllExtendedLanguageReferences(l));
       }
 
       for (SModuleReference ref : importedAndExtendedLanguages) {

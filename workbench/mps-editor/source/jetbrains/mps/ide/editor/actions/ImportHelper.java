@@ -170,10 +170,9 @@ public class ImportHelper {
         public void run() {
           Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
 
-          HashSet<Language> langs = new HashSet<Language>();
-          new LanguageDependenciesManager(lang).collectAllExtendedLanguages(langs);
-
+          HashSet<Language> langs = new HashSet<Language>(LanguageDependenciesManager.getAllExtendedLanguages(lang));
           langs.remove(lang);
+          // todo: ! ?
           //this is added in language implicitly, so we don't show this import
           langs.remove(BootstrapLanguages.coreLanguage());
 

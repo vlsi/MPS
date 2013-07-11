@@ -96,7 +96,7 @@ public class LanguageScopeFactory {
         continue;
       }
       updateNamespaceBit(nsBitSet, lng.getModuleDescriptor().getNamespace());
-      for (SModuleReference mref : new LanguageDependenciesManager(lng).getAllExtendedLanguages()) {
+      for (SModuleReference mref : LanguageDependenciesManager.getAllExtendedLanguageReferences(lng)) {
         Language ext = ModuleRepositoryFacade.getInstance().getModule(mref, Language.class);
         updateNamespaceBit(nsBitSet, ext.getModuleDescriptor().getNamespace());
       }

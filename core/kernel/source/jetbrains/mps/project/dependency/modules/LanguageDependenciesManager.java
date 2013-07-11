@@ -30,6 +30,7 @@ public class LanguageDependenciesManager {
     myLanguage = language;
   }
 
+  @Deprecated
   public void collectAllExtendedLanguages(Set<Language> result) {
     if (result.contains(myLanguage)) return;
 
@@ -40,6 +41,7 @@ public class LanguageDependenciesManager {
     }
   }
 
+  @Deprecated
   public Iterable<SModuleReference> getAllExtendedLanguages() {
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     THashSet<Language> langs = new THashSet<Language>();
@@ -52,13 +54,14 @@ public class LanguageDependenciesManager {
 
   public static Set<Language> getAllExtendedLanguages(Language language) {
     // todo: LinkedHashSet?
+    // todo: merge with GlobalModuleDependenciesManager
     THashSet<Language> langs = new THashSet<Language>();
     new LanguageDependenciesManager(language).collectAllExtendedLanguages(langs);
     return langs;
   }
 
   public static Set<SModuleReference> getAllExtendedLanguageReferences(Language language) {
-    // todo: LinkedHashSet?
+    // todo: same as getAllExtendedLanguages
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     for (Language lang : getAllExtendedLanguages(language)) {
       result.add(lang.getModuleReference());
