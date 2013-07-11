@@ -79,5 +79,8 @@
     </scopeInfo>
     <unitInfo nodeId="3257040239264480619" fileName="ExecuteActionAttachedToCurrentNode_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.console.editorActions.actions.ExecuteActionAttachedToCurrentNode_Action" />
   </root>
+  <root nodeRef="r:8771cffb-ce70-4df3-be97-623986f1b2a8(jetbrains.mps.console.editorActions.actions)/3257040239264853769">
+    <unitInfo nodeId="3257040239264853769" fileName="ConsoleActions.xml" startLine="1" startPosition="0" endLine="8" endPosition="13" unitName="jetbrains.mps.console.editorActions.actions.ConsoleActions" />
+  </root>
 </debugInfo>
 

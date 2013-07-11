@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.console.editorActions.actions.ConsoleActions" file="ConsoleActions.xml" />
   <dependency className="jetbrains.mps.console.editorActions.actions.ExecuteActionAttachedToCurrentNode_Action" file="ExecuteActionAttachedToCurrentNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />

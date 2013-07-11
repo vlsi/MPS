@@ -72,5 +72,22 @@
       </node>
     </node>
   </root>
+  <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3257040239264853627" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleEditorActions" />
+    <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="3257040239264853654" nodeInfo="ng">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3257040239264853657" nodeInfo="ng">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3257040239264480619" resolveInfo="ExecuteActionAttachedToCurrentNode" />
+      </node>
+    </node>
+  </root>
+  <root type="tp4k.IdeaConfigurationXml" typeId="tp4k.3205778618063718746" id="3257040239264853769" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleActions" />
+    <node role="actions" roleId="tp4k.3205778618063718748" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="3257040239264853770" nodeInfo="ng">
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3257040239264853772" nodeInfo="ng">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="3257040239264853627" resolveInfo="ConsoleEditorActions" />
+      </node>
+    </node>
+  </root>
 </model>
 
