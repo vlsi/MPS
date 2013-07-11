@@ -239,6 +239,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
+    // todo: merge set*Descriptor methods for Solution/Language/DevKit
     assertCanChange();
 
     myLanguageDescriptor = newDescriptor;
