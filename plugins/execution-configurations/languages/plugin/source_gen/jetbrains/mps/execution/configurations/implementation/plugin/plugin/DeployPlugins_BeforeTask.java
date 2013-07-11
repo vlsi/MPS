@@ -11,26 +11,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.make.IMakeService;
-import java.util.concurrent.Future;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
@@ -38,6 +22,7 @@ import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.ant.execution.Ant_Command;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
+import com.intellij.execution.ExecutionException;
 import org.apache.log4j.Priority;
 import com.intellij.execution.Executor;
 import com.intellij.execution.executors.DefaultRunExecutor;
@@ -48,6 +33,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.Icon;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.icons.IconManager;
@@ -55,6 +41,7 @@ import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.actions.CloseAction;
 import com.intellij.execution.ExecutionManager;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
+import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -92,48 +79,22 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
         return true;
       }
 
+      final Wrappers._T<DeployScript> script = new Wrappers._T<DeployScript>();
       final Project projectFinal = project;
-      final Wrappers._T<Tuples._2<SModel, File>> deployScript = new Wrappers._T<Tuples._2<SModel, File>>();
 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
           ModelAccess.instance().executeCommand(new Runnable() {
             public void run() {
-              deployScript.value = DeployScriptCreator.createDeployScript(projectFinal, myPlugins);
+              script.value = new DeployScript(projectFinal, myPlugins);
             }
           }, ProjectHelper.toMPSProject(projectFinal));
         }
       }, ModalityState.NON_MODAL);
 
-      File deployScriptFile = deployScript.value._1();
-      SModel deployScriptModel = deployScript.value._0();
-
-      MakeSession session = new MakeSession(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), null, true);
-      boolean generationSuccessful = IMakeService.INSTANCE.get().openNewSession(session);
-      if (generationSuccessful) {
-        Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), Sequence.<SModel>singleton(deployScriptModel)).resources(false));
-        IResult result = null;
-        try {
-          result = future.get();
-        } catch (CancellationException ignore) {
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
-        }
-        generationSuccessful &= (result != null) && result.isSucessful();
-      }
-
-      final SModule deployScriptModule = deployScriptModel.getModule();
-      FileUtil.delete(new File(((AbstractModule) deployScriptModule).getOutputPath().getPath().replace("/", File.separator)));
-      FileUtil.delete(new File(FileGenerationUtil.getCachesDir(((AbstractModule) deployScriptModule).getOutputPath()).getPath().replace("/", File.separator)));
-
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          MPSModuleRepository.getInstance().unregisterModule(deployScriptModule, ProjectHelper.toMPSProject(projectFinal));
-        }
-      });
-
-      if (!(generationSuccessful)) {
-        FileUtil.delete(deployScriptFile.getParentFile());
+      String deployScriptLocation = script.value.make();
+      if ((deployScriptLocation == null || deployScriptLocation.length() == 0)) {
+        script.value.dispose();
         return false;
       }
 
@@ -142,12 +103,12 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
 
       final Wrappers._T<ProcessHandler> process = new Wrappers._T<ProcessHandler>();
       try {
-        process.value = OutputRedirector.redirect(new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptFile.getAbsolutePath()), new ConsoleProcessListener(console));
-      } catch (com.intellij.execution.ExecutionException e) {
+        process.value = OutputRedirector.redirect(new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation), new ConsoleProcessListener(console));
+      } catch (ExecutionException e) {
         if (LOG.isEnabledFor(Priority.ERROR)) {
           LOG.error("Can not deploy plugins", e);
         }
-        FileUtil.delete(deployScriptFile.getParentFile());
+        script.value.dispose();
         return false;
       }
 
@@ -181,14 +142,12 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
 
       int exitCode = ProcessHandlerBuilder.startAndWait(process.value);
       if (exitCode != 0) {
-        FileUtil.delete(deployScriptFile.getParentFile());
+        script.value.dispose();
         return false;
       }
 
-      // oh, wow 
-      FileUtil.copyDir(new File(deployScriptFile.getParentFile(), "build" + File.separator + "artifacts" + File.separator + "deploy"), myDeployLocation);
-      // 4th time 
-      FileUtil.delete(deployScriptFile.getParentFile());
+      FileUtil.copyDir(script.value.getArtifactsDir(), myDeployLocation);
+      script.value.dispose();
 
       return true;
     }
