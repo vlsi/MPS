@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest;
-import jetbrains.mps.testbench.junit.runners.SuiteMpsTest.SuiteClassSymbols;
+import jetbrains.mps.PersistenceTest;
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-@RunWith(SuiteMpsTest.class)
-@SuiteClassSymbols({"jetbrains.mps.PersistenceTest"})
+// todo: !!!should be WatchingSuite!!!
+@RunWith(Suite.class)
+@Suite.SuiteClasses({PersistenceTest.class})
 public class TimeConsumingTestSuite {
 }
