@@ -10,17 +10,20 @@ import com.intellij.openapi.module.Module;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.idea.java.psi.PsiChangesWatcher;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Map;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.List;
+import com.intellij.psi.PsiDirectory;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
-import com.intellij.psi.PsiDirectory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.psi.PsiJavaFile;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.java.sourceStubs.Util;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiFileSystemItem;
@@ -90,53 +93,53 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
   @Override
   public Iterable<SModel> loadModels() {
-    // TODO get rid of getModelMap(), make it simple 
-    return MapSequence.fromMap(getModelMap()).values();
-  }
-
-  private Map<PsiJavaStubDataSource, SModel> getModelMap() {
-    Map<PsiJavaStubDataSource, SModel> modelMap = MapSequence.fromMap(new HashMap<PsiJavaStubDataSource, SModel>());
+    Map<SModelReference, List<PsiDirectory>> packageToDirs = MapSequence.fromMap(new HashMap<SModelReference, List<PsiDirectory>>());
 
     final VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myIdeaModule).getSourceRoots(false);
     PsiManager psiMgr = PsiManager.getInstance(myIdeaModule.getProject());
 
     for (VirtualFile root : sourceRoots) {
       PsiDirectory dir = psiMgr.findDirectory(root);
-      addModelsForDir(dir, dir, modelMap);
+      collectPackagesInDir(dir, dir, packageToDirs);
     }
 
-    return modelMap;
+    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+
+    for (IMapping<SModelReference, List<PsiDirectory>> pair : MapSequence.fromMap(packageToDirs)) {
+      SModelReference modelRef = pair.key();
+      List<PsiDirectory> dirs = pair.value();
+
+      ListSequence.fromList(models).addElement(makeModelDescriptor(modelRef, dirs));
+    }
+
+    return models;
   }
 
-  private void addModelsForDir(PsiDirectory sourceRoot, PsiDirectory dir, Map<PsiJavaStubDataSource, SModel> resultMap) {
+  private void collectPackagesInDir(PsiDirectory sourceRoot, PsiDirectory dir, Map<SModelReference, List<PsiDirectory>> result) {
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
 
-      SModelReference modelRef = makeModelReference(sourceRoot, dir);
-      SModel model = SModelRepository.getInstance().getModelDescriptor(modelRef);
-
-      if (model == null) {
-        model = makeModelDescriptor(modelRef, dir);
+      jetbrains.mps.smodel.SModelReference modelRef = makeModelReference(sourceRoot, dir);
+      List<PsiDirectory> dirs = MapSequence.fromMap(result).get(modelRef);
+      if (dirs == null) {
+        dirs = ListSequence.fromList(new ArrayList<PsiDirectory>());
+        MapSequence.fromMap(result).put(modelRef, dirs);
       }
-
-      assert model instanceof PsiJavaStubModelDescriptor;
-
-      PsiJavaStubDataSource dataSource = ((PsiJavaStubModelDescriptor) model).getSource();
-      MapSequence.fromMap(resultMap).put(dataSource, model);
+      ListSequence.fromList(dirs).addElement(dir);
     }
 
     for (PsiDirectory subDir : dir.getSubdirectories()) {
-      addModelsForDir(sourceRoot, subDir, resultMap);
+      collectPackagesInDir(sourceRoot, subDir, result);
     }
   }
 
-  private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, PsiDirectory dir) {
-    PsiJavaStubDataSource ds = new PsiJavaStubDataSource(myIdeaModule, dir);
+  private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, Iterable<PsiDirectory> dirs) {
+    MultiplePsiJavaStubDataSource ds = new MultiplePsiJavaStubDataSource(myIdeaModule, dirs);
     PsiJavaStubModelDescriptor md = new PsiJavaStubModelDescriptor(modelRef, ds);
     md.setModelRoot(this);
     return md;
   }
 
-  private SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
+  private jetbrains.mps.smodel.SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
     String packageName = relativeDirName.replace('/', '.').replace('\\', '.');
@@ -145,7 +148,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
       packageName = packageName.substring(1);
     }
 
-    return (SModelReference) Util.makeModelReference(packageName, getModule());
+    return (jetbrains.mps.smodel.SModelReference) Util.makeModelReference(packageName, getModule());
   }
 
   public boolean isReadOnly() {
