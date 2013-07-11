@@ -466,6 +466,7 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
+      <pathelement location="${artifacts.mps}/plugins/mps-build" />
       <pathelement location="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <pathelement location="${artifacts.mps}/plugins/mps-debugger-api" />
       <pathelement location="${artifacts.mps}/plugins/mps-debugger-java" />
@@ -490,6 +491,9 @@
       <classpath>
         <fileset dir="${artifacts.mps}/lib">
           <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${artifacts.mps}/plugins/mps-build">
+          <include name="**/lib/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
           <include name="**/lib/*.jar" />
