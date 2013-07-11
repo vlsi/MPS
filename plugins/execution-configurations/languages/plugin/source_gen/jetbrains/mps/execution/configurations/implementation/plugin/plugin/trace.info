@@ -510,60 +510,64 @@
     <nodeInfo nodeId="468375730751048371" fileName="MpsStartupSettings_Configuration.java" startLine="106" startPosition="5" endLine="107" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="468375730751048390" fileName="MpsStartupSettings_Configuration.java" startLine="111" startPosition="47" endLine="112" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="468375730751048395" fileName="MpsStartupSettings_Configuration.java" startLine="113" startPosition="5" endLine="114" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730751048410" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="79" endLine="118" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730751048423" fileName="MpsStartupSettings_Configuration.java" startLine="119" startPosition="42" endLine="120" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730751048410" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="79" endLine="118" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="468375730751048423" fileName="MpsStartupSettings_Configuration.java" startLine="119" startPosition="42" endLine="120" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="468375730751048429" fileName="MpsStartupSettings_Configuration.java" startLine="121" startPosition="5" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="468375730751048430" fileName="MpsStartupSettings_Configuration.java" startLine="122" startPosition="0" endLine="123" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730751048434" fileName="MpsStartupSettings_Configuration.java" startLine="123" startPosition="47" endLine="124" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730751048443" fileName="MpsStartupSettings_Configuration.java" startLine="124" startPosition="71" endLine="125" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730751048447" fileName="MpsStartupSettings_Configuration.java" startLine="125" startPosition="51" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="468375730751048448" fileName="MpsStartupSettings_Configuration.java" startLine="126" startPosition="0" endLine="127" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="468375730751048452" fileName="MpsStartupSettings_Configuration.java" startLine="128" startPosition="9" endLine="129" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730751048457" fileName="MpsStartupSettings_Configuration.java" startLine="129" startPosition="64" endLine="130" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730751048465" fileName="MpsStartupSettings_Configuration.java" startLine="130" startPosition="59" endLine="131" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730751048469" fileName="MpsStartupSettings_Configuration.java" startLine="131" startPosition="55" endLine="132" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730751048477" fileName="MpsStartupSettings_Configuration.java" startLine="133" startPosition="31" endLine="134" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="468375730751048483" fileName="MpsStartupSettings_Configuration.java" startLine="135" startPosition="29" endLine="136" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="468375730751048485" fileName="MpsStartupSettings_Configuration.java" startLine="137" startPosition="5" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="468375730751048486" fileName="MpsStartupSettings_Configuration.java" startLine="138" startPosition="0" endLine="139" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730751048499" fileName="MpsStartupSettings_Configuration.java" startLine="143" startPosition="39" endLine="144" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730751048510" fileName="MpsStartupSettings_Configuration.java" startLine="146" startPosition="42" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730751048524" fileName="MpsStartupSettings_Configuration.java" startLine="148" startPosition="5" endLine="149" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730751048530" fileName="MpsStartupSettings_Configuration.java" startLine="152" startPosition="67" endLine="153" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730751048534" fileName="MpsStartupSettings_Configuration.java" startLine="153" startPosition="25" endLine="154" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730751048543" fileName="MpsStartupSettings_Configuration.java" startLine="155" startPosition="48" endLine="156" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730751048575" fileName="MpsStartupSettings_Configuration.java" startLine="159" startPosition="37" endLine="160" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="166" startPosition="51" endLine="167" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="168" startPosition="9" endLine="169" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="169" startPosition="36" endLine="170" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="170" startPosition="81" endLine="171" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="173" startPosition="45" endLine="174" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="176" startPosition="5" endLine="177" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750990913" fileName="MpsStartupSettings_Configuration.java" startLine="181" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVmOptions" />
-    <nodeInfo nodeId="468375730750990915" fileName="MpsStartupSettings_Configuration.java" startLine="182" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJrePath" />
-    <nodeInfo nodeId="468375730750990917" fileName="MpsStartupSettings_Configuration.java" startLine="183" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySystemPath" />
-    <nodeInfo nodeId="468375730750990925" fileName="MpsStartupSettings_Configuration.java" startLine="184" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConfigurationPath" />
-    <nodeInfo nodeId="468375730750990933" fileName="MpsStartupSettings_Configuration.java" startLine="185" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpenCurrentProject" />
-    <nodeInfo nodeId="468375730750990936" fileName="MpsStartupSettings_Configuration.java" startLine="186" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectToOpen" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="192" startPosition="61" endLine="193" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="193" startPosition="102" endLine="194" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="194" startPosition="38" endLine="195" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="195" startPosition="34" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="196" startPosition="40" endLine="197" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="197" startPosition="54" endLine="198" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="198" startPosition="56" endLine="199" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="199" startPosition="46" endLine="200" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="207" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorEx" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="209" startPosition="65" endLine="210" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="62" endLine="214" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="218" startPosition="29" endLine="219" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="220" startPosition="5" endLine="221" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="224" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="226" startPosition="60" endLine="227" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="60" endLine="231" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3865452760453964289" fileName="MpsStartupSettings_Configuration.java" startLine="122" startPosition="0" endLine="123" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="468375730751048430" fileName="MpsStartupSettings_Configuration.java" startLine="123" startPosition="36" endLine="124" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3865452760453572906" fileName="MpsStartupSettings_Configuration.java" startLine="124" startPosition="47" endLine="125" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3865452760453573411" fileName="MpsStartupSettings_Configuration.java" startLine="125" startPosition="48" endLine="126" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730751048434" fileName="MpsStartupSettings_Configuration.java" startLine="126" startPosition="19" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="468375730751048443" fileName="MpsStartupSettings_Configuration.java" startLine="127" startPosition="58" endLine="128" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730751048447" fileName="MpsStartupSettings_Configuration.java" startLine="128" startPosition="59" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="468375730751048448" fileName="MpsStartupSettings_Configuration.java" startLine="129" startPosition="0" endLine="130" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="468375730751048452" fileName="MpsStartupSettings_Configuration.java" startLine="131" startPosition="9" endLine="132" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="468375730751048457" fileName="MpsStartupSettings_Configuration.java" startLine="132" startPosition="64" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730751048465" fileName="MpsStartupSettings_Configuration.java" startLine="133" startPosition="59" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730751048469" fileName="MpsStartupSettings_Configuration.java" startLine="134" startPosition="55" endLine="135" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730751048477" fileName="MpsStartupSettings_Configuration.java" startLine="136" startPosition="31" endLine="137" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="468375730751048483" fileName="MpsStartupSettings_Configuration.java" startLine="138" startPosition="29" endLine="139" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="468375730751048485" fileName="MpsStartupSettings_Configuration.java" startLine="140" startPosition="5" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="468375730751048486" fileName="MpsStartupSettings_Configuration.java" startLine="141" startPosition="0" endLine="142" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730751048499" fileName="MpsStartupSettings_Configuration.java" startLine="146" startPosition="39" endLine="147" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730751048510" fileName="MpsStartupSettings_Configuration.java" startLine="149" startPosition="42" endLine="150" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730751048524" fileName="MpsStartupSettings_Configuration.java" startLine="151" startPosition="5" endLine="152" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730751048530" fileName="MpsStartupSettings_Configuration.java" startLine="155" startPosition="67" endLine="156" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="468375730751048534" fileName="MpsStartupSettings_Configuration.java" startLine="156" startPosition="25" endLine="157" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="869778543340639101" fileName="MpsStartupSettings_Configuration.java" startLine="158" startPosition="48" endLine="159" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="468375730751048543" fileName="MpsStartupSettings_Configuration.java" startLine="159" startPosition="20" endLine="160" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730751048575" fileName="MpsStartupSettings_Configuration.java" startLine="163" startPosition="37" endLine="164" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="170" startPosition="51" endLine="171" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="172" startPosition="9" endLine="173" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="173" startPosition="36" endLine="174" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="174" startPosition="81" endLine="175" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="177" startPosition="45" endLine="178" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="180" startPosition="5" endLine="181" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730750990913" fileName="MpsStartupSettings_Configuration.java" startLine="185" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVmOptions" />
+    <nodeInfo nodeId="468375730750990915" fileName="MpsStartupSettings_Configuration.java" startLine="186" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJrePath" />
+    <nodeInfo nodeId="468375730750990917" fileName="MpsStartupSettings_Configuration.java" startLine="187" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySystemPath" />
+    <nodeInfo nodeId="468375730750990925" fileName="MpsStartupSettings_Configuration.java" startLine="188" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConfigurationPath" />
+    <nodeInfo nodeId="468375730750990933" fileName="MpsStartupSettings_Configuration.java" startLine="189" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOpenCurrentProject" />
+    <nodeInfo nodeId="468375730750990936" fileName="MpsStartupSettings_Configuration.java" startLine="190" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectToOpen" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="196" startPosition="61" endLine="197" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="197" startPosition="102" endLine="198" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="198" startPosition="38" endLine="199" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="199" startPosition="34" endLine="200" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="200" startPosition="40" endLine="201" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="201" startPosition="54" endLine="202" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="202" startPosition="56" endLine="203" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="203" startPosition="46" endLine="204" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="211" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorEx" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="65" endLine="214" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="62" endLine="218" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="222" startPosition="29" endLine="223" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="224" startPosition="5" endLine="225" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="228" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="60" endLine="231" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="234" startPosition="60" endLine="235" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="188" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyState#()V" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="204" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsStartupSettings_Configuration#()V" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="192" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyState#()V" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="208" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsStartupSettings_Configuration#()V" />
     <nodeInfo nodeId="468375730751028325" fileName="MpsStartupSettings_Configuration.java" startLine="33" startPosition="73" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="468375730751028334" fileName="MpsStartupSettings_Configuration.java" startLine="36" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="48" startPosition="73" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -581,33 +585,33 @@
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProjectToOpen#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="468375730751048364" fileName="MpsStartupSettings_Configuration.java" startLine="103" startPosition="41" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="468375730751048388" fileName="MpsStartupSettings_Configuration.java" startLine="110" startPosition="40" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730751048417" fileName="MpsStartupSettings_Configuration.java" startLine="118" startPosition="47" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730751048497" fileName="MpsStartupSettings_Configuration.java" startLine="142" startPosition="55" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730751048508" fileName="MpsStartupSettings_Configuration.java" startLine="145" startPosition="5" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730751048541" fileName="MpsStartupSettings_Configuration.java" startLine="154" startPosition="51" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730751048570" fileName="MpsStartupSettings_Configuration.java" startLine="158" startPosition="48" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="172" startPosition="45" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="172" startPosition="45" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCloneTemplate#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettings_Configuration;" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettings_Configuration_Editor;" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="75" endLine="220" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="226" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_l71583_a0a0a0b#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_l71583_a0b0a0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="468375730751048417" fileName="MpsStartupSettings_Configuration.java" startLine="118" startPosition="45" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730751048497" fileName="MpsStartupSettings_Configuration.java" startLine="145" startPosition="54" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730751048508" fileName="MpsStartupSettings_Configuration.java" startLine="148" startPosition="5" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730751048570" fileName="MpsStartupSettings_Configuration.java" startLine="162" startPosition="48" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="176" startPosition="45" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="176" startPosition="45" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCloneTemplate#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettings_Configuration;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettings_Configuration_Editor;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="221" startPosition="75" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_l71583_a0a0a0b#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="234" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_l71583_a0b0a0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeExternal#(Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="468375730751048564" fileName="MpsStartupSettings_Configuration.java" startLine="157" startPosition="5" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="468375730751048541" fileName="MpsStartupSettings_Configuration.java" startLine="157" startPosition="51" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="468375730751048564" fileName="MpsStartupSettings_Configuration.java" startLine="161" startPosition="5" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="33" startPosition="73" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="103" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expandPath#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="110" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shinkPath#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorEx#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="221" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorEx#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExternal#(Lorg/jdom/Element;)V" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="142" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectFile#(Lcom/intellij/openapi/project/Project;)Ljava/io/File;" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="167" startPosition="50" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="468375730751048450" fileName="MpsStartupSettings_Configuration.java" startLine="127" startPosition="29" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="191" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="152" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replacePathMacro#(Lorg/jdom/Element;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="165" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettings_Configuration;" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepareFilesToOpenAndToDelete#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="145" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectDir#(Lcom/intellij/openapi/project/Project;)Ljava/io/File;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="171" startPosition="50" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="468375730751048450" fileName="MpsStartupSettings_Configuration.java" startLine="130" startPosition="29" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="195" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="155" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replacePathMacro#(Lorg/jdom/Element;Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="169" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettings_Configuration;" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="prepareFilesToOpenAndToDelete#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
     <nodeInfo nodeId="8981187274663470334" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="8981187274663471042" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="17" startPosition="59" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="21" startPosition="113" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -622,8 +626,8 @@
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MpsStartupSettingsEditorComponent;" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="29" startPosition="52" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsStartupSettings_Configuration_Editor#()V" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="188" startPosition="22" endLine="188" endPosition="22" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="204" startPosition="45" endLine="204" endPosition="45" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="192" startPosition="22" endLine="192" endPosition="22" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="208" startPosition="45" endLine="208" endPosition="45" />
     <scopeInfo nodeId="468375730751028326" fileName="MpsStartupSettings_Configuration.java" startLine="34" startPosition="62" endLine="35" endPosition="78" />
     <scopeInfo nodeId="468375730751028335" fileName="MpsStartupSettings_Configuration.java" startLine="37" startPosition="55" endLine="38" endPosition="71" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="43" startPosition="76" endLine="44" endPosition="57" />
@@ -642,27 +646,27 @@
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="99" startPosition="46" endLine="100" endPosition="36" />
     <scopeInfo nodeId="468375730751048365" fileName="MpsStartupSettings_Configuration.java" startLine="104" startPosition="47" endLine="105" endPosition="18" />
     <scopeInfo nodeId="468375730751048389" fileName="MpsStartupSettings_Configuration.java" startLine="111" startPosition="47" endLine="112" endPosition="18" />
-    <scopeInfo nodeId="468375730751048422" fileName="MpsStartupSettings_Configuration.java" startLine="119" startPosition="42" endLine="120" endPosition="66" />
-    <scopeInfo nodeId="468375730751048473" fileName="MpsStartupSettings_Configuration.java" startLine="133" startPosition="0" endLine="134" endPosition="38">
+    <scopeInfo nodeId="468375730751048422" fileName="MpsStartupSettings_Configuration.java" startLine="119" startPosition="42" endLine="120" endPosition="65" />
+    <scopeInfo nodeId="468375730751048473" fileName="MpsStartupSettings_Configuration.java" startLine="136" startPosition="0" endLine="137" endPosition="38">
       <varInfo nodeId="468375730751048474" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730751048476" fileName="MpsStartupSettings_Configuration.java" startLine="133" startPosition="31" endLine="134" endPosition="38" />
-    <scopeInfo nodeId="468375730751048479" fileName="MpsStartupSettings_Configuration.java" startLine="135" startPosition="0" endLine="136" endPosition="26">
+    <scopeInfo nodeId="468375730751048476" fileName="MpsStartupSettings_Configuration.java" startLine="136" startPosition="31" endLine="137" endPosition="38" />
+    <scopeInfo nodeId="468375730751048479" fileName="MpsStartupSettings_Configuration.java" startLine="138" startPosition="0" endLine="139" endPosition="26">
       <varInfo nodeId="468375730751048480" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730751048482" fileName="MpsStartupSettings_Configuration.java" startLine="135" startPosition="29" endLine="136" endPosition="26" />
-    <scopeInfo nodeId="468375730751048498" fileName="MpsStartupSettings_Configuration.java" startLine="143" startPosition="39" endLine="144" endPosition="59" />
-    <scopeInfo nodeId="468375730751048509" fileName="MpsStartupSettings_Configuration.java" startLine="146" startPosition="42" endLine="147" endPosition="59" />
-    <scopeInfo nodeId="468375730751048542" fileName="MpsStartupSettings_Configuration.java" startLine="155" startPosition="48" endLine="156" endPosition="156" />
-    <scopeInfo nodeId="468375730751048574" fileName="MpsStartupSettings_Configuration.java" startLine="159" startPosition="37" endLine="160" endPosition="51" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="173" startPosition="45" endLine="174" endPosition="26" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="209" startPosition="65" endLine="210" endPosition="50" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="62" endLine="214" endPosition="57" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="218" startPosition="29" endLine="219" endPosition="31" />
-    <scopeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="226" startPosition="60" endLine="227" endPosition="44" />
-    <scopeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="60" endLine="231" endPosition="44" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="188" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="204" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="468375730751048482" fileName="MpsStartupSettings_Configuration.java" startLine="138" startPosition="29" endLine="139" endPosition="26" />
+    <scopeInfo nodeId="468375730751048498" fileName="MpsStartupSettings_Configuration.java" startLine="146" startPosition="39" endLine="147" endPosition="52" />
+    <scopeInfo nodeId="468375730751048509" fileName="MpsStartupSettings_Configuration.java" startLine="149" startPosition="42" endLine="150" endPosition="59" />
+    <scopeInfo nodeId="468375730751048574" fileName="MpsStartupSettings_Configuration.java" startLine="163" startPosition="37" endLine="164" endPosition="51" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="177" startPosition="45" endLine="178" endPosition="26" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="65" endLine="214" endPosition="50" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="62" endLine="218" endPosition="57" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="222" startPosition="29" endLine="223" endPosition="31" />
+    <scopeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="60" endLine="231" endPosition="44" />
+    <scopeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="234" startPosition="60" endLine="235" endPosition="44" />
+    <scopeInfo nodeId="468375730751048542" fileName="MpsStartupSettings_Configuration.java" startLine="158" startPosition="48" endLine="160" endPosition="214" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="192" startPosition="0" endLine="194" endPosition="0" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="208" startPosition="0" endLine="210" endPosition="0" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
@@ -687,18 +691,18 @@
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="468375730750988347" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730751048569" fileName="MpsStartupSettings_Configuration.java" startLine="158" startPosition="48" endLine="161" endPosition="7" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="168" startPosition="9" endLine="171" endPosition="19" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="172" startPosition="0" endLine="175" endPosition="7">
+    <scopeInfo nodeId="468375730751048569" fileName="MpsStartupSettings_Configuration.java" startLine="162" startPosition="48" endLine="165" endPosition="7" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="172" startPosition="9" endLine="175" endPosition="19" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="176" startPosition="0" endLine="179" endPosition="7">
       <varInfo nodeId="468375730750988347" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="172" startPosition="45" endLine="175" endPosition="7" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="209" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="176" startPosition="45" endLine="179" endPosition="7" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
-    <scopeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="226" startPosition="0" endLine="229" endPosition="0">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="468375730751028333" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="0" endLine="233" endPosition="0">
       <varInfo nodeId="468375730751028333" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="230" startPosition="0" endLine="233" endPosition="0">
+    <scopeInfo nodeId="468375730751028342" fileName="MpsStartupSettings_Configuration.java" startLine="234" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="468375730751028342" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
@@ -707,11 +711,11 @@
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="48" startPosition="73" endLine="52" endPosition="83" />
     <scopeInfo nodeId="468375730751048363" fileName="MpsStartupSettings_Configuration.java" startLine="103" startPosition="41" endLine="107" endPosition="83" />
     <scopeInfo nodeId="468375730751048387" fileName="MpsStartupSettings_Configuration.java" startLine="110" startPosition="40" endLine="114" endPosition="83" />
-    <scopeInfo nodeId="468375730751048451" fileName="MpsStartupSettings_Configuration.java" startLine="128" startPosition="9" endLine="132" endPosition="35">
+    <scopeInfo nodeId="468375730751048451" fileName="MpsStartupSettings_Configuration.java" startLine="131" startPosition="9" endLine="135" endPosition="31">
       <varInfo nodeId="468375730751048453" varName="document" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="75" endLine="221" endPosition="22" />
-    <scopeInfo nodeId="468375730751048564" fileName="MpsStartupSettings_Configuration.java" startLine="157" startPosition="5" endLine="162" endPosition="5">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="221" startPosition="75" endLine="225" endPosition="22" />
+    <scopeInfo nodeId="468375730751048564" fileName="MpsStartupSettings_Configuration.java" startLine="161" startPosition="5" endLine="166" endPosition="5">
       <varInfo nodeId="468375730751048565" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="33" startPosition="73" endLine="39" endPosition="5" />
@@ -722,37 +726,38 @@
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="110" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="468375730751048384" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="217" startPosition="0" endLine="223" endPosition="0" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="221" startPosition="0" endLine="227" endPosition="0" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="468375730750988347" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730751048496" fileName="MpsStartupSettings_Configuration.java" startLine="142" startPosition="55" endLine="149" endPosition="16" />
+    <scopeInfo nodeId="468375730751048496" fileName="MpsStartupSettings_Configuration.java" startLine="145" startPosition="54" endLine="152" endPosition="16" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="192" startPosition="61" endLine="200" endPosition="19">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="196" startPosition="61" endLine="204" endPosition="19">
       <varInfo nodeId="468375730750988347" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="142" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="145" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="468375730751048494" varName="currentProject" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730751048529" fileName="MpsStartupSettings_Configuration.java" startLine="152" startPosition="67" endLine="162" endPosition="5">
+    <scopeInfo nodeId="468375730751048529" fileName="MpsStartupSettings_Configuration.java" startLine="155" startPosition="67" endLine="166" endPosition="5">
       <varInfo nodeId="468375730751048531" varName="path" />
       <varInfo nodeId="468375730751048535" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="166" startPosition="51" endLine="177" endPosition="17">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="170" startPosition="51" endLine="181" endPosition="17">
       <varInfo nodeId="468375730750988347" varName="clone" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="191" startPosition="0" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="152" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="195" startPosition="0" endLine="206" endPosition="0" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="155" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="468375730751048585" varName="element" />
       <varInfo nodeId="468375730751048587" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="165" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="468375730751048409" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="79" endLine="139" endPosition="64">
-      <varInfo nodeId="468375730751048411" varName="projectFile" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="169" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="468375730751048409" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="79" endLine="142" endPosition="63">
+      <varInfo nodeId="3865452760453572907" varName="mpsDir" />
+      <varInfo nodeId="468375730751048411" varName="projectDir" />
       <varInfo nodeId="468375730751048431" varName="temporalDir" />
       <varInfo nodeId="468375730751048435" varName="tmpProjectFile" />
     </scopeInfo>
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="117" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="468375730751048491" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="13" startPosition="31" endLine="13" endPosition="31" />
@@ -773,8 +778,8 @@
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="29" startPosition="52" endLine="34" endPosition="7" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="29" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="180" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration$MyState" />
-    <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="29" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration" />
+    <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="184" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration$MyState" />
+    <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="29" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration" />
     <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="30" startPosition="14" endLine="34" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration_Editor$1" />
     <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration_Editor" />
   </root>

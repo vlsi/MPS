@@ -115,33 +115,36 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   }
 
   public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
-    File projectFile = getProjectFile(project);
+    File projectDir = getProjectDir(project);
     if (!(this.getOpenCurrentProject())) {
-      return MultiTuple.<File,File>from(projectFile, (File) null);
+      return MultiTuple.<File,File>from(projectDir, (File) null);
     }
 
+    // not my best code, not at all 
     File temporalDir = FileUtil.createTmpDir();
-    File tmpProjectFile = new File(temporalDir, projectFile.getName());
-    FileUtil.copyFile(projectFile, tmpProjectFile);
+    File mpsDir = new File(temporalDir, ".mps");
+    mpsDir.mkdir();
+    File tmpProjectFile = new File(mpsDir, "modules.xml");
+    FileUtil.copyDir(new File(projectDir, ".mps"), mpsDir);
 
     // replace project macro 
     try {
       Document document = JDOMUtil.loadDocument(tmpProjectFile);
       replacePathMacro(document.getRootElement(), project);
       JDOMUtil.writeDocument(document, tmpProjectFile);
-      projectFile = tmpProjectFile;
+      projectDir = temporalDir;
     } catch (JDOMException e) {
       // ignore and hope for the best 
     } catch (IOException e) {
       // same as previous 
     }
 
-    return MultiTuple.<File,File>from(projectFile, temporalDir);
+    return MultiTuple.<File,File>from(projectDir, temporalDir);
   }
 
-  private File getProjectFile(Project currentProject) {
+  private File getProjectDir(Project currentProject) {
     if (this.getOpenCurrentProject()) {
-      return new File(currentProject.getProjectFilePath());
+      return new File(currentProject.getBasePath());
     }
     if (this.getProjectToOpen() != null) {
       return new File(expandPath(this.getProjectToOpen()));
@@ -153,7 +156,8 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     String path = "path";
     String value = element.getAttributeValue(path);
     if ((value != null && value.length() > 0)) {
-      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
+      // nooooooooo 
+      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
     }
     for (Object child : element.getChildren()) {
       if (child instanceof Element) {
