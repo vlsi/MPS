@@ -37,22 +37,6 @@
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="org.junit.runners.Suite" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.MakeRunner" file="MakeRunner.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
-    <classNode dependClassName="org.junit.runner.Description" />
-    <classNode dependClassName="org.junit.runner.notification.Failure" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="org.junit.runners.model.TestClass" />
-    <classNode extendsClassName="org.junit.runner.Runner" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" file="ModuleSymbolicSuite.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
