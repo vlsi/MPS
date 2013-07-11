@@ -699,103 +699,119 @@
     <unitInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration_Editor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettings_Configuration_Editor" />
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/5057842142812510296">
-    <nodeInfo nodeId="5057842142812549786" fileName="DeployScript.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
-    <nodeInfo nodeId="5057842142812608629" fileName="DeployScript.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="5057842142812897446" fileName="DeployScript.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="5057842142812765951" fileName="DeployScript.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeployScriptPath" />
-    <nodeInfo nodeId="5057842142812613607" fileName="DeployScript.java" startLine="43" startPosition="70" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812563062" fileName="DeployScript.java" startLine="44" startPosition="24" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812537600" fileName="DeployScript.java" startLine="45" startPosition="67" endLine="46" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812595632" fileName="DeployScript.java" startLine="46" startPosition="73" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5057842142812537606" fileName="DeployScript.java" startLine="47" startPosition="0" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5057842142812595673" fileName="DeployScript.java" startLine="48" startPosition="110" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5057842142812591198" fileName="DeployScript.java" startLine="49" startPosition="0" endLine="50" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5057842142812537626" fileName="DeployScript.java" startLine="50" startPosition="117" endLine="51" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812687184" fileName="DeployScript.java" startLine="51" startPosition="40" endLine="52" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812595715" fileName="DeployScript.java" startLine="52" startPosition="258" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5057842142812537633" fileName="DeployScript.java" startLine="53" startPosition="0" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812859049" fileName="DeployScript.java" startLine="60" startPosition="24" endLine="61" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5057842142812859069" fileName="DeployScript.java" startLine="62" startPosition="62" endLine="63" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5057842142812859090" fileName="DeployScript.java" startLine="63" startPosition="218" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5057842142812859096" fileName="DeployScript.java" startLine="65" startPosition="11" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812870714" fileName="DeployScript.java" startLine="71" startPosition="54" endLine="72" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5057842142812644389" fileName="DeployScript.java" startLine="73" startPosition="7" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5057842142812873002" fileName="DeployScript.java" startLine="75" startPosition="5" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5057842142813066188" fileName="DeployScript.java" startLine="81" startPosition="33" endLine="82" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5057842142812626524" fileName="DeployScript.java" startLine="87" startPosition="25" endLine="88" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812604969" fileName="DeployScript.java" startLine="88" startPosition="49" endLine="89" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812604987" fileName="DeployScript.java" startLine="89" startPosition="95" endLine="90" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142812605005" fileName="DeployScript.java" startLine="90" startPosition="128" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5057842142812605012" fileName="DeployScript.java" startLine="93" startPosition="25" endLine="94" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8244765753355973742" fileName="DeployScript.java" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescriptorFile" />
-    <nodeInfo nodeId="8244765753356393122" fileName="DeployScript.java" startLine="103" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBaseDir" />
-    <nodeInfo nodeId="8244765753355853975" fileName="DeployScript.java" startLine="105" startPosition="48" endLine="106" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="596626231205365389" fileName="DeployScript.java" startLine="106" startPosition="70" endLine="107" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8244765753355977393" fileName="DeployScript.java" startLine="107" startPosition="42" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8244765753355993064" fileName="DeployScript.java" startLine="112" startPosition="38" endLine="113" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8244765753356394519" fileName="DeployScript.java" startLine="116" startPosition="36" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="93303204049968958" fileName="DeployScript.java" startLine="120" startPosition="33" endLine="121" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="93303204049957503" fileName="DeployScript.java" startLine="121" startPosition="19" endLine="122" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5057842142812869931" fileName="DeployScript.java" startLine="70" startPosition="7" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5057842142813065861" fileName="DeployScript.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArtifactsDir#()Ljava/io/File;" />
-    <nodeInfo nodeId="5057842142812605010" fileName="DeployScript.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8244765753356393931" fileName="DeployScript.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBaseDirectory#()Ljava/io/File;" />
-    <nodeInfo nodeId="8244765753355992751" fileName="DeployScript.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptorFile#()Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="93303204049954371" fileName="DeployScript.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPackaged#()Z" />
-    <nodeInfo nodeId="5057842142812605006" fileName="DeployScript.java" startLine="91" startPosition="0" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8244765753355853191" fileName="DeployScript.java" startLine="105" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemporalModuleWithDescriptorFile#()V" />
-    <nodeInfo nodeId="5057842142812859094" fileName="DeployScript.java" startLine="64" startPosition="28" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5057842142812534493" fileName="DeployScript.java" startLine="87" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5057842142812537446" fileName="DeployScript.java" startLine="43" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeployScript#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
-    <nodeInfo nodeId="5057842142812859067" fileName="DeployScript.java" startLine="61" startPosition="122" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5057842142812534989" fileName="DeployScript.java" startLine="59" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#()Ljava/lang/String;" />
-    <scopeInfo nodeId="5057842142812859102" fileName="DeployScript.java" startLine="67" startPosition="0" endLine="67" endPosition="46">
+    <nodeInfo nodeId="5057842142812549786" fileName="DeployScript.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
+    <nodeInfo nodeId="5057842142812608629" fileName="DeployScript.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="5057842142812897446" fileName="DeployScript.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelsToMake" />
+    <nodeInfo nodeId="5057842142812765951" fileName="DeployScript.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDeployScriptPath" />
+    <nodeInfo nodeId="5057842142812613607" fileName="DeployScript.java" startLine="52" startPosition="70" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812563062" fileName="DeployScript.java" startLine="53" startPosition="24" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812537600" fileName="DeployScript.java" startLine="54" startPosition="67" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812595632" fileName="DeployScript.java" startLine="55" startPosition="73" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5057842142812537606" fileName="DeployScript.java" startLine="56" startPosition="0" endLine="57" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5057842142813800682" fileName="DeployScript.java" startLine="57" startPosition="110" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142813903237" fileName="DeployScript.java" startLine="60" startPosition="44" endLine="61" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142813794889" fileName="DeployScript.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5057842142812591198" fileName="DeployScript.java" startLine="64" startPosition="0" endLine="65" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5057842142812537626" fileName="DeployScript.java" startLine="65" startPosition="117" endLine="66" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812687184" fileName="DeployScript.java" startLine="66" startPosition="40" endLine="67" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812595715" fileName="DeployScript.java" startLine="67" startPosition="258" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5057842142812537633" fileName="DeployScript.java" startLine="68" startPosition="0" endLine="69" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142813877466" fileName="DeployScript.java" startLine="69" startPosition="68" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5057842142812859049" fileName="DeployScript.java" startLine="76" startPosition="24" endLine="77" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5057842142812859069" fileName="DeployScript.java" startLine="78" startPosition="62" endLine="79" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5057842142812859090" fileName="DeployScript.java" startLine="79" startPosition="197" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5057842142812859096" fileName="DeployScript.java" startLine="81" startPosition="11" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="88" startPosition="47" endLine="89" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812870714" fileName="DeployScript.java" startLine="90" startPosition="9" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5057842142812644389" fileName="DeployScript.java" startLine="92" startPosition="7" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5057842142812873002" fileName="DeployScript.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5057842142813066188" fileName="DeployScript.java" startLine="100" startPosition="33" endLine="101" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5057842142812626524" fileName="DeployScript.java" startLine="106" startPosition="25" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812604969" fileName="DeployScript.java" startLine="107" startPosition="49" endLine="108" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812604987" fileName="DeployScript.java" startLine="108" startPosition="95" endLine="109" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812605005" fileName="DeployScript.java" startLine="109" startPosition="128" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5057842142812605012" fileName="DeployScript.java" startLine="112" startPosition="25" endLine="113" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8244765753355973742" fileName="DeployScript.java" startLine="121" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescriptorFile" />
+    <nodeInfo nodeId="8244765753356393122" fileName="DeployScript.java" startLine="122" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBaseDir" />
+    <nodeInfo nodeId="8244765753355853975" fileName="DeployScript.java" startLine="124" startPosition="48" endLine="125" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="596626231205365389" fileName="DeployScript.java" startLine="125" startPosition="70" endLine="126" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8244765753355977393" fileName="DeployScript.java" startLine="126" startPosition="42" endLine="127" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8244765753355993064" fileName="DeployScript.java" startLine="131" startPosition="38" endLine="132" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8244765753356394519" fileName="DeployScript.java" startLine="135" startPosition="36" endLine="136" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="93303204049968958" fileName="DeployScript.java" startLine="139" startPosition="33" endLine="140" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="93303204049957503" fileName="DeployScript.java" startLine="140" startPosition="19" endLine="141" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5057842142812510296" fileName="DeployScript.java" startLine="145" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5057842142813902858" fileName="DeployScript.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="87" startPosition="54" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="87" startPosition="54" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5057842142813065861" fileName="DeployScript.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArtifactsDir#()Ljava/io/File;" />
+    <nodeInfo nodeId="5057842142812605010" fileName="DeployScript.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8244765753356393931" fileName="DeployScript.java" startLine="135" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBaseDirectory#()Ljava/io/File;" />
+    <nodeInfo nodeId="8244765753355992751" fileName="DeployScript.java" startLine="130" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptorFile#()Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="93303204049954371" fileName="DeployScript.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPackaged#()Z" />
+    <nodeInfo nodeId="5057842142813877835" fileName="DeployScript.java" startLine="58" startPosition="58" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142812605006" fileName="DeployScript.java" startLine="110" startPosition="0" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8244765753355853191" fileName="DeployScript.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemporalModuleWithDescriptorFile#()V" />
+    <nodeInfo nodeId="5057842142812859094" fileName="DeployScript.java" startLine="80" startPosition="28" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5057842142812869931" fileName="DeployScript.java" startLine="86" startPosition="7" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5057842142812534493" fileName="DeployScript.java" startLine="106" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5057842142812859067" fileName="DeployScript.java" startLine="77" startPosition="123" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5057842142812537446" fileName="DeployScript.java" startLine="52" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeployScript#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
+    <nodeInfo nodeId="5057842142812534989" fileName="DeployScript.java" startLine="75" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#()Ljava/lang/String;" />
+    <scopeInfo nodeId="5057842142812859102" fileName="DeployScript.java" startLine="83" startPosition="0" endLine="83" endPosition="46">
       <varInfo nodeId="5057842142812859103" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5057842142812859105" fileName="DeployScript.java" startLine="67" startPosition="46" endLine="67" endPosition="46" />
-    <scopeInfo nodeId="5057842142812859106" fileName="DeployScript.java" startLine="68" startPosition="0" endLine="68" endPosition="45">
+    <scopeInfo nodeId="5057842142812859105" fileName="DeployScript.java" startLine="83" startPosition="46" endLine="83" endPosition="46" />
+    <scopeInfo nodeId="5057842142812859106" fileName="DeployScript.java" startLine="84" startPosition="0" endLine="84" endPosition="45">
       <varInfo nodeId="5057842142812859107" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5057842142812859109" fileName="DeployScript.java" startLine="68" startPosition="45" endLine="68" endPosition="45" />
-    <scopeInfo nodeId="5057842142812859110" fileName="DeployScript.java" startLine="69" startPosition="0" endLine="69" endPosition="43">
+    <scopeInfo nodeId="5057842142812859109" fileName="DeployScript.java" startLine="84" startPosition="45" endLine="84" endPosition="45" />
+    <scopeInfo nodeId="5057842142812859110" fileName="DeployScript.java" startLine="85" startPosition="0" endLine="85" endPosition="43">
       <varInfo nodeId="5057842142812859111" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5057842142812859113" fileName="DeployScript.java" startLine="69" startPosition="43" endLine="69" endPosition="43" />
-    <scopeInfo nodeId="5057842142812859095" fileName="DeployScript.java" startLine="65" startPosition="11" endLine="66" endPosition="30" />
-    <scopeInfo nodeId="5057842142812869934" fileName="DeployScript.java" startLine="71" startPosition="54" endLine="72" endPosition="20" />
-    <scopeInfo nodeId="5057842142813065864" fileName="DeployScript.java" startLine="81" startPosition="33" endLine="82" endPosition="134" />
-    <scopeInfo nodeId="5057842142812605011" fileName="DeployScript.java" startLine="93" startPosition="25" endLine="94" endPosition="108" />
-    <scopeInfo nodeId="8244765753355992758" fileName="DeployScript.java" startLine="112" startPosition="38" endLine="113" endPosition="107" />
-    <scopeInfo nodeId="8244765753356393934" fileName="DeployScript.java" startLine="116" startPosition="36" endLine="117" endPosition="23" />
-    <scopeInfo nodeId="93303204049954374" fileName="DeployScript.java" startLine="120" startPosition="33" endLine="122" endPosition="19" />
-    <scopeInfo nodeId="5057842142813065861" fileName="DeployScript.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="5057842142812605010" fileName="DeployScript.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="8244765753355853195" fileName="DeployScript.java" startLine="105" startPosition="48" endLine="108" endPosition="59" />
-    <scopeInfo nodeId="8244765753356393931" fileName="DeployScript.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="8244765753355992751" fileName="DeployScript.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="93303204049954371" fileName="DeployScript.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="8244765753355853191" fileName="DeployScript.java" startLine="105" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="5057842142812534496" fileName="DeployScript.java" startLine="87" startPosition="25" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="5057842142812537450" fileName="DeployScript.java" startLine="43" startPosition="70" endLine="54" endPosition="68">
-      <varInfo nodeId="5057842142812591199" varName="deployScriptNode" />
-      <varInfo nodeId="5057842142812537607" varName="model" />
+    <scopeInfo nodeId="5057842142812859113" fileName="DeployScript.java" startLine="85" startPosition="43" endLine="85" endPosition="43" />
+    <scopeInfo nodeId="5057842142813902859" fileName="DeployScript.java" startLine="60" startPosition="44" endLine="61" endPosition="119" />
+    <scopeInfo nodeId="5057842142812859095" fileName="DeployScript.java" startLine="81" startPosition="11" endLine="82" endPosition="30" />
+    <scopeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="88" startPosition="47" endLine="89" endPosition="54" />
+    <scopeInfo nodeId="5057842142813065864" fileName="DeployScript.java" startLine="100" startPosition="33" endLine="101" endPosition="134" />
+    <scopeInfo nodeId="5057842142812605011" fileName="DeployScript.java" startLine="112" startPosition="25" endLine="113" endPosition="108" />
+    <scopeInfo nodeId="8244765753355992758" fileName="DeployScript.java" startLine="131" startPosition="38" endLine="132" endPosition="107" />
+    <scopeInfo nodeId="8244765753356393934" fileName="DeployScript.java" startLine="135" startPosition="36" endLine="136" endPosition="23" />
+    <scopeInfo nodeId="93303204049954374" fileName="DeployScript.java" startLine="139" startPosition="33" endLine="141" endPosition="19" />
+    <scopeInfo nodeId="5057842142813902858" fileName="DeployScript.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="5057842142813902858" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5057842142812534493" fileName="DeployScript.java" startLine="87" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5057842142812859068" fileName="DeployScript.java" startLine="62" startPosition="62" endLine="74" endPosition="32">
+    <scopeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="87" startPosition="54" endLine="90" endPosition="9" />
+    <scopeInfo nodeId="5057842142813065861" fileName="DeployScript.java" startLine="100" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="5057842142812605010" fileName="DeployScript.java" startLine="112" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="8244765753355853195" fileName="DeployScript.java" startLine="124" startPosition="48" endLine="127" endPosition="59" />
+    <scopeInfo nodeId="8244765753356393931" fileName="DeployScript.java" startLine="135" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="5057842142812869934" fileName="DeployScript.java" startLine="87" startPosition="54" endLine="91" endPosition="20" />
+    <scopeInfo nodeId="8244765753355992751" fileName="DeployScript.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="93303204049954371" fileName="DeployScript.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="8244765753355853191" fileName="DeployScript.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="5057842142812534496" fileName="DeployScript.java" startLine="106" startPosition="25" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="5057842142812534493" fileName="DeployScript.java" startLine="106" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="5057842142812859068" fileName="DeployScript.java" startLine="78" startPosition="62" endLine="93" endPosition="32">
       <varInfo nodeId="5057842142812859070" varName="future" />
       <varInfo nodeId="5057842142812859091" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5057842142812537446" fileName="DeployScript.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="5057842142812537450" fileName="DeployScript.java" startLine="52" startPosition="70" endLine="70" endPosition="0">
+      <varInfo nodeId="5057842142812591199" varName="deployScriptNode" />
+      <varInfo nodeId="5057842142812537607" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5057842142812534992" fileName="DeployScript.java" startLine="76" startPosition="24" endLine="95" endPosition="16">
+      <varInfo nodeId="5057842142812859050" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="5057842142812537446" fileName="DeployScript.java" startLine="52" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="5057842142812538060" varName="plugins" />
       <varInfo nodeId="5057842142812538305" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5057842142812534992" fileName="DeployScript.java" startLine="60" startPosition="24" endLine="76" endPosition="16">
-      <varInfo nodeId="5057842142812859050" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="5057842142812534989" fileName="DeployScript.java" startLine="59" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="5057842142812605010" fileName="DeployScript.java" startLine="92" startPosition="46" endLine="96" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$1" />
-    <unitInfo nodeId="8244765753355840208" fileName="DeployScript.java" startLine="101" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$TemporalModuleWithDescriptorFile" />
-    <unitInfo nodeId="5057842142812510296" fileName="DeployScript.java" startLine="36" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript" />
+    <scopeInfo nodeId="5057842142812534989" fileName="DeployScript.java" startLine="75" startPosition="0" endLine="97" endPosition="0" />
+    <unitInfo nodeId="5057842142813902858" fileName="DeployScript.java" startLine="59" startPosition="48" endLine="63" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$1" />
+    <unitInfo nodeId="5057842142812605010" fileName="DeployScript.java" startLine="111" startPosition="46" endLine="115" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$2" />
+    <unitInfo nodeId="8244765753355840208" fileName="DeployScript.java" startLine="120" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$TemporalModuleWithDescriptorFile" />
+    <unitInfo nodeId="5057842142812510296" fileName="DeployScript.java" startLine="45" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript" />
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769033909448">
     <nodeInfo nodeId="6062668769033909565" fileName="Java_Configuration.java" startLine="47" startPosition="39" endLine="48" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
