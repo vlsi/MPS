@@ -34,13 +34,6 @@
       <path path="${mps_build_home}/lib/mps-backend.jar"/>
       <path path="${mps_build_home}/lib/jdom.jar"/>
     </path>
-    <javac classpathref="tests.classpath" destdir="${build.tmp}/buildtests.tmp" fork="true" includeantruntime="false"
-           memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="testbench/tests"/>
-        <path path="testbench/tests_gen"/>
-      </src>
-    </javac>
     <jar destfile="${mps_build_home}/lib/mpstests.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${build.tmp}/buildtests.tmp"/>
     </jar>
