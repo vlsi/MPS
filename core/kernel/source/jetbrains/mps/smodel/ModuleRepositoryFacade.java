@@ -164,7 +164,14 @@ public class ModuleRepositoryFacade implements CoreComponent {
     assert descriptor.getId() != null;
 
     Language language = new Language(descriptor, handle.getFile());
-    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+
+    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+
+    if (registered == language) {
+      language.setLanguageDescriptor(descriptor, false);
+    }
+
+    return registered;
   }
 
   private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
@@ -173,7 +180,13 @@ public class ModuleRepositoryFacade implements CoreComponent {
     assert descriptor.getId() != null;
 
     Solution solution = new Solution(descriptor, handle.getFile());
-    return MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+
+    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    if (registered == solution) {
+      solution.setSolutionDescriptor(descriptor, false);
+    }
+
+    return registered;
   }
 
   private static DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
@@ -182,6 +195,11 @@ public class ModuleRepositoryFacade implements CoreComponent {
     assert descriptor.getId() != null;
 
     DevKit result = new DevKit(descriptor, handle.getFile());
-    return MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
+
+    DevKit registered = MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
+    if (registered == result) {
+      result.setDevKitDescriptor(descriptor, false);
+    }
+    return registered;
   }
 }

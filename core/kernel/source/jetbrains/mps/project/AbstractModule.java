@@ -607,8 +607,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (myDescriptorFile != null) {
       FileSystem.getInstance().addListener(this);
     }
-    // todo: we can do it only on repository attach?
-    reloadAfterDescriptorChange();
   }
 
   @Override
