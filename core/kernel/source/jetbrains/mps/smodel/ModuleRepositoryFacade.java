@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
@@ -163,15 +164,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    Language language = new Language(descriptor, handle.getFile());
-
-    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-
-    if (registered == language) {
-      language.setLanguageDescriptor(descriptor, false);
-    }
-
-    return registered;
+    return registerModule(new Language(descriptor, handle.getFile()), moduleOwner);
   }
 
   private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
@@ -179,26 +172,21 @@ public class ModuleRepositoryFacade implements CoreComponent {
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    Solution solution = new Solution(descriptor, handle.getFile());
-
-    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
-    if (registered == solution) {
-      solution.setSolutionDescriptor(descriptor, false);
-    }
-
-    return registered;
+    return registerModule(new Solution(descriptor, handle.getFile()), moduleOwner);
   }
 
   private static DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
     assert descriptor != null;
     assert descriptor.getId() != null;
+    return registerModule(new DevKit(descriptor, handle.getFile()), moduleOwner);
+  }
 
-    DevKit result = new DevKit(descriptor, handle.getFile());
-
-    DevKit registered = MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
-    if (registered == result) {
-      result.setDevKitDescriptor(descriptor, false);
+  private static <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
+    T registered = MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
+    if (registered == module) {
+      // we can't do it in AbstractModule#attach because we need module without models in SRepositoryListener#moduleAdded event
+      registered.reloadAfterDescriptorChange();
     }
     return registered;
   }

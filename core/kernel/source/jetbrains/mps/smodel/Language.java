@@ -107,7 +107,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  protected void reloadAfterDescriptorChange() {
+  public void reloadAfterDescriptorChange() {
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
   }
