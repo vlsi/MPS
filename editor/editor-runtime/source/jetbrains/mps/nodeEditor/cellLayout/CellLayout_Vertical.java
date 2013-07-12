@@ -81,7 +81,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int cellX = editorCell.getX();
       int cellY = editorCell.getY();
       int newCellX = cellX;
-      CellAlign cellAlign = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_ALIGN);
+      CellAlign cellAlign = editorCell.getStyle().get(StyleAttributes.HORIZONTAL_ALIGN);
       if (cellAlign == CellAlign.CENTER && !myGridLayout) {
         newCellX = cellX + (width - editorCell.getWidth()) / 2;
       } else if (cellAlign == CellAlign.RIGHT && !myGridLayout) {
