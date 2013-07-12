@@ -269,27 +269,29 @@
     <property name="name" nameId="tpck.1169194664001" value="ConsoleActions" />
     <node role="actions" roleId="tp4k.3205778618063718748" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="3257040239264853770" nodeInfo="ng">
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="3257040239264853772" nodeInfo="ng">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="3257040239264853627" resolveInfo="ConsoleEditorActions" />
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="3257040239264853627" resolveInfo="ConsoleExecuteClosureEditorActions" />
       </node>
     </node>
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3257040239264853627" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ConsoleEditorActions" />
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleExecuteClosureEditorActions" />
     <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
     <property name="caption" nameId="tp4k.1204991940915" value="Execute" />
+    <property name="isInvisibleWhenDisabled" nameId="tp4k.1217005992861" value="true" />
+    <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4166509642329677500" nodeInfo="ng">
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.3228268613620327886" resolveInfo="other" />
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.3228268613620327882" resolveInfo="GoToEditorPopupAddition" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.3228268613620327887" resolveInfo="refs" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="3257040239264853654" nodeInfo="ng">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3257040239264853657" nodeInfo="ng">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3257040239264480619" resolveInfo="ExecuteActionAttachedToCurrentNode" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3257040239264480619" resolveInfo="ExecuteClosureAttachedToCurrentNode" />
       </node>
     </node>
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3257040239264480619" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ExecuteActionAttachedToCurrentNode" />
-    <property name="caption" nameId="tp4k.1205250923097" value="Execute Attached Action" />
+    <property name="name" nameId="tpck.1169194664001" value="ExecuteClosureAttachedToCurrentNode" />
+    <property name="caption" nameId="tp4k.1205250923097" value="Execute Attached Closure" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3228268613620327412" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dNODE" resolveInfo="NODE" />
