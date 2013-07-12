@@ -1,7 +1,7 @@
 <components>
   <actions>
     <action id="jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action" class="jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"></action>
-    <group id="jetbrains.mps.console.actions.ConsoleExecuteClosureEditorActions_ActionGroup" text="Execute" popup="true">
+    <group id="jetbrains.mps.console.actions.ConsoleExecuteClosureEditorActions_ActionGroup">
       <reference ref="jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action" />
       <add-to-group group-id="GoToEditorPopupAddition_ActionGrouprefs" anchor="last" />
     </group>

@@ -2215,10 +2215,27 @@
                                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3257040239266250111" nodeInfo="nr">
                                     <property name="name" nameId="tpck.1169194664001" value="result" />
                                     <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3257040239266250106" nodeInfo="in">
-                                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.529843215038987951" resolveInfo="CommandResultPart" />
+                                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.1111629987770987206" resolveInfo="NodeWithClosure" />
                                     </node>
                                     <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3257040239267726410" nodeInfo="nn">
-                                      <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.NodeWithClosure" typeId="eynw.1111629987770987206" id="3257040239267881470" nodeInfo="ng" />
+                                      <node role="quotedNode" roleId="tp3r.1196350785114" type="eynw.NodeWithClosure" typeId="eynw.1111629987770987206" id="6698258751443148553" nodeInfo="ng" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6698258751443190638" nodeInfo="nn">
+                                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6698258751443380345" nodeInfo="nn">
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6698258751443191478" nodeInfo="nn">
+                                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6698258751443190637" nodeInfo="nn">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3257040239266250111" resolveInfo="result" />
+                                      </node>
+                                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6698258751443374538" nodeInfo="nn">
+                                        <link role="property" roleId="tp25.1138056395725" targetNodeId="eynw.6698258751442199460" resolveInfo="text" />
+                                      </node>
+                                    </node>
+                                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="6698258751443387058" nodeInfo="nn">
+                                      <node role="value" roleId="tp25.1138662048170" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6698258751443387357" nodeInfo="nn">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6698258751443106249" resolveInfo="text" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -2264,6 +2281,10 @@
                                     </node>
                                   </node>
                                 </node>
+                              </node>
+                              <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6698258751443106249" nodeInfo="ir">
+                                <property name="name" nameId="tpck.1169194664001" value="text" />
+                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6698258751443145599" nodeInfo="in" />
                               </node>
                               <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3257040239266688739" nodeInfo="ir">
                                 <property name="name" nameId="tpck.1169194664001" value="action" />
@@ -3178,6 +3199,10 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1111629987771316888" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1111629987771316889" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1111629987771316890" nodeInfo="sn" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6698258751443387603" nodeInfo="ir">
+        <property name="name" nameId="tpck.1169194664001" value="text" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6698258751443387648" nodeInfo="in" />
+      </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3257040239266519117" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="action" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="3257040239266519115" nodeInfo="in">

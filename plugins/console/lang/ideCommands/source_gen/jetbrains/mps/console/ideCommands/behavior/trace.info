@@ -154,7 +154,7 @@
       <varInfo nodeId="6147624293055090019" varName="console" />
       <varInfo nodeId="6147624293055083871" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="20" startPosition="30" endLine="24" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$2" />
+    <unitInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="20" startPosition="40" endLine="24" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$2" />
     <unitInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="17" startPosition="45" endLine="26" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$1" />
     <unitInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" />
   </root>
