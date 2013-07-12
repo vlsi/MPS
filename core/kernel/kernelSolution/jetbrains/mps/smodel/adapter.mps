@@ -2616,7 +2616,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3594504603472698097" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SwitchStatement" typeId="tpee.1163670490218" id="3594504603472700775" nodeInfo="nn">
           <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="3594504603472700812" nodeInfo="ng">
-            <node role="expression" roleId="tpee.1163670677455" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118660050" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3321754114104640260" nodeInfo="nn">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="t3eh.~SPrimitiveDataType" resolveInfo="SPrimitiveDataType" />
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="t3eh.~SPrimitiveDataType%dINT" resolveInfo="INT" />
             </node>
             <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="3594504603472700814" nodeInfo="sn">
@@ -2632,7 +2633,8 @@
             </node>
           </node>
           <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="3594504603472723569" nodeInfo="ng">
-            <node role="expression" roleId="tpee.1163670677455" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905118652091" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3321754114104640261" nodeInfo="nn">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="t3eh.~SPrimitiveDataType" resolveInfo="SPrimitiveDataType" />
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="t3eh.~SPrimitiveDataType%dBOOL" resolveInfo="BOOL" />
             </node>
             <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="3594504603472723571" nodeInfo="sn">

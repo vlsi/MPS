@@ -293,6 +293,26 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
+  protected void fireConflictDetected() {
+    for (SModelListener l : myModelListeners) {
+      try {
+        l.conflictDetected(this);
+      } catch (Throwable t) {
+        LOG.error("listener failure", t);
+      }
+    }
+  }
+
+  protected void fireProblemsDetected(Iterable<Problem> problems) {
+    for (SModelListener l : myModelListeners) {
+      try {
+        l.problemsDetected(this, problems);
+      } catch (Throwable t) {
+        LOG.error("listener failure", t);
+      }
+    }
+  }
+
   @Override
   public void changeModelReference(SModelReference newModelReference) {
     super.changeModelReference(newModelReference);

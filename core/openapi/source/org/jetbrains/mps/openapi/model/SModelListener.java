@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.mps.openapi.model.SModel.Problem;
+
 /**
  * This interface can be implemented to track model state.
  */
@@ -27,4 +29,15 @@ public interface SModelListener {
   void modelUnloaded(SModel model);
 
   void modelSaved(SModel model);
+
+  /**
+   * This event is fired when the storage-memory conflict is detected (== isChanged() && needsReloading()).
+   * An IDE can listen to it and give user a way to resolve the conflict by invoking either updateTimestamp(), or reloadFromSource().
+   */
+  void conflictDetected(SModel model);
+
+  /**
+   * This method is called each time a new problem, or a set of problems is discovered.
+   */
+  void problemsDetected(SModel model, Iterable<Problem> problems);
 }

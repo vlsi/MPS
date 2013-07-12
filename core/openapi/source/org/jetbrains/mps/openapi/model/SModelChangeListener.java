@@ -22,9 +22,9 @@ package org.jetbrains.mps.openapi.model;
  */
 public interface SModelChangeListener {
 
-  void nodeAdded(SModel model, SNode node, String role, SNode child);
+  void nodeAdded(SModel model, SNode parent, String role, SNode child);
 
-  void nodeRemoved(SModel model, SNode node, String role, SNode child);
+  void nodeRemoved(SModel model, SNode parent, String role, SNode child);
 
   void propertyChanged(SNode node, String propertyName, String oldValue, String newValue);
 

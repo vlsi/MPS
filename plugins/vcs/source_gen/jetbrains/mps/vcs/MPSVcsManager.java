@@ -18,8 +18,6 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.ChangeProvider;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.vcs.VcsException;
-import jetbrains.mps.smodel.DiskMemoryConflictResolver;
-import jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
@@ -90,7 +88,6 @@ public class MPSVcsManager implements ProjectComponent {
 
   @Override
   public void projectOpened() {
-    DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolverImpl());
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
       return;
     }

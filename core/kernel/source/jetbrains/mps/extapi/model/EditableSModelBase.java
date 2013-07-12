@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SNode;
@@ -135,7 +134,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
         new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), this, this);
+    fireConflictDetected();
   }
 
   public boolean checkAndResolveConflictOnSave() {
@@ -188,7 +187,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     } catch (IOException e) {
       LOG.error("Can't save " + getModelName() + ": " + e.getMessage(), e);
     } catch (ModelSaveException e) {
-      // TODO notify
+      fireProblemsDetected(e.getProblems());
     }
     if (reload) {
       reloadContents();

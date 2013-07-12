@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelListener;
@@ -193,6 +194,14 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   @Override
   public void modelSaved(SModel model) {
+  }
+
+  @Override
+  public void conflictDetected(SModel model) {
+  }
+
+  @Override
+  public void problemsDetected(SModel model, Iterable<Problem> problems) {
   }
 
   @Override
