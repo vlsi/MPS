@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This singleton class provides a per-concept access to SLanguageRepository
  */
@@ -29,11 +31,12 @@ public abstract class SConceptRepository {
     return INSTANCE;
   }
 
-  public abstract SConcept getInstanceConcept(String qualifiedName);
+  @NotNull
+  public abstract SConcept getInstanceConcept(@NotNull String qualifiedName);
 
-  public abstract SAbstractConcept getConcept(String qualifiedName);
+  public abstract SAbstractConcept getConcept(@NotNull String qualifiedName);
 
-  public abstract SEnumeration getEnumeration(String qualifiedName);
+  public abstract SEnumeration getEnumeration(@NotNull String qualifiedName);
 
-  public abstract SLanguage getLanguage(String qualifiedName);
+  public abstract SLanguage getLanguage(@NotNull String qualifiedName);
 }

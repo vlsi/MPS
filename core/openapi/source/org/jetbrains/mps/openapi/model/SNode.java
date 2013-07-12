@@ -71,6 +71,7 @@ public interface SNode {
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.
    */
+  @NotNull
   SConcept getConcept();
 
   /**

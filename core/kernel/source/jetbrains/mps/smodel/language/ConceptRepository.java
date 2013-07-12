@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -33,19 +34,21 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
 
   @Override
-  public SConcept getInstanceConcept(String id) {
+  @NotNull
+  public SConcept getInstanceConcept(@NotNull String id) {
     SAbstractConcept concept = getConcept(id);
     if (concept instanceof SInterfaceConcept) {
       return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
+    }
+    if (concept == null) {
+      // TODO separate implementation for an "invalid" concept?
+      return new SConceptAdapter(id);
     }
     return (SConcept) concept;
   }
 
   @Override
-  public SAbstractConcept getConcept(String id) {
-    if (id == null) {
-      return null;
-    }
+  public SAbstractConcept getConcept(@NotNull String id) {
     ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
     if (desc instanceof IllegalConceptDescriptor) return null;
 
@@ -53,13 +56,13 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   }
 
   @Override
-  public SEnumeration getEnumeration(String qualifiedName) {
+  public SEnumeration getEnumeration(@NotNull String qualifiedName) {
     // TODO
     return null;
   }
 
   @Override
-  public SLanguage getLanguage(String qualifiedName) {
+  public SLanguage getLanguage(@NotNull String qualifiedName) {
     return new SLanguageAdapter(qualifiedName);
   }
 

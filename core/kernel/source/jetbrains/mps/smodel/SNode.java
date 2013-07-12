@@ -612,19 +612,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return new jetbrains.mps.smodel.SNodePointer(this);
   }
 
+  @NotNull
   @Override
   public SConcept getConcept() {
     nodeRead();
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-
-    // Note: during indexing we invoke `node.getConcept().getQualifiedName()`
-    // 1) without read action 2) we must not use deployed version of the concept
-    // ?? may be we need a separate getConceptQualifiedName() method here
-    if (MPSCore.getInstance().isMergeDriverMode() || /* for indexing */ !ModelAccess.instance().canRead()) {
-      return new SConceptAdapter(myConceptFqName);
-    }
 
     return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
   }
