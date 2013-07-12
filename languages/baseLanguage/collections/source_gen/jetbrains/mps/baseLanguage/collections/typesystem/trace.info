@@ -4605,156 +4605,268 @@
     <unitInfo nodeId="1224414526096" fileName="typeof_SequenceCreator_InferenceRule.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SequenceCreator_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1225551170076">
-    <nodeInfo nodeId="1230315924141" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="29" startPosition="279" endLine="30" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948053" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="30" startPosition="104" endLine="31" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="33" startPosition="226" endLine="34" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="34" startPosition="217" endLine="35" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="37" startPosition="7" endLine="38" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="41" startPosition="13" endLine="42" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="42" startPosition="54" endLine="43" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="43" startPosition="223" endLine="44" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="46" startPosition="13" endLine="47" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="47" startPosition="54" endLine="48" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="48" startPosition="223" endLine="49" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3830408436922089013" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="50" startPosition="13" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3830408436922089015" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="51" startPosition="22" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2684739085678948099" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="54" startPosition="15" endLine="55" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948099" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="55" startPosition="166" endLine="56" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948105" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="58" startPosition="19" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948105" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="59" startPosition="60" endLine="60" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948105" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="60" startPosition="229" endLine="61" endPosition="344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2684739085678948143" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="64" startPosition="19" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948143" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="65" startPosition="72" endLine="66" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684739085678948150" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="73" startPosition="7" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2684739085678948154" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="74" startPosition="16" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="79" startPosition="46" endLine="80" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="84" startPosition="5" endLine="85" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="85" startPosition="130" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="90" startPosition="30" endLine="91" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="94" startPosition="83" endLine="95" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="95" startPosition="63" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="96" startPosition="30" endLine="97" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="97" startPosition="30" endLine="98" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="98" startPosition="175" endLine="99" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="100" startPosition="31" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="102" startPosition="5" endLine="103" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="106" startPosition="83" endLine="107" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="107" startPosition="63" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="108" startPosition="30" endLine="109" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="109" startPosition="30" endLine="110" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="110" startPosition="175" endLine="111" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="112" startPosition="31" endLine="113" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="114" startPosition="5" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_SmartClosureParameterDeclaration_InferenceRule#()V" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="99" startPosition="39" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="111" startPosition="39" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684739085678948143" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="63" startPosition="24" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="83" startPosition="68" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="98" startPosition="175" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="98" startPosition="175" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="110" startPosition="175" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="110" startPosition="175" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="31" startPosition="108" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="40" startPosition="29" endLine="45" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="45" startPosition="13" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2684739085678948105" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="57" startPosition="57" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2684739085678948099" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="63" startPosition="22" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="97" startPosition="30" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="97" startPosition="30" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="109" startPosition="30" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="109" startPosition="30" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="94" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_5rdbtv_a0a0d0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="106" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_5rdbtv_a0a0e0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2684739085678948099" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="56" startPosition="188" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684739085678948099" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="53" startPosition="14" endLine="69" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7668447476859120586" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="52" startPosition="22" endLine="70" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
-    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="40" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="38" startPosition="118" endLine="72" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="36" startPosition="7" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225884471784" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="28" startPosition="117" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="28" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="25" startPosition="66" endLine="25" endPosition="66" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="79" startPosition="46" endLine="80" endPosition="95" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="90" startPosition="30" endLine="91" endPosition="16" />
-    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="100" startPosition="31" endLine="101" endPosition="80" />
-    <scopeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="112" startPosition="31" endLine="113" endPosition="80" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2684739085678948143" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="64" startPosition="19" endLine="66" endPosition="261">
-      <varInfo nodeId="2684739085678948143" varName="_reporter_2309309498" />
-      <varInfo nodeId="2684739085678948143" varName="errorTarget" />
+    <nodeInfo nodeId="1230315924141" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="33" startPosition="279" endLine="34" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2684739085678948053" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="34" startPosition="104" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="36" startPosition="7" endLine="37" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="37" startPosition="226" endLine="38" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="38" startPosition="217" endLine="39" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="41" startPosition="7" endLine="42" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="45" startPosition="13" endLine="46" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="46" startPosition="54" endLine="47" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="47" startPosition="223" endLine="48" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="50" startPosition="13" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="51" startPosition="54" endLine="52" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="52" startPosition="223" endLine="53" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8149391245973713516" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="58" startPosition="287" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8149391245973684170" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="59" startPosition="57" endLine="60" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8149391245973650646" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="60" startPosition="153" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1212689055891" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="62" startPosition="26" endLine="63" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8149391245973656861" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="64" startPosition="7" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7192154694571036219" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="65" startPosition="0" endLine="66" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6902868426313419228" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="66" startPosition="86" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4837286298388759139" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="69" startPosition="135" endLine="70" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6902868426313559289" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="70" startPosition="82" endLine="71" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695112407844173847" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="76" startPosition="62" endLine="77" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4695112407844173848" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="77" startPosition="108" endLine="78" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="82" startPosition="9" endLine="83" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="83" startPosition="136" endLine="84" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="84" startPosition="126" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="85" startPosition="24" endLine="86" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="87" startPosition="57" endLine="88" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="88" startPosition="36" endLine="89" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695112407844173868" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="89" startPosition="38" endLine="90" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695112407844173876" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="91" startPosition="110" endLine="92" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7192154694571036454" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="96" startPosition="7" endLine="97" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7192154694571036460" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="97" startPosition="83" endLine="98" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7192154694571049870" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="100" startPosition="102" endLine="101" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7192154694571049880" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="103" startPosition="7" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7192154694571049882" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="104" startPosition="0" endLine="105" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7192154694571049890" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="106" startPosition="103" endLine="107" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7192154694571049896" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="107" startPosition="216" endLine="108" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8149391245973694440" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="109" startPosition="7" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="111" startPosition="7" endLine="112" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="112" startPosition="74" endLine="113" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="113" startPosition="72" endLine="114" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="114" startPosition="23" endLine="115" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="116" startPosition="55" endLine="117" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="117" startPosition="36" endLine="118" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8149391245973739685" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="119" startPosition="59" endLine="120" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9033423951293505984" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="122" startPosition="11" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9033423951293505984" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="123" startPosition="55" endLine="124" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9033423951293505984" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="124" startPosition="221" endLine="125" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8149391245973782227" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="128" startPosition="7" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2328072685354621549" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="129" startPosition="0" endLine="130" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621229" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="131" startPosition="7" endLine="132" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621229" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="132" startPosition="75" endLine="133" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621229" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="133" startPosition="217" endLine="134" endPosition="392" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2328072685354623572" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="136" startPosition="7" endLine="137" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354623572" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="137" startPosition="48" endLine="138" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354623572" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="138" startPosition="217" endLine="139" endPosition="356" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="144" startPosition="46" endLine="145" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="149" startPosition="5" endLine="150" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="150" startPosition="130" endLine="151" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="155" startPosition="30" endLine="156" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="159" startPosition="83" endLine="160" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="160" startPosition="63" endLine="161" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="161" startPosition="30" endLine="162" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="162" startPosition="30" endLine="163" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="163" startPosition="175" endLine="164" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="165" startPosition="31" endLine="166" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="167" startPosition="5" endLine="168" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="171" startPosition="68" endLine="172" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="172" startPosition="63" endLine="173" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="173" startPosition="30" endLine="174" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="174" startPosition="165" endLine="175" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="175" startPosition="239" endLine="176" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="179" startPosition="82" endLine="180" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="180" startPosition="63" endLine="181" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="181" startPosition="30" endLine="182" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="182" startPosition="30" endLine="183" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="183" startPosition="30" endLine="184" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="184" startPosition="172" endLine="185" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="186" startPosition="31" endLine="187" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="188" startPosition="5" endLine="189" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="189" startPosition="159" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="190" startPosition="54" endLine="191" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_SmartClosureParameterDeclaration_InferenceRule#()V" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="173" startPosition="30" endLine="175" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="173" startPosition="30" endLine="175" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="188" startPosition="5" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="188" startPosition="5" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1212689055889" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="61" startPosition="85" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4695112407844173874" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="90" startPosition="61" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7192154694571049868" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="99" startPosition="55" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8149391245973737681" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="118" startPosition="34" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="155" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="164" startPosition="39" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="185" startPosition="39" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6902868426313559256" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="68" startPosition="141" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4837286298388759086" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="75" startPosition="117" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7192154694571049888" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="105" startPosition="75" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="148" startPosition="68" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="163" startPosition="175" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="163" startPosition="175" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="184" startPosition="172" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="184" startPosition="172" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="35" startPosition="108" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="44" startPosition="29" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="49" startPosition="13" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7192154694571049864" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="98" startPosition="222" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9033423951293505984" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="121" startPosition="11" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621229" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="130" startPosition="106" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354623572" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="135" startPosition="7" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="162" startPosition="30" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="162" startPosition="30" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4837286298388758708" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="67" startPosition="37" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4695112407844173841" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="74" startPosition="207" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="148" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="171" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_5rdbtv_a0b0a0h0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="183" startPosition="30" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="183" startPosition="30" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="86" startPosition="25" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="159" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_5rdbtv_a0a0d0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="115" startPosition="22" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="42" startPosition="118" endLine="56" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="81" startPosition="14" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="179" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_5rdbtv_a0t0a0a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4695112407844173854" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="81" startPosition="12" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="40" startPosition="7" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="110" startPosition="0" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4695112407844173828" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="73" startPosition="7" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225884471784" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="32" startPosition="117" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="32" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="29" startPosition="66" endLine="29" endPosition="66" />
+    <scopeInfo nodeId="1212689055890" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="62" startPosition="26" endLine="63" endPosition="15" />
+    <scopeInfo nodeId="4695112407844173875" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="91" startPosition="110" endLine="92" endPosition="223" />
+    <scopeInfo nodeId="7192154694571049869" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="100" startPosition="102" endLine="101" endPosition="215" />
+    <scopeInfo nodeId="8149391245973737684" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="119" startPosition="59" endLine="120" endPosition="21" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="144" startPosition="46" endLine="145" endPosition="95" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="155" startPosition="30" endLine="156" endPosition="16" />
+    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="165" startPosition="31" endLine="166" endPosition="80" />
+    <scopeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="186" startPosition="31" endLine="187" endPosition="82" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6902868426313559259" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="69" startPosition="135" endLine="71" endPosition="90" />
+    <scopeInfo nodeId="4837286298388759087" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="76" startPosition="62" endLine="78" endPosition="117">
+      <varInfo nodeId="4695112407844173847" varName="T_typevar_4695112407844173847" />
     </scopeInfo>
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="84" startPosition="5" endLine="86" endPosition="45">
+    <scopeInfo nodeId="7192154694571049889" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="106" startPosition="103" endLine="108" endPosition="240" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="149" startPosition="5" endLine="151" endPosition="45">
       <varInfo nodeId="1225551170076" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="32" startPosition="7" endLine="35" endPosition="332">
+    <scopeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="173" startPosition="30" endLine="175" endPosition="239" />
+    <scopeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="188" startPosition="5" endLine="190" endPosition="54" />
+    <scopeInfo nodeId="2684739085678948077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="36" startPosition="7" endLine="39" endPosition="332">
       <varInfo nodeId="2684739085678948077" varName="_info_12389875345" />
       <varInfo nodeId="2684739085678948077" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="41" startPosition="13" endLine="44" endPosition="298">
+    <scopeInfo nodeId="7668447476859120558" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="45" startPosition="13" endLine="48" endPosition="298">
       <varInfo nodeId="7668447476859120558" varName="_info_12389875345" />
       <varInfo nodeId="7668447476859120558" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="46" startPosition="13" endLine="49" endPosition="334">
+    <scopeInfo nodeId="7668447476859120577" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="50" startPosition="13" endLine="53" endPosition="334">
       <varInfo nodeId="7668447476859120577" varName="_info_12389875345" />
       <varInfo nodeId="7668447476859120577" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="2684739085678948105" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="58" startPosition="19" endLine="61" endPosition="344">
-      <varInfo nodeId="2684739085678948105" varName="_info_12389875345" />
-      <varInfo nodeId="2684739085678948105" varName="_nodeToCheck_1029348928467" />
+    <scopeInfo nodeId="7192154694571049867" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="99" startPosition="55" endLine="102" endPosition="9" />
+    <scopeInfo nodeId="9033423951293505984" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="122" startPosition="11" endLine="125" endPosition="296">
+      <varInfo nodeId="9033423951293505984" varName="_info_12389875345" />
+      <varInfo nodeId="9033423951293505984" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="2684739085678948142" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="63" startPosition="24" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="83" startPosition="68" endLine="87" endPosition="5" />
-    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="98" startPosition="175" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="110" startPosition="175" endLine="114" endPosition="5" />
-    <scopeInfo nodeId="2684739085678948102" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="57" startPosition="57" endLine="62" endPosition="19" />
-    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="97" startPosition="30" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="109" startPosition="30" endLine="114" endPosition="5" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="2328072685354621229" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="131" startPosition="7" endLine="134" endPosition="392">
+      <varInfo nodeId="2328072685354621229" varName="_info_12389875345" />
+      <varInfo nodeId="2328072685354621229" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2328072685354623572" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="136" startPosition="7" endLine="139" endPosition="356">
+      <varInfo nodeId="2328072685354623572" varName="_info_12389875345" />
+      <varInfo nodeId="2328072685354623572" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="144" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="155" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="4837286298388758709" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="68" startPosition="141" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="6902868426313559256" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="68" startPosition="141" endLine="72" endPosition="9">
+      <varInfo nodeId="6902868426313559257" varName="tvd" />
+    </scopeInfo>
+    <scopeInfo nodeId="4695112407844173846" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="75" startPosition="117" endLine="79" endPosition="11" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="148" startPosition="68" endLine="152" endPosition="5" />
+    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="163" startPosition="175" endLine="167" endPosition="5" />
+    <scopeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="184" startPosition="172" endLine="188" endPosition="5" />
+    <scopeInfo nodeId="7192154694571049864" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="98" startPosition="222" endLine="103" endPosition="7">
+      <varInfo nodeId="7192154694571049865" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="162" startPosition="30" endLine="167" endPosition="5" />
+    <scopeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="171" startPosition="68" endLine="176" endPosition="24">
+      <varInfo nodeId="6902868426313559341" varName="facade" />
+      <varInfo nodeId="6902868426313559341" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4695112407844173840" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="74" startPosition="207" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="4695112407844173841" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="74" startPosition="207" endLine="80" endPosition="9">
+      <varInfo nodeId="4695112407844173842" varName="tvd" />
+    </scopeInfo>
+    <scopeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="87" startPosition="57" endLine="93" endPosition="13" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="148" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="1225551170076" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="94" startPosition="83" endLine="103" endPosition="24">
+    <scopeInfo nodeId="6902868426313559341" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="171" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="183" startPosition="30" endLine="190" endPosition="54" />
+    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="159" startPosition="83" endLine="168" endPosition="24">
       <varInfo nodeId="7668447476859120570" varName="facade" />
       <varInfo nodeId="7668447476859120570" varName="quotedNode_2" />
       <varInfo nodeId="7668447476859120570" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="106" startPosition="83" endLine="115" endPosition="24">
-      <varInfo nodeId="1230315907241" varName="facade" />
-      <varInfo nodeId="1230315907241" varName="quotedNode_2" />
-      <varInfo nodeId="1230315907241" varName="quotedNode_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="94" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="2684739085678948094" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="44" startPosition="29" endLine="54" endPosition="13" />
+    <scopeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="116" startPosition="55" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="7668447476859120570" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="159" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="7668447476859120570" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1230315907241" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="106" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="1230315907241" varName="parameter_1" />
+    <scopeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="44" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="4695112407844173856" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="82" startPosition="9" endLine="94" endPosition="11">
+      <varInfo nodeId="4695112407844173856" varName="targ_it" />
+      <varInfo nodeId="4695112407844173856" varName="targ_var" />
+      <varInfo nodeId="4695112407844173856" varName="tvd_it" />
+      <varInfo nodeId="4695112407844173856" varName="tvd_var" />
     </scopeInfo>
-    <scopeInfo nodeId="2684739085678948099" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="54" startPosition="15" endLine="68" endPosition="17">
-      <varInfo nodeId="2684739085678948099" varName="coercedNode_sg6z08_a4a3a0a" />
-      <varInfo nodeId="2684739085678948099" varName="pattern_sg6z08_a4a3a0a" />
+    <scopeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="179" startPosition="82" endLine="191" endPosition="24">
+      <varInfo nodeId="2328072685354621300" varName="facade" />
+      <varInfo nodeId="2328072685354621300" varName="quotedNode_2" />
+      <varInfo nodeId="2328072685354621300" varName="quotedNode_3" />
+      <varInfo nodeId="2328072685354621300" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="2684739085678948094" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="40" startPosition="29" endLine="70" endPosition="14" />
-    <scopeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="40" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="37" startPosition="7" endLine="72" endPosition="141">
+    <scopeInfo nodeId="4695112407844173855" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="81" startPosition="14" endLine="95" endPosition="9" />
+    <scopeInfo nodeId="2328072685354621300" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="179" startPosition="0" endLine="193" endPosition="0">
+      <varInfo nodeId="2328072685354621300" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="41" startPosition="7" endLine="56" endPosition="141">
       <varInfo nodeId="2684739085678948093" varName="sequenceTypeConcrete" />
     </scopeInfo>
-    <scopeInfo nodeId="1230315433524" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="29" startPosition="279" endLine="75" endPosition="16">
+    <scopeInfo nodeId="4660288602099522949" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="111" startPosition="7" endLine="127" endPosition="9">
+      <varInfo nodeId="4660288602099522949" varName="arg_it" />
+      <varInfo nodeId="4660288602099522949" varName="arg_var" />
+      <varInfo nodeId="4660288602099522949" varName="type_it" />
+      <varInfo nodeId="4660288602099522949" varName="type_var" />
+    </scopeInfo>
+    <scopeInfo nodeId="1230315433524" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="33" startPosition="279" endLine="57" endPosition="7">
       <varInfo nodeId="1230315924141" varName="paramType_typevar_1230315924141" />
       <varInfo nodeId="2684739085678948053" varName="seqType_typevar_2684739085678948053" />
     </scopeInfo>
-    <scopeInfo nodeId="1225551170077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="28" startPosition="117" endLine="76" endPosition="5" />
-    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="28" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="2328072685354540262" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="58" startPosition="287" endLine="140" endPosition="7">
+      <varInfo nodeId="7192154694571036455" varName="argl" />
+      <varInfo nodeId="8149391245973684171" varName="mcall" />
+      <varInfo nodeId="8149391245973650647" varName="mdecl" />
+      <varInfo nodeId="2328072685354621549" varName="ptype_typevar_2328072685354621549" />
+      <varInfo nodeId="7192154694571049883" varName="retType" />
+      <varInfo nodeId="7192154694571036220" varName="subs" />
+      <varInfo nodeId="7192154694571036461" varName="typel" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225551170077" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="32" startPosition="117" endLine="141" endPosition="5" />
+    <scopeInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="32" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="1225551170076" varName="scpd" />
       <varInfo nodeId="1225551170076" varName="status" />
       <varInfo nodeId="1225551170076" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="39" startPosition="67" endLine="72" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SmartClosureParameterDeclaration_InferenceRule$1" />
-    <unitInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="24" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SmartClosureParameterDeclaration_InferenceRule" />
+    <unitInfo nodeId="2684739085678948093" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="43" startPosition="67" endLine="56" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SmartClosureParameterDeclaration_InferenceRule$1" />
+    <unitInfo nodeId="1225551170076" fileName="typeof_SmartClosureParameterDeclaration_InferenceRule.java" startLine="28" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.typesystem.typeof_SmartClosureParameterDeclaration_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1225622471801">
     <nodeInfo nodeId="1225622529097" fileName="typeof_InsertElementOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
