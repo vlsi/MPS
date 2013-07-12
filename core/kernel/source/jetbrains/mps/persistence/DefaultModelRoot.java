@@ -104,13 +104,14 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   public SModel createModel(String modelName, ModelFactory factory) throws IOException {
+    Map<String, String> options = new HashMap<String, String>();
     DataSource source = factory instanceof FolderModelFactory
-        ? ((FolderModelFactory) factory).createNewSource(this, null, modelName)
-        : createSource(modelName, factory.getFileExtension(), null);
+        ? ((FolderModelFactory) factory).createNewSource(this, null, modelName, options)
+        : createSource(modelName, factory.getFileExtension(), null, options);
     if (source == null) {
       return null;
     }
-    SModel model = factory.create(modelName, source);
+    SModel model = factory.create(source, options);
     ((SModelBase) model).setModelRoot(this);
     // TODO fix
     register(model);
@@ -126,13 +127,14 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       return isLanguageAspect(modelName, getFiles(SOURCE_ROOTS).iterator().next());
     }
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    Map<String, String> options = new HashMap<String, String>();
     FileDataSource source;
     try {
-      source = createSource(modelName, MPSExtentions.MODEL, null);
+      source = createSource(modelName, MPSExtentions.MODEL, null, options);
     } catch (IOException e) {
       return false;
     }
-    return modelFactory.canCreate(modelName, source);
+    return modelFactory.canCreate(source, options);
   }
 
   @Override
@@ -169,15 +171,21 @@ public class DefaultModelRoot extends FileBasedModelRoot {
         models.add(model);
       } catch (UnsupportedDataSourceException ex) {
         /* model factory registration problem: ignore */
+      } catch (IOException ex) {
+        // TODO report?
       }
     }
 
     options.put(ModelFactory.OPTION_RELPATH, relativePath);
     for (FolderModelFactory factory : PersistenceRegistry.getInstance().getFolderModelFactories()) {
       for (DataSource dataSource : factory.createDataSources(this, dir)) {
-        SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
-        ((SModelBase) model).setModelRoot(this);
-        models.add(model);
+        try {
+          SModel model = factory.load(dataSource, Collections.unmodifiableMap(options));
+          ((SModelBase) model).setModelRoot(this);
+          models.add(model);
+        } catch (IOException e) {
+          // TODO report?
+        }
       }
     }
 
@@ -200,7 +208,14 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   @NotNull
-  public FileDataSource createSource(String modelName, String extension, @Nullable String sourceRoot) throws IOException {
+  public FileDataSource createSource(String modelName, String extension, @Nullable String sourceRoot, Map<String, String> options) throws IOException {
+    options.put(ModelFactory.OPTION_MODELNAME, modelName);
+    SModule module = getModule();
+    if (module != null) {
+      options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
+    }
+    int lastDot = modelName.lastIndexOf(".");
+    options.put(ModelFactory.OPTION_PACKAGE, lastDot == -1 ? "" : modelName.substring(0, lastDot));
 
     Set<String> sourceRoots = new LinkedHashSet<String>(getFiles(SOURCE_ROOTS));
     if (sourceRoots.isEmpty()) {
@@ -234,7 +249,9 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
 
-    IFile file = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + "." + extension);
+    String relPath = NameUtil.pathFromNamespace(filenameSuffix) + "." + extension;
+    options.put(ModelFactory.OPTION_RELPATH, relPath);
+    IFile file = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + relPath);
     return new FileDataSource(file, this);
   }
 

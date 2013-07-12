@@ -242,6 +242,15 @@ public class XmlConverter {
     return result;
   }
 
+
+
+  public static SNode newDocument(String name) {
+    SNode file = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlFile", null);
+    SPropertyOperations.set(file, "name", name);
+    SLinkOperations.setTarget(file, "document", createXmlDocument_h7fa2c_a0a2a11(name), true);
+    return file;
+  }
+
   private static SNode createXmlAttribute_h7fa2c_a0a0a5a3(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
@@ -341,6 +350,17 @@ public class XmlConverter {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
     n1.setProperty("text", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlDocument_h7fa2c_a0a2a11(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlDocument", null, GlobalScope.getInstance(), false);
+    {
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, GlobalScope.getInstance(), false);
+      n2.setProperty("tagName", (String) p0);
+      n1.addChild("rootElement", n2);
+    }
     return n1;
   }
 }

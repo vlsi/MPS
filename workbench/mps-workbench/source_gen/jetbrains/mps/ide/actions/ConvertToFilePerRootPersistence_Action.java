@@ -24,6 +24,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.PersistenceUtil;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import java.util.HashMap;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -136,7 +137,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
             }
 
             try {
-              DataSource newSource = filePerRootFactory.createNewSource((FileBasedModelRoot) modelRoot, null, newModel.getModelName());
+              DataSource newSource = filePerRootFactory.createNewSource((FileBasedModelRoot) modelRoot, null, newModel.getModelName(), new HashMap<String, String>());
               SModule module = smodel.getModule();
               filePerRootFactory.save(newModel, newSource);
               if (module != null) {

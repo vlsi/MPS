@@ -26,6 +26,8 @@ import java.io.IOException;
  */
 public interface SModelPersistence {
 
+  SModelData createEmpty(SModelReference reference, StreamDataSource source);
+
   SModelData readModel(SModelReference reference, StreamDataSource source) throws IOException;
 
   void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException;

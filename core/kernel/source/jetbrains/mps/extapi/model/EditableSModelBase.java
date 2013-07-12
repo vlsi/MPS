@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -238,7 +239,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
           }
         }
         try {
-          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot, new HashMap<String, String>()).getFile();
           newFile.getParent().mkdirs();
           newFile.createNewFile();
           changeModelFile(newFile);

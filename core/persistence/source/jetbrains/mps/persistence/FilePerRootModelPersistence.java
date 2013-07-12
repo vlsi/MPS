@@ -79,7 +79,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @NotNull
   @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof MultiStreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -104,9 +104,14 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @NotNull
   @Override
-  public SModel create(String modelName, DataSource dataSource) {
+  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof MultiStreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    String modelName = options.get(OPTION_MODELNAME);
+    if (modelName == null) {
+      throw new IOException("modelName is not provided");
     }
 
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
@@ -114,7 +119,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
-  public boolean canCreate(String modelName, DataSource dataSource) {
+  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof MultiStreamDataSource;
   }
 
@@ -194,7 +199,9 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
-  public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName) throws IOException {
+  public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName, Map<String, String> options) throws IOException {
+    options.put(ModelFactory.OPTION_MODELNAME, modelName);
+
     Collection<String> sourceRoots = new LinkedHashSet<String>(modelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS));
     if (sourceRoots.isEmpty()) {
       throw new IOException("empty list of source roots");

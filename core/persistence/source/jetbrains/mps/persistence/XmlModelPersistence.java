@@ -29,6 +29,7 @@ import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
@@ -80,7 +81,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   @NotNull
   @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -96,8 +97,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
         if (dataSource instanceof FileDataSource) {
           LOG.error("cannot load " + dataSource.getLocation() + ": relPath = " + relPath, new Throwable());
         }
-        // TODO fix
-        return null;
+        throw new IOException("cannot load xml model from " + dataSource.getLocation());
       }
       ref = PersistenceFacade.getInstance().createModelReference(
           null, jetbrains.mps.smodel.SModelId.generate(), "temp");
@@ -115,22 +115,39 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   @NotNull
   @Override
-  public SModel create(String modelName, DataSource dataSource) {
+  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
-    // TODO create xml models
-    return null;
+    String moduleRef = options.get(OPTION_MODULEREF);
+    String relPath = options.get(OPTION_RELPATH);
+    String modelName = options.get(OPTION_MODELNAME);
+
+    if (relPath == null || moduleRef == null || modelName == null || !relPath.equals(NameUtil.pathFromNamespace(modelName) + "." + XML_EXTENSION)) {
+      throw new IOException("cannot create xml model from " + dataSource.getLocation());
+    }
+    SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
+    SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(moduleRef);
+    if (mref == null) {
+      throw new IOException("cannot create xml model for " + moduleRef);
+    }
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
+    return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
 
   @Override
-  public boolean canCreate(String modelName, DataSource dataSource) {
+  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
     if (!(dataSource instanceof StreamDataSource)) {
       return false;
     }
-    // TODO create xml models
-    return false;
+
+    String modelName = options.get(ModelFactory.OPTION_MODELNAME);
+    String relPath = NameUtil.pathFromNamespace(modelName) + "." + XML_EXTENSION;
+    if (!relPath.equals(options.get(OPTION_RELPATH))) {
+      return false;
+    }
+    return true;
   }
 
   @Override
@@ -168,6 +185,19 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
 
   @Override
+  public SModelData createEmpty(SModelReference reference, StreamDataSource source) {
+    jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
+    String name = reference.getModelName();
+    if (reference.getModelId() instanceof RelativePathSModelId) {
+      name = FileUtil.getNameWithoutExtension(((RelativePathSModelId) reference.getModelId()).getFileName());
+    }
+    SNode xmlFile = XmlConverter.newDocument(name);
+    sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
+    sModel.addRootNode(xmlFile);
+    return sModel;
+  }
+
+  @Override
   public SModelData readModel(SModelReference reference, StreamDataSource source) throws IOException {
     InputStream in = null;
     try {
@@ -181,6 +211,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
       Document document = JDOMUtil.loadDocument(inputSource);
       SNode xmlFile = XmlConverter.convertDocument(name, document);
       jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
+      sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
       sModel.addRootNode(xmlFile);
       return sModel;
     } catch (JDOMException e) {
