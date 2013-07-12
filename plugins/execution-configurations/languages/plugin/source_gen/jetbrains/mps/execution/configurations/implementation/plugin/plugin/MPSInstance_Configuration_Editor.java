@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 import com.intellij.ui.components.JBCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import com.intellij.util.Restarter;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
@@ -38,6 +39,7 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
         myMpsStartupSettings.setEditable(!(myRestartCheckBox.isSelected()));
       }
     });
+    myRestartCheckBox.setEnabled(Restarter.isSupported());
     JPanel plugins = myPluginsSettings.createEditor();
     plugins.setBorder(new EmptyBorder(5, 0, 0, 0));
 
