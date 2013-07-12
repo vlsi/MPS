@@ -46,19 +46,6 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     return element.getCachedFqName();
   }
 
-  @Override
-  protected String getBorderTitle() {
-    return "Test";
-  }
-
-  @Override
-  protected String getListTitle() {
-    return (this.myIsTestMethods ?
-      "Methods" :
-      "Classes"
-    );
-  }
-
   public void init(List<ITestNodeWrapper> nodes, final boolean isTestMethods) {
     myIsTestMethods = isTestMethods;
     super.init(nodes);
@@ -77,7 +64,7 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
       }
     });
 
-    if (this.myIsTestMethods) {
+    if (myIsTestMethods) {
       final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -91,15 +78,15 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
         }
       });
       synchronized (myLock) {
-        ListSequence.fromList(this.myCandidates).clear();
-        ListSequence.fromList(this.myCandidates).addSequence(ListSequence.fromList(methodsList));
+        ListSequence.fromList(myCandidates).clear();
+        ListSequence.fromList(myCandidates).addSequence(ListSequence.fromList(methodsList));
       }
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           synchronized (myLock) {
-            ListSequence.fromList(TestListPanel.this.myCandidates).clear();
-            ListSequence.fromList(TestListPanel.this.myCandidates).addSequence(ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
+            ListSequence.fromList(myCandidates).clear();
+            ListSequence.fromList(myCandidates).addSequence(ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
               public ITestNodeWrapper select(SNode it) {
                 return wrap(it);
               }
@@ -115,4 +102,8 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   }
 
 
+
+  public TestListPanel() {
+    super("Tests");
+  }
 }

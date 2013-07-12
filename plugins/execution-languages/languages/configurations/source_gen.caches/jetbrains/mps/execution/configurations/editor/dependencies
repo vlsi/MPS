@@ -208,6 +208,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ConfigurationFromExecutorReference_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ConsoleCreator_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ConsoleType_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.editor.EnvironmentExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.GetProjectOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.editor.NodeListSource_Editor" />
@@ -227,6 +228,17 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.editor.EnvironmentExpression_Editor" file="EnvironmentExpression_Editor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.ExecuteConfiguration_Function_Editor" file="ExecuteConfiguration_Function_Editor.java">
     <classNode dependClassName="java.lang.Class" />

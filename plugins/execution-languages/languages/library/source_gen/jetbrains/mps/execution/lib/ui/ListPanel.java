@@ -9,20 +9,21 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBList;
+import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.AnAction;
-import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.JScrollPane;
-import com.intellij.ui.ScrollPaneFactory;
-import javax.swing.JLabel;
+import com.intellij.ui.components.JBLabel;
+import jetbrains.mps.ide.common.LayoutUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.AbstractListModel;
@@ -41,14 +42,35 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemo
  */
 public abstract class ListPanel<T> extends JPanel {
   protected final Object myLock = new Object();
-  private JList myListComponent;
+  private final JList myListComponent;
   protected final List<T> myValues = ListSequence.fromList(new ArrayList<T>());
   protected final List<T> myCandidates = ListSequence.fromList(new ArrayList<T>());
   private ActionListener myListener;
-  private ListPanel.MyAbstractListModel myListModel;
+  private final ListPanel.MyAbstractListModel myListModel;
   private Project myProject;
+  private final String myTitle;
+  private boolean isEditable = true;
 
-  public ListPanel() {
+  public ListPanel(String title) {
+    myTitle = title;
+
+    setLayout(new GridBagLayout());
+    JPanel mainPanel = new JPanel(new BorderLayout());
+
+    myListModel = new ListPanel.MyAbstractListModel();
+    myListComponent = new JBList(myListModel);
+    JScrollPane scrolledListComponent = ScrollPaneFactory.createScrollPane(myListComponent);
+    scrolledListComponent.doLayout();
+    mainPanel.add(scrolledListComponent, BorderLayout.CENTER);
+
+    AnAction add = new ListPanel.MyListAddAction(myListComponent);
+    AnAction remove = new ListPanel.MyListRemoveAction(this.myListComponent);
+    DefaultActionGroup group = ActionUtils.groupFromActions(add, remove);
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    mainPanel.add(toolbar.getComponent(), BorderLayout.EAST);
+
+    this.add(new JBLabel(myTitle + ":"), LayoutUtil.createLabelConstraints(0));
+    this.add(mainPanel, LayoutUtil.createPanelConstraints(1));
   }
 
   protected abstract T wrap(SNode node);
@@ -56,10 +78,6 @@ public abstract class ListPanel<T> extends JPanel {
   protected abstract SNodeReference unwrap(T element);
 
   protected abstract String getFqName(T element);
-
-  protected abstract String getBorderTitle();
-
-  protected abstract String getListTitle();
 
   protected abstract void collectCandidates();
 
@@ -82,25 +100,8 @@ public abstract class ListPanel<T> extends JPanel {
   }
 
   public void init(List<? extends T> nodes) {
-    setLayout(new BorderLayout());
     ListSequence.fromList(myValues).clear();
     ListSequence.fromList(myValues).addSequence(ListSequence.fromList(nodes));
-    myListModel = new ListPanel.MyAbstractListModel();
-    myListComponent = new JBList(myListModel);
-    AnAction add = new ListPanel.MyListAddAction(myListComponent);
-    AnAction remove = new ListPanel.MyListRemoveAction(this.myListComponent);
-
-    this.setBorder(new TitledBorder(getBorderTitle()));
-
-    DefaultActionGroup group = ActionUtils.groupFromActions(add, remove);
-    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-    this.add(toolbar.getComponent(), BorderLayout.WEST);
-
-    JScrollPane comp = ScrollPaneFactory.createScrollPane(myListComponent);
-    comp.doLayout();
-    this.add(comp, BorderLayout.CENTER);
-
-    this.add(new JLabel(getListTitle()), BorderLayout.PAGE_START);
     myListComponent.updateUI();
   }
 
@@ -129,10 +130,12 @@ public abstract class ListPanel<T> extends JPanel {
     }
   }
 
-
-
   public void setProject(Project project) {
     myProject = project;
+  }
+
+  public void setEditable(boolean editable) {
+    isEditable = editable;
   }
 
   private class MyAbstractListModel extends AbstractListModel {
@@ -187,6 +190,12 @@ public abstract class ListPanel<T> extends JPanel {
       ListPanel.this.myListModel.fireSomethingChanged();
       return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value);
     }
+
+    @Override
+    public void update(AnActionEvent event) {
+      event.getPresentation().setEnabled(isEditable);
+      super.update(event);
+    }
   }
 
   private class MyListRemoveAction extends ListRemoveAction {
@@ -215,6 +224,12 @@ public abstract class ListPanel<T> extends JPanel {
       }
       ListPanel.this.myListComponent.updateUI();
       ListPanel.this.myListModel.fireSomethingChanged();
+    }
+
+    @Override
+    public void update(AnActionEvent event) {
+      event.getPresentation().setEnabled(isEditable);
+      super.update(event);
     }
   }
 }

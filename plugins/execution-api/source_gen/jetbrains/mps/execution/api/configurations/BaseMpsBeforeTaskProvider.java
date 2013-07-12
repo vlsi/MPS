@@ -68,7 +68,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       return false;
     }
     try {
-      return task.execute(PlatformDataKeys.PROJECT.getData(context));
+      return task.execute(PlatformDataKeys.PROJECT.getData(context), env);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("Error during executing provider " + (myAlias + "(" + this.getClass().getName() + ")"), t);
@@ -140,7 +140,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       setEnabled(true);
     }
 
-    public abstract boolean execute(Project project);
+    public abstract boolean execute(Project project, ExecutionEnvironment environment);
   }
 
   protected static Logger LOG = LogManager.getLogger(BaseMpsBeforeTaskProvider.class);

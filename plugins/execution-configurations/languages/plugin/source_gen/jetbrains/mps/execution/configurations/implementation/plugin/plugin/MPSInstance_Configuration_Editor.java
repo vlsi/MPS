@@ -5,29 +5,42 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstance_Configuration> {
-  private MpsSettings_Configuration_Editor myMpsSettings;
+  private MpsStartupSettings_Configuration_Editor myMpsSettings;
+  private DeployPluginsSettings_Configuration_Editor myPluginsSettings;
 
   public void disposeEditor() {
     Disposer.dispose(myMpsSettings);
+    Disposer.dispose(myPluginsSettings);
   }
 
   @NotNull
-  public MpsSettingsEditorComponent createEditor() {
-    return myMpsSettings.createEditor();
+  public JPanel createEditor() {
+    JPanel panel = new JPanel(new GridBagLayout());
+    MpsStartupSettingsEditorComponent mpsSettings = myMpsSettings.createEditor();
+    JPanel plugins = myPluginsSettings.createEditor();
+    panel.add(mpsSettings, LayoutUtil.createPanelConstraints(0));
+    panel.add(plugins, LayoutUtil.createPanelConstraints(1));
+    return panel;
   }
 
   public void applyEditorTo(final MPSInstance_Configuration configuration) throws ConfigurationException {
     myMpsSettings.applyEditorTo(configuration.getMpsSettings());
+    myPluginsSettings.applyEditorTo(configuration.getPluginsSettings());
   }
 
   public void resetEditorFrom(final MPSInstance_Configuration configuration) {
     myMpsSettings.resetEditorFrom(configuration.getMpsSettings());
+    myPluginsSettings.resetEditorFrom(configuration.getPluginsSettings());
   }
 
-  public MPSInstance_Configuration_Editor(MpsSettings_Configuration_Editor mpsSettings) {
+  public MPSInstance_Configuration_Editor(MpsStartupSettings_Configuration_Editor mpsSettings, DeployPluginsSettings_Configuration_Editor pluginsSettings) {
     myMpsSettings = mpsSettings;
+    myPluginsSettings = pluginsSettings;
   }
 }

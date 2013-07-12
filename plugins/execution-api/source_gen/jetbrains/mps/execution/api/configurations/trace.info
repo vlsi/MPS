@@ -135,7 +135,7 @@
     <nodeInfo nodeId="7037083547575991118" fileName="BaseMpsBeforeTaskProvider.java" startLine="57" startPosition="48" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7037083547575991120" fileName="BaseMpsBeforeTaskProvider.java" startLine="61" startPosition="5" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012936564564596345" fileName="BaseMpsBeforeTaskProvider.java" startLine="67" startPosition="44" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6314556899428532852" fileName="BaseMpsBeforeTaskProvider.java" startLine="70" startPosition="9" endLine="71" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6314556899428532852" fileName="BaseMpsBeforeTaskProvider.java" startLine="70" startPosition="9" endLine="71" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6314556899428532845" fileName="BaseMpsBeforeTaskProvider.java" startLine="73" startPosition="45" endLine="74" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6314556899428532862" fileName="BaseMpsBeforeTaskProvider.java" startLine="76" startPosition="5" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012936564564596272" fileName="BaseMpsBeforeTaskProvider.java" startLine="81" startPosition="9" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -155,7 +155,7 @@
     <nodeInfo nodeId="2930479450914408224" fileName="BaseMpsBeforeTaskProvider.java" startLine="133" startPosition="49" endLine="134" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1462058189372577436" fileName="BaseMpsBeforeTaskProvider.java" startLine="138" startPosition="61" endLine="139" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7037083547576022746" fileName="BaseMpsBeforeTaskProvider.java" startLine="139" startPosition="24" endLine="140" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7037083547576022756" fileName="BaseMpsBeforeTaskProvider.java" startLine="143" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/openapi/project/Project;)Z" />
+    <nodeInfo nodeId="7037083547576022756" fileName="BaseMpsBeforeTaskProvider.java" startLine="143" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/runners/ExecutionEnvironment;)Z" />
     <nodeInfo nodeId="7037083547575991021" fileName="BaseMpsBeforeTaskProvider.java" startLine="146" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7037083547575991042" fileName="BaseMpsBeforeTaskProvider.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsBeforeTaskProvider#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="2930479450914414995" fileName="BaseMpsBeforeTaskProvider.java" startLine="48" startPosition="58" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -206,7 +206,7 @@
     <scopeInfo nodeId="2930479450914414997" fileName="BaseMpsBeforeTaskProvider.java" startLine="49" startPosition="45" endLine="50" endPosition="30" />
     <scopeInfo nodeId="7037083547575991117" fileName="BaseMpsBeforeTaskProvider.java" startLine="57" startPosition="48" endLine="58" endPosition="20" />
     <scopeInfo nodeId="7012936564564596336" fileName="BaseMpsBeforeTaskProvider.java" startLine="67" startPosition="44" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="6314556899428532830" fileName="BaseMpsBeforeTaskProvider.java" startLine="70" startPosition="9" endLine="71" endPosition="69" />
+    <scopeInfo nodeId="6314556899428532830" fileName="BaseMpsBeforeTaskProvider.java" startLine="70" startPosition="9" endLine="71" endPosition="74" />
     <scopeInfo nodeId="6314556899428532845" fileName="BaseMpsBeforeTaskProvider.java" startLine="73" startPosition="45" endLine="74" endPosition="109" />
     <scopeInfo nodeId="7012936564564596280" fileName="BaseMpsBeforeTaskProvider.java" startLine="83" startPosition="27" endLine="84" endPosition="21" />
     <scopeInfo nodeId="7012936564564596305" fileName="BaseMpsBeforeTaskProvider.java" startLine="88" startPosition="42" endLine="89" endPosition="85" />
@@ -220,6 +220,7 @@
     <scopeInfo nodeId="7876144211257451450" fileName="BaseMpsBeforeTaskProvider.java" startLine="129" startPosition="57" endLine="130" endPosition="53" />
     <scopeInfo nodeId="2930479450914408223" fileName="BaseMpsBeforeTaskProvider.java" startLine="133" startPosition="49" endLine="134" endPosition="23" />
     <scopeInfo nodeId="7037083547576022756" fileName="BaseMpsBeforeTaskProvider.java" startLine="143" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="7508312992416402268" varName="environment" />
       <varInfo nodeId="7037083547576022767" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="6396510228602725940" fileName="BaseMpsBeforeTaskProvider.java" startLine="30" startPosition="63" endLine="32" endPosition="20" />
