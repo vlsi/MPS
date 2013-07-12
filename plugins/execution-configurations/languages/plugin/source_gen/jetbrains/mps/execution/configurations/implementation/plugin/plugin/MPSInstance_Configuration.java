@@ -11,6 +11,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import java.io.File;
+import com.intellij.openapi.application.PathManager;
 import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -88,7 +89,18 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return myPluginsSettings;
   }
 
+  public boolean getIsRestartCurrent() {
+    return myState.myIsRestartCurrent;
+  }
+
+  public void setIsRestartCurrent(boolean value) {
+    myState.myIsRestartCurrent = value;
+  }
+
   public File getPluginsPath() {
+    if (this.getIsRestartCurrent()) {
+      return new File(PathManager.getPluginsPath());
+    }
     return new File(this.getMpsSettings().expandPath(this.getMpsSettings().getConfigurationPath()), "plugins");
   }
 
@@ -110,12 +122,15 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public class MyState {
+    public boolean myIsRestartCurrent = false;
+
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
       MPSInstance_Configuration.MyState state = new MPSInstance_Configuration.MyState();
+      state.myIsRestartCurrent = myIsRestartCurrent;
       return state;
     }
   }

@@ -55,5 +55,6 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
 
   public void setEditable(boolean editable) {
     myField.setEditable(editable);
+    myField.getButton().setEnabled(editable);
   }
 }
