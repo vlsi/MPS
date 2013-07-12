@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.annotations.Nullable;
 
 public interface TextGenDescriptor {
-  void doGenerateText(SNode node, TextGenBuffer buffer);
+  void doGenerateText(@NotNull SNode node, TextGenBuffer buffer);
 
   @Nullable
   public String getExtension(SNode node);

@@ -148,7 +148,7 @@ public class TextGen {
 
   // helper stuff
   @NotNull
-  private static TextGenDescriptor getTextGenForNode(SNode node) {
+  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
     return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getQualifiedName());
   }
 
