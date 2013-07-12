@@ -6,9 +6,9 @@ import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
 
 public class IconContainer {
-  protected static Icon ICON_d0a91 = IconUtil.getIcon("console.png");
-  protected static Icon ICON_c0a1dc = IconUtil.getIcon("run.png");
-  protected static Icon ICON_c0a0fc = IconUtil.getIcon("clean.png");
-  protected static Icon ICON_c0a0hc = IconUtil.getIcon("previousOccurence.png");
-  protected static Icon ICON_c0a0jc = IconUtil.getIcon("nextOccurence.png");
+  protected static Icon ICON_d0a02 = IconUtil.getIcon("console.png");
+  protected static Icon ICON_c0a1yb = IconUtil.getIcon("run.png");
+  protected static Icon ICON_c0a0ac = IconUtil.getIcon("clean.png");
+  protected static Icon ICON_c0a0cc = IconUtil.getIcon("previousOccurence.png");
+  protected static Icon ICON_c0a0ec = IconUtil.getIcon("nextOccurence.png");
 }

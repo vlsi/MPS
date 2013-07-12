@@ -1,0 +1,9 @@
+<components>
+  <actions>
+    <action id="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" class="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action"></action>
+    <group id="jetbrains.mps.console.actions.ConsoleEditorActions_ActionGroup">
+      <reference ref="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" />
+      <add-to-group group-id="GoToEditorPopupAddition_ActionGroupother" anchor="last" />
+    </group>
+  </actions>
+</components>

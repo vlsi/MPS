@@ -69,7 +69,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
 
         myTempModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
         myTempModel.addRootNode(baseMethodDeclaration);
-        TemporaryModels.getInstance().addMissingModuleImports(myTempModel);
+        TemporaryModels.getInstance().addMissingImports(myTempModel);
 
         ChangeMethodSignatureDialog.this.myEditor = new EmbeddableEditor(myProject, true);
         myEditor.editNode(baseMethodDeclaration);
