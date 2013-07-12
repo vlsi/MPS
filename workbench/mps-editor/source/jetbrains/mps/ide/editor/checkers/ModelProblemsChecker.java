@@ -59,6 +59,11 @@ public class ModelProblemsChecker extends EditorCheckerAdapter {
     }
 
     @Override
+    public void problemsDetected(SModel model, Iterable<Problem> problems) {
+      myChanged = true;
+    }
+
+    @Override
     public void modelSaved(SModel model) {
       myChanged = true;
     }

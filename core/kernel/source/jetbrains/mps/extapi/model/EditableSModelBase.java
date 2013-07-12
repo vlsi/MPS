@@ -180,21 +180,24 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     if (!checkAndResolveConflictOnSave()) return;
 
-    setChanged(false);
-    boolean reload = false;
+    boolean isSaved = false;
     try {
-      reload = saveModel();
+      boolean reload = saveModel();
+      setChanged(false);
+      if (reload) {
+        reloadContents();
+      }
+      isSaved = true;
     } catch (IOException e) {
       LOG.error("Can't save " + getModelName() + ": " + e.getMessage(), e);
     } catch (ModelSaveException e) {
       fireProblemsDetected(e.getProblems());
     }
-    if (reload) {
-      reloadContents();
-    }
 
     updateTimestamp();
-    fireModelSaved();
+    if (isSaved) {
+      fireModelSaved();
+    }
   }
 
   /**
