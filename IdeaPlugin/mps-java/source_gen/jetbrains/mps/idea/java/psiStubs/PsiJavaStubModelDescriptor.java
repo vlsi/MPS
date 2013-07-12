@@ -33,6 +33,7 @@ import jetbrains.mps.idea.java.psi.PsiListener;
 import com.intellij.psi.PsiFile;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import com.intellij.psi.PsiImportStatementBase;
+import com.intellij.psi.PsiJavaCodeReferenceElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.psi.PsiImportStaticStatement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -251,10 +252,15 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
     SNode javaImports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
 
     for (PsiImportStatementBase imp : imports) {
+      PsiJavaCodeReferenceElement ref = imp.getImportReference();
+      if (ref == null) {
+        continue;
+      }
+
       SNode javaImport = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
       SPropertyOperations.set(javaImport, "onDemand", "" + (imp.isOnDemand()));
       SPropertyOperations.set(javaImport, "static", "" + (imp instanceof PsiImportStaticStatement));
-      String qName = imp.getImportReference().getQualifiedName();
+      String qName = ref.getQualifiedName();
       SPropertyOperations.set(javaImport, "tokens", qName);
 
       ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).addElement(javaImport);

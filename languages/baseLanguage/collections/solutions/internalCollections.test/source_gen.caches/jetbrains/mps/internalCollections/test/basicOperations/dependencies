@@ -150,7 +150,6 @@
     <classNode dependClassName="java.util.TreeMap" />
     <classNode dependClassName="java.util.WeakHashMap" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -160,8 +159,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SortedMapSequence" />
-    <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.Bar" />
-    <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>

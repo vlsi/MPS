@@ -2,6 +2,7 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.util.Ref;
 import com.intellij.psi.HierarchicalMethodSignature;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
@@ -27,13 +28,18 @@ import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
+import jetbrains.mps.idea.java.util.ClassUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -54,11 +60,18 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @Nullable
   @Override
   public String getQualifiedName() {
-    String modelQName = getContainingModel().getQualifiedName();
-    // Q: is this available somewhere as util?  should it?
-    int atSign = modelQName.indexOf("@");
-    String pkgName = atSign < 0 ? modelQName : modelQName.substring(0, modelQName.indexOf("@"));
-    return pkgName + "." + getName();
+    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+    final Ref<String> result = new Ref<String>();
+
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SNode node = getSNodeReference().resolve(repository);
+        result.set(ClassUtil.getClassFQName(node));
+      }
+    });
+
+    return result.get();
   }
 
   @Override
@@ -154,7 +167,12 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @NotNull
   @Override
   public PsiClass[] getInnerClasses() {
-    return new PsiClass[0];  //To change body of implemented methods use File | Settings | File Templates.
+    PsiClass[] classes = getChildrenOfType("member", PsiClass.class);
+    if (classes == null) {
+      return PsiClass.EMPTY_ARRAY;
+    } else {
+      return classes;
+    }
   }
 
   @NotNull
@@ -178,7 +196,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @NotNull
   @Override
   public PsiClass[] getAllInnerClasses() {
-    return new PsiClass[0];  //To change body of implemented methods use File | Settings | File Templates.
+    return PsiClassImplUtil.getAllInnerClasses(this);
   }
 
   @Nullable

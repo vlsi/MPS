@@ -27,6 +27,7 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ModuleId;
@@ -45,6 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -132,6 +134,19 @@ public abstract class StubSolutionIdea extends StubSolution {
   }
 
   protected abstract RootProvider getRootProvider();
+
+  public static List<ModelRoot> getModelRoots(VirtualFile[] roots) {
+    List<ModelRoot> result = new ArrayList<ModelRoot>();
+
+    for (VirtualFile f : roots) {
+      String localPath = getLocalPath(f);
+      JavaClassStubsModelRoot modelRoot = new JavaClassStubsModelRoot();
+      modelRoot.setPath(localPath);
+      result.add(modelRoot);
+    }
+
+    return result;
+  }
 
   public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
     Set<String> seenPaths = new LinkedHashSet<String>();
