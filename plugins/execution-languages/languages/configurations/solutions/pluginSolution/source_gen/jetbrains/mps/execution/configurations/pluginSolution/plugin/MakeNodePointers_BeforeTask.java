@@ -7,6 +7,7 @@ import com.intellij.openapi.util.Key;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.runners.ExecutionEnvironment;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -52,7 +53,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
       return true;
     }
 
-    public boolean execute(Project project) {
+    public boolean execute(Project project, ExecutionEnvironment environment) {
       Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
         public boolean accept(SNodeReference it) {
           return it != null;

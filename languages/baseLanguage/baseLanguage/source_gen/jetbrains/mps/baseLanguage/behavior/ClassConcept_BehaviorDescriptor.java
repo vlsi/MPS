@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
@@ -72,6 +73,8 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, visited);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.0)
   public boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return ClassConcept_Behavior.virtual_isRunnable_7941158526576616752(thisNode);
   }

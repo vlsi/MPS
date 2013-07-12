@@ -116,7 +116,7 @@ public class ModulesClusterizer {
       } else {
         Set<Language> langs = SetSequence.fromSet(new HashSet<Language>());
         for (Language l : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(mod).getUsedLanguages())) {
-          new LanguageDependenciesManager(l).collectAllExtendedLanguages(langs);
+          SetSequence.fromSet(langs).addSequence(SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(l)));
         }
         QueueSequence.fromQueue(nsq).addSequence(SetSequence.fromSet(langs).select(new ISelector<Language, String>() {
           public String select(Language lang) {

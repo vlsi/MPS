@@ -14,16 +14,18 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.application.ex.ApplicationEx;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.io.File;
-import com.intellij.execution.ui.ConsoleView;
-import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
-import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.util.FileUtil;
+import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
+import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
@@ -54,12 +56,17 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
+    if (myRunConfiguration.getIsRestartCurrent()) {
+      ApplicationEx application = (ApplicationEx) ApplicationManager.getApplication();
+      application.restart(true);
+      // todo 
+      throw new ExecutionException("MPS is going to be restarted.");
+    }
+
+    ProcessHandler process;
 
     final Tuples._2<File, File> files = myRunConfiguration.getMpsSettings().prepareFilesToOpenAndToDelete(project);
-
-    ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-    console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
-    ProcessHandler process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getMpsSettings().getVmOptions()).setJrePath_String(myRunConfiguration.getMpsSettings().getJrePath()).setConfigurationPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getConfigurationPath())).setSystemPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(files._0());
+    process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getMpsSettings().getVmOptions()).setJrePath_String(myRunConfiguration.getMpsSettings().getJrePath()).setConfigurationPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getConfigurationPath())).setSystemPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(files._0());
     if (files._1() != null) {
       OutputRedirector.redirect(process, new ProcessAdapter() {
         @Override
@@ -69,6 +76,9 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
         }
       });
     }
+
+    ConsoleView console = ConsoleCreator.createConsoleView(project, false);
+    console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
     {
       ProcessHandler _processHandler = process;
       final ConsoleView _consoleView = console;

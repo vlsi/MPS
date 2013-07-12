@@ -47,7 +47,6 @@
     <orderEntry type="module" module-name="execution-configurations-plugin" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-configurations-unitTests" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-impl" scope="PROVIDED" />
-    <orderEntry type="module" module-name="execution-languages-deprecated-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-languages-library" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-languages-plugin" scope="PROVIDED" />
     <orderEntry type="module" module-name="findUsages-runtime" scope="PROVIDED" />

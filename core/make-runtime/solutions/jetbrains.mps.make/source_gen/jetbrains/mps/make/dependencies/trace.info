@@ -25,7 +25,7 @@
     <nodeInfo nodeId="6987891284706393037" fileName="ModulesClusterizer.java" startLine="108" startPosition="57" endLine="109" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6987891284706393048" fileName="ModulesClusterizer.java" startLine="112" startPosition="44" endLine="113" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5541828167401370123" fileName="ModulesClusterizer.java" startLine="116" startPosition="14" endLine="117" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2447771473068633787" fileName="ModulesClusterizer.java" startLine="118" startPosition="123" endLine="119" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1407637024314432175" fileName="ModulesClusterizer.java" startLine="118" startPosition="123" endLine="119" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5541828167401370141" fileName="ModulesClusterizer.java" startLine="122" startPosition="47" endLine="123" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6987891284706391848" fileName="ModulesClusterizer.java" startLine="126" startPosition="44" endLine="127" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5541828167401370151" fileName="ModulesClusterizer.java" startLine="131" startPosition="57" endLine="132" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -84,7 +84,7 @@
     <scopeInfo nodeId="5541828167401360177" fileName="ModulesClusterizer.java" startLine="93" startPosition="42" endLine="94" endPosition="26" />
     <scopeInfo nodeId="6987891284706393036" fileName="ModulesClusterizer.java" startLine="108" startPosition="57" endLine="109" endPosition="74" />
     <scopeInfo nodeId="6987891284706393047" fileName="ModulesClusterizer.java" startLine="112" startPosition="44" endLine="113" endPosition="67" />
-    <scopeInfo nodeId="3712686628935232882" fileName="ModulesClusterizer.java" startLine="118" startPosition="123" endLine="119" endPosition="80" />
+    <scopeInfo nodeId="3712686628935232882" fileName="ModulesClusterizer.java" startLine="118" startPosition="123" endLine="119" endPosition="126" />
     <scopeInfo nodeId="5541828167401370140" fileName="ModulesClusterizer.java" startLine="122" startPosition="47" endLine="123" endPosition="61" />
     <scopeInfo nodeId="6987891284706391845" fileName="ModulesClusterizer.java" startLine="126" startPosition="44" endLine="127" endPosition="67" />
     <scopeInfo nodeId="7952422520065086503" fileName="ModulesClusterizer.java" startLine="143" startPosition="31" endLine="144" endPosition="25" />

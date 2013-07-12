@@ -39,7 +39,7 @@ public class LanguageScopeExecutor {
   public static <T> T execWithLanguageScope(Language lang, Computable<T> computable) {
     LanguageScope languageScope = lang == null ? LanguageScope.getGlobal() :
       LanguageScopeFactory.getInstance().getLanguageScope(
-        new LanguageDependenciesManager(lang).getAllExtendedLanguages());
+        LanguageDependenciesManager.getAllExtendedLanguageReferences(lang));
     try{
        LanguageScope.pushCurrent(languageScope, computable);
        return computable.compute();
@@ -53,8 +53,8 @@ public class LanguageScopeExecutor {
     if (lang1 == null || lang2 == null) return execWithLanguageScope(lang1 != null ? lang1 : lang2, computable);
 
     LanguageScope languageScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      new LanguageDependenciesManager(lang1).getAllExtendedLanguages(),
-      new LanguageDependenciesManager(lang2).getAllExtendedLanguages());
+      LanguageDependenciesManager.getAllExtendedLanguageReferences(lang1),
+      LanguageDependenciesManager.getAllExtendedLanguageReferences(lang2));
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.Icon;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -30,6 +31,8 @@ public class BaseConcept_Behavior {
     return new ArrayList<Icon>();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.0)
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return false;
   }

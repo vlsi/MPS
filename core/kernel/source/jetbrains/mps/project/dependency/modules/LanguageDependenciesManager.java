@@ -16,142 +16,83 @@
 package jetbrains.mps.project.dependency.modules;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.ConcurrentMap;
 
+/**
+ * todo: Merge with GlobalModuleDependenciesManager
+ */
 public class LanguageDependenciesManager {
-//  private MyModuleWatcher myModuleWatcher;
-
-//  private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
-//  private volatile Set<SModuleReference> myCachedDeps;
-//  a one-time synchronization helper for the cache
-//  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
-
   private final Language myLanguage;
+  private final Set<Language> myExtendedLanguages;
 
   public LanguageDependenciesManager(Language language) {
     myLanguage = language;
-//    myModuleWatcher = new MyModuleWatcher();
+    myExtendedLanguages = getAllExtendedLanguagesInternal(language);
   }
 
-  public void collectAllExtendedLanguages(Set<Language> result) {
-    if (result.contains(myLanguage)) return;
-
-    result.add(myLanguage);
-
-    for (Language l : ModuleUtil.refsToLanguages(myLanguage.getExtendedLanguageRefs())) {
-      new LanguageDependenciesManager(l).collectAllExtendedLanguages(result);
-    }
+  public static Set<Language> getAllExtendedLanguages(Language language) {
+    return Collections.unmodifiableSet(getLanguageDependenciesManager(language).myExtendedLanguages);
   }
 
-  public Iterable<SModuleReference> getAllExtendedLanguages() {
+  public static Set<SModuleReference> getAllExtendedLanguageReferences(Language language) {
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    THashSet<Language> langs = new THashSet<Language>();
-    collectAllExtendedLanguages(langs);
-    for (Language lang : langs) {
+    for (Language lang : getAllExtendedLanguages(language)) {
       result.add(lang.getModuleReference());
     }
     return result;
-
-//    if (myInvalidatedFlag.compareAndSet(true, false)) {
-//      // lazy initialization
-//      myModuleWatcher.clear();
-//
-//      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-//      THashSet<Language> langs = new THashSet<Language>();
-//      collectAllExtendedLanguages(langs);
-//
-//      for (Language lang: langs) {
-//        myModuleWatcher.watchLanguage(lang);
-//        result.add(lang.getModuleReference());
-//      }
-//      this.myCachedDeps = Collections.unmodifiableSet(result);
-//      myCacheInitGuard.countDown();
-//    }
-//
-//    while(true) {
-//      try {
-//        myCacheInitGuard.await();
-//        break;
-//      } catch (InterruptedException e) {}
-//    }
-//    return myCachedDeps;
   }
 
-//  public void dispose() {
-//    if (myModuleWatcher != null) {
-//      myModuleWatcher.dispose();
-//      this.myModuleWatcher = null;
-//    }
-//  }
+  private static LanguageDependenciesManager getLanguageDependenciesManager(Language language) {
+    ConcurrentMap<Language, LanguageDependenciesManager> cache = ModelAccess.instance().getRepositoryStateCache(LanguageDependenciesManager.class.getName());
+    LanguageDependenciesManager manager = cache.get(language);
+    if (manager != null) {
+      return manager;
+    }
+    manager = new LanguageDependenciesManager(language);
+    cache.put(language, manager);
+    return manager;
+  }
 
-//  private void invalidate() {
-//    myInvalidatedFlag.set(true);
-//  }
+  // main logic
+  private static Set<Language> getAllExtendedLanguagesInternal(Language language) {
+    THashSet<Language> langs = new THashSet<Language>();
 
-//  private class MyModuleWatcher extends ModuleRepositoryAdapter {
-//
-//    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
-//
-//    private MyModuleWatcher() {
-//      registerSelf();
-//    }
-//
-//    @Override
-//    public void moduleRemoved(SModule module) {
-//      invalidateIfWatching(module);
-//    }
-//
-//    @Override
-//    public void moduleInitialized(SModule module) {
-//      invalidateIfWatching(module);
-//    }
-//
-//    @Override
-//    public void moduleChanged(SModule module) {
-//      invalidateIfWatching(module);
-//    }
-//
-//    @Override
-//    public void repositoryChanged() {
-//      invalidate();
-//      unregisterSelf();
-//    }
-//
-//    private void watchDevKit (DevKit devKit) {
-//      myWatchedModules.add(devKit);
-//    }
-//
-//    private void watchLanguage (Language language) {
-//      myWatchedModules.add(language);
-//    }
-//
-//    private void invalidateIfWatching (SModule module) {
-//      if (myWatchedModules.contains(module)) {
-//        invalidate();
-//        unregisterSelf();
-//      }
-//    }
-//
-//    private void clear () {
-//      myWatchedModules.clear();
-//    }
-//
-//    private void dispose() {
-//      clear();
-//      unregisterSelf();
-//    }
-//
-//    private void registerSelf() {
-//      MPSModuleRepository.getInstance().addModuleRepositoryListener(this);
-//    }
-//
-//    private void unregisterSelf() {
-//      MPSModuleRepository.getInstance().removeModuleRepositoryListener(this);
-//    }
-//  }
+    Queue<Language> queue = new LinkedList<Language>();
+    queue.add(language);
+
+    while (!queue.isEmpty()) {
+      Language current = queue.poll();
+      if (langs.contains(current)) continue;
+
+      langs.add(current);
+      for (Language l : ModuleUtil.refsToLanguages(current.getExtendedLanguageRefs())) {
+        queue.add(l);
+      }
+    }
+
+    return langs;
+  }
+
+  // deprecated
+  @Deprecated
+  public void collectAllExtendedLanguages(Set<Language> result) {
+    for (Language language : getAllExtendedLanguages(myLanguage)) {
+      result.add(language);
+    }
+  }
+
+  @Deprecated
+  public Iterable<SModuleReference> getAllExtendedLanguages() {
+    return getAllExtendedLanguageReferences(myLanguage);
+  }
 }

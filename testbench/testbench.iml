@@ -36,7 +36,6 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="library" name="xmlunit" level="project" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="debugger-api-api" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-java-api" scope="RUNTIME" />
@@ -44,7 +43,6 @@
     <orderEntry type="module" module-name="execution-configurations-baseLanguage" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-configurations-plugin" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-configurations-unitTests" scope="RUNTIME" />
-    <orderEntry type="module" module-name="execution-languages-deprecated-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-languages-library" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-languages-plugin" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-api-runtime" scope="RUNTIME" />

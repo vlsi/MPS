@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class MpsSettingsEditorComponent extends JPanel {
+public class MpsStartupSettingsEditorComponent extends JPanel {
   private RawLineEditorComponent myVmOptions = new RawLineEditorComponent();
   private FieldWithPathChooseDialog myJrePath = new FieldWithPathChooseDialog();
   private FieldWithPathChooseDialog mySystemPath = new FieldWithPathChooseDialog();
@@ -18,7 +18,7 @@ public class MpsSettingsEditorComponent extends JPanel {
   private ProjectChooser myProjectChooser = new ProjectChooser();
 
 
-  public MpsSettingsEditorComponent() {
+  public MpsStartupSettingsEditorComponent() {
     super(new GridBagLayout());
 
     this.add(new JLabel("MPS System Path:"), LayoutUtil.createLabelConstraints(0));
@@ -34,7 +34,7 @@ public class MpsSettingsEditorComponent extends JPanel {
     this.add(myProjectChooser, LayoutUtil.createPanelConstraints(8));
   }
 
-  public void applyTo(MpsSettings_Configuration configuration) {
+  public void applyTo(MpsStartupSettings_Configuration configuration) {
     configuration.setVmOptions(myVmOptions.getText());
     configuration.setJrePath(myJrePath.getText());
     configuration.setSystemPath(configuration.shinkPath(mySystemPath.getText()));
@@ -44,7 +44,7 @@ public class MpsSettingsEditorComponent extends JPanel {
     configuration.setProjectToOpen(configuration.shinkPath(value._1()));
   }
 
-  public void resetFrom(MpsSettings_Configuration configuration) {
+  public void resetFrom(MpsStartupSettings_Configuration configuration) {
     myVmOptions.setText(configuration.getVmOptions());
     myJrePath.setText(configuration.getJrePath());
     mySystemPath.setText(configuration.expandPath(configuration.getSystemPath()));

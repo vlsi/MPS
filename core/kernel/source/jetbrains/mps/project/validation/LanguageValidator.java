@@ -55,10 +55,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   }
 
   public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
-    Set<Language> ext = new LinkedHashSet<Language>();
-    new LanguageDependenciesManager(lang).collectAllExtendedLanguages(ext);
-
-    for (Language language : ext) {
+    for (Language language : LanguageDependenciesManager.getAllExtendedLanguages(lang)) {
       EditableSModel descriptor = LanguageAspect.BEHAVIOR.get(language);
       if (descriptor == null) {
         if (lang == language)

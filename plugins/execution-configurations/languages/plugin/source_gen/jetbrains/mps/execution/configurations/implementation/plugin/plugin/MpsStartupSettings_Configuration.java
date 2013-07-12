@@ -26,15 +26,15 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MpsSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
+public class MpsStartupSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
-  private MpsSettings_Configuration.MyState myState = new MpsSettings_Configuration.MyState();
+  private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (isEmpty_xabz3p_a0a0a0b(this.getConfigurationPath())) {
+    if (isEmpty_l71583_a0a0a0b(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if (isEmpty_xabz3p_a0b0a0b(this.getSystemPath())) {
+    if (isEmpty_l71583_a0b0a0b(this.getSystemPath())) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -115,33 +115,36 @@ public class MpsSettings_Configuration implements IPersistentConfiguration, ITem
   }
 
   public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
-    File projectFile = getProjectFile(project);
+    File projectDir = getProjectDir(project);
     if (!(this.getOpenCurrentProject())) {
-      return MultiTuple.<File,File>from(projectFile, (File) null);
+      return MultiTuple.<File,File>from(projectDir, (File) null);
     }
 
+    // not my best code, not at all 
     File temporalDir = FileUtil.createTmpDir();
-    File tmpProjectFile = new File(temporalDir, projectFile.getName());
-    FileUtil.copyFile(projectFile, tmpProjectFile);
+    File mpsDir = new File(temporalDir, ".mps");
+    mpsDir.mkdir();
+    File tmpProjectFile = new File(mpsDir, "modules.xml");
+    FileUtil.copyDir(new File(projectDir, ".mps"), mpsDir);
 
     // replace project macro 
     try {
       Document document = JDOMUtil.loadDocument(tmpProjectFile);
       replacePathMacro(document.getRootElement(), project);
       JDOMUtil.writeDocument(document, tmpProjectFile);
-      projectFile = tmpProjectFile;
+      projectDir = temporalDir;
     } catch (JDOMException e) {
       // ignore and hope for the best 
     } catch (IOException e) {
       // same as previous 
     }
 
-    return MultiTuple.<File,File>from(projectFile, temporalDir);
+    return MultiTuple.<File,File>from(projectDir, temporalDir);
   }
 
-  private File getProjectFile(Project currentProject) {
+  private File getProjectDir(Project currentProject) {
     if (this.getOpenCurrentProject()) {
-      return new File(currentProject.getProjectFilePath());
+      return new File(currentProject.getBasePath());
     }
     if (this.getProjectToOpen() != null) {
       return new File(expandPath(this.getProjectToOpen()));
@@ -153,7 +156,8 @@ public class MpsSettings_Configuration implements IPersistentConfiguration, ITem
     String path = "path";
     String value = element.getAttributeValue(path);
     if ((value != null && value.length() > 0)) {
-      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
+      // nooooooooo 
+      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
     }
     for (Object child : element.getChildren()) {
       if (child instanceof Element) {
@@ -163,11 +167,11 @@ public class MpsSettings_Configuration implements IPersistentConfiguration, ITem
   }
 
   @Override
-  public MpsSettings_Configuration clone() {
-    MpsSettings_Configuration clone = null;
+  public MpsStartupSettings_Configuration clone() {
+    MpsStartupSettings_Configuration clone = null;
     try {
       clone = createCloneTemplate();
-      clone.myState = (MpsSettings_Configuration.MyState) myState.clone();
+      clone.myState = (MpsStartupSettings_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
@@ -190,7 +194,7 @@ public class MpsSettings_Configuration implements IPersistentConfiguration, ITem
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-      MpsSettings_Configuration.MyState state = new MpsSettings_Configuration.MyState();
+      MpsStartupSettings_Configuration.MyState state = new MpsStartupSettings_Configuration.MyState();
       state.myVmOptions = myVmOptions;
       state.myJrePath = myJrePath;
       state.mySystemPath = mySystemPath;
@@ -201,33 +205,33 @@ public class MpsSettings_Configuration implements IPersistentConfiguration, ITem
     }
   }
 
-  public MpsSettings_Configuration() {
+  public MpsStartupSettings_Configuration() {
   }
 
-  private SettingsEditorEx<MpsSettings_Configuration> myEditorEx;
+  private SettingsEditorEx<MpsStartupSettings_Configuration> myEditorEx;
 
-  public MpsSettings_Configuration createCloneTemplate() {
-    return new MpsSettings_Configuration();
+  public MpsStartupSettings_Configuration createCloneTemplate() {
+    return new MpsStartupSettings_Configuration();
   }
 
-  public MpsSettings_Configuration_Editor getEditor() {
-    return new MpsSettings_Configuration_Editor();
+  public MpsStartupSettings_Configuration_Editor getEditor() {
+    return new MpsStartupSettings_Configuration_Editor();
   }
 
-  public SettingsEditorEx<MpsSettings_Configuration> getEditorEx() {
+  public SettingsEditorEx<MpsStartupSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
 
-  protected static Logger LOG = LogManager.getLogger(MpsSettings_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(MpsStartupSettings_Configuration.class);
 
-  public static boolean isEmpty_xabz3p_a0a0a0b(String str) {
+  public static boolean isEmpty_l71583_a0a0a0b(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_xabz3p_a0b0a0b(String str) {
+  public static boolean isEmpty_l71583_a0b0a0b(String str) {
     return str == null || str.length() == 0;
   }
 }

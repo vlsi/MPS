@@ -34,7 +34,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -144,11 +143,10 @@ public class Solution extends AbstractModule {
     ClasspathReader.ClassType classType = bootstrapCP.get(descriptor.getModuleReference());
     if (classType == null) return;
 
-    List<String> javaCP = CommonPaths.getMPSPaths(classType);
-    descriptor.getModelRootDescriptors().clear();
-    descriptor.getAdditionalJavaStubPaths().clear();
+    // do it only for first time
+    if (!descriptor.getModelRootDescriptors().isEmpty()) return;
 
-    for (String path : javaCP) {
+    for (String path : CommonPaths.getMPSPaths(classType)) {
       descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
       descriptor.getAdditionalJavaStubPaths().add(path);
     }

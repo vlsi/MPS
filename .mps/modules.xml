@@ -350,7 +350,6 @@
       <modulePath path="$PROJECT_DIR$/workbench/mps-ui/jetbrains.mps.ide.ui.msd" folder="workbench.ui" />
       <modulePath path="$PROJECT_DIR$/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
     </projectModules>
-    <genConfs />
   </component>
 </project>
 
