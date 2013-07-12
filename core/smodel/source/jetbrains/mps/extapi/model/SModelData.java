@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.extapi.model;
 
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public interface SModelData {
 
+  SModelReference getReference();
+
   Iterable<SNode> getRootNodes();
+
+  SNode getNode(SNodeId nodeId);
 
   void addRootNode(SNode node);
 

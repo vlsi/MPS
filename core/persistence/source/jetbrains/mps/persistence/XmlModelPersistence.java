@@ -208,7 +208,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
     TextGenerationResult result = TextGen.generateText(root, true, false, null);
     if (result.hasErrors()) {
-      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(Kind.Save, result.problems()));
+      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(model, Kind.Save, result.problems()));
     }
 
     String content = (String) result.getResult();

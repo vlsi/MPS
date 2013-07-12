@@ -169,6 +169,7 @@ public class SModel implements SModelData {
     }
   }
 
+  @Override
   @Nullable
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
