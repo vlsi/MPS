@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class PluginVCSManager implements ApplicationComponent {
 
-  private DiskMemoryConflictResolverImpl resolver = new DiskMemoryConflictResolverImpl();
+  private ModelStorageProblemsListener resolver = new ModelStorageProblemsListener();
 
   public PluginVCSManager() {
   }

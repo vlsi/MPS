@@ -29,7 +29,7 @@ import java.io.FileNotFoundException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
-import jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl;
+import jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -234,7 +234,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
         }
       }
     });
-    DiskMemoryConflictResolverImpl.setTestDialog(new TestDialog() {
+    ModelStorageProblemsListener.setTestDialog(new TestDialog() {
       @Override
       public int show(String message) {
         dialogWasInvoked[0] = true;

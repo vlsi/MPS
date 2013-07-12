@@ -5,6 +5,13 @@ package jetbrains.mps.vcs.platform.integration;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import com.intellij.notification.Notifications;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.io.File;
@@ -33,8 +40,8 @@ import com.intellij.openapi.application.Application;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class DiskMemoryConflictResolverImpl extends SRepositoryContentAdapter {
-  public DiskMemoryConflictResolverImpl() {
+public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
+  public ModelStorageProblemsListener() {
   }
 
 
@@ -57,6 +64,39 @@ public class DiskMemoryConflictResolverImpl extends SRepositoryContentAdapter {
     assert m.isChanged() && m.needsReloading();
 
     resolveDiskMemoryConflict(m);
+  }
+
+  @Override
+  public void problemsDetected(SModel model, Iterable<SModel.Problem> problems) {
+    Iterable<SModel.Problem> pr = problems;
+    if (Sequence.fromIterable(pr).any(new IWhereFilter<SModel.Problem>() {
+      public boolean accept(SModel.Problem it) {
+        return it.isError();
+      }
+    })) {
+      boolean isSave = Sequence.fromIterable(pr).any(new IWhereFilter<SModel.Problem>() {
+        public boolean accept(SModel.Problem it) {
+          return it.isError() && it.getKind() == SModel.Problem.Kind.Save;
+        }
+      });
+      String problemText = IterableUtils.join(Sequence.fromIterable(pr).where(new IWhereFilter<SModel.Problem>() {
+        public boolean accept(SModel.Problem it) {
+          return it.isError();
+        }
+      }).select(new ISelector<SModel.Problem, String>() {
+        public String select(SModel.Problem it) {
+          return "error: " + it.getText();
+        }
+      }).take(3), "<br/>");
+      String message = String.format("<p>Cannot %s model %s.<br/>%s</p>", (isSave ?
+        "save" :
+        "load"
+      ), model.getModelName(), problemText);
+      Notifications.Bus.notify(new Notification("Model Persistence", (isSave ?
+        "Save Failure" :
+        "Load Failure"
+      ), message, NotificationType.WARNING));
+    }
   }
 
 
@@ -138,9 +178,9 @@ public class DiskMemoryConflictResolverImpl extends SRepositoryContentAdapter {
   private static File doBackup(IFile modelFile, SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
-      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
+      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
       if (modelFile.exists()) {
-        com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
+        com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + ModelStorageProblemsListener.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
       }
       File zipfile = MergeBackupUtil.chooseZipFileForModelFile(modelFile);
       zipfile.getParentFile().mkdirs();
@@ -201,5 +241,5 @@ public class DiskMemoryConflictResolverImpl extends SRepositoryContentAdapter {
     return application != null && (application.isUnitTestMode() || application.isHeadlessEnvironment());
   }
 
-  protected static Logger LOG = LogManager.getLogger(DiskMemoryConflictResolverImpl.class);
+  protected static Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
 }
