@@ -99,7 +99,7 @@ public class SolutionIdea extends Solution {
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
 
     newDescriptor.setNamespace(myModule.getName());
-    addLibs(newDescriptor);
+//    addLibs(newDescriptor);
     super.setSolutionDescriptor(newDescriptor, reloadClasses);
 
     try {
