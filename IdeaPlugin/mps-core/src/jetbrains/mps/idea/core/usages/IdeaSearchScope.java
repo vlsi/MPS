@@ -32,9 +32,15 @@ import java.util.List;
 public class IdeaSearchScope extends BaseScope {
 
   private GlobalSearchScope ideaScope;
+  private boolean suppressSearchInLibraries = false;
 
   public IdeaSearchScope(GlobalSearchScope scope) {
     ideaScope = scope;
+  }
+
+  public IdeaSearchScope(GlobalSearchScope scope, boolean noLibs) {
+    ideaScope = scope;
+    suppressSearchInLibraries = noLibs;
   }
 
   @Override
@@ -50,7 +56,7 @@ public class IdeaSearchScope extends BaseScope {
         }
       } else {
         // any other module is considered to be "libraries" in idea terminology
-        if (ideaScope.isSearchInLibraries()) {
+        if (!suppressSearchInLibraries && ideaScope.isSearchInLibraries()) {
           result.add(mod);
         }
       }

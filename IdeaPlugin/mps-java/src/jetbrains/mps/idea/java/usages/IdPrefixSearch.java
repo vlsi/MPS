@@ -113,7 +113,7 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
         FileBasedIndex.getInstance().processValues(ForeignIdReferenceIndex.ID, prefixToSearch, null, sReferenceProcessor, scope);
 
         // now process changed models, as the changes are out of index
-        SearchScope mpsSearchScope = new IdeaSearchScope(scope);
+        SearchScope mpsSearchScope = new IdeaSearchScope(scope, true);
         for (SModel model : mpsSearchScope.getModels()) {
           boolean changed = model instanceof EditableSModel && ((EditableSModel) model).isChanged();
           if (!changed) continue;

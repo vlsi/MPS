@@ -18,14 +18,18 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementFinder;
 import com.intellij.psi.PsiPackage;
+import com.intellij.psi.search.DelegatingGlobalSearchScope;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex;
@@ -44,6 +48,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -115,28 +120,58 @@ public class MPSJavaClassFinder extends PsiElementFinder {
    * read access required
    */
   private void findMPSClasses(String qname, Consumer<SNode> consumer, GlobalSearchScope scope) {
-    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
-    List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSFQNameJavaClassIndex.ID, qname, scope);
-    collectNodes(consumer, values);
 
-    // fallback for values not yet in index
-    SearchScope mpsSearchScope = new IdeaSearchScope(scope);
+    // first try changed models
+    SearchScope mpsSearchScope = new IdeaSearchScope(scope, true);
+    CollectConsumer<VirtualFile> processedFilesConsumer = new CollectConsumer<VirtualFile>();
+
     for (SModel model : mpsSearchScope.getModels()) {
       boolean changed = model instanceof EditableSModel && ((EditableSModel) model).isChanged();
       if (!changed) continue;
 
-      String packageName = model.getModelName();
-      if (!qname.startsWith(packageName + ".")) continue;
+      findInModel(model, qname, processedFilesConsumer, consumer);
+    }
 
-      FastNodeFinder fastFinder = ((SModelInternal) model).getFastNodeFinder();
-      List<SNode> classes = fastFinder.getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
+    final Collection<VirtualFile> filesOfChangedModels = processedFilesConsumer.getResult();
 
-      if (classes.isEmpty()) continue;
+    // now index
+    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
+    GlobalSearchScope truncatedScope = new DelegatingGlobalSearchScope(scope) {
+      @Override
+      public boolean contains(VirtualFile file) {
+        if (filesOfChangedModels.contains(file)) return false;
+        return super.contains(file);
+      }
+    };
+    List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSFQNameJavaClassIndex.ID, qname, truncatedScope);
+    collectNodes(consumer, values);
 
-      for (SNode claz : classes) {
-        if (qname.equals(ClassUtil.getClassFQName(claz))) {
-          consumer.consume(claz);
-        }
+  }
+
+  private void findInModel(SModel model, String qname, Consumer<VirtualFile> processedConsumer, Consumer<SNode> consumer) {
+
+    DataSource dataSource = model.getSource();
+    if (!(dataSource instanceof FileDataSource)) return;
+
+    // todo make util method and try to find similar code in other places
+    String path = ((FileDataSource) dataSource).getFile().getPath();
+    VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(path);
+
+    String packageName = model.getModelName();
+    if (!qname.startsWith(packageName + ".")) return;
+
+    if (vfile != null) {
+      processedConsumer.consume(vfile);
+    }
+
+    FastNodeFinder fastFinder = ((SModelInternal) model).getFastNodeFinder();
+    List<SNode> classes = fastFinder.getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
+
+    if (classes.isEmpty()) return;
+
+    for (SNode claz : classes) {
+      if (qname.equals(ClassUtil.getClassFQName(claz))) {
+        consumer.consume(claz);
       }
     }
   }
