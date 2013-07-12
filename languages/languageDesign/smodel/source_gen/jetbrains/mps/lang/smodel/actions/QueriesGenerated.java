@@ -34,6 +34,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_Behavior;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -560,5 +562,33 @@ public class QueriesGenerated {
       }
     }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractNodeRefExpression_2087237500459059709(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression");
+        SLinkOperations.setTarget(newNode, "parent", _context.getSourceNode(), true);
+        return newNode;
+      }
+
+      public String getMatchingText(String pattern) {
+        return "->";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return "add child node";
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractNodeRefExpression_2087237500460546067(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return Sequence.fromIterable(AbstractNodeRefExpression_Behavior.call_getPossibleTargetNodes_5207260697408415741(_context.getSourceNode())).isNotEmpty();
   }
 }

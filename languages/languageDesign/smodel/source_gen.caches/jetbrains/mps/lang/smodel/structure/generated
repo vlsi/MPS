@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6g5hoybzgii3bxvpfdg2oqvzso5oegv">
+<dependencies version="2" modelHash="cowoiuhrg137jisxrhwmquefi0mribk">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -593,7 +593,7 @@
   <source id="4040588429969069898" name="LanguageReferenceExpression" hash="cina48vhi5bla0q9bwjym1d191i88dj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="448792706993295611" name="ReadConceptReferenceExpression" hash="-sm8oozcg5h6qawa4u9k7s9ckpcryg0">
+  <source id="448792706993295611" name="ReadConceptReferenceExpression" hash="2hvl04okmh97jytu1l4eqrjzf1ayp3g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="559557797393017698" name="ModelReferenceExpression" hash="-6ym318cra49rwj8wmwq11hgtae8yvu7">
@@ -617,7 +617,7 @@
   <source id="3575813534625140284" name="AbstractNodeRefExpression" hash="-bc4x9y5q0j7hky0wzd5r88udmk5jqzv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="597763930871270009" name="ChildNodeRefExpression" hash="4q0h4mfeo1p3yj8tivnyf5jb16wfw5b">
+  <source id="597763930871270009" name="ChildNodeRefExpression" hash="-587ja2lxqqiyzeaxgm2aj88i13yb1mw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6955116391921790598" name="CheckedModuleQualifiedName" hash="-243yt55qd1o0xmj5yy6vu3kqm0snocg">

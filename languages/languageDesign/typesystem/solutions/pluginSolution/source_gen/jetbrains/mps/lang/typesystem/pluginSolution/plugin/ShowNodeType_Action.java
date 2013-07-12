@@ -105,7 +105,7 @@ public class ShowNodeType_Action extends BaseAction {
           public void run() {
             tmpModel.value = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
             tmpModel.value.addRootNode(type.value);
-            TemporaryModels.getInstance().addMissingModuleImports(tmpModel.value);
+            TemporaryModels.getInstance().addMissingImports(tmpModel.value);
           }
         });
         new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();

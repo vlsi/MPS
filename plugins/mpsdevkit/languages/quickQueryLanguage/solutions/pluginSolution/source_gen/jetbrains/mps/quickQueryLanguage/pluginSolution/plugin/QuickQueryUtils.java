@@ -70,7 +70,7 @@ public class QuickQueryUtils {
       ((SModelInternal) tempModel).addLanguage(language.getModuleReference());
     }
 
-    TemporaryModels.getInstance().addMissingModuleImports(tempModel);
+    TemporaryModels.getInstance().addMissingImports(tempModel);
 
     return tempModel;
   }
