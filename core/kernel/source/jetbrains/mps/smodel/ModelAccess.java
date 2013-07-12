@@ -168,7 +168,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   @SuppressWarnings("unchecked")
   @Override
-  @Nullable
+//  @Nullable
   public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey) {
     assertLegalRead();
 //    if (canWrite()) {

@@ -16,56 +16,83 @@
 package jetbrains.mps.project.dependency.modules;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.ConcurrentMap;
 
+/**
+ * todo: Merge with GlobalModuleDependenciesManager
+ */
 public class LanguageDependenciesManager {
   private final Language myLanguage;
+  private final Set<Language> myExtendedLanguages;
 
   public LanguageDependenciesManager(Language language) {
     myLanguage = language;
-  }
-
-  @Deprecated
-  public void collectAllExtendedLanguages(Set<Language> result) {
-    if (result.contains(myLanguage)) return;
-
-    result.add(myLanguage);
-
-    for (Language l : ModuleUtil.refsToLanguages(myLanguage.getExtendedLanguageRefs())) {
-      new LanguageDependenciesManager(l).collectAllExtendedLanguages(result);
-    }
-  }
-
-  @Deprecated
-  public Iterable<SModuleReference> getAllExtendedLanguages() {
-    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    THashSet<Language> langs = new THashSet<Language>();
-    collectAllExtendedLanguages(langs);
-    for (Language lang : langs) {
-      result.add(lang.getModuleReference());
-    }
-    return result;
+    myExtendedLanguages = getAllExtendedLanguagesInternal(language);
   }
 
   public static Set<Language> getAllExtendedLanguages(Language language) {
-    // todo: LinkedHashSet?
-    // todo: merge with GlobalModuleDependenciesManager
-    THashSet<Language> langs = new THashSet<Language>();
-    new LanguageDependenciesManager(language).collectAllExtendedLanguages(langs);
-    return langs;
+    return Collections.unmodifiableSet(getLanguageDependenciesManager(language).myExtendedLanguages);
   }
 
   public static Set<SModuleReference> getAllExtendedLanguageReferences(Language language) {
-    // todo: same as getAllExtendedLanguages
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     for (Language lang : getAllExtendedLanguages(language)) {
       result.add(lang.getModuleReference());
     }
     return result;
+  }
+
+  private static LanguageDependenciesManager getLanguageDependenciesManager(Language language) {
+    ConcurrentMap<Language, LanguageDependenciesManager> cache = ModelAccess.instance().getRepositoryStateCache(LanguageDependenciesManager.class.getName());
+    LanguageDependenciesManager manager = cache.get(language);
+    if (manager != null) {
+      return manager;
+    }
+    manager = new LanguageDependenciesManager(language);
+    cache.put(language, manager);
+    return manager;
+  }
+
+  // main logic
+  private static Set<Language> getAllExtendedLanguagesInternal(Language language) {
+    THashSet<Language> langs = new THashSet<Language>();
+
+    Queue<Language> queue = new LinkedList<Language>();
+    queue.add(language);
+
+    while (!queue.isEmpty()) {
+      Language current = queue.poll();
+      if (langs.contains(current)) continue;
+
+      langs.add(current);
+      for (Language l : ModuleUtil.refsToLanguages(current.getExtendedLanguageRefs())) {
+        queue.add(l);
+      }
+    }
+
+    return langs;
+  }
+
+  // deprecated
+  @Deprecated
+  public void collectAllExtendedLanguages(Set<Language> result) {
+    for (Language language : getAllExtendedLanguages(myLanguage)) {
+      result.add(language);
+    }
+  }
+
+  @Deprecated
+  public Iterable<SModuleReference> getAllExtendedLanguages() {
+    return getAllExtendedLanguageReferences(myLanguage);
   }
 }
