@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.textGen.SNodeTextGen;
@@ -39,7 +40,7 @@ public class SNodeTextGenAdapter implements TextGenDescriptor {
   }
 
   @Override
-  public void doGenerateText(SNode node, TextGenBuffer buffer) {
+  public void doGenerateText(@NotNull SNode node, TextGenBuffer buffer) {
     TextGen.appendNodeText(getInstance(), node, buffer);
   }
 
