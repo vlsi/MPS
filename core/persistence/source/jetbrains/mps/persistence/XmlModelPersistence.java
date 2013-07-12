@@ -23,7 +23,6 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.xml.XmlConverter;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -207,9 +206,9 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
               new PersistenceProblem(Kind.Save, "cannot save more than one root into .xml file", null, true, -1, -1, root)));
     }
 
-    TextGenerationResult result = TextGen.generateText(root);
+    TextGenerationResult result = TextGen.generateText(root, true, false, null);
     if (result.hasErrors()) {
-      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(Kind.Save, result.problems()));
+      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(model, Kind.Save, result.problems()));
     }
 
     String content = (String) result.getResult();

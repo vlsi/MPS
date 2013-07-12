@@ -33185,49 +33185,6 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
     </node>
   </root>
-  <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1772357160794501891" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="UpperBoundType_supertypeOf_bound" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
-    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1772357160794501896" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="upperBoundType" />
-      <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1772357160794501897" nodeInfo="in">
-        <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="1772357160794501898" nodeInfo="in">
-          <node role="bound" roleId="tpee.1171903916107" type="tpee.Type" typeId="tpee.1068431790189" id="1772357160794501899" nodeInfo="in">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1772357160794501900" nodeInfo="ng">
-              <property name="varName" nameId="tp3t.1136720037780" value="BOUND" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="1772357160794501893" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1772357160794512256" nodeInfo="nn">
-        <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1772357160794512257" nodeInfo="nn">
-          <property name="text" nameId="tpee.6329021646629104958" value="nothing" />
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1772357160794501901" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="any" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node role="isApplicableClause" roleId="tpd4.3592071576955708909" type="tpd4.IsReplacementRuleApplicable_ConceptFunction" typeId="tpd4.3592071576955708904" id="1772357160794501902" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1772357160794501903" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1772357160794512249" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1772357160794512252" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7juq.~MatchingUtil" resolveInfo="MatchingUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7juq.~MatchingUtil%dmatchNodes(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cboolean" resolveInfo="matchNodes" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1772357160794512253" nodeInfo="nn">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1772357160794501901" resolveInfo="any" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.PatternVariableReference" typeId="tpd4.1174989242422" id="1772357160794512255" nodeInfo="nn">
-              <link role="patternVarDecl" roleId="tpd4.1174989274720" targetNodeId="1772357160794501900" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
   <root type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="8899076737759282444" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="QuickFixForClassCreator" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
@@ -35487,43 +35444,6 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3564968026865770543" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="unkNew" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.3304084122476667220" resolveInfo="UnknownNew" />
-    </node>
-  </root>
-  <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="1772357160794512258" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="LowerBoundType_subtypeOf_bound" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
-    <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1772357160794512267" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="any" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="1772357160794512260" nodeInfo="sn" />
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="1772357160794512262" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="lowerBoundType" />
-      <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1772357160794512263" nodeInfo="in">
-        <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.LowerBoundType" typeId="tpee.1171903862077" id="1772357160794512264" nodeInfo="in">
-          <node role="bound" roleId="tpee.1171903869531" type="tpee.Type" typeId="tpee.1068431790189" id="1772357160794512265" nodeInfo="in">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1772357160794512266" nodeInfo="ng">
-              <property name="varName" nameId="tp3t.1136720037780" value="BOUND" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="isApplicableClause" roleId="tpd4.3592071576955708909" type="tpd4.IsReplacementRuleApplicable_ConceptFunction" typeId="tpd4.3592071576955708904" id="1772357160794512268" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1772357160794512269" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1772357160794512270" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1772357160794512272" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7juq.~MatchingUtil" resolveInfo="MatchingUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7juq.~MatchingUtil%dmatchNodes(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cboolean" resolveInfo="matchNodes" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1772357160794512273" nodeInfo="nn">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1772357160794512267" resolveInfo="any" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.PatternVariableReference" typeId="tpd4.1174989242422" id="1772357160794512286" nodeInfo="nn">
-              <link role="patternVarDecl" roleId="tpd4.1174989274720" targetNodeId="1772357160794512266" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </root>
   <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3485664513391245687" nodeInfo="ng">

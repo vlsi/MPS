@@ -48,6 +48,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
@@ -82,6 +83,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
     @Override
     public void modelUnloaded(SModel model) {
+      problemsUpdated();
+    }
+
+    @Override
+    public void problemsDetected(SModel model, Iterable<Problem> problems) {
       problemsUpdated();
     }
 

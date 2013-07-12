@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashMap;
-import gnu.trove.THashSet;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
@@ -26,37 +26,30 @@ import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public class TypeContextManager implements CoreComponent {
 
@@ -66,57 +59,34 @@ public class TypeContextManager implements CoreComponent {
   private static boolean myReported = false;
 
   private final Object myLock = new Object();
-  private Set<SModel> myListeningForModels = new THashSet<SModel>();
-  private Map<SNodeReference, List<TypecheckingContextHolder>> myTypeCheckingContexts =
-      new THashMap<SNodeReference, List<TypecheckingContextHolder>>(); //todo cleanup on reload (temp solution)
+  private ConcurrentMap<SModel, ConcurrentMap<SNodeId, List<TypecheckingContextHolder>>> myTypeCheckingContexts = new ConcurrentHashMap<SModel, ConcurrentMap<SNodeId, List<TypecheckingContextHolder>>>();
 
   private TypeChecker myTypeChecker;
 
   private ClassLoaderManager myClassLoaderManager;
 
-  private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
+
+  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     @Override
-    public void beforeRootRemoved(SModelRootEvent event) {
-      synchronized (myLock) {
-        removeContextForNode(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getRoot().getNodeId()));
-      }
+    public void nodeRemoved(SModel model, SNode parent, String role, SNode child) {
+      if (parent != null) return;
+      clear(model, child.getNodeId());
     }
 
     @Override
-    public void beforeModelDisposed(SModel sm) {
-      synchronized (myLock) {
-        for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
-          if (sm.getReference().equals(nodePointer.getModelReference())) {
-            removeContextForNode(nodePointer);
-          }
-        }
-      }
-    }
-  };
-
-  private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
-    @Override
-    public void modelRemoved(SModel modelDescriptor) {
-      myListeningForModels.remove(modelDescriptor);
+    public void modelReplaced(SModel model) {
+      clear(model);
     }
 
     @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      for (SModel md : replacedModels) {
-        if (!myListeningForModels.contains(md)) {
-          continue;
-        }
-        SModelReference modelRef = md.getReference();
-        synchronized (myLock) {
-          for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
-            if (nodePointer == null) continue;
-            SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-            if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()) || modelRef.equals(nodePointer.getModelReference())) {
-              removeContextForNode(nodePointer);
-            }
-          }
-        }
-      }
+    public void modelUnloaded(SModel model) {
+      clear(model);
+    }
+
+    @Override
+    public void beforeModelRemoved(SModule module, SModel model) {
+      clear(model);
+      super.beforeModelRemoved(module, model);
     }
   };
 
@@ -153,19 +123,16 @@ public class TypeContextManager implements CoreComponent {
 
     INSTANCE = this;
     myClassLoaderManager.addReloadHandler(myReloadHandler);
-    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
+    SRepositoryRegistry.getInstance().addGlobalListener(myListener);
   }
 
   @Override
   public void dispose() {
-    for (SModel model : myListeningForModels) {
-      ((SModelInternal) model).removeModelListener(myModelListener);
+    for (SModel model : new ArrayList<SModel>(myTypeCheckingContexts.keySet())) {
+      stopListening(model);
+      clear(model);
     }
-    myListeningForModels.clear();
-    for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
-      removeContextForNode(nodePointer);
-    }
-    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+    SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
     INSTANCE = null;
   }
@@ -280,25 +247,75 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void releaseTypecheckingContext(SNode node, ITypeContextOwner contextOwner) {
-    removeOwnerForRootNodeContext(node, contextOwner);
+    ModelAccess.assertLegalRead();
+
+    if (node == null) return;
+    final SModel model = node.getModel();
+    final SNodeId rootNodeId = node.getContainingRoot().getNodeId();
+
+    if (model == null) return;
+    //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
+    synchronized (myLock) {
+      ConcurrentMap<SNodeId, List<TypecheckingContextHolder>> modelContexts = myTypeCheckingContexts.get(model);
+      if (modelContexts == null) return;
+
+      List<TypecheckingContextHolder> contextWithOwners = modelContexts.get(rootNodeId);
+      if (contextWithOwners == null) return;
+
+
+      for (ListIterator<TypecheckingContextHolder> it = contextWithOwners.listIterator(); it.hasNext(); ) {
+        TypecheckingContextHolder contextHolder = it.next();
+        ITypeContextOwner o = contextHolder.getOwner();
+        if (o == contextOwner) {
+          if (!contextOwner.reuseTypecheckingContext()) {
+            contextHolder.release();
+            if (!contextHolder.isActive()) {
+              it.remove();
+            }
+          } else {
+            contextHolder.release();
+            if (!contextHolder.isActive()) {
+              it.remove();
+            }
+          }
+          break;
+        }
+      }
+      if (contextWithOwners.isEmpty()) {
+        modelContexts.remove(rootNodeId);
+        if (modelContexts.isEmpty()) {
+          myTypeCheckingContexts.remove(model);
+          stopListening(model);
+        }
+      }
+    }
   }
 
   private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
     ModelAccess.assertLegalRead();
-    if (node == null) return null;
-    final SNode rootNode = node.getContainingRoot();
-    synchronized (myLock) {
-      SNodeReference rootNodePointer = new jetbrains.mps.smodel.SNodePointer(rootNode);
 
-      List<TypecheckingContextHolder> contextWithOwners = myTypeCheckingContexts.get(rootNodePointer);
-      if (contextWithOwners == null && !createIfAbsent) return null;
-      if (contextWithOwners == null) {
-        contextWithOwners = new ArrayList<TypecheckingContextHolder>(4);
-        myTypeCheckingContexts.put(rootNodePointer, contextWithOwners);
+    if (node == null) return null;
+    final SModel model = node.getModel();
+    final SNodeId rootNodeId = node.getContainingRoot().getNodeId();
+    assert model != null;
+
+    synchronized (myLock) {
+      ConcurrentMap<SNodeId, List<TypecheckingContextHolder>> modelContexts = myTypeCheckingContexts.get(model);
+      if (modelContexts == null) {
+        if (!createIfAbsent) return null;
+        modelContexts = new ConcurrentHashMap<SNodeId, List<TypecheckingContextHolder>>();
+        myTypeCheckingContexts.put(model, modelContexts);
+        startListening(model);
       }
 
-      for (ListIterator<TypecheckingContextHolder> it = contextWithOwners.listIterator(); it.hasNext(); ) {
-        TypecheckingContextHolder contextHolder = it.next();
+      List<TypecheckingContextHolder> contextWithOwners = modelContexts.get(rootNodeId);
+      if (contextWithOwners == null) {
+        if (!createIfAbsent) return null;
+        contextWithOwners = new ArrayList<TypecheckingContextHolder>(4);
+        modelContexts.put(rootNodeId, contextWithOwners);
+      }
+
+      for (TypecheckingContextHolder contextHolder : contextWithOwners) {
         if (contextHolder.getOwner() == owner) {
 
           if (!owner.reuseTypecheckingContext()) {
@@ -313,10 +330,10 @@ public class TypeContextManager implements CoreComponent {
             final TypeCheckingContext ctx = contextHolder.acquire(node);
 
             // Dirty hack
-            if (jetbrains.mps.util.SNodeOperations.isDisposed(ctx.getNode())) {
-              removeContextForNode(rootNodePointer);
+            if (SNodeOperations.isDisposed(ctx.getNode())) {
+              contextWithOwners.clear();
               LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
-              return getOrCreateContext(node, owner, createIfAbsent);
+              break;
             }
 
             return ctx;
@@ -349,67 +366,62 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  private void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
-    ModelAccess.assertLegalRead();
-    if (node == null || node.getModel() == null) return;
-    final SNode rootNode = node.getContainingRoot();
-    //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
-    synchronized (myLock) {
-      SNodeReference rootNodePointer = new jetbrains.mps.smodel.SNodePointer(rootNode);
-      List<TypecheckingContextHolder> contextWithOwners = myTypeCheckingContexts.get(rootNodePointer);
-      if (contextWithOwners != null) {
-        for (ListIterator<TypecheckingContextHolder> it = contextWithOwners.listIterator(); it.hasNext(); ) {
-          TypecheckingContextHolder contextHolder = it.next();
-          ITypeContextOwner o = contextHolder.getOwner();
-          if (o == owner) {
-            if (!owner.reuseTypecheckingContext()) {
-              contextHolder.release();
-              if (!contextHolder.isActive()) {
-                it.remove();
-              }
-            } else {
-              contextHolder.release();
-              if (!contextHolder.isActive()) {
-                it.remove();
-              }
-            }
-            break;
-          }
-        }
-        if (contextWithOwners.isEmpty()) {
-          myTypeCheckingContexts.remove(rootNodePointer);
-        }
+  private void startListening(SModel model) {
+    model.addModelListener(myListener);
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).addChangeListener(myListener);
+    }
+  }
+
+  private void stopListening(SModel model) {
+    model.addModelListener(myListener);
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).addChangeListener(myListener);
+    }
+  }
+
+  private void clear(SModel model) {
+    ModelAccess.assertLegalWrite();
+
+    Map<SNodeId, List<TypecheckingContextHolder>> rm = myTypeCheckingContexts.remove(model);
+    if (rm == null) return;
+    stopListening(model);
+
+    for (List<TypecheckingContextHolder> holders : rm.values()) {
+      for (TypecheckingContextHolder holder : holders) {
+        holder.dispose();
       }
     }
   }
 
-  private void removeContextForNode(SNodeReference nodePointer) {
-    synchronized (myLock) {
-      List<TypecheckingContextHolder> contextWithOwners = myTypeCheckingContexts.remove(nodePointer);
-      if (contextWithOwners != null) {
-        for (TypecheckingContextHolder contextHolder : contextWithOwners) {
-          contextHolder.dispose();
-        }
-      }
+  private void clear(SModel model, SNodeId rootId) {
+    ModelAccess.assertLegalWrite();
+
+    Map<SNodeId, List<TypecheckingContextHolder>> rm = myTypeCheckingContexts.get(model);
+    if (rm == null) return;
+
+    List<TypecheckingContextHolder> holders = rm.remove(rootId);
+    if (holders == null) return;
+
+    for (TypecheckingContextHolder holder : holders) {
+      holder.dispose();
+    }
+
+    if(rm.isEmpty()) {
+      myTypeCheckingContexts.remove(model);
+      stopListening(model);
     }
   }
 
   private void clearForClassesUnload() {
-    synchronized (myLock) {
-      for (List<TypecheckingContextHolder> contexts : myTypeCheckingContexts.values()) {
-        for (TypecheckingContextHolder contextHolder : contexts) {
-          contextHolder.clear();
+    ModelAccess.assertLegalWrite();
+
+    for (Map<SNodeId, List<TypecheckingContextHolder>> modelHolders : myTypeCheckingContexts.values()) {
+      for (List<TypecheckingContextHolder> rootHolders : modelHolders.values()) {
+        for (TypecheckingContextHolder holder : rootHolders) {
+          holder.clear();
         }
       }
-    }
-  }
-
-  private void addModelListener(SNode node) {
-    SModel sModel = node.getModel();
-    SModel descriptor = sModel;
-    if (descriptor != null && !myListeningForModels.contains(descriptor)) {
-      ((SModelInternal) descriptor).addModelListener(myModelListener);
-      myListeningForModels.add(descriptor);
     }
   }
 
@@ -525,7 +537,6 @@ public class TypeContextManager implements CoreComponent {
     public TypeCheckingContext acquire(SNode node) {
       if (myContext == null) {
         myContext = myOwner.createTypecheckingContext(node, TypeContextManager.this);
-        addModelListener(node);
         myCount = 0;
       }
       myCount += 1;
@@ -587,7 +598,6 @@ public class TypeContextManager implements CoreComponent {
       }
 
       final TypeCheckingContext ctx = myOwner.createTypecheckingContext(node, TypeContextManager.this);
-      addModelListener(node);
       myContexts.add(ctx);
 
       return ctx;

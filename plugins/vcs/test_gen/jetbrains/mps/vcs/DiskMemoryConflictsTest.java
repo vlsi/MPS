@@ -29,7 +29,7 @@ import java.io.FileNotFoundException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
-import jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl;
+import jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -73,7 +73,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
         final boolean[] resultArr = new boolean[1];
         try {
           myProject = project;
-          myModel = (EditableSModel) SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(MODEL_UID));
+          myModel = (EditableSModel) SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID));
           myModule = (Solution) myModel.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
@@ -234,7 +234,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
         }
       }
     });
-    DiskMemoryConflictResolverImpl.setTestDialog(new TestDialog() {
+    ModelStorageProblemsListener.setTestDialog(new TestDialog() {
       @Override
       public int show(String message) {
         dialogWasInvoked[0] = true;
@@ -319,7 +319,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModel = ((EditableSModel) SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));
+          myModel = ((EditableSModel) SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));
           myModel.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModel.save();
         }

@@ -19,9 +19,9 @@ public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
   @Override
   public Object fromString(String string) {
     switch (type) {
-      case INT:
+      case SPrimitiveDataType.INT:
         return Integer.getInteger(string);
-      case BOOL:
+      case SPrimitiveDataType.BOOL:
         return Boolean.getBoolean(string);
       default:
     }

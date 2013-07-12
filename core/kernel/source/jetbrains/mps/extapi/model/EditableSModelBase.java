@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SNode;
@@ -135,7 +134,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
         new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), this, this);
+    fireConflictDetected();
   }
 
   public boolean checkAndResolveConflictOnSave() {
@@ -181,21 +180,24 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     if (!checkAndResolveConflictOnSave()) return;
 
-    setChanged(false);
-    boolean reload = false;
+    boolean isSaved = false;
     try {
-      reload = saveModel();
+      boolean reload = saveModel();
+      setChanged(false);
+      if (reload) {
+        reloadContents();
+      }
+      isSaved = true;
     } catch (IOException e) {
       LOG.error("Can't save " + getModelName() + ": " + e.getMessage(), e);
     } catch (ModelSaveException e) {
-      // TODO notify
-    }
-    if (reload) {
-      reloadContents();
+      fireProblemsDetected(e.getProblems());
     }
 
     updateTimestamp();
-    fireModelSaved();
+    if (isSaved) {
+      fireModelSaved();
+    }
   }
 
   /**

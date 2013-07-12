@@ -30,10 +30,18 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
 public class ClassCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_53xyyk_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_53xyyk_a_0(editorContext, node);
   }
 
   private EditorCell createCollection_53xyyk_a(EditorContext editorContext, SNode node) {
@@ -207,6 +215,35 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private EditorCell createCollection_53xyyk_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_53xyyk_a_0");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_53xyyk_a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_53xyyk_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return ((SLinkOperations.getTarget(node, "baseMethodDeclaration", false) != null) ?
+          BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "virtual_getFqName_1213877404258", new Object[]{}) :
+          "<unknown>"
+        );
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_53xyyk_a0");
     return editorCell;
   }
 }

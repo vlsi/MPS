@@ -37,7 +37,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ProjectTestsSupport" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
+    <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

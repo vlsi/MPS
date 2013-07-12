@@ -17,6 +17,8 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -86,18 +88,24 @@ public class PersistenceProblem implements SModel.Problem {
     return anchor;
   }
 
-  public static Problem fromIMessage(Kind kind, IMessage message) {
+  public static Problem fromIMessage(SModelData model, Kind kind, IMessage message) {
     if (message == null) {
       return null;
     }
     SNode anchor = message.getHintObject() instanceof SNode ? (SNode) message.getHintObject() : null;
+    if (anchor == null && model != null && message.getHintObject() instanceof SNodePointer) {
+      SNodePointer ptr = (SNodePointer) message.getHintObject();
+      if (ptr.getModelReference().equals(model.getReference())) {
+        anchor = model.getNode(ptr.getNodeId());
+      }
+    }
     return new PersistenceProblem(kind, message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
   }
 
-  public static Iterable<Problem> fromIMessages(Kind kind, Iterable<IMessage> seq) {
+  public static Iterable<Problem> fromIMessages(@Nullable SModelData model, Kind kind, Iterable<IMessage> seq) {
     List<Problem> result = new ArrayList<Problem>();
     for (IMessage m : seq) {
-      result.add(fromIMessage(kind, m));
+      result.add(fromIMessage(model, kind, m));
     }
     return result;
   }
