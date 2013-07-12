@@ -62,7 +62,7 @@ public class PersistenceUtil {
       }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
       return model;
-    } catch (UnsupportedDataSourceException ex) {
+    } catch (IOException ex) {
       return null;
     }
   }
@@ -81,7 +81,7 @@ public class PersistenceUtil {
       }, Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
       return model;
-    } catch (UnsupportedDataSourceException ex) {
+    } catch (IOException ex) {
       return null;
     }
   }
@@ -96,7 +96,7 @@ public class PersistenceUtil {
           Boolean.TRUE.toString()));
       model.load();
       return model;
-    } catch (UnsupportedDataSourceException ex) {
+    } catch (IOException ex) {
       return null;
     }
   }
@@ -110,8 +110,6 @@ public class PersistenceUtil {
       InMemoryStreamDataSource source = new InMemoryStreamDataSource();
       factory.save(model, source);
       return source.getContent(FileUtil.DEFAULT_CHARSET_NAME);
-    } catch (UnsupportedDataSourceException ex) {
-      ex.printStackTrace();
     } catch (ModelSaveException e) {
       e.printStackTrace();
     } catch (IOException e) {
@@ -129,8 +127,6 @@ public class PersistenceUtil {
       InMemoryMultiStreamDataSource source = new InMemoryMultiStreamDataSource();
       factory.save(model, source);
       return source.getContent(name, FileUtil.DEFAULT_CHARSET_NAME);
-    } catch (UnsupportedDataSourceException ex) {
-      ex.printStackTrace();
     } catch (ModelSaveException e) {
       e.printStackTrace();
     } catch (IOException e) {
@@ -155,8 +151,6 @@ public class PersistenceUtil {
           return source.getContent(name, FileUtil.DEFAULT_CHARSET_NAME);
         }
       }
-    } catch (UnsupportedDataSourceException ex) {
-      ex.printStackTrace();
     } catch (ModelSaveException e) {
       e.printStackTrace();
     } catch (IOException e) {

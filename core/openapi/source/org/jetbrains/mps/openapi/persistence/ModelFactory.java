@@ -41,22 +41,21 @@ public interface ModelFactory {
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
   @NotNull
-  SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
+  SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Creates a new empty model.
    *
-   * @param modelName The name should be unique within the module
-   * @return The created model or null, if the data source is not supported
    * @throws UnsupportedDataSourceException if the data source is not supported
+   * @throws IOException if the model cannot be created
    */
   @NotNull
-  SModel create(String modelName, DataSource dataSource);
+  SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
-  boolean canCreate(String modelName, DataSource dataSource);
+  boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options);
 
   /**
    * Checks if the source content is outdated and needs to be upgraded.

@@ -53,7 +53,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   @NotNull
   @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+  public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -71,18 +71,23 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   @NotNull
   @Override
-  public SModel create(String modelName, DataSource dataSource) {
+  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
     StreamDataSource source = (StreamDataSource) dataSource;
+    String modelName = options.get(OPTION_MODELNAME);
+    if (modelName == null) {
+      throw new IOException("modelName is not provided");
+    }
+
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
     return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
   }
 
   @Override
-  public boolean canCreate(String modelName, DataSource dataSource) {
+  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof StreamDataSource;
   }
 

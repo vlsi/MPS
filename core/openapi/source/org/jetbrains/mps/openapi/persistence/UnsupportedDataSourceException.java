@@ -17,10 +17,12 @@ package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
+
 /**
  * evgeny, 6/3/13
  */
-public class UnsupportedDataSourceException extends RuntimeException {
+public class UnsupportedDataSourceException extends IOException {
 
   public UnsupportedDataSourceException(@NotNull DataSource dataSource) {
     super(toString(dataSource));
