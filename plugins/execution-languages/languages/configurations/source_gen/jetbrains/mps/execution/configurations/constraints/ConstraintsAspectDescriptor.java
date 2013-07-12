@@ -14,33 +14,31 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 0:
         return new AbstractRunConfigurationExecutor_Constraints();
-      case 7:
+      case 6:
         return new RunConfigurationExecutor_Constraints();
       case 2:
         return new ConfigurationFromExecutorReference_Constraints();
-      case 8:
+      case 7:
         return new RunConfigurationProducer_Constraints();
       case 3:
         return new Create_ConceptFunction_Constraints();
-      case 9:
+      case 8:
         return new RunConfigurationProducerPart_Constraints();
-      case 6:
+      case 5:
         return new RunConfigurationCreator_Constraints();
-      case 10:
+      case 9:
         return new RunConfigurationSource_Constraints();
       case 1:
         return new BeforeTaskParameterReference_Constraints();
-      case 5:
-        return new GetProjectOperation_Constraints();
-      case 11:
-        return new StartProcessHandlerStatement_Constraints();
       case 4:
-        return new EnvironmentExpression_Constraints();
+        return new GetProjectOperation_Constraints();
+      case 10:
+        return new StartProcessHandlerStatement_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }

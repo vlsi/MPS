@@ -107,11 +107,12 @@ public class TreeHighlighter implements TreeMessageOwner {
     myInitialized = false;
 
     if (myGlobalModelListener != null) {
-      GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
+      GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelListener);
     }
     FileStatusManager.getInstance(myRegistry.getProject()).removeFileStatusListener(myFileStatusListener);
     myTree.removeTreeNodeListener(myTreeNodeListener);
     myMap.removeListener(myFeatureListener);
+    myQueue.dispose();
   }
 
   private void registerNodeRecursively(@NotNull MPSTreeNode node) {
