@@ -28,6 +28,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -85,6 +86,12 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   }
 
   private SModel loadSModel() {
+    DataSource source = getSource();
+    if (!source.isReadOnly() && source.getTimestamp() == -1) {
+      // no file on disk
+      return (SModel) myPersistence.createEmpty(getReference(), getSource());
+    }
+
     try {
       IFile brokenFile = getBackupFile(true);
       if (brokenFile != null) {

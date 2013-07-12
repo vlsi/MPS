@@ -185,6 +185,19 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
 
   @Override
+  public SModelData createEmpty(SModelReference reference, StreamDataSource source) {
+    jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
+    String name = reference.getModelName();
+    if (reference.getModelId() instanceof RelativePathSModelId) {
+      name = FileUtil.getNameWithoutExtension(((RelativePathSModelId) reference.getModelId()).getFileName());
+    }
+    SNode xmlFile = XmlConverter.newDocument(name);
+    sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
+    sModel.addRootNode(xmlFile);
+    return sModel;
+  }
+
+  @Override
   public SModelData readModel(SModelReference reference, StreamDataSource source) throws IOException {
     InputStream in = null;
     try {
@@ -198,6 +211,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
       Document document = JDOMUtil.loadDocument(inputSource);
       SNode xmlFile = XmlConverter.convertDocument(name, document);
       jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
+      sModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)"));
       sModel.addRootNode(xmlFile);
       return sModel;
     } catch (JDOMException e) {
