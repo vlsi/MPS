@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
@@ -117,22 +116,7 @@ public class ClosureLiteralTarget {
         if (!(hasTypeVariable(rtp)) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(substituteType, rtp))) {
           substituteType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(rtp));
         }
-        List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(targetIfaceErase, "parameter", true)).addElement(substituteType));
-with_queue:
-        while (!(ListSequence.fromList(queue).isEmpty())) {
-          SNode n = ListSequence.fromList(queue).removeElementAt(0);
-          if ((n != null)) {
-            if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-              n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true));
-            } else if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-              n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true));
-            } else {
-              continue with_queue;
-            }
-            ListSequence.fromList(queue).addElement(n);
-            ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
-          }
-        }
+        SNode param = ListSequence.fromList(SLinkOperations.getTargets(targetIfaceErase, "parameter", true)).addElement(substituteType);
       }
       if (reifiedTypeIt.hasNext() || targetTypeVarIt.hasNext()) {
         genContext.showWarningMessage(literal, "Reified type parameters count doesn't match method declaration '" + SPropertyOperations.getString(meth, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "name")));

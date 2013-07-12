@@ -135,6 +135,9 @@ public class SubtypingUtil {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
         TypeChecker.getInstance().getSubtypingManager().collectImmediateSuperTypes(node, true, ancestors, context);
+        if (!yetPassed.contains(node)) {
+          ancestors.add(node);
+        }
         yetPassedRaw.add(node);
       }
       for (SNode ancestor : ancestors) {
