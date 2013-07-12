@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.Random;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JOptionPane;
 
@@ -17,9 +18,11 @@ public class TestActionCommand_Behavior {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         callback.run();
+        // todo: remove concept 
+        final int n = new Random().nextInt();
         console.addAction("action", new _FunctionTypes._void_P0_E0() {
           public void invoke() {
-            JOptionPane.showMessageDialog(null, "Test");
+            JOptionPane.showMessageDialog(null, "Test" + n);
           }
         });
       }

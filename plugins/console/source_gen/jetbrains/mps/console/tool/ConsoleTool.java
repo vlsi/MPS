@@ -32,10 +32,15 @@ import jetbrains.mps.project.AbstractModule;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
+import com.intellij.openapi.actionSystem.MouseShortcut;
+import java.awt.event.MouseEvent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.action.BaseAction;
+import javax.swing.KeyStroke;
+import com.intellij.openapi.actionSystem.ShortcutSet;
 import javax.swing.JScrollPane;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -51,6 +56,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -153,10 +159,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   private JComponent getToolbarComponent(jetbrains.mps.project.Project project) {
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(registerShortcut(new ConsoleTool.ExecuteAction(project), KeyEvent.VK_ENTER));
-    group.add(registerShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
-    group.add(registerShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
-    group.add(registerShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
+    group.add(registerKeyShortcut(new ConsoleTool.ExecuteAction(project), KeyEvent.VK_ENTER));
+    group.add(registerKeyShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
+    group.add(registerKeyShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
+    group.add(registerKeyShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
+    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, KeyEvent.CTRL_MASK, 1))));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
 
     JPanel res = new JPanel(new BorderLayout());
@@ -166,9 +173,15 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
 
-  private BaseAction registerShortcut(BaseAction a, int key) {
-    a.registerCustomShortcutSet(key, KeyEvent.CTRL_MASK, myCommandEditor);
-    a.registerCustomShortcutSet(key, KeyEvent.CTRL_MASK, myHistEditor);
+  private BaseAction registerKeyShortcut(BaseAction a, int key) {
+    return registerShortcutSet(a, new CustomShortcutSet(KeyStroke.getKeyStroke(key, KeyEvent.CTRL_MASK)));
+  }
+
+
+
+  private BaseAction registerShortcutSet(BaseAction a, ShortcutSet shortcutSet) {
+    a.registerCustomShortcutSet(shortcutSet, myCommandEditor);
+    a.registerCustomShortcutSet(shortcutSet, myHistEditor);
     return a;
   }
 
@@ -178,6 +191,9 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     JPanel editorsPanel = new JPanel(new BorderLayout());
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
+    // todo:  
+    // <node> 
+    // <node> 
     return new JScrollPane(editorsPanel);
   }
 
@@ -293,7 +309,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     private jetbrains.mps.project.Project myProject;
 
     public ExecuteAction(jetbrains.mps.project.Project project) {
-      super("Execute", "Execute last command", IconContainer.ICON_c0a1yb);
+      super("Execute", "Execute last command", IconContainer.ICON_c0a1ac);
       ExecuteAction.this.myProject = project;
     }
 
@@ -308,7 +324,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           }
 
           final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
-          final SNode res = _quotation_createNode_xg3v07_a0g0a0a2yb();
+          final SNode res = _quotation_createNode_xg3v07_a0g0a0a2ac();
           final SearchScope scope = (myScopeCombo.getSelectedItem() == ConsoleTool.PROJECT_SCOPE ?
             new ProjectScope(myProject) :
             GlobalScope.getInstance()
@@ -324,7 +340,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           }, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c05(text));
+              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c25(text));
             }
 
             public void addNode(SNode node) {
@@ -334,7 +350,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
             public void addAction(String text, _FunctionTypes._void_P0_E0 action) {
               checkResultAvailable();
-              SNode result = _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2yb();
+              SNode result = _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2ac();
               SPropertyOperations.set(result, "text", text);
               ClosureHoldingNodeUtil.getInstance().register(result, action);
               ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(result);
@@ -367,7 +383,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", IconContainer.ICON_c0a0ac);
+      super("Clear", "Clear console window", IconContainer.ICON_c0a0cc);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -380,7 +396,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", IconContainer.ICON_c0a0cc);
+      super("Prev", "Previous command", IconContainer.ICON_c0a0ec);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -408,7 +424,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", IconContainer.ICON_c0a0ec);
+      super("Next", "Next command", IconContainer.ICON_c0a0gc);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -424,6 +440,22 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         myCursor = null;
         SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myNewCommand, "command", true)), true);
       }
+    }
+  }
+
+
+
+  private class ExecuteClosureAction extends BaseAction {
+    public ExecuteClosureAction() {
+      super("Execute Closure");
+    }
+
+    protected void doExecute(final AnActionEvent event, Map<String, Object> map) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"), event);
+        }
+      });
     }
   }
 
@@ -479,7 +511,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
 
-  private static SNode _quotation_createNode_xg3v07_a0g0a0a2yb() {
+  private static SNode _quotation_createNode_xg3v07_a0g0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -489,7 +521,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c05(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c25(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
@@ -497,7 +529,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2yb() {
+  private static SNode _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosure", null, null, GlobalScope.getInstance(), false);

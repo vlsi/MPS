@@ -304,6 +304,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" file="TestActionCommand_Behavior.java">
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.util.Random" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
