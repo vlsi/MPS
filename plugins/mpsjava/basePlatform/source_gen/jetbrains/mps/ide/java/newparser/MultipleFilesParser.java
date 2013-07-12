@@ -14,9 +14,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.List;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
 import jetbrains.mps.project.AbstractModule;
@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -70,8 +69,10 @@ public class MultipleFilesParser {
 
   private JavaParser myJavaParser = new JavaParser();
   private Map<String, Set<SNode>> classesPerPackage = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+  private Map<String, List<IFile>> filesPerPackage = MapSequence.fromMap(new HashMap<String, List<IFile>>());
   private List<SModel> myModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<SNode> myRoots = ListSequence.fromList(new ArrayList<SNode>());
+  private List<SNode> myAttachedRoots = ListSequence.fromList(new ArrayList<SNode>());
   private List<IFile> mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
 
   private boolean wasDefaultPkg = false;
@@ -111,8 +112,6 @@ public class MultipleFilesParser {
             parseFile(file);
             parseProgress.advance(1);
 
-            ListSequence.fromList(mySuccessfulFiles).addElement(file);
-
           } catch (JavaParseException e) {
           } catch (IOException e) {
           }
@@ -134,7 +133,6 @@ public class MultipleFilesParser {
 
           for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
             final SModel model = registerModelForPackage(pakage);
-
             if (model == null) {
               continue;
             }
@@ -148,13 +146,13 @@ public class MultipleFilesParser {
               }
             });
 
+            ListSequence.fromList(mySuccessfulFiles).addSequence(ListSequence.fromList(MapSequence.fromMap(filesPerPackage).get(pakage)));
+            ListSequence.fromList(myAttachedRoots).addSequence(SetSequence.fromSet(roots));
+
             ListSequence.fromList(myModels).addElement(model);
           }
 
-          for (SModel model : ListSequence.fromList(myModels)) {
-            JavaParser.tryResolveUnknowns(SModelOperations.getRoots(model, null));
-          }
-
+          JavaParser.tryResolveUnknowns(myAttachedRoots);
         }
       });
 
@@ -168,18 +166,16 @@ public class MultipleFilesParser {
             // todo be more accurate with duplicates 
             myModel.addRootNode(root);
           }
-
-          JavaParser.tryResolveUnknowns(myRoots);
+          myAttachedRoots = myRoots;
+          JavaParser.tryResolveUnknowns(myAttachedRoots);
         }
       });
     }
 
-    myRootCount = rootCount;
+    myRootCount = myAttachedRoots.size();
 
     ProgressMonitor resolveProgress = progress.subTask(30);
-
-    tryResolveRefs(myRoots, FeatureKind.CLASS, resolveProgress);
-
+    tryResolveRefs(myAttachedRoots, FeatureKind.CLASS, resolveProgress);
     progress.done();
   }
 
@@ -343,6 +339,13 @@ public class MultipleFilesParser {
       MapSequence.fromMap(classesPerPackage).put(pkg, classesInPackage);
     }
     SetSequence.fromSet(classesInPackage).addSequence(Sequence.fromIterable(roots));
+
+    List<IFile> files = MapSequence.fromMap(filesPerPackage).get(pkg);
+    if (files == null) {
+      files = ListSequence.fromList(new ArrayList<IFile>());
+      MapSequence.fromMap(filesPerPackage).put(pkg, files);
+    }
+    ListSequence.fromList(files).addElement(file);
 
     ListSequence.fromList(myRoots).addSequence(Sequence.fromIterable(roots));
     myRootCount += Sequence.fromIterable(roots).count();
