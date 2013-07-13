@@ -17,12 +17,12 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.FilteredScope;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -50,7 +50,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
 
   @Override
   public NavigationTarget[] find(boolean checkboxState) {
-    if (checkboxState) return find(new FilteredGlobalScope());
+    if (checkboxState) return find(GlobalScope.getInstance());
     MPSProject project = getProject().getComponent(MPSProject.class);
     return find(new FilterStubsScope(new ModulesScope(project.getModulesWithGenerators())));
   }
