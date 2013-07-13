@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -90,10 +91,11 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
         if (modelFactory == null) continue;
 
         fillOptions(file, options);
-        SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
-        // TODO handle errors
-        if (model != null) {
+        try {
+          SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
           result.add(model);
+        } catch (IOException e) {
+          // TODO handle errors
         }
       }
     }
