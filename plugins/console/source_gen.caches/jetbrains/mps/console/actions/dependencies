@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" file="ClosureHoldingNodeUtil.java">
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
+    <classNode dependClassName="java.util.WeakHashMap" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.console.actions.ConsoleActions" file="ConsoleActions.xml" />
-  <dependency className="jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action" file="ExecuteActionAttachedToCurrentNode_Action.java">
+  <dependency className="jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action" file="ExecuteClosureAttachedToCurrentNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

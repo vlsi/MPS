@@ -36,8 +36,11 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CustomShortcutSet" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.MouseShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ShortcutSet" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
@@ -46,6 +49,7 @@
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -58,6 +62,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
@@ -71,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.UIEditorComponent" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
@@ -86,6 +92,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
