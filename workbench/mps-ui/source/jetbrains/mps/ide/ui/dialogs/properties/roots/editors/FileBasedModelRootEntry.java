@@ -30,6 +30,7 @@ import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -171,7 +172,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
     JLabel label2Return = new JLabel(pathPresentation);
 
-    if((new File(file)).exists()) {
+    if((VirtualFileUtils.getVirtualFile(file)).exists()) {
       HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(pathPresentation, foreground);
       hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
       hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
@@ -210,7 +211,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   @Override
   public boolean isValid() {
     try {
-      return (new java.io.File(myFileBasedModelRoot.getContentRoot())).exists();
+      return VirtualFileUtils.getVirtualFile(myFileBasedModelRoot.getContentRoot()).exists();
     } catch (Exception e) {
       return false;
     }
