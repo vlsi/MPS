@@ -37,6 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
+  private static final ClassLoader BOOTSTRAP_CLASSLOADER = Object.class.getClassLoader();
 
   private final ClassLoaderManager myManager;
 
@@ -60,6 +61,10 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    if (name.startsWith("java.")) {
+      return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
+    }
+
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
     //but only makes class loading faster.
     Class<?> clazz = getClassFromCache(name);
