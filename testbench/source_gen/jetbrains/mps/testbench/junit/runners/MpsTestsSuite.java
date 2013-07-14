@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.Description;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 
@@ -129,7 +130,11 @@ public class MpsTestsSuite extends Suite {
     }
 
     private Class getTestClass() {
-      return getTestClass(myModuleReference.resolve(MPSModuleRepository.getInstance()), myClassName);
+      return ModelAccess.instance().runReadAction(new Computable<Class>() {
+        public Class compute() {
+          return getTestClass(myModuleReference.resolve(MPSModuleRepository.getInstance()), myClassName);
+        }
+      });
     }
 
     private static Class getTestClass(SModule module, String className) {
