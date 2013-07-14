@@ -7,10 +7,12 @@
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.persistent.FSRecords" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -40,11 +42,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.DefaultModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.PathUtil" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentUtils" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />

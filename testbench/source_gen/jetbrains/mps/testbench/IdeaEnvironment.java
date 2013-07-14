@@ -23,17 +23,21 @@ import jetbrains.mps.library.LibraryInitializer;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.DefaultModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.util.FileUtil;
+import java.io.InputStream;
+import jetbrains.mps.testbench.junit.suites.ModuleTestSuite;
+import java.io.FileOutputStream;
+import jetbrains.mps.util.ReadUtil;
+import java.io.IOException;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -43,6 +47,8 @@ import jetbrains.mps.tool.common.util.PathUtil;
 import com.intellij.openapi.application.PathMacros;
 
 public class IdeaEnvironment implements Environment {
+  private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
+
   private static boolean cachesInvalidated = false;
 
   private final EnvironmentConfig config;
@@ -149,17 +155,22 @@ public class IdeaEnvironment implements Environment {
   }
 
   public Project createDummyProject() {
-    ProjectManagerEx.getInstanceEx();
+    // todo: for dumb idea env? 
+    // <node> 
     // from CheckProjectStructureHelper 
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-    MPSProject project = new MPSProject(ideaProject);
-    File projectFile = FileUtil.createTmpFile();
-    project.setProjectFile(projectFile);
-    projectFile.deleteOnExit();
-    project.projectOpened();
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
 
-    SetSequence.fromSet(openedProjects).addElement(project);
-    return project;
+    File dummyProjectFile = createDummyProjectFile();
+    Project dummyProject = IdeaEnvironment.openProjectInIdeaEnvironment(dummyProjectFile);
+    dummyProjectFile.deleteOnExit();
+
+    SetSequence.fromSet(openedProjects).addElement(dummyProject);
+    return dummyProject;
   }
 
 
@@ -215,6 +226,27 @@ public class IdeaEnvironment implements Environment {
     });
 
     ActiveEnvironment.deactivateEnvironment(this);
+  }
+
+
+
+  private File createDummyProjectFile() {
+    File projectDir = FileUtil.createTmpDir();
+    File dotMps = new File(projectDir, ".mps");
+    dotMps.mkdir();
+    File projectFile = new File(dotMps, MISC_XML_URI.substring(MISC_XML_URI.lastIndexOf("/") + 1));
+    try {
+      projectFile.createNewFile();
+      InputStream input = ModuleTestSuite.class.getResourceAsStream(MISC_XML_URI);
+      FileOutputStream stream = new FileOutputStream(projectFile);
+      stream.write(ReadUtil.read(input));
+      stream.close();
+      input.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+    return projectDir;
   }
 
 

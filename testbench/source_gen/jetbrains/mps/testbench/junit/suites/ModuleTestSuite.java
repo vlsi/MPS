@@ -38,18 +38,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.testbench.IdeaEnvironment;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.util.FileUtil;
-import java.io.InputStream;
-import java.io.FileOutputStream;
-import jetbrains.mps.util.ReadUtil;
-import java.io.IOException;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
 
 @RunWith(DynamicSuite.class)
 public class ModuleTestSuite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
-  private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
   private static final String PROPERTY_TEST_MODULE = "mps.test.modules";
 
   private static Environment CREATED_ENV;
@@ -188,49 +181,7 @@ public class ModuleTestSuite {
     }
 
     private Project getDummyProject() {
-      // use ENV.createDummy 
-      File dummy = createDummyProjectFile();
-      Project p = IdeaEnvironment.openProjectInIdeaEnvironment(dummy);
-      if (this.lastProject != null) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-              Project lastProject = DummyProjectContainer.this.lastProject;
-              File projectFile = lastProject.getProjectFile();
-              lastProject.dispose();
-              if (projectFile != null) {
-                FileUtil.delete(projectFile);
-              }
-            }
-          });
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      }
-      this.lastProject = p;
-      this.projectName = dummy.getName();
-      return p;
-    }
-
-
-
-    private File createDummyProjectFile() {
-      File projectDir = FileUtil.createTmpDir();
-      File dotMps = new File(projectDir, ".mps");
-      dotMps.mkdir();
-      File projectFile = new File(dotMps, MISC_XML_URI.substring(MISC_XML_URI.lastIndexOf("/") + 1));
-      try {
-        projectFile.createNewFile();
-        InputStream input = ModuleTestSuite.class.getResourceAsStream(MISC_XML_URI);
-        FileOutputStream stream = new FileOutputStream(projectFile);
-        stream.write(ReadUtil.read(input));
-        stream.close();
-        input.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-        return null;
-      }
-      return projectDir;
+      return ActiveEnvironment.get().createDummyProject();
     }
 
 
