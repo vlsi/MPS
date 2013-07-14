@@ -1172,7 +1172,7 @@ public class QueriesGenerated {
       }
     })).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Module") && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
