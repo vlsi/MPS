@@ -56,7 +56,7 @@ public class ModuleTestSuite {
     ModuleTestSuite.DummyProjectContainer container = new ModuleTestSuite.DummyProjectContainer();
     TestMain.PROJECT_CONTAINER = container;
     // all classloading should be finished before test classes collecting 
-    container.getDummyProject();
+    container.getProject(null);
 
     return getUnitTestClasses();
   }
@@ -174,14 +174,10 @@ public class ModuleTestSuite {
 
     @Override
     public Project getProject(String string) {
-      if (this.lastProject == null) {
-        return getDummyProject();
+      if (lastProject == null) {
+        lastProject = ActiveEnvironment.get().createDummyProject();
       }
-      return this.lastProject;
-    }
-
-    private Project getDummyProject() {
-      return ActiveEnvironment.get().createDummyProject();
+      return lastProject;
     }
 
 
