@@ -14,36 +14,28 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.io.File;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Map;
+import java.io.File;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
 
 @RunWith(DynamicSuite.class)
 public class ModuleTestSuite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
-  private static final String PROPERTY_TEST_MODULE = "mps.test.modules";
 
   private static Environment CREATED_ENV;
 
@@ -74,7 +66,7 @@ public class ModuleTestSuite {
 
   protected static Class[] getUnitTestClasses() throws InitializationError {
     List<Class> result = ListSequence.fromList(new ArrayList<Class>());
-    for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptorsFromModels(ListSequence.fromList(getTestModules()).translate(new ITranslator2<SModule, SModel>() {
+    for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptorsFromModels(Sequence.fromIterable(((Iterable<SModule>) TestMain.PROJECT_CONTAINER.getProject(null).getModules())).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }
@@ -102,43 +94,6 @@ public class ModuleTestSuite {
       }
     });
     return testClassDescriptors;
-  }
-
-  private static List<SModule> getTestModules() {
-    List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
-    String modulesString = System.getProperty(PROPERTY_TEST_MODULE);
-    if ((modulesString == null || modulesString.length() == 0)) {
-      return result;
-    }
-    String[] modules = modulesString.split(File.pathSeparator);
-    for (String modulePath : modules) {
-      ListSequence.fromList(result).addSequence(Sequence.fromIterable(loadModule(modulePath)));
-    }
-    return result;
-  }
-
-  private static Iterable<SModule> loadModule(String modulePath) {
-    final List<ModulesMiner.ModuleHandle> collectModules = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(modulePath), false);
-
-    if (collectModules.isEmpty()) {
-      return ListSequence.fromList(new ArrayList<SModule>());
-    }
-
-    return ModelAccess.instance().runWriteAction(new Computable<List<SModule>>() {
-      public List<SModule> compute() {
-        List<SModule> modules = new ArrayList<SModule>();
-        BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
-        for (ModulesMiner.ModuleHandle moduleHandle : collectModules) {
-          SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
-          if (module != null) {
-            modules.add(module);
-          }
-        }
-        CleanupManager.getInstance().cleanup();
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        return modules;
-      }
-    });
   }
 
 
@@ -175,7 +130,7 @@ public class ModuleTestSuite {
     @Override
     public Project getProject(String string) {
       if (lastProject == null) {
-        lastProject = ActiveEnvironment.get().createDummyProject();
+        lastProject = ContextProjextSupport.getContextProject();
       }
       return lastProject;
     }
