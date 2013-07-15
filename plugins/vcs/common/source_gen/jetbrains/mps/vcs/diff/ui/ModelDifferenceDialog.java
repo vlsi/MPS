@@ -104,6 +104,12 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         }
       }
     });
+    if ((oldTitle == null || oldTitle.length() == 0)) {
+      oldTitle = "before";
+    }
+    if ((newTitle == null || newTitle.length() == 0)) {
+      newTitle = "after";
+    }
     myContentTitles = new String[]{oldTitle, newTitle};
     assert myContentTitles.length == 2;
 
