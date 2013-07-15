@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
@@ -45,6 +46,7 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />

@@ -20,8 +20,10 @@ import java.awt.Window;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
-import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -105,7 +107,12 @@ public class ModelDiffTool implements DiffTool {
 
   private static SModel readModel(DiffContent content) throws ModelReadException {
     if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
-      final SModel model = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
+      IFile file = VirtualFileUtils.toIFile(content.getFile());
+      SModel model = SModelFileTracker.getInstance().findModel(file);
+      // special support for per root persistence: 
+      if (model == null && FilePerRootDataSource.isPerRootPersistenceFile(file)) {
+        model = SModelFileTracker.getInstance().findModel(file.getParent());
+      }
 
       if (model != null) {
         return model;
