@@ -108,6 +108,8 @@ public abstract class ReloadableSModelBase extends SModelBase {
       notifyModelReplaced(oldSModel.getModelDescriptor());
     }
 
+    fireModelReplaced();
+
     MPSModuleRepository.getInstance().invalidateCaches();
   }
 }
