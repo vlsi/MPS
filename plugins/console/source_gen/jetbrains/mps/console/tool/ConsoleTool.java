@@ -57,6 +57,17 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.ide.PasteProvider;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.DataContext;
+import jetbrains.mps.ide.datatransfer.SNodeReferenceTransferable;
+import java.awt.datatransfer.Transferable;
+import com.intellij.ide.CopyPasteManagerEx;
+import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -125,9 +136,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           @Nullable
           @Override
           public Object getData(@NonNls String key) {
-            if (PlatformDataKeys.FILE_EDITOR.equals(key)) {
+            if (PlatformDataKeys.FILE_EDITOR.is(key)) {
               return myCommandFileEditor;
             }
+            if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
+              return new ConsoleTool.MyPasteProvider();
+            }
+
             return super.getData(key);
           }
         };
@@ -451,7 +466,49 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"), event);
+      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action")), event);
+    }
+  }
+
+
+
+  private class MyPasteProvider implements PasteProvider {
+
+
+    public void performPaste(@NotNull DataContext context) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          SNodeReferenceTransferable paste = null;
+          try {
+            for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+              if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNodeReference)) {
+                paste = (SNodeReferenceTransferable) trf.getTransferData(SModelDataFlavor.sNodeReference);
+                break;
+              }
+            }
+          } catch (UnsupportedFlavorException ignored) {
+          } catch (IOException ignored) {
+          }
+          EditorCell currentCell = myCommandEditor.getSelectedCell();
+          if (paste != null && currentCell != null) {
+            String role = currentCell.getRole();
+            if (role != null) {
+              SNode parent = currentCell.getParent().getSNode();
+              SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.NodeReference", null);
+              SLinkOperations.setTarget(refContainer, "target", paste.getReference(), false);
+              parent.addChild(role, refContainer);
+            }
+          }
+        }
+      });
+    }
+
+    public boolean isPastePossible(@NotNull DataContext context) {
+      return check_xg3v07_a0a0c26(myCommandEditor.getSelectedCell()) != null;
+    }
+
+    public boolean isPasteEnabled(@NotNull DataContext context) {
+      return true;
     }
   }
 
@@ -533,5 +590,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosure", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
+  }
+
+  private static String check_xg3v07_a0a0c26(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRole();
+    }
+    return null;
   }
 }

@@ -6,6 +6,7 @@ import java.awt.datatransfer.DataFlavor;
 
 public class SModelDataFlavor extends DataFlavor {
   public static DataFlavor sNode = new DataFlavor(SNodeTransferable.class, "SNode");
+  public static DataFlavor sNodeReference = new DataFlavor(SNodeReferenceTransferable.class, "SNodeReference");
 
   public SModelDataFlavor() {
   }

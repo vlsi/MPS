@@ -701,5 +701,6 @@
     </scopeInfo>
     <unitInfo nodeId="6224631407134024896" fileName="InterpretedCommand_Editor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.base.editor.InterpretedCommand_Editor" />
   </root>
+  <root nodeRef="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)/8079535492156769910" />
 </debugInfo>
 

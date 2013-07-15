@@ -80,7 +80,7 @@ public class CopyNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+      CopyPasteUtil.copyNodesAndReferenceToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CopyNode", t);
