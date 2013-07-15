@@ -53,6 +53,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;
   private String myName;
+  private MPSPsiModel myModel;
 
   public MPSPsiRootNode (SNodeId nodeId, String name,  PsiManager manager) {
     this(nodeId, name, manager, null);
@@ -96,6 +97,15 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
     return false;
   }
 
+  public void setModel(MPSPsiModel model) {
+    myModel = model;
+  }
+
+  @Override
+  public MPSPsiModel getContainingModel() {
+    return myModel != null ? myModel : super.getContainingModel();
+  }
+
   @Nullable
   @Override
   public PsiDirectory getContainingDirectory() {
@@ -110,6 +120,8 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   @Nullable
   @Override
   public PsiDirectory getParent() {
+    if(myViewProvider.getVirtualFile().getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE && super.getParent() instanceof MPSPsiModel)
+      return ((MPSPsiModel) super.getParent()).getParentDirectory();
     return (PsiDirectory) super.getParent();
   }
 

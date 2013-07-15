@@ -20,7 +20,6 @@ import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.util.Ref;
-import com.intellij.openapi.util.io.FileSystemUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
@@ -28,6 +27,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
@@ -37,16 +37,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.FilePerRootSModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -69,6 +65,8 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.intellij.openapi.util.io.FileSystemUtil;
 
 /**
  * evgeny, 1/25/13
@@ -315,7 +313,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
     if (mpsPsiNode.getParent() instanceof MPSPsiRootNode) {
       MPSPsiRootNode rootNode = (MPSPsiRootNode) mpsPsiNode.getParent();
-      assert rootNode.getParent() == this;
+      assert rootNode.getContainingModel().equals(this);
 
       MPSPsiRootNode replacementRoot = null;
       if(sNode.getContainingRoot() == sNode && sNode.getModel().getSource() instanceof FilePerRootDataSource) {
@@ -325,7 +323,9 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       } else {
         replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
       }
+      replacementRoot.setModel(this);
       replaceChild(rootNode, replacementRoot);
+      ((PsiManagerImpl)getManager()).getFileManager().setViewProvider(rootNode.getVirtualFile(), null);
       replacementRoot.addChildLast(replacement);
     } else {
       ((MPSPsiNodeBase) mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
@@ -362,6 +362,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         } else {
           rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
         }
+        rootNode.setModel(this);
 
         addChildLast(rootNode);
         rootNode.addChildLast(convert(root));

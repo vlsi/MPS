@@ -18,6 +18,8 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.extapi.psi.PsiElementBase;
 import com.intellij.openapi.util.TextRange;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
@@ -27,9 +29,14 @@ import com.intellij.psi.SyntheticElement;
 import com.intellij.psi.impl.light.LightElement;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.SmartList;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.lang.reflect.Array;
 import java.util.Iterator;
@@ -66,9 +73,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   public MPSPsiModel getContainingModel() {
     PsiElement parent = this;
-    PsiElement grandPa = null;
-    while (parent != null && !(parent instanceof MPSPsiModel)) {
-      grandPa = parent;
+    while (parent != null && !(parent instanceof MPSPsiRootNode)) {
       parent = parent.getParent();
     }
 
@@ -76,7 +81,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
       throw new PsiInvalidElementAccessException(this);
     }
 
-    return (MPSPsiModel) parent;
+    return ((MPSPsiRootNode)parent).getContainingModel();
   }
 
   @Override
