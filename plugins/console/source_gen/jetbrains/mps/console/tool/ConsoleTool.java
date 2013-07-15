@@ -191,9 +191,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     JPanel editorsPanel = new JPanel(new BorderLayout());
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
-    // todo:  
-    // <node> 
-    // <node> 
     return new JScrollPane(editorsPanel);
   }
 
