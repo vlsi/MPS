@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.DiffManager;
 import java.awt.event.WindowAdapter;
@@ -50,6 +49,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -113,15 +113,13 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
       }
     });
-    if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel, "metadata_new", myEditable);
-          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel, "metadata_old", false);
-          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
-        }
-      });
-    }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        SModel newMetaModel = MetadataUtil.createMetadataModel(newModel, "metadata_new", myEditable);
+        SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel, "metadata_old", false);
+        myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
+      }
+    });
 
     myActionGroup = new DefaultActionGroup();
     if (diffRequest != null) {
@@ -136,10 +134,8 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         syncMetadataChanges();
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            if (myMetadataChangeSet != null) {
-              MetadataUtil.dispose(myMetadataChangeSet.getOldModel());
-              MetadataUtil.dispose(myMetadataChangeSet.getNewModel());
-            }
+            MetadataUtil.dispose(myMetadataChangeSet.getOldModel());
+            MetadataUtil.dispose(myMetadataChangeSet.getNewModel());
             if (!(myOldRegistered)) {
               DiffModelUtil.unregisterModel(myChangeSet.getOldModel());
             }
@@ -222,9 +218,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
   /*package*/ void rebuildChangeSets() {
     ChangeSetBuilder.rebuildChangeSet(myChangeSet);
-    if (myMetadataChangeSet != null) {
-      ChangeSetBuilder.rebuildChangeSet(myMetadataChangeSet);
-    }
+    ChangeSetBuilder.rebuildChangeSet(myMetadataChangeSet);
     myTree.rebuildLater();
   }
 
@@ -233,7 +227,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   }
 
   private void syncMetadataChanges() {
-    if (myMetadataChangeSet != null && myEditable) {
+    if (myEditable) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           MetadataUtil.applyMetadataChanges(myChangeSet.getNewModel(), myMetadataChangeSet.getNewModel());
