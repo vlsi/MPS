@@ -60,6 +60,9 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -163,7 +166,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     group.add(registerKeyShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
     group.add(registerKeyShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
     group.add(registerKeyShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
-    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, KeyEvent.CTRL_MASK, 1))));
+    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1))));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
 
     JPanel res = new JPanel(new BorderLayout());
@@ -447,12 +450,8 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       super("Execute Closure");
     }
 
-    protected void doExecute(final AnActionEvent event, Map<String, Object> map) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"), event);
-        }
-      });
+    protected void doExecute(AnActionEvent event, Map<String, Object> map) {
+      ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"), event);
     }
   }
 
@@ -495,8 +494,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       public void run() {
         try {
           result.state = PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL);
-        } catch (Exception ignored) {
-          // todo: log 
+        } catch (Exception e) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Exception", e);
+          }
         }
       }
     });
@@ -507,6 +508,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   }
 
 
+  protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
 
   private static SNode _quotation_createNode_xg3v07_a0g0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
