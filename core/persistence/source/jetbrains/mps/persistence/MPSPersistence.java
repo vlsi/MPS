@@ -39,6 +39,5 @@ public class MPSPersistence extends ComponentPlugin {
     init(new FilePerRootModelPersistence());
     init(new BinaryModelPersistence());
     init(new JavaClassesPersistence());
-    init(new XmlModelPersistence());
   }
 }
