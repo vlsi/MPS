@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.typesystem.typesystem.JoinType_subtypeOf_arguments_InequationReplacementRule" file="JoinType_subtypeOf_arguments_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_arguments_InequationReplacementRule" file="JoinType_supertypeOf_arguments_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.typesystem.MeetType_supertypeOf_arguments_InequationReplacementRule" file="MeetType_supertypeOf_arguments_InequationReplacementRule.java">
+  <dependency className="jetbrains.mps.lang.typesystem.typesystem.MeetType_subtypeOf_arguments_InequationReplacementRule" file="MeetType_subtypeOf_arguments_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -58,9 +58,9 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.JoinType_subtypeOf_arguments_InequationReplacementRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_arguments_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_some_arg_InequationReplacementRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.MeetType_supertypeOf_arguments_InequationReplacementRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.MeetType_subtypeOf_arguments_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_AbstractCheckingRule_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_AbstractEquation_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.check_AbstractEquation_QuickFix_NonTypesystemRule" />

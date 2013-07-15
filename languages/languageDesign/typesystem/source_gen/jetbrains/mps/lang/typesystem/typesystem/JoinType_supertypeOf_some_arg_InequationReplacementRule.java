@@ -21,6 +21,9 @@ public class JoinType_supertypeOf_some_arg_InequationReplacementRule extends Abs
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
+    if (true) {
+      return false;
+    }
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(supertype, "argument", true))) {
       if (SNodeOperations.getConceptDeclaration(arg) == SNodeOperations.getConceptDeclaration(subtype)) {
         if (SNodeOperations.getConceptDeclaration(subtype) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType")) {

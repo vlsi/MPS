@@ -3722,7 +3722,7 @@
     </node>
   </root>
   <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="8030577887428929108" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MeetType_supertypeOf_arguments" />
+    <property name="name" nameId="tpck.1169194664001" value="JoinType_supertypeOf_arguments" />
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="8030577887428929110" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8030577887428929140" nodeInfo="nn">
         <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8030577887428929141" nodeInfo="nn">
@@ -3735,8 +3735,8 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8030577887428929136" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="meetType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1188473524530" resolveInfo="MeetType" />
+      <property name="name" nameId="tpck.1169194664001" value="joinType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1179479408386" resolveInfo="JoinType" />
     </node>
     <node role="isApplicableClause" roleId="tpd4.3592071576955708909" type="tpd4.IsReplacementRuleApplicable_ConceptFunction" typeId="tpd4.3592071576955708904" id="8030577887428929138" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8030577887428929139" nodeInfo="sn">
@@ -3770,10 +3770,10 @@
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8030577887428961163" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8030577887428961164" nodeInfo="nn">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8030577887428929136" resolveInfo="meetType" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8030577887428929136" resolveInfo="joinType" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="8030577887428961165" nodeInfo="nn">
-              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpd4.1188473537547" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="530710817314593912" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpd4.1179479418730" />
             </node>
           </node>
         </node>
@@ -3786,7 +3786,7 @@
     </node>
   </root>
   <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="8030577887428961182" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="JoinType_subtypeOf_arguments" />
+    <property name="name" nameId="tpck.1169194664001" value="MeetType_subtypeOf_arguments" />
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="8030577887428961184" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8030577887428961190" nodeInfo="nn">
         <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8030577887428961191" nodeInfo="nn">
@@ -3795,8 +3795,8 @@
       </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8030577887428961186" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="joinType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1179479408386" resolveInfo="JoinType" />
+      <property name="name" nameId="tpck.1169194664001" value="meetType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpd4.1188473524530" resolveInfo="MeetType" />
     </node>
     <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8030577887428961187" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="any" />
@@ -3834,10 +3834,10 @@
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8030577887428961222" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8030577887428961223" nodeInfo="nn">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8030577887428961186" resolveInfo="joinType" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8030577887428961186" resolveInfo="meetType" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="8030577887428961224" nodeInfo="nn">
-              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpd4.1179479418730" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="530710817314572206" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpd4.1188473537547" />
             </node>
           </node>
         </node>
@@ -3960,6 +3960,18 @@
     </node>
     <node role="isApplicableClause" roleId="tpd4.3592071576955708909" type="tpd4.IsReplacementRuleApplicable_ConceptFunction" typeId="tpd4.3592071576955708904" id="8122224761040392891" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8122224761040392892" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="530710817314492205" nodeInfo="nn">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="530710817314492208" nodeInfo="sn">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="530710817314496098" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="530710817314498798" nodeInfo="nn">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="530710817314494174" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="8122224761040392925" nodeInfo="nn">
           <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="8122224761040392926" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="arg" />

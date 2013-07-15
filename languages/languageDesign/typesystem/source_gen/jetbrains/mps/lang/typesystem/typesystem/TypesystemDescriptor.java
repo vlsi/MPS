@@ -287,7 +287,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new JoinType_subtypeOf_arguments_InequationReplacementRule();
+      InequationReplacementRule_Runtime eliminationRule = new JoinType_supertypeOf_arguments_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
@@ -295,7 +295,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new MeetType_supertypeOf_arguments_InequationReplacementRule();
+      InequationReplacementRule_Runtime eliminationRule = new MeetType_subtypeOf_arguments_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
   }

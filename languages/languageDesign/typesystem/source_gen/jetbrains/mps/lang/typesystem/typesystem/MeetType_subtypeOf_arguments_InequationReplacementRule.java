@@ -12,8 +12,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class JoinType_subtypeOf_arguments_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-  public JoinType_subtypeOf_arguments_InequationReplacementRule() {
+public class MeetType_subtypeOf_arguments_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
+  public MeetType_subtypeOf_arguments_InequationReplacementRule() {
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
@@ -54,7 +54,7 @@ public class JoinType_subtypeOf_arguments_InequationReplacementRule extends Abst
   }
 
   public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.lang.typesystem.structure.JoinType";
+    return "jetbrains.mps.lang.typesystem.structure.MeetType";
   }
 
   public String getApplicableSupertypeConceptFQName() {
