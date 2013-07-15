@@ -69,8 +69,6 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
 
     @Override
     protected String[] getKeys(SModel model, final SNode node) {
-      // Q: we use behaviour method. read action not needed?
-      // seems like the model shouldn't be in a repository, we just parsed it from a file
       return new String[]{ClassUtil.getClassFQName(node)};
 
     }
