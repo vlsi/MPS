@@ -264,17 +264,17 @@ public class CopyPasteUtil {
   }
 
   public static void copyNodesAndReferenceAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
-    copyNodesAndTextToClipboard(nodes, text);
     if (nodes.size() == 1) {
       copyReferenceToClipboard(nodes.get(0));
     }
+    copyNodesAndTextToClipboard(nodes, text);
   }
 
   public static void copyNodesAndReferenceToClipboard(List<SNode> nodes) {
-    copyNodesToClipboard(nodes);
     if (nodes.size() == 1) {
       copyReferenceToClipboard(nodes.get(0));
     }
+    copyNodesToClipboard(nodes);
   }
 
   public static void copyReferenceToClipboard(SNode node) {

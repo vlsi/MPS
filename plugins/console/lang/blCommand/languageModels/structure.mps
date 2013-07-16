@@ -227,7 +227,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8079535492157846728" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
     <property name="name" nameId="tpck.1169194664001" value="NodeReference" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.3575813534625140284" resolveInfo="AbstractNodeRefExpression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8079535492157846729" nodeInfo="ig">

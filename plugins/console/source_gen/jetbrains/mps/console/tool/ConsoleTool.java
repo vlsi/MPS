@@ -493,18 +493,30 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           if (paste != null && currentCell != null) {
             String role = currentCell.getRole();
             if (role != null) {
+              SNode current = currentCell.getSNode();
               SNode parent = currentCell.getParent().getSNode();
               SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.NodeReference", null);
               SLinkOperations.setTarget(refContainer, "target", paste.getReference(), false);
-              parent.addChild(role, refContainer);
+              // todo: better detect cell to paste (current or parent) 
+              if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(((SNode) current)), "abstract")) {
+                SNodeOperations.replaceWithAnother(((SNode) currentCell.getSNode()), refContainer);
+                // <node> 
+              } else {
+                parent.addChild(role, refContainer);
+              }
             }
           }
         }
       });
     }
 
+    private String role() {
+      return check_xg3v07_a0a2kc(myCommandEditor.getSelectedCell());
+    }
+
     public boolean isPastePossible(@NotNull DataContext context) {
-      return check_xg3v07_a0a0c26(myCommandEditor.getSelectedCell()) != null;
+      // todo: detect if expression 
+      return role() != null;
     }
 
     public boolean isPasteEnabled(@NotNull DataContext context) {
@@ -592,7 +604,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return quotedNode_1;
   }
 
-  private static String check_xg3v07_a0a0c26(EditorCell checkedDotOperand) {
+  private static String check_xg3v07_a0a2kc(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRole();
     }
