@@ -66,6 +66,12 @@ public class CellAction_PasteNode extends AbstractCellAction {
   public boolean canExecute(EditorContext context) {
     Selection selection = context.getSelectionManager().getSelection();
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selection.getSelectedNodes().get(0).getModel());
+
+    if (pasteNodes == null || pasteNodes.isEmpty()) {
+      // it used to be ok because conversion would be invoked in this case
+      return false;
+    }
+
     boolean disposed = false;
     for (SNode node : selection.getSelectedNodes()) {
       if (jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
@@ -73,9 +79,8 @@ public class CellAction_PasteNode extends AbstractCellAction {
         break;
       }
     }
-    boolean needToConvert = pasteNodes == null || pasteNodes.isEmpty();
 
-    boolean canPasteWithRemove = !needToConvert && !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
+    boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
     if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
         (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
       EditorCell selectedCell = getCellToPasteTo(context.getSelectedCell());
@@ -85,9 +90,6 @@ public class CellAction_PasteNode extends AbstractCellAction {
       SNode selectedNode = selectedCell.getSNode();
       if (selectedNode == null || jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
         return false;
-      }
-      if (needToConvert) {
-        return CopyPasteUtil.isConversionAvailable(selectedNode.getModel(), selectedNode);
       }
 
       return canPasteViaNodePaster(selectedCell, pasteNodes);
@@ -150,13 +152,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     // sometimes model is not in repository (paste in merge dialog)
     final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modelToPaste.getModelId()) != null;
 
-    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(modelToPaste);
-    final boolean needToConvert = (data == null || data.getNodes().isEmpty());
-    if (needToConvert) {
-      data = CopyPasteUtil.getConvertedFromClipboard(modelToPaste, context.getOperationContext().getProject());
-      if (data == null || data.getNodes().isEmpty()) return;
-    }
-    final PasteNodeData pasteNodeData = data;
+    final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(modelToPaste);
 
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -183,7 +179,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
             NodePaster nodePaster = new NodePaster(pasteNodes);
             boolean disposed = checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
-            boolean canPasteWithRemove = !needToConvert && !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
+            boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
             if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
                 (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
               EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
