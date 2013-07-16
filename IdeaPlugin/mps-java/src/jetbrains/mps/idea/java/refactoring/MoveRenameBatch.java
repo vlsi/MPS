@@ -4,30 +4,23 @@ import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.undo.DocumentReference;
+import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.command.undo.UndoableAction;
+import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.idea.core.refactoring.NodePtr;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * This component is mps-java internal. Not supposed to be used from other plugins.
@@ -42,7 +35,9 @@ public class MoveRenameBatch implements ProjectComponent {
 
   private Project myProject;
   private Object myCommand;
+  private boolean isUndoRedoCommand;
   private CommandListener myCommandListener;
+  private UndoableAction myUndoRedoSupport;
   // generic updaters, not tied to references, used at least for updating method names
   private List<Runnable> nodeUpdaters = new ArrayList<Runnable>();
   // reference -> update code
@@ -68,14 +63,48 @@ public class MoveRenameBatch implements ProjectComponent {
       @Override
       public void beforeCommandFinished(CommandEvent event) {
         if (event.getCommand() == myCommand) {
-          // our refactoring command is over
-          commit();
+          if (!isUndoRedoCommand) {
+            // our refactoring command is over
+            commit();
+
+          } else {
+            // refactoring undo or redo command is over
+            // the effect of undo/redo of commit() is already done automatically
+            // we just want our psi stub models to be in sync with psi
+            ReloadManager.getInstance().flush();
+          }
         }
 
         myCommand = null;
+        isUndoRedoCommand = false;
         nodeUpdaters.clear();
         sreferenceUpdaters.clear();
         prefixReferenceUpdaters.clear();
+      }
+    };
+
+    myUndoRedoSupport = new UndoableAction() {
+      @Override
+      public void undo() throws UnexpectedUndoException {
+        rememberCommand();
+        isUndoRedoCommand = true;
+      }
+
+      @Override
+      public void redo() throws UnexpectedUndoException {
+        rememberCommand();
+        isUndoRedoCommand = true;
+      }
+
+      @Nullable
+      @Override
+      public DocumentReference[] getAffectedDocuments() {
+        return DocumentReference.EMPTY_ARRAY;
+      }
+
+      @Override
+      public boolean isGlobal() {
+        return false;
       }
     };
 
@@ -115,8 +144,8 @@ public class MoveRenameBatch implements ProjectComponent {
     // when refactoring starts we have to stop reloads
     // and here resume and flush
     ReloadManager.getInstance().flush();
+    UndoManager.getInstance(myProject).undoableActionPerformed(myUndoRedoSupport);
 
-    // Maybe should be done in ReloadSession itself
     ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {
