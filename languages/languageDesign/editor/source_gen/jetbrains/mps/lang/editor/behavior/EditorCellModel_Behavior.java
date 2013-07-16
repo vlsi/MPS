@@ -227,6 +227,10 @@ public class EditorCellModel_Behavior {
     return EditorCellModel_Behavior.call_getBooleanStyleValue_1237383442523(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), false);
   }
 
+  public static SNode call_getParentCollectionCell_9186828658634887710(SNode thisNode) {
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+  }
+
   @Deprecated
   public static String call_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultCellId_4539255030934103845", new Object[]{});

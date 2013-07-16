@@ -1004,9 +1004,6 @@
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="4720003541460858001" nodeInfo="nn">
               <property name="style" nameId="tpc2.1186403771423" value="BOLD_ITALIC" />
             </node>
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="30273553379863746" nodeInfo="nn">
-              <property name="flag" nameId="tpc2.1186414551515" value="true" />
-            </node>
           </node>
         </node>
       </node>

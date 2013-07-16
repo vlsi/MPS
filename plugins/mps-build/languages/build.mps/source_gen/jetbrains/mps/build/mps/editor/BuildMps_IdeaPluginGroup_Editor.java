@@ -86,9 +86,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
         editorCell.setReferenceCell(true);
         editorCell.setRole("group");
       }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
-      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }

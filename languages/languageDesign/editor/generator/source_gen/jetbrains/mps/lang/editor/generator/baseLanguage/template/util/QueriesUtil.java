@@ -17,6 +17,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.NameUtil;
 
 public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
@@ -111,5 +116,48 @@ __switch__:
     }
     SetSequence.fromSet(namesSet).addElement(result);
     return result;
+  }
+
+  public static boolean requiresAutoDeletableStyleAddition(SNode inlineEditorComponent) {
+    SNode cellModel_refCell = SNodeOperations.as(SNodeOperations.getParent(inlineEditorComponent), "jetbrains.mps.lang.editor.structure.CellModel_RefCell");
+    if (cellModel_refCell == null) {
+      return false;
+    }
+    for (SNode parentCollection = EditorCellModel_Behavior.call_getParentCollectionCell_9186828658634887710(cellModel_refCell); parentCollection != null; parentCollection = EditorCellModel_Behavior.call_getParentCollectionCell_9186828658634887710(parentCollection)) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(parentCollection, "childCellModel", true)).count() > 1) {
+        return false;
+      }
+    }
+
+    if (!(LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(SLinkOperations.getTarget(cellModel_refCell, "relationDeclaration", false)))) {
+      return false;
+    }
+
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(inlineEditorComponent, "cellModel", true), "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation")) {
+      SNode refPresentation = SNodeOperations.cast(SLinkOperations.getTarget(inlineEditorComponent, "cellModel", true), "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation");
+      return !(hasUserDefinedStyle(refPresentation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem")));
+    }
+
+    return false;
+  }
+
+  private static boolean hasUserDefinedStyle(SNode cellModel, final SNode styleClassConcept) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(cellModel, "styleItem", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(styleClassConcept));
+      }
+    }) != null) {
+      return true;
+    }
+    for (SNode styleClass = SLinkOperations.getTarget(cellModel, "styleClass", false); styleClass != null; styleClass = SLinkOperations.getTarget(SLinkOperations.getTarget(styleClass, "extendedClass", true), "styleSheetClass", false)) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(styleClass, "styleItem", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(styleClassConcept));
+        }
+      }) != null) {
+        return true;
+      }
+    }
+    return false;
   }
 }

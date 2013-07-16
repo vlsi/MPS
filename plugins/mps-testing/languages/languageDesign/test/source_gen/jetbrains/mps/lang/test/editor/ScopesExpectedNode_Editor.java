@@ -70,7 +70,7 @@ public class ScopesExpectedNode_Editor extends DefaultNodeEditor {
         editorCell.setRole("ref");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, false);
       editorCell.getStyle().putAll(style);
       return editorCell;
     }

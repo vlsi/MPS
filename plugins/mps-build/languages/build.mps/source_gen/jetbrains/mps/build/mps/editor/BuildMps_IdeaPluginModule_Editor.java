@@ -14,10 +14,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -81,9 +80,6 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
         editorCell.setReferenceCell(true);
         editorCell.setRole("target");
       }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
-      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }
