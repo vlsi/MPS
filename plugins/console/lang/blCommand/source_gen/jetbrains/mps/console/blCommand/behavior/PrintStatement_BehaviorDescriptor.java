@@ -4,12 +4,12 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 
-public class PrintNode_BehaviorDescriptor extends Statement_BehaviorDescriptor {
-  public PrintNode_BehaviorDescriptor() {
+public class PrintStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
+  public PrintStatement_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.blCommand.structure.PrintNode";
+    return "jetbrains.mps.console.blCommand.structure.PrintStatement";
   }
 }

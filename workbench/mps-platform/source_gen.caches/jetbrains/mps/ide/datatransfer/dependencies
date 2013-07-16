@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteNodeData" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.AddRequiredImportsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeReferenceTransferable" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -55,8 +56,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.ide.datatransfer.SModelDataFlavor" file="SModelDataFlavor.java">
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeReferenceTransferable" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
     <classNode extendsClassName="java.awt.datatransfer.DataFlavor" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.datatransfer.SNodeReferenceTransferable" file="SNodeReferenceTransferable.java">
+    <classNode dependClassName="java.awt.datatransfer.DataFlavor" />
+    <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.awt.datatransfer.Transferable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.datatransfer.SNodeTransferable" file="SNodeTransferable.java">
     <classNode dependClassName="java.awt.datatransfer.DataFlavor" />

@@ -4,7 +4,7 @@
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="22" startPosition="55" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="23" startPosition="48" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="24" startPosition="35" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="24" startPosition="35" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3257040239264487432" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="39" startPosition="7" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -44,7 +44,7 @@
     <scopeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="39" startPosition="7" endLine="41" endPosition="63">
       <varInfo nodeId="3257040239264480619" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="22" startPosition="55" endLine="25" endPosition="41" />
+    <scopeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="22" startPosition="55" endLine="25" endPosition="40" />
     <scopeInfo nodeId="3257040239264480619" fileName="ExecuteClosureAttachedToCurrentNode_Action.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="3257040239264480619" varName="_params" />
       <varInfo nodeId="3257040239264480619" varName="event" />

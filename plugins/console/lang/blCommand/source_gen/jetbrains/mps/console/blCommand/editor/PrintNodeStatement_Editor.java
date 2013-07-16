@@ -12,33 +12,33 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class PrintText_Editor extends DefaultNodeEditor {
+public class PrintNodeStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1998uh_a(editorContext, node);
+    return this.createCollection_1is76e_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1998uh_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1is76e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1998uh_a");
+    editorCell.setCellId("Collection_1is76e_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_1998uh_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1998uh_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_1is76e_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1is76e_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_1998uh_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_1is76e_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 
-  private EditorCell createRefNode_1998uh_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1is76e_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("text");
-    provider.setNoTargetText("<no text>");
+    provider.setRole("node");
+    provider.setNoTargetText("<no node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("text");
+      editorCell.setRole("node");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

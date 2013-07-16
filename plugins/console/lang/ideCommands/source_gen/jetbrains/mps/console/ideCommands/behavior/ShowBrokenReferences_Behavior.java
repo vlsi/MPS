@@ -37,10 +37,10 @@ public class ShowBrokenReferences_Behavior {
         }).toListSequence();
         for (SReference ref : CollectionSequence.fromCollection(brokenReferences)) {
           console.addText("model id = " + ref.getTargetSModelReference());
-          console.addNewLine();
+          console.addText("\n");
           console.addText("node  id = " + ref.getTargetNodeId());
-          console.addNewLine();
-          console.addNewLine();
+          console.addText("\n");
+          console.addText("\n");
         }
       }
     });

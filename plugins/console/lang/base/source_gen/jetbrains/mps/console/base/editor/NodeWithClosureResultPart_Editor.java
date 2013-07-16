@@ -15,15 +15,15 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
-import jetbrains.mps.console.base.behavior.NodeWithClosure_Behavior;
+import jetbrains.mps.console.base.behavior.NodeWithClosureResultPart_Behavior;
 import jetbrains.mps.nodeEditor.MPSColors;
 
-public class NodeWithClosure_Editor extends DefaultNodeEditor {
+public class NodeWithClosureResultPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_e9km58_a(editorContext, node);
+    return this.createProperty_35mqdw_a(editorContext, node);
   }
 
-  private EditorCell createProperty_e9km58_a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_35mqdw_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<action>");
@@ -33,14 +33,14 @@ public class NodeWithClosure_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(NodeWithClosure_Editor._StyleParameter_QueryFunction_e9km58_a0a((editorCell == null ?
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(NodeWithClosureResultPart_Editor._StyleParameter_QueryFunction_35mqdw_a0a((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
     ))));
-    style.set(StyleAttributes.UNDERLINED, NodeWithClosure_Editor._StyleParameter_QueryFunction_e9km58_a1a((editorCell == null ?
+    style.set(StyleAttributes.UNDERLINED, NodeWithClosureResultPart_Editor._StyleParameter_QueryFunction_35mqdw_a1a((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
@@ -59,15 +59,15 @@ public class NodeWithClosure_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_e9km58_a0a(EditorContext editorContext, SNode node) {
-    if (NodeWithClosure_Behavior.call_isAlive_6698258751442247997(node)) {
+  private static Color _StyleParameter_QueryFunction_35mqdw_a0a(EditorContext editorContext, SNode node) {
+    if (NodeWithClosureResultPart_Behavior.call_isAlive_6698258751442247997(node)) {
       return MPSColors.DARK_BLUE;
     } else {
       return MPSColors.GRAY;
     }
   }
 
-  private static boolean _StyleParameter_QueryFunction_e9km58_a1a(EditorContext editorContext, SNode node) {
-    return NodeWithClosure_Behavior.call_isAlive_6698258751442247997(node);
+  private static boolean _StyleParameter_QueryFunction_35mqdw_a1a(EditorContext editorContext, SNode node) {
+    return NodeWithClosureResultPart_Behavior.call_isAlive_6698258751442247997(node);
   }
 }

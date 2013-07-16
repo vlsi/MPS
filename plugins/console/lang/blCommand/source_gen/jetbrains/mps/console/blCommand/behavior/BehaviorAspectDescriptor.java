@@ -14,19 +14,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new BLCommand_BehaviorDescriptor();
-      case 12:
-        return new PrintText_BehaviorDescriptor();
       case 11:
-        return new PrintNode_BehaviorDescriptor();
-      case 10:
-        return new PrintNewLine_BehaviorDescriptor();
+        return new PrintNodeReferenceStatement_BehaviorDescriptor();
       case 2:
         return new EachNodeLoop_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new UsagesExpression_BehaviorDescriptor();
-      case 16:
+      case 17:
         return new ShowStatement_BehaviorDescriptor();
-      case 9:
+      case 10:
         return new NodesShowable_BehaviorDescriptor();
       case 5:
         return new ModelsShowable_BehaviorDescriptor();
@@ -34,24 +30,30 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ModulesShowable_BehaviorDescriptor();
       case 3:
         return new InstancesExpression_BehaviorDescriptor();
-      case 15:
+      case 16:
         return new RefsShowable_BehaviorDescriptor();
       case 1:
         return new EachLoop_BehaviorDescriptor();
       case 8:
         return new NodeEachIterable_BehaviorDescriptor();
-      case 14:
+      case 15:
         return new ReferenceEachIterable_BehaviorDescriptor();
       case 4:
         return new ModelEachIterable_BehaviorDescriptor();
       case 6:
         return new ModuleEachIterable_BehaviorDescriptor();
-      case 13:
+      case 14:
         return new ProjectExpression_BehaviorDescriptor();
+      case 13:
+        return new PrintStatement_BehaviorDescriptor();
+      case 9:
+        return new NodeReference_BehaviorDescriptor();
+      case 12:
+        return new PrintNodeStatement_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintText", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodeReference", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceStatement", "jetbrains.mps.console.blCommand.structure.PrintNodeStatement", "jetbrains.mps.console.blCommand.structure.PrintStatement", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }
