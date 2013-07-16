@@ -7,29 +7,36 @@ import com.intellij.openapi.fileTypes.FileType;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
+import com.intellij.openapi.diff.FileContent;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import org.apache.log4j.Priority;
-import com.intellij.openapi.diff.DiffManager;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import com.intellij.openapi.diff.DiffManager;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.diff.DiffViewer;
 import java.awt.Window;
 import com.intellij.openapi.Disposable;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.util.FileUtil;
+import java.io.IOException;
+import org.apache.log4j.Priority;
 import com.intellij.openapi.diff.DocumentContent;
-import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.project.MPSExtentions;
-import java.io.IOException;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -42,46 +49,45 @@ public class ModelDiffTool implements DiffTool {
   @Override
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
-    final SModel oldModel;
-    final SModel newModel;
-    try {
-      oldModel = readModel(contents[0]);
-      newModel = readModel(contents[1]);
-    } catch (ModelReadException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("Can't read models", e);
-      }
-      DiffManager.getInstance().getIdeaDiffTool().show(request);
-      return;
-    }
-    if (oldModel == null || newModel == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("Can't read models");
-      }
-      DiffManager.getInstance().getIdeaDiffTool().show(request);
-      return;
-    }
     String[] titles = request.getContentTitles();
-    // support perroot and file persistence 
     FileType[] types = {contents[0].getContentType(), contents[1].getContentType()};
     FileType type = (types[1] == null ?
       types[0] :
       types[1]
     );
-    if (type.equals(MPSFileTypeFactory.MPS_FILE_TYPE)) {
-      new ModelDifferenceDialog(request.getProject(), oldModel, newModel, titles[0], titles[1], request).show();
-    } else {
-      assert SModelOperations.getRoots(oldModel, null).size() <= 1;
-      assert SModelOperations.getRoots(newModel, null).size() <= 1;
-      SNodeId rootId = null;
-      if (SModelOperations.getRoots(oldModel, null).size() > 0) {
-        rootId = SModelOperations.getRoots(oldModel, null).get(0).getNodeId();
+
+    // trying to fix null content type 
+    if (type == null) {
+      for (int i = 0; i < contents.length; i++) {
+        if (contents[i] instanceof FileContent && contents[i].getFile() != null) {
+          type = contents[i].getFile().getFileType();
+          break;
+        }
       }
-      if (SModelOperations.getRoots(newModel, null).size() > 0) {
-        rootId = SModelOperations.getRoots(newModel, null).get(0).getNodeId();
-      }
-      ModelDifferenceDialog.showRootDifference(request.getProject(), oldModel, newModel, rootId, titles[0], titles[1], null, request);
     }
+
+    // support per-root persistence 
+    if (MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(type) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(type)) {
+      Tuples._2<SModel, SNodeId> oldModel = getModelAndRoot(contents[0]);
+      Tuples._2<SModel, SNodeId> newModel = getModelAndRoot(contents[1]);
+      if (oldModel != null && newModel != null) {
+        SNodeId rootId = (newModel._1() != null ?
+          newModel._1() :
+          oldModel._1()
+        );
+        ModelDifferenceDialog.showRootDifference(request.getProject(), oldModel._0(), newModel._0(), rootId, titles[0], titles[1], null, request);
+        return;
+      }
+    } else {
+      SModel oldModel = getModel(contents[0]);
+      SModel newModel = getModel(contents[1]);
+      if (oldModel != null && newModel != null) {
+        new ModelDifferenceDialog(request.getProject(), oldModel, newModel, titles[0], titles[1], request).show();
+        return;
+      }
+    }
+
+    DiffManager.getInstance().getIdeaDiffTool().show(request);
   }
 
   @Override
@@ -105,33 +111,100 @@ public class ModelDiffTool implements DiffTool {
     return null;
   }
 
-  private static SModel readModel(DiffContent content) throws ModelReadException {
-    if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
-      IFile file = VirtualFileUtils.toIFile(content.getFile());
-      SModel model = SModelFileTracker.getInstance().findModel(file);
-      // special support for per root persistence: 
-      if (model == null && FilePerRootDataSource.isPerRootPersistenceFile(file)) {
-        model = SModelFileTracker.getInstance().findModel(file.getParent());
-      }
 
-      if (model != null) {
-        return model;
-      }
-    }
+
+  @Nullable
+  private static SModel readModel(DiffContent content) {
     try {
       byte[] bytes = content.getBytes();
-      FileType contentType = content.getContentType();
       // for added/deleted models create empty model to compare with 
       if (bytes.length == 0) {
         return new MergeTemporaryModel(new SModelReference("", ""), true);
       }
-      // <node> 
+      FileType contentType = content.getContentType();
+      String ext = MPSExtentions.MODEL;
       // we use same model loader for perroot (to load root or header) and file persistence 
-      return PersistenceUtil.loadModel(new String(bytes, FileUtil.DEFAULT_CHARSET), MPSExtentions.MODEL);
+      if (contentType != null && !(contentType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) || contentType.equals(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE))) {
+        contentType.getDefaultExtension();
+      }
+      return PersistenceUtil.loadModel(new String(bytes, FileUtil.DEFAULT_CHARSET), ext);
     } catch (IOException ioe) {
-      throw new ModelReadException("Couldn't read content: " + ioe.getMessage(), ioe);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Couldn't read content: " + ioe.getMessage(), ioe);
+      }
     }
+    return null;
+  }
+
+  @Nullable
+  private static SModel getModel(DiffContent content) {
+    if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
+      IFile file = VirtualFileUtils.toIFile(content.getFile());
+      SModel model = SModelFileTracker.getInstance().findModel(file);
+      if (model != null) {
+        return model;
+      }
+    }
+    return readModel(content);
+  }
+
+
+
+  @Nullable
+  private static Tuples._2<SModel, SNodeId> getModelAndRoot(DiffContent content) {
+    if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
+      final IFile file = VirtualFileUtils.toIFile(content.getFile());
+      Tuples._2<SModel, SNodeId> result = ModelAccess.instance().runReadAction(new Computable<Tuples._2<SModel, SNodeId>>() {
+        public Tuples._2<SModel, SNodeId> compute() {
+          Tuples._2<SModel, SNode> modelAndRoot = findModelAndRoot(file);
+          return (modelAndRoot == null ?
+            null :
+            MultiTuple.<SModel,SNodeId>from(modelAndRoot._0(), check_5n7a9f_b0a1a0a0a1a0a9(modelAndRoot._1()))
+          );
+        }
+      });
+      if (result != null) {
+        return result;
+      }
+    }
+    SModel model = readModel(content);
+    if (model == null) {
+      return null;
+    }
+    int size = ListSequence.fromList(SModelOperations.getRoots(model, null)).count();
+    assert size <= 1;
+    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ?
+      (SNodeId) null :
+      ListSequence.fromList(SModelOperations.getRoots(model, null)).getElement(0).getNodeId()
+    ));
+
+  }
+
+  @Nullable
+  private static Tuples._2<SModel, SNode> findModelAndRoot(IFile file) {
+    assert FilePerRootDataSource.isPerRootPersistenceFile(file);
+    SModel model = SModelFileTracker.getInstance().findModel(file.getParent());
+    if (model == null) {
+      return null;
+    }
+    final String name = file.getName();
+    SNode root = null;
+    if (name.endsWith(MPSExtentions.DOT_MODEL_ROOT)) {
+      root = ListSequence.fromList(SModelOperations.getRoots(model, null)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode n) {
+          return name.equals(FilePerRootFormatUtil.asFileName(n.getName()) + MPSExtentions.DOT_MODEL_ROOT);
+        }
+      });
+    }
+    return MultiTuple.<SModel,SNode>from(model, root);
   }
 
   protected static Logger LOG = LogManager.getLogger(ModelDiffTool.class);
+
+  private static SNodeId check_5n7a9f_b0a1a0a0a1a0a9(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
+    }
+    return null;
+  }
 }
