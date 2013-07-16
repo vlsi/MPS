@@ -39,7 +39,7 @@ public class ModelLoader {
   }
 
   public void update() {
-    int nodesCountBefore = myModel.getNodesCount();
+//    int nodesCountBefore = myModel.getNodesCount();
     for (SNode root : myModel.getRootNodes()) {
       if (root instanceof LazySNode) {
         SNode fullRoot = myFullModel.getNode(root.getNodeId());
@@ -53,11 +53,11 @@ public class ModelLoader {
         update((InterfaceSNode) root);
       }
     }
-    int loadedNodes = myModel.getNodesCount() - nodesCountBefore;
-    if (loadedNodes > 0) {
-      LOG.info("model " + myModel.getReference().getModelName() +
-          ": loaded " + loadedNodes + " new nodes, stubs size = " + nodesCountBefore + " nodes", new Throwable());
-    }
+//    int loadedNodes = myModel.getNodesCount() - nodesCountBefore;
+//    if (loadedNodes > 0) {
+//      LOG.info("model " + myModel.getReference().getModelName() +
+//          ": loaded " + loadedNodes + " new nodes, stubs size = " + nodesCountBefore + " nodes", new Throwable());
+//    }
   }
 
   private void update(InterfaceSNode node) {
