@@ -18,7 +18,6 @@
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelData" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
-    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.persistence.xml.XmlConverter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
@@ -44,7 +43,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException" />
     <classNode dependClassName="org.xml.sax.InputSource" />
-    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
     <classNode extendsClassName="jetbrains.mps.extapi.model.SModelPersistence" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
   </dependency>

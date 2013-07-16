@@ -1,0 +1,29 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Deploy plugins and restart" type="MPS" factoryName="MPS Instance">
+    <MyState>
+      <option name="myIsRestartCurrent" value="true" />
+    </MyState>
+    <myMpsSettings>
+      <MyState>
+        <option name="myVmOptions" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
+        <option name="myJrePath" value="" />
+        <option name="mySystemPath" value="$USER_HOME$/.MPSDebug3x/system" />
+        <option name="myConfigurationPath" value="$USER_HOME$/.MPSDebug3x/config" />
+        <option name="myOpenCurrentProject" value="false" />
+        <option name="myProjectToOpen" value="" />
+      </MyState>
+    </myMpsSettings>
+    <myPluginsSettings>
+      <MyState>
+        <option name="myPluginsToDeploy">
+          <list>
+            <option value="r:e21135fb-2b5c-4d73-ac93-7950a105e058(jetbrains.mps.samples.xmlPersistence.build)%1226507853630191733" />
+          </list>
+        </option>
+      </MyState>
+    </myPluginsSettings>
+    <RunnerSettings RunnerId="Default Runner" />
+    <ConfigurationWrapper RunnerId="Default Runner" />
+    <method />
+  </configuration>
+</component>
