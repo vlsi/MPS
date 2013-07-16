@@ -73,6 +73,7 @@ public class MoveRenameBatch implements ProjectComponent {
         }
 
         myCommand = null;
+        nodeUpdaters.clear();
         sreferenceUpdaters.clear();
         prefixReferenceUpdaters.clear();
       }
