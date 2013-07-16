@@ -221,6 +221,8 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     //if(getReference().getModelId().getModelName() != null) { }
     SModelReference newModelReference = PersistenceFacade.getInstance().createModelReference(getReference().getModuleReference(),
         getReference().getModelId(), newModelName);
+
+    fireBeforeModelRenamed(newModelReference);
     changeModelReference(newModelReference);
 
     if (!changeFile) {
@@ -239,7 +241,8 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
           }
         }
         try {
-          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot, new HashMap<String, String>()).getFile();
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot,
+              new HashMap<String, String>()).getFile();
           newFile.getParent().mkdirs();
           newFile.createNewFile();
           changeModelFile(newFile);

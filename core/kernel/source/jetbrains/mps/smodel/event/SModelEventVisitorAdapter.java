@@ -32,6 +32,10 @@ public class SModelEventVisitorAdapter implements SModelEventVisitor {
   @Override
   public void visitReferenceEvent(SModelReferenceEvent event) {
   }
+
+  @Override
+  public void visitReplacedEvent(SModelReplacedEvent event) {
+  }
 }
 
 

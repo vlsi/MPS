@@ -59,4 +59,8 @@ elif [ "${UNAME}" = "Linux" ]; then
 else
   echo "$0 warning: Unknown operating system ${UNAME}. Do not know how to add PWD to libraries path."
 fi
-${JAVA} ${JVM_ARGS} ${ADDITIONAL_JVM_ARGS} -classpath ${CLASSPATH} ${MAIN_CLASS} $*
+
+while true ; do
+  ${JAVA} ${JVM_ARGS} ${ADDITIONAL_JVM_ARGS} -Djb.restart.code=88 -classpath ${CLASSPATH} ${MAIN_CLASS} $*
+  test $? -ne 88 && break
+done

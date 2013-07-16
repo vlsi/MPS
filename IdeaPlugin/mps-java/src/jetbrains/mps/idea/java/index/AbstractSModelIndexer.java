@@ -18,7 +18,10 @@ package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.CollectConsumer;
@@ -27,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.ArrayList;
@@ -36,10 +40,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
-* User: fyodor
-* Date: 3/28/13
-*/
-/*package*/ abstract class AbstractSModelIndexer<S,E> implements DataIndexer<String, Collection<E>, FileContent> {
+ * User: fyodor
+ * Date: 3/28/13
+ */
+/*package*/ abstract class AbstractSModelIndexer<S, E> implements DataIndexer<String, Collection<E>, FileContent> {
 
   private static final Logger LOG = Logger.getLogger(AbstractSModelIndexer.class);
 
@@ -143,34 +147,48 @@ import java.util.Map;
   @NotNull
   @Override
   public Map<String, Collection<E>> map(final FileContent inputData) {
+    Project mpsProject = ProjectHelper.toMPSProject(inputData.getProject());
+    final SRepository mpsRepository = mpsProject.getRepository();
+
     final HashMap<String, Collection<E>> map = new HashMap<String, Collection<E>>();
+
+    // TODO review this code: use of runIndexing and runReadAction
+    // the reason is indexing can use behaviour methods; it calls getRootNodes of language.structure model,
+    // if it happens for the first time, getRootNodes tries to attach them to the repo
     ModelAccess.instance().runIndexing(new Runnable() {
       @Override
       public void run() {
-        try {
-          final SModel model = RootNodeNameIndex.doModelParsing(inputData);
-          final SModelReference modelRef = model.getReference();
-          getObjectsToIndex(model, new Consumer<S>() {
-            @Override
-            public void consume(S object) {
-              String[] keys = getKeys(model, object);
 
-              for (String key : keys) {
-                Collection<E> collection = map.get(key);
-                if (collection == null) {
-                  collection = new ArrayList<E>();
-                  map.put(key, collection);
+        mpsRepository.getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            try {
+              final SModel model = RootNodeNameIndex.doModelParsing(inputData);
+              final SModelReference modelRef = model.getReference();
+              getObjectsToIndex(model, new Consumer<S>() {
+                @Override
+                public void consume(S object) {
+                  String[] keys = getKeys(model, object);
+
+                  for (String key : keys) {
+                    Collection<E> collection = map.get(key);
+                    if (collection == null) {
+                      collection = new ArrayList<E>();
+                      map.put(key, collection);
+                    }
+
+                    updateCollection(modelRef, object, collection);
+                  }
                 }
-
-                updateCollection(modelRef, object, collection);
-              }
+              });
+            } catch (Exception e) {
+              LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
             }
-          });
-        } catch (Exception e) {
-          LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
-        }
+          }
+        });
       }
     });
+
     return map;
   }
 

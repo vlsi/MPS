@@ -1466,8 +1466,18 @@
     <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="4487788881657884450" nodeInfo="ng">
       <property name="text" nameId="s7om.1731640411964798937" value="fi" />
     </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="3987302488396685839" nodeInfo="ng" />
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="3987302488396677191" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="while true ; do" />
+    </node>
     <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="4487788881657885723" nodeInfo="ng">
-      <property name="text" nameId="s7om.1731640411964798937" value="${JAVA} ${JVM_ARGS} ${ADDITIONAL_JVM_ARGS} -classpath ${CLASSPATH} ${MAIN_CLASS} $*" />
+      <property name="text" nameId="s7om.1731640411964798937" value="  ${JAVA} ${JVM_ARGS} ${ADDITIONAL_JVM_ARGS} -Djb.restart.code=88 -classpath ${CLASSPATH} ${MAIN_CLASS} $*" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="3987302488396681996" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="  test $? -ne 88 &amp;&amp; break" />
+    </node>
+    <node role="lines" roleId="s7om.1731640411964205233" type="s7om.TextLine" typeId="s7om.1731640411964205218" id="3987302488396685675" nodeInfo="ng">
+      <property name="text" nameId="s7om.1731640411964798937" value="done" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="4487788881657579421" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="s7om.3885435385580582152" resolveInfo="MpsStartupScript" />

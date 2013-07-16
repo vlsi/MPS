@@ -30,6 +30,11 @@ public interface SModuleListener {
 
   void modelRemoved(SModule module, SModelReference ref);
 
+  /**
+   * Model renamed event may also indicate a change in its data source (e.g. file rename).
+   */
+  void beforeModelRenamed(SModule module, SModel model, SModelReference newRef);
+
   void modelRenamed(SModule module, SModel model, SModelReference oldRef);
 
   void dependencyAdded(SModule module, SDependency dep);

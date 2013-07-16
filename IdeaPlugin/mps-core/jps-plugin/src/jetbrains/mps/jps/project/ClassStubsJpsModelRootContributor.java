@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.jps.project;
 
+import com.intellij.openapi.roots.impl.libraries.LibraryTableImplUtil;
+import com.intellij.project.model.JpsModelManager;
+import com.intellij.project.model.impl.module.JpsOrderEntryFactory;
+import com.intellij.project.model.impl.module.dependencies.JpsLibraryOrderEntry;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import org.jetbrains.jps.model.java.JpsJavaLibraryType;
 import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.library.JpsOrderRootType;
+import org.jetbrains.jps.model.module.JpsDependencyElement;
+import org.jetbrains.jps.model.module.JpsLibraryDependency;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -36,7 +42,13 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
   public Iterable<ModelRoot> getModelRoots(JpsModule module) {
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>();
 
-    for (JpsLibrary lib : module.getLibraryCollection().getLibraries(JpsJavaLibraryType.INSTANCE)) {
+    for (JpsDependencyElement dependency: module.getDependenciesList().getDependencies()) {
+      if (!(dependency instanceof JpsLibraryDependency)) continue;
+
+      JpsLibraryOrderEntry libOrderEntry = new JpsLibraryOrderEntry(null, (JpsLibraryDependency) dependency);
+      if (!libOrderEntry.getLibraryLevel().equals(LibraryTableImplUtil.MODULE_LEVEL)) continue;
+
+      JpsLibrary lib = ((JpsLibraryDependency) dependency).getLibrary();
 
       List<File> roots = lib.getFiles(JpsOrderRootType.COMPILED);
       for (File root : roots) {
@@ -45,7 +57,6 @@ public class ClassStubsJpsModelRootContributor implements JpsModelRootContributo
         modelRoot.setPath(path);
         modelRoots.add(modelRoot);
       }
-
     }
 
     return modelRoots;

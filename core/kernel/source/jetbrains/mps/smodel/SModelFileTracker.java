@@ -16,12 +16,14 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
-import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Map;
@@ -30,16 +32,30 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SModelFileTracker implements CoreComponent {
   private static SModelFileTracker INSTANCE;
 
-
-  private SModelRepository myRepo;
-  private GlobalSModelEventsManager myGem;
   private final Map<String, SModel> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
-  private final SModelRepositoryAdapter myRepoListener = new MySModelRepositoryAdapter();
-  private final SModelFileTracker.ModelChangeListener myModelChangeListener = new ModelChangeListener();
+  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
+    @Override
+    protected void startListening(SModel model) {
+      addModelToFileCache(model);
+    }
 
-  public SModelFileTracker(SModelRepository repo, GlobalSModelEventsManager gem) {
-    myRepo = repo;
-    myGem = gem;
+    @Override
+    protected void stopListening(SModel model) {
+      removeModelFromFileCache(model);
+    }
+
+    @Override
+    public void beforeModelRenamed(SModule module, SModel model, SModelReference newRef) {
+      removeModelFromFileCache(model);
+    }
+
+    @Override
+    public void modelRenamed(SModule module, org.jetbrains.mps.openapi.model.SModel model, SModelReference oldRef) {
+      addModelToFileCache(model);
+    }
+  };
+
+  public SModelFileTracker(SRepositoryRegistry registry) {
   }
 
   public static SModelFileTracker getInstance() {
@@ -52,8 +68,12 @@ public class SModelFileTracker implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
 
-    myRepo.addModelRepositoryListener(myRepoListener);
-    myGem.addGlobalModelListener(myModelChangeListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SRepositoryRegistry.getInstance().addGlobalListener(myListener);
+      }
+    });
 
     INSTANCE = this;
   }
@@ -62,8 +82,12 @@ public class SModelFileTracker implements CoreComponent {
   public void dispose() {
     INSTANCE = null;
 
-    myGem.removeGlobalModelListener(myModelChangeListener);
-    myRepo.removeModelRepositoryListener(myRepoListener);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
+      }
+    });
   }
 
   public SModel findModel(IFile modelFile) {
@@ -75,59 +99,18 @@ public class SModelFileTracker implements CoreComponent {
     if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
 
     String file = source instanceof FileDataSource
-      ?  ((FileDataSource) source).getFile().getPath()
-      : ((FolderDataSource) source).getFolder().getPath();
+        ? ((FileDataSource) source).getFile().getPath()
+        : ((FolderDataSource) source).getFolder().getPath();
     myPathsToModelDescriptorMap.put(file, md);
   }
 
   private void removeModelFromFileCache(SModel md) {
     DataSource source = md.getSource();
-    if (!(source instanceof FileDataSource)) return;
+    if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
 
-    IFile file = ((FileDataSource) source).getFile();
-    myPathsToModelDescriptorMap.remove(file.getPath());
-  }
-
-  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-
-    public MySModelRepositoryAdapter() {
-      super(SModelRepositoryListenerPriority.PLATFORM);
-    }
-
-    @Override
-    public void modelRemoved(SModel modelDescriptor) {
-      removeModelFromFileCache(modelDescriptor);
-    }
-
-    @Override
-    public void modelAdded(SModel modelDescriptor) {
-      addModelToFileCache(modelDescriptor);
-    }
-  }
-
-  private class ModelChangeListener extends SModelAdapter {
-    public ModelChangeListener() {
-      super(SModelListenerPriority.PLATFORM);
-    }
-
-    @Override
-    public void beforeModelRenamed(SModelRenamedEvent event) {
-      removeModelFromFileCache(event.getModelDescriptor());
-    }
-
-    @Override
-    public void modelRenamed(SModelRenamedEvent event) {
-      addModelToFileCache(event.getModelDescriptor());
-    }
-
-    @Override
-    public void beforeModelFileChanged(SModelFileChangedEvent event) {
-      removeModelFromFileCache(event.getModelDescriptor());
-    }
-
-    @Override
-    public void modelFileChanged(SModelFileChangedEvent event) {
-      addModelToFileCache(event.getModelDescriptor());
-    }
+    String file = source instanceof FileDataSource
+        ? ((FileDataSource) source).getFile().getPath()
+        : ((FolderDataSource) source).getFolder().getPath();
+    myPathsToModelDescriptorMap.remove(file);
   }
 }

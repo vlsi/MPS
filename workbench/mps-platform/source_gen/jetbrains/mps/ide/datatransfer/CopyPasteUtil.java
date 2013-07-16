@@ -425,6 +425,7 @@ public class CopyPasteUtil {
     }
   }
 
+  @Deprecated
   public static interface IDataConverter {
     public boolean canPasteAsNodes(SModel model, SNode anchor);
     public void pasteAsNodes(SModel model, SNode anchor, Project project);
