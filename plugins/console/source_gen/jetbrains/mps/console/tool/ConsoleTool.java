@@ -53,6 +53,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
@@ -371,7 +372,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
             public void addNodeReference(SNode node) {
               checkResultAvailable();
-              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "target", ((SNode) node), false);
+              SModuleReference usedLanguage = node.getConcept().getLanguage().getSourceModule().getModuleReference();
+              if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
+                ((SModelInternal) myModel).addLanguage(usedLanguage);
+                ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
+              }
+              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "target", node, false);
             }
 
             public void addNode(SNode node) {
