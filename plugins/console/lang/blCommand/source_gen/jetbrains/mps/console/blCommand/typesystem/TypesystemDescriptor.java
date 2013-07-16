@@ -48,7 +48,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_PrintText_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_PrintNodeStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

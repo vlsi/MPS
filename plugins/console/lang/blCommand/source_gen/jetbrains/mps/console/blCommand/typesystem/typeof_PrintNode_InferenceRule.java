@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -16,10 +17,10 @@ public class typeof_PrintNode_InferenceRule extends AbstractInferenceRule_Runtim
   public typeof_PrintNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode printNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode printNodeReferenceStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = printNode;
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printNodeReferenceStatement, "node", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "6852607286009512877", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "6852607286009511978", true), (SNode) _quotation_createNode_gglnjf_a0a0b(), true, false, _info_12389875345);
       }
@@ -27,7 +28,7 @@ public class typeof_PrintNode_InferenceRule extends AbstractInferenceRule_Runtim
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.PrintNode";
+    return "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceStatement";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
