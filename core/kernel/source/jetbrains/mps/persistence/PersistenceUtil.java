@@ -87,7 +87,11 @@ public class PersistenceUtil {
   }
 
   public static SModel loadModel(IFile file) {
-    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(file.getName()));
+    return loadModel(file, FileUtil.getExtension(file.getName()));
+  }
+
+  public static SModel loadModel(IFile file, String extension) {
+    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
     if (factory == null) {
       return null;
     }
