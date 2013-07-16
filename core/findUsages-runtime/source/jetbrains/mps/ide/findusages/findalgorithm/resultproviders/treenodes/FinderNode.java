@@ -75,11 +75,9 @@ public class FinderNode extends BaseLeaf {
         public SearchResults compute() {
           try {
             SearchResults results = myFinder.find(query, monitor.subTask(1, SubProgressKind.REPLACING));
-            if (myFinder instanceof GeneratedFinder) {
+            if (FinderUtils.isAllResultsIsNodes(results)) {
               FinderUtils.sortNodeResultsByEditorPosition(results);
               monitor.advance(1);
-            } else {
-              // ?
             }
             return results;
           } catch (Throwable t) {
