@@ -30,9 +30,6 @@
     <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
     <property name="isFinal" nameId="tpee.1221565133444" value="false" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7358309956614999746" nodeInfo="nn" />
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7358309956615237867" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kgxg.~CoreComponent" resolveInfo="CoreComponent" />
-    </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7358309956614999748" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qx6n.~ModelFactory" resolveInfo="ModelFactory" />
     </node>
@@ -78,60 +75,6 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7358309956614999761" nodeInfo="in" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7358309956614999762" nodeInfo="sn" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7358309956614999763" nodeInfo="nn" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7358309956614999764" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="init" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7358309956614999765" nodeInfo="nn">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7358309956614999766" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7358309956614999767" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7358309956614999768" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7358309956615572856" nodeInfo="nn">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d2v5.~PersistenceRegistry" resolveInfo="PersistenceRegistry" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d2v5.~PersistenceRegistry%dgetInstance()%cjetbrains%dmps%dpersistence%dPersistenceRegistry" resolveInfo="getInstance" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7358309956614999770" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d2v5.~PersistenceRegistry%dsetModelFactory(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelFactory)%cvoid" resolveInfo="setModelFactory" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7358309956614999771" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7358309956614999750" resolveInfo="XML_EXTENSION" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7358309956614999772" nodeInfo="nn" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7358309956614999773" nodeInfo="nn" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7358309956614999774" nodeInfo="in" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7358309956614999775" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="dispose" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7358309956614999776" nodeInfo="nn">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7358309956614999777" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7358309956614999778" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7358309956614999779" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7358309956615569144" nodeInfo="nn">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d2v5.~PersistenceRegistry" resolveInfo="PersistenceRegistry" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d2v5.~PersistenceRegistry%dgetInstance()%cjetbrains%dmps%dpersistence%dPersistenceRegistry" resolveInfo="getInstance" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7358309956614999781" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d2v5.~PersistenceRegistry%dsetModelFactory(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelFactory)%cvoid" resolveInfo="setModelFactory" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7358309956614999782" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7358309956614999750" resolveInfo="XML_EXTENSION" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7358309956614999783" nodeInfo="nn" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7358309956614999784" nodeInfo="nn" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7358309956614999785" nodeInfo="in" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7358309956614999786" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="load" />
