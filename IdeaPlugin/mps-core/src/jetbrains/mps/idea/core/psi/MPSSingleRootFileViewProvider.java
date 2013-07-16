@@ -26,6 +26,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -61,6 +62,9 @@ public abstract class MPSSingleRootFileViewProvider extends SingleRootFileViewPr
       return null;
     }
     PsiFile psiFile = myPsiFile.get();
+    /*if(psiFile != null && psiFile instanceof MPSPsiRootNode) {
+      psiFile = psiFile.getViewProvider().getPsi(target);
+    }*/
     if (psiFile == null) {
       psiFile = createFile();
       boolean set = myPsiFile.compareAndSet(null, psiFile);

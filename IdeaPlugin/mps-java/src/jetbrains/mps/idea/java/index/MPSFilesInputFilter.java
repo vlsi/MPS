@@ -32,6 +32,9 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
   @Override
   public boolean acceptInput(VirtualFile file) {
     FileType fileType = file.getFileType();
-    return MPSFileTypeFactory.MPS_FILE_TYPE.equals(fileType) || MPSFileTypeFactory.MPS_BINARY_FILE_TYPE.equals(fileType);
+    return MPSFileTypeFactory.MPS_FILE_TYPE.equals(fileType)
+      || MPSFileTypeFactory.MPS_BINARY_FILE_TYPE.equals(fileType)
+      || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(fileType)
+      || MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(fileType);
   }
 }

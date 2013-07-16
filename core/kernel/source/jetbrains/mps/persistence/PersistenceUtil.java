@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.misc.hash.LinkedHashMap;
@@ -28,7 +29,6 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -92,8 +92,14 @@ public class PersistenceUtil {
       return null;
     }
     try {
-      SModel model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
+      SModel model = null;
+      if(factory instanceof FolderModelFactory) {
+        model = factory.load(new FolderDataSource(file.getParent(), null), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
           Boolean.TRUE.toString()));
+      } else {
+        model = factory.load(new FileDataSource(file), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
+          Boolean.TRUE.toString()));
+      }
       model.load();
       return model;
     } catch (IOException ex) {
