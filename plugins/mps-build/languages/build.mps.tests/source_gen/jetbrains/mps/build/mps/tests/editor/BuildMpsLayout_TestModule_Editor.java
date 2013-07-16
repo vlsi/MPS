@@ -14,6 +14,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class BuildMpsLayout_TestModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -66,6 +69,9 @@ public class BuildMpsLayout_TestModule_Editor extends DefaultNodeEditor {
         editorCell.setReferenceCell(true);
         editorCell.setRole("module");
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-409hxnyydveqykvmhaknizq07kjx41k">
+<dependencies version="2" modelHash="-58m7ko9wp94c5vwu5ybsw13auinqied">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.cellProviders(MPS.Editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.generator.internal(MPS.Editor/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -1097,7 +1097,8 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_ImportContent_Editor.java" />
   </source>
-  <source id="5610619299014309554" name="BuildSource_JavaExternalJarRef_Editor" hash="c7v1yovu6bm90opnd0cvztrqxdpo13u">
+  <source id="5610619299014309554" name="BuildSource_JavaExternalJarRef_Editor" hash="8ed8pl79tayjins87wtfotzv6fszhg2">
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -1114,7 +1115,8 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaLibraryExternalJar_Editor.java" />
   </source>
-  <source id="5610619299014531649" name="BuildSource_JavaExternalJarFolderRef_Editor" hash="892jxr36a1875koya1tnrnqpmq374r0">
+  <source id="5610619299014531649" name="BuildSource_JavaExternalJarFolderRef_Editor" hash="-y8kbyxg5ydlvidypdvxwzpiu4b0psq">
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />

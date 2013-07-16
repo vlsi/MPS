@@ -995,11 +995,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     return prevCell;
   }
 
-  protected boolean isTopCell() {
-    return getParent() == null || getParent().getSNode() != getSNode()
-      || (getParent().getChildCount() == 1 && getParent().isSelectable() && getParent().isTopCell());
-  }
-
   @Override
   public boolean isFirstCaretPosition() {
     return false;

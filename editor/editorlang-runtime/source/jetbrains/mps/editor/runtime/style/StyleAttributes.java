@@ -94,7 +94,7 @@ public class StyleAttributes {
   public static final StyleAttribute<String> LAYOUT_CONSTRAINT = new SimpleStyleAttribute<String>("layout-constraint");
   public static final StyleAttribute<FocusPolicy> FOCUS_POLICY = new SimpleStyleAttribute<FocusPolicy>("focus-policy", FocusPolicy.NONE);
   public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITION = new SimpleStyleAttribute<CaretPosition>("default-caret-position");
-  public static final StyleAttribute<Boolean> AUTO_DELETABLE = new SimpleStyleAttribute<Boolean>("auto-deletable", true);
+  public static final StyleAttribute<Boolean> AUTO_DELETABLE = new SimpleStyleAttribute<Boolean>("auto-deletable", false);
 
   public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute<Integer>("font-style", Font.PLAIN);
   public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute<Integer>("font-size");
