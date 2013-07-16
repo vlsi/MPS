@@ -37,21 +37,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.resources.FResource;
-import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.compiler.CompilationResultAdapter;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.compiler.IClassesData;
-import jetbrains.mps.smodel.resources.CResource;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class JavaCompile_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -60,7 +48,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
   public JavaCompile_Facet() {
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_compile());
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_auxCompile());
-    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_compileToMemory());
   }
 
   public Iterable<ITarget> targets() {
@@ -432,167 +419,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_compileToMemory implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{FResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory");
-
-    public Target_compileToMemory() {
-    }
-
-    public IJob createJob() {
-      return new IJob.Stub() {
-        @Override
-        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
-          Iterable<IResource> _output_wf1ya0_a0c = null;
-          final Iterable<FResource> input = (Iterable<FResource>) (Iterable) rawInput;
-          switch (0) {
-            case 0:
-              final JavaCompiler jc = new JavaCompiler();
-              final Set<SModule> modules = SetSequence.fromSet(new HashSet<SModule>());
-              for (FResource fres : Sequence.fromIterable(input)) {
-                MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
-                  public void visit(IMapping<String, Object> m) {
-                    jc.addSourceFile("", m.key(), m.value());
-                  }
-                });
-                if (fres.module() != null) {
-                  SetSequence.fromSet(modules).addElement(fres.module());
-                }
-              }
-              pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
-              jc.addCompilationResultListener(new CompilationResultAdapter() {
-                @Override
-                public void onCompilationResult(CompilationResult cr) {
-                  if (cr.hasErrors()) {
-                    pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);
-                    CategorizedProblem[] categorizedProblems = cr.getErrors();
-                    for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
-                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.valueOf(categorizedProblems[i]))));
-                    }
-                  }
-                }
-              });
-              final Wrappers._T<CompositeClassPathItem> ccp = new Wrappers._T<CompositeClassPathItem>();
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  ccp.value = JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(modules, true), "JavaCompile_Facet");
-                  Sequence.fromIterable(pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
-                    public void visit(IClassPathItem cpi) {
-                      ccp.value.add(cpi);
-                    }
-                  });
-                }
-              });
-              jc.compile(ccp.value);
-              if ((boolean) pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors()) {
-                return new IResult.FAILURE(_output_wf1ya0_a0c);
-              }
-              IClassesData function = new IClassesData() {
-                public ClassLoader getClassLoader(ClassLoader parent) {
-                  return jc.getClassLoader(parent);
-                }
-              };
-              _output_wf1ya0_a0c = Sequence.fromIterable(_output_wf1ya0_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(function))));
-            default:
-              return new IResult.SUCCESS(_output_wf1ya0_a0c);
-          }
-        }
-      };
-    }
-
-    public IConfig createConfig() {
-      return null;
-    }
-
-    public Iterable<ITarget.Name> notAfter() {
-      return null;
-    }
-
-    public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")});
-    }
-
-    public Iterable<ITarget.Name> notBefore() {
-      return null;
-    }
-
-    public Iterable<ITarget.Name> before() {
-      return null;
-    }
-
-    public ITarget.Name getName() {
-      return name;
-    }
-
-    public boolean isOptional() {
-      return false;
-    }
-
-    public boolean requiresInput() {
-      return true;
-    }
-
-    public boolean producesOutput() {
-      return true;
-    }
-
-    public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
-    }
-
-    public Iterable<Class<? extends IResource>> expectedOutput() {
-      return null;
-    }
-
-    public <T> T createParameters(Class<T> cls) {
-      return cls.cast(new Parameters());
-    }
-
-    public <T> T createParameters(Class<T> cls, T copyFrom) {
-      T t = createParameters(cls);
-      if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
-      }
-      return t;
-    }
-
-    public int workEstimate() {
-      return 200;
-    }
-
-    public static class Parameters extends MultiTuple._2<Iterable<IClassPathItem>, Boolean> {
-      public Parameters() {
-        super();
-      }
-
-      public Parameters(Iterable<IClassPathItem> classPath, Boolean errors) {
-        super(classPath, errors);
-      }
-
-      public Iterable<IClassPathItem> classPath(Iterable<IClassPathItem> value) {
-        return super._0(value);
-      }
-
-      public Boolean errors(Boolean value) {
-        return super._1(value);
-      }
-
-      public Iterable<IClassPathItem> classPath() {
-        return super._0();
-      }
-
-      public Boolean errors() {
-        return super._1();
-      }
-
-      @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_compileToMemory.Parameters assignFrom(Tuples._2<Iterable<IClassPathItem>, Boolean> from) {
-        return (JavaCompile_Facet.Target_compileToMemory.Parameters) super.assign(from);
-      }
-    }
-  }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
@@ -612,14 +438,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.auxCompile.project", null);
           MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
-        }
-      }
-      {
-        ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory");
-        if (properties.hasProperties(name)) {
-          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.compileToMemory.classPath", null);
-          MapSequence.fromMap(store).put("jetbrains.mps.make.facets.JavaCompile.compileToMemory.errors", String.valueOf((boolean) props.errors()));
         }
       }
     }
@@ -644,16 +462,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.auxCompile.skipAuxCompile")) {
             props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.facets.JavaCompile.auxCompile.skipAuxCompile")));
-          }
-        }
-        {
-          ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory");
-          JavaCompile_Facet.Target_compileToMemory.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compileToMemory.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.compileToMemory.classPath")) {
-            props.classPath(null);
-          }
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.facets.JavaCompile.compileToMemory.errors")) {
-            props.errors(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.facets.JavaCompile.compileToMemory.errors")));
           }
         }
       } catch (RuntimeException re) {
