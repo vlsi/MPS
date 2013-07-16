@@ -34,6 +34,10 @@ public class SModuleAdapter implements SModuleListener {
   }
 
   @Override
+  public void beforeModelRenamed(SModule module, SModel model, SModelReference newRef) {
+  }
+
+  @Override
   public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
   }
 

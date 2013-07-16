@@ -19,6 +19,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Set;
 
+/**
+ * use {@link org.jetbrains.mps.openapi.module.SRepositoryContentAdapter} via
+ * {@link jetbrains.mps.extapi.module.SRepositoryRegistry#addGlobalListener(org.jetbrains.mps.openapi.module.SRepositoryListener)}
+ */
+@Deprecated
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
   private SModelRepositoryListenerPriority myPriority;
 

@@ -258,6 +258,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
+  protected final void fireBeforeModelRenamed(SModelReference newName) {
+    SModule module = getModule();
+    if (module instanceof SModuleBase) {
+      ((SModuleBase) module).fireBeforeModelRenamed(this, newName);
+    }
+  }
+
   protected final void fireModelRenamed(SModelReference oldName) {
     SModule module = getModule();
     if (module instanceof SModuleBase) {
