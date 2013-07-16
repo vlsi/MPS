@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,26 @@
  */
 package jetbrains.mps.smodel.event;
 
-public class SModelEventVisitorAdapter implements SModelEventVisitor {
-  @Override
-  public void visitRootEvent(SModelRootEvent event) {
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+
+/**
+ * User: fyodor
+ * Date: 7/16/13
+ */
+public class SModelReplacedEvent extends SModelEvent {
+
+  public SModelReplacedEvent(SModel model) {
+    super(model);
   }
 
   @Override
-  public void visitChildEvent(SModelChildEvent event) {
+  public void accept(SModelEventVisitor visitor) {
+
   }
 
   @Override
-  public void visitPropertyEvent(SModelPropertyEvent event) {
-  }
-
-
-  @Override
-  public void visitReferenceEvent(SModelReferenceEvent event) {
-  }
-
-  @Override
-  public void visitReplacedEvent(SModelReplacedEvent event) {
+  public SNode getAffectedRoot() {
+    return null;
   }
 }
-
-
