@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
@@ -35,17 +36,22 @@ public class ModelFactoryRegister implements ApplicationComponent {
   public void initComponent() {
     for (ModelFactoryProvider provider : ModelFactoryProvider.EP_MODEL_FACTORY.getExtensions()) {
       try {
+        String implementationClassName = provider.getImplementationClass();
+        if (implementationClassName.isEmpty()) {
+          LOG.error("Empty implementationClass in ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId());
+          continue;
+        }
         Class<ModelFactory> implementationClass =
-            (Class<ModelFactory>) Class.forName(provider.getImplementationClass(), true, provider.getClass().getClassLoader());
+            (Class<ModelFactory>) Class.forName(implementationClassName, true, provider.getLoaderForClass());
         ModelFactory modelFactory = implementationClass.newInstance();
         myRegisteredFactories.add(modelFactory);
         PersistenceRegistry.getInstance().setModelFactory(modelFactory.getFileExtension(), modelFactory);
       } catch (ClassNotFoundException e) {
-        LOG.error(e);
+        LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
       } catch (InstantiationException e) {
-        LOG.error(e);
+        LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
       } catch (IllegalAccessException e) {
-        LOG.error(e);
+        LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
       }
     }
   }
