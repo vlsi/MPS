@@ -33,22 +33,26 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 8:
         return Collections.<ConceptEditor>singletonList(new NodeEachIterable_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new NodesShowable_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeReference_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new PrintNewLine_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodesShowable_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new PrintNode_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrintNewLine_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new PrintText_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrintNode_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrintObject_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new ReferenceEachIterable_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrintText_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new RefsShowable_Editor());
+        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new ShowStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceEachIterable_Editor());
       case 17:
+        return Collections.<ConceptEditor>singletonList(new RefsShowable_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new ShowStatement_Editor());
+      case 19:
         return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
       default:
     }
@@ -66,5 +70,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintText", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodeReference", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintNewLine", "jetbrains.mps.console.blCommand.structure.PrintNode", "jetbrains.mps.console.blCommand.structure.PrintObject", "jetbrains.mps.console.blCommand.structure.PrintText", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }

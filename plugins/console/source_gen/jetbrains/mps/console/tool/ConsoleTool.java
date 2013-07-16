@@ -57,9 +57,23 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.ide.PasteProvider;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.DataContext;
+import jetbrains.mps.ide.datatransfer.SNodeReferenceTransferable;
+import java.awt.datatransfer.Transferable;
+import com.intellij.ide.CopyPasteManagerEx;
+import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -122,9 +136,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           @Nullable
           @Override
           public Object getData(@NonNls String key) {
-            if (PlatformDataKeys.FILE_EDITOR.equals(key)) {
+            if (PlatformDataKeys.FILE_EDITOR.is(key)) {
               return myCommandFileEditor;
             }
+            if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
+              return new ConsoleTool.MyPasteProvider();
+            }
+
             return super.getData(key);
           }
         };
@@ -163,7 +181,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     group.add(registerKeyShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
     group.add(registerKeyShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
     group.add(registerKeyShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
-    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, KeyEvent.CTRL_MASK, 1))));
+    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1))));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
 
     JPanel res = new JPanel(new BorderLayout());
@@ -191,9 +209,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     JPanel editorsPanel = new JPanel(new BorderLayout());
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
-    // todo:  
-    // <node> 
-    // <node> 
     return new JScrollPane(editorsPanel);
   }
 
@@ -450,12 +465,62 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       super("Execute Closure");
     }
 
-    protected void doExecute(final AnActionEvent event, Map<String, Object> map) {
+    protected void doExecute(AnActionEvent event, Map<String, Object> map) {
+      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action")), event);
+    }
+  }
+
+
+
+  private class MyPasteProvider implements PasteProvider {
+
+
+    public void performPaste(@NotNull DataContext context) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"), event);
+          SNodeReferenceTransferable paste = null;
+          try {
+            for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+              if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNodeReference)) {
+                paste = (SNodeReferenceTransferable) trf.getTransferData(SModelDataFlavor.sNodeReference);
+                break;
+              }
+            }
+          } catch (UnsupportedFlavorException ignored) {
+          } catch (IOException ignored) {
+          }
+          EditorCell currentCell = myCommandEditor.getSelectedCell();
+          if (paste != null && currentCell != null) {
+            String role = currentCell.getRole();
+            if (role != null) {
+              SNode current = currentCell.getSNode();
+              SNode parent = currentCell.getParent().getSNode();
+              SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.NodeReference", null);
+              SLinkOperations.setTarget(refContainer, "target", paste.getReference(), false);
+              // todo: better detect cell to paste (current or parent) 
+              if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(((SNode) current)), "abstract")) {
+                SNodeOperations.replaceWithAnother(((SNode) currentCell.getSNode()), refContainer);
+                // <node> 
+              } else {
+                parent.addChild(role, refContainer);
+              }
+            }
+          }
         }
       });
+    }
+
+    private String role() {
+      return check_xg3v07_a0a2kc(myCommandEditor.getSelectedCell());
+    }
+
+    public boolean isPastePossible(@NotNull DataContext context) {
+      // todo: detect if expression 
+      return role() != null;
+    }
+
+    public boolean isPasteEnabled(@NotNull DataContext context) {
+      return true;
     }
   }
 
@@ -498,8 +563,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       public void run() {
         try {
           result.state = PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL);
-        } catch (Exception ignored) {
-          // todo: log 
+        } catch (Exception e) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Exception", e);
+          }
         }
       }
     });
@@ -510,6 +577,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   }
 
 
+  protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
 
   private static SNode _quotation_createNode_xg3v07_a0g0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -534,5 +602,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosure", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
+  }
+
+  private static String check_xg3v07_a0a2kc(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRole();
+    }
+    return null;
   }
 }

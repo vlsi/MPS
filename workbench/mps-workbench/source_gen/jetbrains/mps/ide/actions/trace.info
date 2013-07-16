@@ -10628,7 +10628,7 @@
     <nodeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="71" startPosition="14" endLine="72" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="75" startPosition="60" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5033107305426685897" fileName="CopyNode_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5033107305426685897" fileName="CopyNode_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="85" startPosition="45" endLine="86" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="66" startPosition="28" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -10661,7 +10661,7 @@
     <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="69" startPosition="35" endLine="70" endPosition="56" />
     <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="71" startPosition="14" endLine="72" endPosition="114" />
     <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="75" startPosition="60" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="100" />
+    <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="112" />
     <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="85" startPosition="45" endLine="86" endPosition="82" />
     <scopeInfo nodeId="5033107305426684804" fileName="CopyNode_Action.java" startLine="48" startPosition="7" endLine="50" endPosition="63">
       <varInfo nodeId="5033107305426684804" varName="enabled" />

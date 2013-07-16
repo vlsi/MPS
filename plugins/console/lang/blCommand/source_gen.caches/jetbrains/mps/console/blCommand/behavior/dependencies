@@ -18,9 +18,11 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ModuleEachIterable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ModulesShowable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.NodeEachIterable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.NodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.NodesShowable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.PrintNewLine_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.PrintNode_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.PrintObject_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.PrintText_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ProjectExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ReferenceEachIterable_BehaviorDescriptor" />
@@ -117,6 +119,20 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.console.blCommand.behavior.NodeReference_Behavior" file="NodeReference_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.blCommand.behavior.NodeReference_BehaviorDescriptor" file="NodeReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.NodeReference_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.console.blCommand.behavior.NodesShowable_BehaviorDescriptor" file="NodesShowable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -132,6 +148,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.blCommand.behavior.PrintNode_BehaviorDescriptor" file="PrintNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.blCommand.behavior.PrintObject_BehaviorDescriptor" file="PrintObject_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />

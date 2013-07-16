@@ -58,7 +58,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
   public void execute(EditorContext context) {
     _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
     if (tuple == null) return;
-    CopyPasteUtil.copyNodesAndTextToClipboard(tuple._0(), tuple._1(), tuple._2());
+    CopyPasteUtil.copyNodesAndReferenceAndTextToClipboard(tuple._0(), tuple._1(), tuple._2());
   }
 
   protected _3<List<SNode>, Map<SNode, Set<SNode>>, String> extractSelection (EditorContext context) {
