@@ -59,6 +59,10 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.goTo.index.JavaStubNavigationContributor</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.persistence.ModelFactoryRegister</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -85,6 +89,7 @@
     <extensionPoint qualifiedName="com.intellij.mps.modelRootFactory" beanClass="jetbrains.mps.ide.persistence.ModelRootFactoryEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootSettings" beanClass="jetbrains.mps.ide.persistence.ModelRootSettingsEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.treeCreationHandler" area="IDEA_PROJECT" interface="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension"/>
+    <extensionPoint qualifiedName="com.intellij.mps.ModelFactoryProvider" beanClass="jetbrains.mps.persistence.ModelFactoryRegister.ModelFactoryProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
