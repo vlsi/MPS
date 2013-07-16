@@ -46,12 +46,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4417779018064682857" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="out" />
-    <property name="name" nameId="tpck.1169194664001" value="PrintNewLine" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="printNewLine" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963815748" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
     <property name="name" nameId="tpck.1169194664001" value="EachNodeLoop" />
@@ -216,7 +210,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8365379837260459177" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="out" />
-    <property name="name" nameId="tpck.1169194664001" value="PrintObject" />
+    <property name="name" nameId="tpck.1169194664001" value="PrintStatement" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="print" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8365379837260461921" nodeInfo="ig">

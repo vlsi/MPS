@@ -35,7 +35,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="529843215038987960" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.529843215038987952" resolveInfo="NodeResultPart" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.529843215038987952" resolveInfo="NodeReferenceResultPart" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="3210622965583281865" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.529843215038987954" />
       <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="3210622965583281866" nodeInfo="ng">
@@ -110,7 +110,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1111629987770987262" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1111629987770987206" resolveInfo="NodeWithClosure" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1111629987770987206" resolveInfo="NodeWithClosureResultPart" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6698258751442245504" nodeInfo="ng">
       <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
       <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;action&gt;" />
@@ -163,6 +163,13 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8927119896327927250" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.8927119896327927090" resolveInfo="NodeResultPart" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8927119896327929016" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.8927119896327929014" />
     </node>
   </root>
 </model>

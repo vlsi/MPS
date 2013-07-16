@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="aytvla66w2qd21rh1updhjjrdazqbe4">
+<dependencies version="2" modelHash="-8ktjociv7fb89dsrqjh14llq3pn3p7r">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -21,6 +21,7 @@
     <dep root="757553790980850366" />
     <dep root="757553790980855626" />
     <dep root="8517397753921951830" />
+    <dep root="8927119896327927090" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -56,7 +57,7 @@
   <source id="529843215038987951" name="CommandResultPart" hash="-29drad4bqlmdt5qmfqstvt9hac671p9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="529843215038987952" name="NodeResultPart" hash="9drl8glvqei00w84j3owcr3rwjntdur">
+  <source id="529843215038987952" name="NodeReferenceResultPart" hash="-18lnevebk5qcb3rgaa3vbizlip9xt0z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="529843215038987955" name="TextResultPart" hash="-1ag36i9arhbspsyqdqo3ae4fyctoh3i">
@@ -65,10 +66,13 @@
   <source id="351968380916615243" name="CommandHolder" hash="9joi8znaiwunyxq079xe8foyboi7js5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1111629987770987206" name="NodeWithClosure" hash="-cvsdkjfqvrpxwckr40e0lmipt0h88ou">
+  <source id="1111629987770987206" name="NodeWithClosureResultPart" hash="-ccbk9jkfvqawyegeaxny6n70593f4tz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8517397753921951830" name="ActionHolder" hash="-5ek0arqo8wmc46isfkvm0bt18ul1r3f">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8927119896327927090" name="NodeResultPart" hash="-30cuum5l3yuj6k5yhth6xrlm8ljr2ms">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

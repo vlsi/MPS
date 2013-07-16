@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ActionHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ActionHolder_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CommandHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
   <unitInfo fileName="CommandResultLine_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResultLine_BehaviorDescriptor" />
   <unitInfo fileName="CommandResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandResultPart_BehaviorDescriptor" />
@@ -11,8 +11,9 @@
   <unitInfo fileName="HistoryItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.HistoryItem_BehaviorDescriptor" />
   <unitInfo fileName="History_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.History_BehaviorDescriptor" />
   <unitInfo fileName="InterpretedCommand_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+  <unitInfo fileName="NodeReferenceResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeReferenceResultPart_BehaviorDescriptor" />
   <unitInfo fileName="NodeResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeResultPart_BehaviorDescriptor" />
-  <unitInfo fileName="NodeWithClosure_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWithClosureResultPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeWithClosureResultPart_BehaviorDescriptor" />
   <unitInfo fileName="Result_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Result_BehaviorDescriptor" />
   <unitInfo fileName="TextResultPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.TextResultPart_BehaviorDescriptor" />
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/1769790395579662700">
@@ -129,30 +130,30 @@
     <unitInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_Behavior" />
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3257040239265539407">
-    <nodeInfo nodeId="6664564541453239044" fileName="NodeWithClosure_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6698258751442318378" fileName="NodeWithClosure_Behavior.java" startLine="16" startPosition="74" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6381287528186271375" fileName="NodeWithClosure_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isAlive_6698258751442247997#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="3257040239265539569" fileName="NodeWithClosure_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6664564541453239043" fileName="NodeWithClosure_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" />
-    <scopeInfo nodeId="6698258751442248160" fileName="NodeWithClosure_Behavior.java" startLine="16" startPosition="74" endLine="17" endPosition="77" />
-    <scopeInfo nodeId="3282455643657949050" fileName="NodeWithClosure_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="79" />
-    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="6664564541453239044" fileName="NodeWithClosureResultPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6698258751442318378" fileName="NodeWithClosureResultPart_Behavior.java" startLine="16" startPosition="74" endLine="17" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6381287528186271375" fileName="NodeWithClosureResultPart_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isAlive_6698258751442247997#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="3257040239265539569" fileName="NodeWithClosureResultPart_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="6664564541453239043" fileName="NodeWithClosureResultPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" />
+    <scopeInfo nodeId="6698258751442248160" fileName="NodeWithClosureResultPart_Behavior.java" startLine="16" startPosition="74" endLine="17" endPosition="77" />
+    <scopeInfo nodeId="3282455643657949050" fileName="NodeWithClosureResultPart_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="89" />
+    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="3257040239265539407" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3257040239265539407" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="3257040239265539407" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3257040239265539407" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3257040239265539407" fileName="NodeWithClosure_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeWithClosure_Behavior" />
+    <unitInfo nodeId="3257040239265539407" fileName="NodeWithClosureResultPart_Behavior.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeWithClosureResultPart_Behavior" />
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3257040239265789190" />
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/5211727872447036637" />
