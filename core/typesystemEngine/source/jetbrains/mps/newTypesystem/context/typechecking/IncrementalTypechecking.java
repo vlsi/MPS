@@ -20,6 +20,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -28,18 +29,19 @@ import jetbrains.mps.newTypesystem.context.component.IncrementalTypecheckingComp
 import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
 import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.util.*;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -47,12 +49,18 @@ import java.util.*;
 
 public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemComponent> {
 
-  private List<SModelEvent> myEvents;
+  private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
+  private List<SModel> myReplacedModels = new ArrayList<SModel>();
 
-  private MyTypeRecalculatedListener myTypeRecalculatedListener;
+  private Map<SModel, Set<SNode>> mySModelNodes = new THashMap<SModel, Set<SNode>>();
 
-  private MyModelListener myModelListener;
-  private MyModelListenerManager myModelListenerManager;
+  private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+
+  private MyModelListener myModelListener = new MyModelListener();
+
+  private MyModelListenerManager myModelListenerManager = new MyModelListenerManager();
+
+  private MySmodelListener mySModelListener = new MySmodelListener();
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
 
@@ -65,11 +73,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
   public IncrementalTypechecking(SNode node, State state) {
     super(node, state);
     myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), state, this);
-    myModelListener = new MyModelListener();
-    myModelListenerManager = new MyModelListenerManager(myModelListener);
     myModelListenerManager.track(myRootNode);
-    myTypeRecalculatedListener = new MyTypeRecalculatedListener();
-    myEvents = new ArrayList<SModelEvent>();
   }
 
   @Override
@@ -143,10 +147,16 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
   public void dispose() {
     if (myModelListenerManager != null) {
       myModelListenerManager.dispose();
+      myModelListenerManager = null;
     }
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
     if (myNonTypeSystemComponent != null) {
       myNonTypeSystemComponent.dispose();
+      myNonTypeSystemComponent = null;
+    }
+    if (mySModelListener != null) {
+      SRepositoryRegistry.getInstance().removeGlobalListener(mySModelListener);
+      mySModelListener = null;
     }
     super.dispose();
   }
@@ -272,9 +282,16 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
   }
 
   private void processPendingEvents() {
+    final MySModelEventVisitorAdapter visitor = new MySModelEventVisitorAdapter();
     for (SModelEvent event : myEvents) {
-      event.accept(new MySModelEventVisitorAdapter());
+      event.accept(visitor);
     }
+    for (SModel replacedModel : myReplacedModels) {
+      for (SNode node : mySModelNodes.get(replacedModel)) {
+        visitor.markInvalid(node);
+      }
+    }
+    myReplacedModels.clear();
     myEvents.clear();
   }
 
@@ -291,34 +308,37 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     public void eventFired(SModelEvent event) {
       myEvents.add(event);
     }
+  }
 
+  private class MySmodelListener extends SRepositoryContentAdapter {
     @Override
-    public void beforeModelDisposed(SModel sm) {
-      ((SModelInternal) sm).removeModelListener(this);
-      clear();
+    public void modelReplaced(SModel model) {
+      myReplacedModels.add(model);
     }
   }
 
   private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {
     @Override
     public void visitChildEvent(SModelChildEvent event) {
-      markDependentNodesForInvalidation(event.getChild(), getTypecheckingComponent());
-      markDependentNodesForInvalidation(event.getParent(), getTypecheckingComponent());
+      final SNode child = event.getChild();
+      final SNode parent = event.getParent();
 
-      markDependentNodesForInvalidation(event.getChild(), myNonTypeSystemComponent);
-      markDependentNodesForInvalidation(event.getParent(), myNonTypeSystemComponent);
+      markInvalid(child);
+      markInvalid(parent);
 
-      List<SReference> references = new ArrayList<SReference>();
-      SNode child = event.getChild();
-      references.addAll(IterableUtil.asCollection(child.getReferences()));
-      for (SNode descendant : jetbrains.mps.util.SNodeOperations.getDescendants(child, null)) {
-        references.addAll(IterableUtil.asCollection(descendant.getReferences()));
+      final List<SNode> descendants = jetbrains.mps.util.SNodeOperations.getDescendants(child, null);
+      for (SNode descendant : descendants) {
         if (event.isRemoved()) {
           //invalidate nodes which are removed
           markDependentNodesForInvalidation(descendant, myNonTypeSystemComponent);
           markDependentNodesForInvalidation(descendant, getTypecheckingComponent());
         }
       }
+
+      markReferenceTargetsInvalid(collectReferences(child, descendants));
+    }
+
+    private void markReferenceTargetsInvalid(List<SReference> references) {
       for (SReference reference : references) {
         if (reference instanceof DynamicReference) {
           // the problem was in a more strict case:
@@ -335,8 +355,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     @Override
     public void visitReferenceEvent(SModelReferenceEvent event) {
-      markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypecheckingComponent());
-      markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
+      markInvalid(event.getReference().getSourceNode());
       if (!event.isAdded()) return;
       SNode node = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference());
       if (node == null) return;
@@ -346,6 +365,20 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
+    }
+
+    private List<SReference> collectReferences(SNode child, List<SNode> descendants) {
+      List<SReference> references = new ArrayList<SReference>();
+      references.addAll(IterableUtil.asCollection(child.getReferences()));
+      for (SNode descendant : descendants) {
+        references.addAll(IterableUtil.asCollection(descendant.getReferences()));
+      }
+      return references;
+    }
+
+    private void markInvalid(SNode node) {
+      markDependentNodesForInvalidation(node, getTypecheckingComponent());
+      markDependentNodesForInvalidation(node, myNonTypeSystemComponent);
     }
 
     private void markDependentNodesForInvalidation(SNode eventNode, IncrementalTypecheckingComponent component) {
@@ -372,11 +405,6 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
     private Map<SModel, Integer> myNodesCount = new THashMap<SModel, Integer>();
     private Map<WeakReference, SModel> myDescriptors = new THashMap<WeakReference, SModel>();
-    private SModelListener myListener;
-
-    MyModelListenerManager(SModelListener listener) {
-      myListener = listener;
-    }
 
     /**
      * Warning: this method should be called only once for each node
@@ -387,8 +415,10 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
       SModel sm = node.getModel();
       if (!myNodesCount.containsKey(sm)) {
-        ((SModelInternal) sm).addModelListener(myListener);
+        ((SModelInternal) sm).addModelListener(myModelListener);
+        sm.addModelListener(mySModelListener);
         myNodesCount.put(sm, 1);
+        mySModelNodes.put(sm, new WeakSet<SNode>());
       } else {
         Integer oldValue = myNodesCount.get(sm);
         myNodesCount.put(sm, oldValue + 1);
@@ -396,6 +426,8 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
       WeakReference<SNode> ref = new WeakReference<SNode>(node, myReferenceQueue);
       myDescriptors.put(ref, sm);
+
+      mySModelNodes.get(sm).add(node);
     }
 
 
@@ -407,8 +439,10 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
         SModel sm = myDescriptors.get(ref);
         Integer count = myNodesCount.get(sm);
         if (count == 1) {
-          ((SModelInternal) sm).removeModelListener(myListener);
+          ((SModelInternal) sm).removeModelListener(myModelListener);
+          sm.removeModelListener(mySModelListener);
           myNodesCount.remove(sm);
+          mySModelNodes.remove(sm);
         } else {
           myNodesCount.put(sm, count - 1);
         }
@@ -419,7 +453,8 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     void dispose() {
       for (SModel sm : Collections.unmodifiableCollection(myNodesCount.keySet())) {
-        ((SModelInternal) sm).removeModelListener(myListener);
+        ((SModelInternal) sm).removeModelListener(myModelListener);
+        sm.removeModelListener(mySModelListener);
       }
     }
   }
