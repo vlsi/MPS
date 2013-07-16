@@ -28,15 +28,10 @@ import com.intellij.openapi.diff.DocumentContent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -153,16 +148,8 @@ public class ModelDiffTool implements DiffTool {
   @Nullable
   private static Tuples._2<SModel, SNodeId> getModelAndRoot(DiffContent content) {
     if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
-      final IFile file = VirtualFileUtils.toIFile(content.getFile());
-      Tuples._2<SModel, SNodeId> result = ModelAccess.instance().runReadAction(new Computable<Tuples._2<SModel, SNodeId>>() {
-        public Tuples._2<SModel, SNodeId> compute() {
-          Tuples._2<SModel, SNode> modelAndRoot = findModelAndRoot(file);
-          return (modelAndRoot == null ?
-            null :
-            MultiTuple.<SModel,SNodeId>from(modelAndRoot._0(), check_5n7a9f_b0a1a0a0a1a0a9(modelAndRoot._1()))
-          );
-        }
-      });
+      IFile file = VirtualFileUtils.toIFile(content.getFile());
+      Tuples._2<SModel, SNodeId> result = findModelAndRoot(file);
       if (result != null) {
         return result;
       }
@@ -181,30 +168,27 @@ public class ModelDiffTool implements DiffTool {
   }
 
   @Nullable
-  private static Tuples._2<SModel, SNode> findModelAndRoot(IFile file) {
+  private static Tuples._2<SModel, SNodeId> findModelAndRoot(IFile file) {
     assert FilePerRootDataSource.isPerRootPersistenceFile(file);
     SModel model = SModelFileTracker.getInstance().findModel(file.getParent());
     if (model == null) {
       return null;
     }
-    final String name = file.getName();
-    SNode root = null;
-    if (name.endsWith(MPSExtentions.DOT_MODEL_ROOT)) {
-      root = ListSequence.fromList(SModelOperations.getRoots(model, null)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode n) {
-          return name.equals(FilePerRootFormatUtil.asFileName(n.getName()) + MPSExtentions.DOT_MODEL_ROOT);
-        }
-      });
+    // get rootId from file 
+    SModel diskModel = PersistenceUtil.loadModel(file, MPSExtentions.MODEL);
+    if (diskModel == null) {
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("Error reading MPS file " + file.getPath());
+      }
+      return null;
     }
-    return MultiTuple.<SModel,SNode>from(model, root);
+    int size = ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).count();
+    assert size <= 1;
+    return MultiTuple.<SModel,SNodeId>from(model, (size == 0 ?
+      (SNodeId) null :
+      ListSequence.fromList(SModelOperations.getRoots(diskModel, null)).getElement(0).getNodeId()
+    ));
   }
 
   protected static Logger LOG = LogManager.getLogger(ModelDiffTool.class);
-
-  private static SNodeId check_5n7a9f_b0a1a0a0a1a0a9(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNodeId();
-    }
-    return null;
-  }
 }
