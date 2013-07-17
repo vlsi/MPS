@@ -372,70 +372,90 @@
     <nodeInfo nodeId="1175522890409" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175522890409" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="22" startPosition="91" endLine="23" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175522890409" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="23" startPosition="197" endLine="24" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="27" startPosition="45" endLine="28" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="28" startPosition="197" endLine="29" endPosition="442" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="32" startPosition="45" endLine="33" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="33" startPosition="197" endLine="34" endPosition="443" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="38" startPosition="46" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="43" startPosition="5" endLine="44" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="44" startPosition="130" endLine="45" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="49" startPosition="30" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="53" startPosition="61" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="54" startPosition="63" endLine="55" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="55" startPosition="30" endLine="56" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="55" startPosition="30" endLine="56" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="55" startPosition="30" endLine="56" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="56" startPosition="162" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="30" startPosition="11" endLine="31" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="34" startPosition="17" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="35" startPosition="57" endLine="36" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="36" startPosition="209" endLine="37" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="39" startPosition="17" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="40" startPosition="57" endLine="41" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="41" startPosition="209" endLine="42" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="52" startPosition="46" endLine="53" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="57" startPosition="5" endLine="58" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="58" startPosition="130" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="63" startPosition="30" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="67" startPosition="61" endLine="68" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="68" startPosition="63" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="69" startPosition="30" endLine="70" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="69" startPosition="30" endLine="70" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="69" startPosition="30" endLine="70" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="70" startPosition="162" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeOf_TernaryOperator_InferenceRule#()V" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="42" startPosition="68" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="56" startPosition="68" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1175522890409" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="116" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="25" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="30" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_n8o2jn_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="33" startPosition="33" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="38" startPosition="17" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_n8o2jn_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="33" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="31" startPosition="220" endLine="45" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="29" startPosition="27" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="29" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="27" startPosition="212" endLine="48" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="25" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="17" startPosition="49" endLine="17" endPosition="49" />
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="38" startPosition="46" endLine="39" endPosition="76" />
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="49" startPosition="30" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="55" startPosition="30" endLine="56" endPosition="162" />
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="52" startPosition="46" endLine="53" endPosition="76" />
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="63" startPosition="30" endLine="64" endPosition="17" />
+    <scopeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="69" startPosition="30" endLine="70" endPosition="162" />
     <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="43" startPosition="5" endLine="45" endPosition="45">
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="57" startPosition="5" endLine="59" endPosition="45">
       <varInfo nodeId="1175522835145" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="1175522890409" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="297">
       <varInfo nodeId="1175522890409" varName="_info_12389875345" />
       <varInfo nodeId="1175522890409" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="26" startPosition="5" endLine="29" endPosition="442">
+    <scopeInfo nodeId="1175522910263" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="34" startPosition="17" endLine="37" endPosition="319">
       <varInfo nodeId="1175522910263" varName="_info_12389875345" />
       <varInfo nodeId="1175522910263" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="31" startPosition="5" endLine="34" endPosition="443">
+    <scopeInfo nodeId="1175522930326" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="39" startPosition="17" endLine="42" endPosition="320">
       <varInfo nodeId="1175522930326" varName="_info_12389875345" />
       <varInfo nodeId="1175522930326" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="42" startPosition="68" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="53" startPosition="61" endLine="57" endPosition="24">
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="56" startPosition="68" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="67" startPosition="61" endLine="71" endPosition="24">
       <varInfo nodeId="1196777953619" varName="facade" />
       <varInfo nodeId="1196777953619" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1175522835145" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1175522835146" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="116" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1196777953619" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="67" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="3096905448804004960" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="33" startPosition="33" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="33" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="30" startPosition="11" endLine="45" endPosition="133">
+      <varInfo nodeId="3096905448804004959" varName="iffalse" />
+    </scopeInfo>
+    <scopeInfo nodeId="3096905448804004247" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="29" startPosition="27" endLine="46" endPosition="11" />
+    <scopeInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="29" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="26" startPosition="5" endLine="48" endPosition="127">
+      <varInfo nodeId="3096905448804004245" varName="iftrue" />
+    </scopeInfo>
+    <scopeInfo nodeId="1175522835146" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="116" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="20" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1175522835145" varName="status" />
       <varInfo nodeId="1175522835145" varName="toe" />
       <varInfo nodeId="1175522835145" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule" />
+    <unitInfo nodeId="3096905448804004959" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="32" startPosition="58" endLine="45" endPosition="13" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule$2" />
+    <unitInfo nodeId="3096905448804004245" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="28" startPosition="51" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule$1" />
+    <unitInfo nodeId="1175522835145" fileName="typeOf_TernaryOperator_InferenceRule.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_TernaryOperator_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/1175523864032">
     <nodeInfo nodeId="1175523899734" fileName="subtyping_classifier_SubtypingRule.java" startLine="24" startPosition="120" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
