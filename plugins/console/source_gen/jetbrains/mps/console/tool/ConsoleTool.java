@@ -578,10 +578,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          result.state = PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL);
+          result.state = (myModel == null ?
+            null :
+            PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL)
+          );
         } catch (Exception e) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
-            LOG.error("Exception", e);
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("Error on console model saving", e);
           }
         }
       }
