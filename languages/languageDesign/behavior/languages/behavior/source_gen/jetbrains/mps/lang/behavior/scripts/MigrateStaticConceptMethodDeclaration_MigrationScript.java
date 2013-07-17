@@ -87,7 +87,7 @@ public class MigrateStaticConceptMethodDeclaration_MigrationScript extends BaseM
       }
 
       public boolean isShowAsIntention() {
-        return false;
+        return true;
       }
     });
   }

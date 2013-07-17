@@ -32,7 +32,7 @@
     <nodeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="80" startPosition="59" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="893319872183774910" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="84" startPosition="52" endLine="85" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="893319872183835230" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="85" startPosition="233" endLine="86" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="89" startPosition="42" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="89" startPosition="42" endLine="90" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="893319872183790224" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="95" startPosition="120" endLine="96" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="893319872183790224" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="96" startPosition="63" endLine="97" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="893319872183790224" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="97" startPosition="30" endLine="98" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -85,7 +85,7 @@
     <scopeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="72" startPosition="41" endLine="73" endPosition="62" />
     <scopeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="76" startPosition="59" endLine="77" endPosition="77" />
     <scopeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="80" startPosition="59" endLine="81" endPosition="20" />
-    <scopeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="89" startPosition="42" endLine="90" endPosition="21" />
+    <scopeInfo nodeId="5963210568513216356" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="89" startPosition="42" endLine="90" endPosition="20" />
     <scopeInfo nodeId="893319872183790224" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="106" startPosition="33" endLine="107" endPosition="78" />
     <scopeInfo nodeId="5963210568513216360" fileName="MigrateStaticConceptMethodDeclaration_MigrationScript.java" startLine="84" startPosition="52" endLine="86" endPosition="57">
       <varInfo nodeId="893319872183774913" varName="result" />
