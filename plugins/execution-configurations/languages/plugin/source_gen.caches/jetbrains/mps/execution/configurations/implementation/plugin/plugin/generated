@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3lg4yvjnwxpydplvwuwmaji8wpgmg1u">
+<dependencies version="2" modelHash="-82a6zkgr8qoxs1rer3xqquy7hd9ehwl">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />
@@ -30,6 +30,8 @@
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.pom(MPS.IDEA/com.intellij.pom@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.psi(MPS.IDEA/com.intellij.psi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.psi.impl(MPS.IDEA/com.intellij.psi.impl@java_stub)" />
+  <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui(MPS.IDEA/com.intellij.ui@java_stub)" />
+  <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.components(MPS.IDEA/com.intellij.ui.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.content.tabs(MPS.IDEA/com.intellij.ui.content.tabs@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.switcher(MPS.IDEA/com.intellij.ui.switcher@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util(MPS.IDEA/com.intellij.util@java_stub)" />
@@ -84,7 +86,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-5kctb7b7jnlp1h0duovrvgm0c42ily4" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-6g5hoybzgii3bxvpfdg2oqvzso5oegv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="cowoiuhrg137jisxrhwmquefi0mribk" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-142wbmg1uqs2tdphevb8ixrdwx6p65o" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6gqo4kx9jphzn6bpxoxyctwq8hygfkd" />
@@ -137,11 +139,15 @@
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
   <common hash="9k7bu6juh2mdpj8wncni9zj37gjqi9u">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -204,11 +210,15 @@
   </common>
   <source id="6893245555985399815" name="Execution Configurations" hash="5sdo432vbbxdgpib5wl095j95mlipq0" dependsOnCreated="true">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -242,11 +252,15 @@
   </source>
   <source id="6062668769033909448" name="Java" hash="-1161divjeh9zkk7mn8engxvnm42t8jv">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
     <dep root="6062668769033909683" />
@@ -321,11 +335,15 @@
   </source>
   <source id="6062668769033909641" name="Java Application" hash="-90ny23jvvi8adgpjjcjio87wma08w7e">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909643" />
     <dep root="6062668769033909683" />
@@ -434,11 +452,15 @@
   </source>
   <source id="6062668769034010588" name="JUnit Tests" hash="-fg33w6637aeayjki8lgzl849sdiuov">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -470,11 +492,15 @@
   </source>
   <source id="6062668769034010590" name="JUnit Tests" hash="-3wdjzzqpgij1e4uz7hu2exvlrofqpyv">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -638,13 +664,17 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="JUnitTests_Producer.java" />
   </source>
-  <source id="6062668769034024112" name="MPS" hash="-1etiq1pfpfbjwjk9rzk83mgr9duet12">
+  <source id="6062668769034024112" name="MPS" hash="b27t49prhcg0ekklgtg7v0dkc3cmsoj">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -674,13 +704,17 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MPS_Kind.java" />
   </source>
-  <source id="6062668769034024114" name="MPS Instance" hash="9ibl0mbq63kgt1kcscofzt6xqd81fvv">
+  <source id="6062668769034024114" name="MPS Instance" hash="-9c9sxbqmvuk791h4i4ygrmps2achewa">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -738,7 +772,7 @@
     <file name="MPSInstance_Configuration_Editor.java" />
     <file name="MPSInstance_Configuration_Factory.java" />
   </source>
-  <source id="6062668769034024381" name="MPS Instance Executor" hash="b8oz968rko8c72olryeoypk9mvwb0wy">
+  <source id="6062668769034024381" name="MPS Instance Executor" hash="25psdcr25f3j9vxh4xsknrdpgghcebo">
     <dep root="468375730750988347" />
     <dep root="6062668769034024114" />
     <dep root="6062668769034024422" />
@@ -808,11 +842,15 @@
   </source>
   <source id="6391517972808447555" name="Remote" hash="doufvpvcjwxb14ho040asjvcaze4wmq">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -844,11 +882,15 @@
   </source>
   <source id="6391517972808447557" name="Remote" hash="cduii3f8b17tirfwpniyq5m7hffnk5m">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -948,7 +990,7 @@
     <dep model="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" />
     <file name="RemoteSettingsEditor.java" />
   </source>
-  <source id="357096973092112028" name="ProjectChooser" hash="9n2fg6x0kw82gg8pr3b3lhwtgbvi34e">
+  <source id="357096973092112028" name="ProjectChooser" hash="3yesbion79s50kjmqaztjm1a00lrjai">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
@@ -970,11 +1012,15 @@
   </source>
   <source id="7162597690968026150" hash="7i3b2qo16lpnib2n1j4dwbuzoxdmx8" dependsOnCreated="true">
     <dep root="1706452255240565482" />
+    <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
     <dep root="33324785354130501" />
     <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
     <dep root="468375730750988347" />
     <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
     <dep root="6062668769033909448" />
     <dep root="6062668769033909641" />
     <dep root="6062668769033909643" />
@@ -1000,7 +1046,7 @@
     <file name="Plugin_ApplicationPlugin.java" />
     <file name="Plugin_ProjectPlugin.java" />
   </source>
-  <source id="468375730750988347" name="MpsStartupSettings" hash="8puykuiq4ht50zbaf39si51zvbx5oir">
+  <source id="468375730750988347" name="MpsStartupSettings" hash="-68rd4nm2ujmnjett43jqh75srx46yzy">
     <dep root="6062668769034024422" />
     <dep root="8981187274662750476" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
@@ -1037,7 +1083,7 @@
     <file name="MpsStartupSettings_Configuration.java" />
     <file name="MpsStartupSettings_Configuration_Editor.java" />
   </source>
-  <source id="8981187274662750476" name="MpsStartupSettingsEditorComponent" hash="53t3bfxim1ijtf8k9ml46szmjc18oot">
+  <source id="8981187274662750476" name="MpsStartupSettingsEditorComponent" hash="5x6y9v4kg5y7l31vftg7r6zzqugpzro">
     <dep root="357096973092112028" />
     <dep root="468375730750988347" />
     <dep root="6062668769034024422" />
@@ -1060,7 +1106,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="MpsStartupSettingsEditorComponent.java" />
   </source>
-  <source id="1706452255240565482" name="PluginsListPanel" hash="-5j50d53zmxinzkekrl4htzs1ic9iuj2">
+  <source id="1706452255240565482" name="PluginsListPanel" hash="b5xfxnefbfkti5smhq7p6gkidzajg6r">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -1086,7 +1132,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="PluginsListPanel.java" />
   </source>
-  <source id="6883107143361156570" name="DeployPluginsSettings" hash="4h2qvrtap6fqr63xsw46qc5dhqousv0">
+  <source id="6883107143361156570" name="DeployPluginsSettings" hash="7xab4aazvu94em8ttirqnoyuydlasan">
     <dep root="1706452255240565482" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options(MPS.IDEA/com.intellij.openapi.options@java_stub)" />
@@ -1196,7 +1242,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DeployPlugins_BeforeTask.java" />
   </source>
-  <source id="5057842142812510296" name="DeployScript" hash="9werq6wuvuic3nsuhcfsb3ztm050dtp">
+  <source id="5057842142812510296" name="DeployScript" hash="8j96b4l5r6ooemkegi9ot2mdman6yn1">
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
@@ -1241,6 +1287,152 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DeployScript.java" />
+  </source>
+  <source id="2023531404351503243" name="Deploy Plugins" hash="a0zhaln3danovhn26nvomui038ec3t1">
+    <dep root="1706452255240565482" />
+    <dep root="33324785348706117" />
+    <dep root="33324785354130501" />
+    <dep root="357096973092112028" />
+    <dep root="4283566179238991813" />
+    <dep root="4283566179239172617" />
+    <dep root="468375730750988347" />
+    <dep root="5057842142812510296" />
+    <dep root="5963359171344105821" />
+    <dep root="6062668769033909448" />
+    <dep root="6062668769033909641" />
+    <dep root="6062668769033909643" />
+    <dep root="6062668769033909683" />
+    <dep root="6062668769034010588" />
+    <dep root="6062668769034010590" />
+    <dep root="6062668769034010900" />
+    <dep root="6062668769034010995" />
+    <dep root="6062668769034024112" />
+    <dep root="6062668769034024114" />
+    <dep root="6062668769034024381" />
+    <dep root="6062668769034024422" />
+    <dep root="6391517972808447555" />
+    <dep root="6391517972808447557" />
+    <dep root="6391517972808447593" />
+    <dep root="6391517972808447783" />
+    <dep root="6883107143361156570" />
+    <dep root="6893245555985399815" />
+    <dep root="7162597690968026150" />
+    <dep root="8981187274662750476" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.icons(MPS.IDEA/com.intellij.icons@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options(MPS.IDEA/com.intellij.openapi.options@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui(MPS.IDEA/com.intellij.ui@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.components(MPS.IDEA/com.intellij.ui.components@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.accessibility(JDK/javax.accessibility@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" />
+    <dep model="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.execution.settings.generator.template.main@generator)" />
+    <dep model="r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)" />
+    <dep model="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)" />
+    <dep model="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" />
+    <dep model="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" />
+    <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="DeployPlugins_Configuration.java" />
+    <file name="DeployPlugins_Configuration_Editor.java" />
+    <file name="DeployPlugins_Configuration_Factory.java" />
+  </source>
+  <source id="5963359171344105821" name="Deploy Plugins Executor" hash="-65j3tl8msbvro62scn7mj45tvo8c0va">
+    <dep root="2023531404351503243" />
+    <dep root="4283566179239172617" />
+    <dep root="5057842142812510296" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.configurations(MPS.IDEA/com.intellij.execution.configurations@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.executors(MPS.IDEA/com.intellij.execution.executors@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.impl(MPS.IDEA/com.intellij.execution.impl@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.runners(MPS.IDEA/com.intellij.execution.runners@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.ui(MPS.IDEA/com.intellij.execution.ui@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide(MPS.IDEA/com.intellij.ide@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application.ex(MPS.IDEA/com.intellij.openapi.application.ex@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.accessibility(JDK/javax.accessibility@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
+    <dep model="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.execution.settings.generator.template.main@generator)" />
+    <dep model="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)" />
+    <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
+    <dep model="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)" />
+    <dep model="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" />
+    <dep model="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)" />
+    <dep model="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)" />
+    <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="DeployPlugins_Configuration_RunProfileState.java" />
+  </source>
+  <source id="4283566179238991813" name="Make Deploy Scripts" hash="4sjdehavghvatzn30fo4esodg22c57e">
+    <dep root="33324785354130501" />
+    <dep root="4283566179239172617" />
+    <dep root="5057842142812510296" />
+    <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.runners(MPS.IDEA/com.intellij.execution.runners@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
+    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps(MPS.Platform/jetbrains.mps@java_stub)" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide(MPS.Platform/jetbrains.mps.ide@java_stub)" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="MakeDeployScripts_BeforeTask.java" />
+  </source>
+  <source id="4283566179239172617" name="ScriptsHolder" hash="-1kbaaf1ffrgz6r3nmhzb0ofqojuq98j">
+    <dep root="5057842142812510296" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ScriptsHolder.java" />
   </source>
 </dependencies>
 
