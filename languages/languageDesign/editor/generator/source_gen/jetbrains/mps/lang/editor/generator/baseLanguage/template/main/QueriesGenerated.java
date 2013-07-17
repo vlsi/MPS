@@ -2408,7 +2408,7 @@ public class QueriesGenerated {
   }
 
   public static SNode insertMacro_Query_9186828658631657775(final IOperationContext operationContext, final TemplateQueryContextWithMacro _context) {
-    SNode refPresentation = SNodeOperations.copyNode(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "cellModel", true), "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation"));
+    SNode refPresentation = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "cellModel", true));
     SNode autoDeletable = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", null);
     SPropertyOperations.set(autoDeletable, "flag", "" + (true));
     ListSequence.fromList(SLinkOperations.getTargets(refPresentation, "styleItem", true)).addElement(autoDeletable);

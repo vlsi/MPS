@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6a788p211hrt27wevz3jlvkniiukdpa">
+<dependencies version="2" modelHash="datfp7nmf3nwr8j4bcc9s0jlmjwgnds">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -303,7 +303,7 @@
   <source id="1198258144506" name="reduce_CellModel_BlockStart" hash="-2ok00g0wlm1worgjslztbos4g6wh4z4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1198258322917" name="MAPPING_Sugar" hash="-cutkroi8wz6gkr167fzrfp05pdn3vqi">
+  <source id="1198258322917" name="MAPPING_Sugar" hash="bw4z00tozwdutdrsak5y0lh602yj7pc">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1198258380049" name="reduce_CellModel_BlockEnd" hash="art8gzofypph5m62qblb7nzmaegfgv5">

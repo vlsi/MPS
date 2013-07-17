@@ -138,6 +138,11 @@ __switch__:
       return !(hasUserDefinedStyle(refPresentation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem")));
     }
 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(inlineEditorComponent, "cellModel", true), "jetbrains.mps.lang.editor.structure.CellModel_Property")) {
+      SNode refPresentation = SNodeOperations.cast(SLinkOperations.getTarget(inlineEditorComponent, "cellModel", true), "jetbrains.mps.lang.editor.structure.CellModel_Property");
+      return !(hasUserDefinedStyle(refPresentation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem")));
+    }
+
     return false;
   }
 
