@@ -35,6 +35,7 @@
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalVariableReference_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalVariableReference_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterReference_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterReference_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterizedIntentionDeclaration_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterizedIntentionDeclaration_Action"></action>
+    <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateStaticConceptMethodDeclaration_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateStaticConceptMethodDeclaration_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_RemoveDirectCallProperty_Action" class="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_RemoveDirectCallProperty_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" class="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action" class="jetbrains.mps.ide.mpsmigration.migration30.UpgradePersistence_Action"></action>
@@ -68,6 +69,7 @@
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalVariableReference_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterReference_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixPluginKindForMPSTestCases_Action" />
+      <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateStaticConceptMethodDeclaration_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrateCondition_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateAbstractConceptDeclarationMethodOnConceptVariable_Action" />
