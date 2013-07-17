@@ -96,6 +96,12 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiArrayType(id, concept, containingRole);
       }
     });
+    factories.put("jetbrains.mps.baseLanguage.structure.VariableArityType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiVariableArityType(id, concept, containingRole);
+      }
+    });
     factories.put("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {

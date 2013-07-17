@@ -42,6 +42,7 @@ import com.intellij.psi.PsiTypeElement;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeParameterList;
 import com.intellij.psi.impl.ElementPresentationUtil;
+import com.intellij.psi.impl.PsiImplUtil;
 import com.intellij.psi.impl.PsiSuperMethodImplUtil;
 import com.intellij.psi.impl.light.JavaIdentifier;
 import com.intellij.psi.javadoc.PsiDocComment;
@@ -54,7 +55,6 @@ import com.intellij.util.PlatformIcons;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -122,7 +122,7 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   @Override
   public boolean isVarArgs() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return PsiImplUtil.isVarArgs(this);
   }
 
   @NotNull
