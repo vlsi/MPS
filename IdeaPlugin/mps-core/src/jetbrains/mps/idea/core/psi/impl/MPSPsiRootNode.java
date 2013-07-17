@@ -215,4 +215,12 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   public boolean isWritable() {
     return true;
   }
+
+  @Override
+  public String getText() {
+    // implemented to avoid assertion error in PsiDocumentManagerImpl.getDocument(PsiFile)
+    // document.getTextLength() != file.getTextLength() fails
+    return myViewProvider.getPsi(getLanguage()).getText();
+  }
+
 }
