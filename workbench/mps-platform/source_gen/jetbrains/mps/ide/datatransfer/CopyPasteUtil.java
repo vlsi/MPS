@@ -263,24 +263,6 @@ public class CopyPasteUtil {
     CopyPasteUtil.copyNodesToClipboard(list);
   }
 
-  public static void copyNodesAndReferenceAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
-    if (nodes.size() == 1) {
-      copyReferenceToClipboard(nodes.get(0));
-    }
-    copyNodesAndTextToClipboard(nodes, text);
-  }
-
-  public static void copyNodesAndReferenceToClipboard(List<SNode> nodes) {
-    if (nodes.size() == 1) {
-      copyReferenceToClipboard(nodes.get(0));
-    }
-    copyNodesToClipboard(nodes);
-  }
-
-  public static void copyReferenceToClipboard(SNode node) {
-    setClipboardContents(new SNodeReferenceTransferable(node));
-  }
-
   public static List<SNode> getNodesFromClipboard(SModel model) {
     return CopyPasteUtil.getPasteNodeDataFromClipboard(model).getNodes();
   }

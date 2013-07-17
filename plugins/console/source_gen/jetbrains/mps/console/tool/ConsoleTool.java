@@ -61,7 +61,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.ide.PasteProvider;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.DataContext;
-import jetbrains.mps.ide.datatransfer.SNodeReferenceTransferable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.datatransfer.Transferable;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
@@ -69,6 +69,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -495,13 +496,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     public void performPaste(@NotNull DataContext context) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SNodeReferenceTransferable paste = null;
+          SNodeReference paste = null;
           try {
             for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
               if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNodeReference)) {
-                paste = (SNodeReferenceTransferable) trf.getTransferData(SModelDataFlavor.sNodeReference);
-                break;
+                paste = (SNodeReference) trf.getTransferData(SModelDataFlavor.sNodeReference);
               }
+              break;
             }
           } catch (UnsupportedFlavorException ignored) {
           } catch (IOException ignored) {
@@ -513,7 +514,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               SNode current = currentCell.getSNode();
               SNode parent = currentCell.getParent().getSNode();
               SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.NodeReference", null);
-              SLinkOperations.setTarget(refContainer, "target", paste.getReference(), false);
+              SLinkOperations.setTarget(refContainer, "target", paste.resolve(MPSModuleRepository.getInstance()), false);
               // todo: better detect cell to paste (current or parent) 
               if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(((SNode) current)), "abstract")) {
                 SNodeOperations.replaceWithAnother(((SNode) currentCell.getSNode()), refContainer);
