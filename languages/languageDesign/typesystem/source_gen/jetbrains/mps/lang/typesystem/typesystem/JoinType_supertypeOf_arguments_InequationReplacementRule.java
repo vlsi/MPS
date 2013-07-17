@@ -6,9 +6,10 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +19,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
-      if (MatchingUtil.matchNodes(arg, subtype)) {
+      if (SNodeOperations.getConceptDeclaration(subtype) == SNodeOperations.getConceptDeclaration(arg)) {
         return true;
       }
     }
@@ -26,12 +27,27 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
-    // nothing 
+    for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
+      if (SNodeOperations.getConceptDeclaration(subtype) == SNodeOperations.getConceptDeclaration(arg)) {
+        {
+          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8991952304890041665", 0, null);
+          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+          typeCheckingContext.createLessThanInequality((SNode) subtype, (SNode) arg, false, true, _info_12389875345);
+        }
+        break;
+      }
+    }
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    // nothing 
+    for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
+      if (SNodeOperations.getConceptDeclaration(subtype) == SNodeOperations.getConceptDeclaration(arg)) {
+        result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) arg, true);
+        break;
+      }
+    }
     return result_14532009;
   }
 
