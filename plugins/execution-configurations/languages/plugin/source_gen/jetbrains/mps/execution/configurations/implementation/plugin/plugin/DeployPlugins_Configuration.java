@@ -13,8 +13,11 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import java.io.File;
 import com.intellij.openapi.application.PathManager;
-import org.apache.log4j.Priority;
 import com.intellij.openapi.project.Project;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -72,16 +75,16 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
     return myPluginsSettings;
   }
 
-  public boolean getDeployClassesOnly() {
-    return myState.myDeployClassesOnly;
+  public boolean getSkipModulesLoading() {
+    return myState.mySkipModulesLoading;
   }
 
   public boolean getRestartCurrentInstance() {
     return myState.myRestartCurrentInstance;
   }
 
-  public void setDeployClassesOnly(boolean value) {
-    myState.myDeployClassesOnly = value;
+  public void setSkipModulesLoading(boolean value) {
+    myState.mySkipModulesLoading = value;
   }
 
   public void setRestartCurrentInstance(boolean value) {
@@ -90,6 +93,29 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
 
   public File getPluginsPath() {
     return new File(PathManager.getPluginsPath());
+  }
+
+  public void removeLanguageLibraries(Element element, Project project) {
+    List<Element> toRemove = ListSequence.fromList(new ArrayList<Element>());
+    removeLanguageLibraries(element, project, toRemove);
+    ListSequence.fromList(toRemove).visitAll(new IVisitor<Element>() {
+      public void visit(Element it) {
+        it.detach();
+      }
+    });
+  }
+
+  private void removeLanguageLibraries(Element element, Project project, List<Element> toRemove) {
+    String mpsLanguageLib = "LanguageLibrary";
+    if (element.getName().endsWith(mpsLanguageLib)) {
+      ListSequence.fromList(toRemove).addElement(element);
+    } else {
+      for (Object child : element.getChildren()) {
+        if (child instanceof Element) {
+          removeLanguageLibraries((Element) child, project, toRemove);
+        }
+      }
+    }
   }
 
   @Override
@@ -109,7 +135,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   }
 
   public class MyState {
-    public boolean myDeployClassesOnly = true;
+    public boolean mySkipModulesLoading = true;
     public boolean myRestartCurrentInstance = true;
 
     public MyState() {
@@ -118,7 +144,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
     @Override
     public Object clone() throws CloneNotSupportedException {
       DeployPlugins_Configuration.MyState state = new DeployPlugins_Configuration.MyState();
-      state.myDeployClassesOnly = myDeployClassesOnly;
+      state.mySkipModulesLoading = mySkipModulesLoading;
       state.myRestartCurrentInstance = myRestartCurrentInstance;
       return state;
     }

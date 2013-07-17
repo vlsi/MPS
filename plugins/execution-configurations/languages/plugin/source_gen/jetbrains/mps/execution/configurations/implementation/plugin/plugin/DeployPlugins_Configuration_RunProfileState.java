@@ -13,7 +13,6 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
@@ -22,8 +21,13 @@ import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.ant.execution.Ant_Command;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
-import jetbrains.mps.util.FileUtil;
 import java.io.File;
+import org.apache.log4j.Priority;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
+import org.jdom.JDOMException;
+import java.io.IOException;
+import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
@@ -31,6 +35,8 @@ import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.execution.executors.DefaultRunExecutor;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DeployPlugins_Configuration_RunProfileState implements RunProfileState {
   @NotNull
@@ -54,15 +60,17 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    final DeployScript script = MapSequence.fromMap(ScriptsHolder.EXECUTOR_ID_TO_SCRIPT).get(myEnvironment.getExecutionId());
+    final DeployScript script = ScriptsHolder.get(myEnvironment);
     if (script == null) {
       throw new ExecutionException("Could not deploy plugins");
     }
 
+    final Project projectFinal = project;
+
     String deployScriptLocation = script.getDeployScriptLocation();
     if ((deployScriptLocation == null || deployScriptLocation.length() == 0)) {
       script.dispose();
-      MapSequence.fromMap(ScriptsHolder.EXECUTOR_ID_TO_SCRIPT).removeKey(myEnvironment.getExecutionId());
+      ScriptsHolder.remove(myEnvironment);
       throw new ExecutionException("Can not generate deploy script");
     }
 
@@ -75,13 +83,36 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
         @Override
         public void processTerminated(ProcessEvent event) {
           if (event.getExitCode() == 0) {
-            FileUtil.copyDir(new File(script.getArtifactsPath()), myRunConfiguration.getPluginsPath());
-            script.dispose();
-            MapSequence.fromMap(ScriptsHolder.EXECUTOR_ID_TO_SCRIPT).removeKey(myEnvironment.getExecutionId());
+            File artifacts = new File(script.getArtifactsPath());
 
-            if (myRunConfiguration.getDeployClassesOnly()) {
-              // todo 
+            if (myRunConfiguration.getSkipModulesLoading()) {
+              // using the same "advanced" technique we use for copying current project in mps command 
+
+              // configuration supports only plugin construction 
+              // which implies that plugin.xml can be only in PLUGIN_HOME/META-INF 
+              for (File pluginDir : artifacts.listFiles()) {
+                File pluginXml = new File(new File(pluginDir, "META-INF"), "plugin.xml");
+                if (!(pluginXml.exists())) {
+                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                    LOG.error("Can not find plugin.xml for deployed plugin by path " + pluginXml.getAbsolutePath());
+                  }
+                  continue;
+                }
+                try {
+                  Document document = JDOMUtil.loadDocument(pluginXml);
+                  myRunConfiguration.removeLanguageLibraries(document.getRootElement(), projectFinal);
+                  JDOMUtil.writeDocument(document, pluginXml);
+                } catch (JDOMException e) {
+                  // ignore and hope for the best 
+                } catch (IOException e) {
+                  // same as previous 
+                }
+              }
             }
+
+            FileUtil.copyDir(artifacts, myRunConfiguration.getPluginsPath());
+            script.dispose();
+            ScriptsHolder.remove(myEnvironment);
 
             if (myRunConfiguration.getRestartCurrentInstance()) {
               ApplicationEx application = (ApplicationEx) ApplicationManager.getApplication();
@@ -92,7 +123,7 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
       });
     } catch (ExecutionException e) {
       script.dispose();
-      MapSequence.fromMap(ScriptsHolder.EXECUTOR_ID_TO_SCRIPT).removeKey(myEnvironment.getExecutionId());
+      ScriptsHolder.remove(myEnvironment);
       throw new ExecutionException("Can not deploy plugins", e);
     }
 
@@ -114,4 +145,6 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
     }
     return false;
   }
+
+  protected static Logger LOG = LogManager.getLogger(DeployPlugins_Configuration_RunProfileState.class);
 }

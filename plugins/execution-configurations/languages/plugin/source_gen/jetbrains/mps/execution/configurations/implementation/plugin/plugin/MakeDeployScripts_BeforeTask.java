@@ -14,7 +14,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class MakeDeployScripts_BeforeTask extends BaseMpsBeforeTaskProvider<MakeDeployScripts_BeforeTask.MakeDeployScripts_BeforeTask_RunTask> {
   private static final Key<MakeDeployScripts_BeforeTask.MakeDeployScripts_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask");
@@ -67,7 +66,7 @@ public class MakeDeployScripts_BeforeTask extends BaseMpsBeforeTaskProvider<Make
         return false;
       }
 
-      MapSequence.fromMap(ScriptsHolder.EXECUTOR_ID_TO_SCRIPT).put(environment.getExecutionId(), script.value);
+      ScriptsHolder.put(environment, script.value);
 
       return true;
     }

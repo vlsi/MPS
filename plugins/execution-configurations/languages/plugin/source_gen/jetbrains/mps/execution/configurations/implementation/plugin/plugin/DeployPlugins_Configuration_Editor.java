@@ -12,7 +12,7 @@ import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class DeployPlugins_Configuration_Editor extends SettingsEditorEx<DeployPlugins_Configuration> {
-  private JBCheckBox myDeployClassesCheckbox;
+  private JBCheckBox mySkipModulesLoading;
   private JBCheckBox myRestartCurrentInstanceCheckbox;
   private DeployPluginsSettings_Configuration_Editor myPluginsSettings;
 
@@ -23,12 +23,12 @@ public class DeployPlugins_Configuration_Editor extends SettingsEditorEx<DeployP
   @NotNull
   public JPanel createEditor() {
     JPanel plugins = myPluginsSettings.createEditor();
-    myDeployClassesCheckbox = new JBCheckBox("Deploy Classes Only");
+    mySkipModulesLoading = new JBCheckBox("Do not load modules from deployed plugins");
     myRestartCurrentInstanceCheckbox = new JBCheckBox("Restart Current MPS Instance");
 
     JPanel panel = new JPanel(new GridBagLayout());
     panel.add(plugins, LayoutUtil.createPanelConstraints(0));
-    panel.add(myDeployClassesCheckbox, LayoutUtil.createLabelConstraints(1));
+    panel.add(mySkipModulesLoading, LayoutUtil.createLabelConstraints(1));
     panel.add(myRestartCurrentInstanceCheckbox, LayoutUtil.createLabelConstraints(2));
 
     return panel;
@@ -36,13 +36,13 @@ public class DeployPlugins_Configuration_Editor extends SettingsEditorEx<DeployP
 
   public void applyEditorTo(final DeployPlugins_Configuration configuration) throws ConfigurationException {
     myPluginsSettings.applyEditorTo(configuration.getPluginsSettings());
-    configuration.setDeployClassesOnly(myDeployClassesCheckbox.isSelected());
+    configuration.setSkipModulesLoading(mySkipModulesLoading.isSelected());
     configuration.setRestartCurrentInstance(myRestartCurrentInstanceCheckbox.isSelected());
   }
 
   public void resetEditorFrom(final DeployPlugins_Configuration configuration) {
     myPluginsSettings.resetEditorFrom(configuration.getPluginsSettings());
-    myDeployClassesCheckbox.setSelected(configuration.getDeployClassesOnly());
+    mySkipModulesLoading.setSelected(configuration.getSkipModulesLoading());
     myRestartCurrentInstanceCheckbox.setSelected(configuration.getRestartCurrentInstance());
   }
 
