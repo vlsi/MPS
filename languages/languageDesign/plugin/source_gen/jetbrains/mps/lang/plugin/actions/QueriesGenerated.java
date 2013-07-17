@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -132,7 +133,7 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                return ActionDataParameterDeclaration_Behavior.getDescription_47694270442103157((item));
+                return ActionDataParameterDeclaration_Behavior.call_getDescription_47694270442103157(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"))), (item));
               }
             });
           }

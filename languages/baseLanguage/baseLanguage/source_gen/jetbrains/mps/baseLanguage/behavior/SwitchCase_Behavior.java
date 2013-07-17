@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SwitchCase_Behavior {
@@ -12,7 +15,7 @@ public class SwitchCase_Behavior {
 
   public static void call_collectUncaughtThrowables_4313092516461872703(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (!(ignoreMayBeThrowables)) {
-      Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "expression", true));
+      Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(thisNode, "expression", true));
     }
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "body", true), throwables, ignoreMayBeThrowables);
   }

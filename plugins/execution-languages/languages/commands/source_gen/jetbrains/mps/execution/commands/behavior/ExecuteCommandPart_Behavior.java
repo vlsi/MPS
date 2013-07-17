@@ -12,6 +12,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -59,7 +62,7 @@ public class ExecuteCommandPart_Behavior {
   }
 
   public static String call_getSuffix_3754131050835940463(SNode thisNode) {
-    return "_" + IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(thisNode.getNodeId().toString());
+    return "_" + IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), thisNode.getNodeId().toString());
   }
 
   @Deprecated

@@ -15,6 +15,9 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -48,7 +51,7 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode contextBuilder = null;
             if (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getContextNode()), "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-              contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732((SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") ?
+              contextBuilder = Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), (SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder") ?
                 SNodeOperations.getParent(_context.getContextNode()) :
                 _context.getContextNode()
               ));

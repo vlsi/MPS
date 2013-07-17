@@ -10,6 +10,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -32,7 +35,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         return;
       }
 
-      SNode contextClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(varRef);
+      SNode contextClassifier = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), varRef);
       if (contextClassifier == null) {
         return;
       }

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -37,7 +38,7 @@ public class AttributeQualifier_Behavior {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");
   }
 
-  public static Iterable<SNode> getApplicableRoles_959482772563105834(SNode enclosingNode, String attributeType, SModel model, final IScope scope) {
+  public static Iterable<SNode> call_getApplicableRoles_959482772563105834(SAbstractConcept thisConcept, SNode enclosingNode, String attributeType, SModel model, final IScope scope) {
     // all applicable attribute roles ('attributeType' subconcepts with role definition) 
     final SNode container = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.as(enclosingNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess")), "concept", false);
     // all attribute concepts of given type 

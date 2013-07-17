@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -12,7 +15,7 @@ public class ThisExpression_Behavior {
   }
 
   public static List<SNode> call_getPossibleClassifiers_1215682129821(SNode thisNode) {
-    return Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(thisNode);
+    return Classifier_Behavior.call_getNonStaticContextClassifiers_6775591514230482802(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode);
   }
 
   public static SNode call_getContextClassifierMember_6516287307421538194(SNode thisNode) {

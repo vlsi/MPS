@@ -14,6 +14,9 @@ import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -77,11 +80,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4484885613884830953(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TestInfo_Behavior.isUITest_4484885613884830715(SNodeOperations.getModel(_context.getNode()));
+    return TestInfo_Behavior.call_isUITest_4484885613884830715(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1031873601093426077(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TestInfo_Behavior.reOpenProject_1031873601093419509(SNodeOperations.getModel(_context.getNode()));
+    return TestInfo_Behavior.call_reOpenProject_1031873601093419509(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038142(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -101,7 +104,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603647998(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1226937589842(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -161,7 +164,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1229211902562(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_5364632142688376317(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -189,7 +192,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4484885613884740503(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(TestInfo_Behavior.isUITest_4484885613884830715(SNodeOperations.getModel(_context.getNode())) || TestInfo_Behavior.reOpenProject_1031873601093419509(SNodeOperations.getModel(_context.getNode())));
+    return !(TestInfo_Behavior.call_isUITest_4484885613884830715(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode())) || TestInfo_Behavior.call_reOpenProject_1031873601093419509(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), SNodeOperations.getModel(_context.getNode())));
   }
 
   public static SNode sourceNodeQuery_4277730795458378995(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

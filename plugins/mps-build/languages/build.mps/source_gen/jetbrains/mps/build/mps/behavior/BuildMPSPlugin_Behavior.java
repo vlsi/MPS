@@ -22,6 +22,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -114,14 +117,14 @@ public class BuildMPSPlugin_Behavior {
   }
 
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return Sequence.<SNode>singleton(BuildMPSPlugin_Behavior.getMpsLibrary_4101476690147447822());
+    return Sequence.<SNode>singleton(BuildMPSPlugin_Behavior.call_getMpsLibrary_4101476690147447822(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMPSPlugin")))));
   }
 
-  public static SNode getMpsLibrary_4101476690147447822() {
-    return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0a(), "target", false);
+  public static SNode call_getMpsLibrary_4101476690147447822(SAbstractConcept thisConcept) {
+    return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0e(), "target", false);
   }
 
-  private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0a() {
+  private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, GlobalScope.getInstance(), false);
     n1.setReference("target", SReference.create("target", n1, facade.createModelReference("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), facade.createNodeId("398731435597190701")));

@@ -16,6 +16,9 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
 import jetbrains.mps.execution.configurations.behavior.AbstractRunConfigurationExecutor_Behavior;
@@ -107,7 +110,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6550182048787667298(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name"));
+    return PersistentPropertyDeclaration_Behavior.call_addMyPrefix_6314556899428615272(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_7024026323278183387(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -123,7 +126,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983709820(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "configurationName"));
+    return PersistentPropertyDeclaration_Behavior.call_addMyPrefix_6314556899428615272(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(_context.getNode(), "configurationName"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472774(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -131,11 +134,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472784(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerConfidurationMethodName_6226796386650472924();
+    return CommandDeclaration_Behavior.call_getGetDebuggerConfidurationMethodName_6226796386650472924(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650491266(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerConfidurationMethodName_6226796386650472924();
+    return CommandDeclaration_Behavior.call_getGetDebuggerConfidurationMethodName_6226796386650472924(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983618075(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -175,7 +178,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7684700299064368403(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.removeMyPrefix_946964771156066836(SPropertyOperations.getString(_context.getNode(), "name"));
+    return PersistentPropertyDeclaration_Behavior.call_removeMyPrefix_946964771156066836(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_7684700299064368420(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -245,15 +248,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6550182048787659839(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
+    return PersistentPropertyDeclaration_Behavior.call_addMyPrefix_6314556899428615272(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2137130439060046356(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.removeMyPrefix_946964771156066836(SPropertyOperations.getString(_context.getNode(), "name"));
+    return PersistentPropertyDeclaration_Behavior.call_removeMyPrefix_946964771156066836(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2137130439060046387(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.removeMyPrefix_946964771156066836(SPropertyOperations.getString(_context.getNode(), "name"));
+    return PersistentPropertyDeclaration_Behavior.call_removeMyPrefix_946964771156066836(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2137130439060060173(final IOperationContext operationContext, final PropertyMacroContext _context) {
