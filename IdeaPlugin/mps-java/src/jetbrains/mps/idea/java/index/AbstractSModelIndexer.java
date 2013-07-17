@@ -148,44 +148,34 @@ import java.util.Map;
   @Override
   public Map<String, Collection<E>> map(final FileContent inputData) {
     Project mpsProject = ProjectHelper.toMPSProject(inputData.getProject());
-    final SRepository mpsRepository = mpsProject.getRepository();
 
     final HashMap<String, Collection<E>> map = new HashMap<String, Collection<E>>();
 
-    // TODO review this code: use of runIndexing and runReadAction
-    // the reason is indexing can use behaviour methods; it calls getRootNodes of language.structure model,
-    // if it happens for the first time, getRootNodes tries to attach them to the repo
     ModelAccess.instance().runIndexing(new Runnable() {
       @Override
       public void run() {
+        try {
+          final SModel model = RootNodeNameIndex.doModelParsing(inputData);
+          final SModelReference modelRef = model.getReference();
+          getObjectsToIndex(model, new Consumer<S>() {
+            @Override
+            public void consume(S object) {
+              String[] keys = getKeys(model, object);
 
-        mpsRepository.getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            try {
-              final SModel model = RootNodeNameIndex.doModelParsing(inputData);
-              final SModelReference modelRef = model.getReference();
-              getObjectsToIndex(model, new Consumer<S>() {
-                @Override
-                public void consume(S object) {
-                  String[] keys = getKeys(model, object);
-
-                  for (String key : keys) {
-                    Collection<E> collection = map.get(key);
-                    if (collection == null) {
-                      collection = new ArrayList<E>();
-                      map.put(key, collection);
-                    }
-
-                    updateCollection(modelRef, object, collection);
-                  }
+              for (String key : keys) {
+                Collection<E> collection = map.get(key);
+                if (collection == null) {
+                  collection = new ArrayList<E>();
+                  map.put(key, collection);
                 }
-              });
-            } catch (Exception e) {
-              LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
+
+                updateCollection(modelRef, object, collection);
+              }
             }
-          }
-        });
+          });
+        } catch (Exception e) {
+          LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
+        }
       }
     });
 
