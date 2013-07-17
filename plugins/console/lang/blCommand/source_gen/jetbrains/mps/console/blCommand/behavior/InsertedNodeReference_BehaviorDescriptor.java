@@ -6,16 +6,16 @@ import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_BehaviorDesc
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeReference_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public NodeReference_BehaviorDescriptor() {
+public class InsertedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
+  public InsertedNodeReference_BehaviorDescriptor() {
   }
 
   public SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
-    return NodeReference_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
+    return InsertedNodeReference_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.blCommand.structure.NodeReference";
+    return "jetbrains.mps.console.blCommand.structure.InsertedNodeReference";
   }
 }

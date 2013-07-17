@@ -68,8 +68,10 @@ import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import java.util.ArrayList;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -496,11 +498,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     public void performPaste(@NotNull DataContext context) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SNodeReference paste = null;
+          SNodeReference pastingNodeReference = null;
           try {
             for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
               if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNodeReference)) {
-                paste = (SNodeReference) trf.getTransferData(SModelDataFlavor.sNodeReference);
+                pastingNodeReference = (SNodeReference) trf.getTransferData(SModelDataFlavor.sNodeReference);
               }
               break;
             }
@@ -508,20 +510,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           } catch (IOException ignored) {
           }
           EditorCell currentCell = myCommandEditor.getSelectedCell();
-          if (paste != null && currentCell != null) {
-            String role = currentCell.getRole();
-            if (role != null) {
-              SNode current = currentCell.getSNode();
-              SNode parent = currentCell.getParent().getSNode();
-              SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.NodeReference", null);
-              SLinkOperations.setTarget(refContainer, "target", paste.resolve(MPSModuleRepository.getInstance()), false);
-              // todo: better detect cell to paste (current or parent) 
-              if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(((SNode) current)), "abstract")) {
-                SNodeOperations.replaceWithAnother(((SNode) currentCell.getSNode()), refContainer);
-                // <node> 
-              } else {
-                parent.addChild(role, refContainer);
-              }
+          if (pastingNodeReference != null && currentCell != null) {
+            SNode referenceTarget = pastingNodeReference.resolve(MPSModuleRepository.getInstance());
+            if (referenceTarget != null) {
+              SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.InsertedNodeReference", null);
+              SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
+              NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
+              paster.paste(currentCell);
             }
           }
         }
