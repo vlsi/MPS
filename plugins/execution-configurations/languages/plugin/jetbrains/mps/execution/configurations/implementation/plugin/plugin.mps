@@ -2524,7 +2524,7 @@
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2905993316357258840" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f0dr.~TitledBorder%d&lt;init&gt;(java%dlang%dString)" resolveInfo="TitledBorder" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2905993316357258846" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1070475926801" value="New MPS Instance Settings" />
+                          <property name="value" nameId="tpee.1070475926801" value="New MPS instance settings" />
                         </node>
                       </node>
                     </node>
@@ -2559,7 +2559,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="929631657465279787" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xg1q.~JBCheckBox%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JBCheckBox" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="929631657465279793" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Restart Current MPS Instance" />
+                    <property name="value" nameId="tpee.1070475926801" value="Restart current MPS instance" />
                   </node>
                 </node>
               </node>
@@ -9575,7 +9575,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5963359171343843894" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xg1q.~JBCheckBox%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JBCheckBox" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5963359171343843895" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Restart Current MPS Instance" />
+                    <property name="value" nameId="tpee.1070475926801" value="Restart current MPS instance" />
                   </node>
                 </node>
               </node>

@@ -43,7 +43,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553525984" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="tpht.1202465836231" resolveInfo="text" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553525985" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="VM Parameters:" />
+            <property name="value" nameId="tpee.1070475926801" value="VM parameters:" />
           </node>
         </node>
       </node>
@@ -72,7 +72,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553525995" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="xk9i.1240470842553500415" resolveInfo="dialogCaption" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553525996" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="VM Parameters" />
+            <property name="value" nameId="tpee.1070475926801" value="VM parameters" />
           </node>
         </node>
         <node role="content" roleId="tphr.1202817142302" type="tphr.ActionHandler" typeId="tphr.1202744043552" id="1240470842553525997" nodeInfo="ng">
@@ -97,7 +97,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553526005" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="tpht.1202465836231" resolveInfo="text" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553526006" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Program Parameters:" />
+            <property name="value" nameId="tpee.1070475926801" value="Program parameters:" />
           </node>
         </node>
       </node>
@@ -126,7 +126,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553526016" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="xk9i.1240470842553500415" resolveInfo="dialogCaption" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553526017" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Program Parameters" />
+            <property name="value" nameId="tpee.1070475926801" value="Program parameters" />
           </node>
         </node>
         <node role="content" roleId="tphr.1202817142302" type="tphr.ActionHandler" typeId="tphr.1202744043552" id="1240470842553526018" nodeInfo="ng">
@@ -151,7 +151,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553526026" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="tpht.1202465836231" resolveInfo="text" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553526027" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Working Directory:" />
+            <property name="value" nameId="tpee.1070475926801" value="Working directory:" />
           </node>
         </node>
       </node>
@@ -180,7 +180,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553526037" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="xk9i.1240470842553500237" resolveInfo="title" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553526038" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Select Working Directory" />
+            <property name="value" nameId="tpee.1070475926801" value="Select working directory" />
           </node>
         </node>
         <node role="content" roleId="tphr.1202817142302" type="tphr.ActionHandler" typeId="tphr.1202744043552" id="1240470842553526039" nodeInfo="ng">
@@ -264,7 +264,7 @@
         <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="1240470842553526072" nodeInfo="ng">
           <link role="attribute" roleId="tphr.1202389328439" targetNodeId="xk9i.1240470842553500237" resolveInfo="title" />
           <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1240470842553526073" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Select Alternative JRE home" />
+            <property name="value" nameId="tpee.1070475926801" value="Select alternative JRE home" />
           </node>
         </node>
         <node role="content" roleId="tphr.1202817142302" type="tphr.ActionHandler" typeId="tphr.1202744043552" id="1240470842553526074" nodeInfo="ng">

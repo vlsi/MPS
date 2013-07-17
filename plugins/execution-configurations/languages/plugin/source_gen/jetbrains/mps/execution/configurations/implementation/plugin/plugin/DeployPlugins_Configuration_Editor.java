@@ -24,7 +24,7 @@ public class DeployPlugins_Configuration_Editor extends SettingsEditorEx<DeployP
   public JPanel createEditor() {
     JPanel plugins = myPluginsSettings.createEditor();
     mySkipModulesLoading = new JBCheckBox("Do not load modules from deployed plugins");
-    myRestartCurrentInstanceCheckbox = new JBCheckBox("Restart Current MPS Instance");
+    myRestartCurrentInstanceCheckbox = new JBCheckBox("Restart current MPS instance");
 
     JPanel panel = new JPanel(new GridBagLayout());
     panel.add(plugins, LayoutUtil.createPanelConstraints(0));

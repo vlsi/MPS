@@ -32,8 +32,8 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
   @NotNull
   public JPanel createEditor() {
     myMpsStartupSettings = myMpsSettings.createEditor();
-    myMpsStartupSettings.setBorder(new CompoundBorder(new TitledBorder("New MPS Instance Settings"), new EmptyBorder(3, 5, 3, 5)));
-    myRestartCheckBox = new JBCheckBox("Restart Current MPS Instance");
+    myMpsStartupSettings.setBorder(new CompoundBorder(new TitledBorder("New MPS instance settings"), new EmptyBorder(3, 5, 3, 5)));
+    myRestartCheckBox = new JBCheckBox("Restart current MPS instance");
     myRestartCheckBox.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         myMpsStartupSettings.setEditable(!(myRestartCheckBox.isSelected()));
