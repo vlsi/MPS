@@ -1221,6 +1221,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1i04.1225194588610" resolveInfo="StaticConceptMethodDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1068499141037" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5963210568513239380" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206482823744" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
