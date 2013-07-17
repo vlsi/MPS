@@ -53,39 +53,7 @@
     <unitInfo nodeId="1230052406741" fileName="ConceptFunctioParameterTest_Test.java" startLine="24" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test$TestBody" />
     <unitInfo nodeId="1230052406741" fileName="ConceptFunctioParameterTest_Test.java" startLine="16" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptFunctioParameterTest_Test" />
   </root>
-  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052406787">
-    <nodeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="23" startPosition="53" endLine="24" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="24" startPosition="112" endLine="25" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406874" fileName="ConceptMethod_Test.java" startLine="30" startPosition="55" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406874" fileName="ConceptMethod_Test.java" startLine="31" startPosition="40" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8814655848772868919" fileName="ConceptMethod_Test.java" startLine="32" startPosition="40" endLine="33" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406883" fileName="ConceptMethod_Test.java" startLine="33" startPosition="315" endLine="34" endPosition="397" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052406892" fileName="ConceptMethod_Test.java" startLine="34" startPosition="397" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406897" fileName="ConceptMethod_Test.java" startLine="35" startPosition="28" endLine="36" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052406902" fileName="ConceptMethod_Test.java" startLine="36" startPosition="84" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406907" fileName="ConceptMethod_Test.java" startLine="37" startPosition="20" endLine="38" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406916" fileName="ConceptMethod_Test.java" startLine="38" startPosition="239" endLine="39" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406921" fileName="ConceptMethod_Test.java" startLine="39" startPosition="28" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406926" fileName="ConceptMethod_Test.java" startLine="40" startPosition="59" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406930" fileName="ConceptMethod_Test.java" startLine="41" startPosition="23" endLine="42" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406794" fileName="ConceptMethod_Test.java" startLine="45" startPosition="51" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fff#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/ExtractMethodRefactoring;)V" />
-    <nodeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_conceptMethod#()V" />
-    <nodeInfo nodeId="1230052406874" fileName="ConceptMethod_Test.java" startLine="30" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_conceptMethod#()V" />
-    <scopeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="45" startPosition="51" endLine="46" endPosition="23" />
-    <scopeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="23" startPosition="53" endLine="25" endPosition="106" />
-    <scopeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="1230052406789" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1230052406874" fileName="ConceptMethod_Test.java" startLine="30" startPosition="55" endLine="42" endPosition="395">
-      <varInfo nodeId="1230052406884" varName="params" />
-      <varInfo nodeId="1230052406898" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="1230052406874" fileName="ConceptMethod_Test.java" startLine="30" startPosition="0" endLine="44" endPosition="0" />
-    <unitInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="28" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptMethod_Test$TestBody" />
-    <unitInfo nodeId="1230052406787" fileName="ConceptMethod_Test.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.refactoringTest.ConceptMethod_Test" />
-  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052406787" />
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/1230052406933">
     <nodeInfo nodeId="1230052406933" fileName="ExtractFromAnonymous_Test.java" startLine="22" startPosition="60" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1230052406933" fileName="ExtractFromAnonymous_Test.java" startLine="23" startPosition="112" endLine="24" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
