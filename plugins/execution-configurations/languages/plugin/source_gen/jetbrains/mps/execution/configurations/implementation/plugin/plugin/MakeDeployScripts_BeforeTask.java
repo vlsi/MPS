@@ -19,7 +19,7 @@ public class MakeDeployScripts_BeforeTask extends BaseMpsBeforeTaskProvider<Make
   private static final Key<MakeDeployScripts_BeforeTask.MakeDeployScripts_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask");
 
   public MakeDeployScripts_BeforeTask() {
-    super("Make Deploy Scripts");
+    super("Make deploy scripts");
   }
 
   protected MakeDeployScripts_BeforeTask.MakeDeployScripts_BeforeTask_RunTask createTaskImpl() {

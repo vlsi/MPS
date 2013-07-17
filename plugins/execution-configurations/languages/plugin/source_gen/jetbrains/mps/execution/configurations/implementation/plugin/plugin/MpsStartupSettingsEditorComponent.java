@@ -21,15 +21,15 @@ public class MpsStartupSettingsEditorComponent extends JPanel {
   public MpsStartupSettingsEditorComponent() {
     super(new GridBagLayout());
 
-    this.add(new JLabel("MPS System Path:"), LayoutUtil.createLabelConstraints(0));
+    this.add(new JLabel("MPS system path:"), LayoutUtil.createLabelConstraints(0));
     this.add(mySystemPath, LayoutUtil.createFieldConstraints(1));
-    this.add(new JLabel("MPS Configuration Path:"), LayoutUtil.createLabelConstraints(2));
+    this.add(new JLabel("MPS configuration path:"), LayoutUtil.createLabelConstraints(2));
     this.add(myConfigurationPath, LayoutUtil.createFieldConstraints(3));
-    myVmOptions.setDialogCaption("Virtual Machine Parameters");
+    myVmOptions.setDialogCaption("Virtual machine parameters");
     myVmOptions.setText(Mps_Command.getDefaultVirtualMachineParameters());
-    this.add(new JLabel("Virtual Machine Parameters:"), LayoutUtil.createLabelConstraints(4));
+    this.add(new JLabel("Virtual machine parameters:"), LayoutUtil.createLabelConstraints(4));
     this.add(myVmOptions, LayoutUtil.createFieldConstraints(5));
-    this.add(new JLabel("Alternative JRE Path:"), LayoutUtil.createLabelConstraints(6));
+    this.add(new JLabel("Alternative JRE path:"), LayoutUtil.createLabelConstraints(6));
     this.add(myJrePath, LayoutUtil.createFieldConstraints(7));
     this.add(myProjectChooser, LayoutUtil.createPanelConstraints(8));
   }

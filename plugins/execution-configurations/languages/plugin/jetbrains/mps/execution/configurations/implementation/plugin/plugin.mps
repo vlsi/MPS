@@ -2503,46 +2503,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4367809097116603655" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4367809097116607234" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="fb9u.EditorPropertyReference" typeId="fb9u.946964771156066611" id="4367809097116603654" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="929631657465344418" resolveInfo="myMpsStartupSettings" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4367809097116650689" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JComponent%dsetBorder(javax%dswing%dborder%dBorder)%cvoid" resolveInfo="setBorder" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2905993316357841860" nodeInfo="nn">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2905993316357848761" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f0dr.~CompoundBorder%d&lt;init&gt;(javax%dswing%dborder%dBorder,javax%dswing%dborder%dBorder)" resolveInfo="CompoundBorder" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2905993316357245046" nodeInfo="nn">
-                      <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2905993316357258840" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f0dr.~TitledBorder%d&lt;init&gt;(java%dlang%dString)" resolveInfo="TitledBorder" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2905993316357258846" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1070475926801" value="New MPS instance settings" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2905993316357854147" nodeInfo="nn">
-                      <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2905993316357865352" nodeInfo="nn">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f0dr.~EmptyBorder%d&lt;init&gt;(int,int,int,int)" resolveInfo="EmptyBorder" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2905993316358638846" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="3" />
-                        </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2905993316357869066" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="5" />
-                        </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2905993316357869079" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="3" />
-                        </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2905993316357869094" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="5" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6883107143361822898" nodeInfo="nn">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6883107143361822899" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="plugins" />
@@ -4024,7 +3984,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6391517972808447986" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JLabel%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JLabel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6391517972808447987" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="Remote JVM Command Line Arguments:" />
+                  <property name="value" nameId="tpee.1070475926801" value="Remote JVM command line arguments:" />
                 </node>
               </node>
             </node>
@@ -4525,7 +4485,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="357096973092121056" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JCheckBox%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JCheckBox" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1282994116698516430" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="Open Current Project" />
+                  <property name="value" nameId="tpee.1070475926801" value="Open current project" />
                 </node>
               </node>
             </node>
@@ -4726,7 +4686,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="357096973092120958" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JLabel%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JLabel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="357096973092120959" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Project To Open:" />
+                    <property name="value" nameId="tpee.1070475926801" value="Project to open:" />
                   </node>
                 </node>
               </node>
@@ -5758,7 +5718,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8981187274662860055" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JLabel%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JLabel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8981187274662860056" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="MPS System Path:" />
+                    <property name="value" nameId="tpee.1070475926801" value="MPS system path:" />
                   </node>
                 </node>
               </node>
@@ -5797,7 +5757,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8981187274662860071" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JLabel%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JLabel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8981187274662860072" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="MPS Configuration Path:" />
+                    <property name="value" nameId="tpee.1070475926801" value="MPS configuration path:" />
                   </node>
                 </node>
               </node>
@@ -5835,7 +5795,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8981187274662860085" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xk9i.1240470842553500428" resolveInfo="setDialogCaption" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8981187274662860086" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="Virtual Machine Parameters" />
+                <property name="value" nameId="tpee.1070475926801" value="Virtual machine parameters" />
               </node>
             </node>
           </node>
@@ -5867,7 +5827,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8981187274662860099" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JLabel%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JLabel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8981187274662860100" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Virtual Machine Parameters:" />
+                    <property name="value" nameId="tpee.1070475926801" value="Virtual machine parameters:" />
                   </node>
                 </node>
               </node>
@@ -5906,7 +5866,7 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8981187274662860115" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JLabel%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JLabel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8981187274662860116" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Alternative JRE Path:" />
+                    <property name="value" nameId="tpee.1070475926801" value="Alternative JRE path:" />
                   </node>
                 </node>
               </node>
@@ -6365,7 +6325,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="5133679254725649087" nodeInfo="nn">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xk9i.1895567659272474680" resolveInfo="ListPanel" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5133679254725683056" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Plugins To Deploy" />
+            <property name="value" nameId="tpee.1070475926801" value="Plugins to deploy" />
           </node>
         </node>
       </node>
@@ -7478,7 +7438,7 @@
   <root type="uhxm.BeforeTask" typeId="uhxm.7037083547576022975" id="33324785354130501" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="mps.deployPlugins" />
     <property name="name" nameId="tpck.1169194664001" value="DeployPlugins" />
-    <property name="alias" nameId="tpck.1156235010670" value="Deploy Plugins" />
+    <property name="alias" nameId="tpck.1156235010670" value="Deploy plugins" />
     <node role="execute" roleId="uhxm.2454261876037700497" type="uhxm.ExecuteBeforeTask_ConceptFunction" typeId="uhxm.2454261876037468744" id="33324785354130502" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="33324785354130503" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7126833505588416769" nodeInfo="nn">
@@ -10116,7 +10076,7 @@
       </node>
     </node>
     <node role="beforeTask" roleId="uhxm.6550182048787537895" type="uhxm.BeforeTaskCall" typeId="uhxm.6550182048787537880" id="4283566179239165434" nodeInfo="ng">
-      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="4283566179238991813" resolveInfo="Make Deploy Scripts" />
+      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="4283566179238991813" resolveInfo="Make deploy scripts" />
       <node role="parameter" roleId="uhxm.5475888311765521408" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4283566179239166934" nodeInfo="nn">
         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4283566179239166935" nodeInfo="nn">
           <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="4283566179239166936" nodeInfo="nn" />
@@ -10132,7 +10092,7 @@
   </root>
   <root type="uhxm.BeforeTask" typeId="uhxm.7037083547576022975" id="4283566179238991813" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="mps.deployPlugins.configuration" />
-    <property name="name" nameId="tpck.1169194664001" value="Make Deploy Scripts" />
+    <property name="name" nameId="tpck.1169194664001" value="Make deploy scripts" />
     <node role="parameter" roleId="uhxm.6550182048787568298" type="uhxm.BeforeTaskParameter" typeId="uhxm.6550182048787562516" id="4283566179239098139" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="myPlugins" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="4283566179239098140" nodeInfo="in">

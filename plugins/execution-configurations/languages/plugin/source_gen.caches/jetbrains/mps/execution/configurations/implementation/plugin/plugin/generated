@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2shaz7zgzbbjx8djejctp53tt12jz6a">
+<dependencies version="2" modelHash="-96ojgohbn9asbbwhkggyqxjs4vhcys6">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.actions(MPS.IDEA/com.intellij.execution.actions@java_stub)" />
@@ -703,7 +703,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MPS_Kind.java" />
   </source>
-  <source id="6062668769034024114" name="MPS Instance" hash="-r6j9fsnfx9nncu0a77lbovp2wki177">
+  <source id="6062668769034024114" name="MPS Instance" hash="-dvkekhvp2rlc55n0sq8reixdgzpcms5">
     <dep root="1706452255240565482" />
     <dep root="2023531404351503243" />
     <dep root="33324785348706117" />
@@ -969,7 +969,7 @@
     <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" />
     <file name="Remote_Configuration_RunProfileState.java" />
   </source>
-  <source id="6391517972808447783" name="RemoteSettingsEditor" hash="-50y6hie2d7dekiz9o5g8xwwoty4j0vr">
+  <source id="6391517972808447783" name="RemoteSettingsEditor" hash="d8t6gn7fxglu254a5o5038okhy70wdu">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -985,7 +985,7 @@
     <dep model="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" />
     <file name="RemoteSettingsEditor.java" />
   </source>
-  <source id="357096973092112028" name="ProjectChooser" hash="3yesbion79s50kjmqaztjm1a00lrjai">
+  <source id="357096973092112028" name="ProjectChooser" hash="8tkl2si1a2kvy52i14wit5ooih4bnuu">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs(MPS.IDEA/com.intellij.openapi.vfs@java_stub)" />
@@ -1078,7 +1078,7 @@
     <file name="MpsStartupSettings_Configuration.java" />
     <file name="MpsStartupSettings_Configuration_Editor.java" />
   </source>
-  <source id="8981187274662750476" name="MpsStartupSettingsEditorComponent" hash="5x6y9v4kg5y7l31vftg7r6zzqugpzro">
+  <source id="8981187274662750476" name="MpsStartupSettingsEditorComponent" hash="-d5rn874jlmvts9u96rv55pq4cfikzrs">
     <dep root="357096973092112028" />
     <dep root="468375730750988347" />
     <dep root="6062668769034024422" />
@@ -1101,7 +1101,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="MpsStartupSettingsEditorComponent.java" />
   </source>
-  <source id="1706452255240565482" name="PluginsListPanel" hash="b5xfxnefbfkti5smhq7p6gkidzajg6r">
+  <source id="1706452255240565482" name="PluginsListPanel" hash="4qm2zyehuaup5cefis0ydj33htsp6xh">
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -1181,7 +1181,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DeployScriptCreator.java" />
   </source>
-  <source id="33324785354130501" name="DeployPlugins" hash="c3899rwjwnzuqm5f7tprfbkm7i7q89o">
+  <source id="33324785354130501" name="DeployPlugins" hash="xisd3hztf2y7gkk4jlccajal66r6fy">
     <dep root="5057842142812510296" />
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)" />
@@ -1352,7 +1352,7 @@
     <file name="DeployPlugins_Configuration_Editor.java" />
     <file name="DeployPlugins_Configuration_Factory.java" />
   </source>
-  <source id="5963359171344105821" name="Deploy Plugins Executor" hash="-bz0s6j6zuw2eig76jmfuyvu72szle7u">
+  <source id="5963359171344105821" name="Deploy Plugins Executor" hash="-dm92a0s2ofbmqhe0uq6xlx6xxmm49yk">
     <dep root="2023531404351503243" />
     <dep root="4283566179239172617" />
     <dep root="5057842142812510296" />
@@ -1399,7 +1399,7 @@
     <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)" />
     <file name="DeployPlugins_Configuration_RunProfileState.java" />
   </source>
-  <source id="4283566179238991813" name="Make Deploy Scripts" hash="-2mmudvhn3g1167nixcun5w49y1cn09j">
+  <source id="4283566179238991813" name="Make deploy scripts" hash="1qfgwvg2eqwxuis5l1yrooam8kuu00i">
     <dep root="33324785354130501" />
     <dep root="5057842142812510296" />
     <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />

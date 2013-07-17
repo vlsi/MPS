@@ -586,9 +586,7 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPluginsSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsStartupSettingsEditorComponent" />

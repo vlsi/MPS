@@ -185,7 +185,7 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
     return DeployPlugins_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  public Object[] createMakeDeployScriptsTask() {
+  public Object[] createMakedeployscriptsTask() {
     return new Object[]{this.getPluginsSettings().getPluginsListToDeploy()};
   }
 

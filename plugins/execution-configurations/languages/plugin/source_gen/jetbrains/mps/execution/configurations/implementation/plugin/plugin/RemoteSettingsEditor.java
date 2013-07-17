@@ -45,7 +45,7 @@ public class RemoteSettingsEditor extends JPanel {
     add(myHostTextField, LayoutUtil.createFieldConstraints(1));
     add(new JLabel("Port:"), LayoutUtil.createLabelConstraints(2));
     add(myPortTextField, LayoutUtil.createFieldConstraints(3));
-    add(new JLabel("Remote JVM Command Line Arguments:"), LayoutUtil.createLabelConstraints(4));
+    add(new JLabel("Remote JVM command line arguments:"), LayoutUtil.createLabelConstraints(4));
     add(myCommandLineTextField, LayoutUtil.createFieldConstraints(5));
   }
 

@@ -6,8 +6,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.common.LayoutUtil;
@@ -26,7 +24,6 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
   @NotNull
   public JPanel createEditor() {
     myMpsStartupSettings = myMpsSettings.createEditor();
-    myMpsStartupSettings.setBorder(new CompoundBorder(new TitledBorder("New MPS instance settings"), new EmptyBorder(3, 5, 3, 5)));
     JPanel plugins = myPluginsSettings.createEditor();
     plugins.setBorder(new EmptyBorder(5, 0, 0, 0));
 
