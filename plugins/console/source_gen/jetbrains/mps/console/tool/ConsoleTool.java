@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.ide.PasteProvider;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -58,7 +59,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.ide.PasteProvider;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.DataContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -68,7 +68,6 @@ import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import java.util.ArrayList;
@@ -80,6 +79,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 @State(name = "ConsoleHistory", storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
 )
@@ -144,9 +145,8 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               return myCommandFileEditor;
             }
             if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
-              return new ConsoleTool.MyPasteProvider();
+              return new ConsoleTool.MyPasteProvider((PasteProvider) super.getData(key));
             }
-
             return super.getData(key);
           }
         };
@@ -494,8 +494,16 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   private class MyPasteProvider implements PasteProvider {
 
+    private PasteProvider myDefaultPasteProvider;
 
-    public void performPaste(@NotNull DataContext context) {
+
+    public MyPasteProvider(PasteProvider defaultPasteProvider) {
+      myDefaultPasteProvider = defaultPasteProvider;
+    }
+
+
+
+    public void performPaste(@NotNull final DataContext context) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SNodeReference pastingNodeReference = null;
@@ -510,26 +518,21 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           } catch (IOException ignored) {
           }
           EditorCell currentCell = myCommandEditor.getSelectedCell();
-          if (pastingNodeReference != null && currentCell != null) {
-            SNode referenceTarget = pastingNodeReference.resolve(MPSModuleRepository.getInstance());
-            if (referenceTarget != null) {
-              SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.InsertedNodeReference", null);
-              SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
-              NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
-              paster.paste(currentCell);
-            }
+          SNode referenceTarget = check_xg3v07_a0d0a0a5kc(pastingNodeReference);
+          if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f26(check_xg3v07_a0a0e0a0a5kc(pastingNodeReference), myModel))) {
+            SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.InsertedNodeReference", null);
+            SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
+            NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
+            paster.paste(currentCell);
+          } else {
+            myDefaultPasteProvider.performPaste(context);
           }
         }
       });
     }
 
-    private String role() {
-      return check_xg3v07_a0a2kc(myCommandEditor.getSelectedCell());
-    }
-
     public boolean isPastePossible(@NotNull DataContext context) {
-      // todo: detect if expression 
-      return role() != null;
+      return true;
     }
 
     public boolean isPasteEnabled(@NotNull DataContext context) {
@@ -617,9 +620,23 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return quotedNode_1;
   }
 
-  private static String check_xg3v07_a0a2kc(EditorCell checkedDotOperand) {
+  private static SNode check_xg3v07_a0d0a0a5kc(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getRole();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+    }
+    return null;
+  }
+
+  private static boolean check_xg3v07_a0a4a0a0f26(SModelReference checkedDotOperand, SModel myModel) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.equals(myModel.getReference());
+    }
+    return false;
+  }
+
+  private static SModelReference check_xg3v07_a0a0e0a0a5kc(SNodeReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelReference();
     }
     return null;
   }
