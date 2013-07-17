@@ -80,11 +80,11 @@
       <fileset dir="${mps_home}">
         <include name="MPSPlugin/**/*.java" />
         <include name="core/**/*.java" />
-        <include name="languages/**/*.java" />
         <include name="plugins/**/*.java" />
         <include name="workbench/**/*.java" />
         <include name="testbench/**/*.java" />
         <exclude name="**/sandbox/**" />
+        <exclude name="**/languages/**" />
       </fileset>
       <regexpmapper from="(.*)(/|\\)(src|sources|source|source_gen|source-api)(/|\\)(.*)" to="\5" />
     </copy>
