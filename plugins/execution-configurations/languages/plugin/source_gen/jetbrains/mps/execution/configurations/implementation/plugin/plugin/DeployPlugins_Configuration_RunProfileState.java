@@ -22,7 +22,6 @@ import jetbrains.mps.ant.execution.Ant_Command;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import java.io.File;
-import org.apache.log4j.Priority;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.JDOMException;
@@ -35,8 +34,6 @@ import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.execution.executors.DefaultRunExecutor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeployPlugins_Configuration_RunProfileState implements RunProfileState {
   @NotNull
@@ -93,9 +90,6 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
               for (File pluginDir : artifacts.listFiles()) {
                 File pluginXml = new File(new File(pluginDir, "META-INF"), "plugin.xml");
                 if (!(pluginXml.exists())) {
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
-                    LOG.error("Can not find plugin.xml for deployed plugin by path " + pluginXml.getAbsolutePath());
-                  }
                   continue;
                 }
                 try {
@@ -145,6 +139,4 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
     }
     return false;
   }
-
-  protected static Logger LOG = LogManager.getLogger(DeployPlugins_Configuration_RunProfileState.class);
 }
