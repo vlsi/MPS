@@ -17989,96 +17989,104 @@
     <unitInfo nodeId="6624237184121136115" fileName="check_AnnotationInstanceHasAllValues_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AnnotationInstanceHasAllValues_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6654001062452780370">
-    <nodeInfo nodeId="3300216939609202000" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="39" endLine="30" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3300216939609202077" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="37" endLine="34" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3300216939609201948" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="39" endLine="38" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4579166930940319793" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="41" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3300216939609202153" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="39" endLine="44" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3300216939609202608" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3300216939609202520" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="49" startPosition="39" endLine="50" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="53" startPosition="7" endLine="54" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="54" startPosition="60" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="55" startPosition="56" endLine="56" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="61" startPosition="46" endLine="62" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="66" startPosition="5" endLine="67" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="67" startPosition="130" endLine="68" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="30" endLine="73" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckVariableDoubling_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="3300216939609201994" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3300216939609202071" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3300216939609201946" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3300216939609202149" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3300216939609202516" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="65" startPosition="68" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="76" startPosition="71" endLine="80" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3300216939609202463" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="152" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="52" startPosition="9" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_6gv83m_a0a0a0a0a0a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="3300216939609202475" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3300216939609170041" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="27" startPosition="137" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="24" startPosition="52" endLine="24" endPosition="52" />
-    <scopeInfo nodeId="3300216939609201995" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="39" endLine="30" endPosition="108" />
-    <scopeInfo nodeId="3300216939609202072" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="37" endLine="34" endPosition="100" />
-    <scopeInfo nodeId="3300216939609201947" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="39" endLine="38" endPosition="148" />
-    <scopeInfo nodeId="3300216939609202150" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="39" endLine="44" endPosition="130" />
-    <scopeInfo nodeId="3300216939609202517" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="49" startPosition="39" endLine="50" endPosition="210" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="61" startPosition="46" endLine="62" endPosition="75" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="30" endLine="73" endPosition="17" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="66" startPosition="5" endLine="68" endPosition="45">
+    <nodeInfo nodeId="893319872200366914" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="137" endLine="29" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3300216939609170041" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="211" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3300216939609202000" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="41" endLine="34" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3300216939609202077" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="39" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3300216939609201948" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="41" endLine="42" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="893319872200467865" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="45" startPosition="12" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4579166930940319793" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="47" startPosition="5" endLine="48" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3300216939609202153" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="50" startPosition="39" endLine="51" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3300216939609202608" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="53" startPosition="7" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3300216939609202520" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="56" startPosition="39" endLine="57" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="60" startPosition="7" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="61" startPosition="60" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="62" startPosition="56" endLine="63" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="68" startPosition="46" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="73" startPosition="5" endLine="74" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="74" startPosition="130" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="79" startPosition="30" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckVariableDoubling_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="893319872200467860" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="45" startPosition="10" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3300216939609201994" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3300216939609202071" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3300216939609201946" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3300216939609202149" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3300216939609202516" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="68" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="83" startPosition="73" endLine="87" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3300216939609202463" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="48" startPosition="152" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="59" startPosition="9" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_6gv83m_a0a0a0a0a0a0a2a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="3300216939609202475" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="893319872200485656" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="31" startPosition="33" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="893319872200464222" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="30" startPosition="37" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="25" startPosition="52" endLine="25" endPosition="52" />
+    <scopeInfo nodeId="3300216939609201995" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="41" endLine="34" endPosition="110" />
+    <scopeInfo nodeId="3300216939609202072" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="39" endLine="38" endPosition="102" />
+    <scopeInfo nodeId="3300216939609201947" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="41" endLine="42" endPosition="152" />
+    <scopeInfo nodeId="893319872200467861" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="45" startPosition="12" endLine="46" endPosition="49" />
+    <scopeInfo nodeId="3300216939609202150" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="50" startPosition="39" endLine="51" endPosition="130" />
+    <scopeInfo nodeId="3300216939609202517" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="56" startPosition="39" endLine="57" endPosition="210" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="68" startPosition="46" endLine="69" endPosition="75" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="79" startPosition="30" endLine="80" endPosition="17" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="73" startPosition="5" endLine="75" endPosition="45">
       <varInfo nodeId="6654001062452780370" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="3300216939609201994" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="3300216939609201994" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="3300216939609201994" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3300216939609202071" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="3300216939609202071" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="3300216939609202071" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3300216939609201946" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="3300216939609201946" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="3300216939609201946" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3300216939609202149" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="3300216939609202149" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="3300216939609202149" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3300216939609202516" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3300216939609202516" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3300216939609202516" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="53" startPosition="7" endLine="56" endPosition="347">
+    <scopeInfo nodeId="4164094338984214928" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="60" startPosition="7" endLine="63" endPosition="347">
       <varInfo nodeId="4164094338984214928" varName="_reporter_2309309498" />
       <varInfo nodeId="4164094338984214928" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="65" startPosition="68" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="76" startPosition="71" endLine="80" endPosition="6" />
-    <scopeInfo nodeId="3300216939609202476" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="52" startPosition="9" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="68" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="83" startPosition="73" endLine="87" endPosition="6" />
+    <scopeInfo nodeId="3300216939609202476" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="59" startPosition="9" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="72" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="6654001062452780370" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="3300216939609201949" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="3300216939609201949" varName="a" />
       <varInfo nodeId="3300216939609201949" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6654001062452780371" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="27" startPosition="137" endLine="58" endPosition="5">
+    <scopeInfo nodeId="893319872200464225" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="31" startPosition="33" endLine="44" endPosition="9" />
+    <scopeInfo nodeId="6654001062452780371" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="137" endLine="65" endPosition="5">
       <varInfo nodeId="4579166930940319794" varName="nearestMethod" />
       <varInfo nodeId="3300216939609202464" varName="variablesFromCurrentMethod" />
       <varInfo nodeId="3300216939609170042" varName="variablesInScope" />
+      <varInfo nodeId="893319872200366915" varName="variablesScope" />
     </scopeInfo>
-    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6654001062452780370" varName="localVariableDeclaration" />
       <varInfo nodeId="6654001062452780370" varName="status" />
       <varInfo nodeId="6654001062452780370" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="3300216939609201994" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="28" startPosition="342" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$1" />
-    <unitInfo nodeId="3300216939609202071" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="32" startPosition="18" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$2" />
-    <unitInfo nodeId="3300216939609201946" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="36" startPosition="17" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$3" />
-    <unitInfo nodeId="3300216939609202149" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="42" startPosition="99" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$4" />
-    <unitInfo nodeId="3300216939609202516" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="48" startPosition="66" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$5" />
-    <unitInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" />
+    <unitInfo nodeId="3300216939609201994" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="32" startPosition="159" endLine="36" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$1" />
+    <unitInfo nodeId="3300216939609202071" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="36" startPosition="20" endLine="40" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$2" />
+    <unitInfo nodeId="3300216939609201946" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="40" startPosition="19" endLine="44" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$3" />
+    <unitInfo nodeId="3300216939609202149" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="49" startPosition="99" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$4" />
+    <unitInfo nodeId="3300216939609202516" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="55" startPosition="66" endLine="59" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule$5" />
+    <unitInfo nodeId="6654001062452780370" fileName="CheckVariableDoubling_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6658278290515545914">
     <nodeInfo nodeId="6658278290515558277" fileName="typeof_AsExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
