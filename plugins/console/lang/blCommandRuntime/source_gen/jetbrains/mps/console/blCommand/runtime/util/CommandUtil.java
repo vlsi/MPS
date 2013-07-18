@@ -135,7 +135,8 @@ public class CommandUtil {
 
 
   public static Collection<SReference> usages(SearchScope scope, SNode node) {
-    return FindUsagesManager.getInstance().findUsages(scope, Collections.<SNode>singleton(node), new EmptyProgressMonitor());
+    Collection<SReference> result = FindUsagesManager.getInstance().findUsages(scope, Collections.<SNode>singleton(node), new EmptyProgressMonitor());
+    return result;
   }
 
 

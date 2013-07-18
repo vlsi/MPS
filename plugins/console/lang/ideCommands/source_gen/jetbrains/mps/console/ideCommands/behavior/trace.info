@@ -16,54 +16,66 @@
   <unitInfo fileName="TestActionCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_BehaviorDescriptor" />
   <unitInfo fileName="UnloadModelsCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2087237500458009230">
-    <nodeInfo nodeId="2087237500458009246" fileName="ShowBrokenReferences_Behavior.java" startLine="26" startPosition="25" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5207260697411630211" fileName="ShowBrokenReferences_Behavior.java" startLine="27" startPosition="23" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5191068651950664617" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="59" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5191068651950664626" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="48" endLine="35" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2087237500458009264" fileName="ShowBrokenReferences_Behavior.java" startLine="38" startPosition="84" endLine="39" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458009273" fileName="ShowBrokenReferences_Behavior.java" startLine="39" startPosition="74" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458009277" fileName="ShowBrokenReferences_Behavior.java" startLine="40" startPosition="32" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="783234604506122156" fileName="ShowBrokenReferences_Behavior.java" startLine="41" startPosition="65" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="783234604506124454" fileName="ShowBrokenReferences_Behavior.java" startLine="42" startPosition="32" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5191068651950664615" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5191068651950664624" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
-    <nodeInfo nodeId="2087237500458009260" fileName="ShowBrokenReferences_Behavior.java" startLine="37" startPosition="28" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2087237500458009250" fileName="ShowBrokenReferences_Behavior.java" startLine="28" startPosition="0" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2087237500458009244" fileName="ShowBrokenReferences_Behavior.java" startLine="26" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2087237500458009243" fileName="ShowBrokenReferences_Behavior.java" startLine="24" startPosition="157" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="24" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
-    <scopeInfo nodeId="2087237500458009232" fileName="ShowBrokenReferences_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="5191068651950664616" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="59" endLine="31" endPosition="53" />
-    <scopeInfo nodeId="5191068651950664625" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="48" endLine="35" endPosition="88" />
-    <scopeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
+    <nodeInfo nodeId="2087237500458009246" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="25" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5207260697411630211" fileName="ShowBrokenReferences_Behavior.java" startLine="31" startPosition="23" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5191068651950664617" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="59" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5191068651950664626" fileName="ShowBrokenReferences_Behavior.java" startLine="38" startPosition="48" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="879099975775159033" fileName="ShowBrokenReferences_Behavior.java" startLine="41" startPosition="28" endLine="42" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458009264" fileName="ShowBrokenReferences_Behavior.java" startLine="43" startPosition="84" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458009273" fileName="ShowBrokenReferences_Behavior.java" startLine="44" startPosition="74" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458009277" fileName="ShowBrokenReferences_Behavior.java" startLine="45" startPosition="32" endLine="46" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="879099975775241082" fileName="ShowBrokenReferences_Behavior.java" startLine="46" startPosition="65" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="879099975775446935" fileName="ShowBrokenReferences_Behavior.java" startLine="47" startPosition="55" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3228268613620327610" fileName="ShowBrokenReferences_Behavior.java" startLine="50" startPosition="34" endLine="51" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="783234604506122156" fileName="ShowBrokenReferences_Behavior.java" startLine="53" startPosition="13" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="783234604506124454" fileName="ShowBrokenReferences_Behavior.java" startLine="54" startPosition="32" endLine="55" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5191068651950664615" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5191068651950664624" fileName="ShowBrokenReferences_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
+    <nodeInfo nodeId="879099975774974850" fileName="ShowBrokenReferences_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="879099975774838382" fileName="ShowBrokenReferences_Behavior.java" startLine="48" startPosition="32" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458009250" fileName="ShowBrokenReferences_Behavior.java" startLine="32" startPosition="0" endLine="41" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458009260" fileName="ShowBrokenReferences_Behavior.java" startLine="42" startPosition="86" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2087237500458009244" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2087237500458009243" fileName="ShowBrokenReferences_Behavior.java" startLine="28" startPosition="157" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="28" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
+    <scopeInfo nodeId="2087237500458009232" fileName="ShowBrokenReferences_Behavior.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
+    <scopeInfo nodeId="5191068651950664616" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="59" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="5191068651950664625" fileName="ShowBrokenReferences_Behavior.java" startLine="38" startPosition="48" endLine="39" endPosition="88" />
+    <scopeInfo nodeId="879099975774974852" fileName="ShowBrokenReferences_Behavior.java" startLine="50" startPosition="34" endLine="51" endPosition="140" />
+    <scopeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="2087237500458009230" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5191068651950664615" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="5191068651950664615" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5191068651950664615" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5191068651950664624" fileName="ShowBrokenReferences_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="5191068651950664624" fileName="ShowBrokenReferences_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5191068651950664624" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458009263" fileName="ShowBrokenReferences_Behavior.java" startLine="38" startPosition="84" endLine="43" endPosition="32" />
-    <scopeInfo nodeId="2087237500458009260" fileName="ShowBrokenReferences_Behavior.java" startLine="37" startPosition="28" endLine="44" endPosition="9">
+    <scopeInfo nodeId="879099975774974850" fileName="ShowBrokenReferences_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="2087237500458009263" fileName="ShowBrokenReferences_Behavior.java" startLine="43" startPosition="84" endLine="55" endPosition="32">
+      <varInfo nodeId="879099975775241085" varName="targetNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2087237500458009260" fileName="ShowBrokenReferences_Behavior.java" startLine="42" startPosition="86" endLine="56" endPosition="9">
       <varInfo nodeId="2087237500458009261" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458009245" fileName="ShowBrokenReferences_Behavior.java" startLine="26" startPosition="25" endLine="44" endPosition="9">
+    <scopeInfo nodeId="2087237500458009245" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="25" endLine="56" endPosition="9">
       <varInfo nodeId="2087237500458009251" varName="brokenReferences" />
+      <varInfo nodeId="879099975775159034" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458009244" fileName="ShowBrokenReferences_Behavior.java" startLine="26" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="2087237500458009242" fileName="ShowBrokenReferences_Behavior.java" startLine="24" startPosition="157" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="24" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="2087237500458009244" fileName="ShowBrokenReferences_Behavior.java" startLine="30" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2087237500458009242" fileName="ShowBrokenReferences_Behavior.java" startLine="28" startPosition="157" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="28" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="2087237500458009236" varName="c" />
       <varInfo nodeId="2087237500458009240" varName="callback" />
       <varInfo nodeId="2087237500458009238" varName="console" />
       <varInfo nodeId="2087237500458009230" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5191068651950664615" fileName="ShowBrokenReferences_Behavior.java" startLine="29" startPosition="275" endLine="33" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$2" />
-    <unitInfo nodeId="5191068651950664624" fileName="ShowBrokenReferences_Behavior.java" startLine="33" startPosition="21" endLine="37" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$2" />
-    <unitInfo nodeId="2087237500458009244" fileName="ShowBrokenReferences_Behavior.java" startLine="25" startPosition="45" endLine="46" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$1" />
-    <unitInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="20" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior" />
+    <unitInfo nodeId="5191068651950664615" fileName="ShowBrokenReferences_Behavior.java" startLine="33" startPosition="275" endLine="37" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$2" />
+    <unitInfo nodeId="5191068651950664624" fileName="ShowBrokenReferences_Behavior.java" startLine="37" startPosition="21" endLine="41" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$2" />
+    <unitInfo nodeId="879099975774974850" fileName="ShowBrokenReferences_Behavior.java" startLine="49" startPosition="61" endLine="53" endPosition="11" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$2" />
+    <unitInfo nodeId="2087237500458009244" fileName="ShowBrokenReferences_Behavior.java" startLine="29" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior$1" />
+    <unitInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="24" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2087237500458473183">
     <nodeInfo nodeId="2087237500458561738" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="21" startPosition="130" endLine="22" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
