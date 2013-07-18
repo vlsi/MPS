@@ -28,6 +28,7 @@ import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;
@@ -40,7 +41,7 @@ public class MigrationAssistant extends AbstractProjectComponent {
 
   private final MPSProjectMigrationComponent myMigrationState;
 
-  protected MigrationAssistant(Project project, MPSProjectMigrationComponent migrationState) {
+  protected MigrationAssistant(Project project, MPSProjectMigrationComponent migrationState, ProjectLibraryManager projectLibraryManager) {
     super(project);
     myMigrationState = migrationState;
   }
