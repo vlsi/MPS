@@ -28,6 +28,8 @@ import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -147,7 +149,36 @@ public class TypesUtil {
     return match;
   }
 
-  @Deprecated
+  public static boolean matchExpandingJoinAndMeet(SNode left, SNode right, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
+    if (match(left, right, matchingPairs)) return true;
+
+    if (LatticeUtil.isJoin(left)) {
+      for (SNode arg : LatticeUtil.getJoinArguments(left)) {
+        if (match(arg, right, matchingPairs)) return true;
+      }
+    }
+    if (LatticeUtil.isMeet(left)) {
+      for (SNode arg : LatticeUtil.getMeetArguments(left)) {
+        if (!match(arg, right, matchingPairs)) return false;
+      }
+      return true;
+    }
+    if (LatticeUtil.isJoin(right)) {
+      for (SNode arg : LatticeUtil.getJoinArguments(right)) {
+        if (match(left, arg, matchingPairs)) return true;
+      }
+    }
+    if (LatticeUtil.isMeet(right)) {
+      for (SNode arg : LatticeUtil.getMeetArguments(right)) {
+        if (!match(left, arg, matchingPairs)) return false;
+      }
+      return true;
+    }
+
+    return false;
+  }
+
+    @Deprecated
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
     THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
     boolean match = match(left, right, matchingPairs);

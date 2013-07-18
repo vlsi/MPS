@@ -22,7 +22,6 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -143,7 +142,7 @@ public class Equations {
       return true;
     }
     THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
-    boolean match = TypesUtil.match(left, right, matchingPairs);
+    boolean match = TypesUtil.matchExpandingJoinAndMeet(left, right, matchingPairs);
     if (match) {
       addEquations(matchingPairs, info);
     }
