@@ -19,6 +19,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -27,6 +28,8 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CommandUtil {
   public static Iterable<SNode> allNodes(SearchScope scope) {
@@ -72,7 +75,13 @@ public class CommandUtil {
 
 
   public static void show(Project p, SearchResults results) {
-    ProjectHelper.toIdeaProject(p).getComponent(UsagesViewTool.class).show(results);
+    try {
+      ProjectHelper.toIdeaProject(p).getComponent(UsagesViewTool.class).show(results, "No results to show");
+    } catch (Exception e) {
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("Exception in showing custom console result", e);
+      }
+    }
   }
 
 
@@ -138,4 +147,5 @@ public class CommandUtil {
   }
 
 
+  protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
 }

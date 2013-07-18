@@ -140,6 +140,11 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     showResults(null, null, results, true, true, false, "");
   }
 
+  public void show(SearchResults results, final String notFoundMsg) {
+    ThreadUtils.assertEDT();
+    showResults(null, null, results, true, true, false, notFoundMsg);
+  }
+
   private void showResults(final IResultProvider provider, final SearchQuery query, final SearchResults searchResults, final boolean showOne,
       final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
     int resCount = searchResults.getSearchResults().size();
