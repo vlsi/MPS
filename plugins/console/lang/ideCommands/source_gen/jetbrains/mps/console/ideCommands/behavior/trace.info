@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="GlobalStatisticTarget_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
   <unitInfo fileName="INodeSetReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_BehaviorDescriptor" />
   <unitInfo fileName="IStatisticsTarget_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
+  <unitInfo fileName="ModelReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor" />
   <unitInfo fileName="ModelStatCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_BehaviorDescriptor" />
   <unitInfo fileName="ModelStatisticsTarget_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" />
-  <unitInfo fileName="NodeStatisticsTarget_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.NodeStatisticsTarget_BehaviorDescriptor" />
+  <unitInfo fileName="NodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" />
   <unitInfo fileName="ProjectStatisticsTarget_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
   <unitInfo fileName="RebuildProjectCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
   <unitInfo fileName="ShowBrokenReferences_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
   <unitInfo fileName="StatCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
+  <unitInfo fileName="SubtreeStatisticsTarget_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" />
   <unitInfo fileName="TestActionCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_BehaviorDescriptor" />
   <unitInfo fileName="UnloadModelsCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2087237500458009230">
@@ -64,48 +66,48 @@
     <unitInfo nodeId="2087237500458009230" fileName="ShowBrokenReferences_Behavior.java" startLine="20" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2087237500458473183">
-    <nodeInfo nodeId="2087237500458561738" fileName="NodeStatisticsTarget_Behavior.java" startLine="21" startPosition="130" endLine="22" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2087237500458792365" fileName="NodeStatisticsTarget_Behavior.java" startLine="22" startPosition="209" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2087237500458509014" fileName="NodeStatisticsTarget_Behavior.java" startLine="23" startPosition="99" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2087237500458509018" fileName="NodeStatisticsTarget_Behavior.java" startLine="24" startPosition="23" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2087237500458509026" fileName="NodeStatisticsTarget_Behavior.java" startLine="26" startPosition="33" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458509035" fileName="NodeStatisticsTarget_Behavior.java" startLine="27" startPosition="75" endLine="28" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458509046" fileName="NodeStatisticsTarget_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2087237500458509069" fileName="NodeStatisticsTarget_Behavior.java" startLine="30" startPosition="113" endLine="31" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458509077" fileName="NodeStatisticsTarget_Behavior.java" startLine="31" startPosition="128" endLine="32" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458509084" fileName="NodeStatisticsTarget_Behavior.java" startLine="32" startPosition="104" endLine="33" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2087237500458509091" fileName="NodeStatisticsTarget_Behavior.java" startLine="33" startPosition="104" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2087237500458509092" fileName="NodeStatisticsTarget_Behavior.java" startLine="34" startPosition="0" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5207260697411842270" fileName="NodeStatisticsTarget_Behavior.java" startLine="38" startPosition="106" endLine="39" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="2087237500458509022" fileName="NodeStatisticsTarget_Behavior.java" startLine="25" startPosition="23" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="21" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="2087237500458473348" fileName="NodeStatisticsTarget_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="5207260697411840016" fileName="NodeStatisticsTarget_Behavior.java" startLine="38" startPosition="106" endLine="39" endPosition="124" />
-    <scopeInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="2087237500458561738" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="21" startPosition="130" endLine="22" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458792365" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="22" startPosition="209" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458509014" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="23" startPosition="99" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458509018" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="24" startPosition="23" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458509026" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="26" startPosition="33" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458509035" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="27" startPosition="75" endLine="28" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458509046" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2087237500458509069" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="30" startPosition="113" endLine="31" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458509077" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="31" startPosition="128" endLine="32" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458509084" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="32" startPosition="104" endLine="33" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2087237500458509091" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="33" startPosition="104" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2087237500458509092" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="34" startPosition="0" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5207260697411842270" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="38" startPosition="106" endLine="39" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="2087237500458509022" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="25" startPosition="23" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="21" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="2087237500458473348" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="5207260697411840016" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="38" startPosition="106" endLine="39" endPosition="124" />
+    <scopeInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="2087237500458473183" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458509025" fileName="NodeStatisticsTarget_Behavior.java" startLine="26" startPosition="33" endLine="28" endPosition="91" />
-    <scopeInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="2087237500458509025" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="26" startPosition="33" endLine="28" endPosition="91" />
+    <scopeInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1915462833240403134" varName="context" />
       <varInfo nodeId="2087237500458473183" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458509022" fileName="NodeStatisticsTarget_Behavior.java" startLine="25" startPosition="23" endLine="29" endPosition="5">
+    <scopeInfo nodeId="2087237500458509022" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="25" startPosition="23" endLine="29" endPosition="5">
       <varInfo nodeId="2087237500458509023" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458474345" fileName="NodeStatisticsTarget_Behavior.java" startLine="21" startPosition="130" endLine="35" endPosition="18">
+    <scopeInfo nodeId="2087237500458474345" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="21" startPosition="130" endLine="35" endPosition="18">
       <varInfo nodeId="2087237500458509019" varName="properties" />
       <varInfo nodeId="2087237500458509015" varName="references" />
       <varInfo nodeId="2087237500458509047" varName="result" />
       <varInfo nodeId="2087237500458792368" varName="subNodes" />
       <varInfo nodeId="2087237500458561741" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="21" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="21" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2087237500458474343" varName="context" />
       <varInfo nodeId="2087237500458473183" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2087237500458473183" fileName="NodeStatisticsTarget_Behavior.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.NodeStatisticsTarget_Behavior" />
+    <unitInfo nodeId="2087237500458473183" fileName="SubtreeStatisticsTarget_Behavior.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5207260697411458160">
     <nodeInfo nodeId="5207260697411458160" fileName="INodeSetReference_Behavior.java" startLine="17" startPosition="103" endLine="18" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
-  public static void nodeFactory_NodeSetup_NodeStatisticsTarget_2087237500476328252(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "target", "jetbrains.mps.lang.smodel.structure.NodeRefExpression");
+  public static void nodeFactory_NodeSetup_SubtreeStatisticsTarget_2087237500476328252(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "target", "jetbrains.mps.console.ideCommands.structure.NodeReference");
   }
 }
