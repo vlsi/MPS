@@ -5,7 +5,7 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 
-public class NodeWithClosure_Behavior {
+public class INodeWithClosure_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -13,11 +13,11 @@ public class NodeWithClosure_Behavior {
     ClosureHoldingNodeUtil.getInstance().executeClosure(thisNode);
   }
 
-  public static boolean call_isAlive_6698258751442247997(SNode thisNode) {
+  public static boolean call_isAlive_497034489490439347(SNode thisNode) {
     return ClosureHoldingNodeUtil.getInstance().getClosure(thisNode) != null;
   }
 
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return NodeWithClosure_Behavior.call_isAlive_6698258751442247997(thisNode);
+    return INodeWithClosure_Behavior.call_isAlive_497034489490439347(thisNode);
   }
 }

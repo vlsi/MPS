@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class ActionHolder_Behavior {
+public class IActionHolder_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -23,11 +23,11 @@ public class ActionHolder_Behavior {
 
   @Deprecated
   public static void callSuper_execute_8517397753922085153(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.ActionHolder"), callerConceptFqName, "virtual_execute_8517397753922085153", new Class[]{SNode.class}, new Object[]{});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.IActionHolder"), callerConceptFqName, "virtual_execute_8517397753922085153", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static boolean callSuper_canExecute_3282455643657932881(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.ActionHolder"), callerConceptFqName, "virtual_canExecute_3282455643657932881", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.IActionHolder"), callerConceptFqName, "virtual_canExecute_3282455643657932881", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -66,8 +66,9 @@
     <classNode dependClassName="jetbrains.mps.console.base.editor.CommandResult_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.History_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.InterpretedCommand_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.NodeReferenceResultPart_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.NodeResultPart_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.NodeWithClosure_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.base.editor.NodeWithClosureResultPart_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.TextResultPart_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
@@ -98,16 +99,17 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.NodeResultPart_Editor" file="NodeResultPart_Editor.java">
+  <dependency className="jetbrains.mps.console.base.editor.NodeReferenceResultPart_Editor" file="NodeReferenceResultPart_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Property" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
@@ -117,10 +119,22 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.NodeWithClosure_Editor" file="NodeWithClosure_Editor.java">
+  <dependency className="jetbrains.mps.console.base.editor.NodeResultPart_Editor" file="NodeResultPart_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.base.editor.NodeWithClosureResultPart_Editor" file="NodeWithClosureResultPart_Editor.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeWithClosure_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeWithClosureResultPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />

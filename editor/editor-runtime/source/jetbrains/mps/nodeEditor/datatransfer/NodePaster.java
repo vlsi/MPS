@@ -90,7 +90,8 @@ public class NodePaster {
     SNode firstNode = pasteTargets.get(0);
     String role = firstNode.getRoleInParent();
     for (SNode node : pasteTargets) {
-      if (!node.getRoleInParent().equals(role)) {
+      String role1 = node.getRoleInParent();
+      if (role1 == null || !role1.equals(role)) {
         return false;
       }
     }

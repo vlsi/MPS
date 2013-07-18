@@ -13,6 +13,9 @@
     <property name="name" nameId="tpck.1169194664001" value="ShowRepositoryCommand" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="show repository" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7820875636624659282" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963817777" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ReloadClassesCommand" />
@@ -21,13 +24,16 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963905207" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="RebuildAspectCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="clean and make" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="rebuild aspect" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963905210" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="aspect" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7820875636624653088" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
 </model>
