@@ -14,8 +14,8 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6852607286009511629" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="typeof_PrintNode" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="out" />
+    <property name="name" nameId="tpck.1169194664001" value="typeof_PrintNodeReferenceStatement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6852607286009511893" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="6852607286009512877" nodeInfo="nn">
         <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
@@ -30,8 +30,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6852607286009512262" nodeInfo="nn">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6852607286009511895" resolveInfo="printNodeReferenceStatement" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5510759644748998764" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.6852607286009511530" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7820875636627453049" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.8365379837260461921" />
               </node>
             </node>
           </node>
@@ -443,7 +443,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5510759644748858626" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_PrintNodeStatement" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="out" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5510759644748858627" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="5510759644748858657" nodeInfo="nn">
         <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
@@ -458,8 +458,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5510759644748860186" nodeInfo="nn">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5510759644748858629" resolveInfo="printNodeStatement" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5510759644749005390" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.5510759644748986754" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7820875636627459846" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.8365379837260461921" />
               </node>
             </node>
           </node>

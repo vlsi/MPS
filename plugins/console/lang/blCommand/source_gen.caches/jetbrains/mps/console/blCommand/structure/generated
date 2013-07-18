@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="23n0maycrq91mbtt840l6fx95r5za8w">
+<dependencies version="2" modelHash="-2xjxmh2h5tpci5fkei11hv15h06r0f4">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -23,6 +23,7 @@
     <dep root="752693057586923139" />
     <dep root="752693057587755272" />
     <dep root="7738379549910147341" />
+    <dep root="7820875636626932768" />
     <dep root="8079535492157846728" />
     <dep root="8365379837260459177" />
     <dep root="8483375838963816171" />
@@ -42,7 +43,7 @@
   <source id="5464054275389846505" name="BLCommand" hash="-61oco7i29f4cybfxsq3ijuyx6biaz02">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6852607286009511388" name="PrintNodeReferenceStatement" hash="pwcfq8qhx6qsyum7fdsaz7b4iwzv55">
+  <source id="6852607286009511388" name="PrintNodeReferenceStatement" hash="82x5lo27vwbuknwtikvkeo1cv0894yz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8483375838963816171" name="UsagesExpression" hash="8hm3ikbq0gadv3kmfalk71u1fc9vprs">
@@ -90,13 +91,16 @@
   <source id="752693057587755272" name="ProjectExpression" hash="-2i240y0tmsz4i84wmthqio6qm1os8oy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8365379837260459177" name="PrintStatement" hash="-bod3ipp6h8g6xzkk87fzzn1rkhdgtb8">
+  <source id="8365379837260459177" name="PrintStatement" hash="-4g3glpumpedlyanpbol1nkmfpg9lzld">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8079535492157846728" name="PastedNodeReference" hash="-71h02bigx7p1jvp55a5iz2zws8u8fbx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5510759644748856153" name="PrintNodeStatement" hash="-eilu2a70uxg0x788k0w76so5nfslavn">
+  <source id="5510759644748856153" name="PrintNodeStatement" hash="-1q3ed6m485jib4nhlwknm76i2jr6bz7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7820875636626932768" name="AbstractPrintStatement" hash="-bd62k56o1do732vn2gqdb3iyapyx52d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

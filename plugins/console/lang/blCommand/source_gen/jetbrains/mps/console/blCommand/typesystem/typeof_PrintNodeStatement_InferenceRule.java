@@ -20,7 +20,7 @@ public class typeof_PrintNodeStatement_InferenceRule extends AbstractInferenceRu
   public void applyRule(final SNode printNodeStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printNodeStatement, "node", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printNodeStatement, "object", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "5510759644748858657", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "5510759644748858662", true), (SNode) _quotation_createNode_ttmtky_a0a0b(), true, false, _info_12389875345);
       }

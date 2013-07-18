@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AbstractPrintStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.AbstractPrintStatement_BehaviorDescriptor" />
   <unitInfo fileName="BLCommand_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BLCommand_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="EachLoop_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.EachLoop_BehaviorDescriptor" />
   <unitInfo fileName="IEachIteratable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.IEachIteratable_BehaviorDescriptor" />
   <unitInfo fileName="IShowable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.IShowable_BehaviorDescriptor" />
@@ -13,9 +14,9 @@
   <unitInfo fileName="NodeEachIterable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.NodeEachIterable_BehaviorDescriptor" />
   <unitInfo fileName="NodesShowable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.NodesShowable_BehaviorDescriptor" />
   <unitInfo fileName="PastedNodeReference_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PastedNodeReference_BehaviorDescriptor" />
-  <unitInfo fileName="PrintNodeReferenceStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PrintNodeReferenceStatement_BehaviorDescriptor" />
-  <unitInfo fileName="PrintNodeStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PrintNodeStatement_BehaviorDescriptor" />
-  <unitInfo fileName="PrintStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PrintStatement_BehaviorDescriptor" />
+  <unitInfo fileName="PrintNodeReferenceStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PrintNodeReferenceStatement_BehaviorDescriptor" />
+  <unitInfo fileName="PrintNodeStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PrintNodeStatement_BehaviorDescriptor" />
+  <unitInfo fileName="PrintStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.PrintStatement_BehaviorDescriptor" />
   <unitInfo fileName="ProjectExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ProjectExpression_BehaviorDescriptor" />
   <unitInfo fileName="ReferenceEachIterable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ReferenceEachIterable_BehaviorDescriptor" />
   <unitInfo fileName="RefsShowable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.RefsShowable_BehaviorDescriptor" />

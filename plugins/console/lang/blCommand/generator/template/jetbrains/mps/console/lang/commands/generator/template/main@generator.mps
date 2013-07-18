@@ -60,12 +60,6 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="4417779018064685310" resolveInfo="reduce_PrintNode" />
       </node>
     </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="313482946808709125" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.8483375838963815748" resolveInfo="EachNodeLoop" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="313482946808709126" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="313482946808709018" resolveInfo="reduce_EachNodeLoop" />
-      </node>
-    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1125969196844486002" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.8483375838963816351" resolveInfo="ShowStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1125969196844486003" nodeInfo="nn">
@@ -236,8 +230,8 @@
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4417779018064997384" nodeInfo="sn">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4417779018064997390" nodeInfo="nn">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4417779018064997385" nodeInfo="nn">
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4417779018064997388" nodeInfo="nn">
-                              <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.6852607286009511530" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7820875636627302846" nodeInfo="nn">
+                              <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.8365379837260461921" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4417779018064997389" nodeInfo="nn" />
                           </node>
@@ -1339,8 +1333,8 @@
                         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5510759644749147954" nodeInfo="sn">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5510759644749147960" nodeInfo="nn">
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5510759644749147955" nodeInfo="nn">
-                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5510759644749147958" nodeInfo="nn">
-                                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.5510759644748986754" />
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7820875636627289300" nodeInfo="nn">
+                                <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.8365379837260461921" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5510759644749147959" nodeInfo="nn" />
                             </node>
