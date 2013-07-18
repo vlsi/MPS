@@ -5,7 +5,7 @@ package jetbrains.mps.console.base.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeWithClosureResultPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements CommandResultPart_BehaviorDescriptor, ActionHolder_BehaviorDescriptor {
+public class NodeWithClosureResultPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements CommandResultPart_BehaviorDescriptor, INodeWithClosure_BehaviorDescriptor {
   public NodeWithClosureResultPart_BehaviorDescriptor() {
   }
 

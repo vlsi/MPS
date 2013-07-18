@@ -141,12 +141,12 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1111629987770987235" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6664564541453238855" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8517397753921951830" resolveInfo="ActionHolder" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="497034489490439592" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="497034489490438927" resolveInfo="INodeWithClosure" />
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8517397753921951830" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ActionHolder" />
+    <property name="name" nameId="tpck.1169194664001" value="IActionHolder" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8927119896327927090" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
@@ -160,6 +160,12 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8927119896327927225" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="529843215038987951" resolveInfo="CommandResultPart" />
+    </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="497034489490438927" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="INodeWithClosure" />
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="497034489490438932" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8517397753921951830" resolveInfo="IActionHolder" />
     </node>
   </root>
 </model>

@@ -241,11 +241,14 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8079535492157846730" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3xdn.8079535492157846728" resolveInfo="InsertedNodeReference" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8079535492157846731" nodeInfo="nn">
-      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="8079535492157846732" nodeInfo="nn" />
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8079535492157846733" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="insertedNode" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3xdn.8079535492157846728" resolveInfo="PastedNodeReference" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7820875636622149398" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="pastedNodeRef" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="7820875636622635104" nodeInfo="nn">
+        <property name="color" nameId="tpc2.1186403713874" value="orange" />
+      </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.DrawBorderStyleClassItem" typeId="tpc2.1186414976055" id="7820875636622749859" nodeInfo="nn">
+        <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
     </node>
   </root>

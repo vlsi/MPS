@@ -520,8 +520,9 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           EditorCell currentCell = myCommandEditor.getSelectedCell();
           SNode referenceTarget = check_xg3v07_a0d0a0a5kc(pastingNodeReference);
           if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f26(check_xg3v07_a0a0e0a0a5kc(pastingNodeReference), myModel))) {
-            SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.InsertedNodeReference", null);
+            SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.PastedNodeReference", null);
             SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
+            // todo: set clickable 
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
             paster.paste(currentCell);
           } else {

@@ -4,7 +4,7 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface ActionHolder_BehaviorDescriptor {
+public interface IActionHolder_BehaviorDescriptor {
   public void virtual_execute_8517397753922085153(SNode thisNode);
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode);
 }

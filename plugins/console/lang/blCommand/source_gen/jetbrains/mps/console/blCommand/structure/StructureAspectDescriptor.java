@@ -24,21 +24,21 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.IShowable").interface_().children(new String[]{"items"}, new boolean[]{false}).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InsertedNodeReference").super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("target").create();
-      case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"conceptExpr"}, new boolean[]{false}).alias("instances", "instances in current scope").create();
-      case 7:
+      case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelEachIterable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.blCommand.structure.IEachIteratable").alias("model", "").create();
-      case 8:
+      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelsShowable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.blCommand.structure.IShowable").alias("models", "").create();
-      case 9:
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModuleEachIterable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.blCommand.structure.IEachIteratable").alias("module", "").create();
-      case 10:
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModulesShowable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.blCommand.structure.IShowable").alias("modules", "").create();
-      case 11:
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.NodeEachIterable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.blCommand.structure.IEachIteratable").alias("node", "").create();
-      case 12:
+      case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.NodesShowable").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.blCommand.structure.IShowable").alias("nodes", "").create();
+      case 12:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PastedNodeReference").super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.console.base.structure.INodeWithClosure").references("target").alias("pastedNodeRef", "").create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintNodeReferenceStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"node"}, new boolean[]{false}).alias("printNodeRef", "").create();
       case 14:
@@ -60,5 +60,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.IEachIteratable", "jetbrains.mps.console.blCommand.structure.IShowable", "jetbrains.mps.console.blCommand.structure.InsertedNodeReference", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceStatement", "jetbrains.mps.console.blCommand.structure.PrintNodeStatement", "jetbrains.mps.console.blCommand.structure.PrintStatement", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.EachNodeLoop", "jetbrains.mps.console.blCommand.structure.IEachIteratable", "jetbrains.mps.console.blCommand.structure.IShowable", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PastedNodeReference", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceStatement", "jetbrains.mps.console.blCommand.structure.PrintNodeStatement", "jetbrains.mps.console.blCommand.structure.PrintStatement", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }

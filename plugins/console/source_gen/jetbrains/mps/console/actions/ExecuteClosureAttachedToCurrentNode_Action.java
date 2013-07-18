@@ -31,7 +31,7 @@ public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.ActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
+    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.IActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -61,7 +61,7 @@ public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.console.base.structure.ActionHolder")), "virtual_execute_8517397753922085153", new Object[]{});
+      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.console.base.structure.IActionHolder")), "virtual_execute_8517397753922085153", new Object[]{});
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ExecuteClosureAttachedToCurrentNode", t);
