@@ -166,7 +166,7 @@ public class JUnitConfigEditor extends JPanel {
   private JbRadioButton createComponent_iqjve6_d1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsProject_iqjve6_d1a = component;
-    component.setText("All in Project");
+    component.setText("All in project");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -179,7 +179,7 @@ public class JUnitConfigEditor extends JPanel {
   private JbRadioButton createComponent_iqjve6_e1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsModule_iqjve6_e1a = component;
-    component.setText("All in Module");
+    component.setText("All in module");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -192,7 +192,7 @@ public class JUnitConfigEditor extends JPanel {
   private JbRadioButton createComponent_iqjve6_f1a() {
     JbRadioButton component = new JbRadioButton();
     this.myIsModel_iqjve6_f1a = component;
-    component.setText("All in Model");
+    component.setText("All in model");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {

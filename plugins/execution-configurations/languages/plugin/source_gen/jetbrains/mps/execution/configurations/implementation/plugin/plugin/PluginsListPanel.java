@@ -26,7 +26,7 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
 
 
   public PluginsListPanel() {
-    super("Plugins To Deploy");
+    super("Plugins to deploy");
   }
 
   @Override

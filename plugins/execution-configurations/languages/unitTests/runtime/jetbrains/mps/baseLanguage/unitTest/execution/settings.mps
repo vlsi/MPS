@@ -861,7 +861,7 @@
           <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="6062668769034853037" nodeInfo="ng">
             <link role="attribute" roleId="tphr.1202389328439" targetNodeId="tpht.1202393575288" resolveInfo="text" />
             <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6062668769034853038" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="All in Project" />
+              <property name="value" nameId="tpee.1070475926801" value="All in project" />
             </node>
           </node>
           <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="6062668769034853039" nodeInfo="ng">
@@ -888,7 +888,7 @@
           <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="6062668769034853048" nodeInfo="ng">
             <link role="attribute" roleId="tphr.1202389328439" targetNodeId="tpht.1202393575288" resolveInfo="text" />
             <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6062668769034853049" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="All in Module" />
+              <property name="value" nameId="tpee.1070475926801" value="All in module" />
             </node>
           </node>
           <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="6062668769034853050" nodeInfo="ng">
@@ -915,7 +915,7 @@
           <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="6062668769034853059" nodeInfo="ng">
             <link role="attribute" roleId="tphr.1202389328439" targetNodeId="tpht.1202393575288" resolveInfo="text" />
             <node role="value" roleId="tphr.1202389410534" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6062668769034853060" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="All in Model" />
+              <property name="value" nameId="tpee.1070475926801" value="All in model" />
             </node>
           </node>
           <node role="content" roleId="tphr.1202817142302" type="tphr.AttributeValue" typeId="tphr.1202389314593" id="6062668769034853061" nodeInfo="ng">

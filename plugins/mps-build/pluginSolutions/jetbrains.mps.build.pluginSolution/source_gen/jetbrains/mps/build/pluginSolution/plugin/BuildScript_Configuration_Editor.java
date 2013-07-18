@@ -30,7 +30,7 @@ public class BuildScript_Configuration_Editor extends SettingsEditorEx<BuildScri
     JPanel panel = new JPanel(new GridBagLayout());
 
     myChooser = myNode.createEditor();
-    panel.add(new JLabel("Build Project:"), LayoutUtil.createLabelConstraints(0));
+    panel.add(new JLabel("Build project:"), LayoutUtil.createLabelConstraints(0));
     panel.add(myChooser, LayoutUtil.createFieldConstraints(1));
 
     JPanel settings = mySettings.createEditor();
