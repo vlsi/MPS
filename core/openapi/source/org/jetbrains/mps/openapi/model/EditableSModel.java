@@ -27,6 +27,7 @@ public interface EditableSModel extends SModel {
   /**
    * When owning a write action lock, this method will save the model into the storage.
    * Throws an exception if there were fatal errors during the load phase.
+   * Should only be called when isChanged() == true
    */
   void save();
 
