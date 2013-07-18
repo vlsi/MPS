@@ -34,20 +34,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963815748" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
-    <property name="name" nameId="tpck.1169194664001" value="EachNodeLoop" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="eachNode" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="for each node in current scope" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1153944400369" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="variable" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tp2q.1153944193378" resolveInfo="ForEachVariable" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="752693057587133258" nodeInfo="ig" />
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963816171" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
     <property name="name" nameId="tpck.1169194664001" value="UsagesExpression" />
