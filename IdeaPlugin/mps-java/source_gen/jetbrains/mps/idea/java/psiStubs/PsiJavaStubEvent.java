@@ -4,7 +4,7 @@ package jetbrains.mps.idea.java.psiStubs;
 
 import com.intellij.psi.PsiJavaFile;
 import java.util.Set;
-import jetbrains.mps.idea.java.psi.PsiListener;
+import jetbrains.mps.idea.java.psi.JavaPsiListener;
 
 public abstract class PsiJavaStubEvent {
 
@@ -17,5 +17,5 @@ public abstract class PsiJavaStubEvent {
 
 
 
-  public abstract Set<PsiListener.FSRename> renamed();
+  public abstract Set<JavaPsiListener.FSRename> renamed();
 }

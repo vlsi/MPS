@@ -8,14 +8,16 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -34,34 +36,22 @@ public class ExportScope_Behavior {
     return result;
   }
 
-  public static String getNamespace_2565736246230026649(SNode node) {
-    SModule module = check_ogf5a0_a0a0a(SNodeOperations.getModel(node));
-    if (module instanceof Generator) {
-      module = ((Generator) module).getSourceLanguage();
-    }
-    return check_ogf5a0_a2a0(check_ogf5a0_a0c0a(((AbstractModule) module)));
+  public static boolean call_checkExport_2565736246230031479(SAbstractConcept thisConcept, boolean isConcept, SNode node, String namespace) {
+    SNode exp = ExportScope_Behavior.call_getExportScope_4075196924244445285(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node);
+    return namespace == null || (((exp == null) ?
+      ExportScope_Behavior.call_checkExportDefault_8259195909097980935(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), isConcept, node, namespace) :
+      BehaviorReflection.invokeVirtual(Boolean.TYPE, exp, "virtual_checkExport_2565736246230026584", new Object[]{namespace, node})
+    ));
   }
 
-  public static SNode getExportScope_4075196924244445285(SNode node) {
-    // return effective ExportScope or null 
-    /*
-      return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))) != null);
-        }
-      }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
-    */
-    return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
-  }
-
-  public static boolean checkExportDefault_8259195909097980935(boolean isConcept, SNode node, String namespace) {
+  public static boolean call_checkExportDefault_8259195909097980935(SAbstractConcept thisConcept, boolean isConcept, SNode node, String namespace) {
     /*
       return (isConcept ?
         true :
-        namespace.equals(ExportScope_Behavior.getNamespace_2565736246230026649(node))
+        namespace.equals(ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node))
       );
     */
-    String targetNamespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
+    String targetNamespace = ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node);
     if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {
       return true;
     }
@@ -73,12 +63,24 @@ public class ExportScope_Behavior {
     return !(SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))));
   }
 
-  public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {
-    SNode exp = ExportScope_Behavior.getExportScope_4075196924244445285(node);
-    return namespace == null || (((exp == null) ?
-      ExportScope_Behavior.checkExportDefault_8259195909097980935(isConcept, node, namespace) :
-      BehaviorReflection.invokeVirtual(Boolean.TYPE, exp, "virtual_checkExport_2565736246230026584", new Object[]{namespace, node})
-    ));
+  public static SNode call_getExportScope_4075196924244445285(SAbstractConcept thisConcept, SNode node) {
+    // return effective ExportScope or null 
+    /*
+      return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))) != null);
+        }
+      }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
+    */
+    return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
+  }
+
+  public static String call_getNamespace_2565736246230026649(SAbstractConcept thisConcept, SNode node) {
+    SModule module = check_ogf5a0_a0a0g(SNodeOperations.getModel(node));
+    if (module instanceof Generator) {
+      module = ((Generator) module).getSourceLanguage();
+    }
+    return check_ogf5a0_a2a6(check_ogf5a0_a0c0g(((AbstractModule) module)));
   }
 
   @Deprecated
@@ -91,21 +93,21 @@ public class ExportScope_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", new Class[]{SNode.class, String.class, SNode.class}, new Object[]{sourceNamespace, targetNode});
   }
 
-  private static SModule check_ogf5a0_a0a0a(SModel checkedDotOperand) {
+  private static SModule check_ogf5a0_a0a0g(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static String check_ogf5a0_a2a0(ModuleDescriptor checkedDotOperand) {
+  private static String check_ogf5a0_a2a6(ModuleDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNamespace();
     }
     return null;
   }
 
-  private static ModuleDescriptor check_ogf5a0_a0c0a(AbstractModule checkedDotOperand) {
+  private static ModuleDescriptor check_ogf5a0_a0c0g(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleDescriptor();
     }

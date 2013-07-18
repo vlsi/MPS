@@ -31,6 +31,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptBehavior_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -151,7 +154,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_cuxtnd_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cuxtnd_c1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cuxtnd_d1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_cuxtnd_e1b0(editorContext, node));
+    if (renderingCondition_cuxtnd_a4b1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNodeList_cuxtnd_e1b0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -309,6 +314,10 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_cuxtnd_a4b1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_cuxtnd_c0(EditorContext editorContext, SNode node) {

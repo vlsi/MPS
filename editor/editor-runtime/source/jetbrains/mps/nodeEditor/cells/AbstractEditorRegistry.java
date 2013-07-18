@@ -62,12 +62,7 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
       if (conceptEditor != null) {
         return conceptEditor;
       }
-      String superConceptName = nextConcept.getSuperConcept();
-      if (superConceptName != null && !processedConcepts.contains(superConceptName)) {
-        processedConcepts.add(superConceptName);
-        queue.add(ConceptRegistry.getInstance().getConceptDescriptor(superConceptName));
-      }
-      for (String ancestorName : nextConcept.getAncestorsNames()) {
+      for (String ancestorName : nextConcept.getParentsNames()) {
         if (processedConcepts.contains(ancestorName)) {
           continue;
         }

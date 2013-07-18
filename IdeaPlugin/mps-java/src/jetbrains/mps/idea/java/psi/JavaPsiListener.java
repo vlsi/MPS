@@ -22,8 +22,8 @@ import com.intellij.psi.PsiFileSystemItem;
 /**
  * danilla 11/12/12
  */
-
-public interface PsiListener {
+// Java specificity is not in the signatures but in PsiChangesWatcher
+public interface JavaPsiListener {
 
   void psiChanged(PsiEvent event);
 

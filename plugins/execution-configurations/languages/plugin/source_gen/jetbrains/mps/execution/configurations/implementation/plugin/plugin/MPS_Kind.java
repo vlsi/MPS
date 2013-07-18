@@ -24,6 +24,7 @@ public class MPS_Kind implements ConfigurationType {
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new MPSInstance_Configuration_Factory(this));
+    ListSequence.fromList(result).addElement(new DeployPlugins_Configuration_Factory(this));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }

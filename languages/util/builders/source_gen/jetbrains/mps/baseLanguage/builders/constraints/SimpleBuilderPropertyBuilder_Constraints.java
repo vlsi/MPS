@@ -17,6 +17,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -44,7 +47,7 @@ public class SimpleBuilderPropertyBuilder_Constraints extends BaseConstraintsDes
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode contextBuilder = SNodeOperations.as(Builder_Behavior.getContextBuilder_7057666463730366732(_context.getEnclosingNode()), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
+            SNode contextBuilder = SNodeOperations.as(Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), _context.getEnclosingNode()), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder");
             for (SNode dcl = SLinkOperations.getTarget(contextBuilder, "declaration", false); (dcl != null); dcl = SLinkOperations.getTarget(dcl, "extends", false)) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(dcl, "property", true)));
               for (SNode builders : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {

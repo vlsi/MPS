@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -15,7 +16,7 @@ public class CustomOperatorUsage_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> getVisibleCustomOperators_1141736782992984505(SModel model) {
+  public static List<SNode> call_getVisibleCustomOperators_1141736782992984505(SAbstractConcept thisConcept, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> containers = SModelOperations.getRootsIncludingImported(model, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer");
     for (SNode container : containers) {

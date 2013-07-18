@@ -5,6 +5,9 @@ package jetbrains.mps.lang.test.generator.baseLanguage.template.util;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -17,7 +20,7 @@ public class TestsUtil {
   }
 
   public static String getProjectPath(SModel model, IOperationContext operationContext) {
-    String projectPath = TestInfo_Behavior.getProjectPath_5097124989038916375(model);
+    String projectPath = TestInfo_Behavior.call_getProjectPath_5097124989038916375(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), model);
     if (projectPath != null) {
       return projectPath;
     }
@@ -29,7 +32,7 @@ public class TestsUtil {
   }
 
   public static String getTestBodyClassName(SNode testCase) {
-    return BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}) + "$" + NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))));
   }
 
   private static String check_6yh4up_a0c0b(File checkedDotOperand) {

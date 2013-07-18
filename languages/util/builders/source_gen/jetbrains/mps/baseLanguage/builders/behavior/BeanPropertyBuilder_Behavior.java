@@ -35,7 +35,7 @@ public class BeanPropertyBuilder_Behavior {
     return true;
   }
 
-  public static String getPropertyName_2679357232284040711(String methodName) {
+  public static String call_getPropertyName_2679357232284040711(SAbstractConcept thisConcept, String methodName) {
     String prefix = "set";
     if (methodName == null) {
       return null;

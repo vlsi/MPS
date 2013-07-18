@@ -4,9 +4,13 @@ package jetbrains.mps.execution.common.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -27,7 +31,7 @@ public class IGeneratedToClass_Behavior {
   }
 
   public static String call_getValidClassName_2572811016744662265(SNode thisNode, @NonNls String name) {
-    return IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(name);
+    return IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), name);
   }
 
   public static String call_getGeneratedClassName_946964771156905516(SNode thisNode, String name) {
@@ -45,17 +49,17 @@ public class IGeneratedToClass_Behavior {
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
   }
 
-  public static String replaceProhibitedSymbol_946964771156905390(String name, String symbol) {
+  public static String call_replaceProhibitedSymbol_946964771156905390(SAbstractConcept thisConcept, String name, String symbol) {
     String result = name;
     while (result.contains(symbol)) {
       int index = result.indexOf(symbol);
       result = result.replace(symbol, "");
-      result = IGeneratedToClass_Behavior.makeUpperCase_946964771156905431(result, index);
+      result = IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), result, index);
     }
     return result;
   }
 
-  public static String makeUpperCase_946964771156905431(@NonNls String string, int index) {
+  public static String call_makeUpperCase_946964771156905431(SAbstractConcept thisConcept, @NonNls String string, int index) {
     assert index >= 0 && index < string.length();
     return string.substring(0, index) + string.substring(index, index + 1).toUpperCase() + ((index + 1 < string.length() ?
       string.substring(index + 1) :
@@ -63,14 +67,14 @@ public class IGeneratedToClass_Behavior {
     ));
   }
 
-  public static String getValidClassName_3754131050835940481(@NonNls String name) {
+  public static String call_getValidClassName_3754131050835940481(SAbstractConcept thisConcept, @NonNls String name) {
     // in between 
     name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a9, new _Replacer_tq53pp_a0a0b0j(null, null));
     // in the end 
     name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a3a9, new _Replacer_tq53pp_a0a0d0j(null, null));
     // in the beggining 
     name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a5a9, new _Replacer_tq53pp_a0a0f0j(null, null));
-    return IGeneratedToClass_Behavior.makeUpperCase_946964771156905431(name, 0);
+    return IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), name, 0);
   }
 
   @Deprecated
