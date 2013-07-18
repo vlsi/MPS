@@ -185,7 +185,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     group.add(registerKeyShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
     group.add(registerKeyShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
     group.add(registerKeyShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
-    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1))));
+    registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1)));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
 
     JPanel res = new JPanel(new BorderLayout());
@@ -414,6 +414,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               SLinkOperations.setTarget(myCommandRoot, "command", null, true);
               myCursor = null;
               myNewCommand = null;
+              myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
             }
           }});
         }
