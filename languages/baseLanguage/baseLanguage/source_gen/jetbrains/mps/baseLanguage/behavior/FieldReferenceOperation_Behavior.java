@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -58,7 +60,7 @@ public class FieldReferenceOperation_Behavior {
     if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
       return true;
     }
-    SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(thisNode);
+    SNode classifier = ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), thisNode);
     SNode declarationClassifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
       return false;

@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.behavior.StaticConceptMethodCall_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -36,7 +39,7 @@ public class StaticConceptMethodCall_Constraints extends BaseConstraintsDescript
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getEnclosingNode());
+            return StaticConceptMethodCall_Behavior.call_getClassifiersWithStaticMethods_1213877485028(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall"))), _context.getModel(), operationContext.getScope(), _context.getEnclosingNode());
           }
 
           @Override

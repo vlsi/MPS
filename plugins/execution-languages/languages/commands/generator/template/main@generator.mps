@@ -93,9 +93,13 @@
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="865001690840232894" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="865001690840232895" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="865001690840232896" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="865001690840232897" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282096" resolveInfo="getGetDebuggerMethodName" />
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189700965" nodeInfo="nn">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189700966" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282096" resolveInfo="getGetDebuggerMethodName" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189700967" nodeInfo="nn">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -618,9 +622,13 @@
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="865001690840233097" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="865001690840233098" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="865001690840233099" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="865001690840233100" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282090" resolveInfo="getCreateProcessMethodName" />
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189680150" nodeInfo="nn">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189680151" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282090" resolveInfo="getCreateProcessMethodName" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189680152" nodeInfo="nn">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -669,9 +677,13 @@
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="865001690840233113" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="865001690840233114" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="865001690840233115" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="865001690840233116" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282096" resolveInfo="getGetDebuggerMethodName" />
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189700773" nodeInfo="nn">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189700774" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282096" resolveInfo="getGetDebuggerMethodName" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189700776" nodeInfo="nn">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -855,9 +867,13 @@
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="6226796386650472933" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6226796386650472934" nodeInfo="sn">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6226796386650472935" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="6226796386650472937" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.6226796386650472924" resolveInfo="getGetDebuggerConfidurationMethodName" />
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189677533" nodeInfo="nn">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189677534" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.6226796386650472924" resolveInfo="getGetDebuggerConfidurationMethodName" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189677535" nodeInfo="nn">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -1448,9 +1464,13 @@
                                           </node>
                                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="865001690840233456" nodeInfo="ng">
                                             <property name="propertyName" nameId="tpck.1757699476691236117" value="methodName" />
-                                            <node role="expression" roleId="tp3r.1196350785111" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="865001690840233457" nodeInfo="nn">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282096" resolveInfo="getGetDebuggerMethodName" />
-                                              <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189678781" nodeInfo="nn">
+                                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189678782" nodeInfo="nn">
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282096" resolveInfo="getGetDebuggerMethodName" />
+                                              </node>
+                                              <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189678783" nodeInfo="nn">
+                                                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                                              </node>
                                             </node>
                                           </node>
                                         </node>
@@ -1650,9 +1670,13 @@
               <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="865001690840233529" nodeInfo="nn">
                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="865001690840233530" nodeInfo="sn">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="865001690840233531" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1068580123156" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="865001690840233532" nodeInfo="nn">
-                      <link role="concept" roleId="tp25.1206019820684" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282090" resolveInfo="getCreateProcessMethodName" />
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189678765" nodeInfo="nn">
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189678766" nodeInfo="nn">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mdoc.856705193941282090" resolveInfo="getCreateProcessMethodName" />
+                      </node>
+                      <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189678767" nodeInfo="nn">
+                        <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -272,9 +272,13 @@
                                               <property name="value" nameId="tpee.1070475926801" value="$" />
                                             </node>
                                           </node>
-                                          <node role="rightExpression" roleId="tpee.1081773367579" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="5487985028841906166" nodeInfo="nn">
-                                            <link role="concept" roleId="tp25.1206019820684" targetNodeId="tp5g.1216913645126" resolveInfo="NodesTestCase" />
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp5o.1224602741295" resolveInfo="getTestBodyName" />
+                                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189678721" nodeInfo="nn">
+                                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189678722" nodeInfo="nn">
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp5o.1224602741295" resolveInfo="getTestBodyName" />
+                                            </node>
+                                            <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189678723" nodeInfo="nn">
+                                              <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp5g.1216913645126" resolveInfo="NodesTestCase" />
+                                            </node>
                                           </node>
                                         </node>
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363110601" nodeInfo="nn">

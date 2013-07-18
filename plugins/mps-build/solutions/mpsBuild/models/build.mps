@@ -14190,9 +14190,6 @@
             <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499191" nodeInfo="ng">
               <property name="pattern" nameId="3ior.5248329904288051101" value="core/**/*.java" />
             </node>
-            <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499192" nodeInfo="ng">
-              <property name="pattern" nameId="3ior.5248329904288051101" value="languages/**/*.java" />
-            </node>
             <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="8621428143896499193" nodeInfo="ng">
               <property name="pattern" nameId="3ior.5248329904288051101" value="plugins/**/*.java" />
             </node>
@@ -14204,6 +14201,9 @@
             </node>
             <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="8621428143896499195" nodeInfo="ng">
               <property name="pattern" nameId="3ior.5248329904288051112" value="**/sandbox/**" />
+            </node>
+            <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="5095974365329469402" nodeInfo="ng">
+              <property name="pattern" nameId="3ior.5248329904288051112" value="**/languages/**" />
             </node>
             <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildLayout_CopyRegexMapper" typeId="3ior.3970102152660876447" id="8621428143896499199" nodeInfo="ng">
               <property name="replace" nameId="3ior.3970102152660876449" value="\5" />
@@ -23003,6 +23003,9 @@
           </node>
           <node role="selectors" roleId="3ior.6789562173791401562" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="1392391688313033172" nodeInfo="ng">
             <property name="pattern" nameId="3ior.5248329904288051112" value="ant/docs.zip" />
+          </node>
+          <node role="selectors" roleId="3ior.6789562173791401562" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="5095974365327725920" nodeInfo="ng">
+            <property name="pattern" nameId="3ior.5248329904288051112" value="ant/src/*" />
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="2298500495077071832" nodeInfo="ng">

@@ -32,6 +32,7 @@ import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -389,7 +390,7 @@ public class ClassConcept_Behavior {
     return Classifier_Behavior.call_isInner_521412098689998677(thisNode) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_7405920559687241224", new Object[]{})) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
-  public static SNode getContextClass_8008512149545173402(SNode expr) {
+  public static SNode call_getContextClass_8008512149545173402(SAbstractConcept thisConcept, SNode expr) {
     SNode contextNode = expr;
     SNode parent = SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {

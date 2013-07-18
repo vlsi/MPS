@@ -16,6 +16,9 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -62,7 +65,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(PersistentConfiguration_Behavior.getContextPersistentProperties_946964771156066434(_context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(PersistentConfiguration_Behavior.call_getContextPersistentProperties_946964771156066434(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration"))), _context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, "type", true), _quotation_createNode_lq9qwe_b0a0a0a0a0a0());
               }

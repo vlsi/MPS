@@ -11,6 +11,10 @@ import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -32,11 +36,11 @@ public class ModuleReferenceExpression_Behavior {
 
   @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
-    return ModuleReferenceExpression_Behavior.getVisibleModules_4040588429969394431(scope);
+    return ModuleReferenceExpression_Behavior.call_getVisibleModules_4040588429969394431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"))), scope);
   }
 
   @NotNull
-  public static List<SModule> getVisibleModules_4040588429969394431(IScope scope) {
+  public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept thisConcept, IScope scope) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
     ListSequence.fromList(result).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
     return result;

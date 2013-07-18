@@ -4,6 +4,7 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -27,7 +28,7 @@ public class ConceptConstraints_Behavior {
     SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
   }
 
-  public static SNode getConstraintFunctionBodyUsingInheritance_4960272075650318140(SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
+  public static SNode call_getConstraintFunctionBodyUsingInheritance_4960272075650318140(SAbstractConcept thisConcept, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode concept) {
         return constraintFunctionSpecifier.invoke(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.CONSTRAINTS), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"));
@@ -35,7 +36,7 @@ public class ConceptConstraints_Behavior {
     };
     SNode method = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_computeInHierarchy_4184580446578561998(concept, computePredicate), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
     if (method == null) {
-      return _quotation_createNode_wrxfmp_a0a2a0();
+      return _quotation_createNode_wrxfmp_a0a2a2();
     } else {
       return SLinkOperations.getTarget(method, "body", true);
     }
@@ -61,7 +62,7 @@ public class ConceptConstraints_Behavior {
     BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
   }
 
-  private static SNode _quotation_createNode_wrxfmp_a0a2a0() {
+  private static SNode _quotation_createNode_wrxfmp_a0a2a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

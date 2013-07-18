@@ -12,6 +12,9 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.execution.commands.behavior.CommandDeclaration_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -26,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -65,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840232894(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
+    return CommandDeclaration_Behavior.call_getGetDebuggerMethodName_856705193941282096(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -89,11 +91,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233097(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getCreateProcessMethodName_856705193941282090();
+    return CommandDeclaration_Behavior.call_getCreateProcessMethodName_856705193941282090(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
+    return CommandDeclaration_Behavior.call_getGetDebuggerMethodName_856705193941282096(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233169(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -101,7 +103,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472933(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerConfidurationMethodName_6226796386650472924();
+    return CommandDeclaration_Behavior.call_getGetDebuggerConfidurationMethodName_6226796386650472924(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233227(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -118,7 +120,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233529(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getCreateProcessMethodName_856705193941282090();
+    return CommandDeclaration_Behavior.call_getCreateProcessMethodName_856705193941282090(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandDeclaration"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840233635(final IOperationContext operationContext, final PropertyMacroContext _context) {

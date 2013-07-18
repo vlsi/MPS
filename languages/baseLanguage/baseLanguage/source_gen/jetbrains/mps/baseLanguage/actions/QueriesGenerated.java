@@ -27,6 +27,7 @@ import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
@@ -506,7 +507,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return Classifier_Behavior.getAccessibleMembers_669019847198843527(_context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
+            return Classifier_Behavior.call_getAccessibleMembers_669019847198843527(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
           }
         }.compute();
         if (queryResult != null) {
@@ -521,7 +522,7 @@ public class QueriesGenerated {
                 }
                 SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
+                if (!(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), _context.getParentNode()), "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   while (concept != null && !(Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), concept, "virtual_getThisType_7405920559687254782", new Object[]{}), _context.getParentNode())).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);

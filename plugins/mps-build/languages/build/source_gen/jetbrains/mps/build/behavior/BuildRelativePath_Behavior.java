@@ -7,7 +7,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.MacroHelper;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -47,18 +51,18 @@ public class BuildRelativePath_Behavior {
   }
 
   public static SNode virtual_getParent_8654221991637145399(SNode thisNode) {
-    if (BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(thisNode, "compositePart", true))) {
+    if (BuildRelativePath_Behavior.call_isEmptyTail_8654221991637157686(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(thisNode, "compositePart", true))) {
       return null;
     }
     SNode copy = SNodeOperations.copyNode(thisNode);
     SNode cp = SLinkOperations.getTarget(copy, "compositePart", true);
-    if (BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true))) {
+    if (BuildRelativePath_Behavior.call_isEmptyTail_8654221991637157686(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true))) {
       SLinkOperations.setTarget(copy, "compositePart", null, true);
     } else {
       SNode prev = cp;
-      cp = BuildRelativePath_Behavior.next_8654221991637156927(cp);
+      cp = BuildRelativePath_Behavior.call_next_8654221991637156927(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), cp);
       while (cp != null) {
-        SNode next = BuildRelativePath_Behavior.next_8654221991637156927(cp);
+        SNode next = BuildRelativePath_Behavior.call_next_8654221991637156927(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), cp);
         if (next != null) {
           prev = cp;
           cp = next;
@@ -71,18 +75,18 @@ public class BuildRelativePath_Behavior {
     return copy;
   }
 
-  public static SNode next_8654221991637156927(SNode cp) {
+  public static boolean call_isEmptyTail_8654221991637157686(SAbstractConcept thisConcept, SNode cp) {
+    return cp == null || isEmpty_wij6l5_a0a0a0g(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.call_isEmptyTail_8654221991637157686(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true));
+  }
+
+  public static SNode call_next_8654221991637156927(SAbstractConcept thisConcept, SNode cp) {
     if ((SLinkOperations.getTarget(cp, "tail", true) == null)) {
       return null;
     }
-    if (isEmpty_wij6l5_a0b0g(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
-      return BuildRelativePath_Behavior.next_8654221991637156927(SLinkOperations.getTarget(cp, "tail", true));
+    if (isEmpty_wij6l5_a0b0h(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
+      return BuildRelativePath_Behavior.call_next_8654221991637156927(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true));
     }
     return SLinkOperations.getTarget(cp, "tail", true);
-  }
-
-  public static boolean isEmptyTail_8654221991637157686(SNode cp) {
-    return cp == null || isEmpty_wij6l5_a0a0a0h(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
   }
 
   @Deprecated
@@ -95,11 +99,11 @@ public class BuildRelativePath_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", new Class[]{SNode.class, Context.class}, new Object[]{context});
   }
 
-  public static boolean isEmpty_wij6l5_a0b0g(String str) {
+  public static boolean isEmpty_wij6l5_a0a0a0g(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_wij6l5_a0a0a0h(String str) {
+  public static boolean isEmpty_wij6l5_a0b0h(String str) {
     return str == null || str.length() == 0;
   }
 }

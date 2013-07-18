@@ -5,6 +5,10 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -41,7 +45,7 @@ public class StringLiteralRegexp_Behavior {
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp_Behavior.isHexChar_8949395081772969908(c))) {
+            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8949395081772969908(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"))), c))) {
               return null;
             }
             sb.append(c);
@@ -79,7 +83,7 @@ public class StringLiteralRegexp_Behavior {
     return sb.toString();
   }
 
-  public static boolean isHexChar_8949395081772969908(char c) {
+  public static boolean call_isHexChar_8949395081772969908(SAbstractConcept thisConcept, char c) {
     return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
   }
 

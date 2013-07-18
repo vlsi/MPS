@@ -32,7 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SModelFileTracker implements CoreComponent {
   private static SModelFileTracker INSTANCE;
 
-  private final Map<String, SModel> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
+  private final Map<IFile, SModel> myPathsToModelDescriptorMap = new ConcurrentHashMap<IFile, SModel>();
   private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     @Override
     protected void startListening(SModel model) {
@@ -91,16 +91,16 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   public SModel findModel(IFile modelFile) {
-    return myPathsToModelDescriptorMap.get(modelFile.getPath());
+    return myPathsToModelDescriptorMap.get(modelFile);
   }
 
   private void addModelToFileCache(SModel md) {
     DataSource source = md.getSource();
     if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
 
-    String file = source instanceof FileDataSource
-        ? ((FileDataSource) source).getFile().getPath()
-        : ((FolderDataSource) source).getFolder().getPath();
+    IFile file = source instanceof FileDataSource
+        ? ((FileDataSource) source).getFile()
+        : ((FolderDataSource) source).getFolder();
     myPathsToModelDescriptorMap.put(file, md);
   }
 
@@ -108,9 +108,9 @@ public class SModelFileTracker implements CoreComponent {
     DataSource source = md.getSource();
     if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
 
-    String file = source instanceof FileDataSource
-        ? ((FileDataSource) source).getFile().getPath()
-        : ((FolderDataSource) source).getFolder().getPath();
+    IFile file = source instanceof FileDataSource
+        ? ((FileDataSource) source).getFile()
+        : ((FolderDataSource) source).getFolder();
     myPathsToModelDescriptorMap.remove(file);
   }
 }

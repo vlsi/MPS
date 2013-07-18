@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -26,7 +28,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return CustomOperatorUsage_Behavior.getVisibleCustomOperators_1141736782992984505(_context.getModel());
+          return CustomOperatorUsage_Behavior.call_getVisibleCustomOperators_1141736782992984505(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"))), _context.getModel());
         }
       }.compute();
       if (parameterObjects != null) {

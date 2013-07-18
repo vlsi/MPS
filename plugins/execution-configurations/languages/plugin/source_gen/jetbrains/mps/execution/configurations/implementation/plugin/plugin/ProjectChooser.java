@@ -23,7 +23,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
   public ProjectChooser() {
     super(new GridBagLayout());
 
-    myOpenCurrentProject = new JCheckBox("Open Current Project");
+    myOpenCurrentProject = new JCheckBox("Open current project");
     myOpenCurrentProject.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent p0) {
@@ -41,7 +41,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
     });
 
     this.add(myOpenCurrentProject, LayoutUtil.createLabelConstraints(0));
-    this.add(new JLabel("Project To Open:"), LayoutUtil.createLabelConstraints(1));
+    this.add(new JLabel("Project to open:"), LayoutUtil.createLabelConstraints(1));
     this.add(myProjectPath, LayoutUtil.createFieldConstraints(2));
   }
 

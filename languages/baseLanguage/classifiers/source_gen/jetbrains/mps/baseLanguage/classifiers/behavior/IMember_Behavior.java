@@ -38,7 +38,7 @@ public class IMember_Behavior {
   }
 
   public static SNode call_getContainer_1213877353020(SNode thisNode) {
-    return IClassifier_Behavior.getContextClassifier_1213877527940(thisNode);
+    return IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), thisNode);
   }
 
   public static boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {

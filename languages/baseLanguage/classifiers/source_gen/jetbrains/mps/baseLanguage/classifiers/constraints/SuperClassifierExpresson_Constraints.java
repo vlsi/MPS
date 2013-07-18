@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -38,7 +41,7 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     if (!(inClassifier)) {
       return false;
     }
-    SNode classifier = IClassifier_Behavior.getContextClassifier_1213877527940(parentNode);
+    SNode classifier = IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), parentNode);
     if (classifier == null) {
       return false;
     }

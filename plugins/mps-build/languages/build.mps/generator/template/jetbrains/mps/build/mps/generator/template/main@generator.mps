@@ -12270,9 +12270,13 @@
                                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4101476690154933503" nodeInfo="nn">
                                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4101476690154954912" nodeInfo="nn">
                                         <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="4101476690154964350" nodeInfo="nn">
-                                          <node role="argument" roleId="tp2q.1172256416782" type="tp25.StaticConceptMethodCall" typeId="tp25.1206019730951" id="4101476690147499021" nodeInfo="nn">
-                                            <link role="concept" roleId="tp25.1206019820684" targetNodeId="kdzh.868032131020265945" resolveInfo="BuildMPSPlugin" />
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2txq.4101476690147447822" resolveInfo="getMpsLibrary" />
+                                          <node role="argument" roleId="tp2q.1172256416782" type="tpee.DotExpression" typeId="tpee.1197027756228" id="893319872189678623" nodeInfo="nn">
+                                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="893319872189678624" nodeInfo="nn">
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2txq.4101476690147447822" resolveInfo="getMpsLibrary" />
+                                            </node>
+                                            <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="893319872189678625" nodeInfo="nn">
+                                              <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="kdzh.868032131020265945" resolveInfo="BuildMPSPlugin" />
+                                            </node>
                                           </node>
                                         </node>
                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4101476690154933504" nodeInfo="nn">

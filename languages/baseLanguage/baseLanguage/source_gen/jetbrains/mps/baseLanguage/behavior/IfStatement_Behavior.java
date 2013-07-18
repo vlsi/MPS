@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 
 public class IfStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -60,11 +62,11 @@ public class IfStatement_Behavior {
     for (SNode elseIfClause : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true))) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(elseIfClause, "statementList", true), throwables, ignoreMayBeThrowables);
       if (!(ignoreMayBeThrowables)) {
-        Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(elseIfClause, "condition", true));
+        Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(elseIfClause, "condition", true));
       }
     }
     if (!(ignoreMayBeThrowables)) {
-      Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "condition", true));
+      Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(thisNode, "condition", true));
     }
   }
 }

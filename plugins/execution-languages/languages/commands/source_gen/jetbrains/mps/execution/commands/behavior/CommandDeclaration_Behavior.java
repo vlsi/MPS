@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -96,15 +97,15 @@ public class CommandDeclaration_Behavior {
     });
   }
 
-  public static String getCreateProcessMethodName_856705193941282090() {
+  public static String call_getCreateProcessMethodName_856705193941282090(SAbstractConcept thisConcept) {
     return "createProcess";
   }
 
-  public static String getGetDebuggerMethodName_856705193941282096() {
+  public static String call_getGetDebuggerMethodName_856705193941282096(SAbstractConcept thisConcept) {
     return "getDebugger";
   }
 
-  public static String getGetDebuggerConfidurationMethodName_6226796386650472924() {
+  public static String call_getGetDebuggerConfidurationMethodName_6226796386650472924(SAbstractConcept thisConcept) {
     return "getDebuggerConfiguration";
   }
 

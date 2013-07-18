@@ -128,6 +128,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     FileUtil.copyDir(new File(projectDir, ".mps"), mpsDir);
 
     // replace project macro 
+    // todo: do that foreach file 
     try {
       Document document = JDOMUtil.loadDocument(tmpProjectFile);
       replacePathMacro(document.getRootElement(), project);

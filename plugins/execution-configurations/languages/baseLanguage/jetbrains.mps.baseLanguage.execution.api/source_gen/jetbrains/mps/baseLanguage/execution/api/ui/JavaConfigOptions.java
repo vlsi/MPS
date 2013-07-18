@@ -143,14 +143,14 @@ public class JavaConfigOptions extends JPanel {
   private JLabel createComponent_jy82jx_b0() {
     JLabel component = new JLabel();
     this.myComponent_jy82jx_b0 = component;
-    component.setText("VM Parameters:");
+    component.setText("VM parameters:");
     return component;
   }
 
   private RawLineEditorComponent createComponent_jy82jx_c0() {
     RawLineEditorComponent component = new RawLineEditorComponent();
     this.myVmParam_jy82jx_c0 = component;
-    component.setDialogCaption("VM Parameters");
+    component.setDialogCaption("VM parameters");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onChangeVMParams();
@@ -162,14 +162,14 @@ public class JavaConfigOptions extends JPanel {
   private JLabel createComponent_jy82jx_d0() {
     JLabel component = new JLabel();
     this.myComponent_jy82jx_d0 = component;
-    component.setText("Program Parameters:");
+    component.setText("Program parameters:");
     return component;
   }
 
   private RawLineEditorComponent createComponent_jy82jx_e0() {
     RawLineEditorComponent component = new RawLineEditorComponent();
     this.myProgramParam_jy82jx_e0 = component;
-    component.setDialogCaption("Program Parameters");
+    component.setDialogCaption("Program parameters");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onChangeProgramParams();
@@ -181,14 +181,14 @@ public class JavaConfigOptions extends JPanel {
   private JLabel createComponent_jy82jx_f0() {
     JLabel component = new JLabel();
     this.myComponent_jy82jx_f0 = component;
-    component.setText("Working Directory:");
+    component.setText("Working directory:");
     return component;
   }
 
   private FieldWithPathChooseDialog createComponent_jy82jx_g0() {
     FieldWithPathChooseDialog component = new FieldWithPathChooseDialog();
     this.myWorkingDir_jy82jx_g0 = component;
-    component.setTitle("Select Working Directory");
+    component.setTitle("Select working directory");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onChangeWorkingDir();
@@ -212,7 +212,7 @@ public class JavaConfigOptions extends JPanel {
   private FieldWithPathChooseDialog createComponent_jy82jx_i0() {
     FieldWithPathChooseDialog component = new FieldWithPathChooseDialog();
     this.myJreHome_jy82jx_i0 = component;
-    component.setTitle("Select Alternative JRE home");
+    component.setTitle("Select alternative JRE home");
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onChangeAlternativeJRE();

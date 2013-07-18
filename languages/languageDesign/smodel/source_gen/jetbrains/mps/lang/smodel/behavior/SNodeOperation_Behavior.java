@@ -94,7 +94,7 @@ public class SNodeOperation_Behavior {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
 
-  public static SNode getLeftNodeConcept_1213877508847(SNode parent) {
+  public static SNode call_getLeftNodeConcept_1213877508847(SAbstractConcept thisConcept, SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, "operand", true);
     SNode result = SModelLanguageUtil.getConcept(operand);
     if ((result != null)) {

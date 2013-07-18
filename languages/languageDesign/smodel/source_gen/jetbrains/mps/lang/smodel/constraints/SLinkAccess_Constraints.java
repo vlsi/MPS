@@ -14,6 +14,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -44,7 +47,7 @@ public class SLinkAccess_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // links with cardinality 1 or 0..1 
-            SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
+            SNode dotOperandConcept = SNodeOperation_Behavior.call_getLeftNodeConcept_1213877508847(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation"))), SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
             List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
             return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

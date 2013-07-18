@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.actions.ApplicableTypesInfo" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.StaticConceptMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -27,7 +26,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ChildSubstituteActionsHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSetupContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext" />
@@ -41,7 +39,6 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
   </dependency>

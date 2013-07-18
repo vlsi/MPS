@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 
@@ -12,7 +15,7 @@ public class TryStatement_Behavior {
   }
 
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    TryCatchStatement_Behavior.collectUncatchedThrowables_4313092516462065508(throwables, SLinkOperations.getTarget(thisNode, "body", true), SLinkOperations.getTargets(thisNode, "catchClause", true), ignoreMayBeThrowables);
+    TryCatchStatement_Behavior.call_collectUncatchedThrowables_4313092516462065508(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement"))), throwables, SLinkOperations.getTarget(thisNode, "body", true), SLinkOperations.getTargets(thisNode, "catchClause", true), ignoreMayBeThrowables);
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "finallyBody", true), throwables, ignoreMayBeThrowables);
   }
 

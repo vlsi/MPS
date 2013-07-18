@@ -4,8 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,14 +24,14 @@ public class TryCatchStatement_Behavior {
   }
 
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    TryCatchStatement_Behavior.collectUncatchedThrowables_4313092516462065508(throwables, SLinkOperations.getTarget(thisNode, "body", true), SLinkOperations.getTargets(thisNode, "catchClause", true), ignoreMayBeThrowables);
+    TryCatchStatement_Behavior.call_collectUncatchedThrowables_4313092516462065508(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement"))), throwables, SLinkOperations.getTarget(thisNode, "body", true), SLinkOperations.getTargets(thisNode, "catchClause", true), ignoreMayBeThrowables);
   }
 
   public static List<SNode> virtual_getCatchClauses_3718132079121388582(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "catchClause", true);
   }
 
-  public static void collectUncatchedThrowables_4313092516462065508(Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
+  public static void call_collectUncatchedThrowables_4313092516462065508(SAbstractConcept thisConcept, Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
     Set<SNode> thrownsFromBody = SetSequence.fromSet(new HashSet<SNode>());
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(body, thrownsFromBody, ignoreMayBeThrowables);
 
@@ -37,7 +41,7 @@ public class TryCatchStatement_Behavior {
       Set<SNode> toRemove = SetSequence.fromSet(new HashSet<SNode>());
       for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
         SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(_quotation_createNode_1bi1ep_a0a1a2a4a0(thrownFromBody), catchedType)) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(_quotation_createNode_1bi1ep_a0a1a2a4a2(thrownFromBody), catchedType)) {
           SetSequence.fromSet(toRemove).addElement(thrownFromBody);
         }
       }
@@ -51,7 +55,7 @@ public class TryCatchStatement_Behavior {
     }
   }
 
-  private static SNode _quotation_createNode_1bi1ep_a0a1a2a4a0(Object parameter_1) {
+  private static SNode _quotation_createNode_1bi1ep_a0a1a2a4a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

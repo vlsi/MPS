@@ -6,6 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -29,10 +33,10 @@ public class Statement_Behavior {
     if (ignoreMayBeThrowables) {
       return;
     }
-    Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, thisNode);
+    Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, thisNode);
   }
 
-  public static void collectUncaughtMethodThrowables_5412515780383112967(Set<SNode> throwables, SNode arg) {
+  public static void call_collectUncaughtMethodThrowables_5412515780383112967(SAbstractConcept thisConcept, Set<SNode> throwables, SNode arg) {
     for (SNode methodCall : SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})) {
       for (SNode throwable : SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "throwsItem", true)) {
         if (SNodeOperations.isInstanceOf(throwable, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {

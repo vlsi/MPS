@@ -5,9 +5,13 @@ package jetbrains.mps.execution.settings.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -23,7 +27,7 @@ public class PersistentPropertyDeclaration_Behavior {
   }
 
   public static String call_getAccessorName_946964771156066871(SNode thisNode) {
-    String name = PersistentPropertyDeclaration_Behavior.removeMyPrefixInternal_946964771156066931(SPropertyOperations.getString(thisNode, "name"));
+    String name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(thisNode, "name"));
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
 
@@ -46,20 +50,7 @@ public class PersistentPropertyDeclaration_Behavior {
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"), true), "persistentConfiguration", false);
   }
 
-  public static String removeMyPrefix_946964771156066836(String name) {
-    name = PersistentPropertyDeclaration_Behavior.removeMyPrefixInternal_946964771156066931(name);
-    return name.substring(0, 1).toLowerCase() + name.substring(1);
-  }
-
-  public static String removeMyPrefixInternal_946964771156066931(String name) {
-    String prefix = "my";
-    if (name.startsWith(prefix) && name.length() > 2) {
-      name = name.substring(prefix.length());
-    }
-    return name;
-  }
-
-  public static String addMyPrefix_6314556899428615272(String name) {
+  public static String call_addMyPrefix_6314556899428615272(SAbstractConcept thisConcept, String name) {
     String prefix = "my";
     if (name.length() > 2) {
       if (!(name.startsWith(prefix))) {
@@ -69,6 +60,19 @@ public class PersistentPropertyDeclaration_Behavior {
       name = prefix + name;
     }
     return name;
+  }
+
+  public static String call_removeMyPrefixInternal_946964771156066931(SAbstractConcept thisConcept, String name) {
+    String prefix = "my";
+    if (name.startsWith(prefix) && name.length() > 2) {
+      name = name.substring(prefix.length());
+    }
+    return name;
+  }
+
+  public static String call_removeMyPrefix_946964771156066836(SAbstractConcept thisConcept, String name) {
+    name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), name);
+    return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
 
   @Deprecated

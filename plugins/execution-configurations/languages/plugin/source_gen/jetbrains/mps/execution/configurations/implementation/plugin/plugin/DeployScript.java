@@ -96,6 +96,10 @@ public class DeployScript {
     return myArtifactsPath;
   }
 
+  public String getDeployScriptLocation() {
+    return myDeployScriptPath;
+  }
+
 
 
   public void dispose() {

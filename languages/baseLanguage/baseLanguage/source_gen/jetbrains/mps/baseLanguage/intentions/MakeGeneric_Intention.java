@@ -56,7 +56,7 @@ public class MakeGeneric_Intention implements IntentionFactory {
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     // todo: maybe not "everything except" but "just something"? 
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
   }
 
   public SNodeReference getIntentionNodeReference() {
