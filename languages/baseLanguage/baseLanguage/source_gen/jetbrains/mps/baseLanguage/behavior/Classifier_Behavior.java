@@ -471,6 +471,7 @@ public class Classifier_Behavior {
     }
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "field", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "property", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "constructor", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(asClass, "staticMethod", true)));
