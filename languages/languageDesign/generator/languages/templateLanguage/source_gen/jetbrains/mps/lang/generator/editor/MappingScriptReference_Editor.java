@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class MappingScriptReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -74,6 +75,7 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyReference(style, editorCell);
+      style.set(StyleAttributes.AUTO_DELETABLE, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

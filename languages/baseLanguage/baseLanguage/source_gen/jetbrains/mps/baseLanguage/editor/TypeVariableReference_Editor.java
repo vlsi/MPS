@@ -74,7 +74,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
         editorCell.setRole("typeVariableDeclaration");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      style.set(StyleAttributes.AUTO_DELETABLE, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

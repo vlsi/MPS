@@ -205,7 +205,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     if (type == CellActionType.DELETE && APICellAdapter.isLastPositionInBigCell(selectedCell) && !APICellAdapter.isFirstPositionInBigCell(selectedCell)) {
       final EditorCell target;
       EditorCell bigCellNextSibling = CellTraversalUtil.getNextSibling(APICellAdapter.getContainingBigCell(selectedCell));
-      if (APICellAdapter.isLastPositionInBigCell(selectedCell) && bigCellNextSibling != null) {
+      if (bigCellNextSibling != null) {
         target = bigCellNextSibling;
       } else {
         EditorCell nextSibling = CellTraversalUtil.getNextSibling(APICellAdapter.getContainingBigCell(selectedCell));
@@ -229,7 +229,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     if (type == CellActionType.BACKSPACE && APICellAdapter.isFirstPositionInBigCell(selectedCell) && !APICellAdapter.isLastPositionInBigCell(selectedCell)) {
       final EditorCell target;
       EditorCell bigCellPrevSibling = CellTraversalUtil.getPrevSibling(APICellAdapter.getContainingBigCell(selectedCell));
-      if (APICellAdapter.isFirstPositionInBigCell(selectedCell) && bigCellPrevSibling != null) {
+      if (bigCellPrevSibling != null) {
         target = bigCellPrevSibling;
       } else {
         EditorCell prevSibling = CellTraversalUtil.getPrevSibling(selectedCell);

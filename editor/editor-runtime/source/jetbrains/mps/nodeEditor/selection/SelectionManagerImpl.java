@@ -255,8 +255,7 @@ public class SelectionManagerImpl implements SelectionManager {
           // first -> last & last -> first if prev. or next cell was selected
           if (isFirstPositionRequested) {
             isLastPositionRequested = true;
-          }
-          if (isLastPositionRequested) {
+          } else if (isLastPositionRequested) {
             isLastPositionRequested = false;
             caretPosition = 0;
           }

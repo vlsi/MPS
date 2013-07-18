@@ -4536,6 +4536,7 @@
           <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1194566785068" resolveInfo="reference" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="7350591771767110512" nodeInfo="nn" />
         </node>
       </node>
     </node>

@@ -1140,6 +1140,7 @@
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1219242044358" nodeInfo="nn">
             <property name="value" nameId="tpc2.1215007802031" value="0.0" />
           </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="7350591771775310439" nodeInfo="nn" />
         </node>
       </node>
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1219242048234" nodeInfo="nn">

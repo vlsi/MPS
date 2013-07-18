@@ -7,8 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -34,6 +36,10 @@ public class BinaryOperation_LeftArgument_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "leftExpression", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"))))) {
+        SLinkOperations.setTarget(node, "leftExpression", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+        return;
+      }
       SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
       SNodeOperations.replaceWithAnother(node, rightExpression);
       editorContext.flushEvents();

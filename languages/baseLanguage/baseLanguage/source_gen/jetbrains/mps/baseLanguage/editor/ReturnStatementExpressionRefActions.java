@@ -8,16 +8,19 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
-public class DeleteFieldReferenceOperation {
+public class ReturnStatementExpressionRefActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new DeleteFieldReferenceOperation.DeleteFieldReferenceOperation_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new ReturnStatementExpressionRefActions.ReturnStatementExpressionRefActions_DELETE(node));
   }
 
-  public static class DeleteFieldReferenceOperation_DELETE extends AbstractCellAction {
+  public static class ReturnStatementExpressionRefActions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public DeleteFieldReferenceOperation_DELETE(SNode node) {
+    public ReturnStatementExpressionRefActions_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -26,7 +29,8 @@ public class DeleteFieldReferenceOperation {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.deleteNode(node);
+      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "expression", true));
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, SelectionManager.LAST_CELL, 0);
     }
   }
 }

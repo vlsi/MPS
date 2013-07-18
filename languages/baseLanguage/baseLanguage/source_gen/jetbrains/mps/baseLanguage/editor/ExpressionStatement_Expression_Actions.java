@@ -7,7 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class ExpressionStatement_Expression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,7 +33,11 @@ public class ExpressionStatement_Expression_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.deleteNode(node);
+      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "expression", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")))) {
+        SNodeOperations.deleteNode(node);
+      } else {
+        SLinkOperations.setTarget(node, "expression", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+      }
     }
   }
 }
