@@ -19,17 +19,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
       case 2:
         return new CommandResultLine_BehaviorDescriptor();
       case 4:
-        return new NodeResultPart_BehaviorDescriptor();
-      case 6:
+        return new NodeReferenceResultPart_BehaviorDescriptor();
+      case 7:
         return new TextResultPart_BehaviorDescriptor();
       case 0:
         return new CommandHolder_BehaviorDescriptor();
+      case 6:
+        return new NodeWithClosureResultPart_BehaviorDescriptor();
       case 5:
-        return new NodeWithClosure_BehaviorDescriptor();
+        return new NodeResultPart_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.NodeReferenceResultPart", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosureResultPart", "jetbrains.mps.console.base.structure.TextResultPart"};
 }

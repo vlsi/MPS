@@ -22,7 +22,7 @@ public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
   public ExecuteClosureAttachedToCurrentNode_Action() {
     super("Execute Attached Closure", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override

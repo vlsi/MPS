@@ -8,6 +8,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -23,10 +24,15 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SNodeTransferable implements Transferable {
   private static final int NODE = 0;
-  private static final int STRING = 1;
-  private static final int PLAIN_TEXT = 2;
-  private static final DataFlavor[] flavors = {SModelDataFlavor.sNode, DataFlavor.stringFlavor, DataFlavor.plainTextFlavor};
+  private static final int NODE_REFERENCE = 1;
+  private static final int STRING = 2;
+  private static final int PLAIN_TEXT = 3;
+
+  private static final DataFlavor[] flavors = {SModelDataFlavor.sNode, SModelDataFlavor.sNodeReference, DataFlavor.stringFlavor, DataFlavor.plainTextFlavor};
+
   private List<SNode> mySNodes = new ArrayList<SNode>();
+  @Nullable
+  private SNodeReference mySNodeReference;
   @Nullable
   private SModuleReference mySourceModule;
   private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
@@ -34,20 +40,30 @@ public class SNodeTransferable implements Transferable {
   private String myText = "";
 
   public SNodeTransferable(List<SNode> nodes, String text) {
+    if (nodes.size() == 1) {
+      saveNodeReference(nodes.get(0));
+    }
     saveNodes(nodes, null);
     myText = text;
   }
 
   public SNodeTransferable(List<SNode> nodes) {
+    if (nodes.size() == 1) {
+      saveNodeReference(nodes.get(0));
+    }
     saveNodes(nodes, null);
   }
 
   public SNodeTransferable(@NotNull List<SNode> nodes, String text, Map<SNode, Set<SNode>> nodesAndAttributes) {
+    if (nodes.size() == 1) {
+      saveNodeReference(nodes.get(0));
+    }
     saveNodes(nodes, nodesAndAttributes);
     myText = text;
   }
 
   public SNodeTransferable(SNode node) {
+    saveNodeReference(node);
     List<SNode> list = new ArrayList<SNode>();
     list.add(node);
     saveNodes(list, null);
@@ -55,12 +71,17 @@ public class SNodeTransferable implements Transferable {
 
   @Override
   public DataFlavor[] getTransferDataFlavors() {
-    return ((DataFlavor[]) flavors).clone();
+    if (supportsNodeReference()) {
+      return flavors;
+    } else {
+      DataFlavor[] reducedFlavors = {flavors[NODE], flavors[STRING], flavors[PLAIN_TEXT]};
+      return reducedFlavors;
+    }
   }
 
   @Override
   public boolean isDataFlavorSupported(DataFlavor flavor) {
-    for (DataFlavor flavor1 : flavors) {
+    for (DataFlavor flavor1 : getTransferDataFlavors()) {
       if (flavor.equals(flavor1)) {
         return true;
       }
@@ -72,15 +93,23 @@ public class SNodeTransferable implements Transferable {
   public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
     if (flavor.equals(flavors[NODE])) {
       return this;
+    } else if (flavor.equals(flavors[NODE_REFERENCE])) {
+      if (supportsNodeReference()) {
+        return mySNodeReference;
+      }
     } else
     if (flavor.equals(flavors[STRING])) {
       return getAsString();
     } else
     if (flavor.equals(flavors[PLAIN_TEXT])) {
       return new StringReader(getAsString());
-    } else {
-      throw new UnsupportedFlavorException(flavor);
+
     }
+    throw new UnsupportedFlavorException(flavor);
+  }
+
+  private boolean supportsNodeReference() {
+    return mySNodeReference != null;
   }
 
   private String getAsString() {
@@ -101,6 +130,10 @@ public class SNodeTransferable implements Transferable {
     );
     myNecessaryModels = pasteNodeData.getNecessaryModels();
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
+  }
+
+  private void saveNodeReference(@NotNull SNode node) {
+    mySNodeReference = node.getReference();
   }
 
   public PasteNodeData createNodeData() {

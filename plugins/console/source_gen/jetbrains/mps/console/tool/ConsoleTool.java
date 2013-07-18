@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.ide.PasteProvider;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -53,15 +54,33 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.DataContext;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import java.awt.datatransfer.Transferable;
+import com.intellij.ide.CopyPasteManagerEx;
+import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.io.IOException;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import java.util.ArrayList;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 @State(name = "ConsoleHistory", storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
 )
@@ -122,8 +141,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           @Nullable
           @Override
           public Object getData(@NonNls String key) {
-            if (PlatformDataKeys.FILE_EDITOR.equals(key)) {
+            if (PlatformDataKeys.FILE_EDITOR.is(key)) {
               return myCommandFileEditor;
+            }
+            if (PlatformDataKeys.PASTE_PROVIDER.is(key)) {
+              return new ConsoleTool.MyPasteProvider((PasteProvider) super.getData(key));
             }
             return super.getData(key);
           }
@@ -163,7 +185,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     group.add(registerKeyShortcut(new ConsoleTool.PrevCmdAction(), KeyEvent.VK_UP));
     group.add(registerKeyShortcut(new ConsoleTool.NextCmdAction(), KeyEvent.VK_DOWN));
     group.add(registerKeyShortcut(new ConsoleTool.ClearAction(), KeyEvent.VK_BACK_SPACE));
-    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, KeyEvent.CTRL_MASK, 1))));
+    group.add(registerShortcutSet(new ConsoleTool.ExecuteClosureAction(), new CustomShortcutSet(new MouseShortcut(MouseEvent.BUTTON1, 0, 1))));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
 
     JPanel res = new JPanel(new BorderLayout());
@@ -191,9 +213,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     JPanel editorsPanel = new JPanel(new BorderLayout());
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
-    // todo:  
-    // <node> 
-    // <node> 
     return new JScrollPane(editorsPanel);
   }
 
@@ -340,25 +359,41 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           }, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c25(text));
+              String[] strings = text.split("\n");
+              for (int i = 0; i < strings.length; i++) {
+                if (isNotEmpty_xg3v07_a0a0c0a0a1a3a8a0a0a0a0a2ac(strings[i])) {
+                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a0a2a0a0b0a8a0a0c25(strings[i]));
+                }
+                if (i < strings.length - 1 || text.charAt(text.length() - 1) == '\n') {
+                  SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
+                }
+              }
+              if (text.equals("\n")) {
+                SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
+              }
+            }
+
+            public void addNodeReference(SNode node) {
+              checkResultAvailable();
+              SModuleReference usedLanguage = node.getConcept().getLanguage().getSourceModule().getModuleReference();
+              if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
+                ((SModelInternal) myModel).addLanguage(usedLanguage);
+                ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
+              }
+              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "target", node, false);
             }
 
             public void addNode(SNode node) {
               checkResultAvailable();
-              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "target", ((SNode) node), false);
+              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "node", node, true);
             }
 
             public void addAction(String text, _FunctionTypes._void_P0_E0 action) {
               checkResultAvailable();
-              SNode result = _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2ac();
+              SNode result = _quotation_createNode_xg3v07_a0b0d0a1a0i0a0a2ac();
               SPropertyOperations.set(result, "text", text);
               ClosureHoldingNodeUtil.getInstance().register(result, action);
               ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(result);
-            }
-
-            public void addNewLine() {
-              checkResultAvailable();
-              SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
             }
 
             private void checkResultAvailable() {
@@ -450,12 +485,58 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       super("Execute Closure");
     }
 
-    protected void doExecute(final AnActionEvent event, Map<String, Object> map) {
+    protected void doExecute(AnActionEvent event, Map<String, Object> map) {
+      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action")), event);
+    }
+  }
+
+
+
+  private class MyPasteProvider implements PasteProvider {
+
+    private PasteProvider myDefaultPasteProvider;
+
+
+    public MyPasteProvider(PasteProvider defaultPasteProvider) {
+      myDefaultPasteProvider = defaultPasteProvider;
+    }
+
+
+
+    public void performPaste(@NotNull final DataContext context) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          ActionUtils.updateAndPerformAction(ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action"), event);
+          SNodeReference pastingNodeReference = null;
+          try {
+            for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+              if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNodeReference)) {
+                pastingNodeReference = (SNodeReference) trf.getTransferData(SModelDataFlavor.sNodeReference);
+              }
+              break;
+            }
+          } catch (UnsupportedFlavorException ignored) {
+          } catch (IOException ignored) {
+          }
+          EditorCell currentCell = myCommandEditor.getSelectedCell();
+          SNode referenceTarget = check_xg3v07_a0d0a0a5kc(pastingNodeReference);
+          if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f26(check_xg3v07_a0a0e0a0a5kc(pastingNodeReference), myModel))) {
+            SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.InsertedNodeReference", null);
+            SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
+            NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
+            paster.paste(currentCell);
+          } else {
+            myDefaultPasteProvider.performPaste(context);
+          }
         }
       });
+    }
+
+    public boolean isPastePossible(@NotNull DataContext context) {
+      return true;
+    }
+
+    public boolean isPasteEnabled(@NotNull DataContext context) {
+      return true;
     }
   }
 
@@ -497,9 +578,14 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          result.state = PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL);
-        } catch (Exception ignored) {
-          // todo: log 
+          result.state = (myModel == null ?
+            null :
+            PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL)
+          );
+        } catch (Exception e) {
+          if (LOG.isEnabledFor(Priority.WARN)) {
+            LOG.warn("Error on console model saving", e);
+          }
         }
       }
     });
@@ -510,6 +596,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   }
 
 
+  protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
 
   private static SNode _quotation_createNode_xg3v07_a0g0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -521,7 +608,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a1a0a0b0a8a0a0c25(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a0a2a0a0b0a8a0a0c25(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
@@ -529,10 +616,35 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0b0c0a1a0i0a0a2ac() {
+  private static SNode _quotation_createNode_xg3v07_a0b0d0a1a0i0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosure", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosureResultPart", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
+  }
+
+  private static SNode check_xg3v07_a0d0a0a5kc(SNodeReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+    }
+    return null;
+  }
+
+  private static boolean check_xg3v07_a0a4a0a0f26(SModelReference checkedDotOperand, SModel myModel) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.equals(myModel.getReference());
+    }
+    return false;
+  }
+
+  private static SModelReference check_xg3v07_a0a0e0a0a5kc(SNodeReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelReference();
+    }
+    return null;
+  }
+
+  public static boolean isNotEmpty_xg3v07_a0a0c0a0a1a3a8a0a0a0a0a2ac(String str) {
+    return str != null && str.length() > 0;
   }
 }

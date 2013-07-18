@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3zmnj4cib7thmh8gyuvi0wkhkpicetn">
+<dependencies version="2" modelHash="-7nl2074hr223ah735hnvvl2fkmfwax5">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.datatransfer(JDK/java.awt.datatransfer@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -17,7 +17,7 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
   <common hash="-4p4u43fiufkmgu34bgivkw1cyi3twi4" />
-  <source id="6299533519672638253" name="CopyPasteUtil" hash="7l9tydcbj5hucwfzh4h9e843s9y5m7a">
+  <source id="6299533519672638253" name="CopyPasteUtil" hash="-3ehzme11jtkw8meur0a6wan2fffbvs">
     <dep root="6299533519672649753" />
     <dep root="6299533519672651952" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.datatransfer(JDK/java.awt.datatransfer@java_stub)" />
@@ -38,15 +38,16 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CopyPasteUtil.java" />
   </source>
-  <source id="6299533519672651952" name="SNodeTransferable" hash="-b7m7m1a1l7x2x9o56s21v66qnfkfz7f">
+  <source id="6299533519672651952" name="SNodeTransferable" hash="66c1u3x80f286xcj4md2lezbyunse8p">
     <dep root="6299533519672649753" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.datatransfer(JDK/java.awt.datatransfer@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SNodeTransferable.java" />
   </source>
-  <source id="6299533519672649753" name="SModelDataFlavor" hash="13gvwxhjzdeaoab5qdmngo4y22yazgt">
+  <source id="6299533519672649753" name="SModelDataFlavor" hash="85v2juth6pq83vqenlt1lyqt3lhz0cz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SModelDataFlavor.java" />
   </source>
