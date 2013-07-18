@@ -909,7 +909,11 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4288082098349208038" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModelTreeNode" />
-    <node role="property" roleId="tpee.1201374247313" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208045" nodeInfo="ig">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208066" nodeInfo="nn" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4288082098349208123" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="osf5.~DefaultMutableTreeNode" resolveInfo="DefaultMutableTreeNode" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208045" nodeInfo="igu">
       <property name="propertyName" nameId="tpee.1201371481316" value="text" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208046" nodeInfo="nn" />
       <node role="type" roleId="tpee.1201371521209" type="tpee.StringType" typeId="tpee.1225271177708" id="4288082098349208047" nodeInfo="in" />
@@ -920,7 +924,7 @@
         </node>
       </node>
     </node>
-    <node role="property" roleId="tpee.1201374247313" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208052" nodeInfo="ig">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208052" nodeInfo="igu">
       <property name="propertyName" nameId="tpee.1201371481316" value="leaf" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208053" nodeInfo="nn" />
       <node role="type" roleId="tpee.1201371521209" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4288082098349208054" nodeInfo="in" />
@@ -931,7 +935,7 @@
         </node>
       </node>
     </node>
-    <node role="property" roleId="tpee.1201374247313" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208059" nodeInfo="ig">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208059" nodeInfo="igu">
       <property name="propertyName" nameId="tpee.1201371481316" value="initialized" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208060" nodeInfo="nn" />
       <node role="type" roleId="tpee.1201371521209" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4288082098349208061" nodeInfo="in" />
@@ -941,10 +945,6 @@
           <node role="visibility" roleId="tpee.1202077744034" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208065" nodeInfo="nn" />
         </node>
       </node>
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208066" nodeInfo="nn" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4288082098349208123" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="osf5.~DefaultMutableTreeNode" resolveInfo="DefaultMutableTreeNode" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4288082098349208039" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myCollapsedIcon" />
