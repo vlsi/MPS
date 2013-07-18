@@ -26,10 +26,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import javax.swing.AbstractListModel;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -47,7 +47,7 @@ public abstract class ListPanel<T> extends JPanel {
   protected final List<T> myCandidates = ListSequence.fromList(new ArrayList<T>());
   private ActionListener myListener;
   private final ListPanel.MyAbstractListModel myListModel;
-  private Project myProject;
+  protected Project myProject;
   private final String myTitle;
   private boolean isEditable = true;
 
@@ -138,6 +138,10 @@ public abstract class ListPanel<T> extends JPanel {
     isEditable = editable;
   }
 
+  public NodeChooserDialog createNodeChooserDialog(List<SNodeReference> nodesList) {
+    return new NodeChooserDialog(myProject, nodesList);
+  }
+
   private class MyAbstractListModel extends AbstractListModel {
     public MyAbstractListModel() {
     }
@@ -166,7 +170,7 @@ public abstract class ListPanel<T> extends JPanel {
     protected int doAdd(AnActionEvent p0) {
       List<SNodeReference> nodesList = getCandidates();
 
-      NodeChooserDialog chooserDialog = new NodeChooserDialog(myProject, nodesList);
+      NodeChooserDialog chooserDialog = ListPanel.this.createNodeChooserDialog(nodesList);
       chooserDialog.show();
       final SNodeReference resultNode = chooserDialog.getResult();
 

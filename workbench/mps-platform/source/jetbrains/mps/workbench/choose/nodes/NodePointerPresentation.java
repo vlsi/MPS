@@ -66,7 +66,7 @@ public class NodePointerPresentation extends BasePresentation {
   }
 
   @NotNull
-  private String calculatePresentableTextInternal() {
+  protected String calculatePresentableTextInternal() {
     if (myNode == null) {
       return "null node";
     }
