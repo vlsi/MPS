@@ -20,7 +20,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
-public class NodeRefere nceResultPart_Editor extends DefaultNodeEditor {
+public class NodeReferenceResultPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jk1t21_a(editorContext, node);
   }
