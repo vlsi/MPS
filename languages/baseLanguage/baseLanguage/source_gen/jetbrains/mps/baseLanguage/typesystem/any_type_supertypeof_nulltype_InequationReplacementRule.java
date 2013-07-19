@@ -24,6 +24,9 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
+    if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.NullType")) {
+      return;
+    }
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -35,6 +38,9 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
+    if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.NullType")) {
+      return result_14532009;
+    }
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor")) {
       result_14532009 = false;
     }
