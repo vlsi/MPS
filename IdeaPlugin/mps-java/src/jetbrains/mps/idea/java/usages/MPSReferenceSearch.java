@@ -21,6 +21,7 @@ import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
@@ -94,7 +95,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
           return;
         }
 
-        // if MPSReferenceSearch is item to mps-core, it will be MPS2PsiMapperUtil.getNodeId
+        // if MPSReferenceSearch is moved to mps-core, it will be MPS2PsiMapperUtil.getNodeId
         final SNode targetNode = getNodeForElement(psiTarget);
         if (targetNode == null) {
           // it can't be referenced from MPS
@@ -104,7 +105,13 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
         Set<SNode> targetNodes = new HashSet<SNode>(1);
         targetNodes.add(targetNode);
 
-        Set<SReference> references = FindUsagesFacade.getInstance().findUsages(new IdeaSearchScope(scope), targetNodes, null);
+        Set<SReference> references;
+        try {
+          references = FindUsagesFacade.getInstance().findUsages(new IdeaSearchScope(scope), targetNodes, null);
+        } catch (IndexNotReadyException e) {
+          // DumbService doesn't seem to work
+          return;
+        }
 
         for (SReference sReference : references) {
           SNode source = sReference.getSourceNode();
@@ -113,11 +120,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
           if (psiNode == null) return;
           String refRole = sReference.getRole();
           MPSPsiRef[] refs = psiNode.getReferences(refRole);
-//          // 0 or 1
-//          MPSPsiRef ref = refs.length > 0 ? refs[0] : null;
-//          if (ref != null) {
-//            consumer.process(ref.getReference());
-//          }
+          if (refs.length == 0) continue;
 
           for (MPSPsiRef r : refs) {
             if (targetNode.getNodeId().equals(r.getNodeId())) {
