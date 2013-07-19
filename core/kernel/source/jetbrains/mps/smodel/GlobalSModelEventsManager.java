@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
@@ -109,7 +110,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
     myGlobalListenersList.get(l.getPriority().ordinal()).remove(l);
   }
 
-  public void addGlobalCommandListener(SModelCommandListener l) {
+  public void addGlobalCommandListener(@NotNull SModelCommandListener l) {
     myGlobalCommandListeners.add(l);
   }
 
