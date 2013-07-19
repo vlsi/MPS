@@ -15,17 +15,27 @@
  */
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
+import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
+import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.java.psi.impl.MPSPsiJavaRef.MPSPsiJavaReference;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * danilla 4/29/13
@@ -86,6 +96,42 @@ public class MPSPsiMethodRef extends MPSPsiJavaRef {
           }
         }
       });
+      return MPSPsiMethodRef.this;
+    }
+
+    @Override
+    public PsiElement bindToElement(@NotNull final PsiElement element) throws IncorrectOperationException {
+      super.bindToElement(element);
+
+      // now handle the case when it's static method that has been moved and we're under static method call
+      assert element instanceof PsiMethod;
+
+      final SRepository repository = getProjectRepository();
+      repository.getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          SReference sRef = getSReference();
+          SNode sourceNode = sRef.getSourceNode();
+          if (!"jetbrains.mps.baseLanguage.structure.StaticMethodCall".equals(sourceNode.getConcept().getQualifiedName())) {
+            return;
+          }
+
+          PsiElement psiSourceNode = MPSPsiProvider.getInstance(getProject()).getPsi(sourceNode);
+          assert psiSourceNode instanceof MPSPsiNode;
+
+          MPSPsiRef[] refs = ((MPSPsiNode) psiSourceNode).getReferences("classConcept");
+          if (refs.length == 0) {
+            // probably a static method call with omitted classifier
+            return;
+          }
+
+          PsiReference psiRef = refs[0].getReference();
+          PsiClass newMethodOwner = ((PsiMethod) element).getContainingClass();
+          psiRef.bindToElement(newMethodOwner);
+
+        }
+      });
+
       return MPSPsiMethodRef.this;
     }
   }

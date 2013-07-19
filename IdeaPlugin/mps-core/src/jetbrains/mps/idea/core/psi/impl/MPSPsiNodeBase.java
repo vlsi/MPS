@@ -31,12 +31,15 @@ import com.intellij.util.ArrayUtil;
 import com.intellij.util.SmartList;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.lang.reflect.Array;
 import java.util.Iterator;
@@ -81,7 +84,13 @@ public abstract class MPSPsiNodeBase extends LightElement {
       throw new PsiInvalidElementAccessException(this);
     }
 
-    return ((MPSPsiRootNode)parent).getContainingModel();
+    return ((MPSPsiRootNode) parent).getContainingModel();
+  }
+
+  protected SRepository getProjectRepository() {
+    Project p = ProjectHelper.toMPSProject(getProject());
+    assert p != null;
+    return p.getRepository();
   }
 
   @Override
