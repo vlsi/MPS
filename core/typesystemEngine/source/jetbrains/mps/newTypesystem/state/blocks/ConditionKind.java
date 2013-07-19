@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
@@ -43,6 +44,26 @@ public enum ConditionKind {
         SNode representative = state.getRepresentative(node);
         if (HUtil.isRuntimeTypeVariable(representative)) {
           return Arrays.asList(representative);
+        }
+        else if (LatticeUtil.isMeet(representative)) {
+          List<SNode> result = new ArrayList<SNode>();
+          for (SNode arg : LatticeUtil.getMeetArguments(representative)) {
+            final SNode argRpt = state.getRepresentative(arg);
+            if (HUtil.isRuntimeTypeVariable(argRpt)) {
+              result.add(argRpt);
+            }
+          }
+          return result;
+        }
+        else if (LatticeUtil.isJoin(representative)) {
+          List<SNode> result = new ArrayList<SNode>();
+          for (SNode arg : LatticeUtil.getJoinArguments(representative)) {
+            final SNode argRpt = state.getRepresentative(arg);
+            if (HUtil.isRuntimeTypeVariable(argRpt)) {
+              result.add(argRpt);
+            }
+          }
+          return result;
         }
       }
       return Collections.EMPTY_LIST;
