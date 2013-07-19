@@ -103,7 +103,6 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
               // original node came from MPS index, it must be converted to our PSI element
               assert psiNode instanceof MPSPsiNode;
 
-
               consumer.process(new IdPrefixReference(mpsTarget, role, psiNode));
             }
             return true;

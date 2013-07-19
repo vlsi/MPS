@@ -42,6 +42,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 
+import java.util.regex.Matcher;
+
 
 /**
  * danilla 3/24/13
@@ -130,7 +132,14 @@ public class IdPrefixReference implements PsiReference {
     SNodePointer oldNode = (SNodePointer) myTarget;
     SNode source = ((MPSPsiNode) myParent).getSNodeReference().resolve(MPSModuleRepository.getInstance());
     String oldId = source.getReference(myRole).getTargetNodeId().toString();
-    String newId = oldId.replaceFirst(oldNode.getNodeId().toString(), newNode.getNodeId().toString());
+
+    // replacing all proper occurences
+    String what = oldNode.getNodeId().toString();
+    what = what.startsWith("~") ? what.substring(1) : what;
+    String replacement = newNode.getNodeId().toString();
+    replacement = replacement.startsWith("~") ? replacement.substring(1) : replacement;
+
+    String newId = carefullyReplace(oldId, what, replacement);
 
     source.setReference(myRole, StaticReference.create(myRole, source, newNode.getSModelReference(), new Foreign(newId)));
 
@@ -144,6 +153,27 @@ public class IdPrefixReference implements PsiReference {
 
       ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
     }
+  }
+
+  private String carefullyReplace(String input, String what, String replacement) {
+    String result = input;
+
+    int len = what.length();
+    int idx = input.indexOf(what);
+
+    while (idx >= 0) {
+      if (idx != 0) {
+        char c = result.charAt(idx - 1);
+        if (c == '.' || Character.isLetterOrDigit(c)) { // java foreign id specific knowledge
+          idx = result.indexOf(what, idx + 1);
+          continue;
+        }
+      }
+      result = result.substring(0, idx) + replacement + result.substring(idx + len);
+      idx = result.indexOf(what, idx + len);
+    }
+
+    return result;
   }
 
   @Override

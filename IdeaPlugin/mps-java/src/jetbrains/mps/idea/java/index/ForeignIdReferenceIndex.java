@@ -92,23 +92,43 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
       protected String[] getKeys(SModel model, SReference sref) {
         SNodeId targetNodeId = sref.getTargetNodeId();
         if (targetNodeId instanceof Foreign) {
+
+          ArrayList<String> result = new ArrayList<String>();
+
           String id = targetNodeId.toString();
           id = id.substring(Foreign.ID_PREFIX.length());
           int paren = id.indexOf("(");
-          if (paren >= 0) {
-            id = id.substring(0, paren);
-          }
-          ArrayList<String> result = new ArrayList<String>();
+          String firstPart = paren >= 0 ? id.substring(0, paren) : id;
+          result.addAll(getKeys(firstPart));
 
-          for (int idx = id.indexOf("."); idx >= 0; idx = id.indexOf(".", idx+1)) {
-            result.add(id.substring(0, idx+1)); // tailing dot for all prefixes
+          // now what's after the opening parenthesis, i.e params
+          if (paren > 0) {
+            int paren2 = id.indexOf(")", paren);
+            String params = id.substring(paren+1, paren2); // e.g. Object, int, my.pkg.Claz
+            for (String paramId : params.split(",")) {
+              paramId = paramId.trim();
+              if (!"".equals(paramId)) {
+                // adding dot because we want param types to be considered fully, not only prefixes
+                result.addAll(getKeys(paramId + "."));
+              }
+            }
           }
-          result.add(id); // no trailing dot
 
           return result.toArray(new String[result.size()]);
         }
         return EMPTY;
       }
+
+      private List<String> getKeys(String id) {
+        ArrayList<String> result = new ArrayList<String>();
+
+        for (int idx = id.indexOf("."); idx >= 0; idx = id.indexOf(".", idx+1)) {
+          result.add(id.substring(0, idx+1)); // trailing dot for all prefixes
+        }
+        result.add(id); // no trailing dot
+        return result;
+      }
+
     };
   }
 
