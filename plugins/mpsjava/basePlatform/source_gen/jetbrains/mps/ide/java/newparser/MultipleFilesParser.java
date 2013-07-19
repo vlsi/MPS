@@ -53,16 +53,19 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 public class MultipleFilesParser {
   private static final Logger LOG = LogManager.getLogger(MultipleFilesParser.class);
 
   private SModule myModule;
   private SModel myModel;
+  private boolean myPerRoot;
   private SRepository myRepository;
   private ModelAccess myModelAccess;
 
@@ -80,7 +83,14 @@ public class MultipleFilesParser {
 
 
   public MultipleFilesParser(SModule module, SRepository repository) {
+    this(module, repository, false);
+  }
+
+
+
+  public MultipleFilesParser(SModule module, SRepository repository, boolean perRoot) {
     myModule = module;
+    myPerRoot = perRoot;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }
@@ -1026,7 +1036,15 @@ public class MultipleFilesParser {
       return null;
     }
 
-    SModel modelDescr = SModuleOperations.createModelWithAdjustments(packageName, getRootToCreateModel(packageName));
+    ModelRoot modelRoot = getRootToCreateModel(packageName);
+    SModel modelDescr;
+
+    if (myPerRoot) {
+      ModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+      modelDescr = SModuleOperations.createModelWithAdjustments(packageName, modelRoot, factory);
+    } else {
+      modelDescr = SModuleOperations.createModelWithAdjustments(packageName, modelRoot);
+    }
     assert modelDescr != null;
 
     ((EditableSModel) modelDescr).save();

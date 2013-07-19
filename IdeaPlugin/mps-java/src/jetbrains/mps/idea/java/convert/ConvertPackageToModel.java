@@ -82,7 +82,7 @@ public class ConvertPackageToModel extends AnAction {
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository());
+    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository(), true);
     final List<IFile> javaFiles = new ArrayList<IFile>();
     collectJavaFiles((PsiDirectory) element, javaFiles);
 
