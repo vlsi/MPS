@@ -4,11 +4,13 @@ import com.intellij.facet.FacetManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.impl.scopes.ModuleWithDependentsScope;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiClass;
@@ -19,11 +21,8 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
-import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
@@ -31,15 +30,11 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
-import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
@@ -56,6 +51,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -73,18 +69,49 @@ public class ConvertPackageToModel extends AnAction {
   }
 
   @Override
+  public void update(AnActionEvent e) {
+    PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+    Module module = e.getData(LangDataKeys.MODULE);
+
+    if (element == null
+      || !(element instanceof PsiDirectory)
+      || element instanceof MPSPsiModel
+      || module == null
+      || FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID) == null
+      || !containsJavaFiles((PsiDirectory) element)) {
+
+      e.getPresentation().setVisible(false);
+      e.getPresentation().setEnabled(false);
+    }
+  }
+
+  @Override
   public void actionPerformed(final AnActionEvent e) {
 
     final PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
     final Module module = e.getData(LangDataKeys.MODULE);
+    final Project project = e.getData(PlatformDataKeys.PROJECT);
 
     MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
+    List<PsiJavaFile> psiJavaFiles = new ArrayList<PsiJavaFile>();
+    collectPsiJavaFiles((PsiDirectory) element, psiJavaFiles);
+
+    Collection<Module> modulesWithoutFacet = JavaConverter.getModulesThatNeedMPSFacet(psiJavaFiles);
+
+    if (!modulesWithoutFacet.isEmpty()) {
+      AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project);
+      dialog.show();
+      // Q: is it ok if dialog adds facets inside itself, or should that be written outside
+      if (dialog.getExitCode() == DialogWrapper.CANCEL_EXIT_CODE) {
+        return;
+      }
+    }
+
     final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository(), true);
-    final List<IFile> javaFiles = new ArrayList<IFile>();
-    collectJavaFiles((PsiDirectory) element, javaFiles);
+    final List<IFile> javaFiles = toIFiles(psiJavaFiles);
 
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       @Override
@@ -194,23 +221,6 @@ public class ConvertPackageToModel extends AnAction {
     });
   }
 
-  @Override
-  public void update(AnActionEvent e) {
-    PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
-    Module module = e.getData(LangDataKeys.MODULE);
-
-    if (element == null
-      || !(element instanceof PsiDirectory)
-      || element instanceof MPSPsiModel
-      || module == null
-      || FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID) == null
-      || !containsJavaFiles((PsiDirectory) element)) {
-
-      e.getPresentation().setVisible(false);
-      e.getPresentation().setEnabled(false);
-    }
-
-  }
 
   private boolean containsJavaFiles(PsiDirectory dir) {
     for (PsiFile f : dir.getFiles()) {
@@ -222,16 +232,26 @@ public class ConvertPackageToModel extends AnAction {
     return false;
   }
 
-  private void collectJavaFiles(PsiDirectory dir, List<IFile> result) {
+  private List<IFile> toIFiles(List<? extends PsiFile> psiFiles) {
+    List<IFile> result = new ArrayList<IFile>(psiFiles.size());
+
+    for (PsiFile file : psiFiles) {
+      VirtualFile vfile = file.getVirtualFile();
+      IFile ifile = new IdeaFileSystemProvider().getFile(vfile.getPath());
+      result.add(ifile);
+    }
+
+    return result;
+  }
+
+  private void collectPsiJavaFiles(PsiDirectory dir, List<PsiJavaFile> result) {
     for (PsiFile f : dir.getFiles()) {
       if (f instanceof PsiJavaFile) {
-        VirtualFile vfile = f.getVirtualFile();
-        IFile ifile = new IdeaFileSystemProvider().getFile(vfile.getPath());
-        result.add(ifile);
+        result.add((PsiJavaFile) f);
       }
     }
     for (PsiDirectory d : dir.getSubdirectories()) {
-      collectJavaFiles(d, result);
+      collectPsiJavaFiles(d, result);
     }
   }
 
