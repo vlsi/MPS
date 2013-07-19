@@ -70,6 +70,9 @@ public class SubtypingResolver {
   private boolean isSubType(final SNode subType, final SNode superType) {
     if (null == subType || null == superType) return false;
     if (subType == superType) return true;
+    if (TypesUtil.isVariable(subType)) return false;
+    if (TypesUtil.isVariable(superType)) return false;
+
     boolean canAskCache = (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType));
     if (canAskCache) {
       Boolean answer = getIsSubTypeCacheAnswer(subType, superType, myWeak);
@@ -138,6 +141,8 @@ public class SubtypingResolver {
     visited.add(subType);
     while (!queue.isEmpty()) {
       SNode cur = queue.poll();
+      if (TypesUtil.isVariable(cur)) return false;
+
       if (superType.matchesWith(cur)) {
         addToCache(subType, superType, true, isWeak);
         return true;
