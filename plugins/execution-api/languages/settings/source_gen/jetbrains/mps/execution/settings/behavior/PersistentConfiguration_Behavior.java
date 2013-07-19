@@ -11,6 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -71,7 +75,7 @@ public class PersistentConfiguration_Behavior {
     return allMemebers;
   }
 
-  public static SNode getContextPersistentConfigurationType_946964771156066389(SNode node) {
+  public static SNode call_getContextPersistentConfigurationType_946964771156066389(SAbstractConcept thisConcept, SNode node) {
     SNode configuration = SNodeOperations.getAncestor(node, "jetbrains.mps.execution.settings.structure.PersistentConfiguration", false, false);
     if (configuration == null) {
       SNode executor = SNodeOperations.getAncestor(node, "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent", false, false);
@@ -79,18 +83,18 @@ public class PersistentConfiguration_Behavior {
         configuration = SLinkOperations.getTarget(executor, "configuration", false);
       }
     }
-    return _quotation_createNode_4ves9l_a2a0(configuration);
+    return _quotation_createNode_4ves9l_a2a8(configuration);
   }
 
-  public static List<SNode> getContextPersistentProperties_946964771156066434(SNode node) {
-    SNode configurationType = PersistentConfiguration_Behavior.getContextPersistentConfigurationType_946964771156066389(node);
+  public static List<SNode> call_getContextPersistentProperties_946964771156066434(SAbstractConcept thisConcept, SNode node) {
+    SNode configurationType = PersistentConfiguration_Behavior.call_getContextPersistentConfigurationType_946964771156066389(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration"))), node);
     if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, "persistentConfiguration", false) == null)) {
       return new ArrayList<SNode>();
     }
     return SLinkOperations.getTargets(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false), "persistentProperty", true);
   }
 
-  public static String getCheckMethodName_946964771156066466() {
+  public static String call_getCheckMethodName_946964771156066466(SAbstractConcept thisConcept) {
     return "checkConfiguration";
   }
 
@@ -112,7 +116,7 @@ public class PersistentConfiguration_Behavior {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_4ves9l_a2a0(Object parameter_1) {
+  private static SNode _quotation_createNode_4ves9l_a2a8(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);

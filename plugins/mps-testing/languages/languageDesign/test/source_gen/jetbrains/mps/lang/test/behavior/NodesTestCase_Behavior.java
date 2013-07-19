@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class NodesTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -32,12 +33,12 @@ public class NodesTestCase_Behavior {
     return ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(thisNode, "testMethods", true))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))).toListSequence();
   }
 
-  public static boolean isIntentionApplicable_1217250498008(SNode node) {
+  public static boolean call_isIntentionApplicable_1217250498008(SAbstractConcept thisConcept, SNode node) {
     SNode test = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
     return test != null;
   }
 
-  public static String getTestBodyName_1224602741295() {
+  public static String call_getTestBodyName_1224602741295(SAbstractConcept thisConcept) {
     return "TestBody";
   }
 }

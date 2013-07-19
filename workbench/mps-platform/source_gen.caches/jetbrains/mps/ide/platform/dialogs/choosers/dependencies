@@ -122,6 +122,7 @@
     <classNode extendsClassName="com.intellij.ui.treeStructure.AlwaysExpandedTree" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" file="NodeChooserDialog.java">
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNameModel" />
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
     <classNode dependClassName="com.intellij.navigation.NavigationItem" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />

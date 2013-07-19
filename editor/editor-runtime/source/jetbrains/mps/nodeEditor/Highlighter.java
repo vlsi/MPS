@@ -29,6 +29,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.make.IMakeService;
@@ -112,15 +113,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
-      for (SModel modelDescriptor : replacedModels) {
-        if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
-          continue;
-        }
-        for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-          SNode sNode = editorComponent.getEditedNode();
-          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) &&
-              sNode.getModel().getReference().equals(modelDescriptor.getReference())) {
-            myCheckedOnceEditors.remove(editorComponent);
+      synchronized (EVENTS_LOCK) {
+        for (SModel modelDescriptor : replacedModels) {
+          myLastEvents.add(new SModelReplacedEvent(modelDescriptor));
+          if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
+            continue;
+          }
+          for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
+            SNode sNode = editorComponent.getEditedNode();
+            if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) &&
+                sNode.getModel().getReference().equals(modelDescriptor.getReference())) {
+              myCheckedOnceEditors.remove(editorComponent);
+            }
           }
         }
       }

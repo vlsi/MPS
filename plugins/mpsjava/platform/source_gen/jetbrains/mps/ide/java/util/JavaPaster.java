@@ -135,8 +135,6 @@ public class JavaPaster {
       MultipleFilesParser mfParser = new MultipleFilesParser(operationContext.getModule(), operationContext.getProject().getRepository());
       mfParser.tryResolveRefs(nodes, featureKind, new EmptyProgressMonitor());
 
-      // <node> 
-
     } catch (JavaParseException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }
@@ -176,18 +174,12 @@ public class JavaPaster {
     return true;
   }
 
+  @Deprecated
   public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
-    SModule module = model.getModule();
-    try {
-      JavaParser.JavaParseResult result = new JavaParser().parse(javaCode, SModelOperations.getModelName(model), FeatureKind.STATEMENTS, null, true);
-      String msg = result.getErrorMsg();
-      if (msg != null) {
-        LOG.error(msg);
-      }
-      return result.getNodes();
-    } catch (JavaParseException e) {
-      LOG.error("Exception happened while parsing java code: ", e);
-    }
+    // Now it's just a stub. The client wants the nodes to be in a model,      
+    // it means we would have to create some fake model... 
+    // It all is needed when pasting text into model and converting it to nodes on the fly. 
+    // We have turned off this functionality 
     return new ArrayList<SNode>();
   }
 

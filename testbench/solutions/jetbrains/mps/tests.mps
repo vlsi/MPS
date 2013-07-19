@@ -1011,9 +1011,6 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096674" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052406741" resolveInfo="ConceptFunctioParameterTest" />
     </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096675" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052406787" resolveInfo="ConceptMethod" />
-    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096676" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052406933" resolveInfo="ExtractFromAnonymous" />
     </node>
@@ -1067,9 +1064,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096693" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052684456" resolveInfo="ExtractFromIntention" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096694" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052684553" resolveInfo="staticContainerBehaviorTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096695" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230052684686" resolveInfo="staticContainerClassTest" />

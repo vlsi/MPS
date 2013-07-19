@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class StaticConceptMethodCall_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> getClassifiersWithStaticMethods_1213877485028(SModel model, IScope scope, SNode enclosingNode) {
+  public static List<SNode> call_getClassifiersWithStaticMethods_1213877485028(SAbstractConcept thisConcept, SModel model, IScope scope, SNode enclosingNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode behavior : SModelOperations.getNodesIncludingImported(model, scope, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
       SNode concept = SLinkOperations.getTarget(behavior, "concept", false);

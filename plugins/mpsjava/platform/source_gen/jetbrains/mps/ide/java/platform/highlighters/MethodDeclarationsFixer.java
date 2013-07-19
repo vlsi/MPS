@@ -13,9 +13,10 @@ import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelReplacedEvent;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -69,6 +70,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     }
   };
+  private boolean myCachesCleared = false;
 
   public MethodDeclarationsFixer() {
   }
@@ -81,6 +83,18 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   public void doDispose() {
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
     super.doDispose();
+  }
+
+
+
+  @Override
+  public boolean hasDramaticalEvent(List<SModelEvent> list) {
+    for (SModelEvent event : list) {
+      if (event instanceof SModelReplacedEvent) {
+        return true;
+      }
+    }
+    return super.hasDramaticalEvent(list);
   }
 
   @Override
@@ -102,7 +116,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return new HashSet<EditorMessage>(0);
     }
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
-    if (!(wasCheckedOnce)) {
+    if (!(wasCheckedOnce) || myCachesCleared) {
       for (SNode methodCall : SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})) {
         testAndFixMethodCall(methodCall, reResolvedTargets);
       }
@@ -140,6 +154,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
             methodDeclarationNameChanged(node, reResolvedTargets);
             methodDeclarationSignatureChanged(node, reResolvedTargets);
           }
+        }
+
+        @Override
+        public void visitReplacedEvent(SModelReplacedEvent event) {
+          clearCaches();
         }
       };
       for (SModelEvent event : events) {
@@ -186,9 +205,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myMethodConceptsAndNamesToCheckedMethodCalls.clear();
     myParametersToCheckedMethodCalls.clear();
     myMethodCallsToSetDecls.clear();
+    myCachesCleared = true;
   }
 
   public void testAndFixMethodCall(@NotNull SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
+    myCachesCleared = false;
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName = getMethodName(methodCallNode);
 
@@ -262,7 +283,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     } else {
       return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_vo5uqs_a0a0a0a0a1a0a0e0s(SPropertyOperations.getString(it, "name"), name);
+          return eq_vo5uqs_a0a0a0a0a1a0a0e0v(SPropertyOperations.getString(it, "name"), name);
         }
       }), null);
     }
@@ -391,7 +412,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     clearCaches();
   }
 
-  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0s(Object a, Object b) {
+  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0v(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

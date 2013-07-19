@@ -9,10 +9,12 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.test.behavior.ScopesTest_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -61,7 +63,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
-    return ScopesTest_Behavior.isApplicable_5449224527592368025(node);
+    return ScopesTest_Behavior.call_isApplicable_5449224527592368025(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node);
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -91,7 +93,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
       SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesTest", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest")), newAnnotation);
 
-      if (ScopesTest_Behavior.isSimple_5449224527592395483(node)) {
+      if (ScopesTest_Behavior.call_isSimple_5449224527592395483(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node)) {
         SLinkOperations.setTarget(newAnnotation, "checkingReference", ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation).getTargetNode(), false);
         Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation));
 

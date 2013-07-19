@@ -23,4 +23,6 @@ public interface SModelEventVisitor {
   void visitPropertyEvent(SModelPropertyEvent event);
 
   void visitReferenceEvent(SModelReferenceEvent event);
+
+  void visitReplacedEvent(SModelReplacedEvent event);
 }

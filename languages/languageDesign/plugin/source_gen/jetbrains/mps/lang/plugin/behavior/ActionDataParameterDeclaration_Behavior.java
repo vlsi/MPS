@@ -34,10 +34,10 @@ public class ActionDataParameterDeclaration_Behavior {
     return result;
   }
 
-  public static String getDescription_47694270442103157(SNode parameterObject) {
+  public static String call_getDescription_47694270442103157(SAbstractConcept thisConcept, SNode parameterObject) {
     SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "annotation", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_6xp2og_a0a0a0a0a0a0a0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_6xp2og_a0a0a0a0a0a0a0a3(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
       }
     }).first();
     if (annotation == null) {
@@ -54,7 +54,7 @@ public class ActionDataParameterDeclaration_Behavior {
     return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(value, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
   }
 
-  private static SNode _quotation_createNode_6xp2og_a0a0a0a0a0a0a0a0() {
+  private static SNode _quotation_createNode_6xp2og_a0a0a0a0a0a0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

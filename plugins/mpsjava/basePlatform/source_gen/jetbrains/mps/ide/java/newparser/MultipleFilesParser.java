@@ -126,9 +126,10 @@ public class MultipleFilesParser {
 
     // now we attach the models and try to resolve      
 
-    if (myModel == null) {
-      runCommand("model creation pass", new Runnable() {
-        public void run() {
+    runCommand("roots creation pass", new Runnable() {
+      public void run() {
+
+        if (myModel == null) {
           ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
           for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
@@ -152,14 +153,7 @@ public class MultipleFilesParser {
             ListSequence.fromList(myModels).addElement(model);
           }
 
-          JavaParser.tryResolveUnknowns(myAttachedRoots);
-        }
-      });
-
-    } else {
-      runCommand("attach roots pass", new Runnable() {
-        public void run() {
-
+        } else {
           // todo maybe do something clever with packages <-> java imports 
           // with regard to model where we put it all 
           for (SNode root : ListSequence.fromList(myRoots)) {
@@ -167,10 +161,14 @@ public class MultipleFilesParser {
             myModel.addRootNode(root);
           }
           myAttachedRoots = myRoots;
-          JavaParser.tryResolveUnknowns(myAttachedRoots);
         }
-      });
-    }
+
+        ((AbstractModule) myModule).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+
+        JavaParser.tryResolveUnknowns(myAttachedRoots);
+
+      }
+    });
 
     myRootCount = myAttachedRoots.size();
 

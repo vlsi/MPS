@@ -374,9 +374,9 @@ public class TypeContextManager implements CoreComponent {
   }
 
   private void stopListening(SModel model) {
-    model.addModelListener(myListener);
+    model.removeModelListener(myListener);
     if (model instanceof EditableSModel) {
-      ((EditableSModel) model).addChangeListener(myListener);
+      ((EditableSModel) model).removeChangeListener(myListener);
     }
   }
 

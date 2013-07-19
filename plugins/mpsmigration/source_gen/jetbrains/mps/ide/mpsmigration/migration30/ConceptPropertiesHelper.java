@@ -268,8 +268,8 @@ public class ConceptPropertiesHelper {
 
   private SNode replaceConceptPropertyDeclarations(SNode conceptPropertyDeclaration, Set<SNode> conceptProperties) {
     SNode conceptNode = SNodeOperations.getAncestor(conceptPropertyDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    String conceptName = SPropertyOperations.getString(conceptPropertyDeclaration, "name");
-    if (SConceptOperations.isExactly(((SNode) conceptNode), "jetbrains.mps.lang.core.structure.BaseConcept") && (eq_azpnkk_a0a0a0a0c0u_0(conceptName, ConceptPropertiesHelper.abstractName) || eq_azpnkk_a0a0a0a0c0u(conceptName, ConceptPropertiesHelper.finalName) || eq_azpnkk_a0a0a0a2a02(conceptName, ConceptPropertiesHelper.shortDescriptionName) || eq_azpnkk_a0a0a0c0u(conceptName, ConceptPropertiesHelper.aliasName) || eq_azpnkk_a0a0a2a02(conceptName, ConceptPropertiesHelper.dontSubstituteName))) {
+    String propName = SPropertyOperations.getString(conceptPropertyDeclaration, "name");
+    if (SConceptOperations.isExactly(((SNode) conceptNode), "jetbrains.mps.lang.core.structure.BaseConcept") && (eq_azpnkk_a0a0a0a0c0u_0(propName, ConceptPropertiesHelper.abstractName) || eq_azpnkk_a0a0a0a0c0u(propName, ConceptPropertiesHelper.finalName) || eq_azpnkk_a0a0a0a2a02(propName, ConceptPropertiesHelper.shortDescriptionName) || eq_azpnkk_a0a0a0c0u(propName, ConceptPropertiesHelper.aliasName) || eq_azpnkk_a0a0a2a02(propName, ConceptPropertiesHelper.dontSubstituteName))) {
       return null;
     }
     boolean valueIsDefault = true;
@@ -287,7 +287,7 @@ public class ConceptPropertiesHelper {
     SNode returnStatement;
     if (SNodeOperations.isInstanceOf(conceptPropertyDeclaration, "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
       returnType = _quotation_createNode_azpnkk_a0a0k0u();
-      name = "get" + NameUtil.capitalize(conceptName);
+      name = "get" + NameUtil.capitalize(NameUtil.toValidCamelIdentifier(propName));
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       if (!(valueIsDefault)) {
         SPropertyOperations.set(result, "value", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(sameConceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value")));
@@ -297,7 +297,7 @@ public class ConceptPropertiesHelper {
       returnStatement = _quotation_createNode_azpnkk_a0e0k0u(result);
     } else if (SNodeOperations.isInstanceOf(conceptPropertyDeclaration, "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration")) {
       returnType = _quotation_createNode_azpnkk_a0a0a01a02();
-      name = "get" + NameUtil.capitalize(conceptName);
+      name = "get" + NameUtil.capitalize(NameUtil.toValidCamelIdentifier(propName));
       SNode result;
       if (!(valueIsDefault)) {
         result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
@@ -311,7 +311,7 @@ public class ConceptPropertiesHelper {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
       SPropertyOperations.set(result, "value", "" + (!(valueIsDefault)));
       returnStatement = _quotation_createNode_azpnkk_a0d0b01a02(result);
-      name = conceptName;
+      name = propName;
     } else {
       return null;
     }

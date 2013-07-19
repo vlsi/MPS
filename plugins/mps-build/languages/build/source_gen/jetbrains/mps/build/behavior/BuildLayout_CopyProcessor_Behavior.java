@@ -7,9 +7,13 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.util.GenerationUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -29,23 +33,14 @@ public class BuildLayout_CopyProcessor_Behavior {
     String name = "default";
     SNode copyNode = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_CustomCopy");
     if ((copyNode != null)) {
-      name = BuildLayout_CopyProcessor_Behavior.filesetName_1330375798101726877(SLinkOperations.getTarget(copyNode, "fileset", true));
+      name = BuildLayout_CopyProcessor_Behavior.call_filesetName_1330375798101726877(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyProcessor"))), SLinkOperations.getTarget(copyNode, "fileset", true));
     }
     outpath = Context.defaultContext(genContext).getTempPath(thisNode, name, "customProcessors", BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTaskName_1330375798060763184", new Object[]{}));
     map.put(thisNode, outpath);
     return outpath;
   }
 
-  public static String filesetName_1330375798101726877(SNode fileset) {
-    if (SNodeOperations.isInstanceOf(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
-      return BuildLayout_CopyProcessor_Behavior.representativeName_1330375798101242503(SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true));
-    } else if (SNodeOperations.isInstanceOf(fileset, "jetbrains.mps.build.structure.BuildInputFiles")) {
-      return BuildLayout_CopyProcessor_Behavior.representativeName_1330375798101242503(SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true));
-    }
-    return "copy";
-  }
-
-  public static String representativeName_1330375798101242503(SNode path) {
+  public static String call_representativeName_1330375798101242503(SAbstractConcept thisConcept, SNode path) {
     StringBuilder res = new StringBuilder();
     if (SNodeOperations.isInstanceOf(path, "jetbrains.mps.build.structure.BuildRelativePath")) {
       SNode compositePart = SLinkOperations.getTarget(SNodeOperations.cast(path, "jetbrains.mps.build.structure.BuildRelativePath"), "compositePart", true);
@@ -57,7 +52,7 @@ public class BuildLayout_CopyProcessor_Behavior {
           }
           res.append(name);
         }
-        compositePart = BuildRelativePath_Behavior.next_8654221991637156927(compositePart);
+        compositePart = BuildRelativePath_Behavior.call_next_8654221991637156927(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), compositePart);
       }
     } else {
       res.append(BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{null}));
@@ -66,6 +61,15 @@ public class BuildLayout_CopyProcessor_Behavior {
       res.append("container");
     }
     return res.toString();
+  }
+
+  public static String call_filesetName_1330375798101726877(SAbstractConcept thisConcept, SNode fileset) {
+    if (SNodeOperations.isInstanceOf(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
+      return BuildLayout_CopyProcessor_Behavior.call_representativeName_1330375798101242503(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyProcessor"))), SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true));
+    } else if (SNodeOperations.isInstanceOf(fileset, "jetbrains.mps.build.structure.BuildInputFiles")) {
+      return BuildLayout_CopyProcessor_Behavior.call_representativeName_1330375798101242503(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyProcessor"))), SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true));
+    }
+    return "copy";
   }
 
   @Deprecated

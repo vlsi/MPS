@@ -21,9 +21,9 @@ import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeParameterList;
 import com.intellij.psi.PsiWhiteSpace;
 import jetbrains.mps.ide.platform.watching.ReloadParticipant;
-import jetbrains.mps.idea.java.psi.PsiListener.FSMove;
-import jetbrains.mps.idea.java.psi.PsiListener.FSRename;
-import jetbrains.mps.idea.java.psi.PsiListener.PsiEvent;
+import jetbrains.mps.idea.java.psi.JavaPsiListener.FSMove;
+import jetbrains.mps.idea.java.psi.JavaPsiListener.FSRename;
+import jetbrains.mps.idea.java.psi.JavaPsiListener.PsiEvent;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 

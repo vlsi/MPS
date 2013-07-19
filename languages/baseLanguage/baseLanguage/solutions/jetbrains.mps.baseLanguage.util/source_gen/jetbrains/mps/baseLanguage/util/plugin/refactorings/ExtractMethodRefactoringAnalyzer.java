@@ -15,6 +15,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
@@ -32,7 +33,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExtractMethodRefactoringAnalyzer {
   private List<SNode> myPartToExtract;
@@ -90,11 +90,13 @@ public class ExtractMethodRefactoringAnalyzer {
       return true;
     }
     SNode containerMethod = this.myProcessor.getContainerMethod();
-    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration")) {
+    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       return true;
-    } else {
-      return false;
     }
+    if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && (SPropertyOperations.getBoolean(SNodeOperations.cast(containerMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "isStatic")) && !(SPropertyOperations.getBoolean(SNodeOperations.cast(containerMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "isVirtual"))) {
+      return true;
+    }
+    return false;
   }
 
   private boolean findIfCanBeStatic() {

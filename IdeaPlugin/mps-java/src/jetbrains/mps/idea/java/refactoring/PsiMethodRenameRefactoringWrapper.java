@@ -10,6 +10,7 @@ import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.util.MergeQuery;
 import com.intellij.util.Processor;
 import com.intellij.util.Query;
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -53,9 +54,13 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
 
     String newName = (String) refactoringContext.getParameter("newName");
 
-    for (PsiReference ref : query(method)) {
-      if (ref.getElement() instanceof MPSPsiNodeBase) continue;
-      ref.handleElementRename(newName);
+    SearchResults<SNode> usages = (SearchResults<SNode>) refactoringContext.getUsages();
+
+    for (SearchResult<SNode> result : usages.getSearchResults()) {
+      if (!(result instanceof PsiSearchResult)) continue;
+      PsiReference psiRef = ((PsiSearchResult) result).getReference();
+      if (psiRef.getElement() instanceof MPSPsiNode) continue;
+      psiRef.handleElementRename(newName);
     }
 
     if (myOverriding) {
@@ -102,7 +107,7 @@ public class PsiMethodRenameRefactoringWrapper extends PsiRenameRefactoringWrapp
     } else {
       // include overriding methods' usages
       // todo fix this ugliness
-      final Query<PsiReference>[] query = new Query[] { exactUsages };
+      final Query<PsiReference>[] query = new Query[]{exactUsages};
 
       OverridingMethodsSearch.search(method).forEach(new Processor<PsiMethod>() {
         @Override

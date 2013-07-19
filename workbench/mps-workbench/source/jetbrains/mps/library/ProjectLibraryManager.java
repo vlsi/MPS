@@ -85,23 +85,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public void projectOpened() {
-    final MPSProjectMigrationComponent migrationState = myProject.getComponent(MPSProjectMigrationComponent.class);
-    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
-      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
-        @Override
-        public void migrationFinished(Project mpsProject) {
-          migrationState.removeMigrationListener(this);
-          loadLibraries();
-        }
-        @Override
-        public void migrationAborted(Project project) {
-          migrationState.removeMigrationListener(this);
-        }
-      });
-    }
-    else {
       loadLibraries();
-    }
   }
 
   @Override

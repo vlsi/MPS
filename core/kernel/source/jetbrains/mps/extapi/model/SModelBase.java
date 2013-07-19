@@ -258,6 +258,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
   }
 
+  protected final void fireBeforeModelRenamed(SModelReference newName) {
+    SModule module = getModule();
+    if (module instanceof SModuleBase) {
+      ((SModuleBase) module).fireBeforeModelRenamed(this, newName);
+    }
+  }
+
   protected final void fireModelRenamed(SModelReference oldName) {
     SModule module = getModule();
     if (module instanceof SModuleBase) {
@@ -307,6 +314,16 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     for (SModelListener l : myModelListeners) {
       try {
         l.problemsDetected(this, problems);
+      } catch (Throwable t) {
+        LOG.error("listener failure", t);
+      }
+    }
+  }
+
+  protected void fireModelReplaced() {
+    for (SModelListener l : myModelListeners) {
+      try {
+        l.modelReplaced(this);
       } catch (Throwable t) {
         LOG.error("listener failure", t);
       }

@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public interface ConsoleStream {
   public void addText(String text);
+  public void addNodeReference(SNode node);
   public void addNode(SNode node);
   public void addAction(String text, _FunctionTypes._void_P0_E0 action);
-  public void addNewLine();
 }

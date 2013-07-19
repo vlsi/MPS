@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
@@ -31,7 +34,7 @@ public class ClassifierMember_Behavior {
     final Wrappers._T<SNode> _contextClassifier = new Wrappers._T<SNode>(contextClassifier);
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.StaticKind")) {
       // todo: read specification! 
-      _contextClassifier.value = Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode);
+      _contextClassifier.value = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode);
     }
 
     // public 
@@ -45,7 +48,7 @@ public class ClassifierMember_Behavior {
     // default 
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(_contextClassifier.value);
-    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode));
+    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode));
     if ((SLinkOperations.getTarget(thisNode, "visibility", true) == null)) {
       return eq_i8o263_a0a0l0c(contextNodePackage, contextClassifierPackage);
     }

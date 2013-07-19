@@ -7,6 +7,10 @@ import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -38,7 +42,7 @@ public class BuildLayout_Node_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    BuildLayout_Node_Behavior.appendName_internal_1368030936106708110(thisNode, sb);
+    BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node"))), thisNode, sb);
     return sb.toString();
   }
 
@@ -50,10 +54,10 @@ public class BuildLayout_Node_Behavior {
     return false;
   }
 
-  public static void appendName_internal_1368030936106708110(SNode node, StringBuilder sb) {
+  public static void call_appendName_internal_1368030936106708110(SAbstractConcept thisConcept, SNode node, StringBuilder sb) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_PathElement");
     if (parent != null) {
-      BuildLayout_Node_Behavior.appendName_internal_1368030936106708110(parent, sb);
+      BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node"))), parent, sb);
     }
     BehaviorReflection.invokeVirtual(Void.class, node, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
   }

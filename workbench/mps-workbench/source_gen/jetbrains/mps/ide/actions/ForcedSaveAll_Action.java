@@ -80,11 +80,19 @@ public class ForcedSaveAll_Action extends BaseAction {
         if (model.isReadOnly()) {
           continue;
         }
-        // ensure model is loaded 
-        model.load();
-        //  and force to save model 
-        model.setChanged(true);
-        model.save();
+        try {
+          // ensure model is loaded 
+          model.load();
+          //  and force to save model 
+          model.setChanged(true);
+          if (model.isChanged()) {
+            model.save();
+          }
+        } catch (Exception ex) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Error re-saving model " + model.getModelName(), ex);
+          }
+        }
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

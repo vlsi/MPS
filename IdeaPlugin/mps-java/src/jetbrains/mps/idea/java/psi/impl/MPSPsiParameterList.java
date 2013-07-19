@@ -19,6 +19,7 @@ package jetbrains.mps.idea.java.psi.impl;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiParameterList;
+import com.intellij.psi.impl.PsiImplUtil;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NotNull;
 
@@ -55,11 +56,11 @@ public class MPSPsiParameterList extends MPSPsiNodeBase implements PsiParameterL
 
   @Override
   public int getParameterIndex(PsiParameter parameter) {
-    return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    return PsiImplUtil.getParameterIndex(parameter, this);
   }
 
   @Override
   public int getParametersCount() {
-    return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    return getParameters().length;
   }
 }

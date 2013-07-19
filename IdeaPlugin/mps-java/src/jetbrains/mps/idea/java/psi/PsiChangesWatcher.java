@@ -20,15 +20,12 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
 import com.intellij.refactoring.rename.inplace.InplaceRefactoring;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.platform.watching.ReloadAction;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import jetbrains.mps.idea.java.psi.PsiListener.FSMove;
-import jetbrains.mps.idea.java.psi.PsiListener.FSRename;
-import jetbrains.mps.idea.java.psi.PsiListener.PsiEvent;
+import jetbrains.mps.idea.java.psi.JavaPsiListener.PsiEvent;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NotNull;
 
@@ -45,13 +42,13 @@ public class PsiChangesWatcher implements ProjectComponent {
   private Project myProject;
   private PsiManager myPsiManager;
 
-  private Set<PsiListener> myListeners = new HashSet<PsiListener>();
+  private Set<JavaPsiListener> myListeners = new HashSet<JavaPsiListener>();
   // this is to allow listeners call code that adds/removes another listeners
   // e.g. modelRoot (listener) calls update() that attaches models, which in turn start to listen PSI on attach
   // note: it all happens in one same thread, so LOCK doesn't work as a guard
   private boolean isNotifying = false;
-  private Set<PsiListener> toBeAdded = new HashSet<PsiListener>();
-  private Set<PsiListener> toBeRemoved = new HashSet<PsiListener>();
+  private Set<JavaPsiListener> toBeAdded = new HashSet<JavaPsiListener>();
+  private Set<JavaPsiListener> toBeRemoved = new HashSet<JavaPsiListener>();
 
   private MessageBusConnection connection;
   private PsiTreeChangeListener myOwnPsiListener = new OwnPsiListener();
@@ -90,7 +87,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     myPsiManager.removePsiTreeChangeListener(myOwnPsiListener);
   }
 
-  public void addListener(PsiListener listener) {
+  public void addListener(JavaPsiListener listener) {
     synchronized (LOCK) {
       if (!isNotifying) {
         myListeners.add(listener);
@@ -103,7 +100,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     }
   }
 
-  public void removeListener(PsiListener listener) {
+  public void removeListener(JavaPsiListener listener) {
     synchronized (LOCK) {
       if (!isNotifying) {
         myListeners.remove(listener);
@@ -120,7 +117,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     synchronized (LOCK) {
       try {
         isNotifying = true;
-        for (PsiListener l : myListeners) {
+        for (JavaPsiListener l : myListeners) {
           l.psiChanged(event);
         }
       } finally {

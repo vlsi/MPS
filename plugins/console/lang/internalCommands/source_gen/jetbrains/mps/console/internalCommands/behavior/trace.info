@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="RebuildAspectCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_BehaviorDescriptor" />
+  <unitInfo fileName="RebuildAspectCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_BehaviorDescriptor" />
   <unitInfo fileName="ReloadClassesCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
-  <unitInfo fileName="ShowRepositoryCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
+  <unitInfo fileName="ShowRepositoryCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/6224631407134007787">
     <nodeInfo nodeId="9020890213748159569" fileName="ReloadClassesCommand_Behavior.java" startLine="15" startPosition="133" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6224631407134009998" fileName="ReloadClassesCommand_Behavior.java" startLine="16" startPosition="19" endLine="17" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

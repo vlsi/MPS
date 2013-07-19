@@ -15,9 +15,11 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 
+@Deprecated
 public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPasteUtil.IDataConverter {
   private static final int MIN_TEXT_LENGTH_TO_CONVERT = 100;
 
+  @Deprecated
   public JavaCopyPasteDataConverter(MPSCoreComponents coreComponents) {
   }
 

@@ -56,7 +56,7 @@ public abstract class DependencyAwareCache<K, V> {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       final List<SNode> changedNodes = new ArrayList<SNode>();
       for (SModelEvent e : events) {
-        e.accept(new SModelEventVisitor() {
+        e.accept(new SModelEventVisitorAdapter() {
           @Override
           public void visitRootEvent(SModelRootEvent event) {
             changedNodes.add(event.getRoot());

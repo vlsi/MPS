@@ -76,6 +76,9 @@ public class BuildMpsLayout_Plugin_Behavior {
           if ((group != null) && BuildMps_IdeaPluginGroup_Behavior.call_isCustomPackaging_8301447434616552323(group, module.value)) {
             return null;
           }
+          if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule") && SPropertyOperations.getBoolean(SNodeOperations.as(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), "customPackaging")) {
+            return null;
+          }
           return helper.locations().get(thisNode) + "/languages/" + ((group != null ?
             SPropertyOperations.getString(SLinkOperations.getTarget(group, "group", false), "name") + "/" :
             ""
@@ -112,15 +115,19 @@ public class BuildMpsLayout_Plugin_Behavior {
         if (SNodeOperations.isInstanceOf(module.value, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
           module.value = BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(module.value, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
         }
-        SNode group = BuildMpsLayout_Plugin_Behavior.call_findGroup_8301447434616448040(thisNode, module.value);
-        if ((group != null) && BuildMps_IdeaPluginGroup_Behavior.call_isCustomPackaging_8301447434616552323(group, module.value)) {
-          return false;
-        }
-        return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
+        SNode container = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_exports_6547494638219603457", new Object[]{module.value});
           }
         });
+        SNode group = SNodeOperations.as(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup");
+        if ((group != null) && BuildMps_IdeaPluginGroup_Behavior.call_isCustomPackaging_8301447434616552323(group, module.value)) {
+          return false;
+        }
+        if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule") && SPropertyOperations.getBoolean(SNodeOperations.as(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"), "customPackaging")) {
+          return false;
+        }
+        return container != null;
       }
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer", "virtual_exports_6547494638219603457", new Object[]{artifactId});

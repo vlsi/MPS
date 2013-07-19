@@ -9,6 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,7 +25,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
       classifier = SLinkOperations.getTarget(thisExpr, "classConcept", false);
     } else {
-      classifier = Classifier_Behavior.getContextClassifier_6172562527426750080(thisExpr);
+      classifier = Classifier_Behavior.call_getContextClassifier_6172562527426750080(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisExpr);
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;

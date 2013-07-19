@@ -27,6 +27,9 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.persistence.FolderModelFactory;
+import jetbrains.mps.project.MPSExtentions;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -62,13 +65,23 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
     if (model == null) {
       String ext = FileUtil.getExtension(inputData.getFileName());
+      if(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())) {
+        ext = MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.getDefaultExtension();
+      }
       ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(ext);
       if (factory == null) {
         return null;
       }
-      model = factory.isBinary()
-        ? PersistenceUtil.loadModel(inputData.getContent(), ext)
-        : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
+      if(factory instanceof FolderModelFactory) {
+        model = PersistenceUtil.loadModel(VirtualFileUtils.toIFile(
+          MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())
+            ?  inputData.getFile().getParent().findChild(MPSExtentions.DOT_MODEL_HEADER) : inputData.getFile())
+        );
+      } else {
+        model = factory.isBinary()
+          ? PersistenceUtil.loadModel(inputData.getContent(), ext)
+          : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
+      }
       if (model == null) {
         return null;
       }

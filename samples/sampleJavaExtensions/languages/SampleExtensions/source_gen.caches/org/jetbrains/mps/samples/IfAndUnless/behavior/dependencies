@@ -56,10 +56,6 @@
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_Behavior" file="UnlessStatement_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" file="UnlessStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

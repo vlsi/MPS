@@ -18,6 +18,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -51,7 +52,7 @@ public class PropertyAttributeQualifier_Constraints extends BaseConstraintsDescr
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return AttributeQualifier_Behavior.getApplicableRoles_959482772563105834(_context.getEnclosingNode(), "jetbrains.mps.lang.core.structure.PropertyAttribute", _context.getModel(), operationContext.getScope());
+            return AttributeQualifier_Behavior.call_getApplicableRoles_959482772563105834(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.AttributeQualifier"))), _context.getEnclosingNode(), "jetbrains.mps.lang.core.structure.PropertyAttribute", _context.getModel(), operationContext.getScope());
 
           }
 

@@ -157,6 +157,25 @@ public abstract class SModuleBase implements SModule {
   /**
    * Note: this method must not be used, except from within the model implementation classes.
    */
+  public void fireBeforeModelRenamed(SModelBase model, SModelReference newName) {
+    assertCanChange();
+
+    if (!(myModels.contains(model))) {
+      return;
+    }
+
+    for (SModuleListener listener : myListeners) {
+      try {
+        listener.beforeModelRenamed(this, model, newName);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  /**
+   * Note: this method must not be used, except from within the model implementation classes.
+   */
   public void fireModelRenamed(SModelBase model, SModelReference oldName) {
     assertCanChange();
 
@@ -172,7 +191,6 @@ public abstract class SModuleBase implements SModule {
       }
     }
   }
-
 
   @Override
   public final SModel getModel(SModelId id) {

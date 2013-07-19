@@ -11,9 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifier_Behavior {
@@ -49,11 +52,11 @@ public class IClassifier_Behavior {
       if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), member, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
         ListSequence.fromList(result).addElement(member);
       }
-      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), member, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && IClassifier_Behavior.getContextClassifier_1213877527940(contextNode) == IMember_Behavior.call_getContainer_1213877353020(member)) {
+      if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), member, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), contextNode) == IMember_Behavior.call_getContainer_1213877353020(member)) {
         ListSequence.fromList(result).addElement(member);
       }
       if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), member, "virtual_getVisiblity_1213877352965", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-        SNode contextClassifier = IClassifier_Behavior.getContextClassifier_1213877527940(contextNode);
+        SNode contextClassifier = IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), contextNode);
         if (contextClassifier != null && TypeChecker.getInstance().getSubtypingManager().isSubtype(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifier, "virtual_createType_1213877527970", new Object[]{}), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{}))) {
           ListSequence.fromList(result).addElement(member);
         }
@@ -95,7 +98,7 @@ public class IClassifier_Behavior {
     };
   }
 
-  public static SNode getContextClassifier_1213877527940(SNode contextNode) {
+  public static SNode call_getContextClassifier_1213877527940(SAbstractConcept thisConcept, SNode contextNode) {
     SNode classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", true, false);
     if (classifier != null) {
       return classifier;

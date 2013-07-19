@@ -6,14 +6,15 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import com.intellij.openapi.application.ModalityState;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,11 +27,23 @@ import java.awt.Dimension;
 public class NodeChooserDialog extends DialogWrapper {
   private ChooseByNamePanel myChooser;
 
-  public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
+  public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes, ChooseByNameModel chooseByNameModel) {
     super(project, true);
     setTitle("Choose Node");
 
-    BaseNodePointerModel goToNodeModel = new BaseNodePointerModel(project) {
+    myChooser = MpsPopupFactory.createPanelForNode(chooseByNameModel, false);
+    myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
+      public void elementChosen(Object element) {
+        doOKAction();
+      }
+    }, ModalityState.stateForComponent(getWindow()), false);
+
+    init();
+  }
+
+  public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
+    this(project, nodes, new BaseNodePointerModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SNodeReference node) {
         return new BaseNodePointerItem(node) {
@@ -59,16 +72,7 @@ public class NodeChooserDialog extends DialogWrapper {
       public boolean willOpenEditor() {
         return false;
       }
-    };
-    myChooser = MpsPopupFactory.createPanelForNode(goToNodeModel, false);
-    myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
-      @Override
-      public void elementChosen(Object element) {
-        doOKAction();
-      }
-    }, ModalityState.stateForComponent(getWindow()), false);
-
-    init();
+    });
   }
 
   public NodeChooserDialog(Project project, final List<SNode> nodes) {

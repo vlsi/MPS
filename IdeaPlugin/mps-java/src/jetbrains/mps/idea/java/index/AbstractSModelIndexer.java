@@ -18,7 +18,9 @@ package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.CollectConsumer;
@@ -36,10 +38,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
-* User: fyodor
-* Date: 3/28/13
-*/
-/*package*/ abstract class AbstractSModelIndexer<S,E> implements DataIndexer<String, Collection<E>, FileContent> {
+ * User: fyodor
+ * Date: 3/28/13
+ */
+/*package*/ abstract class AbstractSModelIndexer<S, E> implements DataIndexer<String, Collection<E>, FileContent> {
 
   private static final Logger LOG = Logger.getLogger(AbstractSModelIndexer.class);
 
@@ -143,7 +145,10 @@ import java.util.Map;
   @NotNull
   @Override
   public Map<String, Collection<E>> map(final FileContent inputData) {
+    Project mpsProject = ProjectHelper.toMPSProject(inputData.getProject());
+
     final HashMap<String, Collection<E>> map = new HashMap<String, Collection<E>>();
+
     ModelAccess.instance().runIndexing(new Runnable() {
       @Override
       public void run() {
@@ -171,6 +176,7 @@ import java.util.Map;
         }
       }
     });
+
     return map;
   }
 

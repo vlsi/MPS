@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,7 +22,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
 
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode bmd : ExtractStaticMethod_CallExpression_Behavior.getMethods_5857910569715993654(thisNode)) {
+    for (SNode bmd : ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), thisNode)) {
       if (SPropertyOperations.getString(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name").equals(methodName)) {
         ListSequence.fromList(result).addElement(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       }
@@ -40,7 +43,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
     return true;
   }
 
-  public static List<SNode> getMethods_5857910569715993654(SNode context) {
+  public static List<SNode> call_getMethods_5857910569715993654(SAbstractConcept thisConcept, SNode context) {
     List<SNode> smd = new ArrayList<SNode>();
     for (SNode es : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", true)) {
       ListSequence.fromList(smd).addElement(SLinkOperations.getTarget(es, "method", true));

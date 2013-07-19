@@ -173,12 +173,17 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       @Override
       public String getCanonicalText() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        // very dumb
+        String name = getClassName();
+        if (name == null) {
+          return "NoName";
+        }
+        return name;
       }
 
       @Override
       public String getInternalCanonicalText() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return getCanonicalText();
       }
 
       @Override

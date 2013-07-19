@@ -19,7 +19,7 @@ package jetbrains.mps.idea.java.index;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
-import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.idea.java.util.ClassUtil;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -36,7 +36,7 @@ import java.util.Collection;
  */
 public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
 
-  public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSFQNameJavaClassIndex");
+  public static final ID<String, Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSFQNameJavaClassIndex");
 
   private static final DataIndexer<String, Collection<SNodeDescriptor>, FileContent> INDEXER = new MyIndexer();
 
@@ -68,8 +68,9 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
     }
 
     @Override
-    protected String[] getKeys(SModel model, SNode node) {
-      return new String[] {JavaNameUtil.fqClassName(model, getSNodeName(node))};
+    protected String[] getKeys(SModel model, final SNode node) {
+      return new String[]{ClassUtil.getClassFQName(node)};
+
     }
   }
 

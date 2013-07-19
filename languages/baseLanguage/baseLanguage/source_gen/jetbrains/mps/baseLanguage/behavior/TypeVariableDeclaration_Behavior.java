@@ -7,11 +7,14 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -32,7 +35,7 @@ public class TypeVariableDeclaration_Behavior {
     }
     SetSequence.fromSet(visitedVars).addElement(thisNode);
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
-      return TypeVariableDeclaration_Behavior.getTypeWithConcreteUpperBounds_4346214032091504651(SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
+      return TypeVariableDeclaration_Behavior.call_getTypeWithConcreteUpperBounds_4346214032091504651(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))), SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
     } else {
       return _quotation_createNode_ct7zh2_a0a0c0b();
     }
@@ -52,7 +55,7 @@ public class TypeVariableDeclaration_Behavior {
     return buff.toString();
   }
 
-  public static SNode getTypeWithConcreteUpperBounds_4346214032091504651(SNode inputType, Set<SNode> visitedVars) {
+  public static SNode call_getTypeWithConcreteUpperBounds_4346214032091504651(SAbstractConcept thisConcept, SNode inputType, Set<SNode> visitedVars) {
     if (SNodeOperations.isInstanceOf(inputType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
     }

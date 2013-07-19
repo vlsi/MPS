@@ -14,8 +14,6 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.application.ex.ApplicationEx;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.io.File;
@@ -56,13 +54,6 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    if (myRunConfiguration.getIsRestartCurrent()) {
-      ApplicationEx application = (ApplicationEx) ApplicationManager.getApplication();
-      application.restart(true);
-      // todo 
-      throw new ExecutionException("MPS is going to be restarted.");
-    }
-
     ProcessHandler process;
 
     final Tuples._2<File, File> files = myRunConfiguration.getMpsSettings().prepareFilesToOpenAndToDelete(project);

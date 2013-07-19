@@ -49,7 +49,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
   private static final Key<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask");
 
   public DeployPlugins_BeforeTask() {
-    super("DeployPlugins", "Deploy Plugins");
+    super("DeployPlugins", "Deploy plugins");
   }
 
   protected DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask createTaskImpl() {

@@ -10,6 +10,7 @@ import com.intellij.psi.PsiClassInitializer;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier.ModifierConstant;
@@ -32,7 +33,9 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.java.util.ClassUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -51,6 +54,8 @@ import java.util.List;
  * evgeny, 1/28/13
  */
 public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
+  private static Object LOG = new Object();
+  private String myFQName;
 
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
@@ -60,18 +65,22 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @Nullable
   @Override
   public String getQualifiedName() {
-    final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
-    final Ref<String> result = new Ref<String>();
+    synchronized (LOG) {
 
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = getSNodeReference().resolve(repository);
-        result.set(ClassUtil.getClassFQName(node));
+      if (myFQName == null) {
+        final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
+        repository.getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SNode node = getSNodeReference().resolve(repository);
+            myFQName = ClassUtil.getClassFQName(node);
+          }
+        });
+
       }
-    });
 
-    return result.get();
+      return myFQName;
+    }
   }
 
   @Override
@@ -240,7 +249,16 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @Nullable
   @Override
   public PsiClass findInnerClassByName(@NonNls String name, boolean checkBases) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    PsiClass[] innerClasses = getInnerClasses();
+    if (innerClasses == null || innerClasses.length == 0) {
+      return null;
+    }
+    for (PsiClass claz : innerClasses) {
+      if (name.equals(claz.getName())) {
+        return claz;
+      }
+    }
+    return null;
   }
 
   @Nullable
@@ -279,7 +297,20 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @Nullable
   @Override
   public PsiClass getContainingClass() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    if ("jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(getConcept())) {
+      return null;
+    }
+
+    PsiElement element = this;
+
+    do {
+      element = element.getParent();
+      if (element instanceof PsiClass) {
+        return (PsiClass) element;
+      }
+    } while (!(element instanceof MPSPsiRootNode || element instanceof PsiFile));
+
+    return null;
   }
 
   @NotNull
