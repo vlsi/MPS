@@ -388,6 +388,10 @@ public class State {
     return myEquations.expandNode(node, false);
   }
 
+  public SNode expandFinal(SNode node) {
+    return myEquations.expandNode(node, true);
+  }
+
   public AbstractOperation getOperation() {
     return myOperation;
   }

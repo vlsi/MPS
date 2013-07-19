@@ -44,7 +44,7 @@ public class TargetTypeheckingComponent extends SimpleTypecheckingComponent<Targ
   protected SNode typeCalculated(SNode initialNode) {
     if (initialNode == null) return null;
     if (!getState().isTargetTypeCalculated()) return null;
-    SNode type = getState().expand(getType(initialNode));
+    SNode type = getState().expandFinal(getType(initialNode));
     if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
     return null;
   }
