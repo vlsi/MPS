@@ -7,9 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -21,11 +19,7 @@ public class check_CommandClosureLiteral_NonTypesystemRule extends AbstractNonTy
   }
 
   public void applyRule(final SNode commandClosureLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode rs : ListSequence.fromList(SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).subtract(ListSequence.fromList(SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, new String[]{})).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SNodeOperations.getDescendants(it, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{});
-      }
-    }))) {
+    for (SNode rs : SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodLike"})) {
       if ((SLinkOperations.getTarget(rs, "expression", true) != null)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
