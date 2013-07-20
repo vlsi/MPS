@@ -4,16 +4,15 @@ package jetbrains.mps.console.blCommand.runtime.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.util.FlattenIterable;
-import java.util.Collection;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -22,30 +21,45 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import java.util.Collection;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommandUtil {
-  public static Iterable<SNode> allNodes(SearchScope scope) {
-    return new FlattenIterable<SNode>(((Collection<Iterable<SNode>>) Sequence.fromIterable(allModels(scope)).select(new ISelector<SModel, Iterable<SNode>>() {
-      public Iterable<SNode> select(SModel it) {
-        return SNodeUtil.getDescendants(it);
+
+
+  public static Iterable<SNode> nodes(SearchScope scope, @Nullable final SNode concept) {
+    Iterable<SNode> allNodes = Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SModelOperations.getNodes(it, null);
       }
-    }).toListSequence()));
+    });
+    if (concept == null) {
+      return allNodes;
+    }
+    return Sequence.fromIterable(allNodes).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(concept));
+      }
+    });
   }
 
 
 
-  public static Iterable<SReference> allReferences(SearchScope scope) {
-    return Sequence.fromIterable(allNodes(scope)).translate(new ITranslator2<SNode, SReference>() {
+  public static Iterable<SReference> allReferences(SearchScope scope, @Nullable final SNode concept) {
+    return Sequence.fromIterable(nodes(scope, null)).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
+      }
+    }).where(new IWhereFilter<SReference>() {
+      public boolean accept(SReference it) {
+        return check_1pinza_a0a0a0a0d(check_1pinza_a0a0a0a0a3(it), concept);
       }
     });
   }
@@ -149,4 +163,18 @@ public class CommandUtil {
 
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
+
+  private static boolean check_1pinza_a0a0a0a0d(SNode checkedDotOperand, SNode concept) {
+    if (null != checkedDotOperand) {
+      return SNodeOperations.isInstanceOf(checkedDotOperand, NameUtil.nodeFQName(concept));
+    }
+    return false;
+  }
+
+  private static SNode check_1pinza_a0a0a0a0a3(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTargetNode(checkedDotOperand);
+    }
+    return null;
+  }
 }
