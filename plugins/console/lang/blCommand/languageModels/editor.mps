@@ -199,19 +199,6 @@
       <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
     </node>
   </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8079535492157846730" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3xdn.8079535492157846728" resolveInfo="PastedNodeReference" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7820875636622149398" nodeInfo="nn">
-      <property name="text" nameId="tpc2.1073389577007" value="pastedNodeRef" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="7820875636622635104" nodeInfo="nn">
-        <property name="color" nameId="tpc2.1186403713874" value="orange" />
-      </node>
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.DrawBorderStyleClassItem" typeId="tpc2.1186414976055" id="7820875636622749859" nodeInfo="nn">
-        <property name="flag" nameId="tpc2.1186414551515" value="true" />
-      </node>
-    </node>
-  </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7820875636626932805" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3xdn.7820875636626932768" resolveInfo="AbstractPrintStatement" />

@@ -35,8 +35,8 @@ public class NodeReferenceResultPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefCell_jk1t21_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("target");
-    provider.setNoTargetText("<no target>");
+    provider.setRole("clickableReferenceTarget");
+    provider.setNoTargetText("<no clickableReferenceTarget>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NodeReferenceResultPart_Editor._Inline_jk1t21_a0a());
     editorCell = provider.createEditorCell(editorContext);
@@ -65,11 +65,11 @@ public class NodeReferenceResultPart_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_jk1t21_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "clickableReferenceTarget");
       editorCell.setCellId("ReferencePresentation_jk1t21_a0a0");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
-        editorCell.setRole("target");
+        editorCell.setRole("clickableReferenceTarget");
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));

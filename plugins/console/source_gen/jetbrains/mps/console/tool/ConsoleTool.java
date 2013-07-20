@@ -380,12 +380,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                 ((SModelInternal) myModel).addLanguage(usedLanguage);
                 ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
               }
-              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "target", node, false);
+              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "clickableReferenceTarget", node, false);
             }
 
             public void addNode(SNode node) {
               checkResultAvailable();
-              for (SNode subNode : ListSequence.fromList(SNodeOperations.getDescendants(((SNode) node), null, false, new String[]{})).concat(ListSequence.fromList((ListSequence.fromListAndArray(new ArrayList<SNode>(), node))))) {
+              for (SNode subNode : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).concat(ListSequence.fromList((ListSequence.fromListAndArray(new ArrayList<SNode>(), node))))) {
                 SModuleReference usedLanguage = subNode.getConcept().getLanguage().getSourceModule().getModuleReference();
                 if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
                   ((SModelInternal) myModel).addLanguage(usedLanguage);
@@ -395,11 +395,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "node", node, true);
             }
 
-            public void addAction(String text, _FunctionTypes._void_P0_E0 action) {
+            public void addClosure(String text, _FunctionTypes._void_P0_E0 closure) {
               checkResultAvailable();
               SNode result = _quotation_createNode_xg3v07_a0b0d0a1a0i0a0a2ac();
               SPropertyOperations.set(result, "text", text);
-              ClosureHoldingNodeUtil.getInstance().register(result, action);
+              ClosureHoldingNodeUtil.getInstance().register(result, closure);
               ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(result);
             }
 
@@ -494,7 +494,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteClosureAttachedToCurrentNode_Action")), event);
+      ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action")), event);
     }
   }
 
@@ -528,7 +528,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           EditorCell currentCell = myCommandEditor.getSelectedCell();
           SNode referenceTarget = check_xg3v07_a0d0a0a5kc(pastingNodeReference);
           if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f26(check_xg3v07_a0a0e0a0a5kc(pastingNodeReference), myModel))) {
-            SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.PastedNodeReference", null);
+            SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
             SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
             // todo: set clickable 
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
