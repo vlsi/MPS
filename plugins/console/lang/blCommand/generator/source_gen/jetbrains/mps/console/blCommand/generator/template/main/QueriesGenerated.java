@@ -13,6 +13,14 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_5842059399449233666(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("context", _context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5842059399449255502(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("console", _context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1915462833252931776(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variable", true), "name");
   }
