@@ -39,9 +39,6 @@
         </node>
       </node>
     </node>
-    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="3002373989556352001" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="eynw.757553790980850366" resolveInfo="History" />
-    </node>
     <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="7564874433133602836" nodeInfo="ng">
       <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="7564874433133440377" resolveInfo="SkipHistory" />
     </node>
