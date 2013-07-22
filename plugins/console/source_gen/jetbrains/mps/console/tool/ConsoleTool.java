@@ -13,12 +13,13 @@ import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -74,7 +75,6 @@ import java.util.ArrayList;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.log4j.Priority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -102,7 +102,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
   private UIEditorComponent myCommandEditor;
   private FileEditor myCommandFileEditor;
 
-  private ModuleContext myContext;
+  private Highlighter myHighlighter;
 
 
 
@@ -114,18 +114,22 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   @Override
   public JComponent getComponent() {
-    if (myMainComponent == null) {
-      initMainComponent();
-    }
     return myMainComponent;
   }
 
 
 
   protected void initMainComponent() {
-    final jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
+    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
+
+        if (myModel == null) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Error on loading history: model does not exist");
+          }
+          return;
+        }
 
         loadHistory();
 
@@ -163,10 +167,8 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         ((SModelInternal) myModel).addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
         ((AbstractModule) myModel.getModule()).addUsedDevkit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
 
-        ConsoleTool.this.myContext = new ModuleContext(myModel.getModule(), project);
-
-        myHistEditor.editNode(myHistRoot, myContext);
-        myCommandEditor.editNode(myCommandRoot, myContext);
+        myHistEditor.editNode(myHistRoot);
+        myCommandEditor.editNode(myCommandRoot);
       }
     });
 
@@ -175,6 +177,9 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     myMainComponent.add(createScopeComponent(), BorderLayout.SOUTH);
     myMainComponent.add(getToolbarComponent(project), BorderLayout.WEST);
     myMainComponent.add(createEditorsComponent(), BorderLayout.CENTER);
+
+    myHighlighter = check_xg3v07_a0j0y(getProject(), this);
+    myHighlighter.addAdditionalEditorComponent(myCommandEditor);
   }
 
 
@@ -271,6 +276,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         ConsoleTool.this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
       }
     });
+    initMainComponent();
   }
 
 
@@ -288,13 +294,14 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         TemporaryModels.getInstance().dispose(myModel);
       }
     });
+    myHighlighter.removeAdditionalEditorComponent(myCommandEditor);
     super.doUnregister();
   }
 
 
 
   @Override
-  protected void createTool(boolean b) {
+  protected void createTool() {
   }
 
 
@@ -558,18 +565,21 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   public void loadHistory() {
-    SModel loadedModel = (loadedState == null ?
-      null :
-      PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL)
-    );
-    if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).isEmpty()) {
-      myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
-    } else {
-      myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
-      SModelOperations.addRootNode(myModel, myHistRoot);
+    if (loadedState != null) {
+      SModel loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
+      if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).isEmpty()) {
+        if (LOG.isEnabledFor(Priority.WARN)) {
+          LOG.warn("Error on loading history: invalid saved data");
+        }
+        myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
+      } else {
+        myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
+        SModelOperations.addRootNode(myModel, myHistRoot);
+      }
     }
     this.myCommandRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.CommandHolder", null);
     TemporaryModels.getInstance().addMissingImports(myModel);
+
     loadedState = null;
   }
 
@@ -606,6 +616,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
+
+  private static Highlighter check_xg3v07_a0j0y(Project checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent(Highlighter.class);
+    }
+    return null;
+  }
 
   private static SNode _quotation_createNode_xg3v07_a0g0a0a2ac() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
