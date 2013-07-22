@@ -8,11 +8,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class NodesExpression_Behavior {
+public class QueryExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode call_getConceptParameter_3820104862373852370(SNode thisNode) {
+  public static SNode call_getConceptParameter_6322385757202394043(SNode thisNode) {
     return SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.console.blCommand.structure.ConceptConsoleParameter");

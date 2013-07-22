@@ -20,19 +20,19 @@ public class check_NodesExpresiion_NonTypesystemRule extends AbstractNonTypesyst
   public check_NodesExpresiion_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode nodesExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(nodesExpression, "parameter", true)).where(new IWhereFilter<SNode>() {
+  public void applyRule(final SNode queryExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(queryExpression, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.console.blCommand.structure.ConceptConsoleParameter");
       }
     }).count() <= 1)) {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodesExpression, "Only one concept parameter can be specified", "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "3820104862373836285", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(queryExpression, "Only one concept parameter can be specified", "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "3820104862373836285", null, errorTarget);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.NodesExpression";
+    return "jetbrains.mps.console.blCommand.structure.QueryExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

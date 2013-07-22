@@ -13,16 +13,16 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
-public class NodesExpresiion_KeyMap extends KeyMapImpl {
-  public NodesExpresiion_KeyMap() {
+public class QueryExpression_KeyMap extends KeyMapImpl {
+  public QueryExpression_KeyMap() {
     this.setApplicableToEveryModel(false);
     KeyMapAction action;
-    action = new NodesExpresiion_KeyMap.NodesExpresiion_KeyMap_Action0();
+    action = new QueryExpression_KeyMap.QueryExpression_KeyMap_Action0();
     this.putAction("any", "<", action);
   }
 
-  public static class NodesExpresiion_KeyMap_Action0 extends KeyMapActionImpl {
-    public NodesExpresiion_KeyMap_Action0() {
+  public static class QueryExpression_KeyMap_Action0 extends KeyMapActionImpl {
+    public QueryExpression_KeyMap_Action0() {
       super.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
     }
@@ -40,7 +40,7 @@ public class NodesExpresiion_KeyMap extends KeyMapImpl {
       if (contextNode == null) {
         return false;
       }
-      if (!(SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.console.blCommand.structure.NodesExpression")))) {
+      if (!(SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.console.blCommand.structure.QueryExpression")))) {
         return false;
       }
       return true;

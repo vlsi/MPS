@@ -11,9 +11,9 @@
   <root type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="4593895459758879417" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="4593895459758879418" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="3xdn.2822369470875160718" resolveInfo="NodesExpression" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="3xdn.6322385757202376982" resolveInfo="QueryExpression" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="4593895459759778858" nodeInfo="ng">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="3xdn.2822369470875160718" resolveInfo="NodesExpression" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="3xdn.6322385757202376982" resolveInfo="QueryExpression" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="4593895459759778863" nodeInfo="ng">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="4593895459759778865" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4593895459759778867" nodeInfo="sn">
@@ -21,8 +21,8 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4593895459759815257" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4593895459759788066" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="4593895459759787497" nodeInfo="nn" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4593895459759803301" nodeInfo="nn">
-                      <link role="link" roleId="tp25.1138056546658" targetNodeId="3xdn.2822369470875241885" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6322385757202764318" nodeInfo="nn">
+                      <link role="link" roleId="tp25.1138056546658" targetNodeId="3xdn.6322385757202378053" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_LinkList_AddNewChildOperation" typeId="tpdg.767145758118872833" id="4593895459759864585" nodeInfo="nn" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-v1d898xoawmc6s03u8j0zdbezid1xj">
+<dependencies version="2" modelHash="-njklq0ds1apulooqyz2qrnjd3twqu2">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -20,6 +20,8 @@
     <dep root="4593895459759227380" />
     <dep root="5464054275389846505" />
     <dep root="5510759644748856153" />
+    <dep root="6322385757202370749" />
+    <dep root="6322385757202376982" />
     <dep root="6852607286009511388" />
     <dep root="752693057586916300" />
     <dep root="752693057586923139" />
@@ -100,13 +102,19 @@
   <source id="7820875636626932768" name="AbstractPrintStatement" hash="-bd62k56o1do732vn2gqdb3iyapyx52d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2822369470875160718" name="NodesExpression" hash="cbtmw9pqj34u5t7srkzsfhgpx2sm1rj">
+  <source id="2822369470875160718" name="NodesExpression" hash="-7ss3oavjqvw5ytznjynrd0wme0g2hvo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2822369470875241887" name="AbstractConsoleParameter" hash="-4mbhyjr43t2wdk7a86u178aymsx9zj6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4593895459759227380" name="ConceptConsoleParameter" hash="d1de46i5b1mtve4m3hc2fe6qoqrrvjl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6322385757202370749" name="ReferencesExpression" hash="67buxw0fm1k20on1uuf3cx057hzogt4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6322385757202376982" name="QueryExpression" hash="-9qefwt3po8t807xiwjttizr42wfboux">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

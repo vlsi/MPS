@@ -16,9 +16,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
-  public static List<SubstituteAction> sideTransform_ActionsFactory_NodesExpression_4593895459758879418(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_QueryExpression_4593895459758879418(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.NodesExpression"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.console.blCommand.structure.AbstractConsoleParameter");
         return _context.getSourceNode();

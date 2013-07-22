@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -29,7 +30,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommandUtil {
 
@@ -42,26 +42,32 @@ public class CommandUtil {
     });
     if (concept == null) {
       return allNodes;
+    } else {
+      return Sequence.fromIterable(allNodes).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(concept));
+        }
+      });
     }
-    return Sequence.fromIterable(allNodes).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(concept));
-      }
-    });
   }
 
 
 
-  public static Iterable<SReference> allReferences(SearchScope scope, @Nullable final SNode concept) {
-    return Sequence.fromIterable(nodes(scope, null)).translate(new ITranslator2<SNode, SReference>() {
+  public static Iterable<SReference> references(SearchScope scope, @Nullable final SNode concept) {
+    Iterable<SReference> allReferences = Sequence.fromIterable(nodes(scope, null)).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
       }
-    }).where(new IWhereFilter<SReference>() {
-      public boolean accept(SReference it) {
-        return check_1pinza_a0a0a0a0d(check_1pinza_a0a0a0a0a3(it), concept);
-      }
     });
+    if (concept == null) {
+      return allReferences;
+    } else {
+      return Sequence.fromIterable(allReferences).where(new IWhereFilter<SReference>() {
+        public boolean accept(SReference it) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(it), NameUtil.nodeFQName(concept));
+        }
+      });
+    }
   }
 
 
@@ -163,18 +169,4 @@ public class CommandUtil {
 
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
-
-  private static boolean check_1pinza_a0a0a0a0d(SNode checkedDotOperand, SNode concept) {
-    if (null != checkedDotOperand) {
-      return SNodeOperations.isInstanceOf(checkedDotOperand, NameUtil.nodeFQName(concept));
-    }
-    return false;
-  }
-
-  private static SNode check_1pinza_a0a0a0a0a3(SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SLinkOperations.getTargetNode(checkedDotOperand);
-    }
-    return null;
-  }
 }
