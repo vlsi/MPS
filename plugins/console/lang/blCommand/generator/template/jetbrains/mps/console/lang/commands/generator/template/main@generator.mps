@@ -27,7 +27,7 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="5336086527852811410" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="main" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="752693057587764124" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.752693057587755272" resolveInfo="ProjectExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="752693057587764125" nodeInfo="nn">
@@ -564,7 +564,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7738379549905438724" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_UsagesExpression" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.8483375838963816171" resolveInfo="UsagesExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7738379549905456956" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
@@ -649,7 +649,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7738379549910152710" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_InstancesExpression" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.7738379549910147341" resolveInfo="InstancesExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7738379549910152711" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
@@ -1012,6 +1012,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgo0.351968380915899899" resolveInfo="getScope" />
                 </node>
               </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6322385757201475969" nodeInfo="nn" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1915462833256367380" nodeInfo="ng" />
             </node>
           </node>
@@ -1403,7 +1404,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4593895459761048274" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_NodesExpresiion" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.2822369470875160718" resolveInfo="NodesExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4593895459761049871" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />

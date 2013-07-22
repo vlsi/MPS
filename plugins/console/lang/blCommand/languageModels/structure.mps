@@ -29,7 +29,7 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="7820875636626932768" resolveInfo="AbstractPrintStatement" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963816171" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <property name="name" nameId="tpck.1169194664001" value="UsagesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="usages" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="direct references in current scope" />
@@ -91,7 +91,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7738379549910147341" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <property name="name" nameId="tpck.1169194664001" value="InstancesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="instances" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="instances in current scope" />
@@ -113,7 +113,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1915462833252925296" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <property name="name" nameId="tpck.1169194664001" value="EachLoop" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="each" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="for each node/model/reference" />
@@ -132,11 +132,11 @@
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1915462833252925669" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <property name="name" nameId="tpck.1169194664001" value="IEachIteratable" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1915462833253080539" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <property name="name" nameId="tpck.1169194664001" value="NodeEachIterable" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -145,7 +145,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1915462833256314994" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <property name="name" nameId="tpck.1169194664001" value="ReferenceEachIterable" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="reference" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -154,7 +154,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="752693057586916300" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <property name="name" nameId="tpck.1169194664001" value="ModelEachIterable" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -163,7 +163,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="752693057586923139" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <property name="name" nameId="tpck.1169194664001" value="ModuleEachIterable" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="module" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -200,7 +200,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2822369470875160718" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <property name="name" nameId="tpck.1169194664001" value="NodesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodes" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="nodes in current scope" />
@@ -213,14 +213,14 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2822369470875241887" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
     <property name="name" nameId="tpck.1169194664001" value="AbstractConsoleParameter" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4593895459759227380" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
     <property name="name" nameId="tpck.1169194664001" value="ConceptConsoleParameter" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="2822369470875241887" resolveInfo="AbstractConsoleParameter" />

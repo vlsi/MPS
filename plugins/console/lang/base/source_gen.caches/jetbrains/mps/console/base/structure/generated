@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="efqxvvtm79tetit9fydoxmjukdzm70z">
+<dependencies version="2" modelHash="-9s82yfi9ghzdl6ktne6mpbnt3y4p1u5">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -62,7 +62,7 @@
   <source id="529843215038987951" name="CommandResultPart" hash="-29drad4bqlmdt5qmfqstvt9hac671p9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="529843215038987952" name="NodeReferenceResultPart" hash="6oozv4wzlws2od7a2x7flwiqh8vvrah">
+  <source id="529843215038987952" name="NodeReferenceResultPart" hash="2k05542t3wgnn3g81bp7kl4gozw9zl5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="529843215038987955" name="TextResultPart" hash="-1ag36i9arhbspsyqdqo3ae4fyctoh3i">
@@ -83,10 +83,10 @@
   <source id="497034489490438927" name="INodeWithClosure" hash="b9lw26nwy44j1zc5xum0kaxmcl2hmi7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3939645998855102389" name="INodeWithClickableReference" hash="1hdrg5eohtd0skvnifslcbphmcki066">
+  <source id="3939645998855102389" name="INodeWithClickableReference" hash="128g5fettwes0yrnxmipl1mwyed06ml">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5842059399443118718" name="PastedNodeReference" hash="-cagdc3twm5pclog34tnfb2sd72gydjq">
+  <source id="5842059399443118718" name="PastedNodeReference" hash="-8lr8vr57qsilsk4ut200fkw38leonwj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

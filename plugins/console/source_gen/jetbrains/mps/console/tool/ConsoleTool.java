@@ -51,6 +51,7 @@ import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
@@ -69,7 +70,6 @@ import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import java.util.ArrayList;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -350,7 +350,8 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           }
 
           final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
-          final SNode res = _quotation_createNode_xg3v07_a0g0a0a2ac();
+          final SNode res = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandResult", null);
+          SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
           final SearchScope scope = (myScopeCombo.getSelectedItem() == ConsoleTool.PROJECT_SCOPE ?
             new ProjectScope(myProject) :
             GlobalScope.getInstance()
@@ -368,8 +369,8 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               checkResultAvailable();
               String[] strings = text.split("\n");
               for (int i = 0; i < strings.length; i++) {
-                if (isNotEmpty_xg3v07_a0a0c0a0a1a3a8a0a0a0a0a2ac(strings[i])) {
-                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a0a2a0a0b0a8a0a0c25(strings[i]));
+                if (isNotEmpty_xg3v07_a0a0c0a0a1a3a9a0a0a0a0a2ac(strings[i])) {
+                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a0a2a0a0b0a9a0a0c25(strings[i]));
                 }
                 if (i < strings.length - 1 || text.charAt(text.length() - 1) == '\n') {
                   SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
@@ -387,7 +388,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                 ((SModelInternal) myModel).addLanguage(usedLanguage);
                 ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
               }
-              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "clickableReferenceTarget", node, false);
+              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "target", node, false);
             }
 
             public void addNode(SNode node) {
@@ -404,7 +405,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
             public void addClosure(String text, _FunctionTypes._void_P0_E0 closure) {
               checkResultAvailable();
-              SNode result = _quotation_createNode_xg3v07_a0b0d0a1a0i0a0a2ac();
+              SNode result = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosureResultPart", null);
               SPropertyOperations.set(result, "text", text);
               ClosureHoldingNodeUtil.getInstance().register(result, closure);
               ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(result);
@@ -537,7 +538,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f26(check_xg3v07_a0a0e0a0a5kc(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
             SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
-            // todo: set clickable 
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
             paster.paste(currentCell);
           } else {
@@ -624,29 +624,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return null;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0g0a0a2ac() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.CommandResult", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.CommandResultLine", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.addChild("line", quotedNode_2);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_xg3v07_a0a0a0a2a0a0b0a8a0a0c25(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a0a2a0a0b0a9a0a0c25(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_xg3v07_a0b0d0a1a0i0a0a2ac() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.NodeWithClosureResultPart", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
   }
 
   private static SNode check_xg3v07_a0d0a0a5kc(SNodeReference checkedDotOperand) {
@@ -670,7 +653,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return null;
   }
 
-  public static boolean isNotEmpty_xg3v07_a0a0c0a0a1a3a8a0a0a0a0a2ac(String str) {
+  public static boolean isNotEmpty_xg3v07_a0a0c0a0a1a3a9a0a0a0a0a2ac(String str) {
     return str != null && str.length() > 0;
   }
 }

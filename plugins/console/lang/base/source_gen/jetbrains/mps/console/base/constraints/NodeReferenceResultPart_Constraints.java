@@ -23,7 +23,7 @@ public class NodeReferenceResultPart_Constraints extends BaseConstraintsDescript
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
-    references.put("clickableReferenceTarget", new BaseReferenceConstraintsDescriptor("clickableReferenceTarget", this) {
+    references.put("target", new BaseReferenceConstraintsDescriptor("target", this) {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {

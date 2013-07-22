@@ -18,6 +18,10 @@ public class NodeReferenceResultPart_BehaviorDescriptor extends BaseConcept_Beha
     INodeWithClickableReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
 
+  public SNode virtual_getTargetNode_6322385757200662712(SNode thisNode) {
+    return NodeReferenceResultPart_Behavior.virtual_getTargetNode_6322385757200662712(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.NodeReferenceResultPart";

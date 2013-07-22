@@ -4,19 +4,20 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class INodeWithClickableReference_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    SNode targetNode = SLinkOperations.getTarget(thisNode, "clickableReferenceTarget", false);
+    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{});
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null) {
       return;
@@ -30,6 +31,16 @@ public class INodeWithClickableReference_Behavior {
     if (mpsProject == null) {
       return false;
     }
-    return SLinkOperations.getTarget(thisNode, "clickableReferenceTarget", false) != null;
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{}) != null;
+  }
+
+  @Deprecated
+  public static SNode call_getTargetNode_6322385757200662712(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_getTargetNode_6322385757200662712(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.INodeWithClickableReference"), callerConceptFqName, "virtual_getTargetNode_6322385757200662712", new Class[]{SNode.class}, new Object[]{});
   }
 }

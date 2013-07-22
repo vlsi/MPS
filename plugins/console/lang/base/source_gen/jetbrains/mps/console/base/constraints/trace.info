@@ -30,7 +30,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5510759644747941343" fileName="NodeReferenceResultPart_Constraints.java" startLine="23" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="5510759644747941343" fileName="NodeReferenceResultPart_Constraints.java" startLine="30" startPosition="19" endLine="43" endPosition="9" unitName="jetbrains.mps.console.base.constraints.NodeReferenceResultPart_Constraints$2" />
-    <unitInfo nodeId="5510759644747941343" fileName="NodeReferenceResultPart_Constraints.java" startLine="26" startPosition="51" endLine="45" endPosition="5" unitName="jetbrains.mps.console.base.constraints.NodeReferenceResultPart_Constraints$1" />
+    <unitInfo nodeId="5510759644747941343" fileName="NodeReferenceResultPart_Constraints.java" startLine="26" startPosition="33" endLine="45" endPosition="5" unitName="jetbrains.mps.console.base.constraints.NodeReferenceResultPart_Constraints$1" />
     <unitInfo nodeId="5510759644747941343" fileName="NodeReferenceResultPart_Constraints.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.console.base.constraints.NodeReferenceResultPart_Constraints" />
   </root>
   <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/7820875636624865058">
