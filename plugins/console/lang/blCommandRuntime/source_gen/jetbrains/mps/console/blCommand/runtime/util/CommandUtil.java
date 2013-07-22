@@ -9,11 +9,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -34,20 +34,15 @@ import org.apache.log4j.LogManager;
 public class CommandUtil {
 
 
-  public static Iterable<SNode> nodes(SearchScope scope, @Nullable final SNode concept) {
-    Iterable<SNode> allNodes = Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.getNodes(it, null);
-      }
-    });
+  public static Iterable<SNode> nodes(SearchScope scope, @Nullable SNode concept) {
     if (concept == null) {
-      return allNodes;
-    } else {
-      return Sequence.fromIterable(allNodes).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(concept));
+      return Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
+        public Iterable<SNode> translate(SModel it) {
+          return SModelOperations.getNodes(it, null);
         }
       });
+    } else {
+      return instances(scope, concept);
     }
   }
 
