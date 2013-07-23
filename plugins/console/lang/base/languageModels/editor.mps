@@ -37,7 +37,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.529843215038987952" resolveInfo="NodeReferenceResultPart" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="991997738729018582" nodeInfo="ng">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.529843215038987954" />
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.6322385757200866456" />
       <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="991997738729018583" nodeInfo="ng">
         <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ReferencePresentation" typeId="tpc2.625126330682908270" id="991997738729018588" nodeInfo="ng">
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="991997738729212284" nodeInfo="nn">
@@ -129,7 +129,7 @@
               <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6698258751442869907" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="6698258751442869409" nodeInfo="nn" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6698258751442880754" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zyb2.6698258751442247997" resolveInfo="isAlive" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zyb2.497034489490439347" resolveInfo="isAlive" />
                 </node>
               </node>
               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6698258751442884984" nodeInfo="nn">
@@ -154,7 +154,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6698258751442897575" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="6698258751442897077" nodeInfo="nn" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6698258751442908136" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zyb2.6698258751442247997" resolveInfo="isAlive" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zyb2.497034489490439347" resolveInfo="isAlive" />
                 </node>
               </node>
             </node>
@@ -168,6 +168,19 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.8927119896327927090" resolveInfo="NodeResultPart" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8927119896327929016" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.8927119896327929014" />
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5842059399443118722" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5842059399443118718" resolveInfo="PastedNodeReference" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5842059399443118723" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="pastedNodeRef" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="5842059399443118724" nodeInfo="nn">
+        <property name="color" nameId="tpc2.1186403713874" value="orange" />
+      </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.DrawBorderStyleClassItem" typeId="tpc2.1186414976055" id="5842059399443118725" nodeInfo="nn">
+        <property name="flag" nameId="tpc2.1186414551515" value="true" />
+      </node>
     </node>
   </root>
 </model>

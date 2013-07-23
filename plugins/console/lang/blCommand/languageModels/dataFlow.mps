@@ -10,7 +10,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
   <root type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="752693057588072211" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="statement" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="each" />
     <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="3xdn.1915462833252925296" resolveInfo="EachLoop" />
     <node role="builderBlock" roleId="tp41.1206442812839" type="tp41.BuilderBlock" typeId="tp41.1206442659665" id="752693057588072212" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="752693057588072213" nodeInfo="sn">

@@ -18,8 +18,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class ShowBrokenReferences_Behavior {
   public static void init(SNode thisNode) {
@@ -39,18 +37,14 @@ public class ShowBrokenReferences_Behavior {
             return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
           }
         }).toListSequence();
-        final IOperationContext context = new ProjectOperationContext(c.getProject());
+        IOperationContext context = new ProjectOperationContext(c.getProject());
         for (SReference ref : CollectionSequence.fromCollection(brokenReferences)) {
           console.addText("model id = " + ref.getTargetSModelReference());
           console.addText("\n");
           console.addText("node  id = " + ref.getTargetNodeId());
-          final SNode targetNode = ref.getSourceNode();
+          SNode targetNode = ref.getSourceNode();
           console.addText("\n");
-          console.addAction("Go to node with reference", new _FunctionTypes._void_P0_E0() {
-            public void invoke() {
-              NavigationSupport.getInstance().openNode(context, targetNode, true, !(jetbrains.mps.util.SNodeOperations.isRoot(targetNode)));
-            }
-          });
+          console.addNodeReference(targetNode);
           console.addText("\n");
           console.addText("\n");
         }
