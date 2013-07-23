@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-bx1z3t4qc7bw0pfpkzt4win5qi3w72u">
+  <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
+  <common hash="92morcallckr4msuv6z0kxybrysnbpt" />
+  <source id="725186580885945862" name="EditorAspectDescriptorImpl" hash="-dpdawzted0lerd4s73u2hk2vusyvyt4">
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="EditorAspectDescriptorImpl.java" />
+  </source>
+  <source id="725186580886525059" name="DiagramEditor" hash="6ejecem7p25r52ugmdtna9ozgni7s0">
+    <file name="DiagramEditor.java" />
+  </source>
+</dependencies>
+

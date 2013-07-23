@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)/725186580885945862">
+    <nodeInfo nodeId="725186580886619253" fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="99" endLine="16" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885947489" fileName="EditorAspectDescriptorImpl.java" startLine="17" startPosition="5" endLine="18" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885950044" fileName="EditorAspectDescriptorImpl.java" startLine="21" startPosition="110" endLine="22" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580885950454" fileName="EditorAspectDescriptorImpl.java" startLine="25" startPosition="51" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580886587076" fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="77" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="725186580885947490" fileName="EditorAspectDescriptorImpl.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditorComponents#(Ljetbrains/mps/smodel/runtime/ConceptDescriptor;Ljava/lang/String;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="725186580885947502" fileName="EditorAspectDescriptorImpl.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="725186580885947480" fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditors#(Ljetbrains/mps/smodel/runtime/ConceptDescriptor;)Ljava/util/Collection;" />
+    <scopeInfo nodeId="725186580886587079" fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="99" endLine="16" endPosition="75" />
+    <scopeInfo nodeId="725186580885947499" fileName="EditorAspectDescriptorImpl.java" startLine="21" startPosition="110" endLine="22" endPosition="35" />
+    <scopeInfo nodeId="725186580885947507" fileName="EditorAspectDescriptorImpl.java" startLine="25" startPosition="51" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="725186580885947490" fileName="EditorAspectDescriptorImpl.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="725186580885947495" varName="descriptor" />
+      <varInfo nodeId="725186580885947497" varName="string" />
+    </scopeInfo>
+    <scopeInfo nodeId="725186580885947502" fileName="EditorAspectDescriptorImpl.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="725186580885947487" fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="77" endLine="18" endPosition="50" />
+    <scopeInfo nodeId="725186580885947480" fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="725186580885947485" varName="descriptor" />
+    </scopeInfo>
+    <unitInfo nodeId="725186580885945862" fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.EditorAspectDescriptorImpl" />
+  </root>
+  <root nodeRef="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)/725186580886525059">
+    <nodeInfo nodeId="725186580886526532" fileName="DiagramEditor.java" startLine="15" startPosition="73" endLine="16" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580886632906" fileName="DiagramEditor.java" startLine="20" startPosition="47" endLine="21" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="725186580886525250" fileName="DiagramEditor.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="725186580886631940" fileName="DiagramEditor.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <scopeInfo nodeId="725186580886525258" fileName="DiagramEditor.java" startLine="15" startPosition="73" endLine="16" endPosition="58" />
+    <scopeInfo nodeId="725186580886631945" fileName="DiagramEditor.java" startLine="20" startPosition="47" endLine="21" endPosition="98" />
+    <scopeInfo nodeId="725186580886525250" fileName="DiagramEditor.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="725186580886525254" varName="context" />
+      <varInfo nodeId="725186580886525256" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="725186580886631940" fileName="DiagramEditor.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="725186580886525059" fileName="DiagramEditor.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.DiagramEditor" />
+  </root>
+</debugInfo>
+
