@@ -113,6 +113,7 @@ public class LibraryInitializer implements CoreComponent {
         myParentLoaders.put(bundlePath != null ? bundlePath.getPath() : s.path, s.parentLoader != null ? s.parentLoader : LibraryInitializer.class.getClassLoader());
       }
     }
+    myLibraries.removeAll(toUnload);
 
     // unload
     for (SLibrary unloadLib : toUnload) {
