@@ -9,5 +9,5 @@ public interface ConsoleStream {
   public void addText(String text);
   public void addNodeReference(SNode node);
   public void addNode(SNode node);
-  public void addAction(String text, _FunctionTypes._void_P0_E0 action);
+  public void addClosure(String text, _FunctionTypes._void_P0_E0 closure);
 }

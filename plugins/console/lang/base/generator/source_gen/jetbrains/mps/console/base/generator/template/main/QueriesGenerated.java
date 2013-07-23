@@ -8,6 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_7574671482230414774(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -16,5 +20,13 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5336086527852751150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "command", true);
+  }
+
+  public static void mappingScript_CodeBlock_7564874433133440378(final IOperationContext operationContext, final MappingScriptContext _context) {
+    ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.console.base.structure.History")).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        SNodeOperations.deleteNode(it);
+      }
+    });
   }
 }

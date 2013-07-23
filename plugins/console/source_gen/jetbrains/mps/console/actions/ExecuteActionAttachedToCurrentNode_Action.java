@@ -10,17 +10,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
+public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ExecuteClosureAttachedToCurrentNode_Action() {
-    super("Execute Attached Closure", "", ICON);
+  public ExecuteActionAttachedToCurrentNode_Action() {
+    super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -31,7 +33,7 @@ public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.IActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
+    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.IActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -42,7 +44,7 @@ public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteClosureAttachedToCurrentNode", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteActionAttachedToCurrentNode", t);
       }
       this.disable(event.getPresentation());
     }
@@ -56,18 +58,22 @@ public class ExecuteClosureAttachedToCurrentNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.console.base.structure.IActionHolder")), "virtual_execute_8517397753922085153", new Object[]{});
+      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.console.base.structure.IActionHolder")), "virtual_execute_8517397753922085153", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExecuteClosureAttachedToCurrentNode", t);
+        LOG.error("User's action execute method failed. Action:" + "ExecuteActionAttachedToCurrentNode", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(ExecuteClosureAttachedToCurrentNode_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ExecuteActionAttachedToCurrentNode_Action.class);
 }

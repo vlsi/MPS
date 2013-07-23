@@ -19,11 +19,11 @@ public class check_CommandClosureLiteral_NonTypesystemRule extends AbstractNonTy
   }
 
   public void applyRule(final SNode commandClosureLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode rs : SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})) {
+    for (SNode rs : SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodLike"})) {
       if ((SLinkOperations.getTarget(rs, "expression", true) != null)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rs, "not allowed here", "r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)", "8974276187400348235", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rs, "return statement not allowed here", "r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)", "5842059399448775938", null, errorTarget);
         }
       }
     }

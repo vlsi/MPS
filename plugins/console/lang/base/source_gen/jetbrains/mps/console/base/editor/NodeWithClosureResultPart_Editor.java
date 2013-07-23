@@ -15,7 +15,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
-import jetbrains.mps.console.base.behavior.NodeWithClosureResultPart_Behavior;
+import jetbrains.mps.console.base.behavior.INodeWithClosure_Behavior;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NodeWithClosureResultPart_Editor extends DefaultNodeEditor {
@@ -60,7 +60,7 @@ public class NodeWithClosureResultPart_Editor extends DefaultNodeEditor {
   }
 
   private static Color _StyleParameter_QueryFunction_35mqdw_a0a(EditorContext editorContext, SNode node) {
-    if (NodeWithClosureResultPart_Behavior.call_isAlive_6698258751442247997(node)) {
+    if (INodeWithClosure_Behavior.call_isAlive_497034489490439347(node)) {
       return MPSColors.DARK_BLUE;
     } else {
       return MPSColors.GRAY;
@@ -68,6 +68,6 @@ public class NodeWithClosureResultPart_Editor extends DefaultNodeEditor {
   }
 
   private static boolean _StyleParameter_QueryFunction_35mqdw_a1a(EditorContext editorContext, SNode node) {
-    return NodeWithClosureResultPart_Behavior.call_isAlive_6698258751442247997(node);
+    return INodeWithClosure_Behavior.call_isAlive_497034489490439347(node);
   }
 }
