@@ -23,6 +23,7 @@ import jetbrains.mps.newTypesystem.relations.AbstractRelation;
 import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.Pair;
@@ -258,11 +259,30 @@ public class Inequalities {
     if (myNodesInc.size() == 0) {
       return false;
     }
+
+    // recursive relations have to be eliminated *before* we attempt to pick a type for a var
+    if (trySolvingRecursive(inequalities)) return true;
+
     mySolveOnlyRight = true;
     if (chooseVarAndSolve(mySolvableRight)) return true;
     mySolveOnlyRight = false;
     if (chooseVarAndSolve(mySolvableLeft)) return true;
     if (lastChance(inequalities)) return true;
+    return false;
+  }
+
+  private boolean trySolvingRecursive(List<RelationBlock> inequalities) {
+    for (RelationBlock inequality : inequalities) {
+      if (!(TypesUtil.isVariable(inequality.getLeftNode()) &&
+          TypesUtil.hasVariablesInside(inequality.getLeftNode()) &&
+          TypesUtil.isVariable(inequality.getRightNode())) &&
+          TypesUtil.getVariables(inequality.getLeftNode(), myState).contains(myState.getRepresentative(inequality.getRightNode())) &&
+          myState.getBlocks().contains(inequality))
+      {
+        myState.executeOperation(new RemoveBlockOperation(inequality));
+        return true;
+      }
+    }
     return false;
   }
 
@@ -277,7 +297,15 @@ public class Inequalities {
   }
 
   private void collectNodesTransitive(SNode node, Set<SNode> collected, boolean isLeft, Map<SNode, RelationBlock> typesToBlocks, AbstractRelation relation, Set<SNode> alreadyPassed) {
-    Set<RelationBlock> blocks = myNodesToBlocksInc.getByFirst(node);
+    // Patching a deficiency of this algorithm: we're listening to equation/inequation adding, but not removing
+    // TODO: update the incremental maps on equation/inequation removal
+    Set<RelationBlock> blocks = new THashSet<RelationBlock>(myNodesToBlocksInc.getByFirst(node));
+    final Set<Block> stateBlocks = myState.getBlocks();
+    for(Iterator<RelationBlock> it = blocks.iterator(); it.hasNext();) {
+      if(!stateBlocks.contains(it.next())) {
+        it.remove();
+      }
+    }
     alreadyPassed.add(node);
     blocks = getRelationBlocks(blocks, relation);
     for (RelationBlock block : blocks) {
