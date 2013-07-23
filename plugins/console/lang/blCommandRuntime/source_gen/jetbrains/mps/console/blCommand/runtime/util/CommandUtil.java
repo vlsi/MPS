@@ -4,7 +4,6 @@ package jetbrains.mps.console.blCommand.runtime.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -12,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -26,6 +23,7 @@ import java.util.Collection;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.apache.log4j.Logger;
@@ -34,35 +32,22 @@ import org.apache.log4j.LogManager;
 public class CommandUtil {
 
 
-  public static Iterable<SNode> nodes(SearchScope scope, @Nullable SNode concept) {
-    if (concept == null) {
-      return Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
-        public Iterable<SNode> translate(SModel it) {
-          return SModelOperations.getNodes(it, null);
-        }
-      });
-    } else {
-      return instances(scope, concept);
-    }
+  public static Iterable<SNode> nodes(SearchScope scope) {
+    return Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SModelOperations.getNodes(it, null);
+      }
+    });
   }
 
 
 
-  public static Iterable<SReference> references(SearchScope scope, @Nullable final SNode concept) {
-    Iterable<SReference> allReferences = Sequence.fromIterable(nodes(scope, null)).translate(new ITranslator2<SNode, SReference>() {
+  public static Iterable<SReference> references(SearchScope scope) {
+    return Sequence.fromIterable(nodes(scope)).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
       }
     });
-    if (concept == null) {
-      return allReferences;
-    } else {
-      return Sequence.fromIterable(allReferences).where(new IWhereFilter<SReference>() {
-        public boolean accept(SReference it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(it), NameUtil.nodeFQName(concept));
-        }
-      });
-    }
   }
 
 
