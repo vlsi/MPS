@@ -88,6 +88,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private MessageBusConnection myMessageBusConnection;
   private List<Editor> myAdditionalEditors = new ArrayList<Editor>();
 
+  private List<EditorComponent> myAdditionalEditorComponents = new ArrayList<EditorComponent>();
+
   private ReloadListener myReloadListener = new ReloadAdapter() {
     @Override
     public void unload() {
@@ -252,6 +254,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
+  public void addAdditionalEditorComponent(EditorComponent additionalEditorComponent) {
+    synchronized (ADD_EDITORS_LOCK) {
+      myAdditionalEditorComponents.add(additionalEditorComponent);
+    }
+  }
+
+  public void removeAdditionalEditorComponent(EditorComponent additionalEditorComponent) {
+    synchronized (ADD_EDITORS_LOCK) {
+      myAdditionalEditorComponents.remove(additionalEditorComponent);
+    }
+  }
+
   public void addAdditionalEditor(Editor additionalEditor) {
     synchronized (ADD_EDITORS_LOCK) {
       myAdditionalEditors.add(additionalEditor);
@@ -408,6 +422,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               editorComponents.add(editorComponent);
             }
           }
+          editorComponents.addAll(myAdditionalEditorComponents);
         }
       });
     } catch (InterruptedException e) {
