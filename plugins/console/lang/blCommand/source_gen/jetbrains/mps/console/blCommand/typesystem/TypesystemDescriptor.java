@@ -77,7 +77,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_NodesExpresiion_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_QueryExpression_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
   }

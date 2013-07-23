@@ -16,8 +16,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_NodesExpresiion_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_NodesExpresiion_NonTypesystemRule() {
+public class check_QueryExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_QueryExpression_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode queryExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
