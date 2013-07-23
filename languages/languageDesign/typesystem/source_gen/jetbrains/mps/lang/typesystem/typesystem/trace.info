@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="11" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="12" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/1035511193819763968">
     <nodeInfo nodeId="1035511193819771010" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1035511193819771010" fileName="check_TypesystemIntentionWithoutDescription_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3317,6 +3317,89 @@
     </scopeInfo>
     <unitInfo nodeId="5622704259074446614" fileName="typeof_OperationContextExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_OperationContextExpression_InferenceRule" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/6303539268843067240">
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6303539268843227042" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="52" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843244647" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="24" startPosition="5" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="31" startPosition="207" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="36" startPosition="27" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="41" startPosition="5" endLine="42" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="42" startPosition="133" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="48" startPosition="5" endLine="49" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="49" startPosition="135" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="54" startPosition="53" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="58" startPosition="55" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MeetType_subtypeOf_arguments_InequationReplacementRule#()V" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+    <nodeInfo nodeId="6303539268843190740" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="20" startPosition="77" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="40" startPosition="71" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="73" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6303539268843178240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="97" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="16" startPosition="67" endLine="16" endPosition="67" />
+    <scopeInfo nodeId="6303539268843077179" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="28" startPosition="253" endLine="28" endPosition="253" />
+    <scopeInfo nodeId="6303539268843077179" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="35" endLine="32" endPosition="35" />
+    <scopeInfo nodeId="6303539268843190741" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="52" endLine="22" endPosition="20" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="36" startPosition="27" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="54" startPosition="53" endLine="55" endPosition="62" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="58" startPosition="55" endLine="59" endPosition="55" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="28" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6303539268843067240" varName="equationInfo" />
+      <varInfo nodeId="6303539268843067240" varName="inequalityIsLessThan" />
+      <varInfo nodeId="6303539268843067240" varName="inequalityIsWeak" />
+      <varInfo nodeId="6303539268843067240" varName="status" />
+      <varInfo nodeId="6303539268843067240" varName="subtype" />
+      <varInfo nodeId="6303539268843067240" varName="supertype" />
+      <varInfo nodeId="6303539268843067240" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="31" startPosition="207" endLine="33" endPosition="27">
+      <varInfo nodeId="6303539268843067240" varName="result_14532009" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="41" startPosition="5" endLine="43" endPosition="45">
+      <varInfo nodeId="6303539268843067240" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="48" startPosition="5" endLine="50" endPosition="45">
+      <varInfo nodeId="6303539268843067240" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843178241" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="20" startPosition="77" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6303539268843067240" varName="equationInfo" />
+      <varInfo nodeId="6303539268843067240" varName="inequalityIsLessThan" />
+      <varInfo nodeId="6303539268843067240" varName="inequalityIsWeak" />
+      <varInfo nodeId="6303539268843067240" varName="status" />
+      <varInfo nodeId="6303539268843067240" varName="subtype" />
+      <varInfo nodeId="6303539268843067240" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="40" startPosition="71" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="73" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="6303539268843178240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="97" endLine="24" endPosition="5">
+      <varInfo nodeId="6303539268843178244" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843098746" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="97" endLine="25" endPosition="17" />
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6303539268843067240" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6303539268843067240" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="6303539268843067240" varName="status" />
+      <varInfo nodeId="6303539268843067240" varName="subtype" />
+      <varInfo nodeId="6303539268843067240" varName="supertype" />
+    </scopeInfo>
+    <unitInfo nodeId="6303539268843067240" fileName="MeetType_subtypeOf_arguments_InequationReplacementRule.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.MeetType_subtypeOf_arguments_InequationReplacementRule" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/6359146168314207367">
     <nodeInfo nodeId="6359146168314207369" fileName="check_NodeTypeOperation_NonTypesystemRule.java" startLine="20" startPosition="66" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6359146168314207369" fileName="check_NodeTypeOperation_NonTypesystemRule.java" startLine="21" startPosition="58" endLine="22" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3529,6 +3612,62 @@
       <varInfo nodeId="6807484249529698278" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="6807484249529698278" fileName="typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/7799224375431419713">
+    <nodeInfo nodeId="7799224375431528941" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="19" startPosition="48" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431537981" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="22" startPosition="5" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="26" startPosition="27" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="31" startPosition="5" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="32" startPosition="127" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="38" startPosition="5" endLine="39" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="39" startPosition="127" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="44" startPosition="47" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="48" startPosition="47" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MeetType_comparable_with_arguments_ComparisonRule#()V" />
+    <nodeInfo nodeId="7799224375431517718" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="18" startPosition="75" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName1#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName2#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="30" startPosition="59" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="37" startPosition="60" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7799224375431469624" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="17" startPosition="86" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSecond#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="14" startPosition="62" endLine="14" endPosition="62" />
+    <scopeInfo nodeId="7799224375431517719" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="19" startPosition="48" endLine="20" endPosition="20" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="26" startPosition="27" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="44" startPosition="47" endLine="45" endPosition="55" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="48" startPosition="47" endLine="49" endPosition="62" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="7799224375431419713" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="7799224375431419713" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="7799224375431469625" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="18" startPosition="75" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="30" startPosition="59" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="37" startPosition="60" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="7799224375431469624" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="17" startPosition="86" endLine="22" endPosition="5">
+      <varInfo nodeId="7799224375431469628" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="7799224375431419910" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="17" startPosition="86" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="7799224375431419713" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="7799224375431419713" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7799224375431419713" varName="node1" />
+      <varInfo nodeId="7799224375431419713" varName="node2" />
+      <varInfo nodeId="7799224375431419713" varName="status" />
+    </scopeInfo>
+    <unitInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="13" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.MeetType_comparable_with_arguments_ComparisonRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/8030577887428929108">
     <nodeInfo nodeId="8030577887428961175" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="105" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

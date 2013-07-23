@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
@@ -287,7 +288,15 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      ComparisonRule_Runtime comparisonRule = new MeetType_comparable_with_arguments_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
       InequationReplacementRule_Runtime eliminationRule = new JoinType_supertypeOf_arguments_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new MeetType_subtypeOf_arguments_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
   }
