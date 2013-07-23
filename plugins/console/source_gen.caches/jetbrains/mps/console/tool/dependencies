@@ -68,7 +68,6 @@
     <classNode dependClassName="javax.swing.JComboBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JScrollBar" />
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
