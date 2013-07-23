@@ -89,46 +89,48 @@
     <nodeInfo nodeId="2436117033632110919" fileName="BuildMPSPlugin_Behavior.java" startLine="95" startPosition="102" endLine="96" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2436117033632412778" fileName="BuildMPSPlugin_Behavior.java" startLine="97" startPosition="33" endLine="98" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2436117033632110934" fileName="BuildMPSPlugin_Behavior.java" startLine="98" startPosition="93" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224588814561913953" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="50" endLine="109" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224588814561914031" fileName="BuildMPSPlugin_Behavior.java" startLine="112" startPosition="5" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4101476690143409727" fileName="BuildMPSPlugin_Behavior.java" startLine="116" startPosition="98" endLine="117" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4101476690147448925" fileName="BuildMPSPlugin_Behavior.java" startLine="120" startPosition="59" endLine="121" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="124" startPosition="70" endLine="125" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="125" startPosition="63" endLine="126" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="167" endLine="127" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="167" endLine="127" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="127" startPosition="214" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7809112406656462248" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="50" endLine="109" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7809112406656447702" fileName="BuildMPSPlugin_Behavior.java" startLine="111" startPosition="9" endLine="112" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224588814561916391" fileName="BuildMPSPlugin_Behavior.java" startLine="112" startPosition="281" endLine="113" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224588814561914031" fileName="BuildMPSPlugin_Behavior.java" startLine="114" startPosition="5" endLine="115" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4101476690143409727" fileName="BuildMPSPlugin_Behavior.java" startLine="118" startPosition="98" endLine="119" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4101476690147448925" fileName="BuildMPSPlugin_Behavior.java" startLine="122" startPosition="59" endLine="123" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="70" endLine="127" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="127" startPosition="63" endLine="128" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="128" startPosition="167" endLine="129" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="128" startPosition="167" endLine="129" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="129" startPosition="214" endLine="130" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1224588814561825281" fileName="BuildMPSPlugin_Behavior.java" startLine="34" startPosition="94" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5905179409467643495" fileName="BuildMPSPlugin_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="5905179409467643516" fileName="BuildMPSPlugin_Behavior.java" startLine="53" startPosition="130" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224588814561913949" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/build/util/DescendantsScope;" />
-    <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getImportedLibraries_4101476690142937969#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMpsLibrary_4101476690147447822#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7809112406656462246" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/build/util/DescendantsScope;" />
+    <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getImportedLibraries_4101476690142937969#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMpsLibrary_4101476690147447822#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3340252814673125821" fileName="BuildMPSPlugin_Behavior.java" startLine="64" startPosition="131" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3340252814673125854" fileName="BuildMPSPlugin_Behavior.java" startLine="74" startPosition="123" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3340252814673340818" fileName="BuildMPSPlugin_Behavior.java" startLine="82" startPosition="125" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2436117033632110932" fileName="BuildMPSPlugin_Behavior.java" startLine="96" startPosition="129" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224588814561916391" fileName="BuildMPSPlugin_Behavior.java" startLine="106" startPosition="306" endLine="111" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="124" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBwfTaskLibraryDependency_6x52oe_a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7809112406656462236" fileName="BuildMPSPlugin_Behavior.java" startLine="106" startPosition="306" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createBwfTaskLibraryDependency_6x52oe_a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLayoutScope_1224588814561807654#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="3340252814672948353" fileName="BuildMPSPlugin_Behavior.java" startLine="72" startPosition="75" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3340252814673340808" fileName="BuildMPSPlugin_Behavior.java" startLine="80" startPosition="77" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2436117033632110922" fileName="BuildMPSPlugin_Behavior.java" startLine="94" startPosition="28" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224588814561913852" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="110" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2436117033632110863" fileName="BuildMPSPlugin_Behavior.java" startLine="93" startPosition="113" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224588814561913852" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="110" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5905179409467643488" fileName="BuildMPSPlugin_Behavior.java" startLine="47" startPosition="34" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getProjectStructureScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getProjectStructureScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="3340252814672948097" fileName="BuildMPSPlugin_Behavior.java" startLine="62" startPosition="365" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="42" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_fetchDependencies_5908258303322131137#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
     <scopeInfo nodeId="1224588814561889094" fileName="BuildMPSPlugin_Behavior.java" startLine="31" startPosition="43" endLine="31" endPosition="43" />
     <scopeInfo nodeId="1224588814561825283" fileName="BuildMPSPlugin_Behavior.java" startLine="35" startPosition="306" endLine="36" endPosition="213" />
     <scopeInfo nodeId="5905179409467643496" fileName="BuildMPSPlugin_Behavior.java" startLine="49" startPosition="39" endLine="50" endPosition="64" />
     <scopeInfo nodeId="5905179409467643517" fileName="BuildMPSPlugin_Behavior.java" startLine="54" startPosition="35" endLine="55" endPosition="44" />
-    <scopeInfo nodeId="1224588814561913950" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="50" endLine="109" endPosition="153" />
-    <scopeInfo nodeId="4101476690143403605" fileName="BuildMPSPlugin_Behavior.java" startLine="116" startPosition="98" endLine="117" endPosition="98" />
-    <scopeInfo nodeId="4101476690147447825" fileName="BuildMPSPlugin_Behavior.java" startLine="120" startPosition="59" endLine="121" endPosition="101" />
-    <scopeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="167" endLine="127" endPosition="214" />
+    <scopeInfo nodeId="7809112406656462247" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="50" endLine="109" endPosition="153" />
+    <scopeInfo nodeId="4101476690143403605" fileName="BuildMPSPlugin_Behavior.java" startLine="118" startPosition="98" endLine="119" endPosition="98" />
+    <scopeInfo nodeId="4101476690147447825" fileName="BuildMPSPlugin_Behavior.java" startLine="122" startPosition="59" endLine="123" endPosition="101" />
+    <scopeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="128" startPosition="167" endLine="129" endPosition="214" />
     <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="31" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1224588814561889092" varName="thisNode" />
     </scopeInfo>
@@ -139,17 +141,17 @@
     <scopeInfo nodeId="5905179409467643495" fileName="BuildMPSPlugin_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5905179409467643495" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1224588814561913949" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="1224588814561913949" varName="it" />
+    <scopeInfo nodeId="7809112406656462246" fileName="BuildMPSPlugin_Behavior.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="7809112406656462246" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="118" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1224588814561889092" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="5905179409467643507" fileName="BuildMPSPlugin_Behavior.java" startLine="52" startPosition="9" endLine="56" endPosition="7">
       <varInfo nodeId="5905179409467643509" varName="pluginArtifact" />
     </scopeInfo>
-    <scopeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="124" startPosition="70" endLine="128" endPosition="14">
+    <scopeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="70" endLine="130" endPosition="14">
       <varInfo nodeId="4101476690143383739" varName="facade" />
       <varInfo nodeId="4101476690143383739" varName="n1" />
     </scopeInfo>
@@ -163,18 +165,21 @@
     <scopeInfo nodeId="2436117033632110923" fileName="BuildMPSPlugin_Behavior.java" startLine="95" startPosition="102" endLine="100" endPosition="9">
       <varInfo nodeId="2436117033632110920" varName="gentestJar" />
     </scopeInfo>
-    <scopeInfo nodeId="1224588814561913853" fileName="BuildMPSPlugin_Behavior.java" startLine="106" startPosition="306" endLine="111" endPosition="318" />
-    <scopeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="124" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="4101476690143383739" fileName="BuildMPSPlugin_Behavior.java" startLine="126" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1224588814561889098" varName="kind" />
       <varInfo nodeId="1224588814561889092" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2436117033632110864" fileName="BuildMPSPlugin_Behavior.java" startLine="94" startPosition="28" endLine="101" endPosition="7" />
-    <scopeInfo nodeId="1224588814561913842" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="110" endLine="113" endPosition="16" />
+    <scopeInfo nodeId="1224588814561913853" fileName="BuildMPSPlugin_Behavior.java" startLine="106" startPosition="306" endLine="113" endPosition="148">
+      <varInfo nodeId="7809112406656462237" varName="forAllVisible" />
+      <varInfo nodeId="7809112406656447703" varName="forThis" />
+    </scopeInfo>
     <scopeInfo nodeId="5905179409467643488" fileName="BuildMPSPlugin_Behavior.java" startLine="47" startPosition="34" endLine="57" endPosition="5">
       <varInfo nodeId="5905179409467643489" varName="plugin" />
     </scopeInfo>
-    <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="1224588814561913842" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="110" endLine="115" endPosition="16" />
+    <scopeInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="105" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="1224588814561913843" varName="kind" />
       <varInfo nodeId="1224588814561889092" varName="thisNode" />
     </scopeInfo>
@@ -200,8 +205,8 @@
       <varInfo nodeId="1224588814561889092" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="5905179409467643495" fileName="BuildMPSPlugin_Behavior.java" startLine="48" startPosition="81" endLine="52" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior$1" />
-    <unitInfo nodeId="1224588814561913949" fileName="BuildMPSPlugin_Behavior.java" startLine="107" startPosition="207" endLine="111" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior$2" />
-    <unitInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="30" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior" />
+    <unitInfo nodeId="7809112406656462246" fileName="BuildMPSPlugin_Behavior.java" startLine="107" startPosition="224" endLine="111" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior$2" />
+    <unitInfo nodeId="1224588814561889092" fileName="BuildMPSPlugin_Behavior.java" startLine="30" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_Behavior" />
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/1265949165890654187">
     <nodeInfo nodeId="6547494638219485350" fileName="BuildMpsLayout_ModuleJars_Behavior.java" startLine="17" startPosition="122" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -167,7 +167,7 @@ public class MPSModulesPartitioner {
         }
       } else if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
         SNode devkit = SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
-        for (SNode q : Sequence.fromIterable(BuildMps_DevKit_Behavior.call_getExportedModules_7391870795496918763(devkit)).concat(ListSequence.fromList(SLinkOperations.getTargets(devkit, "extends", true)).where(new IWhereFilter<SNode>() {
+        Iterable<SNode> extended = ListSequence.fromList(SLinkOperations.getTargets(devkit, "extends", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "devkit", false) != null);
           }
@@ -175,7 +175,8 @@ public class MPSModulesPartitioner {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "devkit", false);
           }
-        }))) {
+        });
+        for (SNode q : Sequence.fromIterable(BuildMps_DevKit_Behavior.call_getExportedModules_7391870795496918763(devkit)).concat(Sequence.fromIterable(extended))) {
           MPSModulesPartitioner.Node node = map.get(q);
           if (node != null) {
             SetSequence.fromSet(dependencyNodes).addElement(node);
