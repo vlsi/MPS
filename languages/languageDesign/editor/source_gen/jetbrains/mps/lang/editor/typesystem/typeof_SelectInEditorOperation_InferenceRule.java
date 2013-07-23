@@ -34,6 +34,11 @@ public class typeof_SelectInEditorOperation_InferenceRule extends AbstractInfere
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4461169032998055208", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4461169032998055213", true), (SNode) _quotation_createNode_gf4lkw_a0c0b(), false, false, _info_12389875345);
     }
+    {
+      SNode _nodeToCheck_1029348928467 = selectInOperation;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "3883224472490224131", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "3883224472490222881", true), (SNode) _quotation_createNode_gf4lkw_a0d0b(), _info_12389875345);
+    }
   }
 
   public String getApplicableConceptFQName() {
@@ -70,6 +75,13 @@ public class typeof_SelectInEditorOperation_InferenceRule extends AbstractInfere
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_gf4lkw_a0d0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 }
