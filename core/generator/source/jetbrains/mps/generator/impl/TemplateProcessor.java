@@ -471,9 +471,10 @@ public class TemplateProcessor {
       }
       return outputNodes;
 
-    } else if (macroConceptFQName.equals(RuleUtil.concept_SwitchMacro)) {
-      // $SWITCH$
-      SNode templateSwitch = RuleUtil.getSwitchMacro_TemplateSwitch(macro);
+    } else if (macroConceptFQName.equals(RuleUtil.concept_SwitchMacro) || macroConceptFQName.equals(RuleUtil.concept_TemplateSwitchMacro)) {
+      // $SWITCH-OLD$ without arguments and $SWITCH$ that allows arguments
+      final boolean newSwitchMacro = macroConceptFQName.equals(RuleUtil.concept_TemplateSwitchMacro);
+      SNode templateSwitch = newSwitchMacro ? RuleUtil.getTemplateSwitchMacro_TemplateSwitch(macro) : RuleUtil.getSwitchMacro_TemplateSwitch(macro);
       if (templateSwitch == null) {
         myGenerator.showErrorMessage(templateContext.getInput(), macro, "error processing $SWITCH$ - bad TemplateSwitch reference");
         return null;
@@ -496,7 +497,15 @@ public class TemplateProcessor {
       }
       myTracer.pushSwitch(new jetbrains.mps.smodel.SNodePointer(templateSwitch));
       try {
-        final TemplateContext switchContext = templateContext.subContext(mappingName, newInputNode);
+        // [artem]>>>
+        final TemplateContext switchContext;
+        if (newSwitchMacro) {
+          final TemplateContext newcontext = GeneratorUtil.createTemplateCallContext(templateContext.getInput(), templateContext, myReductionContext, macro, newInputNode, myGenerator);
+          switchContext = newcontext.subContext(mappingName);
+        } else{
+          switchContext = templateContext.subContext(mappingName, newInputNode);
+        }
+        // [artem]<<<
 
         Collection<SNode> collection = myGenerator.tryToReduce(switchContext, switchPtr, mappingName, myReductionContext);
         if (collection == null) {

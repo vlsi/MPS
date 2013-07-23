@@ -50,6 +50,7 @@ public class RuleUtil {
   public static final String concept_TemplateArgumentPatternRef = "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef";
   public static final String concept_TemplateArgumentQueryExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression";
   public static final String concept_TemplateArgumentParameterExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression";
+  public static final String concept_TemplateSwitchMacro = "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
 
@@ -165,8 +166,8 @@ public class RuleUtil {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(reductionRule, "pattern", true), "patternNode", true);
   }
 
-  public static String[] getTemplateDeclarationParameterNames(SNode templateDeclaration) {
-    List<SNode> params = SLinkOperations.getTargets(templateDeclaration, "parameter", true);
+  public static String[] getTemplateDeclarationParameterNames(SNode template) {
+    List<SNode> params = SLinkOperations.getTargets(template, "parameter", true);
     String[] result = new String[ListSequence.fromList(params).count()];
     for (int i = 0; i < result.length; i++) {
       SNode param = ListSequence.fromList(params).getElement(i);
@@ -209,12 +210,16 @@ public class RuleUtil {
     return SLinkOperations.getTarget(macro, "templateSwitch", false);
   }
 
+  public static SNode getTemplateSwitchMacro_TemplateSwitch(SNode macro) {
+    return SNodeOperations.cast(SLinkOperations.getTarget(macro, "template", false), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
+  }
+
   public static SNode getIncludeMacro_Template(SNode macro) {
     return SLinkOperations.getTarget(macro, "includeTemplate", false);
   }
 
   public static SNode getCallMacro_Template(SNode macro) {
-    return SLinkOperations.getTarget(macro, "template", false);
+    return SNodeOperations.cast(SLinkOperations.getTarget(macro, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
 
   public static SNode getWeaving_ContextNodeQuery(SNode rule) {
@@ -230,7 +235,7 @@ public class RuleUtil {
   }
 
   public static SNode getTemplateDeclarationReference_Template(SNode ref) {
-    return SLinkOperations.getTarget(ref, "template", false);
+    return SNodeOperations.cast(SLinkOperations.getTarget(ref, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
 
   public static SNode getWeaveEach_Template(SNode weaveEach) {

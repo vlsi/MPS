@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-brl2bgkky74xjyauouufkoy6p3yk0z4">
+<dependencies version="2" modelHash="-3mqnxyhs3ngr0ail0ua00abye2ssjiu">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -93,6 +93,8 @@
     <dep root="650531548511911818" />
     <dep root="7830515785164762753" />
     <dep root="8900764248744213868" />
+    <dep root="982871510064032177" />
+    <dep root="982871510068000147" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -110,7 +112,7 @@
   <source id="1088761943574" name="ReferenceMacro" hash="cdslxb5c2tj7xbxwnykh3ny8hm6n4jh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1092059087312" name="TemplateDeclaration" hash="-460w7uz7h8sxv254rg9tvlx8kggfeds">
+  <source id="1092059087312" name="TemplateDeclaration" hash="dddale0qnnisobaqiks847iiph3uu8g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1095416546421" name="MappingConfiguration" hash="clwonqhddxvkuijjyqr0mnbeyhyniw7">
@@ -119,10 +121,10 @@
   <source id="1095672379244" name="TemplateFragment" hash="-6as4yxbiia8quu2h6a6me53p8m8kqwy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1112730859144" name="TemplateSwitch" hash="b23b6o3t4cu720cuuqoyhz5gc9kkzx3">
+  <source id="1112730859144" name="TemplateSwitch" hash="x7y4cc6v7nhf9cverm4e6y8szjazxv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1112731569622" name="SwitchMacro" hash="4tpab3wnryken532ch8zqwrah4nnkr1">
+  <source id="1112731569622" name="SwitchMacro" hash="36od1lxt5kmf018qq8s8xmg85r2j223">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1112911581741" name="TemplateSwitchReference" hash="3tpemqd232gf451wz3719dvi6gn89fp">
@@ -300,7 +302,7 @@
   <source id="1805153994416516020" name="PatternReduction_MappingRule" hash="-2eul3urk8mff90rq1q3gezhtcsigoex">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1722980698497626400" name="ITemplateCall" hash="2cpj8pb8ofql70tbfy2uyt5178mdqvc">
+  <source id="1722980698497626400" name="ITemplateCall" hash="4r4uzftao2kpzismjtjkhtpj3qq0tnc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4035562641222585520" name="TemplateArgumentQueryExpression" hash="-c0i05fnc3ckom87ixtmkz7mb0iv7koo">
@@ -364,6 +366,12 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3118009927543452571" name="TraceMacro" hash="-72j7o9bq21403xqjxgbxcfoh9lrvgj0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="982871510064032177" name="IParameterizedTemplate" hash="-6s3rvm7evtbzfovzbz3pgrtp44qd6kx">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="982871510068000147" name="TemplateSwitchMacro" hash="5vvu10fdad5vfis87k8co4dqvw0yza0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
