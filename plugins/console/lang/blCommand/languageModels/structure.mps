@@ -174,6 +174,8 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="752693057587755272" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ProjectExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="project" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="current project" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8365379837260459177" nodeInfo="ig">
@@ -211,6 +213,19 @@
     <property name="name" nameId="tpck.1169194664001" value="ReferencesExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="references" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="references in current scope" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6864030874027862829" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
+    <property name="name" nameId="tpck.1169194664001" value="ModelsExpression" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="models" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="models in current scope" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6864030874028745314" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
+    <property name="name" nameId="tpck.1169194664001" value="ModulesExpression" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="modules" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
   </root>
 </model>

@@ -8,14 +8,12 @@ import jetbrains.mps.console.tool.ConsoleContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ProjectStatisticsTarget_Behavior {
@@ -25,31 +23,21 @@ public class ProjectStatisticsTarget_Behavior {
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
 
-    Collection<SModule> modules = IterableUtil.asCollection(context.getProject().getModules());
-    Collection<SModule> modulesWithGenerators = IterableUtil.asCollection(context.getProject().getModulesWithGenerators());
+    Iterable<? extends SModule> modules = context.getProject().getModulesWithGenerators();
+    Iterable<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    });
 
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", IterableUtil.asCollection(modules).size()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules with generators", IterableUtil.asCollection(modulesWithGenerators).size()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Non-packaged modules", CollectionSequence.fromCollection(modules).where(new IWhereFilter<SModule>() {
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Modules", Sequence.fromIterable(modules).count()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Non-packaged modules", Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
-        return !(((SModule) it).isPackaged());
+        return it.isPackaged();
       }
     }).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", CollectionSequence.fromCollection(modules).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models with generators", CollectionSequence.fromCollection(modulesWithGenerators).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }).count()));
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Editable models", CollectionSequence.fromCollection(modules).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }).where(new IWhereFilter<SModel>() {
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Models", Sequence.fromIterable(models).count()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Editable models", Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return !(it.isReadOnly());
       }
@@ -58,9 +46,9 @@ public class ProjectStatisticsTarget_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
-    Collection<SModule> asCollection = IterableUtil.asCollection(context.getProject().getModules());
-    return CollectionSequence.fromCollection(asCollection).translate(new ITranslator2<SModule, SModel>() {
+  public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
+    Iterable<? extends SModule> modules = context.getProject().getModules();
+    return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
       }

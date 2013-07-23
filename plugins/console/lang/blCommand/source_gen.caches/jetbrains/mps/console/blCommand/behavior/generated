@@ -14,7 +14,7 @@
   <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="-309i5ncp7643vnzmpl3cbr8yid4yob7" />
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-9s82yfi9ghzdl6ktne6mpbnt3y4p1u5" />
   <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="76myxegtoxgbtj6tyvu3vtcyqh6ntew" />
-  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="aux4y6zfwwtqa2r6lhsnf5z8dxa6yvn" />
+  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-79y5dhps87w460wvlr7agcxsuc0xn00" />
   <dep model="r:94bd2666-1ac8-410a-98e9-2f3a3dca76c3(jetbrains.mps.lang.scopes.generator.template.main@generator)" hash="de8jk0uv38paz3z84ekbz5fge4s359" />
   <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="2hf7wd9bjykv0opc11rw1zkjpxxgwmv" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
@@ -40,8 +40,10 @@
     <file name="IShowable_BehaviorDescriptor.java" />
     <file name="InstancesExpression_BehaviorDescriptor.java" />
     <file name="ModelEachIterable_BehaviorDescriptor.java" />
+    <file name="ModelsExpression_BehaviorDescriptor.java" />
     <file name="ModelsShowable_BehaviorDescriptor.java" />
     <file name="ModuleEachIterable_BehaviorDescriptor.java" />
+    <file name="ModulesExpression_BehaviorDescriptor.java" />
     <file name="ModulesShowable_BehaviorDescriptor.java" />
     <file name="NodeEachIterable_BehaviorDescriptor.java" />
     <file name="NodesExpression_BehaviorDescriptor.java" />

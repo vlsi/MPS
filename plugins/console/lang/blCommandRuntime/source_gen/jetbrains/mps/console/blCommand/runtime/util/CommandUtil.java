@@ -33,7 +33,7 @@ public class CommandUtil {
 
 
   public static Iterable<SNode> nodes(SearchScope scope) {
-    return Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
+    return Sequence.fromIterable(models(scope)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.getNodes(it, null);
       }
@@ -52,7 +52,7 @@ public class CommandUtil {
 
 
 
-  public static Iterable<SModel> allModels(SearchScope scope) {
+  public static Iterable<SModel> models(SearchScope scope) {
     Iterable<SModel> allModels = scope.getModels();
     return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -63,7 +63,7 @@ public class CommandUtil {
 
 
 
-  public static Iterable<SModule> allModules(SearchScope scope) {
+  public static Iterable<SModule> modules(SearchScope scope) {
     Iterable<SModule> allModules = scope.getModules();
     return Sequence.fromIterable(allModules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
