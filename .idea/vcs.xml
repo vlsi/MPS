@@ -12,6 +12,8 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/editor/editor-jetpad/core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/editor/editor-jetpad/projectional" vcs="Git" />
   </component>
 </project>
 
