@@ -56,6 +56,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.Scanner;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -367,17 +368,15 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           }, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
-              String[] strings = text.split("\n");
-              for (int i = 0; i < strings.length; i++) {
-                if (isNotEmpty_xg3v07_a0a0c0a0a1a3a9a0a0a0a0a2ac(strings[i])) {
-                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a0a2a0a0b0a9a0a0c25(strings[i]));
+              Scanner scanner = new Scanner(text);
+              while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                if ((line != null && line.length() > 0)) {
+                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a1a2a0a0b0a9a0a0c25(line));
                 }
-                if (i < strings.length - 1 || text.charAt(text.length() - 1) == '\n') {
+                if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
                   SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
                 }
-              }
-              if (text.equals("\n")) {
-                SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
               }
             }
 
@@ -624,7 +623,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return null;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a0a2a0a0b0a9a0a0c25(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a1a2a0a0b0a9a0a0c25(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
@@ -651,9 +650,5 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       return checkedDotOperand.getModelReference();
     }
     return null;
-  }
-
-  public static boolean isNotEmpty_xg3v07_a0a0c0a0a1a3a9a0a0a0a0a2ac(String str) {
-    return str != null && str.length() > 0;
   }
 }

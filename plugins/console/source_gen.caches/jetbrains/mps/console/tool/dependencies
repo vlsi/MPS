@@ -64,6 +64,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="javax.swing.JComboBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
