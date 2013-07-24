@@ -10,13 +10,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.jetpad.geometry.Vector;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.geometry.Vector;
 
 public class DiagramEditor extends DefaultNodeEditor {
   private DiagramView myView = new DiagramView();
@@ -25,8 +25,15 @@ public class DiagramEditor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     GenericViewCell cell = GenericViewCell.createViewCell(context, node, myView);
     EditorCell_Collection collection = createBlockCollection(context, node);
+    cell.addEditorCell(collection);
+    int i = 0;
     for (EditorCell child : Sequence.fromIterable(collection)) {
-      cell.addEditorCell(child);
+      if (child instanceof GenericViewCell) {
+        View view = ((GenericViewCell) child).getView();
+        myView.itemsView.children().add(view);
+        view.moveTo(new Vector(i, i));
+        i += 10;
+      }
     }
     return cell;
   }
@@ -39,15 +46,6 @@ public class DiagramEditor extends DefaultNodeEditor {
   private EditorCell_Collection createBlockCollection(EditorContext context, SNode node) {
     AbstractCellListHandler handler = new RefNodeListHandler(node, "blocks", context) {};
     jetbrains.mps.nodeEditor.cells.EditorCell_Collection cells = handler.createCells(context, new CellLayout_Indent(), false);
-    int i = 0;
-    for (EditorCell cell : Sequence.fromIterable(cells)) {
-      if (cell instanceof GenericViewCell) {
-        View view = ((GenericViewCell) cell).myView;
-        myView.itemsView.children().add(view);
-        view.moveTo(new Vector(i, i));
-        i += 10;
-      }
-    }
     return cells;
   }
 }

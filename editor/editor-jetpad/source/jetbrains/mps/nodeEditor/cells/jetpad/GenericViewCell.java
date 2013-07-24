@@ -40,7 +40,7 @@ import java.awt.Graphics;
  * Date: 7/23/13
  */
 public class GenericViewCell extends EditorCell_Collection {
-  public View myView;
+  private View myView;
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
 
   protected GenericViewCell(EditorContext editorContext, SNode node,
@@ -115,5 +115,13 @@ public class GenericViewCell extends EditorCell_Collection {
     myY = bounds.dimension.y;
     myWidth = bounds.dimension.x;
     myHeight = bounds.dimension.y;
+  }
+
+  public View getView() {
+    return myView;
+  }
+
+  public void setView(View view) {
+    myView = view;
   }
 }
