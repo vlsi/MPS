@@ -24,6 +24,8 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
@@ -38,12 +40,18 @@ import java.awt.Graphics;
  * Date: 7/23/13
  */
 public class GenericViewCell extends EditorCell_Collection {
-  private View myView;
+  public View myView;
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
 
   protected GenericViewCell(EditorContext editorContext, SNode node,
       CellLayout cellLayout, AbstractCellListHandler handler) {
     super(editorContext, node, cellLayout, handler);
+  }
+
+  public static GenericViewCell createViewCell(EditorContext editorContext, SNode node, View view) {
+    GenericViewCell cell = new GenericViewCell(editorContext, node, new CellLayout_Indent(), null);
+    cell.myView = view;
+    return cell;
   }
 
   @Override
@@ -100,6 +108,8 @@ public class GenericViewCell extends EditorCell_Collection {
 
   @Override
   protected void relayoutImpl() {
+    super.relayoutImpl();
+    myView.validate();
     Rectangle bounds = myView.bounds().get();
     myX = bounds.origin.x;
     myY = bounds.dimension.y;
