@@ -150,7 +150,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       @Override
       public void run(AnActionButton anActionButton) {
         List<ModelRootDescriptor> modelRoots = new ArrayList<ModelRootDescriptor>(myJavaModuleFacet.getModule().getModuleDescriptor().getModelRootDescriptors());
-        StubRootChooser stubRootChooser = new StubRootChooser(modelRoots, (myJavaModuleFacet.getModule() instanceof Language ? true : false));
+        StubRootChooser stubRootChooser = new StubRootChooser(librariesTable, modelRoots, myJavaModuleFacet.getModule() instanceof Language);
         myLibraryTableModel.addAll(stubRootChooser.compute());
       }
     }).setRemoveAction(new AnActionButtonRunnable() {

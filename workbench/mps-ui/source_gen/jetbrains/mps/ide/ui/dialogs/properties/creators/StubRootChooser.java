@@ -4,6 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
+import java.awt.Component;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
@@ -18,10 +19,12 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 
 public class StubRootChooser implements Computable<List<String>> {
+  private Component myComponent;
   private List<ModelRootDescriptor> myRoots;
   private boolean myJavaOnly;
 
-  public StubRootChooser(List<ModelRootDescriptor> roots, boolean javaOnly) {
+  public StubRootChooser(Component component, List<ModelRootDescriptor> roots, boolean javaOnly) {
+    myComponent = component;
     myRoots = roots;
     myJavaOnly = javaOnly;
   }
@@ -41,7 +44,7 @@ public class StubRootChooser implements Computable<List<String>> {
 
 
     if (myJavaOnly) {
-      int res = Messages.showYesNoDialog("MPS can try creating models for the specified locations, so that class files can be referenced from MPS models directly. Would you like to import models for the specified locations?", "Model Roots", Messages.getQuestionIcon());
+      int res = Messages.showYesNoDialog(myComponent, "MPS can try creating models for the specified locations, so that class files can be referenced from MPS models directly. Would you like to import models for the specified locations?", "Model Roots", Messages.getQuestionIcon());
       if (res == Messages.YES) {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
@@ -61,7 +64,7 @@ public class StubRootChooser implements Computable<List<String>> {
           return it;
         }
       }).toListSequence();
-      final int res = Messages.showChooseDialog("MPS can try creating models for the specified locations,\n" + "so that class files can be referenced from MPS models directly.\n" + "Would you like to import models for the specified locations?", "Model Roots", ListSequence.fromList(modelRootNames).toGenericArray(String.class), ListSequence.fromList(modelRootNames).first(), Messages.getQuestionIcon());
+      final int res = Messages.showChooseDialog(myComponent, "MPS can try creating models for the specified locations,\n" + "so that class files can be referenced from MPS models directly.\n" + "Would you like to import models for the specified locations?", "Model Roots", ListSequence.fromList(modelRootNames).toGenericArray(String.class), ListSequence.fromList(modelRootNames).first(), Messages.getQuestionIcon());
       if (res >= 0) {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
