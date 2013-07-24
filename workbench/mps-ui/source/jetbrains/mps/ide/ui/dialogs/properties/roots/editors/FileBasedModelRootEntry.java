@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.Gray;
 import com.intellij.ui.HoverHyperlinkLabel;
 import com.intellij.ui.JBColor;
@@ -172,7 +173,8 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
     JLabel label2Return = new JLabel(pathPresentation);
 
-    if((VirtualFileUtils.getVirtualFile(file)).exists()) {
+    VirtualFile virtualFile = null;
+    if((virtualFile = VirtualFileUtils.getVirtualFile(file)) != null && virtualFile.exists()) {
       HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(pathPresentation, foreground);
       hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
       hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
