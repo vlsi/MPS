@@ -21,18 +21,20 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 2:
         return Collections.<ConceptEditor>singletonList(new CommandResultLine_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new History_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExceptionResultPart_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new History_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new NodeReferenceResultPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeReferenceResultPart_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new NodeWithClosureResultPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeWithClosureResultPart_Editor());
       case 9:
+        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+      case 10:
         return Collections.<ConceptEditor>singletonList(new TextResultPart_Editor());
       default:
     }
@@ -50,5 +52,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeReferenceResultPart", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosureResultPart", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.ExceptionResultPart", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeReferenceResultPart", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosureResultPart", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
 }

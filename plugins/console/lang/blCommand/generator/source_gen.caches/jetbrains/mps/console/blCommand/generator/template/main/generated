@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8dqjw4c916jof265jxzzznlktzshgn">
+<dependencies version="2" modelHash="cf4bnzdmcv20i76uo5060v8iq6d996">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-7awaq033a3kgl89pbjkeqgdywogljba" />
@@ -10,7 +10,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
   <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="ajfkqc51g4uxfn3mrwg706yhsoza98" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-ati4v64o5vs56cll47w2i2bxdu53ooa" />
-  <common hash="-8tbwrm6a4ta8vkul0k7j5ot49uyplzz">
+  <common hash="9musmdfx617wl6iildvawq82fchopr8">
     <dep root="1125969196844485895" />
     <dep root="1125969196844628675" />
     <dep root="1125969196844640012" />
@@ -47,7 +47,7 @@
   <source id="5336086527852811410" name="main" hash="bbhiqti1uwv7izozny38nyvo2lxp27p">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5336086527852812352" name="reduce_BaseLanguageCommand" hash="5gmu2ee1518o8dreiq0pcepro4j2ykg">
+  <source id="5336086527852812352" name="reduce_BaseLanguageCommand" hash="-56tbilql2cikf56j7tjt7nl15amfocc">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="4417779018064685310" name="reduce_PrintNode" hash="-azyli4zfxzzd9asw3l4e7ex0wu1uz40">

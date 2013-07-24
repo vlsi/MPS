@@ -138,36 +138,39 @@
     <unitInfo nodeId="5207260697411458160" fileName="INodeSetReference_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6147624293055083871">
-    <nodeInfo nodeId="6147624293055096200" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="25" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8608546828743388075" fileName="TestActionCommand_Behavior.java" startLine="20" startPosition="23" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5822155848365471342" fileName="TestActionCommand_Behavior.java" startLine="21" startPosition="32" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4166509642329243480" fileName="TestActionCommand_Behavior.java" startLine="24" startPosition="32" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="6147624293055169342" fileName="TestActionCommand_Behavior.java" startLine="22" startPosition="45" endLine="27" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6147624293055096161" fileName="TestActionCommand_Behavior.java" startLine="17" startPosition="145" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="17" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
-    <scopeInfo nodeId="6147624293055084036" fileName="TestActionCommand_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="4166509642329243289" fileName="TestActionCommand_Behavior.java" startLine="24" startPosition="32" endLine="25" endPosition="60" />
-    <scopeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="6147624293055096200" fileName="TestActionCommand_Behavior.java" startLine="21" startPosition="25" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8608546828743388075" fileName="TestActionCommand_Behavior.java" startLine="22" startPosition="23" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5822155848365471342" fileName="TestActionCommand_Behavior.java" startLine="23" startPosition="32" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2699636778860806747" fileName="TestActionCommand_Behavior.java" startLine="24" startPosition="45" endLine="25" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2699636778860826448" fileName="TestActionCommand_Behavior.java" startLine="25" startPosition="137" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4166509642329243480" fileName="TestActionCommand_Behavior.java" startLine="28" startPosition="32" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="6147624293055169342" fileName="TestActionCommand_Behavior.java" startLine="26" startPosition="67" endLine="31" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6147624293055096161" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="145" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;)V" />
+    <scopeInfo nodeId="6147624293055084036" fileName="TestActionCommand_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="4166509642329243289" fileName="TestActionCommand_Behavior.java" startLine="28" startPosition="32" endLine="29" endPosition="60" />
+    <scopeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6147624293055083871" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6147624293055096163" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="25" endLine="27" endPosition="11">
+    <scopeInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6147624293055096163" fileName="TestActionCommand_Behavior.java" startLine="21" startPosition="25" endLine="31" endPosition="11">
       <varInfo nodeId="5822155848365471345" varName="n" />
+      <varInfo nodeId="2699636778860806750" varName="nodeWithClosure" />
     </scopeInfo>
-    <scopeInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="6147624293055090023" fileName="TestActionCommand_Behavior.java" startLine="17" startPosition="145" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="17" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="21" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="6147624293055090023" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="145" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="19" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="6147624293055090017" varName="c" />
       <varInfo nodeId="6147624293055090021" varName="callback" />
       <varInfo nodeId="6147624293055090019" varName="console" />
       <varInfo nodeId="6147624293055083871" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="23" startPosition="41" endLine="27" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$2" />
-    <unitInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="18" startPosition="45" endLine="29" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$1" />
-    <unitInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" />
+    <unitInfo nodeId="4166509642329243288" fileName="TestActionCommand_Behavior.java" startLine="27" startPosition="48" endLine="31" endPosition="9" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$2" />
+    <unitInfo nodeId="6147624293055096162" fileName="TestActionCommand_Behavior.java" startLine="20" startPosition="45" endLine="33" endPosition="5" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior$1" />
+    <unitInfo nodeId="6147624293055083871" fileName="TestActionCommand_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/6224631407134025442">
     <nodeInfo nodeId="9020890213748147039" fileName="RebuildProjectCommand_Behavior.java" startLine="13" startPosition="133" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

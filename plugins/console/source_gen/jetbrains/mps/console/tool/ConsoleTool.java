@@ -59,7 +59,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -403,12 +402,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "node", node, true);
             }
 
-            public void addClosure(String text, _FunctionTypes._void_P0_E0 closure) {
+            public void addClosure(SNode nodeWithClosure, _FunctionTypes._void_P0_E0 closure) {
               checkResultAvailable();
-              SNode result = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosureResultPart", null);
-              SPropertyOperations.set(result, "text", text);
-              ClosureHoldingNodeUtil.getInstance().register(result, closure);
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(result);
+              ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
+              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(nodeWithClosure);
             }
 
             private void checkResultAvailable() {

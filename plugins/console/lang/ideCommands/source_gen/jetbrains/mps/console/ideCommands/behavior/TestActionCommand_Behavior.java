@@ -7,6 +7,8 @@ import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Random;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JOptionPane;
 
@@ -20,7 +22,9 @@ public class TestActionCommand_Behavior {
         callback.run();
         // todo: remove concept 
         final int n = new Random().nextInt();
-        console.addClosure("action", new _FunctionTypes._void_P0_E0() {
+        SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosureResultPart", null);
+        SPropertyOperations.set(nodeWithClosure, "text", "action");
+        console.addClosure(nodeWithClosure, new _FunctionTypes._void_P0_E0() {
           public void invoke() {
             JOptionPane.showMessageDialog(null, "Test" + n);
           }
