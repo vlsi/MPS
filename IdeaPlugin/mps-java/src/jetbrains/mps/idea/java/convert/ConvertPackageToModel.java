@@ -102,11 +102,13 @@ public class ConvertPackageToModel extends AnAction {
     Collection<Module> modulesWithoutFacet = JavaConverter.getModulesThatNeedMPSFacet(psiJavaFiles);
 
     if (!modulesWithoutFacet.isEmpty()) {
-      AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project);
+      AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project, module.getName(), modulesWithoutFacet);
       dialog.show();
       // Q: is it ok if dialog adds facets inside itself, or should that be written outside
-      if (dialog.getExitCode() == DialogWrapper.CANCEL_EXIT_CODE) {
-        return;
+      if (dialog.getExitCode() == DialogWrapper.OK_EXIT_CODE) {
+        for(Module modelToAddFacet : dialog.getResult()) {
+          //TODO: add facet to each module
+        }
       }
     }
 
