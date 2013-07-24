@@ -16,6 +16,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       return Collections.<ConceptEditor>singletonList(new DiagramEditor());
     } else if ("jetbrains.mps.testHybridEditor.structure.Block".equals(descriptor.getConceptFqName())) {
       return Collections.<ConceptEditor>singletonList(new BlockEditor());
+    } else if ("jetbrains.mps.testHybridEditor.structure.Connector".equals(descriptor.getConceptFqName())) {
+      return Collections.<ConceptEditor>singletonList(new ConnectorEditor());
     }
     return Collections.<ConceptEditor>emptyList();
   }

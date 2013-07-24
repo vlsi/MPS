@@ -56,37 +56,40 @@ public class GenericViewCell extends EditorCell_Collection {
 
   @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
-    Color background = myView.background().get();
-    Rectangle bounds = myView.bounds().get();
+    paintContent(g, parentSettings, myView);
+  }
+  public void paintContent(Graphics g, ParentSettings parentSettings, View view) {
+    Color background = view.background().get();
+    Rectangle bounds = view.bounds().get();
 
     if (background != null) {
       g.setColor(JetpadUtils.toAwtColor(background));
       g.fillRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x, bounds.dimension.y);
     }
 
-    Color border = myView.border().get();
+    Color border = view.border().get();
     if (border != null) {
       g.setColor(JetpadUtils.toAwtColor(border));
       g.drawRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x - 1, bounds.dimension.y - 1);
     }
 
-    if (myView instanceof RectView) {
-      RectView rectView = (RectView) myView;
+    if (view instanceof RectView) {
+      RectView rectView = (RectView) view;
       g.setColor(JetpadUtils.toAwtColor(rectView.background().get()));
 
       g.fillRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x, bounds.dimension.y);
     }
 
-    if (myView instanceof LineView) {
-      LineView lineView = (LineView) myView;
+    if (view instanceof LineView) {
+      LineView lineView = (LineView) view;
       g.setColor(JetpadUtils.toAwtColor(lineView.color().get()));
       Vector start = lineView.start().get();
       Vector end = lineView.end().get();
       g.drawLine(start.x, start.y, end.x, end.y);
     }
 
-    if (myView instanceof TextView) {
-      TextView textView = (TextView) myView;
+    if (view instanceof TextView) {
+      TextView textView = (TextView) view;
       String text = textView.text().get();
       Vector origin = bounds.origin;
       Font font = myFont;

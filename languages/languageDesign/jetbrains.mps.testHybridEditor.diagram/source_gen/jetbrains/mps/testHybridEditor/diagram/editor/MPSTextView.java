@@ -16,8 +16,6 @@ public class MPSTextView extends TextView {
     myFont = font;
   }
 
-
-
   @Override
   protected void doValidate(View.ValidationContext context) {
     String text = text().get();

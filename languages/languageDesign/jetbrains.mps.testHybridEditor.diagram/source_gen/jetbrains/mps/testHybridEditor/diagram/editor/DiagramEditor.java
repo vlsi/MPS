@@ -26,13 +26,13 @@ public class DiagramEditor extends DefaultNodeEditor {
     GenericViewCell cell = GenericViewCell.createViewCell(context, node, myView);
     EditorCell_Collection collection = createBlockCollection(context, node);
     cell.addEditorCell(collection);
-    int i = 0;
+    int i = 40;
     for (EditorCell child : Sequence.fromIterable(collection)) {
       if (child instanceof GenericViewCell) {
         View view = ((GenericViewCell) child).getView();
         myView.itemsView.children().add(view);
         view.moveTo(new Vector(i, i));
-        i += 10;
+        i += 40;
       }
     }
     return cell;
