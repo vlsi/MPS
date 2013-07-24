@@ -45,18 +45,18 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
-import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
-import jetbrains.mps.project.Project;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
 import javax.swing.DefaultCellEditor;
@@ -66,6 +66,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
@@ -112,7 +113,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   @Override
   public final JComponent createComponent() {
-    myTabbedPaneWrapper = new TabbedPaneWrapper(this);
     for (Tab tab : myTabs)
       addTab(tab);
     return myTabbedPaneWrapper.getComponent();
@@ -122,13 +122,34 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     return myTabbedPaneWrapper.getTabCount();
   }
 
-  protected void addTab(Tab tab) {
+  public final Tab getTab(int index) {
+    return myTabs.get(index);
+  }
+
+  public void selectTab(Tab tab) {
+    selectTab(indexOfTab(tab));
+  }
+
+  public void selectTab(int index) {
+    myTabbedPaneWrapper.setSelectedIndex(index);
+  }
+
+  public void addTab(Tab tab) {
     if(tab == null || tab.getTabComponent() == null) return;
     if(tab.getToolTip() == null && tab instanceof BaseTab) ((BaseTab)tab).setToolTip(tab.getTitle());
 
     if(!myTabs.contains(tab)) myTabs.add(tab);
     if(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0)
       myTabbedPaneWrapper.addTab(tab.getTitle(), tab.getIcon(), tab.getTabComponent(), tab.getToolTip());
+  }
+
+  public void insertTab(Tab tab, int index) {
+    if(tab == null || tab.getTabComponent() == null) return;
+    if(tab.getToolTip() == null && tab instanceof BaseTab) ((BaseTab)tab).setToolTip(tab.getTitle());
+
+    if(!myTabs.contains(tab)) myTabs.add(tab);
+    if(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0)
+      myTabbedPaneWrapper.insertTab(tab.getTitle(), tab.getIcon(), tab.getTabComponent(), tab.getToolTip(), index);
   }
 
   private void removeTab(int index) {
@@ -149,6 +170,11 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   public boolean containsTab(Tab tab) {
     return myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) >= 0;
+  }
+
+  public final void addChangeListener(final ChangeListener listener){
+    if(myTabbedPaneWrapper != null)
+    myTabbedPaneWrapper.addChangeListener(listener);
   }
 
   @Override

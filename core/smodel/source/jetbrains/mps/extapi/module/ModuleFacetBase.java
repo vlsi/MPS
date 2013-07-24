@@ -29,6 +29,10 @@ public abstract class ModuleFacetBase implements SModuleFacet {
 
   public abstract String getFacetType();
 
+  public String getFacetPresentation() {
+    return getFacetType();
+  }
+
   @Override
   public SModule getModule() {
     return myModule;

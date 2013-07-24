@@ -16,15 +16,14 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,6 +39,11 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   private static final Logger LOG = LogManager.getLogger(JavaModuleFacetImpl.class);
 
   public JavaModuleFacetImpl() {
+  }
+
+  @Override
+  public String getFacetPresentation() {
+    return "Java";
   }
 
   @Override

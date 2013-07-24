@@ -16,53 +16,28 @@
 package jetbrains.mps.ide.project.facets.ui;
 
 import com.intellij.icons.AllIcons.Nodes;
-import com.intellij.ide.util.BrowseFilesListener;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
-import com.intellij.openapi.fileChooser.FileChooserFactory;
-import com.intellij.openapi.util.EmptyRunnable;
-import com.intellij.ui.AnActionButton;
-import com.intellij.ui.AnActionButtonRunnable;
-import com.intellij.ui.FieldPanel;
-import com.intellij.ui.IdeBorderFactory;
-import com.intellij.ui.InsertPathAction;
-import com.intellij.ui.TableUtil;
-import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBLabel;
-import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
-import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
-import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.Memento;
+import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.util.Iterator;
-import java.util.List;
 
-public class IdeaPluginModuleFacetTab extends BaseTab {
+public class IdeaPluginModuleFacetTab extends BaseTab implements FacetTab {
 
   private final IdeaPluginModuleFacet myIdeaPluginModuleFacet;
   private IdeaPluginModuleFacet myNewIdeaPluginModuleFacet;
@@ -70,7 +45,7 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
   private JTextField myTextField;
 
   public IdeaPluginModuleFacetTab(IdeaPluginModuleFacet moduleFacet) {
-    super("Idea Plugin", Nodes.Plugin, "Idea Plugin Properties");
+    super(((ModuleFacetBase)moduleFacet).getFacetPresentation(), Nodes.Plugin, "Idea Plugin Properties");
 
     myIdeaPluginModuleFacet = moduleFacet;
     myNewIdeaPluginModuleFacet = cloneFacet(moduleFacet);
@@ -143,5 +118,10 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
+  }
+
+  @Override
+  public SModuleFacet getFacet() {
+    return myIdeaPluginModuleFacet;
   }
 }

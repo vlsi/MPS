@@ -13,18 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.project.facets.ui;
+package org.jetbrains.mps.openapi.ui.persistence;
 
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
-import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
-import org.jetbrains.mps.openapi.ui.persistence.TabFactory;
 
-public class IdeaPluginModuleFacetTabFactory implements TabFactory {
-  @Override
-  public FacetTab getTab(SModuleFacet moduleFacet) {
-    if(!(moduleFacet instanceof IdeaPluginModuleFacet))
-      return null;
-    return new IdeaPluginModuleFacetTab((IdeaPluginModuleFacet)moduleFacet);
-  }
+public interface FacetTab extends Tab {
+  SModuleFacet getFacet();
 }

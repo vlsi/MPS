@@ -39,6 +39,11 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
   private Map<String, FacetFactory> myFacetsByType = new HashMap<String, FacetFactory>();
 
   @Override
+  public Set<String> getFacetTypes() {
+    return myFacetsByType.keySet();
+  }
+
+  @Override
   public Set<String> getApplicableFacetTypes(Iterable<String> usedLanguages) {
     Set<String> result = new LinkedHashSet<String>();
     for (String lang : usedLanguages) {
