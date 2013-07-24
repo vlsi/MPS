@@ -55,11 +55,13 @@ public class DiagramEditor extends DefaultNodeEditor {
           View fromView = MapSequence.fromMap(nodeToViewMap).get(SNodeOperations.getParent(SLinkOperations.getTarget(((SNode) child.getSNode()), "inputPort", false)));
           View toView = MapSequence.fromMap(nodeToViewMap).get(SNodeOperations.getParent(SLinkOperations.getTarget(((SNode) child.getSNode()), "outputPort", false)));
           PolylineConnection connection = ((ConnectorViewCell) child).getConnection();
-          connection.toView().set(fromView);
-          connection.fromView().set(toView);
-          connection.update(fromView.bounds().get().center(), toView.bounds().get().center());
-          for (LineView line : ListSequence.fromList(connection.getLines())) {
-            cell.addEditorCell(GenericViewCell.createViewCell(context, node, line));
+          if (fromView != null && toView != null) {
+            connection.toView().set(fromView);
+            connection.fromView().set(toView);
+            connection.update(fromView.bounds().get().center(), toView.bounds().get().center());
+            for (LineView line : ListSequence.fromList(connection.getLines())) {
+              cell.addEditorCell(GenericViewCell.createViewCell(context, node, line));
+            }
           }
 
         }
