@@ -24,9 +24,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/editor/editor-jetpad/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(Jetpad.Editor)</dependency>
