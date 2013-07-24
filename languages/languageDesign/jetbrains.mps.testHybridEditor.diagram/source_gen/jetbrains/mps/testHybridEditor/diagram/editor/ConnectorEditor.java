@@ -7,15 +7,28 @@ import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.jetpad.projectional.diagram.view.LabelView;
 import java.util.Collection;
 import java.util.Collections;
 
 public class ConnectorEditor extends DefaultNodeEditor {
-  private PolylineConnection myConncetion = new PolylineConnection();
+  private PolylineConnection myConnection = new PolylineConnection();
 
   @Override
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return null;
+    ConnectorViewCell cell = ConnectorViewCell.createViewCell(context, node, myConnection);
+    // <node>    
+    ListSequence.fromList(((List<View>) cell.getConnection().view().children())).removeWhere(new IWhereFilter<View>() {
+      public boolean accept(View it) {
+        return it instanceof LabelView;
+      }
+    });
+    return cell;
   }
 
   @Override

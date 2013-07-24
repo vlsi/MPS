@@ -4,14 +4,24 @@ package jetbrains.mps.testHybridEditor.diagram.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
+import jetbrains.jetpad.projectional.view.LineView;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -20,19 +30,39 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 
 public class DiagramEditor extends DefaultNodeEditor {
   private DiagramView myView = new DiagramView();
+  private Map<SNode, View> nodeToViewMap = MapSequence.fromMap(new HashMap<SNode, View>());
 
   @Override
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     GenericViewCell cell = GenericViewCell.createViewCell(context, node, myView);
-    EditorCell_Collection collection = createBlockCollection(context, node);
-    cell.addEditorCell(collection);
-    int i = 40;
-    for (EditorCell child : Sequence.fromIterable(collection)) {
+    EditorCell_Collection blockCollection = createBlockCollection(context, node);
+    cell.addEditorCell(blockCollection);
+    for (EditorCell child : Sequence.fromIterable(blockCollection)) {
       if (child instanceof GenericViewCell) {
         View view = ((GenericViewCell) child).getView();
         myView.itemsView.children().add(view);
-        view.moveTo(new Vector(i, i));
-        i += 40;
+        view.moveTo(new Vector(SPropertyOperations.getInteger(((SNode) child.getSNode()), "x"), SPropertyOperations.getInteger(((SNode) child.getSNode()), "y")));
+        MapSequence.fromMap(nodeToViewMap).put(child.getSNode(), view);
+      }
+    }
+    EditorCell_Collection connectorCollection = createConnectorCollection(context, node);
+    cell.addEditorCell(connectorCollection);
+    for (EditorCell child : Sequence.fromIterable(connectorCollection)) {
+      if (child instanceof GenericViewCell) {
+        View view = ((GenericViewCell) child).getView();
+        myView.itemsView.children().add(view);
+        if (child instanceof ConnectorViewCell) {
+          View fromView = MapSequence.fromMap(nodeToViewMap).get(SNodeOperations.getParent(SLinkOperations.getTarget(((SNode) child.getSNode()), "inputPort", false)));
+          View toView = MapSequence.fromMap(nodeToViewMap).get(SNodeOperations.getParent(SLinkOperations.getTarget(((SNode) child.getSNode()), "outputPort", false)));
+          PolylineConnection connection = ((ConnectorViewCell) child).getConnection();
+          connection.toView().set(fromView);
+          connection.fromView().set(toView);
+          connection.update(fromView.bounds().get().center(), toView.bounds().get().center());
+          for (LineView line : ListSequence.fromList(connection.getLines())) {
+            cell.addEditorCell(GenericViewCell.createViewCell(context, node, line));
+          }
+
+        }
       }
     }
     return cell;
@@ -45,6 +75,12 @@ public class DiagramEditor extends DefaultNodeEditor {
 
   private EditorCell_Collection createBlockCollection(EditorContext context, SNode node) {
     AbstractCellListHandler handler = new RefNodeListHandler(node, "blocks", context) {};
+    jetbrains.mps.nodeEditor.cells.EditorCell_Collection cells = handler.createCells(context, new CellLayout_Indent(), false);
+    return cells;
+  }
+
+  private EditorCell_Collection createConnectorCollection(EditorContext context, SNode node) {
+    AbstractCellListHandler handler = new RefNodeListHandler(node, "connectors", context) {};
     jetbrains.mps.nodeEditor.cells.EditorCell_Collection cells = handler.createCells(context, new CellLayout_Indent(), false);
     return cells;
   }
