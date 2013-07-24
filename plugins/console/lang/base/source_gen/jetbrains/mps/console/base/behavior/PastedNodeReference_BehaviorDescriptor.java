@@ -7,16 +7,16 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 
-public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, INodeWithClickableReference_BehaviorDescriptor {
+public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, INodeWithReference_BehaviorDescriptor {
   public PastedNodeReference_BehaviorDescriptor() {
   }
 
-  public boolean virtual_canExecute_3282455643657932881(SNode thisNode, Project project) {
-    return INodeWithClickableReference_Behavior.virtual_canExecute_3282455643657932881(thisNode, project);
+  public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
+    return INodeWithReference_Behavior.virtual_canExecute_3282455643657932881(thisNode);
   }
 
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    INodeWithClickableReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
+    INodeWithReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
 
   public SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {

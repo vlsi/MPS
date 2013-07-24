@@ -10,7 +10,7 @@ public class RebuildAspectCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
+  public static void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
     callback.run();
   }
 }

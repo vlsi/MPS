@@ -4,6 +4,6 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface INodeWithClickableReference_BehaviorDescriptor extends IActionHolder_BehaviorDescriptor {
+public interface INodeWithReference_BehaviorDescriptor extends IActionHolder_BehaviorDescriptor {
   public SNode virtual_getTargetNode_6322385757200662712(SNode thisNode);
 }

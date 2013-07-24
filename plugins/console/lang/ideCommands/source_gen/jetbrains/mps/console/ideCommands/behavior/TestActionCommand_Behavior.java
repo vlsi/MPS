@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.Random;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JOptionPane;
 
@@ -16,15 +17,15 @@ public class TestActionCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(SNode thisNode, ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, final Runnable callback) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         callback.run();
         // todo: remove concept 
         final int n = new Random().nextInt();
-        SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosureResultPart", null);
-        SPropertyOperations.set(nodeWithClosure, "text", "action");
-        console.addClosure(nodeWithClosure, new _FunctionTypes._void_P0_E0() {
+        SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
+        SPropertyOperations.set(nodeWithClosure, "text", "action" + n);
+        ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, new _FunctionTypes._void_P0_E0() {
           public void invoke() {
             JOptionPane.showMessageDialog(null, "Test" + n);
           }

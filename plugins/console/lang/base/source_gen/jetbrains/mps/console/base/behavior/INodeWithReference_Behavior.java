@@ -12,7 +12,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
-public class INodeWithClickableReference_Behavior {
+public class INodeWithReference_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -26,11 +26,7 @@ public class INodeWithClickableReference_Behavior {
     NavigationSupport.getInstance().openNode(context, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
   }
 
-  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode, Project project) {
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    if (mpsProject == null) {
-      return false;
-    }
+  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{}) != null;
   }
 
@@ -41,6 +37,6 @@ public class INodeWithClickableReference_Behavior {
 
   @Deprecated
   public static SNode callSuper_getTargetNode_6322385757200662712(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.INodeWithClickableReference"), callerConceptFqName, "virtual_getTargetNode_6322385757200662712", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.INodeWithReference"), callerConceptFqName, "virtual_getTargetNode_6322385757200662712", new Class[]{SNode.class}, new Object[]{});
   }
 }

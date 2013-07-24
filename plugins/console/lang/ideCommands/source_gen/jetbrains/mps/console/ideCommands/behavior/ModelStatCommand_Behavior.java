@@ -19,7 +19,7 @@ public class ModelStatCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, ConsoleContext c, ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_6854397602732226506(final SNode thisNode, ConsoleContext c, ConsoleStream console, final Runnable callback) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         callback.run();

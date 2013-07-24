@@ -58,8 +58,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
@@ -340,6 +338,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       ExecuteAction.this.myProject = project;
     }
 
+    @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
@@ -357,7 +356,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
             new ProjectScope(myProject) :
             GlobalScope.getInstance()
           );
-          BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_757553790980855637", new Object[]{new ConsoleContext() {
+          BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(lastCmd, "jetbrains.mps.console.base.structure.Command"), "virtual_execute_6854397602732226506", new Object[]{new ConsoleContext() {
             public jetbrains.mps.project.Project getProject() {
               return myProject;
             }
@@ -380,16 +379,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               }
             }
 
-            public void addNodeReference(SNode node) {
-              checkResultAvailable();
-              SModuleReference usedLanguage = node.getConcept().getLanguage().getSourceModule().getModuleReference();
-              if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
-                ((SModelInternal) myModel).addLanguage(usedLanguage);
-                ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
-              }
-              SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeReferenceResultPart"), "target", node, false);
-            }
-
             public void addNode(SNode node) {
               checkResultAvailable();
               for (SNode subNode : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
@@ -400,12 +389,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                 }
               }
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "node", node, true);
-            }
-
-            public void addClosure(SNode nodeWithClosure, _FunctionTypes._void_P0_E0 closure) {
-              checkResultAvailable();
-              ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
-              ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(nodeWithClosure);
             }
 
             private void checkResultAvailable() {
@@ -421,6 +404,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               myNewCommand = null;
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
+                  ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                    public void run() {
+                      TemporaryModels.getInstance().addMissingImports(myModel);
+                    }
+                  });
                   myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
                 }
               });

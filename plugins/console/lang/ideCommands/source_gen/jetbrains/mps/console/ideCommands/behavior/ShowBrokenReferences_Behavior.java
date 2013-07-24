@@ -13,12 +13,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ShowBrokenReferences_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_6854397602732226506(final SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         callback.run();
@@ -38,7 +40,10 @@ public class ShowBrokenReferences_Behavior {
           console.addText("node  id = " + ref.getTargetNodeId());
           SNode targetNode = ref.getSourceNode();
           console.addText("\n");
-          console.addNodeReference(targetNode);
+          SNode clickableNode = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClickableReferenceString", null);
+          SPropertyOperations.set(clickableNode, "text", "Go to enclosing node");
+          SLinkOperations.setTarget(clickableNode, "target", targetNode, false);
+          console.addNode(clickableNode);
           console.addText("\n");
           console.addText("\n");
         }

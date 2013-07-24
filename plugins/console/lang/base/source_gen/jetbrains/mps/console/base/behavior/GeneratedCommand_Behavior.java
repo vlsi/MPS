@@ -23,7 +23,7 @@ public class GeneratedCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
     final SNode n = thisNode;
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {

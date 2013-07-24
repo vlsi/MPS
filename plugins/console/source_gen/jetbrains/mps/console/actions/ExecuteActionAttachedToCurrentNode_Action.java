@@ -10,11 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -33,7 +33,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.IActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
+    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.IActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

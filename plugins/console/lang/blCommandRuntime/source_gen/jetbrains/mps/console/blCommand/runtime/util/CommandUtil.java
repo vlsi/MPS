@@ -26,6 +26,20 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import javax.swing.SwingUtilities;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+import java.awt.datatransfer.StringSelection;
+import com.intellij.ide.CopyPasteManagerEx;
+import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
+import jetbrains.mps.project.ProjectOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -145,6 +159,38 @@ public class CommandUtil {
     String cName = NameUtil.nodeFQName(concept);
     SAbstractConcept c = SConceptRepository.getInstance().getConcept(cName);
     return FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(c), false, new EmptyProgressMonitor());
+  }
+
+
+
+  public static void addNodeReference(ConsoleStream console, SNode target) {
+    SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClickableReferencePresentation", null);
+    SLinkOperations.setTarget(node, "target", target, false);
+    console.addNode(node);
+  }
+
+
+
+  public static void registerAnalyzeStacktraceDialogClosure(final ConsoleContext context, ConsoleStream console, final Exception exception) {
+    SNode exceptionResultPart = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ExceptionHolder", null);
+    SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
+    SPropertyOperations.set(nodeWithClosure, "text", exception.getClass().getName());
+    SLinkOperations.setTarget(exceptionResultPart, "clickable", nodeWithClosure, true);
+    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            StringWriter writer = new StringWriter();
+            exception.printStackTrace(new PrintWriter(writer));
+            StringSelection contents = new StringSelection(writer.toString());
+            CopyPasteManagerEx.getInstanceEx().setContents(contents);
+            final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(ProjectHelper.toIdeaProject(context.getProject()), new ProjectOperationContext(context.getProject()));
+            dialog.show();
+          }
+        });
+      }
+    });
+    console.addNode(exceptionResultPart);
   }
 
 
