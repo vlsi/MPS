@@ -11,10 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.build.util.DescendantsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.util.DescendantsScope;
+import jetbrains.mps.scope.CompositeScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -43,11 +43,13 @@ public class BuildJavaPlugin_Behavior {
     }
 
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_JavaModule") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_JavaLibrary")) {
-      return new CompositeScope(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), false)).select(new ISelector<SNode, DescendantsScope>() {
+      Iterable<DescendantsScope> forAllVisible = Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), false)).select(new ISelector<SNode, DescendantsScope>() {
         public DescendantsScope select(SNode it) {
           return DescendantsScope.forNamedElements(it, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
         }
-      }).concat(Sequence.fromIterable(Sequence.<DescendantsScope>singleton(DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind)))).toGenericArray(DescendantsScope.class));
+      });
+      Iterable<DescendantsScope> forThis = Sequence.<DescendantsScope>singleton(DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind));
+      return new CompositeScope(Sequence.fromIterable(forAllVisible).concat(Sequence.fromIterable(forThis)).toGenericArray(DescendantsScope.class));
     }
 
     return null;
