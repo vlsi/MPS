@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.testHybridEditor.diagram" uuid="793ae30e-1fd8-4b40-88a8-3d626473a00b">
+<language namespace="jetbrains.mps.testHybridEditor.diagram" uuid="793ae30e-1fd8-4b40-88a8-3d626473a00b" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
@@ -24,8 +24,12 @@
       <mapping-priorities />
     </generator>
   </generators>
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/editor/editor-jetpad/classes" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(Jetpad.Editor)</dependency>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
   </dependencies>
   <usedDevKits>
