@@ -5,7 +5,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.GlobalStatisticTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.NodeReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
@@ -13,7 +12,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
@@ -97,34 +95,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior" file="ModelStatCommand_Behavior.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_BehaviorDescriptor" file="ModelStatCommand_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_Behavior" file="ModelStatisticsTarget_Behavior.java">
@@ -304,31 +274,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" file="TestActionCommand_Behavior.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.util.Random" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_BehaviorDescriptor" file="TestActionCommand_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />

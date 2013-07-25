@@ -350,11 +350,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           myCursor = null;
+          TemporaryModels.getInstance().addMissingImports(myModel);
           final SNode lastCmd = SLinkOperations.getTarget(myCommandRoot, "command", true);
           if ((lastCmd == null)) {
             return;
           }
-
           final SNode willBeLastHist = SNodeOperations.copyNode(myCommandRoot);
           final SNode res = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandResult", null);
           SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");

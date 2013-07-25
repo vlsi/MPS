@@ -16,6 +16,7 @@
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="5336086527852717845" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="main" />
+    <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="5336086527852743314" nodeInfo="ng">
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="5336086527852743855" resolveInfo="Main" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="eynw.351968380916615243" resolveInfo="CommandHolder" />
