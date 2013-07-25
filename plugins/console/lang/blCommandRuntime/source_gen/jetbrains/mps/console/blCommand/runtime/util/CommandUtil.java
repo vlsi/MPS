@@ -30,16 +30,9 @@ import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.console.tool.ConsoleContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import javax.swing.SwingUtilities;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import java.awt.datatransfer.StringSelection;
-import com.intellij.ide.CopyPasteManagerEx;
-import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -171,26 +164,14 @@ public class CommandUtil {
 
 
 
-  public static void registerAnalyzeStacktraceDialogClosure(final ConsoleContext context, ConsoleStream console, final Exception exception) {
-    SNode exceptionResultPart = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ExceptionHolder", null);
-    SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
-    SPropertyOperations.set(nodeWithClosure, "text", exception.getClass().getName());
-    SLinkOperations.setTarget(exceptionResultPart, "clickable", nodeWithClosure, true);
-    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            StringWriter writer = new StringWriter();
-            exception.printStackTrace(new PrintWriter(writer));
-            StringSelection contents = new StringSelection(writer.toString());
-            CopyPasteManagerEx.getInstanceEx().setContents(contents);
-            final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(ProjectHelper.toIdeaProject(context.getProject()), new ProjectOperationContext(context.getProject()));
-            dialog.show();
-          }
-        });
-      }
-    });
-    console.addNode(exceptionResultPart);
+  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Exception exception) {
+    StringWriter writer = new StringWriter();
+    exception.printStackTrace(new PrintWriter(writer));
+
+    SNode exceptionHolder = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.ExceptionHolder", null);
+    SPropertyOperations.set(exceptionHolder, "stackTrace", writer.toString());
+    SPropertyOperations.set(exceptionHolder, "text", exception.getClass().getName());
+    console.addNode(exceptionHolder);
   }
 
 

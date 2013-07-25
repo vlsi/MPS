@@ -232,5 +232,17 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="modules" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6558068108107691796" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="result" />
+    <property name="name" nameId="tpck.1169194664001" value="ExceptionHolder" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6558068108108282025" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="stackTrace" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6558068108108193136" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.2348043250036119213" resolveInfo="IClickableText" />
+    </node>
+  </root>
 </model>
 

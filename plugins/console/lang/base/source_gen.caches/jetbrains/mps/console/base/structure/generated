@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b1gj97m800q1rymltzpxz8rb1khulv3">
+<dependencies version="2" modelHash="3s0pkbf0m425ehhkjb36ar50ecjbizo">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -15,7 +15,6 @@
     <dep root="2348043250036119213" />
     <dep root="2348043250037290416" />
     <dep root="2348043250037383180" />
-    <dep root="2699636778859335756" />
     <dep root="2699636778859335853" />
     <dep root="351968380916615243" />
     <dep root="3939645998855102389" />
@@ -78,9 +77,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5842059399443118718" name="PastedNodeReference" hash="9pw1owywmggkp1vlc1gtbek5nzdfkds">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="2699636778859335756" name="ExceptionHolder" hash="zqxg341wtwcy36nsg2c2ppji9v6v5l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2699636778859335853" name="CommandResultPart" hash="-5o12cnqu3zp87a2yyftjlo7criw9pzt">
