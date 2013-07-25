@@ -344,6 +344,11 @@ public class CopyPasteUtil {
 
   @Nullable
   public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
+    SModelReference oldModel = pasteNodeData.getSourceModel();
+    if (oldModel != null && jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(targetModel).equals(oldModel.getModelName())) {
+      return null;
+    }
+
     return CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
 
