@@ -59,6 +59,7 @@ import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -387,6 +388,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
             public void addNode(SNode node) {
               checkResultAvailable();
+              for (SNode subNode : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
+                SModuleReference usedLanguage = subNode.getConcept().getLanguage().getSourceModule().getModuleReference();
+                if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
+                  ((SModelInternal) myModel).addLanguage(usedLanguage);
+                  ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
+                }
+              }
               SLinkOperations.setTarget(SLinkOperations.addNewChild(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", "jetbrains.mps.console.base.structure.NodeResultPart"), "node", node, true);
             }
 
