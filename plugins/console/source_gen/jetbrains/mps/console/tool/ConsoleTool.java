@@ -44,6 +44,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.KeyStroke;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -57,6 +58,7 @@ import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
@@ -218,10 +220,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   private JScrollPane createEditorsComponent() {
-    JPanel editorsPanel = new JPanel(new BorderLayout());
+    final JPanel editorsPanel = new JPanel(new BorderLayout());
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
-    return new JScrollPane(editorsPanel);
+    return ScrollPaneFactory.createScrollPane(editorsPanel);
   }
 
 
@@ -347,7 +349,6 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           myCursor = null;
-          TemporaryModels.getInstance().addMissingImports(myModel);
           final SNode lastCmd = SLinkOperations.getTarget(myCommandRoot, "command", true);
           if ((lastCmd == null)) {
             return;
@@ -375,7 +376,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 if ((line != null && line.length() > 0)) {
-                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a1a2a0a0b0a9a0a0c45(line));
+                  ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(res, "line", true)).last(), "part", true)).addElement(_quotation_createNode_xg3v07_a0a0a1a2a0a0b0a8a0a0c45(line));
                 }
                 if (scanner.hasNextLine() || text.charAt(text.length() - 1) == '\n') {
                   SLinkOperations.addNewChild(res, "line", "jetbrains.mps.console.base.structure.CommandResultLine");
@@ -407,7 +408,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                   TemporaryModels.getInstance().addMissingImports(myModel);
                 }
               });
-              myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
+              SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                  myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
+                }
+              });
             }
           }});
         }
@@ -610,7 +615,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     return null;
   }
 
-  private static SNode _quotation_createNode_xg3v07_a0a0a1a2a0a0b0a9a0a0c45(Object parameter_1) {
+  private static SNode _quotation_createNode_xg3v07_a0a0a1a2a0a0b0a8a0a0c45(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
