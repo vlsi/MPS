@@ -12,6 +12,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class PastedNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -19,14 +20,25 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7k9x8q_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pastedNodeRef");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pasted refernce");
     editorCell.setCellId("Constant_7k9x8q_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
-    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
+    style.set(StyleAttributes.UNDERLINED, PastedNodeReference_Editor._StyleParameter_QueryFunction_7k9x8q_a2a((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_7k9x8q_a2a(EditorContext editorContext, SNode node) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
   }
 }

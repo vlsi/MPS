@@ -23,7 +23,7 @@ public class GeneratedCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
     final SNode n = thisNode;
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
@@ -51,8 +51,9 @@ public class GeneratedCommand_Behavior {
                   Method[] methods = Class.forName(name, true, loader).getMethods();
                   for (Method method : methods) {
                     if (method.getName().equals("execute")) {
-                      callback.run();
+                      beforeCallback.run();
                       method.invoke(null, new Object[]{c, console});
+                      afterCallback.run();
                       return;
                     }
                   }

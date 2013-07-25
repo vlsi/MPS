@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ModelStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
@@ -33,7 +33,7 @@ public class ModelStatisticsTarget_Behavior {
       properties += SNodeOperations.getProperties(node).keySet().size();
     }
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
-    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Roots", IterableUtil.asCollection(ModelStatisticsTarget_Behavior.call_getModel_5207260697411904434(thisNode).getRootNodes()).size()));
+    ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Roots", ListSequence.fromList(SModelOperations.getRoots(ModelStatisticsTarget_Behavior.call_getModel_5207260697411904434(thisNode), null)).count()));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", SNodeOperations.nodesCount(ModelStatisticsTarget_Behavior.call_getModel_5207260697411904434(thisNode))));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("References", references));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Properties", properties));
@@ -41,7 +41,7 @@ public class ModelStatisticsTarget_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
-    return IterableUtil.asList(SNodeUtil.getDescendants(ModelStatisticsTarget_Behavior.call_getModel_5207260697411904434(thisNode)));
+  public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
+    return SModelOperations.getNodes(ModelStatisticsTarget_Behavior.call_getModel_5207260697411904434(thisNode), null);
   }
 }

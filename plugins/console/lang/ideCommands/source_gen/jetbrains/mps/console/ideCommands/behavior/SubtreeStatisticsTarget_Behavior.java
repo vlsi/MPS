@@ -35,7 +35,7 @@ public class SubtreeStatisticsTarget_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
+  public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "target", true), null, false, new String[]{});
   }
 }

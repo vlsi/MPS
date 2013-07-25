@@ -4,7 +4,6 @@ package jetbrains.mps.console.blCommand.runtime.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -12,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -26,48 +23,43 @@ import java.util.Collection;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.console.tool.ConsoleContext;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class CommandUtil {
 
 
-  public static Iterable<SNode> nodes(SearchScope scope, @Nullable SNode concept) {
-    if (concept == null) {
-      return Sequence.fromIterable(allModels(scope)).translate(new ITranslator2<SModel, SNode>() {
-        public Iterable<SNode> translate(SModel it) {
-          return SModelOperations.getNodes(it, null);
-        }
-      });
-    } else {
-      return instances(scope, concept);
-    }
+  public static Iterable<SNode> nodes(SearchScope scope) {
+    return Sequence.fromIterable(models(scope)).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return SModelOperations.getNodes(it, null);
+      }
+    });
   }
 
 
 
-  public static Iterable<SReference> references(SearchScope scope, @Nullable final SNode concept) {
-    Iterable<SReference> allReferences = Sequence.fromIterable(nodes(scope, null)).translate(new ITranslator2<SNode, SReference>() {
+  public static Iterable<SReference> references(SearchScope scope) {
+    return Sequence.fromIterable(nodes(scope)).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
         return SNodeOperations.getReferences(it);
       }
     });
-    if (concept == null) {
-      return allReferences;
-    } else {
-      return Sequence.fromIterable(allReferences).where(new IWhereFilter<SReference>() {
-        public boolean accept(SReference it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(it), NameUtil.nodeFQName(concept));
-        }
-      });
-    }
   }
 
 
 
-  public static Iterable<SModel> allModels(SearchScope scope) {
+  public static Iterable<SModel> models(SearchScope scope) {
     Iterable<SModel> allModels = scope.getModels();
     return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -78,7 +70,7 @@ public class CommandUtil {
 
 
 
-  public static Iterable<SModule> allModules(SearchScope scope) {
+  public static Iterable<SModule> modules(SearchScope scope) {
     Iterable<SModule> allModules = scope.getModules();
     return Sequence.fromIterable(allModules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
@@ -160,6 +152,26 @@ public class CommandUtil {
     String cName = NameUtil.nodeFQName(concept);
     SAbstractConcept c = SConceptRepository.getInstance().getConcept(cName);
     return FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(c), false, new EmptyProgressMonitor());
+  }
+
+
+
+  public static void addNodeReference(ConsoleStream console, SNode target) {
+    SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferencePresentation", null);
+    SLinkOperations.setTarget(node, "target", target, false);
+    console.addNode(node);
+  }
+
+
+
+  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Exception exception) {
+    StringWriter writer = new StringWriter();
+    exception.printStackTrace(new PrintWriter(writer));
+
+    SNode exceptionHolder = SConceptOperations.createNewNode("jetbrains.mps.console.blCommand.structure.ExceptionHolder", null);
+    SPropertyOperations.set(exceptionHolder, "stackTrace", writer.toString());
+    SPropertyOperations.set(exceptionHolder, "text", exception.getClass().getName());
+    console.addNode(exceptionHolder);
   }
 
 

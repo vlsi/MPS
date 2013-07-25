@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c4ecu3ifyfp2ewzengg1sp79kx6415b">
+<dependencies version="2" modelHash="6ozu270r0igl433h0iy61vi6pts0sfu">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -20,19 +20,23 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8kl264jggjxpmfxay14z7cicvvn9un3" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="2warf9wz9zr88u4nnjvoe96w6bynxhi" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-9s82yfi9ghzdl6ktne6mpbnt3y4p1u5" />
-  <dep model="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)" hash="-7jtyrw12kfzpi1utlftdl0hnxss1p4f" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="3s0pkbf0m425ehhkjb36ar50ecjbizo" />
+  <dep model="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)" hash="-bmvlew6g7dnvdbhuwr4uv8ft8vh56pa" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-92z3kc7g4kx9n9qzbqubjixq01c8bgj" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-6pikcckev1z9vhvxsogx7eulj9f0ygr" dependsOnNodes="true">
+  <common hash="7ecypelpqgamolyn4p4n8mqxhf567kv" dependsOnNodes="true">
     <dep root="1769790395579662700" />
+    <dep root="2348043250036161048" />
+    <dep root="2348043250037295215" />
+    <dep root="2348043250037311043" />
+    <dep root="2348043250037383206" />
     <dep root="3002373989556540709" />
+    <dep root="3321948346081461817" />
     <dep root="3939645998855102457" />
     <dep root="497034489490439257" />
     <dep root="5842059399443118726" />
-    <dep root="6322385757200870332" />
-    <dep root="757553790980855631" />
+    <dep root="6854397602732226001" />
     <dep root="8517397753921951854" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -54,28 +58,21 @@
     <file name="HistoryItem_BehaviorDescriptor.java" />
     <file name="History_BehaviorDescriptor.java" />
     <file name="IActionHolder_BehaviorDescriptor.java" />
-    <file name="INodeWithClickableReference_BehaviorDescriptor.java" />
+    <file name="IClickableText_BehaviorDescriptor.java" />
+    <file name="IClickable_BehaviorDescriptor.java" />
     <file name="INodeWithClosure_BehaviorDescriptor.java" />
+    <file name="INodeWithReference_BehaviorDescriptor.java" />
     <file name="InterpretedCommand_BehaviorDescriptor.java" />
-    <file name="NodeReferenceResultPart_BehaviorDescriptor.java" />
+    <file name="NodeReferencePresentation_BehaviorDescriptor.java" />
+    <file name="NodeReferenceString_BehaviorDescriptor.java" />
     <file name="NodeResultPart_BehaviorDescriptor.java" />
-    <file name="NodeWithClosureResultPart_BehaviorDescriptor.java" />
+    <file name="NodeWithClosure_BehaviorDescriptor.java" />
     <file name="PastedNodeReference_BehaviorDescriptor.java" />
-    <file name="Result_BehaviorDescriptor.java" />
     <file name="TextResultPart_BehaviorDescriptor.java" />
   </common>
-  <source id="757553790980855631" name="Command_Behavior" hash="-b4cdtpmn7vxblbox8bn6wekskps15sc">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
-    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
-    <file name="Command_Behavior.java" />
-  </source>
-  <source id="1769790395579662700" name="GeneratedCommand_Behavior" hash="-5w93r5630xpwg5rx141iztw3vkhk9lj">
+  <source id="1769790395579662700" name="GeneratedCommand_Behavior" hash="7t0y0ytrgn120fldeedzx7bnuiam8m3">
     <dep root="3002373989556540709" />
-    <dep root="757553790980855631" />
+    <dep root="6854397602732226001" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(MPS.Core/jetbrains.mps.classloading@java_stub)" />
@@ -93,13 +90,13 @@
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
     <file name="GeneratedCommand_Behavior.java" />
   </source>
-  <source id="3002373989556540709" name="CommandHolder_Behavior" hash="-560puica17fs27mnv9aegyqywvkluys">
+  <source id="3002373989556540709" name="CommandHolder_Behavior" hash="-chl9erhh1zshgsv8ps7t8e8js6qpcx0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <file name="CommandHolder_Behavior.java" />
   </source>
-  <source id="8517397753921951854" name="IActionHolder_Behavior" hash="46vfsf3snyitrbdk2n6d9v6ukbwxl8u">
+  <source id="8517397753921951854" name="IActionHolder_Behavior" hash="-88oh7jfixghepi9xodwatb4e1lmgp36">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -108,7 +105,7 @@
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <file name="IActionHolder_Behavior.java" />
   </source>
-  <source id="497034489490439257" name="INodeWithClosure_Behavior" hash="-53vieup3mvt4e7twa3njhy6oic9s67a">
+  <source id="497034489490439257" name="INodeWithClosure_Behavior" hash="a9cq0rh5s2b49bklxurtysc0krxj8gp">
     <dep root="8517397753921951854" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -117,7 +114,7 @@
     <dep model="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)" />
     <file name="INodeWithClosure_Behavior.java" />
   </source>
-  <source id="3939645998855102457" name="INodeWithClickableReference_Behavior" hash="-4m6v3u3nmfzgywstxf50a25wytng5bj">
+  <source id="3939645998855102457" name="INodeWithReference_Behavior" hash="-890s79ajdwz0fgpxp6x9sezswvyk6kr">
     <dep root="8517397753921951854" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -129,7 +126,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
-    <file name="INodeWithClickableReference_Behavior.java" />
+    <file name="INodeWithReference_Behavior.java" />
   </source>
   <source id="5842059399443118726" name="PastedNodeReference_Behavior" hash="-4b0x24l1bszqojnkuvvau2xtam2tt2a">
     <dep root="3939645998855102457" />
@@ -140,13 +137,67 @@
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <file name="PastedNodeReference_Behavior.java" />
   </source>
-  <source id="6322385757200870332" name="NodeReferenceResultPart_Behavior" hash="4polo7jgpn0jj9awycrrk47d3cx125m">
+  <source id="6854397602732226001" name="Command_Behavior" hash="a9t73q9w7fvmclqfip8r2zdhz8uu8uq">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <file name="Command_Behavior.java" />
+  </source>
+  <source id="2348043250036161048" name="NodeReferenceString_Behavior" hash="20f0wnsf65qkj1fnjz51t9z7j2p3gmd">
     <dep root="3939645998855102457" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
-    <file name="NodeReferenceResultPart_Behavior.java" />
+    <file name="NodeReferenceString_Behavior.java" />
+  </source>
+  <source id="2348043250037295215" name="IClickable_Behavior" hash="-8h6yn5fnxwx8c7d6tt5675yycmc9brd">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <file name="IClickable_Behavior.java" />
+  </source>
+  <source id="2348043250037311043" name="IClickableText_Behavior" hash="alwd1h0az6jlwhih0wulqntw2mr0m2v">
+    <dep root="2348043250037295215" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
+    <file name="IClickableText_Behavior.java" />
+  </source>
+  <source id="2348043250037383206" name="NodeReferencePresentation_Behavior" hash="-5pvcidhuwiy5toxpo8zq14l8bt5tjaq">
+    <dep root="2348043250037295215" />
+    <dep root="3939645998855102457" />
+    <dep root="8517397753921951854" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
+    <file name="NodeReferencePresentation_Behavior.java" />
+  </source>
+  <source id="3321948346081461817" name="InterpretedCommand_Behavior" hash="ddmsx3fqlqs1xuu66n9le0klzn0qml2">
+    <dep root="6854397602732226001" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <file name="InterpretedCommand_Behavior.java" />
   </source>
 </dependencies>
 

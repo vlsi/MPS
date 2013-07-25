@@ -14,11 +14,7 @@ public class INodeWithClosure_Behavior {
     ClosureHoldingNodeUtil.getInstance().executeClosure(thisNode);
   }
 
-  public static boolean call_isAlive_497034489490439347(SNode thisNode) {
+  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return ClosureHoldingNodeUtil.getInstance().getClosure(thisNode) != null;
-  }
-
-  public static boolean virtual_canExecute_3282455643657932881(SNode thisNode, Project project) {
-    return INodeWithClosure_Behavior.call_isAlive_497034489490439347(thisNode);
   }
 }
