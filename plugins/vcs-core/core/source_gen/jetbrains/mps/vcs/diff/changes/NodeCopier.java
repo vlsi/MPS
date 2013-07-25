@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -51,15 +52,20 @@ public class NodeCopier {
   }
 
   public void restoreIds(boolean affectOthers) {
-    softRestoreIds();
-    if (affectOthers) {
-      evictOtherDuplicates();
+    UnregisteredNodes.WarningLevel oldWarningLevel = UnregisteredNodes.instance().setWarningLevel(UnregisteredNodes.WarningLevel.WARNING);
+    try {
       softRestoreIds();
-      assert Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
-        public boolean accept(SNodeId id) {
-          return id == null;
-        }
-      });
+      if (affectOthers) {
+        evictOtherDuplicates();
+        softRestoreIds();
+        assert Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
+          public boolean accept(SNodeId id) {
+            return id == null;
+          }
+        });
+      }
+    } finally {
+      UnregisteredNodes.instance().setWarningLevel(oldWarningLevel);
     }
   }
 
