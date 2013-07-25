@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="Jetpad.Editor" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true" generatorOutputPath="${module}/source_gen">
+<solution name="Jetpad.Editor" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true">
   <models>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="models" />
-    </modelRoot>
     <modelRoot path="${mps_home}/editor/editor-jetpad/classes" type="java_classes" />
   </models>
   <stubModelEntries>
