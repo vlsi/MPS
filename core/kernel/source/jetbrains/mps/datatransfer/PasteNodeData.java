@@ -17,7 +17,6 @@ package jetbrains.mps.datatransfer;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -34,14 +33,16 @@ public class PasteNodeData {
   private Set<SModuleReference> myNecessaryLanguages;
   private Set<SModelReference> myNecessaryModels;
   private SModule mySourceModule;
+  private SModelReference mySourceModel;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
-                       SModule sourceModule,
+                       SModule sourceModule, SModelReference sourceModelRef,
                        Set<SModuleReference> necessaryLanguages,
                        Set<SModelReference> necessaryModels) {
     myNodes = nodes;
     myRequireResolveReferences = references;
     mySourceModule = sourceModule;
+    mySourceModel = sourceModelRef;
     myNecessaryLanguages = necessaryLanguages;
     myNecessaryModels = necessaryModels;
   }
@@ -56,7 +57,13 @@ public class PasteNodeData {
 
   @Nullable
   public SModule getSourceModule() {
+    //?? SModelRepository.getInstance().getModelDescriptor(mySourceModel).?getModule();
     return mySourceModule;
+  }
+
+  @Nullable
+  public SModelReference getSourceModel() {
+    return mySourceModel;
   }
 
   public Set<SModuleReference> getNecessaryLanguages() {
@@ -67,10 +74,10 @@ public class PasteNodeData {
     return myNecessaryModels;
   }
 
-  public static PasteNodeData emptyPasteNodeData(SModule sourceModule) {
+  public static PasteNodeData emptyPasteNodeData(SModule sourceModule, SModelReference sourceModel) {
     return new PasteNodeData(new ArrayList<SNode>(),
       new HashSet<SReference>(),
-      sourceModule,
+      sourceModule, sourceModel,
       new HashSet<SModuleReference>(),
       new HashSet<SModelReference>());
   }
