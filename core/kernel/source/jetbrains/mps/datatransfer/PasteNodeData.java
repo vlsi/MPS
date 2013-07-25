@@ -32,16 +32,14 @@ public class PasteNodeData {
   private Set<SReference> myRequireResolveReferences;
   private Set<SModuleReference> myNecessaryLanguages;
   private Set<SModelReference> myNecessaryModels;
-  private SModule mySourceModule;
   private SModelReference mySourceModel;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
-                       SModule sourceModule, SModelReference sourceModelRef,
+                       SModelReference sourceModelRef,
                        Set<SModuleReference> necessaryLanguages,
                        Set<SModelReference> necessaryModels) {
     myNodes = nodes;
     myRequireResolveReferences = references;
-    mySourceModule = sourceModule;
     mySourceModel = sourceModelRef;
     myNecessaryLanguages = necessaryLanguages;
     myNecessaryModels = necessaryModels;
@@ -53,12 +51,6 @@ public class PasteNodeData {
 
   public Set<SReference> getRequireResolveReferences() {
     return myRequireResolveReferences;
-  }
-
-  @Nullable
-  public SModule getSourceModule() {
-    //?? SModelRepository.getInstance().getModelDescriptor(mySourceModel).?getModule();
-    return mySourceModule;
   }
 
   @Nullable
@@ -74,10 +66,10 @@ public class PasteNodeData {
     return myNecessaryModels;
   }
 
-  public static PasteNodeData emptyPasteNodeData(SModule sourceModule, SModelReference sourceModel) {
+  public static PasteNodeData emptyPasteNodeData(SModelReference sourceModel) {
     return new PasteNodeData(new ArrayList<SNode>(),
       new HashSet<SReference>(),
-      sourceModule, sourceModel,
+      sourceModel,
       new HashSet<SModuleReference>(),
       new HashSet<SModelReference>());
   }
