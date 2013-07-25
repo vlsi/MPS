@@ -24,7 +24,6 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -58,6 +57,7 @@ public class GenericViewCell extends EditorCell_Collection {
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     paintContent(g, parentSettings, myView);
   }
+
   public void paintContent(Graphics g, ParentSettings parentSettings, View view) {
     Color background = view.background().get();
     Rectangle bounds = view.bounds().get();
