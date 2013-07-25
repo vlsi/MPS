@@ -308,11 +308,17 @@ public class ContentEntriesEditor implements Disposable {
 
     private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
       String contentRoot = myDefaultFolder != null ? myDefaultFolder : "";
-      SModule module = MPSModuleRepository.getInstance().getModule(myModuleDescriptor.getId());
-      if (module instanceof AbstractModule) {
-        contentRoot = ((AbstractModule) module).getModuleSourceDir() == null
-            ? ((AbstractModule) module).getDescriptorFile().getParent().getPath()
-            : ((AbstractModule) module).getModuleSourceDir().getPath();
+      final SModule[] module = new SModule[1];
+      MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          module[0] = MPSModuleRepository.getInstance().getModule(myModuleDescriptor.getId());
+        }
+      });
+      if (module[0] instanceof AbstractModule) {
+        contentRoot = ((AbstractModule) module[0]).getModuleSourceDir() == null
+            ? ((AbstractModule) module[0]).getDescriptorFile().getParent().getPath()
+            : ((AbstractModule) module[0]).getModuleSourceDir().getPath();
       }
 
       Set<String> strings = new HashSet<String>();
