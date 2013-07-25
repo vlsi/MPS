@@ -19,10 +19,9 @@ public class ModelStatCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_6854397602732226506(final SNode thisNode, ConsoleContext c, ConsoleStream console, final Runnable callback) {
+  public static void virtual_doExecute_3321948346081469500(final SNode thisNode, ConsoleContext context, ConsoleStream console) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        callback.run();
 
         SModel model = SModelRepository.getInstance().getModelDescriptor(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "model", true), "fqName"));
         int references = 0;

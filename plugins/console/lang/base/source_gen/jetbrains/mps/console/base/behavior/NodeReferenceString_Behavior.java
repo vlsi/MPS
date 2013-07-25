@@ -5,7 +5,7 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class NodeWithClickableReferenceString_Behavior {
+public class NodeReferenceString_Behavior {
   public static void init(SNode thisNode) {
   }
 

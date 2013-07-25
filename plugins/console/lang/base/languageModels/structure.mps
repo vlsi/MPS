@@ -172,7 +172,7 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2348043250036118117" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="NodeWithClickableReferenceString" />
+    <property name="name" nameId="tpck.1169194664001" value="NodeReferenceString" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2348043250036118118" nodeInfo="ig">
@@ -207,7 +207,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2348043250037383180" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="NodeWithClickableReferencePresentation" />
+    <property name="name" nameId="tpck.1169194664001" value="NodeReferencePresentation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2348043250037857624" nodeInfo="ig">

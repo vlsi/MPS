@@ -117,7 +117,6 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_BehaviorDescriptor" file="ModelStatCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatCommand_Behavior" />
@@ -203,14 +202,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_Behavior" file="RebuildProjectCommand_Behavior.java">
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" file="RebuildProjectCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_Behavior" />
@@ -243,7 +240,6 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" file="ShowBrokenReferences_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior" />
@@ -270,7 +266,6 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" file="StatCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.StatCommand_Behavior" />
@@ -328,7 +323,6 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_BehaviorDescriptor" file="TestActionCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.TestActionCommand_Behavior" />
@@ -340,14 +334,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_Behavior" file="UnloadModelsCommand_Behavior.java">
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" file="UnloadModelsCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_Behavior" />

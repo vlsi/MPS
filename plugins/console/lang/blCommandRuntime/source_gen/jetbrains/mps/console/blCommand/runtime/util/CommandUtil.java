@@ -164,7 +164,7 @@ public class CommandUtil {
 
 
   public static void addNodeReference(ConsoleStream console, SNode target) {
-    SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClickableReferencePresentation", null);
+    SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferencePresentation", null);
     SLinkOperations.setTarget(node, "target", target, false);
     console.addNode(node);
   }

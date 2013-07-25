@@ -17,10 +17,9 @@ public class TestActionCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, final Runnable callback) {
+  public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        callback.run();
         // todo: remove concept 
         final int n = new Random().nextInt();
         SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);

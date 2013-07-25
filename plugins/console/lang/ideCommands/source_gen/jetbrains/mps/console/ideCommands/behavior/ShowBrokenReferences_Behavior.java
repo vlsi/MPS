@@ -20,12 +20,10 @@ public class ShowBrokenReferences_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_6854397602732226506(final SNode thisNode, final ConsoleContext c, final ConsoleStream console, final Runnable callback) {
+  public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        callback.run();
-
-        Iterable<SReference> brokenReferences = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getNodes_5207260697411458163", new Object[]{c})).translate(new ITranslator2<SNode, SReference>() {
+        Iterable<SReference> brokenReferences = Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getNodes_5207260697411458163", new Object[]{context})).translate(new ITranslator2<SNode, SReference>() {
           public Iterable<SReference> translate(SNode it) {
             return SNodeOperations.getReferences(it);
           }
@@ -40,7 +38,7 @@ public class ShowBrokenReferences_Behavior {
           console.addText("node  id = " + ref.getTargetNodeId());
           SNode targetNode = ref.getSourceNode();
           console.addText("\n");
-          SNode clickableNode = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClickableReferenceString", null);
+          SNode clickableNode = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferenceString", null);
           SPropertyOperations.set(clickableNode, "text", "Go to enclosing node");
           SLinkOperations.setTarget(clickableNode, "target", targetNode, false);
           console.addNode(clickableNode);

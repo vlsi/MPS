@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.project.Project;
 
-public class NodeWithClickableReferencePresentation_Behavior {
+public class NodeReferencePresentation_Behavior {
   public static void init(SNode thisNode) {
   }
 

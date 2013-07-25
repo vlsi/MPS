@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-e0dkj6bwgewy99eazxmh7ltfbw7j7ww">
+<dependencies version="2" modelHash="-bpy7k70lfkv9k0muqdlhtl39d0upiu0">
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-7aedsp6m9nampug07ct608j0i3g70mo" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="-cy7iedl2zzxvjv2fwgv2muszjsrmmwf" />
+  <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="6ozu270r0igl433h0iy61vi6pts0sfu" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="2warf9wz9zr88u4nnjvoe96w6bynxhi" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-13gey16fxutzd0ek34j75cvi6tky0c2" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="b1gj97m800q1rymltzpxz8rb1khulv3" />
   <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" hash="-89g4kpyaxyv8do9co9pnqkuipe0c8hz" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="33jjfqgbx6whknn9mncnqxwr42e5ohq" dependsOnNodes="true">
+  <common hash="-a3x8tgxdawqwfnyb8ixfl7r6q4t8rsw" dependsOnNodes="true">
     <dep root="6224631407134007787" />
     <dep root="6224631407134025051" />
     <dep root="6224631407134025278" />
@@ -27,22 +27,20 @@
     <file name="ReloadClassesCommand_BehaviorDescriptor.java" />
     <file name="ShowRepositoryCommand_BehaviorDescriptor.java" />
   </common>
-  <source id="6224631407134007787" name="ReloadClassesCommand_Behavior" hash="edn1m7wj0n2l2htzwh05awkpornhxi2">
+  <source id="6224631407134007787" name="ReloadClassesCommand_Behavior" hash="-6hotu2zs2ig4fnub8y7dhthsv7etzla">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
     <file name="ReloadClassesCommand_Behavior.java" />
   </source>
-  <source id="6224631407134025051" name="ShowRepositoryCommand_Behavior" hash="c57it79qevui2w2qd2t95eu2j0gyyuk">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <source id="6224631407134025051" name="ShowRepositoryCommand_Behavior" hash="-bq7mrhsbwavk8s25kb4erjm43v5hsdv">
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
     <file name="ShowRepositoryCommand_Behavior.java" />
   </source>
-  <source id="6224631407134025278" name="RebuildAspectCommand_Behavior" hash="4r063c112t8rpbo1a1quqft70ub5fl6">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <source id="6224631407134025278" name="RebuildAspectCommand_Behavior" hash="-3xdqx0g029mtznshfzr7x75bgoyt0xi">
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />

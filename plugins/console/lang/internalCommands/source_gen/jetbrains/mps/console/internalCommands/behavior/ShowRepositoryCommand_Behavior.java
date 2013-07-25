@@ -10,7 +10,6 @@ public class ShowRepositoryCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
-    callback.run();
+  public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
   }
 }

@@ -16,5 +16,5 @@ public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDes
     return "jetbrains.mps.console.base.structure.Command";
   }
 
-  public abstract void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback);
+  public abstract void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback);
 }

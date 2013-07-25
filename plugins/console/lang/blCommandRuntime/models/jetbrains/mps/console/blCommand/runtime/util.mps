@@ -858,12 +858,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2348043250037290194" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="node" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2348043250037290189" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.2348043250037383180" resolveInfo="NodeWithClickableReferencePresentation" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.2348043250037383180" resolveInfo="NodeReferencePresentation" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2348043250038028204" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="2348043250038028202" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2348043250038028203" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.2348043250037383180" resolveInfo="NodeWithClickableReferencePresentation" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="eynw.2348043250037383180" resolveInfo="NodeReferencePresentation" />
                 </node>
               </node>
             </node>

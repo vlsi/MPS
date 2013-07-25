@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 
-public class NodeWithClickableReferenceString_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INodeWithReference_BehaviorDescriptor, IClickableText_BehaviorDescriptor {
-  public NodeWithClickableReferenceString_BehaviorDescriptor() {
+public class NodeReferenceString_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INodeWithReference_BehaviorDescriptor, IClickableText_BehaviorDescriptor {
+  public NodeReferenceString_BehaviorDescriptor() {
   }
 
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
@@ -19,7 +19,7 @@ public class NodeWithClickableReferenceString_BehaviorDescriptor extends BaseCon
   }
 
   public SNode virtual_getTargetNode_6322385757200662712(SNode thisNode) {
-    return NodeWithClickableReferenceString_Behavior.virtual_getTargetNode_6322385757200662712(thisNode);
+    return NodeReferenceString_Behavior.virtual_getTargetNode_6322385757200662712(thisNode);
   }
 
   public String virtual_getText_2348043250037295218(SNode thisNode) {
@@ -28,6 +28,6 @@ public class NodeWithClickableReferenceString_BehaviorDescriptor extends BaseCon
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.base.structure.NodeWithClickableReferenceString";
+    return "jetbrains.mps.console.base.structure.NodeReferenceString";
   }
 }

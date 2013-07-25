@@ -12,8 +12,8 @@ public class TestActionCommand_BehaviorDescriptor extends InterpretedCommand_Beh
   public TestActionCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
-    TestActionCommand_Behavior.virtual_execute_6854397602732226506(thisNode, c, console, callback);
+  public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
+    TestActionCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
   }
 
   @Override
