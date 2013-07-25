@@ -44,6 +44,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.KeyStroke;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import javax.swing.JScrollPane;
+import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -220,7 +221,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   private JScrollPane createEditorsComponent() {
-    final JPanel editorsPanel = new JPanel(new BorderLayout());
+    final JPanel editorsPanel = new ScrollablePanel(new BorderLayout());
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
     return ScrollPaneFactory.createScrollPane(editorsPanel);
