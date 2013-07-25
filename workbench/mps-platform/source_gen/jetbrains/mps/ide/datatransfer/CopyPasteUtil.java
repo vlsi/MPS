@@ -342,7 +342,9 @@ public class CopyPasteUtil {
 
   @Nullable
   public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
+    // shows dialog if necessary and pasted nodes were taken not from the same model 
     SModelReference oldModel = pasteNodeData.getSourceModel();
+    // no dialog if copying from the same model 
     if (oldModel != null && jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(targetModel).equals(oldModel.getModelName())) {
       return null;
     }

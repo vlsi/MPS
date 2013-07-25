@@ -3382,6 +3382,11 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="183739269705851184" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="183739269705851185" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7601187074164928220" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7601187074164972384" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="shows dialog if necessary and pasted nodes were taken not from the same model" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2413654197079644620" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2413654197079644619" nodeInfo="nr">
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
@@ -3397,6 +3402,11 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k050.~PasteNodeData%dgetSourceModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModelReference" resolveInfo="getSourceModel" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7601187074165905626" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7601187074165964313" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="no dialog if copying from the same model" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2413654197079644623" nodeInfo="nn">
