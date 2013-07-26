@@ -44,7 +44,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.KeyStroke;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import javax.swing.JScrollPane;
-import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import java.awt.Color;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -222,15 +223,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   private JScrollPane createEditorsComponent() {
-    JPanel editorsPanel = new ScrollablePanel(new BorderLayout()) {
-      @Override
-      public boolean getScrollableTracksViewportHeight() {
-        return true;
-      }
-    };
-    editorsPanel.add(myHistEditor, BorderLayout.CENTER);
+    JPanel editorsPanel = new JPanel(new BorderLayout());
+    JPanel historyPanel = new JPanel(new BorderLayout());
+    JPanel spacePanel = new JPanel();
+    spacePanel.setBackground((StyleRegistry.getInstance() == null ?
+      Color.white :
+      StyleRegistry.getInstance().getEditorBackground()
+    ));
+    historyPanel.add(spacePanel, BorderLayout.CENTER);
+    historyPanel.add(myHistEditor, BorderLayout.SOUTH);
+    editorsPanel.add(historyPanel, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
-    return ScrollPaneFactory.createScrollPane(editorsPanel);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorsPanel);
+    scrollPane.getVerticalScrollBar().setUnitIncrement(10);
+    return scrollPane;
   }
 
 
