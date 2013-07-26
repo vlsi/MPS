@@ -383,13 +383,15 @@ public class TypeContextManager implements CoreComponent {
   private void clear(SModel model) {
     ModelAccess.assertLegalWrite();
 
-    Map<SNodeId, List<TypecheckingContextHolder>> rm = myTypeCheckingContexts.remove(model);
-    if (rm == null) return;
-    stopListening(model);
+    synchronized (myLock) {
+      Map<SNodeId, List<TypecheckingContextHolder>> rm = myTypeCheckingContexts.remove(model);
+      if (rm == null) return;
+      stopListening(model);
 
-    for (List<TypecheckingContextHolder> holders : rm.values()) {
-      for (TypecheckingContextHolder holder : holders) {
-        holder.dispose();
+      for (List<TypecheckingContextHolder> holders : rm.values()) {
+        for (TypecheckingContextHolder holder : holders) {
+          holder.dispose();
+        }
       }
     }
   }
@@ -397,19 +399,21 @@ public class TypeContextManager implements CoreComponent {
   private void clear(SModel model, SNodeId rootId) {
     ModelAccess.assertLegalWrite();
 
-    Map<SNodeId, List<TypecheckingContextHolder>> rm = myTypeCheckingContexts.get(model);
-    if (rm == null) return;
+    synchronized (myLock) {
+      Map<SNodeId, List<TypecheckingContextHolder>> rm = myTypeCheckingContexts.get(model);
+      if (rm == null) return;
 
-    List<TypecheckingContextHolder> holders = rm.remove(rootId);
-    if (holders == null) return;
+      List<TypecheckingContextHolder> holders = rm.remove(rootId);
+      if (holders == null) return;
 
-    for (TypecheckingContextHolder holder : holders) {
-      holder.dispose();
-    }
+      for (TypecheckingContextHolder holder : holders) {
+        holder.dispose();
+      }
 
-    if(rm.isEmpty()) {
-      myTypeCheckingContexts.remove(model);
-      stopListening(model);
+      if(rm.isEmpty()) {
+        myTypeCheckingContexts.remove(model);
+        stopListening(model);
+      }
     }
   }
 
