@@ -222,7 +222,12 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   private JScrollPane createEditorsComponent() {
-    final JPanel editorsPanel = new ScrollablePanel(new BorderLayout());
+    JPanel editorsPanel = new ScrollablePanel(new BorderLayout()) {
+      @Override
+      public boolean getScrollableTracksViewportHeight() {
+        return true;
+      }
+    };
     editorsPanel.add(myHistEditor, BorderLayout.CENTER);
     editorsPanel.add(myCommandEditor, BorderLayout.SOUTH);
     return ScrollPaneFactory.createScrollPane(editorsPanel);
