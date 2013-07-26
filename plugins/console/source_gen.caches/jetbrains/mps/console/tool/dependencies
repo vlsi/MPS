@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.tool.ConsoleContext" file="ConsoleContext.java">
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.console.tool.ConsoleFileEditor" file="ConsoleFileEditor.java">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />
@@ -66,7 +65,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Scanner" />
-    <classNode dependClassName="javax.swing.JComboBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JScrollPane" />
@@ -77,7 +75,6 @@
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.console.tool.IconContainer" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SModelDataFlavor" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -118,7 +115,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="com.intellij.ide.PasteProvider" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />

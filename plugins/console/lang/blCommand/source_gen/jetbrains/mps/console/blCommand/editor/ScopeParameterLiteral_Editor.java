@@ -7,12 +7,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ModulesExpression_Editor extends DefaultNodeEditor {
+public class ScopeParameterLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_h5xtfa_a(editorContext, node);
+    return this.createComponent_iphr8p_a(editorContext, node);
   }
 
-  private EditorCell createComponent_h5xtfa_a(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_iphr8p_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     editorCell.setBig(true);
     return editorCell;
