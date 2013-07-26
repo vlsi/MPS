@@ -1,4 +1,7 @@
-This sample project is a result of completing tutorial 
+Calculator Tutorial
+===================
+
+This sample project is a result of completing tutorial
 that can be found at http://www.jetbrains.com/mps/docs/tutorial.html.
 
 We've also added an ability to execute your calculators using 
