@@ -49,6 +49,8 @@ public class MPSNavBarExtension implements NavBarModelExtension{
   public PsiElement getParent(PsiElement psiElement) {
     if (psiElement instanceof MPSPsiModel) {
       VirtualFile virtualFile = ((MPSPsiModel) psiElement).getSourceVirtualFile();
+      if (!virtualFile.isValid()) return null;
+
       PsiFile file = psiElement.getManager().findFile(virtualFile);
       if (file == null) return null;
       return file.getParent();
