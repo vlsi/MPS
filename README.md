@@ -28,7 +28,11 @@ Download
 --------
 
 If you'd prefer a ready-to-use build, please head over to the [Download](http://www.jetbrains.com/mps/download/) page and grab an installation package of your choice.
-_Please note, that MPS is an open source tool offered for free. See the [complete MPS license agreement](http://www.jetbrains.com/mps/download/license.html) for full details._
+
+License
+-------
+
+_MPS is licensed under the Apache 2 open-source license. See the [complete MPS license agreement](http://www.jetbrains.com/mps/download/license.html) for full details._
 
 System requirements
 -------------------
@@ -37,5 +41,5 @@ To run JetBrains MPS you need JDK 5.0 or JDK 6.0.
 
 
 ----------------------
-Develop with pleasure!
-JetBrains MPS Team
+_Develop with pleasure! return
+JetBrains MPS Team_
