@@ -387,9 +387,9 @@ public class ChangesTracking {
     }
 
     @Override
-    protected void eventsHappened(List<SModelEvent> evets) {
+    protected void eventsHappened(List<SModelEvent> events) {
       Map<SNode, Set<String>> chlidChanged = MapSequence.fromMap(new HashMap<SNode, Set<String>>());
-      for (SModelEvent event : ListSequence.fromList(evets)) {
+      for (SModelEvent event : ListSequence.fromList(events)) {
         if (event instanceof SModelPropertyEvent) {
           processProperty((SModelPropertyEvent) event);
         } else if (event instanceof SModelReferenceEvent) {
