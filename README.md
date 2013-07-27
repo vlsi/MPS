@@ -41,5 +41,5 @@ To run JetBrains MPS you need JDK 5.0 or JDK 6.0.
 
 
 ----------------------
-_Develop with pleasure!   return
+_Develop with pleasure!
 JetBrains MPS Team_
