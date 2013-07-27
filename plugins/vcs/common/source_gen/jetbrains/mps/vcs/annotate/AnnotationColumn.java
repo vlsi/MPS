@@ -99,8 +99,11 @@ import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.ChangesUtil;
 import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import com.intellij.openapi.fileTypes.FileType;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.diff.SimpleContent;
 import com.intellij.openapi.diff.DiffRequest;
@@ -695,32 +698,44 @@ __switch__:
                 if (pi.isCanceled()) {
                   return;
                 }
+                pi.setText("Loading model after change");
+
+                assert after != null;
+                FileType[] filetypes = {(before == null ?
+                  null :
+                  before.getFile().getFileType()
+                ), after.getFile().getFileType()};
+                final boolean isPerRoot = MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(filetypes[1]) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(filetypes[1]);
+
+                final SModel afterModel = PersistenceUtil.loadModel(after.getContent(), (isPerRoot ?
+                  MPSExtentions.MODEL :
+                  filetypes[1].getDefaultExtension()
+                ));
+
+                if (pi.isCanceled()) {
+                  return;
+                }
                 pi.setText("Loading model before change");
 
                 final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
                 if (before == null) {
                   beforeModel.value = new MergeTemporaryModel(myModel.getReference(), true);
                 } else {
-                  beforeModel.value = PersistenceUtil.loadModel(before.getContent(), before.getFile().getFileType().getDefaultExtension());
+                  beforeModel.value = PersistenceUtil.loadModel(before.getContent(), (isPerRoot ?
+                    MPSExtentions.MODEL :
+                    filetypes[0].getDefaultExtension()
+                  ));
                 }
-
-                if (pi.isCanceled()) {
-                  return;
-                }
-
-                pi.setText("Loading model after change");
-                assert after != null;
-                final SModel afterModel = PersistenceUtil.loadModel(after.getContent(), after.getFile().getFileType().getDefaultExtension());
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
                   public SNodeId invoke() {
-                    SNodeId nodeId = check_5mnya_a0a0a0a91a8a2a0a0a0a1a1a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
+                    SNodeId nodeId = check_5mnya_a0a0a0a22a8a2a0a0a0a1a1a2tb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
                     SNode node = afterModel.getNode(nodeId);
                     if ((node == null)) {
                       node = beforeModel.value.getNode(nodeId);
                     }
-                    return rootId.value = check_5mnya_a0d0a0a91a8a2a0a0a0a1a1a2tb(SNodeOperations.getContainingRoot(node));
+                    return rootId.value = check_5mnya_a0d0a0a22a8a2a0a0a0a1a1a2tb(SNodeOperations.getContainingRoot(node));
                   }
                 }));
 
@@ -728,15 +743,18 @@ __switch__:
                   "<no revision>" :
                   before.getRevisionNumber().asString()
                 ), after.getRevisionNumber().asString()};
-                DiffContent[] diffContents = new DiffContent[]{new SimpleContent(before.getContent(), before.getFile().getFileType()), new SimpleContent(after.getContent(), after.getFile().getFileType())};
+                DiffContent[] diffContents = new DiffContent[]{new SimpleContent((before == null ?
+                  "" :
+                  before.getContent()
+                ), filetypes[0]), new SimpleContent(after.getContent(), filetypes[1])};
                 final DiffRequest diffRequest = new SimpleDiffRequest(project, diffContents, titles);
 
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
-                    if (rootId.value == null) {
-                      new ModelDifferenceDialog(project, beforeModel.value, afterModel, titles[0], titles[1], diffRequest).show();
-                    } else {
+                    if (isPerRoot || rootId.value != null) {
                       ModelDifferenceDialog.showRootDifference(project, beforeModel.value, afterModel, rootId.value, titles[0], titles[1], null, diffRequest);
+                    } else {
+                      new ModelDifferenceDialog(project, beforeModel.value, afterModel, titles[0], titles[1], diffRequest).show();
                     }
                   }
                 });
@@ -805,14 +823,14 @@ __switch__:
     return null;
   }
 
-  private static SNodeId check_5mnya_a0a0a0a91a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
+  private static SNodeId check_5mnya_a0a0a0a22a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
 
-  private static SNodeId check_5mnya_a0d0a0a91a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
+  private static SNodeId check_5mnya_a0d0a0a22a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }

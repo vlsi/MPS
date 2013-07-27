@@ -1,7 +1,7 @@
 -client
 -Xss1024k
 -ea
--Xmx1200m
+-Xmx1100m
 -XX:MaxPermSize=256m
 -XX:NewSize=256m
 -XX:+HeapDumpOnOutOfMemoryError
