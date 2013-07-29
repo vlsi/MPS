@@ -36,7 +36,7 @@ public class SNodeUtil {
   /**
    * Returns whether the given node belongs to the repository (or to one of its parent repositories).
    */
-  public static boolean isAccessible(SNode node, SRepository inRepository) {
+  public static boolean isAccessible(@NotNull SNode node, SRepository inRepository) {
     inRepository.getModelAccess().checkReadAccess();
 
     SModel model = node.getModel();
