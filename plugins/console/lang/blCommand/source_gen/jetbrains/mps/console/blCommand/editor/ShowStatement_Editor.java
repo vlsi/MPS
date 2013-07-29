@@ -22,7 +22,7 @@ public class ShowStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_kx1yvh_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kx1yvh_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_kx1yvh_a0(editorContext, node));

@@ -22,7 +22,7 @@ public class typeof_ConstraintsFunctionParameter_node_InferenceRule extends Abst
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept;
-    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", false, false) != null)) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", false, false) != null)) {
       applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), "concept", false);
     } else {
       applicableConcept = NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", false, false));

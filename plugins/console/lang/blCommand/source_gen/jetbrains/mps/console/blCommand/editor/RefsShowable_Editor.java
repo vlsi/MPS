@@ -18,7 +18,7 @@ public class RefsShowable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_cy3mm2_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cy3mm2_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_cy3mm2_a0(editorContext, node));

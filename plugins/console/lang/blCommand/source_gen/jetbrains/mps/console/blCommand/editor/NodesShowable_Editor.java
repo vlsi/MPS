@@ -18,7 +18,7 @@ public class NodesShowable_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_5iagpe_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5iagpe_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_5iagpe_a0(editorContext, node));
