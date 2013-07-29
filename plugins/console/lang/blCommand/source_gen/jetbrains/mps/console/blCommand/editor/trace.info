@@ -515,76 +515,76 @@
     <unitInfo nodeId="4307205004136299046" fileName="QueryExpression_Editor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.blCommand.editor.QueryExpression_Editor" />
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.console.blCommand.editor)/4307205004140167141">
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="19" startPosition="35" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="20" startPosition="42" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="21" startPosition="24" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="22" startPosition="73" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="27" startPosition="45" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="40" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="66" endLine="36" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="37" startPosition="34" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="39" startPosition="7" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="41" startPosition="32" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="44" startPosition="157" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="46" startPosition="7" endLine="47" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="50" startPosition="60" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="51" startPosition="62" endLine="52" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004141752568" fileName="QueryExpression_KeyMap.java" startLine="55" startPosition="127" endLine="56" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140263012" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="121" endLine="60" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="34" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="21" startPosition="24" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExpression_KeyMap_Action0#()V" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="36" startPosition="62" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="40" startPosition="49" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="43" startPosition="7" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExpression_KeyMap#()V" />
-    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="27" startPosition="45" endLine="28" endPosition="38" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="40" endLine="32" endPosition="19" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="37" startPosition="34" endLine="38" endPosition="21" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="41" startPosition="32" endLine="42" endPosition="21" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="44" startPosition="157" endLine="45" endPosition="21" />
-    <scopeInfo nodeId="4307205004141751594" fileName="QueryExpression_KeyMap.java" startLine="55" startPosition="127" endLine="56" endPosition="144" />
-    <scopeInfo nodeId="4307205004140167196" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="121" endLine="60" endPosition="171" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="34" endLine="64" endPosition="18" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="21" startPosition="24" endLine="23" endPosition="39" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="50" startPosition="60" endLine="52" endPosition="105">
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="23" startPosition="35" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="24" startPosition="42" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="25" startPosition="24" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="26" startPosition="73" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="45" endLine="32" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="40" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="39" startPosition="66" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="41" startPosition="34" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="43" startPosition="7" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="45" startPosition="32" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="48" startPosition="157" endLine="49" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="50" startPosition="7" endLine="51" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="54" startPosition="60" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="55" startPosition="62" endLine="56" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307205004141752568" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="127" endLine="60" endPosition="452" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140263012" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="121" endLine="64" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="67" startPosition="34" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="25" startPosition="24" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExpression_KeyMap_Action0#()V" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="40" startPosition="62" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="44" startPosition="49" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="47" startPosition="7" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExpression_KeyMap#()V" />
+    <nodeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="39" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="45" endLine="32" endPosition="38" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="40" endLine="36" endPosition="19" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="41" startPosition="34" endLine="42" endPosition="21" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="45" startPosition="32" endLine="46" endPosition="21" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="48" startPosition="157" endLine="49" endPosition="21" />
+    <scopeInfo nodeId="4307205004141751594" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="127" endLine="60" endPosition="452" />
+    <scopeInfo nodeId="4307205004140167196" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="121" endLine="64" endPosition="166" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="67" startPosition="34" endLine="68" endPosition="18" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="25" startPosition="24" endLine="27" endPosition="39" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="54" startPosition="60" endLine="56" endPosition="105">
       <varInfo nodeId="4307205004140167141" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="4307205004140167141" varName="editorContext" />
-      <varInfo nodeId="4307205004140167141" varName="node" />
-      <varInfo nodeId="4307205004140167141" varName="selectedNodes" />
-    </scopeInfo>
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4307205004140167141" varName="editorContext" />
       <varInfo nodeId="4307205004140167141" varName="node" />
       <varInfo nodeId="4307205004140167141" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="19" startPosition="35" endLine="23" endPosition="39">
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="4307205004140167141" varName="editorContext" />
+      <varInfo nodeId="4307205004140167141" varName="node" />
+      <varInfo nodeId="4307205004140167141" varName="selectedNodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="23" startPosition="35" endLine="27" endPosition="39">
       <varInfo nodeId="4307205004140167141" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="4307205004140167141" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="66" endLine="47" endPosition="104">
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="39" startPosition="66" endLine="51" endPosition="104">
       <varInfo nodeId="4307205004140167141" varName="contextCell" />
       <varInfo nodeId="4307205004140167141" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="35" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="39" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4307205004140167141" varName="editorContext" />
     </scopeInfo>
-    <unitInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="26" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.console.blCommand.editor.QueryExpression_KeyMap$QueryExpression_KeyMap_Action0" />
-    <unitInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.console.blCommand.editor.QueryExpression_KeyMap" />
+    <unitInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="30" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.console.blCommand.editor.QueryExpression_KeyMap$QueryExpression_KeyMap_Action0" />
+    <unitInfo nodeId="4307205004140167141" fileName="QueryExpression_KeyMap.java" startLine="22" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.console.blCommand.editor.QueryExpression_KeyMap" />
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.console.blCommand.editor)/4307205004140653645">
     <nodeInfo nodeId="4307205004140653645" fileName="QueryExpression_Actions.java" startLine="17" startPosition="95" endLine="18" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
