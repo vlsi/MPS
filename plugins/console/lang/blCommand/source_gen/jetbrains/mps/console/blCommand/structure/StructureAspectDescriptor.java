@@ -44,7 +44,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintStatement").super_("jetbrains.mps.console.blCommand.structure.AbstractPrintStatement").parents("jetbrains.mps.console.blCommand.structure.AbstractPrintStatement").alias("print", "").create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("project", "current project").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("project", "current project").create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectScopeLiteral").super_("jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral").parents("jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral").alias("project", "").create();
       case 17:
@@ -52,11 +52,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly").super_("jetbrains.mps.console.blCommand.structure.QueryParameter").parents("jetbrains.mps.console.blCommand.structure.QueryParameter").alias("r/o+", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly").super_("jetbrains.mps.console.blCommand.structure.QueryParameter").parents("jetbrains.mps.console.blCommand.structure.QueryParameter").alias("r/o+", "include read only").create();
       case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameterList").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"parameter"}, new boolean[]{true}).alias("< .. >", "").create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameterScope").super_("jetbrains.mps.console.blCommand.structure.QueryParameter").parents("jetbrains.mps.console.blCommand.structure.QueryParameter").children(new String[]{"value"}, new boolean[]{false}).alias("scope", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.QueryParameterScope").super_("jetbrains.mps.console.blCommand.structure.QueryParameter").parents("jetbrains.mps.console.blCommand.structure.QueryParameter").children(new String[]{"value"}, new boolean[]{false}).alias("scope", "used search scope").create();
       case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ReferencesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("references", "references in current scope").create();
       case 23:

@@ -121,7 +121,7 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="project" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="current project" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544317" resolveInfo="QueryExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8365379837260459177" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
@@ -222,12 +222,14 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.parameter" />
     <property name="name" nameId="tpck.1169194664001" value="QueryParameterIncludeReadOnly" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="r/o+" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="include read only" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544565" resolveInfo="QueryParameter" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4307205004132412719" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.parameter" />
     <property name="name" nameId="tpck.1169194664001" value="QueryParameterScope" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="scope" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="used search scope" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004131544565" resolveInfo="QueryParameter" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4307205004134707081" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

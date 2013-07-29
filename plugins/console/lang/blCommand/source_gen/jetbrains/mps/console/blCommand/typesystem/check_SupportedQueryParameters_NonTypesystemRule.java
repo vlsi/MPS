@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_SupportedQueryParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -29,7 +28,7 @@ public class check_SupportedQueryParameters_NonTypesystemRule extends AbstractNo
     for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(queryExpression, "parameter", true), "parameter", true))) {
       if (!(Sequence.fromIterable(supportedParameters).contains(SNodeOperations.getConceptDeclaration(param)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(param, "Unsupported kind of parameter: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(param), "alias"), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "4307205004147146470", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(param, "Unsupported kind of parameter: " + param.getPresentation(), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "4307205004147146470", null, errorTarget);
       }
     }
   }

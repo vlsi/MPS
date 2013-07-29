@@ -10,6 +10,10 @@ public abstract class QueryExpression_BehaviorDescriptor extends Expression_Beha
   public QueryExpression_BehaviorDescriptor() {
   }
 
+  public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    return QueryExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.QueryExpression";

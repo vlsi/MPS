@@ -44,7 +44,6 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModelsShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModulesShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.NodesShowable_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ProjectExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.QueryExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.QueryExpression_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.QueryParameterList_Editor" />
@@ -123,12 +122,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.blCommand.editor.ProjectExpression_Editor" file="ProjectExpression_Editor.java">
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
