@@ -20,9 +20,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.Diagram").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"blocks", "connectors"}, new boolean[]{true, true}).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.InputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.InputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.OutputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.OutputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.RootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"myChildren"}, new boolean[]{true}).create();
       case 6:

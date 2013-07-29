@@ -57,12 +57,12 @@ public class DiagramEditor extends DefaultNodeEditor {
   }
 
   private void createConnectorCollection(EditorContext editorContext, SNode diagramNode, GenericViewCell diagramCell) {
+    EditorCell_Collection lineCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(editorContext, diagramNode);
     for (SNode connectorNode : ListSequence.fromList(SLinkOperations.getTargets(diagramNode, "connectors", true))) {
       ConnectorViewCell connectorCell = (ConnectorViewCell) editorContext.createNodeCell(connectorNode);
       View connectorView = connectorCell.getView();
       View fromView = MapSequence.fromMap(nodeToViewMap).get(SNodeOperations.getParent(SLinkOperations.getTarget(connectorNode, "inputPort", false)));
       View toView = MapSequence.fromMap(nodeToViewMap).get(SNodeOperations.getParent(SLinkOperations.getTarget(connectorNode, "outputPort", false)));
-      EditorCell_Collection lineCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(editorContext, diagramNode);
       if (fromView != null && toView != null) {
         createConnection(lineCollection, connectorCell, connectorView, fromView, toView, editorContext, diagramNode);
       }
@@ -71,13 +71,13 @@ public class DiagramEditor extends DefaultNodeEditor {
   }
 
   private void createConnection(EditorCell_Collection linesCell, ConnectorViewCell connectorCell, View connectorView, View fromView, View toView, EditorContext editorContext, SNode diagramNode) {
-    // <node> 
     PolylineConnection connection = connectorCell.getConnection();
     connection.toView().set(fromView);
     connection.fromView().set(toView);
     myView.connections.add(connection);
-    Vector fromCenter = fromView.bounds().get().center();
-    Vector toCenter = toView.bounds().get().center();
+    myView.validate();
+    // <node> 
+    // <node> 
     // <node> 
 
     for (LineView line : ListSequence.fromList(connection.getLines())) {

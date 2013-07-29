@@ -4,8 +4,8 @@
   <unitInfo fileName="Block_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.Block_BehaviorDescriptor" />
   <unitInfo fileName="Connector_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.Connector_BehaviorDescriptor" />
   <unitInfo fileName="Diagram_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.Diagram_BehaviorDescriptor" />
-  <unitInfo fileName="InputPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.InputPort_BehaviorDescriptor" />
-  <unitInfo fileName="OutputPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.OutputPort_BehaviorDescriptor" />
+  <unitInfo fileName="InputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.InputPort_BehaviorDescriptor" />
+  <unitInfo fileName="OutputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.OutputPort_BehaviorDescriptor" />
   <unitInfo fileName="RootConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.RootConcept_BehaviorDescriptor" />
   <unitInfo fileName="SimpleConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.SimpleConcept_BehaviorDescriptor" />
 </debugInfo>

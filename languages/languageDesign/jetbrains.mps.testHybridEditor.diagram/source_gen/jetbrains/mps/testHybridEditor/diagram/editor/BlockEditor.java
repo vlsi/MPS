@@ -11,11 +11,14 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collection;
 import java.util.Collections;
 
 public class BlockEditor extends DefaultNodeEditor {
-  private MPSLabelView myView = new MPSLabelView();
+  private MPSBlockView myView = new MPSBlockView();
 
   @Override
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -24,6 +27,8 @@ public class BlockEditor extends DefaultNodeEditor {
 
     createRectCell(context, node, blockCell);
     createTextCell(context, node, blockCell);
+    createInputPorts(context, node, blockCell);
+    createOutputPorts(context, node, blockCell);
     return blockCell;
   }
 
@@ -44,6 +49,28 @@ public class BlockEditor extends DefaultNodeEditor {
     GenericViewCell textCell = GenericViewCell.createViewCell(context, node, textView);
     blockCell.addEditorCell(textCell);
   }
+
+  private void createInputPorts(EditorContext context, SNode node, GenericViewCell blockCell) {
+    EditorCell_Collection inputCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(context, node);
+    for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
+      GenericViewCell portCell = (GenericViewCell) context.createNodeCell(port);
+      inputCollection.addEditorCell(portCell);
+      myView.addInputPort(portCell.getView());
+    }
+    blockCell.addEditorCell(inputCollection);
+  }
+
+  private void createOutputPorts(EditorContext context, SNode node, GenericViewCell blockCell) {
+    EditorCell_Collection outputCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(context, node);
+    for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
+      GenericViewCell portCell = (GenericViewCell) context.createNodeCell(port);
+      outputCollection.addEditorCell(portCell);
+      myView.addOutputPort(portCell.getView());
+    }
+    blockCell.addEditorCell(outputCollection);
+  }
+
+
 
   @Override
   public Collection<String> getContextHints() {

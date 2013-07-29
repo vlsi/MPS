@@ -14,39 +14,52 @@
   <root type="adck.Diagram" typeId="adck.725186580883451585" id="725186580883618058" nodeInfo="ng">
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="806334514635516125" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="aaa" />
-      <property name="y" nameId="adck.6279035160242221911" value="0" />
-      <property name="x" nameId="adck.6279035160242221415" value="0" />
-      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="806334514635516139" nodeInfo="ng" />
-      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="1573757998054795405" nodeInfo="ng" />
+      <property name="y" nameId="adck.6279035160242221911" value="10" />
+      <property name="x" nameId="adck.6279035160242221415" value="10" />
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="806334514635516139" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="aaaInputport" />
+      </node>
+      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="1573757998054795405" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="aaaOutputPort" />
+      </node>
     </node>
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="725186580883628378" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Connector1" />
-      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="725186580883628367" />
-      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="725186580883628369" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="725186580883628367" resolveInfo="port1" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="725186580883628369" resolveInfo="port4" />
     </node>
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="806334514635516141" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="connec" />
-      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="725186580883628369" />
-      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="806334514635516139" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="725186580883628369" resolveInfo="port4" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="806334514635516139" resolveInfo="aaaInputport" />
     </node>
     <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="1573757998054795393" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="connec2" />
-      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="725186580883628367" />
-      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="1573757998054795405" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="725186580883628367" resolveInfo="port1" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="1573757998054795405" resolveInfo="aaaOutputPort" />
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="725186580883628362" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="Block234234" />
+      <property name="name" nameId="tpck.1169194664001" value="Block23422237" />
       <property name="y" nameId="adck.6279035160242221911" value="266" />
-      <property name="x" nameId="adck.6279035160242221415" value="26" />
-      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="725186580883628367" nodeInfo="ng" />
-      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="1573757998054795407" nodeInfo="ng" />
+      <property name="x" nameId="adck.6279035160242221415" value="20" />
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="725186580883628367" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="port1" />
+      </node>
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="3524364213240862147" nodeInfo="ng" />
+      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="1573757998054795407" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="port2" />
+      </node>
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="725186580883628364" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Block2" />
-      <property name="x" nameId="adck.6279035160242221415" value="100" />
+      <property name="x" nameId="adck.6279035160242221415" value="10" />
       <property name="y" nameId="adck.6279035160242221911" value="100" />
-      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="725186580883628369" nodeInfo="ng" />
-      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="1573757998054795409" nodeInfo="ng" />
+      <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="725186580883628369" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="port4" />
+      </node>
+      <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="1573757998054795409" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="port3" />
+      </node>
     </node>
   </root>
 </model>

@@ -18,6 +18,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       return Collections.<ConceptEditor>singletonList(new BlockEditor());
     } else if ("jetbrains.mps.testHybridEditor.structure.Connector".equals(descriptor.getConceptFqName())) {
       return Collections.<ConceptEditor>singletonList(new ConnectorEditor());
+    } else if ("jetbrains.mps.testHybridEditor.structure.InputPort".equals(descriptor.getConceptFqName())) {
+      return Collections.<ConceptEditor>singletonList(new InputPortEditor());
+    } else if ("jetbrains.mps.testHybridEditor.structure.OutputPort".equals(descriptor.getConceptFqName())) {
+      return Collections.<ConceptEditor>singletonList(new OutputPortEditor());
     }
     return Collections.<ConceptEditor>emptyList();
   }
