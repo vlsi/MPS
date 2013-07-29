@@ -56,6 +56,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
           return Collections.<ConceptEditorComponent>singletonList(new QueryExpression_EditorComponent());
         }
         break;
+      case 1:
+        if ("jetbrains.mps.console.blCommand.editor.QueryParameter_EditorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new QueryParameter_EditorComponent());
+        }
+        break;
       default:
     }
     return Collections.emptyList();
@@ -69,5 +74,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintStatement", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.QueryExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter"};
 }

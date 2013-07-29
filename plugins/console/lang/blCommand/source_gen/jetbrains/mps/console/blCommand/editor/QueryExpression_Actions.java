@@ -10,6 +10,7 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
@@ -34,7 +35,7 @@ public class QueryExpression_Actions {
 
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell cell = editor.findNodeCell(node);
+      EditorCell cell = editor.findNodeCell(SNodeOperations.getAncestor(node, "jetbrains.mps.console.blCommand.structure.QueryExpression", true, false));
       if (cell != null) {
         EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(firstLeaf);
@@ -42,7 +43,6 @@ public class QueryExpression_Actions {
           ((EditorCell_Label) firstLeaf).end();
         }
       }
-
     }
   }
 }

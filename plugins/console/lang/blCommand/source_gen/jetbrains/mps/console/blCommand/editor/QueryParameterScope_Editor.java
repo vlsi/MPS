@@ -29,7 +29,7 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_5iann0_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryParameter_EditorComponent");
     return editorCell;
   }
 
@@ -49,6 +49,7 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("value");
     }
+    QueryParameter_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

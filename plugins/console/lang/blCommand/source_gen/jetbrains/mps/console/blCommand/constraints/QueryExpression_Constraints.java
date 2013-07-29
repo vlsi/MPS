@@ -37,6 +37,9 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
+    if (SConceptOperations.isExactly(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
+      return true;
+    }
     if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
       return Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains((SNode) childConcept);
     }
