@@ -96,7 +96,7 @@ public class MPSModelVirtualFile extends VirtualFile {
 
   @Override
   public boolean isWritable() {
-    return false;
+    return true;
   }
 
   @Override

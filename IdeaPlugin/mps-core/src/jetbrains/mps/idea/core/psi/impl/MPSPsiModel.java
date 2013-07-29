@@ -59,14 +59,13 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.Icon;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.intellij.openapi.util.io.FileSystemUtil;
 
 /**
  * evgeny, 1/25/13
@@ -483,4 +482,16 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     }
   }
 
+  @Override
+  public void checkDelete() throws IncorrectOperationException {
+  }
+
+  @Override
+  public void delete() throws IncorrectOperationException {
+    try {
+      getSourceVirtualFile().delete(getManager());
+    } catch (IOException e) {
+      throw new IncorrectOperationException(e.toString(), e);
+    }
+  }
 }
