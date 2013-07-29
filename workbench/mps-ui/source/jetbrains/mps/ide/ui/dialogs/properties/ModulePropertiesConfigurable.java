@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.ide.util.BrowseFilesListener;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -34,11 +35,13 @@ import com.intellij.ui.InsertPathAction;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SpeedSearchBase;
 import com.intellij.ui.SpeedSearchComparator;
+import com.intellij.ui.TabbedPaneWrapper.TabWrapper;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
+import com.intellij.ui.tabs.impl.JBTabsImpl;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
@@ -79,6 +82,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -88,6 +92,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -99,16 +104,20 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
+import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -122,6 +131,7 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
@@ -130,18 +140,26 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EventObject;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModuleDescriptor myModuleDescriptor;
   private AbstractModule myModule;
+  private Map<JBCheckBox, SModuleFacet> myCheckBoxMap = new HashMap<JBCheckBox, SModuleFacet>();
+  private Map<SModuleFacet, JBCheckBox> myModuleFacetMap = new HashMap<SModuleFacet, JBCheckBox>();
 
   public ModulePropertiesConfigurable(SModule module, Project project) {
     super(project);
@@ -154,8 +172,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       addTab(new ModuleUsedLanguagesTab());
       if (myModule instanceof Language)
         addTab(new RuntimeTab());
-//      if((myModule instanceof Language || myModule instanceof Solution) && dependOnBL())
-//        addTab((myTab = new JavaModuleFacetTab(myModule, myModuleDescriptor)));
       if (myModule instanceof Generator)
         addTab(new GeneratorAdvancesTab());
     }
@@ -168,13 +184,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (facetTab != null)
         addTab(facetTab);
     }
+
+    addTab(new AddFacetsTab());
   }
 
   @Override
   protected void save() {
     // todo: !!!
     myModule.setModuleDescriptor(myModuleDescriptor, true);
-    ((AbstractModule) myModule).save();
+    myModule.save();
   }
 
   @Nls
@@ -274,12 +292,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof DevKit)
         myModuleDependenciesTab.apply();
       else {
-        if (myModule instanceof Language) {
-          ((LanguageDescriptor) myModule.getModuleDescriptor()).setGenPath(
-              myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
-        } else if (myModule instanceof Solution) {
-          ((SolutionDescriptor) myModule.getModuleDescriptor()).setOutputPath(
-              myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
+        if(myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
+          if (myModule instanceof Language) {
+            ((LanguageDescriptor) myModule.getModuleDescriptor()).setGenPath(
+                myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
+          } else if (myModule instanceof Solution) {
+            ((SolutionDescriptor) myModule.getModuleDescriptor()).setOutputPath(
+                myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
+          }
         }
         myEntriesEditor.apply();
       }
@@ -1208,6 +1228,181 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         GeneratorDescriptor descriptor = (GeneratorDescriptor) myModuleDescriptor;
         descriptor.getPriorityRules().clear();
         descriptor.getPriorityRules().addAll(myMappingPriorityRules);
+      }
+    }
+  }
+
+  public class AddFacetsTab extends BaseTab {
+
+    public AddFacetsTab() {
+      super("Facets", AllIcons.General.Settings, "Add facets");
+      init();
+
+      addChangeListener(new ChangeListener() {
+        @Override
+        public void stateChanged(ChangeEvent e) {
+          if(!(e.getSource() instanceof JBTabsImpl && ((JBTabsImpl) e.getSource()).getSelectedInfo().getComponent() instanceof TabWrapper))
+            return;
+
+          final JComponent component = ((JBTabsImpl) e.getSource()).getSelectedInfo().getComponent();
+          if(component.getComponentCount() == 0) return;
+          if(component.getComponent(0).equals(getTabComponent())) {
+//            ModulePropertiesConfigurable.this.selectTab(ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this) - 1);
+
+          }
+        }
+      });
+    }
+
+    @Override
+    public void init() {
+      Set<String> facetsTypes = new HashSet<String>();
+      Set<String> usedLangs = new HashSet<String>();
+      for(SModuleReference reference : myModuleDescriptor.getUsedLanguages()) { usedLangs.add(reference.getModuleName()); }
+      Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
+
+      int recommended = 0;
+      for (final SModuleFacet moduleFacet : myModule.getFacets()) {
+        if(!(moduleFacet instanceof ModuleFacetBase))
+          continue;
+
+        facetsTypes.add(((ModuleFacetBase) moduleFacet).getFacetType());
+
+        if(applicableFacetTypes.contains(((ModuleFacetBase) moduleFacet).getFacetType())) recommended++;
+
+        final JBCheckBox checkBox = new JBCheckBox(
+            ((ModuleFacetBase) moduleFacet).getFacetPresentation(), true);
+        checkBox.addItemListener(new FacetCheckBoxItemListener(checkBox, moduleFacet));
+
+        myCheckBoxMap.put(checkBox, moduleFacet);
+      }
+
+
+      for(String facet : FacetsFacade.getInstance().getFacetTypes()) {
+        final SModuleFacet sModuleFacet = FacetsFacade.getInstance().getFacetFactory(facet).create();
+        if(!(sModuleFacet instanceof ModuleFacetBase) || facetsTypes.contains(facet))
+          continue;
+
+        if(applicableFacetTypes.contains(facet)) recommended++;
+
+        final JBCheckBox checkBox = new JBCheckBox(
+            ((ModuleFacetBase) sModuleFacet).getFacetPresentation(), false);
+        checkBox.addItemListener(new FacetCheckBoxItemListener(checkBox, sModuleFacet));
+
+        myCheckBoxMap.put(checkBox, sModuleFacet);
+      }
+
+      JPanel panel = new JPanel(new GridLayoutManager(recommended != 0 ? 2 : 1, 1));
+
+      int row = 0;
+      final GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+
+      if(recommended > 0) {
+        JPanel recomendedPanel = new JPanel(new GridLayoutManager(recommended, 1));
+        recomendedPanel.setBorder(IdeBorderFactory.createTitledBorder("Recommended facets", false, INSETS));
+        for (JBCheckBox jbCheckBox : myCheckBoxMap.keySet()) {
+          if(applicableFacetTypes.contains(((ModuleFacetBase) myCheckBoxMap.get(jbCheckBox)).getFacetType()) ) {
+            constraints.setRow(row++);
+            recomendedPanel.add(jbCheckBox, constraints);
+          }
+        }
+        row = 0;
+        constraints.setRow(row);
+        panel.add(recomendedPanel, constraints);
+      }
+
+      JPanel other = new JPanel(new GridLayoutManager(myCheckBoxMap.size() - recommended, 1));
+      other.setBorder(IdeBorderFactory.createTitledBorder("Available facets", false, INSETS));
+      for (JBCheckBox jbCheckBox : myCheckBoxMap.keySet()) {
+        if(!applicableFacetTypes.contains( ((ModuleFacetBase)myCheckBoxMap.get(jbCheckBox)).getFacetType()) ) {
+          constraints.setRow(row++);
+          other.add(jbCheckBox, constraints);
+        }
+      }
+      constraints.setRow(recommended > 0 ? 1 : 0);
+      panel.add(other, constraints);
+
+      //panel.setBorder(IdeBorderFactory.createTitledBorder("Facet types", false, INSETS));
+      setTabComponent(panel);
+    }
+
+    @Override
+    public boolean isModified() {
+      Set<String> facetsTypes = new HashSet<String>();
+      for (SModuleFacet moduleFacet : myModule.getFacets()) {
+        if(!(moduleFacet instanceof ModuleFacetBase))
+          continue;
+        facetsTypes.add(((ModuleFacetBase) moduleFacet).getFacetType());
+      }
+
+      Set<String> newFacetsTypes = new HashSet<String>();
+      for (SModuleFacet moduleFacet : myCheckBoxMap.values()) {
+        if(!(moduleFacet instanceof ModuleFacetBase))
+          continue;
+        newFacetsTypes.add(((ModuleFacetBase) moduleFacet).getFacetType());
+      }
+
+      return facetsTypes.addAll(newFacetsTypes) && newFacetsTypes.containsAll(facetsTypes);
+    }
+
+    @Override
+    public void apply() {
+      List<SModuleFacet> moduleFacets = IterableUtil.asList(myModule.getFacets());
+      for (JBCheckBox checkBox : myCheckBoxMap.keySet()) {
+
+        if(checkBox.isSelected() && !moduleFacets.contains(myCheckBoxMap.get(checkBox))) {
+
+          ModuleFacetBase facetBase = (ModuleFacetBase) myCheckBoxMap.get(checkBox);
+          facetBase.setModule(myModule);
+          Memento memento = new MementoImpl();
+          facetBase.save(memento);
+          myModuleDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facetBase.getFacetType(), memento));
+
+        } else if(!checkBox.isSelected() && moduleFacets.contains(myCheckBoxMap.get(checkBox)))  {
+
+          Iterator<ModuleFacetDescriptor> it = myModuleDescriptor.getModuleFacetDescriptors().iterator();
+          while (it.hasNext()) {
+            ModuleFacetDescriptor facetDescriptor = it.next();
+            if(facetDescriptor.getType().equals(((ModuleFacetBase)myCheckBoxMap.get(checkBox)).getFacetType())) {
+              myModuleDescriptor.getModuleFacetDescriptors().remove(facetDescriptor);
+              break;
+            }
+          }
+
+        }
+      }
+    }
+
+    private class FacetCheckBoxItemListener implements ItemListener {
+      private final JBCheckBox myCheckBox;
+      private final SModuleFacet mySModuleFacet;
+
+      public FacetCheckBoxItemListener(JBCheckBox checkBox, SModuleFacet sModuleFacet) {
+        myCheckBox = checkBox;
+        mySModuleFacet = sModuleFacet;
+      }
+
+      @Override
+      public void itemStateChanged(ItemEvent e) {
+        if(!e.getSource().equals(myCheckBox)) return;
+        if(myCheckBox.isSelected()) {
+          ModuleFacetBase moduleFacetBase = (ModuleFacetBase) mySModuleFacet;
+          Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(
+              moduleFacetBase.getFacetType(), moduleFacetBase);
+          if (facetTab != null) {
+            ModulePropertiesConfigurable.this.insertTab(facetTab, ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this));
+//            ModulePropertiesConfigurable.this.selectTab(facetTab);
+          }
+
+        } else {
+          for(int i = 0 ; i < ModulePropertiesConfigurable.this.getTabsCount(); i++) {
+             Tab tab = ModulePropertiesConfigurable.this.getTab(i);
+            if(!(tab instanceof FacetTab)) continue;
+            if(((FacetTab) tab).getFacet().equals(mySModuleFacet))
+              ModulePropertiesConfigurable.this.removeTab(tab);
+          }
+        }
       }
     }
   }

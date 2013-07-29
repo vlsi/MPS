@@ -11,8 +11,8 @@ public class ReloadClassesCommand_BehaviorDescriptor extends InterpretedCommand_
   public ReloadClassesCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
-    ReloadClassesCommand_Behavior.virtual_execute_757553790980855637(thisNode, c, console, callback);
+  public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
+    ReloadClassesCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
   }
 
   @Override

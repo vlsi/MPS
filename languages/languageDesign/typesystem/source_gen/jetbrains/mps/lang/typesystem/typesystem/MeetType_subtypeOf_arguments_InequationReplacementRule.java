@@ -26,12 +26,10 @@ public class MeetType_subtypeOf_arguments_InequationReplacementRule extends Abst
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
-    // nothing 
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    // nothing 
     return result_14532009;
   }
 
@@ -58,6 +56,6 @@ public class MeetType_subtypeOf_arguments_InequationReplacementRule extends Abst
   }
 
   public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.lang.core.structure.BaseConcept";
+    return "jetbrains.mps.baseLanguage.structure.Type";
   }
 }

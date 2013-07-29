@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -35,12 +36,15 @@ public class NodeCopier {
     SNode copy = CopyUtil.copyAndPreserveId(sourceNode);
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
       SNodeId nodeId = node.getNodeId();
-      SNodeId replacedId = nodeId;
-      while (myModel.getNode(replacedId) != null) {
-        replacedId = jetbrains.mps.smodel.SModel.generateUniqueId();
+      if (myModel.getNode(nodeId) == null) {
+        continue;
       }
+      SNodeId replacedId;
+      do {
+        replacedId = jetbrains.mps.smodel.SModel.generateUniqueId();
+      } while (myModel.getNode(replacedId) != null);
       ((jetbrains.mps.smodel.SNode) node).setId(replacedId);
-      if (replacedId != nodeId && !(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
+      if (!(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
         MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
       }
     }
@@ -48,15 +52,20 @@ public class NodeCopier {
   }
 
   public void restoreIds(boolean affectOthers) {
-    softRestoreIds();
-    if (affectOthers) {
-      evictOtherDuplicates();
+    UnregisteredNodes.WarningLevel oldWarningLevel = UnregisteredNodes.instance().setWarningLevel(UnregisteredNodes.WarningLevel.WARNING);
+    try {
       softRestoreIds();
-      assert Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
-        public boolean accept(SNodeId id) {
-          return id == null;
-        }
-      });
+      if (affectOthers) {
+        evictOtherDuplicates();
+        softRestoreIds();
+        assert Sequence.fromIterable(MapSequence.fromMap(myIdReplacementCache).values()).all(new IWhereFilter<SNodeId>() {
+          public boolean accept(SNodeId id) {
+            return id == null;
+          }
+        });
+      }
+    } finally {
+      UnregisteredNodes.instance().setWarningLevel(oldWarningLevel);
     }
   }
 

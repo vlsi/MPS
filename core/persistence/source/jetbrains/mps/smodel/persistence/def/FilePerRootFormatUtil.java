@@ -37,8 +37,11 @@ import org.xml.sax.InputSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -90,7 +93,10 @@ public class FilePerRootFormatUtil {
     header = result.getSModelHeader();
 
     // load roots
-    for (String stream : dataSource.getAvailableStreams()) {
+    List<String> streams = new ArrayList<String>();
+    for (String s : dataSource.getAvailableStreams())  streams.add(s);
+    Collections.sort(streams);
+    for (String stream : streams) {
       if (!(stream.endsWith(FilePerRootDataSource.ROOT_EXTENSION))) continue;
 
       XMLSAXHandler<ModelLoadResult> rootHandler = mp.getModelReaderHandler(targetState, header);

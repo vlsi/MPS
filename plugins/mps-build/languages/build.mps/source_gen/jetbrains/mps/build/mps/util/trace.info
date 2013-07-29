@@ -815,21 +815,21 @@
     <nodeInfo nodeId="8845345751178265636" fileName="MPSModulesPartitioner.java" startLine="162" startPosition="72" endLine="163" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8845345751178265747" fileName="MPSModulesPartitioner.java" startLine="164" startPosition="29" endLine="165" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7391870795496919110" fileName="MPSModulesPartitioner.java" startLine="168" startPosition="109" endLine="169" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="43" endLine="172" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="41" endLine="176" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7391870795496918677" fileName="MPSModulesPartitioner.java" startLine="178" startPosition="14" endLine="179" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7391870795496918686" fileName="MPSModulesPartitioner.java" startLine="180" startPosition="29" endLine="181" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2761855734069308486" fileName="MPSModulesPartitioner.java" startLine="189" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modules" />
-    <nodeInfo nodeId="5970181360960156106" fileName="MPSModulesPartitioner.java" startLine="190" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="conflicting" />
-    <nodeInfo nodeId="8845345751178198211" fileName="MPSModulesPartitioner.java" startLine="192" startPosition="20" endLine="193" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5970181360960156112" fileName="MPSModulesPartitioner.java" startLine="193" startPosition="69" endLine="194" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8845345751178285127" fileName="MPSModulesPartitioner.java" startLine="197" startPosition="36" endLine="198" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5970181360960288069" fileName="MPSModulesPartitioner.java" startLine="201" startPosition="40" endLine="202" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5970181360960156216" fileName="MPSModulesPartitioner.java" startLine="205" startPosition="45" endLine="206" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7391870795497041695" fileName="MPSModulesPartitioner.java" startLine="209" startPosition="34" endLine="210" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5970181360960156171" fileName="MPSModulesPartitioner.java" startLine="214" startPosition="17" endLine="215" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7391870795497041744" fileName="MPSModulesPartitioner.java" startLine="216" startPosition="14" endLine="217" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7391870795497041742" fileName="MPSModulesPartitioner.java" startLine="216" startPosition="12" endLine="218" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="43" endLine="172" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="41" endLine="176" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795496918677" fileName="MPSModulesPartitioner.java" startLine="179" startPosition="165" endLine="180" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7391870795496918686" fileName="MPSModulesPartitioner.java" startLine="181" startPosition="29" endLine="182" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2761855734069308486" fileName="MPSModulesPartitioner.java" startLine="190" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modules" />
+    <nodeInfo nodeId="5970181360960156106" fileName="MPSModulesPartitioner.java" startLine="191" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="conflicting" />
+    <nodeInfo nodeId="8845345751178198211" fileName="MPSModulesPartitioner.java" startLine="193" startPosition="20" endLine="194" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5970181360960156112" fileName="MPSModulesPartitioner.java" startLine="194" startPosition="69" endLine="195" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8845345751178285127" fileName="MPSModulesPartitioner.java" startLine="198" startPosition="36" endLine="199" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5970181360960288069" fileName="MPSModulesPartitioner.java" startLine="202" startPosition="40" endLine="203" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5970181360960156216" fileName="MPSModulesPartitioner.java" startLine="206" startPosition="45" endLine="207" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795497041695" fileName="MPSModulesPartitioner.java" startLine="210" startPosition="34" endLine="211" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5970181360960156171" fileName="MPSModulesPartitioner.java" startLine="215" startPosition="17" endLine="216" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7391870795497041744" fileName="MPSModulesPartitioner.java" startLine="217" startPosition="14" endLine="218" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7391870795497041742" fileName="MPSModulesPartitioner.java" startLine="217" startPosition="12" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="624983197652069599" fileName="MPSModulesPartitioner.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="8845345751178211715" fileName="MPSModulesPartitioner.java" startLine="58" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4753432221828866312" fileName="MPSModulesPartitioner.java" startLine="73" startPosition="39" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -847,35 +847,36 @@
     <nodeInfo nodeId="2761855734069308512" fileName="MPSModulesPartitioner.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Node#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4753432221828866249" fileName="MPSModulesPartitioner.java" startLine="156" startPosition="55" endLine="159" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8845345751178265645" fileName="MPSModulesPartitioner.java" startLine="163" startPosition="55" endLine="166" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7391870795496918684" fileName="MPSModulesPartitioner.java" startLine="179" startPosition="55" endLine="182" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8845345751178285122" fileName="MPSModulesPartitioner.java" startLine="197" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/Set;" />
-    <nodeInfo nodeId="5970181360960288064" fileName="MPSModulesPartitioner.java" startLine="201" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConflicting#()Ljava/util/Set;" />
-    <nodeInfo nodeId="5970181360960156201" fileName="MPSModulesPartitioner.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflicting#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8845345751178285135" fileName="MPSModulesPartitioner.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBootstrap#()Z" />
+    <nodeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7391870795496918684" fileName="MPSModulesPartitioner.java" startLine="180" startPosition="55" endLine="183" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8845345751178285122" fileName="MPSModulesPartitioner.java" startLine="198" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/Set;" />
+    <nodeInfo nodeId="5970181360960288064" fileName="MPSModulesPartitioner.java" startLine="202" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConflicting#()Ljava/util/Set;" />
+    <nodeInfo nodeId="5970181360960156201" fileName="MPSModulesPartitioner.java" startLine="206" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflicting#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8845345751178285135" fileName="MPSModulesPartitioner.java" startLine="210" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBootstrap#()Z" />
     <nodeInfo nodeId="4753432221828866202" fileName="MPSModulesPartitioner.java" startLine="145" startPosition="46" endLine="149" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8845345751178198203" fileName="MPSModulesPartitioner.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Chunk#()V" />
+    <nodeInfo nodeId="8845345751178198203" fileName="MPSModulesPartitioner.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Chunk#()V" />
     <nodeInfo nodeId="7459197473280105295" fileName="MPSModulesPartitioner.java" startLine="37" startPosition="80" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="7459197473279966049" fileName="MPSModulesPartitioner.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSModulesPartitioner#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
     <nodeInfo nodeId="8845345751178211692" fileName="MPSModulesPartitioner.java" startLine="53" startPosition="110" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7391870795497041820" fileName="MPSModulesPartitioner.java" startLine="85" startPosition="50" endLine="90" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7391870795497078309" fileName="MPSModulesPartitioner.java" startLine="90" startPosition="10" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5970181360960744880" fileName="MPSModulesPartitioner.java" startLine="99" startPosition="43" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7391870795497041737" fileName="MPSModulesPartitioner.java" startLine="213" startPosition="58" endLine="218" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7391870795497041737" fileName="MPSModulesPartitioner.java" startLine="214" startPosition="58" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4753432221828866239" fileName="MPSModulesPartitioner.java" startLine="154" startPosition="207" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8845345751178265566" fileName="MPSModulesPartitioner.java" startLine="161" startPosition="49" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7391870795496918674" fileName="MPSModulesPartitioner.java" startLine="178" startPosition="11" endLine="184" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2761855734069308240" fileName="MPSModulesPartitioner.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSModulesPartitioner#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5970181360960729852" fileName="MPSModulesPartitioner.java" startLine="99" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildExternalDependencies#()V" />
     <nodeInfo nodeId="2761855734069309077" fileName="MPSModulesPartitioner.java" startLine="144" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNexts#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4753432221828866280" fileName="MPSModulesPartitioner.java" startLine="213" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBootstrap#(Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
+    <nodeInfo nodeId="4753432221828866280" fileName="MPSModulesPartitioner.java" startLine="214" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBootstrap#(Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
+    <nodeInfo nodeId="8567544756204742051" fileName="MPSModulesPartitioner.java" startLine="169" startPosition="105" endLine="178" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7391870795497041582" fileName="MPSModulesPartitioner.java" startLine="84" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7391870795496918674" fileName="MPSModulesPartitioner.java" startLine="169" startPosition="105" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4753432221828866023" fileName="MPSModulesPartitioner.java" startLine="69" startPosition="86" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="2761855734069308303" fileName="MPSModulesPartitioner.java" startLine="115" startPosition="59" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2761855734069308293" fileName="MPSModulesPartitioner.java" startLine="115" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModules#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7391870795496541144" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="66" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8845345751178264256" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fill#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7391870795496541144" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="66" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8845345751178264256" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fill#(Ljava/util/Map;)V" />
     <nodeInfo nodeId="8845345751178211227" fileName="MPSModulesPartitioner.java" startLine="51" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildChunks#()V" />
     <scopeInfo nodeId="624983197652069600" fileName="MPSModulesPartitioner.java" startLine="39" startPosition="38" endLine="40" endPosition="57" />
     <scopeInfo nodeId="8845345751178211721" fileName="MPSModulesPartitioner.java" startLine="59" startPosition="61" endLine="60" endPosition="21" />
@@ -894,16 +895,16 @@
     <scopeInfo nodeId="2761855734069308516" fileName="MPSModulesPartitioner.java" startLine="140" startPosition="31" endLine="141" endPosition="27" />
     <scopeInfo nodeId="4753432221828866250" fileName="MPSModulesPartitioner.java" startLine="157" startPosition="29" endLine="158" endPosition="67" />
     <scopeInfo nodeId="8845345751178265646" fileName="MPSModulesPartitioner.java" startLine="164" startPosition="29" endLine="165" endPosition="66" />
-    <scopeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="43" endLine="172" endPosition="76" />
-    <scopeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="41" endLine="176" endPosition="66" />
-    <scopeInfo nodeId="7391870795496918685" fileName="MPSModulesPartitioner.java" startLine="180" startPosition="29" endLine="181" endPosition="66" />
-    <scopeInfo nodeId="8845345751178285126" fileName="MPSModulesPartitioner.java" startLine="197" startPosition="36" endLine="198" endPosition="21" />
-    <scopeInfo nodeId="5970181360960288068" fileName="MPSModulesPartitioner.java" startLine="201" startPosition="40" endLine="202" endPosition="25" />
-    <scopeInfo nodeId="5970181360960156204" fileName="MPSModulesPartitioner.java" startLine="205" startPosition="45" endLine="206" endPosition="60" />
-    <scopeInfo nodeId="8845345751178285138" fileName="MPSModulesPartitioner.java" startLine="209" startPosition="34" endLine="210" endPosition="59" />
-    <scopeInfo nodeId="7391870795497041738" fileName="MPSModulesPartitioner.java" startLine="214" startPosition="17" endLine="215" endPosition="60" />
-    <scopeInfo nodeId="7391870795497041743" fileName="MPSModulesPartitioner.java" startLine="216" startPosition="14" endLine="217" endPosition="63" />
-    <scopeInfo nodeId="8845345751178198207" fileName="MPSModulesPartitioner.java" startLine="192" startPosition="20" endLine="194" endPosition="67" />
+    <scopeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="43" endLine="172" endPosition="76" />
+    <scopeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="41" endLine="176" endPosition="66" />
+    <scopeInfo nodeId="7391870795496918685" fileName="MPSModulesPartitioner.java" startLine="181" startPosition="29" endLine="182" endPosition="66" />
+    <scopeInfo nodeId="8845345751178285126" fileName="MPSModulesPartitioner.java" startLine="198" startPosition="36" endLine="199" endPosition="21" />
+    <scopeInfo nodeId="5970181360960288068" fileName="MPSModulesPartitioner.java" startLine="202" startPosition="40" endLine="203" endPosition="25" />
+    <scopeInfo nodeId="5970181360960156204" fileName="MPSModulesPartitioner.java" startLine="206" startPosition="45" endLine="207" endPosition="60" />
+    <scopeInfo nodeId="8845345751178285138" fileName="MPSModulesPartitioner.java" startLine="210" startPosition="34" endLine="211" endPosition="59" />
+    <scopeInfo nodeId="7391870795497041738" fileName="MPSModulesPartitioner.java" startLine="215" startPosition="17" endLine="216" endPosition="60" />
+    <scopeInfo nodeId="7391870795497041743" fileName="MPSModulesPartitioner.java" startLine="217" startPosition="14" endLine="218" endPosition="63" />
+    <scopeInfo nodeId="8845345751178198207" fileName="MPSModulesPartitioner.java" startLine="193" startPosition="20" endLine="195" endPosition="67" />
     <scopeInfo nodeId="624983197652069599" fileName="MPSModulesPartitioner.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="624983197652069599" varName="it" />
     </scopeInfo>
@@ -938,18 +939,18 @@
     <scopeInfo nodeId="2761855734069308512" fileName="MPSModulesPartitioner.java" startLine="140" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="2761855734069308517" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="7391870795496919169" varName="it" />
+    <scopeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="171" startPosition="0" endLine="174" endPosition="0">
+      <varInfo nodeId="8567544756204742053" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="0" endLine="178" endPosition="0">
-      <varInfo nodeId="7391870795496919169" varName="it" />
+    <scopeInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="0" endLine="178" endPosition="0">
+      <varInfo nodeId="8567544756204742053" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8845345751178285122" fileName="MPSModulesPartitioner.java" startLine="197" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="5970181360960288064" fileName="MPSModulesPartitioner.java" startLine="201" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="5970181360960156201" fileName="MPSModulesPartitioner.java" startLine="205" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="8845345751178285122" fileName="MPSModulesPartitioner.java" startLine="198" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="5970181360960288064" fileName="MPSModulesPartitioner.java" startLine="202" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="5970181360960156201" fileName="MPSModulesPartitioner.java" startLine="206" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="5970181360960156210" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="8845345751178285135" fileName="MPSModulesPartitioner.java" startLine="209" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="8845345751178285135" fileName="MPSModulesPartitioner.java" startLine="210" startPosition="0" endLine="213" endPosition="0" />
     <scopeInfo nodeId="2761855734069309082" fileName="MPSModulesPartitioner.java" startLine="145" startPosition="46" endLine="149" endPosition="8" />
     <scopeInfo nodeId="4753432221828866241" fileName="MPSModulesPartitioner.java" startLine="155" startPosition="72" endLine="159" endPosition="11">
       <varInfo nodeId="4753432221828866243" varName="node" />
@@ -957,10 +958,10 @@
     <scopeInfo nodeId="8845345751178265569" fileName="MPSModulesPartitioner.java" startLine="162" startPosition="72" endLine="166" endPosition="11">
       <varInfo nodeId="8845345751178265637" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7391870795496918676" fileName="MPSModulesPartitioner.java" startLine="178" startPosition="14" endLine="182" endPosition="11">
+    <scopeInfo nodeId="7391870795496918676" fileName="MPSModulesPartitioner.java" startLine="179" startPosition="165" endLine="183" endPosition="11">
       <varInfo nodeId="7391870795496918678" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8845345751178198203" fileName="MPSModulesPartitioner.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="8845345751178198203" fileName="MPSModulesPartitioner.java" startLine="193" startPosition="0" endLine="197" endPosition="0" />
     <scopeInfo nodeId="2761855734069308243" fileName="MPSModulesPartitioner.java" startLine="37" startPosition="80" endLine="42" endPosition="49" />
     <scopeInfo nodeId="7459197473279966049" fileName="MPSModulesPartitioner.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="7459197473279966087" varName="genContext" />
@@ -974,12 +975,15 @@
       <varInfo nodeId="7391870795497078312" varName="confl" />
     </scopeInfo>
     <scopeInfo nodeId="5970181360960729855" fileName="MPSModulesPartitioner.java" startLine="99" startPosition="43" endLine="104" endPosition="7" />
-    <scopeInfo nodeId="4753432221828866283" fileName="MPSModulesPartitioner.java" startLine="213" startPosition="58" endLine="218" endPosition="7" />
+    <scopeInfo nodeId="4753432221828866283" fileName="MPSModulesPartitioner.java" startLine="214" startPosition="58" endLine="219" endPosition="7" />
     <scopeInfo nodeId="4753432221828866239" fileName="MPSModulesPartitioner.java" startLine="154" startPosition="207" endLine="160" endPosition="9">
       <varInfo nodeId="4753432221828866240" varName="q" />
     </scopeInfo>
     <scopeInfo nodeId="8845345751178265566" fileName="MPSModulesPartitioner.java" startLine="161" startPosition="49" endLine="167" endPosition="9">
       <varInfo nodeId="8845345751178265567" varName="q" />
+    </scopeInfo>
+    <scopeInfo nodeId="7391870795496918674" fileName="MPSModulesPartitioner.java" startLine="178" startPosition="11" endLine="184" endPosition="9">
+      <varInfo nodeId="7391870795496918675" varName="q" />
     </scopeInfo>
     <scopeInfo nodeId="2761855734069308240" fileName="MPSModulesPartitioner.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2761855734069308250" varName="genContext" />
@@ -987,7 +991,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5970181360960729852" fileName="MPSModulesPartitioner.java" startLine="99" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="2761855734069309077" fileName="MPSModulesPartitioner.java" startLine="144" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="4753432221828866280" fileName="MPSModulesPartitioner.java" startLine="213" startPosition="0" endLine="220" endPosition="0">
+    <scopeInfo nodeId="4753432221828866280" fileName="MPSModulesPartitioner.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="7391870795497041725" varName="flag" />
       <varInfo nodeId="5970181360960156099" varName="module" />
     </scopeInfo>
@@ -1005,21 +1009,19 @@
     <scopeInfo nodeId="7391870795496541145" fileName="MPSModulesPartitioner.java" startLine="153" startPosition="102" endLine="167" endPosition="9">
       <varInfo nodeId="624983197652037785" varName="closure" />
     </scopeInfo>
-    <scopeInfo nodeId="7391870795496918674" fileName="MPSModulesPartitioner.java" startLine="169" startPosition="105" endLine="183" endPosition="9">
-      <varInfo nodeId="7391870795496918675" varName="q" />
-    </scopeInfo>
     <scopeInfo nodeId="4753432221828866023" fileName="MPSModulesPartitioner.java" startLine="69" startPosition="86" endLine="84" endPosition="5">
       <varInfo nodeId="4753432221828866031" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="7391870795496918643" fileName="MPSModulesPartitioner.java" startLine="168" startPosition="109" endLine="183" endPosition="9">
+    <scopeInfo nodeId="7391870795496918643" fileName="MPSModulesPartitioner.java" startLine="168" startPosition="109" endLine="184" endPosition="9">
       <varInfo nodeId="7391870795496919111" varName="devkit" />
+      <varInfo nodeId="8567544756204742052" varName="extended" />
     </scopeInfo>
     <scopeInfo nodeId="2761855734069308296" fileName="MPSModulesPartitioner.java" startLine="115" startPosition="59" endLine="132" endPosition="7" />
     <scopeInfo nodeId="2761855734069308293" fileName="MPSModulesPartitioner.java" startLine="115" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="2761855734069308301" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8845345751178264259" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="66" endLine="184" endPosition="7" />
-    <scopeInfo nodeId="8845345751178264256" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="8845345751178264259" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="66" endLine="185" endPosition="7" />
+    <scopeInfo nodeId="8845345751178264256" fileName="MPSModulesPartitioner.java" startLine="152" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="8845345751178264260" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="8845345751178211230" fileName="MPSModulesPartitioner.java" startLine="51" startPosition="29" endLine="96" endPosition="5">
@@ -1038,11 +1040,11 @@
     <unitInfo nodeId="2761855734069038033" fileName="MPSModulesPartitioner.java" startLine="120" startPosition="21" endLine="124" endPosition="5" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$5" />
     <unitInfo nodeId="2761855734069038317" fileName="MPSModulesPartitioner.java" startLine="124" startPosition="99" endLine="128" endPosition="5" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$6" />
     <unitInfo nodeId="2761855734069038406" fileName="MPSModulesPartitioner.java" startLine="128" startPosition="18" endLine="132" endPosition="5" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$7" />
-    <unitInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="170" startPosition="215" endLine="174" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$1" />
-    <unitInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="174" startPosition="22" endLine="178" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$2" />
-    <unitInfo nodeId="2761855734069308480" fileName="MPSModulesPartitioner.java" startLine="188" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Chunk" />
-    <unitInfo nodeId="2761855734069308494" fileName="MPSModulesPartitioner.java" startLine="135" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Node" />
-    <unitInfo nodeId="2761855734069308238" fileName="MPSModulesPartitioner.java" startLine="29" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner" />
+    <unitInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="170" startPosition="120" endLine="174" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$1" />
+    <unitInfo nodeId="8567544756204742053" fileName="MPSModulesPartitioner.java" startLine="174" startPosition="22" endLine="178" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$2" />
+    <unitInfo nodeId="2761855734069308480" fileName="MPSModulesPartitioner.java" startLine="189" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Chunk" />
+    <unitInfo nodeId="2761855734069308494" fileName="MPSModulesPartitioner.java" startLine="135" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner$Node" />
+    <unitInfo nodeId="2761855734069308238" fileName="MPSModulesPartitioner.java" startLine="29" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.build.mps.util.MPSModulesPartitioner" />
   </root>
   <root nodeRef="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)/2887318893673144002">
     <nodeInfo nodeId="6984624797025347718" fileName="ModuleFinder.java" startLine="22" startPosition="127" endLine="23" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

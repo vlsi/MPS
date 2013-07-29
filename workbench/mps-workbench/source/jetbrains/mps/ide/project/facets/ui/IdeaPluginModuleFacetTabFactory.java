@@ -17,12 +17,12 @@ package jetbrains.mps.ide.project.facets.ui;
 
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
-import org.jetbrains.mps.openapi.ui.persistence.Tab;
+import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.TabFactory;
 
 public class IdeaPluginModuleFacetTabFactory implements TabFactory {
   @Override
-  public Tab getTab(SModuleFacet moduleFacet) {
+  public FacetTab getTab(SModuleFacet moduleFacet) {
     if(!(moduleFacet instanceof IdeaPluginModuleFacet))
       return null;
     return new IdeaPluginModuleFacetTab((IdeaPluginModuleFacet)moduleFacet);

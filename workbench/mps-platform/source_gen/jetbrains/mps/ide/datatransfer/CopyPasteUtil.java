@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,6 +36,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -71,7 +71,6 @@ public class CopyPasteUtil {
       return PasteNodeData.emptyPasteNodeData(null);
     }
     SModel model = sourceNodes.get(0).getModel();
-    SModule module = model.getModule();
     List<SNode> result = new ArrayList<SNode>();
     Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
     Set<SReference> allReferences = new HashSet<SReference>();
@@ -91,10 +90,10 @@ public class CopyPasteUtil {
     for (SNode newNode : result) {
       CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
     }
-    return new PasteNodeData(result, null, module, necessaryLanguages, necessaryModels);
+    return new PasteNodeData(result, null, model.getReference(), necessaryLanguages, necessaryModels);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModule sourceModule, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
     }
@@ -109,7 +108,7 @@ public class CopyPasteUtil {
       result.add(nodeToPaste);
     }
     CopyPasteUtil.processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
-    return new PasteNodeData(result, referencesRequireResolve, sourceModule, necessaryLanguages, necessaryModels);
+    return new PasteNodeData(result, referencesRequireResolve, sourceModel, necessaryLanguages, necessaryModels);
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
@@ -268,7 +267,6 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
-    SModule module = model.getModule();
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
@@ -277,7 +275,7 @@ public class CopyPasteUtil {
       break;
     }
     if (content == null) {
-      return PasteNodeData.emptyPasteNodeData(module);
+      return PasteNodeData.emptyPasteNodeData(model.getReference());
     }
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
       SNodeTransferable nodeTransferable;
@@ -294,7 +292,7 @@ public class CopyPasteUtil {
         }
       }
     }
-    return PasteNodeData.emptyPasteNodeData(module);
+    return PasteNodeData.emptyPasteNodeData(model.getReference());
   }
 
   public static SNode getNodeFromClipboard(SModel model) {
@@ -302,7 +300,7 @@ public class CopyPasteUtil {
   }
 
   @Nullable
-  public static Runnable addImportsWithDialog(final SModule sourceModule, final SModel targetModel, final Set<SModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
+  public static Runnable addImportsWithDialog(final SModel targetModel, final Set<SModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModule() == null) {
       return null;
     }
@@ -344,7 +342,14 @@ public class CopyPasteUtil {
 
   @Nullable
   public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
-    return CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
+    // shows dialog if necessary and pasted nodes were taken not from the same model 
+    SModelReference oldModel = pasteNodeData.getSourceModel();
+    // no dialog if copying from the same model 
+    if (oldModel != null && jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(targetModel).equals(oldModel.getModelName())) {
+      return null;
+    }
+
+    return CopyPasteUtil.addImportsWithDialog(targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
 
   private static Runnable addImports(Project p, final SModel targetModel, @NotNull final SModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {

@@ -11,8 +11,8 @@ public class StatCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorD
   public StatCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable callback) {
-    StatCommand_Behavior.virtual_execute_757553790980855637(thisNode, c, console, callback);
+  public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
+    StatCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
   }
 
   @Override

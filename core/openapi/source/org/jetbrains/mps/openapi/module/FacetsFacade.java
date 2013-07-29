@@ -30,8 +30,20 @@ public abstract class FacetsFacade {
     return INSTANCE;
   }
 
+  /**
+   * Return set of all registered facet types
+   */
+  public abstract Set<String> getFacetTypes();
+
+  /**
+   * For the given set of languages, returns a set of recommended facet types.
+   */
   public abstract Set<String> getApplicableFacetTypes(Iterable<String> usedLanguages);
 
+  /**
+   *  Associates a facet with a language. Allows MPS to advise a user to turn on the facet for
+   *  modules using this language.
+   */
   public abstract void registerLanguageFacet(String language, String facetType);
 
   public abstract void unregisterLanguageFacet(String language, String facetType);

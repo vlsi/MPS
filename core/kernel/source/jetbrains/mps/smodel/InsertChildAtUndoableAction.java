@@ -36,6 +36,6 @@ class InsertChildAtUndoableAction extends SNodeUndoableAction {
 
   @Override
   protected void doRedo() {
-    jetbrains.mps.util.SNodeOperations.insertChild(getAffectedNode(), myRole, myChild, myAnchor);
+    getAffectedNode().insertChildBefore(myRole, myChild, myAnchor);
   }
 }

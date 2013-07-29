@@ -5,7 +5,7 @@ package jetbrains.mps.console.base.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
-public class CommandResult_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Result_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class CommandResult_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements HistoryItem_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public CommandResult_BehaviorDescriptor() {
   }
 

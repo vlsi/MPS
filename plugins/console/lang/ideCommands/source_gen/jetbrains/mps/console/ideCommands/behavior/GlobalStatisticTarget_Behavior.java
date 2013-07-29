@@ -31,8 +31,8 @@ public class GlobalStatisticTarget_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext c) {
-    Iterable<SModule> modules = IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules());
+  public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext c) {
+    Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {
         return it.getModels();
@@ -41,6 +41,6 @@ public class GlobalStatisticTarget_Behavior {
       public Iterable<SNode> translate(SModel it) {
         return SNodeUtil.getDescendants(it);
       }
-    }).toListSequence();
+    });
   }
 }

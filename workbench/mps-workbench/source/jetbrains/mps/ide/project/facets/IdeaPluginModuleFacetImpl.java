@@ -19,15 +19,8 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * evgeny, 2/28/13
@@ -38,6 +31,11 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
   @Override
   public String getFacetType() {
     return FACET_TYPE;
+  }
+
+  @Override
+  public String getFacetPresentation() {
+    return "Idea Plugin";
   }
 
   @Override
@@ -60,7 +58,8 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
 
   @Override
   public void save(Memento memento) {
-    memento.put("pluginId", pluginId);
+    if(pluginId != null && !pluginId.isEmpty())
+      memento.put("pluginId", pluginId);
   }
 
   @Override

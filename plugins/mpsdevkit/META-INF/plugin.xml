@@ -66,6 +66,7 @@
     <mps.VisibleModuleMask mask="jetbrains\.mps\.kernel"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.lang.*"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.make.*"/>
+    <mps.VisibleModuleMask mask="jetbrains\.mps\.core\.xml.*"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.refactoring\.runtime"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.runtime"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.smodel\.resources"/>

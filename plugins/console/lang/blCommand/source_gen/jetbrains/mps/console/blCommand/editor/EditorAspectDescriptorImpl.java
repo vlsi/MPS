@@ -19,32 +19,28 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new EachLoop_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
       case 3:
         return Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new ModelEachIterable_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelsExpression_Editor());
       case 5:
         return Collections.<ConceptEditor>singletonList(new ModelsShowable_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new ModuleEachIterable_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModulesExpression_Editor());
       case 7:
         return Collections.<ConceptEditor>singletonList(new ModulesShowable_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new NodeEachIterable_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodesExpression_Editor());
       case 9:
         return Collections.<ConceptEditor>singletonList(new NodesShowable_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
-      case 11:
         return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
-      case 12:
-        return Collections.<ConceptEditor>singletonList(new ReferenceEachIterable_Editor());
-      case 13:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new RefsShowable_Editor());
-      case 14:
+      case 12:
         return Collections.<ConceptEditor>singletonList(new ShowStatement_Editor());
-      case 15:
+      case 13:
         return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
       default:
     }
@@ -62,5 +58,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintStatement", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.EachLoop", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelEachIterable", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModuleEachIterable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodeEachIterable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PastedNodeReference", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ReferenceEachIterable", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintStatement", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }

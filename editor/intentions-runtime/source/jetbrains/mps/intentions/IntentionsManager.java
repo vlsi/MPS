@@ -21,21 +21,19 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
 import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTypeVisitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -43,16 +41,19 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -440,10 +441,19 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------visiting registered intentions---------------
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
+    SModelBase model = (SModelBase) node.getModel();
+    if (model == null) return true;
+    Collection<SModuleReference> languages = model.getModelDepsManager().getAllImportedLanguages();
+    Set<String> langNames = new HashSet<String>();
+    for (SModuleReference l : languages) {
+      langNames.add(l.getModuleName());
+    }
+
     for (String conceptId : LanguageHierarchyCache.getAncestorsNames(node.getConcept().getQualifiedName())) {
       Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
       if (concept2FactoriesMap.containsKey(conceptId)) {
         for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
+          if (!langNames.contains(intentionFactory.getLanguageFqName())) continue;
           if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
             continue;
           }
@@ -454,9 +464,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
       if (myIntentions.containsKey(conceptId)) {
         for (Intention intention : myIntentions.get(conceptId)) {
-          if (isAncestor && !intention.isAvailableInChildNodes()) {
-            continue;
-          }
+          if (!langNames.contains(intention.getLanguageFqName())) continue;
+            if (isAncestor && !intention.isAvailableInChildNodes()) {
+              continue;
+            }
           if (!filter.accept(intention) || !intention.isApplicable(node, editorContext)) {
             continue;
           }

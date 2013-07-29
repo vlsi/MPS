@@ -22,7 +22,7 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -143,7 +143,7 @@ public class Equations {
       return true;
     }
     THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
-    boolean match = TypesUtil.match(left, right, matchingPairs);
+    boolean match = TypesUtil.matchExpandingJoinAndMeet(left, right, matchingPairs);
     if (match) {
       addEquations(matchingPairs, info);
     }
@@ -171,7 +171,13 @@ public class Equations {
     if (node == null) {
       return null;
     }
+
     SNode type = getRepresentativeNoShortenPaths(node);
+    while (finalExpansion && LatticeUtil.isMeet(type)) {
+      // Dirty hack to avoid meet type to appear inside fully reified type
+      type = LatticeUtil.getMeetArguments(type).get(0);
+    }
+
     if (type != node) {
       SNode result = expandNode(type, variablesMet, finalExpansion, copy);
       variablesMet.remove(type);
@@ -191,6 +197,7 @@ public class Equations {
       if (finalExpansion && TypesUtil.isVariable(newChild)) {
         newChild = convertReferentVariable(node, child.getRoleInParent(), child);
       }
+
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }

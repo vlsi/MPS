@@ -35,6 +35,7 @@ public class UnregisteredNodes {
   private final Object myLock = new Object();
 
   private boolean myDisabled = true;
+  private WarningLevel myWarningLevel = WarningLevel.ERROR;
 
   public static UnregisteredNodes instance() {
     if (ourInstance == null) {
@@ -50,6 +51,12 @@ public class UnregisteredNodes {
   public void disable() {
     myDisabled = true;
     clear();
+  }
+
+  public WarningLevel setWarningLevel(WarningLevel level) {
+    WarningLevel oldLevel = myWarningLevel;
+    myWarningLevel = level;
+    return oldLevel;
   }
 
   private UnregisteredNodes() {
@@ -108,8 +115,24 @@ public class UnregisteredNodes {
       myMap.put(reference, id, node);
     }
     if (showError) {
-      IllegalStateException ex = new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id);
-      LOG.error(ex, ex);
+      switch (myWarningLevel) {
+        case ERROR:
+          IllegalStateException ex = new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id);
+          LOG.error(ex, ex);
+          break;
+        case WARNING:
+          LOG.warn("attempt to put another node with same key: " + reference + "#" + id + ". Undo can be broken.");
+          myWarningLevel = WarningLevel.SILENT;
+          break;
+        case SILENT:
+          break;
+      }
     }
+  }
+
+  public enum WarningLevel {
+    ERROR,
+    WARNING,
+    SILENT
   }
 }

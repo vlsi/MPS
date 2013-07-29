@@ -19,18 +19,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 1:
         return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ModelStatCommand_Editor());
-      case 3:
         return Collections.<ConceptEditor>singletonList(new ModelStatisticsTarget_Editor());
-      case 4:
+      case 3:
         return Collections.<ConceptEditor>singletonList(new NodeReference_Editor());
-      case 5:
+      case 4:
         return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
-      case 6:
+      case 5:
         return Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor());
-      case 7:
+      case 6:
         return Collections.<ConceptEditor>singletonList(new StatCommand_Editor());
-      case 8:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new SubtreeStatisticsTarget_Editor());
       default:
     }
@@ -48,5 +46,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatCommand", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
 }

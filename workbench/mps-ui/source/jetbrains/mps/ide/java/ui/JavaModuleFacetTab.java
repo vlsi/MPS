@@ -29,6 +29,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.ItemRemovable;
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
@@ -45,6 +46,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -58,7 +61,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class JavaModuleFacetTab extends BaseTab {
+public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private PathsTableModel myPathsTableModel;
   private LibraryTableModel myLibraryTableModel;
   private JBCheckBox myCheckBox;
@@ -67,7 +70,7 @@ public class JavaModuleFacetTab extends BaseTab {
   private JavaModuleFacetImpl myJavaModuleFacet;
 
   public JavaModuleFacetTab(JavaModuleFacet javaModuleFacet) {
-    super(PropertiesBundle.message("mps.properties.configurable.module.javatab.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.module.javatab.tip"));
+    super(((ModuleFacetBase)javaModuleFacet).getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.module.javatab.tip"));
     myJavaModuleFacet = (JavaModuleFacetImpl)javaModuleFacet;
     init();
   }
@@ -147,7 +150,7 @@ public class JavaModuleFacetTab extends BaseTab {
       @Override
       public void run(AnActionButton anActionButton) {
         List<ModelRootDescriptor> modelRoots = new ArrayList<ModelRootDescriptor>(myJavaModuleFacet.getModule().getModuleDescriptor().getModelRootDescriptors());
-        StubRootChooser stubRootChooser = new StubRootChooser(modelRoots, (myJavaModuleFacet.getModule() instanceof Language ? true : false));
+        StubRootChooser stubRootChooser = new StubRootChooser(librariesTable, modelRoots, myJavaModuleFacet.getModule() instanceof Language);
         myLibraryTableModel.addAll(stubRootChooser.compute());
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
@@ -189,6 +192,11 @@ public class JavaModuleFacetTab extends BaseTab {
 
     myPathsTableModel.apply();
     myLibraryTableModel.apply();
+  }
+
+  @Override
+  public SModuleFacet getFacet() {
+    return myJavaModuleFacet;
   }
 
   private class PathsTableModel extends AbstractTableModel implements ItemRemovable {

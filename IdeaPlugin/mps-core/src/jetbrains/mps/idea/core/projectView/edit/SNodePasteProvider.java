@@ -75,7 +75,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
     return new Runnable() {
       @Override
       public void run() {
-        Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData.getSourceModule(), myModel, nodeData.getNecessaryLanguages(), nodeData.getNecessaryModels(), operationContext);
+        Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, operationContext);
         ModelAccess.instance().runCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable, operationContext), myProject);
       }
     };

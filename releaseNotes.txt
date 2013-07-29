@@ -1,11 +1,16 @@
-New Features in MPS 2.5
+New Features in MPS 3.0
 
-- MPS plugin for IntelliJ IDEA
-- New Build Language
-- Customizable scopes
-- Custom persistence for MPS models
-- Suppressing errors
-- New XML language
-- Dependencies analyzer & Module Dependencies Tool
+- Tight integration between Java and BaseLanguage in the MPS plugin for IntelliJ IDEA
+- Import from Java
+- BaseLanguage structure and editor changes
+- Face-lifted Structure language
+- Open API to access model repositories
+- Custom persistence API
+- Build language improvements
+- Local history
+- Version control improvements
+- Default editor and multiple editors per concept
+- Overriding editor components
+- Type system changes and type system debugging improvements
 
 See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html

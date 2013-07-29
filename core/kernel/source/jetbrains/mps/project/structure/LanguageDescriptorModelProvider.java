@@ -280,6 +280,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       if (hash == null) {
         IFile descriptorFile = myModule.getDescriptorFile();
         hash = ModelDigestUtil.hash(new FileDataSource(descriptorFile), true);
+        if (hash == null) return null;
 
         BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
         for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {

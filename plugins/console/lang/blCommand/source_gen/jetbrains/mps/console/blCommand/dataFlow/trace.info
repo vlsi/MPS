@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.console.blCommand.dataFlow.DFABuilders" />
   <root nodeRef="r:f56ab982-a3fa-425a-a541-545195484eac(jetbrains.mps.console.blCommand.dataFlow)/2137637419751427347" />
-  <root nodeRef="r:f56ab982-a3fa-425a-a541-545195484eac(jetbrains.mps.console.blCommand.dataFlow)/752693057588072211">
-    <nodeInfo nodeId="752693057588073052" fileName="EachLoop_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752693057588073053" fileName="EachLoop_DataFlow.java" startLine="16" startPosition="49" endLine="17" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752693057588073056" fileName="EachLoop_DataFlow.java" startLine="17" startPosition="189" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752693057588073060" fileName="EachLoop_DataFlow.java" startLine="18" startPosition="105" endLine="19" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752693057588073065" fileName="EachLoop_DataFlow.java" startLine="21" startPosition="25" endLine="22" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752693057588072211" fileName="EachLoop_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EachLoop_DataFlow#()V" />
-    <nodeInfo nodeId="752693057588073064" fileName="EachLoop_DataFlow.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="752693057588073064" fileName="EachLoop_DataFlow.java" startLine="19" startPosition="101" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752693057588072211" fileName="EachLoop_DataFlow.java" startLine="15" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="752693057588072211" fileName="EachLoop_DataFlow.java" startLine="12" startPosition="30" endLine="12" endPosition="30" />
-    <scopeInfo nodeId="752693057588073064" fileName="EachLoop_DataFlow.java" startLine="21" startPosition="25" endLine="22" endPosition="204" />
-    <scopeInfo nodeId="752693057588072211" fileName="EachLoop_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="752693057588073064" fileName="EachLoop_DataFlow.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="752693057588072213" fileName="EachLoop_DataFlow.java" startLine="15" startPosition="102" endLine="24" endPosition="7" />
-    <scopeInfo nodeId="752693057588072211" fileName="EachLoop_DataFlow.java" startLine="15" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="752693057588072211" varName="_context" />
-      <varInfo nodeId="752693057588072211" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="752693057588073064" fileName="EachLoop_DataFlow.java" startLine="20" startPosition="51" endLine="24" endPosition="5" unitName="jetbrains.mps.console.blCommand.dataFlow.EachLoop_DataFlow$1" />
-    <unitInfo nodeId="752693057588072211" fileName="EachLoop_DataFlow.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.blCommand.dataFlow.EachLoop_DataFlow" />
-  </root>
+  <root nodeRef="r:f56ab982-a3fa-425a-a541-545195484eac(jetbrains.mps.console.blCommand.dataFlow)/752693057588072211" />
 </debugInfo>
 

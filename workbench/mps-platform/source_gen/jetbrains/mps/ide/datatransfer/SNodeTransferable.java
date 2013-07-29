@@ -9,18 +9,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.Set;
 import java.util.HashSet;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.io.StringReader;
 import jetbrains.mps.datatransfer.PasteNodeData;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class SNodeTransferable implements Transferable {
   private static final int NODE = 0;
@@ -34,7 +32,7 @@ public class SNodeTransferable implements Transferable {
   @Nullable
   private SNodeReference mySNodeReference;
   @Nullable
-  private SModuleReference mySourceModule;
+  private SModelReference mySourceModel;
   private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
   private Set<SModuleReference> myNecessaryLanguages = new HashSet<SModuleReference>();
   private String myText = "";
@@ -123,11 +121,7 @@ public class SNodeTransferable implements Transferable {
     mySNodes.clear();
     PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes, nodesAndAttributes);
     mySNodes.addAll(pasteNodeData.getNodes());
-    SModule module = pasteNodeData.getSourceModule();
-    mySourceModule = (module == null ?
-      null :
-      module.getModuleReference()
-    );
+    mySourceModel = pasteNodeData.getSourceModel();
     myNecessaryModels = pasteNodeData.getNecessaryModels();
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
   }
@@ -145,11 +139,7 @@ public class SNodeTransferable implements Transferable {
     if (necessaryLanguages == null) {
       necessaryLanguages = new HashSet<SModuleReference>();
     }
-    SModule module = (mySourceModule == null ?
-      null :
-      MPSModuleRepository.getInstance().getModule(mySourceModule)
-    );
-    return CopyPasteUtil.createNodeDataOut(mySNodes, module, new HashSet<SModuleReference>(necessaryLanguages), new HashSet<SModelReference>(necessaryImports));
+    return CopyPasteUtil.createNodeDataOut(mySNodes, mySourceModel, new HashSet<SModuleReference>(necessaryLanguages), new HashSet<SModelReference>(necessaryImports));
   }
 
   public boolean containsNodes() {

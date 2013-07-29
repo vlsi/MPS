@@ -8,15 +8,11 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_EachLoop_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_InstancesExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ModelEachIterable_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ModelsExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -24,7 +20,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ModuleEachIterable_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ModulesExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -32,7 +28,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_NodeEachIterable_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_NodesExpresiion_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -52,7 +48,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ReferenceEachIterable_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ReferencesExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
