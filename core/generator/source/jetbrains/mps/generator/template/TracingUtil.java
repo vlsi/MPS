@@ -17,6 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
@@ -53,16 +54,16 @@ public class TracingUtil {
   }
 
   @Nullable
-  public static SNodeReference getInput(SNode output) {
+  public static SNodeReference getInput(@NotNull SNode output) {
     return (SNodeReference) output.getUserObject(ORIGINAL_INPUT_NODE);
   }
 
-  public static void putInput(SNode output, SNodeReference input) {
+  public static void putInput(@NotNull SNode output, SNodeReference input) {
     output.putUserObject(ORIGINAL_INPUT_NODE, input);
   }
 
   @Nullable
-  public static SNode getInputNode(SNode output) {
+  public static SNode getInputNode(@NotNull SNode output) {
     SNodeReference inputNodePointer = (SNodeReference) output.getUserObject(ORIGINAL_INPUT_NODE);
     if (inputNodePointer == null) {
       return null;
@@ -70,11 +71,11 @@ public class TracingUtil {
     return inputNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
-  public static void putInputNode(SNode output, SNode input) {
+  public static void putInputNode(@NotNull SNode output, @NotNull SNode input) {
     output.putUserObject(ORIGINAL_INPUT_NODE, new jetbrains.mps.smodel.SNodePointer(input));
   }
 
-  public static void fillOriginalNode(SNode inputNode, SNode outputNode, boolean originalInput) {
+  public static void fillOriginalNode(@NotNull SNode inputNode, @NotNull SNode outputNode, boolean originalInput) {
     if (originalInput) {
       putInputNode(outputNode, inputNode);
     } else {

@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -112,7 +113,9 @@ public class FilePerRootFormatUtil {
           headerHandler.getResult().setState(ModelLoadingState.INTERFACE_LOADED);
         }
         int count = 0;
-        for (SNode rootNode : rootHandler.getResult().getModel().getRootNodes()) {
+        LazySModel model = rootHandler.getResult().getModel();
+        model.setUpdateMode(true);
+        for (SNode rootNode : model.getRootNodes()) {
           if (count != 0) {
             throw new ModelReadException("Couldn't read model: " + stream + " root file is broken - contains more than one roots", null);
           }
