@@ -104,6 +104,12 @@ public class QueriesUtil {
             continue;
           }
         }
+        if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")) {
+          if (SLinkOperations.getTarget(SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), "sourceNodeQuery", true) == null) {
+            //  the query is optional - continue 'enclosing macro' look up 
+            continue;
+          }
+        }
         // ======== 
         prevMacro = SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro");
       }
@@ -184,6 +190,9 @@ __switch__:
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.SwitchMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true);
+    }
+    if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), "sourceNodeQuery", true);
     }
     if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);

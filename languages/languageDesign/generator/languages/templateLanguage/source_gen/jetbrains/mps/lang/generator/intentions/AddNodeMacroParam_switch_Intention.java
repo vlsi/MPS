@@ -104,9 +104,9 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = QueriesUtil.addNodeMacro(node);
-      SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.SwitchMacro", null);
+      SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro", null);
       SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
-      SLinkOperations.setTarget(switchMacro, "templateSwitch", myParameter, false);
+      SLinkOperations.setTarget(switchMacro, "template", myParameter, false);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, switchMacro, SelectionManager.FIRST_CELL, 1);
     }

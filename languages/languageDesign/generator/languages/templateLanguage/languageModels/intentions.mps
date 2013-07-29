@@ -7626,12 +7626,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2127765886923122651" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="switchMacro" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2127765886923122652" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1112731569622" resolveInfo="SwitchMacro" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.982871510068000147" resolveInfo="TemplateSwitchMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2127765886923122653" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="2127765886923122654" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2127765886923122655" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1112731569622" resolveInfo="SwitchMacro" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.982871510068000147" resolveInfo="TemplateSwitchMacro" />
                 </node>
               </node>
             </node>
@@ -7655,8 +7655,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363098071" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2127765886923122651" resolveInfo="switchMacro" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2127765886923122665" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1112731629154" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6254388211297017907" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1722980698497626483" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="2127765886923122666" nodeInfo="nn">
