@@ -99,9 +99,9 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new TemplateCallMacro_Editor._Inline_nnob7w_a0b0());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
+    PreventCompletion.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -140,6 +140,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       Styles_StyleSheet.applyReference(style, editorCell);
+      style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
