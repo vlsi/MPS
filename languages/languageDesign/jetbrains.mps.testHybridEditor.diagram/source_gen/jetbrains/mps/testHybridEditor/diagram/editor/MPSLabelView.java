@@ -30,7 +30,8 @@ public class MPSLabelView extends GroupView {
     super.doValidate(context);
     Rectangle labelRect = myTextView.bounds().get();
     myRectView.moveTo(labelRect.origin);
-    myRectView.dimension().set(labelRect.dimension);
+    myRectView.dimension().set(myRectView.dimension().get().max(myTextView.bounds().get().dimension));
+
     super.doValidate(context);
 
   }

@@ -8,8 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.projectional.view.TextView;
 import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.util.Collection;
 import java.util.Collections;
@@ -19,29 +19,30 @@ public class BlockEditor extends DefaultNodeEditor {
 
   @Override
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    GenericViewCell viewCell = GenericViewCell.createViewCell(context, node, myView);
-    GenericViewCell rectCell = createRectCell(context, node);
-    viewCell.addEditorCell(rectCell);
-    myView.setRectView(((RectView) rectCell.getView()));
 
-    GenericViewCell textCell = createTextCell(context, node);
-    viewCell.addEditorCell(textCell);
-    myView.setTextView(((TextView) textCell.getView()));
+    GenericViewCell blockCell = GenericViewCell.createViewCell(context, node, myView);
 
-    return viewCell;
+    createRectCell(context, node, blockCell);
+    createTextCell(context, node, blockCell);
+    return blockCell;
   }
 
-  private GenericViewCell createRectCell(EditorContext context, SNode node) {
-    RectView view = new RectView();
-    view.background().set(Color.LIGHT_GRAY);
-    view.visible().set(true);
-    return GenericViewCell.createViewCell(context, node, view);
+  private void createRectCell(EditorContext context, SNode node, GenericViewCell blockCell) {
+    RectView rectView = new RectView();
+    rectView.background().set(Color.LIGHT_GRAY);
+    rectView.visible().set(true);
+    rectView.dimension().set(new Vector(75, 75));
+    myView.setRectView(rectView);
+    GenericViewCell rectCell = GenericViewCell.createViewCell(context, node, rectView);
+    blockCell.addEditorCell(rectCell);
   }
 
-  private GenericViewCell createTextCell(EditorContext context, SNode node) {
-    MPSTextView view = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
-    view.text().set(node.getName());
-    return GenericViewCell.createViewCell(context, node, view);
+  private void createTextCell(EditorContext context, SNode node, GenericViewCell blockCell) {
+    MPSTextView textView = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
+    textView.text().set(node.getName());
+    myView.setTextView(textView);
+    GenericViewCell textCell = GenericViewCell.createViewCell(context, node, textView);
+    blockCell.addEditorCell(textCell);
   }
 
   @Override

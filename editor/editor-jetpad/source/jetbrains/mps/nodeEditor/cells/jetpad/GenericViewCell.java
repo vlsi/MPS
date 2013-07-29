@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.projectional.view.LineView;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.projectional.view.TextView;
@@ -112,7 +113,9 @@ public class GenericViewCell extends EditorCell_Collection {
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
-    myView.validate();
+    if(myView instanceof DiagramView) {
+      myView.validate();
+    }
     Rectangle bounds = myView.bounds().get();
     myX = bounds.origin.x;
     myY = bounds.dimension.y;

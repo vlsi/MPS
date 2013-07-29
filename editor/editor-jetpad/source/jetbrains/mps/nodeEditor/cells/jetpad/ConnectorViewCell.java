@@ -1,6 +1,7 @@
 package jetbrains.mps.nodeEditor.cells.jetpad;
 
 
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
