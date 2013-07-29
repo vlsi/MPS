@@ -37,6 +37,7 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
+    // QueryParameter is abstract, so it is already highlighted as invalid 
     if (SConceptOperations.isExactly(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
       return true;
     }
