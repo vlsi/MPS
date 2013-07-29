@@ -7,6 +7,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,7 +37,17 @@ public class AbstractPrintStatement_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_wxfnk4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractPrintStatement_Editor.ReplaceWith_AbstractPrintStatement_cellMenu_wxfnk4_a0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_AbstractPrintStatement_cellMenu_wxfnk4_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractPrintStatement_cellMenu_wxfnk4_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.console.blCommand.structure.AbstractPrintStatement";
+    }
   }
 
   private EditorCell createRefNode_wxfnk4_b0(EditorContext editorContext, SNode node) {
