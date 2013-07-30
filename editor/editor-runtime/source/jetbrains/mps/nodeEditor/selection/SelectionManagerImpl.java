@@ -245,6 +245,9 @@ public class SelectionManagerImpl implements SelectionManager {
   @Override
   public void setSelection(SNode node, @NotNull String cellId, int caretPosition) {
     EditorCell cell = findCell(node, cellId);
+    if (cell instanceof EditorCell_Collection && caretPosition == 0 || caretPosition == -1) {
+      cell = findChildCell(cell, caretPosition == 0 ? SelectionManager.FIRST_CELL : SelectionManager.LAST_CELL);
+    }
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label labelCell = (EditorCell_Label) cell;
       boolean isFirstPositionRequested = caretPosition == 0;
@@ -323,14 +326,16 @@ public class SelectionManagerImpl implements SelectionManager {
     if (isSpecifiedById(nodeCell, cellId)) {
       return nodeCell;
     }
+    return findChildCell(nodeCell, cellId);
+  }
 
+  private EditorCell findChildCell(EditorCell nodeCell, String cellId) {
     boolean useForwardIterator = !SelectionManager.LAST_CELL.equals(cellId) && !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
     for (EditorCell cell : new DfsTraverserIterable(nodeCell, useForwardIterator, true)) {
       if (isSpecifiedById(cell, cellId)) {
         return cell;
       }
     }
-
     return null;
   }
 
