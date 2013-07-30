@@ -39,7 +39,7 @@ public class NodePatcher {
    * This method normalises classifier in this respect.
    */
   public static void fixNonStatic(SNode node) {
-    for (SNode cls : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
+    for (SNode cls : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, new String[]{}))) {
       if (SNodeAccessUtil.getProperty(cls, "nonStatic") == null) {
         SPropertyOperations.set(cls, "nonStatic", "" + (true));
       }
