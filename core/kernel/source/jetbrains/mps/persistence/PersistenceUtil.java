@@ -43,6 +43,7 @@ import java.util.Map;
  * evgeny, 3/6/13
  */
 public class PersistenceUtil {
+  private final static String PER_ROOT_PERSISTENCE_FACTORY = "file-per-root";
 
   private PersistenceUtil() {
   }
@@ -128,8 +129,37 @@ public class PersistenceUtil {
     return null;
   }
 
+  public static SModel loadPerRootModel(final Map<String, Object> content) {
+    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory(PER_ROOT_PERSISTENCE_FACTORY);
+    if (factory == null || factory.isBinary()) {
+      return null;
+    }
+    try {
+      SModel model = factory.load(new MultiStreamDataSourceBase() {
+        @Override
+        public Iterable<String> getAvailableStreams() {
+          return content.keySet();
+        }
+        @Override
+        public InputStream openInputStream(String name) throws IOException {
+          Object data = content.get(name);
+          if (data instanceof String) {
+            return new ByteArrayInputStream(((String)data).getBytes(FileUtil.DEFAULT_CHARSET));
+          } else if (data instanceof byte[]) {
+            return new ByteArrayInputStream((byte[])data);
+          }
+          throw new UnsupportedOperationException();
+        }
+      }, Collections.<String, String>emptyMap());
+      model.load();
+      return model;
+    } catch (IOException ex) {
+      return null;
+    }
+  }
+
   public static String savePerRootModel(final SModel model, String name) {
-    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory(PER_ROOT_PERSISTENCE_FACTORY);
     if (factory == null || factory.isBinary()) {
       return null;
     }
@@ -146,7 +176,7 @@ public class PersistenceUtil {
   }
 
   public static String savePerRootModel(final SModel model, boolean isHeader) {
-    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory(PER_ROOT_PERSISTENCE_FACTORY);
     if (factory == null || factory.isBinary()) {
       return null;
     }
@@ -169,7 +199,7 @@ public class PersistenceUtil {
     return null;
   }
 
-  private static abstract class StreamDataSourceBase implements StreamDataSource {
+  private static class StreamDataSourceBase implements StreamDataSource {
 
     @NotNull
     @Override
@@ -180,6 +210,11 @@ public class PersistenceUtil {
     @Override
     public boolean isReadOnly() {
       return true;
+    }
+
+    @Override
+    public InputStream openInputStream() throws IOException {
+      throw new UnsupportedOperationException();
     }
 
     @Override
@@ -203,41 +238,14 @@ public class PersistenceUtil {
     }
   }
 
-  private static class InMemoryStreamDataSource implements StreamDataSource {
+  private static class InMemoryStreamDataSource extends StreamDataSourceBase {
     private ByteArrayOutputStream myStream;
-
-    @Override
-    public InputStream openInputStream() throws IOException {
-      throw new UnsupportedOperationException();
-    }
 
     @Override
     public OutputStream openOutputStream() throws IOException {
       myStream = new ByteArrayOutputStream();
       return myStream;
     }
-
-    @NotNull
-    @Override
-    public String getLocation() {
-      return "in-memory";
-    }
-
-    @Override
-    public void addListener(DataSourceListener listener) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void removeListener(DataSourceListener listener) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public long getTimestamp() {
-      return 0;
-    }
-
     @Override
     public boolean isReadOnly() {
       return false;
@@ -253,13 +261,7 @@ public class PersistenceUtil {
     }
   }
 
-  private static class InMemoryMultiStreamDataSource implements MultiStreamDataSource {
-    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
-
-    @Override
-    public Iterable<String> getAvailableStreams() {
-      return myStreams.keySet();
-    }
+  private abstract static class MultiStreamDataSourceBase implements MultiStreamDataSource {
 
     @Override
     public InputStream openInputStream(String name) throws IOException {
@@ -268,9 +270,7 @@ public class PersistenceUtil {
 
     @Override
     public OutputStream openOutputStream(String name) throws IOException {
-      ByteArrayOutputStream stream = new ByteArrayOutputStream();
-      myStreams.put(name, stream);
-      return stream;
+      throw new UnsupportedOperationException();
     }
 
     @Override
@@ -299,6 +299,25 @@ public class PersistenceUtil {
       return 0;
     }
 
+    @Override
+    public boolean isReadOnly() {
+      return true;
+    }
+  }
+
+  private static class InMemoryMultiStreamDataSource extends MultiStreamDataSourceBase {
+    private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
+
+    @Override
+    public Iterable<String> getAvailableStreams() {
+      return myStreams.keySet();
+    }
+    @Override
+    public OutputStream openOutputStream(String name) throws IOException {
+      ByteArrayOutputStream stream = new ByteArrayOutputStream();
+      myStreams.put(name, stream);
+      return stream;
+    }
     @Override
     public boolean isReadOnly() {
       return false;
