@@ -485,8 +485,8 @@
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1162" startPosition="216" endLine="1163" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1164" startPosition="7" endLine="1165" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1168" startPosition="100" endLine="1169" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1172" startPosition="163" endLine="1173" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1173" startPosition="49" endLine="1174" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1172" startPosition="163" endLine="1173" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1173" startPosition="56" endLine="1174" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1174" startPosition="81" endLine="1175" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1177" startPosition="30" endLine="1178" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1209603916390" fileName="Mappingmain.java" startLine="1179" startPosition="9" endLine="1180" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

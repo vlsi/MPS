@@ -31,7 +31,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
   }
 
   protected Collection<SNode> applyNode0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final List<SNode> tlist1 = new ArrayList();
+    final List<SNode> tlist1 = new ArrayList<SNode>();
     try {
       environment.getTracer().pushMacro(mapsrcMacroRef_i5yf3w_a0a0a1a2);
       TemplateContext context1 = context.subContext("map_FinderConstructor");
