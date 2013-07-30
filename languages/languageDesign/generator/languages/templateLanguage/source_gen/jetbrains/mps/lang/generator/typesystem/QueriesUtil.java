@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -85,35 +86,28 @@ public class QueriesUtil {
         return null;
       }
     }
-    List<SNode> attributes = AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes());
-    SNode prevMacro = null;
-    for (SNode attribute : ListSequence.fromList(attributes)) {
-      if (attribute == currMacroNode) {
-        break;
+    List<SNode> attributes = (currMacroNode == null ?
+      AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()) :
+      SNodeOperations.getPrevSiblings(currMacroNode, false)
+    );
+    SNode prevMacro = SNodeOperations.as(ListSequence.fromList(attributes).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        if (!(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"))) {
+          return false;
+        }
+        // macros can change source, skip those that do not change it due to missing optional query   
+        if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true) == null)) {
+          return false;
+        }
+        if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.SwitchMacro") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true) == null)) {
+          return false;
+        }
+        if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), "sourceNodeQuery", true) == null)) {
+          return false;
+        }
+        return true;
       }
-      if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
-        if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-          if (SLinkOperations.getTarget(SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true) == null) {
-            // the query is optional - continue 'enclosing macro' look-up 
-            continue;
-          }
-        }
-        if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.SwitchMacro")) {
-          if (SLinkOperations.getTarget(SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true) == null) {
-            // the query is optional - continue 'enclosing macro' look-up 
-            continue;
-          }
-        }
-        if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")) {
-          if (SLinkOperations.getTarget(SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), "sourceNodeQuery", true) == null) {
-            //  the query is optional - continue 'enclosing macro' look up 
-            continue;
-          }
-        }
-        // ======== 
-        prevMacro = SNodeOperations.cast(attribute, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro");
-      }
-    }
+    }).last(), "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro");
     // ======== 
     if (prevMacro != null) {
       return prevMacro;
