@@ -292,6 +292,8 @@ public class RuleUtil {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", true);
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TraceMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TraceMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), "sourceNodeQuery", true);
     }
     return null;
   }
