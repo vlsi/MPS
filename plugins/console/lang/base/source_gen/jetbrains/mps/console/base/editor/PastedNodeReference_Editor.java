@@ -20,7 +20,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7k9x8q_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pasted refernce");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pasted reference");
     editorCell.setCellId("Constant_7k9x8q_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

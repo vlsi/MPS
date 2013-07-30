@@ -100,7 +100,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="input" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.5842059399443118718" resolveInfo="PastedNodeReference" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4015120746837900941" nodeInfo="nn">
-      <property name="text" nameId="tpc2.1073389577007" value="pasted refernce" />
+      <property name="text" nameId="tpc2.1073389577007" value="pasted reference" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="5842059399443118724" nodeInfo="nn">
         <property name="color" nameId="tpc2.1186403713874" value="orange" />
       </node>

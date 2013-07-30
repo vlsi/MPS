@@ -35,6 +35,18 @@ public class RoundTrip_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_TypeVars", true);
   }
 
+  @Test
+  public void test_OuterClassThis() throws Throwable {
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_OuterClassThis", true);
+  }
+
+  @Test
+  public void test_VarargMethods() throws Throwable {
+    this.initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)");
+    this.runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_VarargMethods", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_Simple() throws Exception {
@@ -42,8 +54,10 @@ public class RoundTrip_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607508738");
       this.addNodeById("8083368042256391113");
       this.addNodeById("7030568040400121706");
+      this.addNodeById("1369191534307039900");
+      this.addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(this.getNodeById("4795297196607508732"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-      Utils.checkString(genCode, SNodeOperations.cast(this.getNodeById("4795297196607508732"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkStringStubs(genCode, SNodeOperations.cast(this.getNodeById("4795297196607508732"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
     public void test_Methods() throws Exception {
@@ -51,8 +65,10 @@ public class RoundTrip_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607508738");
       this.addNodeById("8083368042256391113");
       this.addNodeById("7030568040400121706");
+      this.addNodeById("1369191534307039900");
+      this.addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(this.getNodeById("4795297196607508741"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-      Utils.checkString(genCode, SNodeOperations.cast(this.getNodeById("4795297196607508741"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkStringStubs(genCode, SNodeOperations.cast(this.getNodeById("4795297196607508741"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
     public void test_Fields() throws Exception {
@@ -60,8 +76,10 @@ public class RoundTrip_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607508738");
       this.addNodeById("8083368042256391113");
       this.addNodeById("7030568040400121706");
+      this.addNodeById("1369191534307039900");
+      this.addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(this.getNodeById("8083368042256391114"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-      Utils.checkString(genCode, SNodeOperations.cast(this.getNodeById("8083368042256391114"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkStringStubs(genCode, SNodeOperations.cast(this.getNodeById("8083368042256391114"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
     public void test_TypeVars() throws Exception {
@@ -69,8 +87,32 @@ public class RoundTrip_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607508738");
       this.addNodeById("8083368042256391113");
       this.addNodeById("7030568040400121706");
+      this.addNodeById("1369191534307039900");
+      this.addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(this.getNodeById("7030568040400121707"), "jetbrains.mps.baseLanguage.structure.Interface"));
-      Utils.checkString(genCode, SNodeOperations.cast(this.getNodeById("7030568040400121707"), "jetbrains.mps.baseLanguage.structure.Interface"));
+      Utils.checkStringStubs(genCode, SNodeOperations.cast(this.getNodeById("7030568040400121707"), "jetbrains.mps.baseLanguage.structure.Interface"));
+    }
+
+    public void test_OuterClassThis() throws Exception {
+      this.addNodeById("4795297196607456975");
+      this.addNodeById("4795297196607508738");
+      this.addNodeById("8083368042256391113");
+      this.addNodeById("7030568040400121706");
+      this.addNodeById("1369191534307039900");
+      this.addNodeById("1369191534311251473");
+      String genCode = Utils.generateCode(SNodeOperations.cast(this.getNodeById("1369191534307040156"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkString(genCode, SNodeOperations.cast(this.getNodeById("1369191534307040156"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+    }
+
+    public void test_VarargMethods() throws Exception {
+      this.addNodeById("4795297196607456975");
+      this.addNodeById("4795297196607508738");
+      this.addNodeById("8083368042256391113");
+      this.addNodeById("7030568040400121706");
+      this.addNodeById("1369191534307039900");
+      this.addNodeById("1369191534311251473");
+      String genCode = Utils.generateCode(SNodeOperations.cast(this.getNodeById("1369191534311251786"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkString(genCode, SNodeOperations.cast(this.getNodeById("1369191534311251786"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     }
   }
 }
