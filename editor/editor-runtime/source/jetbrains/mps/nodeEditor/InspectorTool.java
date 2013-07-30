@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.components.ProjectComponent;
@@ -137,7 +136,14 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     return myComponent;
   }
 
-  public void inspect(final SNode node, IOperationContext context, FileEditor fileEditor) {
+  public void inspect(SNode node, IOperationContext context, FileEditor fileEditor) {
+    if (node instanceof jetbrains.mps.smodel.SNode && ((jetbrains.mps.smodel.SNode) node).isDisposed()) {
+      // Note: inspector does not support disposed nodes. If we get one, just clear the tool.
+      // The editor holds references to nodes between read actions and these references are updated asynchronously.
+      // This means that sometimes an editor may give us an outdated node.
+      node = null;
+    }
+
     myFileEditor = fileEditor;
     myInspectorComponent.editNode(node);
     myMessagePanel.setNode(node);

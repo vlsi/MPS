@@ -20,13 +20,15 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.List;
 import java.util.Set;
@@ -46,8 +48,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final boolean myShowBadChildWarning;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                    ProgressMonitor progressMonitor, IGeneratorLogger logger,
-                    SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
+      ProgressMonitor progressMonitor, IGeneratorLogger logger,
+      SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
     myLogger = logger;
@@ -103,9 +105,9 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     }
 
     myLogger.error((templateNode != null ? templateNode : ruleNode), message,
-      GeneratorUtil.describeIfExists(inputNode, "input node"),
-      GeneratorUtil.describeIfExists(ruleNode, "rule"),
-      GeneratorUtil.describeIfExists(templateNode, "template"));
+        GeneratorUtil.describeIfExists(inputNode, "input node"),
+        GeneratorUtil.describeIfExists(ruleNode, "rule"),
+        GeneratorUtil.describeIfExists(templateNode, "template"));
   }
 
   @Override
@@ -221,7 +223,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     if (link == null) {
       String relationKind = child ? "child" : "referent";
       return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' cannot have " + relationKind + " with role '" + role + "'",
-        GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
+          GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
     }
     if (!myShowBadChildWarning) {
       // ignore
@@ -237,7 +239,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       String was = targetNode.getConcept().getName();
       String relationKind = child ? "child" : "referent";
       return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
-        GeneratorUtil.describe(targetNode, relationKind));
+          GeneratorUtil.describe(targetNode, relationKind));
     }
     return null;
   }

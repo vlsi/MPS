@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/1125969196844431009">
     <nodeInfo nodeId="1125969196844439139" fileName="typeof_NodesShowable_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1125969196844439139" fileName="typeof_NodesShowable_InferenceRule.java" startLine="23" startPosition="94" endLine="24" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -190,6 +190,89 @@
   </root>
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/1176561466494" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/3820104862373722999" />
+  <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/4307205004145151167">
+    <nodeInfo nodeId="4307205004145330194" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="131" endLine="30" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145277367" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145781772" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="42" endLine="40" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145869096" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="49" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145898696" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="49" startPosition="7" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="52" startPosition="57" endLine="53" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="53" startPosition="60" endLine="54" endPosition="445" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="46" endLine="60" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="64" startPosition="5" endLine="65" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="65" startPosition="130" endLine="66" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="30" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DuplicatedParameters_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="4307205004145276652" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4307205004145781770" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4307205004145869094" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Iterable;)Z" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="51" startPosition="76" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="68" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4307205004145290005" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="30" startPosition="105" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145781766" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="53" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145868505" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145898592" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4307205004145779983" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="4307205004145312475" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="18" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="57" endLine="26" endPosition="57" />
+    <scopeInfo nodeId="4307205004145276653" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="57" />
+    <scopeInfo nodeId="4307205004145781771" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="42" endLine="40" endPosition="114" />
+    <scopeInfo nodeId="4307205004145869095" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="49" endLine="47" endPosition="53" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="46" endLine="60" endPosition="74" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="30" endLine="71" endPosition="17" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="52" startPosition="57" endLine="54" endPosition="445">
+      <varInfo nodeId="4307205004145899056" varName="_reporter_2309309498" />
+      <varInfo nodeId="4307205004145899056" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="64" startPosition="5" endLine="66" endPosition="45">
+      <varInfo nodeId="4307205004145151167" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145276652" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4307205004145276652" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145781770" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="4307205004145781770" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145869094" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="4307205004145869094" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4307205004145898598" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="51" startPosition="76" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="68" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="4307205004145779984" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="53" endLine="42" endPosition="11" />
+    <scopeInfo nodeId="4307205004145898592" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="56" endPosition="5">
+      <varInfo nodeId="4307205004145898594" varName="group" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="4307205004145151167" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145779983" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4307205004145779983" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145151168" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="131" endLine="56" endPosition="5">
+      <varInfo nodeId="4307205004145868508" varName="duplicatedParameters" />
+      <varInfo nodeId="4307205004145312478" varName="groupedByConcepts" />
+      <varInfo nodeId="4307205004145290008" varName="parameterConcepts" />
+      <varInfo nodeId="4307205004145330197" varName="parameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="4307205004145151167" varName="queryParameterList" />
+      <varInfo nodeId="4307205004145151167" varName="status" />
+      <varInfo nodeId="4307205004145151167" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4307205004145276652" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="85" endLine="35" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$1" />
+    <unitInfo nodeId="4307205004145781770" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="38" startPosition="59" endLine="42" endPosition="9" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$3" />
+    <unitInfo nodeId="4307205004145869094" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="45" startPosition="114" endLine="49" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$3" />
+    <unitInfo nodeId="4307205004145779983" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="36" startPosition="112" endLine="44" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$2" />
+    <unitInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/4307205004147018693" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/4593895459761134312">
     <nodeInfo nodeId="6322385757205373104" fileName="typeof_NodesExpresiion_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6322385757205373104" fileName="typeof_NodesExpresiion_InferenceRule.java" startLine="21" startPosition="57" endLine="22" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -603,86 +686,85 @@
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/752693057588070149" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/752693057588070839" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/7738379549905488001">
-    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="23" startPosition="46" endLine="24" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="24" startPosition="208" endLine="25" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="28" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="28" startPosition="87" endLine="29" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="29" startPosition="208" endLine="30" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="34" startPosition="46" endLine="35" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="39" startPosition="5" endLine="40" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="40" startPosition="130" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="49" startPosition="61" endLine="50" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="50" startPosition="63" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="30" endLine="53" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="53" startPosition="177" endLine="54" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="54" startPosition="164" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="55" startPosition="55" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="59" startPosition="61" endLine="60" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="60" startPosition="63" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="61" startPosition="30" endLine="62" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="62" startPosition="165" endLine="63" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="63" startPosition="290" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_UsagesExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="53" startPosition="177" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="53" startPosition="177" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="30" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="30" endLine="55" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="21" startPosition="117" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_qth3vr_a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_qth3vr_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="18" startPosition="50" endLine="18" endPosition="50" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="34" startPosition="46" endLine="35" endPosition="72" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="39" startPosition="5" endLine="41" endPosition="45">
+    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="22" startPosition="46" endLine="23" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="23" startPosition="208" endLine="24" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="27" startPosition="87" endLine="28" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="28" startPosition="208" endLine="29" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="39" startPosition="130" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="48" startPosition="61" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="49" startPosition="63" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="52" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="177" endLine="53" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="53" startPosition="164" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="54" startPosition="55" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="58" startPosition="61" endLine="59" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="59" startPosition="63" endLine="60" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="60" startPosition="30" endLine="61" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="60" startPosition="30" endLine="61" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="60" startPosition="30" endLine="61" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="61" startPosition="159" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_UsagesExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="177" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="177" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="20" startPosition="117" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="25" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_qth3vr_a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_qth3vr_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="17" startPosition="50" endLine="17" endPosition="50" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="72" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="60" startPosition="30" endLine="61" endPosition="159" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
       <varInfo nodeId="7738379549905488001" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="53" startPosition="177" endLine="55" endPosition="55" />
-    <scopeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="61" startPosition="30" endLine="63" endPosition="290" />
-    <scopeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="285">
+    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="177" endLine="54" endPosition="55" />
+    <scopeInfo nodeId="7738379549905488875" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="285">
       <varInfo nodeId="7738379549905488875" varName="_info_12389875345" />
       <varInfo nodeId="7738379549905488875" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="30" endPosition="309">
+    <scopeInfo nodeId="7738379549905501791" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="26" startPosition="5" endLine="29" endPosition="309">
       <varInfo nodeId="7738379549905501791" varName="_info_12389875345" />
       <varInfo nodeId="7738379549905501791" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="52" startPosition="30" endLine="55" endPosition="55" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="59" startPosition="61" endLine="64" endPosition="24">
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="54" endPosition="55" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="58" startPosition="61" endLine="62" endPosition="24">
       <varInfo nodeId="7738379549905502044" varName="facade" />
       <varInfo nodeId="7738379549905502044" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="7738379549905488001" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="49" startPosition="61" endLine="56" endPosition="24">
+    <scopeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="48" startPosition="61" endLine="55" endPosition="24">
       <varInfo nodeId="7738379549905488938" varName="facade" />
       <varInfo nodeId="7738379549905488938" varName="quotedNode_1" />
       <varInfo nodeId="7738379549905488938" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="7738379549905502044" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="59" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="49" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7738379549905488262" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="21" startPosition="117" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="7738379549905488938" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7738379549905488262" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="20" startPosition="117" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="7738379549905488001" varName="expr" />
       <varInfo nodeId="7738379549905488001" varName="status" />
       <varInfo nodeId="7738379549905488001" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_UsagesExpression_InferenceRule" />
+    <unitInfo nodeId="7738379549905488001" fileName="typeof_UsagesExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_UsagesExpression_InferenceRule" />
   </root>
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/7738379549910147904">
     <nodeInfo nodeId="6864030874024291249" fileName="typeof_InstancesExpression_InferenceRule.java" startLine="24" startPosition="7" endLine="25" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
