@@ -238,11 +238,11 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1112731569622" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="template switch macro" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="template switch macro (no arguments)" />
     <property name="name" nameId="tpck.1169194664001" value="SwitchMacro" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$SWITCH-OLD$" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$SWITCH$" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1168380395224" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1394,7 +1394,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
     <property name="name" nameId="tpck.1169194664001" value="TemplateSwitchMacro" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$SWITCH$" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="template switch macro" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="template switch macro (with arguments)" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="982871510068000158" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

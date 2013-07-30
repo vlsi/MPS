@@ -119,7 +119,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 51:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery").super_("jetbrains.mps.lang.generator.structure.TemplateQueryBase").parents("jetbrains.mps.lang.generator.structure.TemplateQueryBase").alias("query", "").staticScope(StaticScope.NONE).create();
       case 52:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.SwitchMacro").super_("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro").parents("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro").references("templateSwitch").children(new String[]{"sourceNodeQuery"}, new boolean[]{false}).alias("$SWITCH-OLD$", "template switch macro").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.SwitchMacro").super_("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro").parents("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro").references("templateSwitch").children(new String[]{"sourceNodeQuery"}, new boolean[]{false}).alias("$SWITCH$", "template switch macro (no arguments)").staticScope(StaticScope.NONE).create();
       case 53:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression").super_("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef").parents("jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef").references("patternVar").staticScope(StaticScope.NONE).create();
       case 54:
@@ -163,7 +163,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 73:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.TemplateSwitch").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.generator.structure.IParameterizedTemplate", "jetbrains.mps.lang.structure.structure.IConceptAspect").references("modifiedSwitch").children(new String[]{"reductionMappingRule", "defaultConsequence", "nullInputMessage"}, new boolean[]{true, false, false}).alias("template switch", "").create();
       case 74:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro").super_("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro").parents("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall").children(new String[]{"sourceNodeQuery"}, new boolean[]{false}).alias("$SWITCH$", "template switch macro").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro").super_("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro").parents("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.generator.structure.ITemplateCall").children(new String[]{"sourceNodeQuery"}, new boolean[]{false}).alias("$SWITCH$", "template switch macro (with arguments)").create();
       case 75:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.TemplateSwitchReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("templateSwitch").create();
       case 76:
