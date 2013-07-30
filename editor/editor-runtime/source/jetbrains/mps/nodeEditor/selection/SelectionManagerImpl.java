@@ -245,7 +245,7 @@ public class SelectionManagerImpl implements SelectionManager {
   @Override
   public void setSelection(SNode node, @NotNull String cellId, int caretPosition) {
     EditorCell cell = findCell(node, cellId);
-    if (cell instanceof EditorCell_Collection && caretPosition == 0 || caretPosition == -1) {
+    if (cell instanceof EditorCell_Collection && (caretPosition == 0 || caretPosition == -1)) {
       cell = findChildCell(cell, caretPosition == 0 ? SelectionManager.FIRST_CELL : SelectionManager.LAST_CELL);
     }
     if (cell instanceof EditorCell_Label) {
