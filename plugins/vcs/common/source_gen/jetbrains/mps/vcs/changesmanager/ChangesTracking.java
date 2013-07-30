@@ -165,6 +165,7 @@ public class ChangesTracking {
       getStatus(myModelDescriptor)
     );
 
+    // todo: make !force working for per-root persistence (here status==null) 
     if (status != null && myStatusOnLastUpdate == status && !(force)) {
       return;
     }
@@ -245,6 +246,7 @@ public class ChangesTracking {
       VirtualFile file = VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
       return FileStatusManager.getInstance(myProject).getStatus(file);
     } else if (ds instanceof FilePerRootDataSource) {
+      // todo: do we need status at all? 
       return null;
     }
     return FileStatus.UNKNOWN;
