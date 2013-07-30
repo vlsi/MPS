@@ -52,14 +52,8 @@ public class MergeTemporaryModel extends EditableSModelBase {
   }
 
   @Override
-  public boolean isChanged() {
-    // false prevents model from saving 
-    return false;
-  }
-
-  @Override
   protected boolean saveModel() throws IOException, ModelSaveException {
-    throw new UnsupportedOperationException();
+    return false;
   }
 
   @Override
