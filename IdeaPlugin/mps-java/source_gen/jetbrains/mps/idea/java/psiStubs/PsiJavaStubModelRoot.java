@@ -119,12 +119,14 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
 
       jetbrains.mps.smodel.SModelReference modelRef = makeModelReference(sourceRoot, dir);
-      List<PsiDirectory> dirs = MapSequence.fromMap(result).get(modelRef);
-      if (dirs == null) {
-        dirs = ListSequence.fromList(new ArrayList<PsiDirectory>());
-        MapSequence.fromMap(result).put(modelRef, dirs);
+      if (modelRef != null) {
+        List<PsiDirectory> dirs = MapSequence.fromMap(result).get(modelRef);
+        if (dirs == null) {
+          dirs = ListSequence.fromList(new ArrayList<PsiDirectory>());
+          MapSequence.fromMap(result).put(modelRef, dirs);
+        }
+        ListSequence.fromList(dirs).addElement(dir);
       }
-      ListSequence.fromList(dirs).addElement(dir);
     }
 
     for (PsiDirectory subDir : dir.getSubdirectories()) {
@@ -143,6 +145,10 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
     String packageName = relativeDirName.replace('/', '.').replace('\\', '.');
+
+    if ((packageName == null || packageName.length() == 0)) {
+      return null;
+    }
 
     if (packageName.length() > 0 && packageName.charAt(0) == '.') {
       packageName = packageName.substring(1);

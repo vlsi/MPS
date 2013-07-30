@@ -107,10 +107,13 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
 
     if (thereAreJavaFiles) {
       SModelReference modelRef = Util.makeModelReference(pkg, getModule());
-      JavaSourceStubModelDescriptor model = new JavaSourceStubModelDescriptor(modelRef, dataSource, pkg);
-      SetSequence.fromSet(models).addElement(model);
+      // it can be a default package 
+      if (modelRef != null) {
+        JavaSourceStubModelDescriptor model = new JavaSourceStubModelDescriptor(modelRef, dataSource, pkg);
+        SetSequence.fromSet(models).addElement(model);
 
-      SetSequence.fromSet(myDataSources).addElement(dataSource);
+        SetSequence.fromSet(myDataSources).addElement(dataSource);
+      }
     }
 
     // should be one line: dir.getChildren().where cannot be entered... 
@@ -189,6 +192,5 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
 
   @Override
   public void update(ProgressMonitor monitor, FileSystemListener.FileSystemEvent event) {
-    LOG.info("HEY!!! FS CHANGED !!!");
   }
 }
