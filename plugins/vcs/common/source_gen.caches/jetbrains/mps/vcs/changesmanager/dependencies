@@ -4,6 +4,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.BinaryContentRevision" />
@@ -13,12 +14,24 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.ChangesTracking" file="ChangesTracking.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -55,7 +68,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
+    <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
@@ -102,6 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="jetbrains.mps.smodel.EventsCollector" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
   </dependency>
