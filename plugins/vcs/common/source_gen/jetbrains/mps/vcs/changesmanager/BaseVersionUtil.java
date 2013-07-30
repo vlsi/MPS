@@ -16,6 +16,18 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.vcs.changes.BinaryContentRevision;
 import com.intellij.openapi.vcs.VcsException;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -61,6 +73,54 @@ public class BaseVersionUtil {
       }
       return null;
     }
+  }
+
+  @Nullable
+  public static SModel getBaseVersionModel(SModel model, Project project) {
+    DataSource ds = model.getSource();
+    if (ds instanceof FileDataSource) {
+      IFile file = ((FileDataSource) ds).getFile();
+      if (!(file.exists())) {
+        return null;
+      }
+      VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+      if (vFile == null || ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile) == null) {
+        return null;
+      }
+
+      Object content = BaseVersionUtil.getBaseVersionContent(vFile, project);
+      if (content == null) {
+        FileStatus status = FileStatusManager.getInstance(project).getStatus(vFile);
+        if (status != FileStatus.NOT_CHANGED) {
+          if (LOG.isEnabledFor(Priority.ERROR)) {
+            LOG.error("Base version content is null while file status is " + status);
+          }
+        }
+        return null;
+      }
+      String ext = vFile.getExtension();
+      return (content instanceof String ?
+        PersistenceUtil.loadModel((String) content, ext) :
+        PersistenceUtil.loadModel((byte[]) content, ext)
+      );
+    } else if (ds instanceof FilePerRootDataSource) {
+      FilePerRootDataSource rds = (FilePerRootDataSource) ds;
+      Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());
+      for (String stream : Sequence.fromIterable(rds.getAvailableStreams())) {
+        IFile file = rds.getFile(stream);
+        VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+        if (vFile == null) {
+          continue;
+        }
+        Object o = BaseVersionUtil.getBaseVersionContent(vFile, project);
+        if (o == null) {
+          continue;
+        }
+        MapSequence.fromMap(content).put(stream, o);
+      }
+      return PersistenceUtil.loadPerRootModel(content);
+    }
+    return null;
   }
 
   protected static Logger LOG = LogManager.getLogger(BaseVersionUtil.class);

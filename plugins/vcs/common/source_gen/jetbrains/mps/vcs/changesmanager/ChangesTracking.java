@@ -23,24 +23,25 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.vfs.IFile;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import org.apache.log4j.Priority;
-import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Priority;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -150,64 +151,34 @@ public class ChangesTracking {
   }
 
   private void update(boolean force) {
-    final Wrappers._boolean _force = new Wrappers._boolean(force);
     myQueue.assertSoftlyIsCommandThread();
     if (!(myDifference.isEnabled())) {
       return;
     }
-
-    if (!(myModelDescriptor.getSource() instanceof FileDataSource)) {
+    if (!(isUnderVcs(myModelDescriptor))) {
       return;
     }
-    IFile modelFile = ((FileDataSource) myModelDescriptor.getSource()).getFile();
-    if (!(modelFile.exists())) {
-      return;
-    }
-    VirtualFile modelVFile = VirtualFileUtils.getVirtualFile(modelFile);
-    if (modelVFile == null || ProjectLevelVcsManager.getInstance(myProject).getVcsFor(modelVFile) == null) {
-      return;
-    }
-    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(modelVFile);
-    if (ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
-      status = FileStatus.MERGED_WITH_CONFLICTS;
-    }
 
-    if (myDifference.getChangeSet() != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          if (myDifference.getChangeSet().getNewModel() != myModelDescriptor) {
-            _force.value = true;
-          }
-        }
-      });
-    }
+    boolean isConflict = ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject);
+    FileStatus status = (isConflict ?
+      FileStatus.MERGED_WITH_CONFLICTS :
+      getStatus(myModelDescriptor)
+    );
 
-    if (myStatusOnLastUpdate == status && !(_force.value)) {
+    if (status != null && myStatusOnLastUpdate == status && !(force)) {
       return;
     }
     myDifference.removeChangeSet();
     myStatusOnLastUpdate = status;
-    if (FileStatus.NOT_CHANGED == status && !(_force.value)) {
+    if (FileStatus.NOT_CHANGED == status && !(force)) {
       return;
     }
+
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
-    if (BaseVersionUtil.isAddedFileStatus(status) || ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
+    if (isAdded(myModelDescriptor) || isConflict) {
       baseVersionModel.value = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
     } else {
-      Object content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
-      if (content == null && status != FileStatus.NOT_CHANGED) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
-          LOG.error("Base version content is null while file status is " + status);
-        }
-      }
-      if (content == null) {
-        return;
-      }
-      String ext = modelVFile.getExtension();
-      baseVersionModel.value = (content instanceof String ?
-        PersistenceUtil.loadModel((String) content, ext) :
-        PersistenceUtil.loadModel((byte[]) content, ext)
-      );
+      baseVersionModel.value = BaseVersionUtil.getBaseVersionModel(myModelDescriptor, myProject);
       if (baseVersionModel.value == null) {
         return;
       }
@@ -234,7 +205,6 @@ public class ChangesTracking {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
-            // todo: check it is needed 
             DiffModelUtil.renameModel(baseVersionModel.value, "repository");
             ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
@@ -244,6 +214,43 @@ public class ChangesTracking {
       }
     });
   }
+
+  private boolean isUnderVcs(SModel model) {
+    DataSource ds = model.getSource();
+    IFile file = null;
+    if (ds instanceof FileDataSource) {
+      file = ((FileDataSource) ds).getFile();
+    } else if (ds instanceof FilePerRootDataSource) {
+      file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
+    }
+    VirtualFile vFile = VirtualFileUtils.getVirtualFile(file);
+    return vFile != null && ProjectLevelVcsManager.getInstance(myProject).getVcsFor(vFile) != null;
+  }
+
+  private boolean isAdded(SModel model) {
+    DataSource ds = model.getSource();
+    IFile file = null;
+    if (ds instanceof FileDataSource) {
+      file = ((FileDataSource) ds).getFile();
+    } else if (ds instanceof FilePerRootDataSource) {
+      file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
+    }
+    FileStatus status = FileStatusManager.getInstance(myProject).getStatus(VirtualFileUtils.getVirtualFile(file));
+    return BaseVersionUtil.isAddedFileStatus(status);
+  }
+
+  private FileStatus getStatus(SModel model) {
+    DataSource ds = model.getSource();
+    if (ds instanceof FileDataSource) {
+      VirtualFile file = VirtualFileUtils.getVirtualFile(((FileDataSource) ds).getFile());
+      return FileStatusManager.getInstance(myProject).getStatus(file);
+    } else if (ds instanceof FilePerRootDataSource) {
+      return null;
+    }
+    return FileStatus.UNKNOWN;
+  }
+
+
 
   private void addChange(@NotNull ModelChange change) {
     updateCacheForChange(change);
@@ -314,7 +321,7 @@ public class ChangesTracking {
 
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a0a52(myDifference.getChangeSet()).getNode(id);
+    return check_5iuzi5_a0a0a92(myDifference.getChangeSet()).getNode(id);
   }
 
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {
@@ -357,7 +364,7 @@ public class ChangesTracking {
 
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
-    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a72(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
+    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a13(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
       List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
@@ -598,14 +605,14 @@ public class ChangesTracking {
 
   protected static Logger LOG = LogManager.getLogger(ChangesTracking.class);
 
-  private static SModel check_5iuzi5_a0a0a52(ChangeSet checkedDotOperand) {
+  private static SModel check_5iuzi5_a0a0a92(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOldModel();
     }
     return null;
   }
 
-  private static boolean neq_5iuzi5_a0a1a72(Object a, Object b) {
+  private static boolean neq_5iuzi5_a0a1a13(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
