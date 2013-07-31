@@ -109,7 +109,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     int index = myJbTabs.getSelectedIndex();
     PlainEditorTab tab = myRealTabs.get(index);
     SNodeReference np = tab.getNode();
-    if (EqualUtil.equals(np, getLastNode())) return;
+    if (np != null && EqualUtil.equals(np, getLastNode())) return;
 
     SNode node = np == null ? null : np.resolve(MPSModuleRepository.getInstance());
 
