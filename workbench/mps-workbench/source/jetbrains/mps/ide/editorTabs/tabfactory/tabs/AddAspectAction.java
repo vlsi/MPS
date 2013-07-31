@@ -49,13 +49,6 @@ public abstract class AddAspectAction extends AnAction {
   }
 
   @Override
-  public void update(AnActionEvent e) {
-    SModel model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-    boolean enabled = model instanceof EditableSModel && !model.isReadOnly();
-    e.getPresentation().setEnabled(enabled);
-  }
-
-  @Override
   public void actionPerformed(final AnActionEvent e) {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
