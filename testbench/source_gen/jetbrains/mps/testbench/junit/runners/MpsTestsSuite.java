@@ -16,6 +16,8 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -37,6 +39,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
  */
 public class MpsTestsSuite extends Suite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
+  private static final String MPS_MACRO_PREFIX = "mps.macro.";
 
   private final Project contextProject;
   private final List<Runner> children;
@@ -62,6 +65,9 @@ public class MpsTestsSuite extends Suite {
     for (IMapping<String, File> lib : MapSequence.fromMap(loadLibraries())) {
       config = config.addLib(lib.key(), lib.value());
     }
+    for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
+      config = config.addMacro(macro.key(), macro.value());
+    }
     MpsTestsSupport.initEnv(true, config);
     // todo: ! dispose env at the end? 
   }
@@ -78,6 +84,23 @@ public class MpsTestsSuite extends Suite {
       if (libFile.exists()) {
         MapSequence.fromMap(result).put(libFile.getName(), libFile);
       }
+    }
+    return result;
+  }
+
+  private static Map<String, File> loadMacros() {
+    Map<String, File> result = MapSequence.fromMap(new HashMap<String, File>());
+    for (Map.Entry<Object, Object> property : SetSequence.fromSet(System.getProperties().entrySet())) {
+      if (!(property.getKey() instanceof String && property.getValue() instanceof String)) {
+        continue;
+      }
+      String key = (String) property.getKey();
+      String value = (String) property.getValue();
+
+      if (!(key.startsWith(MPS_MACRO_PREFIX) && key.length() > MPS_MACRO_PREFIX.length())) {
+        continue;
+      }
+      MapSequence.fromMap(result).put(key.substring(MPS_MACRO_PREFIX.length()), new File(value));
     }
     return result;
   }
