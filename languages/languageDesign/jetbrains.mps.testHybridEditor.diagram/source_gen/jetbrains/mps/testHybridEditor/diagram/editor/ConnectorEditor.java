@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.jetpad.projectional.diagram.view.LabelView;
+import jetbrains.jetpad.projectional.view.TextView;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -23,9 +24,15 @@ public class ConnectorEditor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     ConnectorViewCell cell = ConnectorViewCell.createViewCell(context, node, myConnection);
     // <node>    
+    // todo remove these dirty hacks 
     ListSequence.fromList(((List<View>) cell.getConnection().view().children())).removeWhere(new IWhereFilter<View>() {
       public boolean accept(View it) {
         return it instanceof LabelView;
+      }
+    });
+    ListSequence.fromList(((List<View>) cell.getConnection().label().children())).removeWhere(new IWhereFilter<View>() {
+      public boolean accept(View it) {
+        return it instanceof TextView;
       }
     });
     return cell;

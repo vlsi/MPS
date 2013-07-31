@@ -19,7 +19,7 @@ public class OutputPortEditor extends DefaultNodeEditor {
 
   @Override
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    myView.background().set(Color.LIGHT_GRAY);
+    myView.background().set(Color.GRAY);
     myView.visible().set(true);
     myView.dimension().set(new Vector(10, 10));
     return GenericViewCell.createViewCell(context, node, myView);

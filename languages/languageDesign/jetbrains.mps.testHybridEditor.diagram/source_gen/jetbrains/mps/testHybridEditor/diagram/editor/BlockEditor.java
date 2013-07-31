@@ -7,9 +7,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,6 +30,7 @@ public class BlockEditor extends DefaultNodeEditor {
     createTextCell(context, node, blockCell);
     createInputPorts(context, node, blockCell);
     createOutputPorts(context, node, blockCell);
+    myView.moveTo(new Vector(SPropertyOperations.getInteger(node, "x"), SPropertyOperations.getInteger(node, "y")));
     return blockCell;
   }
 
@@ -54,10 +56,10 @@ public class BlockEditor extends DefaultNodeEditor {
     EditorCell_Collection inputCollection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(context, node);
     for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
       GenericViewCell portCell = (GenericViewCell) context.createNodeCell(port);
-      inputCollection.addEditorCell(portCell);
-      myView.addInputPort(portCell.getView());
+      blockCell.addEditorCell(portCell);
+      myView.addInputPort(portCell.getView(), port);
     }
-    blockCell.addEditorCell(inputCollection);
+    // <node> 
   }
 
   private void createOutputPorts(EditorContext context, SNode node, GenericViewCell blockCell) {
@@ -65,7 +67,7 @@ public class BlockEditor extends DefaultNodeEditor {
     for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
       GenericViewCell portCell = (GenericViewCell) context.createNodeCell(port);
       outputCollection.addEditorCell(portCell);
-      myView.addOutputPort(portCell.getView());
+      myView.addOutputPort(portCell.getView(), port);
     }
     blockCell.addEditorCell(outputCollection);
   }

@@ -24,12 +24,16 @@ import jetbrains.jetpad.projectional.view.TextView;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.values.Color;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Font;
@@ -116,9 +120,13 @@ public class GenericViewCell extends EditorCell_Collection {
     if(myView instanceof DiagramView) {
       myView.validate();
     }
+    setBounds();
+  }
+
+  protected void setBounds() {
     Rectangle bounds = myView.bounds().get();
     myX = bounds.origin.x;
-    myY = bounds.dimension.y;
+    myY = bounds.origin.y;
     myWidth = bounds.dimension.x;
     myHeight = bounds.dimension.y;
   }

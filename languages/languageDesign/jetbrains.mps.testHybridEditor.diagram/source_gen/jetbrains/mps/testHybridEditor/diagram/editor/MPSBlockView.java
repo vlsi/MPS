@@ -5,8 +5,12 @@ package jetbrains.mps.testHybridEditor.diagram.editor;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.projectional.view.TextView;
-import jetbrains.jetpad.projectional.diagram.base.GridDirection;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.jetpad.projectional.diagram.base.GridDirection;
 import jetbrains.jetpad.geometry.Rectangle;
 import java.util.List;
 import jetbrains.jetpad.geometry.Vector;
@@ -19,6 +23,7 @@ public class MPSBlockView extends GroupView {
   private TextView myTextView;
   private final GroupView inputs = new GroupView();
   private final GroupView outputs = new GroupView();
+  private final Map<SNode, View> portToViewMap = MapSequence.fromMap(new HashMap<SNode, View>());
   private GridDirection myDir = GridDirection.RIGHT;
 
 
@@ -38,20 +43,33 @@ public class MPSBlockView extends GroupView {
     children().add(rectView);
   }
 
-  public void addInputPort(View inputPortView) {
-    inputs.children().add(inputPortView);
+  public GroupView getInputView() {
+    return inputs;
   }
 
-  public void addOutputPort(View outputPortView) {
+  public GroupView getOutputView() {
+    return outputs;
+  }
+
+  public void addInputPort(View inputPortView, SNode port) {
+    inputs.children().add(inputPortView);
+    MapSequence.fromMap(portToViewMap).put(port, inputPortView);
+  }
+
+  public void addOutputPort(View outputPortView, SNode port) {
     outputs.children().add(outputPortView);
+    MapSequence.fromMap(portToViewMap).put(port, outputPortView);
+  }
+
+  public View getViewByPort(SNode port) {
+    return MapSequence.fromMap(portToViewMap).get(port);
   }
 
   @Override
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
     Rectangle labelRect = myTextView.bounds().get();
-    myRectView.moveTo(labelRect.origin);
-    myRectView.dimension().set(myRectView.dimension().get().max(myTextView.bounds().get().dimension));
+    myRectView.dimension().set(myRectView.dimension().get().max(labelRect.dimension));
     layoutPorts(inputs.children(), myDir.opposite());
     layoutPorts(outputs.children(), myDir);
     super.doValidate(context);
