@@ -51,7 +51,8 @@ public class DependenciesTableItem<T> {
   public boolean equals(Object obj) {
     if(!(obj instanceof DependenciesTableItem)) return false;
     DependenciesTableItem item = (DependenciesTableItem)obj;
-    return myItem.equals(item.myItem);
+    return myItem.equals(item.getItem())
+        && (myModuleType.equals(ModuleType.GENERATOR) && item.getModuleType().equals(ModuleType.GENERATOR) ? myRole.equals(item.getRole()) : true);
   }
 
   public boolean isReExportable() {
