@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/1213104837507">
     <nodeInfo nodeId="1213104837507" fileName="Root_MappingRule_Constraints.java" startLine="19" startPosition="41" endLine="20" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104837507" fileName="Root_MappingRule_Constraints.java" startLine="24" startPosition="83" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -514,6 +514,83 @@
     <scopeInfo nodeId="5740396897827770142" fileName="MappingRuleTemplateNodeSearchScope.java" startLine="48" startPosition="0" endLine="66" endPosition="0" />
     <unitInfo nodeId="5740396897827770164" fileName="MappingRuleTemplateNodeSearchScope.java" startLine="51" startPosition="39" endLine="62" endPosition="7" unitName="jetbrains.mps.lang.generator.constraints.MappingRuleTemplateNodeSearchScope$1" />
     <unitInfo nodeId="5740396897827770061" fileName="MappingRuleTemplateNodeSearchScope.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.MappingRuleTemplateNodeSearchScope" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/5858775738865267759">
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="28" startPosition="39" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="33" startPosition="83" endLine="34" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="37" startPosition="44" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="46" startPosition="63" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="238835255327286313" fileName="TemplateSwitch_Constraints.java" startLine="55" startPosition="56" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738865780308" fileName="TemplateSwitch_Constraints.java" startLine="57" startPosition="17" endLine="58" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5858775738865781389" fileName="TemplateSwitch_Constraints.java" startLine="58" startPosition="72" endLine="59" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5858775738865782929" fileName="TemplateSwitch_Constraints.java" startLine="59" startPosition="124" endLine="60" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5858775738865785822" fileName="TemplateSwitch_Constraints.java" startLine="60" startPosition="141" endLine="61" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5858775738866213342" fileName="TemplateSwitch_Constraints.java" startLine="62" startPosition="208" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="238835255324861148" fileName="TemplateSwitch_Constraints.java" startLine="65" startPosition="133" endLine="66" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="238835255325001302" fileName="TemplateSwitch_Constraints.java" startLine="66" startPosition="125" endLine="67" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="238835255328695421" fileName="TemplateSwitch_Constraints.java" startLine="67" startPosition="129" endLine="68" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="238835255328702588" fileName="TemplateSwitch_Constraints.java" startLine="68" startPosition="111" endLine="69" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="238835255327501981" fileName="TemplateSwitch_Constraints.java" startLine="70" startPosition="175" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="238835255325065647" fileName="TemplateSwitch_Constraints.java" startLine="73" startPosition="119" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738866853001" fileName="TemplateSwitch_Constraints.java" startLine="76" startPosition="17" endLine="77" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="83" startPosition="7" endLine="84" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_phmuaq_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemplateSwitch_Constraints#()V" />
+    <nodeInfo nodeId="238835255327244242" fileName="TemplateSwitch_Constraints.java" startLine="54" startPosition="53" endLine="57" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5858775738866037438" fileName="TemplateSwitch_Constraints.java" startLine="61" startPosition="124" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="238835255327403982" fileName="TemplateSwitch_Constraints.java" startLine="69" startPosition="91" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="238835255325011784" fileName="TemplateSwitch_Constraints.java" startLine="72" startPosition="19" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="5858775738866226208" fileName="TemplateSwitch_Constraints.java" startLine="64" startPosition="17" endLine="76" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="5858775738865372412" fileName="TemplateSwitch_Constraints.java" startLine="53" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="51" startPosition="122" endLine="79" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5858775738865368556" fileName="TemplateSwitch_Constraints.java" startLine="51" startPosition="122" endLine="79" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="50" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="43" startPosition="56" endLine="81" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="41" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="34" startPosition="75" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="32" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="28" startPosition="39" endLine="29" endPosition="67" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="37" startPosition="44" endLine="38" endPosition="20" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="46" startPosition="63" endLine="47" endPosition="58" />
+    <scopeInfo nodeId="238835255327244245" fileName="TemplateSwitch_Constraints.java" startLine="55" startPosition="56" endLine="56" endPosition="30" />
+    <scopeInfo nodeId="5858775738866037441" fileName="TemplateSwitch_Constraints.java" startLine="62" startPosition="208" endLine="63" endPosition="30" />
+    <scopeInfo nodeId="238835255327403985" fileName="TemplateSwitch_Constraints.java" startLine="70" startPosition="175" endLine="71" endPosition="32" />
+    <scopeInfo nodeId="238835255325011787" fileName="TemplateSwitch_Constraints.java" startLine="73" startPosition="119" endLine="74" endPosition="32" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5858775738866226211" fileName="TemplateSwitch_Constraints.java" startLine="65" startPosition="133" endLine="75" endPosition="19">
+      <varInfo nodeId="238835255324861151" varName="p1" />
+      <varInfo nodeId="238835255325001303" varName="p2" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858775738866226208" fileName="TemplateSwitch_Constraints.java" startLine="64" startPosition="17" endLine="76" endPosition="17">
+      <varInfo nodeId="5858775738866226214" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858775738865372421" fileName="TemplateSwitch_Constraints.java" startLine="54" startPosition="53" endLine="77" endPosition="29">
+      <varInfo nodeId="5858775738865782932" varName="contributor" />
+      <varInfo nodeId="5858775738865785825" varName="originCandidate" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858775738865372412" fileName="TemplateSwitch_Constraints.java" startLine="53" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="5858775738865372418" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="51" startPosition="122" endLine="79" endPosition="14" />
+    <scopeInfo nodeId="5858775738865283159" fileName="TemplateSwitch_Constraints.java" startLine="51" startPosition="122" endLine="79" endPosition="14" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="50" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="5858775738865267759" varName="_context" />
+      <varInfo nodeId="5858775738865267759" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="43" startPosition="56" endLine="81" endPosition="10" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="41" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="33" startPosition="83" endLine="84" endPosition="22">
+      <varInfo nodeId="5858775738865267759" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="32" startPosition="0" endLine="86" endPosition="0" />
+    <unitInfo nodeId="5858775738865371644" fileName="TemplateSwitch_Constraints.java" startLine="52" startPosition="23" endLine="79" endPosition="13" unitName="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints$3" />
+    <unitInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="44" startPosition="19" endLine="81" endPosition="9" unitName="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints$2" />
+    <unitInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="35" startPosition="41" endLine="83" endPosition="5" unitName="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints$1" />
+    <unitInfo nodeId="5858775738865267759" fileName="TemplateSwitch_Constraints.java" startLine="27" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/7941504602772991213">
     <nodeInfo nodeId="7941504602772991213" fileName="GeneratorParameterReference_Constraints.java" startLine="19" startPosition="52" endLine="20" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
