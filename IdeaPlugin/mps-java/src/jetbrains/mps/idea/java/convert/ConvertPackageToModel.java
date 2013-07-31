@@ -1,10 +1,12 @@
 package jetbrains.mps.idea.java.convert;
 
 import com.intellij.facet.FacetManager;
+import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
@@ -102,13 +104,18 @@ public class ConvertPackageToModel extends AnAction {
     Collection<Module> modulesWithoutFacet = JavaConverter.getModulesThatNeedMPSFacet(psiJavaFiles);
 
     if (!modulesWithoutFacet.isEmpty()) {
-      AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project, module.getName(), modulesWithoutFacet);
+      final AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project, module.getName(), modulesWithoutFacet);
       dialog.show();
-      // Q: is it ok if dialog adds facets inside itself, or should that be written outside
       if (dialog.getExitCode() == DialogWrapper.OK_EXIT_CODE) {
-        for(Module modelToAddFacet : dialog.getResult()) {
-          //TODO: add facet to each module
-        }
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            for(Module moduleToAddFacet : dialog.getResult()) {
+              FacetManager.getInstance(moduleToAddFacet).addFacet(
+                FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID), "", null);
+            }
+          }
+        });
       }
     }
 
