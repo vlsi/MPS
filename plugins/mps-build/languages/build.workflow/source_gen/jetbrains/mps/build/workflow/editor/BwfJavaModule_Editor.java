@@ -153,6 +153,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_y27sly_f4a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_g4a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y27sly_h4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y27sly_i4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_y27sly_j4a(editorContext, node));
     return editorCell;
   }
 
@@ -316,6 +318,76 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createConstant_y27sly_i4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prepare");
+    editorCell.setCellId("Constant_y27sly_i4a");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_y27sly_j4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfJavaModule_Editor.prepareStatementsListHandler_y27sly_j4a(node, "prepareStatements", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_prepareStatements");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private static class prepareStatementsListHandler_y27sly_j4a extends RefNodeListHandler {
+    public prepareStatementsListHandler_y27sly_j4a(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_y27sly_a9e0(editorContext, node);
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    private EditorCell createConstant_y27sly_a9e0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_y27sly_a9e0");
+      editorCell.setDefaultText("<no statements>");
+      return editorCell;
+    }
   }
 
   private EditorCell createConstant_y27sly_f0(EditorContext editorContext, SNode node) {
