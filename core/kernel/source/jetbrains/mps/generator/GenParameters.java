@@ -40,9 +40,6 @@ public class GenParameters {
    */
   @Deprecated
   public List<SModel> getModelDescriptors() {
-    for (SModel model : myModels) {
-      throw new IllegalStateException();
-    }
     return (List) Collections.unmodifiableList(myModels);
   }
 
