@@ -53,9 +53,13 @@ public class AttributeQualifier_Behavior {
       public boolean accept(SNode attr) {
         return modelScope.isInScope(attr) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(((SNode) attr), LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_h001dt_a0a0a0a0a0a0a0a0a0a0a6a3(SPropertyOperations.getString(it, "name"), "getRole");
+            return eq_h001dt_a0a0a0a0a0a0a0a0a0a0g0d(SPropertyOperations.getString(it, "name"), "getRole");
           }
-        }) && BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getRole_1262430001741497900", new Object[]{}) != null && ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getAttributed_3044950653914717013", new Object[]{})).any(new IWhereFilter<SNode>() {
+        });
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode attr) {
+        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getRole_1262430001741497900", new Object[]{}) == null || ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getAttributed_3044950653914717013", new Object[]{})).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
           }
@@ -74,7 +78,7 @@ public class AttributeQualifier_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static boolean eq_h001dt_a0a0a0a0a0a0a0a0a0a0a6a3(Object a, Object b) {
+  private static boolean eq_h001dt_a0a0a0a0a0a0a0a0a0a0g0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

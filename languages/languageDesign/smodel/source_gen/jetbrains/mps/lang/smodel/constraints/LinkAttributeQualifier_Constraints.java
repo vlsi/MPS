@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -47,7 +48,15 @@ public class LinkAttributeQualifier_Constraints extends BaseConstraintsDescripto
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) _context.getParameterNode()))), "virtual_getRole_1262430001741497900", new Object[]{});
+            try {
+              String role = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) _context.getParameterNode()))), "virtual_getRole_1262430001741497900", new Object[]{});
+              if (role != null) {
+                return role;
+              }
+            } catch (Exception ex) {
+              // ignore 
+            }
+            return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
 
           @Override
