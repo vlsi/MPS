@@ -87,6 +87,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
         .file("MainClass.class")
         .file("ProjectKind.class")
         .file("SimpleMarker.class")
+        .file("trace.info")
     );
   }
 
