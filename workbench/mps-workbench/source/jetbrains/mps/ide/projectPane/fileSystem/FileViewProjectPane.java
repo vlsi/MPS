@@ -384,7 +384,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       @Override
       public void run() {
         myIdeDocumentHistory.includeCurrentCommandAsNavigation();
-        myEditorManager.openFile(fileTreeNode.getFile(), true);
+        myEditorManager.openFile(fileTreeNode.getFile(), true, true);
       }
     }, "navigate", "");
   }
