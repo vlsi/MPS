@@ -22,6 +22,7 @@ import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.SDependencyAdapter;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -265,7 +266,8 @@ public class Generator extends AbstractModule {
         Set<Language> result = new LinkedHashSet<Language>();
         result.add(BootstrapLanguages.generatorLanguage());
         result.add(BootstrapLanguages.generatorContextLanguage());
-        result.addAll(ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs()));
+
+        result.addAll(LanguageDependenciesManager.getAllExtendedLanguages(sourceLanguage));
 
         return result;
       } else {
