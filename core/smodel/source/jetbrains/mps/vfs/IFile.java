@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vfs;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -36,6 +38,7 @@ public interface IFile {
   IFile getParent();
 
   List<IFile> getChildren();
+  @NotNull
   IFile getDescendant(String suffix);
 
   boolean isDirectory();

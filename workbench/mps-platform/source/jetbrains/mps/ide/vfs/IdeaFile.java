@@ -105,6 +105,7 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
+  @NotNull
   public IFile getDescendant(String suffix) {
     String path = getPath();
     String separator = path.contains("!") ? "/" : File.separator;

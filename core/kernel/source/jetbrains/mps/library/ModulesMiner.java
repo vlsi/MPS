@@ -283,6 +283,7 @@ public class ModulesMiner {
   }
 
   @Nullable
+  //todo remove this method as modules miner works BEFORE you can access modules
   public static IFile getRealDescriptorFile(SModule m) {
     if (!(m instanceof AbstractModule)) {
       return null;
