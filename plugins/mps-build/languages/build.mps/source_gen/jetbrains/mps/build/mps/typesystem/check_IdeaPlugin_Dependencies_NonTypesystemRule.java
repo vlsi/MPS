@@ -7,10 +7,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -23,6 +25,10 @@ public class check_IdeaPlugin_Dependencies_NonTypesystemRule extends AbstractNon
   }
 
   public void applyRule(final SNode plugin, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.getModel(plugin).getModule() instanceof TransientModelsModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(plugin)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(plugin)))) {
+      return;
+    }
+
     IdeaPluginDependenciesHelper helper = new IdeaPluginDependenciesHelper(plugin);
     for (SNode module : ListSequence.fromList(SLinkOperations.getTargets(plugin, "content", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
