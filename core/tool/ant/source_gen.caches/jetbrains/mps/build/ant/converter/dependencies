@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
     <classNode dependClassName="org.apache.tools.ant.types.FilterSetCollection" />
     <classNode dependClassName="org.apache.tools.ant.util.FirstMatchMapper" />
     <classNode dependClassName="org.apache.tools.ant.util.GlobPatternMapper" />
