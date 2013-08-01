@@ -9,8 +9,8 @@ import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -31,7 +31,7 @@ public class ConceptsScope extends SimpleScope {
     SModule contextModule = contextNode.getModel().getModule();
 
     Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
-    for (SModule module : Sequence.fromIterable(((AbstractModule) contextModule).getScope().getModules())) {
+    for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
       if (module instanceof Language) {
         SetSequence.fromSet(contextLanguages).addElement((Language) module);
       }
