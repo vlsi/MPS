@@ -42,6 +42,7 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.module-B-in-Z" depends="fetchDependencies">
+    <mkdir dir="${basedir}/subprojects/buildB/moduleB" />
     <mkdir dir="${build.tmp}/java/out/module-B-in-Z" />
     <javac destdir="${build.tmp}/java/out/module-B-in-Z" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

@@ -586,6 +586,7 @@
   </target>
   
   <target name="java.compile.migrationAssistant" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/migrationAssistant/source" />
     <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
     <javac2 destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -622,6 +623,7 @@
   </target>
   
   <target name="java.compile.modelchecker" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/modelchecker/platform/source_gen" />
     <mkdir dir="${build.tmp}/java/out/modelchecker" />
     <javac2 destdir="${build.tmp}/java/out/modelchecker" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -704,6 +706,7 @@
   </target>
   
   <target name="java.compile.consoleTool" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/source_gen" />
     <mkdir dir="${build.tmp}/java/out/consoleTool" />
     <javac2 destdir="${build.tmp}/java/out/consoleTool" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -790,6 +793,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.blCommand.runtime" depends="java.compile.consoleTool, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/blCommandRuntime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -840,6 +844,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.base" depends="java.compile.consoleTool, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/base/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.base" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.base" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -891,6 +896,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.base#5336086527852717844" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/base/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.base#5336086527852717844" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.base#5336086527852717844" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -941,6 +947,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.blCommand" depends="java.compile.consoleTool, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/blCommand/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.blCommand" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -993,6 +1000,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.blCommand#5336086527852811409" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.blCommand.runtime, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/blCommand/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.blCommand#5336086527852811409" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.blCommand#5336086527852811409" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1046,6 +1054,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.ideCommands" depends="java.compile.consoleTool, java.compile.java.modules.cycle.1, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/ideCommands/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1097,6 +1106,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.ideCommands#7935955022005272663" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.ideCommands, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/ideCommands/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands#7935955022005272663" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands#7935955022005272663" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1148,6 +1158,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.internalCommands" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/internalCommands/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1198,6 +1209,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.internalCommands#8483375838963160298" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.internalCommands, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/internalCommands/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands#8483375838963160298" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands#8483375838963160298" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1249,6 +1261,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.migration" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/migration/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.migration" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.migration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1292,6 +1305,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.console.migration#8483375838963817286" depends="java.compile.jetbrains.mps.console.migration, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/lang/migration/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.migration#8483375838963817286" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.migration#8483375838963817286" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1336,6 +1350,7 @@
   </target>
   
   <target name="java.compile.samples" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/samples/sources" />
     <mkdir dir="${build.tmp}/java/out/samples" />
     <javac2 destdir="${build.tmp}/java/out/samples" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1372,6 +1387,7 @@
   </target>
   
   <target name="java.compile.mpsmigration" depends="java.compile.modelchecker, java.compile.mps-java, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mpsmigration/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mpsmigration" />
     <javac2 destdir="${build.tmp}/java/out/mpsmigration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1411,6 +1427,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.ide.java.migration" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mpsjava/migration/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />

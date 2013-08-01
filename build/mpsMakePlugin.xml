@@ -74,6 +74,7 @@
   <target name="makeDependents" />
   
   <target name="java.compile.mps-make" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mpsmake/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-make" />
     <javac2 destdir="${build.tmp}/java/out/mps-make" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />

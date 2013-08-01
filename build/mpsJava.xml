@@ -131,6 +131,8 @@
   </target>
   
   <target name="java.compile.mps-java-common" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-java-common" />
     <javac destdir="${build.tmp}/java/out/mps-java-common" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

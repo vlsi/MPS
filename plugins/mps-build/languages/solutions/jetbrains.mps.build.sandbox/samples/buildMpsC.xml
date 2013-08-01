@@ -35,6 +35,7 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.testModuleWithAbcde">
+    <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/testModuleWithAbcde" />
     <javac destdir="${build.tmp}/java/out/testModuleWithAbcde" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

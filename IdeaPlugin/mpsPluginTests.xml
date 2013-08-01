@@ -119,6 +119,11 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.mps-plugin-tests" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-core/testSrc" />
+    <mkdir dir="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+    <mkdir dir="${mps_home}/testbench/source_gen" />
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-java/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin-tests" />
     <javac2 destdir="${build.tmp}/java/out/mps-plugin-tests" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -167,6 +172,7 @@
   </target>
   
   <target name="java.compile.mps-jps-plugin-tests" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
     <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin-tests" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />

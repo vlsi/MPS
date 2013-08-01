@@ -34,6 +34,7 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.mps_D_using_lib_from_C" depends="fetchDependencies">
+    <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/samples/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/mps_D_using_lib_from_C" />
     <javac destdir="${build.tmp}/java/out/mps_D_using_lib_from_C" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

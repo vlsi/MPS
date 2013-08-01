@@ -238,6 +238,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.build.sandbox" depends="fetchDependencies">
+    <mkdir dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

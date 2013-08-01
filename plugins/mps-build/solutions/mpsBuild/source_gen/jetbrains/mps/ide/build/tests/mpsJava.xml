@@ -171,6 +171,7 @@
   <target name="module-tests" depends="assemble" />
   
   <target name="java.compile.jetbrains.mps.ide.java.tests" depends="fetchDependencies">
+    <mkdir dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />

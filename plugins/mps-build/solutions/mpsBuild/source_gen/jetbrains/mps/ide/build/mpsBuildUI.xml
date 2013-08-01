@@ -283,6 +283,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.build.mps.pluginSolution" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -329,6 +330,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.build.pluginSolution" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
