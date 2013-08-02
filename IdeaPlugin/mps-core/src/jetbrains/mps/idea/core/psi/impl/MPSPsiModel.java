@@ -28,6 +28,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.PsiManagerImpl;
+import com.intellij.psi.impl.file.PsiDirectoryImpl;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
@@ -79,6 +80,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   private final Map<SNodeId, MPSPsiNode> myNodes = new HashMap<SNodeId, MPSPsiNode>();
   private final Map<MPSPsiNodeBase, Integer> myNodesOrder = new HashMap<MPSPsiNodeBase, Integer>();
   private VirtualFile mySourceVirtualFile;
+  private PsiDirectoryImpl myPsiDirectory;
 
   public MPSPsiModel(SModelReference reference, PsiManager manager) {
     super(manager);
@@ -225,21 +227,32 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     throw new IncorrectOperationException("Not implemented");
   }
 
+  @Override
+  public final boolean isWritable() {
+    return myPsiDirectory == null ? false : myPsiDirectory.isWritable();
+  }
+
   @NotNull
   @Override
   public PsiDirectory createSubdirectory(@NotNull String name) throws IncorrectOperationException {
-    throw new IncorrectOperationException("Not implemented");
+    if(myPsiDirectory == null)
+      throw new IncorrectOperationException("Parent directory is null");
+    return myPsiDirectory.createSubdirectory(name);
   }
 
   @Override
   public void checkCreateSubdirectory(@NotNull String name) throws IncorrectOperationException {
-    throw new IncorrectOperationException("Not implemented");
+    if(myPsiDirectory == null)
+      throw new IncorrectOperationException("Parent directory is null");
+    myPsiDirectory.checkCreateSubdirectory(name);
   }
 
   @NotNull
   @Override
   public PsiFile createFile(@NotNull @NonNls String name) throws IncorrectOperationException {
-    throw new IncorrectOperationException("Not implemented");
+    if(myPsiDirectory == null)
+      throw new IncorrectOperationException("Parent directory is null");
+    return myPsiDirectory.createFile(name);
   }
 
   @NotNull
@@ -250,7 +263,23 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   public void checkCreateFile(@NotNull String name) throws IncorrectOperationException {
-    throw new IncorrectOperationException("Not implemented");
+    if(myPsiDirectory == null)
+      throw new IncorrectOperationException("Parent directory is null");
+    myPsiDirectory.checkCreateFile(name);
+  }
+
+  @Override
+  public PsiElement add(@NotNull PsiElement element) throws IncorrectOperationException {
+    if(myPsiDirectory == null)
+      throw new IncorrectOperationException("Parent directory is null");
+    return myPsiDirectory.add(element);
+  }
+
+  @Override
+  public void checkAdd(@NotNull PsiElement element) throws IncorrectOperationException {
+    if(myPsiDirectory == null)
+      throw new IncorrectOperationException("Parent directory is null");
+    myPsiDirectory.checkAdd(element);
   }
 
   @Override
@@ -378,6 +407,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       } else if(source instanceof FilePerRootDataSource) {
         this.mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) source).getFolder()).findChild(MPSExtentions.DOT_MODEL_HEADER);
       }
+      myPsiDirectory = new PsiDirectoryImpl((PsiManagerImpl)myManager, getSourceVirtualFile().getParent());
       /*MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
