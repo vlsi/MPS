@@ -52,6 +52,7 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -434,7 +435,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
-        String classes = MacrosFactory.forModule(this).expandPath("${module}/" + suffix);
+        IFile originalDescriptorFile = dd != null ? ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd) : null;
+        // MacrosFactory based on original descriptor file because we use original descriptor file for ModelRootDescriptor reading, so all paths expanded to original descriptor file
+        MacroHelper macroHelper = MacrosFactory.forModuleFile(originalDescriptorFile != null ? originalDescriptorFile : getDescriptorFile());
+        String classes = macroHelper.expandPath("${module}/" + suffix);
         addBundleAsModelRoot = FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath);
       } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
         addBundleAsModelRoot = true;
