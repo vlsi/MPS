@@ -23,28 +23,28 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModule;
 
 // todo: rewrite this. all methods should have same signature!
 public class ProjectPathUtil {
-  public static IFile getClassesGenFolder(IFile moduleSourceDir, boolean isGenerator) {
-    if (moduleSourceDir == null) return null;
+  public static IFile getClassesGenFolder(IFile descriptorFile, boolean isGenerator) {
+    if (descriptorFile == null) return null;
 
-    if (moduleSourceDir.isReadOnly()) {
+    if (!descriptorFile.isReadOnly()) {
+      // on sources
+      IFile folderWithClassesGen = isGenerator ? descriptorFile.getParent().getDescendant("generator") : descriptorFile.getParent();
+      return folderWithClassesGen.getDescendant("classes_gen");
+    } else {
       // packaged
-      IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleSourceDir);
+      IFile bundleHome = FileSystem.getInstance().getBundleHome(descriptorFile);
       if (bundleHome == null) return null;
 
+      // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
       String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
       String jarPath = isGenerator ? (mainPath + "-generator.jar") : (mainPath + ".jar");
 
       return FileSystem.getInstance().getFileByPath(jarPath);
-    } else {
-      return isGenerator ? moduleSourceDir.getDescendant("generator").getDescendant("classes_gen") : moduleSourceDir.getDescendant("classes_gen");
     }
   }
 

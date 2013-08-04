@@ -249,7 +249,7 @@ public class ModulesMiner {
   }
 
   private void excludeClassesGen(IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
-    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile.getParent(), descriptor instanceof GeneratorDescriptor);
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile, descriptor instanceof GeneratorDescriptor);
     if (classesGen != null) {
       excludes.add(classesGen);
     }
