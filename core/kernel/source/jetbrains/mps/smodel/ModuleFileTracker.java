@@ -88,7 +88,6 @@ public class ModuleFileTracker implements CoreComponent {
       IFile file = ((AbstractModule) module).getDescriptorFile();
       if (file == null) return;
       removeModuleFile(file);
-      removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
     }
 
     @Override
@@ -96,7 +95,6 @@ public class ModuleFileTracker implements CoreComponent {
       IFile file = ((AbstractModule) module).getDescriptorFile();
       if (file == null) return;
       addCanonicalFile(file, module);
-      addCanonicalFile(ModulesMiner.getRealDescriptorFile(module), module);
     }
   }
 }
