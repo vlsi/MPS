@@ -17,14 +17,12 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -278,19 +276,6 @@ public class ModulesMiner {
       if (sourcesJar.exists() && deploymentDescriptor.getDescriptorFile() != null) {
         return FileSystem.getInstance().getFileByPath(sourcesJar.getPath() + "!/module/" + deploymentDescriptor.getDescriptorFile());
       }
-    }
-    return null;
-  }
-
-  @Nullable
-  //todo remove this method as modules miner works BEFORE you can access modules
-  public static IFile getRealDescriptorFile(SModule m) {
-    if (!(m instanceof AbstractModule)) {
-      return null;
-    }
-    AbstractModule module = (AbstractModule) m;
-    if (module.getModuleSourceDir() != null && module.getModuleDescriptor() != null && module.getModuleDescriptor().getDeploymentDescriptor() != null) {
-      return module.getModuleSourceDir().getDescendant(module.getModuleDescriptor().getDeploymentDescriptor().getDescriptorFile());
     }
     return null;
   }

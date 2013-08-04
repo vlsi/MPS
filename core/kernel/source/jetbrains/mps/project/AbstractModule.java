@@ -434,7 +434,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
-        IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(this);
+        IFile realDescriptorFile = null;
+        if (getDescriptorFile() != null && dd != null) {
+          realDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
+        }
+
+        IFile parent = dd == null ? getDescriptorFile().getParent() : realDescriptorFile;
         if (dd != null && parent != null) {
           parent = parent.getParent();
         }
