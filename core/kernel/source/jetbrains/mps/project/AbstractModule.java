@@ -434,17 +434,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
-        IFile realDescriptorFile = null;
-        if (getDescriptorFile() != null && dd != null) {
-          realDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
-        }
-
-        IFile parent = dd == null ? getDescriptorFile().getParent() : realDescriptorFile;
-        if (dd != null && parent != null) {
-          parent = parent.getParent();
-        }
-        IFile classes = parent != null ? parent.getDescendant(suffix) : null;
-        addBundleAsModelRoot = classes != null && FileUtil.getCanonicalPath(classes.getPath()).equalsIgnoreCase(canonicalPath);
+        String classes = MacrosFactory.forModule(this).expandPath("${module}/" + suffix);
+        addBundleAsModelRoot = FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath);
       } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
         addBundleAsModelRoot = true;
       }
