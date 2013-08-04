@@ -69,7 +69,12 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   @Override
   @Nullable
   public IFile getClassesGen() {
-    return ProjectPathUtil.getClassesGenFolder(getModule().getDescriptorFile(), getModule() instanceof Generator);
+    if (getModule() instanceof Generator) {
+      Generator generator = (Generator) getModule();
+      return ProjectPathUtil.getClassesGenFolder(generator.getSourceLanguage().getDescriptorFile(), true);
+    } else {
+      return ProjectPathUtil.getClassesGenFolder(getModule().getDescriptorFile(), false);
+    }
   }
 
   @Override
