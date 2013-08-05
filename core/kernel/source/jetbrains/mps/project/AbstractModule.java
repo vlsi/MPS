@@ -406,8 +406,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    if (descriptor == null || dd == null) return;
+    if (dd == null) return;
 
     final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
     if (bundleHomeFile == null) return;
@@ -423,49 +424,33 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       assert !(descriptor instanceof DeploymentDescriptor);
     }
 
-    String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
-
-    boolean addBundleAsModelRoot = false;
-
-    // stub libraries
-    List<String> toRemovePaths = new ArrayList<String>();
-    for (String path : descriptor.getAdditionalJavaStubPaths()) {
-      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
-      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
-        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+    // 1 && 2
+    if (sourcesDescriptorFile != null) {
+      // stub libraries
+      Set<String> libPaths = new LinkedHashSet<String>();
+      for (String path : descriptor.getAdditionalJavaStubPaths()) {
+        String converted = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+        if (converted != null) {
+          libPaths.add(converted);
+        }
       }
-      toRemovePaths.add(path);
-    }
-    descriptor.getAdditionalJavaStubPaths().removeAll(toRemovePaths);
+      descriptor.getAdditionalJavaStubPaths().clear();
+      descriptor.getAdditionalJavaStubPaths().addAll(libPaths);
 
-    // stub model roots
-    List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
-    for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
-      if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
-      String path = mrd.getMemento().get("path");
-      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
+      // stub model roots
+      List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
+      for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
+        if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
+        String path = mrd.getMemento().get("path");
+        String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
 
-      String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
-      if (canonicalPath.endsWith(suffix)) {
-        // MacrosFactory based on original descriptor file because we use original descriptor file for ModelRootDescriptor reading, so all paths expanded to original descriptor file
-        MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile != null ? sourcesDescriptorFile : getDescriptorFile());
-        String classes = macroHelper.expandPath("${module}/" + suffix);
-        addBundleAsModelRoot = FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath);
-      } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
-        addBundleAsModelRoot = true;
+        if (convertedPath != null) {
+          mrd.getMemento().put("path", convertedPath);
+        } else {
+          toRemove.add(mrd);
+        }
       }
-
-      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
-        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
-      }
-      toRemove.add(mrd);
-    }
-    descriptor.getModelRootDescriptors().removeAll(toRemove);
-
-    if (addBundleAsModelRoot) {
-      descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(bundleHomeFile.getPath()));
+      descriptor.getModelRootDescriptors().removeAll(toRemove);
     }
 
     for (String jarFile : dd.getLibraries()) {
@@ -478,6 +463,40 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
       }
     }
+  }
+
+  /**
+   * Convert path from sources module descriptor for using on distribution
+   * /classes && /classes_gen converts to bundle home path
+   *
+   * @param originalPath Original path from sources module descriptor
+   * @return Converted path, null if path meaningless on packaged module
+   */
+  @Nullable
+  private String convertPath(String originalPath, IFile bundleHome, IFile sourcesDescriptorFile, ModuleDescriptor descriptor) {
+    String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
+
+    String canonicalPath = FileUtil.getCanonicalPath(originalPath).toLowerCase();
+    // todo: ${mps_home}/lib paths?
+
+//    String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
+//    if (canonicalPath.endsWith(suffix)) {
+//      // MacrosFactory based on original descriptor file because we use original descriptor file for ModelRootDescriptor reading, so all paths expanded to original descriptor file
+//      MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
+//      String classes = macroHelper.expandPath("${module}/" + suffix);
+//      addBundleAsModelRoot = FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath);
+//    } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
+//      addBundleAsModelRoot = true;
+//    }
+
+    if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
+      String shrinked = MacrosFactory.forModule(this).shrinkPath(originalPath);
+      if (MacrosFactory.containsNonMPSMacros(shrinked)) {
+        return originalPath;
+      }
+    }
+
+    return null;
   }
 
 
