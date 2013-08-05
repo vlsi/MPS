@@ -416,9 +416,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-
     IFile sourcesDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
     if (sourcesDescriptorFile == null) {
+      // todo: for now it's impossible
       assert descriptor instanceof DeploymentDescriptor;
     } else {
       assert !(descriptor instanceof DeploymentDescriptor);
@@ -427,6 +427,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // 1 && 2
     if (sourcesDescriptorFile != null) {
       // stub libraries
+      // todo: looks like module.xml contains info about model libs
       // ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
 //      Set<String> libPaths = new LinkedHashSet<String>();
 //      for (String path : descriptor.getAdditionalJavaStubPaths()) {
