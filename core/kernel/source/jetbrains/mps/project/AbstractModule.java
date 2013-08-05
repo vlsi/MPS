@@ -391,9 +391,18 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return getStubPaths(getModuleDescriptor());
   }
 
-  //----classpath
-  //todo check this code. Wy not to do it where we add jars?
-  protected void updatePackagedDescriptorClasspath() {
+  // todo: remove, should be done in module packing
+  protected void updatePackagedDescriptor() {
+    // things to do:
+    // 1) load/prepare stub libraries (getAdditionalJavaStubPaths) from sources descriptor
+    // 2) load/prepare stub model roots from sources descriptor
+    // 3) load libraries from deployment descriptor
+
+    // possible cases:
+    // 1) without deployment descriptor (nothing to do; todo: ?)
+    // 2) with dd, without sources (to do: 3)
+    // 3) with dd, with sources (to do: 1,2,3)
+
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -485,7 +494,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   // do not use, used only from ModuleRepositoryFacade
   public void reloadAfterDescriptorChange() {
-    updatePackagedDescriptorClasspath();
+    updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
   }
