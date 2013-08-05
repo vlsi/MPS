@@ -454,6 +454,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       descriptor.getModelRootDescriptors().removeAll(toRemove);
     }
 
+    // 3
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
@@ -475,12 +476,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    */
   @Nullable
   private String convertPath(String originalPath, IFile bundleHome, IFile sourcesDescriptorFile, ModuleDescriptor descriptor) {
-    String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
+    MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
 
     String canonicalPath = FileUtil.getCanonicalPath(originalPath).toLowerCase();
-    // todo: ${mps_home}/lib paths?
 
-    MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
     // /classes && /classes_gen hack
     String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
     if (canonicalPath.endsWith(suffix)) {
@@ -493,13 +492,18 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       return bundleHome.getPath();
     }
 
-    if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-      if (MacrosFactory.containsNonMPSMacros(macroHelper.shrinkPath(originalPath))) {
-        return originalPath;
-      }
+    // ${mps_home}/lib
+    String mpsHomeLibPath = FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase();
+    if (canonicalPath.startsWith(mpsHomeLibPath)) {
+      return canonicalPath;
     }
 
-    return null;
+    if (MacrosFactory.containsNonMPSMacros(macroHelper.shrinkPath(originalPath))) {
+      return originalPath;
+    } else {
+      // ignore paths starts from ${module}/${project} etc
+      return null;
+    }
   }
 
 
