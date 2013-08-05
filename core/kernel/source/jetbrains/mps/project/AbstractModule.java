@@ -427,15 +427,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // 1 && 2
     if (sourcesDescriptorFile != null) {
       // stub libraries
-      Set<String> libPaths = new LinkedHashSet<String>();
-      for (String path : descriptor.getAdditionalJavaStubPaths()) {
-        String converted = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
-        if (converted != null) {
-          libPaths.add(converted);
-        }
-      }
+      // ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
+//      Set<String> libPaths = new LinkedHashSet<String>();
+//      for (String path : descriptor.getAdditionalJavaStubPaths()) {
+//        String converted = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+//        if (converted != null) {
+//          libPaths.add(converted);
+//        }
+//      }
       descriptor.getAdditionalJavaStubPaths().clear();
-      descriptor.getAdditionalJavaStubPaths().addAll(libPaths);
+//      descriptor.getAdditionalJavaStubPaths().addAll(libPaths);
 
       // stub model roots
       List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
