@@ -142,33 +142,33 @@ public class DeleteNodesHelper {
                 }
               }
             });
+
+            if (pi.isCanceled()) {
+              return;
+            }
+
+            Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(results).select(new ISelector<SearchResult<SNode>, SNode>() {
+              public SNode select(SearchResult<SNode> it) {
+                return it.getObject();
+              }
+            }));
+            for (SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), results)) {
+              SNode resultNode = searchResult.getObject();
+
+              for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, false))) {
+                if (SetSequence.fromSet(nodes).contains(anc)) {
+                  SetSequence.fromSet(results).removeElement(searchResult);
+                  break;
+                }
+              }
+            }
           }
         });
 
         if (pi.isCanceled()) {
           return;
         }
-
-        Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(results).select(new ISelector<SearchResult<SNode>, SNode>() {
-          public SNode select(SearchResult<SNode> it) {
-            return it.getObject();
-          }
-        }));
-        for (SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), results)) {
-          SNode resultNode = searchResult.getObject();
-
-          for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, false))) {
-            if (SetSequence.fromSet(nodes).contains(anc)) {
-              SetSequence.fromSet(results).removeElement(searchResult);
-              break;
-            }
-          }
-        }
         final SearchResults sr = new SearchResults<SNode>(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
-
-        if (pi.isCanceled()) {
-          return;
-        }
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
