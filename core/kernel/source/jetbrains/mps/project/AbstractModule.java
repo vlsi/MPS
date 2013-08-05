@@ -479,19 +479,21 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     String canonicalPath = FileUtil.getCanonicalPath(originalPath).toLowerCase();
     // todo: ${mps_home}/lib paths?
 
-//    String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
-//    if (canonicalPath.endsWith(suffix)) {
-//      // MacrosFactory based on original descriptor file because we use original descriptor file for ModelRootDescriptor reading, so all paths expanded to original descriptor file
-//      MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
-//      String classes = macroHelper.expandPath("${module}/" + suffix);
-//      addBundleAsModelRoot = FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath);
-//    } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
-//      addBundleAsModelRoot = true;
-//    }
+    MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
+    // /classes && /classes_gen hack
+    String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
+    if (canonicalPath.endsWith(suffix)) {
+      // MacrosFactory based on original descriptor file because we use original descriptor file for ModuleDescriptor reading, so all paths expanded to original descriptor file
+      String classes = macroHelper.expandPath("${module}/" + suffix);
+      if (FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath)) {
+        return bundleHome.getPath();
+      }
+    } else if (FileUtil.getCanonicalPath(bundleHome.getPath()).equalsIgnoreCase(canonicalPath)) {
+      return bundleHome.getPath();
+    }
 
     if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-      String shrinked = MacrosFactory.forModule(this).shrinkPath(originalPath);
-      if (MacrosFactory.containsNonMPSMacros(shrinked)) {
+      if (MacrosFactory.containsNonMPSMacros(macroHelper.shrinkPath(originalPath))) {
         return originalPath;
       }
     }
