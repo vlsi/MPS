@@ -406,7 +406,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
+    DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
+    if (descriptor == null || dd == null) return;
 
     final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
     if (bundleHomeFile == null) return;
@@ -417,8 +418,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
 
     boolean addBundleAsModelRoot = false;
-    final DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    String libPath = dd == null ? FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase() : null;
 
     // stub libraries
     List<String> toRemovePaths = new ArrayList<String>();
@@ -427,9 +426,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
-      }
-      if (dd == null && canonicalPath.startsWith(libPath)) {
-        continue;
       }
       toRemovePaths.add(path);
     }
@@ -444,7 +440,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
-        IFile originalDescriptorFile = dd != null ? ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd) : null;
+        IFile originalDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
         // MacrosFactory based on original descriptor file because we use original descriptor file for ModelRootDescriptor reading, so all paths expanded to original descriptor file
         MacroHelper macroHelper = MacrosFactory.forModuleFile(originalDescriptorFile != null ? originalDescriptorFile : getDescriptorFile());
         String classes = macroHelper.expandPath("${module}/" + suffix);
@@ -457,18 +453,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
-      if (dd == null && canonicalPath.startsWith(libPath)) {
-        continue;
-      }
       toRemove.add(mrd);
     }
     descriptor.getModelRootDescriptors().removeAll(toRemove);
 
     if (addBundleAsModelRoot) {
       descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(bundleHomeFile.getPath()));
-    }
-    if (dd == null) {
-      return;
     }
 
     for (String jarFile : dd.getLibraries()) {
