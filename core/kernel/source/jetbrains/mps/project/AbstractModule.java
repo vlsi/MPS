@@ -396,7 +396,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // things to do:
     // 1) load/prepare stub libraries (getAdditionalJavaStubPaths) from sources descriptor
     // 2) load/prepare stub model roots from sources descriptor
-    // 3) load libraries from deployment descriptor
+    // 3) load libraries from deployment descriptor (/classes_gen ?)
 
     // possible cases:
     // 1) without deployment descriptor (nothing to do; todo: ?)
@@ -414,6 +414,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
+
+
+    IFile sourcesDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
+    if (sourcesDescriptorFile == null) {
+      assert descriptor instanceof DeploymentDescriptor;
+    } else {
+      assert !(descriptor instanceof DeploymentDescriptor);
+    }
 
     String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
 
@@ -440,9 +448,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
-        IFile originalDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
         // MacrosFactory based on original descriptor file because we use original descriptor file for ModelRootDescriptor reading, so all paths expanded to original descriptor file
-        MacroHelper macroHelper = MacrosFactory.forModuleFile(originalDescriptorFile != null ? originalDescriptorFile : getDescriptorFile());
+        MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile != null ? sourcesDescriptorFile : getDescriptorFile());
         String classes = macroHelper.expandPath("${module}/" + suffix);
         addBundleAsModelRoot = FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath);
       } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
