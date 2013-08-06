@@ -61,7 +61,7 @@ public class FileOpenUtil {
   }
 
   public static void openFile(Project project, VirtualFile file, int lineNumber) {
-    FileEditor[] result = FileEditorManager.getInstance(project).openFile(file, true);
+    FileEditor[] result = FileEditorManager.getInstance(project).openFile(file, true, true);
     if (result.length == 1 && result[0] instanceof TextEditor) {
       TextEditor textEditor = (TextEditor) result[0];
       LogicalPosition position = new LogicalPosition(lineNumber - 1, 0);
