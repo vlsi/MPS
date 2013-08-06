@@ -38,7 +38,7 @@ class FileWithLogicalPositionNavigationHandler implements INavigationHandler<Fil
     VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
     if (vf == null) return;
 
-    for (FileEditor fe: FileEditorManager.getInstance(project).openFile(vf, true)){
+    for (FileEditor fe: FileEditorManager.getInstance(project).openFile(vf, true, true)){
       if (!(fe instanceof TextEditor)) continue;
 
       TextEditor te = (TextEditor) fe;
