@@ -22,6 +22,7 @@ import com.intellij.ide.util.frameworkSupport.FrameworkSupportModel;
 import com.intellij.ide.util.frameworkSupport.FrameworkSupportProviderBase;
 import com.intellij.ide.util.frameworkSupport.FrameworkVersion;
 import com.intellij.ide.util.newProjectWizard.impl.FrameworkSupportModelBase;
+import com.intellij.ide.util.projectWizard.JavaModuleBuilder;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
@@ -111,6 +112,11 @@ public class MPSFrameworkSupportConfigurable extends FrameworkSupportConfigurabl
 
   @NonNls
   private String getDefaultModelDirectoryName() {
+    if(myFrameworkSupportModel.getModuleBuilder() instanceof JavaModuleBuilder
+      && !((JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder()).getSourcePaths().isEmpty())
+      return ((JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder()).getSourcePaths().get(0).first.
+        replace(((FrameworkSupportModelBase) myFrameworkSupportModel).getBaseDirectoryForLibrariesPath(), "").replace(File.separator, "");
+
     return "models";
   }
 
