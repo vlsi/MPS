@@ -944,7 +944,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));
 
       myTable = new JBTable();
-      myTable.setSelectionBackground(myTable.getSelectionBackground().darker());
       myTable.setAutoscrolls(true);
       myTable.getTableHeader().setReorderingAllowed(false);
 
@@ -985,7 +984,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 row, Math.max(checkboxTree.getPreferredSize().height + 10, table.getRowHeight(row))
             );
 
-            checkboxTree.setBackground(hasFocus ? table.getSelectionBackground().darker() : isSelected ? table.getSelectionBackground() : table.getBackground());
+            checkboxTree.setBackground(isSelected && !hasFocus ? table.getSelectionBackground() : table.getBackground());
 
             return checkboxTree;
           }
