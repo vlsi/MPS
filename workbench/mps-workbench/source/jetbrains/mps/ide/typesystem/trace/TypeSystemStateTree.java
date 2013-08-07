@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -136,7 +137,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
     TypeSystemStateTreeNode[] nodes = {createInequalitiesNode(), createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null), createNode(
         "When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null), createNode("Errors", myState.getNodeMaps().getErrorListPresentation(),
-        Color.RED), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
+        StyleRegistry.getInstance().getSimpleColor(Color.RED)), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
     for (TypeSystemStateTreeNode node : nodes) {
       if (node.children().hasMoreElements()) {
         result.add(node);
@@ -158,9 +159,9 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
 
   private TypeSystemStateTreeNode createNode(String category, Set<Block> entries, Color color) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category + " (" + entries.size() + ")", myOperationContext);
-    if (color != null) {
-      result.setColor(color);
-    }
+    if (color == null)
+      color = Color.LIGHT_GRAY;
+    result.setColor(color);
     for (Block block : entries) {
       result.add(new BlockTreeNode(block, myOperationContext, myState, myEditorComponent));
     }
@@ -319,7 +320,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     private jetbrains.mps.openapi.editor.cells.EditorCell myCell;
 
     public TypeEditorMessage(jetbrains.mps.openapi.editor.cells.EditorCell cell, String message) {
-      super(cell.getSNode(), Color.blue, message, myMessageOwner);
+      super(cell.getSNode(), StyleRegistry.getInstance().getSimpleColor(Color.blue), message, myMessageOwner);
       this.myCell = cell;
     }
 
