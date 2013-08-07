@@ -8270,6 +8270,11 @@
       <property name="name" nameId="tpck.1169194664001" value="createComponent" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7546597551782287880" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7546597551780505644" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="239974159283528778" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="239974159283528952" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="TODO: make IDEA like" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7546597551782304726" nodeInfo="nn">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7546597551782304727" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="panel" />
@@ -8484,17 +8489,26 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7546597551782304794" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JComponent%dsetBackground(java%dawt%dColor)%cvoid" resolveInfo="setBackground" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7546597551782304795" nodeInfo="nn">
-                        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7546597551782304796" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Color%d&lt;init&gt;(int,int,int)" resolveInfo="Color" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.HexIntegerLiteral" typeId="tpee.1179360813171" id="7546597551782304797" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1179360856892" value="e7" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7443274696672357057" nodeInfo="nn">
+                        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7443274696672357058" nodeInfo="nn">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ayyu.~JBColor%d&lt;init&gt;(java%dawt%dColor,java%dawt%dColor)" resolveInfo="JBColor" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7443274696672357059" nodeInfo="nn">
+                            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7443274696672357060" nodeInfo="nn">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7x.~Color%d&lt;init&gt;(java%dawt%dcolor%dColorSpace,float[],float)" resolveInfo="Color" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7443274696672357053" nodeInfo="nn">
+                                <property name="value" nameId="tpee.1068580320021" value="231" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7443274696672357054" nodeInfo="nn">
+                                <property name="value" nameId="tpee.1068580320021" value="254" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7443274696672357055" nodeInfo="nn">
+                                <property name="value" nameId="tpee.1068580320021" value="234" />
+                              </node>
+                            </node>
                           </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.HexIntegerLiteral" typeId="tpee.1179360813171" id="7546597551782304798" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1179360856892" value="fe" />
-                          </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.HexIntegerLiteral" typeId="tpee.1179360813171" id="7546597551782304799" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1179360856892" value="ea" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7443274696672357063" nodeInfo="nn">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ayyu.~Gray%d_100" resolveInfo="_100" />
+                            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ayyu.~Gray" resolveInfo="Gray" />
                           </node>
                         </node>
                       </node>
@@ -8550,6 +8564,20 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="239974159283559239" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="239974159283562396" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="239974159283559238" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7546597551782304765" resolveInfo="textPane" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="239974159283600280" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JComponent%dsetForeground(java%dawt%dColor)%cvoid" resolveInfo="setForeground" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="239974159283615499" nodeInfo="nn">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ayyu.~JBColor%dforeground()%cjava%dawt%dColor" resolveInfo="foreground" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ayyu.~JBColor" resolveInfo="JBColor" />
                   </node>
                 </node>
               </node>

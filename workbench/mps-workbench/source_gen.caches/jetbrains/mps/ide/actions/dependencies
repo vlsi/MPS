@@ -3621,6 +3621,8 @@
   <dependency className="jetbrains.mps.ide.actions.ShowParameters_Action" file="ShowParameters_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.ui.Gray" />
+    <classNode dependClassName="com.intellij.ui.JBColor" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.GridBagConstraints" />

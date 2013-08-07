@@ -28,7 +28,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import javax.swing.JTextPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import com.intellij.ui.JBColor;
 import java.awt.Color;
+import com.intellij.ui.Gray;
 import java.awt.GridBagConstraints;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -113,6 +115,7 @@ public class ShowParameters_Action extends BaseAction {
   }
 
   private <T> Component createComponent(ParametersInformation<T> parametersInformation, SNode node, final Map<String, Object> _params) {
+    // TODO: make IDEA like 
     JPanel panel = new JPanel(new GridBagLayout());
     panel.setBackground(ToolTip.BACKGROUND_COLOR);
     panel.setBorder(new EmptyBorder(0, 4, 0, 4));
@@ -126,10 +129,11 @@ public class ShowParameters_Action extends BaseAction {
       textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       textPane.setOpaque(true);
       if (Sequence.fromIterable(methods).count() > 1 && parametersInformation.isMethodCurrent(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method)) {
-        textPane.setBackground(new Color(0xe7, 0xfe, 0xea));
+        textPane.setBackground(new JBColor(new Color(231, 254, 234), Gray._100));
       } else {
         textPane.setBackground(ToolTip.BACKGROUND_COLOR);
       }
+      textPane.setForeground(JBColor.foreground());
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.fill = GridBagConstraints.BOTH;
       constraints.gridy = lineNumber++;
