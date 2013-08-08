@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a1qnoe1ojhhkzh79p8629milp2hxxcr">
+<dependencies version="2" modelHash="ntwtemht1thy6jeprtizgeh7pljyat">
   <dep model="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-  <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
@@ -72,7 +71,7 @@
   <dep model="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" hash="-97j9zbwcadg9ryhiv3676ur8qnp0ej5" />
   <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="7bmx3biplurssqid0dk879b6t4cz0rb" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-2ceur5du3yqthf3v7ik0o02nnkxfnjg" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-ati4v64o5vs56cll47w2i2bxdu53ooa" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-92z3kc7g4kx9n9qzbqubjixq01c8bgj" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-byinzgphm193qdqek2c63uyrtilnwsz" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
@@ -1442,6 +1441,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -1705,7 +1705,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrateCondition_Action.java" />
   </source>
-  <source id="584739067017114195" name="MigrationScript_MigrateLocalVariableReference" hash="adtuemuyopcg9md9rlimx2es3mepjuz">
+  <source id="584739067017114195" name="MigrationScript_MigrateLocalVariableReference" hash="1nszg070hkxdk13gbbvla8temdhwapw">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -1754,7 +1754,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1771,7 +1770,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateLocalVariableReference_Action.java" />
   </source>
-  <source id="2761153619454568020" name="MigrationScript_MigrateClassifierMemberNodes" hash="9e52w3i2rbqyihun8i2y80btjtf8dbo">
+  <source id="2761153619454568020" name="MigrationScript_MigrateClassifierMemberNodes" hash="75qj8tm1ippfne2ywj683tw188s0qj5">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -1820,7 +1819,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1837,7 +1835,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateClassifierMemberNodes_Action.java" />
   </source>
-  <source id="584739067017117249" name="MigrationScript_MigrateAbstractConceptDeclarationMethodOnConceptVariable" hash="-3vvy9t2ynjjs2x5ubpgtumjsokh7uou">
+  <source id="584739067017117249" name="MigrationScript_MigrateAbstractConceptDeclarationMethodOnConceptVariable" hash="ehae8jw73hnmvf6ewcrk06pp5uktcrf">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -1886,7 +1884,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1903,7 +1900,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateAbstractConceptDeclarationMethodOnConceptVariable_Action.java" />
   </source>
-  <source id="584739067017114980" name="MigrationScript_MigrateParameterReference" hash="3oz36c8uksnugdei5jhw2mfbp7i07vt">
+  <source id="584739067017114980" name="MigrationScript_MigrateParameterReference" hash="7mcrjhbo65edh2qfonytwjmhh4iml0f">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -1952,7 +1949,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1969,7 +1965,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateParameterReference_Action.java" />
   </source>
-  <source id="584739067017111603" name="MigrationScript_FixPluginKindForMPSTestCases" hash="-4g4aithnjmu4a7j0mm212gfg8qwgk3r">
+  <source id="584739067017111603" name="MigrationScript_FixPluginKindForMPSTestCases" hash="5zbl3aiyrr4oxsryj9lgi2nrzaqttbr">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2018,7 +2014,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2035,7 +2030,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_FixPluginKindForMPSTestCases_Action.java" />
   </source>
-  <source id="584739067017095757" name="MigrationScript_FixMPSClasspath" hash="-el1flr5ecxsz7g97h9gtdeqjorgh6h5">
+  <source id="584739067017095757" name="MigrationScript_FixMPSClasspath" hash="-4yak450qp0u0ikkzfiggmpjg9bzo91l">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2084,7 +2079,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2101,7 +2095,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_FixMPSClasspath_Action.java" />
   </source>
-  <source id="7230597598607093233" name="MigrationScript_MigrateClassifierMembersSModelUsages" hash="8zywv10fifxahvswpyacuurwpafdchm">
+  <source id="7230597598607093233" name="MigrationScript_MigrateClassifierMembersSModelUsages" hash="-3kuisvlc24wmluj1ypecdhzgw84282o">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2150,7 +2144,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2167,7 +2160,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateClassifierMembersSModelUsages_Action.java" />
   </source>
-  <source id="584739067017040800" name="MigrationScript_MigrateIModuleCastToAbstractModuleCast" hash="e5pcv658zhw6cg7f6p2obw45j5a45s0">
+  <source id="584739067017040800" name="MigrationScript_MigrateIModuleCastToAbstractModuleCast" hash="-4oqy843r4x9stwtg35ntkcui6sprkyc">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2216,7 +2209,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2233,7 +2225,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateIModuleCastToAbstractModuleCast_Action.java" />
   </source>
-  <source id="584739067017118197" name="MigrationScript_MigrateParameterizedIntentionDeclaration" hash="-1pnwegjzkiq3vs8atgcu6igoubx6lio">
+  <source id="584739067017118197" name="MigrationScript_MigrateParameterizedIntentionDeclaration" hash="-7xb25foncygdibmz3oovp6u82og8dm7">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2282,7 +2274,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2299,7 +2290,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateParameterizedIntentionDeclaration_Action.java" />
   </source>
-  <source id="584739067017118402" name="MigrationScript_EditorContext" hash="-21ddtpgqul1ge9ov7r7nz3e8lbmkb6e">
+  <source id="584739067017118402" name="MigrationScript_EditorContext" hash="4hgcvospawdr8cxx65qcbhf2bg9legi">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2348,7 +2339,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2365,7 +2355,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_EditorContext_Action.java" />
   </source>
-  <source id="584739067017112627" name="MigrationScript_MigrateLocalInstanceFieldReference" hash="bshxvb3sv39kjrmffrefk5puyyjyqa6">
+  <source id="584739067017112627" name="MigrationScript_MigrateLocalInstanceFieldReference" hash="8402t5l99mbgcdus4uivwdcull8hytv">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2414,7 +2404,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2431,7 +2420,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateLocalInstanceFieldReference_Action.java" />
   </source>
-  <source id="584739067017113410" name="MigrationScript_MigrateLocalStaticFieldReference" hash="b0ha8d5gjj5giydtpwgu7j28kdclhj9">
+  <source id="584739067017113410" name="MigrationScript_MigrateLocalStaticFieldReference" hash="-dokml7zdt1se7r2bwuwqvvncla3z0mp">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2480,7 +2469,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2497,7 +2485,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateLocalStaticFieldReference_Action.java" />
   </source>
-  <source id="584739067017104320" name="MigrationScript_FixJDKTools" hash="c7fs23exiriffl07ckgd5mxccgq607r">
+  <source id="584739067017104320" name="MigrationScript_FixJDKTools" hash="-7wyhbw13l38xgz8f9rjkq9uvzjbg2ov">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2546,7 +2534,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2563,7 +2550,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_FixJDKTools_Action.java" />
   </source>
-  <source id="584739067017116464" name="MigrationScript_MigrateLocalStaticMethodCall" hash="5k8m16mmr4i89ys88fng3yfmqhlfogc">
+  <source id="584739067017116464" name="MigrationScript_MigrateLocalStaticMethodCall" hash="39zr54dwn4xn8f5520run7u04u1p6tm">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2612,7 +2599,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2629,7 +2615,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateLocalStaticMethodCall_Action.java" />
   </source>
-  <source id="584739067017115723" name="MigrationScript_MigrateLocalInstanceMethodCall" hash="6vc76fz70zi5qu9q0boqlc0qky50n6g">
+  <source id="584739067017115723" name="MigrationScript_MigrateLocalInstanceMethodCall" hash="-au69pyndw6b1bexe7qvvkuqd89bpw65">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2678,7 +2664,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2695,7 +2680,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrateLocalInstanceMethodCall_Action.java" />
   </source>
-  <source id="584739067017117992" name="MigrationScript_RemoveDirectCallProperty" hash="b1ywkc82vd1epjslmt0dn8zj2sw50nu">
+  <source id="584739067017117992" name="MigrationScript_RemoveDirectCallProperty" hash="1mktypilv78o3jdzo1ym3eo98v92jya">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -2744,7 +2729,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2932,7 +2916,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FixMissingImportsInProject_Action.java" />
   </source>
-  <source id="1537259975113699022" name="MigrationScript_ConvertSNode" hash="-amc8v1nhgahcs8fls7oyu2vckzscuxr">
+  <source id="1537259975113699022" name="MigrationScript_ConvertSNode" hash="-7gotsg648fsu8dofg2rkqpm3ycpdi3b">
     <dep root="1478877201356791037" />
     <dep root="1537259975113912259" />
     <dep root="1537259975114124589" />
@@ -2981,7 +2965,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -2998,7 +2981,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_ConvertSNode_Action.java" />
   </source>
-  <source id="1537259975113912259" name="MigrationScript_ConvertSModel" hash="-9kcpvnkyj8qwbuytitb7asuq93ibjhk">
+  <source id="1537259975113912259" name="MigrationScript_ConvertSModel" hash="7km6m1cepugc1ye7dmhir0bnitms3nb">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975114124589" />
@@ -3047,7 +3030,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -3064,7 +3046,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_ConvertSModel_Action.java" />
   </source>
-  <source id="1537259975114124589" name="MigrationScript_ConvertSModule" hash="-12m136alp8jfziv5ucrhhhxio17wg6b">
+  <source id="1537259975114124589" name="MigrationScript_ConvertSModule" hash="1p3lo7499esn66j3jc5v579zoa89d0s">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -3113,7 +3095,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -3130,7 +3111,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_ConvertSModule_Action.java" />
   </source>
-  <source id="893319872196801234" name="MigrationScript_MigrateStaticConceptMethodDeclaration" hash="9qtact0sl65x7vgbs8yte3k513bbg4g">
+  <source id="893319872196801234" name="MigrationScript_MigrateStaticConceptMethodDeclaration" hash="5pd3hzuroi4wc85pni2qnzupg2p8cg7">
     <dep root="1478877201356791037" />
     <dep root="1537259975113699022" />
     <dep root="1537259975113912259" />
@@ -3179,7 +3160,6 @@
     <dep root="9012587759412831851" />
     <dep root="9164503229271455483" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
-    <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.command(MPS.IDEA/com.intellij.openapi.command@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

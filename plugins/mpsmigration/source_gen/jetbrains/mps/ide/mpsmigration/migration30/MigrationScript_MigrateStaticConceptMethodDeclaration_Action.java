@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.command.CommandProcessorEx;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
@@ -68,7 +68,7 @@ public class MigrationScript_MigrateStaticConceptMethodDeclaration_Action extend
     try {
       SNodeReference script = new SNodePointer("r:94d2957d-c7c1-4065-9834-3b16b5f674fa(jetbrains.mps.lang.behavior.scripts)", "5963210568513209363");
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Migrate StaticConceptMethodDeclaration to static, non-virtual ConceptMethodDeclaration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
+      if (ModelAccess.instance().canWrite()) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
         executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));

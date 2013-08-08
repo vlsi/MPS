@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.command.CommandProcessorEx;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
@@ -68,7 +68,7 @@ public class MigrationScript_MigrateIModuleCastToAbstractModuleCast_Action exten
     try {
       SNodeReference script = new SNodePointer("r:e6842e57-909e-4595-b7d4-8a0ffd0d1e32(jetbrains.mps.lang.core.scripts)", "5989998095154029688");
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Migrate IModule casts to AbstractModule casts", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
+      if (ModelAccess.instance().canWrite()) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
         executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
