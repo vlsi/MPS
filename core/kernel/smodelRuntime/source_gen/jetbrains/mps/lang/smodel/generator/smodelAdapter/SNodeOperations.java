@@ -7,10 +7,11 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -114,7 +115,7 @@ public class SNodeOperations {
     if (conceptFQName == null) {
       return true;
     }
-    return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFQName));
+    return SNodeOperations._isInstanceOf(node, conceptFQName);
   }
 
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
@@ -176,7 +177,7 @@ public class SNodeOperations {
       node = node.getParent();
     }
     while (node != null) {
-      if (ancestorConceptFqName == null || SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(ancestorConceptFqName))) {
+      if (ancestorConceptFqName == null || SNodeOperations._isInstanceOf(node, ancestorConceptFqName)) {
         result.add(node);
       }
       node = node.getParent();
@@ -220,7 +221,7 @@ public class SNodeOperations {
     }
 
     if (inclusion) {
-      if (SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(childConceptFqName))) {
+      if (SNodeOperations._isInstanceOf(node, childConceptFqName)) {
         result.add(node);
       }
     }
@@ -236,7 +237,7 @@ public class SNodeOperations {
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
       @Override
       public boolean met(SNode node) {
-        return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(childConceptFqName));
+        return SNodeOperations._isInstanceOf(node, childConceptFqName);
       }
     }, stopCondition);
     return result;
@@ -291,11 +292,18 @@ public class SNodeOperations {
       if (conceptFqName == null) {
         continue;
       }
-      if (SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFqName))) {
+      if (SNodeOperations._isInstanceOf(node, conceptFqName)) {
         return true;
       }
     }
     return false;
+  }
+
+  private static boolean _isInstanceOf(SNode node, String conceptFqName) {
+    if (node == null) {
+      return false;
+    }
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getInstanceConcept(conceptFqName));
   }
 
   public static List<SNode> getChildren(SNode node) {
@@ -327,7 +335,7 @@ public class SNodeOperations {
     if (conceptFQName == null) {
       return false;
     }
-    return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFQName));
+    return SNodeOperations._isInstanceOf(node, conceptFQName);
   }
 
   public static SNode getNextSibling(SNode node) {
