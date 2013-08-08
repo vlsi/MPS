@@ -22,6 +22,7 @@ import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
+import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -35,6 +36,10 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class MPSCoreComponents implements ApplicationComponent {
+
+  public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
+  }
+
   @NotNull
   @Override
   public String getComponentName() {
@@ -45,12 +50,6 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    boolean useIoFile = MPSCore.getInstance().isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));
-    if (!useIoFile) {
-      // setup filesystem provider
-      FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProvider());
-    }
-
     // setup undo
     UndoHelper.getInstance().setUndoHandler(new WorkbenchUndoHandler());
 

@@ -25,6 +25,10 @@
 
   <application-components>
     <component>
+      <interface-class>jetbrains.mps.ide.vfs.FileSystemProviderComponent</interface-class>
+      <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystemProvider</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>

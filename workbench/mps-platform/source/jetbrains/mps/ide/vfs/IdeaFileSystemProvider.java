@@ -44,7 +44,7 @@ import java.util.Set;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystemProvider implements FileSystemProvider, SafeWriteRequestor {
+public class IdeaFileSystemProvider extends FileSystemProviderComponent implements FileSystemProvider, SafeWriteRequestor {
   static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
@@ -68,6 +68,7 @@ public class IdeaFileSystemProvider implements FileSystemProvider, SafeWriteRequ
   @Override
   public void removeListener(FileSystemListener listener) {
     myListeners.removeListener(listener);
+
   }
 
   public FileSystemListenersContainer getListenersContainer() {
@@ -145,5 +146,11 @@ public class IdeaFileSystemProvider implements FileSystemProvider, SafeWriteRequ
         });
       }
     }
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "IdeaFileSystemProvider";
   }
 }
