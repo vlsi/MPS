@@ -513,6 +513,9 @@
         <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" />
         <module file="${basedir}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

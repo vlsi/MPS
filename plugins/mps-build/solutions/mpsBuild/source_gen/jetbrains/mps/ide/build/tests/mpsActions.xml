@@ -159,6 +159,9 @@
       <chunk>
         <module file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

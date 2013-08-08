@@ -243,6 +243,9 @@
         <module file="${basedir}/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" />
         <module file="${basedir}/plugins/execution-languages/languages/tests.data/jetbrains.mps.execution.impl.tests.sandbox.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

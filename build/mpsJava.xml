@@ -116,6 +116,9 @@
         <module file="${mps_home}/plugins/mpsjava/basePlatform/jetbrains.mps.ide.java.basePlatform.msd" />
         <module file="${mps_home}/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   
