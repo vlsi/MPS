@@ -47,12 +47,21 @@ public class ProjectHelper {
   }
 
   @Nullable
-  public static ModelAccess getModelAccess(com.intellij.openapi.project.Project p) {
+  public static SRepository getProjectRepository(com.intellij.openapi.project.Project p) {
     if (p != null) {
       Project project = p.getComponent(MPSProject.class);
       if (project != null) {
-        return project.getRepository().getModelAccess();
+        return project.getRepository();
       }
+    }
+    return null;
+  }
+
+  @Nullable
+  public static ModelAccess getModelAccess(com.intellij.openapi.project.Project p) {
+    SRepository repository = getProjectRepository(p);
+    if (repository != null) {
+      return repository.getModelAccess();
     }
     return null;
   }

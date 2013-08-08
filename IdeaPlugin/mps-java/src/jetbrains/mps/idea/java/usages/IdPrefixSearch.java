@@ -71,8 +71,10 @@ public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParame
     final PsiElement target = queryParameters.getElementToSearch();
     // Only class names can be prefixes in foreign ids of other nodes
     if (!(target instanceof PsiClass)) return;
-
-    final SRepository repository = ProjectHelper.toMPSProject(scope.getProject()).getRepository();
+    final SRepository repository = ProjectHelper.getProjectRepository(scope.getProject());
+    if (repository == null) {
+      return;
+    }
 
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
