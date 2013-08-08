@@ -40,8 +40,14 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public BaseVersionEditorComponent(SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
-    myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel), true);
+    final jetbrains.mps.smodel.SModel[] baseModel = new jetbrains.mps.smodel.SModel[1];
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        baseModel[0] = as_i3w5ys_a0a0a0a0a0a0c0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
+      }
+    });
+    myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel[0]), true);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffModelUtil.renameModelAndRegister(myBaseModel, null);
@@ -113,7 +119,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     return myScrollPane;
   }
 
-  private static <T> T as_i3w5ys_a0a0b0c(Object o, Class<T> type) {
+  private static <T> T as_i3w5ys_a0a0a0a0a0a0c0c(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
