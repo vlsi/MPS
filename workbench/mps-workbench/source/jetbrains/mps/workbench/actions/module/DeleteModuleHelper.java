@@ -21,6 +21,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -35,8 +36,18 @@ public class DeleteModuleHelper {
 
   public static void deleteModule(Project project, SModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
+      if (module instanceof Language) {
+        for (SModule m : ((Language) module).getGenerators()) {
+          safeDelete(project, m, deleteFiles);
+        }
+      }
       safeDelete(project, module, deleteFiles);
     } else {
+      if (module instanceof Language) {
+        for (SModule m : ((Language) module).getGenerators()) {
+          delete(project, m, deleteFiles);
+        }
+      }
       delete(project, module, deleteFiles);
     }
   }
