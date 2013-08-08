@@ -25,7 +25,6 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="8dm4" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.internal.collections.runtime(MPS.Core/jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="qqyk" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" version="-1" />
-  <import index="49tf" modelUID="f:java_stub#d44dab97-aaac-44cb-9745-8a14db674c03#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -57,8 +56,8 @@
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238935302754" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238935302755" nodeInfo="nn">
                           <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1238935302756" nodeInfo="nn">
-                            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2056920265174975916" nodeInfo="in">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="49tf.~Tuples" resolveInfo="Tuples" />
+                            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3240020926587862704" nodeInfo="in">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="upz5.1238932923132" resolveInfo="Tuples" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1238935302758" nodeInfo="nn">
@@ -426,8 +425,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="cx9y.1238853782547" resolveInfo="IndexedTupleLiteral" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6272899139367872552" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6272899139367872553" nodeInfo="nn">
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qqyk.~MultiTuple%dfrom(java%dlang%dObject)%cjetbrains%dmps%dbaseLanguage%dtuples%druntime%dTuples$_1" resolveInfo="from" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="6272899139367872554" nodeInfo="nn">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="6272899139367872555" nodeInfo="nn">
               <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6272899139367872556" nodeInfo="nn">
@@ -453,8 +452,8 @@
                     <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6272899139367872567" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6272899139367872568" nodeInfo="nn">
-                        <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2056920265173906525" nodeInfo="in">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="49tf.~MultiTuple" resolveInfo="MultiTuple" />
+                        <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3240020926587953961" nodeInfo="in">
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6272899139367872570" nodeInfo="nn">
@@ -1641,8 +1640,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpee.1068580123152" resolveInfo="EqualsExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1239723456635" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1239723587450" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qqyk.~MultiTuple%deq(java%dlang%dObject,java%dlang%dObject)%cboolean" resolveInfo="eq" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qqyk.~MultiTuple%deq(java%dlang%dObject,java%dlang%dObject)%cboolean" resolveInfo="eq" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1239723588978" nodeInfo="nn">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1239723591679" nodeInfo="nn">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1239723591680" nodeInfo="nn">
