@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.util.FileUtil;
 
 /**
  * Component that lets you add watch requests.
@@ -24,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
  * adding fs listeners on some dirs/files), unlike idea's where there is a known structure: modules, source roots.
  */
 public class WatchedRoots implements ApplicationComponent {
-
   private final Map<Project, LocalFileSystem.WatchRequest> myProjectRequests = new HashMap<Project, LocalFileSystem.WatchRequest>();
   private final Map<String, LocalFileSystem.WatchRequest> myOtherRequests = new HashMap<String, LocalFileSystem.WatchRequest>();
   private final Map<String, Integer> myRequestedPaths = new HashMap<String, Integer>();
@@ -53,7 +53,7 @@ public class WatchedRoots implements ApplicationComponent {
 
 
 
-  public void addProjectWatch(Project project) {
+  public synchronized void addProjectWatch(Project project) {
     LocalFileSystem.WatchRequest request = myLocalFileSystem.addRootToWatch(project.getBasePath(), true);
     if (request == null) {
       return;
@@ -61,9 +61,10 @@ public class WatchedRoots implements ApplicationComponent {
     myProjectRequests.put(project, request);
   }
 
-  public void removeProjectWatch(Project project) {
+  public synchronized void removeProjectWatch(Project project) {
     LocalFileSystem.WatchRequest request = myProjectRequests.get(project);
     myProjectRequests.remove(project);
+
     if (request != null) {
       myLocalFileSystem.removeWatchedRoot(request);
     }
@@ -82,7 +83,7 @@ public class WatchedRoots implements ApplicationComponent {
     }
   }
 
-  public void addWatchRequest(String path) {
+  public synchronized void addWatchRequest(String path) {
     Integer count = myRequestedPaths.get(path);
     if (count == null) {
       count = 1;
@@ -95,7 +96,7 @@ public class WatchedRoots implements ApplicationComponent {
 
     for (LocalFileSystem.WatchRequest watch : CollectionSequence.fromCollection(myProjectRequests.values())) {
       String watchPath = watch.getRootPath();
-      if (path.startsWith(watchPath)) {
+      if (FileUtil.isSubPath(watchPath, path)) {
         alreadyCovered = true;
         break;
       }
@@ -108,11 +109,12 @@ public class WatchedRoots implements ApplicationComponent {
     }
   }
 
-  public void removeWatchRequest(String path) {
+  public synchronized void removeWatchRequest(String path) {
     Integer count = myRequestedPaths.get(path);
-    if (count == null || count == 0) {
+    if (count == null) {
       return;
     }
+    assert count > 0;
     count = count - 1;
     if (count > 0) {
       myRequestedPaths.put(path, count);

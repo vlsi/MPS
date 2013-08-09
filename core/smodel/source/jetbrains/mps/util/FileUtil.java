@@ -537,6 +537,21 @@ public class FileUtil {
     return path;
   }
 
+  // not taking non-canonical paths into account
+  public static boolean isSubPath(@NotNull String base, @NotNull String sub) {
+    boolean startsWith = sub.startsWith(base);
+    if (!startsWith) return false;
+    int baseLen = base.length();
+    if (sub.length() == baseLen) return true; // non-strict comparison: equal strings -> true
+
+    char lastBaseChar = base.charAt(baseLen - 1);
+    char nextChar = sub.charAt(baseLen);
+    if (lastBaseChar == '/' || lastBaseChar == '\\' || nextChar == '/' || nextChar == '\\') {
+      return true;
+    }
+    return false;
+  }
+
   private abstract static class Packer {
     public void pack(File dir, File to) {
       FileOutputStream fos = null;
