@@ -243,7 +243,7 @@
   </void>
   <void method="put">
    <string>public org.jetbrains.mps.openapi.model.SModel jetbrains.mps.smodel.SNode.getModel()</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getPresentation()</string>
