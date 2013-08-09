@@ -407,7 +407,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       } else if(source instanceof FilePerRootDataSource) {
         this.mySourceVirtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource) source).getFolder()).findChild(MPSExtentions.DOT_MODEL_HEADER);
       }
-      myPsiDirectory = new PsiDirectoryImpl((PsiManagerImpl)myManager, getSourceVirtualFile().getParent());
+      if(getSourceVirtualFile() == null || getSourceVirtualFile().getParent() == null)
+        myPsiDirectory = null;
+      else
+        myPsiDirectory = new PsiDirectoryImpl((PsiManagerImpl)myManager, getSourceVirtualFile().getParent());
       /*MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
