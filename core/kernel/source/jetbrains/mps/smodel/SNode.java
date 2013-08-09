@@ -799,9 +799,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    nodeRead();
+    //nodeRead();
 
-    fireNodeReadAccess();
+    //fireNodeReadAccess();
 
     return internal_getModel();
   }
