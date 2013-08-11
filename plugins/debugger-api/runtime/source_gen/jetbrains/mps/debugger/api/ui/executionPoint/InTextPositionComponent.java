@@ -165,6 +165,9 @@ public class InTextPositionComponent implements ProjectComponent {
     if (myHighlighter != null) {
       return new _FunctionTypes._void_P0_E0() {
         public void invoke() {
+          if (myHighlighter == null) {
+            return;
+          }
           RangeHighlighter highlighter = myHighlighter;
           myHighlighter = null;
           highlighter.dispose();
