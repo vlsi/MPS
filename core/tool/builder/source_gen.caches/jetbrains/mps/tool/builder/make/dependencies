@@ -197,6 +197,7 @@
   <dependency className="jetbrains.mps.tool.builder.make.GeneratorWorker" file="GeneratorWorker.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -209,6 +210,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.classloading.DumbIdeaPluginFacet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -230,7 +232,9 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.FacetsFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleFacet" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.make.BaseGeneratorWorker" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
   </dependency>
