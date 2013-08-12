@@ -615,10 +615,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-    nodeRead();
+    //should not contain read events as concept can't be changed
+    //nodeRead();
 
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
+    //fireNodeReadAccess();
+    //fireNodeUnclassifiedReadAccess();
 
     // Note: during indexing we invoke `node.getConcept().getQualifiedName()`
     // 1) without read action 2) we must not use deployed version of the concept
