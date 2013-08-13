@@ -50,8 +50,7 @@ public class ClassifiersScope extends FilteringScope {
     }
     // end of hack 
     // TODO Must be done through ScopeProvider 
-    return ClassifierResolveUtils.resolve(refText, contextNode, myModuleScope, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
-    // <node> 
+    return ClassifierResolveUtils.resolveAndCache(refText, contextNode, myModuleScope, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
   }
 
   @Override

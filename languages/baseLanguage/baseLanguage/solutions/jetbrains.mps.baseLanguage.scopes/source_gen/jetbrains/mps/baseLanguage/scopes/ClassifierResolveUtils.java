@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -234,6 +236,18 @@ public class ClassifierResolveUtils {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
       }
     });
+  }
+
+  public static SNode resolveAndCache(final String refText, final SNode contextNode, final IScope moduleScope, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
+
+    SNode claz = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    Pair<SNode, String> key = new Pair(claz, refText);
+    return RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        return resolve(refText, contextNode, moduleScope, modelPlusImported, includeAncestors);
+      }
+    });
+
   }
 
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
