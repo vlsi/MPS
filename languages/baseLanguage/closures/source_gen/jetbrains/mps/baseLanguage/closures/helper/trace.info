@@ -1016,59 +1016,69 @@
     <nodeInfo nodeId="6289591591668589929" fileName="WrappersUtils.java" startLine="64" startPosition="17" endLine="65" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6289591591668589970" fileName="WrappersUtils.java" startLine="67" startPosition="5" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1207130155281" fileName="WrappersUtils.java" startLine="71" startPosition="78" endLine="72" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207130155314" fileName="WrappersUtils.java" startLine="74" startPosition="809" endLine="75" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207130155331" fileName="WrappersUtils.java" startLine="77" startPosition="114" endLine="78" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207143472897" fileName="WrappersUtils.java" startLine="84" startPosition="88" endLine="85" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207144509279" fileName="WrappersUtils.java" startLine="85" startPosition="27" endLine="86" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207144694028" fileName="WrappersUtils.java" startLine="89" startPosition="316" endLine="90" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1226351069701" fileName="WrappersUtils.java" startLine="91" startPosition="331" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5415035327164076869" fileName="WrappersUtils.java" startLine="93" startPosition="329" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1237140443216" fileName="WrappersUtils.java" startLine="95" startPosition="331" endLine="96" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5415035327164076888" fileName="WrappersUtils.java" startLine="97" startPosition="329" endLine="98" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7376433222636453483" fileName="WrappersUtils.java" startLine="101" startPosition="7" endLine="102" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1207144725057" fileName="WrappersUtils.java" startLine="102" startPosition="73" endLine="103" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207130155369" fileName="WrappersUtils.java" startLine="104" startPosition="5" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6206193564521359038" fileName="WrappersUtils.java" startLine="74" startPosition="108" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6206193564521362001" fileName="WrappersUtils.java" startLine="76" startPosition="7" endLine="77" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207130155314" fileName="WrappersUtils.java" startLine="78" startPosition="457" endLine="79" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207130155331" fileName="WrappersUtils.java" startLine="81" startPosition="114" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6206193564521414287" fileName="WrappersUtils.java" startLine="86" startPosition="5" endLine="87" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6206193564521421931" fileName="WrappersUtils.java" startLine="87" startPosition="94" endLine="88" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1207143472897" fileName="WrappersUtils.java" startLine="90" startPosition="88" endLine="91" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207144509279" fileName="WrappersUtils.java" startLine="91" startPosition="27" endLine="92" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6206193564521388627" fileName="WrappersUtils.java" startLine="94" startPosition="110" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6206193564521390627" fileName="WrappersUtils.java" startLine="96" startPosition="9" endLine="97" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207144694028" fileName="WrappersUtils.java" startLine="99" startPosition="316" endLine="100" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1226351069701" fileName="WrappersUtils.java" startLine="101" startPosition="331" endLine="102" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5415035327164076869" fileName="WrappersUtils.java" startLine="103" startPosition="329" endLine="104" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1237140443216" fileName="WrappersUtils.java" startLine="105" startPosition="331" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5415035327164076888" fileName="WrappersUtils.java" startLine="107" startPosition="329" endLine="108" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7376433222636453483" fileName="WrappersUtils.java" startLine="111" startPosition="7" endLine="112" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1207144725057" fileName="WrappersUtils.java" startLine="112" startPosition="73" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207130155369" fileName="WrappersUtils.java" startLine="114" startPosition="5" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6289591591668590015" fileName="WrappersUtils.java" startLine="29" startPosition="107" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6289591591668590300" fileName="WrappersUtils.java" startLine="36" startPosition="31" endLine="39" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5415035327163506173" fileName="WrappersUtils.java" startLine="53" startPosition="45" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207130448150" fileName="WrappersUtils.java" startLine="76" startPosition="135" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6206193564521313017" fileName="WrappersUtils.java" startLine="73" startPosition="93" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207130448150" fileName="WrappersUtils.java" startLine="80" startPosition="135" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6206193564521382284" fileName="WrappersUtils.java" startLine="93" startPosition="90" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6289591591668589903" fileName="WrappersUtils.java" startLine="59" startPosition="45" endLine="63" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6289591591668590151" fileName="WrappersUtils.java" startLine="35" startPosition="107" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207130155321" fileName="WrappersUtils.java" startLine="75" startPosition="161" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207130155321" fileName="WrappersUtils.java" startLine="79" startPosition="83" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6289591591668590122" fileName="WrappersUtils.java" startLine="34" startPosition="71" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1207130155312" fileName="WrappersUtils.java" startLine="73" startPosition="93" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207130155312" fileName="WrappersUtils.java" startLine="77" startPosition="106" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6289591591668590099" fileName="WrappersUtils.java" startLine="32" startPosition="7" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207130155310" fileName="WrappersUtils.java" startLine="72" startPosition="71" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1207144762933" fileName="WrappersUtils.java" startLine="88" startPosition="836" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207144558987" fileName="WrappersUtils.java" startLine="87" startPosition="90" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207144545863" fileName="WrappersUtils.java" startLine="86" startPosition="211" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1207144762933" fileName="WrappersUtils.java" startLine="98" startPosition="406" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207144558987" fileName="WrappersUtils.java" startLine="97" startPosition="108" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207130155310" fileName="WrappersUtils.java" startLine="72" startPosition="71" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6289591591668563655" fileName="WrappersUtils.java" startLine="27" startPosition="222" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6289591591668589549" fileName="WrappersUtils.java" startLine="50" startPosition="51" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6289591591668589527" fileName="WrappersUtils.java" startLine="49" startPosition="71" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1207144545863" fileName="WrappersUtils.java" startLine="92" startPosition="211" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6289591591668531649" fileName="WrappersUtils.java" startLine="25" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectVariableDeclarationsToWrap2#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1207143418304" fileName="WrappersUtils.java" startLine="82" startPosition="5" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6289591591668585099" fileName="WrappersUtils.java" startLine="47" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectVariableUsages#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="1207078442157" fileName="WrappersUtils.java" startLine="71" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectVariableDeclarationsToWrap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1207143418304" fileName="WrappersUtils.java" startLine="88" startPosition="114" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1207078442157" fileName="WrappersUtils.java" startLine="71" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectVariableDeclarationsToWrap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="6289591591668590018" fileName="WrappersUtils.java" startLine="30" startPosition="105" endLine="31" endPosition="143" />
     <scopeInfo nodeId="6289591591668590301" fileName="WrappersUtils.java" startLine="37" startPosition="119" endLine="38" endPosition="152" />
     <scopeInfo nodeId="5415035327163506174" fileName="WrappersUtils.java" startLine="54" startPosition="62" endLine="55" endPosition="50" />
-    <scopeInfo nodeId="1207130448151" fileName="WrappersUtils.java" startLine="77" startPosition="114" endLine="78" endPosition="57" />
-    <scopeInfo nodeId="1207144762934" fileName="WrappersUtils.java" startLine="89" startPosition="316" endLine="90" endPosition="32" />
-    <scopeInfo nodeId="1226350804602" fileName="WrappersUtils.java" startLine="91" startPosition="331" endLine="92" endPosition="32" />
-    <scopeInfo nodeId="5415035327164076868" fileName="WrappersUtils.java" startLine="93" startPosition="329" endLine="94" endPosition="32" />
-    <scopeInfo nodeId="1237140443215" fileName="WrappersUtils.java" startLine="95" startPosition="331" endLine="96" endPosition="32" />
-    <scopeInfo nodeId="5415035327164076887" fileName="WrappersUtils.java" startLine="97" startPosition="329" endLine="98" endPosition="32" />
+    <scopeInfo nodeId="6206193564521313020" fileName="WrappersUtils.java" startLine="74" startPosition="108" endLine="75" endPosition="17" />
+    <scopeInfo nodeId="1207130448151" fileName="WrappersUtils.java" startLine="81" startPosition="114" endLine="82" endPosition="57" />
+    <scopeInfo nodeId="6206193564521382287" fileName="WrappersUtils.java" startLine="94" startPosition="110" endLine="95" endPosition="19" />
+    <scopeInfo nodeId="1207144762934" fileName="WrappersUtils.java" startLine="99" startPosition="316" endLine="100" endPosition="32" />
+    <scopeInfo nodeId="1226350804602" fileName="WrappersUtils.java" startLine="101" startPosition="331" endLine="102" endPosition="32" />
+    <scopeInfo nodeId="5415035327164076868" fileName="WrappersUtils.java" startLine="103" startPosition="329" endLine="104" endPosition="32" />
+    <scopeInfo nodeId="1237140443215" fileName="WrappersUtils.java" startLine="105" startPosition="331" endLine="106" endPosition="32" />
+    <scopeInfo nodeId="5415035327164076887" fileName="WrappersUtils.java" startLine="107" startPosition="329" endLine="108" endPosition="32" />
     <scopeInfo nodeId="6289591591668590015" fileName="WrappersUtils.java" startLine="29" startPosition="107" endLine="32" endPosition="7">
       <varInfo nodeId="6289591591668590016" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="6289591591668590153" fileName="WrappersUtils.java" startLine="36" startPosition="31" endLine="39" endPosition="13" />
-    <scopeInfo nodeId="1207130155328" fileName="WrappersUtils.java" startLine="76" startPosition="135" endLine="79" endPosition="11" />
+    <scopeInfo nodeId="1207130155328" fileName="WrappersUtils.java" startLine="80" startPosition="135" endLine="83" endPosition="11" />
     <scopeInfo nodeId="6289591591668590125" fileName="WrappersUtils.java" startLine="35" startPosition="107" endLine="40" endPosition="11" />
     <scopeInfo nodeId="6289591591668589550" fileName="WrappersUtils.java" startLine="51" startPosition="43" endLine="56" endPosition="9">
       <varInfo nodeId="6289591591668589663" varName="ri" />
       <varInfo nodeId="6289591591668589705" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1207130155313" fileName="WrappersUtils.java" startLine="74" startPosition="809" endLine="80" endPosition="9">
+    <scopeInfo nodeId="1207130155313" fileName="WrappersUtils.java" startLine="78" startPosition="457" endLine="84" endPosition="9">
       <varInfo nodeId="1207130155315" varName="vd" />
     </scopeInfo>
     <scopeInfo nodeId="6289591591668590122" fileName="WrappersUtils.java" startLine="34" startPosition="71" endLine="41" endPosition="9">
@@ -1082,19 +1092,20 @@
       <varInfo nodeId="6289591591668589889" varName="wi" />
       <varInfo nodeId="6289591591668589904" varName="writes" />
     </scopeInfo>
-    <scopeInfo nodeId="1207130155311" fileName="WrappersUtils.java" startLine="73" startPosition="93" endLine="81" endPosition="7" />
-    <scopeInfo nodeId="1207130155310" fileName="WrappersUtils.java" startLine="72" startPosition="71" endLine="82" endPosition="5">
-      <varInfo nodeId="1207130155364" varName="desc" />
+    <scopeInfo nodeId="1207144558988" fileName="WrappersUtils.java" startLine="98" startPosition="406" endLine="109" endPosition="11" />
+    <scopeInfo nodeId="1207130155311" fileName="WrappersUtils.java" startLine="73" startPosition="93" endLine="85" endPosition="7">
+      <varInfo nodeId="6206193564521362004" varName="varRef" />
     </scopeInfo>
-    <scopeInfo nodeId="1207144558988" fileName="WrappersUtils.java" startLine="88" startPosition="836" endLine="99" endPosition="11" />
-    <scopeInfo nodeId="1207144545864" fileName="WrappersUtils.java" startLine="87" startPosition="90" endLine="100" endPosition="9" />
     <scopeInfo nodeId="6289591591668563656" fileName="WrappersUtils.java" startLine="28" startPosition="31" endLine="42" endPosition="7">
       <varInfo nodeId="6289591591668589976" varName="clsMap" />
     </scopeInfo>
-    <scopeInfo nodeId="1207144545863" fileName="WrappersUtils.java" startLine="86" startPosition="211" endLine="101" endPosition="7">
-      <varInfo nodeId="1207144545867" varName="desc" />
+    <scopeInfo nodeId="1207130155310" fileName="WrappersUtils.java" startLine="72" startPosition="71" endLine="86" endPosition="5">
+      <varInfo nodeId="1207130155364" varName="desc" />
     </scopeInfo>
     <scopeInfo nodeId="6289591591668589528" fileName="WrappersUtils.java" startLine="50" startPosition="51" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="1207144545864" fileName="WrappersUtils.java" startLine="93" startPosition="90" endLine="110" endPosition="9">
+      <varInfo nodeId="6206193564521390628" varName="varRef" />
+    </scopeInfo>
     <scopeInfo nodeId="6289591591668589527" fileName="WrappersUtils.java" startLine="49" startPosition="71" endLine="67" endPosition="5">
       <varInfo nodeId="6289591591668589531" varName="ins" />
     </scopeInfo>
@@ -1102,9 +1113,8 @@
       <varInfo nodeId="6289591591668563666" varName="resVdecls" />
       <varInfo nodeId="6289591591668563283" varName="wrpPrgNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1207143418305" fileName="WrappersUtils.java" startLine="84" startPosition="88" endLine="103" endPosition="18">
-      <varInfo nodeId="1207144509280" varName="sl" />
-      <varInfo nodeId="1207143472898" varName="vd" />
+    <scopeInfo nodeId="1207144545863" fileName="WrappersUtils.java" startLine="92" startPosition="211" endLine="111" endPosition="7">
+      <varInfo nodeId="1207144545867" varName="desc" />
     </scopeInfo>
     <scopeInfo nodeId="6289591591668531649" fileName="WrappersUtils.java" startLine="25" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="6289591591668563291" varName="closure" />
@@ -1113,19 +1123,23 @@
       <varInfo nodeId="6289591591668589518" varName="prg" />
       <varInfo nodeId="6289591591668589569" varName="resMap" />
     </scopeInfo>
-    <scopeInfo nodeId="1207143418304" fileName="WrappersUtils.java" startLine="82" startPosition="5" endLine="104" endPosition="5">
-      <varInfo nodeId="1207143418307" varName="it" />
-    </scopeInfo>
     <scopeInfo nodeId="6289591591668585099" fileName="WrappersUtils.java" startLine="47" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="6289591591668585117" varName="start" />
     </scopeInfo>
-    <scopeInfo nodeId="1207078442160" fileName="WrappersUtils.java" startLine="71" startPosition="78" endLine="105" endPosition="18">
+    <scopeInfo nodeId="1207143418305" fileName="WrappersUtils.java" startLine="90" startPosition="88" endLine="113" endPosition="18">
+      <varInfo nodeId="1207144509280" varName="sl" />
+      <varInfo nodeId="1207143472898" varName="vd" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207143418304" fileName="WrappersUtils.java" startLine="88" startPosition="114" endLine="114" endPosition="5">
+      <varInfo nodeId="1207143418307" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207078442160" fileName="WrappersUtils.java" startLine="71" startPosition="78" endLine="115" endPosition="18">
       <varInfo nodeId="1207130155282" varName="vdecls" />
     </scopeInfo>
-    <scopeInfo nodeId="1207078442157" fileName="WrappersUtils.java" startLine="71" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="1207078442157" fileName="WrappersUtils.java" startLine="71" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="1207078468785" varName="closure" />
     </scopeInfo>
-    <unitInfo nodeId="1207078435086" fileName="WrappersUtils.java" startLine="24" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils" />
+    <unitInfo nodeId="1207078435086" fileName="WrappersUtils.java" startLine="24" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.WrappersUtils" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590339(jetbrains.mps.baseLanguage.closures.helper)/1240908386453">
     <nodeInfo nodeId="1240910255624" fileName="Flags.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
