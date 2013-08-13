@@ -35,6 +35,10 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -733,6 +737,124 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChildWrapper_2870536390415252400(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_wrapperSubstituteDefaultSelection");
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAbstractChild_4942308145796905559(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1");
+      }
+
+      public String getMatchingText(String pattern) {
+        return "child1";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), null));
+      }
+    });
+    return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAbstractChild_3185679905989951457(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1");
+      }
+
+      public String getMatchingText(String pattern) {
+        return "child1";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), null));
+      }
+    });
+    return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAnotherAbstractChild_3185679905992087904(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return !(SPropertyOperations.getBoolean(it, "abstract"));
+            }
+          }).toListSequence();
+        }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null));
+            }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), null));
+            }
+          });
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAnotherAbstractChild_3185679905990459421(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return !(SPropertyOperations.getBoolean(it, "abstract"));
+            }
+          }).toListSequence();
+        }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null));
+            }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"), null));
+            }
+          });
+        }
+      }
+    }
+    return result;
   }
 
   private static SNode _quotation_createNode_qp9nsj_a0l0a0a0(Object parameter_1) {
