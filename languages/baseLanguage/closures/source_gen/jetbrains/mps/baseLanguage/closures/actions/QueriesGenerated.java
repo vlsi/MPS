@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -186,6 +187,14 @@ public class QueriesGenerated {
       public String getDescriptionText(String pattern) {
         return "add parameter";
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), null));
+      }
     });
     return result;
   }
@@ -213,6 +222,14 @@ public class QueriesGenerated {
       public String getDescriptionText(String pattern) {
         return "add parameter";
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), null));
+      }
     });
     return result;
   }
@@ -238,6 +255,14 @@ public class QueriesGenerated {
 
       public String getDescriptionText(String pattern) {
         return "invoke function";
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"), null));
       }
     });
     return result;
@@ -266,6 +291,14 @@ public class QueriesGenerated {
       public String getDescriptionText(String pattern) {
         return "add formal parameter";
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), null));
+      }
     });
     return result;
   }
@@ -288,6 +321,14 @@ public class QueriesGenerated {
 
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), null));
       }
     });
     return result;

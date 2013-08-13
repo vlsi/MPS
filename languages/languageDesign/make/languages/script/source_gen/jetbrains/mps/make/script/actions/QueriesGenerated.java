@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -244,6 +245,14 @@ public class QueriesGenerated {
 
       public String getDescriptionText(String pattern) {
         return "make default";
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.Option"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.Option"), null));
       }
     });
     return result;

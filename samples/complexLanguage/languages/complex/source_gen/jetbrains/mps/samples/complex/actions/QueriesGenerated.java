@@ -16,6 +16,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1196261413060(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -39,6 +40,14 @@ public class QueriesGenerated {
       public String getDescriptionText(String pattern) {
         return "complex real part";
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), null));
+      }
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
@@ -58,6 +67,14 @@ public class QueriesGenerated {
 
       public String getDescriptionText(String pattern) {
         return "complex imaginary part";
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), null));
       }
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
@@ -79,6 +96,14 @@ public class QueriesGenerated {
       public String getDescriptionText(String pattern) {
         return "complex absolute value";
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), null));
+      }
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
@@ -98,6 +123,14 @@ public class QueriesGenerated {
 
       public String getDescriptionText(String pattern) {
         return "complex argument";
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), null));
       }
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
@@ -119,6 +152,14 @@ public class QueriesGenerated {
       public String getDescriptionText(String pattern) {
         return "complex conjugative";
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), null));
+      }
     });
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
@@ -138,6 +179,14 @@ public class QueriesGenerated {
 
       public String getDescriptionText(String pattern) {
         return "complex degree";
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), null));
       }
     });
     return result;

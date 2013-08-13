@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 
 public class QueriesGenerated {
@@ -94,6 +95,14 @@ public class QueriesGenerated {
 
       public String getDescriptionText(String pattern) {
         return "add qualifier for super expression";
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), null));
       }
     });
     return result;

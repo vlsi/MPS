@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="org.jetbrains.mps.samples.Money.actions.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -19,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformActionsBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

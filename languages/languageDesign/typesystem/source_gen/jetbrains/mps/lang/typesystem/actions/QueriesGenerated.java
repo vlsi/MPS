@@ -30,6 +30,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_AbstractEquationStatement_1174664649251(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -137,6 +138,14 @@ public class QueriesGenerated {
               SLinkOperations.setTarget(left, "normalType", _context.getSourceNode(), true);
               SLinkOperations.setTarget(result, "leftExpression", left, true);
               return result;
+            }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), null));
             }
           });
         }

@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_LogicalOperator_642541832606605390(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -109,6 +110,14 @@ public class QueriesGenerated {
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), null));
+            }
           });
         }
       }
@@ -148,6 +157,14 @@ public class QueriesGenerated {
 
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
+            }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), null));
             }
           });
         }
@@ -189,6 +206,14 @@ public class QueriesGenerated {
             public String getDescriptionText(String pattern) {
               return SPropertyOperations.getString((item), "name");
             }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), null));
+            }
           });
         }
       }
@@ -228,6 +253,14 @@ public class QueriesGenerated {
 
             public String getDescriptionText(String pattern) {
               return SPropertyOperations.getString((item), "name");
+            }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), null));
             }
           });
         }

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1141736782992981496(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -48,6 +49,14 @@ public class QueriesGenerated {
 
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
+            }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), null));
             }
           });
         }

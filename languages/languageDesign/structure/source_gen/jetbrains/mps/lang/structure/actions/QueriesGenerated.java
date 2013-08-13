@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -42,6 +43,14 @@ public class QueriesGenerated {
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), null));
+      }
     });
     return result;
   }
@@ -64,6 +73,14 @@ public class QueriesGenerated {
 
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), null));
       }
     });
     return result;
@@ -111,6 +128,14 @@ public class QueriesGenerated {
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
+
+            @Override
+            protected boolean isEnabled() {
+              SNode sourceNode = getSourceNode();
+              SNode parent = SNodeOperations.getParent(sourceNode);
+              SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+              return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"), null));
+            }
           });
         }
       }
@@ -136,6 +161,14 @@ public class QueriesGenerated {
 
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"), null));
       }
     });
     return result;
