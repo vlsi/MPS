@@ -221,7 +221,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorComponent.class));
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
-  public static final Color CARET_ROW_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
 
   private static final int SCROLL_GAP = 15;
 
@@ -2275,6 +2274,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   protected void paintComponent(Graphics gg) {
+    EditorSettings setting = EditorSettings.getInstance();
     Graphics2D g = (Graphics2D) gg;
 
     turnOnAliasingIfPossible(g);
@@ -2288,7 +2288,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
-      g.setColor(CARET_ROW_COLOR);
+      g.setColor(setting.getCaretRowColor());
       g.fillRect(0, deepestCell.getY(), getWidth(),
           deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
@@ -2307,7 +2307,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
-      EditorSettings setting = EditorSettings.getInstance();
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());

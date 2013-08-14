@@ -39,6 +39,7 @@ import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -306,12 +307,12 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       int selectedCellY = deepestCell.getY();
       int selectedCellHeight = deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset();
       if (g.hitClip(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight)) {
-        g.setColor(EditorComponent.CARET_ROW_COLOR);
+        g.setColor(EditorSettings.getInstance().getCaretRowColor());
         g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
         // Drawing folding line
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(),
             EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
-        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR,
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorSettings.getInstance().getCaretRowColor(),
             EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(),
             EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));

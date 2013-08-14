@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -59,7 +60,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
         SNode baseRooot = myBaseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
         editNode(baseRooot);
 
-        setBackground(EditorComponent.CARET_ROW_COLOR);
+        setBackground(EditorSettings.getInstance().getCaretRowColor());
 
         Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
           public Iterable<ChangeEditorMessage> translate(ModelChange ch) {

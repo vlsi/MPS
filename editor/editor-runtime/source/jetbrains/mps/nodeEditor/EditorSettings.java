@@ -41,6 +41,9 @@ import java.util.List;
 )
 public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
+  private static final Color DEFAULT_CARET_ROW_COLOR = new Color(255, 255, 215);
+
+  private final EditorColorsManager myColorsManager;
 
   public static EditorSettings getInstance() {
     return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);
@@ -60,12 +63,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
   private CaretBlinker myCaretBlinker;
 
-  public EditorSettings(CaretBlinker caretBlinker) {
+  public EditorSettings(CaretBlinker caretBlinker, EditorColorsManager colorsManager) {
     myCaretBlinker = caretBlinker;
+    myColorsManager = colorsManager;
     updateCachedValue();
   }
 
   private EditorSettings() {
+    myColorsManager = null;
     updateCachedValue();
   }
 
@@ -144,6 +149,10 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
   public Color getRangeSelectionForegroundColor() {
     return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
+  }
+
+  public Color getCaretRowColor() {
+    return myColorsManager == null ? DEFAULT_CARET_ROW_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
   }
 
   public int getSpacesWidth(int size) {
