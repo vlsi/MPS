@@ -247,7 +247,7 @@
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getPresentation()</string>
-   <int>8</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.removeChild(org.jetbrains.mps.openapi.model.SNode)</string>
@@ -295,7 +295,7 @@
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getConceptDeclarationNode()</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public boolean jetbrains.mps.smodel.SNode.isDescendantOf(jetbrains.mps.smodel.SNode,boolean)</string>
@@ -359,7 +359,7 @@
   </void>
   <void method="put">
    <string>public org.jetbrains.mps.openapi.language.SConcept jetbrains.mps.smodel.SNode.getConcept()</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.Language jetbrains.mps.smodel.SNode.getNodeLanguage()</string>
@@ -439,7 +439,7 @@
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptFqName()</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPropertyDeclaration(java.lang.String)</string>
@@ -467,7 +467,7 @@
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getConceptShortName()</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string>
@@ -507,7 +507,7 @@
   </void>
   <void method="put">
    <string>public jetbrains.mps.project.structure.modules.ModuleReference jetbrains.mps.smodel.SNode.getConceptLanguage()</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getRoleLink()</string>
@@ -543,7 +543,7 @@
   </void>
   <void method="put">
    <string>public java.lang.String jetbrains.mps.smodel.SNode.getPresentation(boolean)</string>
-   <int>8</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public void jetbrains.mps.smodel.SNode.setProperty(java.lang.String,java.lang.String)</string>

@@ -84,6 +84,9 @@ public class TextGenerator {
     for (TextGenerationResult result : results) {
       SNode outputRootNode = result.getRoot();
 
+      Object contents = result.getResult();
+      if (contents == TextGen.NO_TEXTGEN) continue;
+
       String name = getFileName(outputRootNode);
       if (name == null) {
         Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getNodeId() + "] in model " + outputRootNode.getModel().getReference().getModelName());
@@ -92,13 +95,10 @@ public class TextGenerator {
         continue;
       }
 
-      Object contents = result.getResult();
-      if (contents != TextGen.NO_TEXTGEN) {
-        if (contents instanceof String) {
-          streamHandler.saveStream(name, (String) contents, false);
-        } else {
-          streamHandler.saveStream(name, (byte[]) contents, false);
-        }
+      if (contents instanceof String) {
+        streamHandler.saveStream(name, (String) contents, false);
+      } else {
+        streamHandler.saveStream(name, (byte[]) contents, false);
       }
     }
   }
