@@ -3,9 +3,9 @@
   <id>jetbrains.mps.console</id>
   <name>MPS Console</name>
   <description>Console in IDE to write and immediately execute DSL queries in IDE context</description>
-  <version>1.0</version>
+  <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="123.1"/>
+  <idea-version since-build="129.1" until-build="130.1"/>
 
   <xi:include href="../classes/jetbrains/mps/console/actions/ConsoleActions.xml" xpointer="xpointer(/components/*)"/>
 
