@@ -43,6 +43,9 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
   private static final Color DEFAULT_CARET_ROW_COLOR = new Color(255, 255, 215);
 
+  private static final Color DEFAULT_LEFT_HIGHLIGHTER_BACKGROUND_COLOR = Color.WHITE;
+  private static final Color DEFAULT_LEFT_HIGHLIGHTER_TEAR_LINE_COLOR = Color.gray;
+
   private final EditorColorsManager myColorsManager;
 
   public static EditorSettings getInstance() {
@@ -153,6 +156,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
   public Color getCaretRowColor() {
     return myColorsManager == null ? DEFAULT_CARET_ROW_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
+  }
+
+  public Color getLeftHighlighterBackgroundColor() {
+    return myColorsManager == null ? DEFAULT_LEFT_HIGHLIGHTER_BACKGROUND_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
+  }
+
+  public Color getLeftHighlighterTearLineColor() {
+    return myColorsManager == null ? DEFAULT_LEFT_HIGHLIGHTER_TEAR_LINE_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR);
   }
 
   public int getSpacesWidth(int size) {
