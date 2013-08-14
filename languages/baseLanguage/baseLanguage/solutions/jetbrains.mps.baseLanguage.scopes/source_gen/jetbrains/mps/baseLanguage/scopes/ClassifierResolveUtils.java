@@ -242,12 +242,13 @@ public class ClassifierResolveUtils {
 
     SNode claz = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     Pair<SNode, String> key = new Pair(claz, refText);
-    return RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<SNode>() {
-      public SNode invoke() {
-        return resolve(refText, contextNode, moduleScope, modelPlusImported, includeAncestors);
+    ResolveResult result = RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<ResolveResult>() {
+      public ResolveResult invoke() {
+        return new ResolveResult(resolve(refText, contextNode, moduleScope, modelPlusImported, includeAncestors));
       }
     });
 
+    return SNodeOperations.cast(result.getResult(), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
