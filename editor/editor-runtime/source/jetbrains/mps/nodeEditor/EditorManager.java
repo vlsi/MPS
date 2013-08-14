@@ -151,7 +151,8 @@ public class EditorManager {
       if (needToPushContext){
         context.getCellFactory().pushCellContext();
         com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
-        MyState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
+        ConceptEditorHintSettingsComponent editorHintSettings = ConceptEditorHintSettingsComponent.getInstance(project);
+        MyState state = editorHintSettings != null ? editorHintSettings.getState() : null;
         if (project != null && state != null) {
           Object[] hints = state.getEnabledHints().toArray();
           context.getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
