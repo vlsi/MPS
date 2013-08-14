@@ -448,12 +448,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         myNewCommand = SNodeOperations.copyNode(myCommandRoot);
       } else {
         newCursor = getPrevCmd(myCursor);
+        if ((newCursor == null)) {
+          return;
+        }
+        SNode myCursorCommand = SLinkOperations.getTarget(myCursor, "command", true);
+        SNode myCursorNew = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", null);
+        SLinkOperations.setTarget(myCursorNew, "command", myCursorCommand, true);
+        SLinkOperations.setTarget(myCursorNew, "modifiedCommand", SLinkOperations.getTarget(myCommandRoot, "command", true), true);
+        SNodeOperations.replaceWithAnother(myCursor, myCursorNew);
       }
       if ((newCursor == null)) {
         return;
       }
       myCursor = newCursor;
-      SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myCursor, "command", true)), true);
+      SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
     }
   }
 
@@ -468,14 +476,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       if ((myCursor == null)) {
         return;
       }
-
       SNode newCursor = getNextCmd(myCursor);
+
+      SNode myCursorCommand = SLinkOperations.getTarget(myCursor, "command", true);
+      SNode myCursorNew = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", null);
+      SLinkOperations.setTarget(myCursorNew, "command", myCursorCommand, true);
+      SLinkOperations.setTarget(myCursorNew, "modifiedCommand", SLinkOperations.getTarget(myCommandRoot, "command", true), true);
+      SNodeOperations.replaceWithAnother(myCursor, myCursorNew);
+
       if (!((newCursor == null))) {
         myCursor = newCursor;
-        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myCursor, "command", true)), true);
+        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       } else {
         myCursor = null;
-        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myNewCommand, "command", true)), true);
+        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       }
     }
   }

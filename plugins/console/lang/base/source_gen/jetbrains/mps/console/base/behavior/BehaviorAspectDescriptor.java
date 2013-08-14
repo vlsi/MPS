@@ -18,24 +18,26 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CommandResult_BehaviorDescriptor();
       case 2:
         return new CommandResultLine_BehaviorDescriptor();
-      case 9:
+      case 10:
         return new TextResultPart_BehaviorDescriptor();
       case 0:
         return new CommandHolder_BehaviorDescriptor();
-      case 7:
-        return new NodeWithClosure_BehaviorDescriptor();
-      case 6:
-        return new NodeResultPart_BehaviorDescriptor();
       case 8:
+        return new NodeWithClosure_BehaviorDescriptor();
+      case 7:
+        return new NodeResultPart_BehaviorDescriptor();
+      case 9:
         return new PastedNodeReference_BehaviorDescriptor();
-      case 5:
+      case 6:
         return new NodeReferenceString_BehaviorDescriptor();
-      case 4:
+      case 5:
         return new NodeReferencePresentation_BehaviorDescriptor();
+      case 4:
+        return new ModifiedCommandHistoryItem_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", "jetbrains.mps.console.base.structure.NodeReferencePresentation", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.NodeWithClosure", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
 }
