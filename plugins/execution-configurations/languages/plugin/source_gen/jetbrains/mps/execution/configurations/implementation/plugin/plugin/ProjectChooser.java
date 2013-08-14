@@ -8,9 +8,7 @@ import jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
 import jetbrains.mps.ide.common.LayoutUtil;
 import javax.swing.JLabel;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -30,15 +28,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
         myProjectPath.setEditable(!(myOpenCurrentProject.isSelected()));
       }
     });
-    myProjectPath = new FieldWithPathChooseDialog(new FileChooserDescriptor(true, false, false, false, false, false) {
-      @Override
-      public boolean isFileVisible(VirtualFile file, boolean b) {
-        if (!(super.isFileVisible(file, b))) {
-          return false;
-        }
-        return file.isDirectory() || file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT);
-      }
-    });
+    myProjectPath = new FieldWithPathChooseDialog(new OpenMPSProjectFileChooserDescriptor(true));
 
     this.add(myOpenCurrentProject, LayoutUtil.createLabelConstraints(0));
     this.add(new JLabel("Project to open:"), LayoutUtil.createLabelConstraints(1));
