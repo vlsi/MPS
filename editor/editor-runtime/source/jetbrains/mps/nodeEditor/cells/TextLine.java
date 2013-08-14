@@ -42,7 +42,8 @@ import java.util.Set;
 public class TextLine {
   // COLORS: Remove hardcoded color
   private static final Color ERROR_COLOR =
-      StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 220, 220);
+      StyleRegistry.getInstance() != null && StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() :
+          new Color(255, 220, 220);
 
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
   private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
