@@ -234,9 +234,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.JavaConvertUtil" file="JavaConvertUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
