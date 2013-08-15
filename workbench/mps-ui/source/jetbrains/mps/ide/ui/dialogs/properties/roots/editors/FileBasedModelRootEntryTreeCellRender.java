@@ -66,7 +66,7 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
       }
       Collection<String> kindFiles = modelRoot.getFiles(kind);
       for(String kindFile : kindFiles) {
-        if(file.getPath().contains(kindFile))
+        if(file.getPath().startsWith(kindFile + "/"))
           return myModelRootEditor.getFileBasedModelRootEntry().getKindIcon(kind);
       }
     }

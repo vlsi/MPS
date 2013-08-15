@@ -18,10 +18,17 @@ package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.ui.SModuleConfigurationTab;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry.ModelRootEntryListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -62,6 +69,30 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
       : myContext.getProject().getBasePath());
     myRootPanel.removeAll();
     myRootPanel.add(myContentEntriesEditor.getComponent(), BorderLayout.CENTER);
+
+    //Watch for changes in model root source folders
+    for(ModelRootEntryContainer container : myContentEntriesEditor.getModelRootsEntries()) {
+      container.getModelRootEntry().addModelRootEntryListener(new ModelRootEntryListener() {
+        @Override
+        public void fireDataChanged() {
+          final ModifiableRootModel modifiableRootModel = myContext.getModifiableRootModel();
+
+          for (ModelRoot path : myContentEntriesEditor.getModelRoots()) {
+            if(path instanceof FileBasedModelRoot) {
+              for(String file : ((FileBasedModelRoot) path).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
+                for(ContentEntry contentEntry : modifiableRootModel.getContentEntries()) {
+                  if(!file.contains(contentEntry.getFile().getPath()))
+                    continue;
+                  //Just add new source folder - do not watch after delete
+                  contentEntry.addSourceFolder(VirtualFileUtils.getVirtualFile(file), false);
+                  break;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
   }
 
   public void apply(MPSConfigurationBean data) {
