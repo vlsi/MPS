@@ -115,7 +115,7 @@ public class MPSFrameworkSupportConfigurable extends FrameworkSupportConfigurabl
     if(myFrameworkSupportModel.getModuleBuilder() instanceof JavaModuleBuilder
       && !((JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder()).getSourcePaths().isEmpty())
       return ((JavaModuleBuilder)myFrameworkSupportModel.getModuleBuilder()).getSourcePaths().get(0).first.
-        replace(((FrameworkSupportModelBase) myFrameworkSupportModel).getBaseDirectoryForLibrariesPath(), "").replace(File.separator, "");
+        replace(((FrameworkSupportModelBase) myFrameworkSupportModel).getBaseDirectoryForLibrariesPath(), "").replace("/", "");
 
     return "models";
   }
