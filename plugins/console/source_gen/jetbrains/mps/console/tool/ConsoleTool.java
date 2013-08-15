@@ -405,7 +405,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               });
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                  myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
+                  ProjectHelper.toIdeaProject(myProject).getComponent(ConsoleTool.class).getToolWindow().activate(new Runnable() {
+                    public void run() {
+                      myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
+                    }
+                  });
                 }
               });
             }
