@@ -12450,7 +12450,7 @@
                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3151797052710560697" nodeInfo="nn">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3151797052710547478" nodeInfo="nn">
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3151797052710388459" resolveInfo="deepReferences" />
-                                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3356342729940974921" resolveInfo="MultipleFilesParser" />
+                                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3356342729940974921" resolveInfo="JavaToMpsConverter" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3151797052710547912" nodeInfo="nn">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8504030010051279069" resolveInfo="theRightNode" />
                                         </node>
@@ -27131,7 +27131,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3356342729940974921" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="MultipleFilesParser" />
+    <property name="name" nameId="tpck.1169194664001" value="JavaToMpsConverter" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3356342729941530259" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="LOG" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -27139,7 +27139,7 @@
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxp.~LogManager%dgetLogger(java%dlang%dClass)%corg%dapache%dlog4j%dLogger" resolveInfo="getLogger" />
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ajxp.~LogManager" resolveInfo="LogManager" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="3356342729941570230" nodeInfo="nn">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="3356342729940974921" resolveInfo="MultipleFilesParser" />
+          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="3356342729940974921" resolveInfo="JavaToMpsConverter" />
         </node>
       </node>
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3356342729941587762" nodeInfo="in">
@@ -27351,7 +27351,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6323600598939691480" nodeInfo="in" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6323600598939691482" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="6323600598939917224" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3356342729946436650" resolveInfo="MultipleFilesParser" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3356342729946436650" resolveInfo="JavaToMpsConverter" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6323600598939917877" nodeInfo="nn">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6323600598939770610" resolveInfo="module" />
           </node>

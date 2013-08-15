@@ -273,7 +273,7 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FullASTConverter" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.MultipleFilesParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -307,7 +307,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.newparser.MultipleFilesParser" file="MultipleFilesParser.java">
+  <dependency className="jetbrains.mps.ide.java.newparser.JavaToMpsConverter" file="JavaToMpsConverter.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.InterruptedException" />

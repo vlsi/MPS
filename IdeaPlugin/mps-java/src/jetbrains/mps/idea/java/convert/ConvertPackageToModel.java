@@ -41,7 +41,7 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
@@ -132,7 +132,7 @@ public class ConvertPackageToModel extends AnAction {
       }
     }
 
-    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository(), true);
+    final JavaToMpsConverter parser = new JavaToMpsConverter(mpsModule, mpsProject.getRepository(), true);
     final List<IFile> javaFiles = toIFiles(psiJavaFiles);
 
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {

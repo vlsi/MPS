@@ -60,8 +60,8 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 
-public class MultipleFilesParser {
-  private static final Logger LOG = LogManager.getLogger(MultipleFilesParser.class);
+public class JavaToMpsConverter {
+  private static final Logger LOG = LogManager.getLogger(JavaToMpsConverter.class);
 
   private SModule myModule;
   private SModel myModel;
@@ -82,13 +82,13 @@ public class MultipleFilesParser {
   private int myRootCount = 0;
 
 
-  public MultipleFilesParser(SModule module, SRepository repository) {
+  public JavaToMpsConverter(SModule module, SRepository repository) {
     this(module, repository, false);
   }
 
 
 
-  public MultipleFilesParser(SModule module, SRepository repository, boolean perRoot) {
+  public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot) {
     myModule = module;
     myPerRoot = perRoot;
     myRepository = repository;
@@ -97,7 +97,7 @@ public class MultipleFilesParser {
 
 
 
-  public MultipleFilesParser(SModel model, SRepository repository) {
+  public JavaToMpsConverter(SModel model, SRepository repository) {
     myModel = model;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();

@@ -102,8 +102,8 @@
     <nodeInfo nodeId="6254820179237854131" fileName="JavaPaster.java" startLine="131" startPosition="7" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6254820179237722143" fileName="JavaPaster.java" startLine="132" startPosition="0" endLine="133" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="9025524024257384034" fileName="JavaPaster.java" startLine="133" startPosition="67" endLine="134" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508813892212566018" fileName="JavaPaster.java" startLine="134" startPosition="43" endLine="135" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1508813892212947055" fileName="JavaPaster.java" startLine="135" startPosition="138" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508813892212566018" fileName="JavaPaster.java" startLine="134" startPosition="43" endLine="135" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1508813892212947055" fileName="JavaPaster.java" startLine="135" startPosition="136" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6254820179237852606" fileName="JavaPaster.java" startLine="136" startPosition="78" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8183587472723150359" fileName="JavaPaster.java" startLine="138" startPosition="37" endLine="139" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418985936284183547" fileName="JavaPaster.java" startLine="143" startPosition="105" endLine="144" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
