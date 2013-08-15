@@ -46,7 +46,7 @@ import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -88,15 +88,13 @@ public class ConvertPackageToModel extends AnAction {
 
   @Override
   public void update(AnActionEvent e) {
-    PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+    PsiElement[] elements = e.getData(LangDataKeys.PSI_ELEMENT_ARRAY);
     Module module = e.getData(LangDataKeys.MODULE);
 
-    if (element == null
-      || !(element instanceof PsiDirectory)
-      || element instanceof MPSPsiModel
+    if (elements == null
       || module == null
       || FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID) == null
-      || !containsJavaFiles((PsiDirectory) element)) {
+      || !containsJavaThings(elements)) {
 
       e.getPresentation().setVisible(false);
       e.getPresentation().setEnabled(false);
@@ -106,7 +104,7 @@ public class ConvertPackageToModel extends AnAction {
   @Override
   public void actionPerformed(final AnActionEvent e) {
 
-    final PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+    final PsiElement[] elements = e.getData(LangDataKeys.PSI_ELEMENT_ARRAY);
     final Module module = e.getData(LangDataKeys.MODULE);
     final Project project = e.getData(PlatformDataKeys.PROJECT);
 
@@ -114,8 +112,7 @@ public class ConvertPackageToModel extends AnAction {
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    List<PsiJavaFile> psiJavaFiles = new ArrayList<PsiJavaFile>();
-    collectPsiJavaFiles((PsiDirectory) element, psiJavaFiles);
+    List<PsiJavaFile> psiJavaFiles = JavaConverter.getFilesFromSelection(JavaConverter.liftToFiles(Arrays.asList(elements)));
 
     Collection<Module> modulesWithoutFacet = JavaConverter.getModulesThatNeedMPSFacet(psiJavaFiles);
 
@@ -246,6 +243,17 @@ public class ConvertPackageToModel extends AnAction {
     });
   }
 
+  private boolean containsJavaThings(PsiElement[] elements) {
+    for (PsiElement e : elements) {
+      if (e instanceof PsiJavaFile) return true;
+      if (e instanceof PsiClass && !(e instanceof MPSPsiNode)) return true;
+    }
+    for (PsiElement e : elements) {
+      if (!(e instanceof PsiDirectory)) continue;
+      if (containsJavaFiles((PsiDirectory) e)) return true;
+    }
+    return false;
+  }
 
   private boolean containsJavaFiles(PsiDirectory dir) {
     for (PsiFile f : dir.getFiles()) {
@@ -269,16 +277,7 @@ public class ConvertPackageToModel extends AnAction {
     return result;
   }
 
-  private void collectPsiJavaFiles(PsiDirectory dir, List<PsiJavaFile> result) {
-    for (PsiFile f : dir.getFiles()) {
-      if (f instanceof PsiJavaFile) {
-        result.add((PsiJavaFile) f);
-      }
-    }
-    for (PsiDirectory d : dir.getSubdirectories()) {
-      collectPsiJavaFiles(d, result);
-    }
-  }
+
 
   private Set<PsiClass> getPsiClasses(List<IFile> javaFiles, PsiManager psiManager) {
     Set<PsiClass> result = new HashSet<PsiClass>();
