@@ -112,9 +112,9 @@ public class ConvertPackageToModel extends AnAction {
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    List<PsiJavaFile> psiJavaFiles = JavaConverter.getFilesFromSelection(JavaConverter.liftToFiles(Arrays.asList(elements)));
+    List<PsiJavaFile> psiJavaFiles = JavaConverterHelper.getFilesFromSelection(JavaConverterHelper.liftToFiles(Arrays.asList(elements)));
 
-    Collection<Module> modulesWithoutFacet = JavaConverter.getModulesThatNeedMPSFacet(psiJavaFiles);
+    Collection<Module> modulesWithoutFacet = JavaConverterHelper.getModulesThatNeedMPSFacet(psiJavaFiles);
 
     if (!modulesWithoutFacet.isEmpty()) {
       final AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project, module.getName(), modulesWithoutFacet);

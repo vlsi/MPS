@@ -38,7 +38,7 @@ import java.util.Set;
  * danilla 7/19/13
  */
 
-public class JavaConverter {
+public class JavaConverterHelper {
 
   public static Collection<Module> getModulesThatNeedMPSFacet(Collection<PsiJavaFile> javaFiles) {
     Set<Module> modules = new HashSet<Module>();
