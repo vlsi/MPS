@@ -569,17 +569,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   public void loadHistory() {
+    SModel loadedModel = null;
     if (loadedState != null) {
-      SModel loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
-      if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).isEmpty()) {
+      loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
+    }
+    if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).isEmpty()) {
+      if (loadedState != null) {
         if (LOG.isEnabledFor(Priority.WARN)) {
           LOG.warn("Error on loading history: invalid saved data");
         }
-        myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
-      } else {
-        myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
-        SModelOperations.addRootNode(myModel, myHistRoot);
       }
+      myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
+    } else {
+      myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
+      SModelOperations.addRootNode(myModel, myHistRoot);
     }
     this.myCommandRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.CommandHolder", null);
     TemporaryModels.getInstance().addMissingImports(myModel);
