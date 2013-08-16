@@ -405,7 +405,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
               });
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                  myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
+                  ProjectHelper.toIdeaProject(myProject).getComponent(ConsoleTool.class).getToolWindow().activate(new Runnable() {
+                    public void run() {
+                      myCommandEditor.scrollRectToVisible(myCommandEditor.getBounds());
+                    }
+                  });
                 }
               });
             }
@@ -448,12 +452,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         myNewCommand = SNodeOperations.copyNode(myCommandRoot);
       } else {
         newCursor = getPrevCmd(myCursor);
+        if ((newCursor == null)) {
+          return;
+        }
+        SNode myCursorCommand = SLinkOperations.getTarget(myCursor, "command", true);
+        SNode myCursorNew = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", null);
+        SLinkOperations.setTarget(myCursorNew, "command", myCursorCommand, true);
+        SLinkOperations.setTarget(myCursorNew, "modifiedCommand", SLinkOperations.getTarget(myCommandRoot, "command", true), true);
+        SNodeOperations.replaceWithAnother(myCursor, myCursorNew);
       }
       if ((newCursor == null)) {
         return;
       }
       myCursor = newCursor;
-      SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myCursor, "command", true)), true);
+      SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
     }
   }
 
@@ -468,14 +480,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       if ((myCursor == null)) {
         return;
       }
-
       SNode newCursor = getNextCmd(myCursor);
+
+      SNode myCursorCommand = SLinkOperations.getTarget(myCursor, "command", true);
+      SNode myCursorNew = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem", null);
+      SLinkOperations.setTarget(myCursorNew, "command", myCursorCommand, true);
+      SLinkOperations.setTarget(myCursorNew, "modifiedCommand", SLinkOperations.getTarget(myCommandRoot, "command", true), true);
+      SNodeOperations.replaceWithAnother(myCursor, myCursorNew);
+
       if (!((newCursor == null))) {
         myCursor = newCursor;
-        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myCursor, "command", true)), true);
+        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myCursor, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       } else {
         myCursor = null;
-        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(SLinkOperations.getTarget(myNewCommand, "command", true)), true);
+        SLinkOperations.setTarget(myCommandRoot, "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
       }
     }
   }
@@ -551,17 +569,20 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   public void loadHistory() {
+    SModel loadedModel = null;
     if (loadedState != null) {
-      SModel loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
-      if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).isEmpty()) {
+      loadedModel = PersistenceUtil.loadModel(loadedState.state, MPSExtentions.MODEL);
+    }
+    if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).isEmpty()) {
+      if (loadedState != null) {
         if (LOG.isEnabledFor(Priority.WARN)) {
           LOG.warn("Error on loading history: invalid saved data");
         }
-        myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
-      } else {
-        myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
-        SModelOperations.addRootNode(myModel, myHistRoot);
       }
+      myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
+    } else {
+      myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
+      SModelOperations.addRootNode(myModel, myHistRoot);
     }
     this.myCommandRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.CommandHolder", null);
     TemporaryModels.getInstance().addMissingImports(myModel);
