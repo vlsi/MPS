@@ -43,6 +43,7 @@ import java.util.Set;
 import java.util.LinkedHashSet;
 import com.intellij.openapi.application.PathMacros;
 import java.util.ArrayList;
+import com.intellij.openapi.application.ApplicationInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -253,7 +254,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     } else if (eq_un708i_a0b71a21(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
       dateMacro = _quotation_createNode_un708i_a0a0b71a21();
       ListSequence.fromList(macros).addElement(dateMacro);
-      buildNumber = _quotation_createNode_un708i_a0c0b71a21(name + "-SNAPSHOT");
+      buildNumber = _quotation_createNode_un708i_a0c0b71a21(name + "-" + ApplicationInfo.getInstance().getBuild().getBaselineVersion() + ".SNAPSHOT");
       ListSequence.fromList(macros).addElement(buildNumber);
       SNode macro = _quotation_createNode_un708i_a0e0b71a21();
       ListSequence.fromList(macros).addElement(macro);
