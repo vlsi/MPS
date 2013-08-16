@@ -111,7 +111,7 @@ public class JavaConverterHelper {
       PsiElement parent = element.getParent();
       if (dirs.contains(parent)) {
         if (element instanceof PsiDirectory) {
-          shallowDirs.add((PsiDirectory) element);
+          shallowDirs.add((PsiDirectory) parent);
         } else {
           excluded.add(parent);
         }
