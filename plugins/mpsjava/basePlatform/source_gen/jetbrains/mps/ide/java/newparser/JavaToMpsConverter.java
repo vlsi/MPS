@@ -52,20 +52,27 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.persistence.FilePerRootModelPersistence;
+import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class JavaToMpsConverter {
   private static final Logger LOG = LogManager.getLogger(JavaToMpsConverter.class);
 
   private SModule myModule;
   private SModel myModel;
-  private boolean myPerRoot;
+  private boolean myCreatePerRoot;
+  private boolean myCreateInplace;
   private SRepository myRepository;
   private ModelAccess myModelAccess;
 
@@ -73,6 +80,7 @@ public class JavaToMpsConverter {
   private JavaParser myJavaParser = new JavaParser();
   private Map<String, Set<SNode>> classesPerPackage = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<String, List<IFile>> filesPerPackage = MapSequence.fromMap(new HashMap<String, List<IFile>>());
+  private Map<String, IFile> packageDirs = MapSequence.fromMap(new HashMap<String, IFile>());
   private List<SModel> myModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<SNode> myRoots = ListSequence.fromList(new ArrayList<SNode>());
   private List<SNode> myAttachedRoots = ListSequence.fromList(new ArrayList<SNode>());
@@ -83,14 +91,17 @@ public class JavaToMpsConverter {
 
 
   public JavaToMpsConverter(SModule module, SRepository repository) {
-    this(module, repository, false);
+    this(module, repository, false, false);
   }
 
 
 
-  public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot) {
+  public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot, boolean inPlace) {
+    // currently perRoot==false and inPlace==true doesn't make it in-place 
+    // because of how DefaultModelRoot is implemented 
     myModule = module;
-    myPerRoot = perRoot;
+    myCreatePerRoot = perRoot;
+    myCreateInplace = inPlace;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }
@@ -143,7 +154,7 @@ public class JavaToMpsConverter {
           ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
 
           for (String pakage : SetSequence.fromSet(MapSequence.fromMap(classesPerPackage).keySet())) {
-            final SModel model = registerModelForPackage(pakage);
+            final SModel model = getModel(pakage, MapSequence.fromMap(packageDirs).get(pakage));
             if (model == null) {
               continue;
             }
@@ -337,6 +348,14 @@ public class JavaToMpsConverter {
     if (!(DirParser.checkPackageMatchesSourceDirectory(pkg, dir))) {
       LOG.error("package " + pkg + " doesn't match directory " + dir.getPath() + " (in file " + file.getName() + ")");
       return;
+    }
+
+    IFile currentDir = MapSequence.fromMap(packageDirs).get(pkg);
+    // if it's already set, leave it as is 
+    // it means one package is present in more than one dir, but we will have only one model 
+    // and it has to be somewhere 
+    if (currentDir == null) {
+      MapSequence.fromMap(packageDirs).put(pkg, dir);
     }
 
     Iterable<SNode> roots = parseResult.getNodes();
@@ -1011,51 +1030,84 @@ public class JavaToMpsConverter {
 
 
 
-  private SModel registerModelForPackage(String fqName) {
-
-    // FIXME uses not our myRepository (SRepository doesn't have getModelsByName) 
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
-    if (modelDescriptor != null) {
-      if (!(Sequence.fromIterable(((Iterable<SModel>) myModule.getModels())).contains(modelDescriptor))) {
-        // <node> 
-        // <node> 
-        return createModel(fqName);
+  private SModel getModel(String pkgFqName, IFile pkgDir) {
+    for (SModel model : Sequence.fromIterable(myModule.getModels())) {
+      // not handling stereotype on purpose: if there's my.pkg@java_stub, it shouldn't prevent us 
+      // from creating my.pkg 
+      if (pkgFqName.equals(model.getModelName())) {
+        return model;
       }
-      // package is already present... 
-      // maybe we shouldn't touch it then, maybe it should be an option 
-      return modelDescriptor;
-    } else {
-      return createModel(fqName);
     }
+    return createModel(pkgFqName, pkgDir);
   }
 
-  private SModel createModel(String packageName) {
-    // first check if it is possible 
-    if (getRootToCreateModel(packageName) == null) {
-      LOG.error("Cannot create model " + packageName + " in module " + myModule.getModuleName());
+  private SModel createModel(String pkgFqName, IFile pkgDir) {
+    ModelFactory factory = (myCreatePerRoot ?
+      PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID) :
+      PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL)
+    );
+
+    ModelRoot modelRoot;
+    String sourceRoot;
+
+    if (myCreateInplace) {
+      Tuples._2<ModelRoot, String> where = getRootContainingDir(pkgDir);
+      modelRoot = where._0();
+      sourceRoot = where._1();
+    } else {
+      modelRoot = getFirstRootToCreateModel(pkgFqName);
+      sourceRoot = null;
+    }
+
+    if (modelRoot == null) {
+      LOG.error("Failed to get model root to create the model in");
       return null;
     }
 
-    ModelRoot modelRoot = getRootToCreateModel(packageName);
     SModel modelDescr;
-
-    if (myPerRoot) {
-      ModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
-      modelDescr = SModuleOperations.createModelWithAdjustments(packageName, modelRoot, factory);
-    } else {
-      modelDescr = SModuleOperations.createModelWithAdjustments(packageName, modelRoot);
+    try {
+      modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, sourceRoot, factory);
+      if (modelDescr == null) {
+        LOG.error("Failed to create model: createModel returned null");
+        return null;
+      }
+    } catch (IOException e) {
+      LOG.error("Failed to create model", e);
+      return null;
     }
-    assert modelDescr != null;
 
+    // load() is needed to mark model loaded (really?!), without it save() would be a no-op 
+    modelDescr.load();
+    ((EditableSModel) modelDescr).setChanged(true);
     ((EditableSModel) modelDescr).save();
+
     return modelDescr;
   }
 
   @Nullable
-  private ModelRoot getRootToCreateModel(String packageName) {
+  private ModelRoot getFirstRootToCreateModel(String packageName) {
     for (ModelRoot root : Sequence.fromIterable(myModule.getModelRoots())) {
+      if (!(root instanceof DefaultModelRoot)) {
+        continue;
+      }
       if (root.canCreateModel(packageName)) {
         return root;
+      }
+    }
+    return null;
+  }
+
+  private Tuples._2<ModelRoot, String> getRootContainingDir(IFile dir) {
+    // returns modelRoot and sourceRoot within 
+    for (ModelRoot modelRoot : Sequence.fromIterable(myModule.getModelRoots())) {
+      // or maybe more general: file based model root? 
+      if (!(modelRoot instanceof DefaultModelRoot)) {
+        continue;
+      }
+      for (String sourceRoot : CollectionSequence.fromCollection(((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS))) {
+        if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
+          return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
+        }
       }
     }
     return null;
