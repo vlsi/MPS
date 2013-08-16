@@ -6,7 +6,6 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -17,6 +16,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -40,7 +40,10 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     if (this.getRunType() != null) {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      if (neq_jtq3ac_a0a2a1a0a1(this.getRunType(), JUnitRunTypes2.PROJECT) && ListSequence.fromList(getTests(null)).isEmpty()) {
+      if (eq_jtq3ac_a0c0b0a0b(this.getRunType(), JUnitRunTypes2.PROJECT)) {
+        return;
+      }
+      if (!(hasTests(null))) {
         throw new RuntimeConfigurationException("Could not find tests to run.");
       }
     }
@@ -112,6 +115,19 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return all[0];
   }
 
+  public boolean hasTests(final Project project) {
+    final boolean[] hasTests = {false};
+    final JUnitSettings_Configuration settings = this;
+    if (this.getRunType() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          hasTests[0] = Sequence.fromIterable(JUnitSettings_Configuration.this.getRunType().collect(settings, project)).isNotEmpty();
+        }
+      });
+    }
+    return hasTests[0];
+  }
+
   public List<ITestNodeWrapper> getTestsUnderProgress(final Project project) {
     final List<ITestNodeWrapper> stuffToTest = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     final JUnitRunTypes2 runTypes2 = this.getRunType();
@@ -128,7 +144,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
         }
       }
     };
-    if (eq_jtq3ac_a0a4a51_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_jtq3ac_a0a4a51(this.getRunType(), JUnitRunTypes2.MODULE)) {
+    if (eq_jtq3ac_a0a4a61_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_jtq3ac_a0a4a61(this.getRunType(), JUnitRunTypes2.MODULE)) {
       // collecting for module/project is slow, so execute under progress 
       // todo: get rid of casts to MPSProject 
       ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, ProjectHelper.toIdeaProject(project));
@@ -216,21 +232,21 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
 
   protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
 
-  private static boolean neq_jtq3ac_a0a2a1a0a1(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
-  private static boolean eq_jtq3ac_a0a4a51(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0c0b0a0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_jtq3ac_a0a4a51_0(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0a4a61(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_jtq3ac_a0a4a61_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
