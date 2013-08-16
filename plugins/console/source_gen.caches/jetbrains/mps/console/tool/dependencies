@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.tool.ConsoleContext" file="ConsoleContext.java">
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.console.tool.ConsoleFileEditor" file="ConsoleFileEditor.java">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />

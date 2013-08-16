@@ -357,6 +357,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
             public jetbrains.mps.project.Project getProject() {
               return myProject;
             }
+
+            public SModel getConsoleModel() {
+              return myModel;
+            }
           }, new ConsoleStream() {
             public void addText(String text) {
               checkResultAvailable();
@@ -403,6 +407,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                   TemporaryModels.getInstance().addMissingImports(myModel);
                 }
               });
+              // todo: this is a hack - activate is not required there because command can activate some other component 
               SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                   ProjectHelper.toIdeaProject(myProject).getComponent(ConsoleTool.class).getToolWindow().activate(new Runnable() {
