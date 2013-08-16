@@ -42,8 +42,11 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
   }
 
   public static class MapEntryViewerWrapper extends ValueWrapper {
+    private final String myPresentation;
+
     public MapEntryViewerWrapper(JavaValue value) {
       super(value);
+      myPresentation = getValuePresentationImpl();
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl() {
@@ -63,12 +66,16 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       return result;
     }
 
-    public String getValuePresentation() {
+    private String getValuePresentationImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<String>() {
         public String invoke() throws EvaluationException {
           return getValuePresentation((IObjectValueProxy) myValueProxy);
         }
       }, super.getValuePresentation());
+    }
+
+    public String getValuePresentation() {
+      return myPresentation;
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
