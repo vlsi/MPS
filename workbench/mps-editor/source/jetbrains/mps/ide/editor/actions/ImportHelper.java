@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -313,13 +314,18 @@ public class ImportHelper {
       });
 
       if (module[0] != null) {
-        int res = JOptionPane.showConfirmDialog(getFrame(),
-            "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + module[0].getModuleName() +
-                "</b> which is not imported.</html>\n\n" +
+        int res;
+        if (TemporaryModels.isTemporary(myModel)) {
+          res = JOptionPane.YES_OPTION;
+        } else {
+          res = JOptionPane.showConfirmDialog(getFrame(),
+              "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + module[0].getModuleName() +
+                  "</b> which is not imported.</html>\n\n" +
 
-                "Importing the module will take some time.\n" +
-                "Do you want to automatically import the module?",
-            "Module import", JOptionPane.YES_NO_OPTION);
+                  "Importing the module will take some time.\n" +
+                  "Do you want to automatically import the module?",
+              "Module import", JOptionPane.YES_NO_OPTION);
+        }
         if (res == JOptionPane.YES_OPTION) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             @Override
