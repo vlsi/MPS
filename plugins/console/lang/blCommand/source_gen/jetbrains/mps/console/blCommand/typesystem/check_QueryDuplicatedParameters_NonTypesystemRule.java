@@ -18,12 +18,11 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_DuplicatedParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_DuplicatedParameters_NonTypesystemRule() {
+public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_QueryDuplicatedParameters_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode queryParameterList, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
@@ -42,16 +41,15 @@ public class check_DuplicatedParameters_NonTypesystemRule extends AbstractNonTyp
         });
       }
     });
-    Iterable<? extends Iterable<SNode>> duplicatedParameters = Sequence.fromIterable(groupedByConcepts).where(new IWhereFilter<Iterable<SNode>>() {
-      public boolean accept(Iterable<SNode> it) {
-        return Sequence.fromIterable(it).count() > 1;
-      }
-    });
 
     for (Iterable<SNode> group : Sequence.fromIterable(groupedByConcepts)) {
-      if (!(Sequence.fromIterable(group).count() <= 1)) {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ListSequence.fromList(Sequence.fromIterable(group).toListSequence()).getElement(1), "Duplicated parameter: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(Sequence.fromIterable(group).first()), "conceptAlias"), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "4307205004145899056", null, errorTarget);
+      if (Sequence.fromIterable(group).count() > 1) {
+        for (SNode other : Sequence.fromIterable(group).tail(Sequence.fromIterable(group).count() - 1)) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(other, "Duplicated parameter: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(Sequence.fromIterable(group).first()), "conceptAlias"), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910212797905", null, errorTarget);
+          }
+        }
       }
     }
   }

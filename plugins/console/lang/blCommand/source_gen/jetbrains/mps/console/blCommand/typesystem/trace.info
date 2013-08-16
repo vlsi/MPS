@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/1125969196844431009">
     <nodeInfo nodeId="1125969196844439139" fileName="typeof_NodesShowable_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1125969196844439139" fileName="typeof_NodesShowable_InferenceRule.java" startLine="23" startPosition="94" endLine="24" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -189,88 +189,242 @@
     <unitInfo nodeId="1125969196844440632" fileName="typeof_ModulesShowable_InferenceRule.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_ModulesShowable_InferenceRule" />
   </root>
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/1176561466494" />
+  <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/2284201910212722574">
+    <nodeInfo nodeId="2284201910213127592" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="123" endLine="26" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213127609" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="37" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910213127632" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="42" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910213127644" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2284201910213127662" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="45" startPosition="11" endLine="46" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213127662" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="64" endLine="47" endPosition="374" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="54" startPosition="46" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="60" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="60" startPosition="130" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="65" startPosition="30" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_CallActionDuplicatedParameters_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="2284201910213127607" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2284201910213127630" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2284201910213127662" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="44" startPosition="105" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="58" startPosition="68" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2284201910213127599" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="97" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213127626" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="33" startPosition="53" endLine="38" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910213127651" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="43" startPosition="53" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2284201910213127624" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="2284201910213127649" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="42" startPosition="66" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2284201910213127616" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="18" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213127645" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="22" startPosition="67" endLine="22" endPosition="67" />
+    <scopeInfo nodeId="2284201910213127608" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="37" endLine="29" endPosition="67" />
+    <scopeInfo nodeId="2284201910213127631" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="42" endLine="36" endPosition="75" />
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="54" startPosition="46" endLine="55" endPosition="66" />
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="65" startPosition="30" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2284201910213127662" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="45" startPosition="11" endLine="47" endPosition="374">
+      <varInfo nodeId="2284201910213127662" varName="_reporter_2309309498" />
+      <varInfo nodeId="2284201910213127662" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="61" endPosition="45">
+      <varInfo nodeId="2284201910212722574" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213127607" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2284201910213127607" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213127630" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="2284201910213127630" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2284201910213127661" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="44" startPosition="105" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="58" startPosition="68" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="2284201910213127625" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="33" startPosition="53" endLine="38" endPosition="11" />
+    <scopeInfo nodeId="2284201910213127650" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="43" startPosition="53" endLine="49" endPosition="9" />
+    <scopeInfo nodeId="2284201910213127651" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="43" startPosition="53" endLine="49" endPosition="9">
+      <varInfo nodeId="2284201910213127652" varName="other" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="2284201910212722574" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213127624" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2284201910213127624" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213127648" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="42" startPosition="66" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="2284201910213127645" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="51" endPosition="5">
+      <varInfo nodeId="2284201910213127646" varName="group" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910212722575" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="123" endLine="51" endPosition="5">
+      <varInfo nodeId="2284201910213127617" varName="grouped" />
+      <varInfo nodeId="2284201910213127600" varName="parameterConcepts" />
+      <varInfo nodeId="2284201910213127593" varName="parameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="2284201910212722574" varName="callAction" />
+      <varInfo nodeId="2284201910212722574" varName="status" />
+      <varInfo nodeId="2284201910212722574" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2284201910213127607" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="27" startPosition="85" endLine="31" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_CallActionDuplicatedParameters_NonTypesystemRule$1" />
+    <unitInfo nodeId="2284201910213127630" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="34" startPosition="59" endLine="38" endPosition="9" unitName="jetbrains.mps.console.blCommand.typesystem.check_CallActionDuplicatedParameters_NonTypesystemRule$3" />
+    <unitInfo nodeId="2284201910213127624" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="102" endLine="40" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_CallActionDuplicatedParameters_NonTypesystemRule$2" />
+    <unitInfo nodeId="2284201910212722574" fileName="check_CallActionDuplicatedParameters_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.check_CallActionDuplicatedParameters_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/2284201910213724242">
+    <nodeInfo nodeId="2284201910214035187" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="30" startPosition="43" endLine="31" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="37" startPosition="39" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="41" startPosition="37" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910214313681" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="45" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910214329644" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="47" startPosition="7" endLine="48" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910214329644" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="48" startPosition="60" endLine="49" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="54" startPosition="46" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="60" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="60" startPosition="130" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="65" startPosition="30" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_RequiredParametersArePassed_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="2284201910214033806" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2284201910214329644" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="46" startPosition="53" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="58" startPosition="68" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2284201910213827819" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910214291388" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="45" startPosition="121" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2284201910214155311" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2284201910214162257" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="26" startPosition="123" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910214164483" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="35" startPosition="7" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="23" startPosition="64" endLine="23" endPosition="64" />
+    <scopeInfo nodeId="2284201910214033807" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="30" startPosition="43" endLine="31" endPosition="109" />
+    <scopeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="37" startPosition="39" endLine="38" endPosition="77" />
+    <scopeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="41" startPosition="37" endLine="42" endPosition="67" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="54" startPosition="46" endLine="55" endPosition="66" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="65" startPosition="30" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2284201910214329644" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="47" startPosition="7" endLine="49" endPosition="332">
+      <varInfo nodeId="2284201910214329644" varName="_reporter_2309309498" />
+      <varInfo nodeId="2284201910214329644" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="59" startPosition="5" endLine="61" endPosition="45">
+      <varInfo nodeId="2284201910213724242" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910214033806" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="2284201910214033806" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2284201910214253916" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="2284201910214253916" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2284201910214291391" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="46" startPosition="53" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="58" startPosition="68" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="2284201910214155312" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="33" endPosition="11" />
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="2284201910213724242" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910214155311" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="2284201910214155311" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213724243" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="26" startPosition="123" endLine="51" endPosition="5">
+      <varInfo nodeId="2284201910214313684" varName="missed" />
+      <varInfo nodeId="2284201910214164486" varName="passedParameters" />
+      <varInfo nodeId="2284201910214162260" varName="requiredParameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="2284201910213724242" varName="callAction" />
+      <varInfo nodeId="2284201910213724242" varName="status" />
+      <varInfo nodeId="2284201910213724242" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2284201910214033806" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="29" startPosition="96" endLine="33" endPosition="9" unitName="jetbrains.mps.console.blCommand.typesystem.check_RequiredParametersArePassed_NonTypesystemRule$2" />
+    <unitInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="36" startPosition="130" endLine="40" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_RequiredParametersArePassed_NonTypesystemRule$2" />
+    <unitInfo nodeId="2284201910214253916" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="40" startPosition="18" endLine="44" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_RequiredParametersArePassed_NonTypesystemRule$3" />
+    <unitInfo nodeId="2284201910214155311" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="27" startPosition="176" endLine="35" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_RequiredParametersArePassed_NonTypesystemRule$1" />
+    <unitInfo nodeId="2284201910213724242" fileName="check_RequiredParametersArePassed_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.check_RequiredParametersArePassed_NonTypesystemRule" />
+  </root>
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/3820104862373722999" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/4307205004145151167">
-    <nodeInfo nodeId="4307205004145330194" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="131" endLine="30" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145277367" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145781772" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="42" endLine="40" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145869096" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="49" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145898696" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="49" startPosition="7" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="52" startPosition="57" endLine="53" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="53" startPosition="60" endLine="54" endPosition="445" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="46" endLine="60" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="64" startPosition="5" endLine="65" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="65" startPosition="130" endLine="66" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="30" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DuplicatedParameters_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="4307205004145276652" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4307205004145781770" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4307205004145869094" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Iterable;)Z" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="51" startPosition="76" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="68" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4307205004145290005" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="30" startPosition="105" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145781766" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="53" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4307205004145868505" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145898592" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="4307205004145779983" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
-    <nodeInfo nodeId="4307205004145312475" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="18" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="57" endLine="26" endPosition="57" />
-    <scopeInfo nodeId="4307205004145276653" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="57" />
-    <scopeInfo nodeId="4307205004145781771" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="42" endLine="40" endPosition="114" />
-    <scopeInfo nodeId="4307205004145869095" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="49" endLine="47" endPosition="53" />
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="46" endLine="60" endPosition="74" />
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="30" endLine="71" endPosition="17" />
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4307205004145899056" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="52" startPosition="57" endLine="54" endPosition="445">
-      <varInfo nodeId="4307205004145899056" varName="_reporter_2309309498" />
-      <varInfo nodeId="4307205004145899056" varName="errorTarget" />
+    <nodeInfo nodeId="4307205004145330194" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="131" endLine="29" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145277367" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="37" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145781772" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="38" startPosition="42" endLine="39" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145898696" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2284201910212797905" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="48" startPosition="11" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910212797905" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="49" startPosition="64" endLine="50" endPosition="372" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="57" startPosition="46" endLine="58" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="63" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="130" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="68" startPosition="30" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_QueryDuplicatedParameters_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="4307205004145276652" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4307205004145781770" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2284201910212797905" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="47" startPosition="105" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4307205004145290005" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="105" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145781766" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="36" startPosition="53" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2284201910212811255" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="53" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4307205004145779983" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="2284201910212748726" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="45" startPosition="76" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4307205004145312475" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="34" startPosition="18" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4307205004145898592" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="62" endLine="25" endPosition="62" />
+    <scopeInfo nodeId="4307205004145276653" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="37" endLine="32" endPosition="57" />
+    <scopeInfo nodeId="4307205004145781771" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="38" startPosition="42" endLine="39" endPosition="114" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="57" startPosition="46" endLine="58" endPosition="74" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="68" startPosition="30" endLine="69" endPosition="17" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2284201910212797905" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="48" startPosition="11" endLine="50" endPosition="372">
+      <varInfo nodeId="2284201910212797905" varName="_reporter_2309309498" />
+      <varInfo nodeId="2284201910212797905" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="64" startPosition="5" endLine="66" endPosition="45">
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="64" endPosition="45">
       <varInfo nodeId="4307205004145151167" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145276652" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="4307205004145276652" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="4307205004145276652" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145781770" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4307205004145781770" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4307205004145781770" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145869094" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="4307205004145869094" varName="it" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="2284201910212811261" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="47" startPosition="105" endLine="51" endPosition="11" />
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="4307205004145779984" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="36" startPosition="53" endLine="41" endPosition="11" />
+    <scopeInfo nodeId="2284201910212748729" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="53" endLine="52" endPosition="9" />
+    <scopeInfo nodeId="2284201910212811255" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="46" startPosition="53" endLine="52" endPosition="9">
+      <varInfo nodeId="2284201910212811257" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="4307205004145898598" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="51" startPosition="76" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="68" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="4307205004145779984" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="53" endLine="42" endPosition="11" />
-    <scopeInfo nodeId="4307205004145898592" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="56" endPosition="5">
-      <varInfo nodeId="4307205004145898594" varName="group" />
-    </scopeInfo>
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4307205004145151167" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145779983" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="4307205004145779983" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="4307205004145779983" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145151168" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="131" endLine="56" endPosition="5">
-      <varInfo nodeId="4307205004145868508" varName="duplicatedParameters" />
+    <scopeInfo nodeId="4307205004145898598" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="45" startPosition="76" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="4307205004145898592" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="54" endPosition="5">
+      <varInfo nodeId="4307205004145898594" varName="group" />
+    </scopeInfo>
+    <scopeInfo nodeId="4307205004145151168" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="131" endLine="54" endPosition="5">
       <varInfo nodeId="4307205004145312478" varName="groupedByConcepts" />
       <varInfo nodeId="4307205004145290008" varName="parameterConcepts" />
       <varInfo nodeId="4307205004145330197" varName="parameters" />
     </scopeInfo>
-    <scopeInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="4307205004145151167" varName="queryParameterList" />
       <varInfo nodeId="4307205004145151167" varName="status" />
       <varInfo nodeId="4307205004145151167" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="4307205004145276652" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="31" startPosition="85" endLine="35" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$1" />
-    <unitInfo nodeId="4307205004145781770" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="38" startPosition="59" endLine="42" endPosition="9" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$3" />
-    <unitInfo nodeId="4307205004145869094" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="45" startPosition="114" endLine="49" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$3" />
-    <unitInfo nodeId="4307205004145779983" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="36" startPosition="112" endLine="44" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule$2" />
-    <unitInfo nodeId="4307205004145151167" fileName="check_DuplicatedParameters_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.check_DuplicatedParameters_NonTypesystemRule" />
+    <unitInfo nodeId="4307205004145276652" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="30" startPosition="85" endLine="34" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$1" />
+    <unitInfo nodeId="4307205004145781770" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="37" startPosition="59" endLine="41" endPosition="9" unitName="jetbrains.mps.console.blCommand.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$3" />
+    <unitInfo nodeId="4307205004145779983" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="35" startPosition="112" endLine="43" endPosition="5" unitName="jetbrains.mps.console.blCommand.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule$2" />
+    <unitInfo nodeId="4307205004145151167" fileName="check_QueryDuplicatedParameters_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.check_QueryDuplicatedParameters_NonTypesystemRule" />
   </root>
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/4307205004147018693" />
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/4593895459761134312">
@@ -898,6 +1052,101 @@
     </scopeInfo>
     <unitInfo nodeId="6864030874024291258" fileName="typeof_InstancesExpression_InferenceRule.java" startLine="32" startPosition="65" endLine="51" endPosition="7" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_InstancesExpression_InferenceRule$1" />
     <unitInfo nodeId="7738379549910147904" fileName="typeof_InstancesExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_InstancesExpression_InferenceRule" />
+  </root>
+  <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/8953981490813245444">
+    <nodeInfo nodeId="8953981490813248129" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8953981490813248129" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="21" startPosition="64" endLine="22" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8953981490813248129" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="22" startPosition="208" endLine="23" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="45" startPosition="160" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ConsoleModelExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8953981490813248129" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="19" startPosition="135" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_6ekwmv_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="16" startPosition="56" endLine="16" endPosition="56" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="78" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="160" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+      <varInfo nodeId="8953981490813245444" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8953981490813248129" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="285">
+      <varInfo nodeId="8953981490813248129" varName="_info_12389875345" />
+      <varInfo nodeId="8953981490813248129" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="42" startPosition="61" endLine="46" endPosition="24">
+      <varInfo nodeId="8953981490813248259" varName="facade" />
+      <varInfo nodeId="8953981490813248259" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8953981490813245445" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="19" startPosition="135" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="8953981490813245444" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="8953981490813248259" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="8953981490813245444" varName="consoleModelExpression" />
+      <varInfo nodeId="8953981490813245444" varName="status" />
+      <varInfo nodeId="8953981490813245444" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="8953981490813245444" fileName="typeof_ConsoleModelExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_ConsoleModelExpression_InferenceRule" />
+  </root>
+  <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/9149301274757091527">
+    <nodeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="22" startPosition="105" endLine="23" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="23" startPosition="210" endLine="24" endPosition="469" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="35" startPosition="130" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ActionCallParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="20" startPosition="59" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="19" startPosition="132" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="19" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="16" startPosition="53" endLine="16" endPosition="53" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="75" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+      <varInfo nodeId="9149301274757091527" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="21" startPosition="7" endLine="24" endPosition="469">
+      <varInfo nodeId="2284201910210401103" varName="_info_12389875345" />
+      <varInfo nodeId="2284201910210401103" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="2284201910210401103" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="20" startPosition="59" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="9149301274757091527" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="9149301274757091528" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="19" startPosition="132" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="19" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="9149301274757091527" varName="actionCallParameter" />
+      <varInfo nodeId="9149301274757091527" varName="status" />
+      <varInfo nodeId="9149301274757091527" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.console.blCommand.typesystem.typeof_ActionCallParameter_InferenceRule" />
   </root>
   <root nodeRef="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)/996400390539500201">
     <nodeInfo nodeId="996400390539500203" fileName="typeof_RefsShowable_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
