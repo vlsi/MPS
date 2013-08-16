@@ -26,11 +26,10 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -430,16 +429,7 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  public void apply(JUnitSettings_Configuration config) {
-    myThis.apply(config, new _FunctionTypes._void_P6_E0<JUnitSettings_Configuration, Integer, ClonableList<String>, ClonableList<String>, String, String>() {
-      public void invoke(JUnitSettings_Configuration c, Integer configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
-        myThis.applyInternal(c, configurationIndex, testMethods, testCases, model, module);
-        return;
-      }
-    });
-  }
-
-  private void apply(final JUnitSettings_Configuration configuration, final _FunctionTypes._void_P6_E0<? super JUnitSettings_Configuration, ? super Integer, ? super ClonableList<String>, ? super ClonableList<String>, ? super String, ? super String> applyInternal) {
+  public void apply(final JUnitSettings_Configuration configuration) {
     // read our fields in UI thread 
     final List<ITestNodeWrapper> editorMethodList = myThis.getMethods();
     final List<ITestNodeWrapper> editorTestCasesList = myThis.getNodes();
@@ -486,23 +476,19 @@ public class JUnitConfigEditor extends JPanel {
         // we neeed to set run config fields so we have to go into UI thread again 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            applyInternal.invoke(configuration, configTypeIndex, testMethods, testCases, modelFinal, moduleFinal);
+            if (configTypeIndex >= 0) {
+              configuration.setRunType(JUnitRunTypes2.values()[configTypeIndex]);
+            }
+
+            configuration.setTestMethods(testMethods);
+            configuration.setTestCases(testCases);
+            configuration.setModel(model.value);
+            configuration.setModule(module.value);
           }
         });
 
       }
     });
-  }
-
-  private void applyInternal(JUnitSettings_Configuration configuration, int configurationIndex, ClonableList<String> testMethods, ClonableList<String> testCases, String model, String module) {
-    if (configurationIndex >= 0) {
-      configuration.setRunType(JUnitRunTypes2.values()[configurationIndex]);
-    }
-
-    configuration.setTestMethods(testMethods);
-    configuration.setTestCases(testCases);
-    configuration.setModel(model);
-    configuration.setModule(module);
   }
 
   public void reset(final JUnitSettings_Configuration configuration) {
