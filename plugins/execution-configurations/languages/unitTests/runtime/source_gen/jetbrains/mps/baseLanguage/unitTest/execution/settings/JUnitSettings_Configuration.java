@@ -6,6 +6,7 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -19,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -43,7 +43,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       if (eq_jtq3ac_a0c0b0a0b(this.getRunType(), JUnitRunTypes2.PROJECT)) {
         return;
       }
-      if (!(hasTests(null))) {
+      if (!(hasTests(ProjectHelper.toMPSProject(myProject)))) {
         throw new RuntimeConfigurationException("Could not find tests to run.");
       }
     }
@@ -189,7 +189,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public String myModule;
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
-    public JUnitRunTypes2 myRunType;
+    public JUnitRunTypes2 myRunType = JUnitRunTypes2.PROJECT;
 
     public MyState() {
     }
@@ -210,17 +210,19 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
   }
 
-  public JUnitSettings_Configuration() {
+  public JUnitSettings_Configuration(com.intellij.openapi.project.Project project) {
+    myProject = project;
   }
 
+  private final com.intellij.openapi.project.Project myProject;
   private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;
 
   public JUnitSettings_Configuration createCloneTemplate() {
-    return new JUnitSettings_Configuration();
+    return new JUnitSettings_Configuration(myProject);
   }
 
   public JUnitSettings_Configuration_Editor getEditor() {
-    return new JUnitSettings_Configuration_Editor();
+    return new JUnitSettings_Configuration_Editor(myProject);
   }
 
   public SettingsEditorEx<JUnitSettings_Configuration> getEditorEx() {

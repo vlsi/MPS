@@ -5,18 +5,19 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Factory;
 
 public class JUnitSettings_Configuration_Editor extends SettingsEditorEx<JUnitSettings_Configuration> {
-  private JUnitConfigEditor myEditor;
+  private JUnitConfigurationEditorComponent myEditor;
 
   public void disposeEditor() {
     myEditor.dispose();
   }
 
   @NotNull
-  public JUnitConfigEditor createEditor() {
-    myEditor = new JUnitConfigEditor();
+  public JUnitConfigurationEditorComponent createEditor() {
+    myEditor = new JUnitConfigurationEditorComponent(myProject);
     return myEditor;
   }
 
@@ -28,11 +29,14 @@ public class JUnitSettings_Configuration_Editor extends SettingsEditorEx<JUnitSe
     myEditor.reset(configuration);
   }
 
-  public JUnitSettings_Configuration_Editor() {
+  private Project myProject;
+
+  public JUnitSettings_Configuration_Editor(final Project project) {
     super(new Factory<JUnitSettings_Configuration>() {
       public JUnitSettings_Configuration create() {
-        return new JUnitSettings_Configuration();
+        return new JUnitSettings_Configuration(project);
       }
     });
+    myProject = project;
   }
 }

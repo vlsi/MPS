@@ -1128,6 +1128,10 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769034642231" nodeInfo="nn">
         <node role="creator" roleId="tpee.1145553007750" type="fb9u.PersistentConfigurationTemplateInitializer" typeId="fb9u.946964771156066582" id="6062668769034873873" nodeInfo="nn">
           <link role="template" roleId="fb9u.946964771156066583" targetNodeId="tty3.6062668769034854986" resolveInfo="JUnitSettings" />
+          <node role="parameter" roleId="fb9u.946964771156066584" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1822803054821841106" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1822803054821840793" nodeInfo="nn" />
+            <node role="operation" roleId="tpee.1197027833540" type="uhxm.GetProjectOperation" typeId="uhxm.5453800039284219178" id="1822803054821844723" nodeInfo="nn" />
+          </node>
         </node>
       </node>
     </node>
