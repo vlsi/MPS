@@ -42,7 +42,6 @@ public class CallAction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_eeodo_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_eeodo_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_eeodo_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_eeodo_f0(editorContext, node));
     return editorCell;
   }
 
@@ -142,9 +141,13 @@ public class CallAction_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_eeodo_a3a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -170,6 +173,13 @@ public class CallAction_Editor extends DefaultNodeEditor {
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
+
+    private EditorCell createConstant_eeodo_a3a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_eeodo_a3a");
+      editorCell.setDefaultText("");
+      return editorCell;
+    }
   }
 
   private EditorCell createConstant_eeodo_e0(EditorContext editorContext, SNode node) {
@@ -177,16 +187,6 @@ public class CallAction_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_eeodo_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_eeodo_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_eeodo_f0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

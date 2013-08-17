@@ -20,37 +20,37 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
-public class AbstractPrintStatement_Editor extends DefaultNodeEditor {
+public class AbstractPrintExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_wxfnk4_a(editorContext, node);
+    return this.createCollection_9ckmec_a(editorContext, node);
   }
 
-  private EditorCell createCollection_wxfnk4_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9ckmec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_wxfnk4_a");
+    editorCell.setCellId("Collection_9ckmec_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_wxfnk4_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_wxfnk4_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_wxfnk4_c0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_9ckmec_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9ckmec_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ckmec_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_wxfnk4_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_9ckmec_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractPrintStatement_Editor.ReplaceWith_AbstractPrintStatement_cellMenu_wxfnk4_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractPrintExpression_Editor.ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0()}));
     return editorCell;
   }
 
-  public static class ReplaceWith_AbstractPrintStatement_cellMenu_wxfnk4_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractPrintStatement_cellMenu_wxfnk4_a0a0() {
+  public static class ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0() {
     }
 
     public String getReplacementConceptName() {
-      return "jetbrains.mps.console.blCommand.structure.AbstractPrintStatement";
+      return "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression";
     }
   }
 
-  private EditorCell createRefNode_wxfnk4_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9ckmec_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("object");
     provider.setNoTargetText("<no object>");
@@ -70,9 +70,9 @@ public class AbstractPrintStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_wxfnk4_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ckmec_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_wxfnk4_c0");
+    editorCell.setCellId("Constant_9ckmec_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
     editorCell.getStyle().putAll(style);

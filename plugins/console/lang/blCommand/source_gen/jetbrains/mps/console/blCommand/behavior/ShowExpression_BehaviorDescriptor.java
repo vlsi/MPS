@@ -5,16 +5,16 @@ package jetbrains.mps.console.blCommand.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class CallAction_BehaviorDescriptor extends Expression_BehaviorDescriptor {
-  public CallAction_BehaviorDescriptor() {
+public class ShowExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
+  public ShowExpression_BehaviorDescriptor() {
   }
 
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
-    return CallAction_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
+    return ShowExpression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.blCommand.structure.CallAction";
+    return "jetbrains.mps.console.blCommand.structure.ShowExpression";
   }
 }

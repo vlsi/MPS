@@ -28,7 +28,7 @@ public class typeof_PrintNodeStatement_InferenceRule extends AbstractInferenceRu
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.PrintNodeStatement";
+    return "jetbrains.mps.console.blCommand.structure.PrintNodeExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
