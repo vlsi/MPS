@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bgqg1kkgkeve9hzow3qd4jzrq6kzx2c">
+<dependencies version="2" modelHash="2c76zlm67elcw43psb1xpt6828cl5ad">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.cells(MPS.Editor/jetbrains.mps.editor.runtime.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
@@ -30,13 +30,14 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
   <dep model="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)" hash="-7clm9qco2ta86mz5xjb1lljw5xeip3c" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-142wbmg1uqs2tdphevb8ixrdwx6p65o" />
-  <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" hash="-2a33gw8ev3u5nibua0r2mkckjz581c2" />
-  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="cbsokh2x523f5wxwzvnirpth3k37qm1" />
+  <dep model="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)" hash="-3sqwjb80w6feh06ebf7rins2qfzmyli" />
+  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="13oiz1hbak92ac91yxuctev9nw9bmdk" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-65lnd9htecmkxj41y3m1foua1yntvpy" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)" hash="-bspi3pxx0kcffzz2ldyhu1p3qenli9" />
   <common hash="ecjhy0kxtd2deku0crsad2cy8y1x3yh">
     <dep root="1125969196844413435" />
+    <dep root="2284201910216573417" />
     <dep root="4307205004132277777" />
     <dep root="4307205004132521953" />
     <dep root="4307205004133424467" />
@@ -75,15 +76,14 @@
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <file name="BLCommand_Editor.java" />
   </source>
-  <source id="1125969196844413435" name="ShowStatement_Editor" hash="d7isbm3c4i0hrey5v8n3libvq3n2mcj">
+  <source id="1125969196844413435" name="ShowExpression_Editor" hash="26uzu92txkdyvnop356rgt2by2g5cjf">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
-    <file name="ShowStatement_Editor.java" />
+    <file name="ShowExpression_Editor.java" />
   </source>
   <source id="6933495578704253872" name="ModelsShowable_Editor" hash="-gvqz2iihge78v48d50jbv2ae96y9fv">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -131,7 +131,7 @@
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <file name="RefsShowable_Editor.java" />
   </source>
-  <source id="7820875636626932805" name="AbstractPrintStatement_Editor" hash="-6rfl01zvf9lr2wyydjzg6ymtsh1dxsa">
+  <source id="7820875636626932805" name="AbstractPrintExpression_Editor" hash="-djiqjunhyf1buzx2u9el9p3jfm25l87">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -139,7 +139,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
-    <file name="AbstractPrintStatement_Editor.java" />
+    <file name="AbstractPrintExpression_Editor.java" />
   </source>
   <source id="6558068108108748448" name="ExceptionHolder_Editor" hash="bq9kdzpo8b2m8up4ec7lyy9c53wv6ml">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
@@ -191,7 +191,7 @@
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <file name="InstancesExpression_Editor.java" />
   </source>
-  <source id="4307205004135242359" name="QueryExpression_EditorComponent" hash="9a91tjvqv1a0a97sk6fopst7omboz3v">
+  <source id="4307205004135242359" name="QueryExpression_EditorComponent" hash="-2ndv7mjj7cck7vrsyzcen9tyjkmfk3j">
     <dep root="4307205004140167141" />
     <dep root="4307205004140653645" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
@@ -296,7 +296,7 @@
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <file name="ActionCallParameter_Editor.java" />
   </source>
-  <source id="9149301274757091516" name="CallAction_Editor" hash="-7coqkwnemuqd8w5231disc7c9uhtpxd">
+  <source id="9149301274757091516" name="CallAction_Editor" hash="-9nbwz888d5qgluq1xud99oapxo06di9">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -317,6 +317,16 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
     <file name="ConsoleModelExpression_Editor.java" />
+  </source>
+  <source id="2284201910216573417" name="ModelProperties_Editor" hash="-808d7wh9mpznviis2vrf0uf6n7t6t30">
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" />
+    <file name="ModelProperties_Editor.java" />
   </source>
 </dependencies>
 

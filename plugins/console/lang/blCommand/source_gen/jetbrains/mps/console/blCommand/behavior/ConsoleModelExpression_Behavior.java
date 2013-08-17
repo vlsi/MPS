@@ -5,7 +5,7 @@ package jetbrains.mps.console.blCommand.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class ProjectExpression_Behavior {
+public class ConsoleModelExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 

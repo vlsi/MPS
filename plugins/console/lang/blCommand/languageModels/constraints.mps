@@ -14,7 +14,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7284872370239728884" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.parameter" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3xdn.4307205004131544317" resolveInfo="QueryExpression" />
     <node role="canBeAncestor" roleId="tp1t.7852712695066883424" type="tp1t.ConstraintFunction_CanBeAnAncestor" typeId="tp1t.7855321458717464197" id="7284872370239728936" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7284872370239728937" nodeInfo="sn">

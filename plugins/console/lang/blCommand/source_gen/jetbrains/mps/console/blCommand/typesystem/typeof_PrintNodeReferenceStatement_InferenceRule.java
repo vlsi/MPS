@@ -28,7 +28,7 @@ public class typeof_PrintNodeReferenceStatement_InferenceRule extends AbstractIn
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceStatement";
+    return "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

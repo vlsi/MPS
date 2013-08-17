@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.console.blCommand.editor.AbstractPrintStatement_Editor" file="AbstractPrintStatement_Editor.java">
+  <dependency className="jetbrains.mps.console.blCommand.editor.AbstractPrintExpression_Editor" file="AbstractPrintExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
@@ -94,13 +94,14 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.AbstractPrintStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.AbstractPrintExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ActionCallParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.BLCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.CallAction_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ConsoleModelExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ExceptionHolder_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.InstancesExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModelProperties_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModelsShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ModulesShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.NodesShowable_Editor" />
@@ -112,7 +113,7 @@
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.QueryParameter_EditorComponent" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.RefsShowable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ScopeParameterLiteral_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ShowStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.blCommand.editor.ShowExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.UsagesExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
@@ -134,6 +135,22 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.console.blCommand.editor.InstancesExpression_Editor" file="InstancesExpression_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.blCommand.editor.ModelProperties_Editor" file="ModelProperties_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -333,18 +350,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.blCommand.editor.ShowStatement_Editor" file="ShowStatement_Editor.java">
+  <dependency className="jetbrains.mps.console.blCommand.editor.ShowExpression_Editor" file="ShowExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
