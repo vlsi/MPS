@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bjyxlkdur5s2z1u1nw8eqzlvrufg3oz">
+<dependencies version="2" modelHash="-ar6g5ykfcx3wl1zzyimqr2e5tmfi8g2">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
@@ -123,7 +123,7 @@
   <source id="6062668769034853017" name="ModuleChooserComponent_Controller" hash="2zgtpj9omrxlpi6cd1l83w6227fza6j">
     <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6062668769034854986" name="JUnitSettings" hash="-22wnzizgrorumxmt45tkv9rfn5k8irq">
+  <source id="6062668769034854986" name="JUnitSettings" hash="165rt8kvrvwlzx7om7o87ybvyez5rlu">
     <dep root="6062668769034855735" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
@@ -222,7 +222,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TestListPanel.java" />
   </source>
-  <source id="1822803054815683350" name="JUnitConfigurationEditorComponent" hash="7vlc6w1yiy8zgfxph961fdwnnhblz5p">
+  <source id="1822803054815683350" name="JUnitConfigurationEditorComponent" hash="6hfc4661awjravtmx1rwjg0bdwyence">
     <dep root="1895567659270719476" />
     <dep root="6062668769034852749" />
     <dep root="6062668769034852876" />

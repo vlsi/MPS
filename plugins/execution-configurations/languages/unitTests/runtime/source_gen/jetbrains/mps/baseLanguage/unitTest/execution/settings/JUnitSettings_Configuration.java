@@ -116,7 +116,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   }
 
   public boolean hasTests(final Project project) {
-    final boolean[] hasTests = {false};
+    final boolean[] hasTests = {true};
     final JUnitSettings_Configuration settings = this;
     if (this.getRunType() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
