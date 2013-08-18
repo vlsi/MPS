@@ -46,8 +46,8 @@
   <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" file="JavaRunParameters_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>

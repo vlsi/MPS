@@ -59,6 +59,7 @@ public class JavaConfigurationOptions extends JBPanel {
     myJreHome.setText(javaOptions.jrePath());
     myWorkingDirectory.setText(javaOptions.workingDirectory());
     myUseAlternativeJre.setSelected((boolean) javaOptions.useAlternativeJre());
+    myJreHome.setEditable((boolean) javaOptions.useAlternativeJre());
   }
 
   public void apply(@Nullable JavaRunParameters javaOptions) {
@@ -70,5 +71,12 @@ public class JavaConfigurationOptions extends JBPanel {
     javaOptions.jrePath(myJreHome.getText());
     javaOptions.workingDirectory(myWorkingDirectory.getText());
     javaOptions.useAlternativeJre(myUseAlternativeJre.isSelected());
+  }
+
+  public void dispose() {
+    myJreHome.dispose();
+    myProgramParameters.dispose();
+    myVmParameters.dispose();
+    myWorkingDirectory.dispose();
   }
 }
