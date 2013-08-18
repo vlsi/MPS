@@ -4,7 +4,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
   <language namespace="756e911c-3f1f-4a48-bdf5-a2ceb91b723c(jetbrains.mps.execution.settings)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
@@ -54,13 +53,11 @@
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
-  <import index="tphr" modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tpht" modelUID="r:00000000-0000-4000-0000-011c8959054d(jetbrains.mps.uiLanguage.components)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6062668769034852749" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModelChooser" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6062668769034852750" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myCheckedModels" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -409,25 +406,9 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xk9i.1240470842553499171" resolveInfo="BaseChooserComponent" />
     </node>
   </root>
-  <root type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034852876" nodeInfo="ng">
-    <property name="stub" nameId="tphr.1202393242164" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="ModelChooserComponent" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
-    <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-    <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
-    <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
-  </root>
-  <root type="tphr.ComponentController" typeId="tphr.1202388384249" id="6062668769034852877" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
-    <link role="component" roleId="tphr.1202388401455" targetNodeId="6062668769034852876" resolveInfo="ModelChooserComponent" />
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="6062668769034852878" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.StringType" typeId="tpee.1225271177708" id="6062668769034852879" nodeInfo="in" />
-    </node>
-  </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6062668769034852880" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ModuleChooser" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6062668769034852881" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myCheckedModules" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -792,22 +773,6 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6062668769034852888" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6062668769034852946" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="xk9i.1240470842553499171" resolveInfo="BaseChooserComponent" />
-    </node>
-  </root>
-  <root type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034853016" nodeInfo="ng">
-    <property name="stub" nameId="tphr.1202393242164" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="ModuleChooserComponent" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
-    <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-    <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
-    <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
-  </root>
-  <root type="tphr.ComponentController" typeId="tphr.1202388384249" id="6062668769034853017" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
-    <link role="component" roleId="tphr.1202388401455" targetNodeId="6062668769034853016" resolveInfo="ModuleChooserComponent" />
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="6062668769034853018" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.StringType" typeId="tpee.1225271177708" id="6062668769034853019" nodeInfo="in" />
     </node>
   </root>
   <root type="fb9u.PersistentConfigurationTemplate" typeId="fb9u.946964771156066579" id="6062668769034854986" nodeInfo="ng">
@@ -4002,8 +3967,8 @@
       <property name="name" nameId="tpck.1169194664001" value="myModuleChooser" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1822803054819364417" nodeInfo="nn" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tphr.ComponentType" typeId="tphr.1202465023198" id="1822803054819368116" nodeInfo="in">
-        <link role="component" roleId="tphr.1202465029373" targetNodeId="6062668769034853016" resolveInfo="ModuleChooserComponent" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1549513576337167173" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1822803054819368118" nodeInfo="igu">
@@ -4012,8 +3977,8 @@
       <property name="name" nameId="tpck.1169194664001" value="myModelChooser" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1822803054819368119" nodeInfo="nn" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tphr.ComponentType" typeId="tphr.1202465023198" id="1822803054819368120" nodeInfo="in">
-        <link role="component" roleId="tphr.1202465029373" targetNodeId="6062668769034852876" resolveInfo="ModelChooserComponent" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1549513576337167235" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1822803054819372647" nodeInfo="igu">
@@ -4811,8 +4776,8 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1822803054819367181" resolveInfo="myModuleChooser" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1822803054819595085" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tphr.ComponentCreator" typeId="tphr.1203520768804" id="1822803054819595086" nodeInfo="nn">
-                <link role="componentDeclaration" roleId="tphr.1203520776742" targetNodeId="6062668769034853016" resolveInfo="ModuleChooserComponent" />
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1549513576337349938" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6062668769034852889" resolveInfo="ModuleChooser" />
               </node>
             </node>
           </node>
@@ -4918,8 +4883,8 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1822803054819368118" resolveInfo="myModelChooser" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1822803054816982110" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tphr.ComponentCreator" typeId="tphr.1203520768804" id="1822803054816982111" nodeInfo="nn">
-                <link role="componentDeclaration" roleId="tphr.1203520776742" targetNodeId="6062668769034852876" resolveInfo="ModelChooserComponent" />
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1549513576337355048" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6062668769034852758" resolveInfo="ModelChooser" />
               </node>
             </node>
           </node>
