@@ -25,10 +25,10 @@ public class ModulesWithLanguagesScope extends FilteredScope {
 
   @Override
   protected boolean acceptModel(SModel model) {
-    if (SModelStereotype.isUserModel(model) && !(SModelStereotype.isGeneratorModel(model))) {
-      return acceptModule(model.getModule());
+    if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
+      return false;
     }
-    return false;
+    return acceptModule(model.getModule());
   }
 
   @Override
