@@ -23,6 +23,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -72,7 +73,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if (!checkCondition(baseRuleCondition, false, context.getInput(), environment.getGenerator())) {
+    if (!checkCondition(baseRuleCondition, false, context, environment.getGenerator())) {
       return null;
     }
 
@@ -96,10 +97,10 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
   }
 
-  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, TemplateGenerator generator) throws GenerationFailureException {
+  private boolean checkCondition(SNode condition, boolean required, TemplateContext context, TemplateGenerator generator) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
-        generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
+        generator.showErrorMessage(context.getInput(), null, ruleNode, "rule condition required");
         return false;
       }
       return true;
@@ -110,7 +111,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new BaseMappingRuleContext(inputNode, ruleNode, generator),
+        new ReductionRuleQueryContext(context, ruleNode, generator),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
