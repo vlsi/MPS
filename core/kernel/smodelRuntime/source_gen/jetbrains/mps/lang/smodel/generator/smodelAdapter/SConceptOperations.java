@@ -18,7 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
-import jetbrains.mps.smodel.ConceptDescendantsCache;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -114,7 +114,7 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
-    Set<String> descendants = ConceptDescendantsCache.getInstance().getDescendants(NameUtil.nodeFQName(conceptDeclarationNode));
+    Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
