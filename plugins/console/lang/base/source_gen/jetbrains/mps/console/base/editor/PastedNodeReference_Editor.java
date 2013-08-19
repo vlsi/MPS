@@ -6,39 +6,124 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import java.awt.Color;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class PastedNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_7k9x8q_a(editorContext, node);
+    return this.createCollection_7k9x8q_a(editorContext, node);
   }
 
-  private EditorCell createConstant_7k9x8q_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pasted reference");
-    editorCell.setCellId("Constant_7k9x8q_a");
+  private EditorCell createCollection_7k9x8q_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_7k9x8q_a");
     editorCell.setBig(true);
+    editorCell.addEditorCell(this.createRefCell_7k9x8q_a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createRefCell_7k9x8q_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("target");
+    provider.setNoTargetText("<no target>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new PastedNodeReference_Editor._Inline_7k9x8q_a0a());
+    editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
-    style.set(StyleAttributes.UNDERLINED, PastedNodeReference_Editor._StyleParameter_QueryFunction_7k9x8q_a2a((editorCell == null ?
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(PastedNodeReference_Editor._StyleParameter_QueryFunction_7k9x8q_a0a0((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black, StyleRegistry.getInstance().getSimpleColor(PastedNodeReference_Editor._StyleParameter_QueryFunction_7k9x8q_a0a0((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )))));
+    style.set(StyleAttributes.UNDERLINED, PastedNodeReference_Editor._StyleParameter_QueryFunction_7k9x8q_a2a0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
     )));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_7k9x8q_a2a(EditorContext editorContext, SNode node) {
+  public static class _Inline_7k9x8q_a0a extends InlineCellProvider {
+    public _Inline_7k9x8q_a0a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createReadOnlyModelAccessor_7k9x8q_a0a0(editorContext, node);
+    }
+
+    private EditorCell createReadOnlyModelAccessor_7k9x8q_a0a0(final EditorContext editorContext, final SNode node) {
+      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+        public String getText() {
+          int id = node.getNodeId().hashCode();
+          return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
+        }
+
+        public void setText(String s) {
+        }
+
+        public boolean isValidText(String s) {
+          return EqualUtil.equals(s, getText());
+        }
+      }, node);
+      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setCellId("ReadOnlyModelAccessor_7k9x8q_a0a0");
+      if (editorCell.getRole() == null) {
+        editorCell.setReferenceCell(true);
+        editorCell.setRole("target");
+      }
+      return editorCell;
+    }
+  }
+
+  private static Color _StyleParameter_QueryFunction_7k9x8q_a0a0(EditorContext editorContext, SNode node) {
+    int id = SLinkOperations.getTarget(node, "target", false).getNodeId().hashCode();
+    return new Color(255 - (id >> 25), 200, (id << 24) >>> 24);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_7k9x8q_a2a0(EditorContext editorContext, SNode node) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
   }
 }
