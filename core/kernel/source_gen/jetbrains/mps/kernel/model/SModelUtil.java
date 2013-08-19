@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -199,9 +199,7 @@ public class SModelUtil {
     if (to == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
       return true;
     }
-    String fromFqName = NameUtil.nodeFQName(from);
-    String toFqName = NameUtil.nodeFQName(to);
-    return LanguageHierarchyCache.isAssignable(fromFqName, toFqName);
+    return isAssignableConcept(NameUtil.nodeFQName(from), NameUtil.nodeFQName(to));
   }
 
   public static boolean isAssignableConcept(SNode from, String toFqName) {
@@ -223,7 +221,7 @@ public class SModelUtil {
       return true;
     }
 
-    return LanguageHierarchyCache.isAssignable(fromFqName, toFqName);
+    return ConceptRegistry.getInstance().getConceptDescriptor(fromFqName).isAssignableTo(toFqName);
   }
 
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {

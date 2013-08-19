@@ -126,7 +126,7 @@ public class ConceptDescendantsCache implements CoreComponent {
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
     SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_AbstractConceptDeclaration);
     for (SNode root : structureModel.getRootNodes()) {
-      if (org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(root, abstractConceptDeclaration)) {
+      if (root.getConcept().isSubConceptOf(abstractConceptDeclaration)) {
         ConceptDescriptor descriptor = structureDescriptor.getDescriptor(NameUtil.nodeFQName(root));
         if (descriptor != null) {
           result.add(descriptor);
