@@ -48,18 +48,18 @@ public class ConceptDescendantsCache implements CoreComponent {
     }
 
     private void loadConcept(ConceptDescriptor concept) {
-      for (String ancestor : concept.getAncestorsNames()) {
-        Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
+      for (String parent : concept.getParentsNames()) {
+        Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(parent));
         descendants.add(concept.getConceptFqName());
-        myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
+        myDescendantsCache.put(parent, Collections.unmodifiableSet(descendants));
       }
     }
 
     private void unloadConcept(ConceptDescriptor concept) {
-      for (String ancestor : concept.getAncestorsNames()) {
-        Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
+      for (String parent : concept.getParentsNames()) {
+        Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(parent));
         descendants.remove(concept.getConceptFqName());
-        myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
+        myDescendantsCache.put(parent, Collections.unmodifiableSet(descendants));
       }
     }
   };
