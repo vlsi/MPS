@@ -20,11 +20,49 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Based on generated structure descriptors
  */
-public class ConceptDescendantsCache implements CoreComponent, LanguageRegistryListener {
+public class ConceptDescendantsCache implements CoreComponent {
   private static ConceptDescendantsCache INSTANCE;
 
   private final MPSModuleRepository myModuleRepository;
   private final LanguageRegistry myLanguageRegistry;
+
+  private final LanguageRegistryListener myLanguageRegistryListener = new LanguageRegistryListener() {
+    @Override
+    public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+      ModelAccess.assertLegalWrite();
+      for (LanguageRuntime language : languages) {
+        for (ConceptDescriptor concept : getConcepts(language)) {
+          loadConcept(concept);
+        }
+      }
+    }
+
+    @Override
+    public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+      ModelAccess.assertLegalWrite();
+      for (LanguageRuntime language : languages) {
+        for (ConceptDescriptor concept : getConcepts(language)) {
+          unloadConcept(concept);
+        }
+      }
+    }
+
+    private void loadConcept(ConceptDescriptor concept) {
+      for (String ancestor : concept.getAncestorsNames()) {
+        Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
+        descendants.add(concept.getConceptFqName());
+        myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
+      }
+    }
+
+    private void unloadConcept(ConceptDescriptor concept) {
+      for (String ancestor : concept.getAncestorsNames()) {
+        Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
+        descendants.remove(concept.getConceptFqName());
+        myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
+      }
+    }
+  };
 
   private final ConcurrentMap<String, Set<String>> myDescendantsCache = new ConcurrentHashMap<String, Set<String>>();
 
@@ -40,12 +78,12 @@ public class ConceptDescendantsCache implements CoreComponent, LanguageRegistryL
     }
     INSTANCE = this;
 
-    myLanguageRegistry.addRegistryListener(this);
+    myLanguageRegistry.addRegistryListener(myLanguageRegistryListener);
   }
 
   @Override
   public void dispose() {
-    myLanguageRegistry.removeRegistryListener(this);
+    myLanguageRegistry.removeRegistryListener(myLanguageRegistryListener);
 
     INSTANCE = null;
   }
@@ -55,6 +93,7 @@ public class ConceptDescendantsCache implements CoreComponent, LanguageRegistryL
   }
 
   public Set<String> getDescendants(String conceptFqName) {
+    ModelAccess.assertLegalRead();
     Set<String> result = new LinkedHashSet<String>();
     collectDescendants(conceptFqName, result);
     return result;
@@ -70,43 +109,9 @@ public class ConceptDescendantsCache implements CoreComponent, LanguageRegistryL
   }
 
   public Set<String> getDirectDescendants(String conceptFqName) {
+    ModelAccess.assertLegalRead();
     Set<String> result = myDescendantsCache.get(conceptFqName);
     return result != null ? result : Collections.<String>emptySet();
-  }
-
-  // languages listening
-  private void loadConcept(ConceptDescriptor concept) {
-    for (String ancestor : concept.getAncestorsNames()) {
-      Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
-      descendants.add(concept.getConceptFqName());
-      myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
-    }
-  }
-
-  private void unloadConcept(ConceptDescriptor concept) {
-    for (String ancestor : concept.getAncestorsNames()) {
-      Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
-      descendants.remove(concept.getConceptFqName());
-      myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
-    }
-  }
-
-  @Override
-  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
-    for (LanguageRuntime language : languages) {
-      for (ConceptDescriptor concept : getConcepts(language)) {
-        loadConcept(concept);
-      }
-    }
-  }
-
-  @Override
-  public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
-    for (LanguageRuntime language : languages) {
-      for (ConceptDescriptor concept : getConcepts(language)) {
-        unloadConcept(concept);
-      }
-    }
   }
 
   // utils
