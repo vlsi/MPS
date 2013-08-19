@@ -155,7 +155,7 @@ public class TemplateProcessor {
       }
     }
 
-    // templateNode has no unprocessed node-macros - create output instance for the tempate node
+    // templateNode has no unprocessed node-macros - create output instance for the template node
     myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(templateNode));
     jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(templateNode.getConcept().getQualifiedName());
     GeneratorMappings mappings = myGenerator.getMappings();
@@ -410,7 +410,7 @@ public class TemplateProcessor {
         if (altConsequence != null) {
           try {
             List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(altConsequence,
-                templateContext.getInput(), macro, myReductionContext, myGenerator);
+                templateContext, macro, myReductionContext, myGenerator);
             if (nodeAndMappingNamePairs == null) {
               myGenerator.showErrorMessage(templateContext.getInput(), null, macro, "error processing $IF$/alternative");
               return null;

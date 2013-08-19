@@ -15,6 +15,7 @@ import java.util.LinkedList;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -107,15 +108,21 @@ public class GeneratorUtilEx {
     return true;
   }
 
-  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(SNode ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
+
+
+  /**
+   * This is the better alternative to the similar function that takes only inputNode as
+   * it facilitates access to generation context parameters from in-line template switch queries 
+   */
+  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(SNode ruleConsequence, TemplateContext context, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
     if (ruleConsequence == null) {
-      generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
+      generator.showErrorMessage(context.getInput(), null, ruleNode, "no rule consequence");
       return null;
     }
     generator.getGenerationTracer().pushRuleConsequence(new SNodePointer(ruleConsequence));
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
       SNode message = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"), "generatorMessage", true);
-      DismissTopMappingRuleException.MessageType messageType = processGeneratorMessage(message, inputNode, null, ruleNode, generator);
+      DismissTopMappingRuleException.MessageType messageType = processGeneratorMessage(message, context.getInput(), null, ruleNode, generator);
       throw new DismissTopMappingRuleException(messageType);
     } else
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence")) {
@@ -129,11 +136,11 @@ public class GeneratorUtilEx {
         templateContainer = ruleConsequence;
       }
       if (templateContainer == null) {
-        generator.showErrorMessage(inputNode, ruleConsequence, ruleNode, "error processing template consequence: no 'template'");
+        generator.showErrorMessage(context.getInput(), ruleConsequence, ruleNode, "error processing template consequence: no 'template'");
         return null;
       }
       List<SNode> fragments = getTemplateFragments(templateContainer);
-      if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, inputNode, ruleNode, generator)) {
+      if (GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, templateContainer, context.getInput(), ruleNode, generator)) {
         List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(fragments.size());
         for (SNode fragment : fragments) {
           result.add(new Pair<SNode, String>(SNodeOperations.getParent(fragment), getMappingName(fragment, null)));
@@ -146,26 +153,33 @@ public class GeneratorUtilEx {
       if (templateNode != null) {
         return Collections.singletonList(new Pair<SNode, String>(templateNode, null));
       } else {
-        generator.showErrorMessage(inputNode, null, ruleConsequence, "no template node");
+        generator.showErrorMessage(context.getInput(), null, ruleConsequence, "no template node");
       }
     } else
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")) {
       SNode inlineSwitch = SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
       for (SNode switchCase : SLinkOperations.getTargets(inlineSwitch, "case", true)) {
-        if (reductionContext.getQueryExecutor().checkCondition(SLinkOperations.getTarget(switchCase, "conditionFunction", true), true, inputNode, switchCase)) {
-          return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(SLinkOperations.getTarget(switchCase, "caseConsequence", true), inputNode, switchCase, reductionContext, generator);
+        if (reductionContext.getQueryExecutor().checkCondition(SLinkOperations.getTarget(switchCase, "conditionFunction", true), true, context, switchCase)) {
+          return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(SLinkOperations.getTarget(switchCase, "caseConsequence", true), context, switchCase, reductionContext, generator);
         }
       }
       SNode defaultConsequence = SLinkOperations.getTarget(inlineSwitch, "defaultConsequence", true);
       if (defaultConsequence == null) {
-        generator.showErrorMessage(inputNode, null, inlineSwitch, "no default consequence in switch");
+        generator.showErrorMessage(context.getInput(), null, inlineSwitch, "no default consequence in switch");
       } else {
-        return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence, reductionContext, generator);
+        return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context, defaultConsequence, reductionContext, generator);
       }
     } else {
-      generator.showErrorMessage(inputNode, null, ruleConsequence, "unsupported rule consequence");
+      generator.showErrorMessage(context.getInput(), null, ruleConsequence, "unsupported rule consequence");
     }
     return null;
+  }
+
+
+
+  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(SNode ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
+    TemplateContext ctx = new DefaultTemplateContext(inputNode);
+    return getTemplateNodesFromRuleConsequence(ruleConsequence, ctx, ruleNode, reductionContext, generator);
   }
 
   public static DismissTopMappingRuleException.MessageType processGeneratorMessage(SNode message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {

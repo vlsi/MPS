@@ -172,7 +172,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
     // create all roots
     if (isPrimary) {
-      ttrace.push("create root", false);
+      ttrace.push("create roots", false);
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {

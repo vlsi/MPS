@@ -114,6 +114,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
       environment.getGenerator().showErrorMessage(inputNode, null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
+    // [artem] FIXME likely shall pass context here and use it for consequence as well, e.g. if there's inline switch that accesses template parameters through genContext.
     TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(inputNode, new DefaultTemplateContext(pattern, null, inputNode), environment.getReductionContext(), ruleConsequence, inputNode, environment.getGenerator());
 
     List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, ruleNode, environment.getReductionContext(), environment.getGenerator());
