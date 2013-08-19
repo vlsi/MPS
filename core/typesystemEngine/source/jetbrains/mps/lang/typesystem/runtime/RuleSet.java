@@ -18,7 +18,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.SingleTermRules;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class RuleSet<T extends IApplicableToConcept> {
 
     @Override
     protected List<String> getParents(String nextConceptFQName) {
-      return LanguageHierarchyCache.getParentsNames(nextConceptFQName);
+      return ConceptRegistry.getInstance().getConceptDescriptor(nextConceptFQName).getParentsNames();
     }
 
     @Override

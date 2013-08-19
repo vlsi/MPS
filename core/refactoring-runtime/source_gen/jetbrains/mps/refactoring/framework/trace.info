@@ -697,7 +697,7 @@
     <nodeInfo nodeId="6918927246412048491" fileName="RefactoringNodeMembersAccessModifier.java" startLine="88" startPosition="5" endLine="89" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972810925" fileName="RefactoringNodeMembersAccessModifier.java" startLine="89" startPosition="71" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972810938" fileName="RefactoringNodeMembersAccessModifier.java" startLine="91" startPosition="27" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4792031542972810940" fileName="RefactoringNodeMembersAccessModifier.java" startLine="93" startPosition="5" endLine="94" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4792031542972810940" fileName="RefactoringNodeMembersAccessModifier.java" startLine="93" startPosition="5" endLine="94" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972810951" fileName="RefactoringNodeMembersAccessModifier.java" startLine="95" startPosition="46" endLine="96" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972810963" fileName="RefactoringNodeMembersAccessModifier.java" startLine="97" startPosition="33" endLine="98" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972810969" fileName="RefactoringNodeMembersAccessModifier.java" startLine="98" startPosition="50" endLine="99" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -732,7 +732,7 @@
     <nodeInfo nodeId="4792031542972810999" fileName="RefactoringNodeMembersAccessModifier.java" startLine="111" startPosition="82" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4792031542972811035" fileName="RefactoringNodeMembersAccessModifier.java" startLine="122" startPosition="85" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4792031542972811071" fileName="RefactoringNodeMembersAccessModifier.java" startLine="133" startPosition="93" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4792031542972810946" fileName="RefactoringNodeMembersAccessModifier.java" startLine="94" startPosition="86" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4792031542972810946" fileName="RefactoringNodeMembersAccessModifier.java" startLine="94" startPosition="116" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4792031542972810989" fileName="RefactoringNodeMembersAccessModifier.java" startLine="110" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNewChildRole#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4792031542972811025" fileName="RefactoringNodeMembersAccessModifier.java" startLine="121" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNewReferentRole#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4792031542972811061" fileName="RefactoringNodeMembersAccessModifier.java" startLine="132" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNewPropertyName#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
@@ -794,7 +794,7 @@
     <scopeInfo nodeId="4792031542972810950" fileName="RefactoringNodeMembersAccessModifier.java" startLine="95" startPosition="46" endLine="100" endPosition="7">
       <varInfo nodeId="4792031542972810952" varName="newChildRole" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972810946" fileName="RefactoringNodeMembersAccessModifier.java" startLine="94" startPosition="86" endLine="101" endPosition="5">
+    <scopeInfo nodeId="4792031542972810946" fileName="RefactoringNodeMembersAccessModifier.java" startLine="94" startPosition="116" endLine="101" endPosition="5">
       <varInfo nodeId="4792031542972810948" varName="parentFQName" />
     </scopeInfo>
     <scopeInfo nodeId="4792031542972810998" fileName="RefactoringNodeMembersAccessModifier.java" startLine="111" startPosition="82" endLine="118" endPosition="16" />
@@ -987,7 +987,7 @@
     <nodeInfo nodeId="3294360850844698906" fileName="RefactoringContext.java" startLine="378" startPosition="77" endLine="379" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972814685" fileName="RefactoringContext.java" startLine="383" startPosition="7" endLine="384" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814697" fileName="RefactoringContext.java" startLine="385" startPosition="41" endLine="386" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4792031542972814708" fileName="RefactoringContext.java" startLine="388" startPosition="98" endLine="389" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4792031542972814708" fileName="RefactoringContext.java" startLine="388" startPosition="128" endLine="389" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814721" fileName="RefactoringContext.java" startLine="390" startPosition="38" endLine="391" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972814731" fileName="RefactoringContext.java" startLine="394" startPosition="90" endLine="395" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814738" fileName="RefactoringContext.java" startLine="395" startPosition="109" endLine="396" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1492,7 +1492,7 @@
       <varInfo nodeId="4792031542972814053" varName="nodes" />
       <varInfo nodeId="4792031542972814065" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972814707" fileName="RefactoringContext.java" startLine="388" startPosition="98" endLine="392" endPosition="9">
+    <scopeInfo nodeId="4792031542972814707" fileName="RefactoringContext.java" startLine="388" startPosition="128" endLine="392" endPosition="9">
       <varInfo nodeId="4792031542972814709" varName="conceptFeatures" />
     </scopeInfo>
     <scopeInfo nodeId="4792031542972814927" fileName="RefactoringContext.java" startLine="442" startPosition="26" endLine="446" endPosition="43">

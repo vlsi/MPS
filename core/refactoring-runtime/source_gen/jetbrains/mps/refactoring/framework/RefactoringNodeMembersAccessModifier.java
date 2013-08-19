@@ -19,7 +19,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.List;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 
 public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(RefactoringNodeMembersAccessModifier.class));
@@ -91,7 +91,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     if (language == null) {
       return null;
     }
-    List<String> parentsNames = LanguageHierarchyCache.getParentsNames(conceptFQName);
+    List<String> parentsNames = ConceptRegistry.getInstance().getConceptDescriptor(conceptFQName).getParentsNames();
     for (String parentFQName : parentsNames) {
       String newChildRole = getNewFeatureRole_internal(parentFQName, oldRole, conceptFeatureKind);
       if (newChildRole != null) {

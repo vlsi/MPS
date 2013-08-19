@@ -42,6 +42,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+// todo: DO NOT USE if not sure, use ConceptDescendantsCache
 // todo: should be built based on nodes, useful for ConceptHierarchyTree?
 public class LanguageHierarchyCache implements CoreComponent {
   private static LanguageHierarchyCache INSTANCE;

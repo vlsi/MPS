@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.NodeFactoryUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -111,7 +112,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   private static boolean setupNode_internal(SNode nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     List<SNode> nodeFactories = new ArrayList<SNode>();
-    for (String ancestor : LanguageHierarchyCache.getAncestorsNames(NameUtil.nodeFQName(nodeConcept))) {
+    for (String ancestor : ConceptRegistry.getInstance().getConceptDescriptor(NameUtil.nodeFQName(nodeConcept)).getAncestorsNames()) {
       SNode acd = SModelUtil.findConceptDeclaration(ancestor, scope);
       Language language = SModelUtil.getDeclaringLanguage(acd);
       if (language == null) break;
