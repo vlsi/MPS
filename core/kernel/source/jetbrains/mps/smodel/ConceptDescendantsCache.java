@@ -1,0 +1,136 @@
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+/**
+ * Based on generated structure descriptors
+ */
+public class ConceptDescendantsCache implements CoreComponent, LanguageRegistryListener {
+  private static ConceptDescendantsCache INSTANCE;
+
+  private final MPSModuleRepository myModuleRepository;
+  private final LanguageRegistry myLanguageRegistry;
+
+  private final ConcurrentMap<String, Set<String>> myDescendantsCache = new ConcurrentHashMap<String, Set<String>>();
+
+  public ConceptDescendantsCache(MPSModuleRepository moduleRepository, LanguageRegistry languageRegistry) {
+    myModuleRepository = moduleRepository;
+    myLanguageRegistry = languageRegistry;
+  }
+
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+    INSTANCE = this;
+
+    myLanguageRegistry.addRegistryListener(this);
+  }
+
+  @Override
+  public void dispose() {
+    myLanguageRegistry.removeRegistryListener(this);
+
+    INSTANCE = null;
+  }
+
+  public static ConceptDescendantsCache getInstance() {
+    return INSTANCE;
+  }
+
+  public Set<String> getDescendants(String conceptFqName) {
+    Set<String> result = new LinkedHashSet<String>();
+    collectDescendants(conceptFqName, result);
+    return result;
+  }
+
+  private void collectDescendants(String conceptFqName, Set<String> result) {
+    if (result.contains(conceptFqName)) return;
+    result.add(conceptFqName);
+
+    for (String descendant : getDirectDescendants(conceptFqName)) {
+      collectDescendants(descendant, result);
+    }
+  }
+
+  public Set<String> getDirectDescendants(String conceptFqName) {
+    Set<String> result = myDescendantsCache.get(conceptFqName);
+    return result != null ? result : Collections.<String>emptySet();
+  }
+
+  // languages listening
+  private void loadConcept(ConceptDescriptor concept) {
+    for (String ancestor : concept.getAncestorsNames()) {
+      Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
+      descendants.add(concept.getConceptFqName());
+      myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
+    }
+  }
+
+  private void unloadConcept(ConceptDescriptor concept) {
+    for (String ancestor : concept.getAncestorsNames()) {
+      Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(ancestor));
+      descendants.remove(concept.getConceptFqName());
+      myDescendantsCache.put(ancestor, Collections.unmodifiableSet(descendants));
+    }
+  }
+
+  @Override
+  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+    for (LanguageRuntime language : languages) {
+      for (ConceptDescriptor concept : getConcepts(language)) {
+        loadConcept(concept);
+      }
+    }
+  }
+
+  @Override
+  public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+    for (LanguageRuntime language : languages) {
+      for (ConceptDescriptor concept : getConcepts(language)) {
+        unloadConcept(concept);
+      }
+    }
+  }
+
+  // utils
+  private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {
+    // todo: should be generated in StructureAspectDescriptor
+    Language language = (Language) myModuleRepository.getModuleByFqName(languageRuntime.getNamespace());
+    org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor();
+    if (structureModel == null) return Collections.emptySet();
+
+    StructureAspectDescriptor structureDescriptor = languageRuntime.getStructureAspectDescriptor();
+
+    Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
+    SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_AbstractConceptDeclaration);
+    for (SNode root : structureModel.getRootNodes()) {
+      if (org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(root, abstractConceptDeclaration)) {
+        ConceptDescriptor descriptor = structureDescriptor.getDescriptor(NameUtil.nodeFQName(root));
+        if (descriptor != null) {
+          result.add(descriptor);
+        } else {
+          // todo: ?
+        }
+      }
+    }
+
+    return result;
+  }
+}
