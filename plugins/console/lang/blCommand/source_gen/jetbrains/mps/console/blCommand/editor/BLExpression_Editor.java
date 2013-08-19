@@ -12,27 +12,27 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class BLCommand_Editor extends DefaultNodeEditor {
+public class BLExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_zc016d_a(editorContext, node);
+    return this.createCollection_f3ggz9_a(editorContext, node);
   }
 
-  private EditorCell createCollection_zc016d_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_f3ggz9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_zc016d_a");
+    editorCell.setCellId("Collection_f3ggz9_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNode_zc016d_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_f3ggz9_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_zc016d_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_f3ggz9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("body");
-    provider.setNoTargetText("<no body>");
+    provider.setRole("expression");
+    provider.setNoTargetText("<no expression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("body");
+      editorCell.setRole("expression");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
