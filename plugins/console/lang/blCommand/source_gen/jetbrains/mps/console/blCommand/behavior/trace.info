@@ -3,7 +3,8 @@
   <unitInfo fileName="AbstractPrintExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.AbstractPrintExpression_BehaviorDescriptor" />
   <unitInfo fileName="ActionCallParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ActionCallParameter_BehaviorDescriptor" />
   <unitInfo fileName="BLCommand_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BLCommand_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BLExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BLExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CallAction_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.CallAction_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleModelExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ConsoleModelExpression_BehaviorDescriptor" />
   <unitInfo fileName="ExceptionHolder_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_BehaviorDescriptor" />
