@@ -1077,6 +1077,7 @@ public class JavaToMpsConverter {
     }
 
     // load() is needed to mark model loaded (really?!), without it save() would be a no-op 
+    // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save() 
     modelDescr.load();
     ((EditableSModel) modelDescr).setChanged(true);
     ((EditableSModel) modelDescr).save();

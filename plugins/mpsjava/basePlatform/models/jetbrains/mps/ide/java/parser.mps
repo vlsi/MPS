@@ -34608,6 +34608,11 @@
             <property name="text" nameId="tpee.6329021646629104958" value="load() is needed to mark model loaded (really?!), without it save() would be a no-op" />
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="6638037897919817056" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="6638037897920016946" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()" />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3815171369204849298" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3815171369204905565" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3815171369204849297" nodeInfo="nn">

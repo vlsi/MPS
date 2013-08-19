@@ -167,6 +167,7 @@ public class SModuleOperations {
       LOG.error("Can't create a model " + name + ": " + e.getMessage());
       return null;
     }
+    // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
     // model.getSModel() ?
     model.setChanged(true);
     model.save();
