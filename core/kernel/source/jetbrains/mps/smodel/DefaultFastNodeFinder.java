@@ -82,7 +82,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       final List<SNode> result = new ArrayList<SNode>();
 
       if (includeInherited) {
-        for (String d : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName)) {
+        for (String d : ConceptDescendantsCache.getInstance().getDescendants(conceptFqName)) {
           if (myNodes.containsKey(d)) {
             result.addAll(myNodes.get(d));
           }

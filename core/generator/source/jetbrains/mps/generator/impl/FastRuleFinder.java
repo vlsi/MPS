@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
@@ -44,7 +44,7 @@ public class FastRuleFinder {
       rules.add(rule);
 
       if (rule.applyToInheritors()) {
-        for (String conceptFqName : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(applicableConceptFqName)) {
+        for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
           rules = applicableRules.get(conceptFqName);
           if (rules == null) {
             rules = new LinkedList<TemplateReductionRule>();
