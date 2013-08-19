@@ -7,20 +7,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
-public class QueryExpression_Actions {
+public class AbstractPrintExpression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new QueryExpression_Actions.QueryExpression_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new AbstractPrintExpression_Actions.AbstractPrintExpression_Actions_DELETE(node));
   }
 
-  public static class QueryExpression_Actions_DELETE extends AbstractCellAction {
+  public static class AbstractPrintExpression_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public QueryExpression_Actions_DELETE(SNode node) {
+    public AbstractPrintExpression_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -29,8 +27,7 @@ public class QueryExpression_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "parameter", true), "parameter", true)).clear();
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, SelectionManager.LAST_CELL, -1);
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "object", true));
     }
   }
 }
