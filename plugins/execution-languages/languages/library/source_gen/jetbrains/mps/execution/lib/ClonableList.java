@@ -51,6 +51,7 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
   @Override
   public ClonableList<T> clone() throws CloneNotSupportedException {
     ClonableList<T> result = ((ClonableList<T>) super.clone());
+    ListSequence.fromList(result.myData).clear();
     ListSequence.fromList(result.myData).addSequence(ListSequence.fromList(myData));
     return result;
   }

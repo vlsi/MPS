@@ -577,19 +577,20 @@
     <nodeInfo nodeId="5133679254727508098" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133679254727508113" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508130" fileName="ClonableList.java" startLine="52" startPosition="68" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5133679254727508139" fileName="ClonableList.java" startLine="53" startPosition="63" endLine="54" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133679254727508150" fileName="ClonableList.java" startLine="54" startPosition="84" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5830001343568748228" fileName="ClonableList.java" startLine="58" startPosition="28" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="927456781810330248" fileName="ClonableList.java" startLine="53" startPosition="63" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727508139" fileName="ClonableList.java" startLine="54" startPosition="49" endLine="55" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727508150" fileName="ClonableList.java" startLine="55" startPosition="84" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5830001343568748228" fileName="ClonableList.java" startLine="59" startPosition="28" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508017" fileName="ClonableList.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#()V" />
     <nodeInfo nodeId="5133679254727508025" fileName="ClonableList.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#(Ljava/util/List;)V" />
     <nodeInfo nodeId="5133679254727508038" fileName="ClonableList.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#(null)V" />
-    <nodeInfo nodeId="5830001343568747993" fileName="ClonableList.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#()Ljava/util/List;" />
+    <nodeInfo nodeId="5830001343568747993" fileName="ClonableList.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#()Ljava/util/List;" />
     <nodeInfo nodeId="5133679254727508050" fileName="ClonableList.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(I)null" />
     <nodeInfo nodeId="5133679254727508064" fileName="ClonableList.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()I" />
     <nodeInfo nodeId="5133679254727508075" fileName="ClonableList.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#(I)null" />
     <nodeInfo nodeId="5133679254727508089" fileName="ClonableList.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Inull)V" />
     <nodeInfo nodeId="5133679254727508107" fileName="ClonableList.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Inull)null" />
-    <nodeInfo nodeId="5133679254727508125" fileName="ClonableList.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/lib/ClonableList;" />
+    <nodeInfo nodeId="5133679254727508125" fileName="ClonableList.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/lib/ClonableList;" />
     <scopeInfo nodeId="5133679254727508020" fileName="ClonableList.java" startLine="14" startPosition="25" endLine="15" endPosition="52" />
     <scopeInfo nodeId="5133679254727508031" fileName="ClonableList.java" startLine="18" startPosition="38" endLine="19" endPosition="19" />
     <scopeInfo nodeId="5133679254727508041" fileName="ClonableList.java" startLine="22" startPosition="41" endLine="23" endPosition="67" />
@@ -598,7 +599,7 @@
     <scopeInfo nodeId="5133679254727508076" fileName="ClonableList.java" startLine="37" startPosition="30" endLine="38" endPosition="64" />
     <scopeInfo nodeId="5133679254727508097" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="63" />
     <scopeInfo nodeId="5133679254727508112" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="67" />
-    <scopeInfo nodeId="5830001343568747996" fileName="ClonableList.java" startLine="58" startPosition="28" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="5830001343568747996" fileName="ClonableList.java" startLine="59" startPosition="28" endLine="60" endPosition="18" />
     <scopeInfo nodeId="5133679254727508017" fileName="ClonableList.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="5133679254727508025" fileName="ClonableList.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="5133679254727508026" varName="inner" />
@@ -606,10 +607,7 @@
     <scopeInfo nodeId="5133679254727508038" fileName="ClonableList.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5133679254727508047" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727508129" fileName="ClonableList.java" startLine="52" startPosition="68" endLine="55" endPosition="18">
-      <varInfo nodeId="5133679254727508131" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5830001343568747993" fileName="ClonableList.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5830001343568747993" fileName="ClonableList.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="5133679254727508050" fileName="ClonableList.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5133679254727508060" varName="index" />
     </scopeInfo>
@@ -625,8 +623,11 @@
       <varInfo nodeId="5133679254727508108" varName="index" />
       <varInfo nodeId="5133679254727508121" varName="object" />
     </scopeInfo>
-    <scopeInfo nodeId="5133679254727508125" fileName="ClonableList.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="5133679254727508012" fileName="ClonableList.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.lib.ClonableList" />
+    <scopeInfo nodeId="5133679254727508129" fileName="ClonableList.java" startLine="52" startPosition="68" endLine="56" endPosition="18">
+      <varInfo nodeId="5133679254727508131" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="5133679254727508125" fileName="ClonableList.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
+    <unitInfo nodeId="5133679254727508012" fileName="ClonableList.java" startLine="11" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.execution.lib.ClonableList" />
   </root>
   <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/8278380780105768314">
     <nodeInfo nodeId="6072045827976706427" fileName="NodeByConcept_Configuration.java" startLine="31" startPosition="5" endLine="32" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -25,7 +25,7 @@ public class DeployPluginsSettings_Configuration_Editor extends SettingsEditorEx
   public JPanel createEditor() {
     JPanel panel = new JPanel(new GridBagLayout());
     myPluginsPanel = new PluginsListPanel();
-    myPluginsPanel.init(ListSequence.fromList(new ArrayList<SNodeReference>()));
+    myPluginsPanel.setData(ListSequence.fromList(new ArrayList<SNodeReference>()));
     panel.add(myPluginsPanel, LayoutUtil.createPanelConstraints(0));
     return panel;
   }
@@ -40,7 +40,7 @@ public class DeployPluginsSettings_Configuration_Editor extends SettingsEditorEx
   }
 
   public void resetEditorFrom(final DeployPluginsSettings_Configuration configuration) {
-    myPluginsPanel.init(PointerUtils.clonableListToNodes(configuration.getPluginsToDeploy()));
+    myPluginsPanel.setData(PointerUtils.clonableListToNodes(configuration.getPluginsToDeploy()));
   }
 
   public DeployPluginsSettings_Configuration_Editor() {

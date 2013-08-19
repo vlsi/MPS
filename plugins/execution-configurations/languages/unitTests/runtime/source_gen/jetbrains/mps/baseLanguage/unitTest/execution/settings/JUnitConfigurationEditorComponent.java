@@ -223,28 +223,30 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     myButtons[myRunKind.ordinal()].setSelected(true);
 
     // nodes 
-    myClassesList.clear();
+    final List<ITestNodeWrapper> classes = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Sequence.fromIterable(TestUtils.wrapPointerStrings(configuration.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
-            myClassesList.addItem(it);
+            ListSequence.fromList(classes).addElement(it);
           }
         });
       }
     });
+    myClassesList.setData(classes);
 
     // methods 
-    myMethodsList.clear();
+    final List<ITestNodeWrapper> methods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Sequence.fromIterable(TestUtils.wrapPointerStrings(configuration.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
-            myMethodsList.addItem(it);
+            ListSequence.fromList(methods).addElement(it);
           }
         });
       }
     });
+    myMethodsList.setData(methods);
 
     // models 
     if (configuration.getModel() != null) {

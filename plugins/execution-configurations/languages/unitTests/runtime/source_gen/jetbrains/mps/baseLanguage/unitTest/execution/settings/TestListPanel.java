@@ -47,11 +47,6 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     return element.getCachedFqName();
   }
 
-  public void init(List<ITestNodeWrapper> nodes, final boolean isTestMethods) {
-    myIsTestMethods = isTestMethods;
-    super.init(nodes);
-  }
-
   @Override
   protected void collectCandidates() {
     final List<SNode> nodesList = new ArrayList<SNode>();
@@ -108,6 +103,6 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     super("Tests");
     myIsTestMethods = isTestMethods;
     setProject(project);
-    super.init(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+    super.setData(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
   }
 }
