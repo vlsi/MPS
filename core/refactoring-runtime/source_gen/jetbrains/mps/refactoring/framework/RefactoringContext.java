@@ -385,6 +385,7 @@ public class RefactoringContext {
       if (exactConceptFeatures != null) {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
+      // TODO: don't know what should be done here 
       for (String parentConceptFQName : LanguageHierarchyCache.getAncestorsNames(conceptFQName)) {
         Set<StructureModificationData.ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
         if (conceptFeatures != null) {
