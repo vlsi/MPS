@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 
 public class ClonableList<T> extends AbstractList<T> implements Cloneable {
-  private final List<T> myData;
+  private List<T> myData;
 
   public ClonableList() {
     this(ListSequence.fromList(new ArrayList<T>()));
@@ -51,7 +51,7 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
   @Override
   public ClonableList<T> clone() throws CloneNotSupportedException {
     ClonableList<T> result = ((ClonableList<T>) super.clone());
-    ListSequence.fromList(result.myData).clear();
+    result.myData = ListSequence.fromList(new ArrayList<T>());
     ListSequence.fromList(result.myData).addSequence(ListSequence.fromList(myData));
     return result;
   }

@@ -41,12 +41,12 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -88,15 +88,13 @@ public class ConvertPackageToModel extends AnAction {
 
   @Override
   public void update(AnActionEvent e) {
-    PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+    PsiElement[] elements = e.getData(LangDataKeys.PSI_ELEMENT_ARRAY);
     Module module = e.getData(LangDataKeys.MODULE);
 
-    if (element == null
-      || !(element instanceof PsiDirectory)
-      || element instanceof MPSPsiModel
+    if (elements == null
       || module == null
       || FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID) == null
-      || !containsJavaFiles((PsiDirectory) element)) {
+      || !containsJavaThings(elements)) {
 
       e.getPresentation().setVisible(false);
       e.getPresentation().setEnabled(false);
@@ -106,7 +104,7 @@ public class ConvertPackageToModel extends AnAction {
   @Override
   public void actionPerformed(final AnActionEvent e) {
 
-    final PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+    final PsiElement[] elements = e.getData(LangDataKeys.PSI_ELEMENT_ARRAY);
     final Module module = e.getData(LangDataKeys.MODULE);
     final Project project = e.getData(PlatformDataKeys.PROJECT);
 
@@ -114,10 +112,9 @@ public class ConvertPackageToModel extends AnAction {
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    List<PsiJavaFile> psiJavaFiles = new ArrayList<PsiJavaFile>();
-    collectPsiJavaFiles((PsiDirectory) element, psiJavaFiles);
+    List<PsiJavaFile> psiJavaFiles = JavaConverterHelper.getFilesFromSelection(JavaConverterHelper.liftToFiles(Arrays.asList(elements)));
 
-    Collection<Module> modulesWithoutFacet = JavaConverter.getModulesThatNeedMPSFacet(psiJavaFiles);
+    Collection<Module> modulesWithoutFacet = JavaConverterHelper.getModulesThatNeedMPSFacet(psiJavaFiles);
 
     if (!modulesWithoutFacet.isEmpty()) {
       final AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project, module.getName(), modulesWithoutFacet);
@@ -135,7 +132,7 @@ public class ConvertPackageToModel extends AnAction {
       }
     }
 
-    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository(), true);
+    final JavaToMpsConverter parser = new JavaToMpsConverter(mpsModule, mpsProject.getRepository(), true, true);
     final List<IFile> javaFiles = toIFiles(psiJavaFiles);
 
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
@@ -246,6 +243,17 @@ public class ConvertPackageToModel extends AnAction {
     });
   }
 
+  private boolean containsJavaThings(PsiElement[] elements) {
+    for (PsiElement e : elements) {
+      if (e instanceof PsiJavaFile) return true;
+      if (e instanceof PsiClass && !(e instanceof MPSPsiNode)) return true;
+    }
+    for (PsiElement e : elements) {
+      if (!(e instanceof PsiDirectory)) continue;
+      if (containsJavaFiles((PsiDirectory) e)) return true;
+    }
+    return false;
+  }
 
   private boolean containsJavaFiles(PsiDirectory dir) {
     for (PsiFile f : dir.getFiles()) {
@@ -269,16 +277,7 @@ public class ConvertPackageToModel extends AnAction {
     return result;
   }
 
-  private void collectPsiJavaFiles(PsiDirectory dir, List<PsiJavaFile> result) {
-    for (PsiFile f : dir.getFiles()) {
-      if (f instanceof PsiJavaFile) {
-        result.add((PsiJavaFile) f);
-      }
-    }
-    for (PsiDirectory d : dir.getSubdirectories()) {
-      collectPsiJavaFiles(d, result);
-    }
-  }
+
 
   private Set<PsiClass> getPsiClasses(List<IFile> javaFiles, PsiManager psiManager) {
     Set<PsiClass> result = new HashSet<PsiClass>();

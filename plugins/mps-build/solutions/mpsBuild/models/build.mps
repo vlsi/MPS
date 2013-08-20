@@ -13801,10 +13801,10 @@
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Branding" typeId="kdzh.7753544965996377997" id="7753544965996546378" nodeInfo="ng">
-      <property name="minor" nameId="kdzh.3497141547781541445" value="0" />
-      <property name="eap" nameId="kdzh.3497141547781541446" value="true" />
+      <property name="minor" nameId="kdzh.3497141547781541445" value="1" />
       <property name="name" nameId="tpck.1169194664001" value="MPS" />
       <property name="major" nameId="kdzh.3497141547781541444" value="3" />
+      <property name="eap" nameId="kdzh.3497141547781541446" value="true" />
       <node role="welcomeLogo" roleId="kdzh.772379520210716142" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="772379520211581357" nodeInfo="ng">
         <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="772379520211581358" nodeInfo="nn">
           <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
@@ -13861,7 +13861,7 @@
         </node>
         <node role="updateChannel" roleId="kdzh.8795525031433091059" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7753544965996568508" nodeInfo="ng">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568509" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS25" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS31" />
           </node>
         </node>
       </node>

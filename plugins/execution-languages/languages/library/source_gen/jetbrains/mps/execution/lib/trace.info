@@ -577,8 +577,8 @@
     <nodeInfo nodeId="5133679254727508098" fileName="ClonableList.java" startLine="42" startPosition="49" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133679254727508113" fileName="ClonableList.java" startLine="47" startPosition="46" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508130" fileName="ClonableList.java" startLine="52" startPosition="68" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="927456781810330248" fileName="ClonableList.java" startLine="53" startPosition="63" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5133679254727508139" fileName="ClonableList.java" startLine="54" startPosition="49" endLine="55" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5133679254727508139" fileName="ClonableList.java" startLine="53" startPosition="63" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="497309993137389050" fileName="ClonableList.java" startLine="54" startPosition="62" endLine="55" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5133679254727508150" fileName="ClonableList.java" startLine="55" startPosition="84" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5830001343568748228" fileName="ClonableList.java" startLine="59" startPosition="28" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5133679254727508017" fileName="ClonableList.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClonableList#()V" />

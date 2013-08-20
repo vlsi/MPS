@@ -162,11 +162,12 @@ public class SModuleOperations {
     EditableSModel model;
     try {
       model = (EditableSModel) (modelFactory != null && root instanceof DefaultModelRoot
-          ? ((DefaultModelRoot) root).createModel(name, modelFactory) : root.createModel(name));
+          ? ((DefaultModelRoot) root).createModel(name, null, modelFactory) : root.createModel(name));
     } catch (IOException e) {
       LOG.error("Can't create a model " + name + ": " + e.getMessage());
       return null;
     }
+    // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
     // model.getSModel() ?
     model.setChanged(true);
     model.save();
