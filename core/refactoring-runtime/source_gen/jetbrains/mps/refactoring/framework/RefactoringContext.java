@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -385,7 +385,8 @@ public class RefactoringContext {
       if (exactConceptFeatures != null) {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
-      for (String parentConceptFQName : ConceptRegistry.getInstance().getConceptDescriptor(conceptFQName).getAncestorsNames()) {
+      // TODO: don't know what should be done here 
+      for (String parentConceptFQName : LanguageHierarchyCache.getAncestorsNames(conceptFQName)) {
         Set<StructureModificationData.ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
         if (conceptFeatures != null) {
           allConceptFeatures.addAll(conceptFeatures);
