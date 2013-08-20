@@ -122,7 +122,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7738379549910181271(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "conceptExpr", true);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) {
+      return _quotation_createNode_x583g4_a0a0a0z(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false));
+    }
+    return null;
   }
 
   public static SNode sourceNodeQuery_996400390539534565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -199,6 +204,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_8953981490812725464(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
+  }
+
+  private static SNode _quotation_createNode_x583g4_a0a0a0z(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaration", (SNode) parameter_1);
+    return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0b0hb() {

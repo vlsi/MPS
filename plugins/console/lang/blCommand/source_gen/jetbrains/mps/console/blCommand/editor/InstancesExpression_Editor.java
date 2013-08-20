@@ -49,12 +49,12 @@ public class InstancesExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_le77e3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("conceptExpr");
-    provider.setNoTargetText("<no conceptExpr>");
+    provider.setRole("conceptArg");
+    provider.setNoTargetText("<no conceptArg>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("conceptExpr");
+      editorCell.setRole("conceptArg");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
