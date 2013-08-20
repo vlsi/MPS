@@ -8,6 +8,9 @@
   </models>
   <facets>
     <facet pluginId="jetbrains.mps.ide.devkit" type="ideaPlugin" />
+    <facet pluginId="jetbrains.mps.ide.devkit" type="ideaPlugin" />
+    <facet type="java" />
+    <facet type="tests" />
   </facets>
   <sourcePath />
   <dependencies>
@@ -47,7 +50,6 @@
     <usedLanguage>ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)</usedLanguage>
     <usedLanguage>982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)</usedLanguage>
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
-    <usedLanguage>5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</usedLanguage>
   </usedLanguages>
 </solution>
 

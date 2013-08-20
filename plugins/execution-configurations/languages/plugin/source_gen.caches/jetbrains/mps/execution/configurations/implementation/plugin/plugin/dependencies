@@ -477,8 +477,8 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser" />

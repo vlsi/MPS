@@ -5,7 +5,7 @@ package jetbrains.mps.ide.devkit.newDevkitDialog;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import jetbrains.mps.ide.common.PathField;
+import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
 import java.util.List;
