@@ -552,7 +552,7 @@
     <nodeInfo nodeId="7656298970872540642" fileName="PastedNodeReference_Editor.java" startLine="114" startPosition="42" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7656298970872540642" fileName="PastedNodeReference_Editor.java" startLine="116" startPosition="7" endLine="117" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7656298970874681542" fileName="PastedNodeReference_Editor.java" startLine="121" startPosition="107" endLine="122" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7656298970872959927" fileName="PastedNodeReference_Editor.java" startLine="122" startPosition="85" endLine="123" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7656298970872959927" fileName="PastedNodeReference_Editor.java" startLine="122" startPosition="85" endLine="123" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2470736109869087481" fileName="PastedNodeReference_Editor.java" startLine="126" startPosition="109" endLine="127" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7656298970872540642" fileName="PastedNodeReference_Editor.java" startLine="104" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="5842059399443118722" fileName="PastedNodeReference_Editor.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -587,7 +587,7 @@
       <varInfo nodeId="7656298970872540642" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="7656298970872540642" fileName="PastedNodeReference_Editor.java" startLine="113" startPosition="41" endLine="115" endPosition="37" />
-    <scopeInfo nodeId="7656298970872958801" fileName="PastedNodeReference_Editor.java" startLine="121" startPosition="107" endLine="123" endPosition="63">
+    <scopeInfo nodeId="7656298970872958801" fileName="PastedNodeReference_Editor.java" startLine="121" startPosition="107" endLine="123" endPosition="64">
       <varInfo nodeId="7656298970874681545" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="5842059399443118722" fileName="PastedNodeReference_Editor.java" startLine="30" startPosition="0" endLine="33" endPosition="0">

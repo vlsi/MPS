@@ -120,7 +120,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
 
   private static Color _StyleParameter_QueryFunction_7k9x8q_a0a0(EditorContext editorContext, SNode node) {
     int id = SLinkOperations.getTarget(node, "target", false).getNodeId().hashCode();
-    return new Color(255 - (id >> 25), 200, (id << 24) >>> 24);
+    return new Color(255 - (id >>> 25), 200, (id << 24) >>> 24);
   }
 
   private static boolean _StyleParameter_QueryFunction_7k9x8q_a2a0(EditorContext editorContext, SNode node) {
