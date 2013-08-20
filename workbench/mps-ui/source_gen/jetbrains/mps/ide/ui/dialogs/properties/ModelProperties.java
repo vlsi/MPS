@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
@@ -129,7 +129,7 @@ public class ModelProperties {
       }
     }
 
-    if (!(TemporaryModels.isTemporary(myModelDescriptor))) {
+    if (myModelDescriptor.getSource() instanceof NullDataSource) {
       ((EditableSModel) myModelDescriptor).save();
     }
     MissingDependenciesFixer.fixDependencies(myModelDescriptor);
