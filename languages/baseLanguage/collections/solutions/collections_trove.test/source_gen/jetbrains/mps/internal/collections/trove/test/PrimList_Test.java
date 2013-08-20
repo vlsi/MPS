@@ -66,6 +66,9 @@ public class PrimList_Test extends TestCase {
     Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liBox).count());
   }
 
+  public PrimList_Test() {
+  }
+
   private long getUsedMem() {
     System.gc();
     System.gc();

@@ -193,7 +193,10 @@
     <nodeInfo nodeId="1841835149314780128" fileName="TestRelativePathHelper_Test.java" startLine="39" startPosition="0" endLine="40" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1841835149314780130" fileName="TestRelativePathHelper_Test.java" startLine="40" startPosition="12" endLine="41" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1841835149314781674" fileName="TestRelativePathHelper_Test.java" startLine="41" startPosition="108" endLine="42" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5368511706901688072" fileName="TestRelativePathHelper_Test.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestRelativePathHelper_Test#()V" />
     <nodeInfo nodeId="5368511706901692172" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRelPaths#()V" />
+    <scopeInfo nodeId="5368511706901688075" fileName="TestRelativePathHelper_Test.java" startLine="45" startPosition="40" endLine="45" endPosition="40" />
+    <scopeInfo nodeId="5368511706901688072" fileName="TestRelativePathHelper_Test.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="5368511706901692175" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="52" endLine="42" endPosition="109">
       <varInfo nodeId="1841835149314687008" varName="baseDir" />
       <varInfo nodeId="1841835149314780164" varName="oneUp" />
@@ -202,7 +205,7 @@
       <varInfo nodeId="1841835149314679085" varName="tmpFile" />
     </scopeInfo>
     <scopeInfo nodeId="5368511706901692172" fileName="TestRelativePathHelper_Test.java" startLine="11" startPosition="0" endLine="44" endPosition="0" />
-    <unitInfo nodeId="5368511706901688070" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
+    <unitInfo nodeId="5368511706901688070" fileName="TestRelativePathHelper_Test.java" startLine="10" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.tests.TestRelativePathHelper_Test" />
   </root>
   <root nodeRef="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)/5584673629410321146">
     <nodeInfo nodeId="5584673629410321283" fileName="TestContext.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEMP_MACRO" />

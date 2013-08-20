@@ -32,4 +32,7 @@ public class LinkedMap_Test extends Util_Test {
     Assert.assertSame(1, MapSequence.fromMap(map).get("A"));
     this.assertIterableEquals(Arrays.asList(5, 4, 3, 2, 1), MapSequence.fromMap(map).values());
   }
+
+  public LinkedMap_Test() {
+  }
 }

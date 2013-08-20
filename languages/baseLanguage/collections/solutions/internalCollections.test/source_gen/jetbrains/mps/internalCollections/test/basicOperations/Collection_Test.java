@@ -39,4 +39,7 @@ public class Collection_Test extends Util_Test {
     CollectionSequence.fromCollection(cs).removeElement("bar");
     assertIterableEquals(Sequence.fromArray(new String[]{"foo", "qux"}), cs);
   }
+
+  public Collection_Test() {
+  }
 }
