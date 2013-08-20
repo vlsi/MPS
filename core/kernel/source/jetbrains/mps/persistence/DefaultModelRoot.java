@@ -103,10 +103,10 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return super.canCreateModels() && !getFiles(SOURCE_ROOTS).isEmpty();
   }
 
-  public SModel createModel(String modelName, ModelFactory factory) throws IOException {
+  public SModel createModel(String modelName, String sourceRoot, ModelFactory factory) throws IOException {
     Map<String, String> options = new HashMap<String, String>();
     DataSource source = factory instanceof FolderModelFactory
-        ? ((FolderModelFactory) factory).createNewSource(this, null, modelName, options)
+        ? ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, options)
         : createSource(modelName, factory.getFileExtension(), null, options);
     if (source == null) {
       return null;
@@ -141,7 +141,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   public SModel createModel(String modelName) {
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
     try {
-      return createModel(modelName, modelFactory);
+      return createModel(modelName, null, modelFactory);
     } catch (IOException e) {
       return null;
     }

@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.NameUtil;
@@ -132,7 +132,7 @@ public class JavaPaster {
 
       // trying to resolve names when nodes are already in a model 
       JavaParser.tryResolveUnknowns(nodes);
-      MultipleFilesParser mfParser = new MultipleFilesParser(operationContext.getModule(), operationContext.getProject().getRepository());
+      JavaToMpsConverter mfParser = new JavaToMpsConverter(operationContext.getModule(), operationContext.getProject().getRepository());
       mfParser.tryResolveRefs(nodes, featureKind, new EmptyProgressMonitor());
 
     } catch (JavaParseException ex) {

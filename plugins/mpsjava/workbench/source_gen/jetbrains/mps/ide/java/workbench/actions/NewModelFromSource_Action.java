@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.newparser.JavaConvertUtil;
-import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import com.intellij.openapi.util.Ref;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import com.intellij.openapi.progress.ProgressManager;
@@ -156,7 +156,7 @@ public class NewModelFromSource_Action extends BaseAction {
       }
       final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
 
-      final MultipleFilesParser parser = new MultipleFilesParser(((SModule) MapSequence.fromMap(_params).get("module")), repository);
+      final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), repository);
       final Ref<JavaParseException> parseException = new Ref<JavaParseException>();
 
       ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
