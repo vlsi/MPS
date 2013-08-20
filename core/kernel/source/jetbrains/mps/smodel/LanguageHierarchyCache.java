@@ -42,6 +42,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+// todo: DO NOT USE if not sure, use ConceptDescendantsCache
+// todo: should be built based on nodes, useful for ConceptHierarchyTree?
 public class LanguageHierarchyCache implements CoreComponent {
   private static LanguageHierarchyCache INSTANCE;
   private SRepositoryContentAdapter myRepositoryListener = new SRepositoryContentAdapter() {
@@ -66,9 +68,6 @@ public class LanguageHierarchyCache implements CoreComponent {
 
   private final Object myLanguageLock = new Object();
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
-
-  private CopyOnWriteArrayList<CacheChangeListener> myCacheChangeListeners = new CopyOnWriteArrayList<CacheChangeListener>();
-  private ThreadLocal<CacheReadAccessListener> myCacheReadAccessListener = new ThreadLocal<CacheReadAccessListener>();
 
   private MPSModuleRepository myModuleRepository;
 
@@ -100,38 +99,7 @@ public class LanguageHierarchyCache implements CoreComponent {
   public void dispose() {
     // TODO unregister listeners?
     myRepositoryListener.unsubscribeFrom(MPSModuleRepository.getInstance());
-    myCacheChangeListeners.clear();
-    myCacheReadAccessListener = null;
     INSTANCE = null;
-  }
-
-  public void addCacheChangeListener(CacheChangeListener listener) {
-    myCacheChangeListeners.addIfAbsent(listener);
-  }
-
-  public void removeCacheChangeListener(CacheChangeListener listener) {
-    myCacheChangeListeners.remove(listener);
-  }
-
-  public void setReadAccessListener(CacheReadAccessListener listener) {
-    myCacheReadAccessListener.set(listener);
-  }
-
-  public void removeReadAccessListener() {
-    myCacheReadAccessListener.set(null);
-  }
-
-  private void fireCacheChanged() {
-    for (CacheChangeListener listener : myCacheChangeListeners) {
-      listener.languageCacheChanged();
-    }
-  }
-
-  private void fireReadAccessPerformed() {
-    CacheReadAccessListener listener = myCacheReadAccessListener.get();
-    if (listener != null) {
-      listener.languageCacheRead();
-    }
   }
 
   public void invalidateCache() {
@@ -146,8 +114,6 @@ public class LanguageHierarchyCache implements CoreComponent {
     synchronized (myLanguageLock) {
       myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
     }
-
-    fireCacheChanged();
   }
 
   public static List<String> getParentsNames(String conceptFqName) {
@@ -155,7 +121,6 @@ public class LanguageHierarchyCache implements CoreComponent {
   }
 
   public List<String> _getParentsNames(final String conceptFqName) {
-    fireReadAccessPerformed();
     synchronized (myParentsNamesLock) {
       List<String> result = myParentsNamesMap.get(conceptFqName);
       if (result == null) {
@@ -220,7 +185,6 @@ public class LanguageHierarchyCache implements CoreComponent {
   }
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {
-    fireReadAccessPerformed();
     InternAwareStringSet result = myAncestorsNamesMap.get(conceptFqName);
     if (result != null) return result;
 
@@ -274,7 +238,6 @@ public class LanguageHierarchyCache implements CoreComponent {
   }
 
   public Set<String> getDescendantsOfConcept(String conceptFQName) {
-    fireReadAccessPerformed();
     Set<String> children;
     synchronized (myDescendantsLock) {
       if (!myDescendantsCachesAreValid) {
@@ -387,13 +350,5 @@ public class LanguageHierarchyCache implements CoreComponent {
     Set<String> getSubconcepts(String fqName) {
       return mySubconcepts.get(fqName);
     }
-  }
-
-  public static interface CacheChangeListener {
-    public void languageCacheChanged();
-  }
-
-  public static interface CacheReadAccessListener {
-    public void languageCacheRead();
   }
 }

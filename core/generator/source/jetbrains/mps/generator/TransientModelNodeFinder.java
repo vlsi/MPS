@@ -16,11 +16,10 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
+import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
-import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -102,7 +101,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
 
     if (includeInherited) {
       final List<SNode> result = new ArrayList<SNode>();
-      for (String d : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName)) {
+      for (String d : ConceptDescendantsCache.getInstance().getDescendants(conceptFqName)) {
         List<SNode> nodes = myNodes.get(d);
         if (nodes!=null) {
           result.addAll(nodes);

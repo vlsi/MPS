@@ -6394,7 +6394,6 @@
     <scopeInfo nodeId="1951613054411714136" fileName="DebugActions_ActionGroup.java" startLine="21" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="1951613054411714136" fileName="DebugActions_ActionGroup.java" startLine="12" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2003512433031647631" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2003512433031647705">
     <nodeInfo nodeId="2003512433031647705" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2003512433031647705" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="36" startPosition="46" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -6783,7 +6782,6 @@
     </scopeInfo>
     <unitInfo nodeId="2010440180771532928" fileName="EditGivenNode_Action.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.EditGivenNode_Action" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2162966196216183754" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/2214103008221911161">
     <nodeInfo nodeId="2214103008221911161" fileName="FindModelUsages_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2214103008221911161" fileName="FindModelUsages_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -9684,7 +9682,7 @@
     <nodeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4006758004392312929" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4006758004392312965" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="78" startPosition="40" endLine="79" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392312965" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="78" startPosition="40" endLine="79" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4006758004392313023" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="81" startPosition="9" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8787627761412217709" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="84" startPosition="56" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8848477597120135286" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="87" startPosition="31" endLine="88" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -9722,7 +9720,7 @@
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="64" startPosition="66" endLine="65" endPosition="19" />
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="4006758004392312961" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="78" startPosition="40" endLine="79" endPosition="157" />
+    <scopeInfo nodeId="4006758004392312961" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="78" startPosition="40" endLine="79" endPosition="187" />
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="98" startPosition="45" endLine="99" endPosition="105" />
     <scopeInfo nodeId="5938312768539964254" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="87" startPosition="31" endLine="89" endPosition="239">
       <varInfo nodeId="8848477597120135287" varName="concept" />
@@ -10270,7 +10268,6 @@
     <unitInfo nodeId="4514830148568024326" fileName="SetNodePackageDialog.java" startLine="49" startPosition="68" endLine="56" endPosition="5" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog$2" />
     <unitInfo nodeId="4514830148568015579" fileName="SetNodePackageDialog.java" startLine="24" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.actions.SetNodePackageDialog" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/4533699301447536554" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/484385057887943926">
     <nodeInfo nodeId="484385057887943926" fileName="MessagesViewActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="484385057887943926" fileName="MessagesViewActions_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -13696,8 +13693,6 @@
     <unitInfo nodeId="7162597690968192621" fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
     <unitInfo nodeId="7162597690968192621" fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/7318050879424155903" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/738639550409927630" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/738639550409927657">
     <nodeInfo nodeId="738639550409927657" fileName="PrintNodePosition_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="738639550409927657" fileName="PrintNodePosition_Action.java" startLine="23" startPosition="37" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -15541,7 +15536,6 @@
     </scopeInfo>
     <unitInfo nodeId="8394433674396727873" fileName="StyledTextPrinterImpl.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.StyledTextPrinterImpl" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/8494854374084157115" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/8671835029167053045">
     <nodeInfo nodeId="8671835029167053045" fileName="CalcSNodeStatistic_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8671835029167053045" fileName="CalcSNodeStatistic_Action.java" startLine="25" startPosition="38" endLine="26" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

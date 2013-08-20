@@ -37,10 +37,10 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -449,7 +449,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       langNames.add(l.getModuleName());
     }
 
-    for (String conceptId : LanguageHierarchyCache.getAncestorsNames(node.getConcept().getQualifiedName())) {
+    for (String conceptId : ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getAncestorsNames()) {
       Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
       if (concept2FactoriesMap.containsKey(conceptId)) {
         for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {

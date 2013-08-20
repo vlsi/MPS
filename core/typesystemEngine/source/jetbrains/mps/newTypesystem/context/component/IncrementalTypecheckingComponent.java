@@ -19,7 +19,6 @@ import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -145,38 +144,9 @@ import java.util.Set;
     }
   }
 
-
   protected void setInvalidationResult(boolean result) {
     setInvalidationWasPerformed(true);
     myCacheWasRebuilt = false;
     myInvalidationResult = result;
   }
-  /*
-   *  Single-threaded.
-   */
-  class MyLanguageCachesReadListener implements CacheReadAccessListener {
-    private boolean myIsCacheAccessed = false;
-    private boolean myIsSetAccessReport = false;
-
-    MyLanguageCachesReadListener() {
-    }
-
-    public void setAccessReport(boolean accessReport) {
-      myIsSetAccessReport = accessReport;
-    }
-
-    @Override
-    public void languageCacheRead() {
-      if (myIsSetAccessReport) {
-        new Throwable().printStackTrace();
-      }
-      myIsCacheAccessed = true;
-    }
-
-    public boolean isCacheAccessed() {
-      return myIsCacheAccessed;
-    }
-  }
-
-
 }

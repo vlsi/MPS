@@ -26,7 +26,6 @@ import jetbrains.mps.newTypesystem.state.State;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -45,9 +44,6 @@ import java.util.*;
   private Map<SNode, Set<Pair<String, String>>> myNodesToRules;
   private Set<SNode> myNodesDependentOnCaches;
 
-  private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
-
-
   public TypeSystemComponent(TypeChecker typeChecker, State state, IncrementalTypechecking component) {
     super(typeChecker, state, component);
 
@@ -59,7 +55,6 @@ import java.util.*;
 
   @Override
   public void dispose() {
-    LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
   }
 
   //returns true if something was invalidated
@@ -218,7 +213,6 @@ import java.util.*;
   protected void performActionsAfterChecking() {
     getTypechecking().updateGCedNodes();
     TypeChecker.getInstance().addTypeRecalculatedListener(getTypechecking().getTypeRecalculatedListener());//method checks if already exists
-    LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
 
   @Override
@@ -249,9 +243,7 @@ import java.util.*;
   }
 
   private class MyAccessTracking extends AccessTracking {
-
     private MyEventsReadListener nodesReadListener;
-    private MyLanguageCachesReadListener languageCachesReadListener;
 
     public MyAccessTracking() {
       this.nodesReadListener = isIncrementalMode() ? new MyEventsReadListener() : null;
@@ -260,17 +252,14 @@ import java.util.*;
     @Override
     protected void installReadListeners() {
       if (isIncrementalMode()) {
-        this.languageCachesReadListener = new MyLanguageCachesReadListener();
         nodesReadListener.clear();
         NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
-        LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
       }
     }
 
     @Override
     protected void removeReadListeners() {
       if (isIncrementalMode()) {
-        LanguageHierarchyCache.getInstance().removeReadAccessListener();
         NodeReadEventsCaster.removeNodesReadListener();
       }
     }
@@ -282,24 +271,8 @@ import java.util.*;
         Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
         addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
         nodesReadListener.setAccessReport(false);
-        if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
-          languageCachesReadListener.setAccessReport(true);
-          if (languageCachesReadListener.isCacheAccessed()) {
-            addCacheDependentNodesTypesystem(sNode);
-          }
-          languageCachesReadListener.setAccessReport(false);
-        }
         nodesReadListener.clear();
-        this.languageCachesReadListener = null;
       }
-    }
-  }
-
-  private class MyLanguageCacheListener implements CacheChangeListener {
-    @Override
-    public void languageCacheChanged() {
-      setCacheWasRebuild(true);
-      setInvalidationWasPerformed(false);
     }
   }
 }
