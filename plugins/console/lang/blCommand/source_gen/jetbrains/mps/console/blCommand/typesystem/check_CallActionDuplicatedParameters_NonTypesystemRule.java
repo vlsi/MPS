@@ -52,7 +52,7 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.CallAction";
+    return "jetbrains.mps.console.blCommand.structure.CallActionExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

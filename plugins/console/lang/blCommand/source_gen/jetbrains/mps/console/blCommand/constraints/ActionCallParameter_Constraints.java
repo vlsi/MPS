@@ -65,8 +65,8 @@ public class ActionCallParameter_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.console.blCommand.structure.CallAction")) {
-              return new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.console.blCommand.structure.CallAction"), "action", false))).where(new IWhereFilter<SNode>() {
+            if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.console.blCommand.structure.CallActionExpression")) {
+              return new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.console.blCommand.structure.CallActionExpression"), "action", false))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration");
                 }
@@ -85,7 +85,7 @@ public class ActionCallParameter_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.console.blCommand.structure.CallAction");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.console.blCommand.structure.CallActionExpression");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:aef526b1-5019-472a-a761-72ac88ef58a4(jetbrains.mps.console.blCommand.constraints)", "9149301274757091583");

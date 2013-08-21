@@ -186,7 +186,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "targetModel", true);
   }
 
-  public static SNode sourceNodeQuery_7656298970878364349(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7600370246417154396(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 

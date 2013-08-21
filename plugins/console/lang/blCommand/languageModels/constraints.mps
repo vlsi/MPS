@@ -99,7 +99,7 @@
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9149301274757091553" nodeInfo="nn">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9149301274757091554" nodeInfo="nn">
                             <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="9149301274757091555" nodeInfo="nn">
-                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallAction" />
+                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallActionExpression" />
                               <node role="leftExpression" roleId="tp25.1140138123956" type="tp1t.ConceptParameter_ReferentSearchScope_enclosingNode" typeId="tp1t.1148934636683" id="9149301274757091556" nodeInfo="nn" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="9149301274757091557" nodeInfo="nn">
@@ -158,7 +158,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConceptParameter_ReferentSearchScope_enclosingNode" typeId="tp1t.1148934636683" id="9149301274757091578" nodeInfo="nn" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="9149301274757091579" nodeInfo="nn">
                 <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="9149301274757091580" nodeInfo="nn">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallAction" />
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallActionExpression" />
                 </node>
               </node>
             </node>
@@ -176,7 +176,7 @@
             <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="9149301274757091587" nodeInfo="nn" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="9149301274757091588" nodeInfo="nn">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="9149301274757091589" nodeInfo="nn">
-                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallAction" />
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallActionExpression" />
               </node>
             </node>
           </node>

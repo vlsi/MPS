@@ -56,13 +56,13 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4417779018064685312" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.6852607286009511388" resolveInfo="PrintNodeReferenceExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="4417779018064685313" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="4417779018064685310" resolveInfo="reduce_PrintNodeReferenceStatement" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="4417779018064685310" resolveInfo="reduce_PrintNodeReferenceExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1125969196844486002" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.8483375838963816351" resolveInfo="ShowExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1125969196844486003" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1125969196844485895" resolveInfo="reduce_ShowStatement" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1125969196844485895" resolveInfo="reduce_ShowExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1125969196844628677" nodeInfo="ng">
@@ -104,13 +104,13 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8365379837260462301" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.8365379837260459177" resolveInfo="PrintExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="8365379837260462302" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8365379837260462194" resolveInfo="reduce_Print" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8365379837260462194" resolveInfo="reduce_PrintExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5510759644748861250" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.5510759644748856153" resolveInfo="PrintNodeExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5510759644748861251" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5510759644748861143" resolveInfo="reduce_PrintNodeStatement" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5510759644748861143" resolveInfo="reduce_PrintNodeExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4593895459761048381" nodeInfo="ng">
@@ -156,9 +156,9 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="9149301274757474163" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallAction" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallActionExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="9149301274757474164" nodeInfo="nn">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="9149301274757474161" resolveInfo="reduce_CallAction" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="9149301274757474161" resolveInfo="reduce_CallActionExpression" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8953981490813256158" nodeInfo="ng">
@@ -325,7 +325,7 @@
     </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="4417779018064685310" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_PrintNodeReferenceStatement" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_PrintNodeReferenceExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.6852607286009511388" resolveInfo="PrintNodeReferenceExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4417779018064997084" nodeInfo="ig">
@@ -405,7 +405,7 @@
     </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1125969196844485895" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_ShowStatement" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_ShowExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="show" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.8483375838963816351" resolveInfo="ShowExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1125969196844488723" nodeInfo="ig">
@@ -481,8 +481,8 @@
                   </node>
                 </node>
               </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7600370246416867845" nodeInfo="ng" />
             </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1125969196844615934" nodeInfo="ng" />
           </node>
         </node>
       </node>
@@ -975,7 +975,7 @@
     </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8365379837260462194" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_Print" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_PrintExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.8365379837260459177" resolveInfo="PrintExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8365379837260463160" nodeInfo="ig">
@@ -1063,7 +1063,7 @@
     </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5510759644748861143" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_PrintNodeStatement" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_PrintNodeExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="print" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.5510759644748856153" resolveInfo="PrintNodeExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5510759644748861396" nodeInfo="ig">
@@ -1708,9 +1708,9 @@
     </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="9149301274757474161" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="reduce_CallAction" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_CallActionExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="callAction" />
-    <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallAction" />
+    <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallActionExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9149301274757475734" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Main" />
@@ -1865,8 +1865,8 @@
                   </node>
                 </node>
               </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7600370246417170743" nodeInfo="ng" />
             </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="9149301274757634490" nodeInfo="ng" />
           </node>
         </node>
       </node>
@@ -1942,7 +1942,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="callAction" />
     <property name="name" nameId="tpck.1169194664001" value="reduce_ModelProperties" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3xdn.2284201910216573342" resolveInfo="ModelProperties" />
-    <node role="contentNode" roleId="tpf8.1092060348987" type="3xdn.CallAction" typeId="3xdn.9149301274757091502" id="2284201910216999027" nodeInfo="ng">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="3xdn.CallActionExpression" typeId="3xdn.9149301274757091502" id="2284201910216999027" nodeInfo="ng">
       <link role="action" roleId="3xdn.9149301274757091503" targetNodeId="tprs.1235219887263" resolveInfo="ModelProperties" />
       <node role="parameter" roleId="3xdn.9149301274757091504" type="3xdn.ActionCallParameter" typeId="3xdn.9149301274757091505" id="2284201910216999028" nodeInfo="ng">
         <link role="declaration" roleId="3xdn.9149301274757091507" targetNodeId="tprs.6352952732714422544" resolveInfo="ideaProject" />
@@ -2009,17 +2009,19 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="3xdn.BLCommand" typeId="3xdn.5464054275389846505" id="7656298970878363337" nodeInfo="ng">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7656298970878363637" nodeInfo="ng" />
       <node role="body" roleId="3xdn.1769790395579689573" type="tpee.StatementList" typeId="tpee.1068580123136" id="7656298970878363901" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="3xdn.PrintStatement" typeId="3xdn.8365379837260459177" id="7600370246414326108" nodeInfo="ng">
-          <node role="object" roleId="3xdn.8365379837260461921" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7656298970878364335" nodeInfo="nn">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="7656298970878364346" nodeInfo="nn">
-              <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="7656298970878364349" nodeInfo="nn">
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7656298970878364350" nodeInfo="sn">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7656298970878364356" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7656298970878364351" nodeInfo="nn">
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7656298970878364354" nodeInfo="nn">
-                        <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.7656298970878093890" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7600370246417154355" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="3xdn.PrintExpression" typeId="3xdn.8365379837260459177" id="7600370246417154353" nodeInfo="ng">
+            <node role="object" roleId="3xdn.8365379837260461921" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7600370246417154366" nodeInfo="nn">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="7600370246417154393" nodeInfo="nn">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="7600370246417154396" nodeInfo="nn">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7600370246417154397" nodeInfo="sn">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7600370246417154403" nodeInfo="nn">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7600370246417154398" nodeInfo="nn">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7600370246417154401" nodeInfo="nn">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="3xdn.7656298970878093890" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7600370246417154402" nodeInfo="nn" />
                       </node>
-                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7656298970878364355" nodeInfo="nn" />
                     </node>
                   </node>
                 </node>

@@ -52,7 +52,7 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.CallAction";
+    return "jetbrains.mps.console.blCommand.structure.CallActionExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

@@ -259,7 +259,7 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="4307205004134636875" resolveInfo="ScopeParameterLiteral" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9149301274757091502" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CallAction" />
+    <property name="name" nameId="tpck.1169194664001" value="CallActionExpression" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="callAction" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="execute mps action with custom parameters" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="callAction" />
