@@ -469,10 +469,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void doSubstituteSelection() {
-    String pattern = getPatternEditor().getPattern();
-    SubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
+    final String pattern = getPatternEditor().getPattern();
+    final SubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
-    action.substitute(myEditorComponent.getEditorContext(), pattern);
+    myEditorComponent.getEditorContext().getRepository().getModelAccess().executeCommand(new Runnable() {
+      @Override
+      public void run() {
+        action.substitute(myEditorComponent.getEditorContext(), pattern);
+      }
+    });
   }
 
   public void doSubstituteSelection(String pattern, int index) {

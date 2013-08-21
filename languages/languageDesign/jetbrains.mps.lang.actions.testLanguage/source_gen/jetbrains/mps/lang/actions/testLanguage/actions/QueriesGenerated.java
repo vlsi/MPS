@@ -522,6 +522,9 @@ public class QueriesGenerated {
             tmpVar = tmpVar && operationContext.getScope() != null;
             tmpVar = tmpVar && editorContext != null;
 
+            // Check if we have read access here 
+            String name = SPropertyOperations.getString(nodeToWrap, "name");
+
             SNode wrapperNode = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", null);
             SLinkOperations.setTarget(wrapperNode, "childToWrap", nodeToWrap, true);
             return wrapperNode;
@@ -536,6 +539,9 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && operationContext != null;
             tmpVar = tmpVar && nodeToWrap != null;
+
+            // Check if we have read access here 
+            String name = SPropertyOperations.getString(nodeToWrap, "name");
 
             return SNodeOperations.isInstanceOf(nodeToWrap, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2");
           }
@@ -564,13 +570,15 @@ public class QueriesGenerated {
             private SNode setupSelection(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
               // compilation test for all passed parameters 
               boolean tmpVar = _context.getParentNode() != null;
-              tmpVar = tmpVar && _context.getParentNode() != null;
               tmpVar = tmpVar && createdNode != null;
               tmpVar = tmpVar && _context.getChildConcept() != null;
               tmpVar = tmpVar && model != null;
               tmpVar = tmpVar && operationContext != null;
               tmpVar = tmpVar && operationContext.getScope() != null;
               tmpVar = tmpVar && editorContext != null;
+
+              // Check if we have read access here 
+              String name = SPropertyOperations.getString(SLinkOperations.getTarget(createdNode, "childToWrap", true), "name");
 
               // selecting a custom cell 
               editorContext.flushEvents();
