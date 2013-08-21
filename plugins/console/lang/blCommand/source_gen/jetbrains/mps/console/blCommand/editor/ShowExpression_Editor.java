@@ -33,12 +33,12 @@ public class ShowExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_rowo1n_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("showable");
-    provider.setNoTargetText("<no showable>");
+    provider.setRole("object");
+    provider.setNoTargetText("<no object>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("showable");
+      editorCell.setRole("object");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
