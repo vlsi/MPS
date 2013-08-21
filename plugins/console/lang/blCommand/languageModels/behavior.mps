@@ -546,7 +546,7 @@
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2284201910216391605" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.callAction" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallAction" />
+    <link role="concept" roleId="1i04.1225194240799" targetNodeId="3xdn.9149301274757091502" resolveInfo="CallActionExpression" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4225915845891065696" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="legalAsStatement" />
       <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />

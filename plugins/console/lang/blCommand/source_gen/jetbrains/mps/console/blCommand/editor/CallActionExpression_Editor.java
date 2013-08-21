@@ -28,34 +28,34 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class CallAction_Editor extends DefaultNodeEditor {
+public class CallActionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_eeodo_a(editorContext, node);
+    return this.createCollection_1hloy8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_eeodo_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1hloy8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_eeodo_a");
+    editorCell.setCellId("Collection_1hloy8_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_eeodo_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_eeodo_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_eeodo_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_eeodo_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_eeodo_e0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_1hloy8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_1hloy8_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1hloy8_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_1hloy8_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1hloy8_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_eeodo_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_1hloy8_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
     return editorCell;
   }
 
-  private EditorCell createRefCell_eeodo_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1hloy8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CallAction_Editor._Inline_eeodo_a1a());
+    provider.setAuxiliaryCellProvider(new CallActionExpression_Editor._Inline_1hloy8_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -68,8 +68,8 @@ public class CallAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_eeodo_a1a extends InlineCellProvider {
-    public _Inline_eeodo_a1a() {
+  public static class _Inline_1hloy8_a1a extends InlineCellProvider {
+    public _Inline_1hloy8_a1a() {
       super();
     }
 
@@ -78,10 +78,10 @@ public class CallAction_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_eeodo_a0b0(editorContext, node);
+      return this.createProperty_1hloy8_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_eeodo_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1hloy8_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -105,9 +105,9 @@ public class CallAction_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_eeodo_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1hloy8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_eeodo_c0");
+    editorCell.setCellId("Constant_1hloy8_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -115,16 +115,16 @@ public class CallAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_eeodo_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CallAction_Editor.parameterListHandler_eeodo_d0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_1hloy8_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CallActionExpression_Editor.parameterListHandler_1hloy8_d0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class parameterListHandler_eeodo_d0 extends RefNodeListHandler {
-    public parameterListHandler_eeodo_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_1hloy8_d0 extends RefNodeListHandler {
+    public parameterListHandler_1hloy8_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -147,7 +147,7 @@ public class CallAction_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_eeodo_a3a(editorContext, node);
+      return this.createConstant_1hloy8_a3a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -174,17 +174,17 @@ public class CallAction_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private EditorCell createConstant_eeodo_a3a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_1hloy8_a3a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_eeodo_a3a");
+      editorCell.setCellId("Constant_1hloy8_a3a");
       editorCell.setDefaultText("");
       return editorCell;
     }
   }
 
-  private EditorCell createConstant_eeodo_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1hloy8_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_eeodo_e0");
+    editorCell.setCellId("Constant_1hloy8_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -57,11 +57,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_PrintNodeReferenceStatement_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_PrintNodeExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_PrintNodeStatement_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_PrintNodeReferenceExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -74,6 +74,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_RefsShowable_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ShowExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
