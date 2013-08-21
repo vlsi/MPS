@@ -224,4 +224,7 @@ __switch__:
     });
     this.assertIterableEquals(this.inputABC(), test4);
   }
+
+  public Array_Test() {
+  }
 }

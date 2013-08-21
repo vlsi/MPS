@@ -2106,6 +2106,9 @@ __switch__:
     Assert.assertEquals(Double.valueOf(2.718281828), Sequence.fromIterable(seq).skip(2).first());
   }
 
+  public YieldClosures_Test() {
+  }
+
   private List<? extends Number> numberSubtypes() {
     return Sequence.fromIterable(Sequence.fromArray(new Number[]{Integer.valueOf(42), Long.valueOf(100500L), Double.valueOf(2.718281828)})).toListSequence();
   }

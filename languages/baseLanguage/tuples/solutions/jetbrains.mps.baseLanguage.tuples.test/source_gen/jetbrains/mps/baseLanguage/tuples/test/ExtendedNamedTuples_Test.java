@@ -19,4 +19,7 @@ public class ExtendedNamedTuples_Test extends TestCase {
     bar = qux;
     Assert.assertEquals(new Bar(1, "asd", "xyz", 234.0), bar);
   }
+
+  public ExtendedNamedTuples_Test() {
+  }
 }

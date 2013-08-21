@@ -22,6 +22,9 @@ public class TestSafeEquals_Test extends TestCase {
     Assert.assertFalse(neq_g71ru1_a0a4a1(null, null));
   }
 
+  public TestSafeEquals_Test() {
+  }
+
   private static boolean eq_g71ru1_a0a1a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

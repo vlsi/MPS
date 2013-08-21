@@ -9,12 +9,15 @@
     <nodeInfo nodeId="12077399789563400" fileName="PropertiesTest_Test.java" startLine="14" startPosition="45" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="12077399789563419" fileName="PropertiesTest_Test.java" startLine="15" startPosition="57" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7542046987151769370" fileName="PropertiesTest_Test.java" startLine="16" startPosition="44" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="12077399789561868" fileName="PropertiesTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertiesTest_Test#()V" />
     <nodeInfo nodeId="12077399789562069" fileName="PropertiesTest_Test.java" startLine="9" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_properties#()V" />
+    <scopeInfo nodeId="12077399789561871" fileName="PropertiesTest_Test.java" startLine="20" startPosition="32" endLine="20" endPosition="32" />
+    <scopeInfo nodeId="12077399789561868" fileName="PropertiesTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="12077399789562072" fileName="PropertiesTest_Test.java" startLine="9" startPosition="50" endLine="17" endPosition="63">
       <varInfo nodeId="12077399789562076" varName="testClass" />
     </scopeInfo>
     <scopeInfo nodeId="12077399789562069" fileName="PropertiesTest_Test.java" startLine="9" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="12077399789561866" fileName="PropertiesTest_Test.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
+    <unitInfo nodeId="12077399789561866" fileName="PropertiesTest_Test.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.propertiesTest.PropertiesTest_Test" />
   </root>
   <root nodeRef="r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)/12077399789561873">
     <nodeInfo nodeId="12077399789561978" fileName="TestClass.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="value" />

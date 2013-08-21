@@ -37,4 +37,7 @@ public class Generics_Test extends TestCase {
     o1.doSmth();
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList(), "foo", "bar"), o1.myList);
   }
+
+  public Generics_Test() {
+  }
 }

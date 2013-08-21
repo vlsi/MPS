@@ -132,4 +132,7 @@ __switch__:
       }));
     }
   }
+
+  public Where_Select_Test1_Test() {
+  }
 }

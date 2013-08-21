@@ -215,6 +215,9 @@ public class Set_Test extends Util_Test {
     }
   }
 
+  public Set_Test() {
+  }
+
   private static boolean eq_c8cpc7_a0a2a61(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

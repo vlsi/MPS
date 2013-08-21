@@ -229,4 +229,7 @@ __switch__:
       }
     });
   }
+
+  public SequenceFunctionTypes_Test() {
+  }
 }

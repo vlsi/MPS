@@ -74,6 +74,9 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertNull(sd);
   }
 
+  public FacetDescriptorsIO_Test() {
+  }
+
   private Element readRoot(IFile moduleFile) throws IOException, JDOMException {
     return JDOMUtil.loadDocument(moduleFile).getRootElement();
   }
