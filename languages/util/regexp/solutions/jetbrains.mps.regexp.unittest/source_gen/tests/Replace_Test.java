@@ -13,5 +13,8 @@ public class Replace_Test extends TestCase {
     Assert.assertEquals("<Manny> <goes> <home>", s);
   }
 
+  public Replace_Test() {
+  }
+
   private static Pattern REGEXP_55w9mm_b0a0a0 = Pattern.compile("(\\w+)", 0);
 }

@@ -87,4 +87,7 @@ public class MultiForeachTest_Test extends TestCase {
     }
     Assert.assertEquals("a1b2", IterableUtils.join(ListSequence.fromList(res), ""));
   }
+
+  public MultiForeachTest_Test() {
+  }
 }

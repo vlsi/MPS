@@ -56,12 +56,15 @@ public class Match_Test extends TestCase {
     }
   }
 
+  public Match_Test() {
+  }
+
   public void check(String searchin) {
     Matcher _matcher_vwem4m_a0a0;
     Matcher _matcher_vwem4m_a0a0a;
-    if ((_matcher_vwem4m_a0a0 = REGEXP_vwem4m_a0a0a2a6.matcher(searchin)).find()) {
+    if ((_matcher_vwem4m_a0a0 = REGEXP_vwem4m_a0a0a2a7.matcher(searchin)).find()) {
       Assert.assertEquals("xyz", _matcher_vwem4m_a0a0.group(1));
-    } else if ((_matcher_vwem4m_a0a0a = REGEXP_vwem4m_a0a0a0c0g.matcher(searchin)).find()) {
+    } else if ((_matcher_vwem4m_a0a0a = REGEXP_vwem4m_a0a0a0c0h.matcher(searchin)).find()) {
       Assert.assertEquals("aaad", _matcher_vwem4m_a0a0a.group(1));
     } else {
       Assert.fail("no match");
@@ -75,6 +78,6 @@ public class Match_Test extends TestCase {
   private static Pattern REGEXP_vwem4m_b0a0a2 = Pattern.compile(",\\s*", 0);
   private static Pattern REGEXP_vwem4m_a0a0b0d = Pattern.compile("(\\s*)(?:\\[(\\w+)\\])", 0);
   private static Pattern REGEXP_vwem4m_a0a0a1a5 = Pattern.compile("(?:(?:(?:([a-zA-Z_][a-zA-Z_0-9]+))\\[(\\d+)\\])(\\w+))", 0);
-  private static Pattern REGEXP_vwem4m_a0a0a2a6 = Pattern.compile("!\\s*(\\w+)", 0);
-  private static Pattern REGEXP_vwem4m_a0a0a0c0g = Pattern.compile("([a-f]+)", 0);
+  private static Pattern REGEXP_vwem4m_a0a0a2a7 = Pattern.compile("!\\s*(\\w+)", 0);
+  private static Pattern REGEXP_vwem4m_a0a0a0c0h = Pattern.compile("([a-f]+)", 0);
 }

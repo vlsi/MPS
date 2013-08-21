@@ -448,6 +448,9 @@ __switch__:
     }
   }
 
+  public ClassifierAdapters_Test() {
+  }
+
   public void acceptWorker(Worker one, Worker two) {
   }
 

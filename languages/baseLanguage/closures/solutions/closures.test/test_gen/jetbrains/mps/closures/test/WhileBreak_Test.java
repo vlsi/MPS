@@ -124,4 +124,7 @@ __switch__:
       }
     });
   }
+
+  public WhileBreak_Test() {
+  }
 }
