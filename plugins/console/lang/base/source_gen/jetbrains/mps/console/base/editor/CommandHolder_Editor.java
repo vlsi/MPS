@@ -31,10 +31,11 @@ public class CommandHolder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_nvbf9m_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "> ");
     editorCell.setCellId("Constant_nvbf9m_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
