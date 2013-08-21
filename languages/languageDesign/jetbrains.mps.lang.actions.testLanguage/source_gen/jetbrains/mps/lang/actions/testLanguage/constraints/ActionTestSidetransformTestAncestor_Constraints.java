@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class ActionTestSidetransofrmTestAncestor_Constraints extends BaseConstraintsDescriptor {
-  public ActionTestSidetransofrmTestAncestor_Constraints() {
-    super("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransofrmTestAncestor");
+public class ActionTestSidetransformTestAncestor_Constraints extends BaseConstraintsDescriptor {
+  public ActionTestSidetransformTestAncestor_Constraints() {
+    super("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor");
   }
 
   @Override
@@ -32,7 +32,7 @@ public class ActionTestSidetransofrmTestAncestor_Constraints extends BaseConstra
   }
 
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
-    return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && !(SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept"));
+    return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1") && !(SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept")) && childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild");
   }
 
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)", "3185679905989886136");

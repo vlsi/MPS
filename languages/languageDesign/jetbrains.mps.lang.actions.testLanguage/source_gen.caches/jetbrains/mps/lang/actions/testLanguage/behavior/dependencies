@@ -115,6 +115,18 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAddConceptAbstractChild_BehaviorDescriptor" file="ActionTestSidetransformAddConceptAbstractChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAddConceptChild_BehaviorDescriptor" file="ActionTestSidetransformAddConceptChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAddConceptAbstractChild_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAnotherAbstractChild_BehaviorDescriptor" file="ActionTestSidetransformAnotherAbstractChild_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -145,13 +157,13 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAbstractChild_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformTestContainer_BehaviorDescriptor" file="ActionTestSidetransformTestContainer_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformTestAncestor_BehaviorDescriptor" file="ActionTestSidetransformTestAncestor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransofrmTestAncestor_BehaviorDescriptor" file="ActionTestSidetransofrmTestAncestor_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformTestContainer_BehaviorDescriptor" file="ActionTestSidetransformTestContainer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -170,11 +182,12 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultChild1_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultChild2_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAddConceptChild_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAnotherChild1_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformAnotherChild2_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformChild1_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformTestAncestor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransformTestContainer_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestSidetransofrmTestAncestor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />

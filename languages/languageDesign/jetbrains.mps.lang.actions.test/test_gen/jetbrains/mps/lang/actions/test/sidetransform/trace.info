@@ -299,6 +299,59 @@
     <unitInfo nodeId="3185679905992082178" fileName="LeftTransformWithCustomItems_Parameterized_checkCanBeParent_Test.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithCustomItems_Parameterized_checkCanBeParent_Test$TestBody" />
     <unitInfo nodeId="3185679905992082178" fileName="LeftTransformWithCustomItems_Parameterized_checkCanBeParent_Test.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithCustomItems_Parameterized_checkCanBeParent_Test" />
   </root>
+  <root nodeRef="r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)/3959984916895237523">
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="21" startPosition="87" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="22" startPosition="128" endLine="23" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="32" startPosition="51" endLine="33" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="33" startPosition="99" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3959984916895237532" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="34" startPosition="93" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237533" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="35" startPosition="58" endLine="36" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237535" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="36" startPosition="122" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237541" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="37" startPosition="80" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237547" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="38" startPosition="82" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237554" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="39" startPosition="67" endLine="40" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RightTransformWithAddConcept_checkCanBeAncestor_Test#()V" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RightTransformWithAddConcept_checkCanBeAncestor#()V" />
+    <nodeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="31" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="17" startPosition="65" endLine="17" endPosition="65" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="28" startPosition="23" endLine="28" endPosition="23" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="21" startPosition="87" endLine="23" endPosition="149" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="32" startPosition="51" endLine="40" endPosition="119">
+      <varInfo nodeId="3959984916895237523" varName="editor" />
+      <varInfo nodeId="3959984916895237523" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="31" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithAddConcept_checkCanBeAncestor_Test$TestBody" />
+    <unitInfo nodeId="3959984916895237523" fileName="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithAddConcept_checkCanBeAncestor_Test" />
+  </root>
+  <root nodeRef="r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)/4886882084760491503">
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4886882084760491511" fileName="LeftTransformWithAddConcept_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LeftTransformWithAddConcept_Test#()V" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LeftTransformWithAddConcept#()V" />
+    <nodeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="14" startPosition="45" endLine="14" endPosition="45" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="18" startPosition="67" endLine="20" endPosition="129" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="73">
+      <varInfo nodeId="4886882084760491503" varName="editor" />
+      <varInfo nodeId="4886882084760491503" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithAddConcept_Test$TestBody" />
+    <unitInfo nodeId="4886882084760491503" fileName="LeftTransformWithAddConcept_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithAddConcept_Test" />
+  </root>
   <root nodeRef="r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)/4942308145798660281">
     <nodeInfo nodeId="4942308145798660281" fileName="RightTransformWithCustomItem_Simple_checkCanBeParent_Test.java" startLine="21" startPosition="92" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4942308145798660281" fileName="RightTransformWithCustomItem_Simple_checkCanBeParent_Test.java" startLine="22" startPosition="128" endLine="23" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -327,6 +380,59 @@
     <scopeInfo nodeId="4942308145798660281" fileName="RightTransformWithCustomItem_Simple_checkCanBeParent_Test.java" startLine="31" startPosition="0" endLine="42" endPosition="0" />
     <unitInfo nodeId="4942308145798660281" fileName="RightTransformWithCustomItem_Simple_checkCanBeParent_Test.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithCustomItem_Simple_checkCanBeParent_Test$TestBody" />
     <unitInfo nodeId="4942308145798660281" fileName="RightTransformWithCustomItem_Simple_checkCanBeParent_Test.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithCustomItem_Simple_checkCanBeParent_Test" />
+  </root>
+  <root nodeRef="r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)/6500338114639041001">
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="18" startPosition="68" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6500338114639041009" fileName="RightTransformWithAddConcept_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RightTransformWithAddConcept_Test#()V" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RightTransformWithAddConcept#()V" />
+    <nodeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="14" startPosition="46" endLine="14" endPosition="46" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="18" startPosition="68" endLine="20" endPosition="130" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="73">
+      <varInfo nodeId="6500338114639041001" varName="editor" />
+      <varInfo nodeId="6500338114639041001" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithAddConcept_Test$TestBody" />
+    <unitInfo nodeId="6500338114639041001" fileName="RightTransformWithAddConcept_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.RightTransformWithAddConcept_Test" />
+  </root>
+  <root nodeRef="r:3643c33a-b564-4832-938b-79a88b40b6f2(jetbrains.mps.lang.actions.test.sidetransform@tests)/6500338114639041774">
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="21" startPosition="86" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="22" startPosition="128" endLine="23" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="32" startPosition="51" endLine="33" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="33" startPosition="99" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6500338114639041783" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="34" startPosition="93" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041784" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="35" startPosition="58" endLine="36" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041786" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="36" startPosition="122" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041792" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="37" startPosition="80" endLine="38" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041798" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="38" startPosition="82" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041805" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="39" startPosition="67" endLine="40" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LeftTransformWithAddConcept_checkCanBeAncestor_Test#()V" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LeftTransformWithAddConcept_checkCanBeAncestor#()V" />
+    <nodeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="31" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="17" startPosition="64" endLine="17" endPosition="64" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="28" startPosition="23" endLine="28" endPosition="23" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="21" startPosition="86" endLine="23" endPosition="148" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="32" startPosition="51" endLine="40" endPosition="119">
+      <varInfo nodeId="6500338114639041774" varName="editor" />
+      <varInfo nodeId="6500338114639041774" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="31" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithAddConcept_checkCanBeAncestor_Test$TestBody" />
+    <unitInfo nodeId="6500338114639041774" fileName="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.actions.test.sidetransform.LeftTransformWithAddConcept_checkCanBeAncestor_Test" />
   </root>
 </debugInfo>
 

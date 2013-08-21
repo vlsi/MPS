@@ -32,20 +32,22 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionTestDefaultChild2_BehaviorDescriptor();
       case 1:
         return new ActionTestChild1Child_BehaviorDescriptor();
-      case 13:
+      case 15:
         return new ActionTestSidetransformTestContainer_BehaviorDescriptor();
-      case 12:
+      case 13:
         return new ActionTestSidetransformChild1_BehaviorDescriptor();
       case 14:
-        return new ActionTestSidetransofrmTestAncestor_BehaviorDescriptor();
-      case 10:
-        return new ActionTestSidetransformAnotherChild1_BehaviorDescriptor();
+        return new ActionTestSidetransformTestAncestor_BehaviorDescriptor();
       case 11:
+        return new ActionTestSidetransformAnotherChild1_BehaviorDescriptor();
+      case 12:
         return new ActionTestSidetransformAnotherChild2_BehaviorDescriptor();
+      case 10:
+        return new ActionTestSidetransformAddConceptChild_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransofrmTestAncestor"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"};
 }

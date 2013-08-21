@@ -209,7 +209,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public void dispose() {
-    myNodeEditor.dispose();
+    if (myNodeEditor != null) {
+      myNodeEditor.dispose();
+    }
     myComponent.removeAll();
     myDisposed = true;
   }

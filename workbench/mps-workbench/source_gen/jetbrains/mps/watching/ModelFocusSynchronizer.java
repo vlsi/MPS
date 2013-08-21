@@ -47,7 +47,10 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
                     node = nvf.getNode();
                   }
                   if (node != null) {
-                    SetSequence.fromSet(models).addElement(node.getModel());
+                    SModel model = node.getModel();
+                    if (model != null) {
+                      SetSequence.fromSet(models).addElement(model);
+                    }
                   }
                 }
               }
@@ -55,8 +58,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
             for (SModel model : SetSequence.fromSet(models)) {
-              SModel md = model;
-              for (IFile file : CollectionSequence.fromCollection(ModelUtil.getFilesByModelDescriptor(md))) {
+              for (IFile file : CollectionSequence.fromCollection(ModelUtil.getFilesByModelDescriptor(model))) {
                 IFile fileToRefresh = file;
                 while (!(fileToRefresh.exists())) {
                   fileToRefresh = fileToRefresh.getParent();

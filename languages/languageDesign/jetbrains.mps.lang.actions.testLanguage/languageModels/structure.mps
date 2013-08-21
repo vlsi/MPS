@@ -218,6 +218,12 @@
       <property name="role" nameId="tpce.1071599776563" value="anotherAbstractChildConstrained" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3185679905990200726" resolveInfo="ActionTestSidetransformAnotherAbstractChild" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4886882084760491410" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="abstractChildAddConcept" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4886882084760489344" resolveInfo="ActionTestSidetransformAddConceptAbstractChild" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1702123884811416051" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ActionTestSidetransformAbstractChild" />
@@ -235,7 +241,7 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1702123884811416051" resolveInfo="ActionTestSidetransformAbstractChild" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3185679905989655160" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ActionTestSidetransofrmTestAncestor" />
+    <property name="name" nameId="tpck.1169194664001" value="ActionTestSidetransformTestAncestor" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3185679905989655255" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -269,6 +275,19 @@
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3185679905990200726" resolveInfo="ActionTestSidetransformAnotherAbstractChild" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4886882084760489344" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sidetransform" />
+    <property name="name" nameId="tpck.1169194664001" value="ActionTestSidetransformAddConceptAbstractChild" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4886882084761150502" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sidetransform" />
+    <property name="name" nameId="tpck.1169194664001" value="ActionTestSidetransformAddConceptChild" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="addConceptChild" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="4886882084760489344" resolveInfo="ActionTestSidetransformAddConceptAbstractChild" />
   </root>
 </model>
 

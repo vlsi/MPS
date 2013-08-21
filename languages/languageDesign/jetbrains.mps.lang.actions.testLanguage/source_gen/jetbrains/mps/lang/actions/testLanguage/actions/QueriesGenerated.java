@@ -522,6 +522,9 @@ public class QueriesGenerated {
             tmpVar = tmpVar && operationContext.getScope() != null;
             tmpVar = tmpVar && editorContext != null;
 
+            // Check if we have read access here 
+            String name = SPropertyOperations.getString(nodeToWrap, "name");
+
             SNode wrapperNode = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", null);
             SLinkOperations.setTarget(wrapperNode, "childToWrap", nodeToWrap, true);
             return wrapperNode;
@@ -536,6 +539,9 @@ public class QueriesGenerated {
             tmpVar = tmpVar && _context.getChildConcept() != null;
             tmpVar = tmpVar && operationContext != null;
             tmpVar = tmpVar && nodeToWrap != null;
+
+            // Check if we have read access here 
+            String name = SPropertyOperations.getString(nodeToWrap, "name");
 
             return SNodeOperations.isInstanceOf(nodeToWrap, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2");
           }
@@ -564,13 +570,15 @@ public class QueriesGenerated {
             private SNode setupSelection(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
               // compilation test for all passed parameters 
               boolean tmpVar = _context.getParentNode() != null;
-              tmpVar = tmpVar && _context.getParentNode() != null;
               tmpVar = tmpVar && createdNode != null;
               tmpVar = tmpVar && _context.getChildConcept() != null;
               tmpVar = tmpVar && model != null;
               tmpVar = tmpVar && operationContext != null;
               tmpVar = tmpVar && operationContext.getScope() != null;
               tmpVar = tmpVar && editorContext != null;
+
+              // Check if we have read access here 
+              String name = SPropertyOperations.getString(SLinkOperations.getTarget(createdNode, "childToWrap", true), "name");
 
               // selecting a custom cell 
               editorContext.flushEvents();
@@ -852,6 +860,60 @@ public class QueriesGenerated {
             }
           });
         }
+      }
+    }
+    return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAddConceptAbstractChild_6500338114638885844(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAddConceptAbstractChild_4886882084760483961(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
       }
     }
     return result;
