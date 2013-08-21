@@ -23,15 +23,17 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Priority;
+import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.console.tool.ConsoleContext;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
@@ -129,6 +131,15 @@ public class CommandUtil {
 
 
 
+  public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
+    SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
+    SPropertyOperations.set(nodeWithClosure, "text", text);
+    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
+    console.addNode(nodeWithClosure);
+  }
+
+
+
   public static SearchResults nodesToResults(Iterable<SNode> nodes) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
     Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
@@ -141,9 +152,9 @@ public class CommandUtil {
 
 
 
-  public static SearchResults refsToResults(Iterable<SReference> nodes) {
+  public static SearchResults refsToResults(Iterable<SReference> references) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
-    Sequence.fromIterable(nodes).visitAll(new IVisitor<SReference>() {
+    Sequence.fromIterable(references).visitAll(new IVisitor<SReference>() {
       public void visit(SReference it) {
         res.getSearchResults().add(new SearchResult<SNode>(it.getSourceNode(), "usage"));
       }
@@ -185,7 +196,7 @@ public class CommandUtil {
 
 
 
-  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Exception exception) {
+  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Throwable exception) {
     StringWriter writer = new StringWriter();
     exception.printStackTrace(new PrintWriter(writer));
 

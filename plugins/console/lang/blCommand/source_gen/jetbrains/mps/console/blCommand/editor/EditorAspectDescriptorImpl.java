@@ -33,26 +33,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 8:
         return Collections.<ConceptEditor>singletonList(new ModelProperties_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new ModelsShowable_Editor());
-      case 10:
-        return Collections.<ConceptEditor>singletonList(new ModulesShowable_Editor());
-      case 11:
-        return Collections.<ConceptEditor>singletonList(new NodesShowable_Editor());
-      case 12:
         return Collections.<ConceptEditor>singletonList(new QueryExpression_Editor());
-      case 13:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
-      case 14:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new QueryParameterList_Editor());
-      case 15:
+      case 12:
         return Collections.<ConceptEditor>singletonList(new QueryParameterScope_Editor());
-      case 16:
-        return Collections.<ConceptEditor>singletonList(new RefsShowable_Editor());
-      case 17:
+      case 13:
         return Collections.<ConceptEditor>singletonList(new ScopeParameterLiteral_Editor());
-      case 18:
+      case 14:
         return Collections.<ConceptEditor>singletonList(new ShowExpression_Editor());
-      case 19:
+      case 15:
         return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
       default:
     }
@@ -83,6 +75,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.ActionCallParameter", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.CallActionExpression", "jetbrains.mps.console.blCommand.structure.ConsoleModelExpression", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelProperties", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.ActionCallParameter", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.CallActionExpression", "jetbrains.mps.console.blCommand.structure.ConsoleModelExpression", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelProperties", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter"};
 }

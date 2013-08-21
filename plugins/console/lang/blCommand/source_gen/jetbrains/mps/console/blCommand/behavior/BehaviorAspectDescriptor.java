@@ -14,49 +14,41 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 2:
         return new BLCommand_BehaviorDescriptor();
-      case 18:
-        return new PrintNodeReferenceExpression_BehaviorDescriptor();
-      case 27:
-        return new UsagesExpression_BehaviorDescriptor();
-      case 26:
-        return new ShowExpression_BehaviorDescriptor();
       case 15:
-        return new NodesShowable_BehaviorDescriptor();
-      case 11:
-        return new ModelsShowable_BehaviorDescriptor();
-      case 13:
-        return new ModulesShowable_BehaviorDescriptor();
+        return new PrintNodeReferenceExpression_BehaviorDescriptor();
+      case 25:
+        return new UsagesExpression_BehaviorDescriptor();
+      case 24:
+        return new ShowExpression_BehaviorDescriptor();
       case 8:
         return new InstancesExpression_BehaviorDescriptor();
-      case 25:
-        return new RefsShowable_BehaviorDescriptor();
-      case 19:
+      case 18:
         return new ProjectExpression_BehaviorDescriptor();
-      case 16:
-        return new PrintExpression_BehaviorDescriptor();
       case 17:
+        return new PrintTextExpression_BehaviorDescriptor();
+      case 14:
         return new PrintNodeExpression_BehaviorDescriptor();
       case 0:
         return new AbstractPrintExpression_BehaviorDescriptor();
-      case 14:
+      case 12:
         return new NodesExpression_BehaviorDescriptor();
-      case 24:
+      case 23:
         return new ReferencesExpression_BehaviorDescriptor();
       case 10:
         return new ModelsExpression_BehaviorDescriptor();
-      case 12:
+      case 11:
         return new ModulesExpression_BehaviorDescriptor();
       case 6:
         return new ExceptionHolder_BehaviorDescriptor();
-      case 22:
-        return new QueryParameterList_BehaviorDescriptor();
       case 21:
+        return new QueryParameterList_BehaviorDescriptor();
+      case 20:
         return new QueryParameterIncludeReadOnly_BehaviorDescriptor();
-      case 23:
+      case 22:
         return new QueryParameterScope_BehaviorDescriptor();
       case 7:
         return new GlobalScopeLiteral_BehaviorDescriptor();
-      case 20:
+      case 19:
         return new ProjectScopeLiteral_BehaviorDescriptor();
       case 4:
         return new CallActionExpression_BehaviorDescriptor();
@@ -68,10 +60,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ModelProperties_BehaviorDescriptor();
       case 3:
         return new BLExpression_BehaviorDescriptor();
+      case 13:
+        return new PrintExpression_BehaviorDescriptor();
+      case 16:
+        return new PrintSequenceExpression_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.ActionCallParameter", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.CallActionExpression", "jetbrains.mps.console.blCommand.structure.ConsoleModelExpression", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.GlobalScopeLiteral", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelProperties", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.PrintExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ProjectScopeLiteral", "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ReferencesExpression", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.ActionCallParameter", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.CallActionExpression", "jetbrains.mps.console.blCommand.structure.ConsoleModelExpression", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.GlobalScopeLiteral", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelProperties", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.PrintExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression", "jetbrains.mps.console.blCommand.structure.PrintSequenceExpression", "jetbrains.mps.console.blCommand.structure.PrintTextExpression", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ProjectScopeLiteral", "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ReferencesExpression", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
 }

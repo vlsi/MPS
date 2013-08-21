@@ -20,9 +20,6 @@ public class NodeReferencePresentation_Behavior {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "target", false), "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "target", false), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     }
-    if (isNotEmpty_gfqt5j_a0c0b(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "target", false)), "conceptAlias"))) {
-      return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "target", false)), "conceptAlias");
-    }
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "target", false)), "name");
   }
 
@@ -36,9 +33,5 @@ public class NodeReferencePresentation_Behavior {
 
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.console.base.structure.INodeWithReference", "virtual_execute_8517397753922085153", new Object[]{project});
-  }
-
-  public static boolean isNotEmpty_gfqt5j_a0c0b(String str) {
-    return str != null && str.length() > 0;
   }
 }
