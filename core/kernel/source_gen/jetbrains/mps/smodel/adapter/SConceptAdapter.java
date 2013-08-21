@@ -7,11 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.apache.log4j.Priority;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
   public SConceptAdapter(@NotNull String concept) {
@@ -22,6 +25,9 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   public SConcept getSuperConcept() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("using of IllegalConceptDescriptor", new Throwable());
+      }
       return null;
     }
 
@@ -36,6 +42,9 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      if (LOG.isEnabledFor(Priority.WARN)) {
+        LOG.warn("using of IllegalConceptDescriptor", new Throwable());
+      }
       return null;
     }
 
@@ -48,4 +57,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     }
     return res;
   }
+
+  protected static Logger LOG = LogManager.getLogger(SConceptAdapter.class);
 }
