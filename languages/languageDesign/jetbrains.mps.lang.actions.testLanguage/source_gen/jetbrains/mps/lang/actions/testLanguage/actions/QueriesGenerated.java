@@ -8,25 +8,25 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
@@ -42,228 +42,10 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.SReference;
 
 public class QueriesGenerated {
-  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChild_2534942168330113631(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    final StringHolder firstMatchingText = new Computable<StringHolder>() {
-      public StringHolder compute() {
-        // compilation test for all passed parameters 
-        boolean tmpVar = _context.getParentNode() != null;
-        tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-        tmpVar = tmpVar && _context.getChildConcept() != null;
-        tmpVar = tmpVar && _context.getModel() != null;
-        tmpVar = tmpVar && operationContext != null;
-        tmpVar = tmpVar && operationContext.getScope() != null;
-
-        return new StringHolder();
-      }
-    }.compute();
-    {
-      // compilation test for all passed parameters 
-      boolean tmpVar = _context.getParentNode() != null;
-      tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-      tmpVar = tmpVar && _context.getChildConcept() != null;
-      tmpVar = tmpVar && _context.getModel() != null;
-      tmpVar = tmpVar && operationContext != null;
-      tmpVar = tmpVar && operationContext.getScope() != null;
-
-      firstMatchingText.matchingText = "newChild1";
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
-      SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && model != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", null);
-            SLinkOperations.addNewChild(result, "child1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child");
-            return result;
-          }
-
-          @Override
-          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-            // returning node to select 
-            return ListSequence.fromList(SLinkOperations.getTargets(createdNode, "child1", true)).first();
-          }
-
-          public boolean hasSubstitute() {
-            return true;
-          }
-
-          public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && strictly;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && _context.getModel() != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-
-            return (strictly ?
-              firstMatchingText.matchingText.equals(pattern) :
-              firstMatchingText.matchingText.startsWith(pattern)
-            );
-          }
-
-          public String getDescriptionText(String pattern) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && _context.getModel() != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-
-            return "Description of " + firstMatchingText.matchingText;
-          }
-
-          public String getMatchingText(String pattern) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && _context.getModel() != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-
-            return firstMatchingText.matchingText;
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return getMatchingText(pattern);
-          }
-
-          public SNode getIconNode(String pattern) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && _context.getModel() != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-
-            return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
-          }
-
-          public SNode getActionType(String pattern) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && _context.getModel() != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-
-            return _quotation_createNode_mw8afp_a9a0a0a();
-          }
-        });
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
-      SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", null);
-          }
-
-          public boolean hasSubstitute() {
-            return true;
-          }
-
-          public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return false;
-          }
-
-          public String getMatchingText(String pattern) {
-            return "newChild2_fake_filtered";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2");
-      SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", null);
-          }
-
-          @Override
-          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-            // compilation test for all passed parameters 
-            boolean tmpVar = pattern != null;
-            tmpVar = tmpVar && _context.getParentNode() != null;
-            tmpVar = tmpVar && createdNode != null;
-            tmpVar = tmpVar && _context.getChildConcept() != null;
-            tmpVar = tmpVar && model != null;
-            tmpVar = tmpVar && operationContext != null;
-            tmpVar = tmpVar && operationContext.getScope() != null;
-            tmpVar = tmpVar && editorContext != null;
-
-            // selecting a custom cell 
-            editorContext.flushEvents();
-            EditorCell createdNodeCell = editorContext.getEditorComponent().findNodeCell(createdNode);
-            if (createdNodeCell != null) {
-              EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(createdNodeCell);
-              editorContext.getEditorComponent().changeSelection(firstLeaf);
-              if (firstLeaf instanceof EditorCell_Label) {
-                ((EditorCell_Label) firstLeaf).setCaretPosition(3);
-              }
-              return null;
-            }
-            return createdNode;
-          }
-
-          public String getDescriptionText(String pattern) {
-            return "NewChild2 description text";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "newChild2";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return getMatchingText(pattern);
-          }
-
-          public SNode getActionType(String pattern) {
-            return _quotation_createNode_mw8afp_a0a0a1a();
-          }
-        });
-      }
-    }
-    return result;
-  }
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChild_2534942168331233421(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_simpleItemSubstitute");
-  }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChild_6866660893594527079(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
@@ -500,6 +282,224 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChild_3286607483604919584(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_parameterizedSubstitute");
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChild_2534942168330113631(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    final StringHolder firstMatchingText = new Computable<StringHolder>() {
+      public StringHolder compute() {
+        // compilation test for all passed parameters 
+        boolean tmpVar = _context.getParentNode() != null;
+        tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+        tmpVar = tmpVar && _context.getChildConcept() != null;
+        tmpVar = tmpVar && _context.getModel() != null;
+        tmpVar = tmpVar && operationContext != null;
+        tmpVar = tmpVar && operationContext.getScope() != null;
+
+        return new StringHolder();
+      }
+    }.compute();
+    {
+      // compilation test for all passed parameters 
+      boolean tmpVar = _context.getParentNode() != null;
+      tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+      tmpVar = tmpVar && _context.getChildConcept() != null;
+      tmpVar = tmpVar && _context.getModel() != null;
+      tmpVar = tmpVar && operationContext != null;
+      tmpVar = tmpVar && operationContext.getScope() != null;
+
+      firstMatchingText.matchingText = "newChild1";
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && model != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+
+            SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", null);
+            SLinkOperations.addNewChild(result, "child1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child");
+            return result;
+          }
+
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            // returning node to select 
+            return ListSequence.fromList(SLinkOperations.getTargets(createdNode, "child1", true)).first();
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && strictly;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+
+            return (strictly ?
+              firstMatchingText.matchingText.equals(pattern) :
+              firstMatchingText.matchingText.startsWith(pattern)
+            );
+          }
+
+          public String getDescriptionText(String pattern) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+
+            return "Description of " + firstMatchingText.matchingText;
+          }
+
+          public String getMatchingText(String pattern) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+
+            return firstMatchingText.matchingText;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+
+          public SNode getIconNode(String pattern) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
+          }
+
+          public SNode getActionType(String pattern) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+
+            return _quotation_createNode_mw8afp_a9a0a0a();
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", null);
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return false;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "newChild2_fake_filtered";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", null);
+          }
+
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = pattern != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && createdNode != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && model != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+            tmpVar = tmpVar && editorContext != null;
+
+            // selecting a custom cell 
+            editorContext.flushEvents();
+            EditorCell createdNodeCell = editorContext.getEditorComponent().findNodeCell(createdNode);
+            if (createdNodeCell != null) {
+              EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(createdNodeCell);
+              editorContext.getEditorComponent().changeSelection(firstLeaf);
+              if (firstLeaf instanceof EditorCell_Label) {
+                ((EditorCell_Label) firstLeaf).setCaretPosition(3);
+              }
+              return null;
+            }
+            return createdNode;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "NewChild2 description text";
+          }
+
+          public String getMatchingText(String pattern) {
+            return "newChild2";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+
+          public SNode getActionType(String pattern) {
+            return _quotation_createNode_mw8afp_a0a0a1a();
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChild_2534942168331233421(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_simpleItemSubstitute");
   }
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChildWrapper_5164819300892286056(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -747,60 +747,6 @@ public class QueriesGenerated {
     return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_wrapperSubstituteDefaultSelection");
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAddConceptAbstractChild_6500338114638885844(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      final String[] lastPattern = new String[1];
-      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
-          return substitute(newChild, lastPattern[0], editorContext);
-        }
-
-        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          return result;
-        }
-      }, operationContext);
-      for (final SubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAddConceptAbstractChild_4886882084760483961(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      final String[] lastPattern = new String[1];
-      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
-          return substitute(newChild, lastPattern[0], editorContext);
-        }
-
-        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          return result;
-        }
-      }, operationContext);
-      for (final SubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
-    }
-    return result;
-  }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAbstractChild_4942308145796905559(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1"), _context.getSourceNode()) {
@@ -919,20 +865,58 @@ public class QueriesGenerated {
     return result;
   }
 
-  private static SNode _quotation_createNode_mw8afp_a9a0a0a() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103442169")));
-    return quotedNode_1;
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAddConceptAbstractChild_6500338114638885844(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    return result;
   }
 
-  private static SNode _quotation_createNode_mw8afp_a0a0a1a() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103442509")));
-    return quotedNode_1;
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ActionTestSidetransformAddConceptAbstractChild_4886882084760483961(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    return result;
   }
 
   private static SNode _quotation_createNode_qp9nsj_a0l0a0a0(Object parameter_1) {
@@ -947,6 +931,22 @@ public class QueriesGenerated {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_mw8afp_a9a0a0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103442169")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_mw8afp_a0a0a1a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103442509")));
     return quotedNode_1;
   }
 }
