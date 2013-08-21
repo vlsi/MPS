@@ -148,26 +148,26 @@ public class ChildSubstituteActionsHelper {
       resultActions = ChildSubstituteActionsUtil.applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept, context);
     }
 
-    if (childSetter instanceof DefaultChildNodeSetter || childSetter instanceof AbstractCellMenuPart_ReplaceNode_CustomNodeConcept && currentChild != null) {
-      SNode linkDeclaration;
-      if (childSetter instanceof DefaultChildNodeSetter) {
-        linkDeclaration = ((DefaultChildNodeSetter) childSetter).myLinkDeclaration;
-      } else {
-        linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
+    SNode linkDeclaration;
+    if (childSetter instanceof DefaultChildNodeSetter) {
+      linkDeclaration = ((DefaultChildNodeSetter) childSetter).myLinkDeclaration;
+    } else if (childSetter instanceof AbstractCellMenuPart_ReplaceNode_CustomNodeConcept && currentChild != null) {
+      linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
+    } else {
+      linkDeclaration = null;
+    }
+
+    for (Iterator<SubstituteAction> it = resultActions.iterator(); it.hasNext(); ) {
+      SubstituteAction action = it.next();
+
+      SNode conceptNode = action.getOutputConcept();
+      if (conceptNode == null) {
+        continue;
       }
 
-      for (Iterator<SubstituteAction> it = resultActions.iterator(); it.hasNext(); ) {
-        SubstituteAction action = it.next();
-
-        SNode conceptNode = action.getOutputConcept();
-        if (conceptNode == null) {
-          continue;
-        }
-
-        if (!ModelConstraints.canBeParent(parentNode, conceptNode, linkDeclaration, null, null) ||
-            !ModelConstraints.canBeAncestor(parentNode, null, conceptNode, null)) {
-          it.remove();
-        }
+      if (linkDeclaration != null && !ModelConstraints.canBeParent(parentNode, conceptNode, linkDeclaration, null, null) ||
+          !ModelConstraints.canBeAncestor(parentNode, null, conceptNode, null)) {
+        it.remove();
       }
     }
 

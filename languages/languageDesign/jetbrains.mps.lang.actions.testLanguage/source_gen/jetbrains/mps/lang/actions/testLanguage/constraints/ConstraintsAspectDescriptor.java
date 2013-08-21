@@ -12,15 +12,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 0:
-        return new ActionTestSidetransformTestContainer_Constraints();
       case 1:
-        return new ActionTestSidetransofrmTestAncestor_Constraints();
+        return new ActionTestSidetransformTestContainer_Constraints();
+      case 0:
+        return new ActionTestSidetransformTestAncestor_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransofrmTestAncestor"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"};
 }
