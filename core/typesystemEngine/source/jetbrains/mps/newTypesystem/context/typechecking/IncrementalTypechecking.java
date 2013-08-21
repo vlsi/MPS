@@ -355,8 +355,12 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     @Override
     public void visitReferenceEvent(SModelReferenceEvent event) {
-      markInvalid(event.getReference().getSourceNode());
+      SReference ref = event.getReference();
+      markInvalid(ref.getSourceNode());
       if (!event.isAdded()) return;
+      if (ref instanceof DynamicReference && ref.getSourceNode().getModel() == null) {
+        return;
+      }
       SNode node = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference());
       if (node == null) return;
       markDependentNodesForInvalidation(node, myNonTypeSystemComponent);
