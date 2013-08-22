@@ -24,10 +24,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Priority;
 import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -131,14 +131,10 @@ public class CommandUtil {
 
 
 
-  public static void printClosure(ConsoleStream console, final Runnable closure, String text) {
+  public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
     SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
     SPropertyOperations.set(nodeWithClosure, "text", text);
-    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        closure.run();
-      }
-    });
+    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
     console.addNode(nodeWithClosure);
   }
 
