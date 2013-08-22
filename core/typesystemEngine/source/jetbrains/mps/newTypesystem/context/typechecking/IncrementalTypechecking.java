@@ -340,6 +340,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     private void markReferenceTargetsInvalid(List<SReference> references) {
       for (SReference reference : references) {
+        // MPS-18585 IncrementalTypecheking doesn't invalidate target nodes of dynamic refs if source node has been detached from model
         if (reference instanceof DynamicReference) {
           // the problem was in a more strict case:
           // dynamic reference from a detached node (its getTargetNode() seems to be non-sensible)
@@ -358,6 +359,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       SReference ref = event.getReference();
       markInvalid(ref.getSourceNode());
       if (!event.isAdded()) return;
+      // MPS-18585 IncrementalTypecheking doesn't invalidate target nodes of dynamic refs if source node has been detached from model
       if (ref instanceof DynamicReference && ref.getSourceNode().getModel() == null) {
         return;
       }
