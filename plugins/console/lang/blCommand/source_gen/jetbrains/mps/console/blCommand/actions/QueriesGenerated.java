@@ -16,9 +16,9 @@ public class QueriesGenerated {
     }
   }
 
-  public static void nodeFactory_NodeSetup_AbstractPrintStatement_7284872370241013747(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintStatement")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "object", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintStatement"), "object", true), true);
+  public static void nodeFactory_NodeSetup_AbstractPrintExpression_7284872370241013747(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "object", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"), "object", true), true);
     }
   }
 }

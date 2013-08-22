@@ -23,18 +23,31 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Priority;
+import jetbrains.mps.console.tool.ConsoleStream;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.console.tool.ConsoleContext;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.ActionManager;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DataContext;
+import org.jetbrains.annotations.NonNls;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -118,6 +131,15 @@ public class CommandUtil {
 
 
 
+  public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
+    SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
+    SPropertyOperations.set(nodeWithClosure, "text", text);
+    ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
+    console.addNode(nodeWithClosure);
+  }
+
+
+
   public static SearchResults nodesToResults(Iterable<SNode> nodes) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
     Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
@@ -130,9 +152,9 @@ public class CommandUtil {
 
 
 
-  public static SearchResults refsToResults(Iterable<SReference> nodes) {
+  public static SearchResults refsToResults(Iterable<SReference> references) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
-    Sequence.fromIterable(nodes).visitAll(new IVisitor<SReference>() {
+    Sequence.fromIterable(references).visitAll(new IVisitor<SReference>() {
       public void visit(SReference it) {
         res.getSearchResults().add(new SearchResult<SNode>(it.getSourceNode(), "usage"));
       }
@@ -174,7 +196,7 @@ public class CommandUtil {
 
 
 
-  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Exception exception) {
+  public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Throwable exception) {
     StringWriter writer = new StringWriter();
     exception.printStackTrace(new PrintWriter(writer));
 
@@ -203,6 +225,29 @@ public class CommandUtil {
         return includeReadOnly;
       }
     };
+  }
+
+
+
+  public static Map<String, Object> prepareParameters(Iterable<Tuples._2<String, Object>> parameters) {
+    Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
+    for (Tuples._2<String, Object> parameter : Sequence.fromIterable(parameters)) {
+      MapSequence.fromMap(result).put(parameter._0(), parameter._1());
+    }
+    return result;
+  }
+
+
+
+  public static void callAction(final SNode actionDeclaration, final Map<String, Object> parameters) {
+    AnAction action = ActionManager.getInstance().getAction(BehaviorReflection.invokeNonVirtual(String.class, actionDeclaration, "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "call_getGeneratedClassFQName_1213877371952", new Object[]{}));
+    ActionUtils.updateAndPerformAction(action, ActionUtils.createEvent(ActionPlaces.UNKNOWN, new DataContext() {
+      @Nullable
+      public Object getData(@NonNls String key) {
+        return MapSequence.fromMap(parameters).get(key);
+      }
+    }));
+
   }
 
 

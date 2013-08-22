@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 
-public class NodeReferenceString_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INodeWithReference_BehaviorDescriptor, IClickableText_BehaviorDescriptor {
+public class NodeReferenceString_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INodeWithReference_BehaviorDescriptor {
   public NodeReferenceString_BehaviorDescriptor() {
   }
 
@@ -18,12 +18,8 @@ public class NodeReferenceString_BehaviorDescriptor extends BaseConcept_Behavior
     INodeWithReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
 
-  public SNode virtual_getTargetNode_6322385757200662712(SNode thisNode) {
-    return NodeReferenceString_Behavior.virtual_getTargetNode_6322385757200662712(thisNode);
-  }
-
-  public String virtual_getText_2348043250037295218(SNode thisNode) {
-    return IClickableText_Behavior.virtual_getText_2348043250037295218(thisNode);
+  public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
+    return NodeReferenceString_Behavior.virtual_getTextWhenBroken_328850564593858078(thisNode);
   }
 
   @Override

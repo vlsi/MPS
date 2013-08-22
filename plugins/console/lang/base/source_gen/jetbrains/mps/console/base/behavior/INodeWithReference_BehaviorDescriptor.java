@@ -5,5 +5,5 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface INodeWithReference_BehaviorDescriptor extends IActionHolder_BehaviorDescriptor {
-  public SNode virtual_getTargetNode_6322385757200662712(SNode thisNode);
+  public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode);
 }

@@ -14,11 +14,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 0:
         return new CommandHolder_Constraints();
+      case 1:
+        return new NodeReferenceString_Constraints();
+      case 2:
+        return new PastedNodeReference_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.PastedNodeReference"};
 }
