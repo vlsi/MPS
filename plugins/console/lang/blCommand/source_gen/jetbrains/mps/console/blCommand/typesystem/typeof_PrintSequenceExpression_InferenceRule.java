@@ -19,12 +19,10 @@ public class typeof_PrintSequenceExpression_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode printSequenceExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(typeCheckingContext.isSingleTypeComputation())) {
-      {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printSequenceExpression, "object", true);
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "7600370246423000992", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "7600370246423000997", true), (SNode) _quotation_createNode_u62o5j_a0a0b(), true, false, _info_12389875345);
-      }
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(printSequenceExpression, "object", true);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "3856122757887347236", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "3856122757887347250", true), (SNode) _quotation_createNode_u62o5j_a0a0b(), false, true, _info_12389875345);
     }
   }
 
