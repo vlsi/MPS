@@ -1186,8 +1186,8 @@
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2348043250036530741" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2348043250036510919" resolveInfo="clickableNode" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2348043250036572900" nodeInfo="nn">
-                          <link role="property" roleId="tp25.1138056395725" targetNodeId="eynw.2348043250036122669" resolveInfo="text" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="328850564591772139" nodeInfo="nn">
+                          <link role="property" roleId="tp25.1138056395725" targetNodeId="eynw.328850564588102084" resolveInfo="referencePresentation" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="2348043250036591873" nodeInfo="nn">
@@ -1203,8 +1203,8 @@
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2348043250036644455" nodeInfo="nn">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2348043250036510919" resolveInfo="clickableNode" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2348043250036659940" nodeInfo="nn">
-                          <link role="link" roleId="tp25.1138056516764" targetNodeId="eynw.2348043250036119172" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="328850564591800910" nodeInfo="nn">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="eynw.328850564588043375" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="2348043250036673435" nodeInfo="nn">

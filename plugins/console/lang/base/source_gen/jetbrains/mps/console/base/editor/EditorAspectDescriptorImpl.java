@@ -25,12 +25,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Collections.<ConceptEditor>singletonList(new IClickable_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new INodeWithReference_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
+        return Collections.<ConceptEditor>singletonList(new InterpretedCommand_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new NodeResultPart_Editor());
       case 8:
+        return Collections.<ConceptEditor>singletonList(new PastedNodeReference_Editor());
+      case 9:
         return Collections.<ConceptEditor>singletonList(new TextResultPart_Editor());
       default:
     }
@@ -45,6 +47,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         }
         break;
       case 1:
+        if ("jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new INodeWithReference_EditorComponent());
+        }
+        break;
+      case 2:
         if ("jetbrains.mps.console.base.editor.FirstWordEditorComponent".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new FirstWordEditorComponent());
         }
@@ -61,6 +68,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.InterpretedCommand"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.CommandResult", "jetbrains.mps.console.base.structure.CommandResultLine", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NodeResultPart", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.TextResultPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand"};
 }
