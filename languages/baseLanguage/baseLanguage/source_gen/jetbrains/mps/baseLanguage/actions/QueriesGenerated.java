@@ -53,7 +53,6 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
-import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -65,6 +64,7 @@ import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
@@ -2392,10 +2392,7 @@ public class QueriesGenerated {
         }
 
         private SNode substitute(SNode result, SNode targetNode, String pattern, @Nullable EditorContext editorContext) {
-          SNodeOperations.replaceWithAnother(targetNode, result);
-          SLinkOperations.setTarget(result, "leftExpression", targetNode, true);
-          ParenthesisUtil.checkOperationWRTPriority(result);
-          return result;
+          return PrecedenceUtil.processRightTransform(targetNode, result);
         }
       }, operationContext);
       for (final SubstituteAction action : list) {
@@ -2419,13 +2416,18 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       final String[] lastPattern = new String[1];
-      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+      final SNode targetNode = new Computable<SNode>() {
+        public SNode compute() {
+          return SLinkOperations.getTarget(_context.getSourceNode(), "rightExpression", true);
+        }
+      }.compute();
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
         public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
-          return substitute(newChild, lastPattern[0], editorContext);
+          return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          return PrecedenceUtil.processRightTransform(_context.getSourceNode(), result);
+        private SNode substitute(SNode result, SNode targetNode, String pattern, @Nullable EditorContext editorContext) {
+          return PrecedenceUtil.processLeftTransform(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Expression"), result);
         }
       }, operationContext);
       for (final SubstituteAction action : list) {
@@ -2445,13 +2447,18 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       final String[] lastPattern = new String[1];
-      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+      final SNode targetNode = new Computable<SNode>() {
+        public SNode compute() {
+          return SLinkOperations.getTarget(_context.getSourceNode(), "leftExpression", true);
+        }
+      }.compute();
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(targetNode, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
         public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
-          return substitute(newChild, lastPattern[0], editorContext);
+          return substitute(newChild, targetNode, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          return PrecedenceUtil.processLeftTransform(_context.getSourceNode(), result);
+        private SNode substitute(SNode result, SNode targetNode, String pattern, @Nullable EditorContext editorContext) {
+          return PrecedenceUtil.processRightTransform(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Expression"), result);
         }
       }, operationContext);
       for (final SubstituteAction action : list) {
