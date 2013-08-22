@@ -4,12 +4,14 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class INodeWithReference_Behavior {
@@ -17,7 +19,7 @@ public class INodeWithReference_Behavior {
   }
 
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{});
+    SNode targetNode = SLinkOperations.getTarget(thisNode, "target", false);
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null) {
       return;
@@ -27,16 +29,20 @@ public class INodeWithReference_Behavior {
   }
 
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{}) != null;
+    return SLinkOperations.getTarget(thisNode, "target", false) != null;
+  }
+
+  public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "referencePresentation") + " (deleted node)";
   }
 
   @Deprecated
-  public static SNode call_getTargetNode_6322385757200662712(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_6322385757200662712", new Object[]{});
+  public static String call_getTextWhenBroken_328850564593858078(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getTargetNode_6322385757200662712(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.INodeWithReference"), callerConceptFqName, "virtual_getTargetNode_6322385757200662712", new Class[]{SNode.class}, new Object[]{});
+  public static String callSuper_getTextWhenBroken_328850564593858078(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.INodeWithReference"), callerConceptFqName, "virtual_getTextWhenBroken_328850564593858078", new Class[]{SNode.class}, new Object[]{});
   }
 }
