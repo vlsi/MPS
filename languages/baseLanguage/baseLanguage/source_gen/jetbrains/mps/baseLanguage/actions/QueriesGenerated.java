@@ -52,8 +52,8 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -2335,10 +2335,7 @@ public class QueriesGenerated {
         }
 
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
-          ParenthesisUtil.checkOperationWRTPriority(result);
-          return result;
+          return PrecedenceUtil.processRightTransform(_context.getSourceNode(), result);
         }
       }, operationContext);
       for (final SubstituteAction action : list) {
@@ -2364,23 +2361,7 @@ public class QueriesGenerated {
         }
 
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
-          SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
-          // since BinaryOperations are left-associative we should perform complex LT then 
-          // BinaryOperations is "rightExpression" child of another BinaryOperations with same priority 
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SNodeOperations.getContainingLinkDeclaration(nodeToProcess) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
-            SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-            if (PrecedenceUtil.isSamePriority(parentBinaryOperation, result)) {
-              SNodeOperations.replaceWithAnother(parentBinaryOperation, result);
-              // <node> 
-              SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
-              SLinkOperations.setTarget(result, "leftExpression", parentBinaryOperation, true);
-              return result;
-            }
-          }
-          SNodeOperations.replaceWithAnother(nodeToProcess, result);
-          SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
-          PrecedenceUtil.parenthesiseIfNecessary(result);
-          return result;
+          return PrecedenceUtil.processLeftTransform(_context.getSourceNode(), result);
         }
       }, operationContext);
       for (final SubstituteAction action : list) {
@@ -2432,6 +2413,58 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_710337334809133195(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_BinaryOperation_2350996240743394742(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          return PrecedenceUtil.processRightTransform(_context.getSourceNode(), result);
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_BinaryOperation_2350996240752486438(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          return PrecedenceUtil.processLeftTransform(_context.getSourceNode(), result);
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1197028841767(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -5668,7 +5701,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a632(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a832(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -5930,7 +5963,7 @@ __switch__:
     return str == null || str.length() == 0;
   }
 
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a632(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a832(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
