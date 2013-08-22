@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class TemplateModelScanner {
   private SModel myTemplateModel;
@@ -120,5 +123,28 @@ public class TemplateModelScanner {
 
   public Set<String> getQueryLanguages() {
     return myQueryLanguages;
+  }
+
+  private boolean safeIsInstanceOf(SNode node, SNode concept) {
+    // as this class executed before ALL generation process we cannot use isInstanceOf operation here 
+    // so isInstanceOf limited only to generator language concepts 
+    // todo: extending generator macroses impossible anymore, is it ok? 
+    if (eq_8grp5z_a0d0l(getSConcept(SNodeOperations.getConceptDeclaration(node)).getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
+      return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept));
+    } else {
+      return false;
+    }
+  }
+
+  private static SConcept getSConcept(SNode concept) {
+    // todo: should be removed 
+    return SConceptRepository.getInstance().getInstanceConcept(NameUtil.nodeFQName(concept));
+  }
+
+  private static boolean eq_8grp5z_a0d0l(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
