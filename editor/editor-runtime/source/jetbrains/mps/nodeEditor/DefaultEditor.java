@@ -133,7 +133,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
     //todo: remove getConceptDeclarationNode() check when editor doesn't need concept node
     if (myConceptDescriptor instanceof IllegalConceptDescriptor ||
-        (mySNode instanceof jetbrains.mps.smodel.SNode && ((jetbrains.mps.smodel.SNode) mySNode).getConceptDeclarationNode() == null)) {
+        !(mySNode instanceof jetbrains.mps.smodel.SNode) || ((jetbrains.mps.smodel.SNode) mySNode).getConceptDeclarationNode() == null) {
       myNullConcept = true;
     }
 
