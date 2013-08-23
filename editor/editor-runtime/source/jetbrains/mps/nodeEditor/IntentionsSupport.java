@@ -55,6 +55,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -297,7 +298,8 @@ public class IntentionsSupport {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            SNode intentionNode = intention.getDescriptor().getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
+            SNodeReference nodeRef = intention.getDescriptor().getIntentionNodeReference();
+            SNode intentionNode = nodeRef==null?null:nodeRef.resolve(MPSModuleRepository.getInstance());
             if (intentionNode == null) {
               Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
                   "Could not find declaration for " + intention.getClass().getSimpleName()

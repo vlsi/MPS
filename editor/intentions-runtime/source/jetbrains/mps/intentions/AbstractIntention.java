@@ -19,9 +19,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Computable;
 
 public abstract class AbstractIntention implements Intention {
   @Override
@@ -37,7 +37,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>getDescription(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public String getDescription(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
@@ -51,7 +51,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>isApplicable(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>isApplicable(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public boolean isApplicable(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
@@ -68,7 +68,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public void execute(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
@@ -77,7 +77,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 proper content will be generated into getType() method
-   * Should be removed after 3.0
+   *             Should be removed after 3.0
    */
   @Deprecated
   public boolean isErrorIntention() {
@@ -91,7 +91,7 @@ public abstract class AbstractIntention implements Intention {
 
   /**
    * @deprecated starting from MPS 3.0 proper content will be generated into getType() method
-   * of sub-classes. This method should be removed.
+   *             of sub-classes. This method should be removed.
    */
   @Override
   public IntentionType getType() {
@@ -147,7 +147,8 @@ public abstract class AbstractIntention implements Intention {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        SNode intentionNode = getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
+        SNodeReference ref = getIntentionNodeReference();
+        SNode intentionNode = ref == null ? null : ref.resolve(MPSModuleRepository.getInstance());
         if (intentionNode != null) {
           return intentionNode.getName();
         } else {
