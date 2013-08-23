@@ -1019,16 +1019,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       @Override
       public void run() {
         assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
-      }
-    });
 
-    if (myNode != null && notifiesCreation()) {
-      notifyDisposal();
-    }
+        if (myNode != null && notifiesCreation()) {
+          notifyDisposal();
+        }
 
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
         final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
         if (needNewTypecheckingContext) {
           disposeTypeCheckingContext();
@@ -1054,12 +1049,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         rebuildEditorContent();
+
+        if (myNode != null && notifiesCreation()) {
+          notifyCreation();
+        }
       }
     });
-
-    if (myNode != null && notifiesCreation()) {
-      notifyCreation();
-    }
   }
 
   public void addAdditionalPainter(AdditionalPainter additionalPainter) {
