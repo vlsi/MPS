@@ -37,6 +37,11 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
 
   private static Logger LOG = Logger.getLogger(MPSMethodReferencesSearch.class.getName());
 
+  public MPSMethodReferencesSearch() {
+    // flag: requires read action
+    super(true);
+  }
+
   @Override
   public void processQuery(@NotNull final SearchParameters queryParameters, @NotNull final Processor<PsiReference> consumer) {
 

@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -28,7 +29,11 @@ public class ModelsScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && SetSequence.fromSet(myModels).contains(node.getModel());
+    SAbstractConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
+    if (concept == null) {
+      return false;
+    }
+    return SNodeUtil.isInstanceOf(node, concept) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && SetSequence.fromSet(myModels).contains(node.getModel());
   }
 
   @Override
