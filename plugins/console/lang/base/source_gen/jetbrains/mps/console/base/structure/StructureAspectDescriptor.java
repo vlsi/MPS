@@ -38,21 +38,21 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.INodeWithClosure").interface_().parents("jetbrains.mps.console.base.structure.IActionHolder").create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.INodeWithReference").interface_().parents("jetbrains.mps.console.base.structure.IActionHolder").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.INodeWithReference").interface_().parents("jetbrains.mps.console.base.structure.IActionHolder").properties("referencePresentation").references("target").create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.InterpretedCommand").super_("jetbrains.mps.console.base.structure.Command").parents("jetbrains.mps.console.base.structure.Command").abstract_().create();
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.ModifiedCommandHistoryItem").super_("jetbrains.mps.console.base.structure.CommandHolder").parents("jetbrains.mps.console.base.structure.CommandHolder").children(new String[]{"modifiedCommand"}, new boolean[]{false}).create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeReferencePresentation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference").references("target").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeReferencePresentation").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.INodeWithReference").create();
       case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeReferenceString").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.IClickableText").references("target").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeReferenceString").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.INodeWithReference").create();
       case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeResultPart").super_("jetbrains.mps.console.base.structure.CommandResultPart").parents("jetbrains.mps.console.base.structure.CommandResultPart").children(new String[]{"node"}, new boolean[]{false}).create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.NodeWithClosure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.INodeWithClosure", "jetbrains.mps.console.base.structure.IClickableText").create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.PastedNodeReference").super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.console.base.structure.INodeWithReference").references("target").alias("pastedNodeRef", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.PastedNodeReference").super_("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression").parents("jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.console.base.structure.INodeWithReference").alias("pastedNodeRef", "").create();
       case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.base.structure.TextResultPart").super_("jetbrains.mps.console.base.structure.CommandResultPart").parents("jetbrains.mps.console.base.structure.CommandResultPart").properties("text").create();
       default:

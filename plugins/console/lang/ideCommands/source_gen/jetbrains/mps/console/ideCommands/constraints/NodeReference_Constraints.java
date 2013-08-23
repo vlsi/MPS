@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeReference_Constraints extends BaseConstraintsDescriptor {
@@ -33,7 +32,7 @@ public class NodeReference_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getConceptDeclaration(parentNode) == SConceptOperations.findConceptDeclaration("jetbrains.mps.console.ideCommands.structure.StatCommand") || SNodeOperations.getAncestor(parentNode, "jetbrains.mps.console.ideCommands.structure.StatCommand", false, false) != null;
+    return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.StatCommand"}, true, false) != null;
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636627071491");

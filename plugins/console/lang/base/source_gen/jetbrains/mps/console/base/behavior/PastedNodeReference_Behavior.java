@@ -4,7 +4,6 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class PastedNodeReference_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +13,8 @@ public class PastedNodeReference_Behavior {
     return SLinkOperations.getTarget(thisNode, "target", false);
   }
 
-  public static SNode virtual_getTargetNode_6322385757200662712(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{});
+  public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
+    int id = SLinkOperations.getTarget(thisNode, "target", false).getNodeId().hashCode();
+    return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
   }
 }
