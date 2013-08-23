@@ -4,14 +4,12 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
 
 public class ProjectExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
-    return Sequence.fromIterable(Collections.<SNode>emptyList());
+    return null;
   }
 }

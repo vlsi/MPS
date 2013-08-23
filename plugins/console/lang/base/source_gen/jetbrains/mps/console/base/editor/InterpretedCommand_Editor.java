@@ -13,7 +13,7 @@ public class InterpretedCommand_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_k55s8m_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.base.editor.FirstWordEditorComponent");
     editorCell.setBig(true);
     return editorCell;
   }
