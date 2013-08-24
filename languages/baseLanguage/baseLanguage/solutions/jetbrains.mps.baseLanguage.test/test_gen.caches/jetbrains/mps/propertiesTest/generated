@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8c78qzgla2pjocrz4mqclop7i3c0t0s">
+<dependencies version="2" modelHash="-3kceebt3q6eh47v08bm8bjypqe2x3sz">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-wb1u76p46887dz9vwa6rzd4g937623" />
   <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="2qjqkl3jtwhulyxqncisd2qbu73qeae" />
@@ -12,11 +12,18 @@
     <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
     <file name="PropertiesTest_Test.java" />
   </source>
-  <source id="12077399789561873" name="TestClass" hash="2xd3vl0wzktx7o0hzqnu5x5x9aptt3y">
+  <source id="12077399789561873" name="TestClass" hash="777e8mkcn2xv8x1grvb8bvfvznxsgqy">
+    <dep root="7319542056806110576" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <file name="TestClass.java" />
+  </source>
+  <source id="7319542056806110576" name="BaseTestClass" hash="29elvzw2p83g5lbfhrax8krl2j656kr">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <file name="BaseTestClass.java" />
   </source>
 </dependencies>
 
