@@ -9,13 +9,10 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
-import org.apache.log4j.Priority;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements SInterfaceConcept {
   public SInterfaceConceptAdapter(@NotNull String conceptName) {
@@ -39,9 +36,7 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
-        LOG.warn("using of IllegalConceptDescriptor", new Throwable());
-      }
+      illegalConceptDescriptorWarning();
       return null;
     }
 
@@ -54,6 +49,4 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     }
     return res;
   }
-
-  protected static Logger LOG = LogManager.getLogger(SInterfaceConceptAdapter.class);
 }
