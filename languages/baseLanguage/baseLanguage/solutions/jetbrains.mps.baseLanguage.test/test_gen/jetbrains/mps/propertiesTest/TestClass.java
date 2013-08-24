@@ -7,14 +7,14 @@ public class TestClass extends BaseTestClass {
   public int value;
 
   public TestClass(int initialValue) {
-    TestClass.this.setPropertyValue(initialValue);
+    setPropertyValue(initialValue);
     this.setPropertyValue(initialValue);
-    this.value = TestClass.this.getPropertyValue();
-    int asLocalValue = TestClass.this.getPropertyValue();
-    asLocalValue = TestClass.this.getPropertyValue();
-    TestClass.this.setSecondPropertyValue(TestClass.this.getPropertyValue());
-    BaseTestClass.this.setBasePropertyValue(asLocalValue);
-    int secondLocalValue = BaseTestClass.this.getBasePropertyValue();
+    this.value = getPropertyValue();
+    int asLocalValue = getPropertyValue();
+    asLocalValue = getPropertyValue();
+    setSecondPropertyValue(getPropertyValue());
+    setBasePropertyValue(asLocalValue);
+    int secondLocalValue = getBasePropertyValue();
   }
 
   public void changeValueUsingNestedClass(int newValue) {
@@ -23,12 +23,12 @@ public class TestClass extends BaseTestClass {
 
   public class PropertyChanger {
     public PropertyChanger(int newValue) {
+      setPropertyValue(newValue);
       TestClass.this.setPropertyValue(newValue);
-      TestClass.this.setPropertyValue(newValue);
-      value = TestClass.this.getPropertyValue();
-      int asLocalValue = TestClass.this.getPropertyValue();
-      asLocalValue = TestClass.this.getPropertyValue();
-      TestClass.this.setSecondPropertyValue(TestClass.this.getPropertyValue());
+      value = getPropertyValue();
+      int asLocalValue = getPropertyValue();
+      asLocalValue = getPropertyValue();
+      setSecondPropertyValue(getPropertyValue());
     }
   }
 
