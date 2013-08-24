@@ -86,11 +86,11 @@ public class TemplateModelScanner {
   }
 
   private void scanControlNode(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+    if (safeIsInstanceOf(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) {
       scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), "contentNode", true));
-    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) {
+    } else if (safeIsInstanceOf(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) {
       scanTemplateNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), "templateNode", true));
-    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule")) {
+    } else if (safeIsInstanceOf(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"))) {
       // ignore pattern 
       SetSequence.fromSet(myQueryLanguages).addElement("jetbrains.mps.lang.pattern");
       scanControlNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "ruleConsequence", true));

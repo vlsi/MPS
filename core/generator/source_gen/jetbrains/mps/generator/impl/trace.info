@@ -565,9 +565,9 @@
     <nodeInfo nodeId="8341644365990767827" fileName="TemplateModelScanner.java" startLine="79" startPosition="146" endLine="80" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8341644365990767838" fileName="TemplateModelScanner.java" startLine="80" startPosition="29" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8341644365990767839" fileName="TemplateModelScanner.java" startLine="83" startPosition="74" endLine="84" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8341644365990767944" fileName="TemplateModelScanner.java" startLine="89" startPosition="129" endLine="90" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8341644365990767965" fileName="TemplateModelScanner.java" startLine="91" startPosition="125" endLine="92" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8341644365990767986" fileName="TemplateModelScanner.java" startLine="93" startPosition="123" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8341644365990767944" fileName="TemplateModelScanner.java" startLine="89" startPosition="160" endLine="90" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8341644365990767965" fileName="TemplateModelScanner.java" startLine="91" startPosition="156" endLine="92" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8341644365990767986" fileName="TemplateModelScanner.java" startLine="93" startPosition="154" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3516755371414158658" fileName="TemplateModelScanner.java" startLine="94" startPosition="24" endLine="95" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8341644365990767989" fileName="TemplateModelScanner.java" startLine="95" startPosition="85" endLine="96" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8341644365990768001" fileName="TemplateModelScanner.java" startLine="96" startPosition="173" endLine="97" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -634,8 +634,8 @@
     <scopeInfo nodeId="5644445207311224408" fileName="TemplateModelScanner.java" startLine="69" startPosition="14" endLine="70" endPosition="28" />
     <scopeInfo nodeId="1571936477005979114" fileName="TemplateModelScanner.java" startLine="76" startPosition="25" endLine="77" endPosition="13" />
     <scopeInfo nodeId="8341644365990767765" fileName="TemplateModelScanner.java" startLine="83" startPosition="74" endLine="84" endPosition="33" />
-    <scopeInfo nodeId="8341644365990767935" fileName="TemplateModelScanner.java" startLine="89" startPosition="129" endLine="90" endPosition="190" />
-    <scopeInfo nodeId="8341644365990767956" fileName="TemplateModelScanner.java" startLine="91" startPosition="125" endLine="92" endPosition="173" />
+    <scopeInfo nodeId="8341644365990767935" fileName="TemplateModelScanner.java" startLine="89" startPosition="160" endLine="90" endPosition="190" />
+    <scopeInfo nodeId="8341644365990767956" fileName="TemplateModelScanner.java" startLine="91" startPosition="156" endLine="92" endPosition="173" />
     <scopeInfo nodeId="8341644365990771425" fileName="TemplateModelScanner.java" startLine="100" startPosition="82" endLine="101" endPosition="33" />
     <scopeInfo nodeId="8341644365990771450" fileName="TemplateModelScanner.java" startLine="103" startPosition="14" endLine="104" endPosition="28" />
     <scopeInfo nodeId="8341644365990767622" fileName="TemplateModelScanner.java" startLine="110" startPosition="25" endLine="111" endPosition="13" />
@@ -668,7 +668,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8341644365990767662" fileName="TemplateModelScanner.java" startLine="35" startPosition="147" endLine="39" endPosition="9" />
     <scopeInfo nodeId="5644445207311223405" fileName="TemplateModelScanner.java" startLine="62" startPosition="125" endLine="66" endPosition="151" />
-    <scopeInfo nodeId="8341644365990767977" fileName="TemplateModelScanner.java" startLine="93" startPosition="123" endLine="97" endPosition="173" />
+    <scopeInfo nodeId="8341644365990767977" fileName="TemplateModelScanner.java" startLine="93" startPosition="154" endLine="97" endPosition="173" />
     <scopeInfo nodeId="6796834553411273824" fileName="TemplateModelScanner.java" startLine="146" startPosition="62" endLine="150" endPosition="6" />
     <scopeInfo nodeId="8341644365990734228" fileName="TemplateModelScanner.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="8341644365990734236" varName="model" />
