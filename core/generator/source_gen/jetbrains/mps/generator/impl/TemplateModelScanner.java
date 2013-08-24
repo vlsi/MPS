@@ -10,10 +10,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class TemplateModelScanner {
   private SModel myTemplateModel;
@@ -42,7 +42,7 @@ public class TemplateModelScanner {
       } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.GeneratorDescriptor"))) {
         // internal root 
       } else {
-        if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
+        if (safeNodeAttribute(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null) {
           scanTemplateNode(root);
         }
       }
@@ -76,7 +76,7 @@ public class TemplateModelScanner {
     if ((node == null)) {
       return;
     }
-    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null) {
+    if ((safeNodeAttribute(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null)) {
       scanTemplateNode(node);
       return;
     }
@@ -132,6 +132,15 @@ public class TemplateModelScanner {
     } else {
       return false;
     }
+  }
+
+  private SNode safeNodeAttribute(SNode node, final SNode attribute) {
+    // todo: basically for this we need everything castable to BaseConcept 
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return safeIsInstanceOf(it, attribute);
+      }
+    });
   }
 
   private static boolean eq_8grp5z_a0d0l(Object a, Object b) {
