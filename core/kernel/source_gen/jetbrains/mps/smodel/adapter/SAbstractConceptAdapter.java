@@ -126,6 +126,12 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public boolean isSubConceptOf(SAbstractConcept concept) {
+    // todo: hack, need for working node attributes on nodes of not generated concepts 
+    // todo: remove 
+    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) {
+      return true;
+    }
+
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       if (LOG.isEnabledFor(Priority.WARN)) {
