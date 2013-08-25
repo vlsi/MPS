@@ -36,6 +36,7 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return null;
     }
 
