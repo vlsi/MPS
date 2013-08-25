@@ -42,7 +42,7 @@ public class TemplateModelScanner {
       } else if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.GeneratorDescriptor"))) {
         // internal root 
       } else {
-        if (safeNodeAttribute(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null) {
+        if ((safeNodeAttribute(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
           scanTemplateNode(root);
         }
       }
