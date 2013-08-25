@@ -219,7 +219,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
         if (currentNode == null) {
           return null;
         }
-        return new MPSLocation(myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNode());
+        return new MPSLocation(myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNodePointer());
       }
       return null;
     }

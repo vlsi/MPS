@@ -2681,7 +2681,7 @@
     <nodeInfo nodeId="8321286824326263009" fileName="UnitTestViewComponent.java" startLine="210" startPosition="47" endLine="211" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8321286824326263027" fileName="UnitTestViewComponent.java" startLine="217" startPosition="45" endLine="218" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8321286824326263035" fileName="UnitTestViewComponent.java" startLine="219" startPosition="34" endLine="220" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321286824326263040" fileName="UnitTestViewComponent.java" startLine="221" startPosition="9" endLine="222" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321286824326263040" fileName="UnitTestViewComponent.java" startLine="221" startPosition="9" endLine="222" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321286824326263052" fileName="UnitTestViewComponent.java" startLine="223" startPosition="7" endLine="224" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8321286824326262652" fileName="UnitTestViewComponent.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProcessListener#()Lcom/intellij/execution/process/ProcessListener;" />
     <nodeInfo nodeId="8321286824326262675" fileName="UnitTestViewComponent.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addCloseListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
@@ -2747,7 +2747,7 @@
       <varInfo nodeId="8321286824326262609" varName="tablePanel" />
     </scopeInfo>
     <scopeInfo nodeId="8321286824326262687" fileName="UnitTestViewComponent.java" startLine="133" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="8321286824326263026" fileName="UnitTestViewComponent.java" startLine="217" startPosition="45" endLine="222" endPosition="102">
+    <scopeInfo nodeId="8321286824326263026" fileName="UnitTestViewComponent.java" startLine="217" startPosition="45" endLine="222" endPosition="109">
       <varInfo nodeId="8321286824326263028" varName="currentNode" />
     </scopeInfo>
     <scopeInfo nodeId="8321286824326262660" fileName="UnitTestViewComponent.java" startLine="122" startPosition="0" endLine="128" endPosition="0" />

@@ -10,6 +10,7 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import org.jetbrains.annotations.NotNull;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
@@ -57,6 +58,10 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
   @Override
   protected AbstractDebugSession getCurrentSession() {
     return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
+  }
+
+  protected Collection<? extends AbstractDebugSession> getAllSessions() {
+    return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessions();
   }
 
   @Override
