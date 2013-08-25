@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5e3yx2w58udl8cefh9oj8itlfbeccaz">
+<dependencies version="2" modelHash="cc7o70y3x6a1q5rfecppj3ktrfovycf">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -15,17 +15,21 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+  <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="9z6x8c1urbmyb5yn9iisl7x02v04j52" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-bvatcc3cof0bfj69ynp5fcik5l2431r" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="cowoiuhrg137jisxrhwmquefi0mribk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="zxpgkonvyj6c68gccqxxip5xymvvd2" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8kl264jggjxpmfxay14z7cicvvn9un3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <dep model="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" hash="-55raccji7mwps04jjqrrswe4qpopxbo" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
-  <common hash="-7athfwuhtiwhtbdc1nlw5hvdhjgz2mv" />
-  <source id="2075824672078462207" name="SConceptAdapter" hash="3k3u1t2jrcckc4ph1wrwom0bw942egt">
+  <common hash="-alcr99vnyugrxw4gcajeb9izsdtedkn" />
+  <source id="2075824672078462207" name="SConceptAdapter" hash="boehu2rs1l288nzr96qbnah79rtew0l">
     <dep root="5691494193750495380" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SConceptAdapter.java" />
@@ -37,7 +41,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="SAbstractLinkAdapter.java" />
   </source>
-  <source id="2601097456319836723" name="SInterfaceConceptAdapter" hash="eiobj8zjio78v0lm5ql3jgc34pueld4">
+  <source id="2601097456319836723" name="SInterfaceConceptAdapter" hash="5m4w2xqdwhyvd1vo1dr11bi3w4h9lea">
     <dep root="5691494193750495380" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
@@ -80,7 +84,7 @@
   <source id="2601097456319899832" name="SDataTypeAdapter" hash="-exgnlsm2gsg36c0ht61kyjc8mehbvp9">
     <file name="SDataTypeAdapter.java" />
   </source>
-  <source id="5691494193750495380" name="SAbstractConceptAdapter" hash="8kjriwjog11n4jro7cqlv5yb03mwq4t">
+  <source id="5691494193750495380" name="SAbstractConceptAdapter" hash="-aer5wv1h6t3ta1cm6pcawswqgx5zlsd">
     <dep root="2075824672078462511" />
     <dep root="2601097456319846203" />
     <dep root="9029962061609404774" />
@@ -92,8 +96,13 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SAbstractConceptAdapter.java" />
   </source>

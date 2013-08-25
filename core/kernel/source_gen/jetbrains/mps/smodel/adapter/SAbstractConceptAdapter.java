@@ -14,8 +14,10 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class SAbstractConceptAdapter implements SAbstractConcept {
   protected String myConceptName;
@@ -45,6 +47,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public SAbstractLink getLink(String role) {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return null;
     }
 
@@ -62,6 +65,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public Iterable<SAbstractLink> getLinks() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return Collections.emptyList();
     }
 
@@ -83,6 +87,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public SProperty getProperty(String name) {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return null;
     }
 
@@ -98,6 +103,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public Iterable<SProperty> getProperties() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return Collections.emptyList();
     }
 
@@ -112,7 +118,19 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public boolean isSubConceptOf(SAbstractConcept concept) {
-    return SModelUtil.isAssignableConcept(myConceptName, concept.getQualifiedName());
+    // todo: hack, need for working node attributes on nodes of not generated concepts 
+    // todo: remove 
+    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) {
+      return true;
+    }
+
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
+      return false;
+    }
+
+    return d.isAssignableTo(concept.getQualifiedName());
   }
 
 
@@ -121,4 +139,14 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public SLanguage getLanguage() {
     return new SLanguageAdapter(NameUtil.namespaceFromConceptFQName(myConceptName));
   }
+
+
+
+  protected void illegalConceptDescriptorWarning() {
+    if (LOG.isEnabledFor(Priority.WARN)) {
+      LOG.warn("using of IllegalConceptDescriptor: " + myConceptName, new Throwable());
+    }
+  }
+
+  protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
 }
