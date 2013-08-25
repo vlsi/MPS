@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 
-public class AddUsedLanguageAsImported_QuickFix extends QuickFix_Runtime {
-  public AddUsedLanguageAsImported_QuickFix() {
+public class ImportUsedLanguage_QuickFix extends QuickFix_Runtime {
+  public ImportUsedLanguage_QuickFix() {
   }
 
   public String getDescription(SNode node) {

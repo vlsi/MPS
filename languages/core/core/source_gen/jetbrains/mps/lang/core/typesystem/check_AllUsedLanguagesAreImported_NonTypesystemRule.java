@@ -22,8 +22,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_AllUsedLanguagesImported_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_AllUsedLanguagesImported_NonTypesystemRule() {
+public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_AllUsedLanguagesAreImported_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode root, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
@@ -37,13 +37,13 @@ public class check_AllUsedLanguagesImported_NonTypesystemRule extends AbstractNo
       importedLanguages.add(language);
     }
 
-    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{}))) {
       if (!(importedLanguages.contains(node.getConcept().getLanguage()))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node of not imported language " + node.getConcept().getLanguage().getQualifiedName(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, node.getConcept().getLanguage().getQualifiedName() + " is not imported", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "6268689888338468534", null, errorTarget);
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.AddUsedLanguageAsImported_QuickFix", false);
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.ImportUsedLanguage_QuickFix", false);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }

@@ -953,7 +953,7 @@
     </node>
   </root>
   <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6268689888338066042" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="check_AllUsedLanguagesImported" />
+    <property name="name" nameId="tpck.1169194664001" value="check_AllUsedLanguagesAreImported" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6268689888338066501" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6268689888338069369" nodeInfo="nn">
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6268689888338069370" nodeInfo="sn">
@@ -1062,6 +1062,7 @@
             <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6268689888338068504" resolveInfo="root" />
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="6268689888338403909" nodeInfo="nn">
+            <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="7319542056807450017" nodeInfo="ng" />
             <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="6268689888338403911" nodeInfo="ng">
               <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6268689888338403930" nodeInfo="nn">
                 <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -1073,11 +1074,11 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6268689888338404642" nodeInfo="nn">
             <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6268689888338404643" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="6268689888338468534" nodeInfo="nn">
-                <node role="errorString" roleId="tpd4.1175517851849" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6268689888338472487" nodeInfo="nn">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6268689888338470360" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Node of not imported language " />
+                <node role="errorString" roleId="tpd4.1175517851849" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7319542056807476696" nodeInfo="nn">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7319542056807476699" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1070475926801" value=" is not imported" />
                   </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6268689888338475411" nodeInfo="nn">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6268689888338475411" nodeInfo="nn">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6268689888338472540" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6268689888338472541" nodeInfo="nn">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="6268689888338472542" nodeInfo="nn">
@@ -1102,7 +1103,7 @@
                   <link role="variable" roleId="tp2q.1153944258490" targetNodeId="6268689888338383206" resolveInfo="node" />
                 </node>
                 <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="6268689888341991552" nodeInfo="ng">
-                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="6268689888341989285" resolveInfo="AddUsedLanguageAsImported" />
+                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="6268689888341989285" resolveInfo="ImportUsedLanguage" />
                 </node>
               </node>
             </node>
@@ -1141,7 +1142,7 @@
     </node>
   </root>
   <root type="tpd4.TypesystemQuickFix" typeId="tpd4.1216383170661" id="6268689888341989285" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="AddUsedLanguageAsImported" />
+    <property name="name" nameId="tpck.1169194664001" value="ImportUsedLanguage" />
     <node role="executeBlock" roleId="tpd4.1216383424566" type="tpd4.QuickFixExecuteBlock" typeId="tpd4.1216383287005" id="6268689888341989286" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6268689888341989287" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6268689888343069756" nodeInfo="nn">

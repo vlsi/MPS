@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c4btnglstpzso281qv9ao6i6lhpecgr">
+<dependencies version="2" modelHash="-8w7oxye0074cb9atvwkqczqlanm9eb6">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -146,7 +146,7 @@
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
     <file name="check_Export_NonTypesystemRule.java" />
   </source>
-  <source id="6268689888338066042" name="check_AllUsedLanguagesImported" hash="-dbnm50khvu9yllk5t2rkmkmx46yjfax">
+  <source id="6268689888338066042" name="check_AllUsedLanguagesAreImported" hash="3ttbxdz7qspnoebntwywhdv4y2lbfvb">
     <dep root="6268689888341989285" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -161,14 +161,14 @@
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
-    <file name="check_AllUsedLanguagesImported_NonTypesystemRule.java" />
+    <file name="check_AllUsedLanguagesAreImported_NonTypesystemRule.java" />
   </source>
-  <source id="6268689888341989285" name="AddUsedLanguageAsImported" hash="ckbpwahqw51i8sgi709d6ulbwmb4rca">
+  <source id="6268689888341989285" name="ImportUsedLanguage" hash="4hmdibku2ugcjnagzmqqi6gtmivkhcd">
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <file name="AddUsedLanguageAsImported_QuickFix.java" />
+    <file name="ImportUsedLanguage_QuickFix.java" />
   </source>
 </dependencies>
 
