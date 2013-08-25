@@ -21,12 +21,12 @@ public class BeforeTasksInitializer_CustomProjectPlugin extends BaseCustomProjec
   public void doInit(MPSProject project) {
     ExtensionPoint<BeforeRunTaskProvider<BeforeRunTask>> beforeTasksExtensionPoint = Extensions.getArea(project.getProject()).getExtensionPoint(BeforeRunTaskProvider.EXTENSION_POINT_NAME);
     {
-      BeforeRunTaskProvider beforeTask = (BeforeRunTaskProvider) new DeployPlugins_BeforeTask();
+      BeforeRunTaskProvider beforeTask = (BeforeRunTaskProvider) new MakeDeployScripts_BeforeTask();
       ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).addElement(beforeTask);
       beforeTasksExtensionPoint.registerExtension(beforeTask);
     }
     {
-      BeforeRunTaskProvider beforeTask = (BeforeRunTaskProvider) new MakeDeployScripts_BeforeTask();
+      BeforeRunTaskProvider beforeTask = (BeforeRunTaskProvider) new DeployPlugins_BeforeTask();
       ListSequence.fromList(BeforeTasksInitializer_CustomProjectPlugin.this.myRegisteredBeforeTasks).addElement(beforeTask);
       beforeTasksExtensionPoint.registerExtension(beforeTask);
     }
