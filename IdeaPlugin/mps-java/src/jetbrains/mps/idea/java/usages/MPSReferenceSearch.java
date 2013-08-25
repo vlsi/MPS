@@ -74,6 +74,12 @@ import java.util.Set;
 // For methods MethodReferenceSearch is used.
 // Local variables shouldn't bother us since we can't reference java code's local vars
 public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, ReferencesSearch.SearchParameters> {
+
+  public MPSReferenceSearch() {
+    // flag: requires read action
+    super(true);
+  }
+
   @Override
   public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiReference> consumer) {
     if (!(queryParameters.getEffectiveSearchScope() instanceof GlobalSearchScope)) {

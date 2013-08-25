@@ -22,6 +22,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   public SConcept getSuperConcept() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return null;
     }
 
@@ -36,6 +37,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
       return null;
     }
 

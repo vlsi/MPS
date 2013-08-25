@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -105,9 +104,7 @@ public class ConceptRegistry implements CoreComponent {
     try {
       try {
         LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        if (languageRuntime == null) {
-          LOG.warn("No language for: " + fqName, new Throwable());
-        } else {
+        if (languageRuntime != null) {
           descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
         }
       } catch (Throwable e) {
@@ -115,7 +112,7 @@ public class ConceptRegistry implements CoreComponent {
       }
 
       if (descriptor == null) {
-        descriptor = StructureAspectInterpreted.getInstance().getDescriptor(fqName);
+        descriptor = new IllegalConceptDescriptor(fqName);
       }
 
       conceptDescriptors.put(fqName, descriptor);

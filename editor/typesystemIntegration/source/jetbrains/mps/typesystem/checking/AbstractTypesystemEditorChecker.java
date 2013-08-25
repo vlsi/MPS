@@ -24,7 +24,6 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -35,7 +34,6 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -142,37 +140,12 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
           public void run() {
             EditorCell selectedCell = editorContext.getSelectedCell();
             if (selectedCell == null) return;
-            boolean restoreCaretPosition = false;
-            int caretX = 0;
-            int caretY = 0;
+            int caretX = selectedCell.getCaretX();
+            int caretY = selectedCell.getBaseline();
 
-            Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-                editorContext.getOperationContext().getProject() :
-                null
-            );
+            Project p = editorContext.getOperationContext() != null ? editorContext.getOperationContext().getProject() : null;
             if (p == null) {
               return;
-            }
-
-            if (selectedCell instanceof EditorCell_Label) {
-              final EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
-              //todo it is illegal to pass SNodes between reads
-              restoreCaretPosition = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-                @Override
-                public Boolean compute() {
-                  return jetbrains.mps.util.SNodeOperations.isAncestor(quickFixNode, cell_label.getSNode());
-                }
-              });
-              caretX = cell_label.getCaretX();
-              caretY = cell_label.getBaseline();
-              boolean last = cell_label.getCaretPosition() == cell_label.getText().length();
-              boolean first = cell_label.getCaretPosition() == 0;
-              if (last) {
-                caretX = caretX - 1;
-              }
-              if (first) {
-                caretY = caretY + 1;
-              }
             }
 
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
@@ -182,8 +155,8 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
               }
             }, p);
 
-            if (restoreCaretPosition) {
-              editorContext.flushEvents();
+            editorContext.flushEvents();
+            if (editorContext.getSelectionManager().getSelection() == null) {
               EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
               EditorCell leaf = rootCell.findLeaf(caretX, caretY);
               if (leaf != null) {

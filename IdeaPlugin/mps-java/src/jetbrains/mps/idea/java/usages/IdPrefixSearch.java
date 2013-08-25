@@ -60,6 +60,12 @@ import java.util.LinkedList;
  */
 
 public class IdPrefixSearch extends QueryExecutorBase<PsiReference, SearchParameters> {
+
+  public IdPrefixSearch() {
+    // flag: requires read action
+    super(true);
+  }
+
   @Override
   public void processQuery(@NotNull SearchParameters queryParameters, @NotNull final Processor<PsiReference> consumer) {
 
