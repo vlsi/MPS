@@ -117,7 +117,7 @@
     <nodeInfo nodeId="6062668769034852818" fileName="ModelChooser.java" startLine="42" startPosition="32" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503361594441" fileName="ModelChooser.java" startLine="45" startPosition="25" endLine="46" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2034046503361594448" fileName="ModelChooser.java" startLine="46" startPosition="138" endLine="47" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361594471" fileName="ModelChooser.java" startLine="48" startPosition="58" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2034046503361594471" fileName="ModelChooser.java" startLine="48" startPosition="35" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2034046503361594477" fileName="ModelChooser.java" startLine="49" startPosition="56" endLine="50" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2034046503361594486" fileName="ModelChooser.java" startLine="51" startPosition="86" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2034046503361594493" fileName="ModelChooser.java" startLine="53" startPosition="11" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -135,7 +135,7 @@
     <scopeInfo nodeId="6062668769034852775" fileName="ModelChooser.java" startLine="32" startPosition="51" endLine="37" endPosition="9">
       <varInfo nodeId="6062668769034852786" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="2034046503361594470" fileName="ModelChooser.java" startLine="48" startPosition="58" endLine="54" endPosition="82">
+    <scopeInfo nodeId="2034046503361594470" fileName="ModelChooser.java" startLine="48" startPosition="35" endLine="54" endPosition="82">
       <varInfo nodeId="2034046503361594478" varName="md" />
       <varInfo nodeId="2034046503361594472" varName="model" />
     </scopeInfo>
