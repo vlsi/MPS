@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DescriptorUtils {
@@ -45,13 +46,18 @@ public class DescriptorUtils {
     return null;
   }
 
+  @Deprecated
   @Nullable
   public static <T> T getObjectByClassNameForLanguage(String className, Class<T> castTo, @Nullable Language language, boolean avoidLogErrors) {
-    try {
-      if (language == null) {
-        return null;
-      }
+    if (language == null) {
+      return null;
+    }
+    return getObjectByClassNameForLanguage(className, castTo, language);
+  }
 
+  @Nullable
+  public static <T> T getObjectByClassNameForLanguage(String className, Class<T> castTo, @NotNull Language language) {
+    try {
       Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
       if (clazz == null) {
         return null;

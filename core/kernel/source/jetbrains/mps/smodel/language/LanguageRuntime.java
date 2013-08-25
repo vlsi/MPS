@@ -20,6 +20,7 @@ import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -33,7 +34,10 @@ import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
+import jetbrains.mps.smodel.structure.InterpretedFacetProvider;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -44,12 +48,15 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
+import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguageNamespace;
 
 /**
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
+  public static final DescriptorProvider<FacetDescriptor> INTERPRETED_FACET_PROVIDER = new InterpretedFacetProvider();
+
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
 
   private StructureAspectDescriptor structureDescriptor;
@@ -64,8 +71,19 @@ public abstract class LanguageRuntime {
   public abstract String getNamespace();
 
   public IHelginsDescriptor getTypesystem() {
-    // TODO generate
-    return new LanguageRuntimeInterpreted(ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class)).getTypesystem();
+    Language language = ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+
+    SModel helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(language);
+    if (helginsModelDescriptor == null) return null;
+    String packageName = SNodeOperations.getModelLongName(helginsModelDescriptor);
+
+    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", IHelginsDescriptor.class, language, true);
+
+    if (helginsDescriptor != null) {
+      return (IHelginsDescriptor) helginsDescriptor;
+    } else {
+      return getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", IHelginsDescriptor.class, language, true);
+    }
   }
 
   public BaseFindUsagesDescriptor getFindUsages() {
@@ -84,7 +102,7 @@ public abstract class LanguageRuntime {
 
   public DescriptorProvider<FacetDescriptor> getFacetProvider() {
     if (facetDescriptor == null) {
-      facetDescriptor = getDescriptorProvider("plugin.FacetAspectDescriptor", LanguageRuntimeInterpreted.FACET_PROVIDER);
+      facetDescriptor = getDescriptorProvider("plugin.FacetAspectDescriptor", INTERPRETED_FACET_PROVIDER);
     }
     return facetDescriptor;
   }
