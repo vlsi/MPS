@@ -48,6 +48,7 @@
     <classNode extendsClassName="com.intellij.ide.wizard.StepAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl" file="BuildGeneratorImpl.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationInfo" />
     <classNode dependClassName="com.intellij.openapi.application.PathMacros" />
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationInfoEx" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />

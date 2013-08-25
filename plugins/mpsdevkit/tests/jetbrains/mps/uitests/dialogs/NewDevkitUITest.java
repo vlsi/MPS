@@ -16,10 +16,10 @@
 package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
-import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 import junit.framework.Assert;
 

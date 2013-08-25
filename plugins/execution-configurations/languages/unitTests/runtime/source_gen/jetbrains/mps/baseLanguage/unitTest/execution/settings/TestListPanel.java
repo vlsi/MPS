@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.project.Project;
 
 public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   private boolean myIsTestMethods;
@@ -44,11 +45,6 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   @Override
   protected String getFqName(ITestNodeWrapper element) {
     return element.getCachedFqName();
-  }
-
-  public void init(List<ITestNodeWrapper> nodes, final boolean isTestMethods) {
-    myIsTestMethods = isTestMethods;
-    super.init(nodes);
   }
 
   @Override
@@ -103,7 +99,10 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
 
 
 
-  public TestListPanel() {
+  public TestListPanel(Project project, boolean isTestMethods) {
     super("Tests");
+    myIsTestMethods = isTestMethods;
+    setProject(project);
+    super.setData(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
   }
 }

@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.util.PathUtil;
-import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;

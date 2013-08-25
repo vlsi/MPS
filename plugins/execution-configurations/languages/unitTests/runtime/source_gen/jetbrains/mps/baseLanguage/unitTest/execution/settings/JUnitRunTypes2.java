@@ -4,53 +4,54 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public enum JUnitRunTypes2 {
-  METHOD() {
+  PROJECT() {
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
-      return TestUtils.wrapPointerStrings(configuration.getTestMethods());
+      if (project == null) {
+        return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
+      }
+      return TestUtils.getProjectTests(project);
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if ((configuration.getTestMethods() == null || configuration.getTestMethods().isEmpty())) {
-        return "Methods list is empty.";
+      if (project == null) {
+        return null;
       }
-      if (configuration.getTestMethods() != null) {
-        for (String method : ListSequence.fromList(configuration.getTestMethods())) {
-          SNodeReference pointer = PointerUtils.stringToPointer(method);
-          if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
-            return "Could not find test method for id " + method + ".";
-          }
-        }
+      if (Sequence.fromIterable(TestUtils.getProjectTests(project)).isEmpty()) {
+        return "Project does not contain tests.";
       }
       return null;
     }
 
   },
-  NODE() {
+  MODULE() {
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
-      return TestUtils.wrapPointerStrings(configuration.getTestCases());
+      SModule module = TestUtils.getModule(configuration.getModule());
+      if (module == null) {
+        return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
+      }
+      return TestUtils.getModuleTests(module);
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if ((configuration.getTestCases() == null || configuration.getTestCases().isEmpty())) {
-        return "Classes list is empty.";
+      if (isEmpty_torbaz_a0a0b1(configuration.getModule())) {
+        return "Module is not selected.";
       }
-      if (configuration.getTestCases() != null) {
-        for (String testCase : ListSequence.fromList(configuration.getTestCases())) {
-          SNodeReference pointer = PointerUtils.stringToPointer(testCase);
-          if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
-            return "Could not find test case for id " + testCase + ".";
-          }
-        }
+      SModule module = TestUtils.getModule(configuration.getModule());
+      if (module == null) {
+        return "Module " + configuration.getModule() + " does not exist.";
+      }
+      if (Sequence.fromIterable(TestUtils.getModuleTests(module)).isEmpty()) {
+        return "No tests found in module " + configuration.getModule() + "";
       }
       return null;
     }
@@ -79,42 +80,41 @@ public enum JUnitRunTypes2 {
     }
 
   },
-  MODULE() {
+  NODE() {
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
-      SModule module = TestUtils.getModule(configuration.getModule());
-      if (module == null) {
-        return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
-      }
-      return TestUtils.getModuleTests(module);
+      return TestUtils.wrapPointerStrings(configuration.getTestCases());
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if (isEmpty_torbaz_a0a0b3(configuration.getModule())) {
-        return "Module is not selected.";
+      if ((configuration.getTestCases() == null || configuration.getTestCases().isEmpty())) {
+        return "Classes list is empty.";
       }
-      SModule module = TestUtils.getModule(configuration.getModule());
-      if (module == null) {
-        return "Module " + configuration.getModule() + " does not exist.";
-      }
-      if (Sequence.fromIterable(TestUtils.getModuleTests(module)).isEmpty()) {
-        return "No tests found in module " + configuration.getModule() + "";
+      if (configuration.getTestCases() != null) {
+        for (String testCase : ListSequence.fromList(configuration.getTestCases())) {
+          SNodeReference pointer = PointerUtils.stringToPointer(testCase);
+          if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
+            return "Could not find test case for id " + testCase + ".";
+          }
+        }
       }
       return null;
     }
 
   },
-  PROJECT() {
+  METHOD() {
     public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
-      if (project == null) {
-        return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
-      }
-      return TestUtils.getProjectTests(project);
+      return TestUtils.wrapPointerStrings(configuration.getTestMethods());
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if (project == null) {
-        return null;
+      if ((configuration.getTestMethods() == null || configuration.getTestMethods().isEmpty())) {
+        return "Methods list is empty.";
       }
-      if (Sequence.fromIterable(TestUtils.getProjectTests(project)).isEmpty()) {
-        return "Project does not contain tests.";
+      if (configuration.getTestMethods() != null) {
+        for (String method : ListSequence.fromList(configuration.getTestMethods())) {
+          SNodeReference pointer = PointerUtils.stringToPointer(method);
+          if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
+            return "Could not find test method for id " + method + ".";
+          }
+        }
       }
       return null;
     }
@@ -128,7 +128,7 @@ public enum JUnitRunTypes2 {
 
   public abstract String check(JUnitSettings_Configuration cofiguration, Project project);
 
-  public static boolean isEmpty_torbaz_a0a0b3(String str) {
+  public static boolean isEmpty_torbaz_a0a0b1(String str) {
     return str == null || str.length() == 0;
   }
 }

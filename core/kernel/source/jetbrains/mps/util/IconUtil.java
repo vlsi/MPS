@@ -21,25 +21,33 @@ import sun.reflect.Reflection;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 
 /**
  * @author Evgeny Gerashchenko
  * @since 1/13/12
- *
+ * <p/>
  * TODO FIXME remove "this" from core-runtime, move to mps-platform
  */
 public class IconUtil {
   @Nullable
   public static Icon getIcon(final String path) {
-    int stackFrameCount = 2;
-    Class callerClass = Reflection.getCallerClass(stackFrameCount);
-    while (callerClass != null && (callerClass.getClassLoader() == null || callerClass.equals(IconUtil.class))) { // looks like a system class
-      callerClass = Reflection.getCallerClass(++stackFrameCount);
+    // see MPS-18100 and IDEA-106251 and read IconLoader.getIcon/ReflectionUtil.findCallerClass sources from IDEA
+    Class[] stack = MySecurityManager.INSTANCE.getStack();
+    Class callerClass = null;
+    for (int i = 0; i < stack.length; i++) {
+      if (IconUtil.class.equals(stack[i])) {
+        if (stack.length > i + 1) {
+          callerClass = stack[i + 1];
+          break;
+        }
+      }
     }
     if (callerClass == null) {
-      callerClass = Reflection.getCallerClass(1);
+      callerClass = IconUtil.class;
     }
     return getIcon(path, callerClass);
   }
@@ -69,6 +77,14 @@ public class IconUtil {
       return null;
     } finally {
       FileUtil.closeFileSafe(inputStream);
+    }
+  }
+
+  private static class MySecurityManager extends SecurityManager {
+    private static final MySecurityManager INSTANCE = new MySecurityManager();
+
+    public Class[] getStack() {
+      return getClassContext();
     }
   }
 

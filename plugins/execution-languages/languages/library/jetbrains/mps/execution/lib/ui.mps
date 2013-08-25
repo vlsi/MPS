@@ -6,7 +6,6 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
-  <language namespace="5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)" />
   <language namespace="982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
@@ -55,9 +54,7 @@
   <import index="xk9i" modelUID="r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)" version="1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="tphr" modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tpht" modelUID="r:00000000-0000-4000-0000-011c8959054d(jetbrains.mps.uiLanguage.components)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -3298,28 +3295,6 @@
       </node>
     </node>
   </root>
-  <root type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="1240470842553500231" nodeInfo="ng">
-    <property name="stub" nameId="tphr.1202393242164" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="FieldWithBrowseButton" />
-    <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-    <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="1240470842553500239" resolveInfo="FieldWithPathChooseDialog" />
-    <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
-  </root>
-  <root type="tphr.ComponentController" typeId="tphr.1202388384249" id="1240470842553500232" nodeInfo="ng">
-    <link role="component" roleId="tphr.1202388401455" targetNodeId="1240470842553500231" resolveInfo="FieldWithBrowseButton" />
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="1240470842553500233" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.StringType" typeId="tpee.1225271177708" id="1240470842553500234" nodeInfo="in" />
-    </node>
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="1240470842553500235" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="editable" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1240470842553500236" nodeInfo="in" />
-    </node>
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="1240470842553500237" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="title" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.StringType" typeId="tpee.1225271177708" id="1240470842553500238" nodeInfo="in" />
-    </node>
-  </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553500239" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FieldWithPathChooseDialog" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1240470842553500314" nodeInfo="nn" />
@@ -3730,24 +3705,6 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1240470842553500313" nodeInfo="nn">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
-    </node>
-  </root>
-  <root type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="1240470842553500411" nodeInfo="ng">
-    <property name="stub" nameId="tphr.1202393242164" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="ParameterBrowser" />
-    <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
-    <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="1240470842553500417" resolveInfo="RawLineEditorComponent" />
-    <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
-  </root>
-  <root type="tphr.ComponentController" typeId="tphr.1202388384249" id="1240470842553500412" nodeInfo="ng">
-    <link role="component" roleId="tphr.1202388401455" targetNodeId="1240470842553500411" resolveInfo="ParameterBrowser" />
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="1240470842553500413" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.StringType" typeId="tpee.1225271177708" id="1240470842553500414" nodeInfo="in" />
-    </node>
-    <node role="attribute" roleId="tphr.1202389186753" type="tphr.AttributeDeclaration" typeId="tphr.1202388805843" id="1240470842553500415" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="dialogCaption" />
-      <node role="type" roleId="tphr.1202389048182" type="tpee.StringType" typeId="tpee.1225271177708" id="1240470842553500416" nodeInfo="in" />
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553500417" nodeInfo="ig">
@@ -5832,11 +5789,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1895567659272474747" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1895567659272474748" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1895567659272474749" nodeInfo="nn">
-            <node role="operation" roleId="tpee.1197027833540" type="tp2q.RemoveAllElementsOperation" typeId="tp2q.1173946412755" id="1895567659272474750" nodeInfo="nn">
-              <node role="argument" roleId="tp2q.1173946412756" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1895567659272474751" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1895567659272474657" resolveInfo="myValues" />
-              </node>
-            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.ClearAllElementsOperation" typeId="tp2q.1227022210526" id="4864551121702340141" nodeInfo="nn" />
             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1895567659272474752" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1895567659272474657" resolveInfo="myValues" />
             </node>
@@ -5857,9 +5810,9 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1895567659272474758" nodeInfo="in" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1895567659272474759" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="init" />
+      <property name="name" nameId="tpck.1169194664001" value="setData" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1895567659272474760" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="nodes" />
+        <property name="name" nameId="tpck.1169194664001" value="data" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1895567659272474761" nodeInfo="in">
           <node role="elementType" roleId="tp2q.1151688676805" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="1895567659272474762" nodeInfo="in">
             <node role="bound" roleId="tpee.1171903916107" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="1895567659272474763" nodeInfo="in">
@@ -5886,7 +5839,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="1895567659272474778" nodeInfo="nn">
               <node role="argument" roleId="tp2q.1160666822012" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1895567659272474779" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1895567659272474760" resolveInfo="nodes" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1895567659272474760" resolveInfo="data" />
               </node>
             </node>
           </node>

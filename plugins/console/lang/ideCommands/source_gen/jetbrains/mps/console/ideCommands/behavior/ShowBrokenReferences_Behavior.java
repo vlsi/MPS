@@ -39,7 +39,7 @@ public class ShowBrokenReferences_Behavior {
           SNode targetNode = ref.getSourceNode();
           console.addText("\n");
           SNode clickableNode = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferenceString", null);
-          SPropertyOperations.set(clickableNode, "text", "Go to enclosing node");
+          SPropertyOperations.set(clickableNode, "referencePresentation", "Go to enclosing node");
           SLinkOperations.setTarget(clickableNode, "target", targetNode, false);
           console.addNode(clickableNode);
           console.addText("\n");
