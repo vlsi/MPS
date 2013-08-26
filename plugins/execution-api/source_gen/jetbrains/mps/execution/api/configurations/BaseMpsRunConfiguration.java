@@ -6,11 +6,10 @@ import com.intellij.execution.configurations.RunConfigurationBase;
 import com.intellij.execution.configurations.LocatableConfiguration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.executors.DefaultRunExecutor;
 
 public abstract class BaseMpsRunConfiguration extends RunConfigurationBase implements LocatableConfiguration {
-  public BaseMpsRunConfiguration(Project project, ConfigurationFactory factory, @NotNull String name) {
+  public BaseMpsRunConfiguration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
 
@@ -25,10 +24,6 @@ public abstract class BaseMpsRunConfiguration extends RunConfigurationBase imple
 
   @Override
   public String suggestedName() {
-    String name = getName();
-    if (name == null) {
-      return this.getClass().getSimpleName();
-    }
-    return name;
+    return getName();
   }
 }
