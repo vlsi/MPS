@@ -81,7 +81,7 @@ public class FindModelUsages_Action extends BaseAction {
 
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          query[0] = new SearchQuery(model, scope);
+          query[0] = new SearchQuery(model.getReference(), scope);
           provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
         }
       });

@@ -7,7 +7,10 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.annotations.Nullable;
+import java.util.Collections;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -19,6 +22,8 @@ import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ClassifierScopeUtils {
   private ClassifierScopeUtils() {
@@ -49,20 +54,29 @@ public class ClassifierScopeUtils {
     return SPropertyOperations.getString(method, "name") + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
   }
 
-  public static Map<SNode, SNode> resolveClassifierTypeVars(SNode classifier) {
+  public static Map<SNode, SNode> resolveClassifierTypeVars(@Nullable SNode classifier) {
+    if (classifier == null) {
+      return Collections.emptyMap();
+    }
     return getClassifierAndSuperClassifiersData(classifier).typeByTypeVariable;
   }
 
-  public static Set<SNode> getExtendedClassifiers(SNode classifier) {
+  public static Set<SNode> getExtendedClassifiers(@Nullable SNode classifier) {
+    if (classifier == null) {
+      return Collections.emptySet();
+    }
     return getClassifierAndSuperClassifiersData(classifier).classifiers;
   }
 
-  public static boolean isHierarchyCyclic(SNode classifier) {
+  public static boolean isHierarchyCyclic(@Nullable SNode classifier) {
+    if (classifier == null) {
+      return false;
+    }
     return getClassifierAndSuperClassifiersData(classifier).isCyclic;
   }
 
-  private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(final SNode classifier) {
-    if (SNodeOperations.getModel(classifier).getModule() instanceof TransientModelsModule) {
+  private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(@NotNull final SNode classifier) {
+    if (check_uu0vlb_a0a0g(SNodeOperations.getModel(classifier)) instanceof TransientModelsModule) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
     } else {
       return RepositoryStateCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
@@ -122,5 +136,12 @@ public class ClassifierScopeUtils {
       SetSequence.fromSet(subClassifiers).removeElement(classifier);
       return false;
     }
+  }
+
+  private static SModule check_uu0vlb_a0a0g(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

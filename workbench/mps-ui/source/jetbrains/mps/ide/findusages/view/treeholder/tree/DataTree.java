@@ -36,9 +36,11 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -191,18 +193,18 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
     for (DataNode child : root.getChildren()) {
       if (currentIdObject instanceof String) {
-        if (child.getData().getIdObject().equals(currentIdObject)) {
+        if (EqualUtil.equals(currentIdObject, child.getData().getIdObject())) {
           next = child;
         }
       } else if (currentIdObject instanceof Pair && child.getData() instanceof CategoryNodeData) {
         Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
         CategoryNodeData data = (CategoryNodeData) child.getData();
         if (data.getCategoryKindName().equals(category.o1.getName())
-          && data.getIdObject().equals(category.o2)) {
+          && EqualUtil.equals(data.getIdObject(), category.o2)) {
           next = child;
         }
       } else {
-        if (child.getData().getIdObject() == currentIdObject) {
+        if (EqualUtil.equals(child.getData().getIdObject(), currentIdObject)) {
           next = child;
         }
       }
@@ -215,15 +217,15 @@ public class DataTree implements IExternalizeable, IChangeListener {
       boolean isResult = index == path.size() - 1;
       if (o instanceof SModule) {
         if (result != null && isResult) {
-          data = new ModuleNodeData(creator, result, isResult, nodeRepresentator, results);
+          data = new ModuleNodeData(creator, result, true, nodeRepresentator, results);
         } else {
           data = new ModuleNodeData(creator, (SModule) o, isResult, results);
         }
-      } else if (o instanceof SModel) {
+      } else if (o instanceof SModelReference) {
         if (result != null && isResult) {
-          data = new ModelNodeData(creator, result, isResult, nodeRepresentator, results);
+          data = new ModelNodeData(creator, result, true, nodeRepresentator, results);
         } else {
-          data = new ModelNodeData(creator, (SModel) o, isResult, results);
+          data = new ModelNodeData(creator, (SModelReference) o, isResult, results);
         }
       } else if (o instanceof SNode) {
         if (result != null && isResult) {

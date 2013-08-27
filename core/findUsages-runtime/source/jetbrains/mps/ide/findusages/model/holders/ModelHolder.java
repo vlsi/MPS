@@ -18,16 +18,14 @@ package jetbrains.mps.ide.findusages.model.holders;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class ModelHolder implements IHolder<SModel> {
+public class ModelHolder implements IHolder<SModelReference> {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
@@ -37,19 +35,13 @@ public class ModelHolder implements IHolder<SModel> {
     read(element, project);
   }
 
-  public ModelHolder(SModel model) {
-    myModelReference = model.getReference();
-  }
-
-  private SModel getModelDescriptor() {
-    return SModelRepository.getInstance().getModelDescriptor(myModelReference);
+  public ModelHolder(SModelReference modelReference) {
+    myModelReference = modelReference;
   }
 
   @Override
-  public SModel getObject() {
-    SModel modelDescriptor = getModelDescriptor();
-    if (modelDescriptor == null) return null;
-    return modelDescriptor;
+  public SModelReference getObject() {
+    return myModelReference;
   }
 
   @Override

@@ -9,7 +9,7 @@ import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import org.jdom.Element;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
@@ -34,8 +34,8 @@ public class SearchQuery implements IExternalizeable {
     myObjectHolder = objectHolder;
   }
 
-  public SearchQuery(SModel model, SearchScope scope) {
-    this(new ModelHolder(model), scope);
+  public SearchQuery(SModelReference modelReference, SearchScope scope) {
+    this(new ModelHolder(modelReference), scope);
   }
 
   public SearchQuery(SNode node, SearchScope scope) {

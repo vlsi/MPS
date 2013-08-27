@@ -47,6 +47,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -219,12 +220,13 @@ public class DeleteModelHelper {
       }
     }
 
-
+    @Nullable
     @Override
     public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
-      SearchQuery searchQuery = new SearchQuery(refactoringContext.getSelectedModel(), GlobalScope.getInstance());
+      if (refactoringContext.getSelectedModel() == null) return null;
+
+      SearchQuery searchQuery = new SearchQuery(refactoringContext.getSelectedModel().getReference(), GlobalScope.getInstance());
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), searchQuery, new ModelUsagesFinder());
     }
   }
-
 }
