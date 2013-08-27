@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d5ccl6efwavfjl1o6yezxfgit1xwsgx">
+<dependencies version="2" modelHash="c2340pgsb9fo52uts1hsumaajkq8cmt">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-7piasnd35vg9w551we1azh7n2elnqg1" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-wwjhnstlwnrpmlqd334xaw7mdsc6g1" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="95bnfiqd9akddkgokngbmm4qgie68q2">
     <dep root="2284201910216573342" />
@@ -49,46 +49,46 @@
   <source id="5464054275389846505" name="BLCommand" hash="-a6717z4xbacl8dywnzwd4k3rf13w1dh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6852607286009511388" name="PrintNodeReferenceExpression" hash="6lyc62umhwb5es5x9ywwk0g5wcteopp">
+  <source id="6852607286009511388" name="PrintNodeReferenceExpression" hash="-epdoa5ulxzjslbspdxd0g0ill2ffmtl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8483375838963816171" name="UsagesExpression" hash="-c3i253ew3wvwz5wo5h0r5931m75u0zl">
+  <source id="8483375838963816171" name="UsagesExpression" hash="ebmi82yyhzl020yd1u57vk38xkfl84c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8483375838963816351" name="ShowExpression" hash="-c74wv0iycm3xe29ew0ynh2l4p0kgvi4">
+  <source id="8483375838963816351" name="ShowExpression" hash="434cj5fzg7d58n7kiu59t6jhhu7ga4h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7738379549910147341" name="InstancesExpression" hash="94pf6q1q0q3uz4sodpc3bc4kaefr5uy">
+  <source id="7738379549910147341" name="InstancesExpression" hash="4k5et69o55vd53lghe2d6zl8jq1mu6x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="752693057587755272" name="ProjectExpression" hash="-bfdff6vvb977glhf4gbbzer71djecuu">
+  <source id="752693057587755272" name="ProjectExpression" hash="-7yz4jhecp0u0be5a24dv8yu3lcwu5rr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8365379837260459177" name="PrintTextExpression" hash="-8z20rn1raayf381ijs5d7sjooqlse8z">
+  <source id="8365379837260459177" name="PrintTextExpression" hash="-8xyojm3x87exih1bkenwaa59d7e6krp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5510759644748856153" name="PrintNodeExpression" hash="-1rcdcw4pxxyibk8scl5audxt9wds22p">
+  <source id="5510759644748856153" name="PrintNodeExpression" hash="-d2jk5h0z8oinmtjqi0taq37uccczj4m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7820875636626932768" name="AbstractPrintExpression" hash="by6r2r3xg5hycgke3m96ndxjonb5nmx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2822369470875160718" name="NodesExpression" hash="-du6ntzi04o0edxisp2rlwinphqhmjax">
+  <source id="2822369470875160718" name="NodesExpression" hash="-7in3h11ej4mvsx4zm6clu03w53eavk9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6322385757202370749" name="ReferencesExpression" hash="-ag2ieh3qki0n479ylw3ixbaqlf5vihv">
+  <source id="6322385757202370749" name="ReferencesExpression" hash="-2atjf3crpl6xyiljssyvbj6l5ni55zd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6864030874027862829" name="ModelsExpression" hash="8crtkbdhq3lccviudgkgg2eomst7qrc">
+  <source id="6864030874027862829" name="ModelsExpression" hash="-8e88weiw3dhpi5l2dao5egvl5c14sm1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6864030874028745314" name="ModulesExpression" hash="-ai1ungb5dzxp94j8cw80o1wjuohwpu0">
+  <source id="6864030874028745314" name="ModulesExpression" hash="4tnnze141tg4esuh0o0pl563npft4rq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6558068108107691796" name="ExceptionHolder" hash="c3r69f3dfh03g3kkut19m4ucu1zzgzc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4307205004131544317" name="QueryExpression" hash="-7qr21o2h29vgqydtc9qax7251s4o6g0">
+  <source id="4307205004131544317" name="QueryExpression" hash="-7tyt2z20k4h92vod987eylkim6329pw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4307205004131544565" name="QueryParameter" hash="ds4wr7zsrvvkixpo2177whn9lf7kf75">
@@ -112,25 +112,25 @@
   <source id="4307205004134636962" name="ProjectScopeLiteral" hash="caldjs5xnrhidy1qfnzp79ul2oobmno">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9149301274757091502" name="CallActionExpression" hash="a61n0w5ytoelw962nlp84i05b4keoyw">
+  <source id="9149301274757091502" name="CallActionExpression" hash="3l9n8svuafdo41h6bjvopilwctkmyvq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="9149301274757091505" name="ActionCallParameter" hash="-crt7l3higsiug1v7r1832pmkfsigcg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8953981490813243063" name="ConsoleModelExpression" hash="-ad822n0k14rih1ctgvrjitp9q7nljf7">
+  <source id="8953981490813243063" name="ConsoleModelExpression" hash="es4myh4j55u6dfa1wmc6db2oigstv4k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2284201910216573342" name="ModelProperties" hash="c7tan0nh4wka2gi0kwge1jlqo8rb2k8">
+  <source id="2284201910216573342" name="ModelProperties" hash="ce7gtm9lmlfemhi9glwi360eyu2bzpz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7656298970878093785" name="BLExpression" hash="-db24zir1ynuxa49x0pyiotdu7ly340a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7600370246417552247" name="PrintExpression" hash="-4jxzbs45ranhxcm1dv2v6y5xme7cfa2">
+  <source id="7600370246417552247" name="PrintExpression" hash="-e608a3bql3tx2iep8ywvi7o5hs6ntro">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7600370246423000655" name="PrintSequenceExpression" hash="dtl8jy5j36kxctn5r4fk2bhus99etmf">
+  <source id="7600370246423000655" name="PrintSequenceExpression" hash="-7rz9aa7734tjxs1zezu69qznm8z9z20">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
