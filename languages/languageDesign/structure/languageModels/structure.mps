@@ -5,6 +5,8 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1071489090640" nodeInfo="ig">
     <property name="abstract" nameId="4628067390765956802" value="false" />
     <property name="rootable" nameId="1096454100552" value="true" />
@@ -702,6 +704,27 @@
       <property name="internalValue" nameId="1083923523171" value="none" />
       <property name="javaIdentifier" nameId="1192116978809" value="none" />
       <property name="externalValue" nameId="1083923523172" value="none" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="2992811758677295509" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="AttributeInfo" />
+    <property name="conceptAlias" nameId="5092175715804935370" value="@attribute info" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
+    <link role="extends" roleId="1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="7588428831955550663" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="role" />
+      <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" roleId="1071489727083" type="tpce.LinkDeclaration" typeId="1071489288298" id="7588428831955550186" nodeInfo="ig">
+      <property name="metaClass" nameId="1071599937831" value="aggregation" />
+      <property name="role" nameId="1071599776563" value="multiple" />
+      <link role="target" roleId="1071599976176" targetNodeId="tpee.1068580123137" resolveInfo="BooleanConstant" />
+    </node>
+    <node role="linkDeclaration" roleId="1071489727083" type="tpce.LinkDeclaration" typeId="1071489288298" id="7588428831947959310" nodeInfo="ig">
+      <property name="metaClass" nameId="1071599937831" value="aggregation" />
+      <property name="role" nameId="1071599776563" value="attributed" />
+      <property name="sourceCardinality" nameId="1071599893252" value="0..n" />
+      <link role="target" roleId="1071599976176" targetNodeId="tp25.1154546950173" resolveInfo="ConceptReference" />
     </node>
   </root>
 </model>
