@@ -12,6 +12,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -28,16 +32,20 @@ public class ModelCheckerIssueFinder implements IFinder {
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     IOperationContext operationContext;
-    List<SModel> modelDescriptors;
+    List<SModel> models;
     List<SModule> modules = null;
     if (objectHolder instanceof ModelsHolder) {
       ModelsHolder modelsHolder = (ModelsHolder) objectHolder;
       operationContext = modelsHolder.getOperationContext();
-      modelDescriptors = modelsHolder.getObject();
+      models = Sequence.fromIterable(((Iterable<SModelReference>) modelsHolder.getObject())).select(new ISelector<SModelReference, SModel>() {
+        public SModel select(SModelReference ref) {
+          return SModelRepository.getInstance().getModelDescriptor(ref);
+        }
+      }).toListSequence();
     } else if (objectHolder instanceof ModulesHolder) {
       ModulesHolder modulesHolder = (ModulesHolder) objectHolder;
       operationContext = modulesHolder.getOperationContext();
-      modelDescriptors = ModelCheckerUtils.getModelDescriptors(modulesHolder.getObject());
+      models = ModelCheckerUtils.getModelDescriptors(modulesHolder.getObject());
       modules = modulesHolder.getObject();
     } else {
       throw new IllegalArgumentException();
@@ -46,7 +54,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     int work = ((modules != null ?
       ListSequence.fromList(modules).count() :
       0
-    )) + ListSequence.fromList(modelDescriptors).count() + 1;
+    )) + ListSequence.fromList(models).count() + 1;
     monitor.start("Checking", work);
 
     try {
@@ -70,7 +78,7 @@ public class ModelCheckerIssueFinder implements IFinder {
       modelChecker.setSpecificCheckers(getSpecificCheckers());
       monitor.advance(1);
 
-      for (SModel modelDescriptor : ListSequence.fromList(modelDescriptors)) {
+      for (SModel modelDescriptor : ListSequence.fromList(models)) {
         modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;

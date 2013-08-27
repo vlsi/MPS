@@ -267,15 +267,15 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              List<SModel> models = new LinkedList<SModel>();
+              List<SModelReference> modelReferences = new LinkedList<SModelReference>();
               for (int i : myTable.getSelectedRows()) {
                 Object value = myImportedModels.getValueAt(i, 0);
                 if (value instanceof SModelReference) {
-                  models.add(((SModelReference) value).resolve(MPSModuleRepository.getInstance()));
+                  modelReferences.add((SModelReference) value);
                 }
               }
 
-              ModelsHolder modelsHolder = new ModelsHolder(models, null) {
+              ModelsHolder modelsHolder = new ModelsHolder(modelReferences, null) {
                 @Override
                 public void read(Element element, Project project) throws CantLoadSomethingException {
                 }
@@ -290,10 +290,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                 public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
                   SearchResults searchResults = new SearchResults();
                   ModelsHolder modelsHolder = (ModelsHolder) query.getObjectHolder();
-                  for (SModel searchedModel : modelsHolder.getObject()) {
-                    // todo!
-                    searchResults.getSearchedNodes().add(searchedModel);
-                    SearchQuery searchQuery = new SearchQuery(searchedModel.getReference(), query.getScope());
+                  for (SModelReference searchedModelReference : modelsHolder.getObject()) {
+                    searchResults.getSearchedNodes().add(searchedModelReference);
+                    SearchQuery searchQuery = new SearchQuery(searchedModelReference, query.getScope());
                     searchResults.addAll(super.find(searchQuery, monitor));
                   }
 
