@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -40,6 +41,10 @@ public class ModelCheckerIssueFinder implements IFinder {
       models = Sequence.fromIterable(((Iterable<SModelReference>) modelsHolder.getObject())).select(new ISelector<SModelReference, SModel>() {
         public SModel select(SModelReference ref) {
           return SModelRepository.getInstance().getModelDescriptor(ref);
+        }
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
+          return it != null;
         }
       }).toListSequence();
     } else if (objectHolder instanceof ModulesHolder) {

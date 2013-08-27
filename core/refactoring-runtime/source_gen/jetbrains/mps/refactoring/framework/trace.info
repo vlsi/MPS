@@ -1821,33 +1821,33 @@
     <unitInfo nodeId="4792031542972815559" fileName="ConceptAncestorsProvider.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.refactoring.framework.ConceptAncestorsProvider" />
   </root>
   <root nodeRef="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)/4792031542972815662">
-    <nodeInfo nodeId="4792031542972815664" fileName="IRefactoring.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4792031542972815672" fileName="IRefactoring.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="4792031542972815676" fileName="IRefactoring.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="4792031542972815680" fileName="IRefactoring.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
-    <nodeInfo nodeId="4792031542972815686" fileName="IRefactoring.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="4792031542972815692" fileName="IRefactoring.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="4792031542972815699" fileName="IRefactoring.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWhenDone#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="4792031542972815705" fileName="IRefactoring.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <scopeInfo nodeId="4792031542972815664" fileName="IRefactoring.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="4792031542972815672" fileName="IRefactoring.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="4792031542972815676" fileName="IRefactoring.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="4792031542972815680" fileName="IRefactoring.java" startLine="13" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="4792031542972815664" fileName="IRefactoring.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4792031542972815672" fileName="IRefactoring.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="4792031542972815676" fileName="IRefactoring.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="4792031542972815680" fileName="IRefactoring.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
+    <nodeInfo nodeId="4792031542972815686" fileName="IRefactoring.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="4792031542972815692" fileName="IRefactoring.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="4792031542972815699" fileName="IRefactoring.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWhenDone#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="4792031542972815705" fileName="IRefactoring.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <scopeInfo nodeId="4792031542972815664" fileName="IRefactoring.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="4792031542972815672" fileName="IRefactoring.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="4792031542972815676" fileName="IRefactoring.java" startLine="13" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="4792031542972815680" fileName="IRefactoring.java" startLine="14" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4792031542972815683" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972815686" fileName="IRefactoring.java" startLine="14" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="4792031542972815686" fileName="IRefactoring.java" startLine="15" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="4792031542972815689" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972815692" fileName="IRefactoring.java" startLine="15" startPosition="0" endLine="16" endPosition="0">
+    <scopeInfo nodeId="4792031542972815692" fileName="IRefactoring.java" startLine="16" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="4792031542972815696" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972815699" fileName="IRefactoring.java" startLine="16" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="4792031542972815699" fileName="IRefactoring.java" startLine="17" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="4792031542972815702" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4792031542972815705" fileName="IRefactoring.java" startLine="17" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="4792031542972815705" fileName="IRefactoring.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4792031542972815708" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="4792031542972815662" fileName="IRefactoring.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.refactoring.framework.IRefactoring" />
+    <unitInfo nodeId="4792031542972815662" fileName="IRefactoring.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.refactoring.framework.IRefactoring" />
   </root>
 </debugInfo>
 
