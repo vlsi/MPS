@@ -484,12 +484,6 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2284201910216574932" nodeInfo="nn" />
     </node>
   </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7656298970878225878" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3xdn.7656298970878093785" resolveInfo="BLExpression" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7600370246414456438" nodeInfo="ng">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3xdn.7656298970878093890" />
-    </node>
-  </root>
   <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="7656298970875048514" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expression.print" />
     <property name="name" nameId="tpck.1169194664001" value="AbstractPrintExpression_Actions" />
@@ -513,6 +507,12 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7656298970878225878" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3xdn.7656298970878093785" resolveInfo="BLExpression" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7600370246414456438" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3xdn.7656298970878093890" />
     </node>
   </root>
 </model>
