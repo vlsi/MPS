@@ -55,13 +55,7 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
       message.getText();
 
 
-    NavStatus ns = ModelAccess.instance().runReadAction(new Computable<NavStatus>() {
-      @Override
-      public NavStatus compute() {
-        return canNavigate(message);
-      }
-    });
-
+    NavStatus ns = canNavigate(message);
     if (ns == NavStatus.NO) {
       component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
       component.setText(text);
