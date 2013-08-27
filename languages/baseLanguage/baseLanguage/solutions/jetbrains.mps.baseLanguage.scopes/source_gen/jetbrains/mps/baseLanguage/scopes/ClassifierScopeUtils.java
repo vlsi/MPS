@@ -19,6 +19,8 @@ import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ClassifierScopeUtils {
   private ClassifierScopeUtils() {
@@ -62,7 +64,7 @@ public class ClassifierScopeUtils {
   }
 
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(final SNode classifier) {
-    if (SNodeOperations.getModel(classifier).getModule() instanceof TransientModelsModule) {
+    if (check_uu0vlb_a0a0g(SNodeOperations.getModel(classifier)) instanceof TransientModelsModule) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
     } else {
       return RepositoryStateCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {
@@ -122,5 +124,12 @@ public class ClassifierScopeUtils {
       SetSequence.fromSet(subClassifiers).removeElement(classifier);
       return false;
     }
+  }
+
+  private static SModule check_uu0vlb_a0a0g(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

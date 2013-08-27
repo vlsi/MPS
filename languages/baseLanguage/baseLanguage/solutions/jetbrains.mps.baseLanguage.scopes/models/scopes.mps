@@ -397,10 +397,7 @@
             <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3884510085343928031" nodeInfo="in">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y5px.~TransientModelsModule" resolveInfo="TransientModelsModule" />
             </node>
-            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3884510085343928032" nodeInfo="nn">
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3884510085343928033" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
-              </node>
+            <node role="leftExpression" roleId="tpee.1081256993304" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="317627504161952249" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="3884510085343928034" nodeInfo="nn">
                 <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3884510085343928035" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151618407" nodeInfo="nn">
@@ -408,6 +405,9 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="3884510085343928037" nodeInfo="nn" />
                 </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3884510085343928033" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
               </node>
             </node>
           </node>
