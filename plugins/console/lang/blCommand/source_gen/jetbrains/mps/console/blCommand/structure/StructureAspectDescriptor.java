@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLCommand").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").children(new String[]{"body"}, new boolean[]{false}).alias("{", "baseLanguage command").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLExpression").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.lang.core.structure.IWrapper").children(new String[]{"expression"}, new boolean[]{false}).alias("(", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.BLExpression").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand", "jetbrains.mps.lang.core.structure.IWrapper").children(new String[]{"expression"}, new boolean[]{false}).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.CallActionExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("action").children(new String[]{"parameter"}, new boolean[]{true}).alias("#callAction", "execute mps action with custom parameters").create();
       case 5:

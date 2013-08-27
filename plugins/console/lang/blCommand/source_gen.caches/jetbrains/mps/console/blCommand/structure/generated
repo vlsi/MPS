@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c2340pgsb9fo52uts1hsumaajkq8cmt">
+<dependencies version="2" modelHash="e6mp7106piu212v5jyz1m7cmqfywrxm">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -124,7 +124,7 @@
   <source id="2284201910216573342" name="ModelProperties" hash="ce7gtm9lmlfemhi9glwi360eyu2bzpz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7656298970878093785" name="BLExpression" hash="-db24zir1ynuxa49x0pyiotdu7ly340a">
+  <source id="7656298970878093785" name="BLExpression" hash="b8rvdz74unp0gztszu8myk7zypckzu9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7600370246417552247" name="PrintExpression" hash="-e608a3bql3tx2iep8ywvi7o5hs6ntro">
