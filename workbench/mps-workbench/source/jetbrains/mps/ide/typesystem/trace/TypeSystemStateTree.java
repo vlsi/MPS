@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.ui.JBColor;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -152,7 +153,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
     TypeSystemStateTreeNode[] nodes = {createInequalitiesNode(), createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null), createNode(
         "When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null), createNode("Errors", myState.getNodeMaps().getErrorListPresentation(),
-        StyleRegistry.getInstance().getSimpleColor(Color.RED)), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
+        JBColor.RED), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
     for (TypeSystemStateTreeNode node : nodes) {
       if (node.children().hasMoreElements()) {
         result.add(node);

@@ -18,6 +18,7 @@ package jetbrains.mps.ide.typesystem.trace;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.ui.JBColor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -169,7 +170,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       public void doUpdatePresentation() {
         super.doUpdatePresentation();
         if (!(showNode)) {
-          setColor(Color.LIGHT_GRAY);
+          setColor(JBColor.GRAY);
         }
       }
     };
@@ -518,7 +519,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
             public void doUpdatePresentation() {
               super.doUpdatePresentation();
               if (!(showNode)) {
-                setColor(Color.LIGHT_GRAY);
+                setColor(JBColor.BLACK);
               }
             }
           };
