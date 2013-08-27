@@ -4,15 +4,18 @@
     <nodeInfo nodeId="3908032508224771140" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="94" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3908032508224771129" fileName="BaseMpsRunConfiguration.java" startLine="16" startPosition="48" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7521473491034214420" fileName="BaseMpsRunConfiguration.java" startLine="21" startPosition="36" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7521473491034214424" fileName="BaseMpsRunConfiguration.java" startLine="26" startPosition="33" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5972250810576146511" fileName="BaseMpsRunConfiguration.java" startLine="26" startPosition="33" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5972250810583840980" fileName="BaseMpsRunConfiguration.java" startLine="28" startPosition="23" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7521473491034214424" fileName="BaseMpsRunConfiguration.java" startLine="30" startPosition="5" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3908032508224771136" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsRunConfiguration#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/configurations/ConfigurationFactory;Ljava/lang/String;)V" />
     <nodeInfo nodeId="3908032508224771123" fileName="BaseMpsRunConfiguration.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5972250810583829070" fileName="BaseMpsRunConfiguration.java" startLine="27" startPosition="28" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7521473491034214414" fileName="BaseMpsRunConfiguration.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGeneratedName#()Z" />
-    <nodeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suggestedName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suggestedName#()Ljava/lang/String;" />
     <scopeInfo nodeId="3908032508224771139" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="94" endLine="13" endPosition="34" />
     <scopeInfo nodeId="3908032508224771128" fileName="BaseMpsRunConfiguration.java" startLine="16" startPosition="48" endLine="17" endPosition="61" />
     <scopeInfo nodeId="7521473491034214417" fileName="BaseMpsRunConfiguration.java" startLine="21" startPosition="36" endLine="22" endPosition="16" />
-    <scopeInfo nodeId="7521473491034214413" fileName="BaseMpsRunConfiguration.java" startLine="26" startPosition="33" endLine="27" endPosition="21" />
+    <scopeInfo nodeId="5972250810583829073" fileName="BaseMpsRunConfiguration.java" startLine="28" startPosition="23" endLine="29" endPosition="40" />
     <scopeInfo nodeId="3908032508224771136" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3908032508224771146" varName="factory" />
       <varInfo nodeId="3908032508224771148" varName="name" />
@@ -22,8 +25,11 @@
       <varInfo nodeId="3908032508224771124" varName="executorId" />
     </scopeInfo>
     <scopeInfo nodeId="7521473491034214414" fileName="BaseMpsRunConfiguration.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="3908032508224771122" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
+    <scopeInfo nodeId="7521473491034214413" fileName="BaseMpsRunConfiguration.java" startLine="26" startPosition="33" endLine="31" endPosition="16">
+      <varInfo nodeId="5972250810576146512" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="3908032508224771122" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
   </root>
   <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/3908032508224771150">
     <nodeInfo nodeId="3908032508224771151" fileName="ConsoleProcessListener.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsoleView" />
