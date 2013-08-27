@@ -16,6 +16,7 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -38,5 +39,6 @@ public interface IntentionDescriptor {
 
   boolean isApplicable(SNode node, EditorContext editorContext);
 
+  @Nullable
   SNodeReference getIntentionNodeReference();
 }
