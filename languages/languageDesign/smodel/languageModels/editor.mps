@@ -31,6 +31,7 @@
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
+  <import index="tp2u" modelUID="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)" version="-1" implicit="yes" />
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1138063451695" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.1138056022639" resolveInfo="SPropertyAccess" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1138412409274" nodeInfo="ng">
@@ -4811,6 +4812,29 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4693937538534531731" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.4693937538533521280" resolveInfo="OfConceptOperation" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4611582986551314336" nodeInfo="nn">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400313" nodeInfo="ng">
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4611582986551314341" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="&lt;" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tp2u.1215709345400" resolveInfo="LeftAngleBracket" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4611582986551314346" nodeInfo="ng">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp25.4693937538533538124" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4611582986551314343" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="&gt;" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tp2u.1215709621223" resolveInfo="RightAngleBracket" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="4611582986551314337" nodeInfo="nn" />
     </node>
   </root>
 </model>

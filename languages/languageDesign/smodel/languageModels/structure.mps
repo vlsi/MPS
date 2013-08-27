@@ -10,6 +10,7 @@
   <import index="hypd" modelUID="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" version="-1" />
   <import index="tpeu" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138055754698" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
@@ -2160,6 +2161,19 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6955116391921791525" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="moduleId" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4693937538533521280" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence" />
+    <property name="name" nameId="tpck.1169194664001" value="OfConceptOperation" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ofConcept" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="select elements of the specified concept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2q.1151701983961" resolveInfo="SequenceOperation" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4693937538533538124" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="requestedConcept" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1206659704055" resolveInfo="IRefConceptArg" />
     </node>
   </root>
 </model>
