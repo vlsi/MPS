@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6skig64erfo1r3l2w0wq3d80p7i6qie">
+<dependencies version="2" modelHash="-5f3jhcbl0g2uqdudy9jva0gpxjtjj69">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
   <common hash="-4mikhp8uywqkn0io1j9xhlkolpu594t" />
   <source id="847291649004062081" name="CategoryKind" hash="cgb9974q3ewdus0tei6woye2yec6gtu">
@@ -9,7 +9,6 @@
     <file name="IResultProvider.java" />
   </source>
   <source id="847291649004063609" name="SearchResult" hash="-bk69angpfcjm6zral7w9o36o547buz8">
-    <dep root="847291649004062081" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SearchResult.java" />
   </source>
@@ -17,7 +16,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SearchResults.java" />
   </source>
-  <source id="847291649006544485" name="SearchQuery" hash="-6zrca25uf8b9mxl79l2ti2iyvd11j7q">
+  <source id="847291649006544485" name="SearchQuery" hash="33bdkjvad7o3hhjpszg3exjd5ppv5jl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SearchQuery.java" />
   </source>

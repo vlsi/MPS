@@ -291,8 +291,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                   SearchResults searchResults = new SearchResults();
                   ModelsHolder modelsHolder = (ModelsHolder) query.getObjectHolder();
                   for (SModel searchedModel : modelsHolder.getObject()) {
+                    // todo!
                     searchResults.getSearchedNodes().add(searchedModel);
-                    SearchQuery searchQuery = new SearchQuery(searchedModel, query.getScope());
+                    SearchQuery searchQuery = new SearchQuery(searchedModel.getReference(), query.getScope());
                     searchResults.addAll(super.find(searchQuery, monitor));
                   }
 

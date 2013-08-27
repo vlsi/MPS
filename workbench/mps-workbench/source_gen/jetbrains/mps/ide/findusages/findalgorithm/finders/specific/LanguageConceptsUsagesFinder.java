@@ -40,22 +40,18 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (structureModel == null) {
       return searchResults;
     }
-    SModel sModel = structureModel;
-    if (sModel == null) {
-      return searchResults;
-    }
-    if (IterableUtil.asCollection(sModel.getRootNodes()).size() == 0) {
+    if (IterableUtil.asCollection(structureModel.getRootNodes()).size() == 0) {
       return searchResults;
     }
     List<SNode> roots = new LinkedList<SNode>();
-    for (SNode root : sModel.getRootNodes()) {
+    for (SNode root : structureModel.getRootNodes()) {
       roots.add(root);
     }
     searchResults.getSearchedNodes().addAll(roots);
 
-    monitor.start("", IterableUtil.asCollection(sModel.getRootNodes()).size() + 1);
+    monitor.start("", IterableUtil.asCollection(structureModel.getRootNodes()).size() + 1);
     try {
-      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
+      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
       List<SModel> models = new ArrayList<SModel>();
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject());
