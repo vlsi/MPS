@@ -14,9 +14,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
@@ -47,13 +48,13 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"))) {
-              return new EmptyScope();
+            {
+              SNode classifier = SNodeOperations.cast(SLinkOperations.getTarget(_context.getReferenceNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Classifier");
+              if ((classifier == null)) {
+                return new EmptyScope();
+              }
+              return new NamedElementsScope(Members.visibleStaticFields(classifier, _context.getContextNode()));
             }
-            if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false) == null)) {
-              return new EmptyScope();
-            }
-            return new NamedElementsScope(Members.visibleStaticFields(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false), _context.getContextNode()));
           }
         };
       }
