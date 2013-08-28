@@ -21,6 +21,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
+    <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
+    <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
   </component>
 </module>
 
