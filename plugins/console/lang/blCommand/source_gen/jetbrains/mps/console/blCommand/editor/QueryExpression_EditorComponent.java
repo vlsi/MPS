@@ -46,7 +46,7 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
   }
 
   private EditorCell createComponent_adikco_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.addKeyMap(new QueryExpression_KeyMap());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new QueryExpression_EditorComponent.ReplaceWith_QueryExpression_cellMenu_adikco_a0a0()}));
     return editorCell;

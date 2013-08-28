@@ -58,7 +58,7 @@ public class ExecuteRefactoringStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_aspgo4_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
 

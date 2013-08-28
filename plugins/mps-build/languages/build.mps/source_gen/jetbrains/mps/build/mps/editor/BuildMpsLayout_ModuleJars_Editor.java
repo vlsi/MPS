@@ -50,7 +50,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_aqxvre_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);

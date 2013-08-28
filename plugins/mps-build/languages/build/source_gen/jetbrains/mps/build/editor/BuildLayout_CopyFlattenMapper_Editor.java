@@ -15,7 +15,7 @@ public class BuildLayout_CopyFlattenMapper_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_58i5u9_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
