@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
 
 public class FixAttributeInfo_QuickFix extends QuickFix_Runtime {
   public FixAttributeInfo_QuickFix() {
@@ -22,10 +23,10 @@ public class FixAttributeInfo_QuickFix extends QuickFix_Runtime {
 
   public void execute(SNode node) {
     SNode conceptDeclaration = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    if (AttributeUtils.isApplicableAttribute(conceptDeclaration) && (AttributeOperations.getAttribute(conceptDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) == null)) {
+    if (AttributeDesignTimeOperations.isAttributeDeclaration(conceptDeclaration) && (AttributeOperations.getAttribute(conceptDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) == null)) {
       AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo")), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.AttributeInfo", null));
     }
-    if (!(AttributeUtils.isApplicableAttribute(conceptDeclaration)) && (AttributeOperations.getAttribute(conceptDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) != null)) {
+    if (!(AttributeDesignTimeOperations.isAttributeDeclaration(conceptDeclaration)) && (AttributeOperations.getAttribute(conceptDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) != null)) {
       SNodeOperations.deleteNode(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))));
     }
   }

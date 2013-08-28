@@ -442,7 +442,7 @@
     <nodeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588428831960066183" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588428831960066183" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7588428831960071449" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="34" startPosition="52" endLine="35" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7588428831963516489" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="35" startPosition="244" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7588428831963295864" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="37" startPosition="20" endLine="38" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -460,7 +460,7 @@
     <scopeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="56" />
     <scopeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="56" />
     <scopeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="26" startPosition="59" endLine="27" endPosition="75" />
-    <scopeInfo nodeId="7588428831960057440" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="249" />
+    <scopeInfo nodeId="7588428831960057440" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="265" />
     <scopeInfo nodeId="7588428831963517124" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="37" startPosition="20" endLine="38" endPosition="80" />
     <scopeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="42" startPosition="42" endLine="43" endPosition="21" />
     <scopeInfo nodeId="7588428831960056846" fileName="MigrateMigratedToBehaviorMethodsAttributes_MigrationScript.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
