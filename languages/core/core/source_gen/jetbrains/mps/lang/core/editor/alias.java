@@ -20,16 +20,16 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
-public class AliasEditorComponent implements ConceptEditorComponent {
+public class alias implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createReadOnlyModelAccessor_c5ei8w_a(editorContext, node);
+    return this.createReadOnlyModelAccessor_rnm7c_a(editorContext, node);
   }
 
-  private EditorCell createReadOnlyModelAccessor_c5ei8w_a(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_rnm7c_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias");

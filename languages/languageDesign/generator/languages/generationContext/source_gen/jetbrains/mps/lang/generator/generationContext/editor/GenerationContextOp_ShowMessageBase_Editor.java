@@ -37,7 +37,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
   }
 
   private EditorCell createComponent_53ih5o_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyGenContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -15,7 +15,7 @@ public class MappingsSetOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_wvlzl_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);

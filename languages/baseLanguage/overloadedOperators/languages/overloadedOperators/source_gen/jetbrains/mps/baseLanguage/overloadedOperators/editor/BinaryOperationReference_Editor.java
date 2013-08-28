@@ -58,7 +58,7 @@ public class BinaryOperationReference_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createComponent_mfrs1f_a0a0(EditorContext editorContext, SNode node) {
-      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+      EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("binaryOperation");
