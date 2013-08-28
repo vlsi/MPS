@@ -25,6 +25,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -73,34 +77,41 @@ public class APICellAdapter {
     return referentNode != null ? referentNode : node;
   }
 
-  public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {
-    SubstituteInfo substituteInfo = cell.getSubstituteInfo();
-    if (substituteInfo == null) {
-      return false;
-    }
+  public static boolean validate(final EditorCell cell, final boolean strict, final boolean canActivatePopup) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner)cell.getEditorComponent(), cell.getEditorComponent().getEditedNode(),
+        new Computation<Boolean>() {
+          @Override
+          public Boolean compute(TypeCheckingContext context) {
 
-    if (cell instanceof EditorCell_Collection) {
-      return false;
-    }
-    String pattern = cell.renderText().getText();
+            SubstituteInfo substituteInfo = cell.getSubstituteInfo();
+            if (substituteInfo == null) {
+              return false;
+            }
 
-    if (pattern.equals("")) return false;
+            if (cell instanceof EditorCell_Collection) {
+              return false;
+            }
+            String pattern = cell.renderText().getText();
 
-    List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
-    if (matchingActions.size() == 0 && canActivatePopup) {
-      return false;
-    }
-    if (matchingActions.size() != 1) {
-      if (canActivatePopup) {
-        ((EditorComponent) cell.getEditorComponent()).activateNodeSubstituteChooser(cell, false);
-      } else {
-        return false;
-      }
-      return true;
-    }
+            if (pattern.equals("")) return false;
 
-    matchingActions.get(0).substitute(cell.getContext(), pattern);
-    return true;
+            List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
+            if (matchingActions.size() == 0 && canActivatePopup) {
+              return false;
+            }
+            if (matchingActions.size() != 1) {
+              if (canActivatePopup) {
+                ((EditorComponent) cell.getEditorComponent()).activateNodeSubstituteChooser(cell, false);
+              } else {
+                return false;
+              }
+              return true;
+            }
+
+            matchingActions.get(0).substitute(cell.getContext(), pattern);
+            return true;
+          }
+        });
   }
 
   public static boolean isFirstPositionInBigCell(EditorCell cell) {
