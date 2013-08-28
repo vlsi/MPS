@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.console.base.constraints.ConstraintsAspectDescriptor" />
-  <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/328850564591709018" />
-  <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/328850564591873279" />
   <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/328850564594282261">
     <nodeInfo nodeId="328850564594282261" fileName="NodeReferenceString_Constraints.java" startLine="18" startPosition="44" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="328850564594282261" fileName="NodeReferenceString_Constraints.java" startLine="23" startPosition="83" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -67,8 +65,6 @@
     <unitInfo nodeId="328850564594334290" fileName="PastedNodeReference_Constraints.java" startLine="25" startPosition="33" endLine="41" endPosition="5" unitName="jetbrains.mps.console.base.constraints.PastedNodeReference_Constraints$1" />
     <unitInfo nodeId="328850564594334290" fileName="PastedNodeReference_Constraints.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.console.base.constraints.PastedNodeReference_Constraints" />
   </root>
-  <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/5510759644747941343" />
-  <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/7284872370241568303" />
   <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/7820875636624865058">
     <nodeInfo nodeId="7820875636624865058" fileName="CommandHolder_Constraints.java" startLine="16" startPosition="38" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7820875636624865058" fileName="CommandHolder_Constraints.java" startLine="21" startPosition="46" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -10,7 +10,7 @@
   <import index="caxt" modelUID="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" version="-1" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963817983" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="UnloadModelsCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="unload models" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#unload models" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7820875636624659323" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -18,7 +18,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963818242" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="RebuildProjectCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="rebuild project" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#rebuild project" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="clean and make" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963818243" nodeInfo="ig">
@@ -35,7 +35,7 @@
     <property name="name" nameId="tpck.1169194664001" value="StatCommand" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="stat" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#stat" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="stat" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7490254719522675891" nodeInfo="ig">
@@ -93,7 +93,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2087237500458009228" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ShowBrokenReferences" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="show broken references" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#show broken references" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2087237500458009229" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

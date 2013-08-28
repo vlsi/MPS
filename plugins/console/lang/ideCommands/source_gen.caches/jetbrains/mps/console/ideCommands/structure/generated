@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-efhpwghai0xuna7pwed9r9qg1si27t2">
+<dependencies version="2" modelHash="2oh4p8of7km9nyr7se2rhlwj5u8pxit">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -31,13 +31,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="8483375838963817983" name="UnloadModelsCommand" hash="1j0duufbsuurliu2y56tdigtkzuqnpd">
+  <source id="8483375838963817983" name="UnloadModelsCommand" hash="4xmr22mz1pfa4ue0zu8kbpyxm7j7otx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8483375838963818242" name="RebuildProjectCommand" hash="9s4i9mhvwvfuva5ihbh7pn7pxm3efy0">
+  <source id="8483375838963818242" name="RebuildProjectCommand" hash="4owe1jq1rre8s83sp7cs8z00l3h632z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7490254719522540696" name="StatCommand" hash="ejexewcz7wejrqu2us8jmevul9qq71f">
+  <source id="7490254719522540696" name="StatCommand" hash="-eeage8wlhsqa00sbbxr5zgsm9nufv18">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7490254719522675890" name="IStatisticsTarget" hash="cc9ayctb4030c2jtqchpfb70c0g9blm">
@@ -52,7 +52,7 @@
   <source id="7490254719523007894" name="ModelStatisticsTarget" hash="3qv8llfgjiweuqwlipjtr03uu4sh8rl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2087237500458009228" name="ShowBrokenReferences" hash="8fyizfaum8ihc6ff47lbvv6u3766uq1">
+  <source id="2087237500458009228" name="ShowBrokenReferences" hash="accq64xd6t7je9hqwvty79c6f0mcfgb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2087237500458473003" name="SubtreeStatisticsTarget" hash="-6cvtudc29gfn08qdhn6tbo2al295yz1">

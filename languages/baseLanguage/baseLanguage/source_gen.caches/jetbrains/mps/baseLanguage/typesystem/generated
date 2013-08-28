@@ -31,8 +31,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" hash="27pnt9ecft42ezaoytdd2bwdgit5iei" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="zxpgkonvyj6c68gccqxxip5xymvvd2" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2b7a2rppfq1uhvwub5utjsuj27e8nm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-16sfuu19alxlf0q1pv4ipb6a2wrzjiu" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-142wbmg1uqs2tdphevb8ixrdwx6p65o" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6gqo4kx9jphzn6bpxoxyctwq8hygfkd" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-8kl264jggjxpmfxay14z7cicvvn9un3" />
@@ -42,12 +42,12 @@
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-7c144kqc2jnjr4hoi06x3ow7i4x04cl" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="24go6mlxqfa8vkywupfg1a2w2jd0abi" />
   <dep model="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" hash="ebnlze73yjmv9gnn2i8bqjrcev26v8v" />
-  <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="-309i5ncp7643vnzmpl3cbr8yid4yob7" />
+  <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="-4zcy4gvpln4g3nwnxdcfljhe52zapai" />
   <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" hash="8unhjzmnhaf77u3sl9bm8ocdpq896st" />
-  <dep model="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" hash="1wmp6woto3u4a80ido66pnfxf4wayd1" />
+  <dep model="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" hash="9nzqrv4td4d8g8skzoh4byuzkebw03i" />
   <dep model="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)" hash="-7c2pkmmzrgfr2td84lqv2xj4dad5cs4" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="-2ceur5du3yqthf3v7ik0o02nnkxfnjg" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="cbhb98ho6jrnc8bdfuq5idnhau7ov53" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="56hp7ufb0g7n07w45isi7gjdlywapxb" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="98890s9g1x0hvuvs00x0vvc202v78uo" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="b0w2rjsg3jout9oi44c0ie31jbcdte7" />
   <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="-azv9ztey47ziv0xcqwuhl6no95phms" />
@@ -78,6 +78,7 @@
     <dep root="1176896028282" />
     <dep root="1176896711973" />
     <dep root="1176896957096" />
+    <dep root="1176897069499" />
     <dep root="1176897875482" />
     <dep root="1176897963478" />
     <dep root="1176898146638" />
@@ -152,6 +153,9 @@
     <dep root="1212689018464" />
     <dep root="1212781547110" />
     <dep root="1215004550927" />
+    <dep root="1216393886413" />
+    <dep root="1216647860300" />
+    <dep root="1216647988572" />
     <dep root="1219921316999" />
     <dep root="1219948071216" />
     <dep root="1220288256431" />
@@ -159,6 +163,7 @@
     <dep root="1221566468365" />
     <dep root="1221637809819" />
     <dep root="1221737503734" />
+    <dep root="1223640197349" />
     <dep root="1224574932971" />
     <dep root="1224575656586" />
     <dep root="1225197179133" />
@@ -172,6 +177,7 @@
     <dep root="1225276872555" />
     <dep root="1225895339531" />
     <dep root="1228301715997" />
+    <dep root="1228302110245" />
     <dep root="1228406942093" />
     <dep root="1228992488875" />
     <dep root="1230476723779" />
@@ -181,6 +187,7 @@
     <dep root="1239631684045" />
     <dep root="1239715048280" />
     <dep root="1240394564106" />
+    <dep root="1241100983853" />
     <dep root="1241450769537" />
     <dep root="1241543390448" />
     <dep root="1241543745974" />
@@ -189,6 +196,7 @@
     <dep root="1387988544209571090" />
     <dep root="1461424660015406123" />
     <dep root="1596333951698899849" />
+    <dep root="1790843000908443483" />
     <dep root="1830039279190444602" />
     <dep root="185741718243562924" />
     <dep root="185741718243807129" />
@@ -200,8 +208,12 @@
     <dep root="2108863436754358969" />
     <dep root="2136569867736938387" />
     <dep root="2235632002330538635" />
+    <dep root="2235632002330965611" />
+    <dep root="2235632002330984372" />
     <dep root="2298236629740276218" />
+    <dep root="2298236629740276246" />
     <dep root="2364881513287566301" />
+    <dep root="2364881513287750938" />
     <dep root="2731213890635093487" />
     <dep root="2782601603365239753" />
     <dep root="2792291462223192819" />
@@ -209,7 +221,10 @@
     <dep root="2796241438627654698" />
     <dep root="2925336694746290132" />
     <dep root="2925336694746295105" />
+    <dep root="2925336694746295128" />
+    <dep root="3059273017711351113" />
     <dep root="3073231036166000665" />
+    <dep root="3084663847510172787" />
     <dep root="3115327157609992976" />
     <dep root="3151797052696836061" />
     <dep root="3151797052703959690" />
@@ -217,6 +232,7 @@
     <dep root="3256208460069601930" />
     <dep root="3293010995237496520" />
     <dep root="3306910260423123726" />
+    <dep root="3383150178652161638" />
     <dep root="3434914349253195687" />
     <dep root="3485664513391245687" />
     <dep root="3497441244465827965" />
@@ -224,6 +240,7 @@
     <dep root="3545977178604749608" />
     <dep root="3564968026865770541" />
     <dep root="3637195266922472263" />
+    <dep root="3637195266922531731" />
     <dep root="3759381730162150198" />
     <dep root="3791846458263577202" />
     <dep root="3860149536565525475" />
@@ -231,6 +248,7 @@
     <dep root="4269842503726235544" />
     <dep root="4276006055364077538" />
     <dep root="4299454829930171451" />
+    <dep root="4340499048742652656" />
     <dep root="4539702814067106471" />
     <dep root="4540477783368644589" />
     <dep root="4564374268190697518" />
@@ -247,13 +265,19 @@
     <dep root="498633765598940459" />
     <dep root="498633765599287313" />
     <dep root="498633765599292945" />
+    <dep root="498633765599637389" />
+    <dep root="498633765599987429" />
     <dep root="498633765600365418" />
+    <dep root="498633765600371276" />
+    <dep root="498633765600377965" />
     <dep root="4988876389104043061" />
     <dep root="5091709661843944852" />
     <dep root="5205855332950452916" />
     <dep root="5230012391939085018" />
     <dep root="5279705229678487849" />
     <dep root="543449459583345868" />
+    <dep root="5499146221535981817" />
+    <dep root="5499146221536151101" />
     <dep root="554301099359820376" />
     <dep root="5569019188765049975" />
     <dep root="5583776844526729412" />
@@ -265,23 +289,28 @@
     <dep root="6021327890422132497" />
     <dep root="6125943271043337054" />
     <dep root="6287546302289224310" />
+    <dep root="6287546302289331498" />
     <dep root="6495695326613132490" />
     <dep root="6624237184120284147" />
     <dep root="6624237184121136115" />
     <dep root="6654001062452780370" />
     <dep root="6658278290515545914" />
+    <dep root="6778605776626487870" />
     <dep root="6778605776626937114" />
     <dep root="684456904424062648" />
     <dep root="6935810692634462740" />
     <dep root="6935810692634693777" />
+    <dep root="6974494769387259317" />
     <dep root="7152041109751465917" />
     <dep root="7179268497749415860" />
     <dep root="7243599812675827514" />
     <dep root="7300472450067262862" />
     <dep root="7411612096156021729" />
+    <dep root="7468068125290968523" />
     <dep root="775398157035255701" />
     <dep root="7854098281915049056" />
     <dep root="7868761255934363861" />
+    <dep root="7970711249077251764" />
     <dep root="8218132442157467380" />
     <dep root="8218132442157478804" />
     <dep root="8319647327702769215" />
@@ -293,7 +322,9 @@
     <dep root="8606434284776093589" />
     <dep root="8620077627875074983" />
     <dep root="8695552310379793081" />
+    <dep root="8899076737758799632" />
     <dep root="8899076737758937250" />
+    <dep root="8899076737759282444" />
     <dep root="8899076737759409538" />
     <dep root="8918460683225653166" />
     <dep root="8945315740752657245" />
