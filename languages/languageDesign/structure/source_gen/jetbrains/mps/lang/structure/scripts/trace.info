@@ -360,7 +360,7 @@
     <nodeInfo nodeId="7588428831958344269" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7588428831958606694" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="39" startPosition="0" endLine="40" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7588428831958769450" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="42" startPosition="37" endLine="43" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588428831958787406" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="45" startPosition="9" endLine="46" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7588428831958787406" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="45" startPosition="9" endLine="46" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7588428831958601051" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7588428831957865219" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7588428831963250918" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="54" startPosition="75" endLine="55" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -371,10 +371,10 @@
     <nodeInfo nodeId="7588428831963273114" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="61" startPosition="185" endLine="62" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7588428831959219036" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="69" startPosition="128" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7588428831948659387" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="72" startPosition="5" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="76" startPosition="75" endLine="77" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="77" startPosition="63" endLine="78" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="78" startPosition="156" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="78" startPosition="156" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="76" startPosition="90" endLine="77" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="77" startPosition="63" endLine="78" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="78" startPosition="174" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="78" startPosition="174" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="79" startPosition="49" endLine="80" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7588428831957847917" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="24" startPosition="224" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7588428831958348838" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="35" startPosition="174" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -383,7 +383,7 @@
     <nodeInfo nodeId="7588428831959106226" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="68" startPosition="111" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7588428831957882191" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="29" startPosition="178" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7588428831959089174" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="67" startPosition="86" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createConceptReference_1yrhux_a0a0a31a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAttributeInfo_AttributedConcept_1yrhux_a0a0a31a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7588428831958620643" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="40" startPosition="180" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7588428831946424940" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="67" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findImplementation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7588428831963249903" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="54" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="removeOldBehaviorMethods#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -391,16 +391,16 @@
     <scopeInfo nodeId="7588428831957847920" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="25" startPosition="29" endLine="26" endPosition="18" />
     <scopeInfo nodeId="7588428831958348841" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="36" startPosition="164" endLine="37" endPosition="234" />
     <scopeInfo nodeId="7588428831958768620" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="42" startPosition="37" endLine="43" endPosition="159" />
-    <scopeInfo nodeId="7588428831958620649" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="45" startPosition="9" endLine="46" endPosition="147" />
+    <scopeInfo nodeId="7588428831958620649" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="45" startPosition="9" endLine="46" endPosition="162" />
     <scopeInfo nodeId="7588428831963250927" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="56" startPosition="29" endLine="57" endPosition="13" />
     <scopeInfo nodeId="7588428831959106227" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="69" startPosition="128" endLine="70" endPosition="22" />
-    <scopeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="78" startPosition="156" endLine="79" endPosition="49" />
+    <scopeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="78" startPosition="174" endLine="79" endPosition="49" />
     <scopeInfo nodeId="7588428831957882194" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="30" startPosition="170" endLine="32" endPosition="294" />
     <scopeInfo nodeId="7588428831958768619" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="7588428831958768619" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="7588428831959089180" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="68" startPosition="111" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="76" startPosition="75" endLine="80" endPosition="14">
+    <scopeInfo nodeId="7588428831958855743" fileName="MigratedToBehaviorMethodsAttributeUtil.java" startLine="76" startPosition="90" endLine="80" endPosition="14">
       <varInfo nodeId="7588428831958855743" varName="facade" />
       <varInfo nodeId="7588428831958855743" varName="n1" />
     </scopeInfo>

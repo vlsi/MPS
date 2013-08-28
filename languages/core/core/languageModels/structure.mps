@@ -7,7 +7,6 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" implicit="yes" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.PrimitiveDataTypeDeclaration" typeId="tpce.1083243159079" id="1082983041843" nodeInfo="ng">
     <property name="name" nameId="1169194664001" value="string" />
   </root>
@@ -110,8 +109,8 @@
     </node>
     <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758953" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="export" />
-      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758954" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338787" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
       </node>
     </node>
   </root>
@@ -246,8 +245,8 @@
     </node>
     <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758765" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="suppress" />
-      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758766" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="3393165121846091586" resolveInfo="ICanSuppressErrors" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338793" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="3393165121846091586" resolveInfo="ICanSuppressErrors" />
       </node>
     </node>
   </root>

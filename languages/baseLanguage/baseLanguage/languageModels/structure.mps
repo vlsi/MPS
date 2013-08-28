@@ -8,7 +8,6 @@
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AssignmentExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
@@ -3718,8 +3717,8 @@
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758943" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="javaImports" />
-      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758944" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1107461130800" resolveInfo="Classifier" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338817" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1107461130800" resolveInfo="Classifier" />
       </node>
     </node>
   </root>

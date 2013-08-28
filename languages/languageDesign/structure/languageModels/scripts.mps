@@ -1273,16 +1273,16 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7588428831958787405" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7588428831946202415" resolveInfo="info" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="7588428831958798722" nodeInfo="nn">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1262857012849383058" nodeInfo="nn">
                     <link role="link" roleId="tp25.1138056546658" targetNodeId="tpce.7588428831947959310" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="7588428831958849222" nodeInfo="nn">
                   <node role="argument" roleId="tp2q.1160612519549" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="7588428831958855743" nodeInfo="nn">
                     <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="7588428831958858484" nodeInfo="nn">
-                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="tp25.1154546950173" resolveInfo="ConceptReference" />
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="tpce.6054523464627964745" resolveInfo="AttributeInfo_AttributedConcept" />
                       <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitLink" typeId="tp3r.5455284157994012186" id="7588428831958859137" nodeInfo="ng">
-                        <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="tp25.1154546997487" />
+                        <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="tpce.6054523464627965081" />
                         <node role="expression" roleId="tp3r.5455284157993911094" type="tp3r.NodeBuilderExpression" typeId="tp3r.8182547171709752110" id="7588428831958860553" nodeInfo="nn">
                           <node role="expression" roleId="tp3r.8182547171709752112" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="7588428831958914302" nodeInfo="nn">
                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="7588428831958620645" resolveInfo="conceptDecl" />

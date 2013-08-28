@@ -5,7 +5,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1071489090640" nodeInfo="ig">
     <property name="abstract" nameId="4628067390765956802" value="false" />
     <property name="rootable" nameId="1096454100552" value="true" />
@@ -625,8 +624,8 @@
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="2992811758677295509" id="7588821453551758670" nodeInfo="ng">
       <property name="role" nameId="7588428831955550663" value="deprecatedNode" />
-      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758671" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
+      <node role="attributed" roleId="7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="6054523464627964745" id="1262857012849338806" nodeInfo="ng">
+        <link role="concept" roleId="6054523464627965081" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
       </node>
     </node>
   </root>
@@ -655,11 +654,11 @@
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="2992811758677295509" id="7588821453551758937" nodeInfo="ng">
       <property name="role" nameId="7588428831955550663" value="migratedNode" />
-      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758938" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1105725006687" resolveInfo="ConceptPropertyDeclaration" />
+      <node role="attributed" roleId="7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="6054523464627964745" id="1262857012849338814" nodeInfo="ng">
+        <link role="concept" roleId="6054523464627965081" targetNodeId="1105725006687" resolveInfo="ConceptPropertyDeclaration" />
       </node>
-      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758939" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1105736576531" resolveInfo="ConceptLinkDeclaration" />
+      <node role="attributed" roleId="7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="6054523464627964745" id="1262857012849338815" nodeInfo="ng">
+        <link role="concept" roleId="6054523464627965081" targetNodeId="1105736576531" resolveInfo="ConceptLinkDeclaration" />
       </node>
     </node>
   </root>
@@ -738,15 +737,15 @@
       <property name="metaClass" nameId="1071599937831" value="aggregation" />
       <property name="role" nameId="1071599776563" value="attributed" />
       <property name="sourceCardinality" nameId="1071599893252" value="0..n" />
-      <link role="target" roleId="1071599976176" targetNodeId="tp25.1154546950173" resolveInfo="ConceptReference" />
+      <link role="target" roleId="1071599976176" targetNodeId="6054523464627964745" resolveInfo="AttributeInfo_AttributedConcept" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="2992811758677295509" id="7588821453551758928" nodeInfo="ng">
       <property name="role" nameId="7588428831955550663" value="attributeInfo" />
-      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758930" nodeInfo="ng">
-        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1071489090640" resolveInfo="ConceptDeclaration" />
-      </node>
       <node role="multiple" roleId="7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="6054523464626862044" id="1262857012846245234" nodeInfo="ng">
         <property name="value" nameId="6054523464626875854" value="false" />
+      </node>
+      <node role="attributed" roleId="7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="6054523464627964745" id="1262857012849338796" nodeInfo="ng">
+        <link role="concept" roleId="6054523464627965081" targetNodeId="1071489090640" resolveInfo="ConceptDeclaration" />
       </node>
     </node>
   </root>

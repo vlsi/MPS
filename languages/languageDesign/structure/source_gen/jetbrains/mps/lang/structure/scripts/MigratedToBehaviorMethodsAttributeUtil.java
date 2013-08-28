@@ -43,7 +43,7 @@ public class MigratedToBehaviorMethodsAttributeUtil {
         return SNodeOperations.cast(SLinkOperations.getTarget(it, "referentNode", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       }
     })) {
-      ListSequence.fromList(SLinkOperations.getTargets(info, "attributed", true)).addElement(createConceptReference_1yrhux_a0a0a31a0(conceptDecl));
+      ListSequence.fromList(SLinkOperations.getTargets(info, "attributed", true)).addElement(createAttributeInfo_AttributedConcept_1yrhux_a0a0a31a0(conceptDecl));
     }
 
     return info;
@@ -73,9 +73,9 @@ public class MigratedToBehaviorMethodsAttributeUtil {
     return null;
   }
 
-  private static SNode createConceptReference_1yrhux_a0a0a31a0(Object p0) {
+  private static SNode createAttributeInfo_AttributedConcept_1yrhux_a0a0a31a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptReference", null, GlobalScope.getInstance(), false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", null, GlobalScope.getInstance(), false);
     n1.setReferenceTarget("concept", (SNode) p0);
     return n1;
   }
