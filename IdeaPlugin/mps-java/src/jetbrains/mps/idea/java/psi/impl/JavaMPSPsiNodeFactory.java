@@ -73,6 +73,15 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiPrimitiveType(id, concept, containingRole);
       }
     });
+    NodeCreator wildCardTypeNodeCreator = new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiWildcardType(id, concept, containingRole);
+      }
+    };
+    factories.put("jetbrains.mps.baseLanguage.structure.UpperBoundType", wildCardTypeNodeCreator);
+    factories.put("jetbrains.mps.baseLanguage.structure.LowerBoundType", wildCardTypeNodeCreator);
+    factories.put("jetbrains.mps.baseLanguage.structure.WildCardType", wildCardTypeNodeCreator);
     factories.put("jetbrains.mps.baseLanguage.structure.StringType", new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
