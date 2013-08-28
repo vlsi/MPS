@@ -194,13 +194,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "parameter", true);
   }
 
-  public static SNode sourceNodeQuery_7738379549910181271(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) {
-      return _quotation_createNode_x583g4_a0a0a0eb(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptArg", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false));
-    }
-    return null;
+  public static SNode sourceNodeQuery_473081947981668370(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "conceptArg", true);
   }
 
   public static SNode sourceNodeQuery_5510759644748879578(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -503,14 +498,6 @@ public class QueriesGenerated {
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SModule")));
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_x583g4_a0a0a0eb(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaration", (SNode) parameter_1);
-    return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0b0lb() {

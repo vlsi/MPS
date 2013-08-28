@@ -134,5 +134,14 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1219352745532" resolveInfo="NodeRefExpression" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="473081947985174289" nodeInfo="ig">
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="IDECommandHelp" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="473081947985174368" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
+    </node>
+  </root>
 </model>
 
