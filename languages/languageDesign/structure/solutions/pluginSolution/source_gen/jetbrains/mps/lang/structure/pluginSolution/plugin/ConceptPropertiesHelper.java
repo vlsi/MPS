@@ -179,7 +179,7 @@ public class ConceptPropertiesHelper {
 
   private static void warnAboutAttributeConceptLinkOrProperty(SNode usage) {
     if (LOG.isEnabledFor(Priority.ERROR)) {
-      LOG.error("ERROR. Not migrated usage of Attribute concept link or property: " + BehaviorReflection.invokeVirtual(String.class, usage, "virtual_getPresentation_1213877396640", new Object[]{}));
+      LOG.error("ERROR. Not migrated usage of Attribute concept link or property. Node presentation: " + BehaviorReflection.invokeVirtual(String.class, usage, "virtual_getPresentation_1213877396640", new Object[]{}) + "; root presentation: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getContainingRoot(usage), "virtual_getPresentation_1213877396640", new Object[]{}) + "; node reference: " + usage.getReference());
     }
   }
 
