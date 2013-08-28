@@ -447,7 +447,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      SLinkOperations.getTargets(myHistRoot, "item", true).clear();
+      createEmptyHistory();
       validateImports();
     }
   }
@@ -600,6 +600,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
         }
       }
       myHistRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.History", null);
+      createEmptyHistory();
     } else {
       myHistRoot = ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.History")).first();
       SModelOperations.addRootNode(myModel, myHistRoot);
@@ -608,6 +609,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     TemporaryModels.getInstance().addMissingImports(myModel);
 
     loadedState = null;
+  }
+
+
+
+  public void createEmptyHistory() {
+    ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).clear();
+    ListSequence.fromList(SLinkOperations.getTargets(myHistRoot, "item", true)).addElement(_quotation_createNode_xg3v07_a0a1a76());
   }
 
 
@@ -678,5 +686,26 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
       return checkedDotOperand.getModelReference();
     }
     return null;
+  }
+
+  private static SNode _quotation_createNode_xg3v07_a0a1a76() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.CommandResult", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.CommandResultLine", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_4, "text", "type an expression or {statements} to execute");
+    quotedNode_2.addChild("part", quotedNode_4);
+    quotedNode_1.addChild("line", quotedNode_2);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.CommandResultLine", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_5, "text", "type ? for a list of commands");
+    quotedNode_3.addChild("part", quotedNode_5);
+    quotedNode_1.addChild("line", quotedNode_3);
+    return quotedNode_1;
   }
 }
