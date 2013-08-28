@@ -3580,5 +3580,25 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2992811758678975685" nodeInfo="nn" />
     </node>
   </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6054523464626876025" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpce.6054523464626862044" resolveInfo="AttributeInfo_IsMultiple" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6054523464626883623" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.6054523464626875854" resolveInfo="value" />
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6054523464627971971" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="attribute" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpce.6054523464627964745" resolveInfo="AttributeInfo_AttributedConcept" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="6054523464627971973" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.6054523464627965081" />
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="6054523464627971974" nodeInfo="ng">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6054523464627971987" nodeInfo="ng">
+          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </root>
 </model>
 

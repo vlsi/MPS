@@ -97,6 +97,23 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.editor.AttributeInfo_AttributedConcept_Editor" file="AttributeInfo_AttributedConcept_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.AttributeInfo_Editor" file="AttributeInfo_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -123,6 +140,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.editor.AttributeInfo_IsMultiple_Editor" file="AttributeInfo_IsMultiple_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.BooleanConceptPropertyDeclaration_Editor" file="BooleanConceptPropertyDeclaration_Editor.java">
@@ -315,7 +343,9 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.AggregationConceptLinkDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.AggregationConceptLink_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.AnnotationLinkDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.AttributeInfo_AttributedConcept_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.AttributeInfo_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.AttributeInfo_IsMultiple_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.BooleanConceptPropertyDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.BooleanConceptProperty_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.ConceptDeclaration_Editor" />

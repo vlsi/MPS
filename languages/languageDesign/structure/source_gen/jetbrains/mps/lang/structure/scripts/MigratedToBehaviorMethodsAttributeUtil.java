@@ -28,7 +28,7 @@ public class MigratedToBehaviorMethodsAttributeUtil {
 
     SNode multipleImpl = findImplementation(behavior, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)", "1262430001741497972"));
     if (ListSequence.fromList(SNodeOperations.getDescendants(multipleImpl, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).isNotEmpty()) {
-      SLinkOperations.setTarget(info, "multiple", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null), true);
+      SLinkOperations.setTarget(info, "multiple", SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", null), true);
       SPropertyOperations.set(SLinkOperations.getTarget(info, "multiple", true), "value", "" + (SPropertyOperations.getBoolean(ListSequence.fromList(SNodeOperations.getDescendants(multipleImpl, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).first(), "value")));
     }
 

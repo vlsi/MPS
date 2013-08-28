@@ -56,11 +56,11 @@
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758678" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="nodeMacro" />
-      <node role="multiple" roleId="tpce.7588428831955550186" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7588821453551758679" nodeInfo="nn">
-        <property name="value" nameId="tpee.1068580123138" value="true" />
-      </node>
       <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758680" nodeInfo="ng">
         <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+      <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="1262857012846245232" nodeInfo="ng">
+        <property name="value" nameId="tpce.6054523464626875854" value="true" />
       </node>
     </node>
   </root>

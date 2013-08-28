@@ -7,7 +7,6 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.PrimitiveDataTypeDeclaration" typeId="tpce.1083243159079" id="1082983041843" nodeInfo="ng">
     <property name="name" nameId="1169194664001" value="string" />
@@ -180,8 +179,8 @@
     </node>
     <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758854" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="" />
-      <node role="multiple" roleId="tpce.7588428831955550186" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7588821453551758855" nodeInfo="nn">
-        <property name="value" nameId="tpee.1068580123138" value="false" />
+      <node role="multiple" roleId="tpce.7588428831955550186" type="tpce.AttributeInfo_IsMultiple" typeId="tpce.6054523464626862044" id="1262857012846245233" nodeInfo="ng">
+        <property name="value" nameId="tpce.6054523464626875854" value="false" />
       </node>
     </node>
   </root>
