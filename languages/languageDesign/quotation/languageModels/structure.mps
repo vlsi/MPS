@@ -6,6 +6,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1196350785110" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AbstractAntiquotation" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6489343236075007666" nodeInfo="ig">
@@ -33,6 +34,12 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5126744752243295315" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1196350785110" resolveInfo="AbstractAntiquotation" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758731" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="antiquotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758732" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196350785113" nodeInfo="ig">
@@ -71,6 +78,12 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5126744752243295318" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1196350785110" resolveInfo="AbstractAntiquotation" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758892" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="referenceAntiquotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758893" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196350785118" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ListAntiquotation" />
@@ -78,12 +91,24 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5126744752243295316" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1196350785110" resolveInfo="AbstractAntiquotation" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758896" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="listAntiquotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758897" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196866233735" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PropertyAntiquotation" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049750" resolveInfo="PropertyAttribute" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5126744752243295317" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1196350785110" resolveInfo="AbstractAntiquotation" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758692" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="propertyAntiquotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758693" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5455284157993911077" nodeInfo="ig">

@@ -6,6 +6,7 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="8sls" modelUID="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" version="0" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6036237525966182693" nodeInfo="ig">
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="EvaluatorConcept" />
@@ -95,11 +96,20 @@
     <property name="name" nameId="tpck.1169194664001" value="GenerationHelperAnnotation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758755" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4698880862823893381" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ToEvaluateAnnotation" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758878" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="toEvaluateAnnotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758879" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9050639307831392587" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="LowLevelVariableReference" />
@@ -121,6 +131,12 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="unprocessed" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758949" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="unprocessedAnnotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758950" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9146111288436274341" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -129,6 +145,12 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="do not transform" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758716" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="doNotTransformAnnotation" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758717" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="9172312269976647291" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="IEvaluatorConcept" />

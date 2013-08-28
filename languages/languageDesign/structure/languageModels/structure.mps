@@ -624,6 +624,12 @@
       <property name="name" nameId="tpck.1169194664001" value="comment" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="2992811758677295509" id="7588821453551758670" nodeInfo="ng">
+      <property name="role" nameId="7588428831955550663" value="deprecatedNode" />
+      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758671" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
+      </node>
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="1169125989551" id="1224848324737" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="IStructureDeprecatable" />
@@ -647,6 +653,15 @@
     </node>
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="8079832110223845416" nodeInfo="ig">
       <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="2992811758677295509" id="7588821453551758937" nodeInfo="ng">
+      <property name="role" nameId="7588428831955550663" value="migratedNode" />
+      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758938" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1105725006687" resolveInfo="ConceptPropertyDeclaration" />
+      </node>
+      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758939" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1105736576531" resolveInfo="ConceptLinkDeclaration" />
+      </node>
     </node>
   </root>
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="8087047305080774904" nodeInfo="ng">
@@ -725,6 +740,15 @@
       <property name="role" nameId="1071599776563" value="attributed" />
       <property name="sourceCardinality" nameId="1071599893252" value="0..n" />
       <link role="target" roleId="1071599976176" targetNodeId="tp25.1154546950173" resolveInfo="ConceptReference" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="2992811758677295509" id="7588821453551758928" nodeInfo="ng">
+      <property name="role" nameId="7588428831955550663" value="attributeInfo" />
+      <node role="multiple" roleId="7588428831955550186" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7588821453551758929" nodeInfo="nn">
+        <property name="value" nameId="tpee.1068580123138" value="false" />
+      </node>
+      <node role="attributed" roleId="7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758930" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="1071489090640" resolveInfo="ConceptDeclaration" />
+      </node>
     </node>
   </root>
 </model>

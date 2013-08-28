@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cx5rkv1madvzf8brfvp63pi4zhmmhmq">
+<dependencies version="2" modelHash="c1xmw75ng452vaicyjhlvp3a415o0k5">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="c8qw9cmdz0e2syn5jbqy0ytnggjczza" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="2sojt9e2nbra1488cf2a5sfk76dyz6w" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="6qaeoivrsfy4n4ja4zcxbpwq2hodkmu" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-2soqc04f1c6wu8bxu5h8ppj1q71tlcv">
+  <common hash="e0lqazpafmlu0gs3wnrszz5q7zt5r3r">
     <dep root="2068944020170241612" />
     <dep root="2217234381367049075" />
     <dep root="2217234381367188006" />
@@ -48,7 +48,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5349172909345501395" name="BaseDocComment" hash="-6dtqceijuhyw3d5r512ve6vojli2cin">
+  <source id="5349172909345501395" name="BaseDocComment" hash="-138m5dqdbhurdi9989z4fmonniy7jc3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5349172909345530173" name="BaseBlockDocTag" hash="-5dwoqnav94zzyruu4ogq6pc8cg94g10">
@@ -57,7 +57,7 @@
   <source id="5349172909345530174" name="AuthorBlockDocTag" hash="-avglp3gdgk1poh2d0eau4u16i8tsc5x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5349172909345532724" name="MethodDocComment" hash="gkl4boh4ipjl9t43uto5qtttowjye3">
+  <source id="5349172909345532724" name="MethodDocComment" hash="e8xnkiizm05eg73iwhr80bripdeol4o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8465538089690324384" name="VersionBlockDocTag" hash="aybwwdx5g3n6jhgqkinu1ln0q29xqc2">
@@ -90,10 +90,10 @@
   <source id="6832197706140518107" name="DocTypeParameterReference" hash="-dk1em5vue1739zg4wtae3ikl3neooon">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6832197706140896242" name="FieldDocComment" hash="a0q8o0c45fo5i1dz6vwt1f1n2cpm6rk">
+  <source id="6832197706140896242" name="FieldDocComment" hash="2qy65swrvlewi6sa8ms9omzzv05kx5e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2068944020170241612" name="ClassifierDocComment" hash="dr9ropgzalh3t7eiee2j58hy2ct46xb">
+  <source id="2068944020170241612" name="ClassifierDocComment" hash="18k06nie6xllj4d952aa1gbwfr5jc4r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8970989240999019142" name="CommentLinePart" hash="-6vkss3k0ojmp7s4a56xnhck5mlh9j2d">

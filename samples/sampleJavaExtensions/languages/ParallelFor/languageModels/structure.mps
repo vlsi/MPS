@@ -6,6 +6,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="cgfx" modelUID="r:10e9da27-7113-45e6-9477-92c95760f135(org.jetbrains.mps.samples.ParallelFor.structure)" version="1" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8923957828369477802" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
@@ -60,10 +61,34 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2975785153735111398" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ThreadSafe" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758737" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="threadSafe" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758738" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758739" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758740" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.7812454656619025412" resolveInfo="LocalMethodCall" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758741" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758742" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2975785153735230336" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="NonThreadSafeClass" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758688" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="nonThreadSafe" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="7588821453551758689" nodeInfo="ng">
+        <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+      </node>
+    </node>
   </root>
 </model>
 
