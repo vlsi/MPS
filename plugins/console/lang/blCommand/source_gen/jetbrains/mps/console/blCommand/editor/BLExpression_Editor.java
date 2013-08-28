@@ -34,6 +34,7 @@ public class BLExpression_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("expression");
     }
+    BLExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

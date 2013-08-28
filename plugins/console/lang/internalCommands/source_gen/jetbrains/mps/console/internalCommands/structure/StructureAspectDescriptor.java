@@ -14,15 +14,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("aspect").alias("#rebuild aspect", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalCommandHelp").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.ConsoleHelpProvider").abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("#reload classes", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("aspect").alias("#rebuild aspect", "").create();
       case 2:
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("#reload classes", "").create();
+      case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("#show repository", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.console.internalCommands.structure.InternalCommandHelp", "jetbrains.mps.console.internalCommands.structure.RebuildAspectCommand", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
 }

@@ -8,6 +8,7 @@
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-4iwr4t8vcav0e929l5w2cyvnm8tkua" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="-dunbd0oyxe863rrdao9b0smphkf39su">
+    <dep root="473081947985481154" />
     <dep root="8483375838963817777" />
     <dep root="8483375838963818252" />
     <dep root="8483375838963905207" />
