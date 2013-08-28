@@ -142,7 +142,13 @@ public class ConceptPropertiesHelper {
         return true;
       }
     } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
-      if (isAttributeConceptLink(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"))) {
+      if (isAttributeConceptLink(SLinkOperations.getTarget(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "conceptLinkDeclaration", false))) {
+        warnAboutAttributeConceptLinkOrProperty(usage);
+        return true;
+      }
+    } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess")) {
+      SNode declaration = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"), "conceptLinkDeclaration", false), "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration");
+      if ((declaration != null) && isAttributeConceptLink(declaration)) {
         warnAboutAttributeConceptLinkOrProperty(usage);
         return true;
       }
@@ -154,8 +160,8 @@ public class ConceptPropertiesHelper {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptPropertyDeclaration", true)).contains(conceptPropertyDeclaration);
   }
 
-  private static boolean isAttributeConceptLink(SNode conceptLink) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).contains(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false));
+  private static boolean isAttributeConceptLink(SNode conceptLinkDeclaration) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptLinkDeclaration", true)).contains(conceptLinkDeclaration);
   }
 
   private static void warnAboutAttributeConceptLinkOrProperty(SNode usage) {
