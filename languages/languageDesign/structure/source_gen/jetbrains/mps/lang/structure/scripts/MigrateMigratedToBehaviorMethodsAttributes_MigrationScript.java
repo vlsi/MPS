@@ -10,6 +10,7 @@ import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MigrateMigratedToBehaviorMethodsAttributes_MigrationScript extends BaseMigrationScript {
   public MigrateMigratedToBehaviorMethodsAttributes_MigrationScript(IOperationContext operationContext) {
@@ -34,7 +35,7 @@ public class MigrateMigratedToBehaviorMethodsAttributes_MigrationScript extends 
       public void doUpdateInstanceNode(SNode node) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo")), MigratedToBehaviorMethodsAttributeUtil.extractInfo(node));
         // todo: enable 
-        if (false) {
+        if (node != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161") && false) {
           MigratedToBehaviorMethodsAttributeUtil.removeOldBehaviorMethods(node);
         }
       }
