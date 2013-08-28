@@ -6,7 +6,7 @@
   <unitInfo fileName="CheckProperties_Function_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_BehaviorDescriptor" />
   <unitInfo fileName="Configuration_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Configuration_Parameter_BehaviorDescriptor" />
   <unitInfo fileName="CreateEditor_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" />
-  <unitInfo fileName="DeprecatedAnnotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_BehaviorDescriptor" />
+  <unitInfo fileName="DeprecatedAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="Dispose_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Dispose_Function_BehaviorDescriptor" />
   <unitInfo fileName="EditorExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorExpression_BehaviorDescriptor" />
   <unitInfo fileName="EditorOperationCall_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationCall_BehaviorDescriptor" />
@@ -88,28 +88,12 @@
     <unitInfo nodeId="1262430001741717491" fileName="EditorPropertyReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorPropertyReference_Behavior" />
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741718588">
-    <nodeInfo nodeId="1262430001741718587" fileName="DeprecatedAnnotation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718651" fileName="DeprecatedAnnotation_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914718666" fileName="DeprecatedAnnotation_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718670" fileName="DeprecatedAnnotation_Behavior.java" startLine="22" startPosition="178" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741718590" fileName="DeprecatedAnnotation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718585" fileName="DeprecatedAnnotation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="24" />
-    <scopeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1262430001741718590" fileName="DeprecatedAnnotation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1262430001741718588" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741718588" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914718650" fileName="DeprecatedAnnotation_Behavior.java" startLine="20" startPosition="101" endLine="23" endPosition="18">
-      <varInfo nodeId="3044950653914718652" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1262430001741718588" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_Behavior" />
+    <unitInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_Behavior" />
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/2797684467151253534">
     <nodeInfo nodeId="2797684467151253546" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="19" startPosition="152" endLine="20" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

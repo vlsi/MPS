@@ -34,8 +34,7 @@ public class MigrateMigratedToBehaviorMethodsAttributes_MigrationScript extends 
 
       public void doUpdateInstanceNode(SNode node) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo")), MigratedToBehaviorMethodsAttributeUtil.extractInfo(node));
-        // todo: enable 
-        if (node != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161") && false) {
+        if (node != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161")) {
           MigratedToBehaviorMethodsAttributeUtil.removeOldBehaviorMethods(node);
         }
       }
