@@ -20,8 +20,9 @@
         </option>
         <modelRoots>
           <modelRoot type="default">
-            <settings contentPath="$MODULE_DIR$/models" type="default">
-              <sourceRoot location="." />
+            <settings contentPath="$MODULE_DIR$" type="default">
+              <sourceRoot location="models" />
+              <sourceRoot location="src" />
             </settings>
           </modelRoot>
         </modelRoots>
