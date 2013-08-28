@@ -37,7 +37,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   }
 
   private EditorCell createComponent_4ccleb_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyGenContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);

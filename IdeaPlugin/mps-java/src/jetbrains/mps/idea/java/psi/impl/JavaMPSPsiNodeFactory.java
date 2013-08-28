@@ -16,30 +16,19 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiMethod;
-import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
-import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiListType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiMapType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSequenceType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSetType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiStringType;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-
-import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -84,6 +73,15 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiPrimitiveType(id, concept, containingRole);
       }
     });
+    NodeCreator wildCardTypeNodeCreator = new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiWildcardType(id, concept, containingRole);
+      }
+    };
+    factories.put("jetbrains.mps.baseLanguage.structure.UpperBoundType", wildCardTypeNodeCreator);
+    factories.put("jetbrains.mps.baseLanguage.structure.LowerBoundType", wildCardTypeNodeCreator);
+    factories.put("jetbrains.mps.baseLanguage.structure.WildCardType", wildCardTypeNodeCreator);
     factories.put("jetbrains.mps.baseLanguage.structure.StringType", new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
@@ -150,6 +148,33 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiField(id, concept, containingRole);
       }
     });
+
+    // collection types
+    factories.put("jetbrains.mps.baseLanguage.collections.structure.SequenceType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiSequenceType(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.collections.structure.ListType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiListType(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.collections.structure.SetType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiSetType(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.collections.structure.MapType", new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiMapType(id, concept, containingRole);
+      }
+    });
+
 
 
     RefCreator dotBasedRefCreator = new RefCreator() {

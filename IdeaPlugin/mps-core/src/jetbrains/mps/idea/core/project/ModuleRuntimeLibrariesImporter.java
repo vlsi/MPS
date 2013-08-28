@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.project;
 
 import com.intellij.facet.impl.ui.FacetEditorContextBase;
 import com.intellij.facet.ui.FacetEditorContext;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModifiableRootModel;
@@ -44,6 +45,8 @@ import java.util.Set;
  * Date: 6/8/12
  */
 public abstract class ModuleRuntimeLibrariesImporter {
+  private static final Logger LOG = Logger.getInstance(ModuleRuntimeLibrariesImporter.class);
+
   private final Collection<? extends SModuleReference> myAddedModules;
   private final ModifiableRootModel myModifiableRootModel;
   private final LibrariesContainer myLibrariesContainer;
@@ -126,9 +129,9 @@ public abstract class ModuleRuntimeLibrariesImporter {
     protected Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
       Set<SModule> runtimeDependencies = new HashSet<SModule>();
       for (SModuleReference moduleReference : moduleReferences) {
-        SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-        assert module instanceof Language;
-        collectRuntimeModules(runtimeDependencies, (Language) module);
+        Language language = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
+        LOG.assertTrue(language != null, "Can not find language by reference " + moduleReference);
+        collectRuntimeModules(runtimeDependencies, language);
       }
       return runtimeDependencies;
     }

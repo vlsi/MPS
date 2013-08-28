@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
  * @author danilla 3/1/13
  */
 public class NonJavaMPSType extends PsiType {
-  protected NonJavaMPSType(@NotNull PsiAnnotation[] annotations) {
+  public NonJavaMPSType(@NotNull PsiAnnotation[] annotations) {
     super(annotations);
   }
 

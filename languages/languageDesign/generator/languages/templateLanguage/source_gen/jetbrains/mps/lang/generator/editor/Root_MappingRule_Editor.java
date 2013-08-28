@@ -338,7 +338,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("labelDeclaration");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -526,7 +526,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
         editorCell.setRole("labelDeclaration");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+      Styles_StyleSheet.applyMappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

@@ -15,7 +15,7 @@ public class GetKeysOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_d179if_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);

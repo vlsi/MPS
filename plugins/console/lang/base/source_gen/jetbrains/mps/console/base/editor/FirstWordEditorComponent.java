@@ -21,7 +21,7 @@ public class FirstWordEditorComponent implements ConceptEditorComponent {
   }
 
   private EditorCell createComponent_9frd6j_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     Console_Styles_StyleSheet.applyNonIndentFirstWord(style, editorCell);
     editorCell.getStyle().putAll(style);

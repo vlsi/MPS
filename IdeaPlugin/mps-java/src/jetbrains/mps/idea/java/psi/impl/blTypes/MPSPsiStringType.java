@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.idea.java.psi.impl;
+package jetbrains.mps.idea.java.psi.impl.blTypes;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaPsiFacade;
@@ -25,6 +25,7 @@ import com.intellij.psi.PsiType;
 import com.intellij.psi.impl.source.PsiImmediateClassType;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.java.psi.impl.ComputesPsiType;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**

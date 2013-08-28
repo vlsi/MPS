@@ -20,6 +20,7 @@ import com.intellij.compiler.CompilerConfiguration;
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.compiler.CompilationStatusListener;
 import com.intellij.openapi.compiler.CompileContext;
+import com.intellij.openapi.compiler.CompileScope;
 import com.intellij.openapi.compiler.CompilerTopics;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
@@ -61,7 +62,14 @@ public class TraceFilesManager implements ProjectComponent {
     myMessageBusConnection.subscribe(CompilerTopics.COMPILATION_STATUS, new CompilationStatusListener() {
       @Override
       public void compilationFinished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-        Module[] affectedModules = compileContext.getCompileScope().getAffectedModules();
+        if (compileContext == null) {
+          return;
+        }
+        CompileScope compileScope = compileContext.getCompileScope();
+        if (compileScope == null) {
+          return;
+        }
+        Module[] affectedModules = compileScope.getAffectedModules();
         for (Module module : affectedModules) {
           MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
           if (mpsFacet == null) {

@@ -41,7 +41,7 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_bapds0_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     editorCell.getStyle().putAll(style);

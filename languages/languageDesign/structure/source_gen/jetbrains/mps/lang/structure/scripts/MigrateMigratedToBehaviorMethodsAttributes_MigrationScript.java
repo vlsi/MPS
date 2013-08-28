@@ -10,6 +10,8 @@ import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MigrateMigratedToBehaviorMethodsAttributes_MigrationScript extends BaseMigrationScript {
@@ -29,7 +31,7 @@ public class MigrateMigratedToBehaviorMethodsAttributes_MigrationScript extends 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return AttributeDesignTimeOperations.isAttributeDeclaration(node) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) == null);
+        return AttributeDesignTimeOperations.isAttributeDeclaration(node) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "conceptLink", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).isEmpty();
       }
 
       public void doUpdateInstanceNode(SNode node) {

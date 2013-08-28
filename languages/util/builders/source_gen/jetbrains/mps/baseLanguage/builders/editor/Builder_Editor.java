@@ -13,7 +13,7 @@ public class Builder_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_hsieeg_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     return editorCell;
   }
