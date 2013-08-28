@@ -6,8 +6,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Set;
+import java.util.LinkedHashSet;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
@@ -84,16 +87,39 @@ public interface IAttributeDescriptor {
     protected String myAttributeRole;
 
     public AttributeDescriptorString(String attributeRole) {
+      // todo: remove all usages of *String descriptors - it's useless without sources for example 
       myAttributeRole = attributeRole;
     }
 
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeRole == null || myAttributeRole.equals(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(attribute))), "virtual_getRole_1262430001741497900", new Object[]{}));
+      return myAttributeRole == null || myAttributeRole.equals(getAttributeRole(SNodeOperations.getConceptDeclaration(attribute)));
     }
 
     @Override
     public void update(@NotNull SNode attribute) {
+    }
+
+    @Nullable
+    private static String getAttributeRole(SNode attributeDeclaration) {
+      return SPropertyOperations.getString(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return isNotEmpty_6oitxt_a0a0a0a0a0a0a0e7(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role"));
+        }
+      }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role");
+    }
+
+    private static Set<SNode> getSuperConcepts(SNode conceptDeclaration) {
+      Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());
+      while ((conceptDeclaration != null) && !(SetSequence.fromSet(concepts).contains(conceptDeclaration))) {
+        SetSequence.fromSet(concepts).addElement(conceptDeclaration);
+        conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
+      }
+      return concepts;
+    }
+
+    public static boolean isNotEmpty_6oitxt_a0a0a0a0a0a0a0e7(String str) {
+      return str != null && str.length() > 0;
     }
   }
 

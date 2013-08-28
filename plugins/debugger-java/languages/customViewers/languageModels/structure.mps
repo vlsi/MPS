@@ -175,6 +175,12 @@
     <property name="name" nameId="tpck.1169194664001" value="ToProcessMethod" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="to process method" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758924" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="toProcessMethod" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338781" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
 </model>
 

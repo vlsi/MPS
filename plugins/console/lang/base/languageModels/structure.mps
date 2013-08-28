@@ -208,5 +208,18 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6854397602732214175" resolveInfo="Command" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="473081947980701568" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+    <property name="name" nameId="tpck.1169194664001" value="HelpCommand" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="?" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="help" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1769790395579407461" resolveInfo="InterpretedCommand" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="473081947983367592" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="473081947981012231" resolveInfo="ConsoleHelpProvider" />
+    </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="473081947981012231" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleHelpProvider" />
+  </root>
 </model>
 

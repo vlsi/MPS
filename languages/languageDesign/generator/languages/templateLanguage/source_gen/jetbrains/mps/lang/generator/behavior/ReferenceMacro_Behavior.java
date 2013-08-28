@@ -8,9 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ReferenceMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -24,15 +21,5 @@ public class ReferenceMacro_Behavior {
       return false;
     }
     return true;
-  }
-
-  public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
-    return "referenceMacro";
-  }
-
-  public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.core.structure.LinkAttribute", "virtual_getAttributed_3044950653914717013", new Object[]{});
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
-    return result;
   }
 }

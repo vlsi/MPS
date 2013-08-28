@@ -3715,6 +3715,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="28358707492436943" resolveInfo="JavaImport" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758943" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="javaImports" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338817" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1107461130800" resolveInfo="Classifier" />
+      </node>
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6528213125912070246" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Tokens" />
