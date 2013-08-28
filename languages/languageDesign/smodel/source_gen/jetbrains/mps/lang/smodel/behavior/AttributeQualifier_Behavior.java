@@ -8,22 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
-import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AttributeQualifier_Behavior {
@@ -38,34 +23,10 @@ public class AttributeQualifier_Behavior {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");
   }
 
-  public static Iterable<SNode> call_getApplicableRoles_959482772563105834(SAbstractConcept thisConcept, SNode enclosingNode, String attributeType, SModel model, final IScope scope) {
-    // all applicable attribute roles ('attributeType' subconcepts with role definition) 
-    final SNode container = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.as(enclosingNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess")), "concept", false);
-    // all attribute concepts of given type 
-    Set<String> subconceptNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(attributeType);
-    // filter only applicable 
-    final ModelAndImportedModelsScope modelScope = new ModelAndImportedModelsScope(model, true, scope);
-    return SetSequence.fromSet(subconceptNames).select(new ISelector<String, SNode>() {
-      public SNode select(String fqName) {
-        return (SNode) SModelUtil.findConceptDeclaration(fqName, scope);
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode attr) {
-        return modelScope.isInScope(attr) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(((SNode) attr), LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return eq_h001dt_a0a0a0a0a0a0a0a0a0a0g0d(SPropertyOperations.getString(it, "name"), "getRole");
-          }
-        });
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode attr) {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getRole_1262430001741497900", new Object[]{}) == null || ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getAttributed_3044950653914717013", new Object[]{})).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
-          }
-        });
-      }
-    });
+  @Deprecated
+  public static Iterable<SNode> call_getApplicableRoles_959482772563105834(SAbstractConcept thisConcept, SNode enclosingNode, String attributeType, SModel model, IScope scope) {
+    // use AttributeDesignTimeOperations#getApplicableAttributes 
+    return null;
   }
 
   @Deprecated
@@ -76,12 +37,5 @@ public class AttributeQualifier_Behavior {
   @Deprecated
   public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  private static boolean eq_h001dt_a0a0a0a0a0a0a0a0a0a0g0d(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 }

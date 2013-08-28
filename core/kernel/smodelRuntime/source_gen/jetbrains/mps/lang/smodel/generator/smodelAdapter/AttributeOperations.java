@@ -4,9 +4,6 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -27,13 +24,9 @@ public class AttributeOperations {
   }
 
   private static String getOldRole(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.PropertyAttribute")) {
-      return AttributesRolesUtil.childRoleFromPropertyAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName"));
-    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
-      return AttributesRolesUtil.childRoleFromLinkAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole"));
-    } else {
-      return AttributesRolesUtil.childRoleFromAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}));
-    }
+    // todo: dangerous code 
+    // <node> 
+    return null;
   }
 
   public static boolean isOldRoleForNewAttribute(SNode node, String oldRole) {

@@ -6,8 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
@@ -89,7 +87,9 @@ public interface IAttributeDescriptor {
 
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeRole == null || myAttributeRole.equals(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(attribute))), "virtual_getRole_1262430001741497900", new Object[]{}));
+      // todo: dangerous code 
+      // <node> 
+      return true;
     }
 
     @Override

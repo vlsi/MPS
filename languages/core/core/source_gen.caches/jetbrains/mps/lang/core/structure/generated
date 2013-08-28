@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c8qw9cmdz0e2syn5jbqy0ytnggjczza">
+<dependencies version="2" modelHash="2zl6oibxemvll9rx9xwc95pjfitrvvr">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="2sojt9e2nbra1488cf2a5sfk76dyz6w" />
@@ -88,7 +88,7 @@
   <source id="2565736246230036154" name="ExportScopeModule" hash="eitb406esxfxyyiguepur1jqreot9bn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5169995583184591161" name="Attribute" hash="dakmbhbkc8zvnw2o8oj878j4qpozybt">
+  <source id="5169995583184591161" name="Attribute" hash="cgl3jo06kpd7upp8q1og4tx764xwni0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3364660638048049745" name="LinkAttribute" hash="-7hijn3msmvmsto7va9vw38sk6l6mj3k">

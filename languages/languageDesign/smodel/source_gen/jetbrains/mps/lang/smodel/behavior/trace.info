@@ -2774,99 +2774,48 @@
     <unitInfo nodeId="597763930871295349" fileName="ChildNodeRefExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ChildNodeRefExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/6407023681583057385">
-    <nodeInfo nodeId="6960953357954139849" fileName="AttributeQualifier_Behavior.java" startLine="33" startPosition="90" endLine="34" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583066591" fileName="AttributeQualifier_Behavior.java" startLine="37" startPosition="84" endLine="38" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959482772563105946" fileName="AttributeQualifier_Behavior.java" startLine="41" startPosition="183" endLine="42" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="959482772563128669" fileName="AttributeQualifier_Behavior.java" startLine="42" startPosition="89" endLine="43" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959482772563134265" fileName="AttributeQualifier_Behavior.java" startLine="43" startPosition="239" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="959482772563113336" fileName="AttributeQualifier_Behavior.java" startLine="44" startPosition="44" endLine="45" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959482772563134267" fileName="AttributeQualifier_Behavior.java" startLine="45" startPosition="113" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="959482772563223698" fileName="AttributeQualifier_Behavior.java" startLine="46" startPosition="30" endLine="47" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959482772563113369" fileName="AttributeQualifier_Behavior.java" startLine="49" startPosition="42" endLine="50" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5455402260110740355" fileName="AttributeQualifier_Behavior.java" startLine="55" startPosition="43" endLine="56" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959482772563113476" fileName="AttributeQualifier_Behavior.java" startLine="63" startPosition="43" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="72" startPosition="81" endLine="73" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="77" startPosition="114" endLine="78" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAttributeContainerType_6407023681583057388#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="959482772563113364" fileName="AttributeQualifier_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5455402260110692871" fileName="AttributeQualifier_Behavior.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="959482772563113471" fileName="AttributeQualifier_Behavior.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5455402260110769832" fileName="AttributeQualifier_Behavior.java" startLine="81" startPosition="80" endLine="85" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959482772563113392" fileName="AttributeQualifier_Behavior.java" startLine="53" startPosition="41" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2788276434700824026" fileName="AttributeQualifier_Behavior.java" startLine="61" startPosition="41" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5455402260110769832" fileName="AttributeQualifier_Behavior.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_h001dt_a0a0a0a0a0a0a0a0a0a0g0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="959482772563113387" fileName="AttributeQualifier_Behavior.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2788276434700822600" fileName="AttributeQualifier_Behavior.java" startLine="61" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="959482772563113355" fileName="AttributeQualifier_Behavior.java" startLine="47" startPosition="103" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="41" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApplicableRoles_959482772563105834#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="6407023681583057387" fileName="AttributeQualifier_Behavior.java" startLine="30" startPosition="43" endLine="30" endPosition="43" />
-    <scopeInfo nodeId="6407023681583057391" fileName="AttributeQualifier_Behavior.java" startLine="33" startPosition="90" endLine="34" endPosition="201" />
-    <scopeInfo nodeId="6407023681583066589" fileName="AttributeQualifier_Behavior.java" startLine="37" startPosition="84" endLine="38" endPosition="100" />
-    <scopeInfo nodeId="959482772563113365" fileName="AttributeQualifier_Behavior.java" startLine="49" startPosition="42" endLine="50" endPosition="72" />
-    <scopeInfo nodeId="5455402260110692872" fileName="AttributeQualifier_Behavior.java" startLine="55" startPosition="43" endLine="56" endPosition="107" />
-    <scopeInfo nodeId="959482772563113472" fileName="AttributeQualifier_Behavior.java" startLine="63" startPosition="43" endLine="64" endPosition="89" />
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="72" startPosition="81" endLine="73" endPosition="157" />
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="77" startPosition="114" endLine="78" endPosition="293" />
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="30" startPosition="0" endLine="32" endPosition="0">
+    <nodeInfo nodeId="6960953357954139849" fileName="AttributeQualifier_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583066591" fileName="AttributeQualifier_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453560329487" fileName="AttributeQualifier_Behavior.java" startLine="27" startPosition="177" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7588821453560321579" fileName="AttributeQualifier_Behavior.java" startLine="28" startPosition="65" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="33" startPosition="81" endLine="34" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="38" startPosition="114" endLine="39" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAttributeContainerType_6407023681583057388#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApplicableRoles_959482772563105834#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="6407023681583057387" fileName="AttributeQualifier_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="6407023681583057391" fileName="AttributeQualifier_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="201" />
+    <scopeInfo nodeId="6407023681583066589" fileName="AttributeQualifier_Behavior.java" startLine="22" startPosition="84" endLine="23" endPosition="100" />
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="33" startPosition="81" endLine="34" endPosition="157" />
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="38" startPosition="114" endLine="39" endPosition="293" />
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="6407023681583057385" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="959482772563105837" fileName="AttributeQualifier_Behavior.java" startLine="27" startPosition="177" endLine="29" endPosition="16" />
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6407023681583057385" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6407023681583057385" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="959482772563113364" fileName="AttributeQualifier_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="959482772563113364" varName="fqName" />
-    </scopeInfo>
-    <scopeInfo nodeId="5455402260110692871" fileName="AttributeQualifier_Behavior.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="5455402260110692871" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="959482772563113471" fileName="AttributeQualifier_Behavior.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="959482772563113471" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6407023681583057385" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="6407023681583057385" varName="callerConceptFqName" />
       <varInfo nodeId="6407023681583057385" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5455402260110769832" fileName="AttributeQualifier_Behavior.java" startLine="81" startPosition="80" endLine="85" endPosition="6" />
-    <scopeInfo nodeId="959482772563113388" fileName="AttributeQualifier_Behavior.java" startLine="53" startPosition="41" endLine="58" endPosition="11" />
-    <scopeInfo nodeId="2788276434700822601" fileName="AttributeQualifier_Behavior.java" startLine="61" startPosition="41" endLine="66" endPosition="11" />
-    <scopeInfo nodeId="5455402260110769832" fileName="AttributeQualifier_Behavior.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="5455402260110769832" varName="a" />
-      <varInfo nodeId="5455402260110769832" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="959482772563113387" fileName="AttributeQualifier_Behavior.java" startLine="53" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="959482772563113387" varName="attr" />
-    </scopeInfo>
-    <scopeInfo nodeId="2788276434700822600" fileName="AttributeQualifier_Behavior.java" startLine="61" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="2788276434700822600" varName="attr" />
-    </scopeInfo>
-    <scopeInfo nodeId="959482772563105837" fileName="AttributeQualifier_Behavior.java" startLine="41" startPosition="183" endLine="68" endPosition="7">
-      <varInfo nodeId="959482772563128670" varName="container" />
-      <varInfo nodeId="959482772563223699" varName="modelScope" />
-      <varInfo nodeId="959482772563113337" varName="subconceptNames" />
-    </scopeInfo>
-    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="41" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="959482772563105852" varName="attributeType" />
       <varInfo nodeId="959482772563128682" varName="enclosingNode" />
       <varInfo nodeId="959482772563105924" varName="model" />
       <varInfo nodeId="959482772563105928" varName="scope" />
       <varInfo nodeId="6407023681583057385" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="959482772563113364" fileName="AttributeQualifier_Behavior.java" startLine="48" startPosition="59" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior$1" />
-    <unitInfo nodeId="5455402260110692871" fileName="AttributeQualifier_Behavior.java" startLine="54" startPosition="319" endLine="58" endPosition="9" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior$3" />
-    <unitInfo nodeId="959482772563113471" fileName="AttributeQualifier_Behavior.java" startLine="62" startPosition="454" endLine="66" endPosition="9" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior$4" />
-    <unitInfo nodeId="959482772563113387" fileName="AttributeQualifier_Behavior.java" startLine="52" startPosition="17" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior$2" />
-    <unitInfo nodeId="2788276434700822600" fileName="AttributeQualifier_Behavior.java" startLine="60" startPosition="17" endLine="68" endPosition="5" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior$3" />
-    <unitInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="29" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" />
+    <unitInfo nodeId="6407023681583057385" fileName="AttributeQualifier_Behavior.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/6407023681583066595">
     <nodeInfo nodeId="6407023681583098535" fileName="NodeAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

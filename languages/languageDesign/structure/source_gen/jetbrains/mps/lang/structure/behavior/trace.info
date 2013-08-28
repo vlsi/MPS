@@ -1242,103 +1242,152 @@
     <unitInfo nodeId="2992811758677310089" fileName="AttributeInfo_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeInfo_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/7588821453550280407">
-    <nodeInfo nodeId="7588428831957669689" fileName="AttributeDesignTimeOperations.java" startLine="23" startPosition="74" endLine="24" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453550331063" fileName="AttributeDesignTimeOperations.java" startLine="28" startPosition="58" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551149984" fileName="AttributeDesignTimeOperations.java" startLine="32" startPosition="39" endLine="33" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551287950" fileName="AttributeDesignTimeOperations.java" startLine="40" startPosition="58" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551287965" fileName="AttributeDesignTimeOperations.java" startLine="44" startPosition="39" endLine="45" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551353667" fileName="AttributeDesignTimeOperations.java" startLine="51" startPosition="58" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="43" endLine="58" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="61" startPosition="41" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551541273" fileName="AttributeDesignTimeOperations.java" startLine="67" startPosition="39" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453550786871" fileName="AttributeDesignTimeOperations.java" startLine="73" startPosition="81" endLine="74" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7588821453550931530" fileName="AttributeDesignTimeOperations.java" startLine="75" startPosition="79" endLine="76" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7588821453551060096" fileName="AttributeDesignTimeOperations.java" startLine="76" startPosition="71" endLine="77" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7588821453551130628" fileName="AttributeDesignTimeOperations.java" startLine="78" startPosition="5" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7588821453551105333" fileName="AttributeDesignTimeOperations.java" startLine="79" startPosition="11" endLine="80" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7588821453551132786" fileName="AttributeDesignTimeOperations.java" startLine="80" startPosition="172" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="84" startPosition="71" endLine="85" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588428831943411767" fileName="AttributeDesignTimeOperations.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAttributeDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7588821453550324264" fileName="AttributeDesignTimeOperations.java" startLine="27" startPosition="73" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7588821453551149652" fileName="AttributeDesignTimeOperations.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7588821453551287948" fileName="AttributeDesignTimeOperations.java" startLine="39" startPosition="69" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7588821453551287963" fileName="AttributeDesignTimeOperations.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7588821453551353665" fileName="AttributeDesignTimeOperations.java" startLine="50" startPosition="83" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7588821453551539161" fileName="AttributeDesignTimeOperations.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_ripaa1_a0a0a0a0a0a0b0c#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="7588821453550825603" fileName="AttributeDesignTimeOperations.java" startLine="74" startPosition="76" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7588821453551139138" fileName="AttributeDesignTimeOperations.java" startLine="30" startPosition="5" endLine="35" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551287955" fileName="AttributeDesignTimeOperations.java" startLine="42" startPosition="5" endLine="47" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453551374002" fileName="AttributeDesignTimeOperations.java" startLine="55" startPosition="50" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453550322032" fileName="AttributeDesignTimeOperations.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMultipleAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7588821453550772939" fileName="AttributeDesignTimeOperations.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSuperAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7588821453550336013" fileName="AttributeDesignTimeOperations.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttributeRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="55" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7588821453551353672" fileName="AttributeDesignTimeOperations.java" startLine="53" startPosition="5" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7588821453550341773" fileName="AttributeDesignTimeOperations.java" startLine="50" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getApplicableConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="7588428831943411770" fileName="AttributeDesignTimeOperations.java" startLine="23" startPosition="74" endLine="24" endPosition="275" />
-    <scopeInfo nodeId="7588821453550324265" fileName="AttributeDesignTimeOperations.java" startLine="28" startPosition="58" endLine="29" endPosition="19" />
-    <scopeInfo nodeId="7588821453551149653" fileName="AttributeDesignTimeOperations.java" startLine="32" startPosition="39" endLine="33" endPosition="246" />
-    <scopeInfo nodeId="7588821453551287949" fileName="AttributeDesignTimeOperations.java" startLine="40" startPosition="58" endLine="41" endPosition="18" />
-    <scopeInfo nodeId="7588821453551287964" fileName="AttributeDesignTimeOperations.java" startLine="44" startPosition="39" endLine="45" endPosition="265" />
-    <scopeInfo nodeId="7588821453551353666" fileName="AttributeDesignTimeOperations.java" startLine="51" startPosition="58" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="43" endLine="58" endPosition="77" />
-    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="61" startPosition="41" endLine="62" endPosition="67" />
-    <scopeInfo nodeId="7588821453551539162" fileName="AttributeDesignTimeOperations.java" startLine="67" startPosition="39" endLine="68" endPosition="28" />
-    <scopeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="84" startPosition="71" endLine="85" endPosition="43" />
-    <scopeInfo nodeId="7588821453550825605" fileName="AttributeDesignTimeOperations.java" startLine="75" startPosition="79" endLine="77" endPosition="95" />
-    <scopeInfo nodeId="7588428831943411767" fileName="AttributeDesignTimeOperations.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <nodeInfo nodeId="7588821453558807959" fileName="AttributeDesignTimeOperations.java" startLine="26" startPosition="102" endLine="27" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7588821453558329411" fileName="AttributeDesignTimeOperations.java" startLine="27" startPosition="33" endLine="28" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7588821453559007486" fileName="AttributeDesignTimeOperations.java" startLine="29" startPosition="32" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453558377670" fileName="AttributeDesignTimeOperations.java" startLine="31" startPosition="5" endLine="32" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7588821453558531993" fileName="AttributeDesignTimeOperations.java" startLine="34" startPosition="37" endLine="35" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453558563196" fileName="AttributeDesignTimeOperations.java" startLine="38" startPosition="39" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453559904611" fileName="AttributeDesignTimeOperations.java" startLine="42" startPosition="39" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7588821453558760929" fileName="AttributeDesignTimeOperations.java" startLine="45" startPosition="43" endLine="46" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453557833183" fileName="AttributeDesignTimeOperations.java" startLine="53" startPosition="74" endLine="54" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453550331063" fileName="AttributeDesignTimeOperations.java" startLine="58" startPosition="58" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551149984" fileName="AttributeDesignTimeOperations.java" startLine="62" startPosition="39" endLine="63" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551287950" fileName="AttributeDesignTimeOperations.java" startLine="70" startPosition="58" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551287965" fileName="AttributeDesignTimeOperations.java" startLine="74" startPosition="39" endLine="75" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551353667" fileName="AttributeDesignTimeOperations.java" startLine="81" startPosition="58" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="87" startPosition="43" endLine="88" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="91" startPosition="41" endLine="92" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551541273" fileName="AttributeDesignTimeOperations.java" startLine="97" startPosition="39" endLine="98" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453550786871" fileName="AttributeDesignTimeOperations.java" startLine="105" startPosition="72" endLine="106" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7588821453550931530" fileName="AttributeDesignTimeOperations.java" startLine="107" startPosition="107" endLine="108" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7588821453551060096" fileName="AttributeDesignTimeOperations.java" startLine="108" startPosition="67" endLine="109" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7588821453551132786" fileName="AttributeDesignTimeOperations.java" startLine="110" startPosition="5" endLine="111" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453559991150" fileName="AttributeDesignTimeOperations.java" startLine="114" startPosition="70" endLine="115" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="118" startPosition="71" endLine="119" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453558998806" fileName="AttributeDesignTimeOperations.java" startLine="28" startPosition="163" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7588821453558531475" fileName="AttributeDesignTimeOperations.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7588821453558562199" fileName="AttributeDesignTimeOperations.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453558759188" fileName="AttributeDesignTimeOperations.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588428831943411767" fileName="AttributeDesignTimeOperations.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAttributeDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453550324264" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="73" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7588821453551149652" fileName="AttributeDesignTimeOperations.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453551287948" fileName="AttributeDesignTimeOperations.java" startLine="69" startPosition="69" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7588821453551287963" fileName="AttributeDesignTimeOperations.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453551353665" fileName="AttributeDesignTimeOperations.java" startLine="80" startPosition="83" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7588821453551539161" fileName="AttributeDesignTimeOperations.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453559991150" fileName="AttributeDesignTimeOperations.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_ripaa1_a0a1a0a0a0a4a0#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_ripaa1_a0a0a0a0a0a0b0d#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7588821453550825603" fileName="AttributeDesignTimeOperations.java" startLine="106" startPosition="74" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7588821453558614984" fileName="AttributeDesignTimeOperations.java" startLine="43" startPosition="43" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551139138" fileName="AttributeDesignTimeOperations.java" startLine="60" startPosition="5" endLine="65" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453551287955" fileName="AttributeDesignTimeOperations.java" startLine="72" startPosition="5" endLine="77" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453558611214" fileName="AttributeDesignTimeOperations.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453550772939" fileName="AttributeDesignTimeOperations.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSuperConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="7588821453551374002" fileName="AttributeDesignTimeOperations.java" startLine="85" startPosition="50" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453550322032" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMultipleAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7588821453550336013" fileName="AttributeDesignTimeOperations.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttributeRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="85" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7588821453551353672" fileName="AttributeDesignTimeOperations.java" startLine="83" startPosition="5" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453558496086" fileName="AttributeDesignTimeOperations.java" startLine="32" startPosition="168" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7588821453550341773" fileName="AttributeDesignTimeOperations.java" startLine="80" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getApplicableConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7588821453558186462" fileName="AttributeDesignTimeOperations.java" startLine="26" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getApplicableAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7588821453558998809" fileName="AttributeDesignTimeOperations.java" startLine="29" startPosition="32" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="7588821453558531476" fileName="AttributeDesignTimeOperations.java" startLine="34" startPosition="37" endLine="35" endPosition="101" />
+    <scopeInfo nodeId="7588821453558562200" fileName="AttributeDesignTimeOperations.java" startLine="38" startPosition="39" endLine="39" endPosition="81" />
+    <scopeInfo nodeId="7588821453558759189" fileName="AttributeDesignTimeOperations.java" startLine="45" startPosition="43" endLine="46" endPosition="91" />
+    <scopeInfo nodeId="7588428831943411770" fileName="AttributeDesignTimeOperations.java" startLine="53" startPosition="74" endLine="54" endPosition="203" />
+    <scopeInfo nodeId="7588821453550324265" fileName="AttributeDesignTimeOperations.java" startLine="58" startPosition="58" endLine="59" endPosition="19" />
+    <scopeInfo nodeId="7588821453551149653" fileName="AttributeDesignTimeOperations.java" startLine="62" startPosition="39" endLine="63" endPosition="246" />
+    <scopeInfo nodeId="7588821453551287949" fileName="AttributeDesignTimeOperations.java" startLine="70" startPosition="58" endLine="71" endPosition="18" />
+    <scopeInfo nodeId="7588821453551287964" fileName="AttributeDesignTimeOperations.java" startLine="74" startPosition="39" endLine="75" endPosition="265" />
+    <scopeInfo nodeId="7588821453551353666" fileName="AttributeDesignTimeOperations.java" startLine="81" startPosition="58" endLine="82" endPosition="18" />
+    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="87" startPosition="43" endLine="88" endPosition="77" />
+    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="91" startPosition="41" endLine="92" endPosition="67" />
+    <scopeInfo nodeId="7588821453551539162" fileName="AttributeDesignTimeOperations.java" startLine="97" startPosition="39" endLine="98" endPosition="28" />
+    <scopeInfo nodeId="7588821453559991150" fileName="AttributeDesignTimeOperations.java" startLine="114" startPosition="70" endLine="115" endPosition="43" />
+    <scopeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="118" startPosition="71" endLine="119" endPosition="43" />
+    <scopeInfo nodeId="7588821453550825605" fileName="AttributeDesignTimeOperations.java" startLine="107" startPosition="107" endLine="109" endPosition="91" />
+    <scopeInfo nodeId="7588821453558531475" fileName="AttributeDesignTimeOperations.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="7588821453558531475" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588821453558562199" fileName="AttributeDesignTimeOperations.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="7588821453558562199" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588821453558759188" fileName="AttributeDesignTimeOperations.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="7588821453558759188" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588428831943411767" fileName="AttributeDesignTimeOperations.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="7588428831943411781" varName="conceptDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551149652" fileName="AttributeDesignTimeOperations.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7588821453551149652" fileName="AttributeDesignTimeOperations.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="7588821453551149652" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551287963" fileName="AttributeDesignTimeOperations.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="7588821453551287963" fileName="AttributeDesignTimeOperations.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="7588821453551287963" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="87" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="7588821453551424502" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="7588821453551424502" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551539161" fileName="AttributeDesignTimeOperations.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7588821453551539161" fileName="AttributeDesignTimeOperations.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="7588821453551539161" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="7588821453559991150" fileName="AttributeDesignTimeOperations.java" startLine="114" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="7588821453559991150" varName="str" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588821453551336020" fileName="AttributeDesignTimeOperations.java" startLine="118" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="7588821453551336020" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453550322035" fileName="AttributeDesignTimeOperations.java" startLine="27" startPosition="73" endLine="35" endPosition="176" />
-    <scopeInfo nodeId="7588821453550336016" fileName="AttributeDesignTimeOperations.java" startLine="39" startPosition="69" endLine="47" endPosition="156" />
-    <scopeInfo nodeId="7588821453550772942" fileName="AttributeDesignTimeOperations.java" startLine="73" startPosition="81" endLine="81" endPosition="22">
-      <varInfo nodeId="7588821453550786874" varName="attributes" />
+    <scopeInfo nodeId="7588821453558611215" fileName="AttributeDesignTimeOperations.java" startLine="42" startPosition="39" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="7588821453550772942" fileName="AttributeDesignTimeOperations.java" startLine="105" startPosition="72" endLine="111" endPosition="20">
+      <varInfo nodeId="7588821453550786874" varName="concepts" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551370267" fileName="AttributeDesignTimeOperations.java" startLine="55" startPosition="50" endLine="64" endPosition="11" />
-    <scopeInfo nodeId="7588821453550322032" fileName="AttributeDesignTimeOperations.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="7588821453558611214" fileName="AttributeDesignTimeOperations.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="7588821453558611214" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588821453550322035" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="73" endLine="65" endPosition="176" />
+    <scopeInfo nodeId="7588821453550336016" fileName="AttributeDesignTimeOperations.java" startLine="69" startPosition="69" endLine="77" endPosition="156" />
+    <scopeInfo nodeId="7588821453550772939" fileName="AttributeDesignTimeOperations.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="7588821453550779836" varName="conceptDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588821453551370267" fileName="AttributeDesignTimeOperations.java" startLine="85" startPosition="50" endLine="94" endPosition="11" />
+    <scopeInfo nodeId="7588821453550322032" fileName="AttributeDesignTimeOperations.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7588821453550322061" varName="attributeDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453550772939" fileName="AttributeDesignTimeOperations.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="7588821453550779836" varName="attributeDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="7588821453550336013" fileName="AttributeDesignTimeOperations.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="7588821453550336013" fileName="AttributeDesignTimeOperations.java" startLine="68" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="7588821453550336065" varName="attributeDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="85" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="7588821453551370266" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7588821453550341776" fileName="AttributeDesignTimeOperations.java" startLine="50" startPosition="83" endLine="70" endPosition="7" />
-    <scopeInfo nodeId="7588821453550341773" fileName="AttributeDesignTimeOperations.java" startLine="50" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="7588821453550341776" fileName="AttributeDesignTimeOperations.java" startLine="80" startPosition="83" endLine="100" endPosition="7" />
+    <scopeInfo nodeId="7588821453550341773" fileName="AttributeDesignTimeOperations.java" startLine="80" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="7588821453550341848" varName="attributeDeclaration" />
     </scopeInfo>
-    <unitInfo nodeId="7588821453551149652" fileName="AttributeDesignTimeOperations.java" startLine="31" startPosition="179" endLine="35" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$1" />
-    <unitInfo nodeId="7588821453551287963" fileName="AttributeDesignTimeOperations.java" startLine="43" startPosition="152" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$2" />
-    <unitInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="56" startPosition="272" endLine="60" endPosition="9" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
-    <unitInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="60" startPosition="22" endLine="64" endPosition="9" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
-    <unitInfo nodeId="7588821453551539161" fileName="AttributeDesignTimeOperations.java" startLine="66" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
-    <unitInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="54" startPosition="89" endLine="66" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$3" />
-    <unitInfo nodeId="7588821453550280407" fileName="AttributeDesignTimeOperations.java" startLine="22" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations" />
+    <scopeInfo nodeId="7588821453558186465" fileName="AttributeDesignTimeOperations.java" startLine="26" startPosition="102" endLine="50" endPosition="7">
+      <varInfo nodeId="7588821453558377671" varName="conceptsScope" />
+      <varInfo nodeId="7588821453558329414" varName="nodeConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="7588821453558186462" fileName="AttributeDesignTimeOperations.java" startLine="26" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="7588821453558196315" varName="accessNode" />
+      <varInfo nodeId="7588821453558196351" varName="attributeType" />
+    </scopeInfo>
+    <unitInfo nodeId="7588821453558531475" fileName="AttributeDesignTimeOperations.java" startLine="33" startPosition="86" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$1" />
+    <unitInfo nodeId="7588821453558562199" fileName="AttributeDesignTimeOperations.java" startLine="37" startPosition="17" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$2" />
+    <unitInfo nodeId="7588821453558759188" fileName="AttributeDesignTimeOperations.java" startLine="44" startPosition="324" endLine="48" endPosition="9" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
+    <unitInfo nodeId="7588821453551149652" fileName="AttributeDesignTimeOperations.java" startLine="61" startPosition="175" endLine="65" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
+    <unitInfo nodeId="7588821453551287963" fileName="AttributeDesignTimeOperations.java" startLine="73" startPosition="148" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$5" />
+    <unitInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="86" startPosition="272" endLine="90" endPosition="9" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
+    <unitInfo nodeId="7588821453551424502" fileName="AttributeDesignTimeOperations.java" startLine="90" startPosition="22" endLine="94" endPosition="9" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
+    <unitInfo nodeId="7588821453551539161" fileName="AttributeDesignTimeOperations.java" startLine="96" startPosition="28" endLine="100" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
+    <unitInfo nodeId="7588821453558611214" fileName="AttributeDesignTimeOperations.java" startLine="41" startPosition="17" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$3" />
+    <unitInfo nodeId="7588821453551370266" fileName="AttributeDesignTimeOperations.java" startLine="84" startPosition="85" endLine="96" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6" />
+    <unitInfo nodeId="7588821453550280407" fileName="AttributeDesignTimeOperations.java" startLine="25" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/8080932314785851907">
     <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
