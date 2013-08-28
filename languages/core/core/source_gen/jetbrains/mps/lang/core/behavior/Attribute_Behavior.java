@@ -4,23 +4,30 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class Attribute_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
-    return null;
+    // use this method 
+    return AttributeDesignTimeOperations.getAttributeRole(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()));
   }
 
+  @Deprecated
   public static boolean virtual_multiple_1262430001741497972(SAbstractConcept thisConcept) {
-    return false;
+    // use this method 
+    return AttributeDesignTimeOperations.isMultipleAttribute(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()));
   }
 
+  @Deprecated
   public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
-    return ListSequence.fromList(new ArrayList<SNode>());
+    // use this method 
+    return Sequence.fromIterable(AttributeDesignTimeOperations.getApplicableConcepts(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))).toListSequence();
   }
 }
