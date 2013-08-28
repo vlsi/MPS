@@ -12,12 +12,24 @@
     <property name="name" nameId="tpck.1169194664001" value="AsPattern" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136720037779" resolveInfo="PatternVariableDeclaration" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758882" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="asPattern" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338782" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136720037775" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
     <property name="name" nameId="tpck.1169194664001" value="Pattern" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758773" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="pattern" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338801" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136720037777" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -52,6 +64,9 @@
       <property name="name" nameId="tpck.1169194664001" value="varName" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758749" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136720037781" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PropertyPatternVariableDeclaration" />
@@ -63,6 +78,12 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1174989345471" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758684" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="propertyPatternVariableDeclaration" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338805" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136720037783" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -70,6 +91,9 @@
     <property name="name" nameId="tpck.1169194664001" value="WildcardPattern" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="_" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136720037775" resolveInfo="Pattern" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758973" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136727061274" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -78,6 +102,9 @@
     <property name="name" nameId="tpck.1169194664001" value="ListPattern" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="*" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136720037773" resolveInfo="AsPattern" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758729" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1137418540378" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="LinkPatternVariableDeclaration" />
@@ -88,6 +115,12 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1174989359378" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758761" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="linkPatternVariableDeclaration" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338790" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4413230749907733332" nodeInfo="ig">
@@ -104,6 +137,9 @@
       <property name="role" nameId="tpce.1071599776563" value="action" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4413230749907802464" resolveInfo="ActionStatement" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758676" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4413230749907802464" nodeInfo="ig">
@@ -144,6 +180,9 @@
       <property name="role" nameId="tpce.1071599776563" value="variable" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1136720037779" resolveInfo="PatternVariableDeclaration" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758769" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4855904478356877904" nodeInfo="ig">

@@ -38,8 +38,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -411,14 +409,6 @@ public class RefactoringContext {
               }
             }
           }
-          for (SNode linkAttribute : AttributeOperations.getLinkAttributeForLinkRole(node, oldRole)) {
-            if (delete) {
-              linkAttribute.delete();
-            } else {
-              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRoleInParent());
-              ((jetbrains.mps.smodel.SNode) linkAttribute).setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
-            }
-          }
         }
         if (kind == StructureModificationData.ConceptFeatureKind.CHILD) {
           String oldRole = conceptFeature.getFeatureName();
@@ -447,14 +437,6 @@ public class RefactoringContext {
             node.setProperty(newName, val);
           } else {
             node.setProperty(oldName, null);
-          }
-          for (SNode propertyAttribute : AttributeOperations.getPropertyAttributeForPropertyName(node, oldName)) {
-            if (delete) {
-              propertyAttribute.delete();
-            } else {
-              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRoleInParent());
-              ((jetbrains.mps.smodel.SNode) propertyAttribute).setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
-            }
           }
         }
       }
