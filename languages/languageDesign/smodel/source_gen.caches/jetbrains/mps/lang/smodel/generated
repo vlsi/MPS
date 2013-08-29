@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="94ttmmz3zkb55z9hjmxqo1q90j3c6ec">
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <dep model="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" hash="-clznlc365j9x4mf6cu0rq5knjdkgbli" />
+  <dep model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" hash="cdfag7uzqk9ssm4p10ovmx7kx33flco" />
+  <common>
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
