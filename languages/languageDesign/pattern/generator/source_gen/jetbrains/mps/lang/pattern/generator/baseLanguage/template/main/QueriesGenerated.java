@@ -313,7 +313,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_6283201779507549583(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))).first(), "patternVarField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")).first(), "patternVarField");
   }
 
   public static Object referenceMacro_GetReferent_6283201779507549598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -458,10 +458,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6283201779507549607(final IOperationContext operationContext, final IfMacroContext _context) {
-    if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))).count() > 1) {
+    if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")).count() > 1) {
       _context.showErrorMessage(_context.getNode(), "More than one PatternVariableDeclaration on node");
     }
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))).isNotEmpty();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6283201779507549642(final IOperationContext operationContext, final IfMacroContext _context) {
