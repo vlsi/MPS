@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -12,15 +13,20 @@ public interface IAttributeDescriptor {
   public void update(@NotNull SNode attribute);
 
   public static class AttributeDescriptor implements IAttributeDescriptor {
-    protected SNode myAttributeDeclaration;
+    protected String myAttributeConceptName;
 
-    public AttributeDescriptor(SNode attributeDeclaration) {
-      myAttributeDeclaration = attributeDeclaration;
+    public AttributeDescriptor(@Nullable String attributeConceptName) {
+      myAttributeConceptName = attributeConceptName;
+    }
+
+    @Deprecated
+    public AttributeDescriptor(@NotNull SNode attributeDeclaration) {
+      myAttributeConceptName = NameUtil.nodeFQName(attributeDeclaration);
     }
 
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeDeclaration == null || SNodeOperations.isInstanceOf(attribute, NameUtil.nodeFQName(myAttributeDeclaration));
+      return myAttributeConceptName == null || SNodeOperations.isInstanceOf(attribute, myAttributeConceptName);
     }
 
     @Override
@@ -30,22 +36,32 @@ public interface IAttributeDescriptor {
 
   public static class AllAttributes extends IAttributeDescriptor.AttributeDescriptor {
     public AllAttributes() {
-      super(null);
+      super((String) null);
     }
   }
 
   public static class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
+    public NodeAttribute(@NotNull String attributeConceptName) {
+      super(attributeConceptName);
+    }
+
+    @Deprecated
     public NodeAttribute(@NotNull SNode attributeDeclaration) {
-      super(attributeDeclaration);
+      this(NameUtil.nodeFQName(attributeDeclaration));
     }
   }
 
   public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private String myLinkRole;
 
-    public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
-      super(attributeDeclaration);
+    public LinkAttribute(@NotNull String attributeConceptName, String linkRole) {
+      super(attributeConceptName);
       myLinkRole = linkRole;
+    }
+
+    @Deprecated
+    public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
+      this(NameUtil.nodeFQName(attributeDeclaration), linkRole);
     }
 
     @Override
@@ -62,9 +78,14 @@ public interface IAttributeDescriptor {
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private String myPropertyName;
 
-    public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
-      super(attributeDeclaration);
+    public PropertyAttribute(@NotNull String attributeConceptName, String propertyName) {
+      super(attributeConceptName);
       myPropertyName = propertyName;
+    }
+
+    @Deprecated
+    public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
+      this(NameUtil.nodeFQName(attributeDeclaration), propertyName);
     }
 
     @Override
