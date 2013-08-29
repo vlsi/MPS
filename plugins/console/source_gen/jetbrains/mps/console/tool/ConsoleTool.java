@@ -52,12 +52,14 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.KeyStroke;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Scanner;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -67,7 +69,6 @@ import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
@@ -333,9 +334,18 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   private void setSelection() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        myEditor.selectNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", true));
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myEditor.selectNode(SLinkOperations.getTarget(myRoot, "commandHolder", true));
+            EditorCell lastLeaf = ((EditorCell) myEditor.getSelectedCell()).getLastLeaf();
+            myEditor.changeSelection(lastLeaf);
+            if (lastLeaf instanceof EditorCell_Label) {
+              ((EditorCell_Label) lastLeaf).end();
+            }
+          }
+        });
       }
     });
     myEditor.ensureSelectionVisible();
@@ -555,7 +565,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
           } catch (UnsupportedFlavorException ignored) {
           } catch (IOException ignored) {
           }
-          EditorCell currentCell = myEditor.getSelectedCell();
+          jetbrains.mps.openapi.editor.cells.EditorCell currentCell = myEditor.getSelectedCell();
           SNode referenceTarget = check_xg3v07_a0d0a0a5ic(pastingNodeReference);
           if (referenceTarget != null && currentCell != null && !(check_xg3v07_a0a4a0a0f06(check_xg3v07_a0a0e0a0a5ic(pastingNodeReference), myModel))) {
             SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
