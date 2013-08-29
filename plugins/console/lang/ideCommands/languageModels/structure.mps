@@ -126,6 +126,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7820875636625377576" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="stat" />
     <property name="name" nameId="tpck.1169194664001" value="ModelReference" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7820875636625654703" nodeInfo="ig">
@@ -144,7 +145,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7057947030097724900" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ShowMappingPartitioning" />
+    <property name="name" nameId="tpck.1169194664001" value="ShowGenPlan" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#showGenPlan" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7057947030097725050" nodeInfo="ig">

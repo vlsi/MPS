@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.NodeReference_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ProjectStatisticsTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowBrokenReferences_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowMappingPartitioning_Editor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowGenPlan_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.StatCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.SubtreeStatisticsTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
@@ -115,7 +115,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.editor.ShowMappingPartitioning_Editor" file="ShowMappingPartitioning_Editor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.editor.ShowGenPlan_Editor" file="ShowGenPlan_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />

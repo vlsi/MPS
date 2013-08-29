@@ -11,7 +11,7 @@
   <unitInfo fileName="ProjectStatisticsTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
   <unitInfo fileName="RebuildProjectCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
   <unitInfo fileName="ShowBrokenReferences_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
-  <unitInfo fileName="ShowMappingPartitioning_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowMappingPartitioning_BehaviorDescriptor" />
+  <unitInfo fileName="ShowGenPlan_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_BehaviorDescriptor" />
   <unitInfo fileName="StatCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
   <unitInfo fileName="SubtreeStatisticsTarget_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" />
   <unitInfo fileName="UnloadModelsCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
@@ -197,23 +197,23 @@
     <unitInfo nodeId="6224631407134040959" fileName="UnloadModelsCommand_Behavior.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7057947030097947524">
-    <nodeInfo nodeId="9053534423437820393" fileName="ShowMappingPartitioning_Behavior.java" startLine="19" startPosition="134" endLine="20" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7057947030098365030" fileName="ShowMappingPartitioning_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7057947030097947524" fileName="ShowMappingPartitioning_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9053534423437794128" fileName="ShowMappingPartitioning_Behavior.java" startLine="18" startPosition="123" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7057947030097947524" fileName="ShowMappingPartitioning_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
-    <scopeInfo nodeId="7057947030097947677" fileName="ShowMappingPartitioning_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="9053534423437794131" fileName="ShowMappingPartitioning_Behavior.java" startLine="19" startPosition="134" endLine="20" endPosition="13" />
-    <scopeInfo nodeId="7057947030097947524" fileName="ShowMappingPartitioning_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="9053534423437820393" fileName="ShowGenPlan_Behavior.java" startLine="19" startPosition="134" endLine="20" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7057947030098365030" fileName="ShowGenPlan_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7057947030097947524" fileName="ShowGenPlan_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9053534423437794128" fileName="ShowGenPlan_Behavior.java" startLine="18" startPosition="123" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7057947030097947524" fileName="ShowGenPlan_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
+    <scopeInfo nodeId="7057947030097947677" fileName="ShowGenPlan_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="9053534423437794131" fileName="ShowGenPlan_Behavior.java" startLine="19" startPosition="134" endLine="20" endPosition="13" />
+    <scopeInfo nodeId="7057947030097947524" fileName="ShowGenPlan_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7057947030097947524" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7057947030097948405" fileName="ShowMappingPartitioning_Behavior.java" startLine="18" startPosition="123" endLine="22" endPosition="292" />
-    <scopeInfo nodeId="7057947030097947524" fileName="ShowMappingPartitioning_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="7057947030097948405" fileName="ShowGenPlan_Behavior.java" startLine="18" startPosition="123" endLine="22" endPosition="292" />
+    <scopeInfo nodeId="7057947030097947524" fileName="ShowGenPlan_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="7057947030097948408" varName="console" />
       <varInfo nodeId="7057947030097948406" varName="context" />
       <varInfo nodeId="7057947030097947524" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="7057947030097947524" fileName="ShowMappingPartitioning_Behavior.java" startLine="14" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowMappingPartitioning_Behavior" />
+    <unitInfo nodeId="7057947030097947524" fileName="ShowGenPlan_Behavior.java" startLine="14" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.ShowGenPlan_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7057947030098579391">
     <nodeInfo nodeId="7057947030098585940" fileName="ModelReference_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

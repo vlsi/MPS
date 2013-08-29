@@ -1,3 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.ideCommands.typesystem.TypesystemDescriptor" />
+  <root nodeRef="r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)/9053534423438560978">
+    <nodeInfo nodeId="9053534423438583802" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="24" startPosition="165" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9053534423438583802" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="37" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="37" startPosition="130" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ShowGenPlan_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="9053534423438583802" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="23" startPosition="137" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9053534423438600010" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="19" startPosition="48" endLine="19" endPosition="48" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="69" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="9053534423438583802" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="24" startPosition="165" endLine="26" endPosition="304">
+      <varInfo nodeId="9053534423438583802" varName="_reporter_2309309498" />
+      <varInfo nodeId="9053534423438583802" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="9053534423438560978" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="9053534423438600013" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="23" startPosition="137" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="9053534423438560979" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="9053534423438560978" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="9053534423438560978" varName="showGenPlan" />
+      <varInfo nodeId="9053534423438560978" varName="status" />
+      <varInfo nodeId="9053534423438560978" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="9053534423438560978" fileName="check_ShowGenPlan_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.console.ideCommands.typesystem.check_ShowGenPlan_NonTypesystemRule" />
+  </root>
+</debugInfo>
 

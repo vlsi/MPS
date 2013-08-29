@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8bb4aybcjzi8qn1e5t0w45aoz4ojoul">
+<dependencies version="2" modelHash="-b42xf5c44qcwdzeojr0r99xqr7z7y1r">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -63,7 +63,7 @@
   <source id="5207260697411458113" name="INodeSetReference" hash="aeozx18ie1qebowoeuf7fkp8wph251p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7820875636625377576" name="ModelReference" hash="byowwmc8ch0dwrw6oao8x8fjmpp6yma">
+  <source id="7820875636625377576" name="ModelReference" hash="b7lsr8aeoy9qf9gm9aayc2hi067umuv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7820875636625654703" name="NodeReference" hash="7u6y9w76qg6s5sqq8h628g57ye46r3p">
@@ -72,7 +72,7 @@
   <source id="473081947985174289" name="IDECommandHelp" hash="d3cg3pfcp91x08nj0c15bp3s0u4acr3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7057947030097724900" name="ShowMappingPartitioning" hash="-4tkkwj2a85gss37r5gdf3uq2qd3jxxn">
+  <source id="7057947030097724900" name="ShowGenPlan" hash="-6tgmb3hzcxwzclubr4gdttqefsffhh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

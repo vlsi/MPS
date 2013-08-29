@@ -11,7 +11,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 
-public class ShowMappingPartitioning_Behavior {
+public class ShowGenPlan_Behavior {
   public static void init(SNode thisNode) {
   }
 
