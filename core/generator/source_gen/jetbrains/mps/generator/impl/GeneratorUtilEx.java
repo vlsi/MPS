@@ -18,6 +18,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class GeneratorUtilEx {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(GeneratorUtilEx.class));
@@ -185,6 +188,9 @@ public class GeneratorUtilEx {
       }
     }
     return messageType;
+  }
 
+  public static SNode getReferenceMacro(SNode node, String linkRole) {
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), linkRole));
   }
 }
