@@ -107,7 +107,7 @@ __switch__:
 
   public static String virtual_getHelp_473081947982699339(SAbstractConcept thisConcept) {
     String result = "Constructions available in console:\n\n";
-    result += "?                      command       display this help\n";
+    result += "?                       command       display this help\n";
     return result;
 
   }

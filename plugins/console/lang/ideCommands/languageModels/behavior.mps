@@ -1570,7 +1570,17 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984146739" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#stat &lt;scope&gt;          command       display some AST statistics\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#stat &lt;scope&gt;           command       display some AST statistics\n" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9053534423438090364" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusAssignmentExpression" typeId="tpee.1215695189714" id="9053534423438090365" nodeInfo="nn">
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9053534423438090366" nodeInfo="nn">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
+            </node>
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9053534423438090367" nodeInfo="nn">
+              <property name="value" nameId="tpee.1070475926801" value="#showBrokenRefs &lt;scope&gt; command       show broken references\n" />
             </node>
           </node>
         </node>
@@ -1580,7 +1590,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947985255888" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#show broken references &lt;scope&gt;   command\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#showGenPlan &lt;model&gt;    command       show generation plan\n" />
             </node>
           </node>
         </node>

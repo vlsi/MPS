@@ -11,7 +11,7 @@ public class InternalCommandHelp_Behavior {
 
   public static String virtual_getHelp_473081947982699339(SAbstractConcept thisConcept) {
     String result = "";
-    result += "#reload classes        command\n";
+    result += "#reload classes         command\n";
     return result;
   }
 }

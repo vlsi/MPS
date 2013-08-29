@@ -681,7 +681,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984146739" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="&lt;expression&gt;           command       evaluate expression and print its result\n" />
+              <property name="value" nameId="tpee.1070475926801" value="&lt;expression&gt;            command       evaluate expression and print its result\n" />
             </node>
           </node>
         </node>
@@ -691,7 +691,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984148702" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="{ &lt;statements&gt; }       command       execute statement list\n" />
+              <property name="value" nameId="tpee.1070475926801" value="{ &lt;statements&gt; }        command       execute statement list\n" />
             </node>
           </node>
         </node>
@@ -701,7 +701,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984136505" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#print &lt;expression&gt;    expression    print into console\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#print &lt;expression&gt;     expression    print into console\n" />
             </node>
           </node>
         </node>
@@ -711,7 +711,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984578666" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#show &lt;something&gt;      expression    show sequence of nodes/references/models/modules in usages view\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#show &lt;something&gt;       expression    show sequence of nodes/references/models/modules in usages view\n" />
             </node>
           </node>
         </node>
@@ -721,7 +721,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984252317" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#nodes&lt;options&gt;        expression    lazy sequence containing all nodes\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#nodes&lt;options&gt;         expression    lazy sequence containing all nodes\n" />
             </node>
           </node>
         </node>
@@ -731,7 +731,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984347790" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#references&lt;options&gt;   expression    lazy sequence containing all references\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#references&lt;options&gt;    expression    lazy sequence containing all references\n" />
             </node>
           </node>
         </node>
@@ -741,7 +741,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984350778" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#models&lt;options&gt;       expression    lazy sequence containing all models\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#models&lt;options&gt;        expression    lazy sequence containing all models\n" />
             </node>
           </node>
         </node>
@@ -751,7 +751,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984353366" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#modules&lt;options&gt;      expression    lazy sequence containing all modules\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#modules&lt;options&gt;       expression    lazy sequence containing all modules\n" />
             </node>
           </node>
         </node>
@@ -761,7 +761,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984457068" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#instances(&lt;concept&gt;)  expression    instances of concept (find usages mechanism)\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#instances(&lt;concept&gt;)   expression    instances of concept (find usages mechanism)\n" />
             </node>
           </node>
         </node>
@@ -771,7 +771,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984560204" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#usages(&lt;node&gt;)        expression    usages of node (find usages mechanism)\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#usages(&lt;node&gt;)         expression    usages of node (find usages mechanism)\n" />
             </node>
           </node>
         </node>
@@ -781,7 +781,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947984577629" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="#project               expression    current project\n" />
+              <property name="value" nameId="tpee.1070475926801" value="#project                expression    current project\n" />
             </node>
           </node>
         </node>
