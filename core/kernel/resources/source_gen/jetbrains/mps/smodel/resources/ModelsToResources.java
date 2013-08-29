@@ -27,7 +27,7 @@ public class ModelsToResources {
   }
 
   public Iterable<IResource> resources(boolean dirtyOnly) {
-    Iterable<SModel> smds = models;
+    Iterable<SModel> smds = Sequence.fromIterable(models).distinct();
     smds = Sequence.fromIterable(smds).sort(new ISelector<SModel, String>() {
       public String select(SModel desc) {
         return desc.getModule().getModuleName();
