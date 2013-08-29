@@ -117,11 +117,11 @@ public class AttributeOperations {
   }
 
   public static Iterable<SNode> getNodeAttributes(SNode node) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.NodeAttribute"));
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.NodeAttribute");
   }
 
   public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.PropertyAttribute")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0r(SPropertyOperations.getString(it, "propertyName"), propertyName);
       }
@@ -129,7 +129,7 @@ public class AttributeOperations {
   }
 
   public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.LinkAttribute")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0s(SPropertyOperations.getString(it, "linkRole"), linkRole);
       }
