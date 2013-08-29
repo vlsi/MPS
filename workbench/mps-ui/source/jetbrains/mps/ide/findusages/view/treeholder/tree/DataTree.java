@@ -47,6 +47,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class DataTree implements IExternalizeable, IChangeListener {
   private DataNode myTreeRoot = build(new SearchResults(), null);
@@ -102,11 +103,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----DATA QUERY----
 
-  public List<SModel> getIncludedModels() {
+  public Set<SModel> getIncludedModels() {
     return getResultsNode().getIncludedModels();
   }
 
-  public List<SModel> getAllModels() {
+  public Set<SModel> getAllModels() {
     return getResultsNode().getAllModels();
   }
 

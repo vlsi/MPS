@@ -247,11 +247,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     element.addContent(contentsXML);
   }
 
-  public List<SModel> getIncludedModels() {
+  public Set<SModel> getIncludedModels() {
     return myContents.getIncludedModels();
   }
 
-  public List<SModel> getAllModels() {
+  public Set<SModel> getAllModels() {
     return myContents.getAllModels();
   }
 
