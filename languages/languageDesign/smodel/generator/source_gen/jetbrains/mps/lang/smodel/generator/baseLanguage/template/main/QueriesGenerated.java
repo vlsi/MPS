@@ -837,6 +837,18 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "nodeConcept", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1450009024767291129(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "attributeConcept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1450009024767429865(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "attributeConcept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1450009024767433199(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "attributeConcept", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_6407023681583065848(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
     if ((parmConcept == null)) {
@@ -1710,7 +1722,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0no(returnType);
+      return _quotation_createNode_x583g4_a0a0c0qo(returnType);
     }
   }
 
@@ -1738,20 +1750,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_6407023681583040726(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "attributeConcept", false);
-  }
-
-  public static SNode sourceNodeQuery_1757699476691451374(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "attributeConcept", false);
-  }
-
   public static SNode sourceNodeQuery_1757699476691451382(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "linkQualifier", true);
-  }
-
-  public static SNode sourceNodeQuery_1757699476691451355(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "attributeConcept", false);
   }
 
   public static SNode sourceNodeQuery_1757699476691451363(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1915,7 +1915,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0c0no(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0qo(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
