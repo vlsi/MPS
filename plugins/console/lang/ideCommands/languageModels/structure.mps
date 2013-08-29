@@ -93,7 +93,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2087237500458009228" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ShowBrokenReferences" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#show broken references" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#showBrokenRefs" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2087237500458009229" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -145,7 +145,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7057947030097724900" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ShowMappingPartitioning" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#show mapping partitioning" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#showGenPlan" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7057947030097725050" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

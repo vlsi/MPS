@@ -26,7 +26,6 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_drvoix_a");
     editorCell.setBig(true);
-    editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createConstant_drvoix_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drvoix_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drvoix_c0(editorContext, node));

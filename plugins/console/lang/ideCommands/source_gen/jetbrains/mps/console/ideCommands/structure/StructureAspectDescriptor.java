@@ -32,9 +32,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"model"}, new boolean[]{false}).alias("#rebuild project", "clean and make").create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#show broken references", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#showBrokenRefs", "").create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowMappingPartitioning").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#show mapping partitioning", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.ShowMappingPartitioning").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#showGenPlan", "").create();
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.StatCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").children(new String[]{"target"}, new boolean[]{false}).alias("#stat", "").create();
       case 12:

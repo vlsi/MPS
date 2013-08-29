@@ -102,13 +102,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.Console_Styles_StyleSheet" file="Console_Styles_StyleSheet.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-  </dependency>
   <dependency className="jetbrains.mps.console.base.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -119,7 +112,6 @@
     <classNode dependClassName="jetbrains.mps.console.base.editor.CommandResultLine_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.CommandResult_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.ConsoleRoot_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.FirstWordEditorComponent" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.History_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.IClickable_Editor" />
     <classNode dependClassName="jetbrains.mps.console.base.editor.INodeWithReference_Editor" />
@@ -133,18 +125,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.base.editor.FirstWordEditorComponent" file="FirstWordEditorComponent.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.console.base.editor.Console_Styles_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.editor.History_Editor" file="History_Editor.java">
     <classNode dependClassName="java.lang.String" />
