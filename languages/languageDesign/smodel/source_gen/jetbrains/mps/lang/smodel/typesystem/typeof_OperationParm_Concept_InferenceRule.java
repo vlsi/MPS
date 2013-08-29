@@ -7,13 +7,22 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_OperationParm_Concept_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_OperationParm_Concept_InferenceRule() {
   }
 
   public void applyRule(final SNode opp, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(opp, "conceptArgument", true);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8933148862033770435", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8933148862033770437", true), (SNode) _quotation_createNode_eac4ma_a0a0b(), false, true, _info_12389875345);
+    }
   }
 
   public String getApplicableConceptFQName() {
@@ -29,5 +38,12 @@ public class typeof_OperationParm_Concept_InferenceRule extends AbstractInferenc
 
   public boolean overrides() {
     return false;
+  }
+
+  private static SNode _quotation_createNode_eac4ma_a0a0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }
