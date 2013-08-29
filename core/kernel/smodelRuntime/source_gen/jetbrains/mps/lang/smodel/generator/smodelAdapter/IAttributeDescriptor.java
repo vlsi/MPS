@@ -6,11 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Set;
-import java.util.LinkedHashSet;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
@@ -80,97 +75,6 @@ public interface IAttributeDescriptor {
     @Override
     public void update(@NotNull SNode attribute) {
       SNodeAccessUtil.setProperty(attribute, "propertyName", myPropertyName);
-    }
-  }
-
-  public static class AttributeDescriptorString implements IAttributeDescriptor {
-    protected String myAttributeRole;
-
-    public AttributeDescriptorString(String attributeRole) {
-      // todo: remove all usages of *String descriptors - it's useless without sources for example 
-      myAttributeRole = attributeRole;
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      return myAttributeRole == null || myAttributeRole.equals(getAttributeRole(SNodeOperations.getConceptDeclaration(attribute)));
-    }
-
-    @Override
-    public void update(@NotNull SNode attribute) {
-    }
-
-    @Nullable
-    private static String getAttributeRole(SNode attributeDeclaration) {
-      return SPropertyOperations.getString(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return isNotEmpty_6oitxt_a0a0a0a0a0a0a0e7(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role"));
-        }
-      }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role");
-    }
-
-    private static Set<SNode> getSuperConcepts(SNode conceptDeclaration) {
-      Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());
-      while ((conceptDeclaration != null) && !(SetSequence.fromSet(concepts).contains(conceptDeclaration))) {
-        SetSequence.fromSet(concepts).addElement(conceptDeclaration);
-        conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
-      }
-      return concepts;
-    }
-
-    public static boolean isNotEmpty_6oitxt_a0a0a0a0a0a0a0e7(String str) {
-      return str != null && str.length() > 0;
-    }
-  }
-
-  public static class NodeAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
-    public NodeAttributeString(String attributeRole) {
-      super(attributeRole);
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      return SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.NodeAttribute") && super.match(attribute);
-    }
-  }
-
-  public static class LinkAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
-    private String myLinkRole;
-
-    public LinkAttributeString(String attributeRole, String linkRole) {
-      super(attributeRole);
-      myLinkRole = linkRole;
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute");
-      return (attr != null) && super.match(attr) && (myLinkRole == null || myLinkRole.equals(SPropertyOperations.getString(attr, "linkRole")));
-    }
-
-    @Override
-    public void update(@NotNull SNode attribute) {
-      SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole", myLinkRole);
-    }
-  }
-
-  public static class PropertyAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
-    private String myPropertyName;
-
-    public PropertyAttributeString(String attributeRole, String propertyName) {
-      super(attributeRole);
-      myPropertyName = propertyName;
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-      return (attr != null) && super.match(attr) && (myPropertyName == null || myPropertyName.equals(SPropertyOperations.getString(attr, "propertyName")));
-    }
-
-    @Override
-    public void update(@NotNull SNode attribute) {
-      SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName", myPropertyName);
     }
   }
 }

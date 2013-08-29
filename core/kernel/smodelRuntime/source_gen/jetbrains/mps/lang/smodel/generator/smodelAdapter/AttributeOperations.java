@@ -136,14 +136,6 @@ public class AttributeOperations {
     });
   }
 
-  public static SNode getNodeAttribute(SNode node, String role) {
-    return getAttribute(node, new IAttributeDescriptor.NodeAttributeString(role));
-  }
-
-  public static SNode getLinkAttribute(SNode node, String role, String linkRole) {
-    return getAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole));
-  }
-
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
 
