@@ -727,10 +727,10 @@ public class SNodeOperations {
     return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
   }
 
-  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, final SNode concept) {
+  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, final String conceptName) {
     return Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(concept));
+        return SNodeOperations.isInstanceOf(it, conceptName);
       }
     });
   }

@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowMappingPartitioning_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.StatCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
@@ -106,6 +107,12 @@
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference_Behavior" file="ModelReference_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor" file="ModelReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -121,12 +128,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -228,6 +234,27 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowMappingPartitioning_Behavior" file="ShowMappingPartitioning_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelReference_Behavior" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.util.PartitioningHelper" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.ShowMappingPartitioning_BehaviorDescriptor" file="ShowMappingPartitioning_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowMappingPartitioning_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

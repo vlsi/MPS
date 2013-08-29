@@ -10,8 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.GlobalScope;
 
 public class typeof_PoundExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PoundExpression_InferenceRule() {
@@ -22,11 +20,6 @@ public class typeof_PoundExpression_InferenceRule extends AbstractInferenceRule_
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207351244721", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207351238265", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207351249569", false), _info_12389875345);
-    }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "expression", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4693937538532074919", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4693937538532074922", false), (SNode) _quotation_createNode_9gcuh2_a0b0b(), false, true, _info_12389875345);
     }
   }
 
@@ -43,12 +36,5 @@ public class typeof_PoundExpression_InferenceRule extends AbstractInferenceRule_
 
   public boolean overrides() {
     return false;
-  }
-
-  private static SNode _quotation_createNode_9gcuh2_a0b0b() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
   }
 }

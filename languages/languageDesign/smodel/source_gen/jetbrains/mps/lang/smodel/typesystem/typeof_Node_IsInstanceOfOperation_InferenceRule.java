@@ -22,19 +22,12 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode conceptArg = SLinkOperations.getTarget(op, "conceptArgument", true);
-    if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      // concept expected 
-      {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(conceptArg, "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206659963962", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206659963964", false), (SNode) _quotation_createNode_bsicn0_a0b0b0b(), false, true, _info_12389875345);
-      }
-    } else if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) {
+    if (SNodeOperations.isInstanceOf(conceptArg, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference")) {
       SNode conceptReference = SNodeOperations.cast(conceptArg, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference");
       {
         SNode _nodeToCheck_1029348928467 = op;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450650", 0, null);
-        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(op), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450640", true), (SNode) _quotation_createNode_bsicn0_a0b0a1a1(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false)), false, _info_12389875345);
+        typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(op), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450640", true), (SNode) _quotation_createNode_bsicn0_a0b0b0b(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false)), false, _info_12389875345);
       }
     }
 
@@ -60,14 +53,7 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
     return false;
   }
 
-  private static SNode _quotation_createNode_bsicn0_a0b0b0b() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_bsicn0_a0b0a1a1(Object parameter_1) {
+  private static SNode _quotation_createNode_bsicn0_a0b0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);

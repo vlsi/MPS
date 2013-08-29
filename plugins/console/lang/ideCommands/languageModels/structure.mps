@@ -143,5 +143,16 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7057947030097724900" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ShowMappingPartitioning" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#show mapping partitioning" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7057947030097725050" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="targetModel" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7820875636625377576" resolveInfo="ModelReference" />
+    </node>
+  </root>
 </model>
 

@@ -66,6 +66,7 @@ public class MPSCompilerComponent implements ProjectComponent {
     project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new NavigateToNodesWithErrors(errorMessages));
 
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_FILE_TYPE);
+    compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE);
 
 //    for (MPSNoCompiler compiler : compilerManager.getCompilers(MPSNoCompiler.class)) {
 //      compilerManager.removeCompiler(compiler);
@@ -80,7 +81,8 @@ public class MPSCompilerComponent implements ProjectComponent {
 
         if (!CompilerWorkspaceConfiguration.getInstance(project).USE_COMPILE_SERVER) {
           final VirtualFile[] files = compileScope.getFiles(MPSFileTypeFactory.MPS_FILE_TYPE, true);
-          if (files.length > 0) {
+          final VirtualFile[] rootFiles = compileScope.getFiles(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE, true);
+          if (files.length > 0 || rootFiles.length > 0) {
             context.addMessage(CompilerMessageCategory.ERROR, "Generating MPS models is not supported for in-process compiler", null, 0, 0);
             return false;
           }

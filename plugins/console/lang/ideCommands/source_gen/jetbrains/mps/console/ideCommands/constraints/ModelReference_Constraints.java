@@ -7,7 +7,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ModelReference_Constraints extends BaseConstraintsDescriptor {
@@ -32,8 +31,15 @@ public class ModelReference_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.StatCommand"}, true, false) != null;
+    return eq_3fc5vw_a0a0d(parentNode.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.console.ideCommands");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636627213167");
+
+  private static boolean eq_3fc5vw_a0a0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }
