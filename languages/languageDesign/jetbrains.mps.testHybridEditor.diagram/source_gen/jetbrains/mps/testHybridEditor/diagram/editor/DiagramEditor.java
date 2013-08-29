@@ -13,12 +13,14 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
 import java.util.Collection;
 import java.util.Collections;
+import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.model.collections.list.ObservableList;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
@@ -30,7 +32,7 @@ public class DiagramEditor extends DefaultNodeEditor {
 
   @Override
   public EditorCell createEditorCell(EditorContext editorContext, SNode diagramNode) {
-    GenericViewCell diagramCell = GenericViewCell.createViewCell(editorContext, diagramNode, myView);
+    DiagramViewCell diagramCell = DiagramViewCell.createViewCell(editorContext, diagramNode, myView);
     createBlockCells(editorContext, diagramNode, diagramCell);
     createConnectorCollection(editorContext, diagramNode, diagramCell);
     return diagramCell;
@@ -47,7 +49,10 @@ public class DiagramEditor extends DefaultNodeEditor {
       GenericViewCell blockCell = (GenericViewCell) editorContext.createNodeCell(blockNode);
       MPSBlockView blockView = ((MPSBlockView) blockCell.getView());
       blockCollection.addEditorCell(blockCell);
-      myView.itemsView.children().add(blockView);
+      ObservableList<View> children = myView.itemsView.children();
+      if (!(children.contains(blockView))) {
+        children.add(blockView);
+      }
       {
         Iterator<SNode> inputPort_it = ListSequence.fromList(SLinkOperations.getTargets(blockNode, "inputPorts", true)).iterator();
         SNode inputPort_var;

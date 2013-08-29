@@ -44,7 +44,7 @@ import java.awt.Graphics;
  * Date: 7/23/13
  */
 public class GenericViewCell extends EditorCell_Collection {
-  private View myView;
+  protected View myView;
   private Font myFont = EditorSettings.getInstance().getDefaultEditorFont();
 
   protected GenericViewCell(EditorContext editorContext, SNode node,
@@ -60,66 +60,63 @@ public class GenericViewCell extends EditorCell_Collection {
 
   @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
-    paintContent(g, parentSettings, myView);
+   // paintContent(g, parentSettings, myView);
   }
 
   public void paintContent(Graphics g, ParentSettings parentSettings, View view) {
-    Color background = view.background().get();
-    Rectangle bounds = view.bounds().get();
-
-    if (background != null) {
-      g.setColor(JetpadUtils.toAwtColor(background));
-      g.fillRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x, bounds.dimension.y);
-    }
-
-    Color border = view.border().get();
-    if (border != null) {
-      g.setColor(JetpadUtils.toAwtColor(border));
-      g.drawRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x - 1, bounds.dimension.y - 1);
-    }
-
-    if (view instanceof RectView) {
-      RectView rectView = (RectView) view;
-      g.setColor(JetpadUtils.toAwtColor(rectView.background().get()));
-
-      g.fillRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x, bounds.dimension.y);
-    }
-
-    if (view instanceof LineView) {
-      LineView lineView = (LineView) view;
-      g.setColor(JetpadUtils.toAwtColor(lineView.color().get()));
-      Vector start = lineView.start().get();
-      Vector end = lineView.end().get();
-      g.drawLine(start.x, start.y, end.x, end.y);
-    }
-
-    if (view instanceof TextView) {
-      TextView textView = (TextView) view;
-      String text = textView.text().get();
-      Vector origin = bounds.origin;
-      Font font = myFont;
-
-      if (textView.bold().get()) {
-        font = font.deriveFont(Font.BOLD, font.getSize());
-      }
-
-      g.setFont(font);
-      g.setColor(JetpadUtils.toAwtColor(textView.textColor().get()));
-      g.drawString(text, origin.x, origin.y + textView.baseLine());
+//    Color background = view.background().get();
+//    Rectangle bounds = view.bounds().get();
+//
+//    if (background != null) {
+//      g.setColor(JetpadUtils.toAwtColor(background));
+//      g.fillRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x, bounds.dimension.y);
+//    }
+//
+//    Color border = view.border().get();
+//    if (border != null) {
+//      g.setColor(JetpadUtils.toAwtColor(border));
+//      g.drawRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x - 1, bounds.dimension.y - 1);
+//    }
+//
+//    if (view instanceof RectView) {
+//      RectView rectView = (RectView) view;
+//      g.setColor(JetpadUtils.toAwtColor(rectView.background().get()));
+//
+//      g.fillRect(bounds.origin.x, bounds.origin.y, bounds.dimension.x, bounds.dimension.y);
+//    }
+//
+//    if (view instanceof LineView) {
+//      LineView lineView = (LineView) view;
+//      g.setColor(JetpadUtils.toAwtColor(lineView.color().get()));
+//      Vector start = lineView.start().get();
+//      Vector end = lineView.end().get();
+//      g.drawLine(start.x, start.y, end.x, end.y);
+//    }
+//
+//    if (view instanceof TextView) {
+//      TextView textView = (TextView) view;
+//      String text = textView.text().get();
+//      Vector origin = bounds.origin;
+//      Font font = myFont;
+//
+//      if (textView.bold().get()) {
+//        font = font.deriveFont(Font.BOLD, font.getSize());
+//      }
+//
+//      g.setFont(font);
+//      g.setColor(JetpadUtils.toAwtColor(textView.textColor().get()));
+//      g.drawString(text, origin.x, origin.y + textView.baseLine());
 
 //      if (textView.caretVisible().get() && myCaretVisible && myFocused) {
 //        int xOffset = Math.max(0, getFontMetrics().stringWidth(text.substring(0, textView.caretPosition().get())));
 //        g.drawLine(origin.x + xOffset, origin.y, origin.x + xOffset, origin.y + bounds.dimension.y - 1);
 //      }
-    }
+//    }
   }
 
   @Override
   protected void relayoutImpl() {
-    super.relayoutImpl();
-    if(myView instanceof DiagramView) {
-      myView.validate();
-    }
+//    super.relayoutImpl();
     setBounds();
   }
 

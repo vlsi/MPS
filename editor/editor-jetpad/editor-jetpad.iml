@@ -27,6 +27,8 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="openapi" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="module" module-name="mps-platform" />
   </component>
 </module>
 
