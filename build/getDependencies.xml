@@ -1,0 +1,6 @@
+<project name="Get MPS dependencies" default="default">
+  <target name="default">
+    <ant antfile="ideaPlatform.xml" inheritall="false"/>
+    <ant antfile="./jetpad/build.xml" inheritall="false"/>
+  </target>
+</project>

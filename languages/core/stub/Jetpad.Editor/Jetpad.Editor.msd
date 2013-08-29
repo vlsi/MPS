@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="Jetpad.Editor" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6" compileInMPS="true">
   <models>
+    <modelRoot path="${mps_home}/lib/base-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/diagram-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/domUtil-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/event-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/geometry-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/grammar-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/mapper-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/model-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/values-1.0-SNAPSHOT.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/lib/view-1.0-SNAPSHOT.jar" type="java_classes" />
     <modelRoot path="${mps_home}/editor/editor-jetpad/classes" type="java_classes" />
   </models>
+  <facets>
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet type="java" />
+    <facet type="tests" />
+  </facets>
   <stubModelEntries>
+    <stubModelEntry path="${mps_home}/lib/geometry-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/event-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/model-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/domUtil-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/diagram-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/mapper-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/base-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/grammar-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/values-1.0-SNAPSHOT.jar" />
+    <stubModelEntry path="${mps_home}/lib/view-1.0-SNAPSHOT.jar" />
     <stubModelEntry path="${mps_home}/editor/editor-jetpad/classes" />
   </stubModelEntries>
   <sourcePath />

@@ -28,7 +28,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.LabelView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolylineConnection" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.TextView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
