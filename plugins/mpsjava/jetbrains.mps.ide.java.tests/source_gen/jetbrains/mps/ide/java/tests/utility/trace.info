@@ -583,7 +583,7 @@
     <nodeInfo nodeId="6148840541586482187" fileName="NodePatcher.java" startLine="120" startPosition="153" endLine="121" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2623182543841384809" fileName="NodePatcher.java" startLine="122" startPosition="7" endLine="123" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2623182543841387930" fileName="NodePatcher.java" startLine="123" startPosition="39" endLine="124" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6528213125921225364" fileName="NodePatcher.java" startLine="129" startPosition="267" endLine="130" endPosition="525" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6528213125921225364" fileName="NodePatcher.java" startLine="129" startPosition="224" endLine="130" endPosition="439" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256395973" fileName="NodePatcher.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodePatcher#()V" />
     <nodeInfo nodeId="8083368042256395999" fileName="NodePatcher.java" startLine="29" startPosition="51" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8083368042256398814" fileName="NodePatcher.java" startLine="42" startPosition="158" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -630,7 +630,7 @@
     <scopeInfo nodeId="7030568040400429333" fileName="NodePatcher.java" startLine="106" startPosition="38" endLine="107" endPosition="57" />
     <scopeInfo nodeId="7303989191346994323" fileName="NodePatcher.java" startLine="111" startPosition="39" endLine="112" endPosition="99" />
     <scopeInfo nodeId="6148840541586463465" fileName="NodePatcher.java" startLine="120" startPosition="153" endLine="121" endPosition="17" />
-    <scopeInfo nodeId="6528213125921213803" fileName="NodePatcher.java" startLine="129" startPosition="267" endLine="130" endPosition="525" />
+    <scopeInfo nodeId="6528213125921213803" fileName="NodePatcher.java" startLine="129" startPosition="224" endLine="130" endPosition="439" />
     <scopeInfo nodeId="8083368042256395973" fileName="NodePatcher.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8083368042256395980" fileName="NodePatcher.java" startLine="29" startPosition="51" endLine="32" endPosition="5" />
     <scopeInfo nodeId="8083368042256395999" fileName="NodePatcher.java" startLine="29" startPosition="51" endLine="32" endPosition="5">

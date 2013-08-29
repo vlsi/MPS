@@ -6,10 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NodeAttributesUtil {
   public static boolean isDeprecatedNode(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable") && (AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) != null);
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable") && (AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")) != null);
   }
 }

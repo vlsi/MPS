@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class PatternAddingUtil {
   public PatternAddingUtil() {
@@ -31,9 +30,9 @@ public class PatternAddingUtil {
     SNode node = contextCell.getSNode();
     if (contextCell.isReferenceCell()) {
       String role = contextCell.getRole();
-      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), role), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration");
+      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", role), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration");
     } else {
-      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern")), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
+      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.Pattern"), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
     }
   }
 }

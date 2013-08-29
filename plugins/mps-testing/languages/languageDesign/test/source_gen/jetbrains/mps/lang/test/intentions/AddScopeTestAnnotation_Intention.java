@@ -91,7 +91,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesTest", null);
-      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest")), newAnnotation);
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest"), newAnnotation);
 
       if (ScopesTest_Behavior.call_isSimple_5449224527592395483(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node)) {
         SLinkOperations.setTarget(newAnnotation, "checkingReference", ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation).getTargetNode(), false);

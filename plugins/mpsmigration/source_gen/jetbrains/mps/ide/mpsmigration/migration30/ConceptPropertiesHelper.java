@@ -93,9 +93,9 @@ public class ConceptPropertiesHelper {
         SetSequence.fromSet(conceptLinkUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"));
       } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"), "conceptLinkDeclaration", false), "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration")) {
         SetSequence.fromSet(linkAccessUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"));
-      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null) && neq_azpnkk_a0a4b0k0n(SNodeOperations.getAncestor(usage, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")) == null) && neq_azpnkk_a0a4b0k0n(SNodeOperations.getAncestor(usage, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
         SetSequence.fromSet(conceptPropertyDeclarationUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
-      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))) == null)) {
+      } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration") && needToMigrate(usage) && (AttributeOperations.getAttribute(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")) == null)) {
         SetSequence.fromSet(conceptLinkDeclarationUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
       } else {
         usageIsFound = false;
@@ -230,8 +230,8 @@ public class ConceptPropertiesHelper {
       SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
       MapSequence.fromMap(cplToMethodMap).put(conceptPropertyDecl, method);
       SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
-      AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), deprecatedNodeAnnotation);
-      AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), migratedToMethodAnnotation);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), deprecatedNodeAnnotation);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"), migratedToMethodAnnotation);
     }
 
     Map<SNode, List<SNode>> completedConceptsByDeclaration = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
@@ -250,8 +250,8 @@ public class ConceptPropertiesHelper {
       MapSequence.fromMap(cplToMethodMap).put(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), method);
       MapSequence.fromMap(completedConceptsByDeclaration).put(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), ListSequence.fromList(new ArrayList<SNode>()));
       SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
-      AttributeOperations.setAttribute(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), deprecatedNodeAnnotation);
-      AttributeOperations.setAttribute(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), migratedToMethodAnnotation);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), deprecatedNodeAnnotation);
+      AttributeOperations.setAttribute(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"), migratedToMethodAnnotation);
     }
     for (SNode conceptProperty : SetSequence.fromSet(conceptPropertyUsages)) {
       replaceConceptPropertyUsages(conceptProperty, getMethodFromMapOrFromAnnotation(cplToMethodMap, SLinkOperations.getTarget(conceptProperty, "conceptPropertyDeclaration", false)));
@@ -276,9 +276,9 @@ public class ConceptPropertiesHelper {
       return result;
     }
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration")) {
-      return SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))), "method", false);
+      return SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), "method", false);
     } else if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration")) {
-      return SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation"))), "method", false);
+      return SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation")), "method", false);
     }
     return null;
   }

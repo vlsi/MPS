@@ -96,7 +96,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     if (rootable || isInterface) {
       boolean isNeedRootTemplate = true;
       for (SNode genFragment : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findGeneratorFragments_6409339300305625383", new Object[]{})) {
-        if ((AttributeOperations.getAttribute(genFragment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null)) {
+        if ((AttributeOperations.getAttribute(genFragment, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
           isNeedRootTemplate = false;
           break;
         }
@@ -219,7 +219,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         } else {
           SNode rootTemplateNode = SModelOperations.createNewNode(model, null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
           SLinkOperations.setTarget(rootTemplateNode, "applicableConcept", node, false);
-          AttributeOperations.setAttribute(result.value, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), rootTemplateNode);
+          AttributeOperations.setAttribute(result.value, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), rootTemplateNode);
           SPropertyOperations.set(SNodeOperations.cast(result.value, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", SPropertyOperations.getString(node, "name"));
           SModelOperations.addRootNode(model, result.value);
           BehaviorReflection.invokeNonVirtual(Void.class, mapping.value, "jetbrains.mps.lang.generator.structure.MappingConfiguration", "call_addMember_3166264919334415805", new Object[]{result.value});

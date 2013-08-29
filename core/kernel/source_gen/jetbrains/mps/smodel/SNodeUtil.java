@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SNodeUtil {
   public static final String concept_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
@@ -292,6 +291,6 @@ public class SNodeUtil {
   }
 
   public static boolean hasReferenceMacro(SNode node, String role) {
-    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), role)) != null);
+    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", role)) != null);
   }
 }

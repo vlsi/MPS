@@ -86,7 +86,7 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     SNode[] all = {null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeModule"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopePublic"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
     return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
+        return it != jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope")));
       }
     }).toListSequence();
   }
@@ -106,9 +106,9 @@ public class SetExportAnnotation_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
+      jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope")));
       if ((myParameter != null)) {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null));
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope"), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(myParameter), null));
       }
     }
 

@@ -457,49 +457,49 @@
     <unitInfo nodeId="7283836008113024215" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfAbstract_NonTypesystemRule" />
   </root>
   <root nodeRef="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)/8524227390952646882">
-    <nodeInfo nodeId="8524227390952646884" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8524227390952646887" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="25" startPosition="22" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="28" startPosition="7" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="29" startPosition="60" endLine="30" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="35" startPosition="46" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="40" startPosition="5" endLine="41" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="41" startPosition="130" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="46" startPosition="30" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_InstanceOfDeprecated_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="27" startPosition="216" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8524227390952646893" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="26" startPosition="69" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="21" startPosition="57" endLine="21" endPosition="57" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="35" startPosition="46" endLine="36" endPosition="59" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="46" startPosition="30" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="28" startPosition="7" endLine="30" endPosition="377">
+    <nodeInfo nodeId="8524227390952646884" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="23" startPosition="124" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8524227390952646887" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="22" endLine="25" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="27" startPosition="7" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="28" startPosition="60" endLine="29" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="40" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="40" startPosition="130" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_InstanceOfDeprecated_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="26" startPosition="173" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8524227390952646893" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="25" startPosition="69" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="57" endLine="20" endPosition="57" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="59" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8524227390952646895" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="27" startPosition="7" endLine="29" endPosition="377">
       <varInfo nodeId="8524227390952646895" varName="_reporter_2309309498" />
       <varInfo nodeId="8524227390952646895" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="40" startPosition="5" endLine="42" endPosition="45">
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="41" endPosition="45">
       <varInfo nodeId="8524227390952646882" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="8524227390952646894" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="27" startPosition="216" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8524227390952646894" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="26" startPosition="173" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8524227390952646882" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="8524227390952646883" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="32" endPosition="5">
+    <scopeInfo nodeId="8524227390952646883" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="23" startPosition="124" endLine="31" endPosition="5">
       <varInfo nodeId="8524227390952646885" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8524227390952646882" varName="nodeToCheck" />
       <varInfo nodeId="8524227390952646882" varName="status" />
       <varInfo nodeId="8524227390952646882" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule" />
+    <unitInfo nodeId="8524227390952646882" fileName="check_InstanceOfDeprecated_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.check_InstanceOfDeprecated_NonTypesystemRule" />
   </root>
 </debugInfo>
 

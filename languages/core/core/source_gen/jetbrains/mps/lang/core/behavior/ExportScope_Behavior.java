@@ -57,11 +57,11 @@ public class ExportScope_Behavior {
     /*
       return AttributeOperations.getAttribute(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))) != null);
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope")) != null);
         }
-      }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
+      }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope"));
     */
-    return AttributeOperations.getAttribute(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
+    return AttributeOperations.getAttribute(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope"));
   }
 
   public static String call_getNamespace_2565736246230026649(SAbstractConcept thisConcept, SNode node) {

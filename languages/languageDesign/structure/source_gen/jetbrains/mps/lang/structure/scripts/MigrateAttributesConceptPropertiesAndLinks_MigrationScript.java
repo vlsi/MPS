@@ -38,7 +38,7 @@ public class MigrateAttributesConceptPropertiesAndLinks_MigrationScript extends 
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return AttributeDesignTimeOperations.isAttributeDeclaration(node) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))) == null);
+        return AttributeDesignTimeOperations.isAttributeDeclaration(node) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")) == null);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -81,7 +81,7 @@ public class MigrateAttributesConceptPropertiesAndLinks_MigrationScript extends 
           ListSequence.fromList(SLinkOperations.getTargets(info, "attributed", true)).addElement(createAttributeInfo_AttributedConcept_91cv71_a0a0a01a0a(concept));
         }
 
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo")), info);
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo"), info);
         ListSequence.fromList(SLinkOperations.getTargets(node, "conceptProperty", true)).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"), "conceptPropertyDeclaration", true)).contains(SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false));

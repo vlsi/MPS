@@ -20,7 +20,7 @@
     <nodeInfo nodeId="7658393498702987473" fileName="AddTestReferenceAnnotation_Intention.java" startLine="88" startPosition="78" endLine="89" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7658393498702996085" fileName="AddTestReferenceAnnotation_Intention.java" startLine="89" startPosition="56" endLine="90" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7658393498703022822" fileName="AddTestReferenceAnnotation_Intention.java" startLine="90" startPosition="60" endLine="91" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7658393498703024682" fileName="AddTestReferenceAnnotation_Intention.java" startLine="91" startPosition="71" endLine="92" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7658393498703024682" fileName="AddTestReferenceAnnotation_Intention.java" startLine="91" startPosition="71" endLine="92" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="95" startPosition="48" endLine="96" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddTestReferenceAnnotation_Intention#()V" />
     <nodeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="81" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -76,7 +76,7 @@
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="54" startPosition="84" endLine="58" endPosition="16" />
     <scopeInfo nodeId="7658393498702987309" fileName="AddTestReferenceAnnotation_Intention.java" startLine="73" startPosition="99" endLine="77" endPosition="30" />
-    <scopeInfo nodeId="7658393498702987313" fileName="AddTestReferenceAnnotation_Intention.java" startLine="88" startPosition="78" endLine="92" endPosition="309">
+    <scopeInfo nodeId="7658393498702987313" fileName="AddTestReferenceAnnotation_Intention.java" startLine="88" startPosition="78" endLine="92" endPosition="266">
       <varInfo nodeId="7658393498702987474" varName="cell" />
       <varInfo nodeId="7658393498702996086" varName="linkRole" />
       <varInfo nodeId="7658393498703022823" varName="referentNode" />

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -115,7 +114,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   }
 
   private static boolean renderingCondition_e5b6m9_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "template", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "template", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+    return (SLinkOperations.getTarget(node, "template", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "template", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
   }
 
   private EditorCell createRefCell_e5b6m9_b0(EditorContext editorContext, SNode node) {
@@ -177,7 +176,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   }
 
   private static boolean renderingCondition_e5b6m9_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "template", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "template", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
+    return (SLinkOperations.getTarget(node, "template", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "template", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) != null);
   }
 
   private EditorCell createConstant_e5b6m9_c0(EditorContext editorContext, SNode node) {

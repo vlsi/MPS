@@ -41,7 +41,7 @@ public class AttributeDesignTimeOperations {
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // todo: why not getAttributeRole? 
-        return isNotEmpty_ripaa1_a0a1a0a0a0a4a0(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role")) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
+        return isNotEmpty_ripaa1_a0a1a0a0a0a4a0(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role")) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SConceptOperations.isSubConceptOf(nodeConcept, NameUtil.nodeFQName(it));
           }
@@ -60,9 +60,9 @@ public class AttributeDesignTimeOperations {
     }
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "multiple", true) != null);
+        return (SLinkOperations.getTarget(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "multiple", true) != null);
       }
-    }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "multiple", true), "value");
+    }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "multiple", true), "value");
   }
 
   @Nullable
@@ -72,9 +72,9 @@ public class AttributeDesignTimeOperations {
     }
     return SPropertyOperations.getString(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return isNotEmpty_ripaa1_a0a0a0a0a0a0b0d(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role"));
+        return isNotEmpty_ripaa1_a0a0a0a0a0a0b0d(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role"));
       }
-    }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "role");
+    }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role");
   }
 
   public static Iterable<SNode> getApplicableConcepts(SNode attributeDeclaration) {
@@ -83,7 +83,7 @@ public class AttributeDesignTimeOperations {
     }
     return SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AttributeInfo"))), "attributed", true)).where(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "attributed", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "concept", false) != null);
           }

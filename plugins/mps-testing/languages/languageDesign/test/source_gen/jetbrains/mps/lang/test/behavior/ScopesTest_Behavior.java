@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ScopesTest_Behavior {
   public static void init(SNode thisNode) {
@@ -33,6 +32,6 @@ public class ScopesTest_Behavior {
   }
 
   public static boolean call_isApplicable_5449224527592368025(SAbstractConcept thisConcept, SNode node) {
-    return ListSequence.fromList(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))) == null) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.test.structure.ScopesTest"));
+    return ListSequence.fromList(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest")) == null) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.test.structure.ScopesTest"));
   }
 }
