@@ -1,0 +1,19 @@
+<ivy-module version="2.0">
+  <info organisation="org.jetbrains.mps" module="mps"/>
+
+  <dependencies>
+    <dependency org="org" name="MPS_31_JetPadEditor" rev="${jetpad.version}">
+      <include name="base-1.0-SNAPSHOT" ext="jar"/>
+      <include name="diagram-1.0-SNAPSHOT" ext="jar"/>
+      <include name="domUtil-1.0-SNAPSHOT" ext="jar"/>
+      <include name="event-1.0-SNAPSHOT" ext="jar"/>
+      <include name="geometry-1.0-SNAPSHOT" ext="jar"/>
+      <include name="grammar-1.0-SNAPSHOT" ext="jar"/>
+      <include name="jetpadBuildNumber" ext="txt"/>
+      <include name="mapper-1.0-SNAPSHOT" ext="jar"/>
+      <include name="model-1.0-SNAPSHOT" ext="jar"/>
+      <include name="values-1.0-SNAPSHOT" ext="jar"/>
+      <include name="view-1.0-SNAPSHOT" ext="jar"/>
+    </dependency>
+  </dependencies>
+</ivy-module>

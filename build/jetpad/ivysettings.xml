@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-settings>
+    <settings defaultResolver='teamcity-repo'/>
+    <caches defaultCacheDir="${mps.ivy.home}/.ivy2/cache"/>
+    <resolvers>
+        <url name='teamcity-repo' alwaysCheckExactRevision='yes' checkmodified='true'>
+            <ivy pattern='http://buildserver.labs.intellij.net/guestAuth/repository/download/[module]/[revision]/teamcity-ivy.xml'/>
+            <artifact
+                    pattern='http://buildserver.labs.intellij.net/guestAuth/repository/download/[module]/[revision]/[artifact](.[ext])'/>
+        </url>
+    </resolvers>
+</ivy-settings>
