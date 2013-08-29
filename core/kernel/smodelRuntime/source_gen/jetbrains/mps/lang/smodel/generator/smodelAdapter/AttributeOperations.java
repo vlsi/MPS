@@ -10,10 +10,6 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class AttributeOperations {
   private AttributeOperations() {
@@ -105,9 +101,6 @@ public class AttributeOperations {
     return SPropertyOperations.getString(attribute, "propertyName");
   }
 
-  public static void $$$$$$$$$$$$$$$$$$$$() {
-  }
-
   public static boolean isAttribute(SNode node) {
     if (node == null) {
       return false;
@@ -132,80 +125,12 @@ public class AttributeOperations {
     return getAttribute(node, new IAttributeDescriptor.NodeAttributeString(role));
   }
 
-  public static List<SNode> getNodeAttributes(SNode node, String role) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(role))).toListSequence();
-  }
-
-  public static void setNodeAttribute(SNode node, String role, SNode attribute) {
-    setAttribute(node, new IAttributeDescriptor.NodeAttributeString(role), attribute);
-  }
-
-  public static void addNodeAttribute(SNode node, String role, SNode attribute) {
-    addAttribute(node, new IAttributeDescriptor.NodeAttributeString(role), attribute);
-  }
-
-  public static void setPropertyAttribute(SNode node, String role, String propertyName, SNode propertyAttribute) {
-    setAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName), propertyAttribute);
-  }
-
-  public static void addPropertyAttribute(SNode node, String role, String propertyName, SNode propertyAttribute) {
-    addAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName), propertyAttribute);
-  }
-
   public static SNode getPropertyAttribute(SNode node, String role, String propertyName) {
     return getAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName));
   }
 
-  public static List<SNode> getPropertyAttributes(SNode node, String role, String propertyName) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName))).toListSequence();
-  }
-
-  public static Set<SNode> getPropertyAttributeForPropertyName(SNode node, String propertyName) {
-    return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, propertyName)));
-  }
-
-  public static Set<String> getPropertyNamesFromAttributes(SNode node) {
-    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, null))).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return getPropertyName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
-      }
-    }).where(new IWhereFilter<String>() {
-      public boolean accept(String name) {
-        return name != null;
-      }
-    }));
-  }
-
-  public static void setLinkAttribute(SNode node, String role, String linkRole, SNode linkAttribute) {
-    setAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole), linkAttribute);
-  }
-
-  public static void addLinkAttribute(SNode node, String role, String linkRole, SNode linkAttribute) {
-    addAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole), linkAttribute);
-  }
-
   public static SNode getLinkAttribute(SNode node, String role, String linkRole) {
     return getAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole));
-  }
-
-  public static List<SNode> getLinkAttributes(SNode node, String role, String linkRole) {
-    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole))).toListSequence();
-  }
-
-  public static Set<SNode> getLinkAttributeForLinkRole(SNode node, String linkRole) {
-    return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, linkRole)));
-  }
-
-  public static Set<String> getLinkNamesFromAttributes(SNode node) {
-    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return getLinkRole(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.LinkAttribute"));
-      }
-    }).where(new IWhereFilter<String>() {
-      public boolean accept(String role) {
-        return role != null;
-      }
-    }));
   }
 
   public static class AttributeList extends AbstractSNodeList {

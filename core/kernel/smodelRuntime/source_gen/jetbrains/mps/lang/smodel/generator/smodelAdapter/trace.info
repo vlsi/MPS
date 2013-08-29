@@ -82,360 +82,228 @@
     <unitInfo nodeId="1101499704720825413" fileName="SEnumOperations.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
   </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6407023681582958584">
-    <nodeInfo nodeId="6407023681583007509" fileName="AttributeOperations.java" startLine="24" startPosition="39" endLine="25" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583007523" fileName="AttributeOperations.java" startLine="30" startPosition="81" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1287809918884497331" fileName="AttributeOperations.java" startLine="32" startPosition="48" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1872556359014886399" fileName="AttributeOperations.java" startLine="34" startPosition="5" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6407023681583007534" fileName="AttributeOperations.java" startLine="35" startPosition="50" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583007566" fileName="AttributeOperations.java" startLine="39" startPosition="94" endLine="40" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583007584" fileName="AttributeOperations.java" startLine="40" startPosition="103" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6960953357954106834" fileName="AttributeOperations.java" startLine="41" startPosition="29" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068277858973560843" fileName="AttributeOperations.java" startLine="45" startPosition="111" endLine="46" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583066541" fileName="AttributeOperations.java" startLine="46" startPosition="72" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6960953357954106840" fileName="AttributeOperations.java" startLine="47" startPosition="29" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583011607" fileName="AttributeOperations.java" startLine="51" startPosition="96" endLine="52" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6407023681583016413" fileName="AttributeOperations.java" startLine="52" startPosition="46" endLine="53" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583016461" fileName="AttributeOperations.java" startLine="55" startPosition="48" endLine="56" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583011530" fileName="AttributeOperations.java" startLine="61" startPosition="94" endLine="62" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6407023681583011567" fileName="AttributeOperations.java" startLine="64" startPosition="28" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583011559" fileName="AttributeOperations.java" startLine="66" startPosition="7" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583030401" fileName="AttributeOperations.java" startLine="68" startPosition="33" endLine="69" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1872556359014886402" fileName="AttributeOperations.java" startLine="70" startPosition="12" endLine="71" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6407023681583011580" fileName="AttributeOperations.java" startLine="71" startPosition="52" endLine="72" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583066557" fileName="AttributeOperations.java" startLine="73" startPosition="5" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583065811" fileName="AttributeOperations.java" startLine="84" startPosition="115" endLine="85" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6960953357954106672" fileName="AttributeOperations.java" startLine="88" startPosition="115" endLine="89" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1757699476691445108" fileName="AttributeOperations.java" startLine="92" startPosition="59" endLine="93" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1603552250726500469" fileName="AttributeOperations.java" startLine="96" startPosition="53" endLine="97" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1757699476691445340" fileName="AttributeOperations.java" startLine="100" startPosition="63" endLine="101" endPosition="389" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1603552250726500488" fileName="AttributeOperations.java" startLine="104" startPosition="57" endLine="105" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5613258673506096547" fileName="AttributeOperations.java" startLine="112" startPosition="23" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8647109073523579962" fileName="AttributeOperations.java" startLine="114" startPosition="5" endLine="115" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8647109073523580003" fileName="AttributeOperations.java" startLine="116" startPosition="23" endLine="117" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583065770" fileName="AttributeOperations.java" startLine="118" startPosition="5" endLine="119" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884446514" fileName="AttributeOperations.java" startLine="122" startPosition="58" endLine="123" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884446492" fileName="AttributeOperations.java" startLine="126" startPosition="63" endLine="127" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497177" fileName="AttributeOperations.java" startLine="127" startPosition="83" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1287809918884480018" fileName="AttributeOperations.java" startLine="131" startPosition="65" endLine="132" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6967649818394803122" fileName="AttributeOperations.java" startLine="135" startPosition="72" endLine="136" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497191" fileName="AttributeOperations.java" startLine="139" startPosition="81" endLine="140" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1287809918884497218" fileName="AttributeOperations.java" startLine="143" startPosition="81" endLine="144" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1287809918884497356" fileName="AttributeOperations.java" startLine="147" startPosition="114" endLine="148" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1287809918884497383" fileName="AttributeOperations.java" startLine="151" startPosition="114" endLine="152" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1287809918884497404" fileName="AttributeOperations.java" startLine="155" startPosition="90" endLine="156" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497425" fileName="AttributeOperations.java" startLine="159" startPosition="97" endLine="160" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497562" fileName="AttributeOperations.java" startLine="163" startPosition="97" endLine="164" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507439356949661431" fileName="AttributeOperations.java" startLine="169" startPosition="38" endLine="170" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1113897827127266138" fileName="AttributeOperations.java" startLine="173" startPosition="42" endLine="174" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497463" fileName="AttributeOperations.java" startLine="179" startPosition="102" endLine="180" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1287809918884497483" fileName="AttributeOperations.java" startLine="183" startPosition="102" endLine="184" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1287809918884497503" fileName="AttributeOperations.java" startLine="187" startPosition="82" endLine="188" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497520" fileName="AttributeOperations.java" startLine="191" startPosition="89" endLine="192" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884497586" fileName="AttributeOperations.java" startLine="195" startPosition="85" endLine="196" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507439356949661461" fileName="AttributeOperations.java" startLine="201" startPosition="38" endLine="202" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1113897827127266118" fileName="AttributeOperations.java" startLine="205" startPosition="42" endLine="206" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583065644" fileName="AttributeOperations.java" startLine="212" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAttributeDescriptor" />
-    <nodeInfo nodeId="6407023681583065653" fileName="AttributeOperations.java" startLine="214" startPosition="77" endLine="215" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6407023681583065675" fileName="AttributeOperations.java" startLine="215" startPosition="270" endLine="216" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583065701" fileName="AttributeOperations.java" startLine="220" startPosition="62" endLine="221" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583065708" fileName="AttributeOperations.java" startLine="225" startPosition="47" endLine="226" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681583065717" fileName="AttributeOperations.java" startLine="230" startPosition="50" endLine="231" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6407023681582958586" fileName="AttributeOperations.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeOperations#()V" />
-    <nodeInfo nodeId="6407023681583030858" fileName="AttributeOperations.java" startLine="108" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="$$$$$$$$$$$$$$$$$$$$#()V" />
-    <nodeInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1287809918884497321" fileName="AttributeOperations.java" startLine="31" startPosition="59" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6407023681583016445" fileName="AttributeOperations.java" startLine="54" startPosition="57" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6407023681583011549" fileName="AttributeOperations.java" startLine="63" startPosition="51" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6407023681583011578" fileName="AttributeOperations.java" startLine="70" startPosition="10" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6407023681583065781" fileName="AttributeOperations.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAndSetAttrbiute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6960953357954106660" fileName="AttributeOperations.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAndAddAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1603552250726498307" fileName="AttributeOperations.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1603552250726500462" fileName="AttributeOperations.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1603552250726500448" fileName="AttributeOperations.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1603552250726500481" fileName="AttributeOperations.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5613258673506096520" fileName="AttributeOperations.java" startLine="111" startPosition="49" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8647109073523579994" fileName="AttributeOperations.java" startLine="115" startPosition="51" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1287809918884446507" fileName="AttributeOperations.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAllAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1287809918884480006" fileName="AttributeOperations.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6967649818394799893" fileName="AttributeOperations.java" startLine="135" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1287809918884497179" fileName="AttributeOperations.java" startLine="139" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setNodeAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1287809918884497206" fileName="AttributeOperations.java" startLine="143" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addNodeAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1287809918884497341" fileName="AttributeOperations.java" startLine="147" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setPropertyAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1287809918884497368" fileName="AttributeOperations.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addPropertyAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1287809918884497391" fileName="AttributeOperations.java" startLine="155" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1287809918884497421" fileName="AttributeOperations.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1287809918884497535" fileName="AttributeOperations.java" startLine="163" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyAttributeForPropertyName#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Set;" />
-    <nodeInfo nodeId="4507439356949661427" fileName="AttributeOperations.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1113897827127266134" fileName="AttributeOperations.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1287809918884497459" fileName="AttributeOperations.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setLinkAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1287809918884497479" fileName="AttributeOperations.java" startLine="183" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addLinkAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1287809918884497499" fileName="AttributeOperations.java" startLine="187" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1287809918884497516" fileName="AttributeOperations.java" startLine="191" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1287809918884497581" fileName="AttributeOperations.java" startLine="195" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkAttributeForLinkRole#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Set;" />
-    <nodeInfo nodeId="4507439356949661459" fileName="AttributeOperations.java" startLine="201" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1113897827127263987" fileName="AttributeOperations.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6407023681583065621" fileName="AttributeOperations.java" startLine="77" startPosition="91" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1287809918884446481" fileName="AttributeOperations.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6407023681583065639" fileName="AttributeOperations.java" startLine="214" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)V" />
-    <nodeInfo nodeId="6407023681583065681" fileName="AttributeOperations.java" startLine="219" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertAfter#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6407023681583065689" fileName="AttributeOperations.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6407023681583065695" fileName="AttributeOperations.java" startLine="229" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemoveReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6407023681582958596" fileName="AttributeOperations.java" startLine="22" startPosition="98" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583007554" fileName="AttributeOperations.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6407023681583065725" fileName="AttributeOperations.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="53" startPosition="100" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6407023681583065611" fileName="AttributeOperations.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/util/List;" />
-    <nodeInfo nodeId="6407023681582958591" fileName="AttributeOperations.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6407023681582990196" fileName="AttributeOperations.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6407023681583011595" fileName="AttributeOperations.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="deleteAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4507439356949661406" fileName="AttributeOperations.java" startLine="167" startPosition="72" endLine="176" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507439356949661447" fileName="AttributeOperations.java" startLine="199" startPosition="68" endLine="208" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583065763" fileName="AttributeOperations.java" startLine="111" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6407023681583011539" fileName="AttributeOperations.java" startLine="62" startPosition="62" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4507439356949661396" fileName="AttributeOperations.java" startLine="167" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyNamesFromAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="4507439356949661442" fileName="AttributeOperations.java" startLine="199" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkNamesFromAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="6407023681582990187" fileName="AttributeOperations.java" startLine="61" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="6407023681582958589" fileName="AttributeOperations.java" startLine="19" startPosition="33" endLine="19" endPosition="33" />
-    <scopeInfo nodeId="6407023681583030861" fileName="AttributeOperations.java" startLine="108" startPosition="45" endLine="108" endPosition="45" />
-    <scopeInfo nodeId="6407023681583007506" fileName="AttributeOperations.java" startLine="24" startPosition="39" endLine="25" endPosition="36" />
-    <scopeInfo nodeId="1287809918884497322" fileName="AttributeOperations.java" startLine="32" startPosition="48" endLine="33" endPosition="18" />
-    <scopeInfo nodeId="6407023681583016447" fileName="AttributeOperations.java" startLine="55" startPosition="48" endLine="56" endPosition="96" />
-    <scopeInfo nodeId="6407023681583011550" fileName="AttributeOperations.java" startLine="64" startPosition="28" endLine="65" endPosition="20" />
-    <scopeInfo nodeId="6407023681583011570" fileName="AttributeOperations.java" startLine="68" startPosition="33" endLine="69" endPosition="47" />
-    <scopeInfo nodeId="6407023681583065784" fileName="AttributeOperations.java" startLine="84" startPosition="115" endLine="85" endPosition="182" />
-    <scopeInfo nodeId="6960953357954106663" fileName="AttributeOperations.java" startLine="88" startPosition="115" endLine="89" endPosition="182" />
-    <scopeInfo nodeId="1603552250726498310" fileName="AttributeOperations.java" startLine="92" startPosition="59" endLine="93" endPosition="377" />
-    <scopeInfo nodeId="1603552250726500465" fileName="AttributeOperations.java" startLine="96" startPosition="53" endLine="97" endPosition="64" />
-    <scopeInfo nodeId="1603552250726500451" fileName="AttributeOperations.java" startLine="100" startPosition="63" endLine="101" endPosition="389" />
-    <scopeInfo nodeId="1603552250726500484" fileName="AttributeOperations.java" startLine="104" startPosition="57" endLine="105" endPosition="68" />
-    <scopeInfo nodeId="5613258673506096521" fileName="AttributeOperations.java" startLine="112" startPosition="23" endLine="113" endPosition="19" />
-    <scopeInfo nodeId="8647109073523579995" fileName="AttributeOperations.java" startLine="116" startPosition="23" endLine="117" endPosition="19" />
-    <scopeInfo nodeId="1287809918884446510" fileName="AttributeOperations.java" startLine="122" startPosition="58" endLine="123" endPosition="69" />
-    <scopeInfo nodeId="1287809918884480009" fileName="AttributeOperations.java" startLine="131" startPosition="65" endLine="132" endPosition="82" />
-    <scopeInfo nodeId="6967649818394799896" fileName="AttributeOperations.java" startLine="135" startPosition="72" endLine="136" endPosition="123" />
-    <scopeInfo nodeId="1287809918884497182" fileName="AttributeOperations.java" startLine="139" startPosition="81" endLine="140" endPosition="86" />
-    <scopeInfo nodeId="1287809918884497209" fileName="AttributeOperations.java" startLine="143" startPosition="81" endLine="144" endPosition="86" />
-    <scopeInfo nodeId="1287809918884497344" fileName="AttributeOperations.java" startLine="147" startPosition="114" endLine="148" endPosition="112" />
-    <scopeInfo nodeId="1287809918884497371" fileName="AttributeOperations.java" startLine="151" startPosition="114" endLine="152" endPosition="112" />
-    <scopeInfo nodeId="1287809918884497394" fileName="AttributeOperations.java" startLine="155" startPosition="90" endLine="156" endPosition="100" />
-    <scopeInfo nodeId="1287809918884497424" fileName="AttributeOperations.java" startLine="159" startPosition="97" endLine="160" endPosition="141" />
-    <scopeInfo nodeId="1287809918884497538" fileName="AttributeOperations.java" startLine="163" startPosition="97" endLine="164" endPosition="154" />
-    <scopeInfo nodeId="4507439356949661428" fileName="AttributeOperations.java" startLine="169" startPosition="38" endLine="170" endPosition="160" />
-    <scopeInfo nodeId="1113897827127266135" fileName="AttributeOperations.java" startLine="173" startPosition="42" endLine="174" endPosition="28" />
-    <scopeInfo nodeId="1287809918884497462" fileName="AttributeOperations.java" startLine="179" startPosition="102" endLine="180" endPosition="100" />
-    <scopeInfo nodeId="1287809918884497482" fileName="AttributeOperations.java" startLine="183" startPosition="102" endLine="184" endPosition="100" />
-    <scopeInfo nodeId="1287809918884497502" fileName="AttributeOperations.java" startLine="187" startPosition="82" endLine="188" endPosition="92" />
-    <scopeInfo nodeId="1287809918884497519" fileName="AttributeOperations.java" startLine="191" startPosition="89" endLine="192" endPosition="133" />
-    <scopeInfo nodeId="1287809918884497585" fileName="AttributeOperations.java" startLine="195" startPosition="85" endLine="196" endPosition="146" />
-    <scopeInfo nodeId="4507439356949661460" fileName="AttributeOperations.java" startLine="201" startPosition="38" endLine="202" endPosition="152" />
-    <scopeInfo nodeId="1113897827127263988" fileName="AttributeOperations.java" startLine="205" startPosition="42" endLine="206" endPosition="28" />
-    <scopeInfo nodeId="6407023681583065688" fileName="AttributeOperations.java" startLine="220" startPosition="62" endLine="221" endPosition="113" />
-    <scopeInfo nodeId="6407023681583065694" fileName="AttributeOperations.java" startLine="225" startPosition="47" endLine="226" endPosition="98" />
-    <scopeInfo nodeId="6407023681583065700" fileName="AttributeOperations.java" startLine="230" startPosition="50" endLine="231" endPosition="101" />
-    <scopeInfo nodeId="6407023681582958586" fileName="AttributeOperations.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6407023681583011579" fileName="AttributeOperations.java" startLine="70" startPosition="12" endLine="72" endPosition="31" />
-    <scopeInfo nodeId="6407023681583030858" fileName="AttributeOperations.java" startLine="108" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="1287809918884446484" fileName="AttributeOperations.java" startLine="126" startPosition="63" endLine="128" endPosition="14" />
-    <scopeInfo nodeId="6407023681583065642" fileName="AttributeOperations.java" startLine="214" startPosition="77" endLine="216" endPosition="41" />
-    <scopeInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <nodeInfo nodeId="6407023681583007509" fileName="AttributeOperations.java" startLine="20" startPosition="39" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583007523" fileName="AttributeOperations.java" startLine="26" startPosition="81" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1287809918884497331" fileName="AttributeOperations.java" startLine="28" startPosition="48" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1872556359014886399" fileName="AttributeOperations.java" startLine="30" startPosition="5" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6407023681583007534" fileName="AttributeOperations.java" startLine="31" startPosition="50" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583007566" fileName="AttributeOperations.java" startLine="35" startPosition="94" endLine="36" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583007584" fileName="AttributeOperations.java" startLine="36" startPosition="103" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6960953357954106834" fileName="AttributeOperations.java" startLine="37" startPosition="29" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068277858973560843" fileName="AttributeOperations.java" startLine="41" startPosition="111" endLine="42" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583066541" fileName="AttributeOperations.java" startLine="42" startPosition="72" endLine="43" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6960953357954106840" fileName="AttributeOperations.java" startLine="43" startPosition="29" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583011607" fileName="AttributeOperations.java" startLine="47" startPosition="96" endLine="48" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6407023681583016413" fileName="AttributeOperations.java" startLine="48" startPosition="46" endLine="49" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583016461" fileName="AttributeOperations.java" startLine="51" startPosition="48" endLine="52" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583011530" fileName="AttributeOperations.java" startLine="57" startPosition="94" endLine="58" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6407023681583011567" fileName="AttributeOperations.java" startLine="60" startPosition="28" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583011559" fileName="AttributeOperations.java" startLine="62" startPosition="7" endLine="63" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583030401" fileName="AttributeOperations.java" startLine="64" startPosition="33" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1872556359014886402" fileName="AttributeOperations.java" startLine="66" startPosition="12" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6407023681583011580" fileName="AttributeOperations.java" startLine="67" startPosition="52" endLine="68" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583066557" fileName="AttributeOperations.java" startLine="69" startPosition="5" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583065811" fileName="AttributeOperations.java" startLine="80" startPosition="115" endLine="81" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6960953357954106672" fileName="AttributeOperations.java" startLine="84" startPosition="115" endLine="85" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1757699476691445108" fileName="AttributeOperations.java" startLine="88" startPosition="59" endLine="89" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1603552250726500469" fileName="AttributeOperations.java" startLine="92" startPosition="53" endLine="93" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1757699476691445340" fileName="AttributeOperations.java" startLine="96" startPosition="63" endLine="97" endPosition="389" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1603552250726500488" fileName="AttributeOperations.java" startLine="100" startPosition="57" endLine="101" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5613258673506096547" fileName="AttributeOperations.java" startLine="105" startPosition="23" endLine="106" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8647109073523579962" fileName="AttributeOperations.java" startLine="107" startPosition="5" endLine="108" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8647109073523580003" fileName="AttributeOperations.java" startLine="109" startPosition="23" endLine="110" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583065770" fileName="AttributeOperations.java" startLine="111" startPosition="5" endLine="112" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1287809918884446514" fileName="AttributeOperations.java" startLine="115" startPosition="58" endLine="116" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1287809918884446492" fileName="AttributeOperations.java" startLine="119" startPosition="63" endLine="120" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1287809918884497177" fileName="AttributeOperations.java" startLine="120" startPosition="83" endLine="121" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1287809918884480018" fileName="AttributeOperations.java" startLine="124" startPosition="65" endLine="125" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1287809918884497404" fileName="AttributeOperations.java" startLine="128" startPosition="90" endLine="129" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1287809918884497503" fileName="AttributeOperations.java" startLine="132" startPosition="82" endLine="133" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583065644" fileName="AttributeOperations.java" startLine="137" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAttributeDescriptor" />
+    <nodeInfo nodeId="6407023681583065653" fileName="AttributeOperations.java" startLine="139" startPosition="77" endLine="140" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6407023681583065675" fileName="AttributeOperations.java" startLine="140" startPosition="270" endLine="141" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583065701" fileName="AttributeOperations.java" startLine="145" startPosition="62" endLine="146" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583065708" fileName="AttributeOperations.java" startLine="150" startPosition="47" endLine="151" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681583065717" fileName="AttributeOperations.java" startLine="155" startPosition="50" endLine="156" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6407023681582958586" fileName="AttributeOperations.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeOperations#()V" />
+    <nodeInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1287809918884497321" fileName="AttributeOperations.java" startLine="27" startPosition="59" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6407023681583016445" fileName="AttributeOperations.java" startLine="50" startPosition="57" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6407023681583011549" fileName="AttributeOperations.java" startLine="59" startPosition="51" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6407023681583011578" fileName="AttributeOperations.java" startLine="66" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6407023681583065781" fileName="AttributeOperations.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAndSetAttrbiute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6960953357954106660" fileName="AttributeOperations.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAndAddAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1603552250726498307" fileName="AttributeOperations.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1603552250726500462" fileName="AttributeOperations.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1603552250726500448" fileName="AttributeOperations.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1603552250726500481" fileName="AttributeOperations.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5613258673506096520" fileName="AttributeOperations.java" startLine="104" startPosition="49" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8647109073523579994" fileName="AttributeOperations.java" startLine="108" startPosition="51" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1287809918884446507" fileName="AttributeOperations.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAllAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1287809918884480006" fileName="AttributeOperations.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1287809918884497391" fileName="AttributeOperations.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1287809918884497499" fileName="AttributeOperations.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583065621" fileName="AttributeOperations.java" startLine="73" startPosition="91" endLine="77" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1287809918884446481" fileName="AttributeOperations.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6407023681583065639" fileName="AttributeOperations.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)V" />
+    <nodeInfo nodeId="6407023681583065681" fileName="AttributeOperations.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertAfter#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6407023681583065689" fileName="AttributeOperations.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6407023681583065695" fileName="AttributeOperations.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemoveReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6407023681582958596" fileName="AttributeOperations.java" startLine="18" startPosition="98" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583007554" fileName="AttributeOperations.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583065725" fileName="AttributeOperations.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="49" startPosition="100" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6407023681583065611" fileName="AttributeOperations.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttributeList#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/util/List;" />
+    <nodeInfo nodeId="6407023681582958591" fileName="AttributeOperations.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttributes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6407023681582990196" fileName="AttributeOperations.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6407023681583011595" fileName="AttributeOperations.java" startLine="47" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="deleteAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6407023681583065763" fileName="AttributeOperations.java" startLine="104" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6407023681583011539" fileName="AttributeOperations.java" startLine="58" startPosition="62" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6407023681582990187" fileName="AttributeOperations.java" startLine="57" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="6407023681582958589" fileName="AttributeOperations.java" startLine="15" startPosition="33" endLine="15" endPosition="33" />
+    <scopeInfo nodeId="6407023681583007506" fileName="AttributeOperations.java" startLine="20" startPosition="39" endLine="21" endPosition="36" />
+    <scopeInfo nodeId="1287809918884497322" fileName="AttributeOperations.java" startLine="28" startPosition="48" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="6407023681583016447" fileName="AttributeOperations.java" startLine="51" startPosition="48" endLine="52" endPosition="96" />
+    <scopeInfo nodeId="6407023681583011550" fileName="AttributeOperations.java" startLine="60" startPosition="28" endLine="61" endPosition="20" />
+    <scopeInfo nodeId="6407023681583011570" fileName="AttributeOperations.java" startLine="64" startPosition="33" endLine="65" endPosition="47" />
+    <scopeInfo nodeId="6407023681583065784" fileName="AttributeOperations.java" startLine="80" startPosition="115" endLine="81" endPosition="182" />
+    <scopeInfo nodeId="6960953357954106663" fileName="AttributeOperations.java" startLine="84" startPosition="115" endLine="85" endPosition="182" />
+    <scopeInfo nodeId="1603552250726498310" fileName="AttributeOperations.java" startLine="88" startPosition="59" endLine="89" endPosition="377" />
+    <scopeInfo nodeId="1603552250726500465" fileName="AttributeOperations.java" startLine="92" startPosition="53" endLine="93" endPosition="64" />
+    <scopeInfo nodeId="1603552250726500451" fileName="AttributeOperations.java" startLine="96" startPosition="63" endLine="97" endPosition="389" />
+    <scopeInfo nodeId="1603552250726500484" fileName="AttributeOperations.java" startLine="100" startPosition="57" endLine="101" endPosition="68" />
+    <scopeInfo nodeId="5613258673506096521" fileName="AttributeOperations.java" startLine="105" startPosition="23" endLine="106" endPosition="19" />
+    <scopeInfo nodeId="8647109073523579995" fileName="AttributeOperations.java" startLine="109" startPosition="23" endLine="110" endPosition="19" />
+    <scopeInfo nodeId="1287809918884446510" fileName="AttributeOperations.java" startLine="115" startPosition="58" endLine="116" endPosition="69" />
+    <scopeInfo nodeId="1287809918884480009" fileName="AttributeOperations.java" startLine="124" startPosition="65" endLine="125" endPosition="82" />
+    <scopeInfo nodeId="1287809918884497394" fileName="AttributeOperations.java" startLine="128" startPosition="90" endLine="129" endPosition="100" />
+    <scopeInfo nodeId="1287809918884497502" fileName="AttributeOperations.java" startLine="132" startPosition="82" endLine="133" endPosition="92" />
+    <scopeInfo nodeId="6407023681583065688" fileName="AttributeOperations.java" startLine="145" startPosition="62" endLine="146" endPosition="113" />
+    <scopeInfo nodeId="6407023681583065694" fileName="AttributeOperations.java" startLine="150" startPosition="47" endLine="151" endPosition="98" />
+    <scopeInfo nodeId="6407023681583065700" fileName="AttributeOperations.java" startLine="155" startPosition="50" endLine="156" endPosition="101" />
+    <scopeInfo nodeId="6407023681582958586" fileName="AttributeOperations.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="6407023681583011579" fileName="AttributeOperations.java" startLine="66" startPosition="12" endLine="68" endPosition="31" />
+    <scopeInfo nodeId="1287809918884446484" fileName="AttributeOperations.java" startLine="119" startPosition="63" endLine="121" endPosition="14" />
+    <scopeInfo nodeId="6407023681583065642" fileName="AttributeOperations.java" startLine="139" startPosition="77" endLine="141" endPosition="41" />
+    <scopeInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6407023681583007505" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583007557" fileName="AttributeOperations.java" startLine="39" startPosition="94" endLine="42" endPosition="17" />
-    <scopeInfo nodeId="6407023681583065728" fileName="AttributeOperations.java" startLine="45" startPosition="111" endLine="48" endPosition="17" />
-    <scopeInfo nodeId="6407023681583016443" fileName="AttributeOperations.java" startLine="54" startPosition="57" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="6407023681583065781" fileName="AttributeOperations.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="6407023681583007557" fileName="AttributeOperations.java" startLine="35" startPosition="94" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="6407023681583065728" fileName="AttributeOperations.java" startLine="41" startPosition="111" endLine="44" endPosition="17" />
+    <scopeInfo nodeId="6407023681583016443" fileName="AttributeOperations.java" startLine="50" startPosition="57" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="6407023681583065781" fileName="AttributeOperations.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="6407023681583065788" varName="descriptor" />
       <varInfo nodeId="6407023681583065791" varName="newConceptFqname" />
       <varInfo nodeId="6407023681583065786" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6960953357954106660" fileName="AttributeOperations.java" startLine="88" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="6960953357954106660" fileName="AttributeOperations.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="6960953357954106666" varName="descriptor" />
       <varInfo nodeId="6960953357954106669" varName="newConceptFqname" />
       <varInfo nodeId="6960953357954106664" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1603552250726498307" fileName="AttributeOperations.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="1603552250726498307" fileName="AttributeOperations.java" startLine="88" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1603552250726500439" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1603552250726500462" fileName="AttributeOperations.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1603552250726500462" fileName="AttributeOperations.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="1603552250726500467" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1603552250726500448" fileName="AttributeOperations.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="1603552250726500448" fileName="AttributeOperations.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="1603552250726500453" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1603552250726500481" fileName="AttributeOperations.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="1603552250726500481" fileName="AttributeOperations.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="1603552250726500486" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1287809918884446507" fileName="AttributeOperations.java" startLine="122" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="1287809918884446507" fileName="AttributeOperations.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="1287809918884446512" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1287809918884480006" fileName="AttributeOperations.java" startLine="131" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="1287809918884480006" fileName="AttributeOperations.java" startLine="124" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="1287809918884480013" varName="node" />
       <varInfo nodeId="1287809918884480015" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="6967649818394799893" fileName="AttributeOperations.java" startLine="135" startPosition="0" endLine="138" endPosition="0">
-      <varInfo nodeId="6967649818394803117" varName="node" />
-      <varInfo nodeId="6967649818394803119" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497179" fileName="AttributeOperations.java" startLine="139" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="1287809918884497188" varName="attribute" />
-      <varInfo nodeId="1287809918884497183" varName="node" />
-      <varInfo nodeId="1287809918884497185" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497206" fileName="AttributeOperations.java" startLine="143" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="1287809918884497215" varName="attribute" />
-      <varInfo nodeId="1287809918884497210" varName="node" />
-      <varInfo nodeId="1287809918884497212" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497341" fileName="AttributeOperations.java" startLine="147" startPosition="0" endLine="150" endPosition="0">
-      <varInfo nodeId="1287809918884497345" varName="node" />
-      <varInfo nodeId="1287809918884497353" varName="propertyAttribute" />
-      <varInfo nodeId="1287809918884497350" varName="propertyName" />
-      <varInfo nodeId="1287809918884497347" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497368" fileName="AttributeOperations.java" startLine="151" startPosition="0" endLine="154" endPosition="0">
-      <varInfo nodeId="1287809918884497372" varName="node" />
-      <varInfo nodeId="1287809918884497380" varName="propertyAttribute" />
-      <varInfo nodeId="1287809918884497377" varName="propertyName" />
-      <varInfo nodeId="1287809918884497374" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497391" fileName="AttributeOperations.java" startLine="155" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="1287809918884497391" fileName="AttributeOperations.java" startLine="128" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="1287809918884497396" varName="node" />
       <varInfo nodeId="1287809918884497401" varName="propertyName" />
       <varInfo nodeId="1287809918884497398" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="1287809918884497421" fileName="AttributeOperations.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
-      <varInfo nodeId="1287809918884497432" varName="node" />
-      <varInfo nodeId="1287809918884497436" varName="propertyName" />
-      <varInfo nodeId="1287809918884497434" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497535" fileName="AttributeOperations.java" startLine="163" startPosition="0" endLine="166" endPosition="0">
-      <varInfo nodeId="1287809918884497539" varName="node" />
-      <varInfo nodeId="1287809918884497541" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507439356949661427" fileName="AttributeOperations.java" startLine="169" startPosition="0" endLine="172" endPosition="0">
-      <varInfo nodeId="4507439356949661427" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1113897827127266134" fileName="AttributeOperations.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="1113897827127266134" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497459" fileName="AttributeOperations.java" startLine="179" startPosition="0" endLine="182" endPosition="0">
-      <varInfo nodeId="1287809918884497477" varName="linkAttribute" />
-      <varInfo nodeId="1287809918884497475" varName="linkRole" />
-      <varInfo nodeId="1287809918884497471" varName="node" />
-      <varInfo nodeId="1287809918884497473" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497479" fileName="AttributeOperations.java" startLine="183" startPosition="0" endLine="186" endPosition="0">
-      <varInfo nodeId="1287809918884497497" varName="linkAttribute" />
-      <varInfo nodeId="1287809918884497495" varName="linkRole" />
-      <varInfo nodeId="1287809918884497491" varName="node" />
-      <varInfo nodeId="1287809918884497493" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497499" fileName="AttributeOperations.java" startLine="187" startPosition="0" endLine="190" endPosition="0">
+    <scopeInfo nodeId="1287809918884497499" fileName="AttributeOperations.java" startLine="132" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="1287809918884497514" varName="linkRole" />
       <varInfo nodeId="1287809918884497510" varName="node" />
       <varInfo nodeId="1287809918884497512" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="1287809918884497516" fileName="AttributeOperations.java" startLine="191" startPosition="0" endLine="194" endPosition="0">
-      <varInfo nodeId="1287809918884497533" varName="linkRole" />
-      <varInfo nodeId="1287809918884497529" varName="node" />
-      <varInfo nodeId="1287809918884497531" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="1287809918884497581" fileName="AttributeOperations.java" startLine="195" startPosition="0" endLine="198" endPosition="0">
-      <varInfo nodeId="1287809918884497598" varName="linkRole" />
-      <varInfo nodeId="1287809918884497596" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507439356949661459" fileName="AttributeOperations.java" startLine="201" startPosition="0" endLine="204" endPosition="0">
-      <varInfo nodeId="4507439356949661459" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1113897827127263987" fileName="AttributeOperations.java" startLine="205" startPosition="0" endLine="208" endPosition="0">
-      <varInfo nodeId="1113897827127263987" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="6407023681583011540" fileName="AttributeOperations.java" startLine="63" startPosition="51" endLine="67" endPosition="44" />
-    <scopeInfo nodeId="6407023681583065614" fileName="AttributeOperations.java" startLine="77" startPosition="91" endLine="81" endPosition="6" />
-    <scopeInfo nodeId="1287809918884446481" fileName="AttributeOperations.java" startLine="126" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="6407023681583011540" fileName="AttributeOperations.java" startLine="59" startPosition="51" endLine="63" endPosition="44" />
+    <scopeInfo nodeId="6407023681583065614" fileName="AttributeOperations.java" startLine="73" startPosition="91" endLine="77" endPosition="6" />
+    <scopeInfo nodeId="1287809918884446481" fileName="AttributeOperations.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1287809918884446488" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065639" fileName="AttributeOperations.java" startLine="214" startPosition="0" endLine="218" endPosition="0">
+    <scopeInfo nodeId="6407023681583065639" fileName="AttributeOperations.java" startLine="139" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="6407023681583065648" varName="attributed" />
       <varInfo nodeId="6407023681583065650" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065681" fileName="AttributeOperations.java" startLine="219" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="6407023681583065681" fileName="AttributeOperations.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="6407023681583065686" varName="anchorNode" />
       <varInfo nodeId="6407023681583065684" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065689" fileName="AttributeOperations.java" startLine="224" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="6407023681583065689" fileName="AttributeOperations.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="6407023681583065692" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065695" fileName="AttributeOperations.java" startLine="229" startPosition="0" endLine="233" endPosition="0">
+    <scopeInfo nodeId="6407023681583065695" fileName="AttributeOperations.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="6407023681583065698" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681582958594" fileName="AttributeOperations.java" startLine="22" startPosition="98" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="6407023681583007554" fileName="AttributeOperations.java" startLine="39" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="6407023681582958594" fileName="AttributeOperations.java" startLine="18" startPosition="98" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="6407023681583007554" fileName="AttributeOperations.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="6407023681583007560" varName="descriptor" />
       <varInfo nodeId="6407023681583007558" varName="node" />
       <varInfo nodeId="6407023681583007563" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065725" fileName="AttributeOperations.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6407023681583065725" fileName="AttributeOperations.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="6407023681583065731" varName="anchor" />
       <varInfo nodeId="6407023681583065734" varName="descriptor" />
       <varInfo nodeId="6407023681583065729" varName="node" />
       <varInfo nodeId="6407023681583065737" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="53" startPosition="100" endLine="58" endPosition="5">
+    <scopeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="49" startPosition="100" endLine="54" endPosition="5">
       <varInfo nodeId="6407023681583016441" varName="attribute" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681582990199" fileName="AttributeOperations.java" startLine="30" startPosition="81" endLine="36" endPosition="47">
+    <scopeInfo nodeId="6407023681582990199" fileName="AttributeOperations.java" startLine="26" startPosition="81" endLine="32" endPosition="47">
       <varInfo nodeId="6407023681583007524" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065611" fileName="AttributeOperations.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="6407023681583065611" fileName="AttributeOperations.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="6407023681583065618" varName="descriptor" />
       <varInfo nodeId="6407023681583065616" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681582958591" fileName="AttributeOperations.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="6407023681582958591" fileName="AttributeOperations.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6407023681583007365" varName="descriptor" />
       <varInfo nodeId="6407023681582958598" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583011598" fileName="AttributeOperations.java" startLine="51" startPosition="96" endLine="58" endPosition="5">
+    <scopeInfo nodeId="6407023681583011598" fileName="AttributeOperations.java" startLine="47" startPosition="96" endLine="54" endPosition="5">
       <varInfo nodeId="6407023681583011608" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681582990196" fileName="AttributeOperations.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="6407023681582990196" fileName="AttributeOperations.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="6407023681583007520" varName="descriptor" />
       <varInfo nodeId="6407023681582990200" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583065766" fileName="AttributeOperations.java" startLine="111" startPosition="49" endLine="119" endPosition="42">
+    <scopeInfo nodeId="6407023681583065766" fileName="AttributeOperations.java" startLine="104" startPosition="49" endLine="112" endPosition="42">
       <varInfo nodeId="8647109073523579963" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681583011595" fileName="AttributeOperations.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="6407023681583011595" fileName="AttributeOperations.java" startLine="47" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="6407023681583011599" varName="descriptor" />
       <varInfo nodeId="6407023681583011604" varName="node" />
       <varInfo nodeId="6407023681583011601" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4507439356949661399" fileName="AttributeOperations.java" startLine="167" startPosition="72" endLine="176" endPosition="8" />
-    <scopeInfo nodeId="4507439356949661446" fileName="AttributeOperations.java" startLine="199" startPosition="68" endLine="208" endPosition="8" />
-    <scopeInfo nodeId="6407023681583065763" fileName="AttributeOperations.java" startLine="111" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="6407023681583065763" fileName="AttributeOperations.java" startLine="104" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="6407023681583065768" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4507439356949661396" fileName="AttributeOperations.java" startLine="167" startPosition="0" endLine="178" endPosition="0">
-      <varInfo nodeId="4507439356949661404" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4507439356949661442" fileName="AttributeOperations.java" startLine="199" startPosition="0" endLine="210" endPosition="0">
-      <varInfo nodeId="4507439356949661467" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6407023681582990190" fileName="AttributeOperations.java" startLine="61" startPosition="94" endLine="74" endPosition="17">
+    <scopeInfo nodeId="6407023681582990190" fileName="AttributeOperations.java" startLine="57" startPosition="94" endLine="70" endPosition="17">
       <varInfo nodeId="6407023681583011531" varName="oldlist" />
     </scopeInfo>
-    <scopeInfo nodeId="6407023681582990187" fileName="AttributeOperations.java" startLine="61" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="6407023681582990187" fileName="AttributeOperations.java" startLine="57" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="6407023681583007517" varName="descriptor" />
       <varInfo nodeId="6407023681582990191" varName="node" />
       <varInfo nodeId="6407023681582990193" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="23" startPosition="102" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$1" />
-    <unitInfo nodeId="4507439356949661427" fileName="AttributeOperations.java" startLine="168" startPosition="180" endLine="172" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$3" />
-    <unitInfo nodeId="1113897827127266134" fileName="AttributeOperations.java" startLine="172" startPosition="17" endLine="176" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$4" />
-    <unitInfo nodeId="4507439356949661459" fileName="AttributeOperations.java" startLine="200" startPosition="176" endLine="204" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$5" />
-    <unitInfo nodeId="1113897827127263987" fileName="AttributeOperations.java" startLine="204" startPosition="17" endLine="208" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$6" />
-    <unitInfo nodeId="6407023681583065637" fileName="AttributeOperations.java" startLine="211" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$AttributeList" />
-    <unitInfo nodeId="6407023681582958584" fileName="AttributeOperations.java" startLine="18" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <unitInfo nodeId="6407023681583007505" fileName="AttributeOperations.java" startLine="19" startPosition="102" endLine="23" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$1" />
+    <unitInfo nodeId="6407023681583065637" fileName="AttributeOperations.java" startLine="136" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations$AttributeList" />
+    <unitInfo nodeId="6407023681582958584" fileName="AttributeOperations.java" startLine="14" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
   </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6407023681583030432">
     <nodeInfo nodeId="6407023681583030498" fileName="IAttributeDescriptor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
