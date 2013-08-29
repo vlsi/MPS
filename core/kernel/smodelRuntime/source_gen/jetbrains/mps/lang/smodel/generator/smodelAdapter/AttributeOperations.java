@@ -117,16 +117,27 @@ public class AttributeOperations {
   }
 
   public static Iterable<SNode> getNodeAttributes(SNode node) {
-    return getAttributes(node, new IAttributeDescriptor.NodeAttributeString(null));
-    // <node> 
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.NodeAttribute"));
+  }
+
+  public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_b2vkxw_a0a0a0a0a0a0r(SPropertyOperations.getString(it, "propertyName"), propertyName);
+      }
+    });
+  }
+
+  public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_b2vkxw_a0a0a0a0a0a0s(SPropertyOperations.getString(it, "linkRole"), linkRole);
+      }
+    });
   }
 
   public static SNode getNodeAttribute(SNode node, String role) {
     return getAttribute(node, new IAttributeDescriptor.NodeAttributeString(role));
-  }
-
-  public static SNode getPropertyAttribute(SNode node, String role, String propertyName) {
-    return getAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName));
   }
 
   public static SNode getLinkAttribute(SNode node, String role, String linkRole) {
@@ -155,5 +166,19 @@ public class AttributeOperations {
     protected void doRemoveReference(SNode node) {
       AttributeOperations.deleteAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }
+  }
+
+  private static boolean eq_b2vkxw_a0a0a0a0a0a0r(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_b2vkxw_a0a0a0a0a0a0s(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
