@@ -266,6 +266,24 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1583916890557930443" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1583916890557930028" resolveInfo="ConsoleRoot" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1583916890557947353" nodeInfo="nn">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039364043" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="Type an expression or {statements} to execute." />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="6783870023039482949" nodeInfo="nn">
+          <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039364047" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="Type ? for a list of commands." />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="6783870023039482943" nodeInfo="nn">
+          <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039464457" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="Press Ctrl+Enter to execute command." />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="6783870023039482511" nodeInfo="nn">
+          <property name="style" nameId="tpc2.1186403771423" value="PLAIN" />
+        </node>
+      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1583916890557947366" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930415" />
       </node>
