@@ -53,9 +53,11 @@ public class PathProvider {
       }
 
       o = node.getModel();
-      if (o != null) {
-        o = ((SModel) o).getReference();
-      }
+    }
+
+    if (o instanceof SModel) {
+      res.add(new PathItem(PathItemRole.ROLE_MODEL, ((SModel) o).getReference()));
+      o = ((SModel) o).getModule();
     }
 
     if (o instanceof SModelReference) {
