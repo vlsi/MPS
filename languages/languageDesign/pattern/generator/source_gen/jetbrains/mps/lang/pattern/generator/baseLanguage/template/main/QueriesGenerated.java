@@ -11,11 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior;
@@ -179,12 +179,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7207007552736296441(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = Sequence.fromIterable(AttributeOperations.getNodeAttributes(_context.getNode())).first();
-
-    if (attribute == null) {
-      attribute = AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")));
-    }
-    return _context.getOutputNodeByInputNodeAndMappingLabel(attribute, "patternVarField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern"))), "patternVarField");
   }
 
   public static Object referenceMacro_GetReferent_3527005385733066951(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -318,11 +313,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_6283201779507549583(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode attribute = Sequence.fromIterable(AttributeOperations.getNodeAttributes(_context.getNode())).first();
-    if (attribute == null) {
-      attribute = AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")));
-    }
-    return _context.getOutputNodeByInputNodeAndMappingLabel(attribute, "patternVarField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))).first(), "patternVarField");
   }
 
   public static Object referenceMacro_GetReferent_6283201779507549598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -467,11 +458,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6283201779507549607(final IOperationContext operationContext, final IfMacroContext _context) {
-    SNode attribute = Sequence.fromIterable(AttributeOperations.getNodeAttributes(_context.getNode())).first();
-    if (attribute == null) {
-      attribute = AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")));
+    if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))).count() > 1) {
+      _context.showErrorMessage(_context.getNode(), "More than one PatternVariableDeclaration on node");
     }
-    return SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6283201779507549642(final IOperationContext operationContext, final IfMacroContext _context) {
