@@ -40,6 +40,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
@@ -205,9 +207,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     myMainComponent = new JPanel();
     myMainComponent.setLayout(new BorderLayout());
     myMainComponent.add(getToolbarComponent(project), BorderLayout.WEST);
-    myMainComponent.add(myEditor.getExternalComponent(), BorderLayout.CENTER);
+    JPanel editorPanel = new JPanel(new BorderLayout());
+    editorPanel.add(myEditor);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorPanel);
+    myMainComponent.add(scrollPane, BorderLayout.CENTER);
+    myMainComponent.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
 
-    myHighlighter = check_xg3v07_a0i0y(getProject(), this);
+    myHighlighter = check_xg3v07_a0m0y(getProject(), this);
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -661,7 +667,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
 
-  private static Highlighter check_xg3v07_a0i0y(Project checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+  private static Highlighter check_xg3v07_a0m0y(Project checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
