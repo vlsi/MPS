@@ -57,8 +57,8 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
   }
 
   public void relayoutImpl() {
-    super.relayoutImpl();
     myView.validate();
+    super.relayoutImpl();
   }
 
 
