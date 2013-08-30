@@ -248,12 +248,6 @@
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/regexp/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommand/generator/source_gen" includeSubdirectories="true" />
