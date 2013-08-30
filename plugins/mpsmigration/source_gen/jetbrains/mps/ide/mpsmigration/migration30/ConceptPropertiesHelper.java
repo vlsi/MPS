@@ -4,10 +4,11 @@ package jetbrains.mps.ide.mpsmigration.migration30;
 
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -57,14 +58,14 @@ public class ConceptPropertiesHelper {
   private static final String shortDescriptionName = "shortDescription";
   private MPSProject project;
   private Project ideaProject;
-  private IScope scope;
+  private SearchScope scope;
   private Set<Language> languages;
 
 
   public ConceptPropertiesHelper(MPSProject project) {
     this.project = project;
     this.ideaProject = ProjectHelper.toIdeaProject(project);
-    this.scope = project.getScope();
+    this.scope = new ProjectScope(project);
   }
 
 
