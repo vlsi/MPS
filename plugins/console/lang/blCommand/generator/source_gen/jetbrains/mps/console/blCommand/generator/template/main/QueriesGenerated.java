@@ -138,11 +138,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2284201910209561272(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "declaration", false), "virtual_getFieldDeclaration_1171743928471867409", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_2284201910209640652(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "declaration", false), "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_8953981490813374955(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -312,6 +312,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_328850564586294033(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "object", true);
+  }
+
+  public static SNode sourceNodeQuery_119903734739799631(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "targetModule", true);
   }
 
   public static Iterable sourceNodesQuery_5336086527852932024(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

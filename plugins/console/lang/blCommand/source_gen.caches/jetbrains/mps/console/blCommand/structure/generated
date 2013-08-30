@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3iqa6gp37gbuy723xmtalitohr683ic">
+<dependencies version="2" modelHash="cy2efsx5syldmkmtwv9obpw918ieicp">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-4iwr4t8vcav0e929l5w2cyvnm8tkua" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="6fhvf5vpps5j0vboqa1gdxgkf3nphmg" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="95bnfiqd9akddkgokngbmm4qgie68q2">
+    <dep root="119903734736591007" />
+    <dep root="119903734736599867" />
+    <dep root="119903734736601565" />
     <dep root="2284201910216573342" />
     <dep root="2822369470875160718" />
     <dep root="4307205004131544317" />
@@ -113,10 +116,10 @@
   <source id="4307205004134636962" name="ProjectScopeLiteral" hash="caldjs5xnrhidy1qfnzp79ul2oobmno">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9149301274757091502" name="CallActionExpression" hash="3l9n8svuafdo41h6bjvopilwctkmyvq">
+  <source id="9149301274757091502" name="CallActionExpression" hash="-9ewmp3xlcbattjclb167dpmkku70eno">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9149301274757091505" name="ActionCallParameter" hash="-crt7l3higsiug1v7r1832pmkfsigcg">
+  <source id="9149301274757091505" name="ActionCallDeclaredParameter" hash="-93vyol0vr5e5tq6zyulavp4j93yt0n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8953981490813243063" name="ConsoleModelExpression" hash="es4myh4j55u6dfa1wmc6db2oigstv4k">
@@ -135,6 +138,15 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="473081947984132408" name="BLCommandHelp" hash="8a4px3chlldaj1t8go8r8c7j5z2598u">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="119903734736591007" name="ModuleProperties" hash="-598njb1ngg5iz7ueas3mup0tk4y42zw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="119903734736601565" name="ActionCallParameter" hash="anwc9oqqf0z3y04lp8kmpdswtujpfko">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="119903734736599867" name="ActionCallGlobalParameter" hash="71qgxahurgxixwdqp0vezx7u6nob5sw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

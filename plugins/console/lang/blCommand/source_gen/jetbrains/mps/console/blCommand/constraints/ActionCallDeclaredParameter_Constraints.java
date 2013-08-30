@@ -24,9 +24,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class ActionCallParameter_Constraints extends BaseConstraintsDescriptor {
-  public ActionCallParameter_Constraints() {
-    super("jetbrains.mps.console.blCommand.structure.ActionCallParameter");
+public class ActionCallDeclaredParameter_Constraints extends BaseConstraintsDescriptor {
+  public ActionCallDeclaredParameter_Constraints() {
+    super("jetbrains.mps.console.blCommand.structure.ActionCallDeclaredParameter");
   }
 
   @Override
@@ -60,7 +60,7 @@ public class ActionCallParameter_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_una7pi_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_tpbdkp_a0a0a0a0a1a0b0a1a3;
           }
 
           @Override
@@ -89,5 +89,5 @@ public class ActionCallParameter_Constraints extends BaseConstraintsDescriptor {
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:aef526b1-5019-472a-a761-72ac88ef58a4(jetbrains.mps.console.blCommand.constraints)", "9149301274757091583");
-  private static SNodePointer breakingNode_una7pi_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:aef526b1-5019-472a-a761-72ac88ef58a4(jetbrains.mps.console.blCommand.constraints)", "9149301274757091544");
+  private static SNodePointer breakingNode_tpbdkp_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:aef526b1-5019-472a-a761-72ac88ef58a4(jetbrains.mps.console.blCommand.constraints)", "9149301274757091544");
 }
