@@ -16,7 +16,8 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.SortUtil.SModelComparator;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -54,6 +55,8 @@ public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
       } else {
         return 1;
       }
+    } else if(o1 instanceof SModelTreeNode && o2 instanceof SModelTreeNode) {
+      return (new SModelComparator()).compare(((SModelTreeNode) o1).getModel(), ((SModelTreeNode) o2).getModel());
     }
     if (o1.toString() == null || o2.toString() == null) return 0;
     return o1.toString().compareTo(o2.toString());
