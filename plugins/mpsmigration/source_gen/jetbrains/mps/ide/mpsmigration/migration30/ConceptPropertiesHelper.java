@@ -153,6 +153,14 @@ public class ConceptPropertiesHelper {
         warnAboutAttributeConceptLinkOrProperty(usage);
         return true;
       }
+    } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration")) {
+      if (isAttributeConceptProperty(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"))) {
+        return true;
+      }
+    } else if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration")) {
+      if (isAttributeConceptLink(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"))) {
+        return true;
+      }
     }
     return false;
   }

@@ -53,7 +53,7 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
         for (SAbstractConcept concept : elements) {
           Set<String> desc = ConceptDescendantsCache.getInstance().getDescendants(concept.getQualifiedName());
           for (String cName : desc) {
-            queryConcepts.add(SConceptRepository.getInstance().getConcept(cName));
+            queryConcepts.add(SConceptRepository.getInstance().getInstanceConcept(cName));
           }
         }
       }
