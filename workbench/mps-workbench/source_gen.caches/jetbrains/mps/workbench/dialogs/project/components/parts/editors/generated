@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2tnn6l8jlxkf89gm77q9au89rk6v4s">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <common hash="9g0cavttgfjm48249gfl4utvc861866" />
+<dependencies version="2" modelHash="-em2cxnzvmcpduuvvsy5v2ptnf59pmmy">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <common hash="-apumcn3a8cr1rihtgt3ugw1xp0g28wu" />
   <source id="1560298786499490028" name="ModuleEditor" hash="49980y611p2aqcj5pxkbgd9bo451bck">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleEditor.java" />

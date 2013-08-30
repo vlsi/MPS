@@ -96,8 +96,8 @@ public class RenameLanguageDialog extends RenameDialog {
         final List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
         modelAccess.runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(models).addSequence(Sequence.fromIterable(Sequence.fromArray(l.getModels().toArray(new SModel[0]))).where(new IWhereFilter<Object>() {
-              public boolean accept(Object it) {
+            ListSequence.fromList(models).addSequence(Sequence.fromIterable(Sequence.fromArray(l.getModels().toArray(new SModel[0]))).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
                 return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
               }
             }));
