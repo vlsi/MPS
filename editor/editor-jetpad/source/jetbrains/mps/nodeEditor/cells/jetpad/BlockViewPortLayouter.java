@@ -38,7 +38,7 @@ public class BlockViewPortLayouter {
 
     Vector borderDir = dir.turnCounterclockwise().dir();
     Segment border = null;
-    for (Segment s: myRect.getBoundSegments()) {
+    for (Segment s : myRect.getBoundSegments()) {
       Vector sDir = s.end.sub(s.start);
       if (borderDir.isParallel(sDir) && borderDir.dotProduct(sDir) > 0) {
         border = s;
@@ -65,13 +65,13 @@ public class BlockViewPortLayouter {
       portOrigins.add(portLoc.add(mulCoord(SHIFT_TO_ORIGIN[dir.ordinal()], dim)));
     } else if (portDimensions.size() > 1) {
       Vector childrenLen = Vector.ZERO;
-      for (Vector dim: portDimensions) {
+      for (Vector dim : portDimensions) {
         childrenLen = childrenLen.add(mulCoord(dim, borderDir));
       }
       Vector space = border.end.sub(border.start).sub(childrenLen);
 
       Vector offset = Vector.ZERO;
-      for (Vector dim: portDimensions) {
+      for (Vector dim : portDimensions) {
         Vector portLocation = border.start.add(offset);
         portOrigins.add(portLocation.add(mulCoord(SHIFT_TO_ORIGIN[dir.ordinal()], dim)));
         offset = offset.add(space).add(mulCoord(dim, borderDir));

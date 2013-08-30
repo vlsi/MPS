@@ -17,20 +17,16 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
-import java.awt.Dimension;
-import java.awt.Graphics;
 
 /**
  * Created with IntelliJ IDEA.

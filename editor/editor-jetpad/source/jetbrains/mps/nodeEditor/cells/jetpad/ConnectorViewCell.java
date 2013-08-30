@@ -1,19 +1,12 @@
 package jetbrains.mps.nodeEditor.cells.jetpad;
 
 
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.model.collections.CollectionAdapter;
-import jetbrains.jetpad.model.collections.CollectionItemEvent;
 import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
-import jetbrains.jetpad.projectional.view.LineView;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.List;
 
 public class ConnectorViewCell extends GenericViewCell {
   private PolylineConnection myConnection;

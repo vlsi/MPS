@@ -16,24 +16,14 @@
 package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.jetpad.projectional.diagram.view.DiagramView;
-import jetbrains.jetpad.projectional.view.LineView;
-import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.projectional.view.TextView;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.values.Color;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Font;
