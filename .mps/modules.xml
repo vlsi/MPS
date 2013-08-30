@@ -174,10 +174,6 @@
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.baseLanguage.regexp.examples.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.baseLanguage.regexp.sandbox.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd" folder="core.baseLanguage.regexp" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/jetbrains.mps.uiLanguage.mpl" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.samples.msd" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" folder="platform.uiLanguage" />
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />

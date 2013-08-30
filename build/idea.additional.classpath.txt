@@ -32,7 +32,6 @@ workbench/mps-icons/classes
 :workbench
 workbench/resources/classes
 workbench/resources_en/classes
-languages/util/uiLanguage/runtime/classes
 workbench/typesystemUi/classes
 workbench/mps-workbench/classes
 MPSPlugin/apiclasses
