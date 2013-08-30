@@ -7,11 +7,14 @@
     <modelRoot path="${mps_home}/plugins/mpsmake/classes" type="java_classes" />
   </models>
   <facets>
+    <facet type="java" />
     <facet pluginId="com.intellij" type="ideaPlugin" />
+    <facet type="tests" />
+    <facet pluginId="jetbrains.mps.ide.make" type="ideaPlugin" />
+    <facet type="java" />
+    <facet pluginId="com.intellij" type="ideaPlugin" />
+    <facet type="tests" />
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/plugins/mpsmake/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

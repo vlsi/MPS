@@ -254,6 +254,8 @@
       <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/uiLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/actions/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/console/actions/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/base/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/console/lang/blCommand/generator/source_gen" includeSubdirectories="true" />
