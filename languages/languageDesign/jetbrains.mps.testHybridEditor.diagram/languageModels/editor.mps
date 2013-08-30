@@ -75,9 +75,6 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="725186580886597602" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="725186580886587470" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.testHybridEditor.structure.Diagram" />
-            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="725186580886611762" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="725186580886614641" nodeInfo="nn">
@@ -88,6 +85,9 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ConceptDescriptor%dgetConceptFqName()%cjava%dlang%dString" resolveInfo="getConceptFqName" />
                 </node>
               </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="4894941679617588438" nodeInfo="nn">
+              <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="adck.725186580883451585" resolveInfo="Diagram" />
             </node>
           </node>
           <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="7316529950919271211" nodeInfo="ng">
@@ -108,9 +108,6 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1206060619838" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316529950919272504" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7316529950919272505" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.testHybridEditor.structure.Block" />
-              </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7316529950919272506" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7316529950919272507" nodeInfo="nn">
@@ -121,6 +118,9 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ConceptDescriptor%dgetConceptFqName()%cjava%dlang%dString" resolveInfo="getConceptFqName" />
                   </node>
                 </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="4894941679617757557" nodeInfo="nn">
+                <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="adck.725186580883451800" resolveInfo="Block" />
               </node>
             </node>
           </node>
@@ -142,9 +142,6 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1206060619838" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1865267285000608581" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1865267285000608582" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.testHybridEditor.structure.Connector" />
-              </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1865267285000608583" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1865267285000608584" nodeInfo="nn">
@@ -155,6 +152,9 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ConceptDescriptor%dgetConceptFqName()%cjava%dlang%dString" resolveInfo="getConceptFqName" />
                   </node>
                 </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="4894941679617762610" nodeInfo="nn">
+                <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="adck.725186580883451809" resolveInfo="Connector" />
               </node>
             </node>
           </node>
@@ -176,9 +176,6 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1206060619838" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3524364213240664197" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3524364213240664198" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.testHybridEditor.structure.InputPort" />
-              </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3524364213240664199" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3524364213240664200" nodeInfo="nn">
@@ -189,6 +186,9 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ConceptDescriptor%dgetConceptFqName()%cjava%dlang%dString" resolveInfo="getConceptFqName" />
                   </node>
                 </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="4894941679617767302" nodeInfo="nn">
+                <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="adck.725186580883451828" resolveInfo="InputPort" />
               </node>
             </node>
           </node>
@@ -210,9 +210,6 @@
               </node>
             </node>
             <node role="condition" roleId="tpee.1206060619838" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3524364213240667316" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3524364213240667317" nodeInfo="nn">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.testHybridEditor.structure.OutputPort" />
-              </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3524364213240667318" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3524364213240667319" nodeInfo="nn">
@@ -223,6 +220,9 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ConceptDescriptor%dgetConceptFqName()%cjava%dlang%dString" resolveInfo="getConceptFqName" />
                   </node>
                 </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="4894941679617775772" nodeInfo="nn">
+                <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="adck.725186580883451839" resolveInfo="OutputPort" />
               </node>
             </node>
           </node>
