@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -122,8 +123,8 @@ public class GenerationPartitioningUtil {
     return result;
   }
 
-  public static List<String> toStrings(List<TemplateMappingConfiguration> mappings) {
-    List<String> strings = new ArrayList<String>();
+  public static List<Pair<String, TemplateMappingConfiguration>> toStrings(List<TemplateMappingConfiguration> mappings) {
+    List<Pair<String, TemplateMappingConfiguration>> strings = new ArrayList<Pair<String, TemplateMappingConfiguration>>();
 
     // consolidate mappings
     Map<TemplateModel, Integer> numOfMappingsByModel = new HashMap<TemplateModel, Integer>();
@@ -150,15 +151,20 @@ public class GenerationPartitioningUtil {
       TemplateModel model = mappingConfig.getModel();
       if (numOfMappingsByModel.containsKey(model)) {
         if (numOfMappingsByModel.get(model) == 0) {
-          strings.add(model.getLongName() + ".*");
+          strings.add(new Pair<String, TemplateMappingConfiguration>(model.getLongName() + ".*", mappingConfig));
           numOfMappingsByModel.put(model, 1);
         }
       } else {
-        strings.add(model.getLongName() + "." + mappingConfig.getName());
+        strings.add(new Pair<String, TemplateMappingConfiguration>(model.getLongName() + "." + mappingConfig.getName(), mappingConfig));
       }
     }
 
-    Collections.sort(strings);
+    Collections.sort(strings, new Comparator<Pair<String, TemplateMappingConfiguration>>() {
+      @Override
+      public int compare(Pair<String, TemplateMappingConfiguration> o1, Pair<String, TemplateMappingConfiguration> o2) {
+        return o1.o1.compareTo(o2.o1);
+      }
+    });
     return strings;
   }
 

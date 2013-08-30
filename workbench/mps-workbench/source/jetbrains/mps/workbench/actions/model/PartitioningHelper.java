@@ -97,9 +97,9 @@ public class PartitioningHelper {
     for (int step = 0; step < plan.getStepCount(); step++) {
       List<TemplateMappingConfiguration> mappingSet = plan.getMappingConfigurations(step);
       text = text + " [ " + (step + 1) + " ]\n";
-      List<String> strings = GenerationPartitioningUtil.toStrings(mappingSet);
-      for (String string : strings) {
-        text = text + " " + string + "\n";
+      List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
+      for (Pair<String, TemplateMappingConfiguration> string : strings) {
+        text = text + " " + string.o1 + "\n";
       }
       text += "\n";
     }

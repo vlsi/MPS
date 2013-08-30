@@ -180,8 +180,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickableText_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickableText_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

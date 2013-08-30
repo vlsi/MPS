@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6fhvf5vpps5j0vboqa1gdxgkf3nphmg">
+<dependencies version="2" modelHash="9b1mkzsjmu1bvahp1o1bwtfm6q63k0a">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -13,7 +13,6 @@
     <dep root="1769790395579407461" />
     <dep root="1769790395579407473" />
     <dep root="2348043250036118117" />
-    <dep root="2348043250036119213" />
     <dep root="2348043250037290416" />
     <dep root="2348043250037383180" />
     <dep root="2699636778859335853" />
@@ -21,7 +20,6 @@
     <dep root="3939645998855102389" />
     <dep root="473081947980701568" />
     <dep root="473081947981012231" />
-    <dep root="497034489490438927" />
     <dep root="529843215038987946" />
     <dep root="529843215038987949" />
     <dep root="529843215038987955" />
@@ -65,16 +63,13 @@
   <source id="351968380916615243" name="CommandHolder" hash="-9e2hm9pc6rj2jlfsq2yfokbnk4aknkl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1111629987770987206" name="NodeWithClosure" hash="-a3cwnqw6vked0z7ip2qcr31ur7u8963">
+  <source id="1111629987770987206" name="NodeWithClosure" hash="-687wjkq91ummt7nw3bsb1v8opjcsi3s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8517397753921951830" name="IActionHolder" hash="efrhqh0fn7tbkoj2pzb90l2er4ppxym">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8927119896327927090" name="NodeResultPart" hash="28a4csv0qooqhm39jfqmdxovc9pgcks">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="497034489490438927" name="INodeWithClosure" hash="459lix89v7r3gk6zp1l87xddc1hf7ws">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3939645998855102389" name="INodeWithReference" hash="2y2l1955jizz4aa5ftpwlsb202cd1uy">
@@ -92,10 +87,7 @@
   <source id="2348043250036118117" name="NodeReferenceString" hash="-dc975jf94zhnw4ht9j3fa7iix4bv6kk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2348043250036119213" name="IClickableText" hash="-89xgolbvz18549h60xpybneywvkeyps">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="2348043250037290416" name="IClickable" hash="-eskebr6ug06xcgl01gs704qp9hbgznn">
+  <source id="2348043250037290416" name="IClickable" hash="-ch99aggezy7ypnnhlgtkhdkl9bnvibf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2348043250037383180" name="NodeReferencePresentation" hash="-cljq52bot9ylxclp03oe2eymjwn4yed">

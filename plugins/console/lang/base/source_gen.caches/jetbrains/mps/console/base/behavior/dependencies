@@ -206,37 +206,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.IClickableText_Behavior" file="IClickableText_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.IClickableText_BehaviorDescriptor" file="IClickableText_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.IClickable_Behavior" file="IClickable_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" file="IClickable_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.INodeWithClosure_Behavior" file="INodeWithClosure_Behavior.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.base.behavior.INodeWithClosure_BehaviorDescriptor" file="INodeWithClosure_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
@@ -347,14 +317,17 @@
     <classNode dependClassName="jetbrains.mps.console.base.behavior.CommandResultPart_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.console.base.behavior.NodeWithClosure_Behavior" file="NodeWithClosure_Behavior.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.console.base.behavior.NodeWithClosure_BehaviorDescriptor" file="NodeWithClosure_BehaviorDescriptor.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickableText_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickableText_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.INodeWithClosure_Behavior" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.INodeWithClosure_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.NodeWithClosure_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />

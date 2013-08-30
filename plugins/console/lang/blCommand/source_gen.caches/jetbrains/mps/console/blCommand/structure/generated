@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cy2efsx5syldmkmtwv9obpw918ieicp">
+<dependencies version="2" modelHash="-dcb8zx8zw8go4k4ovnrgsmp12vvl7yu">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
-  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="6fhvf5vpps5j0vboqa1gdxgkf3nphmg" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="9b1mkzsjmu1bvahp1o1bwtfm6q63k0a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="95bnfiqd9akddkgokngbmm4qgie68q2">
     <dep root="119903734736591007" />
@@ -89,7 +89,7 @@
   <source id="6864030874028745314" name="ModulesExpression" hash="4tnnze141tg4esuh0o0pl563npft4rq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6558068108107691796" name="ExceptionHolder" hash="c3r69f3dfh03g3kkut19m4ucu1zzgzc">
+  <source id="6558068108107691796" name="ExceptionHolder" hash="ed20985yylzymxb1pcrr2wcryowtd7c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4307205004131544317" name="QueryExpression" hash="-7tyt2z20k4h92vod987eylkim6329pw">

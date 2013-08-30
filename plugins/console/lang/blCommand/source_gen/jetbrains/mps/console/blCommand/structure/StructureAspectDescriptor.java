@@ -32,7 +32,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ConsoleModelExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("#consoleModel", "").create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ExceptionHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickableText").properties("stackTrace").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ExceptionHolder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.base.structure.IClickable").properties("stackTrace").create();
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.GlobalScopeLiteral").super_("jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral").parents("jetbrains.mps.console.blCommand.structure.ScopeParameterLiteral").alias("global", "").create();
       case 11:

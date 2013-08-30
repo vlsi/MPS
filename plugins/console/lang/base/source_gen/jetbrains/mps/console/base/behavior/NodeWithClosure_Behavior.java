@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 
-public class INodeWithClosure_Behavior {
+public class NodeWithClosure_Behavior {
   public static void init(SNode thisNode) {
   }
 

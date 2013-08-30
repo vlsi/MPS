@@ -139,8 +139,8 @@
       <property name="name" nameId="tpck.1169194664001" value="stackTrace" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6558068108108193136" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.2348043250036119213" resolveInfo="IClickableText" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3894227536041924435" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.2348043250037290416" resolveInfo="IClickable" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4307205004131544317" nodeInfo="ig">
