@@ -35,16 +35,12 @@ public class MPSBlockView extends GroupView {
 
   public void setTextView(TextView textView) {
     myTextView = textView;
-    if (!(children().contains(textView))) {
-      children().add(textView);
-    }
+    attach(this, textView);
   }
 
   public void setRectView(RectView rectView) {
     myRectView = rectView;
-    if (!(children().contains(rectView))) {
-      children().add(rectView);
-    }
+    attach(this, rectView);
   }
 
   public GroupView getInputView() {
@@ -56,16 +52,19 @@ public class MPSBlockView extends GroupView {
   }
 
   public void addInputPort(View inputPortView, SNode port) {
-    if (!(inputs.children().contains(inputPortView))) {
-      inputs.children().add(inputPortView);
-    }
+    attach(inputs, inputPortView);
     MapSequence.fromMap(portToViewMap).put(port, inputPortView);
   }
 
-  public void addOutputPort(View outputPortView, SNode port) {
-    if (!(inputs.children().contains(outputPortView))) {
-      outputs.children().add(outputPortView);
+  private void attach(View parent, View inputPortView) {
+    if (inputPortView.parent() != null) {
+      inputPortView.parent().children().remove(inputPortView.parent().children().indexOf(inputPortView));
     }
+    parent.children().add(inputPortView);
+  }
+
+  public void addOutputPort(View outputPortView, SNode port) {
+    attach(outputs, outputPortView);
     MapSequence.fromMap(portToViewMap).put(port, outputPortView);
   }
 

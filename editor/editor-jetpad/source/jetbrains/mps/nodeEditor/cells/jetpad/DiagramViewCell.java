@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
@@ -39,35 +40,30 @@ import java.awt.Graphics;
  * To change this template use File | Settings | File Templates.
  */
 public class DiagramViewCell extends GenericViewCell implements EditorCell_WithComponent {
-  private ViewContainerComponent myComponent = new ViewContainerComponent();
+  private ViewContainerComponent myComponent;
 
   protected DiagramViewCell(EditorContext editorContext, SNode node,
       CellLayout cellLayout, AbstractCellListHandler handler) {
     super(editorContext, node, cellLayout, handler);
+    myComponent = new ViewContainerComponent();
+    myComponent.container(new ViewContainer());
   }
 
   public static DiagramViewCell createViewCell(EditorContext editorContext, SNode node, DiagramView view) {
     DiagramViewCell cell = new DiagramViewCell(editorContext, node, new CellLayout_Indent(), null);
     cell.myView = view;
-    cell.myComponent = new ViewContainerComponent();
-    cell.myComponent.container(new ViewContainer());
     cell.myComponent.container().root().children().add(cell.myView);
     return cell;
   }
 
   public void relayoutImpl() {
-    setBounds();
-    myView.validate();
     super.relayoutImpl();
+    myView.validate();
   }
 
-  @Override
-  public void paintContent(Graphics g, ParentSettings parentSettings) {
-  }
 
   public void setBounds() {
     super.setBounds();
-    myComponent.setSize(new Dimension(myX, myY));
     myComponent.setBounds(myX, myY, myWidth, myHeight);
   }
 
