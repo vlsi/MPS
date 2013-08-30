@@ -1426,7 +1426,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="473081947984140463" resolveInfo="result" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="473081947985255888" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="?                      command       display this help\n" />
+              <property name="value" nameId="tpee.1070475926801" value="?                       command       display this help\n" />
             </node>
           </node>
         </node>

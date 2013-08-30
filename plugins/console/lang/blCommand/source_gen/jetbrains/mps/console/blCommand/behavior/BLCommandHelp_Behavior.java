@@ -11,17 +11,17 @@ public class BLCommandHelp_Behavior {
 
   public static String virtual_getHelp_473081947982699339(SAbstractConcept thisConcept) {
     String result = "";
-    result += "<expression>           command       evaluate expression and print its result\n";
-    result += "{ <statements> }       command       execute statement list\n";
-    result += "#print <expression>    expression    print into console\n";
-    result += "#show <something>      expression    show sequence of nodes/references/models/modules in usages view\n";
-    result += "#nodes<options>        expression    lazy sequence containing all nodes\n";
-    result += "#references<options>   expression    lazy sequence containing all references\n";
-    result += "#models<options>       expression    lazy sequence containing all models\n";
-    result += "#modules<options>      expression    lazy sequence containing all modules\n";
-    result += "#instances(<concept>)  expression    instances of concept (find usages mechanism)\n";
-    result += "#usages(<node>)        expression    usages of node (find usages mechanism)\n";
-    result += "#project               expression    current project\n";
+    result += "<expression>            command       evaluate expression and print its result\n";
+    result += "{ <statements> }        command       execute statement list\n";
+    result += "#print <expression>     expression    print into console\n";
+    result += "#show <something>       expression    show sequence of nodes/references/models/modules in usages view\n";
+    result += "#nodes<options>         expression    lazy sequence containing all nodes\n";
+    result += "#references<options>    expression    lazy sequence containing all references\n";
+    result += "#models<options>        expression    lazy sequence containing all models\n";
+    result += "#modules<options>       expression    lazy sequence containing all modules\n";
+    result += "#instances(<concept>)   expression    instances of concept (find usages mechanism)\n";
+    result += "#usages(<node>)         expression    usages of node (find usages mechanism)\n";
+    result += "#project                expression    current project\n";
     return result;
   }
 }

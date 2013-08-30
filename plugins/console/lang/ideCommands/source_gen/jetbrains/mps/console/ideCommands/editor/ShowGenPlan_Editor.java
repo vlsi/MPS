@@ -12,26 +12,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class ShowMappingPartitioning_Editor extends DefaultNodeEditor {
+public class ShowGenPlan_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8i3675_a(editorContext, node);
+    return this.createCollection_mrkoqg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8i3675_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mrkoqg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8i3675_a");
+    editorCell.setCellId("Collection_mrkoqg_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_8i3675_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8i3675_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_mrkoqg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mrkoqg_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_8i3675_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_mrkoqg_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8i3675_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mrkoqg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("targetModel");
     provider.setNoTargetText("<no targetModel>");

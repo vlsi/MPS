@@ -11,8 +11,9 @@ public class IDECommandHelp_Behavior {
 
   public static String virtual_getHelp_473081947982699339(SAbstractConcept thisConcept) {
     String result = "";
-    result += "#stat <scope>          command       display some AST statistics\n";
-    result += "#show broken references <scope>   command\n";
+    result += "#stat <scope>           command       display some AST statistics\n";
+    result += "#showBrokenRefs <scope> command       show broken references\n";
+    result += "#showGenPlan <model>    command       show generation plan\n";
     return result;
   }
 }
