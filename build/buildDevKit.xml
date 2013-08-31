@@ -1069,6 +1069,9 @@
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/quickQueryLanguage.mpl" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

@@ -4906,6 +4906,9 @@
       <chunk>
         <module file="${mps_home}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

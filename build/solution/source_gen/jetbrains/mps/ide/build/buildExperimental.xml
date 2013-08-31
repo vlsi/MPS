@@ -2066,6 +2066,9 @@
         <module file="${mps_home}/languages/util/ui/languages/swing/swing.mpl" />
         <module file="${mps_home}/languages/util/ui/languages/swt/swt.mpl" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

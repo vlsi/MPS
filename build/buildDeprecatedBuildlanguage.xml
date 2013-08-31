@@ -482,6 +482,9 @@
         <module file="${mps_home}/plugins/mps-obsolete/languages/property/property.mpl" />
         <module file="${mps_home}/plugins/mps-obsolete/languages/buildlanguage/buildlanguage.mpl" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

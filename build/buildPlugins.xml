@@ -460,6 +460,9 @@
         <module file="${mps_home}/plugins/mpsjava/workbench/java.msd" />
         <module file="${mps_home}/plugins/mpsjava/migration/migration.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

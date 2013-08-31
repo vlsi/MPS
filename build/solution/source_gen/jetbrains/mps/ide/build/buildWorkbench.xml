@@ -866,6 +866,9 @@
         <module file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/pluginSolution.msd" />
         <module file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/pluginSolution.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   

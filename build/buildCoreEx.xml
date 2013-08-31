@@ -513,6 +513,9 @@
         <module file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/xmlUnitTest.mpl" />
         <module file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   
