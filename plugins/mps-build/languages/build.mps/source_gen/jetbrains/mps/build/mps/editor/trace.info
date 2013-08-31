@@ -6354,100 +6354,151 @@
     <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="29" startPosition="83" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="29" startPosition="83" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="34" startPosition="90" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="35" startPosition="96" endLine="36" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="37" startPosition="5" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="38" startPosition="42" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="39" startPosition="51" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="40" startPosition="60" endLine="41" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="42" startPosition="5" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="42" startPosition="5" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="43" startPosition="82" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="43" startPosition="82" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="48" startPosition="89" endLine="49" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="49" startPosition="95" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="50" startPosition="48" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="51" startPosition="68" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="57" startPosition="86" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="59" startPosition="5" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="60" startPosition="42" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="62" startPosition="5" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="67" startPosition="89" endLine="68" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="68" startPosition="82" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="70" startPosition="47" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="71" startPosition="26" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="72" startPosition="58" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="72" startPosition="58" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="73" startPosition="47" endLine="74" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="74" startPosition="73" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="75" startPosition="57" endLine="76" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="77" startPosition="35" endLine="78" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="78" startPosition="72" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="79" startPosition="78" endLine="80" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="81" startPosition="10" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="85" startPosition="95" endLine="86" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="86" startPosition="89" endLine="87" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="87" startPosition="30" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="88" startPosition="43" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="89" startPosition="26" endLine="90" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="90" startPosition="58" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="91" startPosition="50" endLine="92" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="93" startPosition="5" endLine="94" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="94" startPosition="42" endLine="95" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="96" startPosition="5" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="97" startPosition="73" endLine="98" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="98" startPosition="57" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="100" startPosition="35" endLine="101" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="101" startPosition="72" endLine="102" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="102" startPosition="78" endLine="103" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="104" startPosition="10" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="49" startPosition="95" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="71" startPosition="26" endLine="74" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="29" startPosition="83" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="29" startPosition="83" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="30" startPosition="83" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="30" startPosition="83" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="35" startPosition="90" endLine="36" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="36" startPosition="96" endLine="37" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="38" startPosition="5" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="40" startPosition="51" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="41" startPosition="60" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="45" startPosition="82" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="49" startPosition="90" endLine="50" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="50" startPosition="96" endLine="51" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="52" startPosition="5" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="53" startPosition="42" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="54" startPosition="51" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="55" startPosition="60" endLine="56" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="57" startPosition="5" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="57" startPosition="5" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="58" startPosition="82" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="58" startPosition="82" endLine="59" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="59" startPosition="82" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="63" startPosition="89" endLine="64" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="64" startPosition="95" endLine="65" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="65" startPosition="48" endLine="66" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="66" startPosition="68" endLine="67" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="67" startPosition="34" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="71" startPosition="89" endLine="72" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="72" startPosition="116" endLine="73" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="73" startPosition="48" endLine="74" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="74" startPosition="68" endLine="75" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="79" startPosition="88" endLine="80" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="80" startPosition="86" endLine="81" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="82" startPosition="5" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="85" startPosition="5" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="86" startPosition="34" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="90" startPosition="89" endLine="91" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="91" startPosition="82" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="92" startPosition="34" endLine="93" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="93" startPosition="47" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="94" startPosition="26" endLine="95" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="95" startPosition="58" endLine="96" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="95" startPosition="58" endLine="96" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="96" startPosition="47" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="97" startPosition="73" endLine="98" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="98" startPosition="57" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="100" startPosition="35" endLine="101" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="101" startPosition="72" endLine="102" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="102" startPosition="78" endLine="103" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="104" startPosition="10" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="108" startPosition="89" endLine="109" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="109" startPosition="82" endLine="110" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="110" startPosition="50" endLine="111" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="111" startPosition="36" endLine="112" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="112" startPosition="40" endLine="113" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="113" startPosition="26" endLine="114" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="114" startPosition="58" endLine="115" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="114" startPosition="58" endLine="115" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="115" startPosition="63" endLine="116" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="116" startPosition="73" endLine="117" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="117" startPosition="57" endLine="118" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="119" startPosition="35" endLine="120" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="120" startPosition="72" endLine="121" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="121" startPosition="78" endLine="122" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="123" startPosition="10" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="127" startPosition="95" endLine="128" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="128" startPosition="89" endLine="129" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="129" startPosition="30" endLine="130" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="130" startPosition="43" endLine="131" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="131" startPosition="26" endLine="132" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="132" startPosition="58" endLine="133" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="133" startPosition="50" endLine="134" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="135" startPosition="5" endLine="136" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="136" startPosition="42" endLine="137" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="138" startPosition="5" endLine="139" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="139" startPosition="73" endLine="140" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="140" startPosition="57" endLine="141" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="142" startPosition="35" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="143" startPosition="72" endLine="144" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="144" startPosition="78" endLine="145" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="146" startPosition="10" endLine="147" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="64" startPosition="95" endLine="66" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="72" startPosition="116" endLine="74" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="94" startPosition="26" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="113" startPosition="26" endLine="116" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6503355885715353767" fileName="BuildMpsAspect_Editor.java" startLine="20" startPosition="62" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="58" startPosition="47" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="92" startPosition="68" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="57" startPosition="86" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="36" startPosition="49" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="76" startPosition="59" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="90" startPosition="58" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="99" startPosition="59" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="35" startPosition="96" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koy33t_a1a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="89" startPosition="26" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_koy33t_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="55" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koy33t_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="33" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_koy33t_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_koy33t_b1a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="84" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_koy33t_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="81" startPosition="47" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="134" startPosition="68" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="80" startPosition="86" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="37" startPosition="49" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="51" startPosition="49" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="99" startPosition="59" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="118" startPosition="59" endLine="124" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="132" startPosition="58" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="141" startPosition="59" endLine="147" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="36" startPosition="96" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="50" startPosition="96" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="62" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koy33t_a1a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koy33t_a2a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="131" startPosition="26" endLine="139" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_koy33t_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="78" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koy33t_d0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_koy33t_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="48" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_koy33t_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="89" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_koy33t_b1a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="107" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_koy33t_b2a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="126" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConceptProperty_koy33t_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6503355885715353767" fileName="BuildMpsAspect_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
     <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" />
     <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="88" />
     <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="28" startPosition="88" endLine="29" endPosition="83" />
-    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="29" startPosition="83" endLine="30" endPosition="81" />
-    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="42" startPosition="5" endLine="43" endPosition="82" />
-    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="43" startPosition="82" endLine="44" endPosition="82" />
-    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="72" startPosition="58" endLine="73" endPosition="47" />
-    <scopeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="49" startPosition="95" endLine="51" endPosition="68" />
-    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="59" startPosition="5" endLine="61" endPosition="60">
+    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="29" startPosition="83" endLine="30" endPosition="83" />
+    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="30" startPosition="83" endLine="31" endPosition="81" />
+    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="43" startPosition="5" endLine="44" endPosition="82" />
+    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="82" />
+    <scopeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="57" startPosition="5" endLine="58" endPosition="82" />
+    <scopeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="58" startPosition="82" endLine="59" endPosition="82" />
+    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="95" startPosition="58" endLine="96" endPosition="47" />
+    <scopeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="114" startPosition="58" endLine="115" endPosition="63" />
+    <scopeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="64" startPosition="95" endLine="66" endPosition="68" />
+    <scopeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="72" startPosition="116" endLine="74" endPosition="68" />
+    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="82" startPosition="5" endLine="84" endPosition="60">
       <varInfo nodeId="6503355885715427953" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="93" startPosition="5" endLine="95" endPosition="62">
+    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="135" startPosition="5" endLine="137" endPosition="62">
       <varInfo nodeId="6503355885715398681" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="71" startPosition="26" endLine="74" endPosition="73" />
-    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105">
+    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="94" startPosition="26" endLine="97" endPosition="73" />
+    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="100" startPosition="35" endLine="103" endPosition="105">
       <varInfo nodeId="6503355885715353800" varName="manager" />
       <varInfo nodeId="6503355885715353800" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="100" startPosition="35" endLine="103" endPosition="105">
+    <scopeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="113" startPosition="26" endLine="116" endPosition="73" />
+    <scopeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="119" startPosition="35" endLine="122" endPosition="105">
+      <varInfo nodeId="8514706502349876858" varName="manager" />
+      <varInfo nodeId="8514706502349876858" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="142" startPosition="35" endLine="145" endPosition="105">
       <varInfo nodeId="6503355885715398681" varName="manager" />
       <varInfo nodeId="6503355885715398681" varName="opContext" />
     </scopeInfo>
@@ -6455,62 +6506,90 @@
       <varInfo nodeId="6503355885715353767" varName="editorContext" />
       <varInfo nodeId="6503355885715353767" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="37" startPosition="5" endLine="41" endPosition="62">
+    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="38" startPosition="5" endLine="42" endPosition="62">
       <varInfo nodeId="6503355885715353792" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="48" startPosition="89" endLine="53" endPosition="22">
+    <scopeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="52" startPosition="5" endLine="56" endPosition="62">
+      <varInfo nodeId="8514706502349876853" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="63" startPosition="89" endLine="68" endPosition="22">
       <varInfo nodeId="6503355885715353798" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="57" startPosition="86" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="25" startPosition="89" endLine="31" endPosition="22">
+    <scopeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="71" startPosition="89" endLine="76" endPosition="22">
+      <varInfo nodeId="8514706502349876857" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="80" startPosition="86" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="132" startPosition="58" endLine="138" endPosition="5" />
+    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
       <varInfo nodeId="4701820937132292233" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="90" startPosition="58" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="35" startPosition="96" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="36" startPosition="96" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="50" startPosition="96" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="6503355885715353798" fileName="BuildMpsAspect_Editor.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="6503355885715353798" varName="editorContext" />
       <varInfo nodeId="6503355885715353798" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="56" startPosition="88" endLine="64" endPosition="22">
+    <scopeInfo nodeId="8514706502349876857" fileName="BuildMpsAspect_Editor.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="8514706502349876857" varName="editorContext" />
+      <varInfo nodeId="8514706502349876857" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="79" startPosition="88" endLine="87" endPosition="22">
       <varInfo nodeId="6503355885715427953" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="89" startPosition="26" endLine="97" endPosition="73" />
-    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="131" startPosition="26" endLine="139" endPosition="73" />
+    <scopeInfo nodeId="4701820937132292233" fileName="BuildMpsAspect_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="4701820937132292233" varName="editorContext" />
       <varInfo nodeId="4701820937132292233" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="34" startPosition="90" endLine="45" endPosition="22">
+    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="35" startPosition="90" endLine="46" endPosition="22">
       <varInfo nodeId="6503355885715353792" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="55" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="49" startPosition="90" endLine="60" endPosition="22">
+      <varInfo nodeId="8514706502349876853" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715427953" fileName="BuildMpsAspect_Editor.java" startLine="78" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="6503355885715427953" varName="editorContext" />
       <varInfo nodeId="6503355885715427953" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="6503355885715353792" fileName="BuildMpsAspect_Editor.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="6503355885715353792" varName="editorContext" />
       <varInfo nodeId="6503355885715353792" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="67" startPosition="89" endLine="82" endPosition="22">
+    <scopeInfo nodeId="8514706502349876853" fileName="BuildMpsAspect_Editor.java" startLine="48" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="8514706502349876853" varName="editorContext" />
+      <varInfo nodeId="8514706502349876853" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="90" startPosition="89" endLine="105" endPosition="22">
       <varInfo nodeId="6503355885715353800" varName="attributeConcept" />
       <varInfo nodeId="6503355885715353800" varName="attributeKind" />
       <varInfo nodeId="6503355885715353800" varName="editorCell" />
       <varInfo nodeId="6503355885715353800" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="66" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="108" startPosition="89" endLine="124" endPosition="22">
+      <varInfo nodeId="8514706502349876858" varName="attributeConcept" />
+      <varInfo nodeId="8514706502349876858" varName="attributeKind" />
+      <varInfo nodeId="8514706502349876858" varName="editorCell" />
+      <varInfo nodeId="8514706502349876858" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715353800" fileName="BuildMpsAspect_Editor.java" startLine="89" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="6503355885715353800" varName="editorContext" />
       <varInfo nodeId="6503355885715353800" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="85" startPosition="95" endLine="105" endPosition="22">
+    <scopeInfo nodeId="8514706502349876858" fileName="BuildMpsAspect_Editor.java" startLine="107" startPosition="0" endLine="126" endPosition="0">
+      <varInfo nodeId="8514706502349876858" varName="editorContext" />
+      <varInfo nodeId="8514706502349876858" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="127" startPosition="95" endLine="147" endPosition="22">
       <varInfo nodeId="6503355885715398681" varName="attributeConcept" />
       <varInfo nodeId="6503355885715398681" varName="attributeKind" />
       <varInfo nodeId="6503355885715398681" varName="editorCell" />
       <varInfo nodeId="6503355885715398681" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="84" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="6503355885715398681" fileName="BuildMpsAspect_Editor.java" startLine="126" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="6503355885715398681" varName="editorContext" />
       <varInfo nodeId="6503355885715398681" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6503355885715353767" fileName="BuildMpsAspect_Editor.java" startLine="20" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsAspect_Editor" />
+    <unitInfo nodeId="6503355885715353767" fileName="BuildMpsAspect_Editor.java" startLine="20" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.mps.editor.BuildMpsAspect_Editor" />
   </root>
   <root nodeId="6592112598314498933" modelId="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)">
     <nodeInfo nodeId="1238980147629899307" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="180" startPosition="58" endLine="180" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

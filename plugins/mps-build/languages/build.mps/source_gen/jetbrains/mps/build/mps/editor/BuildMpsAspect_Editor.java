@@ -27,7 +27,8 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_koy33t_a");
     editorCell.addEditorCell(this.createConceptProperty_koy33t_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_koy33t_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_koy33t_c0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_koy33t_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_koy33t_d0(editorContext, node));
     return editorCell;
   }
 
@@ -45,6 +46,20 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_koy33t_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_koy33t_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.addEditorCell(this.createConstant_koy33t_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_koy33t_b2a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_koy33t_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap");
     editorCell.setCellId("Constant_koy33t_a1a");
@@ -53,9 +68,17 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_koy33t_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_koy33t_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generation max heap size in mb");
+    editorCell.setCellId("Constant_koy33t_a2a");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_koy33t_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_koy33t_c0");
+    editorCell.setCellId("Constant_koy33t_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -71,6 +94,25 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_bootstrap");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_koy33t_b2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("generationMaxHeapSizeInMb");
+    provider.setNoTargetText("512");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_generationMaxHeapSizeInMb");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
