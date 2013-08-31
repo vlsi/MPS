@@ -115,7 +115,9 @@ public class ConceptRegistry implements CoreComponent {
         descriptor = new IllegalConceptDescriptor(fqName);
       }
 
-      conceptDescriptors.put(fqName, descriptor);
+      if (!(descriptor instanceof IllegalConceptDescriptor)) {
+        conceptDescriptors.put(fqName, descriptor);
+      }
 
       return descriptor;
     } finally {
