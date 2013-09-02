@@ -11,10 +11,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class InvertIfCondition_Intention implements IntentionFactory {
@@ -75,6 +76,17 @@ public class InvertIfCondition_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+        SNode newIfFalsefStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+        SLinkOperations.setTarget(newIfFalsefStatement, "condition", SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first(), "condition", true), true);
+        SLinkOperations.setTarget(newIfFalsefStatement, "ifTrue", SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first(), "statementList", true), true);
+        SLinkOperations.setTarget(newIfFalsefStatement, "ifFalseStatement", SLinkOperations.getTarget(node, "ifFalseStatement", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(newIfFalsefStatement, "elsifClauses", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(newIfFalsefStatement, "elsifClauses", true)).removeElementAt(0);
+        SLinkOperations.setTarget(node, "ifFalseStatement", newIfFalsefStatement, true);
+      }
+
+
       // Invert condition 
       SNode condition = SLinkOperations.getTarget(node, "condition", true);
       if ((condition != null)) {
