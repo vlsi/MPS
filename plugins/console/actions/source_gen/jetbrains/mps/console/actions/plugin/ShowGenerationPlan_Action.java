@@ -65,7 +65,7 @@ public class ShowGenerationPlan_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode command = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ShowMappingPartitioning", null);
+      SNode command = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ShowGenPlan", null);
       SLinkOperations.setTarget(command, "targetModel", SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ModelReference", null), true);
       SPropertyOperations.set(SLinkOperations.getTarget(command, "targetModel", true), "fqName", ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
       SPropertyOperations.set(SLinkOperations.getTarget(command, "targetModel", true), "name", SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));

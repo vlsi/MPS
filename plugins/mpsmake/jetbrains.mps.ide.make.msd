@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.make" uuid="8f6725be-608d-433b-98fd-844f816eb05f" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${mps_home}/plugins/mpsmake/source_gen">
+<solution name="jetbrains.mps.ide.make" uuid="8f6725be-608d-433b-98fd-844f816eb05f" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/mpsmake/classes" type="java_classes" />
+    <modelRoot path="${module}/classes" type="java_classes" />
   </models>
   <facets>
     <facet type="java" />

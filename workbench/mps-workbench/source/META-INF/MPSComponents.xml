@@ -153,10 +153,6 @@
       <skipForDummyProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.workbench.output.OutputViewTool</implementation-class>
-      <skipForDummyProject/>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
       <skipForDummyProject/>
     </component>
