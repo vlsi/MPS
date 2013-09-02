@@ -18,7 +18,9 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -219,19 +221,23 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2352568442779188165(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).contains(SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891"));
   }
 
   public static boolean ifMacro_Condition_2352568442779188169(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).contains(SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890"));
   }
 
   public static boolean ifMacro_Condition_2352568442779188173(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).contains(SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892"));
   }
 
   public static boolean ifMacro_Condition_3101153546911107956(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it == SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891") || it == SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890") || it == SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892");
+      }
+    });
   }
 
   public static boolean ifMacro_Condition_8063439325683021763(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -247,19 +253,23 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4456552156417887088(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).contains(SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891"));
   }
 
   public static boolean ifMacro_Condition_4456552156417887173(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).contains(SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890"));
   }
 
   public static boolean ifMacro_Condition_4456552156417887245(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).contains(SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892"));
   }
 
   public static boolean ifMacro_Condition_3101153546911107996(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.TraceableConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.ScopeConcept") || SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.traceable.structure.UnitConcept");
+    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_getAllSuperConcepts_2992811758677902956(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), false)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it == SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369891") || it == SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369890") || it == SNodeOperations.getNode("r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)", "5067982036267369892");
+      }
+    });
   }
 
   public static boolean ifMacro_Condition_2341412953773710155(final IOperationContext operationContext, final IfMacroContext _context) {
