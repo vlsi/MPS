@@ -299,6 +299,9 @@ public class ClassLoaderManager implements CoreComponent {
     }
     modulesToLoad = Collections.unmodifiableSet(modulesToLoad);
 
+    // do not call listeners when no loading
+    if (modulesToLoad.isEmpty()) return modulesToLoad;
+
     // todo: remove this code?
     for (SModule module : modules) {
       if (ModuleClassLoaderSupport.canCreate(module)) {
