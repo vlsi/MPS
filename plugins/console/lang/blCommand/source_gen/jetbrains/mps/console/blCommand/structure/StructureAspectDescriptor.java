@@ -38,11 +38,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"conceptArg"}, new boolean[]{false}).alias("#instances", "instances in current scope").create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#modelProperties", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"targetModel"}, new boolean[]{false}).alias("#modelProperties", "").create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelsExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("#models", "models in current scope").create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModuleProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"targetModule"}, new boolean[]{false}).alias("#moduleProperties", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModuleProperties").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"targetModule"}, new boolean[]{false}).alias("#moduleProperties", "").create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModulesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("#modules", "").create();
       case 16:

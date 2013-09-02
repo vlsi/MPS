@@ -262,6 +262,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2755216049126565848" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7656298970878093785" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BLExpression" />
@@ -309,6 +312,9 @@
       <property name="role" nameId="tpce.1071599776563" value="targetModule" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2755216049126565791" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="119903734736601565" nodeInfo="ig">

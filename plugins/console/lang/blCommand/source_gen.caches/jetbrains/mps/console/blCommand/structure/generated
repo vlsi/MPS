@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dcb8zx8zw8go4k4ovnrgsmp12vvl7yu">
+<dependencies version="2" modelHash="-dyo2pa9mvl9540yg46q9we8u3h8sdfb">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -125,7 +125,7 @@
   <source id="8953981490813243063" name="ConsoleModelExpression" hash="es4myh4j55u6dfa1wmc6db2oigstv4k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2284201910216573342" name="ModelProperties" hash="ce7gtm9lmlfemhi9glwi360eyu2bzpz">
+  <source id="2284201910216573342" name="ModelProperties" hash="-apju922yw0kz8hoz95ahea2u09c3mvo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7656298970878093785" name="BLExpression" hash="b8rvdz74unp0gztszu8myk7zypckzu9">
@@ -140,7 +140,7 @@
   <source id="473081947984132408" name="BLCommandHelp" hash="8a4px3chlldaj1t8go8r8c7j5z2598u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="119903734736591007" name="ModuleProperties" hash="-598njb1ngg5iz7ueas3mup0tk4y42zw">
+  <source id="119903734736591007" name="ModuleProperties" hash="-3vk487vm0az3id5p8q70shkuuw7rcd6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="119903734736601565" name="ActionCallParameter" hash="anwc9oqqf0z3y04lp8kmpdswtujpfko">
