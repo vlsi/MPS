@@ -15,7 +15,7 @@
   <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" hash="6t2jbgflx6f1cyolfzqiw1zh728vtl4" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="2warf9wz9zr88u4nnjvoe96w6bynxhi" />
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="9b1mkzsjmu1bvahp1o1bwtfm6q63k0a" />
-  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-dcb8zx8zw8go4k4ovnrgsmp12vvl7yu" />
+  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-dfv6b2y0x6fdyotumt0oucymom4qgyr" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="euue9nf2dfvmaaw7p51ae5d5ok9xgnc" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
@@ -60,13 +60,16 @@
     <file name="BehaviorAspectDescriptor.java" />
     <file name="CallActionExpression_BehaviorDescriptor.java" />
     <file name="ConsoleModelExpression_BehaviorDescriptor.java" />
+    <file name="CustomScope_BehaviorDescriptor.java" />
     <file name="ExceptionHolder_BehaviorDescriptor.java" />
-    <file name="GlobalScopeLiteral_BehaviorDescriptor.java" />
+    <file name="GlobalScope_BehaviorDescriptor.java" />
     <file name="InstancesExpression_BehaviorDescriptor.java" />
     <file name="ModelProperties_BehaviorDescriptor.java" />
+    <file name="ModelScope_BehaviorDescriptor.java" />
     <file name="ModelsExpression_BehaviorDescriptor.java" />
     <file name="ModuleProperties_BehaviorDescriptor.java" />
     <file name="ModulesExpression_BehaviorDescriptor.java" />
+    <file name="ModulesScope_BehaviorDescriptor.java" />
     <file name="NodesExpression_BehaviorDescriptor.java" />
     <file name="PrintExpression_BehaviorDescriptor.java" />
     <file name="PrintNodeExpression_BehaviorDescriptor.java" />
@@ -74,14 +77,14 @@
     <file name="PrintSequenceExpression_BehaviorDescriptor.java" />
     <file name="PrintTextExpression_BehaviorDescriptor.java" />
     <file name="ProjectExpression_BehaviorDescriptor.java" />
-    <file name="ProjectScopeLiteral_BehaviorDescriptor.java" />
+    <file name="ProjectScope_BehaviorDescriptor.java" />
     <file name="QueryExpression_BehaviorDescriptor.java" />
     <file name="QueryParameterIncludeReadOnly_BehaviorDescriptor.java" />
     <file name="QueryParameterList_BehaviorDescriptor.java" />
     <file name="QueryParameterScope_BehaviorDescriptor.java" />
     <file name="QueryParameter_BehaviorDescriptor.java" />
     <file name="ReferencesExpression_BehaviorDescriptor.java" />
-    <file name="ScopeParameterLiteral_BehaviorDescriptor.java" />
+    <file name="ScopeParameter_BehaviorDescriptor.java" />
     <file name="ShowExpression_BehaviorDescriptor.java" />
     <file name="UsagesExpression_BehaviorDescriptor.java" />
   </common>

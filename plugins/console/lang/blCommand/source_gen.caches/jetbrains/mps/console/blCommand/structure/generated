@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dyo2pa9mvl9540yg46q9we8u3h8sdfb">
+<dependencies version="2" modelHash="-dfv6b2y0x6fdyotumt0oucymom4qgyr">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -7,12 +7,15 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="9b1mkzsjmu1bvahp1o1bwtfm6q63k0a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="95bnfiqd9akddkgokngbmm4qgie68q2">
+  <common hash="-9y2v9s64h8nmhxr5ppy690ve297mqsm">
     <dep root="119903734736591007" />
     <dep root="119903734736599867" />
     <dep root="119903734736601565" />
     <dep root="2284201910216573342" />
+    <dep root="2755216049126692157" />
     <dep root="2822369470875160718" />
+    <dep root="3492877759608408142" />
+    <dep root="3492877759611762121" />
     <dep root="4307205004131544317" />
     <dep root="4307205004131544565" />
     <dep root="4307205004132277753" />
@@ -104,16 +107,16 @@
   <source id="4307205004132412550" name="QueryParameterIncludeReadOnly" hash="2184asto252i9e4x9tvsbwfws42qqh0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4307205004132412719" name="QueryParameterScope" hash="-eo4qm0an6f77jjvijopsh3nvk27pehc">
+  <source id="4307205004132412719" name="QueryParameterScope" hash="-aintapdh5cwlzvnvzr5zay8oqx323x8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4307205004134636866" name="GlobalScopeLiteral" hash="awnt0naa69v791n6ybkwpqniy0cj3up">
+  <source id="4307205004134636866" name="GlobalScope" hash="-bdgk1nglta174d40hffryb4hm3w7w0f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4307205004134636875" name="ScopeParameterLiteral" hash="-4ch1s7f3njn3letaxz7e2tdaa4g5se">
+  <source id="4307205004134636875" name="ScopeParameter" hash="-dd8a2sahunnqy8scend651u0yqb6d85">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4307205004134636962" name="ProjectScopeLiteral" hash="caldjs5xnrhidy1qfnzp79ul2oobmno">
+  <source id="4307205004134636962" name="ProjectScope" hash="-363oorgd5q6glu3iowy0vwmkxkwo1vl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="9149301274757091502" name="CallActionExpression" hash="-9ewmp3xlcbattjclb167dpmkku70eno">
@@ -147,6 +150,15 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="119903734736599867" name="ActionCallGlobalParameter" hash="71qgxahurgxixwdqp0vezx7u6nob5sw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2755216049126692157" name="ModulesScope" hash="d83plgtky112ci9kb7e4yvnis8geq6p">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3492877759608408142" name="ModelScope" hash="-72a4shtkddkuw759qrosohnf5acgr2b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3492877759611762121" name="CustomScope" hash="8k0unz3lwtjxyj0ub8kqv1eo3ly9vfb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

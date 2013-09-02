@@ -7,7 +7,6 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -40,14 +39,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3856122757887589572(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    {
-      IMatchingPattern pattern_x583g4_a0d = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
-      SNode coercedNode_x583g4_a0d = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "object", true)), pattern_x583g4_a0d);
-      if (coercedNode_x583g4_a0d != null) {
-        return ListSequence.fromList(SLinkOperations.getTargets(coercedNode_x583g4_a0d, "parameterType", true)).isEmpty();
-      } else {
-        return false;
-      }
+    SNode functionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "object", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), false);
+    if (functionType != null) {
+      return ListSequence.fromList(SLinkOperations.getTargets(functionType, "parameterType", true)).isEmpty();
+    } else {
+      return false;
     }
   }
 
@@ -318,12 +314,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "targetModule", true);
   }
 
+  public static SNode sourceNodeQuery_3492877759612269969(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "scope", true);
+  }
+
   public static Iterable sourceNodesQuery_5336086527852932024(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_8953981490812725464(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_3492877759611137837(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "module", true);
+  }
+
+  public static Iterable sourceNodesQuery_3492877759611337802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "model", true);
   }
 
   private static SNode _quotation_createNode_x583g4_b0a0a0() {

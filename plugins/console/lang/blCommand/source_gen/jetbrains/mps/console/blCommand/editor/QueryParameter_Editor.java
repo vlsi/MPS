@@ -13,7 +13,7 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_pp9zo5_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryParameter_EditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     return editorCell;
   }
