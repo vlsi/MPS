@@ -581,7 +581,11 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
             SNode refContainer = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.PastedNodeReference", null);
             SLinkOperations.setTarget(refContainer, "target", referenceTarget, false);
             NodePaster paster = new NodePaster(ListSequence.fromListAndArray(new ArrayList<SNode>(), refContainer));
-            paster.paste(currentCell);
+            if (paster.canPaste(currentCell)) {
+              paster.paste(currentCell);
+            } else if (paster.canPasteWithRemove(myEditor.getSelectedNodes())) {
+              paster.pasteWithRemove(myEditor.getSelectedNodes());
+            }
             TemporaryModels.getInstance().addMissingImports(myModel);
           } else {
             myDefaultPasteProvider.performPaste(context);
