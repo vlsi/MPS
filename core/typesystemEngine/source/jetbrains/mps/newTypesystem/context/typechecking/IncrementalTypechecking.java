@@ -49,6 +49,9 @@ import java.util.*;
 
 public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemComponent> {
 
+  private static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
+  private static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
+
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private List<SModel> myReplacedModels = new ArrayList<SModel>();
 
@@ -370,6 +373,9 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
+      if (LEFT_TRANSFORM_HINT.equals(event.getPropertyName()) || RIGHT_TRANSFORM_HINT.equals(event.getPropertyName())) {
+        return;
+      }
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
