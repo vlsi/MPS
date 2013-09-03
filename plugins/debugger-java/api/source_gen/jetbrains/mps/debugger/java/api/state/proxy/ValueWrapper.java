@@ -15,12 +15,13 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.VirtualMachine;
 
 public abstract class ValueWrapper extends JavaValue implements IValue {
+  @NotNull
   protected final JavaValue myWrappedValue;
   @NotNull
   protected final IValueProxy myValueProxy;
   private final String myPresentation;
 
-  public ValueWrapper(JavaValue value) {
+  public ValueWrapper(@NotNull JavaValue value) {
     super(value.getValue(), value.getClassFQName(), value.myThreadReference);
     myWrappedValue = value;
     myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue());
@@ -59,5 +60,9 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
 
   public VirtualMachine getVM() {
     return myValue.virtualMachine();
+  }
+
+  public JavaValue getWrappedValue() {
+    return myWrappedValue;
   }
 }

@@ -37,7 +37,7 @@
     </node>
   </root>
   <root type="kisg.CustomWatchablesContainer" typeId="kisg.5117350825036256317" id="2929731761237869234" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="CollectionsWatchables" />
+    <property name="name" nameId="tpck.1169194664001" value="Collections" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
     <node role="watchable" roleId="kisg.5117350825036256318" type="kisg.CustomWatchable" typeId="kisg.5117350825036234483" id="2929731761237869235" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="element" />
@@ -56,7 +56,7 @@
     </node>
   </root>
   <root type="kisg.HighLevelCustomViewer" typeId="kisg.680105146889009728" id="2929731761237869240" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ListViewer" />
+    <property name="name" nameId="tpck.1169194664001" value="List" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
     <node role="valueType" roleId="kisg.43370322128256026" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2929731761237869241" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
@@ -143,7 +143,7 @@
     </node>
   </root>
   <root type="kisg.HighLevelCustomViewer" typeId="kisg.680105146889009728" id="2929731761237869279" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MapEntryViewer" />
+    <property name="name" nameId="tpck.1169194664001" value="MapEntry" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
     <node role="valueType" roleId="kisg.43370322128256026" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2929731761237869280" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Map$Entry" resolveInfo="Map.Entry" />
@@ -320,7 +320,7 @@
     </node>
   </root>
   <root type="kisg.HighLevelCustomViewer" typeId="kisg.680105146889009728" id="2929731761237869354" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="MapViewer" />
+    <property name="name" nameId="tpck.1169194664001" value="Map" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
     <node role="valueType" roleId="kisg.43370322128256026" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2929731761237869355" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Map" resolveInfo="Map" />
@@ -426,7 +426,7 @@
     </node>
   </root>
   <root type="kisg.HighLevelCustomViewer" typeId="kisg.680105146889009728" id="2929731761237869400" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="SetViewer" />
+    <property name="name" nameId="tpck.1169194664001" value="Set" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
     <node role="valueType" roleId="kisg.43370322128256026" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2929731761237869401" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Set" resolveInfo="Set" />

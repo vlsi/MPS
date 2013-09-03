@@ -122,4 +122,11 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       return "node<" + (String) (((IObjectValueProxy) node.getFieldValue("myConceptFqName"))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
     }
   }
+
+
+
+  @Override
+  public String toString() {
+    return "SNodeViewer";
+  }
 }

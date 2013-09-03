@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 
-public class MapViewer_WrapperFactory extends ValueWrapperFactory {
-  public MapViewer_WrapperFactory() {
+public class List_WrapperFactory extends ValueWrapperFactory {
+  public List_WrapperFactory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new MapViewer_WrapperFactory.MapViewerWrapper(value);
+    return new List_WrapperFactory.ListWrapper(value);
   }
 
   @Override
@@ -33,7 +33,7 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
         if (value == null) {
           return false;
         }
-        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljava/util/Map;", value.virtualMachine()))) {
+        if (!(EvaluationUtils.getInstance().instanceOf(value.type(), "Ljava/util/List;", value.virtualMachine()))) {
           return false;
         }
         return true;
@@ -41,8 +41,8 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
-  public static class MapViewerWrapper extends ValueWrapper {
-    public MapViewerWrapper(JavaValue value) {
+  public static class ListWrapper extends ValueWrapper {
+    public ListWrapper(JavaValue value) {
       super(value);
     }
 
@@ -55,17 +55,23 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
-      List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
+      List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I", getThreadReference()));
-      result.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
+      watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
 
-      IObjectValueProxy entries = ((IObjectValueProxy) value.invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference()));
-      for (IObjectValueProxy entry : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(entries, getThreadReference())) {
-        result.add(new CollectionsWatchables.MyWatchable_entry(ValueUtil.getInstance().fromJDI(entry.getJDIValue(), getThreadReference()), "entry"));
+      for (IObjectValueProxy element : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(value, getThreadReference())) {
+        watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_element(ValueUtil.getInstance().fromJDI(element.getJDIValue(), getThreadReference()), "element"));
       }
 
-      return result;
+      return watchables;
     }
+  }
+
+
+
+  @Override
+  public String toString() {
+    return "List";
   }
 }

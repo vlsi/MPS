@@ -22,22 +22,22 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
     CustomViewersManager manager = CustomViewersManager.getInstance();
     if (manager != null) {
       {
-        ValueWrapperFactory factory = new ListViewer_WrapperFactory();
+        ValueWrapperFactory factory = new List_WrapperFactory();
         ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
       {
-        ValueWrapperFactory factory = new MapEntryViewer_WrapperFactory();
+        ValueWrapperFactory factory = new MapEntry_WrapperFactory();
         ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
       {
-        ValueWrapperFactory factory = new MapViewer_WrapperFactory();
+        ValueWrapperFactory factory = new Map_WrapperFactory();
         ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }
       {
-        ValueWrapperFactory factory = new SetViewer_WrapperFactory();
+        ValueWrapperFactory factory = new Set_WrapperFactory();
         ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).addElement(factory);
         manager.addFactory(factory);
       }

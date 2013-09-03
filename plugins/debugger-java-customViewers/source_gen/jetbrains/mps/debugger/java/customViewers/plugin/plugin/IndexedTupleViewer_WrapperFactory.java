@@ -82,4 +82,11 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
       return "tuple " + (String) (((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue();
     }
   }
+
+
+
+  @Override
+  public String toString() {
+    return "IndexedTupleViewer";
+  }
 }

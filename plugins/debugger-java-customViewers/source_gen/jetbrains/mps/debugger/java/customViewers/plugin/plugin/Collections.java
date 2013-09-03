@@ -6,8 +6,8 @@ import jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 
-public class CollectionsWatchables {
-  public CollectionsWatchables() {
+public class Collections {
+  public Collections() {
   }
 
   public static class MyWatchable_element extends CustomJavaWatchable {

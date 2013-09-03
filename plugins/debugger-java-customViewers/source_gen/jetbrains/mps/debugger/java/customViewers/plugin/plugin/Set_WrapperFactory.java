@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 
-public class SetViewer_WrapperFactory extends ValueWrapperFactory {
-  public SetViewer_WrapperFactory() {
+public class Set_WrapperFactory extends ValueWrapperFactory {
+  public Set_WrapperFactory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new SetViewer_WrapperFactory.SetViewerWrapper(value);
+    return new Set_WrapperFactory.SetWrapper(value);
   }
 
   @Override
@@ -41,8 +41,8 @@ public class SetViewer_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
-  public static class SetViewerWrapper extends ValueWrapper {
-    public SetViewerWrapper(JavaValue value) {
+  public static class SetWrapper extends ValueWrapper {
+    public SetWrapper(JavaValue value) {
       super(value);
     }
 
@@ -59,13 +59,20 @@ public class SetViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I", getThreadReference()));
-      watchables.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
+      watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
 
       for (IObjectValueProxy element : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(value, getThreadReference())) {
-        watchables.add(new CollectionsWatchables.MyWatchable_element(ValueUtil.getInstance().fromJDI(element.getJDIValue(), getThreadReference()), "element"));
+        watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_element(ValueUtil.getInstance().fromJDI(element.getJDIValue(), getThreadReference()), "element"));
       }
 
       return watchables;
     }
+  }
+
+
+
+  @Override
+  public String toString() {
+    return "Set";
   }
 }

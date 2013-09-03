@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil;
 
-public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
-  public MapEntryViewer_WrapperFactory() {
+public class MapEntry_WrapperFactory extends ValueWrapperFactory {
+  public MapEntry_WrapperFactory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new MapEntryViewer_WrapperFactory.MapEntryViewerWrapper(value);
+    return new MapEntry_WrapperFactory.MapEntryWrapper(value);
   }
 
   @Override
@@ -41,10 +41,10 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
-  public static class MapEntryViewerWrapper extends ValueWrapper {
+  public static class MapEntryWrapper extends ValueWrapper {
     private final String myPresentation;
 
-    public MapEntryViewerWrapper(JavaValue value) {
+    public MapEntryWrapper(JavaValue value) {
       super(value);
       myPresentation = getValuePresentationImpl();
     }
@@ -61,8 +61,8 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
       IObjectValueProxy key = ((IObjectValueProxy) value.invokeMethod("getKey", "()Ljava/lang/Object;", getThreadReference()));
       IObjectValueProxy entryValue = ((IObjectValueProxy) value.invokeMethod("getValue", "()Ljava/lang/Object;", getThreadReference()));
-      result.add(new CollectionsWatchables.MyWatchable_key(ValueUtil.getInstance().fromJDI(key.getJDIValue(), getThreadReference()), "key"));
-      result.add(new CollectionsWatchables.MyWatchable_value(ValueUtil.getInstance().fromJDI(entryValue.getJDIValue(), getThreadReference()), "value"));
+      result.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_key(ValueUtil.getInstance().fromJDI(key.getJDIValue(), getThreadReference()), "key"));
+      result.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_value(ValueUtil.getInstance().fromJDI(entryValue.getJDIValue(), getThreadReference()), "value"));
       return result;
     }
 
@@ -89,5 +89,12 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
         (String) (((IObjectValueProxy) entryValue.invokeMethod("toString", "()Ljava/lang/String;", getThreadReference()))).getJavaValue()
       ));
     }
+  }
+
+
+
+  @Override
+  public String toString() {
+    return "MapEntry";
   }
 }

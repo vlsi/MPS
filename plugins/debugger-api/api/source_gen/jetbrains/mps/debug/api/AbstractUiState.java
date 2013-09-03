@@ -100,6 +100,15 @@ public abstract class AbstractUiState {
     return Collections.emptyList();
   }
 
+  /**
+   * It it a fact that we can not run evaluation (i.e. whatever code that executes something on virtual machine under debug) in EDT since it can and will slow down or even freeze ui.
+   * And we also should have a list of threads on the virtual machine that do evaluation in order to skip events from them in the vm manager thread
+   * (like when we are evaluating a method we should not stop on breakpoints in it).
+   * So we need to have a special way to evaluate and here it is.
+   * 
+   * Default implementation just sends a given command to a thread from thread pull (thanks, captain).
+   * Custom debugger implelemntation may create their own special thread for that.
+   */
   public void invokeEvaluation(final _FunctionTypes._void_P0_E0 command) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
