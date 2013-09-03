@@ -105,12 +105,12 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
 
     @Override
     public void stateChanged(AbstractDebugSession session) {
-      reAttachPainter(session);
+      reAttachPainter(session, true);
     }
 
     @Override
     public void paused(AbstractDebugSession debugSession) {
-      reAttachPainter(debugSession);
+      reAttachPainter(debugSession, true);
     }
 
     @Override

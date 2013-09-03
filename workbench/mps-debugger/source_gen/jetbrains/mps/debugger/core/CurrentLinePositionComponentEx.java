@@ -98,7 +98,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   }
 
   @Nullable
-  protected Runnable attachPainterRunnable(final S debugSession) {
+  protected Runnable attachPainterRunnable(final S debugSession, final boolean focus) {
     final CurrentLinePainter newPainter = ModelAccess.instance().runReadAction(new Computable<CurrentLinePainter>() {
       @Override
       public CurrentLinePainter compute() {
@@ -121,7 +121,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
             ModelAccess.assertLegalWrite();
             SNode node = newPainter.getSNode();
             if (node != null) {
-              if (visible) {
+              if (visible && focus) {
                 EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
                 currentEditorComponent = EditorComponentUtil.scrollToNode(node, currentEditorComponent, myFileEditorManager);
                 if (currentEditorComponent != null) {
@@ -171,9 +171,9 @@ public abstract class CurrentLinePositionComponentEx<S> {
     ApplicationManager.getApplication().invokeLater(detachPainterRunnable);
   }
 
-  protected void reAttachPainter(S session) {
+  protected void reAttachPainter(S session, boolean focus) {
     final Runnable detachSession = detachPainterRunnable(session);
-    final Runnable attachSession = attachPainterRunnable(session);
+    final Runnable attachSession = attachPainterRunnable(session, focus);
     if (detachSession != null || attachSession != null) {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
@@ -234,7 +234,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     @Override
     public void commandFinished(SRepository repository) {
       for (S session : CollectionSequence.fromCollection(getAllSessions())) {
-        reAttachPainter(session);
+        reAttachPainter(session, false);
       }
     }
   }
