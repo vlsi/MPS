@@ -10,6 +10,7 @@ import jetbrains.mps.debugger.java.runtime.engine.DebugProcessMulticaster;
 import jetbrains.mps.debugger.java.runtime.engine.SystemMessagesReporter;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -24,6 +25,12 @@ import jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequest
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
 import com.sun.jdi.AbsentInformationException;
 import com.intellij.openapi.application.ApplicationManager;
+import org.jetbrains.annotations.Nullable;
+import java.util.concurrent.atomic.AtomicReference;
+import com.intellij.openapi.progress.util.ProgressWindowWithNotification;
+import com.intellij.openapi.progress.util.ProgressIndicatorListenerAdapter;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import jetbrains.mps.debugger.java.runtime.engine.DebugProcessListener;
 import com.sun.jdi.event.EventQueue;
 import com.sun.jdi.event.EventSet;
@@ -47,8 +54,10 @@ public class EventsProcessor {
   private final SystemMessagesReporter myReporter = new SystemMessagesReporter(myMulticaster);
   private final BreakpointManagerComponent myBreakpointManager;
   private IDebuggableFramesSelector myFramesSelector;
+  private final Project myProject;
 
-  public EventsProcessor(BreakpointManagerComponent breakpointsManagerComponent) {
+  public EventsProcessor(Project project, BreakpointManagerComponent breakpointsManagerComponent) {
+    myProject = project;
     myBreakpointManager = breakpointsManagerComponent;
     myRequestManager = new RequestManager(this);
     // todo? 
@@ -238,6 +247,46 @@ public class EventsProcessor {
         }
       }
     });
+  }
+
+  @Nullable
+  public <R> R invokeEvaluationUnderProgress(final _FunctionTypes._return_P0_E0<? extends R> evaluationCommand, final ThreadReference threadToEvaluateIn) {
+    final AtomicReference<R> resultReference = new AtomicReference();
+
+    final ProgressWindowWithNotification progress = new ProgressWindowWithNotification(true, false, myProject, null, null);
+    progress.setTitle("Evaluating");
+
+    progress.addListener(new ProgressIndicatorListenerAdapter() {
+      @Override
+      public void cancelled() {
+        progress.stop();
+      }
+    });
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        try {
+          ProgressManager.getInstance().runProcess(new Runnable() {
+            public void run() {
+              myContextManager.startEvaluation(threadToEvaluateIn);
+              try {
+                resultReference.set(evaluationCommand.invoke());
+              } finally {
+                myContextManager.finishEvaluation(threadToEvaluateIn);
+              }
+            }
+          }, progress);
+        } catch (ProcessCanceledException e) {
+          progress.cancel();
+        } catch (RuntimeException e) {
+          progress.cancel();
+          throw e;
+        }
+      }
+    });
+
+    progress.startBlocking();
+
+    return resultReference.get();
   }
 
   public void schedule(_FunctionTypes._void_P0_E0 command, _FunctionTypes._void_P0_E0 cancel) {

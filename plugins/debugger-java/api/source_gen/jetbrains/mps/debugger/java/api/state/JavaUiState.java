@@ -7,6 +7,8 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class JavaUiState extends AbstractUiState {
   protected JavaUiState(AbstractDebugSession debugSession) {
@@ -20,4 +22,9 @@ public abstract class JavaUiState extends AbstractUiState {
 
   @Override
   public abstract JavaThread getThread();
+
+  @Nullable
+  public abstract <R> R invokeEvaluationUnderProgress(_FunctionTypes._return_P0_E0<? extends R> command);
+
+
 }

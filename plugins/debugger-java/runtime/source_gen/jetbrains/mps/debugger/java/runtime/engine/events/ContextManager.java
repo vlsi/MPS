@@ -5,10 +5,10 @@ package jetbrains.mps.debugger.java.runtime.engine.events;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
+import java.util.Map;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
@@ -22,7 +22,7 @@ import org.apache.log4j.LogManager;
 
 public class ContextManager {
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
-  private Set<ThreadReference> myEvaluatedThreads = SetSequence.fromSet(new HashSet<ThreadReference>());
+  private final Map<ThreadReference, Integer> myEvaluatedThreads = MapSequence.fromMap(new HashMap<ThreadReference, Integer>());
   private UserContext myUserContext;
 
   public ContextManager() {
@@ -120,15 +120,25 @@ public class ContextManager {
   }
 
   public synchronized void startEvaluation(@NotNull ThreadReference threadReference) {
-    SetSequence.fromSet(myEvaluatedThreads).addElement(threadReference);
+    Integer evaluated = MapSequence.fromMap(myEvaluatedThreads).get(threadReference);
+    if (evaluated == null) {
+      evaluated = 0;
+    }
+    MapSequence.fromMap(myEvaluatedThreads).put(threadReference, evaluated + 1);
   }
 
   public synchronized void finishEvaluation(@NotNull ThreadReference threadReference) {
-    SetSequence.fromSet(myEvaluatedThreads).removeElement(threadReference);
+    Integer evaluated = MapSequence.fromMap(myEvaluatedThreads).get(threadReference);
+    assert evaluated != null && evaluated > 0;
+    if (evaluated == 1) {
+      MapSequence.fromMap(myEvaluatedThreads).removeKey(threadReference);
+    } else {
+      MapSequence.fromMap(myEvaluatedThreads).put(threadReference, evaluated - 1);
+    }
   }
 
   public synchronized boolean isEvaluated(@NotNull ThreadReference threadReference) {
-    return SetSequence.fromSet(myEvaluatedThreads).contains(threadReference);
+    return MapSequence.fromMap(myEvaluatedThreads).containsKey(threadReference) && MapSequence.fromMap(myEvaluatedThreads).get(threadReference) > 0;
   }
 
   protected static Logger LOG = LogManager.getLogger(ContextManager.class);

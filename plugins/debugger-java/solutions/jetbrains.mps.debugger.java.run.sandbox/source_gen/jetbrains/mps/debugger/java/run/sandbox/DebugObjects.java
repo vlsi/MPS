@@ -38,6 +38,21 @@ public class DebugObjects {
 
       public void foo() {
       }
+
+
+
+      @Override
+      public String toString() {
+        int i = 0;
+        try {
+          while (i < 1000) {
+            Thread.sleep(10);
+            i++;
+          }
+        } catch (InterruptedException e) {
+        }
+        return "toString is " + i;
+      }
     }.answerToTheUltimateQuestionofLifeUniverseAndEverything();
   }
 }
