@@ -76,7 +76,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     if (getContext() == null) {
       return null;
     }
-    return myDebugSession.getEventsProcessor().scheduleEvaluation(command, getThread().getThread());
+    return myDebugSession.getEventsProcessor().invokeEvaluationUnderProgress(command, getThread().getThread());
   }
 
   private static boolean eq_vkri5_a0a4a6(Object a, Object b) {

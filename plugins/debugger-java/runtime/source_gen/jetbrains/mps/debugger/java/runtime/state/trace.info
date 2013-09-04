@@ -232,7 +232,7 @@
     <nodeInfo nodeId="654837219998672193" fileName="JavaUiStateImpl.java" startLine="67" startPosition="31" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="654837219998672263" fileName="JavaUiStateImpl.java" startLine="69" startPosition="5" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4750532960509859190" fileName="JavaUiStateImpl.java" startLine="76" startPosition="31" endLine="77" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4750532960509859191" fileName="JavaUiStateImpl.java" startLine="78" startPosition="5" endLine="79" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4750532960509859191" fileName="JavaUiStateImpl.java" startLine="78" startPosition="5" endLine="79" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4352118152439825370" fileName="JavaUiStateImpl.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPausedOnBreakpoint#()Z" />
     <nodeInfo nodeId="4352118152439825397" fileName="JavaUiStateImpl.java" startLine="35" startPosition="56" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439825412" fileName="JavaUiStateImpl.java" startLine="39" startPosition="80" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -267,7 +267,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4352118152439825379" fileName="JavaUiStateImpl.java" startLine="27" startPosition="66" endLine="31" endPosition="58" />
     <scopeInfo nodeId="654837219998668966" fileName="JavaUiStateImpl.java" startLine="66" startPosition="68" endLine="70" endPosition="93" />
-    <scopeInfo nodeId="4750532960509859184" fileName="JavaUiStateImpl.java" startLine="75" startPosition="97" endLine="79" endPosition="100" />
+    <scopeInfo nodeId="4750532960509859184" fileName="JavaUiStateImpl.java" startLine="75" startPosition="97" endLine="79" endPosition="111" />
     <scopeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="82" startPosition="62" endLine="86" endPosition="6" />
     <scopeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="4352118152439825460" varName="a" />
