@@ -136,11 +136,14 @@ public interface SNode {
 
   /**
    * Returns an immutable collection of children in the specified role.
+   * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
+   * does not produce read accesses for skipped children
    */
   Iterable<? extends SNode> getChildren(String role);
 
   /**
    * Returns an immutable collection of all children.
+   * Read access policy is same to getChildren(role)
    */
   public Iterable<? extends SNode> getChildren();
 

@@ -318,15 +318,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
     SNode firstChild = firstChild();
 
     if (role != null) {
-      while (firstChild != null && !firstChild.getRoleInParent().equals(role)) {
+      while (firstChild != null && !firstChild.myRoleInParent.equals(role)) {
         firstChild = firstChild.treeNext();
       }
     }
@@ -1154,32 +1149,60 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     @Override
     protected SNode next(SNode node) {
-      if (myRole == null) return node.nextSibling();
+      SNode next = next_(node);
+      if (next != null) {
+        fireNodeRead(next);
+      }
+      return next;
+    }
+
+    private SNode next_(SNode node) {
+      if (myRole == null) return node.treeNext();
 
       do {
-        node = node.nextSibling();
-      } while (node != null && !node.getRoleInParent().equals(myRole));
+        node = node.treeNext();
+      } while (node != null && !node.myRoleInParent.equals(myRole));
       return node;
     }
 
     @Override
     protected SNode prev(SNode node) {
-      if (getParent() == null) return null;
-      if (myRole == null) return node.prevSibling();
+      SNode prev = prev_(node);
+      if (prev != null) {
+        fireNodeRead(prev);
+      }
+      return prev;
+    }
 
-      SNode first = getParent().firstChild();
-      if (node == first) return null;
+    private SNode prev_(SNode node) {
+      if (node.treeParent() == null) return null;
+      SNode fc = node.treeParent().firstChild();
+
+      if (node == fc) return null;
+      if (myRole == null) return node.treePrevious();
 
       do {
-        node = node.prevSibling();
-      } while (node != first && !node.getRoleInParent().equals(myRole));
+        node = node.treePrevious();
+      } while (node != fc && !node.myRoleInParent.equals(myRole));
 
-      return node.getRoleInParent().equals(myRole) ? node : null;
+      return node.myRoleInParent.equals(myRole) ? node : null;
     }
 
     @Override
     protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
       return new ChildrenList(elem, myRole, size);
+    }
+
+    @Override
+    public int size() {
+      fireNodeRead(myFirst);
+      return super.size();
+    }
+
+    private void fireNodeRead(SNode node) {
+      node.nodeRead();
+      node.fireNodeReadAccess();
+      node.fireNodeUnclassifiedReadAccess();
     }
   }
 
@@ -2085,8 +2108,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public SNode prevSibling() {
-    if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : treePrevious();
+    return (treeParent() == null|| treeParent().firstChild() == this) ? null : treePrevious();
   }
 
   @Deprecated
