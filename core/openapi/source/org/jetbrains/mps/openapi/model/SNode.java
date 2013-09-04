@@ -117,7 +117,8 @@ public interface SNode {
   //base tree queries
 
   /**
-   * Produces read access on parent node
+   * Returns the parent of this node
+   * Does not produce read on current as current is already obtained
    * @return parent of this node
    */
   SNode getParent();
@@ -125,19 +126,29 @@ public interface SNode {
   //complex queries
 
   @NotNull
+  /**
+   * Returns the ancestor of current node, which parent is null
+   * Does not produce read on current as current is already obtained
+   * @return root containing this node
+   */
   SNode getContainingRoot();
 
+  /**
+   * Returns role of this node in parent node
+   */
   String getRoleInParent();
 
   SNode getFirstChild();
 
   /**
    * no parent -> no sibling. Root has no siblings
+   * Does not produce read on current as current is already obtained
    */
   SNode getPrevSibling();
 
   /**
    * no parent -> no sibling. Root has no siblings
+   * Does not produce read on current as current is already obtained
    */
   SNode getNextSibling();
 

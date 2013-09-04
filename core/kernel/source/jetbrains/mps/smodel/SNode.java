@@ -188,17 +188,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public SNode getContainingRoot() {
-    nodeRead();
+    assertCanRead();
 
     SNode current = this;
 
     while (true) {
+      if (current.treeParent() == null) return current;
+
+      current = current.treeParent();
+      current.nodeRead();
       current.fireNodeReadAccess();
-      if (current.treeParent() == null) {
-        return current;
-      } else {
-        current = current.treeParent();
-      }
     }
   }
 
@@ -303,10 +302,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode parent = treeParent();
 
-    parent.nodeRead();
-    parent.fireNodeReadAccess();
-    parent.fireNodeUnclassifiedReadAccess();
-
+    if (parent!=null){
+      parent.nodeRead();
+      parent.fireNodeReadAccess();
+      parent.fireNodeUnclassifiedReadAccess();
+    }
     return parent;
   }
 
@@ -697,39 +697,58 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getFirstChild() {
-    nodeRead();
-    fireNodeReadAccess();
-    return firstChild();
+    assertCanRead();
+
+    SNode child = firstChild();
+    if (child!=null){
+      child.nodeRead();
+      child.fireNodeReadAccess();
+    }
+    return child;
   }
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getLastChild() {
-    nodeRead();
-    fireNodeReadAccess();
-    return firstChild().treePrevious();
+    SNode fc = firstChild();
+    if (fc == null) return null;
+
+    SNode lc = fc.treePrevious();
+    if (lc != null) {
+      lc.nodeRead();
+      lc.fireNodeReadAccess();
+    }
+    return lc;
   }
 
   @Override
   public SNode getPrevSibling() {
-    nodeRead();
-    fireNodeReadAccess();
+    assertCanRead();
 
     SNode p = getParent();
     if (p == null) return null;
 
     SNode tp = treePrevious();
-    return tp.next == null ? null : tp;
+    SNode ps = tp.next == null ? null : tp;
+    if (ps!=null){
+      ps.nodeRead();
+      ps.fireNodeReadAccess();
+    }
+    return ps;
   }
 
   @Override
   public SNode getNextSibling() {
-    nodeRead();
-    fireNodeReadAccess();
+    assertCanRead();
 
     SNode p = getParent();
     if (p == null) return null;
 
-    return treeNext();
+    SNode tn = treeNext();
+    if (tn != null){
+      tn.nodeRead();
+      tn.fireNodeReadAccess();
+    }
+    return tn;
   }
 
   @Override
