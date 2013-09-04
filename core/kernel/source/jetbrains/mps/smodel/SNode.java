@@ -172,19 +172,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void showDisposedMessage() {
-    SModelDescriptor model = internal_getModel();
+    org.jetbrains.mps.openapi.model.SModel model = getModel();
     String modelName = model == null ? "null" : jetbrains.mps.util.SNodeOperations.getModelLongName(model);
     if (ourErroredModels.add(modelName)) {
 //      LOG.error(new IllegalModelAccessError("Accessing disposed node in model " + modelName));
     }
   }
 
-
   @Override
   public SNodeId getNodeId() {
-    nodeRead();
-
-    fireNodeReadAccess();
+    assertCanRead();
     return myId;
   }
 
@@ -795,11 +792,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    //nodeRead();
-
-    //fireNodeReadAccess();
-
-    return internal_getModel();
+    return myModel == null ? null : myModel.getModelDescriptor();
   }
 
   //this method is for internal checks in SReferenceBase only
@@ -981,10 +974,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   //--------------
-
-  private SModelDescriptor internal_getModel() {
-    return myModel == null ? null : myModel.getModelDescriptor();
-  }
 
   //--------seems these methods are not needed-------
 

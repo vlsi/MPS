@@ -54,11 +54,14 @@ public interface SNode {
 
   /**
    * Containing model or null if the node is not contained in any model
+   * Does not produce node read event as the function depending on model is not a pure node function.
+   * @see SModelAccessListener
    */
   SModel getModel();
 
   /**
    * Uniquely identifies the node within its containing model. May also be null.
+   * Does not produce node read event as the result value can't be changed.
    */
   SNodeId getNodeId();
 
