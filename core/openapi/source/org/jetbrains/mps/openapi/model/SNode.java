@@ -68,11 +68,13 @@ public interface SNode {
   /**
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
    * Represents the only correct way to pass or store nodes between read/write actions.
+   * Does not produce node read event as the node is already obtained, and the read event has already happened.
    */
   SNodeReference getReference();
 
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.
+   * Does not produce node read event as the result value can't be changed.
    */
   @NotNull
   SConcept getConcept();
