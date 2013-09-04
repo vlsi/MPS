@@ -819,7 +819,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return (SModelBase) modelDescriptor;
   }
 
-  private void nodeRead() {
+  void nodeRead() {
     assertCanRead();
     SModelBase md = getRealModel();
     if (md == null) return;
@@ -1055,7 +1055,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //--------private-------
 
-  private void fireNodeUnclassifiedReadAccess() {
+  void fireNodeUnclassifiedReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
     if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
       try {
@@ -1067,7 +1067,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  private void fireNodeReadAccess() {
+  void fireNodeReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
     if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
       try {
