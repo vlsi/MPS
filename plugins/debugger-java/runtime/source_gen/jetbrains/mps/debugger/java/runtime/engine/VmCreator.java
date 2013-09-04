@@ -61,7 +61,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
   private final DebugSession myDebuggerSession;
 
   public VmCreator(Project project) {
-    myEventsProcessor = new EventsProcessor(BreakpointManagerComponent.getInstance(project));
+    myEventsProcessor = new EventsProcessor(project, BreakpointManagerComponent.getInstance(project));
     myDebuggerSession = new DebugSession(myEventsProcessor, project);
     myDebuggerSession.setEvaluationProvider(new EvaluationProvider(myDebuggerSession));
   }

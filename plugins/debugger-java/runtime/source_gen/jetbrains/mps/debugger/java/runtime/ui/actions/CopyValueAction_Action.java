@@ -12,14 +12,15 @@ import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import org.apache.log4j.Priority;
-import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
+import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import com.sun.jdi.ThreadReference;
-import com.sun.jdi.Value;
-import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
@@ -59,25 +60,30 @@ public class CopyValueAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+      final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
       if (value == null || !(value instanceof JavaValue)) {
         return;
       }
 
-      EvaluationProvider evaluationProvider = (EvaluationProvider) DebugActionsUtil.getEvaluationProvider(event);
-      if (evaluationProvider == null) {
+      AbstractUiState uiState = check_d54g7t_a0d0a(DebugActionsUtil.getDebugSession(event));
+      if (uiState == null || !(uiState instanceof JavaUiState)) {
         return;
       }
+      JavaUiState javaUiState = (JavaUiState) uiState;
 
-      JavaUiState uiState = evaluationProvider.getDebugSession().getUiState();
-
-      ThreadReference thread = check_d54g7t_a0i0a(check_d54g7t_a0a8a0(uiState));
+      final ThreadReference thread = check_d54g7t_a0h0a(javaUiState.getThread());
       if (thread == null) {
         return;
       }
 
-      Value jdiValue = ((JavaValue) value).getValue();
-      CopyPasteUtil.copyTextToClipboard(EvaluationUtils.getInstance().getStringPresentation(jdiValue, thread));
+      String result = javaUiState.invokeEvaluationUnderProgress(new _FunctionTypes._return_P0_E0<String>() {
+        public String invoke() {
+          return EvaluationUtils.getInstance().getStringPresentation(((JavaValue) value).getValue(), thread);
+        }
+      });
+      if ((result != null && result.length() > 0)) {
+        CopyPasteUtil.copyTextToClipboard(result);
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CopyValueAction", t);
@@ -87,14 +93,14 @@ public class CopyValueAction_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(CopyValueAction_Action.class);
 
-  private static ThreadReference check_d54g7t_a0i0a(JavaThread checkedDotOperand) {
+  private static AbstractUiState check_d54g7t_a0d0a(AbstractDebugSession checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getThread();
+      return checkedDotOperand.getUiState();
     }
     return null;
   }
 
-  private static JavaThread check_d54g7t_a0a8a0(JavaUiState checkedDotOperand) {
+  private static ThreadReference check_d54g7t_a0h0a(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

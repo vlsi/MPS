@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.PausedJavaUiState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.RunningJavaUiState" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.state.PausedJavaUiState" file="PausedJavaUiState.java">

@@ -46,14 +46,6 @@ import com.sun.jdi.IntegerValue;
 import com.sun.jdi.LongValue;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.sun.jdi.ObjectReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.SReference;
 
 public class EvaluationUtilsImpl extends EvaluationUtils {
   public EvaluationUtilsImpl() {
@@ -422,30 +414,11 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
           public String invoke() throws EvaluationException {
             ObjectReference object = (ObjectReference) value;
             IObjectValueProxy valueProxy = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(object);
-            SNode toString = _quotation_createNode_wi3cqi_a0c0a0a0a0a0a0a1a62();
-            IValueProxy result = valueProxy.invokeMethod(SPropertyOperations.getString(toString, "name"), BehaviorReflection.invokeVirtual(String.class, toString, "virtual_jniSignature_8847328628797656446", new Object[]{}), threadReference);
+            IValueProxy result = valueProxy.invokeMethod("toString", "()Ljava/lang/String;", threadReference);
             return getStringPresentation(result.getJDIValue(), threadReference);
           }
         }, null);
       }
     }
-  }
-
-  private static SNode _quotation_createNode_wi3cqi_a0c0a0a0a0a0a0a1a62() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "name", "toString");
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.addChild("visibility", quotedNode_2);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.addChild("body", quotedNode_3);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
-    quotedNode_1.addChild("returnType", quotedNode_4);
-    return quotedNode_1;
   }
 }
