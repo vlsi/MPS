@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b8q2n4du0qiolaxslfmb7m4ipsu8tjr">
+<dependencies version="2" modelHash="-1c8hluwqlit535lxxzscjs0k5axepgt">
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="dur0bgpqopfxy65j55x1p26ysx5646s" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="2uobwy4zb6tp59lpuqqfpo98x4cfevy" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="4mzyuamxg5vu9w750iwwoqla121rlxt" />
@@ -320,7 +320,7 @@
   <source id="1731640411968857441" name="installer.nsi" hash="-9lb6tqn1uw5q1ki3bb5vo88lh3z7ros">
     <file name="installer.nsi" />
   </source>
-  <source id="6265574260762011003" name="mpsMakePlugin" hash="-8ov2qv11079wrb2qbgov1vc7i514krv">
+  <source id="6265574260762011003" name="mpsMakePlugin" hash="cxlgovnyv0chmpm3i9hr6lcjncnrfpe">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />
