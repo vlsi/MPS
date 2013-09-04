@@ -201,6 +201,7 @@ public interface SNode {
    * the target nodes even when working with invalid code.
    * <p/>
    * The returned collection is immutable.
+   * Produces read access on the node.
    */
   public Iterable<? extends SReference> getReferences();
 
