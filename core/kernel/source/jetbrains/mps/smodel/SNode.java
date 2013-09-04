@@ -485,8 +485,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String getPresentation() {
-    nodeRead();
-
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
