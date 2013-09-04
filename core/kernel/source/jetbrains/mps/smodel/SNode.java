@@ -537,7 +537,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
               "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
-    if (getTopmostAncestor() == child) {
+    if (getContainingRoot() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
     }
 
