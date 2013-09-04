@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="ef63hk4x8jh872r6htsf5ce2l6al8g0">
+  <dep model="r:996a5df1-33f3-4ee8-992e-ea30005a5e68(jetbrains.mps.diagramEditor.figure.editor)" hash="-afq2ophskwunac95pihd9we9fshpd7m" />
+  <dep model="r:cc3b0644-9b3a-4a2e-923a-734389e3c113(jetbrains.mps.diagramEditor.figure.typesystem)" hash="clg27603xodm51swsgdf8k6zp53qb7z" />
+  <common>
+    <dep model="r:996a5df1-33f3-4ee8-992e-ea30005a5e68(jetbrains.mps.diagramEditor.figure.editor)" />
+    <dep model="r:cc3b0644-9b3a-4a2e-923a-734389e3c113(jetbrains.mps.diagramEditor.figure.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
