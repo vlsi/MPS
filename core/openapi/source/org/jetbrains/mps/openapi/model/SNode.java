@@ -116,6 +116,10 @@ public interface SNode {
 
   //base tree queries
 
+  /**
+   * Produces read access on parent node
+   * @return parent of this node
+   */
   SNode getParent();
 
   //complex queries

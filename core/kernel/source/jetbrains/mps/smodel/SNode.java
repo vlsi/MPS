@@ -299,12 +299,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   final public SNode getParent() {
-    nodeRead();
+    assertCanRead();
 
-    //todo: ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return treeParent();
+    SNode parent = treeParent();
+
+    parent.nodeRead();
+    parent.fireNodeReadAccess();
+    parent.fireNodeUnclassifiedReadAccess();
+
+    return parent;
   }
 
   @Override
