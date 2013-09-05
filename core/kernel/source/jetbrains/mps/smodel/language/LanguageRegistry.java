@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static java.lang.String.format;
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 
 /**
@@ -89,7 +90,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       try {
         l.languagesUnloaded(languages);
       } catch (Exception ex) {
-        LOG.error(ex);
+        LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
       }
     }
     myConceptRegistry.languagesUnloaded(languages);
@@ -103,7 +104,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       try {
         l.languagesLoaded(languages);
       } catch (Exception ex) {
-        LOG.error(ex);
+        LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
       }
     }
   }
