@@ -44,6 +44,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -87,8 +88,11 @@ public class ClassLoaderManager implements CoreComponent {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
     }
 
+    @Override
+    public void moduleAdded(SModule module) {
+      loadClasses(Arrays.asList(module), new EmptyProgressMonitor());
+    }
 
-    // todo: add listener on module added!
     // todo: add listener on module reloaded! (?)
   };
 
@@ -161,7 +165,7 @@ public class ClassLoaderManager implements CoreComponent {
 
     ClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
-      // todo: illegal state?
+      LOG.warning("ClassLoader is null for module " + module, new Throwable());
       return null;
     }
     try {
@@ -200,9 +204,12 @@ public class ClassLoaderManager implements CoreComponent {
       return ClassLoaderManager.class.getClassLoader();
     }
 
-    if (myClassLoaders.containsKey(module)) {
-      return myClassLoaders.get(module);
-    }
+    return myClassLoaders.get(module);
+  }
+
+  private ModuleClassLoader createClassLoader(SModule module) {
+    assert ModuleClassLoaderSupport.canCreate(module);
+
     ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
     ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
     // save back references
@@ -294,6 +301,9 @@ public class ClassLoaderManager implements CoreComponent {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
       if (ModuleClassLoaderSupport.canCreate(module)) {
+        if (getClassLoader(module) != null) {
+          LOG.warning("ModuleClassLoader should be unloaded before load for module " + module, new Throwable());
+        }
         modulesToLoad.add(module);
       }
     }
@@ -302,10 +312,9 @@ public class ClassLoaderManager implements CoreComponent {
     // do not call listeners when no loading
     if (modulesToLoad.isEmpty()) return modulesToLoad;
 
-    // todo: remove this code?
     for (SModule module : modules) {
       if (ModuleClassLoaderSupport.canCreate(module)) {
-        getClassLoader(module);
+        createClassLoader(module);
       }
     }
     addStat("load:main", startTime);
