@@ -12,7 +12,9 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -26,12 +28,15 @@ public class ConceptDescendantsCache implements CoreComponent {
   private final MPSModuleRepository myModuleRepository;
   private final LanguageRegistry myLanguageRegistry;
 
+  private final Map<LanguageRuntime, Set<ConceptDescriptor>> myLoadedLanguageToConceptsMap = new HashMap<LanguageRuntime, Set<ConceptDescriptor>>();
+
   private final LanguageRegistryListener myLanguageRegistryListener = new LanguageRegistryListener() {
     @Override
     public void languagesLoaded(Iterable<LanguageRuntime> languages) {
       ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : languages) {
-        for (ConceptDescriptor concept : getConcepts(language)) {
+        myLoadedLanguageToConceptsMap.put(language, getConcepts(language));
+        for (ConceptDescriptor concept : myLoadedLanguageToConceptsMap.get(language)) {
           loadConcept(concept);
         }
       }
@@ -41,9 +46,10 @@ public class ConceptDescendantsCache implements CoreComponent {
     public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
       ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : languages) {
-        for (ConceptDescriptor concept : getConcepts(language)) {
+        for (ConceptDescriptor concept : myLoadedLanguageToConceptsMap.get(language)) {
           unloadConcept(concept);
         }
+        myLoadedLanguageToConceptsMap.remove(language);
       }
     }
 
