@@ -16,29 +16,20 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
-import com.intellij.extapi.psi.PsiElementBase;
 import com.intellij.openapi.util.TextRange;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
-import com.intellij.psi.SyntheticElement;
 import com.intellij.psi.impl.light.LightElement;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.SmartList;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.lang.reflect.Array;
@@ -261,6 +252,14 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   protected final void insertChildBefore(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
     children.insertBefore(anchor, node);
+  }
+
+  protected final void updateChildren() {
+    for(MPSPsiNodeBase element : children()) {
+      Entry entry = children.findEntry(element);
+      element.setEntry(entry);
+      element.updateChildren();
+    }
   }
 
   @Deprecated
