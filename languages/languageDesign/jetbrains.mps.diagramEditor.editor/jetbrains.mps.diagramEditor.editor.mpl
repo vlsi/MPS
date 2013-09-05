@@ -32,6 +32,8 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">7752fe80-8f0d-4fbd-849f-a592087c2aa0(jetbrains.mps.diagramEditor.figure)</dependency>
+    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
+    <dependency reexport="false">d7722d50-4b93-4c3a-ae06-1903d05f95a7(jetbrains.mps.lang.editor.figures)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
