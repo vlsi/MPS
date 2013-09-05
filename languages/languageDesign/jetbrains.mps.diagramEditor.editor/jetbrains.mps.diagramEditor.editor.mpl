@@ -5,6 +5,10 @@
       <sourceRoot path="${module}/languageModels" />
     </modelRoot>
   </models>
+  <facets>
+    <facet type="java" />
+    <facet type="tests" />
+  </facets>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.diagramEditor.editor#8079565114666170352" uuid="ffe575a8-745e-4975-b791-0bba75b69a3c">
@@ -26,6 +30,9 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">7752fe80-8f0d-4fbd-849f-a592087c2aa0(jetbrains.mps.diagramEditor.figure)</dependency>
+  </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>

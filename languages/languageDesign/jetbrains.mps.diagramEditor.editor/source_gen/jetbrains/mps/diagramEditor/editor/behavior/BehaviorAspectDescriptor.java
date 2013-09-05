@@ -12,10 +12,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
+      case 1:
+        return new CellModel_ViewMap_BehaviorDescriptor();
+      case 0:
+        return new CellModel_Canvas_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.diagramEditor.editor.structure.CellModel_Canvas", "jetbrains.mps.diagramEditor.editor.structure.CellModel_ViewMap"};
 }
