@@ -28,9 +28,9 @@ public class typeof_ContainsOperation_InferenceRule extends AbstractInferenceRul
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = op;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1301553664997880764", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_qqu4bs_a0c0b(typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "argument", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1301553664997874154", true)), (SNode) typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_6126991172893688470), true, true, _info_12389875345);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "argument", true);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5332044122260178142", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5332044122260178144", true), (SNode) typeCheckingContext.getRepresentative(ELEMENT_TYPE_typevar_6126991172893688470), true, true, _info_12389875345);
       }
     }
     {
@@ -64,21 +64,6 @@ public class typeof_ContainsOperation_InferenceRule extends AbstractInferenceRul
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
     }
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_qqu4bs_a0c0b(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MeetType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("argument", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.addChild("argument", quotedNode_4);
     return quotedNode_2;
   }
 

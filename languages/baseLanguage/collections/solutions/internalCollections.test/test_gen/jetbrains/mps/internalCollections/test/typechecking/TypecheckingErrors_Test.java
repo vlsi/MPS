@@ -21,6 +21,7 @@ public class TypecheckingErrors_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_mps18720() throws Exception {
       this.addNodeById("1301553664999174765");
+      this.addNodeById("3441689827373214227");
       SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1301553664997476018"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
     }
   }

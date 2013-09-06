@@ -4,15 +4,16 @@
     <nodeInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="15" startPosition="48" endLine="16" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="16" startPosition="204" endLine="17" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="50" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2169032458071780699" fileName="TypecheckingErrors_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps18720#()V" />
+    <nodeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2169032458071780699" fileName="TypecheckingErrors_Test.java" startLine="24" startPosition="46" endLine="25" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps18720#()V" />
+    <nodeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mps18720#()V" />
     <scopeInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="15" startPosition="48" endLine="17" endPosition="128" />
-    <scopeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="50" endLine="24" endPosition="163" />
-    <scopeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="50" endLine="25" endPosition="163" />
     <scopeInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.internalCollections.test.typechecking.TypecheckingErrors_Test$TestBody" />
-    <unitInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.internalCollections.test.typechecking.TypecheckingErrors_Test" />
+    <scopeInfo nodeId="2169032458071765481" fileName="TypecheckingErrors_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="20" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.internalCollections.test.typechecking.TypecheckingErrors_Test$TestBody" />
+    <unitInfo nodeId="1301553664999174713" fileName="TypecheckingErrors_Test.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.internalCollections.test.typechecking.TypecheckingErrors_Test" />
   </root>
 </debugInfo>
 
