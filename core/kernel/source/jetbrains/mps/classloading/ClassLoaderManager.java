@@ -165,7 +165,6 @@ public class ClassLoaderManager implements CoreComponent {
 
     ClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
-      LOG.warning("ClassLoader is null for module " + module, new Throwable());
       return null;
     }
     try {
