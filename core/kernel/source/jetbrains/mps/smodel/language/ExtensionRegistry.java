@@ -49,12 +49,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private MPSModuleRepository myRepo;
   private final MPSClassesListener myHandler = new MPSClassesListenerAdapter() {
     @Override
-    public void onClassesUnload(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       unloadExtensionDescriptors(unloadedModules);
     }
 
     @Override
-    public void onClassesLoad(Set<SModule> loadedModules) {
+    public void afterClassesLoaded(Set<SModule> loadedModules) {
       loadExtensionDescriptors(loadedModules);
     }
   };

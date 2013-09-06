@@ -21,10 +21,10 @@ import java.util.Set;
 
 public class MPSClassesListenerAdapter implements MPSClassesListener {
   @Override
-  public void onClassesUnload(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
   }
 
   @Override
-  public void onClassesLoad(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<SModule> loadedModules) {
   }
 }

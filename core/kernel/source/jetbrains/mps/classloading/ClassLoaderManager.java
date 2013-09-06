@@ -238,6 +238,19 @@ public class ClassLoaderManager implements CoreComponent {
     long startTime = System.currentTimeMillis();
     monitor.start("Unloading classes...", 2);
     try {
+      monitor.step("Disposing old classes...");
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          startTime = System.currentTimeMillis();
+          listener.beforeClassesUnloaded(toUnload);
+        } catch (Throwable t) {
+          LOG.error(t);
+        } finally {
+          addStat("unload:" + listener.getClass().getName(), startTime);
+        }
+      }
+      monitor.advance(1);
+
       monitor.step("Invalidate classloaders...");
       toUnload = collectBackReferences(toUnload);
 //      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
@@ -276,19 +289,6 @@ public class ClassLoaderManager implements CoreComponent {
 
       addStat("unload:main", startTime);
 
-      monitor.step("Disposing old classes...");
-      for (MPSClassesListener listener : myClassesHandlers) {
-        try {
-          startTime = System.currentTimeMillis();
-          listener.onClassesUnload(toUnload);
-        } catch (Throwable t) {
-          LOG.error(t);
-        } finally {
-          addStat("unload:" + listener.getClass().getName(), startTime);
-        }
-      }
-      monitor.advance(1);
-
       return toUnload;
     } finally {
       monitor.done();
@@ -325,7 +325,7 @@ public class ClassLoaderManager implements CoreComponent {
       for (MPSClassesListener listener : myClassesHandlers) {
         startTime = System.currentTimeMillis();
         try {
-          listener.onClassesLoad(modulesToLoad);
+          listener.afterClassesLoaded(modulesToLoad);
         } catch (Throwable t) {
           LOG.error(t);
         } finally {

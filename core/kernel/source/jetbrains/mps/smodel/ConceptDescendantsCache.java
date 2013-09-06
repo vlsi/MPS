@@ -32,7 +32,7 @@ public class ConceptDescendantsCache implements CoreComponent {
 
   private final LanguageRegistryListener myLanguageRegistryListener = new LanguageRegistryListener() {
     @Override
-    public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+    public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
       ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : languages) {
         myLoadedLanguageToConceptsMap.put(language, getConcepts(language));
@@ -43,7 +43,7 @@ public class ConceptDescendantsCache implements CoreComponent {
     }
 
     @Override
-    public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+    public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
       ModelAccess.assertLegalWrite();
       for (LanguageRuntime language : languages) {
         for (ConceptDescriptor concept : myLoadedLanguageToConceptsMap.get(language)) {
