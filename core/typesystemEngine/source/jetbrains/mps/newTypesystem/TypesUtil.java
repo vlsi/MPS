@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
@@ -186,6 +187,24 @@ public class TypesUtil {
       equations.addEquations(matchingPairs, info);
     }
     return match;
+  }
+
+  public static SNode cleanupMeet(SNode type) {
+    // Dirty hack to avoid meet type to appear inside fully reified type
+    Set<SNode> newArgs = new THashSet<SNode>();
+    final List<SNode> arguments = LatticeUtil.getMeetArguments(type);
+    boolean addTheRest = false;
+    for (SNode arg: arguments) {
+      if (arg != null && (addTheRest || !SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+        newArgs.add(arg);
+      } else {
+        addTheRest = true;
+      }
+    }
+    if (newArgs.size() != arguments.size()) {
+      type = LatticeUtil.meetNodes(newArgs);
+    }
+    return type;
   }
 
   private static class MatchingNodesCollector implements IMatchModifier {
