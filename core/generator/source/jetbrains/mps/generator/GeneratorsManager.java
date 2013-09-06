@@ -65,7 +65,7 @@ public class GeneratorsManager implements CoreComponent, MPSClassesListener {
   }
 
   @Override
-  public void onClassesUnload(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
     for (SModule module : unloadedModules) {
       if (module instanceof Generator) {
         unloadGenerator((Generator) module);
@@ -74,7 +74,7 @@ public class GeneratorsManager implements CoreComponent, MPSClassesListener {
   }
 
   @Override
-  public void onClassesLoad(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<SModule> loadedModules) {
     for (SModule module : loadedModules) {
       if (module instanceof Generator) {
         loadGenerator((Generator) module);

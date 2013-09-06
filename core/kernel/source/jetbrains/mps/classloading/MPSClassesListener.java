@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 
 public interface MPSClassesListener {
-  void onClassesUnload(Set<SModule> unloadedModules);
+  void beforeClassesUnloaded(Set<SModule> unloadedModules);
 
-  void onClassesLoad(Set<SModule> loadedModules);
+  void afterClassesLoaded(Set<SModule> loadedModules);
 }

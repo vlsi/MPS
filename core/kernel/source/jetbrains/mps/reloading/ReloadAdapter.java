@@ -29,12 +29,12 @@ public class ReloadAdapter implements ReloadListener {
   }
 
   @Override
-  public void onClassesUnload(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
     unload();
   }
 
   @Override
-  public void onClassesLoad(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<SModule> loadedModules) {
     onAfterReload();
   }
 }

@@ -207,4 +207,9 @@ public abstract class LanguageRuntime {
   void deinitialize() {
     myExtendingLanguages.clear();
   }
+
+  @Override
+  public String toString() {
+    return getNamespace() + " runtime";
+  }
 }

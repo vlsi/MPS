@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static java.lang.String.format;
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 
 /**
@@ -87,9 +88,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.languagesUnloaded(languages);
+        l.beforeLanguagesUnloaded(languages);
       } catch (Exception ex) {
-        LOG.error(ex);
+        LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
       }
     }
     myConceptRegistry.languagesUnloaded(languages);
@@ -101,9 +102,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     myConceptRegistry.languagesLoaded(languages);
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.languagesLoaded(languages);
+        l.afterLanguagesLoaded(languages);
       } catch (Exception ex) {
-        LOG.error(ex);
+        LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
       }
     }
   }
@@ -144,7 +145,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   // MPSClassesListener part
   @Override
-  public void onClassesUnload(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
     Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (SModule module : unloadedModules) {
       if (module instanceof Language) {
@@ -164,7 +165,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   @Override
-  public void onClassesLoad(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<SModule> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
