@@ -237,6 +237,9 @@ public class ClassLoaderManager implements CoreComponent {
     long startTime = System.currentTimeMillis();
     monitor.start("Unloading classes...", 2);
     try {
+      toUnload = collectBackReferences(toUnload);
+//      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
+
       monitor.step("Disposing old classes...");
       for (MPSClassesListener listener : myClassesHandlers) {
         try {
@@ -251,8 +254,6 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.advance(1);
 
       monitor.step("Invalidate classloaders...");
-      toUnload = collectBackReferences(toUnload);
-//      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
       // update back refs
       for (Set<SModule> backRefs : myBackRefs.values()) {
         backRefs.removeAll(toUnload);
