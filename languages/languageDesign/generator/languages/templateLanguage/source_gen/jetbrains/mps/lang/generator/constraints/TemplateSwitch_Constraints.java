@@ -20,8 +20,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
@@ -55,24 +55,22 @@ public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
                 if (node == _context.getContextNode()) {
                   return true;
                 }
-                // allow to modify switches that accept more parameters 
-                // iow, rules in this switch need no more parameters than that will be passed to original switch invocation 
+                // allow to modify/extend switches that accept exactly same parameters only, not superset therof. 
+                // the reason is sub-switch may be invoked directly, while the rules of its parent would expect more parameters than there're actually 
                 SNode contributor = SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
                 SNode originCandidate = SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateSwitch");
-                if (ListSequence.fromList(SLinkOperations.getTargets(originCandidate, "parameter", true)).count() < ListSequence.fromList(SLinkOperations.getTargets(contributor, "parameter", true)).count()) {
+                if (ListSequence.fromList(SLinkOperations.getTargets(originCandidate, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(contributor, "parameter", true)).count()) {
                   return true;
                 }
                 for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(contributor, "parameter", true)).count(); i++) {
                   SNode p1 = ListSequence.fromList(SLinkOperations.getTargets(contributor, "parameter", true)).getElement(i);
                   SNode p2 = ListSequence.fromList(SLinkOperations.getTargets(originCandidate, "parameter", true)).getElement(i);
-                  // contributor's parameter types shall be same or narrow (sic!) than that of modified switch 
-                  // so that contributed rules can't expect too much from actual arguments 
-                  if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p2, "type", true), SLinkOperations.getTarget(p1, "type", true)))) {
-                    return true;
-                  }
                   if (!(SPropertyOperations.getString(p1, "name").equals(SPropertyOperations.getString(p2, "name")))) {
                     return true;
                   }
+                  // contributor's parameter types shall be same or narrow (sic!) than that of modified switch 
+                  // so that contributed rules can't expect too much from actual arguments 
+                  return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p2, "type", true), SLinkOperations.getTarget(p1, "type", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p1, "type", true), SLinkOperations.getTarget(p2, "type", true)));
                 }
                 return false;
               }
