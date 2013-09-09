@@ -210,9 +210,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       SNode ruleNode = rule.getRuleNode().resolve(MPSModuleRepository.getInstance());
       String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), ruleNode);
-      if (taskName.indexOf("jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main") > 0) {
-        System.out.print("");
-      }
       tracer.push(taskName, true);
       return wrapped.tryToApply(rule, environment, context);
     } finally {
