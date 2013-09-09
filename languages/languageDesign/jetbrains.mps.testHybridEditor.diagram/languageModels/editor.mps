@@ -5,6 +5,7 @@
   <language namespace="515552c7-fcc0-4ab4-9789-2f3c49344e85(jetbrains.mps.baseLanguage.varVariable)" />
   <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
   <language namespace="eb39f327-b818-413f-965b-ffce0270b64d(jetbrains.mps.diagramEditor.editor)" />
+  <language namespace="6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="53h5" modelUID="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)" version="-1" />
   <import index="adck" modelUID="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" version="-1" />
@@ -36,8 +37,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="ctj7" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(Jetpad.Editor/jetbrains.jetpad.model.property@java_stub)" version="-1" implicit="yes" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
-  <import index="6cne" modelUID="r:7f81f281-871a-472d-91c0-235cc244a37a(jetbrains.mps.diagramEditor.editor.structure)" version="0" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="725186580885945862" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="EditorAspectDescriptorImpl" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="725186580885945863" nodeInfo="nn" />
@@ -3387,27 +3386,6 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7944396626687717894" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7944396626687718346" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~DefaultNodeEditor" resolveInfo="DefaultNodeEditor" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="977829356449390801" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="adck.725186580883451800" resolveInfo="Block" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="6cne.CellModel_DiagramNode" typeId="6cne.977829356449358561" id="977829356449401170" nodeInfo="ng">
-      <link role="figure" roleId="6cne.977829356449359950" targetNodeId="k80i.977829356449108597" />
-      <node role="mappers" roleId="6cne.977829356449360238" type="6cne.PropertyMapper" typeId="6cne.977829356449360195" id="977829356449401358" nodeInfo="ng">
-        <link role="property" roleId="6cne.977829356449360204" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-        <link role="figure" roleId="6cne.977829356449360206" targetNodeId="k80i.977829356449134658" resolveInfo="label" />
-      </node>
-      <node role="mappers" roleId="6cne.977829356449360238" type="6cne.ChildMapper" typeId="6cne.977829356449360219" id="977829356449401375" nodeInfo="ng">
-        <link role="childLink" roleId="6cne.977829356449360220" targetNodeId="adck.725186580883451902" />
-        <link role="figure" roleId="6cne.977829356449360222" targetNodeId="k80i.977829356449134653" resolveInfo="inputPorts" />
-      </node>
-      <node role="mappers" roleId="6cne.977829356449360238" type="6cne.ChildMapper" typeId="6cne.977829356449360219" id="977829356449428289" nodeInfo="ng">
-        <link role="childLink" roleId="6cne.977829356449360220" targetNodeId="adck.725186580883451904" />
-        <link role="figure" roleId="6cne.977829356449360222" targetNodeId="k80i.977829356449134655" resolveInfo="outputPorts" />
-      </node>
-    </node>
-    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="977829356449430950" nodeInfo="ig">
-      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="7v6s.7298117218431643712" resolveInfo="hybrid" />
     </node>
   </root>
 </model>

@@ -14,17 +14,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.Figure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("classifier").children(new String[]{"fields"}, new boolean[]{true}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.IChildFigureMarker").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("fieldDeclaration").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ViewClassFieldMarker").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.figures.structure.IChildFigureMarker").references("fieldDeclaration").create();
-      case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ViewClassFigure").super_("jetbrains.mps.lang.editor.figures.structure.Figure").parents("jetbrains.mps.lang.editor.figures.structure.Figure").references("classifier").children(new String[]{"figureMarkers"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.Figure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.Figure", "jetbrains.mps.lang.editor.figures.structure.IChildFigureMarker", "jetbrains.mps.lang.editor.figures.structure.ViewClassFieldMarker", "jetbrains.mps.lang.editor.figures.structure.ViewClassFigure"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.Figure"};
 }

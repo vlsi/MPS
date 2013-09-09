@@ -13,13 +13,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
-        return new ViewClassFieldMarker_BehaviorDescriptor();
+        return new ExternalViewFigure_BehaviorDescriptor();
       case 1:
-        return new ViewClassFigure_BehaviorDescriptor();
+        return new ExternalViewFigureParameter_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.ViewClassFieldMarker", "jetbrains.mps.lang.editor.figures.structure.ViewClassFigure"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter"};
 }

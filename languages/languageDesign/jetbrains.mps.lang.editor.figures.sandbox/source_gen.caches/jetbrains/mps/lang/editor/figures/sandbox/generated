@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5s3zxh7yp7vnan62ll17adiwtjjd8o2">
-  <dep model="r:29a12015-fffe-444b-8977-9278d286b6c9(jetbrains.mps.lang.editor.figures.generator.template.main@generator)" hash="9z0ldxj5ropsqpbiuitq8f1cm2hssuc" />
-  <common hash="-3cu5harfngqsi6m7ijhiw2uu86u9o10" />
-  <source id="977829356449108597" hash="dzp9taa3jm3tleejdgryrugqrxcd6gf">
+<dependencies version="2" modelHash="a5xpc27lk5p3bymya92pk9stxctwl0i">
+  <dep model="r:29a12015-fffe-444b-8977-9278d286b6c9(jetbrains.mps.lang.editor.figures.generator.template.main@generator)" hash="2hga5zq5p7jibhreo8lslocfgn8oq21" />
+  <common hash="-4ia3ceb5nngpsx6nx6lcmwgfv6afz4d" />
+  <source id="2178507174411843379" name="MPSBlockView" hash="-dq362eiaq01f2w0qwrfjysxhufpjqd4">
     <dep model="r:29a12015-fffe-444b-8977-9278d286b6c9(jetbrains.mps.lang.editor.figures.generator.template.main@generator)" />
   </source>
 </dependencies>

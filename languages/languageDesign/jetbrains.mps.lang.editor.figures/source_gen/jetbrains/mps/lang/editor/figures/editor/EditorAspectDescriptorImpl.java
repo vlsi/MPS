@@ -15,9 +15,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new ViewClassFieldMarker_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExternalViewFigure_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ViewClassFigure_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExternalViewFigureParameter_Editor());
       default:
     }
     return Collections.emptyList();
@@ -34,5 +34,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.figures.structure.ViewClassFieldMarker", "jetbrains.mps.lang.editor.figures.structure.ViewClassFigure"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter"};
 }

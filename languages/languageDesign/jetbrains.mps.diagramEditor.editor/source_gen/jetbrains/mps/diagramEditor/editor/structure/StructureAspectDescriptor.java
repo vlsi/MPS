@@ -14,21 +14,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.diagramEditor.editor.structure.AbstractMapper").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
-      case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.diagramEditor.editor.structure.CellModel_Canvas").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"blocks", "connectors"}, new boolean[]{false, false}).alias("canvas", "").create();
-      case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.diagramEditor.editor.structure.CellModel_DiagramNode").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").references("figure").children(new String[]{"mappers"}, new boolean[]{true}).alias("diagram node", "").create();
-      case 3:
+      case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.diagramEditor.editor.structure.CellModel_ViewMap").super_("jetbrains.mps.lang.editor.structure.CellModel_RefCell").parents("jetbrains.mps.lang.editor.structure.CellModel_RefCell").children(new String[]{"viewMap"}, new boolean[]{false}).alias("viewMap", "").create();
-      case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.diagramEditor.editor.structure.ChildMapper").super_("jetbrains.mps.diagramEditor.editor.structure.AbstractMapper").parents("jetbrains.mps.diagramEditor.editor.structure.AbstractMapper").references("childLink", "figure").create();
-      case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.diagramEditor.editor.structure.PropertyMapper").super_("jetbrains.mps.diagramEditor.editor.structure.AbstractMapper").parents("jetbrains.mps.diagramEditor.editor.structure.AbstractMapper").references("property", "figure").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.diagramEditor.editor.structure.AbstractMapper", "jetbrains.mps.diagramEditor.editor.structure.CellModel_Canvas", "jetbrains.mps.diagramEditor.editor.structure.CellModel_DiagramNode", "jetbrains.mps.diagramEditor.editor.structure.CellModel_ViewMap", "jetbrains.mps.diagramEditor.editor.structure.ChildMapper", "jetbrains.mps.diagramEditor.editor.structure.PropertyMapper"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.diagramEditor.editor.structure.CellModel_Canvas", "jetbrains.mps.diagramEditor.editor.structure.CellModel_ViewMap"};
 }

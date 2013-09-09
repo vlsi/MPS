@@ -17,8 +17,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CellModel_Canvas_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new CellModel_DiagramNode_Editor());
-      case 2:
         return Collections.<ConceptEditor>singletonList(new CellModel_ViewMap_Editor());
       default:
     }
@@ -36,5 +34,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.diagramEditor.editor.structure.CellModel_Canvas", "jetbrains.mps.diagramEditor.editor.structure.CellModel_DiagramNode", "jetbrains.mps.diagramEditor.editor.structure.CellModel_ViewMap"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.diagramEditor.editor.structure.CellModel_Canvas", "jetbrains.mps.diagramEditor.editor.structure.CellModel_ViewMap"};
 }
