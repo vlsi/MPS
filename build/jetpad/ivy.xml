@@ -4,6 +4,8 @@
   <dependencies>
     <dependency org="org" name="MPS_31_JetPadEditor" rev="${jetpad.version}">
       <include name="base-1.0-SNAPSHOT" ext="jar"/>
+      <include name="core-1.0-SNAPSHOT" ext="jar"/>
+      <include name="dataflow-1.0-SNAPSHOT" ext="war"/>
       <include name="diagram-1.0-SNAPSHOT" ext="jar"/>
       <include name="domUtil-1.0-SNAPSHOT" ext="jar"/>
       <include name="event-1.0-SNAPSHOT" ext="jar"/>

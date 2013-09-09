@@ -11,6 +11,8 @@
       <root url="jar://$PROJECT_DIR$/lib/event-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/grammar-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/view-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dataflow-1.0-SNAPSHOT.war!/" />
+      <root url="jar://$PROJECT_DIR$/lib/core-1.0-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -24,6 +26,8 @@
       <root url="jar://$PROJECT_DIR$/lib/event-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/grammar-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/view-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dataflow-1.0-SNAPSHOT.war!/WEB-INF/classes" />
+      <root url="jar://$PROJECT_DIR$/lib/core-1.0-SNAPSHOT.jar!/" />
     </SOURCES>
   </library>
 </component>
