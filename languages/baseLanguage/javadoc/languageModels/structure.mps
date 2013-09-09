@@ -46,6 +46,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2217234381367190443" resolveInfo="SeeBlockDocTag" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758858" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5349172909345530173" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
@@ -83,6 +86,12 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="return" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5858074156537516430" resolveInfo="ReturnBlockDocTag" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758696" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="methodDocComment" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338800" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+      </node>
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8465538089690324384" nodeInfo="ig">
@@ -195,6 +204,15 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6832197706140896242" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="FieldDocComment" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5349172909345501395" resolveInfo="BaseDocComment" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758864" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="fieldDocComment" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338797" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+      </node>
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338798" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2068944020170241612" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ClassifierDocComment" />
@@ -204,6 +222,12 @@
       <property name="role" nameId="tpce.1071599776563" value="param" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8465538089690881930" resolveInfo="ParameterBlockDocTag" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758969" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="classifierDocComment" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338816" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
+      </node>
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8970989240999019142" nodeInfo="ig">

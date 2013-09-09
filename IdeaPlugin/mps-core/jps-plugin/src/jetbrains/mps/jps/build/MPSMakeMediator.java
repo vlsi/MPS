@@ -307,7 +307,7 @@ public class MPSMakeMediator {
     final String targetPath = JpsPathUtil.urlToPath(outputRootUrl) + '/' + relativePath;
 
 
-    final File targetFile = new File(targetPath);
+    final File targetFile = new File(targetPath).getCanonicalFile();
     FileUtil.copyContent(file, targetFile);
     myOutputConsumer.registerOutputFile(target, targetFile, Collections.singletonList(file.getPath()));
   }

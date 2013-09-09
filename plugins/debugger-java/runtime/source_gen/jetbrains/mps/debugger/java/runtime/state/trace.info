@@ -210,83 +210,92 @@
     <unitInfo nodeId="4352118152439824931" fileName="DebugSession.java" startLine="20" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
   </root>
   <root nodeRef="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)/4352118152439825362">
-    <nodeInfo nodeId="4352118152439825363" fileName="JavaUiStateImpl.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
-    <nodeInfo nodeId="4352118152439825490" fileName="JavaUiStateImpl.java" startLine="15" startPosition="57" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4352118152439825492" fileName="JavaUiStateImpl.java" startLine="16" startPosition="19" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439825366" fileName="JavaUiStateImpl.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/debugger/java/runtime/engine/events/Context;" />
-    <nodeInfo nodeId="4352118152439825380" fileName="JavaUiStateImpl.java" startLine="26" startPosition="66" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439825382" fileName="JavaUiStateImpl.java" startLine="27" startPosition="38" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439825384" fileName="JavaUiStateImpl.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4352118152439825386" fileName="JavaUiStateImpl.java" startLine="29" startPosition="62" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825402" fileName="JavaUiStateImpl.java" startLine="35" startPosition="34" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825404" fileName="JavaUiStateImpl.java" startLine="37" startPosition="5" endLine="38" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439825414" fileName="JavaUiStateImpl.java" startLine="39" startPosition="29" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825421" fileName="JavaUiStateImpl.java" startLine="41" startPosition="5" endLine="42" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825434" fileName="JavaUiStateImpl.java" startLine="45" startPosition="73" endLine="46" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439825445" fileName="JavaUiStateImpl.java" startLine="47" startPosition="29" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825447" fileName="JavaUiStateImpl.java" startLine="49" startPosition="5" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4352118152439825453" fileName="JavaUiStateImpl.java" startLine="51" startPosition="25" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825466" fileName="JavaUiStateImpl.java" startLine="54" startPosition="61" endLine="55" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825475" fileName="JavaUiStateImpl.java" startLine="56" startPosition="5" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825481" fileName="JavaUiStateImpl.java" startLine="60" startPosition="49" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="654837219998672193" fileName="JavaUiStateImpl.java" startLine="66" startPosition="31" endLine="67" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="654837219998672263" fileName="JavaUiStateImpl.java" startLine="68" startPosition="5" endLine="69" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439825370" fileName="JavaUiStateImpl.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPausedOnBreakpoint#()Z" />
-    <nodeInfo nodeId="4352118152439825397" fileName="JavaUiStateImpl.java" startLine="34" startPosition="56" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439825412" fileName="JavaUiStateImpl.java" startLine="38" startPosition="80" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439825440" fileName="JavaUiStateImpl.java" startLine="46" startPosition="52" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439825451" fileName="JavaUiStateImpl.java" startLine="50" startPosition="36" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439825458" fileName="JavaUiStateImpl.java" startLine="53" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439825477" fileName="JavaUiStateImpl.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventProcessor#()Ljetbrains/mps/debugger/java/runtime/engine/events/EventsProcessor;" />
-    <nodeInfo nodeId="654837219998671699" fileName="JavaUiStateImpl.java" startLine="65" startPosition="68" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4352118152439825486" fileName="JavaUiStateImpl.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaUiStateImpl#(Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)V" />
-    <nodeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="72" startPosition="62" endLine="76" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="72" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_vkri5_a0a4a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4352118152439825374" fileName="JavaUiStateImpl.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debugger/java/runtime/engine/events/Context;)Ljetbrains/mps/debugger/java/runtime/state/PausedJavaUiState;" />
-    <nodeInfo nodeId="654837219998668939" fileName="JavaUiStateImpl.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeEvaluation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-    <nodeInfo nodeId="4352118152439825392" fileName="JavaUiStateImpl.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debugger/java/runtime/engine/events/Context;)Ljetbrains/mps/debugger/java/runtime/state/JavaUiStateImpl;" />
-    <nodeInfo nodeId="4352118152439825427" fileName="JavaUiStateImpl.java" startLine="45" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findContext#(Ljetbrains/mps/debugger/java/runtime/state/JavaUiStateImpl;)Ljetbrains/mps/debugger/java/runtime/engine/events/Context;" />
-    <scopeInfo nodeId="4352118152439825366" fileName="JavaUiStateImpl.java" startLine="20" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="4352118152439825401" fileName="JavaUiStateImpl.java" startLine="35" startPosition="34" endLine="36" endPosition="18" />
-    <scopeInfo nodeId="4352118152439825413" fileName="JavaUiStateImpl.java" startLine="39" startPosition="29" endLine="40" endPosition="52" />
-    <scopeInfo nodeId="4352118152439825444" fileName="JavaUiStateImpl.java" startLine="47" startPosition="29" endLine="48" endPosition="18" />
-    <scopeInfo nodeId="4352118152439825452" fileName="JavaUiStateImpl.java" startLine="51" startPosition="25" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="4352118152439825465" fileName="JavaUiStateImpl.java" startLine="54" startPosition="61" endLine="55" endPosition="94" />
-    <scopeInfo nodeId="4352118152439825480" fileName="JavaUiStateImpl.java" startLine="60" startPosition="49" endLine="61" endPosition="47" />
-    <scopeInfo nodeId="654837219998671701" fileName="JavaUiStateImpl.java" startLine="66" startPosition="31" endLine="67" endPosition="13" />
-    <scopeInfo nodeId="4352118152439825489" fileName="JavaUiStateImpl.java" startLine="15" startPosition="57" endLine="17" endPosition="29" />
-    <scopeInfo nodeId="4352118152439825370" fileName="JavaUiStateImpl.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="4352118152439825477" fileName="JavaUiStateImpl.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4352118152439825486" fileName="JavaUiStateImpl.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="4352118152439825363" fileName="JavaUiStateImpl.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
+    <nodeInfo nodeId="4352118152439825490" fileName="JavaUiStateImpl.java" startLine="16" startPosition="57" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4352118152439825492" fileName="JavaUiStateImpl.java" startLine="17" startPosition="19" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439825366" fileName="JavaUiStateImpl.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/debugger/java/runtime/engine/events/Context;" />
+    <nodeInfo nodeId="4352118152439825380" fileName="JavaUiStateImpl.java" startLine="27" startPosition="66" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439825382" fileName="JavaUiStateImpl.java" startLine="28" startPosition="38" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439825384" fileName="JavaUiStateImpl.java" startLine="29" startPosition="75" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4352118152439825386" fileName="JavaUiStateImpl.java" startLine="30" startPosition="62" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825402" fileName="JavaUiStateImpl.java" startLine="36" startPosition="34" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825404" fileName="JavaUiStateImpl.java" startLine="38" startPosition="5" endLine="39" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439825414" fileName="JavaUiStateImpl.java" startLine="40" startPosition="29" endLine="41" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825421" fileName="JavaUiStateImpl.java" startLine="42" startPosition="5" endLine="43" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825434" fileName="JavaUiStateImpl.java" startLine="46" startPosition="73" endLine="47" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439825445" fileName="JavaUiStateImpl.java" startLine="48" startPosition="29" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825447" fileName="JavaUiStateImpl.java" startLine="50" startPosition="5" endLine="51" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4352118152439825453" fileName="JavaUiStateImpl.java" startLine="52" startPosition="25" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825466" fileName="JavaUiStateImpl.java" startLine="55" startPosition="61" endLine="56" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825475" fileName="JavaUiStateImpl.java" startLine="57" startPosition="5" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825481" fileName="JavaUiStateImpl.java" startLine="61" startPosition="49" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="654837219998672193" fileName="JavaUiStateImpl.java" startLine="67" startPosition="31" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="654837219998672263" fileName="JavaUiStateImpl.java" startLine="69" startPosition="5" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4750532960509859190" fileName="JavaUiStateImpl.java" startLine="76" startPosition="31" endLine="77" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4750532960509859191" fileName="JavaUiStateImpl.java" startLine="78" startPosition="5" endLine="79" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825370" fileName="JavaUiStateImpl.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPausedOnBreakpoint#()Z" />
+    <nodeInfo nodeId="4352118152439825397" fileName="JavaUiStateImpl.java" startLine="35" startPosition="56" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439825412" fileName="JavaUiStateImpl.java" startLine="39" startPosition="80" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439825440" fileName="JavaUiStateImpl.java" startLine="47" startPosition="52" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439825451" fileName="JavaUiStateImpl.java" startLine="51" startPosition="36" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439825458" fileName="JavaUiStateImpl.java" startLine="54" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439825477" fileName="JavaUiStateImpl.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventProcessor#()Ljetbrains/mps/debugger/java/runtime/engine/events/EventsProcessor;" />
+    <nodeInfo nodeId="654837219998671699" fileName="JavaUiStateImpl.java" startLine="66" startPosition="68" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4750532960509859185" fileName="JavaUiStateImpl.java" startLine="75" startPosition="97" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439825486" fileName="JavaUiStateImpl.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaUiStateImpl#(Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)V" />
+    <nodeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="82" startPosition="62" endLine="86" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_vkri5_a0a4a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4352118152439825374" fileName="JavaUiStateImpl.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debugger/java/runtime/engine/events/Context;)Ljetbrains/mps/debugger/java/runtime/state/PausedJavaUiState;" />
+    <nodeInfo nodeId="654837219998668939" fileName="JavaUiStateImpl.java" startLine="65" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeEvaluation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="4750532960509859178" fileName="JavaUiStateImpl.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeEvaluationUnderProgress#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+    <nodeInfo nodeId="4352118152439825392" fileName="JavaUiStateImpl.java" startLine="34" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debugger/java/runtime/engine/events/Context;)Ljetbrains/mps/debugger/java/runtime/state/JavaUiStateImpl;" />
+    <nodeInfo nodeId="4352118152439825427" fileName="JavaUiStateImpl.java" startLine="46" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findContext#(Ljetbrains/mps/debugger/java/runtime/state/JavaUiStateImpl;)Ljetbrains/mps/debugger/java/runtime/engine/events/Context;" />
+    <scopeInfo nodeId="4352118152439825366" fileName="JavaUiStateImpl.java" startLine="21" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4352118152439825401" fileName="JavaUiStateImpl.java" startLine="36" startPosition="34" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="4352118152439825413" fileName="JavaUiStateImpl.java" startLine="40" startPosition="29" endLine="41" endPosition="52" />
+    <scopeInfo nodeId="4352118152439825444" fileName="JavaUiStateImpl.java" startLine="48" startPosition="29" endLine="49" endPosition="18" />
+    <scopeInfo nodeId="4352118152439825452" fileName="JavaUiStateImpl.java" startLine="52" startPosition="25" endLine="53" endPosition="18" />
+    <scopeInfo nodeId="4352118152439825465" fileName="JavaUiStateImpl.java" startLine="55" startPosition="61" endLine="56" endPosition="94" />
+    <scopeInfo nodeId="4352118152439825480" fileName="JavaUiStateImpl.java" startLine="61" startPosition="49" endLine="62" endPosition="47" />
+    <scopeInfo nodeId="654837219998671701" fileName="JavaUiStateImpl.java" startLine="67" startPosition="31" endLine="68" endPosition="13" />
+    <scopeInfo nodeId="4750532960509859189" fileName="JavaUiStateImpl.java" startLine="76" startPosition="31" endLine="77" endPosition="18" />
+    <scopeInfo nodeId="4352118152439825489" fileName="JavaUiStateImpl.java" startLine="16" startPosition="57" endLine="18" endPosition="29" />
+    <scopeInfo nodeId="4352118152439825370" fileName="JavaUiStateImpl.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4352118152439825477" fileName="JavaUiStateImpl.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4352118152439825486" fileName="JavaUiStateImpl.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4352118152439825496" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439825379" fileName="JavaUiStateImpl.java" startLine="26" startPosition="66" endLine="30" endPosition="58" />
-    <scopeInfo nodeId="654837219998668966" fileName="JavaUiStateImpl.java" startLine="65" startPosition="68" endLine="69" endPosition="93" />
-    <scopeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="72" startPosition="62" endLine="76" endPosition="6" />
-    <scopeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="72" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="4352118152439825379" fileName="JavaUiStateImpl.java" startLine="27" startPosition="66" endLine="31" endPosition="58" />
+    <scopeInfo nodeId="654837219998668966" fileName="JavaUiStateImpl.java" startLine="66" startPosition="68" endLine="70" endPosition="93" />
+    <scopeInfo nodeId="4750532960509859184" fileName="JavaUiStateImpl.java" startLine="75" startPosition="97" endLine="79" endPosition="111" />
+    <scopeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="82" startPosition="62" endLine="86" endPosition="6" />
+    <scopeInfo nodeId="4352118152439825460" fileName="JavaUiStateImpl.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="4352118152439825460" varName="a" />
       <varInfo nodeId="4352118152439825460" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439825374" fileName="JavaUiStateImpl.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="4352118152439825374" fileName="JavaUiStateImpl.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4352118152439825376" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="654837219998668939" fileName="JavaUiStateImpl.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="654837219998668939" fileName="JavaUiStateImpl.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="654837219998668962" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439825396" fileName="JavaUiStateImpl.java" startLine="34" startPosition="56" endLine="42" endPosition="61">
+    <scopeInfo nodeId="4352118152439825396" fileName="JavaUiStateImpl.java" startLine="35" startPosition="56" endLine="43" endPosition="61">
       <varInfo nodeId="4352118152439825405" varName="newContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439825392" fileName="JavaUiStateImpl.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="4750532960509859178" fileName="JavaUiStateImpl.java" startLine="73" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="4750532960509859181" varName="command" />
+    </scopeInfo>
+    <scopeInfo nodeId="4352118152439825392" fileName="JavaUiStateImpl.java" startLine="34" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="4352118152439825394" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439825433" fileName="JavaUiStateImpl.java" startLine="45" startPosition="73" endLine="57" endPosition="22">
+    <scopeInfo nodeId="4352118152439825433" fileName="JavaUiStateImpl.java" startLine="46" startPosition="73" endLine="58" endPosition="22">
       <varInfo nodeId="4352118152439825435" varName="newContext" />
       <varInfo nodeId="4352118152439825448" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439825427" fileName="JavaUiStateImpl.java" startLine="45" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="4352118152439825427" fileName="JavaUiStateImpl.java" startLine="46" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4352118152439825430" varName="previousState" />
     </scopeInfo>
-    <unitInfo nodeId="4352118152439825362" fileName="JavaUiStateImpl.java" startLine="12" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" />
+    <unitInfo nodeId="4352118152439825362" fileName="JavaUiStateImpl.java" startLine="13" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" />
   </root>
   <root nodeRef="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)/4352118152439825500">
     <nodeInfo nodeId="4352118152439825506" fileName="PausedJavaUiState.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadIndex" />

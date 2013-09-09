@@ -6,13 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,46 +14,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BLExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_f3ggz9_a(editorContext, node);
+    return this.createCollection_f3ggz9_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_f3ggz9_a(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = BLExpression_Editor.renderingCondition_f3ggz9_a0(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createCollection_f3ggz9_a0(editorContext, node);
-    } else {
-      editorCell = this.createCollection_f3ggz9_a0_0(editorContext, node);
-    }
+  private EditorCell createCollection_f3ggz9_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_f3ggz9_a");
     editorCell.setBig(true);
+    editorCell.addEditorCell(this.createRefNode_f3ggz9_a0(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_f3ggz9_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.console.base.structure.History", false, false) == null;
-  }
-
-  private EditorCell createCollection_f3ggz9_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_f3ggz9_a0");
-    editorCell.addEditorCell(this.createConstant_f3ggz9_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_f3ggz9_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_f3ggz9_c0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_f3ggz9_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_f3ggz9_a0a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_f3ggz9_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_f3ggz9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -68,43 +34,7 @@ public class BLExpression_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("expression");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConstant_f3ggz9_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_f3ggz9_c0a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createCollection_f3ggz9_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_f3ggz9_a0_0");
-    editorCell.addEditorCell(this.createRefNode_f3ggz9_a0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_f3ggz9_a0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("expression");
-    provider.setNoTargetText("<no expression>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    if (editorCell.getRole() == null) {
-      editorCell.setRole("expression");
-    }
+    BLExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

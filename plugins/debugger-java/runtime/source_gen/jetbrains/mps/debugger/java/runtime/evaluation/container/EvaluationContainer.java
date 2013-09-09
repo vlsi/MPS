@@ -37,7 +37,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -159,7 +158,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected SNode createEvaluatorNode() {
     SNode evaluator = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.Evaluator", null);
-    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluator, "code", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
+    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluator, "code", true), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluator;
   }
 

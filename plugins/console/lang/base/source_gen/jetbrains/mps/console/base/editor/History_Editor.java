@@ -34,7 +34,6 @@ public class History_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new History_Editor.itemListHandler_ff9cd8_a0(node, "item", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_item");
-    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

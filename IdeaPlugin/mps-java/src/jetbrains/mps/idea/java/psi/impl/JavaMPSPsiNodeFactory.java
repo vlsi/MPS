@@ -16,30 +16,19 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiMethod;
-import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
-import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.idea.java.Constants.ConceptNames;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiListType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiMapType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSequenceType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSetType;
+import jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiStringType;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-
-import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,103 +42,139 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
   private static final Map<String, RefCreator> refFactories = new HashMap<String, RefCreator>();
 
   static {
-    factories.put(BootstrapLanguages.concept_baseLanguage_ClassConcept, new NodeCreator() {
+    factories.put(ConceptNames.ClassConcept, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiClass(id, concept, containingRole);
       }
     });
     // TODO use MPS-generated constant value
-    factories.put("jetbrains.mps.baseLanguage.structure.Interface", new NodeCreator() {
+    factories.put(ConceptNames.Interface, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiInterface(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.EnumClass", new NodeCreator() {
+    factories.put(ConceptNames.EnumClass, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiEnum(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.ClassifierType", new NodeCreator() {
+    factories.put(ConceptNames.ClassifierType, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiClassifierType(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.PrimitiveType", new NodeCreator() {
+    factories.put(ConceptNames.PrimitiveType, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiPrimitiveType(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.StringType", new NodeCreator() {
+    NodeCreator wildCardTypeNodeCreator = new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiWildcardType(id, concept, containingRole);
+      }
+    };
+    factories.put(ConceptNames.UpperBoundType, wildCardTypeNodeCreator);
+    factories.put(ConceptNames.LowerBoundType, wildCardTypeNodeCreator);
+    factories.put(ConceptNames.WildCardType, wildCardTypeNodeCreator);
+    factories.put(ConceptNames.StringType, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiStringType(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.ArrayType", new NodeCreator() {
+    factories.put(ConceptNames.ArrayType, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiArrayType(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.VariableArityType", new NodeCreator() {
+    factories.put(ConceptNames.VariableArityType, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiVariableArityType(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.ConstructorDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiConstructor(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.MethodDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.MethodDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiMethod(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.ParameterDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiParameter(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.TypeVariableDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiTypeParameter(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.TypeVariableReference", new NodeCreator() {
+    factories.put(ConceptNames.TypeVariableReference, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiTypeParamRef(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.FieldDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiField(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.EnumConstantDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiEnumConstant(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new NodeCreator() {
+    factories.put(ConceptNames.StaticFieldDeclaration, new NodeCreator() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiField(id, concept, containingRole);
       }
     });
+
+    // collection types
+    factories.put(ConceptNames.SequenceType, new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiSequenceType(id, concept, containingRole);
+      }
+    });
+    factories.put(ConceptNames.ListType, new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiListType(id, concept, containingRole);
+      }
+    });
+    factories.put(ConceptNames.SetType, new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiSetType(id, concept, containingRole);
+      }
+    });
+    factories.put(ConceptNames.MapType, new NodeCreator() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiMapType(id, concept, containingRole);
+      }
+    });
+
 
 
     RefCreator dotBasedRefCreator = new RefCreator() {
@@ -176,12 +201,12 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
       }
     };
 
-    refFactories.put("jetbrains.mps.baseLanguage.structure.Classifier", dotBasedRefCreator);
-    refFactories.put("jetbrains.mps.baseLanguage.structure.VariableDeclaration", dotBasedRefCreator);
+    refFactories.put(ConceptNames.Classifier, dotBasedRefCreator);
+    refFactories.put(ConceptNames.VariableDeclaration, dotBasedRefCreator);
     // this is really for constructors (not all BaseMethodDeclarations)
     // it's done this way because currently Creators have link to ConstructorDeclaration
     // in a form of specialized link to BaseMethodDeclaration
-    refFactories.put("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", methodRefCreator);
+    refFactories.put(ConceptNames.BaseMethodDeclaration, methodRefCreator);
 
   }
 

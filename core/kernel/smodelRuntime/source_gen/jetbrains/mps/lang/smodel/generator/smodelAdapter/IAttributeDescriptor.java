@@ -4,25 +4,29 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
   public void update(@NotNull SNode attribute);
 
   public static class AttributeDescriptor implements IAttributeDescriptor {
-    protected SNode myAttributeDeclaration;
+    protected String myAttributeConceptName;
 
-    public AttributeDescriptor(SNode attributeDeclaration) {
-      myAttributeDeclaration = attributeDeclaration;
+    public AttributeDescriptor(@Nullable String attributeConceptName) {
+      myAttributeConceptName = attributeConceptName;
+    }
+
+    @Deprecated
+    public AttributeDescriptor(@NotNull SNode attributeDeclaration) {
+      myAttributeConceptName = NameUtil.nodeFQName(attributeDeclaration);
     }
 
     @Override
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeDeclaration == null || SNodeOperations.isInstanceOf(attribute, NameUtil.nodeFQName(myAttributeDeclaration));
+      return myAttributeConceptName == null || SNodeOperations.isInstanceOf(attribute, myAttributeConceptName);
     }
 
     @Override
@@ -32,22 +36,32 @@ public interface IAttributeDescriptor {
 
   public static class AllAttributes extends IAttributeDescriptor.AttributeDescriptor {
     public AllAttributes() {
-      super(null);
+      super((String) null);
     }
   }
 
   public static class NodeAttribute extends IAttributeDescriptor.AttributeDescriptor {
+    public NodeAttribute(@NotNull String attributeConceptName) {
+      super(attributeConceptName);
+    }
+
+    @Deprecated
     public NodeAttribute(@NotNull SNode attributeDeclaration) {
-      super(attributeDeclaration);
+      this(NameUtil.nodeFQName(attributeDeclaration));
     }
   }
 
   public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private String myLinkRole;
 
-    public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
-      super(attributeDeclaration);
+    public LinkAttribute(@NotNull String attributeConceptName, String linkRole) {
+      super(attributeConceptName);
       myLinkRole = linkRole;
+    }
+
+    @Deprecated
+    public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
+      this(NameUtil.nodeFQName(attributeDeclaration), linkRole);
     }
 
     @Override
@@ -64,9 +78,14 @@ public interface IAttributeDescriptor {
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private String myPropertyName;
 
-    public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
-      super(attributeDeclaration);
+    public PropertyAttribute(@NotNull String attributeConceptName, String propertyName) {
+      super(attributeConceptName);
       myPropertyName = propertyName;
+    }
+
+    @Deprecated
+    public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
+      this(NameUtil.nodeFQName(attributeDeclaration), propertyName);
     }
 
     @Override
@@ -77,74 +96,6 @@ public interface IAttributeDescriptor {
     @Override
     public void update(@NotNull SNode attribute) {
       SNodeAccessUtil.setProperty(attribute, "propertyName", myPropertyName);
-    }
-  }
-
-  public static class AttributeDescriptorString implements IAttributeDescriptor {
-    protected String myAttributeRole;
-
-    public AttributeDescriptorString(String attributeRole) {
-      myAttributeRole = attributeRole;
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      return myAttributeRole == null || myAttributeRole.equals(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(attribute))), "virtual_getRole_1262430001741497900", new Object[]{}));
-    }
-
-    @Override
-    public void update(@NotNull SNode attribute) {
-    }
-  }
-
-  public static class NodeAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
-    public NodeAttributeString(String attributeRole) {
-      super(attributeRole);
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      return SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.NodeAttribute") && super.match(attribute);
-    }
-  }
-
-  public static class LinkAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
-    private String myLinkRole;
-
-    public LinkAttributeString(String attributeRole, String linkRole) {
-      super(attributeRole);
-      myLinkRole = linkRole;
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute");
-      return (attr != null) && super.match(attr) && (myLinkRole == null || myLinkRole.equals(SPropertyOperations.getString(attr, "linkRole")));
-    }
-
-    @Override
-    public void update(@NotNull SNode attribute) {
-      SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole", myLinkRole);
-    }
-  }
-
-  public static class PropertyAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
-    private String myPropertyName;
-
-    public PropertyAttributeString(String attributeRole, String propertyName) {
-      super(attributeRole);
-      myPropertyName = propertyName;
-    }
-
-    @Override
-    public boolean match(@NotNull SNode attribute) {
-      SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-      return (attr != null) && super.match(attr) && (myPropertyName == null || myPropertyName.equals(SPropertyOperations.getString(attr, "propertyName")));
-    }
-
-    @Override
-    public void update(@NotNull SNode attribute) {
-      SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName", myPropertyName);
     }
   }
 }

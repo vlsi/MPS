@@ -29,28 +29,30 @@ import java.util.*;
 public class SortUtil {
   public static List<SModel> sortModels(List<SModel> modelDescriptors) {
     List<SModel> sortedModels = new ArrayList<SModel>(modelDescriptors);
-    Collections.sort(sortedModels, new Comparator<SModel>() {
-      @Override
-      public int compare(SModel o, SModel o1) {
-        if (o == o1) return 0;
-        int result = Comparing.compare(SNodeOperations.getModelLongName(o), SNodeOperations.getModelLongName(o1));
-        if (result != 0) return result;
-        String str = SModelStereotype.getStereotype(o);
-        String str1 = SModelStereotype.getStereotype(o1);
-        if ((o instanceof TransientSModelDescriptor) && (o1 instanceof TransientSModelDescriptor)) {
-          String[] part = str.split("_");
-          String[] part1 = str1.split("_");
-          for (int i = 0; i < part.length; i++) {
-            result = Comparing.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
-            if (result != 0) return result;
-          }
-          return result;
-        } else {
-          return Comparing.compare(str, str1);
-        }
-      }
-    });
+    Collections.sort(sortedModels, new SModelComparator());
     return sortedModels;
+  }
+
+  public static class SModelComparator implements Comparator<SModel> {
+    @Override
+    public int compare(SModel o, SModel o1) {
+      if (o == o1) return 0;
+      int result = Comparing.compare(SNodeOperations.getModelLongName(o), SNodeOperations.getModelLongName(o1));
+      if (result != 0) return result;
+      String str = SModelStereotype.getStereotype(o);
+      String str1 = SModelStereotype.getStereotype(o1);
+      if ((o instanceof TransientSModelDescriptor) && (o1 instanceof TransientSModelDescriptor)) {
+        String[] part = str.split("_");
+        String[] part1 = str1.split("_");
+        for (int i = 0; i < part.length; i++) {
+          result = Comparing.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
+          if (result != 0) return result;
+        }
+        return result;
+      } else {
+        return Comparing.compare(str, str1);
+      }
+    }
   }
 
   public static List<SModule> sortModules(Collection<SModule> modules) {

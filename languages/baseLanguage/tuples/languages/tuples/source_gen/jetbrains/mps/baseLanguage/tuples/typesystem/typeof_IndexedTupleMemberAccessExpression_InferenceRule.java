@@ -14,6 +14,9 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -44,16 +47,27 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
         final SNode tupleType = typeCheckingContext.typeOf(SLinkOperations.getTarget(mae, "tuple", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864035483", true);
         typeCheckingContext.whenConcrete(tupleType, new Runnable() {
           public void run() {
-            if (!(index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(typeCheckingContext.getExpandedNode(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).count())) {
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", null, errorTarget);
-            }
-            if (index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(typeCheckingContext.getExpandedNode(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).count()) {
-              List<SNode> mtypes = SLinkOperations.getTargets(SNodeOperations.as(typeCheckingContext.getExpandedNode(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);
-              {
-                SNode _nodeToCheck_1029348928467 = mae;
-                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864299354", 0, null);
-                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864289746", true), (SNode) ListSequence.fromList(mtypes).getElement(index), _info_12389875345);
+            {
+              IMatchingPattern pattern_2aq6od_a0c0c0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType");
+              SNode coercedNode_2aq6od_a0c0c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(tupleType), pattern_2aq6od_a0c0c0);
+              if (coercedNode_2aq6od_a0c0c0 != null) {
+                if (!(index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(coercedNode_2aq6od_a0c0c0, "componentType", true)).count())) {
+                  MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", null, errorTarget);
+                }
+                if (index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(coercedNode_2aq6od_a0c0c0, "componentType", true)).count()) {
+                  List<SNode> mtypes = SLinkOperations.getTargets(coercedNode_2aq6od_a0c0c0, "componentType", true);
+                  {
+                    SNode _nodeToCheck_1029348928467 = mae;
+                    EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864299354", 0, null);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864289746", true), (SNode) ListSequence.fromList(mtypes).getElement(index), _info_12389875345);
+                  }
+                }
+              } else {
+                {
+                  MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Indexed tuple expected", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "2608583337446226139", null, errorTarget);
+                }
               }
             }
           }

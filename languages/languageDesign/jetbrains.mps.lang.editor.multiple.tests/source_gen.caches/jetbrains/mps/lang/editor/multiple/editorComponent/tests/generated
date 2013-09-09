@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="1zltbe12haech1cnt4pmdl0vf5mkmto">
-  <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="71eiz5g3x4yswp9gryi6l40xw36apmq" />
+  <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="-evcrdurgb0bmbwga18dyu25hcn4t379" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-zttxhpc4iix3xpfv1j0msfpvjln643" />
   <common hash="atny195n4lx5ya2z10m5tcwxwaderq6" />
   <source id="6420745394459121798" name="DefultEditorComponent" hash="-ddc0r4i8vjf5agd5x88uhfzrrpoo0ij" dependsOnNodes="true">
     <dep root="5950344441601613251" />
-    <dep root="6420745394459130152" />
-    <dep root="6420745394459130264" />
-    <dep root="6420745394459902267" />
-    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="DefultEditorComponent_Test.java" />
   </source>
@@ -19,31 +16,22 @@
   </source>
   <source id="6420745394459130152" name="EditorComponentSpecifiedBy_context_hint" hash="dssonydzycbcw25sgz8o7y1k0tb0php" dependsOnNodes="true">
     <dep root="5950344441601613251" />
-    <dep root="6420745394459121798" />
-    <dep root="6420745394459130264" />
-    <dep root="6420745394459902267" />
-    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="EditorComponentSpecifiedBy_context_hint_Test.java" />
   </source>
   <source id="6420745394459130264" name="MostSpecificEditorComponent" hash="8x6zgw012sx0e16fg62he89djw8yc9k" dependsOnNodes="true">
     <dep root="5950344441601613251" />
-    <dep root="6420745394459121798" />
-    <dep root="6420745394459130152" />
-    <dep root="6420745394459902267" />
-    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="MostSpecificEditorComponent_Test.java" />
   </source>
   <source id="6420745394459902267" name="OverridenEditorComponent" hash="-1wfw69ohcryhlanrqj69o4w40cwhwnx" dependsOnNodes="true">
     <dep root="5950344441601613251" />
-    <dep root="6420745394459121798" />
-    <dep root="6420745394459130152" />
-    <dep root="6420745394459130264" />
-    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="OverridenEditorComponent_Test.java" />
   </source>

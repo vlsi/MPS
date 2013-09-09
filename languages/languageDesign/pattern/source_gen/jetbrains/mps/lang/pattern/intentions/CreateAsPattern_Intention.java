@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateAsPattern_Intention implements IntentionFactory {
@@ -83,7 +82,7 @@ public class CreateAsPattern_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
-      SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")), "jetbrains.mps.lang.pattern.structure.AsPattern");
+      SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.AsPattern");
     }
 
     public IntentionDescriptor getDescriptor() {

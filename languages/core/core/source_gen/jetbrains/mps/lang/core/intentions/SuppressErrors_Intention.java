@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -56,7 +55,7 @@ public class SuppressErrors_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) != null) {
+    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) != null) {
       return true;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
@@ -83,17 +82,17 @@ public class SuppressErrors_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) == null ?
+      return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null ?
         "Supress errors for node '" + node + "'" :
         "Don't supress errors"
       );
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) == null) {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", null));
+      if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null) {
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", null));
       } else {
-        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), null);
+        AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null);
       }
     }
 

@@ -10,8 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,7 +26,7 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode template = SLinkOperations.getTarget(rule, "template", false);
     if ((template != null)) {
-      SNode attrib = AttributeOperations.getAttribute(template, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
+      SNode attrib = AttributeOperations.getAttribute(template, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
       if ((attrib != null)) {
         SNode templateApplicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(attrib, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
         SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, "applicableConcept", false);

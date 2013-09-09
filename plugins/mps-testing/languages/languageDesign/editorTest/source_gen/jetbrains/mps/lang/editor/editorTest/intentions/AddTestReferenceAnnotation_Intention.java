@@ -89,7 +89,7 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
       EditorCell cell = editorContext.getSelectedCell();
       String linkRole = QueriesUtil.getEditedLinkRole(cell);
       SNode referentNode = QueriesUtil.getEditedLinkReferentNode(cell);
-      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), linkRole), "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion");
+      SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", linkRole), "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion");
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -2798,9 +2798,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1219349013090" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1219349022232" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
           <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1200923573457" nodeInfo="nn">
@@ -2889,9 +2887,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1219349166544" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1219349166545" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -2935,9 +2931,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200917687312" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407442010" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -3044,9 +3038,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200917658734" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407441994" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -3170,9 +3162,7 @@
               <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200917586649" nodeInfo="ng">
                 <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-                <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407442078" nodeInfo="nn">
-                  <property name="color" nameId="tpc2.1186403713874" value="orange" />
-                </node>
+                <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
               </node>
             </node>
           </node>
@@ -3247,9 +3237,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200917563252" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407441943" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -3370,9 +3358,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200917674377" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407442098" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -3456,9 +3442,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200917653635" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407441963" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -4338,6 +4322,21 @@
         <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
       </node>
     </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="2854950237272258311" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="mappingRuleDeclaration" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="2854950237272356933" nodeInfo="nn">
+        <property name="color" nameId="tpc2.1186403713874" value="orange" />
+      </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="7253250149918744126" nodeInfo="nn">
+        <property name="color" nameId="tpc2.1186403713874" value="darkGray" />
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="7253250149918727554" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="mappingRuleReference" />
+      <node role="extendedClass" roleId="tpc2.1198252369256" type="tpc2.StyleSheetClassReference" typeId="tpc2.1198252130653" id="7253250149918744121" nodeInfo="ng">
+        <link role="styleSheetClass" roleId="tpc2.1198252276894" targetNodeId="2854950237272258311" resolveInfo="mappingRuleDeclaration" />
+      </node>
+    </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1195158756338" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
@@ -4553,9 +4552,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1200911362725" nodeInfo="ng">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1214407441932" nodeInfo="nn">
-          <property name="color" nameId="tpc2.1186403713874" value="orange" />
-        </node>
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="2854950237272258311" resolveInfo="mappingRuleDeclaration" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1200913021132" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value=":" />
@@ -6033,9 +6030,7 @@
             <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1805153994416878886" nodeInfo="ng">
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1805153994416878887" nodeInfo="nn">
-                <property name="color" nameId="tpc2.1186403713874" value="orange" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
             </node>
           </node>
         </node>
@@ -6112,9 +6107,7 @@
               <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1805153994416878903" nodeInfo="ng">
                 <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
                 <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-                <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1805153994416878904" nodeInfo="nn">
-                  <property name="color" nameId="tpc2.1186403713874" value="orange" />
-                </node>
+                <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7253250149918727554" resolveInfo="mappingRuleReference" />
               </node>
             </node>
           </node>

@@ -15,7 +15,6 @@ import java.util.Collection;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.project.Project;
@@ -110,10 +109,9 @@ public class CommandUtil {
 
 
 
-  public static Collection<SNode> instances(ConsoleScope scope, SNode concept) {
+  public static Collection<SNode> instances(ConsoleScope scope, String conceptName) {
     // todo: readOnly 
-    String cName = NameUtil.nodeFQName(concept);
-    SAbstractConcept c = SConceptRepository.getInstance().getConcept(cName);
+    SAbstractConcept c = SConceptRepository.getInstance().getConcept(conceptName);
     return FindUsagesManager.getInstance().findInstances(scope.getSearchScope(), Collections.singleton(c), false, new EmptyProgressMonitor());
   }
 

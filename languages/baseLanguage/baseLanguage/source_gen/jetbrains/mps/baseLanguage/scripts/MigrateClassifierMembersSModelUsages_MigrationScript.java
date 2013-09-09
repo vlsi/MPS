@@ -9,51 +9,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMigrationScript {
   public MigrateClassifierMembersSModelUsages_MigrationScript(IOperationContext operationContext) {
     super("Use member role for classifier members (smodel usages)");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "Use .fields() etc operation where it possible (replace for sequence access)";
-      }
-
-      public String getAdditionalInfo() {
-        return "Use .fields() etc operation where it possible (replace for sequence access)";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
-          return false;
-        }
-        if (!(NonMigratableUsagesFinder.isSequenceNeeded(node))) {
-          return false;
-        }
-        if (NonMigratableUsagesFinder.isExcluded(node)) {
-          return false;
-        }
-        // not migrate usages with generator macroses etc! 
-        return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty();
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
-        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, "link", false)), false);
-        SNodeOperations.replaceWithAnother(node, methodCall);
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    // whitespace 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Migrate .field.add usages (use member role instead of field role)";
@@ -115,6 +77,42 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
           SLinkOperations.setTarget(operation, "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "link", false), "target", false), false);
         }
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Use .fields() etc operation where it possible (replace for sequence access)";
+      }
+
+      public String getAdditionalInfo() {
+        return "Use .fields() etc operation where it possible (replace for sequence access)";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+          return false;
+        }
+        // it's safer to migrate to sequence access - in this case it fails on generation step with type error 
+        // <node> 
+        if (NonMigratableUsagesFinder.isExcluded(node)) {
+          return false;
+        }
+        // not migrate usages with node attributes (for example generator macroses)! 
+        return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).isEmpty();
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, "link", false)), false);
+        SNodeOperations.replaceWithAnother(node, methodCall);
       }
 
       public boolean isShowAsIntention() {

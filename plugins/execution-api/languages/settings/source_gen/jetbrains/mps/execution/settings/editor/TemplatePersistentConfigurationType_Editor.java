@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -98,7 +97,7 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
   }
 
   private static boolean renderingCondition_1clvom_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
   }
 
   private EditorCell createRefCell_1clvom_b0(EditorContext editorContext, SNode node) {
@@ -160,6 +159,6 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
   }
 
   private static boolean renderingCondition_1clvom_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
+    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) != null);
   }
 }

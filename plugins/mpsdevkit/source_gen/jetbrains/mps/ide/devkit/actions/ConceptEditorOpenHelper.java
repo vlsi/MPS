@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptEditorOpenHelper {
@@ -81,7 +80,7 @@ public class ConceptEditorOpenHelper {
     SNode baseNode = null;
     if (jetbrains.mps.util.SNodeOperations.isRoot(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept")) {
       SNode bc = SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept");
-      SNode annotation = AttributeOperations.getAttribute(bc, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
+      SNode annotation = AttributeOperations.getAttribute(bc, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
       if ((annotation != null) && (SLinkOperations.getTarget(annotation, "applicableConcept", false) != null)) {
         baseNode = SLinkOperations.getTarget(annotation, "applicableConcept", false);
       }

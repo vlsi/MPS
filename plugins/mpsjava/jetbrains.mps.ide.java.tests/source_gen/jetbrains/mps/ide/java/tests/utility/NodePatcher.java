@@ -126,8 +126,8 @@ public class NodePatcher {
   }
 
   public static void copyImportAttrs(SNode from, SNode to) {
-    if ((AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))) != null)) {
-      AttributeOperations.setAttribute(SNodeOperations.cast(to, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), SNodeOperations.copyNode(AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")))));
+    if ((AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")) != null)) {
+      AttributeOperations.setAttribute(SNodeOperations.cast(to, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"), SNodeOperations.copyNode(AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"))));
     }
   }
 }

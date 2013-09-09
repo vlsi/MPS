@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1jikv1m962j2aoa73u8r8uydptqy4v">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <common hash="-35m9fdyrvrlrmwzrj5m5u1qa7tq2zv0" />
+<dependencies version="2" modelHash="-hv43tr0ttbnev0q6v79xfv96uucdyz">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <common hash="3qcudt4pt5kkp5iw6u6p0hapzdhu9af" />
   <source id="1560298786499491521" name="ValidateableBoundPanel" hash="-4hz8gkb0h6r5r34209g0juwpda0wdo2">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValidateableBoundPanel.java" />

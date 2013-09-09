@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="am2j3n68ei9bnscat8ymi6kx40c1vx3">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <common hash="-99v93s1jmubgi35zr63re9vv74kycjh" />
-  <source id="6249396921771873248" name="NewDevKitDialog" hash="-d3w6pzu5y9kz9m75dhw4c59fc796qpf">
+<dependencies version="2" modelHash="6x0ejeia93ehhfpm8ej2zsvrkxt4x7b">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <common hash="-agotlzbv8j9hcf456mza2bfxq7661vl" />
+  <source id="6249396921771873248" name="NewDevKitDialog" hash="-2v0f1amtf3rthqql73t85lhimgpaiib">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewDevKitDialog.java" />
   </source>
-  <source id="6249396921771906419" name="NewDevKitDialogContentPane" hash="ertpk03a9b322fup1hjvpvjig77hijx">
+  <source id="6249396921771906419" name="NewDevKitDialogContentPane" hash="-690z9wa8m4vqsofs5zx56k27wll0puh">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NewDevKitDialogContentPane.java" />
   </source>

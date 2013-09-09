@@ -164,11 +164,23 @@
     <property name="name" nameId="tpck.1169194664001" value="BuilderBlockStatement" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758914" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="builderBlockStatement" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338785" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1082485599095" resolveInfo="BlockStatement" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281787" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BuilderParameter" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758708" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="builderParameter" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338786" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="856705193941281790" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />

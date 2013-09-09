@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6k4hxa9ukxrqpa3vnnv4cm05jwiw95">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <common hash="-etntjn7k8uw7s8ab3qk5w2fi401igx2" />
+<dependencies version="2" modelHash="-2j80dxafop9sws2x0pl20p3fai11nqw">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <common hash="-blangiegs7eq8o3i0id7zgs1fk9tt99" />
   <source id="1560298786499494350" name="CopySupport" hash="-b9w1zxsym4sekmtla9ekvidf4w04qfn">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CopySupport.java" />

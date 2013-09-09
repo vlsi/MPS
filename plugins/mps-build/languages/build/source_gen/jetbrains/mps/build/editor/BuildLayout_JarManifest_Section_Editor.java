@@ -42,7 +42,7 @@ public class BuildLayout_JarManifest_Section_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_9mv0z5_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
     editorCell.getStyle().putAll(style);

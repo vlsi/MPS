@@ -1042,6 +1042,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
             final DialogWrapper dialogWrapper = new DialogWrapper(ProjectHelper.toIdeaProject(myProject)) {
               {
+                setModal(true);
                 init();
               }
 

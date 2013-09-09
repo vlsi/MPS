@@ -169,6 +169,18 @@ import org.jetbrains.annotations.NotNull;
     size = 0;
   }
 
+  Entry findEntry(@NotNull MPSPsiNodeBase node) {
+    Entry e = head;
+    if (e == null) return null;
+    do {
+      Entry next = e.next;
+      if(e.node.equals(node))
+        return e;
+      e = next;
+    } while (e != head);
+    return null;
+  }
+
   class Entry {
     private Entry next;
     private Entry prev;

@@ -81,7 +81,6 @@
     <orderEntry type="module" module-name="typesystemEngine" scope="PROVIDED" />
     <orderEntry type="module" module-name="typesystemIntegration" scope="PROVIDED" />
     <orderEntry type="module" module-name="typesystemUi" scope="PROVIDED" />
-    <orderEntry type="module" module-name="uiLanguage-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="uiTests" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs-core" scope="PROVIDED" />

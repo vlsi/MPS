@@ -32,10 +32,10 @@ public class MPSStackTraceFilter implements Filter {
 
 
   private Filter.Result tryToParseLine(String line, int offset, Project project) {
-    if (!(((line == null ?
+    if (((line == null ?
       null :
       line.trim()
-    )).startsWith(STRING_START))) {
+    )).indexOf(STRING_START) < 0) {
       return null;
     }
 

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ClassifiersScope extends FilteringScope {
   private IScope myModuleScope;
@@ -63,8 +62,8 @@ public class ClassifiersScope extends FilteringScope {
     }
 
     SNode root = Sequence.fromIterable(ClassifierResolveUtils.getPathToRoot(myClassifier)).last();
-    if ((root != null) && (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))) != null)) {
-      return ClassifierResolveUtils.isImportedBy(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))));
+    if ((root != null) && (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")) != null)) {
+      return ClassifierResolveUtils.isImportedBy(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")));
     }
 
     return false;

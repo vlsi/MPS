@@ -54,7 +54,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_7cysuj_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);

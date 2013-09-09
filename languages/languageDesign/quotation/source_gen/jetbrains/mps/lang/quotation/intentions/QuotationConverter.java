@@ -59,13 +59,13 @@ public class QuotationConverter {
     if (quotationNode == null) {
       return null;
     }
-    SNode aq = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation")));
+    SNode aq = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"));
     if ((aq != null)) {
       SNode expr = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", null);
       SLinkOperations.setTarget(expr, "expression", SLinkOperations.getTarget(aq, "expression", true), true);
       return expr;
     }
-    SNode la = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")));
+    SNode la = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
     if ((la != null)) {
       SNode expr = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", null);
       SLinkOperations.setTarget(expr, "expression", SLinkOperations.getTarget(la, "expression", true), true);
@@ -78,7 +78,7 @@ public class QuotationConverter {
     List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), quotationNode.getPropertyNames());
     Collections.sort(propertyNames);
     for (String property : propertyNames) {
-      SNode attribute = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"), property));
+      SNode attribute = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", property));
       SNode pval = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", null);
       SLinkOperations.setTarget(pval, "property", AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(SLinkOperations.getTarget(result, "concept", false), property), false);
       if (attribute != null) {
@@ -98,7 +98,7 @@ public class QuotationConverter {
     Set<String> seenRoles = SetSequence.fromSet(new HashSet<String>());
     for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(quotationNode))) {
       seenRoles.add(SLinkOperations.getRole(ref));
-      SNode refattr = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), SLinkOperations.getRole(ref)));
+      SNode refattr = AttributeOperations.getAttribute(quotationNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", SLinkOperations.getRole(ref)));
       SNode lval = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
       SLinkOperations.setTarget(lval, "link", SNodeOperations.as(SModelSearchUtil.findMostSpecificLinkDeclaration(SLinkOperations.getTarget(result, "concept", false), SLinkOperations.getRole(ref)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       if (refattr != null) {

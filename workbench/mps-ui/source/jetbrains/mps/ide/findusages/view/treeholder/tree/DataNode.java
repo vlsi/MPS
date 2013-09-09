@@ -33,7 +33,9 @@ import org.jetbrains.mps.util.Condition;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class DataNode implements IExternalizeable {
   private static final Logger LOG = LogManager.getLogger(DataNode.class);
@@ -82,8 +84,8 @@ public class DataNode implements IExternalizeable {
 
   //-------DATA QUERY--------
 
-  public List<SModel> getIncludedModels() {
-    List<SModel> models = new ArrayList<SModel>();
+  public Set<SModel> getIncludedModels() {
+    Set<SModel> models = new LinkedHashSet<SModel>();
     if (myData instanceof ModelNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded()) {
         models.add(((ModelNodeData) myData).getModelDescriptor());
@@ -95,7 +97,7 @@ public class DataNode implements IExternalizeable {
     return models;
   }
 
-  public List<SModel> getAllModels() {
+  public Set<SModel> getAllModels() {
     List<DataNode> modelNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
       @Override
       public boolean met(BaseNodeData nodeData) {
@@ -103,7 +105,7 @@ public class DataNode implements IExternalizeable {
       }
     });
 
-    List<SModel> result = new ArrayList<SModel>();
+    Set<SModel> result = new LinkedHashSet<SModel>();
     for (DataNode node : modelNodes) {
       SModel model = ((ModelNodeData) node.getData()).getModel();
       if (model != null) result.add(model);

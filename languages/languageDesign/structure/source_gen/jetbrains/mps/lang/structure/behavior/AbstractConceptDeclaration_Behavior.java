@@ -17,17 +17,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.util.Pair;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.util.Pair;
 import java.util.HashSet;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -92,7 +93,7 @@ public class AbstractConceptDeclaration_Behavior {
       for (SModel sd : g.getOwnTemplateModels()) {
         SModel m = sd;
         for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
-          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false) == thisNode) {
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "applicableConcept", false) == thisNode) {
             ListSequence.fromList(result).addElement(node);
           } else if (ListSequence.fromList(SNodeOperations.getChildren(node)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
@@ -273,6 +274,25 @@ public class AbstractConceptDeclaration_Behavior {
       return SConceptOperations.isSuperConceptOf(expectedConcept, NameUtil.nodeFQName(thisNode));
     }
     return false;
+  }
+
+  public static Iterable<SNode> call_getAllSuperConcepts_2992811758677902956(SNode thisNode, boolean includeSelf) {
+    Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());
+    AbstractConceptDeclaration_Behavior.call_collectSuperConcepts_2992811758677933293(thisNode, thisNode, concepts);
+    if (!(includeSelf)) {
+      SetSequence.fromSet(concepts).removeElement(thisNode);
+    }
+    return concepts;
+  }
+
+  public static void call_collectSuperConcepts_2992811758677933293(SNode thisNode, SNode concept, Set<SNode> result) {
+    if (SetSequence.fromSet(result).contains(concept) || (concept == null)) {
+      return;
+    }
+    SetSequence.fromSet(result).addElement(concept);
+    for (SNode superConcept : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), concept, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{}))) {
+      AbstractConceptDeclaration_Behavior.call_collectSuperConcepts_2992811758677933293(thisNode, superConcept, result);
+    }
   }
 
   public static SNode call_computeInHierarchy_4184580446578561998(SNode thisNode, _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> predicate) {

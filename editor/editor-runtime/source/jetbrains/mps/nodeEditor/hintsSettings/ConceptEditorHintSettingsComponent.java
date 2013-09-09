@@ -62,13 +62,13 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
     }
     myListener = new LanguageRegistryListener() {
       @Override
-      public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+      public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
         updateHintsFromLanguages(languages);
         mySettings.updateSettings(myCurrentState.getEnabledHints());
       }
 
       @Override
-      public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+      public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
         myCurrentState.addEnabledHints(mySettings.getEnabledHints());
         removeHintsFromUnloadedLanguages(languages);
       }

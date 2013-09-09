@@ -29,7 +29,7 @@ public class BaseEmitVariableStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_w7ohj2_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     DataFlow_StyleSheet.applyInstruction(style, editorCell);
     editorCell.getStyle().putAll(style);

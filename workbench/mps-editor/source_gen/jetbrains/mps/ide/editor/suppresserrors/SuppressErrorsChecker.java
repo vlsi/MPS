@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SuppressErrorsChecker extends EditorCheckerAdapter {
   public SuppressErrorsChecker() {
@@ -26,7 +25,7 @@ public class SuppressErrorsChecker extends EditorCheckerAdapter {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = root;
     for (SNode n : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.ICanSuppressErrors", false, new String[]{}))) {
-      if (AttributeOperations.getAttribute(n, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"))) != null) {
+      if (AttributeOperations.getAttribute(n, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) != null) {
         SetSequence.fromSet(messages).addElement(new SuppressErrorsMessage(n, this, "Errors suppressed"));
       }
     }

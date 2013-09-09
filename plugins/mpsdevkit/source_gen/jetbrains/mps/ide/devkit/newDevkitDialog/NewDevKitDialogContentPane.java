@@ -12,7 +12,6 @@ import java.util.List;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.uiLanguage.runtime.events.Events;
 import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
@@ -38,10 +37,6 @@ public class NewDevKitDialogContentPane extends JPanel {
   private DevKit myResult;
   private NewDevKitDialog myDialog;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
-  private Events myEvents = new Events(null) {
-    public void initialize() {
-    }
-  };
 
   public NewDevKitDialogContentPane() {
     this.myThis = this;
@@ -51,15 +46,10 @@ public class NewDevKitDialogContentPane extends JPanel {
     component.add(this.createComponent_t9qnp8_c0());
     component.add(this.createComponent_t9qnp8_d0());
     component.add(this.createComponent_t9qnp8_e0());
-    this.myEvents.initialize();
     myThis.setDevkitName("");
     myThis.setDevkitDir("");
     myThis.myName_t9qnp8_c0.setName("Name");
     myThis.myPath_t9qnp8_e0.setName("Path");
-  }
-
-  public Events getEvents() {
-    return this.myEvents;
   }
 
   public void addNotify() {

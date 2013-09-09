@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,8 +29,8 @@ public class RootTemplateAnnotator implements CoreComponent {
         SNode node = event.getRoot();
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
           if ((Language) check_epzavk_a0a0a0b0a0a0a0a0b(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) != BootstrapLanguages.generatorLanguage() && (Language) check_epzavk_a0a0a0b0a0a0a0a0b_0(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) != BootstrapLanguages.generatorParametersLanguage()) {
-            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null)) {
-              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
+            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) == null)) {
+              AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
             }
           }
         }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -28,14 +27,14 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
     SNode parentLoop = SNodeOperations.getAncestor(baseMethodCall, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
     if (parentLoop != null) {
       if (SNodeOperations.isInstanceOf(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
-        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
         final SNode classConcept = SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false);
-        if (AttributeOperations.getAttribute(classConcept, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+        if (AttributeOperations.getAttribute(classConcept, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
-        if (AttributeOperations.getAttribute(classConcept, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null) {
+        if (AttributeOperations.getAttribute(classConcept, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")) != null) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "Calling a method on a non-thread-safe class", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "5384012304952426855", null, errorTarget);
@@ -53,15 +52,15 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
           }
         }
       } else if ((SNodeOperations.isInstanceOf(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")))) {
-        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
         SNode instanceMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         SNode declaringClass = SNodeOperations.getAncestor(instanceMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null && SPropertyOperations.getBoolean(declaringClass, "isFinal")) {
+        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null && SPropertyOperations.getBoolean(declaringClass, "isFinal")) {
           return;
         }
-        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null) {
+        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")) != null) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "Calling a method on a non-thread-safe shared object", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "5384012304952487123", null, errorTarget);
@@ -73,15 +72,15 @@ public class CallsToNonThreadSafeMethod_NonTypesystemRule extends AbstractNonTyp
         }
         return;
       } else if ((SNodeOperations.isInstanceOf(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
-        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+        if (AttributeOperations.getAttribute(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
         SNode staticMethodDeclaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(baseMethodCall, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
         SNode declaringClass = SNodeOperations.getAncestor(staticMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
           return;
         }
-        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null) {
+        if (declaringClass != null && AttributeOperations.getAttribute(declaringClass, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")) != null) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseMethodCall, "Calling a method on a non-thread-safe class", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "5384012304952487099", null, errorTarget);

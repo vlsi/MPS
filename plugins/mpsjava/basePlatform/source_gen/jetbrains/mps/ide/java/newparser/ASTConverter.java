@@ -251,8 +251,8 @@ public class ASTConverter {
     }
 
     if (x.javadoc != null) {
-      AttributeOperations.createAndSetAttrbiute(cls, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
-      MapSequence.fromMap(myJavadocs).put(x.javadoc.sourceStart, AttributeOperations.getAttribute(cls, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
+      AttributeOperations.createAndSetAttrbiute(cls, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+      MapSequence.fromMap(myJavadocs).put(x.javadoc.sourceStart, AttributeOperations.getAttribute(cls, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")));
     }
 
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Annotation")) {
@@ -350,9 +350,9 @@ public class ASTConverter {
       int start = f.javadoc.sourceStart;
       SNode doc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", null);
       if (SNodeOperations.isInstanceOf(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-        AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), doc);
+        AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), doc);
       } else if (SNodeOperations.isInstanceOf(fDecl, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-        AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), doc);
+        AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), doc);
       }
       MapSequence.fromMap(myJavadocs).put(start, doc);
     }
@@ -417,8 +417,8 @@ public class ASTConverter {
     }
 
     if (method.javadoc != null) {
-      AttributeOperations.createAndSetAttrbiute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
-      MapSequence.fromMap(myJavadocs).put(method.javadoc.sourceStart, AttributeOperations.getAttribute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
+      AttributeOperations.createAndSetAttrbiute(result, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
+      MapSequence.fromMap(myJavadocs).put(method.javadoc.sourceStart, AttributeOperations.getAttribute(result, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
     }
 
     return result;

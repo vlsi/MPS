@@ -53,7 +53,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
     if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       return;
     }
-    SNode javaImports = AttributeOperations.getAttribute(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
+    SNode javaImports = AttributeOperations.getAttribute(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"));
     if ((javaImports == null)) {
       return;
     }

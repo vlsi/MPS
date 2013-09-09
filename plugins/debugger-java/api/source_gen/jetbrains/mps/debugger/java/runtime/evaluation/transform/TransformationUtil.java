@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -23,6 +22,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -97,8 +97,8 @@ public class TransformationUtil {
     SNodeOperations.replaceWithAnother(baseAssignment, _quotation_createNode_crriw5_a0a6a7(SLinkOperations.getTarget(baseAssignment, "lValue", true), rightExpression));
     rightExpression.putUserObject(TransformatorImpl.LTYPE, SNodeOperations.copyNode(lvalueType));
     rightExpression.putUserObject(TransformatorImpl.RTYPE, SNodeOperations.copyNode(rvalueType));
-    AttributeOperations.createAndSetAttrbiute(rightExpression, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
-    AttributeOperations.createAndSetAttrbiute(baseAssignment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
+    AttributeOperations.createAndSetAttrbiute(rightExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
+    AttributeOperations.createAndSetAttrbiute(baseAssignment, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
   }
 
   public static void replaceLowLevelVariableReference(String variableName, SNode variableType, SNode variableRef) {
@@ -153,7 +153,7 @@ public class TransformationUtil {
   }
 
   public static boolean isUnprocessed(SNode node) {
-    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"))) != null) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"))) == null);
+    return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")) != null) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")) == null);
   }
 
   public static boolean isLowLevelVariableReference(SNode variableRef) {

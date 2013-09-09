@@ -2551,72 +2551,72 @@
     <unitInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="21" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Escape_Action" />
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/6893431717880288043">
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="23" startPosition="39" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="24" startPosition="45" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="25" startPosition="35" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="38" startPosition="45" endLine="39" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="40" startPosition="7" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="46" startPosition="53" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="48" startPosition="5" endLine="49" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="50" startPosition="59" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6893431717880288047" fileName="DoNotSuppressErrors_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="60" startPosition="45" endLine="61" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="66" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="45" startPosition="95" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="49" startPosition="84" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="48" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DoNotSuppressErrors_Action#()V" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="56" startPosition="96" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="89" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="43" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="38" startPosition="45" endLine="39" endPosition="94" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="46" startPosition="53" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="50" startPosition="59" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="252" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="60" startPosition="45" endLine="61" endPosition="93" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="23" startPosition="39" endLine="26" endPosition="41" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="59" startPosition="0" endLine="62" endPosition="7">
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="22" startPosition="39" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="23" startPosition="45" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="24" startPosition="35" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="45" endLine="38" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="39" startPosition="7" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="49" startPosition="59" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6893431717880288047" fileName="DoNotSuppressErrors_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="59" startPosition="45" endLine="60" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="44" startPosition="95" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="48" startPosition="84" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="58" startPosition="27" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="58" startPosition="27" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="47" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DoNotSuppressErrors_Action#()V" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="55" startPosition="96" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="33" startPosition="89" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="55" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="9" endLine="35" endPosition="43" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="45" endLine="38" endPosition="94" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="45" startPosition="53" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="49" startPosition="59" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="209" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="59" startPosition="45" endLine="60" endPosition="93" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="22" startPosition="39" endLine="25" endPosition="41" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="36" startPosition="27" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="58" startPosition="0" endLine="61" endPosition="7">
       <varInfo nodeId="6893431717880288043" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="44">
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="58" startPosition="27" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="44">
       <varInfo nodeId="6893431717880288043" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="37" startPosition="27" endLine="41" endPosition="44" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="48" startPosition="5" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="56" startPosition="96" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="89" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="45" startPosition="95" endLine="53" endPosition="16" />
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="56" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="36" startPosition="27" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="47" startPosition="5" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="55" startPosition="96" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="33" startPosition="89" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="44" startPosition="95" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="55" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6893431717880288043" varName="_params" />
       <varInfo nodeId="6893431717880288043" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="33" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="6893431717880288043" varName="_params" />
       <varInfo nodeId="6893431717880288043" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6893431717880288043" varName="_params" />
       <varInfo nodeId="6893431717880288043" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action" />
+    <unitInfo nodeId="6893431717880288043" fileName="DoNotSuppressErrors_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action" />
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/7791284463049069760">
     <nodeInfo nodeId="7791284463049069760" fileName="End_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

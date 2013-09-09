@@ -64,7 +64,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ie6eqd_b0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractEquationStatement_Editor._StyleParameter_QueryFunction_ie6eqd_a0b0((editorCell == null ?
       null :

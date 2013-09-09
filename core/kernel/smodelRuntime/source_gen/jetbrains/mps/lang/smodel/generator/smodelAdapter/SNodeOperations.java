@@ -27,6 +27,8 @@ import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
@@ -723,5 +725,13 @@ public class SNodeOperations {
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
+  }
+
+  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, final String conceptName) {
+    return Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, conceptName);
+      }
+    });
   }
 }

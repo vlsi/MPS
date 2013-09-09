@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,17 +28,17 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
     SNode directAncestor = SNodeOperations.getAncestor(dotExpression, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
 
     if (directAncestor != null) {
-      if (AttributeOperations.getAttribute(dotExpression, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+      if (AttributeOperations.getAttribute(dotExpression, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
         return;
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.ThisExpression")) {
         SNode type = TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
         if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
           final SNode clazz = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-          if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null && SPropertyOperations.getBoolean(clazz, "isFinal")) {
+          if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null && SPropertyOperations.getBoolean(clazz, "isFinal")) {
             return;
           }
-          if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null) {
+          if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")) != null) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(dotExpression, "operation", true), "Calling a method on a non-thread-safe shared object", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "3540747636396645537", null, errorTarget);
@@ -63,17 +62,17 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
         SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operand", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         SNode declarationsAncestor = SNodeOperations.getAncestor(variableDeclaration, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
         if (directAncestor != declarationsAncestor) {
-          if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null) {
+          if (AttributeOperations.getAttribute(variableDeclaration, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null) {
             return;
           }
 
           final SNode targetClassifier = check_ttr84v_a0c0c0c0c0b(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           if (SNodeOperations.isInstanceOf(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             SNode clazz = SNodeOperations.cast(targetClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-            if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) != null && SPropertyOperations.getBoolean(clazz, "isFinal")) {
+            if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) != null && SPropertyOperations.getBoolean(clazz, "isFinal")) {
               return;
             }
-            if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"))) != null) {
+            if (AttributeOperations.getAttribute(clazz, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")) != null) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(dotExpression, "operation", true), "Calling a method on a non-thread-safe shared object", "r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)", "3540747636396547859", null, errorTarget);

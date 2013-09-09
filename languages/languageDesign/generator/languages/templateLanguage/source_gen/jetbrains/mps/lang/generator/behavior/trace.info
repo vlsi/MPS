@@ -38,15 +38,15 @@
   <unitInfo fileName="MappingScriptReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
   <unitInfo fileName="MappingScript_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MappingScript_BehaviorDescriptor" />
   <unitInfo fileName="MappingScript_CodeBlock_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_BehaviorDescriptor" />
-  <unitInfo fileName="NodeMacro_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_BehaviorDescriptor" />
+  <unitInfo fileName="NodeMacro_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_BehaviorDescriptor" />
   <unitInfo fileName="PatternReduction_MappingRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyMacro_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyMacro_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
   <unitInfo fileName="PropertyMacro_GetPropertyValue_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_BehaviorDescriptor" />
   <unitInfo fileName="ReductionRule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReductionRule_BehaviorDescriptor" />
   <unitInfo fileName="Reduction_MappingRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Reduction_MappingRule_BehaviorDescriptor" />
-  <unitInfo fileName="ReferenceMacro_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_BehaviorDescriptor" />
+  <unitInfo fileName="ReferenceMacro_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_BehaviorDescriptor" />
   <unitInfo fileName="ReferenceMacro_GetReferent_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_BehaviorDescriptor" />
-  <unitInfo fileName="RootTemplateAnnotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
+  <unitInfo fileName="RootTemplateAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="Root_MappingRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Root_MappingRule_BehaviorDescriptor" />
   <unitInfo fileName="RuleConsequence_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.RuleConsequence_BehaviorDescriptor" />
   <unitInfo fileName="SourceSubstituteMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_BehaviorDescriptor" />
@@ -63,7 +63,7 @@
   <unitInfo fileName="TemplateCallMacro_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" />
   <unitInfo fileName="TemplateDeclarationReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" />
   <unitInfo fileName="TemplateDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="TemplateFragment_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
+  <unitInfo fileName="TemplateFragment_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
   <unitInfo fileName="TemplateFragment_ContextNodeQuery_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" />
   <unitInfo fileName="TemplateFunctionParameter_mainContextNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_BehaviorDescriptor" />
   <unitInfo fileName="TemplateFunctionParameter_outputNode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_outputNode_BehaviorDescriptor" />
@@ -441,139 +441,117 @@
     <unitInfo nodeId="1213877284681" fileName="MapSrcListMacro_Behavior.java" startLine="13" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877290798">
-    <nodeInfo nodeId="1213877290802" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="91" endLine="23" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877290810" fileName="NodeMacro_Behavior.java" startLine="24" startPosition="32" endLine="25" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290819" fileName="NodeMacro_Behavior.java" startLine="26" startPosition="12" endLine="27" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290826" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8807286715961509953" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="78" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8807286715961529197" fileName="NodeMacro_Behavior.java" startLine="36" startPosition="48" endLine="37" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8807286715961529212" fileName="NodeMacro_Behavior.java" startLine="39" startPosition="35" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8807286715961529190" fileName="NodeMacro_Behavior.java" startLine="40" startPosition="23" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8807286715961529234" fileName="NodeMacro_Behavior.java" startLine="43" startPosition="20" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8807286715961529246" fileName="NodeMacro_Behavior.java" startLine="45" startPosition="14" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8807286715961529222" fileName="NodeMacro_Behavior.java" startLine="47" startPosition="7" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8807286715961529124" fileName="NodeMacro_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290839" fileName="NodeMacro_Behavior.java" startLine="54" startPosition="30" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290844" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877290863" fileName="NodeMacro_Behavior.java" startLine="60" startPosition="47" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1213877290864" fileName="NodeMacro_Behavior.java" startLine="62" startPosition="9" endLine="63" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877290875" fileName="NodeMacro_Behavior.java" startLine="66" startPosition="25" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290880" fileName="NodeMacro_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290895" fileName="NodeMacro_Behavior.java" startLine="72" startPosition="90" endLine="73" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877290906" fileName="NodeMacro_Behavior.java" startLine="74" startPosition="111" endLine="75" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290917" fileName="NodeMacro_Behavior.java" startLine="77" startPosition="107" endLine="78" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290926" fileName="NodeMacro_Behavior.java" startLine="79" startPosition="5" endLine="80" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877290936" fileName="NodeMacro_Behavior.java" startLine="80" startPosition="253" endLine="81" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647208" fileName="NodeMacro_Behavior.java" startLine="84" startPosition="90" endLine="85" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703128" fileName="NodeMacro_Behavior.java" startLine="88" startPosition="92" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718538" fileName="NodeMacro_Behavior.java" startLine="92" startPosition="101" endLine="93" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914718553" fileName="NodeMacro_Behavior.java" startLine="93" startPosition="232" endLine="94" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718557" fileName="NodeMacro_Behavior.java" startLine="94" startPosition="164" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="99" startPosition="88" endLine="100" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="104" startPosition="121" endLine="105" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877290817" fileName="NodeMacro_Behavior.java" startLine="26" startPosition="10" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8807286715961529244" fileName="NodeMacro_Behavior.java" startLine="45" startPosition="12" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPreviousNodeMacro_1213877290823#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877290837" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="115" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290858" fileName="NodeMacro_Behavior.java" startLine="59" startPosition="111" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290873" fileName="NodeMacro_Behavior.java" startLine="65" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290904" fileName="NodeMacro_Behavior.java" startLine="73" startPosition="225" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290915" fileName="NodeMacro_Behavior.java" startLine="76" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_multiple_1262430001741497972#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="8807286715961529178" fileName="NodeMacro_Behavior.java" startLine="38" startPosition="130" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877290808" fileName="NodeMacro_Behavior.java" startLine="23" startPosition="95" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8807286715961529229" fileName="NodeMacro_Behavior.java" startLine="42" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877290856" fileName="NodeMacro_Behavior.java" startLine="58" startPosition="128" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="57" startPosition="24" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="72" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getInputNodeTypeFromEnvironment_1213877290892#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="37" startPosition="28" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEnclosingMacro_1213877290834#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1213877290942" fileName="NodeMacro_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="1213877290809" fileName="NodeMacro_Behavior.java" startLine="24" startPosition="32" endLine="25" endPosition="171" />
-    <scopeInfo nodeId="1213877290818" fileName="NodeMacro_Behavior.java" startLine="26" startPosition="12" endLine="27" endPosition="93" />
-    <scopeInfo nodeId="1213877290825" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="124" />
-    <scopeInfo nodeId="8807286715961529230" fileName="NodeMacro_Behavior.java" startLine="43" startPosition="20" endLine="44" endPosition="50" />
-    <scopeInfo nodeId="8807286715961529245" fileName="NodeMacro_Behavior.java" startLine="45" startPosition="14" endLine="46" endPosition="50" />
-    <scopeInfo nodeId="1213877290838" fileName="NodeMacro_Behavior.java" startLine="54" startPosition="30" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="1213877290862" fileName="NodeMacro_Behavior.java" startLine="60" startPosition="47" endLine="61" endPosition="16" />
-    <scopeInfo nodeId="1213877290874" fileName="NodeMacro_Behavior.java" startLine="66" startPosition="25" endLine="67" endPosition="20" />
-    <scopeInfo nodeId="1213877290905" fileName="NodeMacro_Behavior.java" startLine="74" startPosition="111" endLine="75" endPosition="161" />
-    <scopeInfo nodeId="1213877290916" fileName="NodeMacro_Behavior.java" startLine="77" startPosition="107" endLine="78" endPosition="157" />
-    <scopeInfo nodeId="1262430001741647206" fileName="NodeMacro_Behavior.java" startLine="84" startPosition="90" endLine="85" endPosition="23" />
-    <scopeInfo nodeId="1262430001741703127" fileName="NodeMacro_Behavior.java" startLine="88" startPosition="92" endLine="89" endPosition="16" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="99" startPosition="88" endLine="100" endPosition="164" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="104" startPosition="121" endLine="105" endPosition="294" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
+    <nodeInfo nodeId="1213877290802" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="91" endLine="19" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877290810" fileName="NodeMacro_Behavior.java" startLine="20" startPosition="32" endLine="21" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290819" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="12" endLine="23" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290826" fileName="NodeMacro_Behavior.java" startLine="27" startPosition="79" endLine="28" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8807286715961509953" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8807286715961529197" fileName="NodeMacro_Behavior.java" startLine="32" startPosition="48" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8807286715961529212" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="35" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8807286715961529190" fileName="NodeMacro_Behavior.java" startLine="36" startPosition="23" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8807286715961529234" fileName="NodeMacro_Behavior.java" startLine="39" startPosition="20" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8807286715961529246" fileName="NodeMacro_Behavior.java" startLine="41" startPosition="14" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8807286715961529222" fileName="NodeMacro_Behavior.java" startLine="43" startPosition="7" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8807286715961529124" fileName="NodeMacro_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290839" fileName="NodeMacro_Behavior.java" startLine="50" startPosition="30" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290844" fileName="NodeMacro_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877290863" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="47" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1213877290864" fileName="NodeMacro_Behavior.java" startLine="58" startPosition="9" endLine="59" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877290875" fileName="NodeMacro_Behavior.java" startLine="62" startPosition="25" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290880" fileName="NodeMacro_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290895" fileName="NodeMacro_Behavior.java" startLine="68" startPosition="90" endLine="69" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877290906" fileName="NodeMacro_Behavior.java" startLine="70" startPosition="111" endLine="71" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290917" fileName="NodeMacro_Behavior.java" startLine="73" startPosition="107" endLine="74" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290926" fileName="NodeMacro_Behavior.java" startLine="75" startPosition="5" endLine="76" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877290936" fileName="NodeMacro_Behavior.java" startLine="76" startPosition="210" endLine="77" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="81" startPosition="88" endLine="82" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="86" startPosition="121" endLine="87" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1213877290817" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="10" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8807286715961529244" fileName="NodeMacro_Behavior.java" startLine="41" startPosition="12" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPreviousNodeMacro_1213877290823#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877290837" fileName="NodeMacro_Behavior.java" startLine="49" startPosition="115" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290858" fileName="NodeMacro_Behavior.java" startLine="55" startPosition="111" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290873" fileName="NodeMacro_Behavior.java" startLine="61" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290904" fileName="NodeMacro_Behavior.java" startLine="69" startPosition="225" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290915" fileName="NodeMacro_Behavior.java" startLine="72" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8807286715961529178" fileName="NodeMacro_Behavior.java" startLine="34" startPosition="130" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877290808" fileName="NodeMacro_Behavior.java" startLine="19" startPosition="95" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8807286715961529229" fileName="NodeMacro_Behavior.java" startLine="38" startPosition="7" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290856" fileName="NodeMacro_Behavior.java" startLine="54" startPosition="128" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="24" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getInputNodeTypeFromEnvironment_1213877290892#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="33" startPosition="28" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="49" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getEnclosingMacro_1213877290834#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1213877290942" fileName="NodeMacro_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877290809" fileName="NodeMacro_Behavior.java" startLine="20" startPosition="32" endLine="21" endPosition="171" />
+    <scopeInfo nodeId="1213877290818" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="12" endLine="23" endPosition="93" />
+    <scopeInfo nodeId="1213877290825" fileName="NodeMacro_Behavior.java" startLine="27" startPosition="79" endLine="28" endPosition="124" />
+    <scopeInfo nodeId="8807286715961529230" fileName="NodeMacro_Behavior.java" startLine="39" startPosition="20" endLine="40" endPosition="50" />
+    <scopeInfo nodeId="8807286715961529245" fileName="NodeMacro_Behavior.java" startLine="41" startPosition="14" endLine="42" endPosition="50" />
+    <scopeInfo nodeId="1213877290838" fileName="NodeMacro_Behavior.java" startLine="50" startPosition="30" endLine="51" endPosition="18" />
+    <scopeInfo nodeId="1213877290862" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="47" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="1213877290874" fileName="NodeMacro_Behavior.java" startLine="62" startPosition="25" endLine="63" endPosition="20" />
+    <scopeInfo nodeId="1213877290905" fileName="NodeMacro_Behavior.java" startLine="70" startPosition="111" endLine="71" endPosition="161" />
+    <scopeInfo nodeId="1213877290916" fileName="NodeMacro_Behavior.java" startLine="73" startPosition="107" endLine="74" endPosition="157" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="81" startPosition="88" endLine="82" endPosition="164" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="86" startPosition="121" endLine="87" endPosition="294" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8807286715961529179" fileName="NodeMacro_Behavior.java" startLine="39" startPosition="35" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8807286715961529179" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="35" endLine="37" endPosition="17" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="1213877290798" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="88" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="1213877290798" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914718537" fileName="NodeMacro_Behavior.java" startLine="92" startPosition="101" endLine="95" endPosition="18">
-      <varInfo nodeId="3044950653914718539" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877290857" fileName="NodeMacro_Behavior.java" startLine="59" startPosition="111" endLine="63" endPosition="108" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="1213877290857" fileName="NodeMacro_Behavior.java" startLine="55" startPosition="111" endLine="59" endPosition="108" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="103" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1213877290798" varName="callerConceptFqName" />
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="92" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="1213877290798" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877290801" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="91" endLine="28" endPosition="5">
+    <scopeInfo nodeId="1213877290801" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="91" endLine="24" endPosition="5">
       <varInfo nodeId="1213877290803" varName="prevNodeMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290855" fileName="NodeMacro_Behavior.java" startLine="58" startPosition="128" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1213877290855" fileName="NodeMacro_Behavior.java" startLine="54" startPosition="128" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="57" startPosition="24" endLine="65" endPosition="5">
+    <scopeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="24" endLine="61" endPosition="5">
       <varInfo nodeId="1213877290853" varName="currentAttribute" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290894" fileName="NodeMacro_Behavior.java" startLine="72" startPosition="90" endLine="81" endPosition="168">
+    <scopeInfo nodeId="1213877290894" fileName="NodeMacro_Behavior.java" startLine="68" startPosition="90" endLine="77" endPosition="168">
       <varInfo nodeId="1213877290896" varName="ancestor" />
       <varInfo nodeId="1213877290927" varName="rootAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="8807286715961529134" fileName="NodeMacro_Behavior.java" startLine="38" startPosition="130" endLine="48" endPosition="22" />
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="72" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="8807286715961529134" fileName="NodeMacro_Behavior.java" startLine="34" startPosition="130" endLine="44" endPosition="22" />
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="68" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="37" startPosition="28" endLine="49" endPosition="5">
+    <scopeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="33" startPosition="28" endLine="45" endPosition="5">
       <varInfo nodeId="8807286715961529137" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="8807286715961509433" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="78" endLine="50" endPosition="30">
+    <scopeInfo nodeId="8807286715961509433" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="78" endLine="46" endPosition="30">
       <varInfo nodeId="8807286715961509954" varName="builder" />
       <varInfo nodeId="8807286715961529198" varName="newWord" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290836" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="115" endLine="69" endPosition="123">
+    <scopeInfo nodeId="1213877290836" fileName="NodeMacro_Behavior.java" startLine="49" startPosition="115" endLine="65" endPosition="123">
       <varInfo nodeId="1213877290845" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="49" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1213877290888" varName="currentMacro" />
       <varInfo nodeId="1213877290890" varName="currentNode" />
       <varInfo nodeId="1213877290798" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="18" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" />
+    <unitInfo nodeId="1213877290798" fileName="NodeMacro_Behavior.java" startLine="14" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.NodeMacro_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1213877354940">
     <nodeInfo nodeId="1213877354943" fileName="MappingConfiguration_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -586,9 +564,9 @@
     <nodeInfo nodeId="1213877354984" fileName="MappingConfiguration_Behavior.java" startLine="28" startPosition="134" endLine="29" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877354991" fileName="MappingConfiguration_Behavior.java" startLine="29" startPosition="135" endLine="30" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877354998" fileName="MappingConfiguration_Behavior.java" startLine="30" startPosition="130" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3166264919334429469" fileName="MappingConfiguration_Behavior.java" startLine="35" startPosition="212" endLine="36" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3166264919334429477" fileName="MappingConfiguration_Behavior.java" startLine="36" startPosition="139" endLine="37" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3166264919334429484" fileName="MappingConfiguration_Behavior.java" startLine="37" startPosition="318" endLine="38" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3166264919334429469" fileName="MappingConfiguration_Behavior.java" startLine="35" startPosition="169" endLine="36" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3166264919334429477" fileName="MappingConfiguration_Behavior.java" startLine="36" startPosition="139" endLine="37" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3166264919334429484" fileName="MappingConfiguration_Behavior.java" startLine="37" startPosition="275" endLine="38" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3166264919334429591" fileName="MappingConfiguration_Behavior.java" startLine="39" startPosition="119" endLine="40" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3166264919334429604" fileName="MappingConfiguration_Behavior.java" startLine="40" startPosition="152" endLine="41" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3166264919334432283" fileName="MappingConfiguration_Behavior.java" startLine="41" startPosition="223" endLine="42" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -626,7 +604,7 @@
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1213877354940" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3166264919334429432" fileName="MappingConfiguration_Behavior.java" startLine="35" startPosition="212" endLine="38" endPosition="145">
+    <scopeInfo nodeId="3166264919334429432" fileName="MappingConfiguration_Behavior.java" startLine="35" startPosition="169" endLine="38" endPosition="145">
       <varInfo nodeId="3166264919334429470" varName="ruleNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877354940" fileName="MappingConfiguration_Behavior.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
@@ -1179,28 +1157,12 @@
     <unitInfo nodeId="1262430001741520185" fileName="TemplateFragment_ContextNodeQuery_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741641656">
-    <nodeInfo nodeId="1262430001741641655" fileName="TemplateFragment_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914726555" fileName="TemplateFragment_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914726570" fileName="TemplateFragment_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914726574" fileName="TemplateFragment_Behavior.java" startLine="22" startPosition="164" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741641658" fileName="TemplateFragment_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741641653" fileName="TemplateFragment_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="30" />
-    <scopeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1262430001741641658" fileName="TemplateFragment_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1262430001741641656" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741641656" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914726554" fileName="TemplateFragment_Behavior.java" startLine="20" startPosition="101" endLine="23" endPosition="18">
-      <varInfo nodeId="3044950653914726556" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1262430001741641656" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_Behavior" />
+    <unitInfo nodeId="1262430001741641656" fileName="TemplateFragment_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741641667">
     <nodeInfo nodeId="1262430001741641665" fileName="IfMacro_Condition_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1386,28 +1348,12 @@
     <unitInfo nodeId="1262430001741703037" fileName="MappingScript_CodeBlock_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703474">
-    <nodeInfo nodeId="1262430001741703473" fileName="PropertyMacro_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719993" fileName="PropertyMacro_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914720008" fileName="PropertyMacro_Behavior.java" startLine="21" startPosition="236" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720012" fileName="PropertyMacro_Behavior.java" startLine="22" startPosition="164" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741703476" fileName="PropertyMacro_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703471" fileName="PropertyMacro_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="27" />
-    <scopeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1262430001741703476" fileName="PropertyMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1262430001741703474" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741703474" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914719992" fileName="PropertyMacro_Behavior.java" startLine="20" startPosition="101" endLine="23" endPosition="18">
-      <varInfo nodeId="3044950653914719994" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1262430001741703474" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_Behavior" />
+    <unitInfo nodeId="1262430001741703474" fileName="PropertyMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741703872">
     <nodeInfo nodeId="1262430001741703870" fileName="DropRootRule_Condition_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1488,28 +1434,12 @@
     <unitInfo nodeId="1262430001741704930" fileName="SourceSubstituteMacro_SourceNodesQuery_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741717313">
-    <nodeInfo nodeId="1262430001741717312" fileName="RootTemplateAnnotation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914717914" fileName="RootTemplateAnnotation_Behavior.java" startLine="20" startPosition="101" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914717929" fileName="RootTemplateAnnotation_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717933" fileName="RootTemplateAnnotation_Behavior.java" startLine="22" startPosition="164" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741717315" fileName="RootTemplateAnnotation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741717310" fileName="RootTemplateAnnotation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="36" />
-    <scopeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1262430001741717315" fileName="RootTemplateAnnotation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1262430001741717313" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741717313" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914717913" fileName="RootTemplateAnnotation_Behavior.java" startLine="20" startPosition="101" endLine="23" endPosition="18">
-      <varInfo nodeId="3044950653914717915" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1262430001741717313" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_Behavior" />
+    <unitInfo nodeId="1262430001741717313" fileName="RootTemplateAnnotation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/1262430001741719795">
     <nodeInfo nodeId="1262430001741719793" fileName="MappingConfiguration_Condition_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2027,41 +1957,25 @@
     <unitInfo nodeId="5023471013036171786" fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/5580940619725340902">
-    <nodeInfo nodeId="3772633333666212097" fileName="ReferenceMacro_Behavior.java" startLine="20" startPosition="81" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3772633333666215845" fileName="ReferenceMacro_Behavior.java" startLine="23" startPosition="320" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3772633333666218382" fileName="ReferenceMacro_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741720118" fileName="ReferenceMacro_Behavior.java" startLine="29" startPosition="90" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719938" fileName="ReferenceMacro_Behavior.java" startLine="33" startPosition="101" endLine="34" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914719953" fileName="ReferenceMacro_Behavior.java" startLine="34" startPosition="232" endLine="35" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719957" fileName="ReferenceMacro_Behavior.java" startLine="35" startPosition="164" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3772633333666192901" fileName="ReferenceMacro_Behavior.java" startLine="19" startPosition="91" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3772633333666215843" fileName="ReferenceMacro_Behavior.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="19" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="5580940619725340904" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="3772633333666192904" fileName="ReferenceMacro_Behavior.java" startLine="20" startPosition="81" endLine="21" endPosition="19" />
-    <scopeInfo nodeId="3772633333666215844" fileName="ReferenceMacro_Behavior.java" startLine="23" startPosition="320" endLine="24" endPosition="19" />
-    <scopeInfo nodeId="1262430001741720116" fileName="ReferenceMacro_Behavior.java" startLine="29" startPosition="90" endLine="30" endPosition="28" />
-    <scopeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="3772633333666212097" fileName="ReferenceMacro_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3772633333666215845" fileName="ReferenceMacro_Behavior.java" startLine="20" startPosition="320" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3772633333666218382" fileName="ReferenceMacro_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3772633333666192901" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="91" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3772633333666215843" fileName="ReferenceMacro_Behavior.java" startLine="19" startPosition="5" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="5580940619725340904" fileName="ReferenceMacro_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3772633333666192904" fileName="ReferenceMacro_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="19" />
+    <scopeInfo nodeId="3772633333666215844" fileName="ReferenceMacro_Behavior.java" startLine="20" startPosition="320" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="5580940619725340902" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="5580940619725340902" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914719937" fileName="ReferenceMacro_Behavior.java" startLine="33" startPosition="101" endLine="36" endPosition="18">
-      <varInfo nodeId="3044950653914719939" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="5580940619725340902" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="5580940619725340907" fileName="ReferenceMacro_Behavior.java" startLine="19" startPosition="91" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="19" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="5580940619725340907" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="91" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5580940619725340908" varName="child" />
       <varInfo nodeId="5580940619725340902" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_Behavior" />
+    <unitInfo nodeId="5580940619725340902" fileName="ReferenceMacro_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/650531548511609558">
     <nodeInfo nodeId="650531548511609558" fileName="IGeneratorParameter_Behavior.java" startLine="15" startPosition="76" endLine="16" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

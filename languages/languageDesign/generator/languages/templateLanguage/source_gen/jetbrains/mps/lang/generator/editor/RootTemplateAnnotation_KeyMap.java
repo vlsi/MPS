@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -67,11 +66,11 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
       if (language == BootstrapLanguages.generatorLanguage()) {
         return false;
       }
-      return AttributeOperations.getAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null;
+      return AttributeOperations.getAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) == null;
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+      SNodeFactoryOperations.setNewAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
     }
 
     public String getKeyStroke() {

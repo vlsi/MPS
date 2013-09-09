@@ -20,6 +20,7 @@ import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodeOperations;
@@ -102,8 +103,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     if (SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
     }
-    //if ((SLinkOperations.getTarget(myNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) != null)) {
-    if (AttributeOperations.getNodeAttribute(myNode, "deprecatedNode") != null) {
+    if (NodeAttributesUtil.isDeprecatedNode(myNode)) {
       addFontAttribute(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
     }
 

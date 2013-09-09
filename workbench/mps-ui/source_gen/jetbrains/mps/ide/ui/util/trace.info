@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:92932ea9-7c1a-42ec-ba50-b485e2406f2b(jetbrains.mps.ide.ui.util)/4744614252206716878">
+    <nodeInfo nodeId="4744614252206717045" fileName="NodeAttributesUtil.java" startLine="11" startPosition="54" endLine="12" endPosition="357" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4744614252206717004" fileName="NodeAttributesUtil.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isDeprecatedNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="4744614252206717007" fileName="NodeAttributesUtil.java" startLine="11" startPosition="54" endLine="12" endPosition="357" />
+    <scopeInfo nodeId="4744614252206717004" fileName="NodeAttributesUtil.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="4744614252206717018" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4744614252206716878" fileName="NodeAttributesUtil.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.ui.util.NodeAttributesUtil" />
+  </root>
+</debugInfo>
+
