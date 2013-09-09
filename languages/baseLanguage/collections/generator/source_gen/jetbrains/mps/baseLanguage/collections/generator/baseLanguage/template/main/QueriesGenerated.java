@@ -20,7 +20,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import java.util.List;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -28,8 +27,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
@@ -902,28 +899,28 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_8536718853244882881(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode clsf = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "containerDeclaration", false), "runtimeType", true), "classifier", false);
-    return (SNode) ListSequence.fromList(SNodeOperations.getChildren(clsf)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode chld) {
-        return SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    for (SNode chld : SNodeOperations.getChildren(clsf)) {
+      if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+        SNode cd = SNodeOperations.as(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        if (ListSequence.fromList(SLinkOperations.getTargets(cd, "parameter", true)).isEmpty()) {
+          return cd;
+        }
       }
-    }).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode cd) {
-        return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(cd, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty();
-      }
-    });
+    }
+    return null;
   }
 
   public static Object referenceMacro_GetReferent_6651873253983906828(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode clsf = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "containerDeclaration", false), "runtimeType", true), "classifier", false);
-    return (SNode) ListSequence.fromList(SNodeOperations.getChildren(clsf)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode chld) {
-        return SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    for (SNode chld : SNodeOperations.getChildren(clsf)) {
+      if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+        SNode cd = SNodeOperations.as(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        if (ListSequence.fromList(SLinkOperations.getTargets(cd, "parameter", true)).isEmpty()) {
+          return cd;
+        }
       }
-    }).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode cd) {
-        return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(cd, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty();
-      }
-    });
+    }
+    return null;
   }
 
   public static Object referenceMacro_GetReferent_8293956702610522830(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2737,20 +2734,18 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_6651873253983906966(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode res = (SNode) CopyUtil.copy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "containerDeclaration", false), "factory", true));
-    final List<SNode> tvDecls = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "containerDeclaration", false), "typeVariableDeclaration", true)).toListSequence();
+    List<SNode> tvDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "containerDeclaration", false), "typeVariableDeclaration", true);
     if (ListSequence.fromList(tvDecls).isNotEmpty()) {
-      final List<SNode> types = ListSequence.fromList(new LinkedList<SNode>());
+      ArrayList<SNode> types = new ArrayList<SNode>(2);
       if ((SLinkOperations.getTarget(_context.getNode(), "keyType", true) != null)) {
-        ListSequence.fromList(types).addElement(SLinkOperations.getTarget(_context.getNode(), "keyType", true));
+        types.add(SLinkOperations.getTarget(_context.getNode(), "keyType", true));
       }
       if ((SLinkOperations.getTarget(_context.getNode(), "valueType", true) != null)) {
-        ListSequence.fromList(types).addElement(SLinkOperations.getTarget(_context.getNode(), "valueType", true));
+        types.add(SLinkOperations.getTarget(_context.getNode(), "valueType", true));
       }
-      ListSequence.fromList(SNodeOperations.getDescendants(res, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).toListSequence().visitAll(new IVisitor<SNode>() {
-        public void visit(SNode tvr) {
-          SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(ListSequence.fromList(types).getElement(ListSequence.fromList(tvDecls).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))))));
-        }
-      });
+      for (SNode tvr : SNodeOperations.getDescendants(res, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
+        SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(types.get(ListSequence.fromList(tvDecls).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))))));
+      }
     }
     return res;
   }
