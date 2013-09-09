@@ -85,4 +85,8 @@ public class ArrayType_Behavior {
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_isReifiable_2817265908000464118", new Object[]{});
   }
+
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return "jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName);
+  }
 }

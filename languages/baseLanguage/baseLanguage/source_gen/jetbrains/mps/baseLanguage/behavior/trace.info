@@ -23,7 +23,7 @@
   <unitInfo fileName="ArrayCreator_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayCreator_BehaviorDescriptor" />
   <unitInfo fileName="ArrayLengthOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayLengthOperation_BehaviorDescriptor" />
   <unitInfo fileName="ArrayLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayLiteral_BehaviorDescriptor" />
-  <unitInfo fileName="ArrayType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayType_BehaviorDescriptor" />
+  <unitInfo fileName="ArrayType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayType_BehaviorDescriptor" />
   <unitInfo fileName="AsExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AsExpression_BehaviorDescriptor" />
   <unitInfo fileName="AssertStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssertStatement_BehaviorDescriptor" />
   <unitInfo fileName="AssignmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression_BehaviorDescriptor" />
@@ -5573,6 +5573,7 @@
     <nodeInfo nodeId="1213877352365" fileName="ArrayType_Behavior.java" startLine="77" startPosition="99" endLine="78" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8847328628797640187" fileName="ArrayType_Behavior.java" startLine="81" startPosition="81" endLine="82" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2817265908000610251" fileName="ArrayType_Behavior.java" startLine="85" startPosition="81" endLine="86" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5293313440025690709" fileName="ArrayType_Behavior.java" startLine="89" startPosition="104" endLine="90" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877352270" fileName="ArrayType_Behavior.java" startLine="19" startPosition="78" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getErasureSignature_1213877337313#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -5581,6 +5582,7 @@
     <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasPluralVariableSuffixes_1447667470349154499#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_jniSignature_8847328628797633411#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isReifiable_2817265908000464118#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeCoerced_6321644624958501287#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1447667470349157994" fileName="ArrayType_Behavior.java" startLine="57" startPosition="12" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213877352337" fileName="ArrayType_Behavior.java" startLine="72" startPosition="76" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getErasure_702942408396803226#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -5600,6 +5602,7 @@
     <scopeInfo nodeId="1447667470349154518" fileName="ArrayType_Behavior.java" startLine="66" startPosition="95" endLine="67" endPosition="16" />
     <scopeInfo nodeId="8847328628797640184" fileName="ArrayType_Behavior.java" startLine="81" startPosition="81" endLine="82" endPosition="184" />
     <scopeInfo nodeId="2817265908000610248" fileName="ArrayType_Behavior.java" startLine="85" startPosition="81" endLine="86" endPosition="177" />
+    <scopeInfo nodeId="5293313440025455647" fileName="ArrayType_Behavior.java" startLine="89" startPosition="104" endLine="90" endPosition="82" />
     <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1213877352267" varName="thisNode" />
     </scopeInfo>
@@ -5628,6 +5631,10 @@
       <varInfo nodeId="1213877352267" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1213877352267" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="5293313440025455648" varName="conceptFqName" />
       <varInfo nodeId="1213877352267" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877352269" fileName="ArrayType_Behavior.java" startLine="19" startPosition="78" endLine="23" endPosition="182" />
@@ -5661,7 +5668,7 @@
     <scopeInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="48" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1213877352267" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="15" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayType_Behavior" />
+    <unitInfo nodeId="1213877352267" fileName="ArrayType_Behavior.java" startLine="15" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877355772">
     <nodeInfo nodeId="8083692786967614827" fileName="ClassConcept_Behavior.java" startLine="48" startPosition="100" endLine="49" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
