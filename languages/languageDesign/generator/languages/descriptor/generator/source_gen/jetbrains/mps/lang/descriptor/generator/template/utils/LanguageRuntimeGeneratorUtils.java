@@ -21,19 +21,24 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class LanguageRuntimeGeneratorUtils {
-  public static boolean isAspectOfLanguage(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext, final SNode rootConcept) {
+  public static boolean isAspectOfLanguage(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext, final SNode... rootConcepts) {
     SModel aspectModel = getAspectModel(modelReference, aspect, genContext);
     if (aspectModel == null) {
       return false;
     }
     List<SNode> roots = SModelOperations.getRoots(((SModel) aspectModel), null);
-    return (rootConcept == null ?
+    return (rootConcepts.length == 0 ?
       ListSequence.fromList(roots).isNotEmpty() :
-      ListSequence.fromList(roots).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(it), NameUtil.nodeFQName(rootConcept));
+          for (SNode rootConcept : rootConcepts) {
+            if (SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(it), NameUtil.nodeFQName(rootConcept))) {
+              return true;
+            }
+          }
+          return false;
         }
-      }).isNotEmpty()
+      }) != null
     );
   }
 

@@ -52,7 +52,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_4547882846713899480(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_7533883740977705598(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
