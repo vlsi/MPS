@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.relations;
 
 import jetbrains.mps.newTypesystem.SubtypingUtil;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
@@ -38,6 +39,9 @@ public class SubTypingRelation extends AbstractRelation {
     EquationInfo info = null;
     if (!leftTypes.isEmpty()) {
       result = SubtypingUtil.createLeastCommonSupertype(new LinkedList<SNode>(leftTypes), state.getTypeCheckingContext());
+      if (LatticeUtil.isMeet(result)) {
+        result = TypesUtil.cleanupMeet(result);
+      }
       RelationBlock block = typesToBlocks.get(result);
       info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(leftTypes.iterator().next()).getEquationInfo();
     } else if (!rightTypes.isEmpty()) {

@@ -112,7 +112,32 @@ public class SModel implements SModelData {
     return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
       @Override
       public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
-        return (Iterator) myRoots.iterator();
+        return new Iterator<org.jetbrains.mps.openapi.model.SNode>() {
+          private final Iterator<SNode> myIterator = myRoots.iterator();
+
+          @Override
+          public boolean hasNext() {
+            return myIterator.hasNext();
+          }
+
+          @Override
+          public org.jetbrains.mps.openapi.model.SNode next() {
+            SNode res = myIterator.next();
+            if (res!=null){
+              res.nodeRead();
+
+              res.fireNodeReadAccess();
+              res.fireNodeUnclassifiedReadAccess();
+            }
+
+            return res;
+          }
+
+          @Override
+          public void remove() {
+            throw new UnsupportedOperationException("can't change model roots through roots iterator");
+          }
+        };
       }
     };
   }
@@ -172,6 +197,17 @@ public class SModel implements SModelData {
   @Override
   @Nullable
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    SNode res = getNode_(nodeId);
+    if (res!=null){
+      res.nodeRead();
+
+      res.fireNodeReadAccess();
+      res.fireNodeUnclassifiedReadAccess();
+    }
+    return res;
+  }
+
+  private SNode getNode_(org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 

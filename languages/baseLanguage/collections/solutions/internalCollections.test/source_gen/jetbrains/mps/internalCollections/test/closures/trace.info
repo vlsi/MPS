@@ -2177,6 +2177,7 @@
     <scopeInfo nodeId="1226309825974" fileName="B.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="1226309825972" fileName="B.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.B" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)/1301553664997611583" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)/1522217801069635840">
     <nodeInfo nodeId="1522217801069642376" fileName="ReduceFold_Test.java" startLine="17" startPosition="50" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3343985444902959905" fileName="ReduceFold_Test.java" startLine="20" startPosition="52" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
