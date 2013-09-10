@@ -20,8 +20,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="7lxlzcu93z80n0yskviv0xekkcgmv12" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="zxpgkonvyj6c68gccqxxip5xymvvd2" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1e8mqynz1i311i433bl2v88pktiwk4c" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-142wbmg1uqs2tdphevb8ixrdwx6p65o" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6bt5qo3u2fs70bysrs2vmh1e4jn4nhz" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-crprl0vbsvfyjzt08oxyk7ehlkg0j6h" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-cep7mh91y3nsb84sodf3mqfqh712xxp" />
   <dep model="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" hash="7xubsm0rskuiiyrl0v0m85y2ib6raza" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="3vvof5ynmt6tr5ir7uqwpcbghida239" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="c6kgvjfbj0hos2uqt9fl4n8ry8kzg2u" />
@@ -195,6 +195,7 @@
     <file name="ListCreatorWithInit_BehaviorDescriptor.java" />
     <file name="ListElementAccessExpression_BehaviorDescriptor.java" />
     <file name="ListType_BehaviorDescriptor.java" />
+    <file name="MapAsSequenceVarRef_BehaviorDescriptor.java" />
     <file name="MapClearOperation_BehaviorDescriptor.java" />
     <file name="MapElement_BehaviorDescriptor.java" />
     <file name="MapEntry_BehaviorDescriptor.java" />
