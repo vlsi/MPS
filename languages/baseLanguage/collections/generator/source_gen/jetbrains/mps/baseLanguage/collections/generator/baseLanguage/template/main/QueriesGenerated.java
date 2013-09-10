@@ -2597,7 +2597,8 @@ public class QueriesGenerated {
       if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varDecl, "type", true), "jetbrains.mps.baseLanguage.collections.structure.MapType"))) {
         continue;
       }
-      for (SNode varRef : SNodeOperations.getDescendants(SNodeOperations.getParent(varDecl), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+      SNode varDeclScope = SNodeOperations.getAncestor(varDecl, "jetbrains.mps.lang.core.structure.IContainer", false, false);
+      for (SNode varRef : SNodeOperations.getDescendants(varDeclScope, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
         if (SLinkOperations.getTarget(varRef, "variableDeclaration", false) != varDecl) {
           continue;
         }
@@ -2611,7 +2612,6 @@ public class QueriesGenerated {
           _context.showErrorMessage(varRef, "Error while processing node");
           throw ex;
         }
-
       }
     }
   }
