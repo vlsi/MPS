@@ -87,6 +87,6 @@ public class ArrayType_Behavior {
   }
 
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
-    return "jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName);
+    return "jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.structure.ClassifierType".equals(conceptFqName);
   }
 }
