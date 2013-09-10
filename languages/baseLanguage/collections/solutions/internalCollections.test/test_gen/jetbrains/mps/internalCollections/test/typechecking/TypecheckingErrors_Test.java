@@ -17,12 +17,27 @@ public class TypecheckingErrors_Test extends BaseTransformationTest4 {
     this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypecheckingErrors_Test$TestBody", "test_mps18720", true);
   }
 
+  @Test
+  public void test_varar_raw() throws Throwable {
+    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
+    this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypecheckingErrors_Test$TestBody", "test_varar_raw", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_mps18720() throws Exception {
       this.addNodeById("1301553664999174765");
       this.addNodeById("3441689827373214227");
+      this.addNodeById("1089557578627272135");
       SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1301553664997476018"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("3441689827373215907"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+    }
+
+    public void test_varar_raw() throws Exception {
+      this.addNodeById("1301553664999174765");
+      this.addNodeById("3441689827373214227");
+      this.addNodeById("1089557578627272135");
+      SubtreeChecker.checkNodeForErrors(SNodeOperations.cast(this.getNodeById("1089557578627275112"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     }
   }
 }
