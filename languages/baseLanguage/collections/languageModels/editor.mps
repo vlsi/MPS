@@ -3470,6 +3470,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6481445890964412911" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="impl" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp2q.6481445890964205296" resolveInfo="MapAsSequenceVarRef" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8885775147219593985" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8885775147219593991" nodeInfo="nn">

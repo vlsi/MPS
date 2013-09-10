@@ -2593,21 +2593,25 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_6481445890966574680(final IOperationContext operationContext, final MappingScriptContext _context) {
-    // FIXME it's wise to walk VariableDeclaration of MapType instead as there are few of them   
-    // present code is merely a copy from VariableReference rule's condition 
-    for (SNode varRef : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false)), "jetbrains.mps.baseLanguage.collections.structure.MapType"))) {
+    for (SNode varDecl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varDecl, "type", true), "jetbrains.mps.baseLanguage.collections.structure.MapType"))) {
         continue;
       }
-      try {
-        SNode nt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(varRef), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{varRef});
-        if ((TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null)) {
-          SNode nr = SNodeOperations.replaceWithNewChild(varRef, "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef");
-          SLinkOperations.setTarget(nr, "original", varRef, true);
+      for (SNode varRef : SNodeOperations.getDescendants(SNodeOperations.getParent(varDecl), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+        if (SLinkOperations.getTarget(varRef, "variableDeclaration", false) != varDecl) {
+          continue;
         }
-      } catch (RuntimeException ex) {
-        _context.showErrorMessage(varRef, "Error while processing node");
-        throw ex;
+        try {
+          SNode nt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(varRef), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{varRef});
+          if ((TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(nt, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null)) {
+            SNode nr = SNodeOperations.replaceWithNewChild(varRef, "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef");
+            SLinkOperations.setTarget(nr, "original", varRef, true);
+          }
+        } catch (RuntimeException ex) {
+          _context.showErrorMessage(varRef, "Error while processing node");
+          throw ex;
+        }
+
       }
     }
   }
