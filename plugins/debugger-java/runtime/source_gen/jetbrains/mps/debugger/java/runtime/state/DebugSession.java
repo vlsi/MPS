@@ -8,9 +8,9 @@ import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
@@ -90,11 +90,14 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     setState(state, state.paused(suspendContext), false);
   }
 
-  public JavaUiStateImpl refresh() {
-    JavaUiStateImpl state = getUiState();
-    JavaUiStateImpl newState = state.paused(state.getContext());
-    setState(state, newState);
-    return newState;
+  public void refresh() {
+    myEventsProcessor.schedule(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        JavaUiStateImpl state = getUiState();
+        JavaUiStateImpl newState = state.paused(state.getContext());
+        setState(state, newState);
+      }
+    });
   }
 
   private void resume(Context suspendContext) {
@@ -186,7 +189,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
       myExecutionState = AbstractDebugSession.ExecutionState.Stopped;
       setState(getUiState(), new RunningJavaUiState(DebugSession.this), false);
       fireSessionResumed(DebugSession.this);
-      //  TODO hack 
+      // TODO hack 
     }
   }
 }

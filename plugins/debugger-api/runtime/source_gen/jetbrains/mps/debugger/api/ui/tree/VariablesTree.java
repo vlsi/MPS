@@ -206,6 +206,8 @@ public class VariablesTree extends MPSTree implements DataProvider {
           return ((WatchableNode) selectedNode).getValue();
         }
       }
+    } else if (dataId.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
+      return findSelectedNode();
     }
     return null;
   }

@@ -75,8 +75,9 @@
     <nodeInfo nodeId="4474271214083118568" fileName="VariablesTree.java" startLine="199" startPosition="33" endLine="200" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418270182880555115" fileName="VariablesTree.java" startLine="202" startPosition="61" endLine="203" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="418270182880555157" fileName="VariablesTree.java" startLine="205" startPosition="52" endLine="206" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083118572" fileName="VariablesTree.java" startLine="209" startPosition="5" endLine="210" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083118580" fileName="VariablesTree.java" startLine="213" startPosition="31" endLine="214" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5017680403457451445" fileName="VariablesTree.java" startLine="209" startPosition="70" endLine="210" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083118572" fileName="VariablesTree.java" startLine="211" startPosition="5" endLine="212" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083118580" fileName="VariablesTree.java" startLine="215" startPosition="31" endLine="216" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083118052" fileName="VariablesTree.java" startLine="51" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUiState" />
     <nodeInfo nodeId="4474271214083118587" fileName="VariablesTree.java" startLine="65" startPosition="64" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3443113933323469408" fileName="VariablesTree.java" startLine="76" startPosition="66" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -89,7 +90,7 @@
     <nodeInfo nodeId="4474271214083118531" fileName="VariablesTree.java" startLine="187" startPosition="63" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083118563" fileName="VariablesTree.java" startLine="198" startPosition="62" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="418270182880555148" fileName="VariablesTree.java" startLine="204" startPosition="33" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083118576" fileName="VariablesTree.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
+    <nodeInfo nodeId="4474271214083118576" fileName="VariablesTree.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
     <nodeInfo nodeId="4474271214083118120" fileName="VariablesTree.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUiState#(Ljetbrains/mps/debug/api/AbstractUiState;)V" />
     <nodeInfo nodeId="4474271214083118307" fileName="VariablesTree.java" startLine="106" startPosition="90" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083118249" fileName="VariablesTree.java" startLine="113" startPosition="112" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -108,10 +109,10 @@
     <nodeInfo nodeId="4474271214083118426" fileName="VariablesTree.java" startLine="148" startPosition="23" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8843354299459826435" fileName="VariablesTree.java" startLine="168" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyTree#()Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
     <nodeInfo nodeId="4474271214083118510" fileName="VariablesTree.java" startLine="181" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findSelectedNode#()Ljetbrains/mps/debugger/api/ui/tree/AbstractWatchableNode;" />
-    <nodeInfo nodeId="4474271214083118551" fileName="VariablesTree.java" startLine="196" startPosition="48" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083118551" fileName="VariablesTree.java" startLine="196" startPosition="48" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083118066" fileName="VariablesTree.java" startLine="56" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariablesTree#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debug/api/AbstractUiState;)V" />
-    <nodeInfo nodeId="4474271214083118544" fileName="VariablesTree.java" startLine="194" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
     <nodeInfo nodeId="4474271214083118233" fileName="VariablesTree.java" startLine="104" startPosition="39" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083118544" fileName="VariablesTree.java" startLine="194" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
     <nodeInfo nodeId="4474271214083118216" fileName="VariablesTree.java" startLine="101" startPosition="169" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4474271214083118346" fileName="VariablesTree.java" startLine="127" startPosition="0" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4474271214083118135" fileName="VariablesTree.java" startLine="88" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
@@ -129,7 +130,8 @@
     <scopeInfo nodeId="4474271214083118535" fileName="VariablesTree.java" startLine="188" startPosition="56" endLine="189" endPosition="52" />
     <scopeInfo nodeId="4474271214083118567" fileName="VariablesTree.java" startLine="199" startPosition="33" endLine="200" endPosition="38" />
     <scopeInfo nodeId="418270182880555149" fileName="VariablesTree.java" startLine="205" startPosition="52" endLine="206" endPosition="59" />
-    <scopeInfo nodeId="4474271214083118579" fileName="VariablesTree.java" startLine="213" startPosition="31" endLine="214" endPosition="21" />
+    <scopeInfo nodeId="5017680403457380332" fileName="VariablesTree.java" startLine="209" startPosition="70" endLine="210" endPosition="32" />
+    <scopeInfo nodeId="4474271214083118579" fileName="VariablesTree.java" startLine="215" startPosition="31" endLine="216" endPosition="21" />
     <scopeInfo nodeId="4474271214083118126" fileName="VariablesTree.java" startLine="83" startPosition="60" endLine="85" endPosition="24" />
     <scopeInfo nodeId="4474271214083118311" fileName="VariablesTree.java" startLine="107" startPosition="31" endLine="109" endPosition="74" />
     <scopeInfo nodeId="4474271214083118253" fileName="VariablesTree.java" startLine="114" startPosition="36" endLine="116" endPosition="84" />
@@ -141,7 +143,7 @@
       <varInfo nodeId="4474271214083118496" varName="watchable" />
     </scopeInfo>
     <scopeInfo nodeId="418270182880555122" fileName="VariablesTree.java" startLine="204" startPosition="33" endLine="207" endPosition="9" />
-    <scopeInfo nodeId="4474271214083118576" fileName="VariablesTree.java" startLine="213" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="4474271214083118576" fileName="VariablesTree.java" startLine="215" startPosition="0" endLine="218" endPosition="0" />
     <scopeInfo nodeId="4474271214083118582" fileName="VariablesTree.java" startLine="64" startPosition="50" endLine="68" endPosition="9">
       <varInfo nodeId="4474271214083118584" varName="selectedNode" />
     </scopeInfo>
@@ -192,13 +194,13 @@
     </scopeInfo>
     <scopeInfo nodeId="8843354299459826435" fileName="VariablesTree.java" startLine="168" startPosition="0" endLine="180" endPosition="0" />
     <scopeInfo nodeId="4474271214083118510" fileName="VariablesTree.java" startLine="181" startPosition="0" endLine="193" endPosition="0" />
-    <scopeInfo nodeId="4474271214083118550" fileName="VariablesTree.java" startLine="196" startPosition="48" endLine="210" endPosition="16" />
     <scopeInfo nodeId="4474271214083118073" fileName="VariablesTree.java" startLine="56" startPosition="64" endLine="72" endPosition="30" />
+    <scopeInfo nodeId="4474271214083118550" fileName="VariablesTree.java" startLine="196" startPosition="48" endLine="212" endPosition="16" />
     <scopeInfo nodeId="4474271214083118066" fileName="VariablesTree.java" startLine="56" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="4474271214083118069" varName="project" />
       <varInfo nodeId="4474271214083118071" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083118544" fileName="VariablesTree.java" startLine="194" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="4474271214083118544" fileName="VariablesTree.java" startLine="194" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="4474271214083118547" varName="dataId" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083118220" fileName="VariablesTree.java" startLine="102" startPosition="45" endLine="124" endPosition="7">
@@ -227,7 +229,7 @@
     <unitInfo nodeId="4474271214083118417" fileName="VariablesTree.java" startLine="141" startPosition="37" endLine="146" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$2" />
     <unitInfo nodeId="8843354299459826448" fileName="VariablesTree.java" startLine="170" startPosition="35" endLine="175" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$3" />
     <unitInfo nodeId="4474271214083118108" fileName="VariablesTree.java" startLine="62" startPosition="57" endLine="70" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$1" />
-    <unitInfo nodeId="4474271214083118048" fileName="VariablesTree.java" startLine="48" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
+    <unitInfo nodeId="4474271214083118048" fileName="VariablesTree.java" startLine="48" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
   </root>
   <root nodeRef="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)/4474271214083118844">
     <nodeInfo nodeId="4474271214083118846" fileName="AbstractWatchableNode.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
@@ -304,36 +306,38 @@
     <nodeInfo nodeId="4474271214083120207" fileName="WatchableNode.java" startLine="63" startPosition="28" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8234781197225484419" fileName="WatchableNode.java" startLine="67" startPosition="34" endLine="68" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083120215" fileName="WatchableNode.java" startLine="72" startPosition="27" endLine="73" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3243898559541551901" fileName="WatchableNode.java" startLine="76" startPosition="30" endLine="77" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3243898559541564547" fileName="WatchableNode.java" startLine="81" startPosition="93" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083120238" fileName="WatchableNode.java" startLine="83" startPosition="15" endLine="84" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083120240" fileName="WatchableNode.java" startLine="84" startPosition="35" endLine="85" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8234781197225484535" fileName="WatchableNode.java" startLine="85" startPosition="35" endLine="86" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5971056654871929650" fileName="WatchableNode.java" startLine="73" startPosition="24" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3243898559541551901" fileName="WatchableNode.java" startLine="77" startPosition="30" endLine="78" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5971056654871930178" fileName="WatchableNode.java" startLine="81" startPosition="31" endLine="82" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3243898559541564547" fileName="WatchableNode.java" startLine="83" startPosition="93" endLine="84" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083120238" fileName="WatchableNode.java" startLine="85" startPosition="15" endLine="86" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083120240" fileName="WatchableNode.java" startLine="86" startPosition="35" endLine="87" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8234781197225484535" fileName="WatchableNode.java" startLine="87" startPosition="35" endLine="88" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083120088" fileName="WatchableNode.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWatchable" />
     <nodeInfo nodeId="4474271214083120092" fileName="WatchableNode.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchableNode#(Ljetbrains/mps/debug/api/programState/IWatchable;Ljetbrains/mps/debug/api/AbstractUiState;)V" />
     <nodeInfo nodeId="4474271214083120144" fileName="WatchableNode.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeIcon#()Ljavax/swing/Icon;" />
     <nodeInfo nodeId="654837219997967636" fileName="WatchableNode.java" startLine="50" startPosition="42" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083120203" fileName="WatchableNode.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
     <nodeInfo nodeId="8234781197225484532" fileName="WatchableNode.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChanged#()V" />
-    <nodeInfo nodeId="3243898559541561277" fileName="WatchableNode.java" startLine="80" startPosition="31" endLine="83" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3243898559541561277" fileName="WatchableNode.java" startLine="82" startPosition="34" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4474271214083120138" fileName="WatchableNode.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInitialized#()Z" />
     <nodeInfo nodeId="4474271214083120126" fileName="WatchableNode.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#()V" />
     <nodeInfo nodeId="4474271214083120185" fileName="WatchableNode.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLeaf#()Z" />
     <nodeInfo nodeId="4474271214083120102" fileName="WatchableNode.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchableNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debug/api/programState/IWatchable;Ljetbrains/mps/debug/api/AbstractUiState;)V" />
     <nodeInfo nodeId="4474271214083120152" fileName="WatchableNode.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateNodeId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="654837219998959148" fileName="WatchableNode.java" startLine="79" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="654837219998878118" fileName="WatchableNode.java" startLine="77" startPosition="49" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654837219998867140" fileName="WatchableNode.java" startLine="76" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="654837219998861643" fileName="WatchableNode.java" startLine="74" startPosition="22" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083120217" fileName="WatchableNode.java" startLine="73" startPosition="24" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083120211" fileName="WatchableNode.java" startLine="71" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
+    <nodeInfo nodeId="654837219998959148" fileName="WatchableNode.java" startLine="80" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="654837219998878118" fileName="WatchableNode.java" startLine="78" startPosition="49" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="654837219998867140" fileName="WatchableNode.java" startLine="77" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="654837219998861643" fileName="WatchableNode.java" startLine="75" startPosition="22" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083120217" fileName="WatchableNode.java" startLine="74" startPosition="18" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083120211" fileName="WatchableNode.java" startLine="71" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#()V" />
     <scopeInfo nodeId="4474271214083120098" fileName="WatchableNode.java" startLine="22" startPosition="78" endLine="23" endPosition="33" />
     <scopeInfo nodeId="4474271214083120141" fileName="WatchableNode.java" startLine="41" startPosition="34" endLine="42" endPosition="25" />
     <scopeInfo nodeId="4474271214083120147" fileName="WatchableNode.java" startLine="45" startPosition="32" endLine="46" endPosition="45" />
     <scopeInfo nodeId="654837219997967640" fileName="WatchableNode.java" startLine="51" startPosition="24" endLine="52" endPosition="47" />
     <scopeInfo nodeId="4474271214083120206" fileName="WatchableNode.java" startLine="63" startPosition="28" endLine="64" endPosition="34" />
     <scopeInfo nodeId="8234781197225484418" fileName="WatchableNode.java" startLine="67" startPosition="34" endLine="68" endPosition="73" />
-    <scopeInfo nodeId="3243898559541561280" fileName="WatchableNode.java" startLine="81" startPosition="93" endLine="82" endPosition="59" />
+    <scopeInfo nodeId="3243898559541561280" fileName="WatchableNode.java" startLine="83" startPosition="93" endLine="84" endPosition="59" />
     <scopeInfo nodeId="4474271214083120129" fileName="WatchableNode.java" startLine="35" startPosition="29" endLine="37" endPosition="26" />
     <scopeInfo nodeId="4474271214083120188" fileName="WatchableNode.java" startLine="58" startPosition="27" endLine="60" endPosition="51">
       <varInfo nodeId="4474271214083120190" varName="value" />
@@ -345,7 +349,7 @@
     <scopeInfo nodeId="4474271214083120144" fileName="WatchableNode.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="4474271214083120203" fileName="WatchableNode.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="8234781197225484532" fileName="WatchableNode.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="3243898559541561277" fileName="WatchableNode.java" startLine="80" startPosition="31" endLine="83" endPosition="15">
+    <scopeInfo nodeId="3243898559541561277" fileName="WatchableNode.java" startLine="82" startPosition="34" endLine="85" endPosition="15">
       <varInfo nodeId="3243898559541561279" varName="watchable" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083120138" fileName="WatchableNode.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
@@ -355,22 +359,22 @@
       <varInfo nodeId="654837219997967647" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083120185" fileName="WatchableNode.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="654837219998959152" fileName="WatchableNode.java" startLine="80" startPosition="31" endLine="86" endPosition="28" />
     <scopeInfo nodeId="4474271214083120102" fileName="WatchableNode.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="4474271214083120105" varName="context" />
       <varInfo nodeId="654837219998855390" varName="state" />
       <varInfo nodeId="4474271214083120107" varName="watchable" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083120152" fileName="WatchableNode.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="654837219998959148" fileName="WatchableNode.java" startLine="79" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="654837219998867141" fileName="WatchableNode.java" startLine="76" startPosition="30" endLine="88" endPosition="13" />
-    <scopeInfo nodeId="654837219998867140" fileName="WatchableNode.java" startLine="76" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="4474271214083120220" fileName="WatchableNode.java" startLine="74" startPosition="22" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="4474271214083120214" fileName="WatchableNode.java" startLine="72" startPosition="27" endLine="91" endPosition="5" />
-    <scopeInfo nodeId="4474271214083120211" fileName="WatchableNode.java" startLine="71" startPosition="0" endLine="93" endPosition="0" />
-    <unitInfo nodeId="654837219998959146" fileName="WatchableNode.java" startLine="78" startPosition="62" endLine="88" endPosition="11" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode$2" />
-    <unitInfo nodeId="654837219998867140" fileName="WatchableNode.java" startLine="75" startPosition="35" endLine="90" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode$1" />
-    <unitInfo nodeId="4474271214083120082" fileName="WatchableNode.java" startLine="16" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
+    <scopeInfo nodeId="654837219998959152" fileName="WatchableNode.java" startLine="81" startPosition="31" endLine="88" endPosition="28" />
+    <scopeInfo nodeId="654837219998959148" fileName="WatchableNode.java" startLine="80" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="654837219998867141" fileName="WatchableNode.java" startLine="77" startPosition="30" endLine="90" endPosition="13" />
+    <scopeInfo nodeId="654837219998867140" fileName="WatchableNode.java" startLine="77" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="4474271214083120220" fileName="WatchableNode.java" startLine="75" startPosition="22" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="4474271214083120214" fileName="WatchableNode.java" startLine="72" startPosition="27" endLine="93" endPosition="5" />
+    <scopeInfo nodeId="4474271214083120211" fileName="WatchableNode.java" startLine="71" startPosition="0" endLine="95" endPosition="0" />
+    <unitInfo nodeId="654837219998959146" fileName="WatchableNode.java" startLine="79" startPosition="62" endLine="90" endPosition="11" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode$2" />
+    <unitInfo nodeId="654837219998867140" fileName="WatchableNode.java" startLine="76" startPosition="35" endLine="92" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode$1" />
+    <unitInfo nodeId="4474271214083120082" fileName="WatchableNode.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
   </root>
   <root nodeRef="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)/4474271214083122145">
     <nodeInfo nodeId="4474271214083122155" fileName="NodeTreeNode.java" startLine="11" startPosition="44" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />

@@ -8,7 +8,15 @@ import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.debug.api.programState.IValue;
+import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import org.apache.log4j.Priority;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -30,7 +38,11 @@ public class ViewWithFactory_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(ViewWithFactory_Action.this.factory.toString());
+      {
+        event.getPresentation().setText(ViewWithFactory_Action.this.factory.toString());
+        IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+        event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ViewWithFactory", t);
@@ -43,11 +55,22 @@ public class ViewWithFactory_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+      if (value == null || !(value instanceof JavaValue)) {
+        return;
+      }
+      CustomViewersManager.getInstance().setValueWrapper((JavaValue) value, ViewWithFactory_Action.this.factory);
+      DebugSession debugSession = (DebugSession) DebugActionsUtil.getDebugSession(event);
+      debugSession.refresh();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ViewWithFactory", t);

@@ -71,6 +71,7 @@ public class WatchableNode extends AbstractWatchableNode {
   @Override
   protected void doInit() {
     removeAllChildren();
+    nodeChanged();
     if (!(isLeaf())) {
       myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -78,6 +79,7 @@ public class WatchableNode extends AbstractWatchableNode {
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             @Override
             public void run() {
+              removeAllChildren();
               for (IWatchable watchable : ListSequence.fromList(getValue().getSubvalues())) {
                 add(new WatchableNode(watchable, myState));
               }
