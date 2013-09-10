@@ -103,12 +103,12 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   @Override
-  public void languagesLoaded(Iterable<LanguageRuntime> languages) {
+  public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
     myRulesManager.loadLanguages(languages);
   }
 
   @Override
-  public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+  public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
     myRulesManager.unloadLanguages(languages);
   }
 

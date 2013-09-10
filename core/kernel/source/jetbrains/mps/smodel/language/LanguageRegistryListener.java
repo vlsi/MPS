@@ -23,10 +23,10 @@ public interface LanguageRegistryListener {
   /*
    *  invoked in [write action].
    */
-  void languagesLoaded(Iterable<LanguageRuntime> languages);
+  void afterLanguagesLoaded(Iterable<LanguageRuntime> languages);
 
   /*
    *  invoked in [write action].
    */
-  void languagesUnloaded(Iterable<LanguageRuntime> languages);
+  void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages);
 }

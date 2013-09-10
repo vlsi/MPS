@@ -136,6 +136,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
             public void navigate(boolean requestFocus) {
               MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(perRootModel, ProjectHelper.toMPSProject(myProject), true);
               final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
+              configurable.setParentForCallBack(dialog);
               SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {

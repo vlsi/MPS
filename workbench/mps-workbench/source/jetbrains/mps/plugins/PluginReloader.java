@@ -163,14 +163,14 @@ public class PluginReloader implements ApplicationComponent {
     private boolean reloadScheduled = false;
 
     @Override
-    public void onClassesUnload(Set<SModule> unloadedModules) {
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       if (hasSignificantModule(unloadedModules)) {
         schedulePluginsReload();
       }
     }
 
     @Override
-    public void onClassesLoad(Set<SModule> loadedModules) {
+    public void afterClassesLoaded(Set<SModule> loadedModules) {
       if (hasSignificantModule(loadedModules)) {
         schedulePluginsReload();
       }

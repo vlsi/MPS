@@ -35,11 +35,11 @@ public class SModelRootClassesListener extends MPSClassesListenerAdapter {
   }
 
   @Override
-  public void onClassesUnload(Set<SModule> unloadedModules) {
+  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
   }
 
   @Override
-  public void onClassesLoad(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<SModule> loadedModules) {
     Set<SModuleId> ids = new HashSet<SModuleId>();
     for (SModule module : loadedModules) {
       ids.add(module.getModuleId());

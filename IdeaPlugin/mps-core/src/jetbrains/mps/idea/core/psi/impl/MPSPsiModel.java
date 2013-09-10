@@ -386,14 +386,20 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         MPSPsiRootNode rootNode = null;
         if(model.getSource() instanceof FilePerRootDataSource) {
           final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FilePerRootDataSource)model.getSource()).getFile(rootName + MPSExtentions.DOT_MODEL_ROOT));
-          rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager(), virtualFile);
+          PsiFile psiFile = getManager().findFile(virtualFile);
+          rootNode = psiFile != null && psiFile instanceof MPSPsiRootNode
+            ? (MPSPsiRootNode)psiFile :
+            new MPSPsiRootNode(root.getNodeId(), rootName, getManager(), virtualFile);
         } else {
           rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
         }
         rootNode.setModel(this);
 
         addChildLast(rootNode);
-        rootNode.addChildLast(convert(root));
+        if(rootNode.getChildren().length == 0)
+          rootNode.addChildLast(convert(root));
+        else
+          rootNode.updateChildren();
       }
 
       enumerateNodes();
@@ -482,13 +488,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   private String extractName(SNode sNode) {
-    String name = "";
-    for (String key : sNode.getPropertyNames()) {
-      if ("name".equals(key)) {
-        name = sNode.getProperty(key);
-      }
-    }
-    return name;
+    return sNode.getName() != null && !sNode.getName().isEmpty() ? sNode.getName() : sNode.getNodeId().toString();
   }
 
   private void enumerateNodes() {
