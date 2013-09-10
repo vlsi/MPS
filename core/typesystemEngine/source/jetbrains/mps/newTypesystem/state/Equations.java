@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem.state;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
@@ -175,20 +174,7 @@ public class Equations {
 
     SNode type = getRepresentativeNoShortenPaths(node);
     if (finalExpansion && LatticeUtil.isMeet(type)) {
-      // Dirty hack to avoid meet type to appear inside fully reified type
-      Set<SNode> newArgs = new THashSet<SNode>();
-      final List<SNode> arguments = LatticeUtil.getMeetArguments(type);
-      boolean addTheRest = false;
-      for (SNode arg: arguments) {
-        if (arg != null && (addTheRest || !SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-          newArgs.add(arg);
-        } else {
-          addTheRest = true;
-        }
-      }
-      if (newArgs.size() != arguments.size()) {
-        type = LatticeUtil.meetNodes(newArgs);
-      }
+      type = TypesUtil.cleanupMeet(type);
     }
 
     if (type != node) {
