@@ -10,6 +10,10 @@ public class SNodeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SNodeType_BehaviorDescriptor() {
   }
 
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return SNodeType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  }
+
   public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return SNodeType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }

@@ -37,7 +37,7 @@
   <unitInfo fileName="CustomContainers_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomContainers_BehaviorDescriptor" />
   <unitInfo fileName="CustomMapCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CustomMapCreator_BehaviorDescriptor" />
   <unitInfo fileName="CutOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CutOperation_BehaviorDescriptor" />
-  <unitInfo fileName="DequeType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DequeType_BehaviorDescriptor" />
+  <unitInfo fileName="DequeType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DequeType_BehaviorDescriptor" />
   <unitInfo fileName="DisjunctOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DisjunctOperation_BehaviorDescriptor" />
   <unitInfo fileName="DistinctOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DistinctOperation_BehaviorDescriptor" />
   <unitInfo fileName="DowncastExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DowncastExpression_BehaviorDescriptor" />
@@ -118,7 +118,7 @@
   <unitInfo fileName="PriorityQueueCreator_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_BehaviorDescriptor" />
   <unitInfo fileName="PushOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PushOperation_BehaviorDescriptor" />
   <unitInfo fileName="PutAllOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PutAllOperation_BehaviorDescriptor" />
-  <unitInfo fileName="QueueType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_BehaviorDescriptor" />
+  <unitInfo fileName="QueueType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_BehaviorDescriptor" />
   <unitInfo fileName="ReduceLeftOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ReduceLeftOperation_BehaviorDescriptor" />
   <unitInfo fileName="ReduceRightOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ReduceRightOperation_BehaviorDescriptor" />
   <unitInfo fileName="RemoveAllElementsOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.RemoveAllElementsOperation_BehaviorDescriptor" />
@@ -148,7 +148,7 @@
   <unitInfo fileName="SortedMapType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_BehaviorDescriptor" />
   <unitInfo fileName="SortedSetOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetOperation_BehaviorDescriptor" />
   <unitInfo fileName="SortedSetType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_BehaviorDescriptor" />
-  <unitInfo fileName="StackType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_BehaviorDescriptor" />
+  <unitInfo fileName="StackType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_BehaviorDescriptor" />
   <unitInfo fileName="StopStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StopStatement_BehaviorDescriptor" />
   <unitInfo fileName="SubListOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SubListOperation_BehaviorDescriptor" />
   <unitInfo fileName="SubMapOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SubMapOperation_BehaviorDescriptor" />
@@ -1718,83 +1718,93 @@
     <nodeInfo nodeId="3358009230509700612" fileName="QueueType_Behavior.java" startLine="26" startPosition="137" endLine="27" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576845966386920584" fileName="QueueType_Behavior.java" startLine="27" startPosition="137" endLine="28" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3358009230509358950" fileName="QueueType_Behavior.java" startLine="28" startPosition="129" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="38" startPosition="143" endLine="39" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="42" startPosition="80" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="44" startPosition="30" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="45" startPosition="30" endLine="46" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="46" startPosition="180" endLine="47" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="48" startPosition="31" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="50" startPosition="5" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="54" startPosition="80" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="55" startPosition="63" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="56" startPosition="30" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="57" startPosition="30" endLine="58" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="58" startPosition="183" endLine="59" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="60" startPosition="31" endLine="61" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="62" startPosition="5" endLine="63" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628905464386826743" fileName="QueueType_Behavior.java" startLine="33" startPosition="617" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628905464386826784" fileName="QueueType_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="40" startPosition="110" endLine="41" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="45" startPosition="143" endLine="46" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="49" startPosition="80" endLine="50" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="50" startPosition="63" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="51" startPosition="30" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="52" startPosition="30" endLine="53" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="53" startPosition="180" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="55" startPosition="31" endLine="56" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="57" startPosition="5" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="61" startPosition="80" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="62" startPosition="63" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="63" startPosition="30" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="64" startPosition="30" endLine="65" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="65" startPosition="183" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="67" startPosition="31" endLine="68" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="69" startPosition="5" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="47" startPosition="39" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="59" startPosition="39" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAbstractCreators_7602110602933345818#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAbstractCreators_7602110602933345818#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="46" startPosition="180" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="46" startPosition="180" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="58" startPosition="183" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="58" startPosition="183" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="45" startPosition="30" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="45" startPosition="30" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="57" startPosition="30" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="57" startPosition="30" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5628905464386826741" fileName="QueueType_Behavior.java" startLine="32" startPosition="104" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="54" startPosition="39" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="66" startPosition="39" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAbstractCreators_7602110602933345818#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAbstractCreators_7602110602933345818#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="53" startPosition="180" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="53" startPosition="180" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="65" startPosition="183" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="65" startPosition="183" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="52" startPosition="30" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="52" startPosition="30" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="64" startPosition="30" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="64" startPosition="30" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeCoerced_6321644624958501287#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreators_7602110602933317830#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="42" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1g15wz_a0a1a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="54" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1g15wz_a0a2a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="49" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1g15wz_a0a1a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="61" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1g15wz_a0a2a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="3358009230509337681" fileName="QueueType_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="177" />
-    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="38" startPosition="143" endLine="39" endPosition="331" />
-    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="48" startPosition="31" endLine="49" endPosition="80" />
-    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="60" startPosition="31" endLine="61" endPosition="80" />
+    <scopeInfo nodeId="5628905464386826742" fileName="QueueType_Behavior.java" startLine="33" startPosition="617" endLine="34" endPosition="19" />
+    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="40" startPosition="110" endLine="41" endPosition="177" />
+    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="45" startPosition="143" endLine="46" endPosition="331" />
+    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="55" startPosition="31" endLine="56" endPosition="80" />
+    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="67" startPosition="31" endLine="68" endPosition="80" />
     <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3358009230509337679" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="5628905464386824358" fileName="QueueType_Behavior.java" startLine="32" startPosition="104" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="7602110602933345821" varName="targetModel" />
       <varInfo nodeId="3358009230509337679" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="3358009230509337679" varName="callerConceptFqName" />
       <varInfo nodeId="7602110602933345821" varName="targetModel" />
       <varInfo nodeId="3358009230509337679" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="46" startPosition="180" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="58" startPosition="183" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="53" startPosition="180" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="65" startPosition="183" endLine="69" endPosition="5" />
     <scopeInfo nodeId="7602110602933345820" fileName="QueueType_Behavior.java" startLine="24" startPosition="113" endLine="29" endPosition="15">
       <varInfo nodeId="3358009230509358917" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="45" startPosition="30" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="57" startPosition="30" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="52" startPosition="30" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="64" startPosition="30" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="5628905464386824359" varName="conceptFqName" />
+      <varInfo nodeId="3358009230509337679" varName="thisNode" />
+    </scopeInfo>
     <scopeInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="7602110602933345821" varName="targetModel" />
       <varInfo nodeId="3358009230509337679" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="42" startPosition="80" endLine="51" endPosition="24">
+    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="49" startPosition="80" endLine="58" endPosition="24">
       <varInfo nodeId="3358009230509358933" varName="facade" />
       <varInfo nodeId="3358009230509358933" varName="quotedNode_2" />
       <varInfo nodeId="3358009230509358933" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="54" startPosition="80" endLine="63" endPosition="24">
+    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="61" startPosition="80" endLine="70" endPosition="24">
       <varInfo nodeId="3358009230509700622" varName="facade" />
       <varInfo nodeId="3358009230509700622" varName="quotedNode_2" />
       <varInfo nodeId="3358009230509700622" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="3358009230509358933" fileName="QueueType_Behavior.java" startLine="49" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="3358009230509358933" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="54" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="3358009230509700622" fileName="QueueType_Behavior.java" startLine="61" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="3358009230509700622" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior" />
+    <unitInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3358009230509514611">
     <nodeInfo nodeId="3358009230509516543" fileName="PriorityQueueCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1856,118 +1866,138 @@
     <nodeInfo nodeId="3358009230509734434" fileName="DequeType_Behavior.java" startLine="25" startPosition="45" endLine="26" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576845966386920598" fileName="DequeType_Behavior.java" startLine="26" startPosition="137" endLine="27" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3358009230509734456" fileName="DequeType_Behavior.java" startLine="27" startPosition="129" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="32" startPosition="110" endLine="33" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="37" startPosition="143" endLine="38" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="41" startPosition="80" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="43" startPosition="30" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="44" startPosition="30" endLine="45" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="45" startPosition="180" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="47" startPosition="31" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628905464386801368" fileName="DequeType_Behavior.java" startLine="32" startPosition="703" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628905464386801404" fileName="DequeType_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="39" startPosition="110" endLine="40" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="44" startPosition="143" endLine="45" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="48" startPosition="80" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="49" startPosition="63" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="50" startPosition="30" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="51" startPosition="30" endLine="52" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="52" startPosition="180" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="54" startPosition="31" endLine="55" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="46" startPosition="39" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAbstractCreators_7602110602933345651#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAbstractCreators_7602110602933345651#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="45" startPosition="180" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="45" startPosition="180" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="44" startPosition="30" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="44" startPosition="30" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5628905464386801366" fileName="DequeType_Behavior.java" startLine="31" startPosition="104" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="53" startPosition="39" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAbstractCreators_7602110602933345651#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAbstractCreators_7602110602933345651#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="52" startPosition="180" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="52" startPosition="180" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="51" startPosition="30" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="51" startPosition="30" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreators_7602110602933317830#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="41" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kzauu3_a0a1a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeCoerced_6321644624958501287#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_kzauu3_a0a1a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="3358009230509734420" fileName="DequeType_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="32" startPosition="110" endLine="33" endPosition="177" />
-    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="37" startPosition="143" endLine="38" endPosition="331" />
-    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="47" startPosition="31" endLine="48" endPosition="80" />
+    <scopeInfo nodeId="5628905464386801367" fileName="DequeType_Behavior.java" startLine="32" startPosition="703" endLine="33" endPosition="19" />
+    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="39" startPosition="110" endLine="40" endPosition="177" />
+    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="44" startPosition="143" endLine="45" endPosition="331" />
+    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="54" startPosition="31" endLine="55" endPosition="80" />
     <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3358009230509734418" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7602110602933345653" fileName="DequeType_Behavior.java" startLine="24" startPosition="113" endLine="28" endPosition="15">
       <varInfo nodeId="3358009230509734429" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="5628905464386799265" fileName="DequeType_Behavior.java" startLine="31" startPosition="104" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="7602110602933345654" varName="targetModel" />
       <varInfo nodeId="3358009230509734418" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3358009230509734418" varName="callerConceptFqName" />
       <varInfo nodeId="7602110602933345654" varName="targetModel" />
       <varInfo nodeId="3358009230509734418" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="45" startPosition="180" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="44" startPosition="30" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="52" startPosition="180" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="51" startPosition="30" endLine="56" endPosition="5" />
     <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7602110602933345654" varName="targetModel" />
       <varInfo nodeId="3358009230509734418" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="41" startPosition="80" endLine="50" endPosition="24">
+    <scopeInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5628905464386799266" varName="conceptFqName" />
+      <varInfo nodeId="3358009230509734418" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="48" startPosition="80" endLine="57" endPosition="24">
       <varInfo nodeId="3358009230509734438" varName="facade" />
       <varInfo nodeId="3358009230509734438" varName="quotedNode_2" />
       <varInfo nodeId="3358009230509734438" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="41" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3358009230509734438" fileName="DequeType_Behavior.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3358009230509734438" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DequeType_Behavior" />
+    <unitInfo nodeId="3358009230509734418" fileName="DequeType_Behavior.java" startLine="20" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.DequeType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/3358009230509812020">
     <nodeInfo nodeId="3358009230509812025" fileName="StackType_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3358009230509812031" fileName="StackType_Behavior.java" startLine="25" startPosition="45" endLine="26" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576845966386920563" fileName="StackType_Behavior.java" startLine="26" startPosition="137" endLine="27" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3358009230509812042" fileName="StackType_Behavior.java" startLine="27" startPosition="129" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="32" startPosition="110" endLine="33" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="37" startPosition="143" endLine="38" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="41" startPosition="80" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="43" startPosition="30" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="44" startPosition="30" endLine="45" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="45" startPosition="180" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="47" startPosition="31" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628905464386774734" fileName="StackType_Behavior.java" startLine="32" startPosition="617" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5628905464386774771" fileName="StackType_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="39" startPosition="110" endLine="40" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="44" startPosition="143" endLine="45" endPosition="331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="48" startPosition="80" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="49" startPosition="63" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="50" startPosition="30" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="51" startPosition="30" endLine="52" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="52" startPosition="180" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="54" startPosition="31" endLine="55" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="46" startPosition="39" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAbstractCreators_7602110602933346049#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAbstractCreators_7602110602933346049#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="45" startPosition="180" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="45" startPosition="180" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="44" startPosition="30" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="44" startPosition="30" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5628905464386774732" fileName="StackType_Behavior.java" startLine="31" startPosition="104" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="53" startPosition="39" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAbstractCreators_7602110602933346049#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAbstractCreators_7602110602933346049#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="52" startPosition="180" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="52" startPosition="180" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="51" startPosition="30" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="51" startPosition="30" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreators_7602110602933317830#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="41" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_pawenb_a0a1a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeCoerced_6321644624958501287#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_pawenb_a0a1a0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="3358009230509812022" fileName="StackType_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="32" startPosition="110" endLine="33" endPosition="177" />
-    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="37" startPosition="143" endLine="38" endPosition="331" />
-    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="47" startPosition="31" endLine="48" endPosition="80" />
+    <scopeInfo nodeId="5628905464386774733" fileName="StackType_Behavior.java" startLine="32" startPosition="617" endLine="33" endPosition="19" />
+    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="39" startPosition="110" endLine="40" endPosition="177" />
+    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="44" startPosition="143" endLine="45" endPosition="331" />
+    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="54" startPosition="31" endLine="55" endPosition="80" />
     <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3358009230509812020" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7602110602933346051" fileName="StackType_Behavior.java" startLine="24" startPosition="113" endLine="28" endPosition="15">
       <varInfo nodeId="3358009230509812026" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="5628905464386740857" fileName="StackType_Behavior.java" startLine="31" startPosition="104" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="7602110602933346052" varName="targetModel" />
       <varInfo nodeId="3358009230509812020" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3358009230509812020" varName="callerConceptFqName" />
       <varInfo nodeId="7602110602933346052" varName="targetModel" />
       <varInfo nodeId="3358009230509812020" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="45" startPosition="180" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="44" startPosition="30" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="52" startPosition="180" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="51" startPosition="30" endLine="56" endPosition="5" />
     <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7602110602933346052" varName="targetModel" />
       <varInfo nodeId="3358009230509812020" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="41" startPosition="80" endLine="50" endPosition="24">
+    <scopeInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5628905464386740858" varName="conceptFqName" />
+      <varInfo nodeId="3358009230509812020" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="48" startPosition="80" endLine="57" endPosition="24">
       <varInfo nodeId="3358009230509812035" varName="facade" />
       <varInfo nodeId="3358009230509812035" varName="quotedNode_2" />
       <varInfo nodeId="3358009230509812035" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="41" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3358009230509812035" fileName="StackType_Behavior.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3358009230509812035" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_Behavior" />
+    <unitInfo nodeId="3358009230509812020" fileName="StackType_Behavior.java" startLine="20" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/5686963296372576518">
     <nodeInfo nodeId="5686963296372576523" fileName="AbstractContainerType_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
