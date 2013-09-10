@@ -45,6 +45,8 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.AbstractModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -254,6 +256,14 @@ public class GenTestWorker extends GeneratorWorker {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+
+        // the following updates stub models that could change due to the compilation happened (webr, 3.0 migration case) 
+        for (SModule m : MPSModuleRepository.getInstance().getModules()) {
+          if (!((m instanceof AbstractModule))) {
+            continue;
+          }
+          ((AbstractModule) m).updateModelsSet();
+        }
       }
     });
   }
