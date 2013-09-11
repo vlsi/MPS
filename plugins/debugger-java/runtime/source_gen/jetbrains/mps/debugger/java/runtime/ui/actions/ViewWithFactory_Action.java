@@ -68,7 +68,7 @@ public class ViewWithFactory_Action extends BaseAction {
       if (value == null || !(value instanceof JavaValue)) {
         return;
       }
-      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper((JavaValue) value, ViewWithFactory_Action.this.factory);
+      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewWithFactory_Action.this.factory);
       ((DebugSession) DebugActionsUtil.getDebugSession(event)).refresh();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {

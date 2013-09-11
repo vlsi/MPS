@@ -10,9 +10,11 @@ import java.util.HashMap;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
 import java.util.HashSet;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
+import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import com.sun.jdi.ObjectReference;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -37,7 +39,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     MapSequence.fromMap(myFactories).removeKey(factory.getClass().getName());
   }
 
-  public Set<ValueWrapperFactory> getValueWrapperFactories(@NotNull final JavaValue originalValue) {
+  public Set<ValueWrapperFactory> getValueWrapperFactories(@NotNull final IValueProxy originalValue) {
     Set<ValueWrapperFactory> result = new HashSet<ValueWrapperFactory>();
     for (ValueWrapperFactory factory : MapSequence.fromMap(myFactories).values()) {
       if (factory.canWrapValue(originalValue)) {
@@ -47,22 +49,22 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     return result;
   }
 
-  public synchronized ValueWrapper getValueWrapper(@NotNull JavaValue originalValue) {
-    if (originalValue.getValue() instanceof ObjectReference) {
-      DebugSession session = getSession(originalValue);
+  public synchronized ValueWrapper getValueWrapper(@NotNull IValueProxy proxy, ThreadReference threadReference) {
+    if (proxy instanceof IObjectValueProxy) {
+      DebugSession session = getSession(proxy);
       Map<Long, String> objectIdToFactory = MapSequence.fromMap(myObjectIdToFactory).get(session);
       if (objectIdToFactory == null) {
         objectIdToFactory = MapSequence.fromMap(new HashMap<Long, String>());
         MapSequence.fromMap(myObjectIdToFactory).put(session, objectIdToFactory);
       }
       ValueWrapperFactory factory = null;
-      long uniqueID = getValueId(originalValue);
+      long uniqueID = getValueId(proxy);
       String factoryId = MapSequence.fromMap(objectIdToFactory).get(uniqueID);
       if ((factoryId != null && factoryId.length() > 0)) {
         factory = MapSequence.fromMap(myFactories).get(factoryId);
       }
       if (factory == null) {
-        Set<ValueWrapperFactory> factories = getValueWrapperFactories(originalValue);
+        Set<ValueWrapperFactory> factories = getValueWrapperFactories(proxy);
         if (factories.isEmpty()) {
           return null;
         }
@@ -70,12 +72,12 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
         factoryId = factory.getClass().getName();
         MapSequence.fromMap(objectIdToFactory).put(uniqueID, factoryId);
       }
-      return factory.createValueWrapper(originalValue);
+      return factory.createValueWrapper(proxy, threadReference);
     }
     return null;
   }
 
-  public synchronized void setValueWrapper(@NotNull JavaValue value, @NotNull ValueWrapperFactory factory) {
+  public synchronized void setValueWrapper(@NotNull IValueProxy value, @NotNull ValueWrapperFactory factory) {
     DebugSession session = getSession(value);
     Map<Long, String> objectIdToFactory = MapSequence.fromMap(myObjectIdToFactory).get(session);
     if (objectIdToFactory == null) {
@@ -89,16 +91,16 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     return (CustomViewersManagerImpl) CustomViewersManager.getInstance();
   }
 
-  private long getValueId(@NotNull JavaValue originalValue) {
-    return ((ObjectReference) originalValue.getValue()).uniqueID();
+  private long getValueId(@NotNull IValueProxy originalValue) {
+    return ((ObjectReference) originalValue.getJDIValue()).uniqueID();
   }
 
-  private DebugSession getSession(@NotNull JavaValue value) {
+  private DebugSession getSession(@NotNull IValueProxy value) {
     // this is just wrong 
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
       for (AbstractDebugSession session : SetSequence.fromSet(DebugSessionManagerComponent.getInstance(project).getDebugSessions())) {
         if (session instanceof DebugSession) {
-          if (((DebugSession) session).getEventsProcessor().getVirtualMachine() == value.getValue().virtualMachine()) {
+          if (((DebugSession) session).getEventsProcessor().getVirtualMachine() == value.getJDIValue().virtualMachine()) {
             return (DebugSession) session;
           }
         }

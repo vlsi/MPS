@@ -7,12 +7,16 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
 import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl;
-import com.sun.jdi.ObjectReference;
-import com.sun.jdi.ArrayReference;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import com.sun.jdi.StringReference;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 
 public class ValueUtilImpl extends ValueUtil {
   public ValueUtilImpl() {
@@ -34,36 +38,36 @@ public class ValueUtilImpl extends ValueUtil {
 
   @Override
   public JavaValue fromJDI(@Nullable Value value, ThreadReference threadReference) {
-    if (value == null) {
-      return fromJDIRaw(value, threadReference);
+    IValueProxy proxy = MirrorUtil.getInstance().getValueProxy(value);
+    if (proxy instanceof INullValueProxy) {
+      return fromJDIRaw(proxy, threadReference);
     }
-    JavaValue javaValue = fromJDIRaw(value, threadReference);
-    return tryToWrap(javaValue);
+    return tryToWrap(proxy, threadReference);
   }
 
-  private JavaValue tryToWrap(@NotNull JavaValue javaValue) {
-    ValueWrapper wrapper = CustomViewersManagerImpl.getInstanceImpl().getValueWrapper(javaValue);
+  private JavaValue tryToWrap(@NotNull IValueProxy proxy, ThreadReference threadReference) {
+    ValueWrapper wrapper = CustomViewersManagerImpl.getInstanceImpl().getValueWrapper(proxy, threadReference);
     if (wrapper == null) {
-      return javaValue;
+      return fromJDIRaw(proxy, threadReference);
     }
     return wrapper;
   }
 
-  public JavaValue fromJDIRaw(Value value, ThreadReference threadReference) {
-    if (value == null) {
-      return new JavaPrimitiveValue(value, threadReference);
+  public JavaValue fromJDIRaw(@NotNull IValueProxy proxy, ThreadReference threadReference) {
+    if (proxy instanceof INullValueProxy) {
+      return new JavaObjectValue((INullValueProxy) proxy, threadReference);
     }
-    if (value instanceof ObjectReference) {
-      if (value instanceof ArrayReference) {
-        return new JavaArrayValue(value, threadReference);
+    if (proxy instanceof IObjectValueProxy) {
+      if (proxy instanceof IArrayValueProxy) {
+        return new JavaArrayValue((IArrayValueProxy) proxy, threadReference);
       } else
-      if (value instanceof StringReference) {
-        return new JavaStringValue(value, threadReference);
+      if (proxy.getJDIValue() instanceof StringReference) {
+        return new JavaStringValue((IObjectValueProxy) proxy, threadReference);
       } else {
-        return new JavaObjectValue(value, threadReference);
+        return new JavaObjectValue((IObjectValueProxy) proxy, threadReference);
       }
     } else {
-      return new JavaPrimitiveValue(value, threadReference);
+      return new JavaPrimitiveValue((PrimitiveValueProxy) proxy, threadReference);
     }
   }
 }

@@ -20,4 +20,8 @@ public class PrimitiveValueProxy extends ValueProxy implements IValueProxy {
     }
     return myValue.equals(valueProxy.getJDIValue());
   }
+
+  public String getPresentation() {
+    return myValue.toString();
+  }
 }

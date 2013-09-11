@@ -62,11 +62,11 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" file="JavaValue.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" />
   </dependency>
@@ -91,15 +91,19 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.ui.Icons" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" file="ValueWrapperFactory.java">
-    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>

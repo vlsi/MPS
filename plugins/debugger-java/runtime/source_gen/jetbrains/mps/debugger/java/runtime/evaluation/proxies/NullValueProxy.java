@@ -63,4 +63,8 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
   public boolean javaEquals(IValueProxy proxy) {
     return proxy instanceof INullValueProxy;
   }
+
+  public String getPresentation() {
+    return "null";
+  }
 }

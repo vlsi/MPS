@@ -4,7 +4,8 @@ package jetbrains.mps.debugger.java.customViewers.plugin.plugin;
 
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
@@ -21,15 +22,15 @@ public class Set_WrapperFactory extends ValueWrapperFactory {
   public Set_WrapperFactory() {
   }
 
-  public ValueWrapper createValueWrapper(JavaValue value) {
-    return new Set_WrapperFactory.SetWrapper(value);
+  public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
+    return new Set_WrapperFactory.SetWrapper(value, threadReference);
   }
 
   @Override
-  public boolean canWrapValue(@NotNull final JavaValue javaValue) {
+  public boolean canWrapValue(@NotNull final IValueProxy proxy) {
     return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<Boolean>() {
       public Boolean invoke() throws EvaluationException {
-        Value value = javaValue.getValue();
+        Value value = proxy.getJDIValue();
         if (value == null) {
           return false;
         }
@@ -42,14 +43,14 @@ public class Set_WrapperFactory extends ValueWrapperFactory {
   }
 
   public static class SetWrapper extends ValueWrapper {
-    public SetWrapper(JavaValue value) {
-      super(value);
+    public SetWrapper(IValueProxy value, ThreadReference threadReference) {
+      super(value, threadReference);
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<List<CustomJavaWatchable>>() {
         public List<CustomJavaWatchable> invoke() throws EvaluationException {
-          return getSubvaluesImpl((IObjectValueProxy) myValueProxy);
+          return getSubvaluesImpl((IObjectValueProxy) myValue);
         }
       }, Collections.<CustomJavaWatchable>emptyList());
     }

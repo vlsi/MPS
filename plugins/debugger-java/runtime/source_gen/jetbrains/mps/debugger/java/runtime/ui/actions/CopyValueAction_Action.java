@@ -78,7 +78,7 @@ public class CopyValueAction_Action extends BaseAction {
 
       String result = javaUiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<String>() {
         public String invoke() {
-          return EvaluationUtils.getInstance().getStringPresentation(((JavaValue) value).getValue(), thread);
+          return EvaluationUtils.getInstance().getStringPresentation(((JavaValue) value).getValue().getJDIValue(), thread);
         }
       });
       if ((result != null && result.length() > 0)) {

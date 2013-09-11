@@ -60,7 +60,7 @@ public class VeiwAsActionGroup_ActionGroup extends GeneratedActionGroup {
       final Set<ValueWrapperFactory> factories = SetSequence.fromSet(new HashSet<ValueWrapperFactory>());
       uiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return factories.addAll(CustomViewersManagerImpl.getInstanceImpl().getValueWrapperFactories(((ValueWrapper) value).getWrappedValue()));
+          return factories.addAll(CustomViewersManagerImpl.getInstanceImpl().getValueWrapperFactories(((ValueWrapper) value).getValue()));
         }
       });
 

@@ -5,32 +5,38 @@ package jetbrains.mps.debugger.java.api.state.proxy;
 import jetbrains.mps.debug.api.programState.IValue;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
+import com.sun.jdi.ThreadReference;
 import javax.swing.Icon;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
+import jetbrains.mps.debugger.java.api.ui.Icons;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable;
-import com.sun.jdi.ThreadReference;
 import com.sun.jdi.VirtualMachine;
 
 public abstract class ValueWrapper extends JavaValue implements IValue {
-  @NotNull
-  protected final JavaValue myWrappedValue;
-  @NotNull
-  protected final IValueProxy myValueProxy;
   private final String myPresentation;
 
-  public ValueWrapper(@NotNull JavaValue value) {
-    super(value.getValue(), value.myThreadReference);
-    myWrappedValue = value;
-    myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue());
-    myPresentation = myWrappedValue.getValuePresentation();
+  public ValueWrapper(@NotNull IValueProxy value, @NotNull ThreadReference threadReference) {
+    super(value, threadReference);
+    myPresentation = myValue.getPresentation();
   }
 
   @Override
   public Icon getPresentationIcon() {
-    return myWrappedValue.getPresentationIcon();
+    if (myValue instanceof INullValueProxy) {
+      return Icons.VALUE_PRIMITIVE;
+    }
+    if (myValue instanceof PrimitiveValueProxy) {
+      return Icons.VALUE_PRIMITIVE;
+    }
+    if (myValue instanceof IArrayValueProxy) {
+      return Icons.VALUE_ARRAY;
+    }
+    return Icons.VALUE_OBJECT;
   }
 
   @Override
@@ -59,10 +65,6 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   }
 
   public VirtualMachine getVM() {
-    return myValue.virtualMachine();
-  }
-
-  public JavaValue getWrappedValue() {
-    return myWrappedValue;
+    return myValue.getJDIValue().virtualMachine();
   }
 }

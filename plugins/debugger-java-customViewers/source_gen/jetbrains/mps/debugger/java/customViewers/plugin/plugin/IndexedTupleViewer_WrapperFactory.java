@@ -4,7 +4,8 @@ package jetbrains.mps.debugger.java.customViewers.plugin.plugin;
 
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
@@ -21,15 +22,15 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
   public IndexedTupleViewer_WrapperFactory() {
   }
 
-  public ValueWrapper createValueWrapper(JavaValue value) {
-    return new IndexedTupleViewer_WrapperFactory.IndexedTupleViewerWrapper(value);
+  public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
+    return new IndexedTupleViewer_WrapperFactory.IndexedTupleViewerWrapper(value, threadReference);
   }
 
   @Override
-  public boolean canWrapValue(@NotNull final JavaValue javaValue) {
+  public boolean canWrapValue(@NotNull final IValueProxy proxy) {
     return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<Boolean>() {
       public Boolean invoke() throws EvaluationException {
-        Value value = javaValue.getValue();
+        Value value = proxy.getJDIValue();
         if (value == null) {
           return false;
         }
@@ -44,15 +45,15 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
   public static class IndexedTupleViewerWrapper extends ValueWrapper {
     private final String myPresentation;
 
-    public IndexedTupleViewerWrapper(JavaValue value) {
-      super(value);
+    public IndexedTupleViewerWrapper(IValueProxy value, ThreadReference threadReference) {
+      super(value, threadReference);
       myPresentation = getValuePresentationImpl();
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<List<CustomJavaWatchable>>() {
         public List<CustomJavaWatchable> invoke() throws EvaluationException {
-          return getSubvaluesImpl((IObjectValueProxy) myValueProxy);
+          return getSubvaluesImpl((IObjectValueProxy) myValue);
         }
       }, Collections.<CustomJavaWatchable>emptyList());
     }
@@ -69,7 +70,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
     private String getValuePresentationImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<String>() {
         public String invoke() throws EvaluationException {
-          return getValuePresentation((IObjectValueProxy) myValueProxy);
+          return getValuePresentation((IObjectValueProxy) myValue);
         }
       }, super.getValuePresentation());
     }

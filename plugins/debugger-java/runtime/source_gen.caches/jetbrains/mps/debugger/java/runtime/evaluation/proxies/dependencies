@@ -88,6 +88,7 @@
     <classNode dependClassName="com.sun.jdi.InvocationException" />
     <classNode dependClassName="com.sun.jdi.Method" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
+    <classNode dependClassName="com.sun.jdi.StringReference" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Object" />
