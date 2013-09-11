@@ -15,7 +15,7 @@ import com.sun.jdi.Field;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
+import jetbrains.mps.debugger.java.runtime.state.watchables.JavaField;
 
 /*package*/ class JavaObjectValue extends JavaValue<IObjectValueProxy> {
   private final String myPresentation;

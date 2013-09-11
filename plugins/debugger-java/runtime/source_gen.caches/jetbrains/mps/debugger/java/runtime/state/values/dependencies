@@ -39,8 +39,8 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaField" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.ui.Icons" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.watchables.JavaField" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="kcupb91j8f0p56sem24heen7bu7bqk">
+<dependencies version="2" modelHash="-81135ky40gq6oebzfw8bn1y8q3lq0b1">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <common hash="-aa13zinfb7pb7yt1q76629g6659dmyb" />
-  <source id="3432969378036013923" name="JavaField" hash="7rwuk29a7tgn52ot0yuvhwswyfqjbxr">
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="JavaField.java" />
-  </source>
   <source id="3432969378036014056" name="JavaWatchable" hash="-4kg6fw73fzh5smimys13dvwbncaczik">
     <file name="JavaWatchable.java" />
   </source>
