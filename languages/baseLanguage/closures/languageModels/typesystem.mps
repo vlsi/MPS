@@ -4568,6 +4568,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8885775147219490138" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_ClosureArgReference" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="impl" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="8885775147219490139" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="8885775147219497760" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="8885775147219497763" nodeInfo="ng">
