@@ -19,7 +19,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.AbstractMacro").interface_().properties("comment").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.BaseMappingRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("applyToConceptInheritors").references("applicableConcept", "labelDeclaration").children(new String[]{"conditionFunction"}, new boolean[]{false}).abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.BaseMappingRule").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("applyToConceptInheritors", "description").references("applicableConcept", "labelDeclaration").children(new String[]{"conditionFunction"}, new boolean[]{false}).abstract_().create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition").super_("jetbrains.mps.lang.generator.structure.TemplateQueryBase").parents("jetbrains.mps.lang.generator.structure.TemplateQueryBase").alias("condition", "").staticScope(StaticScope.NONE).create();
       case 4:

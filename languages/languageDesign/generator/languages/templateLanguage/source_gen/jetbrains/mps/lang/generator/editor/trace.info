@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1087903454703">
     <nodeInfo nodeId="1087903454703" fileName="PropertyMacro_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1087903454703" fileName="PropertyMacro_Editor.java" startLine="31" startPosition="82" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -9441,9 +9441,9 @@
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="258" startPosition="40" endLine="259" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="259" startPosition="81" endLine="260" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="259" startPosition="81" endLine="260" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="261" startPosition="85" endLine="262" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="261" startPosition="82" endLine="262" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1167517960208" fileName="Weaving_MappingRule_Editor.java" startLine="265" startPosition="88" endLine="266" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1167517960208" fileName="Weaving_MappingRule_Editor.java" startLine="266" startPosition="98" endLine="267" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167517960208" fileName="Weaving_MappingRule_Editor.java" startLine="267" startPosition="47" endLine="268" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -9460,55 +9460,8 @@
     <nodeInfo nodeId="1167517960209" fileName="Weaving_MappingRule_Editor.java" startLine="281" startPosition="49" endLine="282" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167517960209" fileName="Weaving_MappingRule_Editor.java" startLine="282" startPosition="40" endLine="283" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167517960209" fileName="Weaving_MappingRule_Editor.java" startLine="283" startPosition="34" endLine="284" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="92" endLine="288" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="288" startPosition="99" endLine="289" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="289" startPosition="51" endLine="290" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="290" startPosition="34" endLine="291" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="291" startPosition="49" endLine="292" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="292" startPosition="40" endLine="293" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="292" startPosition="40" endLine="293" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="293" startPosition="82" endLine="294" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="293" startPosition="82" endLine="294" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="294" startPosition="81" endLine="295" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="298" startPosition="89" endLine="299" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="299" startPosition="99" endLine="300" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="300" startPosition="48" endLine="301" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="301" startPosition="34" endLine="302" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="305" startPosition="88" endLine="306" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="306" startPosition="81" endLine="307" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="307" startPosition="41" endLine="308" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="308" startPosition="54" endLine="309" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="309" startPosition="26" endLine="310" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="310" startPosition="92" endLine="311" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="311" startPosition="58" endLine="312" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="312" startPosition="73" endLine="313" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="313" startPosition="57" endLine="314" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="315" startPosition="35" endLine="316" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="316" startPosition="72" endLine="317" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="317" startPosition="78" endLine="318" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="319" startPosition="10" endLine="320" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="324" startPosition="34" endLine="325" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="328" startPosition="69" endLine="329" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="332" startPosition="81" endLine="333" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="336" startPosition="93" endLine="337" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="337" startPosition="84" endLine="338" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="338" startPosition="31" endLine="339" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="339" startPosition="44" endLine="340" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="340" startPosition="33" endLine="341" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="341" startPosition="28" endLine="342" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="342" startPosition="60" endLine="343" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="344" startPosition="41" endLine="345" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="345" startPosition="42" endLine="346" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="347" startPosition="7" endLine="348" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="348" startPosition="36" endLine="349" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="349" startPosition="117" endLine="350" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="350" startPosition="42" endLine="351" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="351" startPosition="75" endLine="352" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="352" startPosition="59" endLine="353" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="354" startPosition="37" endLine="355" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="355" startPosition="74" endLine="356" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="356" startPosition="80" endLine="357" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="358" startPosition="12" endLine="359" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224687350972" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="89" endLine="288" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224687350972" fileName="Weaving_MappingRule_Editor.java" startLine="288" startPosition="154" endLine="289" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="40" startPosition="81" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -9519,20 +9472,14 @@
     <nodeInfo nodeId="1200917687311" fileName="Weaving_MappingRule_Editor.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169580472059" fileName="Weaving_MappingRule_Editor.java" startLine="173" startPosition="58" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1184616402096" fileName="Weaving_MappingRule_Editor.java" startLine="226" startPosition="58" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="324" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_gkr2rl_a1c0#()V" />
-    <nodeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="328" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="332" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169580472031" fileName="Weaving_MappingRule_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_gkr2rl_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200917687312" fileName="Weaving_MappingRule_Editor.java" startLine="127" startPosition="44" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="343" startPosition="46" endLine="347" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7898029224687350972" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_gkr2rl_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="98" startPosition="59" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200917687312" fileName="Weaving_MappingRule_Editor.java" startLine="137" startPosition="61" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200917884282" fileName="Weaving_MappingRule_Editor.java" startLine="147" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169580472059" fileName="Weaving_MappingRule_Editor.java" startLine="179" startPosition="59" endLine="185" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1184616402096" fileName="Weaving_MappingRule_Editor.java" startLine="232" startPosition="59" endLine="238" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="298" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="314" startPosition="59" endLine="320" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="353" startPosition="61" endLine="359" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169580472033" fileName="Weaving_MappingRule_Editor.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1184616402094" fileName="Weaving_MappingRule_Editor.java" startLine="200" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_a1d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -9540,18 +9487,15 @@
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="74" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1195253451315" fileName="Weaving_MappingRule_Editor.java" startLine="210" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_b1d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169580486409" fileName="Weaving_MappingRule_Editor.java" startLine="241" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_c0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="188" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167517960208" fileName="Weaving_MappingRule_Editor.java" startLine="265" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gkr2rl_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="252" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="35" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="154" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gkr2rl_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="89" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_gkr2rl_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="305" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_gkr2rl_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169580472059" fileName="Weaving_MappingRule_Editor.java" startLine="168" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_gkr2rl_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1184616402096" fileName="Weaving_MappingRule_Editor.java" startLine="221" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_gkr2rl_c1d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200917687312" fileName="Weaving_MappingRule_Editor.java" startLine="120" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gkr2rl_a0a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="336" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gkr2rl_a0b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="31" startPosition="82" endLine="32" endPosition="65" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="38" startPosition="28" endLine="39" endPosition="83" />
@@ -9575,17 +9519,14 @@
     <scopeInfo nodeId="1184616402096" fileName="Weaving_MappingRule_Editor.java" startLine="227" startPosition="39" endLine="228" endPosition="45" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="258" startPosition="40" endLine="259" endPosition="81" />
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="259" startPosition="81" endLine="260" endPosition="83" />
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="85" />
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="292" startPosition="40" endLine="293" endPosition="82" />
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="293" startPosition="82" endLine="294" endPosition="81" />
-    <scopeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="324" startPosition="34" endLine="325" endPosition="14" />
-    <scopeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="328" startPosition="69" endLine="329" endPosition="67" />
-    <scopeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="332" startPosition="81" endLine="333" endPosition="67" />
+    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="82" />
     <scopeInfo nodeId="1169580472031" fileName="Weaving_MappingRule_Editor.java" startLine="59" startPosition="90" endLine="61" endPosition="22">
       <varInfo nodeId="1169580472031" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1200917687312" fileName="Weaving_MappingRule_Editor.java" startLine="128" startPosition="41" endLine="130" endPosition="47" />
-    <scopeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="344" startPosition="41" endLine="346" endPosition="47" />
+    <scopeInfo nodeId="7898029224687350972" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="89" endLine="289" endPosition="22">
+      <varInfo nodeId="7898029224687350972" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1167171627113" varName="editorContext" />
       <varInfo nodeId="1167171627113" varName="node" />
@@ -9624,22 +9565,6 @@
       <varInfo nodeId="1184616402096" varName="manager" />
       <varInfo nodeId="1184616402096" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="315" startPosition="35" endLine="318" endPosition="105">
-      <varInfo nodeId="1167171627113" varName="manager" />
-      <varInfo nodeId="1167171627113" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="324" startPosition="0" endLine="327" endPosition="0" />
-    <scopeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="328" startPosition="0" endLine="331" endPosition="0">
-      <varInfo nodeId="1200917658733" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="332" startPosition="0" endLine="335" endPosition="0">
-      <varInfo nodeId="1200917658733" varName="editorContext" />
-      <varInfo nodeId="1200917658733" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="354" startPosition="37" endLine="357" endPosition="107">
-      <varInfo nodeId="1200917658734" varName="manager" />
-      <varInfo nodeId="1200917658734" varName="opContext" />
-    </scopeInfo>
     <scopeInfo nodeId="1169580472031" fileName="Weaving_MappingRule_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="1169580472031" varName="editorContext" />
       <varInfo nodeId="1169580472031" varName="node" />
@@ -9647,16 +9572,13 @@
     <scopeInfo nodeId="1200917884282" fileName="Weaving_MappingRule_Editor.java" startLine="147" startPosition="89" endLine="151" endPosition="22">
       <varInfo nodeId="1200917884282" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="298" startPosition="89" endLine="302" endPosition="22">
-      <varInfo nodeId="1200917658731" varName="editorCell" />
+    <scopeInfo nodeId="7898029224687350972" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="0" endLine="291" endPosition="0">
+      <varInfo nodeId="7898029224687350972" varName="editorContext" />
+      <varInfo nodeId="7898029224687350972" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1200917884282" fileName="Weaving_MappingRule_Editor.java" startLine="147" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="1200917884282" varName="editorContext" />
       <varInfo nodeId="1200917884282" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917658731" fileName="Weaving_MappingRule_Editor.java" startLine="298" startPosition="0" endLine="304" endPosition="0">
-      <varInfo nodeId="1200917658731" varName="editorContext" />
-      <varInfo nodeId="1200917658731" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="49" startPosition="90" endLine="56" endPosition="22">
       <varInfo nodeId="1167171627113" varName="editorCell" />
@@ -9685,10 +9607,6 @@
     <scopeInfo nodeId="1169580486409" fileName="Weaving_MappingRule_Editor.java" startLine="241" startPosition="88" endLine="249" endPosition="22">
       <varInfo nodeId="1169580486409" varName="editorCell" />
       <varInfo nodeId="1169580486409" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="92" endLine="295" endPosition="22">
-      <varInfo nodeId="1167171627113" varName="editorCell" />
-      <varInfo nodeId="1167171627113" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1167171627113" varName="editorContext" />
@@ -9730,10 +9648,6 @@
       <varInfo nodeId="1167171627113" varName="editorCell" />
       <varInfo nodeId="1167171627113" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="287" startPosition="0" endLine="297" endPosition="0">
-      <varInfo nodeId="1167171627113" varName="editorContext" />
-      <varInfo nodeId="1167171627113" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="35" startPosition="89" endLine="46" endPosition="22">
       <varInfo nodeId="1167171627113" varName="editorCell" />
     </scopeInfo>
@@ -9767,12 +9681,6 @@
       <varInfo nodeId="1167171627113" varName="editorCell" />
       <varInfo nodeId="1167171627113" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="305" startPosition="88" endLine="320" endPosition="22">
-      <varInfo nodeId="1167171627113" varName="attributeConcept" />
-      <varInfo nodeId="1167171627113" varName="attributeKind" />
-      <varInfo nodeId="1167171627113" varName="editorCell" />
-      <varInfo nodeId="1167171627113" varName="provider" />
-    </scopeInfo>
     <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="89" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="1167171627113" varName="editorContext" />
       <varInfo nodeId="1167171627113" varName="node" />
@@ -9789,10 +9697,6 @@
       <varInfo nodeId="1184616402096" varName="editorCell" />
       <varInfo nodeId="1184616402096" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="305" startPosition="0" endLine="322" endPosition="0">
-      <varInfo nodeId="1167171627113" varName="editorContext" />
-      <varInfo nodeId="1167171627113" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1169580472059" fileName="Weaving_MappingRule_Editor.java" startLine="168" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="1169580472059" varName="editorContext" />
       <varInfo nodeId="1169580472059" varName="node" />
@@ -9808,24 +9712,12 @@
       <varInfo nodeId="1200917687312" varName="provider" />
       <varInfo nodeId="1200917687312" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="336" startPosition="93" endLine="359" endPosition="24">
-      <varInfo nodeId="1200917658734" varName="attributeConcept" />
-      <varInfo nodeId="1200917658734" varName="attributeKind" />
-      <varInfo nodeId="1200917658734" varName="editorCell" />
-      <varInfo nodeId="1200917658734" varName="provider" />
-      <varInfo nodeId="1200917658734" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1200917687312" fileName="Weaving_MappingRule_Editor.java" startLine="120" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="1200917687312" varName="editorContext" />
       <varInfo nodeId="1200917687312" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917658734" fileName="Weaving_MappingRule_Editor.java" startLine="336" startPosition="0" endLine="361" endPosition="0">
-      <varInfo nodeId="1200917658734" varName="editorContext" />
-      <varInfo nodeId="1200917658734" varName="node" />
-    </scopeInfo>
     <unitInfo nodeId="1200917687311" fileName="Weaving_MappingRule_Editor.java" startLine="107" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor$_Inline_gkr2rl_a0c0" />
-    <unitInfo nodeId="1200917658733" fileName="Weaving_MappingRule_Editor.java" startLine="323" startPosition="0" endLine="362" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor$_Inline_gkr2rl_a1c0" />
-    <unitInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" />
+    <unitInfo nodeId="1167171627113" fileName="Weaving_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Weaving_MappingRule_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1167328078404">
     <nodeInfo nodeId="1167328078404" fileName="BaseMappingRule_premise.java" startLine="28" startPosition="47" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -10252,9 +10144,9 @@
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="201" startPosition="40" endLine="202" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="202" startPosition="81" endLine="203" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="202" startPosition="81" endLine="203" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="203" startPosition="81" endLine="204" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="203" startPosition="81" endLine="204" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="204" startPosition="83" endLine="205" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="203" startPosition="81" endLine="204" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="203" startPosition="81" endLine="204" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="204" startPosition="82" endLine="205" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1167518270806" fileName="Reduction_MappingRule_Editor.java" startLine="208" startPosition="88" endLine="209" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1167518270806" fileName="Reduction_MappingRule_Editor.java" startLine="209" startPosition="100" endLine="210" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167518270806" fileName="Reduction_MappingRule_Editor.java" startLine="210" startPosition="47" endLine="211" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -10271,55 +10163,8 @@
     <nodeInfo nodeId="1167518270807" fileName="Reduction_MappingRule_Editor.java" startLine="224" startPosition="49" endLine="225" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167518270807" fileName="Reduction_MappingRule_Editor.java" startLine="225" startPosition="40" endLine="226" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167518270807" fileName="Reduction_MappingRule_Editor.java" startLine="226" startPosition="34" endLine="227" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="90" endLine="231" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="231" startPosition="99" endLine="232" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="232" startPosition="49" endLine="233" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="233" startPosition="34" endLine="234" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="234" startPosition="49" endLine="235" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="235" startPosition="40" endLine="236" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="235" startPosition="40" endLine="236" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="236" startPosition="82" endLine="237" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="236" startPosition="82" endLine="237" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="237" startPosition="81" endLine="238" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="241" startPosition="89" endLine="242" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="242" startPosition="99" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="243" startPosition="48" endLine="244" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="244" startPosition="34" endLine="245" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="248" startPosition="88" endLine="249" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="249" startPosition="81" endLine="250" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="250" startPosition="41" endLine="251" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="251" startPosition="54" endLine="252" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="252" startPosition="26" endLine="253" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="253" startPosition="94" endLine="254" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="254" startPosition="58" endLine="255" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="255" startPosition="73" endLine="256" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="256" startPosition="57" endLine="257" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="258" startPosition="35" endLine="259" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="259" startPosition="72" endLine="260" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="260" startPosition="78" endLine="261" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="262" startPosition="10" endLine="263" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="267" startPosition="34" endLine="268" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="271" startPosition="69" endLine="272" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="275" startPosition="81" endLine="276" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="279" startPosition="93" endLine="280" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="280" startPosition="84" endLine="281" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="281" startPosition="31" endLine="282" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="282" startPosition="44" endLine="283" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="283" startPosition="33" endLine="284" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="284" startPosition="28" endLine="285" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="285" startPosition="60" endLine="286" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="287" startPosition="41" endLine="288" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="288" startPosition="42" endLine="289" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="290" startPosition="7" endLine="291" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="291" startPosition="36" endLine="292" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="292" startPosition="117" endLine="293" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="293" startPosition="42" endLine="294" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="294" startPosition="75" endLine="295" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="295" startPosition="59" endLine="296" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="297" startPosition="37" endLine="298" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="298" startPosition="74" endLine="299" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="299" startPosition="80" endLine="300" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="301" startPosition="12" endLine="302" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686241015" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="89" endLine="231" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686241015" fileName="Reduction_MappingRule_Editor.java" startLine="231" startPosition="154" endLine="232" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="66" startPosition="82" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -10329,34 +10174,25 @@
     <nodeInfo nodeId="1200917586648" fileName="Reduction_MappingRule_Editor.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200917586648" fileName="Reduction_MappingRule_Editor.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169672948403" fileName="Reduction_MappingRule_Editor.java" startLine="169" startPosition="58" endLine="172" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="267" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_c84kqv_a1c0#()V" />
-    <nodeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="271" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="275" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169672948374" fileName="Reduction_MappingRule_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_c84kqv_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200917586649" fileName="Reduction_MappingRule_Editor.java" startLine="137" startPosition="44" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="286" startPosition="46" endLine="290" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7898029224686241015" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_c84kqv_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="108" startPosition="59" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200917586649" fileName="Reduction_MappingRule_Editor.java" startLine="147" startPosition="61" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200917873343" fileName="Reduction_MappingRule_Editor.java" startLine="157" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c84kqv_b1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169672948403" fileName="Reduction_MappingRule_Editor.java" startLine="175" startPosition="59" endLine="181" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="241" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c84kqv_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="257" startPosition="59" endLine="263" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="296" startPosition="61" endLine="302" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c84kqv_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="45" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c84kqv_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169672948377" fileName="Reduction_MappingRule_Editor.java" startLine="74" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c84kqv_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167518270807" fileName="Reduction_MappingRule_Editor.java" startLine="220" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c84kqv_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="84" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c84kqv_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169672961188" fileName="Reduction_MappingRule_Editor.java" startLine="184" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c84kqv_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c84kqv_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167518270806" fileName="Reduction_MappingRule_Editor.java" startLine="208" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_c84kqv_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="195" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c84kqv_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="60" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_c84kqv_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_c84kqv_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="248" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_c84kqv_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1169672948403" fileName="Reduction_MappingRule_Editor.java" startLine="164" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_c84kqv_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200917586649" fileName="Reduction_MappingRule_Editor.java" startLine="130" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c84kqv_a0a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="279" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_c84kqv_a0b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="31" startPosition="82" endLine="32" endPosition="65" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="38" startPosition="28" endLine="39" endPosition="83" />
@@ -10375,17 +10211,14 @@
     <scopeInfo nodeId="1169672948403" fileName="Reduction_MappingRule_Editor.java" startLine="170" startPosition="39" endLine="171" endPosition="44" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="201" startPosition="40" endLine="202" endPosition="81" />
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="202" startPosition="81" endLine="203" endPosition="81" />
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="203" startPosition="81" endLine="204" endPosition="83" />
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="235" startPosition="40" endLine="236" endPosition="82" />
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="236" startPosition="82" endLine="237" endPosition="81" />
-    <scopeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="267" startPosition="34" endLine="268" endPosition="14" />
-    <scopeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="271" startPosition="69" endLine="272" endPosition="67" />
-    <scopeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="275" startPosition="81" endLine="276" endPosition="67" />
+    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="203" startPosition="81" endLine="204" endPosition="82" />
     <scopeInfo nodeId="1169672948374" fileName="Reduction_MappingRule_Editor.java" startLine="55" startPosition="90" endLine="57" endPosition="22">
       <varInfo nodeId="1169672948374" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1200917586649" fileName="Reduction_MappingRule_Editor.java" startLine="138" startPosition="41" endLine="140" endPosition="47" />
-    <scopeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="287" startPosition="41" endLine="289" endPosition="47" />
+    <scopeInfo nodeId="7898029224686241015" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="89" endLine="232" endPosition="22">
+      <varInfo nodeId="7898029224686241015" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1167328252970" varName="editorContext" />
       <varInfo nodeId="1167328252970" varName="node" />
@@ -10420,22 +10253,6 @@
       <varInfo nodeId="1169672948403" varName="manager" />
       <varInfo nodeId="1169672948403" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="258" startPosition="35" endLine="261" endPosition="105">
-      <varInfo nodeId="1167328252970" varName="manager" />
-      <varInfo nodeId="1167328252970" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="267" startPosition="0" endLine="270" endPosition="0" />
-    <scopeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="271" startPosition="0" endLine="274" endPosition="0">
-      <varInfo nodeId="1200917562297" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="275" startPosition="0" endLine="278" endPosition="0">
-      <varInfo nodeId="1200917562297" varName="editorContext" />
-      <varInfo nodeId="1200917562297" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="297" startPosition="37" endLine="300" endPosition="107">
-      <varInfo nodeId="1200917563252" varName="manager" />
-      <varInfo nodeId="1200917563252" varName="opContext" />
-    </scopeInfo>
     <scopeInfo nodeId="1169672948374" fileName="Reduction_MappingRule_Editor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1169672948374" varName="editorContext" />
       <varInfo nodeId="1169672948374" varName="node" />
@@ -10443,16 +10260,13 @@
     <scopeInfo nodeId="1200917873343" fileName="Reduction_MappingRule_Editor.java" startLine="157" startPosition="90" endLine="161" endPosition="22">
       <varInfo nodeId="1200917873343" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="241" startPosition="89" endLine="245" endPosition="22">
-      <varInfo nodeId="1200917555184" varName="editorCell" />
+    <scopeInfo nodeId="7898029224686241015" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="0" endLine="234" endPosition="0">
+      <varInfo nodeId="7898029224686241015" varName="editorContext" />
+      <varInfo nodeId="7898029224686241015" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1200917873343" fileName="Reduction_MappingRule_Editor.java" startLine="157" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="1200917873343" varName="editorContext" />
       <varInfo nodeId="1200917873343" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917555184" fileName="Reduction_MappingRule_Editor.java" startLine="241" startPosition="0" endLine="247" endPosition="0">
-      <varInfo nodeId="1200917555184" varName="editorContext" />
-      <varInfo nodeId="1200917555184" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="35" startPosition="89" endLine="42" endPosition="22">
       <varInfo nodeId="1167328252970" varName="editorCell" />
@@ -10476,10 +10290,6 @@
     <scopeInfo nodeId="1169672961188" fileName="Reduction_MappingRule_Editor.java" startLine="184" startPosition="88" endLine="192" endPosition="22">
       <varInfo nodeId="1169672961188" varName="editorCell" />
       <varInfo nodeId="1169672961188" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="90" endLine="238" endPosition="22">
-      <varInfo nodeId="1167328252970" varName="editorCell" />
-      <varInfo nodeId="1167328252970" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1167328252970" varName="editorContext" />
@@ -10513,10 +10323,6 @@
       <varInfo nodeId="1167328252970" varName="editorCell" />
       <varInfo nodeId="1167328252970" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="230" startPosition="0" endLine="240" endPosition="0">
-      <varInfo nodeId="1167328252970" varName="editorContext" />
-      <varInfo nodeId="1167328252970" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="60" startPosition="90" endLine="71" endPosition="22">
       <varInfo nodeId="1167328252970" varName="editorCell" />
       <varInfo nodeId="1167328252970" varName="style" />
@@ -10539,12 +10345,6 @@
       <varInfo nodeId="1167328252970" varName="editorCell" />
       <varInfo nodeId="1167328252970" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="248" startPosition="88" endLine="263" endPosition="22">
-      <varInfo nodeId="1167328252970" varName="attributeConcept" />
-      <varInfo nodeId="1167328252970" varName="attributeKind" />
-      <varInfo nodeId="1167328252970" varName="editorCell" />
-      <varInfo nodeId="1167328252970" varName="provider" />
-    </scopeInfo>
     <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="1167328252970" varName="editorContext" />
       <varInfo nodeId="1167328252970" varName="node" />
@@ -10554,10 +10354,6 @@
       <varInfo nodeId="1169672948403" varName="attributeKind" />
       <varInfo nodeId="1169672948403" varName="editorCell" />
       <varInfo nodeId="1169672948403" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="248" startPosition="0" endLine="265" endPosition="0">
-      <varInfo nodeId="1167328252970" varName="editorContext" />
-      <varInfo nodeId="1167328252970" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1169672948403" fileName="Reduction_MappingRule_Editor.java" startLine="164" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="1169672948403" varName="editorContext" />
@@ -10570,24 +10366,12 @@
       <varInfo nodeId="1200917586649" varName="provider" />
       <varInfo nodeId="1200917586649" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="279" startPosition="93" endLine="302" endPosition="24">
-      <varInfo nodeId="1200917563252" varName="attributeConcept" />
-      <varInfo nodeId="1200917563252" varName="attributeKind" />
-      <varInfo nodeId="1200917563252" varName="editorCell" />
-      <varInfo nodeId="1200917563252" varName="provider" />
-      <varInfo nodeId="1200917563252" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1200917586649" fileName="Reduction_MappingRule_Editor.java" startLine="130" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="1200917586649" varName="editorContext" />
       <varInfo nodeId="1200917586649" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917563252" fileName="Reduction_MappingRule_Editor.java" startLine="279" startPosition="0" endLine="304" endPosition="0">
-      <varInfo nodeId="1200917563252" varName="editorContext" />
-      <varInfo nodeId="1200917563252" varName="node" />
-    </scopeInfo>
     <unitInfo nodeId="1200917586648" fileName="Reduction_MappingRule_Editor.java" startLine="117" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor$_Inline_c84kqv_a0b1a" />
-    <unitInfo nodeId="1200917562297" fileName="Reduction_MappingRule_Editor.java" startLine="266" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor$_Inline_c84kqv_a1c0" />
-    <unitInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor" />
+    <unitInfo nodeId="1167328252970" fileName="Reduction_MappingRule_Editor.java" startLine="26" startPosition="0" endLine="235" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Reduction_MappingRule_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1167514442227">
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -10880,9 +10664,9 @@
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="438" startPosition="40" endLine="439" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="439" startPosition="81" endLine="440" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="439" startPosition="81" endLine="440" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="83" endLine="441" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="83" endLine="441" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="441" startPosition="85" endLine="442" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="83" endLine="441" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="83" endLine="441" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="441" startPosition="82" endLine="442" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1167516845603" fileName="Root_MappingRule_Editor.java" startLine="445" startPosition="88" endLine="446" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1167516845603" fileName="Root_MappingRule_Editor.java" startLine="446" startPosition="103" endLine="447" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167516845603" fileName="Root_MappingRule_Editor.java" startLine="447" startPosition="47" endLine="448" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -10899,55 +10683,8 @@
     <nodeInfo nodeId="1167516860073" fileName="Root_MappingRule_Editor.java" startLine="461" startPosition="49" endLine="462" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167516860073" fileName="Root_MappingRule_Editor.java" startLine="462" startPosition="40" endLine="463" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1167516860073" fileName="Root_MappingRule_Editor.java" startLine="463" startPosition="34" endLine="464" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="92" endLine="468" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="468" startPosition="99" endLine="469" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="469" startPosition="51" endLine="470" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="470" startPosition="34" endLine="471" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="471" startPosition="49" endLine="472" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="472" startPosition="40" endLine="473" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="472" startPosition="40" endLine="473" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="473" startPosition="82" endLine="474" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="473" startPosition="82" endLine="474" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="474" startPosition="81" endLine="475" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="478" startPosition="89" endLine="479" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="479" startPosition="99" endLine="480" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="480" startPosition="48" endLine="481" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="481" startPosition="34" endLine="482" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="485" startPosition="88" endLine="486" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="486" startPosition="81" endLine="487" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="487" startPosition="41" endLine="488" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="488" startPosition="54" endLine="489" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="489" startPosition="26" endLine="490" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="490" startPosition="89" endLine="491" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="491" startPosition="58" endLine="492" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="492" startPosition="73" endLine="493" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="493" startPosition="57" endLine="494" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="495" startPosition="35" endLine="496" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="496" startPosition="72" endLine="497" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="497" startPosition="78" endLine="498" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="499" startPosition="10" endLine="500" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="504" startPosition="34" endLine="505" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="508" startPosition="69" endLine="509" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="512" startPosition="81" endLine="513" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="516" startPosition="93" endLine="517" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="517" startPosition="84" endLine="518" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="518" startPosition="31" endLine="519" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="519" startPosition="44" endLine="520" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="520" startPosition="33" endLine="521" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="521" startPosition="28" endLine="522" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="522" startPosition="60" endLine="523" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="524" startPosition="41" endLine="525" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="525" startPosition="42" endLine="526" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="527" startPosition="7" endLine="528" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="528" startPosition="36" endLine="529" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="529" startPosition="117" endLine="530" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="530" startPosition="42" endLine="531" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="531" startPosition="75" endLine="532" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="532" startPosition="59" endLine="533" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="534" startPosition="37" endLine="535" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="535" startPosition="74" endLine="536" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="536" startPosition="80" endLine="537" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="538" startPosition="12" endLine="539" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224687349990" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="89" endLine="468" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224687349990" fileName="Root_MappingRule_Editor.java" startLine="468" startPosition="154" endLine="469" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="42" startPosition="81" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -10964,13 +10701,10 @@
     <nodeInfo nodeId="1167514444712" fileName="Root_MappingRule_Editor.java" startLine="381" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_pxqe0v_a3a#()V" />
     <nodeInfo nodeId="1167514444712" fileName="Root_MappingRule_Editor.java" startLine="385" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514444712" fileName="Root_MappingRule_Editor.java" startLine="389" startPosition="0" endLine="392" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="504" startPosition="0" endLine="507" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_pxqe0v_a1c0#()V" />
-    <nodeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="508" startPosition="0" endLine="511" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="512" startPosition="0" endLine="515" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1177959016745" fileName="Root_MappingRule_Editor.java" startLine="130" startPosition="44" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1200917674377" fileName="Root_MappingRule_Editor.java" startLine="335" startPosition="46" endLine="339" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1167514444713" fileName="Root_MappingRule_Editor.java" startLine="400" startPosition="46" endLine="404" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="523" startPosition="46" endLine="527" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7898029224687349990" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="0" endLine="471" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_pxqe0v_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="101" startPosition="59" endLine="107" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1177959016745" fileName="Root_MappingRule_Editor.java" startLine="140" startPosition="61" endLine="146" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1177959016748" fileName="Root_MappingRule_Editor.java" startLine="181" startPosition="59" endLine="187" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -10981,9 +10715,6 @@
     <nodeInfo nodeId="1200917860731" fileName="Root_MappingRule_Editor.java" startLine="355" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="371" startPosition="59" endLine="377" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1167514444713" fileName="Root_MappingRule_Editor.java" startLine="411" startPosition="61" endLine="417" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="478" startPosition="0" endLine="484" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="494" startPosition="59" endLine="500" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="533" startPosition="61" endLine="539" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1167514444710" fileName="Root_MappingRule_Editor.java" startLine="272" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167516860073" fileName="Root_MappingRule_Editor.java" startLine="457" startPosition="0" endLine="466" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_b0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pxqe0v_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -10996,7 +10727,6 @@
     <nodeInfo nodeId="1177959050712" fileName="Root_MappingRule_Editor.java" startLine="243" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_a3a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="282" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pxqe0v_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514444709" fileName="Root_MappingRule_Editor.java" startLine="421" startPosition="0" endLine="431" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="0" endLine="477" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pxqe0v_c0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167516845603" fileName="Root_MappingRule_Editor.java" startLine="445" startPosition="0" endLine="456" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pxqe0v_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="432" startPosition="0" endLine="444" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pxqe0v_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="37" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pxqe0v_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -11005,12 +10735,10 @@
     <nodeInfo nodeId="1177959058949" fileName="Root_MappingRule_Editor.java" startLine="254" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pxqe0v_b3a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="297" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_pxqe0v_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="362" startPosition="0" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_pxqe0v_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="485" startPosition="0" endLine="502" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_pxqe0v_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1177959016751" fileName="Root_MappingRule_Editor.java" startLine="212" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_pxqe0v_b2a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="89" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_pxqe0v_b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1177959016745" fileName="Root_MappingRule_Editor.java" startLine="123" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pxqe0v_a0b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200917674377" fileName="Root_MappingRule_Editor.java" startLine="328" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pxqe0v_a0a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="516" startPosition="0" endLine="541" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pxqe0v_a0b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1167514444713" fileName="Root_MappingRule_Editor.java" startLine="393" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pxqe0v_a0d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="65" />
@@ -11047,16 +10775,13 @@
     <scopeInfo nodeId="1167514444712" fileName="Root_MappingRule_Editor.java" startLine="389" startPosition="81" endLine="390" endPosition="66" />
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="438" startPosition="40" endLine="439" endPosition="81" />
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="439" startPosition="81" endLine="440" endPosition="83" />
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="83" endLine="441" endPosition="85" />
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="472" startPosition="40" endLine="473" endPosition="82" />
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="473" startPosition="82" endLine="474" endPosition="81" />
-    <scopeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="504" startPosition="34" endLine="505" endPosition="14" />
-    <scopeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="508" startPosition="69" endLine="509" endPosition="67" />
-    <scopeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="512" startPosition="81" endLine="513" endPosition="67" />
+    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="440" startPosition="83" endLine="441" endPosition="82" />
     <scopeInfo nodeId="1177959016745" fileName="Root_MappingRule_Editor.java" startLine="131" startPosition="41" endLine="133" endPosition="48" />
     <scopeInfo nodeId="1200917674377" fileName="Root_MappingRule_Editor.java" startLine="336" startPosition="41" endLine="338" endPosition="47" />
     <scopeInfo nodeId="1167514444713" fileName="Root_MappingRule_Editor.java" startLine="401" startPosition="41" endLine="403" endPosition="39" />
-    <scopeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="524" startPosition="41" endLine="526" endPosition="47" />
+    <scopeInfo nodeId="7898029224687349990" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="89" endLine="469" endPosition="22">
+      <varInfo nodeId="7898029224687349990" varName="editorCell" />
+    </scopeInfo>
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1167514442227" varName="editorContext" />
       <varInfo nodeId="1167514442227" varName="node" />
@@ -11131,35 +10856,16 @@
       <varInfo nodeId="1167514444713" varName="manager" />
       <varInfo nodeId="1167514444713" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="495" startPosition="35" endLine="498" endPosition="105">
-      <varInfo nodeId="1167514442227" varName="manager" />
-      <varInfo nodeId="1167514442227" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="504" startPosition="0" endLine="507" endPosition="0" />
-    <scopeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="508" startPosition="0" endLine="511" endPosition="0">
-      <varInfo nodeId="1200917653634" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="512" startPosition="0" endLine="515" endPosition="0">
-      <varInfo nodeId="1200917653634" varName="editorContext" />
-      <varInfo nodeId="1200917653634" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="534" startPosition="37" endLine="537" endPosition="107">
-      <varInfo nodeId="1200917653635" varName="manager" />
-      <varInfo nodeId="1200917653635" varName="opContext" />
-    </scopeInfo>
     <scopeInfo nodeId="1200917860731" fileName="Root_MappingRule_Editor.java" startLine="355" startPosition="89" endLine="359" endPosition="22">
       <varInfo nodeId="1200917860731" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="478" startPosition="89" endLine="482" endPosition="22">
-      <varInfo nodeId="1200917653632" varName="editorCell" />
+    <scopeInfo nodeId="7898029224687349990" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="0" endLine="471" endPosition="0">
+      <varInfo nodeId="7898029224687349990" varName="editorContext" />
+      <varInfo nodeId="7898029224687349990" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1200917860731" fileName="Root_MappingRule_Editor.java" startLine="355" startPosition="0" endLine="361" endPosition="0">
       <varInfo nodeId="1200917860731" varName="editorContext" />
       <varInfo nodeId="1200917860731" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200917653632" fileName="Root_MappingRule_Editor.java" startLine="478" startPosition="0" endLine="484" endPosition="0">
-      <varInfo nodeId="1200917653632" varName="editorContext" />
-      <varInfo nodeId="1200917653632" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1167514444710" fileName="Root_MappingRule_Editor.java" startLine="272" startPosition="88" endLine="279" endPosition="22">
       <varInfo nodeId="1167514444710" varName="editorCell" />
@@ -11208,10 +10914,6 @@
     <scopeInfo nodeId="1167514444709" fileName="Root_MappingRule_Editor.java" startLine="421" startPosition="88" endLine="429" endPosition="22">
       <varInfo nodeId="1167514444709" varName="editorCell" />
       <varInfo nodeId="1167514444709" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="92" endLine="475" endPosition="22">
-      <varInfo nodeId="1167514442227" varName="editorCell" />
-      <varInfo nodeId="1167514442227" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1167514444710" fileName="Root_MappingRule_Editor.java" startLine="272" startPosition="0" endLine="281" endPosition="0">
       <varInfo nodeId="1167514444710" varName="editorContext" />
@@ -11269,10 +10971,6 @@
       <varInfo nodeId="1167514442227" varName="editorCell" />
       <varInfo nodeId="1167514442227" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="467" startPosition="0" endLine="477" endPosition="0">
-      <varInfo nodeId="1167514442227" varName="editorContext" />
-      <varInfo nodeId="1167514442227" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="37" startPosition="89" endLine="48" endPosition="22">
       <varInfo nodeId="1167514442227" varName="editorCell" />
     </scopeInfo>
@@ -11320,12 +11018,6 @@
       <varInfo nodeId="1167514442227" varName="editorCell" />
       <varInfo nodeId="1167514442227" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="485" startPosition="88" endLine="500" endPosition="22">
-      <varInfo nodeId="1167514442227" varName="attributeConcept" />
-      <varInfo nodeId="1167514442227" varName="attributeKind" />
-      <varInfo nodeId="1167514442227" varName="editorCell" />
-      <varInfo nodeId="1167514442227" varName="provider" />
-    </scopeInfo>
     <scopeInfo nodeId="1177959016748" fileName="Root_MappingRule_Editor.java" startLine="172" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="1177959016748" varName="editorContext" />
       <varInfo nodeId="1177959016748" varName="node" />
@@ -11345,10 +11037,6 @@
       <varInfo nodeId="1167514442227" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="362" startPosition="0" endLine="379" endPosition="0">
-      <varInfo nodeId="1167514442227" varName="editorContext" />
-      <varInfo nodeId="1167514442227" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="485" startPosition="0" endLine="502" endPosition="0">
       <varInfo nodeId="1167514442227" varName="editorContext" />
       <varInfo nodeId="1167514442227" varName="node" />
     </scopeInfo>
@@ -11380,13 +11068,6 @@
       <varInfo nodeId="1200917674377" varName="provider" />
       <varInfo nodeId="1200917674377" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="516" startPosition="93" endLine="539" endPosition="24">
-      <varInfo nodeId="1200917653635" varName="attributeConcept" />
-      <varInfo nodeId="1200917653635" varName="attributeKind" />
-      <varInfo nodeId="1200917653635" varName="editorCell" />
-      <varInfo nodeId="1200917653635" varName="provider" />
-      <varInfo nodeId="1200917653635" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1167514444713" fileName="Root_MappingRule_Editor.java" startLine="393" startPosition="92" endLine="417" endPosition="24">
       <varInfo nodeId="1167514444713" varName="attributeConcept" />
       <varInfo nodeId="1167514444713" varName="attributeKind" />
@@ -11402,19 +11083,14 @@
       <varInfo nodeId="1200917674377" varName="editorContext" />
       <varInfo nodeId="1200917674377" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1200917653635" fileName="Root_MappingRule_Editor.java" startLine="516" startPosition="0" endLine="541" endPosition="0">
-      <varInfo nodeId="1200917653635" varName="editorContext" />
-      <varInfo nodeId="1200917653635" varName="node" />
-    </scopeInfo>
     <scopeInfo nodeId="1167514444713" fileName="Root_MappingRule_Editor.java" startLine="393" startPosition="0" endLine="419" endPosition="0">
       <varInfo nodeId="1167514444713" varName="editorContext" />
       <varInfo nodeId="1167514444713" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1177959016744" fileName="Root_MappingRule_Editor.java" startLine="110" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a1a0a" />
     <unitInfo nodeId="1200917674376" fileName="Root_MappingRule_Editor.java" startLine="315" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a0c0" />
-    <unitInfo nodeId="1200917653634" fileName="Root_MappingRule_Editor.java" startLine="503" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a1c0" />
     <unitInfo nodeId="1167514444712" fileName="Root_MappingRule_Editor.java" startLine="380" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor$_Inline_pxqe0v_a3a" />
-    <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="28" startPosition="0" endLine="543" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor" />
+    <unitInfo nodeId="1167514442227" fileName="Root_MappingRule_Editor.java" startLine="28" startPosition="0" endLine="472" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.Root_MappingRule_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1167859493978">
     <nodeInfo nodeId="1167859493978" fileName="MacroSymbol_Actions.java" startLine="13" startPosition="95" endLine="14" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20852,6 +20528,263 @@
     </scopeInfo>
     <unitInfo nodeId="7386719926921899998" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="38" startPosition="148" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery$1" />
     <unitInfo nodeId="7386719926921893550" fileName="TemplateDeclarationParameterInformationQuery.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/7898029224686240839">
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="26" startPosition="47" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="34" startPosition="89" endLine="35" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="35" startPosition="99" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="36" startPosition="48" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="36" startPosition="48" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="37" startPosition="81" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="37" startPosition="81" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="38" startPosition="83" endLine="39" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="38" startPosition="83" endLine="39" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="39" startPosition="83" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="43" startPosition="88" endLine="44" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="44" startPosition="86" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="45" startPosition="47" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="46" startPosition="34" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="50" startPosition="90" endLine="51" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="51" startPosition="97" endLine="52" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="52" startPosition="49" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="53" startPosition="34" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="54" startPosition="58" endLine="55" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="55" startPosition="40" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="55" startPosition="40" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="56" startPosition="82" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="56" startPosition="82" endLine="57" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="57" startPosition="82" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="57" startPosition="82" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="58" startPosition="82" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="62" startPosition="89" endLine="63" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="63" startPosition="99" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="64" startPosition="48" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="69" startPosition="89" endLine="70" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="70" startPosition="86" endLine="71" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="71" startPosition="48" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="76" startPosition="89" endLine="77" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="77" startPosition="97" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="78" startPosition="48" endLine="79" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="79" startPosition="34" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="83" startPosition="90" endLine="84" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="84" startPosition="97" endLine="85" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="85" startPosition="49" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="86" startPosition="34" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="87" startPosition="59" endLine="88" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="88" startPosition="40" endLine="89" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="88" startPosition="40" endLine="89" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="89" startPosition="81" endLine="90" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="89" startPosition="81" endLine="90" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="90" startPosition="82" endLine="91" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="90" startPosition="82" endLine="91" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="91" startPosition="82" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="95" startPosition="88" endLine="96" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="96" startPosition="81" endLine="97" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="97" startPosition="41" endLine="98" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="98" startPosition="54" endLine="99" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="99" startPosition="26" endLine="100" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="100" startPosition="89" endLine="101" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="101" startPosition="58" endLine="102" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="102" startPosition="73" endLine="103" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="103" startPosition="57" endLine="104" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="105" startPosition="35" endLine="106" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="106" startPosition="72" endLine="107" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="107" startPosition="78" endLine="108" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="109" startPosition="10" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="114" startPosition="34" endLine="115" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="118" startPosition="69" endLine="119" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="122" startPosition="81" endLine="123" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="126" startPosition="93" endLine="127" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="127" startPosition="84" endLine="128" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="128" startPosition="31" endLine="129" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="129" startPosition="44" endLine="130" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="130" startPosition="33" endLine="131" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="131" startPosition="28" endLine="132" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="132" startPosition="60" endLine="133" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="134" startPosition="41" endLine="135" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="135" startPosition="42" endLine="136" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="137" startPosition="7" endLine="138" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="138" startPosition="36" endLine="139" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="139" startPosition="117" endLine="140" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="140" startPosition="42" endLine="141" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="141" startPosition="75" endLine="142" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="142" startPosition="59" endLine="143" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="144" startPosition="37" endLine="145" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="145" startPosition="74" endLine="146" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="146" startPosition="80" endLine="147" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="148" startPosition="12" endLine="149" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="153" startPosition="89" endLine="154" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="154" startPosition="86" endLine="155" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="155" startPosition="48" endLine="156" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="156" startPosition="34" endLine="157" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="160" startPosition="89" endLine="161" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="161" startPosition="82" endLine="162" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="162" startPosition="36" endLine="163" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="163" startPosition="66" endLine="164" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="164" startPosition="40" endLine="165" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="165" startPosition="26" endLine="166" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="166" startPosition="58" endLine="167" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="167" startPosition="49" endLine="168" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="168" startPosition="73" endLine="169" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="169" startPosition="57" endLine="170" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="171" startPosition="35" endLine="172" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="172" startPosition="72" endLine="173" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="173" startPosition="78" endLine="174" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="175" startPosition="10" endLine="176" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_3ei7nb_a0c0#()V" />
+    <nodeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="133" startPosition="44" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_3ei7nb_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_3ei7nb_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_3ei7nb_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_3ei7nb_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="104" startPosition="59" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="143" startPosition="61" endLine="149" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="153" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_3ei7nb_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="170" startPosition="59" endLine="176" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_3ei7nb_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="50" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_3ei7nb_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="83" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_3ei7nb_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="95" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_3ei7nb_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="160" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_3ei7nb_c2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="126" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_3ei7nb_a0a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="26" startPosition="47" endLine="27" endPosition="35" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="30" startPosition="79" endLine="31" endPosition="63" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="36" startPosition="48" endLine="37" endPosition="81" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="37" startPosition="81" endLine="38" endPosition="83" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="38" startPosition="83" endLine="39" endPosition="83" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="55" startPosition="40" endLine="56" endPosition="82" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="56" startPosition="82" endLine="57" endPosition="82" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="57" startPosition="82" endLine="58" endPosition="82" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="88" startPosition="40" endLine="89" endPosition="81" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="89" startPosition="81" endLine="90" endPosition="82" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="90" startPosition="82" endLine="91" endPosition="82" />
+    <scopeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="114" startPosition="34" endLine="115" endPosition="14" />
+    <scopeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="118" startPosition="69" endLine="119" endPosition="67" />
+    <scopeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="122" startPosition="81" endLine="123" endPosition="67" />
+    <scopeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="134" startPosition="41" endLine="136" endPosition="47" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="7898029224686240839" varName="editorContext" />
+      <varInfo nodeId="7898029224686240839" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="105" startPosition="35" endLine="108" endPosition="105">
+      <varInfo nodeId="7898029224686240839" varName="manager" />
+      <varInfo nodeId="7898029224686240839" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="118" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="1200917562297" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="122" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="1200917562297" varName="editorContext" />
+      <varInfo nodeId="1200917562297" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="144" startPosition="37" endLine="147" endPosition="107">
+      <varInfo nodeId="1200917563252" varName="manager" />
+      <varInfo nodeId="1200917563252" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="171" startPosition="35" endLine="174" endPosition="105">
+      <varInfo nodeId="7898029224686240909" varName="manager" />
+      <varInfo nodeId="7898029224686240909" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="43" startPosition="88" endLine="47" endPosition="22">
+      <varInfo nodeId="7898029224696433005" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="62" startPosition="89" endLine="66" endPosition="22">
+      <varInfo nodeId="1200917555184" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="69" startPosition="89" endLine="73" endPosition="22">
+      <varInfo nodeId="7898029224690793142" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="76" startPosition="89" endLine="80" endPosition="22">
+      <varInfo nodeId="7898029224690793153" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="153" startPosition="89" endLine="157" endPosition="22">
+      <varInfo nodeId="7898029224690793202" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="34" startPosition="89" endLine="40" endPosition="22">
+      <varInfo nodeId="7898029224686240839" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224696433005" fileName="MappingRuleCommonFields.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="7898029224696433005" varName="editorContext" />
+      <varInfo nodeId="7898029224696433005" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917555184" fileName="MappingRuleCommonFields.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1200917555184" varName="editorContext" />
+      <varInfo nodeId="1200917555184" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224690793142" fileName="MappingRuleCommonFields.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="7898029224690793142" varName="editorContext" />
+      <varInfo nodeId="7898029224690793142" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224690793153" fileName="MappingRuleCommonFields.java" startLine="76" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="7898029224690793153" varName="editorContext" />
+      <varInfo nodeId="7898029224690793153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224690793202" fileName="MappingRuleCommonFields.java" startLine="153" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="7898029224690793202" varName="editorContext" />
+      <varInfo nodeId="7898029224690793202" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="7898029224686240839" varName="editorContext" />
+      <varInfo nodeId="7898029224686240839" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="50" startPosition="90" endLine="59" endPosition="22">
+      <varInfo nodeId="7898029224686240839" varName="editorCell" />
+      <varInfo nodeId="7898029224686240839" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="83" startPosition="90" endLine="92" endPosition="22">
+      <varInfo nodeId="7898029224686240839" varName="editorCell" />
+      <varInfo nodeId="7898029224686240839" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="50" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="7898029224686240839" varName="editorContext" />
+      <varInfo nodeId="7898029224686240839" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="83" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="7898029224686240839" varName="editorContext" />
+      <varInfo nodeId="7898029224686240839" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="95" startPosition="88" endLine="110" endPosition="22">
+      <varInfo nodeId="7898029224686240839" varName="attributeConcept" />
+      <varInfo nodeId="7898029224686240839" varName="attributeKind" />
+      <varInfo nodeId="7898029224686240839" varName="editorCell" />
+      <varInfo nodeId="7898029224686240839" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="160" startPosition="89" endLine="176" endPosition="22">
+      <varInfo nodeId="7898029224686240909" varName="attributeConcept" />
+      <varInfo nodeId="7898029224686240909" varName="attributeKind" />
+      <varInfo nodeId="7898029224686240909" varName="editorCell" />
+      <varInfo nodeId="7898029224686240909" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="95" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="7898029224686240839" varName="editorContext" />
+      <varInfo nodeId="7898029224686240839" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7898029224686240909" fileName="MappingRuleCommonFields.java" startLine="160" startPosition="0" endLine="178" endPosition="0">
+      <varInfo nodeId="7898029224686240909" varName="editorContext" />
+      <varInfo nodeId="7898029224686240909" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="126" startPosition="93" endLine="149" endPosition="24">
+      <varInfo nodeId="1200917563252" varName="attributeConcept" />
+      <varInfo nodeId="1200917563252" varName="attributeKind" />
+      <varInfo nodeId="1200917563252" varName="editorCell" />
+      <varInfo nodeId="1200917563252" varName="provider" />
+      <varInfo nodeId="1200917563252" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200917563252" fileName="MappingRuleCommonFields.java" startLine="126" startPosition="0" endLine="151" endPosition="0">
+      <varInfo nodeId="1200917563252" varName="editorContext" />
+      <varInfo nodeId="1200917563252" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1200917562297" fileName="MappingRuleCommonFields.java" startLine="113" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingRuleCommonFields$_Inline_3ei7nb_a0c0" />
+    <unitInfo nodeId="7898029224686240839" fileName="MappingRuleCommonFields.java" startLine="25" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingRuleCommonFields" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/8900764248744242392">
     <nodeInfo nodeId="8900764248744242392" fileName="InlineTemplateWithContext_RuleConsequence_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
