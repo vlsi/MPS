@@ -14,9 +14,9 @@
   <application-components>
     <!--api-->
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager</implementation-class>
+      <interface-class>jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager</interface-class>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl</implementation-class>
     </component>
-
     <!--runtime-->
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.JavaDebugger</implementation-class>
