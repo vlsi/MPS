@@ -174,7 +174,7 @@ public class CommandUtil {
 
 
 
-  public static SearchResults modulesToResults(Iterable<SModule> modules) {
+  public static SearchResults modulesToResults(Iterable<? extends SModule> modules) {
     final SearchResults<SModule> res = new SearchResults<SModule>();
     Sequence.fromIterable(modules).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
