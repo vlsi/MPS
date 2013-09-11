@@ -22,7 +22,7 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   private final String myPresentation;
 
   public ValueWrapper(@NotNull JavaValue value) {
-    super(value.getValue(), value.getClassFQName(), value.myThreadReference);
+    super(value.getValue(), value.myThreadReference);
     myWrappedValue = value;
     myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue());
     myPresentation = myWrappedValue.getValuePresentation();

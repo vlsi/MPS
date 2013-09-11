@@ -17,9 +17,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 /*package*/ class JavaExceptionWatchable extends JavaWatchable {
   private final JavaValue myValue;
 
-  public JavaExceptionWatchable(ObjectReference exception, String classFQName, ThreadReference threadReference) {
-    super(classFQName, threadReference);
-    myValue = ValueUtil.getInstance().fromJDI(exception, myClassFQName, myThreadReference);
+  public JavaExceptionWatchable(ObjectReference exception, ThreadReference threadReference) {
+    super(threadReference);
+    myValue = ValueUtil.getInstance().fromJDI(exception, myThreadReference);
   }
 
   @Override

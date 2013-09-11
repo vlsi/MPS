@@ -13,8 +13,8 @@ import java.util.ArrayList;
 /*package*/ class JavaStringValue extends JavaObjectValue {
   private final String myPresentation;
 
-  public JavaStringValue(Value value, String classFQname, ThreadReference threadReference) {
-    super(value, classFQname, threadReference);
+  public JavaStringValue(Value value, ThreadReference threadReference) {
+    super(value, threadReference);
     myPresentation = "\"" + ((StringReference) myValue).value() + "\"";
   }
 

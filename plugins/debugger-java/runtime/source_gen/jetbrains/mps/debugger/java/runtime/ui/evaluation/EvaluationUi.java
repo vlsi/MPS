@@ -165,7 +165,7 @@ public abstract class EvaluationUi extends JPanel {
         JavaUiStateImpl uiState = myDebugSession.getUiState();
         String unitName = check_4q63yg_a0b0a0b02(check_4q63yg_a0a1a0a1u(uiState.getStackFrame()));
         if ((unitName != null && unitName.length() > 0)) {
-          myTree.updateLocation(unitName, uiState.getThread().getThread());
+          myTree.updateLocation(uiState.getThread().getThread());
         }
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override

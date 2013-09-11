@@ -110,7 +110,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     List<JavaLocalVariable> result = new ArrayList<JavaLocalVariable>();
     if (stackFrame != null) {
       for (LocalVariable variable : stackFrame.visibleVariables()) {
-        result.add(new JavaLocalVariable(variable, this, myClassFqName, myThread.getThread()));
+        result.add(new JavaLocalVariable(variable, this, myThread.getThread()));
       }
     }
     return result;
@@ -123,9 +123,9 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     if (stackFrame != null) {
       ObjectReference thisObject = stackFrame.thisObject();
       if (thisObject != null) {
-        return new JavaThisObject(thisObject, this, myClassFqName, myThread.getThread());
+        return new JavaThisObject(thisObject, this, myThread.getThread());
       } else {
-        return new JavaStaticContext(stackFrame.location().declaringType(), myClassFqName, myThread.getThread());
+        return new JavaStaticContext(stackFrame.location().declaringType(), myThread.getThread());
       }
     }
     return null;
@@ -141,7 +141,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     try {
       if (watchable instanceof JavaLocalVariable) {
         JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-        return ValueUtil.getInstance().fromJDI(getFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThread.getThread());
+        return ValueUtil.getInstance().fromJDI(getFrame().getValue(localVariable.getLocalVariable()), myThread.getThread());
       }
     } catch (IncompatibleThreadStateException e) {
     }

@@ -14,7 +14,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class WatchableNode extends AbstractWatchableNode {
-  private boolean myInitialized;
+  private volatile boolean myInitialized;
   @NotNull
   private final IWatchable myWatchable;
   private final AbstractUiState myState;
@@ -70,6 +70,9 @@ public class WatchableNode extends AbstractWatchableNode {
 
   @Override
   protected void doInit() {
+    if (myInitialized) {
+      return;
+    }
     removeAllChildren();
     nodeChanged();
     if (!(isLeaf())) {

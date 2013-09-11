@@ -18,8 +18,8 @@ import jetbrains.mps.debugger.java.runtime.state.watchables.JavaArrayItemWatchab
   private final String myPresentation;
   private final boolean myIsStructure;
 
-  public JavaArrayValue(Value value, String classFQname, ThreadReference threadReference) {
-    super(value, classFQname, threadReference);
+  public JavaArrayValue(Value value, ThreadReference threadReference) {
+    super(value, threadReference);
     myPresentation = (("{" + myValue.type().name() + "} ") + myValue.toString());
     myIsStructure = check_smfa65_a0a2a3(((ArrayReference) myValue)) > 0;
   }
@@ -45,7 +45,7 @@ import jetbrains.mps.debugger.java.runtime.state.watchables.JavaArrayItemWatchab
           len = MAX_ARRAY_VALUES;
         }
         for (int i = 0; i < len; i++) {
-          watchables.add(new JavaArrayItemWatchable(arrayRef, i, myClassFQName, myThreadReference));
+          watchables.add(new JavaArrayItemWatchable(arrayRef, i, myThreadReference));
         }
       }
     }

@@ -20,8 +20,8 @@ import java.util.Collections;
   private final boolean myIsEnter;
   private final JavaMethodWatchable.JavaMethodValue myValue;
 
-  public JavaMethodWatchable(Method method, boolean enter, String classFQName, ThreadReference threadReference) {
-    super(classFQName, threadReference);
+  public JavaMethodWatchable(Method method, boolean enter, ThreadReference threadReference) {
+    super(threadReference);
     myMethod = method;
     myIsEnter = enter;
     myValue = new JavaMethodWatchable.JavaMethodValue();

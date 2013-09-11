@@ -21,7 +21,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
+import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -60,7 +60,7 @@ public class VeiwAsActionGroup_ActionGroup extends GeneratedActionGroup {
       final Set<ValueWrapperFactory> factories = SetSequence.fromSet(new HashSet<ValueWrapperFactory>());
       uiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return factories.addAll(CustomViewersManager.getInstance().getValueWrapperFactories(((ValueWrapper) value).getWrappedValue()));
+          return factories.addAll(CustomViewersManagerImpl.getInstanceImpl().getValueWrapperFactories(((ValueWrapper) value).getWrappedValue()));
         }
       });
 

@@ -20,8 +20,8 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
 /*package*/ class JavaObjectValue extends JavaValue {
   private final String myPresentation;
 
-  public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
-    super(value, classFQname, threadReference);
+  public JavaObjectValue(Value value, ThreadReference threadReference) {
+    super(value, threadReference);
     myPresentation = (("{" + myValue.type().name() + "} ") + myValue.toString());
   }
 
@@ -56,7 +56,7 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
           return it.name();
         }
       }, true)) {
-        watchables.add(new JavaField(f, ref, myClassFQName, myThreadReference));
+        watchables.add(new JavaField(f, ref, myThreadReference));
       }
     }
     return watchables;

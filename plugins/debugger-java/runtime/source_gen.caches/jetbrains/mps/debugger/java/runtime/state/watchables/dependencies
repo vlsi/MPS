@@ -12,7 +12,6 @@
     <classNode dependClassName="com.sun.jdi.event.MethodEntryEvent" />
     <classNode dependClassName="com.sun.jdi.event.MethodExitEvent" />
     <classNode dependClassName="com.sun.jdi.event.ModificationWatchpointEvent" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.watchables.JavaExceptionWatchable" />

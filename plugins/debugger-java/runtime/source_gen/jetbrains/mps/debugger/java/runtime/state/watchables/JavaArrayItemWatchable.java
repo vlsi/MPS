@@ -18,11 +18,11 @@ public class JavaArrayItemWatchable extends JavaWatchable implements IWatchable 
   private final int myIndex;
   private final JavaValue myValue;
 
-  public JavaArrayItemWatchable(ArrayReference arrayReference, int index, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaArrayItemWatchable(ArrayReference arrayReference, int index, ThreadReference threadReference) {
+    super(threadReference);
     myArray = arrayReference;
     myIndex = index;
-    myValue = ValueUtil.getInstance().fromJDI(myArray.getValue(myIndex), myClassFQName, myThreadReference);
+    myValue = ValueUtil.getInstance().fromJDI(myArray.getValue(myIndex), myThreadReference);
   }
 
   public ArrayReference getArray() {

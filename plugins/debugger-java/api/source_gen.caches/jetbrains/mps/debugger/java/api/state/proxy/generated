@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3jle49x5m7a77mqju04f3dzyh64r4jf">
+<dependencies version="2" modelHash="5bzsmlg3biweewpzobcmwzmssvz07j">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -7,10 +7,10 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="b6f59t293haekb6irskuqs1h67va1v0" />
-  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="aokzyd0v3k495bfgkgtunm8bhv5blv6" />
+  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="kcupb91j8f0p56sem24heen7bu7bqk" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="6v02pfa0unztw4l7ywpem1d0wlxitap" />
   <common hash="16zdu5yr5gqqvs5zz1f4spyemf6lz01" />
-  <source id="3432969378036014408" name="ValueWrapper" hash="-5k1g6mesj22ncttc4bghlf95h4mi5j1">
+  <source id="3432969378036014408" name="ValueWrapper" hash="-1od4u68zlyw63ekkuwcofmoqvb21nkb">
     <dep root="3432969378036013922" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValueWrapper.java" />
@@ -29,10 +29,10 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProxyForJava.java" />
   </source>
-  <source id="3432969378036013922" name="JavaValue" hash="-81nctpaog7b0uzfi159slsxtekwzzyc">
+  <source id="3432969378036013922" name="JavaValue" hash="-80cdy85t961xr5uhx4hv72v1ikwk0g8">
     <file name="JavaValue.java" />
   </source>
-  <source id="3432969378036016687" name="JavaStackFrame" hash="6fysprq324v9mox2a0zhdh30fizthmd">
+  <source id="3432969378036016687" name="JavaStackFrame" hash="-8szxpyoj4vgz8gz7dekmjn6qfkq7v5e">
     <dep root="3432969378036013921" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -44,7 +44,7 @@
   <source id="3432969378036017270" name="ValueWrapperFactory" hash="4l72hy97diytn6vpegv4rm0c1v2hap5">
     <file name="ValueWrapperFactory.java" />
   </source>
-  <source id="4838833313499239213" name="ValueUtil" hash="-bqani1mpzynfu06v9dzhtu8j3xd38wu">
+  <source id="4838833313499239213" name="ValueUtil" hash="b282e1966jhthlgl6ig3rpt6ef1kefh">
     <file name="ValueUtil.java" />
   </source>
   <source id="4209988649465089935" name="JavaLocation" hash="-3hvcfn5592ke9y26smfys8q3kikbez8">

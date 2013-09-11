@@ -20,11 +20,11 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
   private final JavaStackFrame myStackFrame;
   private final JavaValue myValue;
 
-  public JavaThisObject(ObjectReference objectReference, JavaStackFrame stackFrame, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaThisObject(ObjectReference objectReference, JavaStackFrame stackFrame, ThreadReference threadReference) {
+    super(threadReference);
     myThisObject = objectReference;
     myStackFrame = stackFrame;
-    myValue = ValueUtil.getInstance().fromJDI(myThisObject, myClassFQName, myThreadReference);
+    myValue = ValueUtil.getInstance().fromJDI(myThisObject, myThreadReference);
   }
 
   public ObjectReference getThisObject() {

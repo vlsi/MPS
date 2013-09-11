@@ -6,11 +6,9 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.ThreadReference;
 
 public abstract class JavaWatchable implements IWatchable {
-  protected String myClassFQName;
   protected ThreadReference myThreadReference;
 
-  public JavaWatchable(String classFQName, ThreadReference threadReference) {
-    myClassFQName = classFQName;
+  public JavaWatchable(ThreadReference threadReference) {
     myThreadReference = threadReference;
   }
 }

@@ -19,11 +19,11 @@ public class JavaField extends JavaWatchable implements IWatchable {
   private final JavaValue myCachedValue;
   private final String myName;
 
-  public JavaField(Field field, ObjectReference parent, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaField(Field field, ObjectReference parent, ThreadReference threadReference) {
+    super(threadReference);
     myField = field;
     myParent = parent;
-    myCachedValue = ValueUtil.getInstance().fromJDI(myParent.getValue(myField), classFqName, threadReference);
+    myCachedValue = ValueUtil.getInstance().fromJDI(myParent.getValue(myField), threadReference);
     myName = calculateName();
   }
 

@@ -4,12 +4,12 @@ package jetbrains.mps.debugger.java.runtime.state.values;
 
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
-import com.sun.jdi.Value;
-import org.jetbrains.annotations.NotNull;
-import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.Nullable;
+import com.sun.jdi.Value;
+import com.sun.jdi.ThreadReference;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
-import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
+import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.ArrayReference;
 import com.sun.jdi.StringReference;
@@ -33,45 +33,37 @@ public class ValueUtilImpl extends ValueUtil {
   }
 
   @Override
-  public JavaValue fromJDI(Value value, @NotNull String classFQname, ThreadReference threadReference) {
-    //  could not we, like, get fqName from the value? 
-    JavaValue javaValue = fromJDIRaw(value, classFQname, threadReference);
-    return tryToWrap(classFQname, javaValue);
-  }
-
-  @Override
   public JavaValue fromJDI(@Nullable Value value, ThreadReference threadReference) {
     if (value == null) {
-      return fromJDIRaw(value, "java.lang.Object", threadReference);
+      return fromJDIRaw(value, threadReference);
     }
-    JavaValue javaValue = fromJDIRaw(value, value.type().name(), threadReference);
-    return tryToWrap(value.type().name(), javaValue);
+    JavaValue javaValue = fromJDIRaw(value, threadReference);
+    return tryToWrap(javaValue);
   }
 
-  private JavaValue tryToWrap(@NotNull String classFQname, JavaValue javaValue) {
-    ValueWrapper wrapper = CustomViewersManager.getInstance().getValueWrapper(javaValue, classFQname);
+  private JavaValue tryToWrap(@NotNull JavaValue javaValue) {
+    ValueWrapper wrapper = CustomViewersManagerImpl.getInstanceImpl().getValueWrapper(javaValue);
     if (wrapper == null) {
       return javaValue;
     }
     return wrapper;
   }
 
-  @Override
-  public JavaValue fromJDIRaw(Value value, String classFQname, ThreadReference threadReference) {
+  public JavaValue fromJDIRaw(Value value, ThreadReference threadReference) {
     if (value == null) {
-      return new JavaPrimitiveValue(value, classFQname, threadReference);
+      return new JavaPrimitiveValue(value, threadReference);
     }
     if (value instanceof ObjectReference) {
       if (value instanceof ArrayReference) {
-        return new JavaArrayValue(value, classFQname, threadReference);
+        return new JavaArrayValue(value, threadReference);
       } else
       if (value instanceof StringReference) {
-        return new JavaStringValue(value, classFQname, threadReference);
+        return new JavaStringValue(value, threadReference);
       } else {
-        return new JavaObjectValue(value, classFQname, threadReference);
+        return new JavaObjectValue(value, threadReference);
       }
     } else {
-      return new JavaPrimitiveValue(value, classFQname, threadReference);
+      return new JavaPrimitiveValue(value, threadReference);
     }
   }
 }

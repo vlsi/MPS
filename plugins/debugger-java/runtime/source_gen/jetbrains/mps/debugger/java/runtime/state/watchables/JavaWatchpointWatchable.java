@@ -19,17 +19,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 /*package*/ class JavaWatchpointWatchable extends JavaWatchable {
   private final FieldWatchpointValue myValue;
 
-  public JavaWatchpointWatchable(Field field, Value currentValue, Value newValue, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
-    JavaValue current = ValueUtil.getInstance().fromJDI(currentValue, classFqName, threadReference);
-    JavaValue neww = ValueUtil.getInstance().fromJDI(newValue, classFqName, threadReference);
-    myValue = new FieldWatchpointValue(field, false, current, neww, classFqName, threadReference);
+  public JavaWatchpointWatchable(Field field, Value currentValue, Value newValue, ThreadReference threadReference) {
+    super(threadReference);
+    JavaValue current = ValueUtil.getInstance().fromJDI(currentValue, threadReference);
+    JavaValue neww = ValueUtil.getInstance().fromJDI(newValue, threadReference);
+    myValue = new FieldWatchpointValue(field, false, current, neww, threadReference);
   }
 
-  public JavaWatchpointWatchable(Field field, Value currentValue, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
-    JavaValue current = ValueUtil.getInstance().fromJDI(currentValue, classFqName, threadReference);
-    myValue = new FieldWatchpointValue(field, true, current, null, classFqName, threadReference);
+  public JavaWatchpointWatchable(Field field, Value currentValue, ThreadReference threadReference) {
+    super(threadReference);
+    JavaValue current = ValueUtil.getInstance().fromJDI(currentValue, threadReference);
+    myValue = new FieldWatchpointValue(field, true, current, null, threadReference);
   }
 
   @Override

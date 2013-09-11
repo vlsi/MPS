@@ -15,7 +15,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
+import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -68,9 +68,8 @@ public class ViewWithFactory_Action extends BaseAction {
       if (value == null || !(value instanceof JavaValue)) {
         return;
       }
-      CustomViewersManager.getInstance().setValueWrapper((JavaValue) value, ViewWithFactory_Action.this.factory);
-      DebugSession debugSession = (DebugSession) DebugActionsUtil.getDebugSession(event);
-      debugSession.refresh();
+      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper((JavaValue) value, ViewWithFactory_Action.this.factory);
+      ((DebugSession) DebugActionsUtil.getDebugSession(event)).refresh();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ViewWithFactory", t);

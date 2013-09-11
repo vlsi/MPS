@@ -21,13 +21,13 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   private final JavaStackFrame myStackFrame;
   private final JavaValue myCachedValue;
 
-  public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, ThreadReference threadReference) {
+    super(threadReference);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
     StackFrame javaStackFrame = myStackFrame.getStackFrame();
     if (javaStackFrame != null) {
-      myCachedValue = ValueUtil.getInstance().fromJDI(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+      myCachedValue = ValueUtil.getInstance().fromJDI(javaStackFrame.getValue(myLocalVariable), threadReference);
     } else {
       myCachedValue = null;
     }

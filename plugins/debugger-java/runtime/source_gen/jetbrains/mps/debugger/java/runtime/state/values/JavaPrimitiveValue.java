@@ -14,8 +14,8 @@ import java.util.ArrayList;
 /*package*/ class JavaPrimitiveValue extends JavaValue {
   private final String myPresentation;
 
-  public JavaPrimitiveValue(Value value, String classFQname, ThreadReference threadReference) {
-    super(value, classFQname, threadReference);
+  public JavaPrimitiveValue(Value value, ThreadReference threadReference) {
+    super(value, threadReference);
     if (myValue == null) {
       myPresentation = "null";
     } else {

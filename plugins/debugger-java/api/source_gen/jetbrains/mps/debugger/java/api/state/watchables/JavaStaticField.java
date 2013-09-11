@@ -16,10 +16,10 @@ public class JavaStaticField extends JavaWatchable implements IWatchable {
   private final Field myField;
   private final JavaValue myCachedValue;
 
-  public JavaStaticField(Field field, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaStaticField(Field field, ThreadReference threadReference) {
+    super(threadReference);
     myField = field;
-    myCachedValue = ValueUtil.getInstance().fromJDI(myField.declaringType().getValue(myField), myClassFQName, myThreadReference);
+    myCachedValue = ValueUtil.getInstance().fromJDI(myField.declaringType().getValue(myField), myThreadReference);
   }
 
   @Override

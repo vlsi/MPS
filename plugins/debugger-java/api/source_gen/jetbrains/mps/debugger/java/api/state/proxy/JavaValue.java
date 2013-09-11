@@ -12,24 +12,18 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
   protected final Value myValue;
-  protected final String myClassFQName;
   protected final ThreadReference myThreadReference;
   private volatile List<IWatchable> mySubvalues;
 
-  public JavaValue(Value value, String classFQname, ThreadReference threadReference) {
+  public JavaValue(Value value, ThreadReference threadReference) {
     super(value);
     myValue = value;
-    myClassFQName = classFQname;
     myThreadReference = threadReference;
   }
 
   @Nullable
   public Value getValue() {
     return myValue;
-  }
-
-  public String getClassFQName() {
-    return myClassFQName;
   }
 
   @Override

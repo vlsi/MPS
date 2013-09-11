@@ -16,9 +16,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 /*package*/ class JavaReturnWatchable extends JavaWatchable {
   private final JavaValue myValue;
 
-  public JavaReturnWatchable(Value value, String classFQName, ThreadReference threadReference) {
-    super(classFQName, threadReference);
-    myValue = ValueUtil.getInstance().fromJDI(value, myClassFQName, threadReference);
+  public JavaReturnWatchable(Value value, ThreadReference threadReference) {
+    super(threadReference);
+    myValue = ValueUtil.getInstance().fromJDI(value, threadReference);
   }
 
   @Override
