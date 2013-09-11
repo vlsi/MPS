@@ -1037,11 +1037,8 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getContainingBigCell() {
-    if (isBig()) {
+    if (isBig() || getParent() == null) {
       return this;
-    }
-    if (getParent() == null) {
-      return null;
     }
     return getParent().getContainingBigCell();
   }
