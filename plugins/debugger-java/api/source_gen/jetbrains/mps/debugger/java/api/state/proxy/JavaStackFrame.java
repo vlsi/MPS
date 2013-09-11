@@ -24,7 +24,6 @@ import jetbrains.mps.debug.api.programState.IValue;
 
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static final Logger LOG = LogManager.getLogger(JavaStackFrame.class);
-  private final String myClassFqName;
   private final int myIndex;
   private final JavaLocation myLocation;
   private final JavaThread myThread;
@@ -39,10 +38,8 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     StackFrame stackFrame = getStackFrame();
     if (stackFrame != null) {
       myLocation = new JavaLocation(stackFrame.location());
-      myClassFqName = myLocation.getUnitName();
     } else {
       myLocation = null;
-      myClassFqName = null;
     }
   }
 
@@ -55,10 +52,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   @Override
   public JavaThread getThread() {
     return myThread;
-  }
-
-  public String getClassFqName() {
-    return myClassFqName;
   }
 
   @Nullable
