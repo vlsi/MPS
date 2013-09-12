@@ -85,7 +85,7 @@ public class PluginContributor extends AbstractPluginFactory {
 
     @Override
     public String toString() {
-      return myFactory + "adapter";
+      return myFactory + " adapter";
     }
   }
 }

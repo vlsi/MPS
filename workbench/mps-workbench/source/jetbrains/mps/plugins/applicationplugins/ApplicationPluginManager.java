@@ -59,8 +59,6 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
       }
     }
 
-    mySortedPlugins = createPlugins();
-
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
         plugin.createKeymaps();
