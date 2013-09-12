@@ -147,6 +147,21 @@ public class PluginUtil {
       if (pluginClassName == null) return null;
       return (BaseProjectPlugin) createPlugin(module, pluginClassName);
     }
+
+    @Override
+    public int hashCode() {
+      return module.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      return o instanceof ModulePluginContributor && (((ModulePluginContributor) o).module == module);
+    }
+
+    @Override
+    public String toString() {
+      return module + " plugin contributor";
+    }
   }
 
   public static String getApplicationPluginClassName(SModule module) {

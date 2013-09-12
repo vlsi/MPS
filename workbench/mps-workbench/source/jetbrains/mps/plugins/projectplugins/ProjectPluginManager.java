@@ -51,13 +51,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 @State(
-  name = "ProjectPluginManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+    name = "ProjectPluginManager",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$WORKSPACE_FILE$"
+        )
+    }
 )
 public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = LogManager.getLogger(ProjectPluginManager.class);
@@ -133,6 +133,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //----------------RELOAD STUFF---------------------
   // plugins should be in load order
+  private final Map<PluginContributor, BaseProjectPlugin> myContributorToPlugin = new HashMap<PluginContributor, BaseProjectPlugin>();
+
   public void loadPlugins(final List<PluginContributor> contributors) {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
@@ -141,22 +143,28 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          mySortedPlugins = new ArrayList<BaseProjectPlugin>();
+          List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
 
           for (PluginContributor c : contributors) {
             BaseProjectPlugin plugin = c.createProjectPlugin();
-            if (plugin == null) continue;
-            mySortedPlugins.add(plugin);
+            if (plugin != null) {
+              plugins.add(plugin);
+            }
+
+            assert !myContributorToPlugin.containsKey(c);
+            myContributorToPlugin.put(c, plugin);
           }
 
-          for (BaseProjectPlugin plugin : mySortedPlugins) {
+          for (BaseProjectPlugin plugin : plugins) {
             try {
               plugin.init(myProject);
             } catch (Throwable t1) {
               LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
             }
           }
-          spreadState(mySortedPlugins);
+          spreadState(plugins);
+
+          mySortedPlugins.addAll(plugins);
         }
       });
     }
@@ -170,13 +178,23 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     assert !myProject.isDisposed();
 
     synchronized (myPluginsLock) {
-      Collections.reverse(mySortedPlugins);
-      collectState(mySortedPlugins);
+      final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
 
+      for (PluginContributor contributor : contributors) {
+        assert myContributorToPlugin.containsKey(contributor);
+        BaseProjectPlugin plugin = myContributorToPlugin.get(contributor);
+        myContributorToPlugin.remove(contributor);
+
+        if (plugin != null) {
+          plugins.add(plugin);
+        }
+      }
+
+      collectState(plugins);
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          for (BaseProjectPlugin plugin : mySortedPlugins) {
+          for (BaseProjectPlugin plugin : plugins) {
             try {
               plugin.dispose();
             } catch (Throwable t) {
@@ -185,7 +203,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           }
         }
       });
-      mySortedPlugins.clear();
+
+      mySortedPlugins.removeAll(plugins);
     }
   }
 
@@ -202,6 +221,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     Collections.reverse(contributors);
     unloadPlugins(contributors);
     myLoaded = false;
+//    System.out.println("!!!" + mySortedPlugins.size());
   }
 
   public EditorOpenHandler getEditorOpenHandler() {
@@ -241,11 +261,13 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   protected void collectState(List<BaseProjectPlugin> plugins) {
-    myState.pluginsState.clear();
+//    myState.pluginsState.clear();
     for (BaseProjectPlugin plugin : plugins) {
       PluginState state = plugin.getState();
       if (state != null) {
         myState.pluginsState.put(plugin.getClass().getName(), state);
+      } else {
+        myState.pluginsState.remove(plugin.getClass().getName());
       }
     }
   }
