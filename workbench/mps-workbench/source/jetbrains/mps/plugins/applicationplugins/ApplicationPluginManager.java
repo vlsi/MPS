@@ -16,7 +16,9 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.workbench.action.IActionsRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.PluginUtil;
@@ -26,10 +28,26 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class ApplicationPluginManager extends BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
+public class ApplicationPluginManager implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
+  protected List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
+
+  //-------
+
+  public BaseApplicationPlugin getPlugin(PluginId id) {
+    for (BaseApplicationPlugin p : mySortedPlugins) {
+      if (p.getId() == id) return p;
+    }
+    return null;
+  }
+
   @Override
+  public IActionsRegistry getActionsRegistry(PluginId id) {
+    return getPlugin(id);
+  }
+
+  // load stuff
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
 
@@ -41,7 +59,39 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
       }
     }
 
-    super.loadPlugins();
+    mySortedPlugins = createPlugins();
+
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+      try {
+        plugin.createKeymaps();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
+      }
+    }
+
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+      try {
+        plugin.createGroups();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
+      }
+    }
+
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+      try {
+        plugin.adjustGroups();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      }
+    }
+
+    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+      try {
+        plugin.createCustomParts();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      }
+    }
 
     if (idePlugin != null) {
       GroupAdjuster.adjustTopLevelGroups(idePlugin);
@@ -49,7 +99,6 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
     GroupAdjuster.refreshCustomizations();
   }
 
-  @Override
   protected List<BaseApplicationPlugin> createPlugins() {
     List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
 
@@ -63,7 +112,6 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
     return result;
   }
 
-  @Override
   public void disposePlugins() {
     Collections.reverse(mySortedPlugins);
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
