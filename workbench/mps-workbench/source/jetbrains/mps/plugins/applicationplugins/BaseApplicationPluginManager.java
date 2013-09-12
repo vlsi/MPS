@@ -87,16 +87,7 @@ public class BaseApplicationPluginManager implements ApplicationComponent, IRegi
   }
 
   protected List<BaseApplicationPlugin> createPlugins() {
-    List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
-
-    Collection<AbstractPluginFactory> pluginContributors = PluginFactoriesRegistry.getPluginFactories();
-    for (AbstractPluginFactory c : pluginContributors) {
-      BaseApplicationPlugin plugin = c.create(BaseApplicationPlugin.class);
-      if (plugin == null) continue;
-      result.add(plugin);
-    }
-
-    return result;
+    throw new UnsupportedOperationException();
   }
 
   public void disposePlugins() {

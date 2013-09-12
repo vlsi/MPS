@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.plugins;
 
+import com.sun.xml.internal.ws.message.RootElementSniffer;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
@@ -96,6 +97,20 @@ public class PluginUtil {
     return plugins;
   }
 
+  private static List<PluginContributor> createPluginContributors(Collection<SModule> modules) {
+    List<SModule> sortedModules = PluginSorter.sortByDependencies(modules);
+
+    final ArrayList<PluginContributor> contributors = new ArrayList<PluginContributor>();
+    for (SModule module : sortedModules) {
+      PluginContributor contributor = createPluginContributor(module);
+      if (contributor != null) {
+        contributors.add(contributor);
+      }
+    }
+
+    return contributors;
+  }
+
   private static Object createPlugin(SModule module, String className) {
     try {
       Class pluginClass = ClassLoaderManager.getInstance().getClass(module, className);
@@ -112,12 +127,48 @@ public class PluginUtil {
     PluginFactoriesRegistry.registerPluginFactory(contributor);
   }
 
+  @Nullable
+  public static PluginContributor createPluginContributor(SModule module) {
+    if (ClassLoaderManager.getInstance().canLoad(module)) {
+      return new ModulePluginContributor(module);
+    } else {
+      return null;
+    }
+  }
+
   public static Collection<PluginContributor> getPluginContributors() {
     List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
+
+    for (PluginContributor contributor : createPluginContributors(collectPluginModules())) {
+      pluginContributors.add(contributor);
+    }
     for (AbstractPluginFactory factory : PluginFactoriesRegistry.getPluginFactories()) {
       pluginContributors.add(PluginContributor.adapt(factory));
     }
+
     return pluginContributors;
+  }
+
+  private static class ModulePluginContributor extends PluginContributor {
+    private final SModule module;
+
+    public ModulePluginContributor(SModule module) {
+      this.module = module;
+    }
+
+    @Override
+    public BaseProjectPlugin createProjectPlugin() {
+      String pluginClassName = ProjectPluginCreator.INSTANCE.getPlugin(module);
+      if (pluginClassName == null) return null;
+      return (BaseProjectPlugin) createPlugin(module, pluginClassName);
+    }
+
+    @Override
+    public BaseApplicationPlugin createApplicationPlugin() {
+      String pluginClassName = ApplicationPluginCreator.INSTANCE.getPlugin(module);
+      if (pluginClassName == null) return null;
+      return (BaseApplicationPlugin) createPlugin(module, pluginClassName);
+    }
   }
 
   private static abstract class PluginCreator<T> {
@@ -143,6 +194,8 @@ public class PluginUtil {
   }
 
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
+    public static ProjectPluginCreator INSTANCE = new ProjectPluginCreator();
+
     @Override
     public String getPlugin(Language l) {
       return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
@@ -156,6 +209,8 @@ public class PluginUtil {
   }
 
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
+    public static ApplicationPluginCreator INSTANCE = new ApplicationPluginCreator();
+
     @Override
     public String getPlugin(Language l) {
       return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";

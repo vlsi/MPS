@@ -16,11 +16,10 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.plugins.PluginContributor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.PluginUtil;
-import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -54,11 +53,12 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
   protected List<BaseApplicationPlugin> createPlugins() {
     List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
 
-    Set<SModule> modules = new HashSet<SModule>();
-    modules.addAll(PluginUtil.collectPluginModules());
-    result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
-
-    result.addAll(super.createPlugins());
+    for (PluginContributor contributor : PluginUtil.getPluginContributors()) {
+      BaseApplicationPlugin plugin = contributor.createApplicationPlugin();
+      if (plugin != null) {
+        result.add(plugin);
+      }
+    }
 
     return result;
   }

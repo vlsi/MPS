@@ -37,11 +37,9 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginUtil;
-import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -146,12 +144,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           mySortedPlugins = new ArrayList<BaseProjectPlugin>();
 
-          Set<SModule> modules = new HashSet<SModule>();
-          modules.addAll(PluginUtil.collectPluginModules());
-          mySortedPlugins.addAll(PluginUtil.createPlugins(modules, new ProjectPluginCreator()));
-
-          Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
-          for (PluginContributor c : pluginContributors) {
+          for (PluginContributor c : PluginUtil.getPluginContributors()) {
             BaseProjectPlugin plugin = c.createProjectPlugin();
             if (plugin == null) continue;
             mySortedPlugins.add(plugin);
