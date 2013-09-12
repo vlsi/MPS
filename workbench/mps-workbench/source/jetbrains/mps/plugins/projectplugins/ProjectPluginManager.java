@@ -49,6 +49,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @State(
     name = "ProjectPluginManager",
@@ -139,6 +140,8 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
 
+    final AtomicBoolean needTabRecreation = new AtomicBoolean(false);
+
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
@@ -165,11 +168,19 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           spreadState(plugins);
 
           mySortedPlugins.addAll(plugins);
+
+          for (BaseProjectPlugin plugin : plugins) {
+            if (!plugin.getTabDescriptors().isEmpty()) {
+              needTabRecreation.set(true);
+            }
+          }
         }
       });
     }
 
-    recreateTabbedEditors();
+    if (needTabRecreation.get()) {
+      recreateTabbedEditors();
+    }
   }
 
   // plugins should be in unload order
@@ -288,7 +299,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //--------------ADDITIONAL----------------
 
-  public void recreateTabbedEditors() {
+  private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -301,17 +312,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
             editor.recreateEditor();
           } else if (editor.getNodeEditor() instanceof NodeEditor) {
             //and this is to make non-tabbed editors tabbed if they need to
-            ArrayList<BaseProjectPlugin> plugins;
-            synchronized (myPluginsLock) {
-              plugins = new ArrayList<BaseProjectPlugin>(mySortedPlugins);
-            }
-            for (BaseProjectPlugin p : plugins) {
-              for (RelationDescriptor tab : p.getTabDescriptors()) {
-                SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(MPSModuleRepository.getInstance());
-                if (tab.getBaseNode(node) != null) {
-                  editor.recreateEditor();
-                  continue editors;
-                }
+            for (RelationDescriptor tab : getTabDescriptors()) {
+              SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(MPSModuleRepository.getInstance());
+              if (tab.getBaseNode(node) != null) {
+                editor.recreateEditor();
+                continue editors;
               }
             }
           }
