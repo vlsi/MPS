@@ -39,9 +39,6 @@ public class ModuleClassLoaderSupport {
     this.module = module;
 
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    assert facet != null;
-
-    assert facet.isCompileInMps();
     classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
 
     compileDependencies = new HashSet<SModule>();
@@ -53,7 +50,8 @@ public class ModuleClassLoaderSupport {
   // ext point possible here
   public static boolean canCreate(SModule module) {
     // todo: + check is module compiled?
-    return module.getFacet(JavaModuleFacet.class) != null && module.getFacet(CustomClassLoadingFacet.class) == null;
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
   public static ModuleClassLoaderSupport create(SModule module) {

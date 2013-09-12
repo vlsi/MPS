@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class CutNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_cut;
@@ -41,6 +43,12 @@ public class CutNode_Action extends BaseAction {
       if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {
         return false;
       }
+      if (check_n39602_a1a0a0(SNodeOperations.getModel(node))) {
+        return false;
+      }
+    }
+    if (((ActionPlace) MapSequence.fromMap(_params).get("place")) != ActionPlace.PROJECT_PANE) {
+      return false;
     }
     return CutNode_Action.this.getProjectPane(_params) != null;
   }
@@ -81,6 +89,10 @@ public class CutNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
+    if (MapSequence.fromMap(_params).get("place") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -109,4 +121,11 @@ public class CutNode_Action extends BaseAction {
   }
 
   protected static Logger LOG = LogManager.getLogger(CutNode_Action.class);
+
+  private static boolean check_n39602_a1a0a0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.isReadOnly();
+    }
+    return false;
+  }
 }
