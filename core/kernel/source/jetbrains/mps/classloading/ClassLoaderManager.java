@@ -193,16 +193,12 @@ public class ClassLoaderManager implements CoreComponent {
       }
     }
 
-    if (!ModuleClassLoaderSupport.canCreate(module)) {
-//      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
-      return null;
-    }
-    if (!module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
+    if (module.getFacet(JavaModuleFacet.class) != null && !module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
       // core module
       LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have nonreloadable facet");
       return ClassLoaderManager.class.getClassLoader();
     }
-
+    
     return myClassLoaders.get(module);
   }
 
