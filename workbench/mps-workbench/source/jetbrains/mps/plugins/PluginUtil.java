@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.plugins;
 
-import com.sun.xml.internal.ws.message.RootElementSniffer;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
@@ -31,10 +30,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.ModuleNameUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -77,24 +73,6 @@ public class PluginUtil {
       }
     }
     return modules;
-  }
-
-  public static <T> List<T> createPlugins(Collection<SModule> modules, PluginCreator<T> creator) {
-    List<SModule> sortedModules = PluginSorter.sortByDependencies(modules);
-
-    final ArrayList<T> plugins = new ArrayList<T>();
-    for (SModule module : sortedModules) {
-      if (ClassLoaderManager.getInstance().canLoad(module)) {
-        String pluginClassName = creator.getPlugin(module);
-        if (pluginClassName == null) continue;
-        T plugin = (T) createPlugin(module, pluginClassName);
-        if (plugin == null) continue;
-
-        plugins.add(plugin);
-      }
-    }
-
-    return plugins;
   }
 
   private static List<PluginContributor> createPluginContributors(Collection<SModule> modules) {
@@ -157,69 +135,27 @@ public class PluginUtil {
     }
 
     @Override
-    public BaseProjectPlugin createProjectPlugin() {
-      String pluginClassName = ProjectPluginCreator.INSTANCE.getPlugin(module);
-      if (pluginClassName == null) return null;
-      return (BaseProjectPlugin) createPlugin(module, pluginClassName);
-    }
-
-    @Override
     public BaseApplicationPlugin createApplicationPlugin() {
-      String pluginClassName = ApplicationPluginCreator.INSTANCE.getPlugin(module);
+      String pluginClassName = getApplicationPluginClassName(module);
       if (pluginClassName == null) return null;
       return (BaseApplicationPlugin) createPlugin(module, pluginClassName);
     }
-  }
-
-  private static abstract class PluginCreator<T> {
-    @Nullable
-    public final String getPlugin(SModule module) {
-      if (module instanceof Language) {
-        Language language = (Language) module;
-        if (LanguageAspect.PLUGIN.get(language) == null) return null;
-        return getPlugin(language);
-      } else if (module instanceof Solution) {
-        Solution solution = (Solution) module;
-        return getPlugin(solution);
-      } else {
-        throw new IllegalStateException("Module type \"" + module.getClass().getSimpleName() + "\" is not supported");
-      }
-    }
-
-    @Nullable
-    public abstract String getPlugin(Language l);
-
-    @Nullable
-    public abstract String getPlugin(Solution s);
-  }
-
-  public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
-    public static ProjectPluginCreator INSTANCE = new ProjectPluginCreator();
 
     @Override
-    public String getPlugin(Language l) {
-      return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
-    }
-
-    @Override
-    public String getPlugin(Solution s) {
-      if (s.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
-      return s.getModuleName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleName())) + "_ProjectPlugin";
+    public BaseProjectPlugin createProjectPlugin() {
+      String pluginClassName = getProjectPluginClassName(module);
+      if (pluginClassName == null) return null;
+      return (BaseProjectPlugin) createPlugin(module, pluginClassName);
     }
   }
 
-  public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
-    public static ApplicationPluginCreator INSTANCE = new ApplicationPluginCreator();
+  public static String getApplicationPluginClassName(SModule module) {
+    if (module.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
+    return module.getModuleName() + ".plugin." + ModuleNameUtil.getModuleShortName(module) + "_ApplicationPlugin";
+  }
 
-    @Override
-    public String getPlugin(Language l) {
-      return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";
-    }
-
-    @Override
-    public String getPlugin(Solution s) {
-      if (s.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
-      return s.getModuleName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleName())) + "_ApplicationPlugin";
-    }
+  public static String getProjectPluginClassName(SModule module) {
+    if (module.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
+    return module.getModuleName() + ".plugin." + ModuleNameUtil.getModuleShortName(module) + "_ProjectPlugin";
   }
 }
