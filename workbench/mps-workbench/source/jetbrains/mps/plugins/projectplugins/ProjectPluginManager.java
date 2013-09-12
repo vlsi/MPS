@@ -131,12 +131,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     return result;
   }
 
-  //----------------RELOAD STUFF---------------------  
-
-  public void loadPlugins() {
+  //----------------RELOAD STUFF---------------------
+  // plugins should be in load order
+  public void loadPlugins(final List<PluginContributor> contributors) {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
-    if (myLoaded) return;
 
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -144,7 +143,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           mySortedPlugins = new ArrayList<BaseProjectPlugin>();
 
-          for (PluginContributor c : PluginUtil.getPluginContributors()) {
+          for (PluginContributor c : contributors) {
             BaseProjectPlugin plugin = c.createProjectPlugin();
             if (plugin == null) continue;
             mySortedPlugins.add(plugin);
@@ -163,14 +162,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
 
     recreateTabbedEditors();
-
-    myLoaded = true;
   }
 
-  public void disposePlugins() {
+  // plugins should be in unload order
+  public void unloadPlugins(List<PluginContributor> contributors) {
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
-    if (!myLoaded) return;
 
     synchronized (myPluginsLock) {
       Collections.reverse(mySortedPlugins);
@@ -190,6 +187,20 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       });
       mySortedPlugins.clear();
     }
+  }
+
+
+  public void loadPlugins() {
+    if (myLoaded) return;
+    loadPlugins(PluginUtil.getPluginContributors());
+    myLoaded = true;
+  }
+
+  public void disposePlugins() {
+    if (!myLoaded) return;
+    List<PluginContributor> contributors = PluginUtil.getPluginContributors();
+    Collections.reverse(contributors);
+    unloadPlugins(contributors);
     myLoaded = false;
   }
 

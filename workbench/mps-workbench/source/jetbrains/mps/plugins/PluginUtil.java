@@ -114,7 +114,7 @@ public class PluginUtil {
     }
   }
 
-  public static Collection<PluginContributor> getPluginContributors() {
+  public static List<PluginContributor> getPluginContributors() {
     List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
 
     for (PluginContributor contributor : createPluginContributors(collectPluginModules())) {
