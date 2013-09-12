@@ -42,6 +42,11 @@ public class List_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
+  @Override
+  public String getWrappedType() {
+    return "Ljava/util/List;";
+  }
+
   public static class ListWrapper extends ValueWrapper {
     public ListWrapper(IValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);

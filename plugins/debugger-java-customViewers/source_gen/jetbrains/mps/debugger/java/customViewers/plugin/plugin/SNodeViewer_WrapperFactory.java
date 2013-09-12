@@ -44,6 +44,11 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
+  @Override
+  public String getWrappedType() {
+    return "Lorg/jetbrains/mps/openapi/model/SNode;";
+  }
+
   public static class SNodeViewerWrapper extends ValueWrapper {
     private final String myPresentation;
 

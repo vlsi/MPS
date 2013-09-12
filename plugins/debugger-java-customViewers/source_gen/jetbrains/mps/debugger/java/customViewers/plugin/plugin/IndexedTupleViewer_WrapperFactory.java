@@ -42,6 +42,11 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
+  @Override
+  public String getWrappedType() {
+    return "Ljetbrains/mps/baseLanguage/tuples/runtime/MultiTuple;";
+  }
+
   public static class IndexedTupleViewerWrapper extends ValueWrapper {
     private final String myPresentation;
 

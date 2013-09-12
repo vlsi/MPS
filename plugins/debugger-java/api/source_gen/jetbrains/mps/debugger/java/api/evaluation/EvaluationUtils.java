@@ -30,6 +30,7 @@ import org.apache.log4j.LogManager;
 public abstract class EvaluationUtils {
   protected static EvaluationUtils INSTANCE;
   protected static final Object LOCK = new Object();
+  public static final String JAVA_LANG_OBJECT = "Ljava/lang/Object;";
 
   public EvaluationUtils() {
   }
@@ -56,6 +57,9 @@ public abstract class EvaluationUtils {
 
   @Nullable
   public abstract ReferenceType findClassTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
+
+  @Nullable
+  public abstract Type findTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
 
   public abstract boolean instanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException;
 

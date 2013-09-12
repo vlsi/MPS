@@ -42,6 +42,11 @@ public class Set_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
+  @Override
+  public String getWrappedType() {
+    return "Ljava/util/Set;";
+  }
+
   public static class SetWrapper extends ValueWrapper {
     public SetWrapper(IValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);

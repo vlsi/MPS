@@ -418,21 +418,25 @@
     <unitInfo nodeId="3432969378036016687" fileName="JavaStackFrame.java" startLine="25" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame" />
   </root>
   <root nodeRef="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)/3432969378036017270">
-    <nodeInfo nodeId="3432969378036017283" fileName="ValueWrapperFactory.java" startLine="13" startPosition="59" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036017285" fileName="ValueWrapperFactory.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
-    <nodeInfo nodeId="3432969378036017272" fileName="ValueWrapperFactory.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueWrapperFactory#()V" />
-    <nodeInfo nodeId="3432969378036017276" fileName="ValueWrapperFactory.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrapValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
-    <scopeInfo nodeId="3432969378036017275" fileName="ValueWrapperFactory.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
-    <scopeInfo nodeId="3432969378036017282" fileName="ValueWrapperFactory.java" startLine="13" startPosition="59" endLine="14" endPosition="17" />
-    <scopeInfo nodeId="3432969378036017285" fileName="ValueWrapperFactory.java" startLine="17" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="3432969378036017283" fileName="ValueWrapperFactory.java" startLine="14" startPosition="59" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997988985" fileName="ValueWrapperFactory.java" startLine="18" startPosition="34" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036017285" fileName="ValueWrapperFactory.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
+    <nodeInfo nodeId="3432969378036017272" fileName="ValueWrapperFactory.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueWrapperFactory#()V" />
+    <nodeInfo nodeId="3432969378036017276" fileName="ValueWrapperFactory.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrapValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+    <nodeInfo nodeId="6108369403997979254" fileName="ValueWrapperFactory.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedType#()Ljava/lang/String;" />
+    <scopeInfo nodeId="3432969378036017275" fileName="ValueWrapperFactory.java" startLine="11" startPosition="32" endLine="11" endPosition="32" />
+    <scopeInfo nodeId="3432969378036017282" fileName="ValueWrapperFactory.java" startLine="14" startPosition="59" endLine="15" endPosition="17" />
+    <scopeInfo nodeId="6108369403997979257" fileName="ValueWrapperFactory.java" startLine="18" startPosition="34" endLine="19" endPosition="44" />
+    <scopeInfo nodeId="3432969378036017285" fileName="ValueWrapperFactory.java" startLine="22" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="7866772524122188302" varName="threadReference" />
       <varInfo nodeId="3432969378036017288" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036017272" fileName="ValueWrapperFactory.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="3432969378036017276" fileName="ValueWrapperFactory.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <scopeInfo nodeId="3432969378036017272" fileName="ValueWrapperFactory.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="3432969378036017276" fileName="ValueWrapperFactory.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="3432969378036017279" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="3432969378036017270" fileName="ValueWrapperFactory.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
+    <scopeInfo nodeId="6108369403997979254" fileName="ValueWrapperFactory.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="3432969378036017270" fileName="ValueWrapperFactory.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
   </root>
   <root nodeRef="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)/4209988649465089935">
     <nodeInfo nodeId="4209988649465089936" fileName="JavaLocation.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileName" />

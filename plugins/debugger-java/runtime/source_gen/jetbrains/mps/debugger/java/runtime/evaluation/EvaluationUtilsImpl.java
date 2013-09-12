@@ -187,10 +187,40 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
     return classes.get(0);
   }
 
+  @Nullable
+  @Override
+  public Type findTypeSilently(String typeSignature, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
+    if ("Z".equals(typeSignature)) {
+      return virtualMachine.mirrorOf(true).type();
+    } else if ("B".equals(typeSignature)) {
+      return virtualMachine.mirrorOf((byte) 1).type();
+    } else if ("C".equals(typeSignature)) {
+      return virtualMachine.mirrorOf('C').type();
+    } else if ("S".equals(typeSignature)) {
+      return virtualMachine.mirrorOf((short) 1).type();
+    } else if ("I".equals(typeSignature)) {
+      return virtualMachine.mirrorOf(1).type();
+    } else if ("J".equals(typeSignature)) {
+      return virtualMachine.mirrorOf((long) 1).type();
+    } else if ("F".equals(typeSignature)) {
+      return virtualMachine.mirrorOf((float) 1.0).type();
+    } else if ("D".equals(typeSignature)) {
+      return virtualMachine.mirrorOf((double) 1.0).type();
+    } else if (typeSignature.startsWith("[")) {
+      try {
+        return createArrayProxy(EvaluationUtils.JAVA_LANG_OBJECT, virtualMachine, 0).getJDIValue().type();
+      } catch (EvaluationException e) {
+        LOG.error(e);
+        return findClassTypeSilently(JAVA_LANG_OBJECT, virtualMachine);
+      }
+    }
+    return findClassTypeSilently(typeSignature.substring(1, typeSignature.length() - 1), virtualMachine);
+  }
+
   @Override
   public boolean instanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException {
     assertEvaluating();
-    if (jniSignature.equals("Ljava/lang/Object;")) {
+    if (jniSignature.equals(EvaluationUtils.JAVA_LANG_OBJECT)) {
       return true;
     }
     if (what.signature().equals(jniSignature)) {

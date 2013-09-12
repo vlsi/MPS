@@ -42,6 +42,11 @@ public class Map_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
+  @Override
+  public String getWrappedType() {
+    return "Ljava/util/Map;";
+  }
+
   public static class MapWrapper extends ValueWrapper {
     public MapWrapper(IValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);

@@ -11,7 +11,17 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
+import com.sun.jdi.VirtualMachine;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import com.sun.jdi.Type;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
+import com.sun.jdi.InterfaceType;
+import com.sun.jdi.ClassType;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
@@ -19,8 +29,9 @@ import com.sun.jdi.ObjectReference;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class CustomViewersManagerImpl extends CustomViewersManager {
   private final Map<String, ValueWrapperFactory> myFactories = MapSequence.fromMap(new HashMap<String, ValueWrapperFactory>());
@@ -40,13 +51,38 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
   }
 
   public Set<ValueWrapperFactory> getValueWrapperFactories(@NotNull final IValueProxy originalValue) {
-    Set<ValueWrapperFactory> result = new HashSet<ValueWrapperFactory>();
+    Set<ValueWrapperFactory> result = SetSequence.fromSet(new LinkedHashSet<ValueWrapperFactory>());
     for (ValueWrapperFactory factory : MapSequence.fromMap(myFactories).values()) {
       if (factory.canWrapValue(originalValue)) {
-        result.add(factory);
+        SetSequence.fromSet(result).addElement(factory);
       }
     }
     return result;
+  }
+
+  private ValueWrapperFactory getBestFactory(Set<ValueWrapperFactory> factories, DebugSession session) {
+    VirtualMachine vm = session.getEventsProcessor().getVirtualMachine();
+    Tuples._2<ValueWrapperFactory, Type> currentBest = MultiTuple.<ValueWrapperFactory,Type>from(null, null);
+    for (ValueWrapperFactory factory : SetSequence.fromSet(factories)) {
+      try {
+        if (currentBest._0() == null) {
+          currentBest._0(factory);
+          currentBest._1(EvaluationUtils.getInstance().findTypeSilently(factory.getWrappedType(), vm));
+        } else if (!(EvaluationUtils.getInstance().instanceOf(currentBest._1(), factory.getWrappedType(), vm))) {
+          Type newType = EvaluationUtils.getInstance().findTypeSilently(factory.getWrappedType(), vm);
+          if (newType instanceof InterfaceType && currentBest._1() instanceof ClassType && !(currentBest._0().getWrappedType().equals(EvaluationUtils.JAVA_LANG_OBJECT))) {
+            continue;
+          }
+          currentBest._0(factory);
+          currentBest._1(newType);
+        }
+      } catch (EvaluationException e) {
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Error while trying to select best custom viewer. Current factory is " + factory, e);
+        }
+      }
+    }
+    return currentBest._0();
   }
 
   public synchronized ValueWrapper getValueWrapper(@NotNull IValueProxy proxy, ThreadReference threadReference) {
@@ -68,7 +104,10 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
         if (factories.isEmpty()) {
           return null;
         }
-        factory = factories.iterator().next();
+        factory = (factories.size() > 1 ?
+          getBestFactory(factories, session) :
+          factories.iterator().next()
+        );
         factoryId = factory.getClass().getName();
         MapSequence.fromMap(objectIdToFactory).put(uniqueID, factoryId);
       }
@@ -108,4 +147,6 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     return null;
   }
+
+  protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
 }

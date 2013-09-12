@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.java.api.state.proxy;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 import com.sun.jdi.ThreadReference;
 
 public abstract class ValueWrapperFactory {
@@ -12,6 +13,10 @@ public abstract class ValueWrapperFactory {
 
   public boolean canWrapValue(@NotNull IValueProxy value) {
     return false;
+  }
+
+  public String getWrappedType() {
+    return EvaluationUtils.JAVA_LANG_OBJECT;
   }
 
   public abstract ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference);

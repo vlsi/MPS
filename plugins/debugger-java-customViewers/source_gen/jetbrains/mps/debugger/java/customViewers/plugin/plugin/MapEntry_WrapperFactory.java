@@ -42,6 +42,11 @@ public class MapEntry_WrapperFactory extends ValueWrapperFactory {
     }, false);
   }
 
+  @Override
+  public String getWrappedType() {
+    return "Ljava/util/Map$Entry;";
+  }
+
   public static class MapEntryWrapper extends ValueWrapper {
     private final String myPresentation;
 
