@@ -6,7 +6,9 @@
     </modelRoot>
   </models>
   <facets>
-    <facet pluginId="jetbrains.mps.debugger.java.customViewers" type="ideaPlugin" />
+    <facet type="java" />
+    <facet type="tests" />
+    <facet pluginId="jetbrains.mps.debugger.java" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>
