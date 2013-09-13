@@ -11,6 +11,12 @@
   <xi:include href="/jetbrains/mps/ide/platform/actions/PlatformActions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
 
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.actions.Ide_PluginInitializer</implementation-class>
+    </component>
+  </application-components>
+
   <extensionPoints>
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
