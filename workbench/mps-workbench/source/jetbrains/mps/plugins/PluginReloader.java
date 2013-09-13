@@ -49,7 +49,6 @@ public class PluginReloader implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
-  private List<ProjectPluginManager> myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
 
   private List<PluginContributor> myContributors = null;
 
@@ -60,18 +59,34 @@ public class PluginReloader implements ApplicationComponent {
     myPluginManager = pluginManager;
   }
 
-  private void loadPlugins() {
-    checkDisposed();
-    if (myContributors != null) return;
+  private void updatePlugins() {
+    assert SwingUtilities.isEventDispatchThread() : "should be called from EDT only";
 
+    if (isDisposed()) return;
+
+    // calc contributors to unload
+    // calc contributors to load
+    // unload
+    // load
+
+    if (myContributors != null) {
+      // dispose
+      Collections.reverse(myContributors);
+      unloadPlugins(myContributors);
+      myContributors = null;
+    }
+
+    // load
     myContributors = PluginUtil.getPluginContributors();
-    myPluginManager.loadPlugins(myContributors);
+    loadPlugins(myContributors);
+  }
 
-    myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
+  private void loadPlugins(List<PluginContributor> contributors) {
+    myPluginManager.loadPlugins(contributors);
+
     for (Project p : myProjectManager.getOpenProjects()) {
       ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
-      myLoadedPluginManagers.add(pm);
-      pm.loadPlugins(myContributors);
+      pm.loadPlugins(contributors);
     }
 
     for (PluginReloadingListener l : getListeners()) {
@@ -79,23 +94,17 @@ public class PluginReloader implements ApplicationComponent {
     }
   }
 
-  private void disposePlugins() {
-    if (isDisposed()) return;
-    if (myContributors == null) return;
-
-    Collections.reverse(myContributors);
-
+  private void unloadPlugins(List<PluginContributor> contributors) {
     for (PluginReloadingListener l : getListeners()) {
       l.beforePluginsDisposed();
     }
 
-    for (ProjectPluginManager pm : myLoadedPluginManagers) {
-      pm.unloadPlugins(myContributors);
+    for (Project p : myProjectManager.getOpenProjects()) {
+      ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
+      pm.unloadPlugins(contributors);
     }
-    myLoadedPluginManagers.clear();
 
-    myPluginManager.unloadPlugins(myContributors);
-    myContributors = null;
+    myPluginManager.unloadPlugins(contributors);
   }
 
   public void addReloadingListener(@NotNull PluginReloadingListener listener) {
@@ -124,7 +133,7 @@ public class PluginReloader implements ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "PluginReloader";
+    return PluginReloader.class.getName();
   }
 
   @Override
@@ -143,10 +152,6 @@ public class PluginReloader implements ApplicationComponent {
     myPluginManager = null;
   }
 
-  private void checkDisposed() {
-    if (isDisposed()) throw new IllegalStateException("already disposed");
-  }
-
   private boolean isDisposed() {
     return myClassLoaderManager == null || myProjectManager == null || myPluginManager == null;
   }
@@ -158,7 +163,8 @@ public class PluginReloader implements ApplicationComponent {
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          disposePlugins();
+          // todo: ???
+//          disposePlugins();
         }
       });
     }
@@ -201,8 +207,7 @@ public class PluginReloader implements ApplicationComponent {
             long beginTime = System.currentTimeMillis();
             try {
               reloadScheduled = false;
-              disposePlugins();
-              loadPlugins();
+              updatePlugins();
             } finally {
               LOG.info("Plugin reload took " + (System.currentTimeMillis() - beginTime) / 1000.0 + " s");
             }
