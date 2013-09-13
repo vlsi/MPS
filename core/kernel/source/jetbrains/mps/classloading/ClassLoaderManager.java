@@ -234,6 +234,15 @@ public class ClassLoaderManager implements CoreComponent {
     monitor.start("Unloading classes...", 2);
     try {
       toUnload = collectBackReferences(toUnload);
+      Set<SModule> notLoaded = new HashSet<SModule>();
+      for (SModule module : toUnload) {
+        if (getClassLoader(module) == null) {
+          notLoaded.add(module);
+        }
+      }
+      toUnload = new HashSet<SModule>(toUnload);
+      toUnload.removeAll(notLoaded);
+
 //      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
 
       monitor.step("Disposing old classes...");
