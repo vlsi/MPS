@@ -17,6 +17,7 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 import org.apache.log4j.Logger;
@@ -28,15 +29,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class ApplicationPluginManager implements ApplicationComponent, IRegistryManager {
+public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
-
-  protected List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
-
-  //-------
+  private volatile boolean myLoaded = false; //this is synchronized
 
   public BaseApplicationPlugin getPlugin(PluginId id) {
-    for (BaseApplicationPlugin p : mySortedPlugins) {
+    for (BaseApplicationPlugin p : getPlugins()) {
       if (p.getId() == id) return p;
     }
     return null;
@@ -48,18 +46,23 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
   }
 
   // load stuff
-  public void loadPlugins() {
-    mySortedPlugins = createPlugins();
 
+  @Override
+  protected BaseApplicationPlugin createPlugin(PluginContributor contributor) {
+    return contributor.createApplicationPlugin();
+  }
+
+  @Override
+  protected void afterPluginsCreated(List<BaseApplicationPlugin> plugins) {
     BaseApplicationPlugin idePlugin = null;
-    for (BaseApplicationPlugin p : mySortedPlugins) {
+    for (BaseApplicationPlugin p : plugins) {
       if (p.getClass().getName().equals(PluginUtil.IDE_MODULE_APPPLUGIN)) {
         idePlugin = p;
         break;
       }
     }
 
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
       try {
         plugin.createKeymaps();
       } catch (Throwable t1) {
@@ -67,7 +70,7 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
       }
     }
 
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
       try {
         plugin.createGroups();
       } catch (Throwable t1) {
@@ -75,7 +78,7 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
       }
     }
 
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
       try {
         plugin.adjustGroups();
       } catch (Throwable t1) {
@@ -83,7 +86,7 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
       }
     }
 
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
+    for (BaseApplicationPlugin plugin : plugins) {
       try {
         plugin.createCustomParts();
       } catch (Throwable t1) {
@@ -97,29 +100,29 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
     GroupAdjuster.refreshCustomizations();
   }
 
-  protected List<BaseApplicationPlugin> createPlugins() {
-    List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
-
-    for (PluginContributor contributor : PluginUtil.getPluginContributors()) {
-      BaseApplicationPlugin plugin = contributor.createApplicationPlugin();
-      if (plugin != null) {
-        result.add(plugin);
-      }
-    }
-
-    return result;
+  @Override
+  protected void beforePluginsDisposed(List<BaseApplicationPlugin> plugins) {
   }
 
+  @Override
+  protected void disposePlugin(BaseApplicationPlugin plugin) {
+    plugin.dispose();
+  }
+
+  // todo: remove
+  public void loadPlugins() {
+    if (myLoaded) return;
+    loadPlugins(PluginUtil.getPluginContributors());
+    myLoaded = true;
+  }
+
+  // todo: remove
   public void disposePlugins() {
-    Collections.reverse(mySortedPlugins);
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.dispose();
-      } catch (Throwable t) {
-        LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-      }
-    }
-    mySortedPlugins.clear();
+    if (!myLoaded) return;
+    List<PluginContributor> contributors = PluginUtil.getPluginContributors();
+    Collections.reverse(contributors);
+    unloadPlugins(contributors);
+    myLoaded = false;
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -128,16 +131,14 @@ public class ApplicationPluginManager implements ApplicationComponent, IRegistry
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "ApplicationPluginManager";
+    return ApplicationPluginManager.class.getName();
   }
 
   @Override
   public void initComponent() {
-
   }
 
   @Override
   public void disposeComponent() {
-
   }
 }

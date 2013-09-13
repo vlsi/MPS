@@ -174,12 +174,14 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     super.unloadPlugins(contributors);
   }
 
+  // todo: remove
   public void loadPlugins() {
     if (myLoaded) return;
     loadPlugins(PluginUtil.getPluginContributors());
     myLoaded = true;
   }
 
+  // todo: remove
   public void disposePlugins() {
     if (!myLoaded) return;
     List<PluginContributor> contributors = PluginUtil.getPluginContributors();
@@ -199,7 +201,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "MPS Plugin Manager";
+    return ProjectPluginManager.class.getName();
   }
 
   @Override
