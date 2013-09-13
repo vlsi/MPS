@@ -75,7 +75,7 @@ public class PluginUtil {
     return modules;
   }
 
-  private static List<PluginContributor> createPluginContributors(Collection<SModule> modules) {
+  public static List<PluginContributor> createPluginContributors(Collection<SModule> modules) {
     List<SModule> sortedModules = PluginSorter.sortByDependencies(modules);
 
     final ArrayList<PluginContributor> contributors = new ArrayList<PluginContributor>();
@@ -114,12 +114,9 @@ public class PluginUtil {
     }
   }
 
-  public static List<PluginContributor> getPluginContributors() {
+  public static List<PluginContributor> getPluginFactoriesRegistryContributors() {
     List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
 
-    for (PluginContributor contributor : createPluginContributors(collectPluginModules())) {
-      pluginContributors.add(contributor);
-    }
     for (AbstractPluginFactory factory : PluginFactoriesRegistry.getPluginFactories()) {
       pluginContributors.add(PluginContributor.adapt(factory));
     }
@@ -127,8 +124,21 @@ public class PluginUtil {
     return pluginContributors;
   }
 
-  private static class ModulePluginContributor extends PluginContributor {
-    private final SModule module;
+  public static List<PluginContributor> getPluginContributors() {
+    List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
+
+    for (PluginContributor contributor : createPluginContributors(collectPluginModules())) {
+      pluginContributors.add(contributor);
+    }
+    for (PluginContributor contributor : getPluginFactoriesRegistryContributors()) {
+      pluginContributors.add(contributor);
+    }
+
+    return pluginContributors;
+  }
+
+  public static class ModulePluginContributor extends PluginContributor {
+    public final SModule module;
 
     public ModulePluginContributor(SModule module) {
       this.module = module;

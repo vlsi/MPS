@@ -23,6 +23,7 @@ import com.intellij.openapi.project.ProjectManagerListener;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.plugins.PluginUtil.ModulePluginContributor;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -53,7 +54,7 @@ public class PluginReloader implements ApplicationComponent {
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
 
-  private List<PluginContributor> myContributors = null;
+  private List<PluginContributor> myContributors = new ArrayList<PluginContributor>();
 
   @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
@@ -68,20 +69,32 @@ public class PluginReloader implements ApplicationComponent {
     if (isDisposed()) return;
 
     // calc contributors to unload
-    // calc contributors to load
-    // unload
-    // load
+    List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
+    for (PluginContributor contributor : myContributors) {
+      if (contributor instanceof ModulePluginContributor) {
+        if (toUnload.contains(((ModulePluginContributor) contributor).module)) {
+          toUnloadContributors.add(contributor);
+        }
+      }
+    }
+    Collections.reverse(toUnloadContributors);
 
-    if (myContributors != null) {
-      // dispose
-      Collections.reverse(myContributors);
-      unloadPlugins(myContributors);
-      myContributors = null;
+    // calc contributors to load
+    List<PluginContributor> toLoadContributors = new ArrayList<PluginContributor>();
+    toLoadContributors.addAll(PluginUtil.createPluginContributors(toLoad));
+    for (PluginContributor contributor : PluginUtil.getPluginFactoriesRegistryContributors()) {
+      if (!myContributors.contains(contributor)) {
+        toLoadContributors.add(contributor);
+      }
     }
 
+    // unload
+    unloadPlugins(toUnloadContributors);
+    myContributors.removeAll(toUnloadContributors);
+
     // load
-    myContributors = PluginUtil.getPluginContributors();
-    loadPlugins(myContributors);
+    myContributors.addAll(toLoadContributors);
+    loadPlugins(toLoadContributors);
   }
 
   private void loadPlugins(List<PluginContributor> contributors) {
