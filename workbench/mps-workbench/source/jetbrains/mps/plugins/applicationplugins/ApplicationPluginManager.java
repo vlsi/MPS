@@ -31,7 +31,6 @@ import java.util.*;
 
 public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
-  private volatile boolean myLoaded = false; //this is synchronized
 
   public BaseApplicationPlugin getPlugin(PluginId id) {
     for (BaseApplicationPlugin p : getPlugins()) {
@@ -107,22 +106,6 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   @Override
   protected void disposePlugin(BaseApplicationPlugin plugin) {
     plugin.dispose();
-  }
-
-  // todo: remove
-  public void loadPlugins() {
-    if (myLoaded) return;
-    loadPlugins(PluginUtil.getPluginContributors());
-    myLoaded = true;
-  }
-
-  // todo: remove
-  public void disposePlugins() {
-    if (!myLoaded) return;
-    List<PluginContributor> contributors = PluginUtil.getPluginContributors();
-    Collections.reverse(contributors);
-    unloadPlugins(contributors);
-    myLoaded = false;
   }
 
   //----------------COMPONENT STUFF---------------------

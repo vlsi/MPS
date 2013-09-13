@@ -22,24 +22,19 @@ import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.ProjectManagerListener;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -56,6 +51,8 @@ public class PluginReloader implements ApplicationComponent {
   private ApplicationPluginManager myPluginManager;
   private List<ProjectPluginManager> myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
 
+  private List<PluginContributor> myContributors = null;
+
   @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
@@ -65,12 +62,16 @@ public class PluginReloader implements ApplicationComponent {
 
   private void loadPlugins() {
     checkDisposed();
-    myPluginManager.loadPlugins();
+    if (myContributors != null) return;
+
+    myContributors = PluginUtil.getPluginContributors();
+    myPluginManager.loadPlugins(myContributors);
+
     myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
     for (Project p : myProjectManager.getOpenProjects()) {
       ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
       myLoadedPluginManagers.add(pm);
-      pm.loadPlugins();
+      pm.loadPlugins(myContributors);
     }
 
     for (PluginReloadingListener l : getListeners()) {
@@ -80,17 +81,21 @@ public class PluginReloader implements ApplicationComponent {
 
   private void disposePlugins() {
     if (isDisposed()) return;
+    if (myContributors == null) return;
+
+    Collections.reverse(myContributors);
 
     for (PluginReloadingListener l : getListeners()) {
       l.beforePluginsDisposed();
     }
 
     for (ProjectPluginManager pm : myLoadedPluginManagers) {
-      pm.disposePlugins();
+      pm.unloadPlugins(myContributors);
     }
     myLoadedPluginManagers.clear();
 
-    myPluginManager.disposePlugins();
+    myPluginManager.unloadPlugins(myContributors);
+    myContributors = null;
   }
 
   public void addReloadingListener(@NotNull PluginReloadingListener listener) {

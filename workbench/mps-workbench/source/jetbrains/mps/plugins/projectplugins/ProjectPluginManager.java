@@ -67,7 +67,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 
   private PluginsState myState = new PluginsState();
-  private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private FileEditorManager myManager;
 
@@ -172,23 +171,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   public void unloadPlugins(List<PluginContributor> contributors) {
     assert !myProject.isDisposed();
     super.unloadPlugins(contributors);
-  }
-
-  // todo: remove
-  public void loadPlugins() {
-    if (myLoaded) return;
-    loadPlugins(PluginUtil.getPluginContributors());
-    myLoaded = true;
-  }
-
-  // todo: remove
-  public void disposePlugins() {
-    if (!myLoaded) return;
-    List<PluginContributor> contributors = PluginUtil.getPluginContributors();
-    Collections.reverse(contributors);
-    unloadPlugins(contributors);
-    myLoaded = false;
-//    System.out.println("!!!" + mySortedPlugins.size());
   }
 
   public EditorOpenHandler getEditorOpenHandler() {
