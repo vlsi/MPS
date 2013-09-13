@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
+import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -60,13 +61,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
         )
     }
 )
-public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
+public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = LogManager.getLogger(ProjectPluginManager.class);
 
   private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 
-  private final Object myPluginsLock = new Object();
-  private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
   private PluginsState myState = new PluginsState();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
@@ -84,13 +83,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   @Override
   public void projectClosed() {
-
   }
 
   @Nullable
   public <T extends BaseGeneratedTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : mySortedPlugins) {
+      for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseGeneratedTool> tools = plugin.getTools();
         for (BaseGeneratedTool tool : tools) {
           if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
@@ -102,7 +100,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
     synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : mySortedPlugins) {
+      for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseProjectPrefsComponent> components = plugin.getPrefsComponents();
         for (BaseProjectPrefsComponent component : components) {
           if (component.getClass().getName().equals(componentClass.getName())) return (T) component;
@@ -115,7 +113,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public List<RelationDescriptor> getTabDescriptors() {
     synchronized (myPluginsLock) {
       List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
-      for (BaseProjectPlugin plugin : mySortedPlugins) {
+      for (BaseProjectPlugin plugin : getPlugins()) {
         result.addAll(plugin.getTabDescriptors());
       }
       return result;
@@ -133,87 +131,48 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   //----------------RELOAD STUFF---------------------
-  // plugins should be in load order
-  private final Map<PluginContributor, BaseProjectPlugin> myContributorToPlugin = new HashMap<PluginContributor, BaseProjectPlugin>();
+  @Override
+  protected BaseProjectPlugin createPlugin(PluginContributor contributor) {
+    BaseProjectPlugin plugin = contributor.createProjectPlugin();
+    if (plugin == null) return null;
 
-  public void loadPlugins(final List<PluginContributor> contributors) {
-    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
-    assert !myProject.isDisposed();
+    plugin.init(myProject);
 
-    synchronized (myPluginsLock) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
-
-          for (PluginContributor c : contributors) {
-            BaseProjectPlugin plugin = c.createProjectPlugin();
-            if (plugin != null) {
-              plugins.add(plugin);
-            }
-
-            assert !myContributorToPlugin.containsKey(c);
-            myContributorToPlugin.put(c, plugin);
-          }
-
-          for (BaseProjectPlugin plugin : plugins) {
-            try {
-              plugin.init(myProject);
-            } catch (Throwable t1) {
-              LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
-            }
-          }
-
-          mySortedPlugins.addAll(plugins);
-
-          spreadState(plugins);
-          for (BaseProjectPlugin plugin : plugins) {
-            if (!plugin.getTabDescriptors().isEmpty()) {
-              recreateTabbedEditors();
-              break;
-            }
-          }
-        }
-      });
-    }
+    return plugin;
   }
 
-  // plugins should be in unload order
-  public void unloadPlugins(List<PluginContributor> contributors) {
-    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
-    assert !myProject.isDisposed();
-
-    synchronized (myPluginsLock) {
-      final List<BaseProjectPlugin> plugins = new ArrayList<BaseProjectPlugin>();
-
-      for (PluginContributor contributor : contributors) {
-        assert myContributorToPlugin.containsKey(contributor);
-        BaseProjectPlugin plugin = myContributorToPlugin.get(contributor);
-        myContributorToPlugin.remove(contributor);
-
-        if (plugin != null) {
-          plugins.add(plugin);
-        }
+  @Override
+  protected void afterPluginsCreated(List<BaseProjectPlugin> plugins) {
+    spreadState(plugins);
+    for (BaseProjectPlugin plugin : plugins) {
+      if (!plugin.getTabDescriptors().isEmpty()) {
+        recreateTabbedEditors();
+        break;
       }
-
-      collectState(plugins);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (BaseProjectPlugin plugin : plugins) {
-            try {
-              plugin.dispose();
-            } catch (Throwable t) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-            }
-          }
-        }
-      });
-
-      mySortedPlugins.removeAll(plugins);
     }
   }
 
+  @Override
+  protected void beforePluginsDisposed(List<BaseProjectPlugin> plugins) {
+    collectState(plugins);
+  }
+
+  @Override
+  protected void disposePlugin(BaseProjectPlugin plugin) {
+    plugin.dispose();
+  }
+
+  @Override
+  public void loadPlugins(List<PluginContributor> contributors) {
+    assert !myProject.isDisposed();
+    super.loadPlugins(contributors);
+  }
+
+  @Override
+  public void unloadPlugins(List<PluginContributor> contributors) {
+    assert !myProject.isDisposed();
+    super.unloadPlugins(contributors);
+  }
 
   public void loadPlugins() {
     if (myLoaded) return;
@@ -245,19 +204,17 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   @Override
   public void initComponent() {
-
   }
 
   @Override
   public void disposeComponent() {
-
   }
 
   //----------------STATE STUFF------------------------
 
   @Override
   public PluginsState getState() {
-    collectState(mySortedPlugins);
+    collectState(getPlugins());
     return myState;
   }
 
