@@ -1280,7 +1280,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private EditorContext createEditorContextForActions() {
-    return new EditorContext(this, getEditedNode().getModel(), myRepository);
+    return new EditorContext(this, getEditedNode() != null ? getEditedNode().getModel() : null, myRepository);
   }
 
   private void selectComponentCell(Component component) {
