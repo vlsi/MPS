@@ -174,13 +174,23 @@ public class PluginReloader implements ApplicationComponent {
 
   private class MyProjectManagerAdapter extends ProjectManagerAdapter {
     @Override
-    public void projectClosing(Project project) {
+    public void projectOpened(final Project project) {
       assert SwingUtilities.isEventDispatchThread();
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          // todo: ???
-//          disposePlugins();
+          project.getComponent(ProjectPluginManager.class).loadPlugins(myContributors);
+        }
+      });
+    }
+
+    @Override
+    public void projectClosing(final Project project) {
+      assert SwingUtilities.isEventDispatchThread();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          project.getComponent(ProjectPluginManager.class).unloadPlugins(myContributors);
         }
       });
     }

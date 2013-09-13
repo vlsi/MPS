@@ -23,7 +23,6 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
@@ -37,7 +36,6 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.PluginContributor;
-import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
@@ -48,9 +46,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import sun.swing.SwingUtilities2;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 @State(
     name = "ProjectPluginManager",
