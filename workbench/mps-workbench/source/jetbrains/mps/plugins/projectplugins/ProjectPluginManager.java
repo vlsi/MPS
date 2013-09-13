@@ -140,8 +140,6 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
 
-    final AtomicBoolean needTabRecreation = new AtomicBoolean(false);
-
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
@@ -165,21 +163,18 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
               LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
             }
           }
-          spreadState(plugins);
 
           mySortedPlugins.addAll(plugins);
 
+          spreadState(plugins);
           for (BaseProjectPlugin plugin : plugins) {
             if (!plugin.getTabDescriptors().isEmpty()) {
-              needTabRecreation.set(true);
+              recreateTabbedEditors();
+              break;
             }
           }
         }
       });
-    }
-
-    if (needTabRecreation.get()) {
-      recreateTabbedEditors();
     }
   }
 
