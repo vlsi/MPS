@@ -16,19 +16,11 @@ public abstract class CustomViewersManager implements ApplicationComponent {
   public CustomViewersManager() {
   }
 
-  @Override
-  public void initComponent() {
-  }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Custom Viewers Manager";
-  }
-
-  @Override
-  public void disposeComponent() {
   }
 
   public abstract void addFactory(@NotNull ValueWrapperFactory factory);

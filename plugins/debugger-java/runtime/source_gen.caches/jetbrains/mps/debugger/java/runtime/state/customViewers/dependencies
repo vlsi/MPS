@@ -42,6 +42,7 @@
   <dependency className="jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl" file="CustomViewersManagerImpl.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManagerListener" />
     <classNode dependClassName="com.sun.jdi.ClassType" />
     <classNode dependClassName="com.sun.jdi.InterfaceType" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
@@ -78,6 +79,8 @@
     <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.project.ProjectManagerAdapter" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionAdapter" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory" file="ObjectWrapperFactory.java">
