@@ -20,11 +20,11 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class ViewWithFactory_Action extends BaseAction {
+public class ViewAs_Action extends BaseAction {
   private static final Icon ICON = null;
   private ValueWrapperFactory factory;
 
-  public ViewWithFactory_Action(ValueWrapperFactory factory_par) {
+  public ViewAs_Action(ValueWrapperFactory factory_par) {
     super("View With Factory", "", ICON);
     this.factory = factory_par;
     this.setIsAlwaysVisible(false);
@@ -39,13 +39,13 @@ public class ViewWithFactory_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        event.getPresentation().setText(ViewWithFactory_Action.this.factory.toString());
+        event.getPresentation().setText(ViewAs_Action.this.factory.toString());
         IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
         event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ViewWithFactory", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "ViewAs", t);
       }
       this.disable(event.getPresentation());
     }
@@ -68,11 +68,11 @@ public class ViewWithFactory_Action extends BaseAction {
       if (value == null || !(value instanceof JavaValue)) {
         return;
       }
-      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewWithFactory_Action.this.factory);
+      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewAs_Action.this.factory);
       ((DebugSession) DebugActionsUtil.getDebugSession(event)).refresh();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ViewWithFactory", t);
+        LOG.error("User's action execute method failed. Action:" + "ViewAs", t);
       }
     }
   }
@@ -91,5 +91,5 @@ public class ViewWithFactory_Action extends BaseAction {
     throw new RuntimeException("NOT IMPLEMENTED");
   }
 
-  protected static Logger LOG = LogManager.getLogger(ViewWithFactory_Action.class);
+  protected static Logger LOG = LogManager.getLogger(ViewAs_Action.class);
 }

@@ -890,7 +890,7 @@
   </root>
   <root type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968011948" nodeInfo="ng" />
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4225554808929802673" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="VeiwAsActionGroup" />
+    <property name="name" nameId="tpck.1169194664001" value="ViewAs_Group" />
     <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     <property name="caption" nameId="tp4k.1204991940915" value="View As" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.UpdateGroupBlock" typeId="tp4k.1239975356883" id="4225554808929822052" nodeInfo="ng">
@@ -1118,12 +1118,15 @@
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4225554808929858972" nodeInfo="nn" />
             </node>
-            <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4225554808929833281" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4225554808929830909" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4225554808929830904" resolveInfo="factories" />
+            <node role="condition" roleId="tpee.1068580123160" type="tpee.LessThanOrEqualsExpression" typeId="tpee.1153422305557" id="3131169769696565651" nodeInfo="nn">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3131169769696565662" nodeInfo="nn">
+                <property name="value" nameId="tpee.1068580320021" value="1" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4225554808929856050" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g4.~Set%disEmpty()%cboolean" resolveInfo="isEmpty" />
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4225554808929833281" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4225554808929830909" nodeInfo="nn">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4225554808929830904" resolveInfo="factories" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetSizeOperation" typeId="tp2q.1162935959151" id="3131169769696554731" nodeInfo="nn" />
               </node>
             </node>
           </node>
@@ -1137,7 +1140,7 @@
             <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="4225554808929943887" nodeInfo="sn">
               <node role="statement" roleId="tpee.1068581517665" type="tp4k.AddStatement" typeId="tp4k.1227013049127" id="4225554808929944720" nodeInfo="nn">
                 <node role="item" roleId="tp4k.1227013166210" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4225554808929981383" nodeInfo="ng">
-                  <link role="action" roleId="tp4k.1203088061055" targetNodeId="4225554808929945133" resolveInfo="ViewWithFactory" />
+                  <link role="action" roleId="tp4k.1203088061055" targetNodeId="4225554808929945133" resolveInfo="ViewAs" />
                   <node role="actualParameter" roleId="tp4k.1227011543811" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4225554808929981385" nodeInfo="nn">
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="4225554808929943883" resolveInfo="factory" />
                   </node>
@@ -1153,7 +1156,7 @@
     </node>
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4225554808929945133" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ViewWithFactory" />
+    <property name="name" nameId="tpck.1169194664001" value="ViewAs" />
     <property name="caption" nameId="tp4k.1205250923097" value="View With Factory" />
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="4225554808929945134" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4225554808929945135" nodeInfo="sn">

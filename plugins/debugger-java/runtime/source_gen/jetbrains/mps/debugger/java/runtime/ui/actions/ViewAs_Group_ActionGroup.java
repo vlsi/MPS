@@ -25,12 +25,12 @@ import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersMana
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
-public class VeiwAsActionGroup_ActionGroup extends GeneratedActionGroup {
-  private static Logger LOG = LogManager.getLogger(VeiwAsActionGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.debugger.java.runtime.ui.actions.VeiwAsActionGroup_ActionGroup";
+public class ViewAs_Group_ActionGroup extends GeneratedActionGroup {
+  private static Logger LOG = LogManager.getLogger(ViewAs_Group_ActionGroup.class);
+  public static final String ID = "jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup";
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
 
-  public VeiwAsActionGroup_ActionGroup() {
+  public ViewAs_Group_ActionGroup() {
     super("View As", ID);
     this.setIsInternal(false);
     this.setPopup(true);
@@ -42,7 +42,7 @@ public class VeiwAsActionGroup_ActionGroup extends GeneratedActionGroup {
 
   public void doUpdate(AnActionEvent event) {
     try {
-      VeiwAsActionGroup_ActionGroup.this.removeAll();
+      ViewAs_Group_ActionGroup.this.removeAll();
 
       final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
       if (value == null || !(value instanceof ValueWrapper)) {
@@ -64,12 +64,12 @@ public class VeiwAsActionGroup_ActionGroup extends GeneratedActionGroup {
         }
       });
 
-      if (factories.isEmpty()) {
+      if (SetSequence.fromSet(factories).count() <= 1) {
         event.getPresentation().setVisible(false);
         return;
       }
       for (ValueWrapperFactory factory : SetSequence.fromSet(factories)) {
-        VeiwAsActionGroup_ActionGroup.this.addParameterizedAction(new ViewWithFactory_Action(factory), PluginId.getId("jetbrains.mps.debugger.java.runtime"), factory);
+        ViewAs_Group_ActionGroup.this.addParameterizedAction(new ViewAs_Action(factory), PluginId.getId("jetbrains.mps.debugger.java.runtime"), factory);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
