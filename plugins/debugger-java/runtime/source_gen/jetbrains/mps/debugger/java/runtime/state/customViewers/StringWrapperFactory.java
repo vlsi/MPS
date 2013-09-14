@@ -26,7 +26,7 @@ public class StringWrapperFactory extends ValueWrapperFactory {
   }
 
   @Override
-  public String toString() {
+  public String getName() {
     return "String";
   }
 

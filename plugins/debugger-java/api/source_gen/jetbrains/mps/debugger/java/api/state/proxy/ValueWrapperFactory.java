@@ -20,4 +20,8 @@ public abstract class ValueWrapperFactory {
   }
 
   public abstract ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference);
+
+  public String getName() {
+    return this.toString();
+  }
 }

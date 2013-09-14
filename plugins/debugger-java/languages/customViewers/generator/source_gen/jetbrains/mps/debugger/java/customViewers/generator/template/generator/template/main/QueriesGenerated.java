@@ -60,6 +60,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_110763052829785268(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (isNotEmpty_x583g4_a0a0h(SPropertyOperations.getString(_context.getNode(), "alias"))) {
+      return SPropertyOperations.getString(_context.getNode(), "alias");
+    }
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -244,6 +247,10 @@ public class QueriesGenerated {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)"), facade.createNodeId("3432969378036017270")));
     return quotedNode_1;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0h(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static boolean isNotEmpty_x583g4_a0a0m(String str) {

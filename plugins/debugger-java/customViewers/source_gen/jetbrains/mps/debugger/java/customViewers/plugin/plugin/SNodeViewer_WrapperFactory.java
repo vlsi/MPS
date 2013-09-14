@@ -132,7 +132,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
 
 
   @Override
-  public String toString() {
+  public String getName() {
     return "SNodeViewer";
   }
 }

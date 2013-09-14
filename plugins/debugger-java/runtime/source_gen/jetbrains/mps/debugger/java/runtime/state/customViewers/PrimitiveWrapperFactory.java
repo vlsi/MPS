@@ -25,7 +25,7 @@ public class PrimitiveWrapperFactory extends ValueWrapperFactory {
   }
 
   @Override
-  public String toString() {
+  public String getName() {
     return "Primitive";
   }
 

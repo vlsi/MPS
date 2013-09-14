@@ -35,7 +35,7 @@ public class ObjectWrapperFactory extends ValueWrapperFactory {
   }
 
   @Override
-  public String toString() {
+  public String getName() {
     return "Object";
   }
 

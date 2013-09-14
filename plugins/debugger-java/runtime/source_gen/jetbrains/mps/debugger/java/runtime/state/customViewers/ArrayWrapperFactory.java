@@ -38,7 +38,7 @@ public class ArrayWrapperFactory extends ValueWrapperFactory {
   }
 
   @Override
-  public String toString() {
+  public String getName() {
     return "Array";
   }
 

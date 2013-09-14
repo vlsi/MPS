@@ -521,6 +521,7 @@
   <root type="kisg.HighLevelCustomViewer" typeId="kisg.680105146889009728" id="2929731761237871799" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="IndexedTupleViewer" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="tuples" />
+    <property name="alias" nameId="tpck.1156235010670" value="IndexedTuple" />
     <node role="valueType" roleId="kisg.43370322128256026" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2929731761237871800" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="upz5.1238932916942" resolveInfo="MultiTuple" />
     </node>

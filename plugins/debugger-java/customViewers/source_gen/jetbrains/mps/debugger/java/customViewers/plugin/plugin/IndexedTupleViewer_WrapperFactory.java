@@ -92,7 +92,7 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
 
 
   @Override
-  public String toString() {
-    return "IndexedTupleViewer";
+  public String getName() {
+    return "IndexedTuple";
   }
 }
