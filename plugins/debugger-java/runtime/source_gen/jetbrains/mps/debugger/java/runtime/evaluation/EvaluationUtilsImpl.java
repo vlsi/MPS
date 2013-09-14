@@ -221,6 +221,8 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
   public boolean instanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException {
     assertEvaluating();
     if (jniSignature.equals(EvaluationUtils.JAVA_LANG_OBJECT)) {
+      // o_O 
+      // this is kinda not true when what is of primitive type 
       return true;
     }
     if (what.signature().equals(jniSignature)) {

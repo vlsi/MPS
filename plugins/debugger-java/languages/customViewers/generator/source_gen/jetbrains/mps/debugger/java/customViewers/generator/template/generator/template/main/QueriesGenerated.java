@@ -179,7 +179,7 @@ public class QueriesGenerated {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
-  public static void mapSrcMacro_post_mapper_9218072571024216449(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+  public static void mapSrcMacro_post_mapper_7129857096177916887(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 

@@ -7,7 +7,7 @@ import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,7 +24,7 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
     super(threadReference);
     myThisObject = objectReference;
     myStackFrame = stackFrame;
-    myValue = ValueUtil.getInstance().fromJDI(myThisObject, myThreadReference);
+    myValue = CustomViewersManager.getInstance().fromJdi(myThisObject, myThreadReference);
   }
 
   public ObjectReference getThisObject() {

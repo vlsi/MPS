@@ -21,6 +21,7 @@ import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaThisObject;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext;
 import jetbrains.mps.debug.api.programState.IValue;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static final Logger LOG = LogManager.getLogger(JavaStackFrame.class);
@@ -134,7 +135,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     try {
       if (watchable instanceof JavaLocalVariable) {
         JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-        return ValueUtil.getInstance().fromJDI(getFrame().getValue(localVariable.getLocalVariable()), myThread.getThread());
+        return CustomViewersManager.getInstance().fromJdi(getFrame().getValue(localVariable.getLocalVariable()), myThread.getThread());
       }
     } catch (IncompatibleThreadStateException e) {
     }

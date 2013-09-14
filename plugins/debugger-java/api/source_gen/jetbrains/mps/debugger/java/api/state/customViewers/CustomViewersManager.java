@@ -6,6 +6,10 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import org.jetbrains.annotations.Nullable;
+import com.sun.jdi.Value;
+import com.sun.jdi.ThreadReference;
 import com.intellij.openapi.application.ApplicationManager;
 
 public abstract class CustomViewersManager implements ApplicationComponent {
@@ -30,6 +34,8 @@ public abstract class CustomViewersManager implements ApplicationComponent {
   public abstract void addFactory(@NotNull ValueWrapperFactory factory);
 
   public abstract void removeFactory(@NotNull ValueWrapperFactory factory);
+
+  public abstract JavaValue fromJdi(@Nullable Value value, @NotNull ThreadReference threadReference);
 
   public static CustomViewersManager getInstance() {
     return ApplicationManager.getApplication().getComponent(CustomViewersManager.class);

@@ -24,12 +24,17 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import org.apache.log4j.Priority;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
 import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import com.sun.jdi.ObjectReference;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import org.jetbrains.annotations.Nullable;
+import com.sun.jdi.Value;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -86,34 +91,37 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
   }
 
   public synchronized ValueWrapper getValueWrapper(@NotNull IValueProxy proxy, ThreadReference threadReference) {
+    if (proxy instanceof INullValueProxy) {
+      return MapSequence.fromMap(myFactories).get(ObjectWrapperFactory.class.getName()).createValueWrapper(proxy, threadReference);
+    }
+
+    ValueWrapperFactory factory = null;
+    DebugSession session = getSession(proxy);
+
     if (proxy instanceof IObjectValueProxy) {
-      DebugSession session = getSession(proxy);
       Map<Long, String> objectIdToFactory = MapSequence.fromMap(myObjectIdToFactory).get(session);
       if (objectIdToFactory == null) {
         objectIdToFactory = MapSequence.fromMap(new HashMap<Long, String>());
         MapSequence.fromMap(myObjectIdToFactory).put(session, objectIdToFactory);
       }
-      ValueWrapperFactory factory = null;
       long uniqueID = getValueId(proxy);
       String factoryId = MapSequence.fromMap(objectIdToFactory).get(uniqueID);
       if ((factoryId != null && factoryId.length() > 0)) {
         factory = MapSequence.fromMap(myFactories).get(factoryId);
       }
-      if (factory == null) {
-        Set<ValueWrapperFactory> factories = getValueWrapperFactories(proxy);
-        if (factories.isEmpty()) {
-          return null;
-        }
-        factory = (factories.size() > 1 ?
-          getBestFactory(factories, session) :
-          factories.iterator().next()
-        );
-        factoryId = factory.getClass().getName();
-        MapSequence.fromMap(objectIdToFactory).put(uniqueID, factoryId);
-      }
-      return factory.createValueWrapper(proxy, threadReference);
     }
-    return null;
+
+    if (factory == null) {
+      Set<ValueWrapperFactory> factories = getValueWrapperFactories(proxy);
+      if (factories.isEmpty()) {
+        return null;
+      }
+      factory = (factories.size() > 1 ?
+        getBestFactory(factories, session) :
+        factories.iterator().next()
+      );
+    }
+    return factory.createValueWrapper(proxy, threadReference);
   }
 
   public synchronized void setValueWrapper(@NotNull IValueProxy value, @NotNull ValueWrapperFactory factory) {
@@ -146,6 +154,10 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
       }
     }
     return null;
+  }
+
+  public JavaValue fromJdi(@Nullable Value value, @NotNull ThreadReference threadReference) {
+    return getValueWrapper(MirrorUtil.getInstance().getValueProxy(value), threadReference);
   }
 
   protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);

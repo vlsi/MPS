@@ -1,170 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:4388830e-b413-4ab4-a4d2-e76a7bc17a27(jetbrains.mps.debugger.java.runtime.state.customViewers)/3432969378036015275">
-    <nodeInfo nodeId="3432969378036017132" fileName="CustomViewersManagerImpl.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFactories" />
-    <nodeInfo nodeId="4054603036794767361" fileName="CustomViewersManagerImpl.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myObjectIdToFactory" />
-    <nodeInfo nodeId="4054603036794820630" fileName="CustomViewersManagerImpl.java" startLine="44" startPosition="64" endLine="45" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4054603036794848174" fileName="CustomViewersManagerImpl.java" startLine="49" startPosition="67" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036017198" fileName="CustomViewersManagerImpl.java" startLine="53" startPosition="102" endLine="54" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6108369403999390068" fileName="CustomViewersManagerImpl.java" startLine="56" startPosition="48" endLine="57" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036017221" fileName="CustomViewersManagerImpl.java" startLine="59" startPosition="5" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6108369403999494498" fileName="CustomViewersManagerImpl.java" startLine="63" startPosition="104" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6108369403999471561" fileName="CustomViewersManagerImpl.java" startLine="64" startPosition="73" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6108369403999472990" fileName="CustomViewersManagerImpl.java" startLine="68" startPosition="39" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6108369403999480961" fileName="CustomViewersManagerImpl.java" startLine="69" startPosition="34" endLine="70" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5764521365758164376" fileName="CustomViewersManagerImpl.java" startLine="71" startPosition="113" endLine="72" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5764521365758204178" fileName="CustomViewersManagerImpl.java" startLine="73" startPosition="171" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5764521365758297573" fileName="CustomViewersManagerImpl.java" startLine="75" startPosition="11" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5764521365758297579" fileName="CustomViewersManagerImpl.java" startLine="76" startPosition="34" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="80" startPosition="47" endLine="81" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6108369403999483091" fileName="CustomViewersManagerImpl.java" startLine="84" startPosition="5" endLine="85" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3714688570619974280" fileName="CustomViewersManagerImpl.java" startLine="89" startPosition="45" endLine="90" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3714688570620001117" fileName="CustomViewersManagerImpl.java" startLine="90" startPosition="47" endLine="91" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3714688570620001479" fileName="CustomViewersManagerImpl.java" startLine="92" startPosition="38" endLine="93" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3714688570619980690" fileName="CustomViewersManagerImpl.java" startLine="93" startPosition="77" endLine="94" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036017257" fileName="CustomViewersManagerImpl.java" startLine="95" startPosition="7" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4054603036794766428" fileName="CustomViewersManagerImpl.java" startLine="96" startPosition="41" endLine="97" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4054603036794955417" fileName="CustomViewersManagerImpl.java" startLine="97" startPosition="40" endLine="98" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4054603036795014519" fileName="CustomViewersManagerImpl.java" startLine="99" startPosition="58" endLine="100" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036017232" fileName="CustomViewersManagerImpl.java" startLine="102" startPosition="28" endLine="103" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3432969378036017243" fileName="CustomViewersManagerImpl.java" startLine="104" startPosition="34" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4054603036794981883" fileName="CustomViewersManagerImpl.java" startLine="110" startPosition="10" endLine="111" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4054603036794966117" fileName="CustomViewersManagerImpl.java" startLine="111" startPosition="49" endLine="112" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036017265" fileName="CustomViewersManagerImpl.java" startLine="113" startPosition="7" endLine="114" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4054603036794990095" fileName="CustomViewersManagerImpl.java" startLine="115" startPosition="5" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3714688570620011423" fileName="CustomViewersManagerImpl.java" startLine="119" startPosition="110" endLine="120" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3714688570620011704" fileName="CustomViewersManagerImpl.java" startLine="120" startPosition="45" endLine="121" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3714688570620013607" fileName="CustomViewersManagerImpl.java" startLine="122" startPosition="36" endLine="123" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3714688570620015979" fileName="CustomViewersManagerImpl.java" startLine="123" startPosition="75" endLine="124" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4054603036795140677" fileName="CustomViewersManagerImpl.java" startLine="125" startPosition="5" endLine="126" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036017163" fileName="CustomViewersManagerImpl.java" startLine="129" startPosition="60" endLine="130" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4054603036795398272" fileName="CustomViewersManagerImpl.java" startLine="133" startPosition="63" endLine="134" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3714688570620105130" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="63" endLine="138" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3714688570619965274" fileName="CustomViewersManagerImpl.java" startLine="142" startPosition="122" endLine="143" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3714688570619965709" fileName="CustomViewersManagerImpl.java" startLine="147" startPosition="5" endLine="148" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036015275" fileName="CustomViewersManagerImpl.java" startLine="151" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3432969378036017139" fileName="CustomViewersManagerImpl.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomViewersManagerImpl#()V" />
-    <nodeInfo nodeId="3432969378036017210" fileName="CustomViewersManagerImpl.java" startLine="55" startPosition="83" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5764521365758178653" fileName="CustomViewersManagerImpl.java" startLine="72" startPosition="102" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="79" startPosition="39" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="79" startPosition="39" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4054603036795003798" fileName="CustomViewersManagerImpl.java" startLine="98" startPosition="78" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036017238" fileName="CustomViewersManagerImpl.java" startLine="103" startPosition="77" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036017159" fileName="CustomViewersManagerImpl.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstanceImpl#()Ljetbrains/mps/debugger/java/runtime/state/customViewers/CustomViewersManagerImpl;" />
-    <nodeInfo nodeId="4054603036795398512" fileName="CustomViewersManagerImpl.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueId#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)J" />
-    <nodeInfo nodeId="3714688570619960726" fileName="CustomViewersManagerImpl.java" startLine="141" startPosition="46" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036017168" fileName="CustomViewersManagerImpl.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
-    <nodeInfo nodeId="3432969378036017179" fileName="CustomViewersManagerImpl.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
-    <nodeInfo nodeId="3714688570619974876" fileName="CustomViewersManagerImpl.java" startLine="91" startPosition="98" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4054603036794988962" fileName="CustomViewersManagerImpl.java" startLine="106" startPosition="9" endLine="110" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3714688570620011778" fileName="CustomViewersManagerImpl.java" startLine="121" startPosition="96" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036017205" fileName="CustomViewersManagerImpl.java" startLine="54" startPosition="100" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3714688570619928842" fileName="CustomViewersManagerImpl.java" startLine="140" startPosition="134" endLine="145" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="547466970563566903" fileName="CustomViewersManagerImpl.java" startLine="139" startPosition="76" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3432969378036017190" fileName="CustomViewersManagerImpl.java" startLine="53" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueWrapperFactories#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Ljava/util/Set;" />
-    <nodeInfo nodeId="4054603036795140421" fileName="CustomViewersManagerImpl.java" startLine="119" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
-    <nodeInfo nodeId="547466970563562942" fileName="CustomViewersManagerImpl.java" startLine="138" startPosition="26" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6108369403999471637" fileName="CustomViewersManagerImpl.java" startLine="67" startPosition="11" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4054603036795014619" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="7" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3714688570619952192" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSession#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Ljetbrains/mps/debugger/java/runtime/state/DebugSession;" />
-    <nodeInfo nodeId="6108369403999525591" fileName="CustomViewersManagerImpl.java" startLine="66" startPosition="72" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6108369403999410693" fileName="CustomViewersManagerImpl.java" startLine="65" startPosition="109" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6108369403999361286" fileName="CustomViewersManagerImpl.java" startLine="63" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBestFactory#(Ljava/util/Set;Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;" />
-    <nodeInfo nodeId="4054603036794687119" fileName="CustomViewersManagerImpl.java" startLine="88" startPosition="113" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036017223" fileName="CustomViewersManagerImpl.java" startLine="88" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
-    <scopeInfo nodeId="3432969378036017142" fileName="CustomViewersManagerImpl.java" startLine="40" startPosition="37" endLine="40" endPosition="37" />
-    <scopeInfo nodeId="3432969378036017173" fileName="CustomViewersManagerImpl.java" startLine="44" startPosition="64" endLine="45" endPosition="80" />
-    <scopeInfo nodeId="3432969378036017184" fileName="CustomViewersManagerImpl.java" startLine="49" startPosition="67" endLine="50" endPosition="77" />
-    <scopeInfo nodeId="3432969378036017215" fileName="CustomViewersManagerImpl.java" startLine="56" startPosition="48" endLine="57" endPosition="56" />
-    <scopeInfo nodeId="5764521365758178656" fileName="CustomViewersManagerImpl.java" startLine="73" startPosition="171" endLine="74" endPosition="21" />
-    <scopeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="80" startPosition="47" endLine="81" endPosition="105" />
-    <scopeInfo nodeId="4054603036795003801" fileName="CustomViewersManagerImpl.java" startLine="99" startPosition="58" endLine="100" endPosition="66" />
-    <scopeInfo nodeId="3432969378036017242" fileName="CustomViewersManagerImpl.java" startLine="104" startPosition="34" endLine="105" endPosition="22" />
-    <scopeInfo nodeId="3432969378036017162" fileName="CustomViewersManagerImpl.java" startLine="129" startPosition="60" endLine="130" endPosition="73" />
-    <scopeInfo nodeId="4054603036795398245" fileName="CustomViewersManagerImpl.java" startLine="133" startPosition="63" endLine="134" endPosition="70" />
-    <scopeInfo nodeId="3714688570619960727" fileName="CustomViewersManagerImpl.java" startLine="142" startPosition="122" endLine="143" endPosition="42" />
-    <scopeInfo nodeId="3432969378036017139" fileName="CustomViewersManagerImpl.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6108369403999471640" fileName="CustomViewersManagerImpl.java" startLine="68" startPosition="39" endLine="70" endPosition="103" />
-    <scopeInfo nodeId="3714688570619974879" fileName="CustomViewersManagerImpl.java" startLine="92" startPosition="38" endLine="94" endPosition="81" />
-    <scopeInfo nodeId="3714688570620011781" fileName="CustomViewersManagerImpl.java" startLine="122" startPosition="36" endLine="124" endPosition="79" />
-    <scopeInfo nodeId="3432969378036017209" fileName="CustomViewersManagerImpl.java" startLine="55" startPosition="83" endLine="58" endPosition="7" />
-    <scopeInfo nodeId="6108369403999525594" fileName="CustomViewersManagerImpl.java" startLine="79" startPosition="0" endLine="82" endPosition="9">
+    <nodeInfo nodeId="3432969378036017132" fileName="CustomViewersManagerImpl.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFactories" />
+    <nodeInfo nodeId="4054603036794767361" fileName="CustomViewersManagerImpl.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myObjectIdToFactory" />
+    <nodeInfo nodeId="4054603036794820630" fileName="CustomViewersManagerImpl.java" startLine="49" startPosition="64" endLine="50" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4054603036794848174" fileName="CustomViewersManagerImpl.java" startLine="54" startPosition="67" endLine="55" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036017198" fileName="CustomViewersManagerImpl.java" startLine="58" startPosition="102" endLine="59" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6108369403999390068" fileName="CustomViewersManagerImpl.java" startLine="61" startPosition="48" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036017221" fileName="CustomViewersManagerImpl.java" startLine="64" startPosition="5" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403999494498" fileName="CustomViewersManagerImpl.java" startLine="68" startPosition="104" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6108369403999471561" fileName="CustomViewersManagerImpl.java" startLine="69" startPosition="73" endLine="70" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6108369403999472990" fileName="CustomViewersManagerImpl.java" startLine="73" startPosition="39" endLine="74" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403999480961" fileName="CustomViewersManagerImpl.java" startLine="74" startPosition="34" endLine="75" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5764521365758164376" fileName="CustomViewersManagerImpl.java" startLine="76" startPosition="113" endLine="77" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5764521365758204178" fileName="CustomViewersManagerImpl.java" startLine="78" startPosition="171" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5764521365758297573" fileName="CustomViewersManagerImpl.java" startLine="80" startPosition="11" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5764521365758297579" fileName="CustomViewersManagerImpl.java" startLine="81" startPosition="34" endLine="82" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="85" startPosition="47" endLine="86" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403999483091" fileName="CustomViewersManagerImpl.java" startLine="89" startPosition="5" endLine="90" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7340583568183847486" fileName="CustomViewersManagerImpl.java" startLine="94" startPosition="43" endLine="95" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7340583568183827345" fileName="CustomViewersManagerImpl.java" startLine="96" startPosition="5" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3432969378036017257" fileName="CustomViewersManagerImpl.java" startLine="97" startPosition="0" endLine="98" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3714688570619974280" fileName="CustomViewersManagerImpl.java" startLine="98" startPosition="39" endLine="99" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7928382991022735331" fileName="CustomViewersManagerImpl.java" startLine="99" startPosition="45" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3714688570620001117" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="45" endLine="102" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3714688570620001479" fileName="CustomViewersManagerImpl.java" startLine="103" startPosition="38" endLine="104" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3714688570619980690" fileName="CustomViewersManagerImpl.java" startLine="104" startPosition="77" endLine="105" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4054603036794766428" fileName="CustomViewersManagerImpl.java" startLine="106" startPosition="7" endLine="107" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4054603036794955417" fileName="CustomViewersManagerImpl.java" startLine="107" startPosition="40" endLine="108" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4054603036795014519" fileName="CustomViewersManagerImpl.java" startLine="109" startPosition="58" endLine="110" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7928382991022744978" fileName="CustomViewersManagerImpl.java" startLine="112" startPosition="5" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3432969378036017232" fileName="CustomViewersManagerImpl.java" startLine="114" startPosition="26" endLine="115" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3432969378036017243" fileName="CustomViewersManagerImpl.java" startLine="116" startPosition="32" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036017265" fileName="CustomViewersManagerImpl.java" startLine="123" startPosition="5" endLine="124" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3714688570620011423" fileName="CustomViewersManagerImpl.java" startLine="127" startPosition="110" endLine="128" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3714688570620011704" fileName="CustomViewersManagerImpl.java" startLine="128" startPosition="45" endLine="129" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3714688570620013607" fileName="CustomViewersManagerImpl.java" startLine="130" startPosition="36" endLine="131" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3714688570620015979" fileName="CustomViewersManagerImpl.java" startLine="131" startPosition="75" endLine="132" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4054603036795140677" fileName="CustomViewersManagerImpl.java" startLine="133" startPosition="5" endLine="134" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036017163" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="60" endLine="138" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4054603036795398272" fileName="CustomViewersManagerImpl.java" startLine="141" startPosition="63" endLine="142" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3714688570620105130" fileName="CustomViewersManagerImpl.java" startLine="145" startPosition="63" endLine="146" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3714688570619965274" fileName="CustomViewersManagerImpl.java" startLine="150" startPosition="122" endLine="151" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3714688570619965709" fileName="CustomViewersManagerImpl.java" startLine="155" startPosition="5" endLine="156" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177641101" fileName="CustomViewersManagerImpl.java" startLine="159" startPosition="93" endLine="160" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036015275" fileName="CustomViewersManagerImpl.java" startLine="163" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3432969378036017139" fileName="CustomViewersManagerImpl.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomViewersManagerImpl#()V" />
+    <nodeInfo nodeId="3432969378036017210" fileName="CustomViewersManagerImpl.java" startLine="60" startPosition="83" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5764521365758178653" fileName="CustomViewersManagerImpl.java" startLine="77" startPosition="102" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="84" startPosition="39" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="84" startPosition="39" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7340583568183843732" fileName="CustomViewersManagerImpl.java" startLine="93" startPosition="113" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4054603036795003798" fileName="CustomViewersManagerImpl.java" startLine="108" startPosition="78" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3432969378036017238" fileName="CustomViewersManagerImpl.java" startLine="115" startPosition="75" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3432969378036017159" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstanceImpl#()Ljetbrains/mps/debugger/java/runtime/state/customViewers/CustomViewersManagerImpl;" />
+    <nodeInfo nodeId="4054603036795398512" fileName="CustomViewersManagerImpl.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueId#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)J" />
+    <nodeInfo nodeId="3714688570619960726" fileName="CustomViewersManagerImpl.java" startLine="149" startPosition="46" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7129857096177639286" fileName="CustomViewersManagerImpl.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromJdi#(Lcom/sun/jdi/Value;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/JavaValue;" />
+    <nodeInfo nodeId="3432969378036017168" fileName="CustomViewersManagerImpl.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+    <nodeInfo nodeId="3432969378036017179" fileName="CustomViewersManagerImpl.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+    <nodeInfo nodeId="3714688570619974876" fileName="CustomViewersManagerImpl.java" startLine="102" startPosition="98" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4054603036794988962" fileName="CustomViewersManagerImpl.java" startLine="118" startPosition="7" endLine="122" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3714688570620011778" fileName="CustomViewersManagerImpl.java" startLine="129" startPosition="96" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3432969378036017205" fileName="CustomViewersManagerImpl.java" startLine="59" startPosition="100" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3714688570619928842" fileName="CustomViewersManagerImpl.java" startLine="148" startPosition="134" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="547466970563566903" fileName="CustomViewersManagerImpl.java" startLine="147" startPosition="76" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3432969378036017190" fileName="CustomViewersManagerImpl.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueWrapperFactories#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Ljava/util/Set;" />
+    <nodeInfo nodeId="4054603036795140421" fileName="CustomViewersManagerImpl.java" startLine="127" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+    <nodeInfo nodeId="547466970563562942" fileName="CustomViewersManagerImpl.java" startLine="146" startPosition="26" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4054603036795014619" fileName="CustomViewersManagerImpl.java" startLine="113" startPosition="0" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6108369403999471637" fileName="CustomViewersManagerImpl.java" startLine="72" startPosition="11" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4054603036794687119" fileName="CustomViewersManagerImpl.java" startLine="100" startPosition="0" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3714688570619952192" fileName="CustomViewersManagerImpl.java" startLine="145" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSession#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Ljetbrains/mps/debugger/java/runtime/state/DebugSession;" />
+    <nodeInfo nodeId="6108369403999525591" fileName="CustomViewersManagerImpl.java" startLine="71" startPosition="72" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6108369403999410693" fileName="CustomViewersManagerImpl.java" startLine="70" startPosition="109" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6108369403999361286" fileName="CustomViewersManagerImpl.java" startLine="68" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBestFactory#(Ljava/util/Set;Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;" />
+    <nodeInfo nodeId="3432969378036017223" fileName="CustomViewersManagerImpl.java" startLine="93" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
+    <scopeInfo nodeId="3432969378036017142" fileName="CustomViewersManagerImpl.java" startLine="45" startPosition="37" endLine="45" endPosition="37" />
+    <scopeInfo nodeId="3432969378036017173" fileName="CustomViewersManagerImpl.java" startLine="49" startPosition="64" endLine="50" endPosition="80" />
+    <scopeInfo nodeId="3432969378036017184" fileName="CustomViewersManagerImpl.java" startLine="54" startPosition="67" endLine="55" endPosition="77" />
+    <scopeInfo nodeId="3432969378036017215" fileName="CustomViewersManagerImpl.java" startLine="61" startPosition="48" endLine="62" endPosition="56" />
+    <scopeInfo nodeId="5764521365758178656" fileName="CustomViewersManagerImpl.java" startLine="78" startPosition="171" endLine="79" endPosition="21" />
+    <scopeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="85" startPosition="47" endLine="86" endPosition="105" />
+    <scopeInfo nodeId="7340583568183843735" fileName="CustomViewersManagerImpl.java" startLine="94" startPosition="43" endLine="95" endPosition="131" />
+    <scopeInfo nodeId="4054603036795003801" fileName="CustomViewersManagerImpl.java" startLine="109" startPosition="58" endLine="110" endPosition="66" />
+    <scopeInfo nodeId="3432969378036017242" fileName="CustomViewersManagerImpl.java" startLine="116" startPosition="32" endLine="117" endPosition="20" />
+    <scopeInfo nodeId="3432969378036017162" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="60" endLine="138" endPosition="73" />
+    <scopeInfo nodeId="4054603036795398245" fileName="CustomViewersManagerImpl.java" startLine="141" startPosition="63" endLine="142" endPosition="70" />
+    <scopeInfo nodeId="3714688570619960727" fileName="CustomViewersManagerImpl.java" startLine="150" startPosition="122" endLine="151" endPosition="42" />
+    <scopeInfo nodeId="7129857096177639289" fileName="CustomViewersManagerImpl.java" startLine="159" startPosition="93" endLine="160" endPosition="91" />
+    <scopeInfo nodeId="3432969378036017139" fileName="CustomViewersManagerImpl.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="6108369403999471640" fileName="CustomViewersManagerImpl.java" startLine="73" startPosition="39" endLine="75" endPosition="103" />
+    <scopeInfo nodeId="3714688570619974879" fileName="CustomViewersManagerImpl.java" startLine="103" startPosition="38" endLine="105" endPosition="81" />
+    <scopeInfo nodeId="3714688570620011781" fileName="CustomViewersManagerImpl.java" startLine="130" startPosition="36" endLine="132" endPosition="79" />
+    <scopeInfo nodeId="3432969378036017209" fileName="CustomViewersManagerImpl.java" startLine="60" startPosition="83" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="6108369403999525594" fileName="CustomViewersManagerImpl.java" startLine="84" startPosition="0" endLine="87" endPosition="9">
       <varInfo nodeId="6108369403999525596" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6108369403999525600" fileName="CustomViewersManagerImpl.java" startLine="79" startPosition="39" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="79" startPosition="39" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="3432969378036017159" fileName="CustomViewersManagerImpl.java" startLine="129" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="4054603036795398512" fileName="CustomViewersManagerImpl.java" startLine="133" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="6108369403999525600" fileName="CustomViewersManagerImpl.java" startLine="84" startPosition="39" endLine="87" endPosition="9" />
+    <scopeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="84" startPosition="39" endLine="87" endPosition="9" />
+    <scopeInfo nodeId="3432969378036017159" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="4054603036795398512" fileName="CustomViewersManagerImpl.java" startLine="141" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="4054603036795398279" varName="originalValue" />
     </scopeInfo>
-    <scopeInfo nodeId="3714688570619928843" fileName="CustomViewersManagerImpl.java" startLine="141" startPosition="46" endLine="144" endPosition="11" />
-    <scopeInfo nodeId="3432969378036017168" fileName="CustomViewersManagerImpl.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="3714688570619928843" fileName="CustomViewersManagerImpl.java" startLine="149" startPosition="46" endLine="152" endPosition="11" />
+    <scopeInfo nodeId="7129857096177639286" fileName="CustomViewersManagerImpl.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
+      <varInfo nodeId="7129857096177639347" varName="threadReference" />
+      <varInfo nodeId="7129857096177639341" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3432969378036017168" fileName="CustomViewersManagerImpl.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="3432969378036017171" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036017179" fileName="CustomViewersManagerImpl.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3432969378036017179" fileName="CustomViewersManagerImpl.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="3432969378036017182" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036017205" fileName="CustomViewersManagerImpl.java" startLine="54" startPosition="100" endLine="59" endPosition="5">
+    <scopeInfo nodeId="3432969378036017205" fileName="CustomViewersManagerImpl.java" startLine="59" startPosition="100" endLine="64" endPosition="5">
       <varInfo nodeId="3432969378036017207" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="547466970563566906" fileName="CustomViewersManagerImpl.java" startLine="140" startPosition="134" endLine="145" endPosition="9" />
-    <scopeInfo nodeId="5764521365758296955" fileName="CustomViewersManagerImpl.java" startLine="71" startPosition="113" endLine="77" endPosition="34">
+    <scopeInfo nodeId="547466970563566906" fileName="CustomViewersManagerImpl.java" startLine="148" startPosition="134" endLine="153" endPosition="9" />
+    <scopeInfo nodeId="5764521365758296955" fileName="CustomViewersManagerImpl.java" startLine="76" startPosition="113" endLine="82" endPosition="34">
       <varInfo nodeId="5764521365758164377" varName="newType" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036017197" fileName="CustomViewersManagerImpl.java" startLine="53" startPosition="102" endLine="60" endPosition="18">
+    <scopeInfo nodeId="3432969378036017197" fileName="CustomViewersManagerImpl.java" startLine="58" startPosition="102" endLine="65" endPosition="18">
       <varInfo nodeId="3432969378036017199" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4054603036795140424" fileName="CustomViewersManagerImpl.java" startLine="119" startPosition="110" endLine="126" endPosition="96">
+    <scopeInfo nodeId="4054603036795140424" fileName="CustomViewersManagerImpl.java" startLine="127" startPosition="110" endLine="134" endPosition="96">
       <varInfo nodeId="3714688570620011705" varName="objectIdToFactory" />
       <varInfo nodeId="3714688570620011424" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="547466970563562948" fileName="CustomViewersManagerImpl.java" startLine="139" startPosition="76" endLine="146" endPosition="7" />
-    <scopeInfo nodeId="547466970563566903" fileName="CustomViewersManagerImpl.java" startLine="139" startPosition="76" endLine="146" endPosition="7">
+    <scopeInfo nodeId="547466970563562948" fileName="CustomViewersManagerImpl.java" startLine="147" startPosition="76" endLine="154" endPosition="7" />
+    <scopeInfo nodeId="547466970563566903" fileName="CustomViewersManagerImpl.java" startLine="147" startPosition="76" endLine="154" endPosition="7">
       <varInfo nodeId="547466970563566904" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036017190" fileName="CustomViewersManagerImpl.java" startLine="53" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="4054603036795014622" fileName="CustomViewersManagerImpl.java" startLine="114" startPosition="26" endLine="122" endPosition="8">
+      <varInfo nodeId="3432969378036017233" varName="factories" />
+    </scopeInfo>
+    <scopeInfo nodeId="3432969378036017190" fileName="CustomViewersManagerImpl.java" startLine="58" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="3432969378036017194" varName="originalValue" />
     </scopeInfo>
-    <scopeInfo nodeId="4054603036795140421" fileName="CustomViewersManagerImpl.java" startLine="119" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="4054603036795140421" fileName="CustomViewersManagerImpl.java" startLine="127" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="4054603036795140647" varName="factory" />
       <varInfo nodeId="4054603036795140639" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="547466970563562942" fileName="CustomViewersManagerImpl.java" startLine="138" startPosition="26" endLine="147" endPosition="5">
+    <scopeInfo nodeId="547466970563562942" fileName="CustomViewersManagerImpl.java" startLine="146" startPosition="26" endLine="155" endPosition="5">
       <varInfo nodeId="547466970563562944" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4054603036795014622" fileName="CustomViewersManagerImpl.java" startLine="102" startPosition="28" endLine="112" endPosition="72">
-      <varInfo nodeId="3432969378036017233" varName="factories" />
+    <scopeInfo nodeId="4054603036794687122" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="45" endLine="111" endPosition="7">
+      <varInfo nodeId="4054603036794955418" varName="factoryId" />
+      <varInfo nodeId="3714688570620001118" varName="objectIdToFactory" />
+      <varInfo nodeId="4054603036794766429" varName="uniqueID" />
     </scopeInfo>
-    <scopeInfo nodeId="6108369403999525593" fileName="CustomViewersManagerImpl.java" startLine="67" startPosition="11" endLine="78" endPosition="9" />
-    <scopeInfo nodeId="3714688570619952195" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="63" endLine="148" endPosition="16" />
-    <scopeInfo nodeId="3714688570619952192" fileName="CustomViewersManagerImpl.java" startLine="137" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="6108369403999525593" fileName="CustomViewersManagerImpl.java" startLine="72" startPosition="11" endLine="83" endPosition="9" />
+    <scopeInfo nodeId="3714688570619952195" fileName="CustomViewersManagerImpl.java" startLine="145" startPosition="63" endLine="156" endPosition="16" />
+    <scopeInfo nodeId="3714688570619952192" fileName="CustomViewersManagerImpl.java" startLine="145" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="3714688570619952464" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6108369403999410699" fileName="CustomViewersManagerImpl.java" startLine="66" startPosition="72" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="6108369403999410693" fileName="CustomViewersManagerImpl.java" startLine="65" startPosition="109" endLine="84" endPosition="5">
+    <scopeInfo nodeId="6108369403999410699" fileName="CustomViewersManagerImpl.java" startLine="71" startPosition="72" endLine="88" endPosition="7" />
+    <scopeInfo nodeId="6108369403999410693" fileName="CustomViewersManagerImpl.java" startLine="70" startPosition="109" endLine="89" endPosition="5">
       <varInfo nodeId="6108369403999410695" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="6108369403999361289" fileName="CustomViewersManagerImpl.java" startLine="63" startPosition="104" endLine="85" endPosition="28">
+    <scopeInfo nodeId="6108369403999361289" fileName="CustomViewersManagerImpl.java" startLine="68" startPosition="104" endLine="90" endPosition="28">
       <varInfo nodeId="6108369403999471564" varName="currentBest" />
       <varInfo nodeId="6108369403999494499" varName="vm" />
     </scopeInfo>
-    <scopeInfo nodeId="6108369403999361286" fileName="CustomViewersManagerImpl.java" startLine="63" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="6108369403999361286" fileName="CustomViewersManagerImpl.java" startLine="68" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="6108369403999380393" varName="factories" />
       <varInfo nodeId="6108369403999361735" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="4054603036794687122" fileName="CustomViewersManagerImpl.java" startLine="89" startPosition="45" endLine="114" endPosition="64">
+    <scopeInfo nodeId="3432969378036017231" fileName="CustomViewersManagerImpl.java" startLine="93" startPosition="113" endLine="124" endPosition="62">
       <varInfo nodeId="3432969378036017258" varName="factory" />
-      <varInfo nodeId="4054603036794955418" varName="factoryId" />
-      <varInfo nodeId="3714688570620001118" varName="objectIdToFactory" />
       <varInfo nodeId="3714688570619974281" varName="session" />
-      <varInfo nodeId="4054603036794766429" varName="uniqueID" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036017231" fileName="CustomViewersManagerImpl.java" startLine="88" startPosition="113" endLine="116" endPosition="16" />
-    <scopeInfo nodeId="3432969378036017223" fileName="CustomViewersManagerImpl.java" startLine="88" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="3432969378036017223" fileName="CustomViewersManagerImpl.java" startLine="93" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="3432969378036017226" varName="proxy" />
       <varInfo nodeId="7866772524122662603" varName="threadReference" />
     </scopeInfo>
-    <unitInfo nodeId="3432969378036015275" fileName="CustomViewersManagerImpl.java" startLine="36" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl" />
+    <unitInfo nodeId="3432969378036015275" fileName="CustomViewersManagerImpl.java" startLine="41" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl" />
+  </root>
+  <root nodeRef="r:4388830e-b413-4ab4-a4d2-e76a7bc17a27(jetbrains.mps.debugger.java.runtime.state.customViewers)/7129857096176465096">
+    <nodeInfo nodeId="7129857096176513534" fileName="BaseLanguageCustomViewers.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCustomViewerManager" />
+    <nodeInfo nodeId="7129857096177154342" fileName="BaseLanguageCustomViewers.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFactories" />
+    <nodeInfo nodeId="7129857096176514077" fileName="BaseLanguageCustomViewers.java" startLine="19" startPosition="66" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177154463" fileName="BaseLanguageCustomViewers.java" startLine="23" startPosition="31" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177406433" fileName="BaseLanguageCustomViewers.java" startLine="24" startPosition="76" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177482923" fileName="BaseLanguageCustomViewers.java" startLine="25" startPosition="75" endLine="26" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177610091" fileName="BaseLanguageCustomViewers.java" startLine="26" startPosition="79" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177174552" fileName="BaseLanguageCustomViewers.java" startLine="29" startPosition="49" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177179387" fileName="BaseLanguageCustomViewers.java" startLine="37" startPosition="49" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096176509635" fileName="BaseLanguageCustomViewers.java" startLine="45" startPosition="36" endLine="46" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096176511499" fileName="BaseLanguageCustomViewers.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseLanguageCustomViewers#(Ljetbrains/mps/debugger/java/api/state/customViewers/CustomViewersManager;)V" />
+    <nodeInfo nodeId="7129857096177174123" fileName="BaseLanguageCustomViewers.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+    <nodeInfo nodeId="7129857096177179385" fileName="BaseLanguageCustomViewers.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+    <nodeInfo nodeId="7129857096177163899" fileName="BaseLanguageCustomViewers.java" startLine="27" startPosition="76" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177179381" fileName="BaseLanguageCustomViewers.java" startLine="35" startPosition="34" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096176509625" fileName="BaseLanguageCustomViewers.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7129857096176509619" fileName="BaseLanguageCustomViewers.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="7129857096176509613" fileName="BaseLanguageCustomViewers.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <scopeInfo nodeId="7129857096176511502" fileName="BaseLanguageCustomViewers.java" startLine="19" startPosition="66" endLine="20" endPosition="36" />
+    <scopeInfo nodeId="7129857096177174124" fileName="BaseLanguageCustomViewers.java" startLine="29" startPosition="49" endLine="30" endPosition="45" />
+    <scopeInfo nodeId="7129857096177179386" fileName="BaseLanguageCustomViewers.java" startLine="37" startPosition="49" endLine="38" endPosition="48" />
+    <scopeInfo nodeId="7129857096176509633" fileName="BaseLanguageCustomViewers.java" startLine="45" startPosition="36" endLine="46" endPosition="42" />
+    <scopeInfo nodeId="7129857096176511499" fileName="BaseLanguageCustomViewers.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="7129857096176512025" varName="manager" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177174123" fileName="BaseLanguageCustomViewers.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="7129857096177174123" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177179385" fileName="BaseLanguageCustomViewers.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7129857096177179385" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096176509624" fileName="BaseLanguageCustomViewers.java" startLine="35" startPosition="34" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="7129857096176509625" fileName="BaseLanguageCustomViewers.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7129857096176509619" fileName="BaseLanguageCustomViewers.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="7129857096176509618" fileName="BaseLanguageCustomViewers.java" startLine="23" startPosition="31" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="7129857096176509613" fileName="BaseLanguageCustomViewers.java" startLine="23" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="7129857096177174123" fileName="BaseLanguageCustomViewers.java" startLine="28" startPosition="50" endLine="32" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.BaseLanguageCustomViewers$1" />
+    <unitInfo nodeId="7129857096177179385" fileName="BaseLanguageCustomViewers.java" startLine="36" startPosition="50" endLine="40" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.BaseLanguageCustomViewers$2" />
+    <unitInfo nodeId="7129857096176465096" fileName="BaseLanguageCustomViewers.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.BaseLanguageCustomViewers" />
+  </root>
+  <root nodeRef="r:4388830e-b413-4ab4-a4d2-e76a7bc17a27(jetbrains.mps.debugger.java.runtime.state.customViewers)/7129857096177041157">
+    <nodeInfo nodeId="7129857096177045377" fileName="ObjectWrapperFactory.java" startLine="29" startPosition="59" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177045186" fileName="ObjectWrapperFactory.java" startLine="33" startPosition="94" endLine="34" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2165033534792613920" fileName="ObjectWrapperFactory.java" startLine="38" startPosition="28" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132593" fileName="ObjectWrapperFactory.java" startLine="43" startPosition="86" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7129857096177050747" fileName="ObjectWrapperFactory.java" startLine="48" startPosition="48" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7129857096177050751" fileName="ObjectWrapperFactory.java" startLine="49" startPosition="64" endLine="50" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7129857096177050763" fileName="ObjectWrapperFactory.java" startLine="51" startPosition="24" endLine="52" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7129857096177050770" fileName="ObjectWrapperFactory.java" startLine="52" startPosition="78" endLine="53" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177050797" fileName="ObjectWrapperFactory.java" startLine="55" startPosition="43" endLine="56" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177050808" fileName="ObjectWrapperFactory.java" startLine="59" startPosition="42" endLine="60" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177050783" fileName="ObjectWrapperFactory.java" startLine="62" startPosition="19" endLine="63" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7129857096177050815" fileName="ObjectWrapperFactory.java" startLine="65" startPosition="7" endLine="66" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858558" fileName="ObjectWrapperFactory.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />
+    <nodeInfo nodeId="6108369403997858561" fileName="ObjectWrapperFactory.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
+    <nodeInfo nodeId="6108369403997858564" fileName="ObjectWrapperFactory.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedValue" />
+    <nodeInfo nodeId="6108369403997858567" fileName="ObjectWrapperFactory.java" startLine="74" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="6108369403997858580" fileName="ObjectWrapperFactory.java" startLine="76" startPosition="92" endLine="77" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6108369403997858582" fileName="ObjectWrapperFactory.java" startLine="77" startPosition="29" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403997858586" fileName="ObjectWrapperFactory.java" startLine="78" startPosition="22" endLine="79" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403997858590" fileName="ObjectWrapperFactory.java" startLine="79" startPosition="24" endLine="80" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403997858601" fileName="ObjectWrapperFactory.java" startLine="80" startPosition="110" endLine="81" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403997858609" fileName="ObjectWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858615" fileName="ObjectWrapperFactory.java" startLine="89" startPosition="29" endLine="90" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858622" fileName="ObjectWrapperFactory.java" startLine="93" startPosition="36" endLine="94" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6108369403997858647" fileName="ObjectWrapperFactory.java" startLine="95" startPosition="108" endLine="96" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403997858661" fileName="ObjectWrapperFactory.java" startLine="97" startPosition="7" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858667" fileName="ObjectWrapperFactory.java" startLine="102" startPosition="30" endLine="103" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858674" fileName="ObjectWrapperFactory.java" startLine="107" startPosition="39" endLine="108" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858683" fileName="ObjectWrapperFactory.java" startLine="112" startPosition="28" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6108369403997858690" fileName="ObjectWrapperFactory.java" startLine="117" startPosition="45" endLine="118" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177045176" fileName="ObjectWrapperFactory.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
+    <nodeInfo nodeId="6957207478384132583" fileName="ObjectWrapperFactory.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaObjectValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IObjectValueProxy;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="7129857096177050795" fileName="ObjectWrapperFactory.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/sun/jdi/Field;)Z" />
+    <nodeInfo nodeId="7129857096177050806" fileName="ObjectWrapperFactory.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/sun/jdi/Field;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6108369403997858605" fileName="ObjectWrapperFactory.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getField#()Lcom/sun/jdi/Field;" />
+    <nodeInfo nodeId="6108369403997858628" fileName="ObjectWrapperFactory.java" startLine="94" startPosition="35" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7129857096177045203" fileName="ObjectWrapperFactory.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrapValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+    <nodeInfo nodeId="2165033534792597481" fileName="ObjectWrapperFactory.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6108369403997858611" fileName="ObjectWrapperFactory.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6108369403997858663" fileName="ObjectWrapperFactory.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
+    <nodeInfo nodeId="6108369403997858670" fileName="ObjectWrapperFactory.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6108369403997858679" fileName="ObjectWrapperFactory.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6108369403997858686" fileName="ObjectWrapperFactory.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
+    <nodeInfo nodeId="6108369403997858570" fileName="ObjectWrapperFactory.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaField#(Lcom/sun/jdi/Field;Lcom/sun/jdi/ObjectReference;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="6108369403997858618" fileName="ObjectWrapperFactory.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7129857096177050779" fileName="ObjectWrapperFactory.java" startLine="53" startPosition="109" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7129857096177050758" fileName="ObjectWrapperFactory.java" startLine="50" startPosition="68" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="948222233230584398" fileName="ObjectWrapperFactory.java" startLine="47" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvaluesImpl#()Ljava/util/List;" />
+    <scopeInfo nodeId="7129857096177045212" fileName="ObjectWrapperFactory.java" startLine="29" startPosition="59" endLine="30" endPosition="46" />
+    <scopeInfo nodeId="7129857096177045184" fileName="ObjectWrapperFactory.java" startLine="33" startPosition="94" endLine="34" endPosition="96" />
+    <scopeInfo nodeId="2165033534792597485" fileName="ObjectWrapperFactory.java" startLine="38" startPosition="28" endLine="39" endPosition="20" />
+    <scopeInfo nodeId="6957207478384132592" fileName="ObjectWrapperFactory.java" startLine="43" startPosition="86" endLine="44" endPosition="36" />
+    <scopeInfo nodeId="7129857096177050796" fileName="ObjectWrapperFactory.java" startLine="55" startPosition="43" endLine="56" endPosition="36" />
+    <scopeInfo nodeId="7129857096177050807" fileName="ObjectWrapperFactory.java" startLine="59" startPosition="42" endLine="60" endPosition="29" />
+    <scopeInfo nodeId="7129857096177050782" fileName="ObjectWrapperFactory.java" startLine="62" startPosition="19" endLine="63" endPosition="88" />
+    <scopeInfo nodeId="6108369403997858608" fileName="ObjectWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="21" />
+    <scopeInfo nodeId="6108369403997858614" fileName="ObjectWrapperFactory.java" startLine="89" startPosition="29" endLine="90" endPosition="20" />
+    <scopeInfo nodeId="6108369403997858646" fileName="ObjectWrapperFactory.java" startLine="95" startPosition="108" endLine="96" endPosition="66" />
+    <scopeInfo nodeId="6108369403997858666" fileName="ObjectWrapperFactory.java" startLine="102" startPosition="30" endLine="103" endPosition="27" />
+    <scopeInfo nodeId="6108369403997858673" fileName="ObjectWrapperFactory.java" startLine="107" startPosition="39" endLine="108" endPosition="46" />
+    <scopeInfo nodeId="6108369403997858682" fileName="ObjectWrapperFactory.java" startLine="112" startPosition="28" endLine="113" endPosition="18" />
+    <scopeInfo nodeId="6108369403997858689" fileName="ObjectWrapperFactory.java" startLine="117" startPosition="45" endLine="118" endPosition="37" />
+    <scopeInfo nodeId="7129857096177045176" fileName="ObjectWrapperFactory.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="7129857096177045181" varName="threadReference" />
+      <varInfo nodeId="7129857096177045179" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384132583" fileName="ObjectWrapperFactory.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6957207478384132590" varName="threadReference" />
+      <varInfo nodeId="6957207478384132586" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177050795" fileName="ObjectWrapperFactory.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="7129857096177050795" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177050806" fileName="ObjectWrapperFactory.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="7129857096177050806" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6108369403997858605" fileName="ObjectWrapperFactory.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="7129857096177045203" fileName="ObjectWrapperFactory.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="7129857096177045206" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2165033534792597481" fileName="ObjectWrapperFactory.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="6108369403997858611" fileName="ObjectWrapperFactory.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="6108369403997858663" fileName="ObjectWrapperFactory.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="6108369403997858670" fileName="ObjectWrapperFactory.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="6108369403997858679" fileName="ObjectWrapperFactory.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="6108369403997858686" fileName="ObjectWrapperFactory.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="6108369403997858579" fileName="ObjectWrapperFactory.java" startLine="76" startPosition="92" endLine="81" endPosition="31" />
+    <scopeInfo nodeId="6108369403997858621" fileName="ObjectWrapperFactory.java" startLine="93" startPosition="36" endLine="98" endPosition="18">
+      <varInfo nodeId="6108369403997858623" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="6108369403997858570" fileName="ObjectWrapperFactory.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="6108369403997858573" varName="field" />
+      <varInfo nodeId="6108369403997858575" varName="parent" />
+      <varInfo nodeId="6108369403997858577" varName="threadReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="6108369403997858618" fileName="ObjectWrapperFactory.java" startLine="93" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="7129857096177050779" fileName="ObjectWrapperFactory.java" startLine="53" startPosition="109" endLine="64" endPosition="9">
+      <varInfo nodeId="7129857096177050780" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177050762" fileName="ObjectWrapperFactory.java" startLine="51" startPosition="24" endLine="64" endPosition="9">
+      <varInfo nodeId="7129857096177050764" varName="fieldList" />
+    </scopeInfo>
+    <scopeInfo nodeId="948222233230584403" fileName="ObjectWrapperFactory.java" startLine="48" startPosition="48" endLine="66" endPosition="24">
+      <varInfo nodeId="7129857096177050752" varName="ref" />
+      <varInfo nodeId="7129857096177050748" varName="watchables" />
+    </scopeInfo>
+    <scopeInfo nodeId="948222233230584398" fileName="ObjectWrapperFactory.java" startLine="47" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="7129857096177050795" fileName="ObjectWrapperFactory.java" startLine="54" startPosition="66" endLine="58" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$1" />
+    <unitInfo nodeId="7129857096177050806" fileName="ObjectWrapperFactory.java" startLine="58" startPosition="20" endLine="62" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$2" />
+    <unitInfo nodeId="6957207478384132580" fileName="ObjectWrapperFactory.java" startLine="42" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$JavaObjectValue" />
+    <unitInfo nodeId="6108369403997858554" fileName="ObjectWrapperFactory.java" startLine="70" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory$JavaField" />
+    <unitInfo nodeId="7129857096177041157" fileName="ObjectWrapperFactory.java" startLine="27" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory" />
+  </root>
+  <root nodeRef="r:4388830e-b413-4ab4-a4d2-e76a7bc17a27(jetbrains.mps.debugger.java.runtime.state.customViewers)/7129857096177319145">
+    <nodeInfo nodeId="7129857096177319191" fileName="ArrayWrapperFactory.java" startLine="27" startPosition="59" endLine="28" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177319494" fileName="ArrayWrapperFactory.java" startLine="32" startPosition="34" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177389739" fileName="ArrayWrapperFactory.java" startLine="36" startPosition="94" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2165033534792615660" fileName="ArrayWrapperFactory.java" startLine="41" startPosition="28" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132941" fileName="ArrayWrapperFactory.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX_ARRAY_VALUES" />
+    <nodeInfo nodeId="948222233230410452" fileName="ArrayWrapperFactory.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsStructure" />
+    <nodeInfo nodeId="6957207478384132955" fileName="ArrayWrapperFactory.java" startLine="49" startPosition="84" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="948222233230412524" fileName="ArrayWrapperFactory.java" startLine="50" startPosition="36" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6957207478384133038" fileName="ArrayWrapperFactory.java" startLine="55" startPosition="34" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132964" fileName="ArrayWrapperFactory.java" startLine="60" startPosition="48" endLine="61" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384132971" fileName="ArrayWrapperFactory.java" startLine="61" startPosition="64" endLine="62" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384132989" fileName="ArrayWrapperFactory.java" startLine="64" startPosition="36" endLine="65" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133000" fileName="ArrayWrapperFactory.java" startLine="66" startPosition="39" endLine="67" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6957207478384133014" fileName="ArrayWrapperFactory.java" startLine="69" startPosition="41" endLine="70" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6957207478384133024" fileName="ArrayWrapperFactory.java" startLine="73" startPosition="7" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722645011" fileName="ArrayWrapperFactory.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myArray" />
+    <nodeInfo nodeId="3187167456722645014" fileName="ArrayWrapperFactory.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIndex" />
+    <nodeInfo nodeId="3243898559542161262" fileName="ArrayWrapperFactory.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="3187167456722645029" fileName="ArrayWrapperFactory.java" startLine="83" startPosition="110" endLine="84" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3187167456722645032" fileName="ArrayWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3187167456722645036" fileName="ArrayWrapperFactory.java" startLine="85" startPosition="31" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3243898559542161277" fileName="ArrayWrapperFactory.java" startLine="86" startPosition="22" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3187167456722645044" fileName="ArrayWrapperFactory.java" startLine="90" startPosition="38" endLine="91" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722645050" fileName="ArrayWrapperFactory.java" startLine="95" startPosition="29" endLine="96" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722645061" fileName="ArrayWrapperFactory.java" startLine="100" startPosition="30" endLine="101" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722645076" fileName="ArrayWrapperFactory.java" startLine="105" startPosition="39" endLine="106" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722645085" fileName="ArrayWrapperFactory.java" startLine="110" startPosition="28" endLine="111" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722645092" fileName="ArrayWrapperFactory.java" startLine="115" startPosition="45" endLine="116" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177321942" fileName="ArrayWrapperFactory.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
+    <nodeInfo nodeId="6957207478384132995" fileName="ArrayWrapperFactory.java" startLine="65" startPosition="38" endLine="68" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6957207478384133004" fileName="ArrayWrapperFactory.java" startLine="68" startPosition="11" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3187167456722645040" fileName="ArrayWrapperFactory.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArray#()Lcom/sun/jdi/ArrayReference;" />
+    <nodeInfo nodeId="7129857096177319155" fileName="ArrayWrapperFactory.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrapValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+    <nodeInfo nodeId="7129857096177319450" fileName="ArrayWrapperFactory.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedType#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2165033534792615396" fileName="ArrayWrapperFactory.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6957207478384132945" fileName="ArrayWrapperFactory.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaArrayValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IArrayValueProxy;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="6957207478384133034" fileName="ArrayWrapperFactory.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
+    <nodeInfo nodeId="3187167456722645046" fileName="ArrayWrapperFactory.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3187167456722645057" fileName="ArrayWrapperFactory.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
+    <nodeInfo nodeId="3187167456722645072" fileName="ArrayWrapperFactory.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="3187167456722645081" fileName="ArrayWrapperFactory.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3187167456722645088" fileName="ArrayWrapperFactory.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
+    <nodeInfo nodeId="3187167456722645017" fileName="ArrayWrapperFactory.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaArrayItemWatchable#(Lcom/sun/jdi/ArrayReference;ILcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="6957207478384132982" fileName="ArrayWrapperFactory.java" startLine="63" startPosition="29" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6957207478384132977" fileName="ArrayWrapperFactory.java" startLine="62" startPosition="71" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="948222233230350441" fileName="ArrayWrapperFactory.java" startLine="59" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvaluesImpl#()Ljava/util/List;" />
+    <scopeInfo nodeId="7129857096177319164" fileName="ArrayWrapperFactory.java" startLine="27" startPosition="59" endLine="28" endPosition="84" />
+    <scopeInfo nodeId="7129857096177319456" fileName="ArrayWrapperFactory.java" startLine="32" startPosition="34" endLine="33" endPosition="50" />
+    <scopeInfo nodeId="7129857096177321950" fileName="ArrayWrapperFactory.java" startLine="36" startPosition="94" endLine="37" endPosition="93" />
+    <scopeInfo nodeId="2165033534792615400" fileName="ArrayWrapperFactory.java" startLine="41" startPosition="28" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="6957207478384133037" fileName="ArrayWrapperFactory.java" startLine="55" startPosition="34" endLine="56" endPosition="27" />
+    <scopeInfo nodeId="6957207478384132999" fileName="ArrayWrapperFactory.java" startLine="66" startPosition="39" endLine="67" endPosition="35" />
+    <scopeInfo nodeId="6957207478384133013" fileName="ArrayWrapperFactory.java" startLine="69" startPosition="41" endLine="70" endPosition="107" />
+    <scopeInfo nodeId="3187167456722645043" fileName="ArrayWrapperFactory.java" startLine="90" startPosition="38" endLine="91" endPosition="21" />
+    <scopeInfo nodeId="3187167456722645049" fileName="ArrayWrapperFactory.java" startLine="95" startPosition="29" endLine="96" endPosition="33" />
+    <scopeInfo nodeId="3187167456722645060" fileName="ArrayWrapperFactory.java" startLine="100" startPosition="30" endLine="101" endPosition="21" />
+    <scopeInfo nodeId="3187167456722645075" fileName="ArrayWrapperFactory.java" startLine="105" startPosition="39" endLine="106" endPosition="43" />
+    <scopeInfo nodeId="3187167456722645084" fileName="ArrayWrapperFactory.java" startLine="110" startPosition="28" endLine="111" endPosition="18" />
+    <scopeInfo nodeId="3187167456722645091" fileName="ArrayWrapperFactory.java" startLine="115" startPosition="45" endLine="116" endPosition="37" />
+    <scopeInfo nodeId="6957207478384132954" fileName="ArrayWrapperFactory.java" startLine="49" startPosition="84" endLine="51" endPosition="46" />
+    <scopeInfo nodeId="7129857096177321942" fileName="ArrayWrapperFactory.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="7129857096177321947" varName="threadReference" />
+      <varInfo nodeId="7129857096177321945" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384133004" fileName="ArrayWrapperFactory.java" startLine="68" startPosition="11" endLine="71" endPosition="11">
+      <varInfo nodeId="6957207478384133005" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3187167456722645040" fileName="ArrayWrapperFactory.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="7129857096177319155" fileName="ArrayWrapperFactory.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="7129857096177319158" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177319450" fileName="ArrayWrapperFactory.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="2165033534792615396" fileName="ArrayWrapperFactory.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6957207478384132945" fileName="ArrayWrapperFactory.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6957207478384132952" varName="threadReference" />
+      <varInfo nodeId="6957207478384132948" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384133034" fileName="ArrayWrapperFactory.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="3187167456722645028" fileName="ArrayWrapperFactory.java" startLine="83" startPosition="110" endLine="87" endPosition="105" />
+    <scopeInfo nodeId="3187167456722645046" fileName="ArrayWrapperFactory.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="3187167456722645057" fileName="ArrayWrapperFactory.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="3187167456722645072" fileName="ArrayWrapperFactory.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="3187167456722645081" fileName="ArrayWrapperFactory.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="3187167456722645088" fileName="ArrayWrapperFactory.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="3187167456722645017" fileName="ArrayWrapperFactory.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="3187167456722645020" varName="arrayReference" />
+      <varInfo nodeId="3187167456722645022" varName="index" />
+      <varInfo nodeId="3187167456722645026" varName="threadReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384132988" fileName="ArrayWrapperFactory.java" startLine="64" startPosition="36" endLine="71" endPosition="11">
+      <varInfo nodeId="6957207478384132990" varName="len" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384132981" fileName="ArrayWrapperFactory.java" startLine="63" startPosition="29" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="948222233230350446" fileName="ArrayWrapperFactory.java" startLine="60" startPosition="48" endLine="74" endPosition="24">
+      <varInfo nodeId="6957207478384132972" varName="arrayRef" />
+      <varInfo nodeId="6957207478384132965" varName="watchables" />
+    </scopeInfo>
+    <scopeInfo nodeId="948222233230350441" fileName="ArrayWrapperFactory.java" startLine="59" startPosition="0" endLine="76" endPosition="0" />
+    <unitInfo nodeId="6957207478384132938" fileName="ArrayWrapperFactory.java" startLine="45" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ArrayWrapperFactory$JavaArrayValue" />
+    <unitInfo nodeId="3187167456722645007" fileName="ArrayWrapperFactory.java" startLine="78" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ArrayWrapperFactory$JavaArrayItemWatchable" />
+    <unitInfo nodeId="7129857096177319145" fileName="ArrayWrapperFactory.java" startLine="25" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.ArrayWrapperFactory" />
+  </root>
+  <root nodeRef="r:4388830e-b413-4ab4-a4d2-e76a7bc17a27(jetbrains.mps.debugger.java.runtime.state.customViewers)/7129857096177421375">
+    <nodeInfo nodeId="7129857096177423546" fileName="PrimitiveWrapperFactory.java" startLine="18" startPosition="59" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177425047" fileName="PrimitiveWrapperFactory.java" startLine="23" startPosition="34" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2165033534792617384" fileName="PrimitiveWrapperFactory.java" startLine="28" startPosition="28" endLine="29" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177487457" fileName="PrimitiveWrapperFactory.java" startLine="32" startPosition="94" endLine="33" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132511" fileName="PrimitiveWrapperFactory.java" startLine="37" startPosition="91" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6957207478384132536" fileName="PrimitiveWrapperFactory.java" startLine="42" startPosition="34" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132520" fileName="PrimitiveWrapperFactory.java" startLine="47" startPosition="48" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177478554" fileName="PrimitiveWrapperFactory.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
+    <nodeInfo nodeId="6957207478384132501" fileName="PrimitiveWrapperFactory.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaPrimitiveValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/PrimitiveValueProxy;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="7129857096177423510" fileName="PrimitiveWrapperFactory.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrapValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+    <nodeInfo nodeId="7129857096177423662" fileName="PrimitiveWrapperFactory.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedType#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2165033534792617217" fileName="PrimitiveWrapperFactory.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6957207478384132532" fileName="PrimitiveWrapperFactory.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
+    <nodeInfo nodeId="948222233230703018" fileName="PrimitiveWrapperFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvaluesImpl#()Ljava/util/List;" />
+    <scopeInfo nodeId="7129857096177423519" fileName="PrimitiveWrapperFactory.java" startLine="18" startPosition="59" endLine="19" endPosition="48" />
+    <scopeInfo nodeId="7129857096177423668" fileName="PrimitiveWrapperFactory.java" startLine="23" startPosition="34" endLine="24" endPosition="44" />
+    <scopeInfo nodeId="2165033534792617221" fileName="PrimitiveWrapperFactory.java" startLine="28" startPosition="28" endLine="29" endPosition="23" />
+    <scopeInfo nodeId="7129857096177478562" fileName="PrimitiveWrapperFactory.java" startLine="32" startPosition="94" endLine="33" endPosition="104" />
+    <scopeInfo nodeId="6957207478384132510" fileName="PrimitiveWrapperFactory.java" startLine="37" startPosition="91" endLine="38" endPosition="36" />
+    <scopeInfo nodeId="6957207478384132535" fileName="PrimitiveWrapperFactory.java" startLine="42" startPosition="34" endLine="43" endPosition="19" />
+    <scopeInfo nodeId="948222233230703023" fileName="PrimitiveWrapperFactory.java" startLine="47" startPosition="48" endLine="48" endPosition="41" />
+    <scopeInfo nodeId="7129857096177478554" fileName="PrimitiveWrapperFactory.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="7129857096177478559" varName="threadReference" />
+      <varInfo nodeId="7129857096177478557" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384132501" fileName="PrimitiveWrapperFactory.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="6957207478384132508" varName="threadReference" />
+      <varInfo nodeId="6957207478384132504" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177423510" fileName="PrimitiveWrapperFactory.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="7129857096177423513" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177423662" fileName="PrimitiveWrapperFactory.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="2165033534792617217" fileName="PrimitiveWrapperFactory.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6957207478384132532" fileName="PrimitiveWrapperFactory.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="948222233230703018" fileName="PrimitiveWrapperFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="6957207478384132498" fileName="PrimitiveWrapperFactory.java" startLine="36" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.PrimitiveWrapperFactory$JavaPrimitiveValue" />
+    <unitInfo nodeId="7129857096177421375" fileName="PrimitiveWrapperFactory.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.PrimitiveWrapperFactory" />
+  </root>
+  <root nodeRef="r:4388830e-b413-4ab4-a4d2-e76a7bc17a27(jetbrains.mps.debugger.java.runtime.state.customViewers)/7129857096177569321">
+    <nodeInfo nodeId="7129857096177570642" fileName="StringWrapperFactory.java" startLine="19" startPosition="59" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177569437" fileName="StringWrapperFactory.java" startLine="24" startPosition="34" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2165033534792618733" fileName="StringWrapperFactory.java" startLine="29" startPosition="28" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177573890" fileName="StringWrapperFactory.java" startLine="33" startPosition="94" endLine="34" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132909" fileName="StringWrapperFactory.java" startLine="38" startPosition="86" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="913871795045658016" fileName="StringWrapperFactory.java" startLine="43" startPosition="34" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="913871795045579556" fileName="StringWrapperFactory.java" startLine="48" startPosition="48" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7129857096177572002" fileName="StringWrapperFactory.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createValueWrapper#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapper;" />
+    <nodeInfo nodeId="6957207478384132899" fileName="StringWrapperFactory.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStringValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IObjectValueProxy;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="7129857096177569333" fileName="StringWrapperFactory.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrapValue#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+    <nodeInfo nodeId="7129857096177569397" fileName="StringWrapperFactory.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedType#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2165033534792618634" fileName="StringWrapperFactory.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="913871795045657777" fileName="StringWrapperFactory.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
+    <nodeInfo nodeId="948222233230729190" fileName="StringWrapperFactory.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvaluesImpl#()Ljava/util/List;" />
+    <scopeInfo nodeId="7129857096177569342" fileName="StringWrapperFactory.java" startLine="19" startPosition="59" endLine="20" endPosition="96" />
+    <scopeInfo nodeId="7129857096177569403" fileName="StringWrapperFactory.java" startLine="24" startPosition="34" endLine="25" endPosition="32" />
+    <scopeInfo nodeId="2165033534792618638" fileName="StringWrapperFactory.java" startLine="29" startPosition="28" endLine="30" endPosition="20" />
+    <scopeInfo nodeId="7129857096177572010" fileName="StringWrapperFactory.java" startLine="33" startPosition="94" endLine="34" endPosition="98" />
+    <scopeInfo nodeId="6957207478384132908" fileName="StringWrapperFactory.java" startLine="38" startPosition="86" endLine="39" endPosition="36" />
+    <scopeInfo nodeId="913871795045657784" fileName="StringWrapperFactory.java" startLine="43" startPosition="34" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="948222233230729268" fileName="StringWrapperFactory.java" startLine="48" startPosition="48" endLine="49" endPosition="64" />
+    <scopeInfo nodeId="7129857096177572002" fileName="StringWrapperFactory.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="7129857096177572007" varName="threadReference" />
+      <varInfo nodeId="7129857096177572005" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="6957207478384132899" fileName="StringWrapperFactory.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6957207478384132906" varName="threadReference" />
+      <varInfo nodeId="6957207478384132902" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177569333" fileName="StringWrapperFactory.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="7129857096177569336" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="7129857096177569397" fileName="StringWrapperFactory.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2165033534792618634" fileName="StringWrapperFactory.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="913871795045657777" fileName="StringWrapperFactory.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="948222233230729190" fileName="StringWrapperFactory.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <unitInfo nodeId="6957207478384132896" fileName="StringWrapperFactory.java" startLine="37" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.StringWrapperFactory$JavaStringValue" />
+    <unitInfo nodeId="7129857096177569321" fileName="StringWrapperFactory.java" startLine="17" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.customViewers.StringWrapperFactory" />
   </root>
 </debugInfo>
 

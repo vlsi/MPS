@@ -8,7 +8,7 @@ import com.sun.jdi.Field;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -21,14 +21,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 
   public JavaWatchpointWatchable(Field field, Value currentValue, Value newValue, ThreadReference threadReference) {
     super(threadReference);
-    JavaValue current = ValueUtil.getInstance().fromJDI(currentValue, threadReference);
-    JavaValue neww = ValueUtil.getInstance().fromJDI(newValue, threadReference);
+    JavaValue current = CustomViewersManager.getInstance().fromJdi(currentValue, threadReference);
+    JavaValue neww = CustomViewersManager.getInstance().fromJdi(newValue, threadReference);
     myValue = new FieldWatchpointValue(field, false, current, neww, threadReference);
   }
 
   public JavaWatchpointWatchable(Field field, Value currentValue, ThreadReference threadReference) {
     super(threadReference);
-    JavaValue current = ValueUtil.getInstance().fromJDI(currentValue, threadReference);
+    JavaValue current = CustomViewersManager.getInstance().fromJdi(currentValue, threadReference);
     myValue = new FieldWatchpointValue(field, true, current, null, threadReference);
   }
 

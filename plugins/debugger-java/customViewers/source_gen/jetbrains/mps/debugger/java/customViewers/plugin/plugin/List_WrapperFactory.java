@@ -16,7 +16,7 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 
 public class List_WrapperFactory extends ValueWrapperFactory {
   public List_WrapperFactory() {
@@ -64,10 +64,10 @@ public class List_WrapperFactory extends ValueWrapperFactory {
       List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I", getThreadReference()));
-      watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
+      watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_size(CustomViewersManager.getInstance().fromJdi(size.getJDIValue(), getThreadReference()), "size"));
 
       for (IObjectValueProxy element : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(value, getThreadReference())) {
-        watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_element(ValueUtil.getInstance().fromJDI(element.getJDIValue(), getThreadReference()), "element"));
+        watchables.add(new jetbrains.mps.debugger.java.customViewers.plugin.plugin.Collections.MyWatchable_element(CustomViewersManager.getInstance().fromJdi(element.getJDIValue(), getThreadReference()), "element"));
       }
 
       return watchables;

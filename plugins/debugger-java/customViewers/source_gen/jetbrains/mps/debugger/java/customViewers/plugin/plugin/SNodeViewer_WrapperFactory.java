@@ -15,7 +15,7 @@ import jetbrains.mps.debugger.java.api.state.watchables.CustomJavaWatchable;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
@@ -70,31 +70,31 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
 
       IObjectValueProxy node = (IObjectValueProxy) value;
 
-      result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
-      result.add(new SNodeWatchables.MyWatchable_id(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
-      result.add(new SNodeWatchables.MyWatchable_model(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
-      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("myConceptFqName")).getJDIValue(), getThreadReference()), "concept"));
+      result.add(new SNodeWatchables.MyWatchable_text(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
+      result.add(new SNodeWatchables.MyWatchable_id(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
+      result.add(new SNodeWatchables.MyWatchable_model(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
+      result.add(new SNodeWatchables.MyWatchable_concept(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("myConceptFqName")).getJDIValue(), getThreadReference()), "concept"));
       if (!(ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("parent")), null))) {
-        result.add(new SNodeWatchables.MyWatchable_parent(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("parent")).getJDIValue(), getThreadReference()), "parent"));
+        result.add(new SNodeWatchables.MyWatchable_parent(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("parent")).getJDIValue(), getThreadReference()), "parent"));
       }
 
       IArrayValueProxy properties = ((IArrayValueProxy) node.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
         for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.util.SNodeOperations", "getProperties", "(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;", getThreadReference(), value)).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
-          result.add(new SNodeWatchables.MyWatchable_property(ValueUtil.getInstance().fromJDI(property.getJDIValue(), getThreadReference()), "property"));
+          result.add(new SNodeWatchables.MyWatchable_property(CustomViewersManager.getInstance().fromJdi(property.getJDIValue(), getThreadReference()), "property"));
         }
       }
 
       IObjectValueProxy currentChild = ((IObjectValueProxy) node.getFieldValue("first"));
       while (!(ProxyEqualsUtil.javaEquals(currentChild, null))) {
-        result.add(new SNodeWatchables.MyWatchable_child(ValueUtil.getInstance().fromJDI(currentChild.getJDIValue(), getThreadReference()), "child"));
+        result.add(new SNodeWatchables.MyWatchable_child(CustomViewersManager.getInstance().fromJdi(currentChild.getJDIValue(), getThreadReference()), "child"));
         currentChild = ((IObjectValueProxy) node.getFieldValue("next"));
       }
 
       IArrayValueProxy references = ((IArrayValueProxy) node.getFieldValue("myReferences"));
       if (!(ProxyEqualsUtil.javaEquals(references, null))) {
         for (int i = 0; i < ((IArrayValueProxy) references).getLength(); i++) {
-          result.add(new SNodeWatchables.MyWatchable_reference(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
+          result.add(new SNodeWatchables.MyWatchable_reference(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
         }
       }
 

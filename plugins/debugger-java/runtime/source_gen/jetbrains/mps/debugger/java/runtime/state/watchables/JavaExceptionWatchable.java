@@ -6,7 +6,7 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
   public JavaExceptionWatchable(ObjectReference exception, ThreadReference threadReference) {
     super(threadReference);
-    myValue = ValueUtil.getInstance().fromJDI(exception, myThreadReference);
+    myValue = CustomViewersManager.getInstance().fromJdi(exception, myThreadReference);
   }
 
   @Override

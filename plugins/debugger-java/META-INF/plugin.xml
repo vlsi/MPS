@@ -19,6 +19,9 @@
     </component>
     <!--runtime-->
     <component>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.state.customViewers.BaseLanguageCustomViewers</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.JavaDebugger</implementation-class>
     </component>
     <component>
