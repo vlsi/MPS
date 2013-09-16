@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.AbstractImmutableList;
+import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
@@ -1129,76 +1129,82 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //--------private classes-------
 
-  private class ChildrenList extends AbstractImmutableList<SNode> {
+  private static class ChildrenList extends AbstractSequentialList<SNode> {
     @Nullable
-    private String myRole;
+    private final String myRole;
 
     public ChildrenList(SNode first, @Nullable String role) {
       super(first);
       myRole = role;
     }
 
-    public ChildrenList(SNode first, @Nullable String role, int size) {
-      super(first, size);
-      myRole = role;
+    @Override
+    protected AbstractSequentialIterator<SNode> createIterator(SNode first) {
+      return new ChildrenIterator(first, myRole);
     }
 
+    @NotNull
     @Override
-    protected SNode next(SNode node) {
-      SNode next = next_(node);
-      if (next != null) {
-        fireNodeRead(next);
+    public List<SNode> subList(int fromIndex, int toIndex) {
+      if (fromIndex < toIndex) {
+        return new ChildrenList(get(fromIndex), myRole);
+      } else {
+        return Collections.emptyList();
       }
-      return next;
     }
 
-    private SNode next_(SNode node) {
-      if (myRole == null) return node.treeNext();
+    private class ChildrenIterator extends AbstractSequentialIterator<SNode> {
+      @Nullable
+      private String myRole;
 
-      do {
-        node = node.treeNext();
-      } while (node != null && !node.myRoleInParent.equals(myRole));
-      return node;
-    }
-
-    @Override
-    protected SNode prev(SNode node) {
-      SNode prev = prev_(node);
-      if (prev != null) {
-        fireNodeRead(prev);
+      public ChildrenIterator(@NotNull SNode first, @Nullable String role) {
+        super(first);
+        myRole = role;
       }
-      return prev;
-    }
 
-    private SNode prev_(SNode node) {
-      if (node.treeParent() == null) return null;
-      SNode fc = node.treeParent().firstChild();
+      @Override
+      protected SNode getNext(SNode node) {
+        if (myRole == null) return node.treeNext();
 
-      if (node == fc) return null;
-      if (myRole == null) return node.treePrevious();
+        do {
+          node = node.treeNext();
+        } while (node != null && !node.myRoleInParent.equals(myRole));
+        return node;
+      }
 
-      do {
-        node = node.treePrevious();
-      } while (node != fc && !node.myRoleInParent.equals(myRole));
+      @Override
+      protected SNode getPrev(SNode node) {
+        if (node.treeParent() == null) return null;
+        SNode fc = node.treeParent().firstChild();
 
-      return node.myRoleInParent.equals(myRole) ? node : null;
-    }
+        if (node == fc) return null;
+        if (myRole == null) return node.treePrevious();
 
-    @Override
-    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
-      return new ChildrenList(elem, myRole, size);
-    }
+        do {
+          node = node.treePrevious();
+        } while (node != fc && !node.myRoleInParent.equals(myRole));
 
-    @Override
-    public int size() {
-      fireNodeRead(myFirst);
-      return super.size();
-    }
+        return node.myRoleInParent.equals(myRole) ? node : null;
+      }
 
-    private void fireNodeRead(SNode node) {
-      node.nodeRead();
-      node.fireNodeReadAccess();
-      node.fireNodeUnclassifiedReadAccess();
+      @Override
+      protected SNode getCurrent() {
+        return readNode(super.getCurrent());
+      }
+
+      @Override
+      protected SNode getPrev() {
+        return readNode(super.getPrev());
+      }
+
+      private SNode readNode(SNode node) {
+        if (node != null) {
+          node.nodeRead();
+          node.fireNodeReadAccess();
+          node.fireNodeUnclassifiedReadAccess();
+        }
+        return node;
+      }
     }
   }
 
