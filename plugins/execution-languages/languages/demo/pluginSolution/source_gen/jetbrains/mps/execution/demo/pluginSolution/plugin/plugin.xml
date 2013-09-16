@@ -9,7 +9,7 @@
   <description>a</description>
   <version>a</version>
   <vendor url="a" logo="a">a</vendor>
-  <idea-version since-build="a"></idea-version>
+  <idea-version since-build="a" until-build="a"></idea-version>
   
   
   <application-components>

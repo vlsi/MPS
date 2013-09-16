@@ -149,6 +149,8 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_bmlzqh_a7a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_bmlzqh_b7a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bmlzqh_c7a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_bmlzqh_d7a(editorContext, node));
     return editorCell;
   }
 
@@ -252,6 +254,13 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_bmlzqh_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Idea ver.:");
     editorCell.setCellId("Constant_bmlzqh_a7a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_bmlzqh_c7a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "until");
+    editorCell.setCellId("Constant_bmlzqh_c7a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -461,6 +470,24 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_ideaVersion");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_bmlzqh_d7a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("ideaVersionUntil");
+    provider.setNoTargetText("<no ideaVersionUntil>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_ideaVersionUntil");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

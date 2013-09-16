@@ -96,12 +96,13 @@
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.ide.modelchecker" />
       <property name="name" nameId="tpck.1169194664001" value="Model Checker" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Audit tool for MPS models" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.4" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.5" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
+      <property name="ideaVersionUntil" nameId="tp4k.171303706294918694" value="129.1" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="1453248744423272129">
       <property name="name" nameId="tpck.1169194664001" value="Default" />
