@@ -28,7 +28,7 @@
     <nodeInfo nodeId="1125969196844733218" fileName="CommandUtil.java" startLine="165" startPosition="72" endLine="166" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1125969196844733231" fileName="CommandUtil.java" startLine="168" startPosition="36" endLine="169" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1125969196844733244" fileName="CommandUtil.java" startLine="171" startPosition="7" endLine="172" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1125969196844733358" fileName="CommandUtil.java" startLine="177" startPosition="75" endLine="178" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1125969196844733358" fileName="CommandUtil.java" startLine="177" startPosition="85" endLine="178" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1125969196844733371" fileName="CommandUtil.java" startLine="180" startPosition="37" endLine="181" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1125969196844733384" fileName="CommandUtil.java" startLine="183" startPosition="7" endLine="184" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2348043250037290191" fileName="CommandUtil.java" startLine="189" startPosition="76" endLine="190" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -194,7 +194,7 @@
     <scopeInfo nodeId="1125969196844632138" fileName="CommandUtil.java" startLine="165" startPosition="72" endLine="172" endPosition="15">
       <varInfo nodeId="1125969196844733219" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1125969196844632255" fileName="CommandUtil.java" startLine="177" startPosition="75" endLine="184" endPosition="15">
+    <scopeInfo nodeId="1125969196844632255" fileName="CommandUtil.java" startLine="177" startPosition="85" endLine="184" endPosition="15">
       <varInfo nodeId="1125969196844733359" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="2699636778862353920" fileName="CommandUtil.java" startLine="197" startPosition="129" endLine="204" endPosition="37">
