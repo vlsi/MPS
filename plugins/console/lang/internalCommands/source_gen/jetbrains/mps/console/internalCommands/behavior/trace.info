@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="InternalCommandHelp_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.InternalCommandHelp_BehaviorDescriptor" />
+  <unitInfo fileName="InternalMode_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
   <unitInfo fileName="RebuildAspectCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_BehaviorDescriptor" />
   <unitInfo fileName="ReloadClassesCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
   <unitInfo fileName="ShowRepositoryCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
@@ -69,6 +70,26 @@
       <varInfo nodeId="6224631407134025278" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6224631407134025278" fileName="RebuildAspectCommand_Behavior.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.RebuildAspectCommand_Behavior" />
+  </root>
+  <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/8829647120617318761">
+    <nodeInfo nodeId="8829647120617324524" fileName="InternalMode_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8829647120617324563" fileName="InternalMode_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="8829647120617318914" fileName="InternalMode_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="8829647120617319091" fileName="InternalMode_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="8829647120617324541" fileName="InternalMode_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="8829647120617318761" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="8829647120617318761" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="8829647120617318761" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.InternalMode_Behavior" />
   </root>
 </debugInfo>
 

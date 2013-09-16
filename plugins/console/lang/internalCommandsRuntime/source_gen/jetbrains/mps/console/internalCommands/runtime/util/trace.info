@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:6eb42b25-83db-4c72-9ba5-c1a95b1514ba(jetbrains.mps.console.internalCommands.runtime.util)/8829647120617550906">
+    <nodeInfo nodeId="8829647120617551057" fileName="InternalUtil.java" startLine="10" startPosition="43" endLine="11" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8829647120617554660" fileName="InternalUtil.java" startLine="16" startPosition="55" endLine="17" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8829647120617557997" fileName="InternalUtil.java" startLine="17" startPosition="53" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8829647120617551037" fileName="InternalUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInternalFlag#()Z" />
+    <nodeInfo nodeId="8829647120617554594" fileName="InternalUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInternalFlag#(Z)Z" />
+    <scopeInfo nodeId="8829647120617551040" fileName="InternalUtil.java" startLine="10" startPosition="43" endLine="11" endPosition="41" />
+    <scopeInfo nodeId="8829647120617554597" fileName="InternalUtil.java" startLine="16" startPosition="55" endLine="18" endPosition="29" />
+    <scopeInfo nodeId="8829647120617551037" fileName="InternalUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="8829647120617554594" fileName="InternalUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="8829647120617554621" varName="flag" />
+    </scopeInfo>
+    <unitInfo nodeId="8829647120617550906" fileName="InternalUtil.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.internalCommands.runtime.util.InternalUtil" />
+  </root>
+</debugInfo>
+

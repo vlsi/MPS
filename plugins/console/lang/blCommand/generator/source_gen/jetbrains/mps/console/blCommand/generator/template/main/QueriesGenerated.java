@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,11 +40,14 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3856122757887589572(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode functionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "object", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), false);
-    if (functionType != null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(functionType, "parameterType", true)).isEmpty();
-    } else {
-      return false;
+    {
+      IMatchingPattern pattern_x583g4_a0d = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+      SNode coercedNode_x583g4_a0d = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "object", true)), pattern_x583g4_a0d);
+      if (coercedNode_x583g4_a0d != null) {
+        return ListSequence.fromList(SLinkOperations.getTargets(coercedNode_x583g4_a0d, "parameterType", true)).isEmpty();
+      } else {
+        return false;
+      }
     }
   }
 

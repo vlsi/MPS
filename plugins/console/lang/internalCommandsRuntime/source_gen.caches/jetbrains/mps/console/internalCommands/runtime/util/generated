@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-2ic1zu6lzwnfjfo0xgb629g7kju3tqo">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <common hash="4111q7oow3o1zgqp72vm5q8rb8eyvui" />
+  <source id="8829647120617550906" name="InternalUtil" hash="-1lh0f5prdns52qtmi230wk3oareqy08">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InternalUtil.java" />
+  </source>
+</dependencies>
+

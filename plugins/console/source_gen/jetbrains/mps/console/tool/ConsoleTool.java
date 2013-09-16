@@ -210,11 +210,10 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     JPanel editorPanel = new JPanel(new BorderLayout());
     editorPanel.add(myEditor);
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorPanel);
-    scrollPane.getVerticalScrollBar().setBlockIncrement(10);
     myMainComponent.add(scrollPane, BorderLayout.CENTER);
     myMainComponent.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
 
-    myHighlighter = check_xg3v07_a0n0y(getProject(), this);
+    myHighlighter = check_xg3v07_a0m0y(getProject(), this);
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -676,7 +675,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
   protected static Logger LOG = LogManager.getLogger(ConsoleTool.class);
 
-  private static Highlighter check_xg3v07_a0n0y(Project checkedDotOperand, ConsoleTool checkedDotThisExpression) {
+  private static Highlighter check_xg3v07_a0m0y(Project checkedDotOperand, ConsoleTool checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }

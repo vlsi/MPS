@@ -45,5 +45,10 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8829647120617316889" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="InternalMode" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#internalMode" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+  </root>
 </model>
 

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.internalCommands.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.internalCommands.generator.template.main.QueriesGenerated" />
+  <root nodeRef="r:445e7307-af0d-43ba-baa4-fce1d9f37357(jetbrains.mps.console.internalCommands.generator.template.main@generator)/8483375838963160299">
+    <nodeInfo nodeId="8829647120617379727" fileName="QueriesGenerated.java" startLine="13" startPosition="152" endLine="14" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6369875563697213769" fileName="QueriesGenerated.java" startLine="17" startPosition="150" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8829647120617326154" fileName="QueriesGenerated.java" startLine="13" startPosition="152" endLine="14" endPosition="168" />
+    <scopeInfo nodeId="6369875563697213768" fileName="QueriesGenerated.java" startLine="17" startPosition="150" endLine="18" endPosition="73" />
+  </root>
 </debugInfo>
 
