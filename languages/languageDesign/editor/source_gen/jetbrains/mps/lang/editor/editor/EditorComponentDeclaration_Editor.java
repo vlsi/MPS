@@ -277,6 +277,8 @@ public class EditorComponentDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, false);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
 
