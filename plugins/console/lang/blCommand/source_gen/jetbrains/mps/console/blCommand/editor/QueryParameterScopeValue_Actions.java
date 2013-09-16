@@ -8,16 +8,17 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class QueryParameter_Actions {
+public class QueryParameterScopeValue_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new QueryParameter_Actions.QueryParameter_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new QueryParameterScopeValue_Actions.QueryParameterScopeValue_Actions_DELETE(node));
   }
 
-  public static class QueryParameter_Actions_DELETE extends AbstractCellAction {
+  public static class QueryParameterScopeValue_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public QueryParameter_Actions_DELETE(SNode node) {
+    public QueryParameterScopeValue_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -26,7 +27,11 @@ public class QueryParameter_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.console.blCommand.structure.QueryParameter");
+      if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "value", true)) != null) {
+        SLinkOperations.setTarget(node, "value", null, true);
+        return;
+      }
+      SNodeOperations.deleteNode(node);
     }
   }
 }
