@@ -13,15 +13,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
-public class QueryParameterList_Element_Actions {
+public class QueryParameter_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new QueryParameterList_Element_Actions.QueryParameterList_Element_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new QueryParameter_Actions.QueryParameter_Actions_DELETE(node));
   }
 
-  public static class QueryParameterList_Element_Actions_DELETE extends AbstractCellAction {
+  public static class QueryParameter_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public QueryParameterList_Element_Actions_DELETE(SNode node) {
+    public QueryParameter_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 

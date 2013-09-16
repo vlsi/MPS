@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueryParameterScopeValue_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,8 +28,13 @@ public class QueryParameterScopeValue_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "value", true)) != null) {
+      if (SLinkOperations.getTarget(node, "value", true) != null) {
         SLinkOperations.setTarget(node, "value", null, true);
+        return;
+      }
+      CellAction action = editorContext.getEditorComponent().findNodeCell(node).getAction(CellActionType.DELETE);
+      if (action != null && action.canExecute(editorContext)) {
+        action.execute(editorContext);
         return;
       }
       SNodeOperations.deleteNode(node);
