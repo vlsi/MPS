@@ -10,15 +10,11 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_List_SubtypingRule() {
@@ -27,16 +23,9 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode elemType = SLinkOperations.getTarget(type, "elementType", true);
-    if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      elemType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), elemType, "virtual_getUnboxedType_1213877337320", new Object[]{});
-    }
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a3a1(elemType));
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a0a4a1(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(type, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false)));
-    }
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a5a1(SLinkOperations.getTarget(type, "elementType", true)));
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a6a1(SLinkOperations.getTarget(type, "elementType", true)));
-    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a7a1());
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a2a1(SLinkOperations.getTarget(type, "elementType", true)));
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a3a1(SLinkOperations.getTarget(type, "elementType", true)));
+    ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a4a1());
     return result;
   }
 
@@ -55,28 +44,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return false;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a3a1(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("parameter", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_w26thq_a0a0a4a1(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_w26thq_a0a5a1(Object parameter_1) {
+  private static SNode _quotation_createNode_w26thq_a0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -88,7 +56,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a6a1(Object parameter_1) {
+  private static SNode _quotation_createNode_w26thq_a0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -100,7 +68,7 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_w26thq_a0a7a1() {
+  private static SNode _quotation_createNode_w26thq_a0a4a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

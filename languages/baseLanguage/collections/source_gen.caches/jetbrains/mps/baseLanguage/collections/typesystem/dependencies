@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.ClassifierType_Set_weakSupertypeOf_set_SubtypingRule" file="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
@@ -159,10 +159,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IEnumerator_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ISequence_class_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_IteratorType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_List_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_QueueType_ClassiType_Queue_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SetType_ClassifierTypeSet_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_StackType_ClassiType_Deque_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_StackType_StackType_withWildcard_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_linkedlist_SubtypingRule" />
@@ -1071,13 +1073,10 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_List_SubtypingRule" file="supertypesOf_List_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_ListType_ClassifierTypeList_SubtypingRule" file="supertypesOf_ListType_ClassifierTypeList_SubtypingRule.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
@@ -1088,7 +1087,23 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_List_SubtypingRule" file="supertypesOf_List_SubtypingRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
@@ -1120,6 +1135,24 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule" file="supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.supertypesOf_SetType_ClassifierTypeSet_SubtypingRule" file="supertypesOf_SetType_ClassifierTypeSet_SubtypingRule.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
