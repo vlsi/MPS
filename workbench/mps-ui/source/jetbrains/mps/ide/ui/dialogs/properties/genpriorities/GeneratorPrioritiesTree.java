@@ -59,13 +59,14 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Queue;
+import java.util.Set;
 
 public class GeneratorPrioritiesTree {
 
   private ExtendedCheckedTreeNode myRootNode;
   private CheckboxTree myCheckboxTree;
 
-  public GeneratorPrioritiesTree(final GeneratorDescriptor descriptor, MappingConfig_AbstractRef mapping, boolean isLeft) {
+  public GeneratorPrioritiesTree(final GeneratorDescriptor descriptor, MappingConfig_AbstractRef mapping, boolean isLeft, final Set<SModuleReference> depGenerators) {
     myRootNode = new RootCheckedTreeNode("Generators");
     final boolean isRight = !isLeft;
 
@@ -74,7 +75,7 @@ public class GeneratorPrioritiesTree {
       public void run() {
         initTree(descriptor);
         if (isRight) {
-          for (SModuleReference ref : descriptor.getDepGenerators()) {
+          for (SModuleReference ref : depGenerators) {
             Generator gen = (Generator) MPSModuleRepository.getInstance().getModule(ref.getModuleId());
             if (gen != null)
               initTree(gen.getModuleDescriptor());
