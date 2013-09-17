@@ -292,7 +292,7 @@ public class QueriesGenerated {
     final SNode directMethodSpecification = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "oldMethodSpecification", true), "jetbrains.mps.lang.script.structure.DirectMethodSpecification");
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(PullUpMethod_Behavior.call_getMigration_5166971494091017146(_context.getNode()), "newClassifier", false))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0b0ic(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(directMethodSpecification, "methodDeclaration", false), "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(directMethodSpecification, "methodDeclaration", false), "parameter", true)).count();
+        return eq_x583g4_a0a0a0a0a0a0b0ic(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(directMethodSpecification, "methodDeclaration", false), "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(directMethodSpecification, "methodDeclaration", false), "parameter", true)).count();
       }
     }).first();
   }

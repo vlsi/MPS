@@ -1274,7 +1274,7 @@
     <nodeInfo nodeId="2684739085678641346" fileName="TypeMatcher.java" startLine="100" startPosition="208" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2684739085678641359" fileName="TypeMatcher.java" startLine="103" startPosition="210" endLine="104" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2684739085678641386" fileName="TypeMatcher.java" startLine="107" startPosition="105" endLine="108" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2684739085678641388" fileName="TypeMatcher.java" startLine="109" startPosition="7" endLine="110" endPosition="616" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2684739085678641388" fileName="TypeMatcher.java" startLine="109" startPosition="7" endLine="110" endPosition="604" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2684739085678641412" fileName="TypeMatcher.java" startLine="111" startPosition="5" endLine="112" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2684739085678641055" fileName="TypeMatcher.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeMatcher#()V" />
     <nodeInfo nodeId="2684739085678641206" fileName="TypeMatcher.java" startLine="58" startPosition="10" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1339,7 +1339,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2684739085678641313" fileName="TypeMatcher.java" startLine="88" startPosition="33" endLine="91" endPosition="7" />
     <scopeInfo nodeId="2684739085678641286" fileName="TypeMatcher.java" startLine="80" startPosition="46" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="2684739085678641378" fileName="TypeMatcher.java" startLine="106" startPosition="102" endLine="110" endPosition="616" />
+    <scopeInfo nodeId="2684739085678641378" fileName="TypeMatcher.java" startLine="106" startPosition="102" endLine="110" endPosition="604" />
     <scopeInfo nodeId="2684739085678641309" fileName="TypeMatcher.java" startLine="87" startPosition="70" endLine="92" endPosition="5">
       <varInfo nodeId="2684739085678641311" varName="left" />
     </scopeInfo>

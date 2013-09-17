@@ -562,7 +562,7 @@
     <nodeInfo nodeId="3044950653914723876" fileName="ScopesTest_Behavior.java" startLine="37" startPosition="101" endLine="38" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914723891" fileName="ScopesTest_Behavior.java" startLine="38" startPosition="232" endLine="39" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914723895" fileName="ScopesTest_Behavior.java" startLine="39" startPosition="164" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5449224527592420839" fileName="ScopesTest_Behavior.java" startLine="43" startPosition="101" endLine="44" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5449224527592420839" fileName="ScopesTest_Behavior.java" startLine="43" startPosition="101" endLine="44" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5449224527592368032" fileName="ScopesTest_Behavior.java" startLine="47" startPosition="105" endLine="48" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5449224527592367169" fileName="ScopesTest_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="9120563202187871592" fileName="ScopesTest_Behavior.java" startLine="21" startPosition="90" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -577,7 +577,7 @@
     <scopeInfo nodeId="9120563202187871593" fileName="ScopesTest_Behavior.java" startLine="22" startPosition="82" endLine="23" endPosition="93" />
     <scopeInfo nodeId="9120563202187871721" fileName="ScopesTest_Behavior.java" startLine="26" startPosition="120" endLine="27" endPosition="59" />
     <scopeInfo nodeId="1262430001741703593" fileName="ScopesTest_Behavior.java" startLine="33" startPosition="90" endLine="34" endPosition="23" />
-    <scopeInfo nodeId="5449224527592395486" fileName="ScopesTest_Behavior.java" startLine="43" startPosition="101" endLine="44" endPosition="89" />
+    <scopeInfo nodeId="5449224527592395486" fileName="ScopesTest_Behavior.java" startLine="43" startPosition="101" endLine="44" endPosition="83" />
     <scopeInfo nodeId="5449224527592368028" fileName="ScopesTest_Behavior.java" startLine="47" startPosition="105" endLine="48" endPosition="355" />
     <scopeInfo nodeId="5449224527592367169" fileName="ScopesTest_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5449224527592367169" varName="thisNode" />

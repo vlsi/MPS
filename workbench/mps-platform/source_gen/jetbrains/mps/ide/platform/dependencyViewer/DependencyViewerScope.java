@@ -124,7 +124,7 @@ public class DependencyViewerScope {
       if (sb.length() > 0) {
         sb.append(" and ");
       }
-      if ((int) CollectionSequence.fromCollection(myModels).count() == 1) {
+      if (CollectionSequence.fromCollection(myModels).count() == 1) {
         sb.append("model " + CollectionSequence.fromCollection(myModels).first().getModelName());
       } else {
         sb.append(CollectionSequence.fromCollection(myModels).count() + " models");
@@ -143,7 +143,7 @@ public class DependencyViewerScope {
     if (CollectionSequence.fromCollection(list).isEmpty()) {
       return "";
     }
-    if ((int) CollectionSequence.fromCollection(list).count() == 1) {
+    if (CollectionSequence.fromCollection(list).count() == 1) {
       return elementType + " " + CollectionSequence.fromCollection(list).first();
     }
     return CollectionSequence.fromCollection(list).count() + " " + elementType + "s";

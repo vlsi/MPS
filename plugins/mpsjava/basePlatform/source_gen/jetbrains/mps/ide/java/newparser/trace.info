@@ -4432,9 +4432,9 @@
     <nodeInfo nodeId="6541262448935719068" fileName="FullASTConverter.java" startLine="1138" startPosition="64" endLine="1139" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5358950978906554486" fileName="FullASTConverter.java" startLine="1139" startPosition="17" endLine="1140" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6541262448935719133" fileName="FullASTConverter.java" startLine="1141" startPosition="49" endLine="1142" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5358950978906654872" fileName="FullASTConverter.java" startLine="1143" startPosition="65" endLine="1144" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5358950978906654872" fileName="FullASTConverter.java" startLine="1143" startPosition="59" endLine="1144" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5358950978906655288" fileName="FullASTConverter.java" startLine="1145" startPosition="12" endLine="1146" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5358950978906655130" fileName="FullASTConverter.java" startLine="1148" startPosition="41" endLine="1149" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5358950978906655130" fileName="FullASTConverter.java" startLine="1148" startPosition="41" endLine="1149" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5358950978906655541" fileName="FullASTConverter.java" startLine="1151" startPosition="9" endLine="1152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6541262448935719197" fileName="FullASTConverter.java" startLine="1153" startPosition="5" endLine="1154" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8539625767970906063" fileName="FullASTConverter.java" startLine="1157" startPosition="98" endLine="1158" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4893,8 +4893,8 @@
     <scopeInfo nodeId="5358950978906666409" fileName="FullASTConverter.java" startLine="1108" startPosition="33" endLine="1109" endPosition="125" />
     <scopeInfo nodeId="5748105936088738614" fileName="FullASTConverter.java" startLine="1124" startPosition="53" endLine="1125" endPosition="66" />
     <scopeInfo nodeId="5358950978906654704" fileName="FullASTConverter.java" startLine="1141" startPosition="49" endLine="1142" endPosition="20" />
-    <scopeInfo nodeId="5358950978906654773" fileName="FullASTConverter.java" startLine="1143" startPosition="65" endLine="1144" endPosition="52" />
-    <scopeInfo nodeId="5358950978906655123" fileName="FullASTConverter.java" startLine="1148" startPosition="41" endLine="1149" endPosition="116" />
+    <scopeInfo nodeId="5358950978906654773" fileName="FullASTConverter.java" startLine="1143" startPosition="59" endLine="1144" endPosition="52" />
+    <scopeInfo nodeId="5358950978906655123" fileName="FullASTConverter.java" startLine="1148" startPosition="41" endLine="1149" endPosition="110" />
     <scopeInfo nodeId="5646944109420321821" fileName="FullASTConverter.java" startLine="1171" startPosition="42" endLine="1172" endPosition="59" />
     <scopeInfo nodeId="7465138971828495316" fileName="FullASTConverter.java" startLine="1180" startPosition="52" endLine="1181" endPosition="74" />
     <scopeInfo nodeId="7465138971828495316" fileName="FullASTConverter.java" startLine="1182" startPosition="56" endLine="1183" endPosition="71" />

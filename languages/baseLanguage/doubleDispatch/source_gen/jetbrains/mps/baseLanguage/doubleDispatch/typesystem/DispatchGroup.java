@@ -51,10 +51,10 @@ public class DispatchGroup {
     Iterable<DispatchGroup.ClassMethodGroup> superClassesGroups = ListSequence.fromList(myGroupsByClass).skip(1);
     Set<SNode> roots = thisClassGroup.getRoots();
 
-    if ((int) ListSequence.fromList(myGroupsByClass).count() == 1) {
+    if (ListSequence.fromList(myGroupsByClass).count() == 1) {
       // this group is local to our class, doesn't span to superclasses 
 
-      if ((int) SetSequence.fromSet(roots).count() == 1) {
+      if (SetSequence.fromSet(roots).count() == 1) {
         return null;
       }
 
@@ -83,7 +83,7 @@ public class DispatchGroup {
 
     Iterable<SNode> methodsForBadRoots = thisClassGroup.methodsByDispatchTypes(badRoots);
 
-    if ((int) SetSequence.fromSet(badRoots).count() == 1) {
+    if (SetSequence.fromSet(badRoots).count() == 1) {
       // check if the class is the superclass for any other dispatch param classes in group 
 
       final SNode cls = SetSequence.fromSet(badRoots).first();

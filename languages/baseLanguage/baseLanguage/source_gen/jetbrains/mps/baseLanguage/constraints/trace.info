@@ -1855,7 +1855,7 @@
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="67" startPosition="13" endLine="68" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="77" startPosition="7" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2580416627845364495" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="82" startPosition="110" endLine="83" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2580416627845385303" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="167" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2580416627845385303" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="161" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2580416627845385307" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="89" startPosition="5" endLine="90" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="94" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_b29p6n_a0a0a0a0a1a0b0a1a3" />
@@ -1881,7 +1881,7 @@
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="40" startPosition="51" endLine="41" endPosition="67" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="52" startPosition="44" endLine="53" endPosition="20" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="61" startPosition="63" endLine="62" endPosition="58" />
-    <scopeInfo nodeId="2580416627845364504" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="167" endLine="86" endPosition="22" />
+    <scopeInfo nodeId="2580416627845364504" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="161" endLine="86" endPosition="22" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2580416627846492977" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="84" startPosition="110" endLine="87" endPosition="9" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />

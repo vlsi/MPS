@@ -84,7 +84,7 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (int) SetSequence.fromSet(editorHintsSet).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).distinct().count() && SetSequence.fromSet(editorHintsSet).containsSequence(ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).select(new ISelector<SNode, SNode>() {
+            return SetSequence.fromSet(editorHintsSet).count() == ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).distinct().count() && SetSequence.fromSet(editorHintsSet).containsSequence(ListSequence.fromList(SLinkOperations.getTargets(it, "contextHints", true)).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SLinkOperations.getTarget(it, "hint", false);
               }

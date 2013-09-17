@@ -400,7 +400,7 @@
     <unitInfo nodeId="3223524098368375707" fileName="BaseMethodsScope.java" startLine="39" startPosition="59" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$1" />
     <unitInfo nodeId="2428721740553104728" fileName="BaseMethodsScope.java" startLine="53" startPosition="95" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$2" />
     <unitInfo nodeId="2428721740553105009" fileName="BaseMethodsScope.java" startLine="57" startPosition="18" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$3" />
-    <unitInfo nodeId="1660916269655819716" fileName="BaseMethodsScope.java" startLine="76" startPosition="72" endLine="80" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$4" />
+    <unitInfo nodeId="1660916269655819716" fileName="BaseMethodsScope.java" startLine="76" startPosition="66" endLine="80" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$4" />
     <unitInfo nodeId="1870042688391591135" fileName="BaseMethodsScope.java" startLine="90" startPosition="77" endLine="94" endPosition="7" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$5" />
     <unitInfo nodeId="2428721740553106092" fileName="BaseMethodsScope.java" startLine="104" startPosition="103" endLine="108" endPosition="9" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$6" />
     <unitInfo nodeId="2428721740553106501" fileName="BaseMethodsScope.java" startLine="114" startPosition="235" endLine="118" endPosition="7" unitName="jetbrains.mps.baseLanguage.scopes.BaseMethodsScope$7" />
@@ -499,7 +499,7 @@
     <nodeInfo nodeId="3050821798733939130" fileName="VisibleClassConstructorsScope.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3050821798733939624" fileName="VisibleClassConstructorsScope.java" startLine="69" startPosition="0" endLine="70" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3050821798733939319" fileName="VisibleClassConstructorsScope.java" startLine="70" startPosition="28" endLine="71" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3050821798733939385" fileName="VisibleClassConstructorsScope.java" startLine="72" startPosition="65" endLine="73" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3050821798733939385" fileName="VisibleClassConstructorsScope.java" startLine="72" startPosition="59" endLine="73" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3050821798733939415" fileName="VisibleClassConstructorsScope.java" startLine="74" startPosition="5" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3050821798733939627" fileName="VisibleClassConstructorsScope.java" startLine="75" startPosition="0" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3050821798733939497" fileName="VisibleClassConstructorsScope.java" startLine="77" startPosition="108" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -536,7 +536,7 @@
     <scopeInfo nodeId="3050821798733938961" fileName="VisibleClassConstructorsScope.java" startLine="42" startPosition="43" endLine="43" endPosition="115" />
     <scopeInfo nodeId="8483743094179640774" fileName="VisibleClassConstructorsScope.java" startLine="58" startPosition="74" endLine="59" endPosition="147" />
     <scopeInfo nodeId="3050821798733939154" fileName="VisibleClassConstructorsScope.java" startLine="66" startPosition="129" endLine="67" endPosition="18" />
-    <scopeInfo nodeId="3050821798733939329" fileName="VisibleClassConstructorsScope.java" startLine="72" startPosition="65" endLine="73" endPosition="57" />
+    <scopeInfo nodeId="3050821798733939329" fileName="VisibleClassConstructorsScope.java" startLine="72" startPosition="59" endLine="73" endPosition="57" />
     <scopeInfo nodeId="3050821798733939425" fileName="VisibleClassConstructorsScope.java" startLine="77" startPosition="108" endLine="78" endPosition="18" />
     <scopeInfo nodeId="3024565449487117730" fileName="VisibleClassConstructorsScope.java" startLine="85" startPosition="35" endLine="86" endPosition="57" />
     <scopeInfo nodeId="3024565449487117712" fileName="VisibleClassConstructorsScope.java" startLine="93" startPosition="55" endLine="94" endPosition="59" />
@@ -2503,7 +2503,7 @@
     <nodeInfo nodeId="7442097546227921734" fileName="StaticFieldDeclarationScope.java" startLine="66" startPosition="100" endLine="67" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7442097546227907509" fileName="StaticFieldDeclarationScope.java" startLine="68" startPosition="16" endLine="69" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7442097546227906902" fileName="StaticFieldDeclarationScope.java" startLine="72" startPosition="5" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7442097546227921984" fileName="StaticFieldDeclarationScope.java" startLine="75" startPosition="68" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7442097546227921984" fileName="StaticFieldDeclarationScope.java" startLine="75" startPosition="62" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7442097546227921818" fileName="StaticFieldDeclarationScope.java" startLine="78" startPosition="5" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7442097546227906806" fileName="StaticFieldDeclarationScope.java" startLine="79" startPosition="0" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7442097546227906733" fileName="StaticFieldDeclarationScope.java" startLine="86" startPosition="64" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2553,7 +2553,7 @@
     <scopeInfo nodeId="7442097546227907431" fileName="StaticFieldDeclarationScope.java" startLine="59" startPosition="41" endLine="60" endPosition="107" />
     <scopeInfo nodeId="7442097546227921733" fileName="StaticFieldDeclarationScope.java" startLine="66" startPosition="100" endLine="67" endPosition="129" />
     <scopeInfo nodeId="7442097546227907441" fileName="StaticFieldDeclarationScope.java" startLine="68" startPosition="16" endLine="69" endPosition="150" />
-    <scopeInfo nodeId="7442097546227921902" fileName="StaticFieldDeclarationScope.java" startLine="75" startPosition="68" endLine="76" endPosition="88" />
+    <scopeInfo nodeId="7442097546227921902" fileName="StaticFieldDeclarationScope.java" startLine="75" startPosition="62" endLine="76" endPosition="88" />
     <scopeInfo nodeId="7442097546227906700" fileName="StaticFieldDeclarationScope.java" startLine="86" startPosition="64" endLine="87" endPosition="59" />
     <scopeInfo nodeId="8401916545537277293" fileName="StaticFieldDeclarationScope.java" startLine="93" startPosition="31" endLine="94" endPosition="23" />
     <scopeInfo nodeId="7442097546227906288" fileName="StaticFieldDeclarationScope.java" startLine="114" startPosition="111" endLine="115" endPosition="19" />

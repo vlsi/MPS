@@ -82,7 +82,7 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       SNode annotationInstance = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
       if (ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).count() <= 1) {
-        if ((int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true)).count() == 1) {
+        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true)).count() == 1) {
           return true;
         }
       }

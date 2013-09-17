@@ -33,7 +33,7 @@ public class IntentionUtils {
           }
         }
         if (matches_k79hya_a0a1) {
-          return ((int) ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).count() == 1 ?
+          return (ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).count() == 1 ?
             optimizeNode(ListSequence.fromList(SLinkOperations.getTargets(matchedNode_k79hya_a0b, "statement", true)).getElement(0)) :
             null
           );

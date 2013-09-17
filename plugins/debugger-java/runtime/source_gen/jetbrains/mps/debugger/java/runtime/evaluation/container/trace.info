@@ -583,7 +583,7 @@
     <nodeInfo nodeId="2557971212596571538" fileName="BaseLanguagesImportHelper.java" startLine="63" startPosition="83" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5414812441082034363" fileName="BaseLanguagesImportHelper.java" startLine="65" startPosition="67" endLine="66" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7239101982553579513" fileName="BaseLanguagesImportHelper.java" startLine="67" startPosition="11" endLine="68" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7239101982553561432" fileName="BaseLanguagesImportHelper.java" startLine="75" startPosition="88" endLine="76" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7239101982553561432" fileName="BaseLanguagesImportHelper.java" startLine="75" startPosition="82" endLine="76" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7239101982553561478" fileName="BaseLanguagesImportHelper.java" startLine="77" startPosition="241" endLine="78" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7239101982553577274" fileName="BaseLanguagesImportHelper.java" startLine="79" startPosition="34" endLine="80" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7239101982553533681" fileName="BaseLanguagesImportHelper.java" startLine="86" startPosition="77" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -691,7 +691,7 @@
       <varInfo nodeId="846214144116937330" varName="a" />
       <varInfo nodeId="846214144116937330" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7239101982553561386" fileName="BaseLanguagesImportHelper.java" startLine="75" startPosition="88" endLine="82" endPosition="7">
+    <scopeInfo nodeId="7239101982553561386" fileName="BaseLanguagesImportHelper.java" startLine="75" startPosition="82" endLine="82" endPosition="7">
       <varInfo nodeId="7239101982553561433" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="7239101982553577402" fileName="BaseLanguagesImportHelper.java" startLine="61" startPosition="60" endLine="69" endPosition="9">

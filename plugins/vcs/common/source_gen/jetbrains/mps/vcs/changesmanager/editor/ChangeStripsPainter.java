@@ -116,7 +116,7 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       return null;
     } else {
       List<ModelChange> changes = myGroupUnderMouse.getChanges();
-      if ((int) ListSequence.fromList(changes).count() == 1) {
+      if (ListSequence.fromList(changes).count() == 1) {
         ModelChange change = ListSequence.fromList(changes).first();
         if (change instanceof SetPropertyChange) {
           return "Changed " + ((SetPropertyChange) change).getPropertyName();

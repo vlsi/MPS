@@ -14826,7 +14826,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/5192033827214196961">
     <nodeInfo nodeId="5192033827214196968" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="409" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="403" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="24" startPosition="58" endLine="25" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14843,7 +14843,7 @@
     <scopeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="85" />
     <scopeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
     <scopeInfo nodeId="5192033827214196961" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="409" endLine="25" endPosition="246">
+    <scopeInfo nodeId="5192033827214196979" fileName="check_CustomContainerCreator_elementType_NonTypesystemRule.java" startLine="23" startPosition="403" endLine="25" endPosition="246">
       <varInfo nodeId="5192033827214196979" varName="_reporter_2309309498" />
       <varInfo nodeId="5192033827214196979" varName="errorTarget" />
     </scopeInfo>
