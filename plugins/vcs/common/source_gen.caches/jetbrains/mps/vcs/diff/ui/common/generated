@@ -246,7 +246,7 @@
   <source id="4652592318748337772" name="ChangeGroupInvalidateListener" hash="-4nbajvc6k5bli7yvdannluheu8sng3m">
     <file name="ChangeGroupInvalidateListener.java" />
   </source>
-  <source id="4652592318748337778" name="DiffEditorSeparator" hash="-bfmmky08dxxyvozdi5zif42dvi6k7jz">
+  <source id="4652592318748337778" name="DiffEditorSeparator" hash="-bfmmky08dxxyvozdi5zif42dvi6k7jz" dependsOnNodes="true">
     <dep root="4393777506305219687" />
     <dep root="4652592318748334972" />
     <dep root="4652592318748335014" />
