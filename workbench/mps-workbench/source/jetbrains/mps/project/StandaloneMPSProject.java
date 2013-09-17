@@ -142,7 +142,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
       ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
     }
     init(descriptor);
-    if (url != null) {
+    if (getFileToListen() != null) {
       FileSystem.getInstance().addListener(this);
     }
   }
