@@ -8,7 +8,9 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.testHybridEditor.diagram.editor.MPSBlockView;
+import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -23,7 +25,10 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramNode_70mnj_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
-    return editorCell;
+    MPSBlockView view = new MPSBlockView();
+    GenericViewCell cell = GenericViewCell.createViewCell(editorContext, node, view);
+    view.setTextView(SPropertyOperations.getString(node, "name"));
+    return cell;
+
   }
 }

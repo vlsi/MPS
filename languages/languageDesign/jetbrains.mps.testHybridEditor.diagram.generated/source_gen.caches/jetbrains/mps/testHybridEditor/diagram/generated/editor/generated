@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3c7q7adn6w4hykxibcrll1iout64h36">
+<dependencies version="2" modelHash="-32sqppmlwbtu02gpaanevfbqme1mu62">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="c4jotocel28ylddfyam5aoo44b2mlb" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-9j9njikjpbm0mdlpt71l8bk62lhmpac" />
+  <dep model="r:1ad1263e-00de-4cc8-9c19-9f634ef22b07(jetbrains.mps.lang.editor.figures.sandbox)" hash="a5xpc27lk5p3bymya92pk9stxctwl0i" />
   <dep model="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" hash="-7jidzaxpg986myx1jleayyadic32x6f" />
-  <dep model="r:3d926cb5-f413-4ee2-863b-46d1c07038f5(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)" hash="-ao4p9wmcictu3hmyjqd5cvy9prhqkpq" />
+  <dep model="r:3d926cb5-f413-4ee2-863b-46d1c07038f5(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)" hash="2xf532gjnlx5pedn2syuvyvf5ngyrki" />
   <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="d5oajupvrkcpp0c6rswodxmm0dbpwks" />
   <dep model="r:814b5a42-e9ec-45d8-81f9-8c398455e907(jetbrains.mps.testHybridEditor.editor)" hash="-awz9ofls9o7x9kn5mu7weeho6jbrliq" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-bfzpl2k7fbyccc6o0e14x62lu72wfye" />
+  <dep model="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)" hash="-7h2ow0qwgymhjt6f9yf3wynuzgdes3w" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
   <common hash="-prqsvqnoa5nzgq86ksbrqw0uucdk67">
     <dep root="1793245865110344037" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditorAspectDescriptorImpl.java" />
   </common>
-  <source id="1793245865110344037" name="Block_diagramGenerated_Editor" hash="-7mnrcy8ihoackc4soe2osaliyvejd5p">
+  <source id="1793245865110344037" name="Block_diagramGenerated_Editor" hash="p0facs5v3s6cyskk535utnyitx2qel">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:1ad1263e-00de-4cc8-9c19-9f634ef22b07(jetbrains.mps.lang.editor.figures.sandbox)" />
     <dep model="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" />
     <dep model="r:3d926cb5-f413-4ee2-863b-46d1c07038f5(jetbrains.mps.lang.editor.diagram.generator.template.main@generator)" />
     <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" />
     <dep model="r:814b5a42-e9ec-45d8-81f9-8c398455e907(jetbrains.mps.testHybridEditor.editor)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
+    <dep model="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)" />
     <file name="Block_diagramGenerated_Editor.java" />
   </source>
 </dependencies>

@@ -31,6 +31,8 @@
         <generator generatorUID="0647eca7-da98-422a-8a8b-6ebc0bd014ea(jetbrains.mps.lang.editor#1129914002149)" />
       </external-templates>
       <dependencies>
+        <dependency reexport="false">847a3235-09f9-403c-b6a9-1c294a212e92(Ant)</dependency>
+        <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(Jetpad.Editor)</dependency>
         <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
       </dependencies>
       <usedLanguages>

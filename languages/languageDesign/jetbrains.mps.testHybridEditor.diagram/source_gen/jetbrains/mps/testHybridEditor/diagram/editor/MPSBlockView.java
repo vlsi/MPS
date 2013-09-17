@@ -11,9 +11,11 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.jetpad.projectional.diagram.base.GridDirection;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.geometry.Rectangle;
 import java.util.List;
-import jetbrains.jetpad.geometry.Vector;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockViewPortLayouter;
 import java.util.Iterator;
@@ -31,16 +33,22 @@ public class MPSBlockView extends GroupView {
   public MPSBlockView() {
     children().add(inputs);
     children().add(outputs);
+    createRectView();
   }
 
-  public void setTextView(TextView textView) {
-    myTextView = textView;
-    attach(this, textView);
+  public void setTextView(String name) {
+    myTextView = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
+    myTextView.text().set(name);
+    attach(this, myTextView);
   }
 
-  public void setRectView(RectView rectView) {
-    myRectView = rectView;
-    attach(this, rectView);
+  private void createRectView() {
+    myRectView = new RectView();
+    myRectView.background().set(Color.LIGHT_GRAY);
+    myRectView.visible().set(true);
+    myRectView.dimension().set(new Vector(75, 75));
+
+    attach(this, myRectView);
   }
 
   public GroupView getInputView() {
