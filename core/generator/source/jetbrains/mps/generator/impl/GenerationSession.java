@@ -64,6 +64,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -288,10 +289,12 @@ class GenerationSession {
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions,
         myDependenciesBuilder, ttrace);
+    LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
     while (it.hasNext()) {
       TemplateMappingConfiguration c = it.next();
       try {
         if (!c.isApplicable(templateGenerator)) {
+          drop.add(c);
           it.remove();
         }
       } catch (GenerationException e) {
@@ -302,6 +305,9 @@ class GenerationSession {
         }
         throw (GenerationFailureException) e;
       }
+    }
+    if (!drop.isEmpty()) {
+      printMappingConfigurations("drop mapping configurations (not applicable):", drop);
     }
 
     if (mappingConfigurations.isEmpty()) {
@@ -670,6 +676,13 @@ class GenerationSession {
     List<String> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
     for (String message : messages) {
       myLogger.info("    " + message);
+    }
+  }
+
+  private void printMappingConfigurations(String title, List<TemplateMappingConfiguration> mc) {
+    myLogger.info(title);
+    for (TemplateMappingConfiguration c : mc) {
+      myLogger.info(String.format("    %s.%s", c.getModel().getLongName(), c.getName()));
     }
   }
 
