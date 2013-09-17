@@ -103,7 +103,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
 
     for (ThreadReference threadReference : getEventProcessor().getVirtualMachine().allThreads()) {
       if (threadReference.isSuspended()) {
-        myThreads.add(new JavaThread(threadReference));
+        ListSequence.fromList(myThreads).addElement(new JavaThread(threadReference));
       }
     }
     assert myThreadIndex < ListSequence.fromList(myThreads).count();
