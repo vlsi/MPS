@@ -18,12 +18,15 @@ package jetbrains.mps.typesystem.uiActions;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,7 +54,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
       return new HashSet<SNode>();
     }
     Set<SNode> supertypes = TypeChecker.getInstance().getSubtypingManager().
-      collectImmediateSupertypes(node, !myShowOnlyStrong);
+        collectImmediateSupertypes(node, !myShowOnlyStrong);
     return supertypes;
   }
 
@@ -61,7 +64,15 @@ public class SupertypesTree extends AbstractHierarchyTree {
   }
 
   public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
-    (new MyBaseNodeDialog(hierarchyTreeNode)).show();
+    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return hierarchyTreeNode.getNode().getModel() == null;
+      }
+    })) {
+      return false;
+    }
+    new MyBaseNodeDialog(hierarchyTreeNode).show();
     return true;
   }
 
