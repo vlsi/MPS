@@ -33,7 +33,17 @@ public class SingleLineCommentActions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode selectedPart = SNodeOperations.cast(editorContext.getSelectedNode(), "jetbrains.mps.baseLanguage.structure.CommentPart");
+
+      SNode selectedNode = editorContext.getSelectedNode();
+      SNode selectedPart;
+      if (SNodeOperations.isInstanceOf(selectedNode, "jetbrains.mps.baseLanguage.structure.CommentPart")) {
+        selectedPart = SNodeOperations.cast(selectedNode, "jetbrains.mps.baseLanguage.structure.CommentPart");
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(selectedNode), "jetbrains.mps.baseLanguage.structure.CommentPart")) {
+        //  commented statement comes in selection 
+        selectedPart = SNodeOperations.cast(SNodeOperations.getParent(selectedNode), "jetbrains.mps.baseLanguage.structure.CommentPart");
+      } else {
+        return;
+      }
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).last() == selectedPart) {
         SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
       } else {
