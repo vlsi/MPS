@@ -838,10 +838,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new any_type_subtypeOf_LowerBoundType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new boolean_extends_Boolean_1_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -987,6 +983,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new LowerBoundType_subtypeOf_bound_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new any_type_subtypeOf_LowerBoundType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
