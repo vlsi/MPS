@@ -11817,6 +11817,155 @@
     </scopeInfo>
     <unitInfo nodeId="2030079436469744702" fileName="typeof_AnnotationInstance_InferenceRule.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_AnnotationInstance_InferenceRule" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/2048470898155992824">
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern2" />
+    <nodeInfo nodeId="2048470898156137193" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="24" startPosition="97" endLine="25" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156175050" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="28" startPosition="253" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="32" startPosition="207" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="33" startPosition="35" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156175050" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="33" startPosition="35" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="34" startPosition="18" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="38" startPosition="27" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="43" startPosition="5" endLine="44" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="44" startPosition="133" endLine="45" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="50" startPosition="5" endLine="51" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="51" startPosition="131" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="52" startPosition="40" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="53" startPosition="38" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="58" startPosition="53" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="62" startPosition="55" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_TYPE" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="73" startPosition="7" endLine="74" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="74" startPosition="71" endLine="75" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="76" startPosition="168" endLine="77" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="79" startPosition="9" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="81" startPosition="158" endLine="82" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="84" startPosition="11" endLine="85" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="85" startPosition="218" endLine="86" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="89" startPosition="7" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="93" startPosition="40" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="98" startPosition="69" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="104" startPosition="48" endLine="105" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="106" startPosition="7" endLine="107" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="any_type_subtypeOf_LowerBoundType_InequationReplacementRule#()V" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_w2c88q_a0a0a0a7#()V" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="110" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="75" startPosition="79" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="80" startPosition="79" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="97" startPosition="71" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="103" startPosition="51" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="103" startPosition="51" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="42" startPosition="71" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="83" startPosition="11" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="49" startPosition="73" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="103" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="80" startPosition="79" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="78" startPosition="9" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="78" startPosition="9" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="75" startPosition="79" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="72" startPosition="45" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="72" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="21" startPosition="72" endLine="21" endPosition="72" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="69" startPosition="38" endLine="69" endPosition="38" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="110" startPosition="42" endLine="110" endPosition="42" />
+    <scopeInfo nodeId="2048470898156083917" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="24" startPosition="97" endLine="25" endPosition="109" />
+    <scopeInfo nodeId="2048470898155993060" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="28" startPosition="253" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="2048470898155993060" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="33" startPosition="35" endLine="34" endPosition="18" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="38" startPosition="27" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="58" startPosition="53" endLine="59" endPosition="55" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="62" startPosition="55" endLine="63" endPosition="65" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="76" startPosition="168" endLine="77" endPosition="23" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="81" startPosition="158" endLine="82" endPosition="25" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="93" startPosition="40" endLine="94" endPosition="19" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="98" startPosition="69" endLine="99" endPosition="75" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="104" startPosition="48" endLine="105" endPosition="31" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="43" startPosition="5" endLine="45" endPosition="45">
+      <varInfo nodeId="2048470898155992824" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="84" startPosition="11" endLine="86" endPosition="90">
+      <varInfo nodeId="2048470898156013848" varName="childVar_any_type_subtypeOf_LowerBoundType_y0gkvf_a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="110" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="2048470898156013848" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="2048470898155992824" varName="status" />
+      <varInfo nodeId="2048470898155992824" varName="subtype" />
+      <varInfo nodeId="2048470898155992824" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2048470898155992824" varName="equationInfo" />
+      <varInfo nodeId="2048470898155992824" varName="inequalityIsLessThan" />
+      <varInfo nodeId="2048470898155992824" varName="inequalityIsWeak" />
+      <varInfo nodeId="2048470898155992824" varName="status" />
+      <varInfo nodeId="2048470898155992824" varName="subtype" />
+      <varInfo nodeId="2048470898155992824" varName="supertype" />
+      <varInfo nodeId="2048470898155992824" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="32" startPosition="207" endLine="35" endPosition="27">
+      <varInfo nodeId="2048470898155992824" varName="result_14532009" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="97" startPosition="71" endLine="100" endPosition="7" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="103" startPosition="51" endLine="106" endPosition="7" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="42" startPosition="71" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="50" startPosition="5" endLine="54" endPosition="48">
+      <varInfo nodeId="2048470898155992824" varName="b" />
+      <varInfo nodeId="2048470898155992824" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="103" startPosition="51" endLine="107" endPosition="18" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2048470898155992824" varName="equationInfo" />
+      <varInfo nodeId="2048470898155992824" varName="inequalityIsLessThan" />
+      <varInfo nodeId="2048470898155992824" varName="inequalityIsWeak" />
+      <varInfo nodeId="2048470898155992824" varName="status" />
+      <varInfo nodeId="2048470898155992824" varName="subtype" />
+      <varInfo nodeId="2048470898155992824" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="97" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="2048470898156013848" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="2048470898155992824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="49" startPosition="73" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="103" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="2048470898156013848" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="80" startPosition="79" endLine="87" endPosition="11" />
+    <scopeInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="2048470898155992824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="79" startPosition="9" endLine="87" endPosition="11">
+      <varInfo nodeId="2048470898156013848" varName="childRole_any_type_subtypeOf_LowerBoundType_y0gkvf_" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="78" startPosition="9" endLine="88" endPosition="9" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="75" startPosition="79" endLine="88" endPosition="9" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="73" startPosition="7" endLine="88" endPosition="9">
+      <varInfo nodeId="2048470898156013848" varName="nodeToMatch_any_type_subtypeOf_LowerBoundType_y0gkvf_a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="72" startPosition="45" endLine="90" endPosition="18" />
+    <scopeInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="72" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="2048470898156013848" varName="nodeToMatch" />
+    </scopeInfo>
+    <unitInfo nodeId="2048470898156013848" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="66" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_InequationReplacementRule$Pattern_w2c88q_a0a0a0a7" />
+    <unitInfo nodeId="2048470898155992824" fileName="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_InequationReplacementRule" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/2089334432679049932">
     <nodeInfo nodeId="2089334432679065799" fileName="check_ExceptionWasNotCaught_NonTypesystemRule.java" startLine="27" startPosition="131" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2248407684786245755" fileName="check_ExceptionWasNotCaught_NonTypesystemRule.java" startLine="29" startPosition="192" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -14093,66 +14242,7 @@
     </scopeInfo>
     <unitInfo nodeId="3434914349253195687" fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_OverrideNullAnnotations_NonTypesystemRule" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/3485664513391245687">
-    <nodeInfo nodeId="2240912231948881506" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="21" startPosition="100" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3485664513391245694" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="23" startPosition="5" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="27" startPosition="46" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="38" startPosition="27" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="42" startPosition="78" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="44" startPosition="30" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="46" startPosition="165" endLine="47" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="48" startPosition="31" endLine="49" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="50" startPosition="5" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="any_type_subtypeOf_LowerBoundType_SubtypingRule#()V" />
-    <nodeInfo nodeId="2240912231948776015" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="20" startPosition="114" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="47" startPosition="39" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="46" startPosition="165" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="46" startPosition="165" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="45" startPosition="30" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="45" startPosition="30" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="42" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_rqn411_a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="17" startPosition="60" endLine="17" endPosition="60" />
-    <scopeInfo nodeId="2240912231948776016" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="21" startPosition="100" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="27" startPosition="46" endLine="28" endPosition="55" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="38" startPosition="27" endLine="39" endPosition="17" />
-    <scopeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="48" startPosition="31" endLine="49" endPosition="74" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
-      <varInfo nodeId="3485664513391245687" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="3485664513391245688" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="20" startPosition="114" endLine="24" endPosition="51" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="46" startPosition="165" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="45" startPosition="30" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="3485664513391245687" varName="status" />
-      <varInfo nodeId="3485664513391245687" varName="type" />
-      <varInfo nodeId="3485664513391245687" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="3485664513391245687" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="42" startPosition="78" endLine="51" endPosition="24">
-      <varInfo nodeId="3485664513391245696" varName="facade" />
-      <varInfo nodeId="3485664513391245696" varName="quotedNode_2" />
-      <varInfo nodeId="3485664513391245696" varName="quotedNode_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="3485664513391245696" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="3485664513391245696" varName="parameter_1" />
-    </scopeInfo>
-    <unitInfo nodeId="3485664513391245687" fileName="any_type_subtypeOf_LowerBoundType_SubtypingRule.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_SubtypingRule" />
-  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/3485664513391245687" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/3497441244465827965">
     <nodeInfo nodeId="1175519229331" fileName="check_BaseAssignmentExpression_NonTypesystemRule.java" startLine="22" startPosition="165" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1175519229331" fileName="check_BaseAssignmentExpression_NonTypesystemRule.java" startLine="23" startPosition="58" endLine="24" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
