@@ -23,6 +23,9 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 public abstract class SingularSelectionListenerAdapter implements SelectionListener {
   @Override
   public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+    if (oldSelection == newSelection) {
+      return;
+    }
     if (oldSelection instanceof SingularSelection) {
       selectionChangedFrom(editorComponent, (SingularSelection) oldSelection);
     }

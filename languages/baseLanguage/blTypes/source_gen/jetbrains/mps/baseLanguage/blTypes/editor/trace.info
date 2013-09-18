@@ -64,7 +64,9 @@
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="128" startPosition="36" endLine="129" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="129" startPosition="55" endLine="130" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="130" startPosition="56" endLine="131" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="131" startPosition="42" endLine="132" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="131" startPosition="42" endLine="132" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="132" startPosition="90" endLine="133" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="133" startPosition="87" endLine="134" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="extendsListHandler_7ntfj2_d0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="117" startPosition="9" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -78,8 +80,8 @@
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_7ntfj2_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7ntfj2_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="111" startPosition="132" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="124" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="111" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="124" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1159268590365" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="52" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_7ntfj2_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" />
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="37" startPosition="28" endLine="38" endPosition="81" />
@@ -143,29 +145,29 @@
       <varInfo nodeId="1159268590362" varName="editorContext" />
       <varInfo nodeId="1159268590362" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="125" startPosition="104" endLine="132" endPosition="24">
-      <varInfo nodeId="1159268590362" varName="editorCell" />
-      <varInfo nodeId="1159268590362" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="34" startPosition="89" endLine="42" endPosition="22">
       <varInfo nodeId="1159268590362" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="112" startPosition="96" endLine="120" endPosition="9" />
+    <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="125" startPosition="104" endLine="134" endPosition="24">
+      <varInfo nodeId="1159268590362" varName="editorCell" />
+      <varInfo nodeId="1159268590362" varName="style" />
+    </scopeInfo>
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1159268590362" varName="editorContext" />
       <varInfo nodeId="1159268590362" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="111" startPosition="132" endLine="121" endPosition="7" />
-    <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="124" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="1159268590362" varName="editorContext" />
-      <varInfo nodeId="1159268590362" varName="nextNode" />
-      <varInfo nodeId="1159268590362" varName="prevNode" />
-    </scopeInfo>
     <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="111" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1159268590362" varName="editorContext" />
       <varInfo nodeId="1159268590362" varName="elementCell" />
       <varInfo nodeId="1159268590362" varName="elementNode" />
       <varInfo nodeId="1159268590362" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="124" startPosition="0" endLine="136" endPosition="0">
+      <varInfo nodeId="1159268590362" varName="editorContext" />
+      <varInfo nodeId="1159268590362" varName="nextNode" />
+      <varInfo nodeId="1159268590362" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1159268590365" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="52" startPosition="88" endLine="70" endPosition="22">
       <varInfo nodeId="1159268590365" varName="attributeConcept" />
@@ -178,8 +180,8 @@
       <varInfo nodeId="1159268590365" varName="editorContext" />
       <varInfo nodeId="1159268590365" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="88" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor$extendsListHandler_7ntfj2_d0" />
-    <unitInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="29" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor" />
+    <unitInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="88" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor$extendsListHandler_7ntfj2_d0" />
+    <unitInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="29" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1159268661793">
     <nodeInfo nodeId="1159268661793" fileName="PrimitiveTypeRef_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

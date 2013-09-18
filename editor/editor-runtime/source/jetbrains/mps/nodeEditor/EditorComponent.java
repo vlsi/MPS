@@ -714,6 +714,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
       public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        if (oldSelection == newSelection) {
+          return;
+        }
         deactivateSubstituteChooser();
         updateStatusBarMessage();
       }
