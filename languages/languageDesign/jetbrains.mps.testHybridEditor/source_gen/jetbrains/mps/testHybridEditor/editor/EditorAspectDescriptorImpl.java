@@ -17,8 +17,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
-      case 0:
-        return Collections.<ConceptEditor>singletonList(new Diagram_diagram_Editor());
       default:
     }
     return Collections.emptyList();
@@ -35,5 +33,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Diagram"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{};
 }

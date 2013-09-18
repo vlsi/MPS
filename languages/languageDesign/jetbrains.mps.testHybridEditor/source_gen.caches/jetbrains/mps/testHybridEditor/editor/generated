@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-awz9ofls9o7x9kn5mu7weeho6jbrliq">
+<dependencies version="2" modelHash="dxm4vhot67lgxf0s0yxce2q771cbnfw">
   <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="c4jotocel28ylddfyam5aoo44b2mlb" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
-  <dep model="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" hash="-7jidzaxpg986myx1jleayyadic32x6f" />
-  <dep model="r:7f81f281-871a-472d-91c0-235cc244a37a(jetbrains.mps.diagramEditor.editor.structure)" hash="-2iz0q50ys8ip54h83gu89vpqod9j5lq" />
-  <dep model="r:cf57beef-1dd0-4fd5-902c-b761ef94e609(jetbrains.mps.diagramEditor.editor.generator.template.main@generator)" hash="d0komb5ken5oy2dr3htpiyqp2wdipen" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="71dr9k071n8wo41x1adfewyuvan6kno">
+  <common hash="cofqe0f589ouhddz455tqb5bouf3zkg">
     <dep root="7298117218431641472" />
-    <dep root="8079565114668551803" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditorAspectDescriptorImpl.java" />
   </common>
   <source id="7298117218431641472" name="HybridHints" hash="98mn9z6un6qibc20zr7siaq56o534ha">
     <file name="HybridHints" />
-  </source>
-  <source id="8079565114668551803" name="Diagram_diagram_Editor" hash="erxrriy9u92018af9j1nl97bl6gk5d9">
-    <dep root="7298117218431641472" />
-    <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)" />
-    <dep model="r:7f81f281-871a-472d-91c0-235cc244a37a(jetbrains.mps.diagramEditor.editor.structure)" />
-    <dep model="r:cf57beef-1dd0-4fd5-902c-b761ef94e609(jetbrains.mps.diagramEditor.editor.generator.template.main@generator)" />
-    <file name="Diagram_diagram_Editor.java" />
   </source>
 </dependencies>
 
