@@ -2,58 +2,57 @@
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.Kaja.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1645404595816833416">
-    <nodeInfo nodeId="1645404595816905413" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="120" endLine="23" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1645404595817039298" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="24" startPosition="451" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645404595817114210" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="28" startPosition="400" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="31" startPosition="7" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="32" startPosition="60" endLine="33" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="35" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="35" startPosition="150" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="42" startPosition="46" endLine="43" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="47" startPosition="5" endLine="48" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="48" startPosition="130" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="53" startPosition="30" endLine="54" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645404595817039298" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="23" startPosition="451" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645404595817114210" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="27" startPosition="400" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="31" startPosition="60" endLine="32" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="34" startPosition="150" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="41" startPosition="46" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="47" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="47" startPosition="130" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="52" startPosition="30" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RepetitionCheck_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1645404595816956324" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="23" startPosition="68" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1645404595817065948" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="27" startPosition="139" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="33" startPosition="289" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="46" startPosition="68" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1645404595817040751" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="26" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="1645404595816956324" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="120" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645404595817065948" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="26" startPosition="139" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="32" startPosition="289" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="45" startPosition="68" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1645404595817040751" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="19" endPosition="46" />
-    <scopeInfo nodeId="1645404595816956327" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="24" startPosition="451" endLine="25" endPosition="13" />
-    <scopeInfo nodeId="1645404595817065949" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="28" startPosition="400" endLine="29" endPosition="15" />
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="42" startPosition="46" endLine="43" endPosition="66" />
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="53" startPosition="30" endLine="54" endPosition="17" />
+    <scopeInfo nodeId="1645404595816956327" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="23" startPosition="451" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="1645404595817065949" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="27" startPosition="400" endLine="28" endPosition="15" />
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="41" startPosition="46" endLine="42" endPosition="66" />
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="52" startPosition="30" endLine="53" endPosition="17" />
     <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="36" endPosition="71">
+    <scopeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="35" endPosition="71">
       <varInfo nodeId="1645404595817116829" varName="intentionProvider" />
     </scopeInfo>
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="47" startPosition="5" endLine="49" endPosition="45">
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="48" endPosition="45">
       <varInfo nodeId="1645404595816833416" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="46" startPosition="68" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="31" startPosition="7" endLine="37" endPosition="9">
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="45" startPosition="68" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1645404595817116829" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="36" endPosition="9">
       <varInfo nodeId="1645404595817116829" varName="_reporter_2309309498" />
       <varInfo nodeId="1645404595817116829" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1645404595816833416" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1645404595817040754" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="27" startPosition="139" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1645404595816843456" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="120" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1645404595817040754" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="26" startPosition="139" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1645404595816843456" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="120" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1645404595816833416" varName="command" />
       <varInfo nodeId="1645404595816833416" varName="status" />
       <varInfo nodeId="1645404595816833416" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.Kaja.typesystem.RepetitionCheck_NonTypesystemRule" />
+    <unitInfo nodeId="1645404595816833416" fileName="RepetitionCheck_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.samples.Kaja.typesystem.RepetitionCheck_NonTypesystemRule" />
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1645404595817127967">
     <nodeInfo nodeId="1645404595817128789" fileName="RemoveRepetition_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

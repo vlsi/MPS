@@ -20,7 +20,6 @@ public class RepetitionCheck_NonTypesystemRule extends AbstractNonTypesystemRule
   }
 
   public void applyRule(final SNode command, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNodeOperations.getChildren(SNodeOperations.getParent(command));
     if (!(SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Step") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.LeftTurn") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Drop") || SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.Pick"))) {
       return;
     }
