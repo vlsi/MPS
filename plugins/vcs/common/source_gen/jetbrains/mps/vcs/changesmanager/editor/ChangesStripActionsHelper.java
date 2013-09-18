@@ -150,7 +150,7 @@ public class ChangesStripActionsHelper {
 
     // find common path 
     final Wrappers._T<List<SNode>> commonPath = new Wrappers._T<List<SNode>>(ListSequence.fromList(paths).getElement(0));
-    for (List<SNode> pathToRoot : ListSequence.fromList(paths)) {
+    for (Iterable<SNode> pathToRoot : ListSequence.fromList(paths)) {
       for (int i = 0; i < Math.min(ListSequence.fromList(commonPath.value).count(), ListSequence.fromList(pathToRoot).count()); i++) {
         if (ListSequence.fromList(commonPath.value).getElement(i) != ListSequence.fromList(pathToRoot).getElement(i)) {
           commonPath.value = ListSequence.fromList(commonPath.value).take(i).toListSequence();
