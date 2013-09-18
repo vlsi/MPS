@@ -368,12 +368,6 @@ public class Inequalities {
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
     collectNodesTransitive(node, leftTypes, false, typesToBlocks, relation, new HashSet<SNode>());
-    if (leftTypes.size() > 1) {
-      for(Iterator<SNode> it = leftTypes.iterator(); it.hasNext(); ) {
-        final SNode next = it.next();
-        if (LatticeUtil.isMeet(next) && TypesUtil.hasVariablesInside(next)) it.remove();
-      }
-    }
     if (!mySolveOnlyRight) {
       collectNodesTransitive(node, rightTypes, true, typesToBlocks, relation, new HashSet<SNode>());
     }

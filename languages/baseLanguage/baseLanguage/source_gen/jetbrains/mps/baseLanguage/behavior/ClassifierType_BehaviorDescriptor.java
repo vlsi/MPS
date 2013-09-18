@@ -12,6 +12,10 @@ public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor i
   public ClassifierType_BehaviorDescriptor() {
   }
 
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return ClassifierType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  }
+
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     ClassifierType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }
