@@ -272,7 +272,7 @@ with_meet:
         cType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
       }
       // avoid coercing if the classifier type is not the immediate supertype 
-      if ((cType != null) && !(TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(type).contains(cType))) {
+      if ((cType != null) && TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(type, true).contains(cType)) {
         cType = null;
       }
     }
