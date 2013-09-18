@@ -54,6 +54,9 @@ public class NextPreviousTraverser {
 
     final SelectionListener selectionListener = new SelectionListener() {
       public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        if (oldSelection == newSelection) {
+          return;
+        }
         setLastEditor(editorComponent);
         updateToolbar();
       }
