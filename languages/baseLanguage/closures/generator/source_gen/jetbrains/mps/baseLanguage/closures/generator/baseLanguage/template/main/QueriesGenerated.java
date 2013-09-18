@@ -48,6 +48,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.helper.WrappersUtils;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -3477,28 +3478,63 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1201686683809(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> bmcs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodCall");
-    for (SNode bmc : bmcs) {
-      List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
-      List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
-      if ((SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
-        _context.showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
-      }
-      int idx = 0;
-      for (SNode pdecl : pdecls) {
-        if (idx < ListSequence.fromList(args).count()) {
-          SNode arg = ListSequence.fromList(args).getElement(idx);
-          FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+    if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+      //  FunctionUtil.prepAdaptations has the same constant check inside 
+      // so the idea is to filter out irrelevant nodes asap 
+      for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.BaseMethodCall")) || !(SNodeOperations.getContainingLinkRole(cl).equals("actualArgument"))) {
+          continue;
         }
-        idx++;
+        SNode bmc = SNodeOperations.cast(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.BaseMethodCall");
+        List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
+        List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
+        if ((SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+          _context.showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
+        }
+        Iterator<SNode> argsItr = ListSequence.fromList(args).iterator();
+        for (SNode pdecl : pdecls) {
+          if (argsItr.hasNext()) {
+            SNode arg = argsItr.next();
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+          }
+        }
+      }
+    } else {
+      //  original code 
+      List<SNode> bmcs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodCall");
+      for (SNode bmc : bmcs) {
+        List<SNode> args = SLinkOperations.getTargets(bmc, "actualArgument", true);
+        List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false), "parameter", true);
+        if ((SLinkOperations.getTarget(bmc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+          _context.showInformationMessage(bmc, "Actual arguments count != parameter declarations count");
+        }
+        int idx = 0;
+        for (SNode pdecl : pdecls) {
+          if (idx < ListSequence.fromList(args).count()) {
+            SNode arg = ListSequence.fromList(args).getElement(idx);
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bmc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+          }
+          idx++;
+        }
       }
     }
   }
 
   public static void mappingScript_CodeBlock_1201703119163(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-    for (SNode ae : aes) {
-      FunctionTypeUtil.prepAdaptations(_context, TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), SLinkOperations.getTarget(ae, "rValue", true));
+    if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+      for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) || !(SNodeOperations.getContainingLinkRole(cl).equals("rValue"))) {
+          continue;
+        }
+        SNode ae = SNodeOperations.cast(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+        FunctionTypeUtil.prepAdaptations(_context, TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), SLinkOperations.getTarget(ae, "rValue", true));
+      }
+    } else {
+      //  original code 
+      List<SNode> aes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+      for (SNode ae : aes) {
+        FunctionTypeUtil.prepAdaptations(_context, TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ae, "lValue", true)), SLinkOperations.getTarget(ae, "rValue", true));
+      }
     }
   }
 
@@ -3520,31 +3556,66 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1204637450606(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode de : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      if (_context.isDirty(de) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-        SNode imco = SNodeOperations.cast(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+    if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+      for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) || !(SNodeOperations.getContainingLinkRole(cl).equals("actualArgument"))) {
+          // TODO in case there's method call with more than one closure arg, we'll process it again, guard against this 
+          continue;
+        }
+        SNode imco = SNodeOperations.cast(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(imco), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+          continue;
+        }
+        SNode de = SNodeOperations.cast(SNodeOperations.getParent(imco), "jetbrains.mps.baseLanguage.structure.DotExpression");
+        if (SLinkOperations.getTarget(de, "operation", true) != imco) {
+          continue;
+        }
         List<SNode> args = SLinkOperations.getTargets(imco, "actualArgument", true);
         List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter", true);
         if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
           _context.showInformationMessage(imco, "Actual arguments count != parameter declarations count");
         }
-        int idx = -1;
+        Iterator<SNode> argsItr = ListSequence.fromList(args).iterator();
         for (SNode pdecl : pdecls) {
-          if (++idx < ListSequence.fromList(args).count()) {
-            SNode arg = ListSequence.fromList(args).getElement(idx);
-            if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
-              //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise 
-              //  This may cause unexpected results, so please disable in case of difficulties generating some code 
-              if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
-                continue;
-              }
-            }
+          if (argsItr.hasNext()) {
+            SNode arg = argsItr.next();
             SNode operandType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
             if ((operandType == null)) {
               operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
             }
             SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), operandType);
             FunctionTypeUtil.prepAdaptations(_context, FunctionTypeUtil.unmeet(pdeclType), arg);
+          }
+        }
+      }
+    } else {
+      for (SNode de : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+        //  why IMCO only from DotExpression? 
+        if (_context.isDirty(de) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+          SNode imco = SNodeOperations.cast(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+          List<SNode> args = SLinkOperations.getTargets(imco, "actualArgument", true);
+          List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter", true);
+          if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+            _context.showInformationMessage(imco, "Actual arguments count != parameter declarations count");
+          }
+          Iterator<SNode> argsItr = ListSequence.fromList(args).iterator();
+          for (SNode pdecl : pdecls) {
+            if (argsItr.hasNext()) {
+              SNode arg = argsItr.next();
+              if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+                //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise 
+                //  This may cause unexpected results, so please disable in case of difficulties generating some code 
+                if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
+                  continue;
+                }
+              }
+              SNode operandType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+              if ((operandType == null)) {
+                operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+              }
+              SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), operandType);
+              FunctionTypeUtil.prepAdaptations(_context, FunctionTypeUtil.unmeet(pdeclType), arg);
+            }
           }
         }
       }
@@ -3583,22 +3654,19 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1207161784299(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> telist = ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
-    for (SNode te : telist) {
-      if ((SLinkOperations.getTarget(te, "classConcept", false) == null)) {
-        SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
-        SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass") && SNodeOperations.getAncestor(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == thisCC) {
-          SNode parent = SNodeOperations.getParent(te);
-          if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-            SNode op = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+    for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+      for (SNode te : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})) {
+        if ((SLinkOperations.getTarget(te, "classConcept", false) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(te), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+          if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass") && SNodeOperations.getAncestor(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == thisCC) {
+            SNode op = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(te), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
             if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
               Flags.REMOVE_THIS.flag(_context, op);
             } else
             if (SNodeOperations.isInstanceOf(op, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
               Flags.REMOVE_THIS.flag(_context, op);
             } else {
-              _context.showErrorMessage(te, "'this' expression coulnd't be removed");
+              _context.showErrorMessage(te, "'this' expression couldn't be removed");
             }
           }
         }
@@ -3622,20 +3690,41 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1219747408129(final IOperationContext operationContext, final MappingScriptContext _context) {
-    List<SNode> ccs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassCreator");
-    for (SNode cc : ccs) {
-      List<SNode> args = SLinkOperations.getTargets(cc, "actualArgument", true);
-      List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(cc, "baseMethodDeclaration", false), "parameter", true);
-      if ((SLinkOperations.getTarget(cc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
-        _context.showInformationMessage(cc, "Actual arguments count != parameter declarations count");
-      }
-      int idx = 0;
-      for (SNode pdecl : pdecls) {
-        if (idx < ListSequence.fromList(args).count()) {
-          SNode arg = ListSequence.fromList(args).getElement(idx);
-          FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+    if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+      for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
+        if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.ClassCreator")) || !(SNodeOperations.getContainingLinkRole(cl).equals("actualArgument"))) {
+          continue;
         }
-        idx++;
+        SNode cc = SNodeOperations.cast(SNodeOperations.getParent(cl), "jetbrains.mps.baseLanguage.structure.ClassCreator");
+        List<SNode> args = SLinkOperations.getTargets(cc, "actualArgument", true);
+        List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(cc, "baseMethodDeclaration", false), "parameter", true);
+        if ((SLinkOperations.getTarget(cc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+          _context.showInformationMessage(cc, "Actual arguments count != parameter declarations count");
+        }
+        Iterator<SNode> argsItr = ListSequence.fromList(args).iterator();
+        for (SNode pdecl : pdecls) {
+          if (argsItr.hasNext()) {
+            SNode arg = argsItr.next();
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+          }
+        }
+      }
+    } else {
+      List<SNode> ccs = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassCreator");
+      for (SNode cc : ccs) {
+        List<SNode> args = SLinkOperations.getTargets(cc, "actualArgument", true);
+        List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(cc, "baseMethodDeclaration", false), "parameter", true);
+        if ((SLinkOperations.getTarget(cc, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
+          _context.showInformationMessage(cc, "Actual arguments count != parameter declarations count");
+        }
+        int idx = 0;
+        for (SNode pdecl : pdecls) {
+          if (idx < ListSequence.fromList(args).count()) {
+            SNode arg = ListSequence.fromList(args).getElement(idx);
+            FunctionTypeUtil.prepAdaptations(_context, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), cc, "virtual_deriveType_1213877435747", new Object[]{arg}), arg);
+          }
+          idx++;
+        }
       }
     }
   }
