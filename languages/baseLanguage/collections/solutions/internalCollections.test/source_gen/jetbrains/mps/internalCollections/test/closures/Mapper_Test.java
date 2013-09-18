@@ -8,10 +8,10 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Arrays;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.Collections;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -64,8 +64,8 @@ __switch__:
 
   public void test_mapperVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
-    ITranslator2<Integer, Integer> trans = new ITranslator2<Integer, Integer>() {
-      public Iterable<Integer> translate(final Integer i) {
+    _FunctionTypes._return_P1_E0<? extends Iterable<Integer>, ? super Integer> trans = new _FunctionTypes._return_P1_E0<Iterable<Integer>, Integer>() {
+      public Iterable<Integer> invoke(final Integer i) {
         return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {

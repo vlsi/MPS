@@ -120,7 +120,7 @@ public class VariablesTree extends MPSTree implements DataProvider {
           watchableList = ListSequence.fromList(new ArrayList<IWatchable>());
           MapSequence.fromMap(nodeToVarsMap).put(node, watchableList);
         }
-        watchableList.add(watchable);
+        ListSequence.fromList(watchableList).addElement(watchable);
       }
     }
     SortedSet<WatchablesCategory> keys = SortedSetSequence.fromSetWithValues(new TreeSet<WatchablesCategory>(), SetSequence.fromSet(MapSequence.fromMap(orphanesByCategory).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(nodeToVarsMapByCategory).keySet())));
@@ -148,7 +148,7 @@ public class VariablesTree extends MPSTree implements DataProvider {
       //  adding nodes 
       for (SNode snode : MapSequence.fromMap(nodeToVarsMap).keySet()) {
         List<IWatchable> watchablesWithNodes = MapSequence.fromMap(nodeToVarsMap).get(snode);
-        if (watchablesWithNodes.size() == 1) {
+        if ((int) ListSequence.fromList(watchablesWithNodes).count() == 1) {
           rootTreeNode.add(new WatchableNode(myContext, ListSequence.fromList(watchablesWithNodes).first(), myUiState));
         } else {
           NodeTreeNode nodeTreeNode = new NodeTreeNode(myContext, snode);

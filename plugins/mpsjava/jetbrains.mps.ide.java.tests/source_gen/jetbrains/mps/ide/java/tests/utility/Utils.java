@@ -219,7 +219,7 @@ public class Utils {
       // <node> 
 
       SModel zzz = m;
-      srcModelsX.add(zzz);
+      ListSequence.fromList(srcModelsX).addElement(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {
         NodePatcher.fixNonStatic(srcRoot);

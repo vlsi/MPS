@@ -110,7 +110,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     List<JavaLocalVariable> result = new ArrayList<JavaLocalVariable>();
     if (stackFrame != null) {
       for (LocalVariable variable : stackFrame.visibleVariables()) {
-        result.add(new JavaLocalVariable(variable, this, myClassFqName, myThread.getThread()));
+        ListSequence.fromList(result).addElement(new JavaLocalVariable(variable, this, myClassFqName, myThread.getThread()));
       }
     }
     return result;
