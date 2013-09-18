@@ -68,15 +68,15 @@ public class ChangeEditorMessageFactory {
 
       // We need to check change models because current edited model can have different indices 
       // (for instance, when some changes are already applied) 
-      SNodeId beginId = (changeBegin < ListSequence.fromList(changeChildren).count() ?
-        ListSequence.fromList(changeChildren).getElement(changeBegin).getNodeId() :
+      SNodeId beginId = (changeBegin < changeChildren.size() ?
+        changeChildren.get(changeBegin).getNodeId() :
         null
       );
-      SNodeId endId = (changeEnd < ListSequence.fromList(changeChildren).count() ?
-        ListSequence.fromList(changeChildren).getElement(changeEnd).getNodeId() :
+      SNodeId endId = (changeEnd < changeChildren.size() ?
+        changeChildren.get(changeEnd).getNodeId() :
         null
       );
-      int currentChildrenSize = ListSequence.fromList(changeChildren).count();
+      int currentChildrenSize = changeChildren.size();
 
       int beginIndex = (beginId == null ?
         currentChildrenSize :
