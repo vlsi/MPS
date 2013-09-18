@@ -33,7 +33,6 @@
   <usedLanguages>
     <usedLanguage>f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</usedLanguage>
     <usedLanguage>515552c7-fcc0-4ab4-9789-2f3c49344e85(jetbrains.mps.baseLanguage.varVariable)</usedLanguage>
-    <usedLanguage>eb39f327-b818-413f-965b-ffce0270b64d(jetbrains.mps.diagramEditor.editor)</usedLanguage>
     <usedLanguage>6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)</usedLanguage>
   </usedLanguages>
   <usedDevKits>

@@ -4,7 +4,6 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="515552c7-fcc0-4ab4-9789-2f3c49344e85(jetbrains.mps.baseLanguage.varVariable)" />
   <language namespace="f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)" />
-  <language namespace="eb39f327-b818-413f-965b-ffce0270b64d(jetbrains.mps.diagramEditor.editor)" />
   <language namespace="6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="53h5" modelUID="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)" version="-1" />

@@ -117,8 +117,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" folder="core.aspects.intentions" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.diagramEditor.editor/jetbrains.mps.diagramEditor.editor.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.diagramEditor.figure/jetbrains.mps.diagramEditor.figure.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.diagram/jetbrains.mps.lang.editor.diagram.mpl" folder="core.aspects.editor" />

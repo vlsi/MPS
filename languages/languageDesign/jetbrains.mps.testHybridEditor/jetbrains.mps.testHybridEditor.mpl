@@ -25,10 +25,6 @@
     </generator>
   </generators>
   <sourcePath />
-  <usedLanguages>
-    <usedLanguage>eb39f327-b818-413f-965b-ffce0270b64d(jetbrains.mps.diagramEditor.editor)</usedLanguage>
-    <usedLanguage>7752fe80-8f0d-4fbd-849f-a592087c2aa0(jetbrains.mps.diagramEditor.figure)</usedLanguage>
-  </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
