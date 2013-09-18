@@ -7,11 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class PreDefinedStyleSheetClass_Constraints extends BaseConstraintsDescriptor {
-  public PreDefinedStyleSheetClass_Constraints() {
-    super("jetbrains.mps.lang.editor.structure.PreDefinedStyleSheetClass");
+public class StylePriorityGroup_Constraints extends BaseConstraintsDescriptor {
+  public StylePriorityGroup_Constraints() {
+    super("jetbrains.mps.lang.editor.structure.StylePriorityGroup");
   }
 
   @Override
@@ -31,9 +32,8 @@ public class PreDefinedStyleSheetClass_Constraints extends BaseConstraintsDescri
   }
 
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    // <node> 
-    return true;
+    return !(SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.editor.structure.ApplyStylePriorityGroup") || SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.editor.structure.DiscardStylePrioriryGroup"));
   }
 
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "4151393920516603320");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1950447826683740664");
 }

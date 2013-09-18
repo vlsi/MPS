@@ -7,8 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class StyleSheetClass_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IStyleContainer_BehaviorDescriptor, IStyleSheetMember_BehaviorDescriptor {
-  public StyleSheetClass_BehaviorDescriptor() {
+public class StylePriorityGroup_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IStyleContainer_BehaviorDescriptor, IStyleSheetMember_BehaviorDescriptor {
+  public StylePriorityGroup_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -16,11 +16,11 @@ public class StyleSheetClass_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   }
 
   public SNode virtual_getParent_1219419981626(SNode thisNode) {
-    return StyleSheetClass_Behavior.virtual_getParent_1219419981626(thisNode);
+    return IStyleContainer_Behavior.virtual_getParent_1219419981626(thisNode);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.editor.structure.StyleSheetClass";
+    return "jetbrains.mps.lang.editor.structure.StylePriorityGroup";
   }
 }
