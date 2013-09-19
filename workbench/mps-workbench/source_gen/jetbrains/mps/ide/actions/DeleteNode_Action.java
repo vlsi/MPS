@@ -6,8 +6,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
@@ -16,6 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,6 +34,11 @@ public class DeleteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+      if (check_v2o7qu_a0a0a0(node.getModel())) {
+        return false;
+      }
+    }
     return ((List<SNode>) MapSequence.fromMap(_params).get("nodes")).size() != 0;
   }
 
@@ -93,4 +100,11 @@ public class DeleteNode_Action extends BaseAction {
   }
 
   protected static Logger LOG = LogManager.getLogger(DeleteNode_Action.class);
+
+  private static boolean check_v2o7qu_a0a0a0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.isReadOnly();
+    }
+    return false;
+  }
 }

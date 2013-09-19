@@ -16654,29 +16654,31 @@
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="138" startPosition="36" endLine="139" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="139" startPosition="55" endLine="140" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="140" startPosition="56" endLine="141" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="141" startPosition="42" endLine="142" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="145" startPosition="92" endLine="146" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="146" startPosition="88" endLine="147" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="147" startPosition="51" endLine="148" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="148" startPosition="36" endLine="149" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="149" startPosition="50" endLine="150" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="150" startPosition="48" endLine="151" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="151" startPosition="61" endLine="152" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="152" startPosition="42" endLine="153" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="153" startPosition="36" endLine="154" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1722980698497626447" fileName="ITemplateCall_actualArguments.java" startLine="158" startPosition="112" endLine="159" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="162" startPosition="89" endLine="163" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="163" startPosition="87" endLine="164" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="164" startPosition="48" endLine="165" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="165" startPosition="34" endLine="166" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="166" startPosition="68" endLine="167" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="167" startPosition="48" endLine="168" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="168" startPosition="58" endLine="169" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="169" startPosition="47" endLine="170" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="171" startPosition="88" endLine="172" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="173" startPosition="5" endLine="174" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="174" startPosition="34" endLine="175" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1722980698497626455" fileName="ITemplateCall_actualArguments.java" startLine="178" startPosition="112" endLine="179" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="141" startPosition="42" endLine="142" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="142" startPosition="90" endLine="143" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="143" startPosition="87" endLine="144" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="147" startPosition="92" endLine="148" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="148" startPosition="88" endLine="149" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="149" startPosition="51" endLine="150" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="150" startPosition="36" endLine="151" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="151" startPosition="50" endLine="152" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="152" startPosition="48" endLine="153" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="153" startPosition="61" endLine="154" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="154" startPosition="42" endLine="155" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="155" startPosition="36" endLine="156" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1722980698497626447" fileName="ITemplateCall_actualArguments.java" startLine="160" startPosition="112" endLine="161" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="164" startPosition="89" endLine="165" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="165" startPosition="87" endLine="166" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="166" startPosition="48" endLine="167" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="167" startPosition="34" endLine="168" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="168" startPosition="68" endLine="169" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="169" startPosition="48" endLine="170" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="170" startPosition="58" endLine="171" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="171" startPosition="47" endLine="172" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="173" startPosition="88" endLine="174" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="175" startPosition="5" endLine="176" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="176" startPosition="34" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1722980698497626455" fileName="ITemplateCall_actualArguments.java" startLine="180" startPosition="112" endLine="181" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="46" startPosition="40" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -16686,22 +16688,22 @@
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="actualArgumentListHandler_1xd1xh_b0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="127" startPosition="9" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1722980698497626445" fileName="ITemplateCall_actualArguments.java" startLine="158" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_1xd1xh_a1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="170" startPosition="40" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1722980698497626453" fileName="ITemplateCall_actualArguments.java" startLine="178" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_1xd1xh_a2a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1722980698497626445" fileName="ITemplateCall_actualArguments.java" startLine="160" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_1xd1xh_a1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="172" startPosition="40" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1722980698497626453" fileName="ITemplateCall_actualArguments.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_1xd1xh_a2a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="123" startPosition="134" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="104" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="110" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626437" fileName="ITemplateCall_actualArguments.java" startLine="69" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1xd1xh_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="121" startPosition="132" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="134" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="41" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1xd1xh_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="53" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1xd1xh_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="145" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1xd1xh_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="147" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1xd1xh_a1a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="121" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="134" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="80" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_1xd1xh_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="162" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1xd1xh_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="164" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1xd1xh_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="33" startPosition="47" endLine="34" endPosition="35" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="37" startPosition="79" endLine="38" endPosition="63" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="47" startPosition="109" endLine="48" endPosition="85" />
@@ -16713,9 +16715,9 @@
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="95" startPosition="107" endLine="96" endPosition="50" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="117" startPosition="89" endLine="118" endPosition="66" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="128" startPosition="131" endLine="129" endPosition="139" />
-    <scopeInfo nodeId="1722980698497626446" fileName="ITemplateCall_actualArguments.java" startLine="158" startPosition="112" endLine="159" endPosition="16" />
-    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="171" startPosition="88" endLine="172" endPosition="90" />
-    <scopeInfo nodeId="1722980698497626454" fileName="ITemplateCall_actualArguments.java" startLine="178" startPosition="112" endLine="179" endPosition="16" />
+    <scopeInfo nodeId="1722980698497626446" fileName="ITemplateCall_actualArguments.java" startLine="160" startPosition="112" endLine="161" endPosition="16" />
+    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="173" startPosition="88" endLine="174" endPosition="90" />
+    <scopeInfo nodeId="1722980698497626454" fileName="ITemplateCall_actualArguments.java" startLine="180" startPosition="112" endLine="181" endPosition="16" />
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="99" startPosition="66" endLine="101" endPosition="93">
       <varInfo nodeId="1722980698497626434" varName="listOwner" />
     </scopeInfo>
@@ -16743,12 +16745,12 @@
       <varInfo nodeId="1722980698497626434" varName="editorContext" />
       <varInfo nodeId="1722980698497626434" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626445" fileName="ITemplateCall_actualArguments.java" startLine="158" startPosition="0" endLine="161" endPosition="0">
+    <scopeInfo nodeId="1722980698497626445" fileName="ITemplateCall_actualArguments.java" startLine="160" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="1722980698497626445" varName="editorContext" />
       <varInfo nodeId="1722980698497626445" varName="node" />
       <varInfo nodeId="1722980698497626445" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626453" fileName="ITemplateCall_actualArguments.java" startLine="178" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="1722980698497626453" fileName="ITemplateCall_actualArguments.java" startLine="180" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="1722980698497626453" varName="editorContext" />
       <varInfo nodeId="1722980698497626453" varName="node" />
       <varInfo nodeId="1722980698497626453" varName="scope" />
@@ -16766,10 +16768,6 @@
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="110" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="1722980698497626434" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="135" startPosition="104" endLine="142" endPosition="24">
-      <varInfo nodeId="1722980698497626434" varName="editorCell" />
-      <varInfo nodeId="1722980698497626434" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1722980698497626437" fileName="ITemplateCall_actualArguments.java" startLine="69" startPosition="89" endLine="77" endPosition="22">
       <varInfo nodeId="1722980698497626437" varName="editorCell" />
       <varInfo nodeId="1722980698497626437" varName="style" />
@@ -16783,7 +16781,11 @@
       <varInfo nodeId="1722980698497626434" varName="editorCell" />
       <varInfo nodeId="1722980698497626434" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="145" startPosition="92" endLine="154" endPosition="24">
+    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="135" startPosition="104" endLine="144" endPosition="24">
+      <varInfo nodeId="1722980698497626434" varName="editorCell" />
+      <varInfo nodeId="1722980698497626434" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="147" startPosition="92" endLine="156" endPosition="24">
       <varInfo nodeId="1722980698497626440" varName="editorCell" />
       <varInfo nodeId="1722980698497626440" varName="style" />
     </scopeInfo>
@@ -16792,11 +16794,6 @@
       <varInfo nodeId="1722980698497626437" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="121" startPosition="132" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="134" startPosition="0" endLine="144" endPosition="0">
-      <varInfo nodeId="1722980698497626434" varName="editorContext" />
-      <varInfo nodeId="1722980698497626434" varName="nextNode" />
-      <varInfo nodeId="1722980698497626434" varName="prevNode" />
-    </scopeInfo>
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="41" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1722980698497626434" varName="editorContext" />
       <varInfo nodeId="1722980698497626434" varName="node" />
@@ -16810,7 +16807,7 @@
       <varInfo nodeId="1722980698497626434" varName="handler" />
       <varInfo nodeId="1722980698497626434" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="145" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="1722980698497626440" fileName="ITemplateCall_actualArguments.java" startLine="147" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="1722980698497626440" varName="editorContext" />
       <varInfo nodeId="1722980698497626440" varName="node" />
     </scopeInfo>
@@ -16820,20 +16817,25 @@
       <varInfo nodeId="1722980698497626434" varName="elementNode" />
       <varInfo nodeId="1722980698497626434" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="134" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="1722980698497626434" varName="editorContext" />
+      <varInfo nodeId="1722980698497626434" varName="nextNode" />
+      <varInfo nodeId="1722980698497626434" varName="prevNode" />
+    </scopeInfo>
     <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="80" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1722980698497626434" varName="editorContext" />
       <varInfo nodeId="1722980698497626434" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="162" startPosition="89" endLine="175" endPosition="22">
+    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="164" startPosition="89" endLine="177" endPosition="22">
       <varInfo nodeId="1722980698497626434" varName="editorCell" />
       <varInfo nodeId="1722980698497626434" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="162" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="164" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="1722980698497626434" varName="editorContext" />
       <varInfo nodeId="1722980698497626434" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="94" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments$actualArgumentListHandler_1xd1xh_b0a" />
-    <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="32" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
+    <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="94" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments$actualArgumentListHandler_1xd1xh_b0a" />
+    <unitInfo nodeId="1722980698497626434" fileName="ITemplateCall_actualArguments.java" startLine="32" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1805153994416198156">
     <nodeInfo nodeId="1805153994416198156" fileName="TemplateParameterDeclaration_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

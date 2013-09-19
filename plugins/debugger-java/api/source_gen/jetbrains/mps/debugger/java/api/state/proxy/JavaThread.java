@@ -41,7 +41,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     myInitialized = true;
     try {
       for (int i = 0; i < myThreadReference.frameCount(); i++) {
-        myStackFrames.add(new JavaStackFrame(this, i));
+        ListSequence.fromList(myStackFrames).addElement(new JavaStackFrame(this, i));
       }
     } catch (IncompatibleThreadStateException ex) {
       if (LOG.isDebugEnabled()) {
@@ -61,7 +61,7 @@ public class JavaThread extends ProxyForJava implements IThread {
 
   @Override
   public synchronized int getFramesCount() {
-    return myStackFrames.size();
+    return ListSequence.fromList(myStackFrames).count();
   }
 
   @Nullable

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystemEngine.util.CoerceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -19,7 +20,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
-      if (SNodeOperations.getConceptDeclaration(subtype) == SNodeOperations.getConceptDeclaration(arg)) {
+      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConceptDeclaration(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConceptDeclaration(subtype))) {
         return true;
       }
     }
@@ -28,7 +29,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
-      if (SNodeOperations.getConceptDeclaration(subtype) == SNodeOperations.getConceptDeclaration(arg)) {
+      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConceptDeclaration(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConceptDeclaration(subtype))) {
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8991952304890041665", 0, null);
@@ -43,7 +44,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
-      if (SNodeOperations.getConceptDeclaration(subtype) == SNodeOperations.getConceptDeclaration(arg)) {
+      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConceptDeclaration(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConceptDeclaration(subtype))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) arg, true);
         break;
       }

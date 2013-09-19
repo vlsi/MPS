@@ -68,7 +68,7 @@ public class StubRootChooser implements Computable<List<String>> {
       if (res >= 0) {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
-            String type = modelRootTypes.get(res);
+            String type = ListSequence.fromList(modelRootTypes).getElement(res);
             ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(type).create();
             if (root instanceof FolderModelRootBase) {
               ((FolderModelRootBase) root).setPath(it);

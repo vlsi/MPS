@@ -345,7 +345,7 @@
     <nodeInfo nodeId="4352118152439825720" fileName="PausedJavaUiState.java" startLine="100" startPosition="49" endLine="101" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4352118152439825725" fileName="PausedJavaUiState.java" startLine="101" startPosition="47" endLine="102" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4352118152439825730" fileName="PausedJavaUiState.java" startLine="102" startPosition="82" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4352118152439825745" fileName="PausedJavaUiState.java" startLine="105" startPosition="42" endLine="106" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4352118152439825745" fileName="PausedJavaUiState.java" startLine="105" startPosition="42" endLine="106" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4352118152439825752" fileName="PausedJavaUiState.java" startLine="108" startPosition="5" endLine="109" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4352118152439825761" fileName="PausedJavaUiState.java" startLine="113" startPosition="40" endLine="114" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4352118152439825772" fileName="PausedJavaUiState.java" startLine="117" startPosition="33" endLine="118" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -456,7 +456,7 @@
     <scopeInfo nodeId="4352118152439825558" fileName="PausedJavaUiState.java" startLine="46" startPosition="40" endLine="47" endPosition="30" />
     <scopeInfo nodeId="4352118152439825618" fileName="PausedJavaUiState.java" startLine="70" startPosition="40" endLine="71" endPosition="30" />
     <scopeInfo nodeId="4352118152439825696" fileName="PausedJavaUiState.java" startLine="92" startPosition="40" endLine="93" endPosition="30" />
-    <scopeInfo nodeId="4352118152439825744" fileName="PausedJavaUiState.java" startLine="105" startPosition="42" endLine="106" endPosition="55" />
+    <scopeInfo nodeId="4352118152439825744" fileName="PausedJavaUiState.java" startLine="105" startPosition="42" endLine="106" endPosition="85" />
     <scopeInfo nodeId="4352118152439825760" fileName="PausedJavaUiState.java" startLine="113" startPosition="40" endLine="114" endPosition="70" />
     <scopeInfo nodeId="4352118152439825789" fileName="PausedJavaUiState.java" startLine="121" startPosition="25" endLine="122" endPosition="37" />
     <scopeInfo nodeId="4352118152439825816" fileName="PausedJavaUiState.java" startLine="127" startPosition="55" endLine="128" endPosition="34" />

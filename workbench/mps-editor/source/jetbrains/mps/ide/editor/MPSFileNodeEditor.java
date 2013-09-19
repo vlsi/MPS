@@ -81,7 +81,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
             SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
             if (descr != null && descr.equals(model)) {
               for (SNode node : descr.getRootNodes()) {
-                if (node.getName().equals(file.getNameWithoutExtension())) {
+                if (node.getName().equals(file.getNameWithoutExtension()) || node.getNodeId().toString().equals(file.getNameWithoutExtension())) {
                   return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
                 }
               }

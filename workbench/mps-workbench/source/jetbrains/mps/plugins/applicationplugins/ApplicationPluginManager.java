@@ -16,33 +16,82 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.BasePluginManager;
+import jetbrains.mps.plugins.PluginContributor;
+import jetbrains.mps.workbench.action.IActionsRegistry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.PluginUtil;
-import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class ApplicationPluginManager extends BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
+public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
-  @Override
-  public void loadPlugins() {
-    mySortedPlugins = createPlugins();
+  public BaseApplicationPlugin getPlugin(PluginId id) {
+    for (BaseApplicationPlugin p : getPlugins()) {
+      if (p.getId() == id) return p;
+    }
+    return null;
+  }
 
+  @Override
+  public IActionsRegistry getActionsRegistry(PluginId id) {
+    return getPlugin(id);
+  }
+
+  // load stuff
+
+  @Override
+  protected BaseApplicationPlugin createPlugin(PluginContributor contributor) {
+    return contributor.createApplicationPlugin();
+  }
+
+  @Override
+  protected void afterPluginsCreated(List<BaseApplicationPlugin> plugins) {
     BaseApplicationPlugin idePlugin = null;
-    for (BaseApplicationPlugin p : mySortedPlugins) {
+    for (BaseApplicationPlugin p : plugins) {
       if (p.getClass().getName().equals(PluginUtil.IDE_MODULE_APPPLUGIN)) {
         idePlugin = p;
         break;
       }
     }
 
-    super.loadPlugins();
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.createKeymaps();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
+      }
+    }
+
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.createGroups();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during pre-initialization ", t1);
+      }
+    }
+
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.adjustGroups();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      }
+    }
+
+    for (BaseApplicationPlugin plugin : plugins) {
+      try {
+        plugin.createCustomParts();
+      } catch (Throwable t1) {
+        LOG.error("Plugin " + plugin + " threw an exception during initialization ", t1);
+      }
+    }
 
     if (idePlugin != null) {
       GroupAdjuster.adjustTopLevelGroups(idePlugin);
@@ -51,29 +100,12 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
   }
 
   @Override
-  protected List<BaseApplicationPlugin> createPlugins() {
-    List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
-
-    Set<SModule> modules = new HashSet<SModule>();
-    modules.addAll(PluginUtil.collectPluginModules());
-    result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
-
-    result.addAll(super.createPlugins());
-
-    return result;
+  protected void beforePluginsDisposed(List<BaseApplicationPlugin> plugins) {
   }
 
   @Override
-  public void disposePlugins() {
-    Collections.reverse(mySortedPlugins);
-    for (BaseApplicationPlugin plugin : mySortedPlugins) {
-      try {
-        plugin.dispose();
-      } catch (Throwable t) {
-        LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-      }
-    }
-    mySortedPlugins.clear();
+  protected void disposePlugin(BaseApplicationPlugin plugin) {
+    plugin.dispose();
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -82,16 +114,14 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "ApplicationPluginManager";
+    return ApplicationPluginManager.class.getName();
   }
 
   @Override
   public void initComponent() {
-
   }
 
   @Override
   public void disposeComponent() {
-
   }
 }

@@ -27,6 +27,9 @@
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

@@ -193,12 +193,12 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     for (ConfigurationType type : configurationTypes) {
       String typeId = type.getClass().getName();
       if (!(SetSequence.fromSet(uniqTypes).contains(typeId))) {
-        result.add(type);
+        ListSequence.fromList(result).addElement(type);
         SetSequence.fromSet(uniqTypes).addElement(typeId);
       }
     }
 
-    return result.toArray(new ConfigurationType[result.size()]);
+    return ListSequence.fromList(result).toGenericArray(ConfigurationType.class);
   }
 
   public static RunConfigurationsStateManager getInstance(Project project) {

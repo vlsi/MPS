@@ -44,6 +44,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -87,8 +88,11 @@ public class ClassLoaderManager implements CoreComponent {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
     }
 
+    @Override
+    public void moduleAdded(SModule module) {
+      loadClasses(Arrays.asList(module), new EmptyProgressMonitor());
+    }
 
-    // todo: add listener on module added!
     // todo: add listener on module reloaded! (?)
   };
 
@@ -161,7 +165,6 @@ public class ClassLoaderManager implements CoreComponent {
 
     ClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
-      // todo: illegal state?
       return null;
     }
     try {
@@ -190,19 +193,18 @@ public class ClassLoaderManager implements CoreComponent {
       }
     }
 
-    if (!ModuleClassLoaderSupport.canCreate(module)) {
-//      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
-      return null;
-    }
-    if (!module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
+    if (module.getFacet(JavaModuleFacet.class) != null && !module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
       // core module
       LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have nonreloadable facet");
       return ClassLoaderManager.class.getClassLoader();
     }
+    
+    return myClassLoaders.get(module);
+  }
 
-    if (myClassLoaders.containsKey(module)) {
-      return myClassLoaders.get(module);
-    }
+  private ModuleClassLoader createClassLoader(SModule module) {
+    assert ModuleClassLoaderSupport.canCreate(module);
+
     ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
     ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
     // save back references
@@ -231,9 +233,32 @@ public class ClassLoaderManager implements CoreComponent {
     long startTime = System.currentTimeMillis();
     monitor.start("Unloading classes...", 2);
     try {
-      monitor.step("Invalidate classloaders...");
       toUnload = collectBackReferences(toUnload);
+      Set<SModule> notLoaded = new HashSet<SModule>();
+      for (SModule module : toUnload) {
+        if (getClassLoader(module) == null) {
+          notLoaded.add(module);
+        }
+      }
+      toUnload = new HashSet<SModule>(toUnload);
+      toUnload.removeAll(notLoaded);
+
 //      System.out.println("To unload on " + modules + " -> " + toUnload.size() + " " + toUnload);
+
+      monitor.step("Disposing old classes...");
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          startTime = System.currentTimeMillis();
+          listener.beforeClassesUnloaded(toUnload);
+        } catch (Throwable t) {
+          LOG.error(t);
+        } finally {
+          addStat("unload:" + listener.getClass().getName(), startTime);
+        }
+      }
+      monitor.advance(1);
+
+      monitor.step("Invalidate classloaders...");
       // update back refs
       for (Set<SModule> backRefs : myBackRefs.values()) {
         backRefs.removeAll(toUnload);
@@ -269,19 +294,6 @@ public class ClassLoaderManager implements CoreComponent {
 
       addStat("unload:main", startTime);
 
-      monitor.step("Disposing old classes...");
-      for (MPSClassesListener listener : myClassesHandlers) {
-        try {
-          startTime = System.currentTimeMillis();
-          listener.onClassesUnload(toUnload);
-        } catch (Throwable t) {
-          LOG.error(t);
-        } finally {
-          addStat("unload:" + listener.getClass().getName(), startTime);
-        }
-      }
-      monitor.advance(1);
-
       return toUnload;
     } finally {
       monitor.done();
@@ -294,6 +306,9 @@ public class ClassLoaderManager implements CoreComponent {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
       if (ModuleClassLoaderSupport.canCreate(module)) {
+        if (getClassLoader(module) != null) {
+          LOG.warning("ModuleClassLoader should be unloaded before load for module " + module, new Throwable());
+        }
         modulesToLoad.add(module);
       }
     }
@@ -302,10 +317,9 @@ public class ClassLoaderManager implements CoreComponent {
     // do not call listeners when no loading
     if (modulesToLoad.isEmpty()) return modulesToLoad;
 
-    // todo: remove this code?
     for (SModule module : modules) {
       if (ModuleClassLoaderSupport.canCreate(module)) {
-        getClassLoader(module);
+        createClassLoader(module);
       }
     }
     addStat("load:main", startTime);
@@ -316,7 +330,7 @@ public class ClassLoaderManager implements CoreComponent {
       for (MPSClassesListener listener : myClassesHandlers) {
         startTime = System.currentTimeMillis();
         try {
-          listener.onClassesLoad(modulesToLoad);
+          listener.afterClassesLoaded(modulesToLoad);
         } catch (Throwable t) {
           LOG.error(t);
         } finally {

@@ -264,19 +264,22 @@ with_meet:
       SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") :
       null
     );
+    if ((cType != null)) {
+      return cType;
+    }
+    cType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     if ((cType == null)) {
-      SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-      if ((cts != null)) {
-        cType = cts;
-      } else {
-        cType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-      }
-      // avoid coercing if the classifier type is not the immediate supertype 
-      if ((cType != null) && !(TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(type).contains(cType))) {
-        cType = null;
+      cType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    }
+    // avoid coercing if the classifier type is not the immediate supertype 
+    if ((cType != null)) {
+      for (Object imsup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(type, true)) {
+        if (SLinkOperations.getTarget(SNodeOperations.as(((SNode) imsup), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(cType, "classifier", false)) {
+          return cType;
+        }
       }
     }
-    return cType;
+    return null;
   }
 
   private static SNode _quotation_createNode_zgotlq_a0a6a0() {

@@ -44,6 +44,9 @@ public class BracesHighlighter {
   private SelectionListener mySelectionListener = new SelectionListener() {
     @Override
     public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      if (oldSelection == newSelection) {
+        return;
+      }
       updateBracesSelection(newSelection instanceof SingularSelection ? ((SingularSelection) newSelection).getEditorCell() : null);
     }
   };

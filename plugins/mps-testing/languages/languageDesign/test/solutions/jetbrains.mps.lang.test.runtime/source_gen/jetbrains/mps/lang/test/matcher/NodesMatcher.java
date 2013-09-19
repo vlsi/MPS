@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Iterator;
 import java.util.HashSet;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class NodesMatcher {
   public NodesMatcher() {
@@ -63,13 +63,10 @@ public class NodesMatcher {
     roles.addAll(SNodeOperations.getChildRoles(a));
     roles.addAll(SNodeOperations.getChildRoles(b));
     for (String role : roles) {
-      List<? extends SNode> children1 = IterableUtil.asList(a.getChildren(role));
-      List<? extends SNode> children2 = IterableUtil.asList(b.getChildren(role));
-      if (children1.size() != children2.size()) {
-        continue;
-      }
-      for (int i = 0; i < children1.size(); i++) {
-        NodesMatcher.match(children1.get(i), children2.get(i), map);
+      Iterator<? extends SNode> iterator1 = a.getChildren(role).iterator();
+      Iterator<? extends SNode> iterator2 = b.getChildren(role).iterator();
+      while (iterator1.hasNext() && iterator2.hasNext()) {
+        NodesMatcher.match(iterator1.next(), iterator2.next(), map);
       }
     }
     map.put(a, b);
@@ -97,29 +94,53 @@ public class NodesMatcher {
     return false;
   }
 
+  private static Map<String, SReference> getReferencesMap(SNode node) {
+    HashMap<String, SReference> references = new HashMap<String, SReference>();
+    for (SReference nextReference : node.getReferences()) {
+      references.put(nextReference.getRole(), nextReference);
+    }
+    return references;
+  }
+
   private static void matchReferences(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
+    Map<String, SReference> references1 = getReferencesMap(a);
+    Map<String, SReference> references2 = getReferencesMap(b);
+
     HashSet<String> roles = new HashSet<String>();
-    roles.addAll(SNodeOperations.getReferenceRoles(a));
-    roles.addAll(SNodeOperations.getReferenceRoles(b));
+    roles.addAll(references1.keySet());
+    roles.addAll(references2.keySet());
     for (String role : roles) {
-      SNode reference1 = null;
-      if (a.getReference(role) != null) {
-        reference1 = a.getReference(role).getTargetNode();
+      SReference reference1 = references1.get(role);
+      SNode referenceTarget1 = null;
+      if (reference1 != null) {
+        referenceTarget1 = reference1.getTargetNode();
       }
-      SNode reference2 = null;
-      if (b.getReference(role) != null) {
-        reference2 = b.getReference(role).getTargetNode();
+
+      SReference reference2 = references2.get(role);
+      SNode referenceTarget2 = null;
+      if (reference2 != null) {
+        referenceTarget2 = reference2.getTargetNode();
       }
-      if (map.containsKey(reference1)) {
-        if (map.get(reference1) != reference2) {
+
+      if (map.containsKey(referenceTarget1)) {
+        if (map.get(referenceTarget1) != referenceTarget2) {
           difference.add(new ReferenceDifferense(role, true));
         }
       } else {
-        if (reference1 != reference2) {
+        if (referenceTarget1 != referenceTarget2) {
           difference.add(new ReferenceDifferense(role, false));
         }
       }
     }
+  }
+
+  private static int countElements(Iterator it) {
+    int counter = 0;
+    while (it.hasNext()) {
+      it.next();
+      counter++;
+    }
+    return counter;
   }
 
   private static void matchChildren(SNode a, SNode b, Map<SNode, SNode> map, ArrayList<DifferanceItem> difference) {
@@ -127,14 +148,19 @@ public class NodesMatcher {
     roles.addAll(SNodeOperations.getChildRoles(a));
     roles.addAll(SNodeOperations.getChildRoles(b));
     for (String role : roles) {
-      List<? extends SNode> children1 = IterableUtil.asList(a.getChildren(role));
-      List<? extends SNode> children2 = IterableUtil.asList(b.getChildren(role));
-      if (children1.size() != children2.size()) {
-        difference.add(new ChildrenCountDifference(role, children1.size(), children2.size()));
+      Iterable<? extends SNode> children1 = a.getChildren(role);
+      Iterable<? extends SNode> children2 = b.getChildren(role);
+      int size1 = countElements(children1.iterator());
+      int size2 = countElements(children2.iterator());
+      if (size1 != size2) {
+        difference.add(new ChildrenCountDifference(role, size1, size2));
         continue;
       }
-      for (int i = 0; i < children1.size(); i++) {
-        NodeDifference d = NodesMatcher.matchNodes(children1.get(i), children2.get(i), map);
+
+      Iterator<? extends SNode> iterator1 = children1.iterator();
+      Iterator<? extends SNode> iterator2 = children2.iterator();
+      while (iterator1.hasNext() && iterator2.hasNext()) {
+        NodeDifference d = NodesMatcher.matchNodes(iterator1.next(), iterator2.next(), map);
         if (d != null) {
           difference.add(d);
         }
@@ -144,11 +170,13 @@ public class NodesMatcher {
 
   private static void matchProperties(SNode a, SNode b, ArrayList<DifferanceItem> difference) {
     HashSet<String> propertes = new HashSet<String>();
-    propertes.addAll(SNodeOperations.getProperties(a).keySet());
-    propertes.addAll(SNodeOperations.getProperties(b).keySet());
+    Map<String, String> properties1 = SNodeOperations.getProperties(a);
+    Map<String, String> properties2 = SNodeOperations.getProperties(b);
+    propertes.addAll(properties1.keySet());
+    propertes.addAll(properties2.keySet());
     for (String key : propertes) {
-      String p1 = SNodeOperations.getProperties(a).get(key);
-      String p2 = SNodeOperations.getProperties(b).get(key);
+      String p1 = properties1.get(key);
+      String p2 = properties2.get(key);
       if (p1 == null && "false".equals(p2)) {
         continue;
       }
