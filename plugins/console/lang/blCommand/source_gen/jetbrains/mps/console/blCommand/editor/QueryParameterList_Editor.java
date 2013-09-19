@@ -70,6 +70,7 @@ public class QueryParameterList_Editor extends DefaultNodeEditor {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          QueryParameter_Actions.setCellActions(elementCell, elementNode, editorContext);
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
@@ -86,6 +87,8 @@ public class QueryParameterList_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
   }

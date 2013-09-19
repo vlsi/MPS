@@ -17,14 +17,13 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.SideTransformUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
@@ -64,12 +63,7 @@ public class SideTransformHintSubstituteActionsHelper {
 
   public boolean canCreateActions() {
     if (!isValid()) return false;
-    return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
-      }
-    });
+    return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
   }
 
   public List<SubstituteAction> createActions() {
@@ -78,12 +72,7 @@ public class SideTransformHintSubstituteActionsHelper {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
-        return TypeContextManager.getInstance().runResolveAction(new Computable<List<SubstituteAction>>() {
-          @Override
-          public List<SubstituteAction> compute() {
-            return Collections.unmodifiableList(SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext));
-          }
-        });
+        return Collections.unmodifiableList(SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext));
       }
     });
   }

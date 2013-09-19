@@ -60,6 +60,13 @@ public class SNodeType_Behavior {
     return _quotation_createNode_4ouf01_a0a6();
   }
 
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    if ("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(conceptFqName)) {
+      return false;
+    }
+    return true;
+  }
+
   private static SNode _quotation_createNode_4ouf01_a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

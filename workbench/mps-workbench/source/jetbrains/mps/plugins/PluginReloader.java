@@ -22,25 +22,24 @@ import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.ProjectManagerListener;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
+import jetbrains.mps.plugins.PluginUtil.ModulePluginContributor;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class PluginReloader implements ApplicationComponent {
@@ -54,7 +53,8 @@ public class PluginReloader implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
-  private List<ProjectPluginManager> myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
+
+  private List<PluginContributor> myContributors = new ArrayList<PluginContributor>();
 
   @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
@@ -63,14 +63,46 @@ public class PluginReloader implements ApplicationComponent {
     myPluginManager = pluginManager;
   }
 
-  private void loadPlugins() {
-    checkDisposed();
-    myPluginManager.loadPlugins();
-    myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
+  private void updatePlugins(Set<SModule> toUnload, Set<SModule> toLoad) {
+    assert SwingUtilities.isEventDispatchThread() : "should be called from EDT only";
+
+    if (isDisposed()) return;
+
+    // calc contributors to unload
+    List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
+    for (PluginContributor contributor : myContributors) {
+      if (contributor instanceof ModulePluginContributor) {
+        if (toUnload.contains(((ModulePluginContributor) contributor).module)) {
+          toUnloadContributors.add(contributor);
+        }
+      }
+    }
+    Collections.reverse(toUnloadContributors);
+
+    // calc contributors to load
+    List<PluginContributor> toLoadContributors = new ArrayList<PluginContributor>();
+    toLoadContributors.addAll(PluginUtil.createPluginContributors(toLoad));
+    for (PluginContributor contributor : PluginUtil.getPluginFactoriesRegistryContributors()) {
+      if (!myContributors.contains(contributor)) {
+        toLoadContributors.add(contributor);
+      }
+    }
+
+    // unload
+    unloadPlugins(toUnloadContributors);
+    myContributors.removeAll(toUnloadContributors);
+
+    // load
+    myContributors.addAll(toLoadContributors);
+    loadPlugins(toLoadContributors);
+  }
+
+  private void loadPlugins(List<PluginContributor> contributors) {
+    myPluginManager.loadPlugins(contributors);
+
     for (Project p : myProjectManager.getOpenProjects()) {
       ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
-      myLoadedPluginManagers.add(pm);
-      pm.loadPlugins();
+      pm.loadPlugins(contributors);
     }
 
     for (PluginReloadingListener l : getListeners()) {
@@ -78,19 +110,17 @@ public class PluginReloader implements ApplicationComponent {
     }
   }
 
-  private void disposePlugins() {
-    if (isDisposed()) return;
-
+  private void unloadPlugins(List<PluginContributor> contributors) {
     for (PluginReloadingListener l : getListeners()) {
       l.beforePluginsDisposed();
     }
 
-    for (ProjectPluginManager pm : myLoadedPluginManagers) {
-      pm.disposePlugins();
+    for (Project p : myProjectManager.getOpenProjects()) {
+      ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
+      pm.unloadPlugins(contributors);
     }
-    myLoadedPluginManagers.clear();
 
-    myPluginManager.disposePlugins();
+    myPluginManager.unloadPlugins(contributors);
   }
 
   public void addReloadingListener(@NotNull PluginReloadingListener listener) {
@@ -119,7 +149,7 @@ public class PluginReloader implements ApplicationComponent {
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "PluginReloader";
+    return PluginReloader.class.getName();
   }
 
   @Override
@@ -138,72 +168,127 @@ public class PluginReloader implements ApplicationComponent {
     myPluginManager = null;
   }
 
-  private void checkDisposed() {
-    if (isDisposed()) throw new IllegalStateException("already disposed");
-  }
-
   private boolean isDisposed() {
     return myClassLoaderManager == null || myProjectManager == null || myPluginManager == null;
   }
 
   private class MyProjectManagerAdapter extends ProjectManagerAdapter {
     @Override
-    public void projectClosing(Project project) {
+    public void projectOpened(final Project project) {
       assert SwingUtilities.isEventDispatchThread();
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          disposePlugins();
+          project.getComponent(ProjectPluginManager.class).loadPlugins(myContributors);
+        }
+      });
+    }
+
+    @Override
+    public void projectClosing(final Project project) {
+      assert SwingUtilities.isEventDispatchThread();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          project.getComponent(ProjectPluginManager.class).unloadPlugins(myContributors);
         }
       });
     }
   }
 
   private class MyReloadAdapter extends MPSClassesListenerAdapter {
-    private boolean reloadScheduled = false;
+    private Map<SModule, ModuleLoadingState> states = new HashMap<SModule, ModuleLoadingState>();
 
     @Override
     public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
-      if (hasSignificantModule(unloadedModules)) {
+      Set<SModule> significantModules = getSignificantModules(unloadedModules);
+      for (SModule module : significantModules) {
+        ModuleLoadingState state = states.get(module);
+        if (state == null) {
+          states.put(module, ModuleLoadingState.UNLOAD);
+        }
+        if (state == ModuleLoadingState.LOAD) {
+          states.put(module, null);
+        }
+        if (state == ModuleLoadingState.RELOAD) {
+          states.put(module, ModuleLoadingState.UNLOAD);
+        }
+        if (state == ModuleLoadingState.UNLOAD) {
+          throw new IllegalStateException();
+        }
+      }
+      if (!significantModules.isEmpty()) {
         schedulePluginsReload();
       }
     }
 
     @Override
     public void afterClassesLoaded(Set<SModule> loadedModules) {
-      if (hasSignificantModule(loadedModules)) {
+      Set<SModule> significantModules = getSignificantModules(loadedModules);
+      for (SModule module : significantModules) {
+        ModuleLoadingState state = states.get(module);
+        if (state == null) {
+          states.put(module, ModuleLoadingState.LOAD);
+        }
+        if (state == ModuleLoadingState.UNLOAD) {
+          states.put(module, ModuleLoadingState.RELOAD);
+        }
+        if (state == ModuleLoadingState.RELOAD) {
+          throw new IllegalStateException();
+        }
+        if (state == ModuleLoadingState.LOAD) {
+          throw new IllegalStateException();
+        }
+      }
+      if (!significantModules.isEmpty()) {
         schedulePluginsReload();
       }
     }
 
-    private boolean hasSignificantModule(Set<SModule> modules) {
+    private Set<SModule> getSignificantModules(Set<SModule> modules) {
+      Set<SModule> result = new HashSet<SModule>();
+
       for (SModule module : modules) {
         if (PluginUtil.isPluginModule(module)) {
-          return true;
+          result.add(module);
         }
       }
-      return false;
+
+      return result;
     }
 
     private void schedulePluginsReload() {
-      reloadScheduled = true;
-
       //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          if (reloadScheduled && !isDisposed()) {
-            long beginTime = System.currentTimeMillis();
-            try {
-              reloadScheduled = false;
-              disposePlugins();
-              loadPlugins();
-            } finally {
-              LOG.info("Plugin reload took " + (System.currentTimeMillis() - beginTime) / 1000.0 + " s");
+          if (isDisposed()) return;
+
+          Set<SModule> toLoad = new HashSet<SModule>(), toUnload = new HashSet<SModule>();
+          for (Map.Entry<SModule, ModuleLoadingState> entry : states.entrySet()) {
+            if (entry.getValue() == ModuleLoadingState.UNLOAD || entry.getValue() == ModuleLoadingState.RELOAD) {
+              toUnload.add(entry.getKey());
             }
+            if (entry.getValue() == ModuleLoadingState.LOAD || entry.getValue() == ModuleLoadingState.RELOAD) {
+              toLoad.add(entry.getKey());
+            }
+          }
+          states.clear();
+
+          if (toLoad.isEmpty() && toUnload.isEmpty()) return;
+
+          long beginTime = System.currentTimeMillis();
+          try {
+            updatePlugins(toUnload, toLoad);
+          } finally {
+            LOG.info("Plugin reload took " + (System.currentTimeMillis() - beginTime) / 1000.0 + " s");
           }
         }
       });
     }
+  }
+
+  private static enum ModuleLoadingState {
+    LOAD, UNLOAD, RELOAD
   }
 }

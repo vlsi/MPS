@@ -142,6 +142,9 @@ public class IntentionsSupport {
     myEditor.getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
       public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        if (oldSelection == newSelection) {
+          return;
+        }
         if (!((EditorComponent) editorComponent).isFocusOwner()) return;
         updateIntentionsStatus();
       }

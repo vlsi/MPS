@@ -268,6 +268,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_subtypeOf_bound_InequationReplacementRule" file="LowerBoundType_subtypeOf_bound_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.MakeInnerClassStatic_QuickFix" file="MakeInnerClassStatic_QuickFix.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -597,6 +613,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.EnumsAreEnum_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Interface_is_comparable_to_ClassifierType_ComparisonRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_subtypeOf_bound_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.NonFinalParametersInAnonymousClass_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.NonFinalVariablesInAnonymousClass_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.ObjectArraySupertypes_SubtypingRule" />
@@ -607,7 +624,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.anonymousClassExtendsItsClassifier_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_to_wildcard_type_ComparisonRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_comparable_with_nulltype_ComparisonRule" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeof_wildcard_type_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_supertypeof_bottom_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.any_type_supertypeof_nulltype_InequationReplacementRule" />
@@ -908,19 +925,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_SubtypingRule" file="any_type_subtypeOf_LowerBoundType_SubtypingRule.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_InequationReplacementRule" file="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeof_wildcard_type_InequationReplacementRule" file="any_type_subtypeof_wildcard_type_InequationReplacementRule.java">
     <classNode dependClassName="java.lang.String" />

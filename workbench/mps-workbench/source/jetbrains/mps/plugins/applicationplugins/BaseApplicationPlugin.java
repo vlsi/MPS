@@ -39,6 +39,8 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
   private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<Pair<DefaultActionGroup, DefaultActionGroup>>();
 
+  private Map<DefaultActionGroup, DefaultActionGroup> myAdjustedGroups = new HashMap<DefaultActionGroup, DefaultActionGroup>();
+
   //----------plugin id------------
 
   protected abstract PluginId getId();
@@ -72,6 +74,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
       myXmlGroups.add(new Pair<DefaultActionGroup, DefaultActionGroup>(gTo, gWhat));
     }
 
+    myAdjustedGroups.put(gTo, gWhat);
     if (labelName != null) {
       Constraints constraints = new Constraints(Anchor.AFTER, labelName);
       gTo.add(gWhat, constraints);
@@ -140,6 +143,10 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
       change.dispose();
     }
     myKeymapChanges.clear();
+
+    for (Map.Entry<DefaultActionGroup, DefaultActionGroup> adjustedGroup : myAdjustedGroups.entrySet()) {
+      adjustedGroup.getKey().remove(adjustedGroup.getValue());
+    }
 
     for (Pair<DefaultActionGroup, DefaultActionGroup> e : myXmlGroups) {
       e.o1.remove(e.o2);

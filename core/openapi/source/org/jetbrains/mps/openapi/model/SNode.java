@@ -54,22 +54,27 @@ public interface SNode {
 
   /**
    * Containing model or null if the node is not contained in any model
+   * Does not produce node read event as the function depending on model is not a pure node function.
+   * @see SModelAccessListener
    */
   SModel getModel();
 
   /**
    * Uniquely identifies the node within its containing model. May also be null.
+   * Does not produce node read event as the result value can't be changed.
    */
   SNodeId getNodeId();
 
   /**
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
    * Represents the only correct way to pass or store nodes between read/write actions.
+   * Does not produce node read event as the node is already obtained, and the read event has already happened.
    */
   SNodeReference getReference();
 
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.
+   * Does not produce node read event as the result value can't be changed.
    */
   @NotNull
   SConcept getConcept();
@@ -111,24 +116,39 @@ public interface SNode {
 
   //base tree queries
 
+  /**
+   * Returns the parent of this node
+   * Does not produce read on current as current is already obtained
+   * @return parent of this node
+   */
   SNode getParent();
 
   //complex queries
 
   @NotNull
+  /**
+   * Returns the ancestor of current node, which parent is null
+   * Does not produce read on current as current is already obtained
+   * @return root containing this node
+   */
   SNode getContainingRoot();
 
+  /**
+   * Returns role of this node in parent node
+   */
   String getRoleInParent();
 
   SNode getFirstChild();
 
   /**
    * no parent -> no sibling. Root has no siblings
+   * Does not produce read on current as current is already obtained
    */
   SNode getPrevSibling();
 
   /**
    * no parent -> no sibling. Root has no siblings
+   * Does not produce read on current as current is already obtained
    */
   SNode getNextSibling();
 
@@ -136,11 +156,14 @@ public interface SNode {
 
   /**
    * Returns an immutable collection of children in the specified role.
+   * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
+   * does not produce read accesses for skipped children
    */
   Iterable<? extends SNode> getChildren(String role);
 
   /**
    * Returns an immutable collection of all children.
+   * Read access policy is same to getChildren(role)
    */
   public Iterable<? extends SNode> getChildren();
 
@@ -178,6 +201,7 @@ public interface SNode {
    * the target nodes even when working with invalid code.
    * <p/>
    * The returned collection is immutable.
+   * Produces read access on the node.
    */
   public Iterable<? extends SReference> getReferences();
 

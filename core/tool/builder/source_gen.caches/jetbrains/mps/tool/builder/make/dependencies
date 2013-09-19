@@ -161,11 +161,13 @@
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.messages.IMessage" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />

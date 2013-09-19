@@ -23,6 +23,7 @@ import jetbrains.mps.newTypesystem.relations.AbstractRelation;
 import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -77,19 +78,19 @@ public class Inequalities {
     }
   }
 
-  private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
-    SNode minNode = null;
-    for (SNode node : unsorted) {
+  private SNode getNodeWithNoInput(Iterable<SNode> sorted, Set<SNode> used) {
+    for (SNode node : sorted) {
       if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
         return node;
       }
     }
     //if no absolutely independent nodes - than try more complicated way
-    for (SNode node : unsorted) {
-      if (isIndependent(unsorted, used, node)) {
+    SNode minNode = null;
+    for (SNode node : sorted) {
+      if (isIndependent(used, node)) {
         return node;
       }
-      if (minNode == null || minNode.getName().compareTo(node.getName()) >= 0) {
+      if (minNode == null) {
         minNode = node;
       }
     }
@@ -97,7 +98,7 @@ public class Inequalities {
     return minNode;
   }
 
-  private boolean isIndependent(Set<SNode> unsorted, Set<SNode> used, SNode var) {
+  private boolean isIndependent(Set<SNode> used, SNode var) {
     Queue<SNode> dependsOn = new LinkedList<SNode>();
     Set<SNode> passed = new HashSet<SNode>();
     dependsOn.addAll(myInputsToOutputsInc.getBySecond(var));
@@ -243,7 +244,15 @@ public class Inequalities {
       }
     }
     Set<SNode> usedNodes = new HashSet<SNode>();
-    Set<SNode> tempNodes = new HashSet<SNode>(nodes);
+    LinkedList<SNode> tempNodes = new LinkedList<SNode>(nodes);
+    // sort once to avoid n^2
+    Collections.sort(tempNodes, new Comparator<SNode>() {
+      @Override
+      public int compare(SNode a, SNode b) {
+        return ((SNodeId)a.getNodeId()).compareTo((SNodeId)b.getNodeId());
+      }
+    });
+
     while (tempNodes.size() > 0) {
       SNode current = getNodeWithNoInput(tempNodes, usedNodes);
       if (solveRelationsForNode(current)) {
@@ -359,12 +368,6 @@ public class Inequalities {
     Set<SNode> rightTypes = new LinkedHashSet<SNode>();
     Set<SNode> leftTypes = new LinkedHashSet<SNode>();
     collectNodesTransitive(node, leftTypes, false, typesToBlocks, relation, new HashSet<SNode>());
-    if (leftTypes.size() > 1) {
-      for(Iterator<SNode> it = leftTypes.iterator(); it.hasNext(); ) {
-        final SNode next = it.next();
-        if (LatticeUtil.isMeet(next) && TypesUtil.hasVariablesInside(next)) it.remove();
-      }
-    }
     if (!mySolveOnlyRight) {
       collectNodesTransitive(node, rightTypes, true, typesToBlocks, relation, new HashSet<SNode>());
     }

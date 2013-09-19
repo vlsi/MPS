@@ -278,7 +278,9 @@
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="118" startPosition="36" endLine="119" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="119" startPosition="55" endLine="120" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="120" startPosition="56" endLine="121" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="121" startPosition="42" endLine="122" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="121" startPosition="42" endLine="122" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="122" startPosition="90" endLine="123" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="123" startPosition="87" endLine="124" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1563914226484928856" fileName="ListValue_Editor.java" startLine="48" startPosition="58" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="valueListHandler_9xngu4_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -292,8 +294,8 @@
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_9xngu4_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_9xngu4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="101" startPosition="132" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="114" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="101" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="114" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1563914226484928856" fileName="ListValue_Editor.java" startLine="43" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_9xngu4_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="36" startPosition="28" endLine="37" endPosition="80" />
@@ -353,26 +355,26 @@
       <varInfo nodeId="1563914226484928846" varName="editorContext" />
       <varInfo nodeId="1563914226484928846" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="115" startPosition="104" endLine="122" endPosition="24">
-      <varInfo nodeId="1563914226484928846" varName="editorCell" />
-      <varInfo nodeId="1563914226484928846" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="102" startPosition="96" endLine="110" endPosition="9" />
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="33" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1563914226484928846" varName="editorContext" />
       <varInfo nodeId="1563914226484928846" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="101" startPosition="132" endLine="111" endPosition="7" />
-    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="114" startPosition="0" endLine="124" endPosition="0">
-      <varInfo nodeId="1563914226484928846" varName="editorContext" />
-      <varInfo nodeId="1563914226484928846" varName="nextNode" />
-      <varInfo nodeId="1563914226484928846" varName="prevNode" />
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="115" startPosition="104" endLine="124" endPosition="24">
+      <varInfo nodeId="1563914226484928846" varName="editorCell" />
+      <varInfo nodeId="1563914226484928846" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="101" startPosition="132" endLine="111" endPosition="7" />
     <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="101" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="1563914226484928846" varName="editorContext" />
       <varInfo nodeId="1563914226484928846" varName="elementCell" />
       <varInfo nodeId="1563914226484928846" varName="elementNode" />
       <varInfo nodeId="1563914226484928846" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="114" startPosition="0" endLine="126" endPosition="0">
+      <varInfo nodeId="1563914226484928846" varName="editorContext" />
+      <varInfo nodeId="1563914226484928846" varName="nextNode" />
+      <varInfo nodeId="1563914226484928846" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1563914226484928856" fileName="ListValue_Editor.java" startLine="43" startPosition="87" endLine="60" endPosition="22">
       <varInfo nodeId="1563914226484928856" varName="attributeConcept" />
@@ -384,8 +386,8 @@
       <varInfo nodeId="1563914226484928856" varName="editorContext" />
       <varInfo nodeId="1563914226484928856" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="78" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor$valueListHandler_9xngu4_c0" />
-    <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="28" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor" />
+    <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="78" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor$valueListHandler_9xngu4_c0" />
+    <unitInfo nodeId="1563914226484928846" fileName="ListValue_Editor.java" startLine="28" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.editor.ListValue_Editor" />
   </root>
   <root nodeRef="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)/1563914226484929057">
     <nodeInfo nodeId="1563914226484929057" fileName="TestListReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
