@@ -90,7 +90,7 @@ public class CopyPasteUtil {
     for (SNode newNode : result) {
       CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
     }
-    return new PasteNodeData(result, null, model.getReference(), necessaryLanguages, necessaryModels);
+    return new PasteNodeData(result, null, check_lwiaog_c0a31a3(model), necessaryLanguages, necessaryModels);
   }
 
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
@@ -438,4 +438,11 @@ public class CopyPasteUtil {
   }
 
   protected static Logger LOG = LogManager.getLogger(CopyPasteUtil.class);
+
+  private static SModelReference check_lwiaog_c0a31a3(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
+  }
 }
