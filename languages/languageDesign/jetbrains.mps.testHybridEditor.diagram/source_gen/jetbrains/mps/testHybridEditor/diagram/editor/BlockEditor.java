@@ -6,8 +6,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.jetpad.projectional.view.RectView;
+import jetbrains.jetpad.values.Color;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collection;
@@ -21,11 +24,30 @@ public class BlockEditor extends AbstractJetpadEditor {
 
     GenericViewCell blockCell = GenericViewCell.createViewCell(context, node, myView);
 
-    myView.setTextView(SPropertyOperations.getString(node, "name"));
+    createRectCell(context, node, blockCell);
+    createTextCell(context, node, blockCell);
     createInputPorts(context, node, blockCell);
     createOutputPorts(context, node, blockCell);
     myView.moveTo(new Vector(SPropertyOperations.getInteger(node, "x"), SPropertyOperations.getInteger(node, "y")));
     return blockCell;
+  }
+
+  private void createRectCell(EditorContext context, SNode node, GenericViewCell blockCell) {
+    RectView rectView = new RectView();
+    rectView.background().set(Color.LIGHT_GRAY);
+    rectView.visible().set(true);
+    rectView.dimension().set(new Vector(75, 75));
+    myView.setRectView(rectView);
+    GenericViewCell rectCell = GenericViewCell.createViewCell(context, node, rectView);
+    blockCell.addEditorCell(rectCell);
+  }
+
+  private void createTextCell(EditorContext context, SNode node, GenericViewCell blockCell) {
+    MPSTextView textView = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
+    textView.text().set(node.getName());
+    myView.setTextView(textView);
+    GenericViewCell textCell = GenericViewCell.createViewCell(context, node, textView);
+    blockCell.addEditorCell(textCell);
   }
 
   private void createInputPorts(EditorContext context, SNode node, GenericViewCell blockCell) {
