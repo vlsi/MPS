@@ -5,13 +5,13 @@ package jetbrains.mps.lang.editor.figures.sandbox;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.projectional.view.TextView;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.jetpad.projectional.diagram.base.GridDirection;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.geometry.Rectangle;
@@ -22,24 +22,35 @@ import java.util.Iterator;
 
 public class MPSBlockView extends GroupView {
   private RectView myRectView;
-  private TextView myTextView;
-  private final GroupView inputs = new GroupView();
-  private final GroupView outputs = new GroupView();
+  private TextView myTextView = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
+  private final GroupView myInputs = new GroupView();
+  private final GroupView myOutputs = new GroupView();
   private final Map<SNode, View> portToViewMap = MapSequence.fromMap(new HashMap<SNode, View>());
   private GridDirection myDir = GridDirection.RIGHT;
 
 
 
   public MPSBlockView() {
-    children().add(inputs);
-    children().add(outputs);
+    children().add(myInputs);
+    children().add(myOutputs);
     createRectView();
   }
 
   public void setTextView(String name) {
-    myTextView = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
     myTextView.text().set(name);
     attach(this, myTextView);
+  }
+
+  public TextView getTextView() {
+    return myTextView;
+  }
+
+  public GroupView getInputs() {
+    return myInputs;
+  }
+
+  public GroupView getOutputs() {
+    return myOutputs;
   }
 
   private void createRectView() {
@@ -52,15 +63,15 @@ public class MPSBlockView extends GroupView {
   }
 
   public GroupView getInputView() {
-    return inputs;
+    return myInputs;
   }
 
   public GroupView getOutputView() {
-    return outputs;
+    return myOutputs;
   }
 
   public void addInputPort(View inputPortView, SNode port) {
-    attach(inputs, inputPortView);
+    attach(myInputs, inputPortView);
     MapSequence.fromMap(portToViewMap).put(port, inputPortView);
   }
 
@@ -72,7 +83,7 @@ public class MPSBlockView extends GroupView {
   }
 
   public void addOutputPort(View outputPortView, SNode port) {
-    attach(outputs, outputPortView);
+    attach(myOutputs, outputPortView);
     MapSequence.fromMap(portToViewMap).put(port, outputPortView);
   }
 
@@ -85,8 +96,8 @@ public class MPSBlockView extends GroupView {
     super.doValidate(context);
     Rectangle labelRect = myTextView.bounds().get();
     myRectView.dimension().set(myRectView.dimension().get().max(labelRect.dimension));
-    layoutPorts(inputs.children(), myDir.opposite());
-    layoutPorts(outputs.children(), myDir);
+    layoutPorts(myInputs.children(), myDir.opposite());
+    layoutPorts(myOutputs.children(), myDir);
     super.doValidate(context);
 
   }

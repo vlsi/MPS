@@ -8,9 +8,11 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.testHybridEditor.diagram.editor.MPSBlockView;
+import jetbrains.mps.lang.editor.figures.sandbox.MPSBlockView;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -28,6 +30,25 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     MPSBlockView view = new MPSBlockView();
     GenericViewCell cell = GenericViewCell.createViewCell(editorContext, node, view);
     view.setTextView(SPropertyOperations.getString(node, "name"));
+    for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
+      GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(child);
+      cell.addEditorCell(childCell);
+
+      if (childCell.getView().parent() != null) {
+        childCell.getView().parent().children().remove(childCell.getView().parent().children().indexOf(childCell.getView()));
+      }
+      view.getInputs().children().add(childCell.getView());
+    }
+    for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
+      GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(child);
+      cell.addEditorCell(childCell);
+
+      if (childCell.getView().parent() != null) {
+        childCell.getView().parent().children().remove(childCell.getView().parent().children().indexOf(childCell.getView()));
+      }
+      view.getOutputs().children().add(childCell.getView());
+    }
+
     return cell;
 
   }

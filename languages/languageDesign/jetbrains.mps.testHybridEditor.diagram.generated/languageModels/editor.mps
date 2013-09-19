@@ -21,11 +21,11 @@
         <link role="property" roleId="gbdf.1094405431463762212" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterLink" typeId="gbdf.1094405431463762240" id="1094405431463946984" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="inputs" />
+        <property name="name" nameId="tpck.1169194664001" value="myInputs" />
         <link role="link" roleId="gbdf.1094405431463762255" targetNodeId="adck.725186580883451902" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterLink" typeId="gbdf.1094405431463762240" id="1094405431463946991" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="outputs" />
+        <property name="name" nameId="tpck.1169194664001" value="myOutputs" />
         <link role="link" roleId="gbdf.1094405431463762255" targetNodeId="adck.725186580883451904" />
       </node>
     </node>
