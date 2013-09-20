@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dpixwjlp1f8um0jwnonsggtpcdiod2u">
+<dependencies version="2" modelHash="dixiduvwwlqksp5063ny7v8fekf1wnz">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -10,7 +10,6 @@
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
-    <dep root="1094405431463663056" />
     <dep root="1094405431463761863" />
     <dep root="1094405431463762199" />
     <dep root="1094405431463762240" />
@@ -19,6 +18,7 @@
     <dep root="6306886970789271602" />
     <dep root="6306886970790135647" />
     <dep root="6306886970790145497" />
+    <dep root="6306886970791033847" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -29,8 +29,7 @@
   </common>
   <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-6av0u3t2xqimv3jtsbiw9oqau02yhkd" />
   <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx" />
-  <source id="1094405431463663051" name="ExternalFigureReference" hash="c393c4lffyvapnxn4kjhgmq0o6w9bxg" />
-  <source id="1094405431463663056" name="ExternalFigureParameterReference" hash="-2vy2tpnsyl6jz7qwssobpshli40hj68" />
+  <source id="1094405431463663051" name="ExternalFigureReference" hash="-15jge7fjsaayroipsv092h0j981u5oq" />
   <source id="1094405431463761863" name="AbstractFigureParameter" hash="2mi0w1lbbriemskptmbfzh5l70jzj97" />
   <source id="1094405431463762199" name="FigureParameterProperty" hash="4afw3ahdx3rhxo459ddhfu2rmeqfy9i" />
   <source id="1094405431463762240" name="FigureParameterLink" hash="-b3dk31lpaj07qklxngyik4iaa3hmpnp" />
