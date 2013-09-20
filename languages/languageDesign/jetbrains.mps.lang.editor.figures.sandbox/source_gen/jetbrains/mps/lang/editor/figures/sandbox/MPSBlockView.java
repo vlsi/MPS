@@ -14,6 +14,7 @@ import java.util.HashMap;
 import jetbrains.jetpad.projectional.diagram.base.GridDirection;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.geometry.Rectangle;
 import java.util.List;
 import java.util.ArrayList;
@@ -58,7 +59,6 @@ public class MPSBlockView extends GroupView {
     myRectView.background().set(Color.LIGHT_GRAY);
     myRectView.visible().set(true);
     myRectView.dimension().set(new Vector(75, 75));
-
     attach(this, myRectView);
   }
 
@@ -73,6 +73,10 @@ public class MPSBlockView extends GroupView {
   public void addInputPort(View inputPortView, SNode port) {
     attach(myInputs, inputPortView);
     MapSequence.fromMap(portToViewMap).put(port, inputPortView);
+  }
+
+  public Property<Vector> dimension() {
+    return myRectView.dimension();
   }
 
   private void attach(View parent, View inputPortView) {

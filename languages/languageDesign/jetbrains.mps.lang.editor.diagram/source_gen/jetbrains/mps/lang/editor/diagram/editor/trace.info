@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/1094405431463761909">
     <nodeInfo nodeId="1094405431463761909" fileName="ExternalFigureReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1094405431463761909" fileName="ExternalFigureReference_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -506,22 +506,24 @@
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="123" startPosition="36" endLine="124" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="124" startPosition="55" endLine="125" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="125" startPosition="56" endLine="126" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="126" startPosition="42" endLine="127" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="131" startPosition="88" endLine="132" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="132" startPosition="87" endLine="133" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="133" startPosition="47" endLine="134" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="134" startPosition="34" endLine="135" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="138" startPosition="91" endLine="139" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="139" startPosition="97" endLine="140" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="140" startPosition="50" endLine="141" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="141" startPosition="28" endLine="142" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="142" startPosition="34" endLine="143" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="143" startPosition="49" endLine="144" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="144" startPosition="40" endLine="145" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="144" startPosition="40" endLine="145" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="145" startPosition="82" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="149" startPosition="89" endLine="150" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="150" startPosition="145" endLine="151" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="126" startPosition="42" endLine="127" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="127" startPosition="90" endLine="128" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="128" startPosition="87" endLine="129" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="133" startPosition="88" endLine="134" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="134" startPosition="87" endLine="135" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="135" startPosition="47" endLine="136" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="136" startPosition="34" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="140" startPosition="91" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="141" startPosition="97" endLine="142" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="142" startPosition="50" endLine="143" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="143" startPosition="28" endLine="144" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="144" startPosition="34" endLine="145" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="145" startPosition="49" endLine="146" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="146" startPosition="40" endLine="147" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="146" startPosition="40" endLine="147" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="147" startPosition="82" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="151" startPosition="89" endLine="152" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="152" startPosition="145" endLine="153" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463845436" fileName="CellModel_DiagramNode_Editor.java" startLine="53" startPosition="58" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -529,18 +531,18 @@
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="112" startPosition="9" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="108" startPosition="134" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_5xszyv_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_5xszyv_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463845436" fileName="CellModel_DiagramNode_Editor.java" startLine="59" startPosition="59" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1094405431463845441" fileName="CellModel_DiagramNode_Editor.java" startLine="68" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5xszyv_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="131" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5xszyv_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="133" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5xszyv_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_5xszyv_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_5xszyv_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="106" startPosition="132" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="119" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="138" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_5xszyv_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="140" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_5xszyv_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="106" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="119" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463845436" fileName="CellModel_DiagramNode_Editor.java" startLine="48" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_5xszyv_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="33" startPosition="82" endLine="34" endPosition="65" />
@@ -551,12 +553,12 @@
     <scopeInfo nodeId="1094405431463845436" fileName="CellModel_DiagramNode_Editor.java" startLine="54" startPosition="39" endLine="55" endPosition="35" />
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="84" startPosition="101" endLine="85" endPosition="50" />
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="113" startPosition="131" endLine="114" endPosition="139" />
-    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="144" startPosition="40" endLine="145" endPosition="82" />
+    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="146" startPosition="40" endLine="147" endPosition="82" />
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="88" startPosition="66" endLine="90" endPosition="93">
       <varInfo nodeId="1094405431463844235" varName="listOwner" />
     </scopeInfo>
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="109" startPosition="34" endLine="111" endPosition="80" />
-    <scopeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="149" startPosition="89" endLine="151" endPosition="22">
+    <scopeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="151" startPosition="89" endLine="153" endPosition="22">
       <varInfo nodeId="3152052307426710942" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
@@ -588,10 +590,10 @@
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="99" startPosition="68" endLine="103" endPosition="23">
       <varInfo nodeId="1094405431463844235" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="131" startPosition="88" endLine="135" endPosition="22">
+    <scopeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="133" startPosition="88" endLine="137" endPosition="22">
       <varInfo nodeId="1094405431463845449" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="3152052307426710942" fileName="CellModel_DiagramNode_Editor.java" startLine="151" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="3152052307426710942" varName="editorContext" />
       <varInfo nodeId="3152052307426710942" varName="node" />
     </scopeInfo>
@@ -610,7 +612,7 @@
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="1094405431463844235" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="131" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="1094405431463845449" fileName="CellModel_DiagramNode_Editor.java" startLine="133" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="1094405431463845449" varName="editorContext" />
       <varInfo nodeId="1094405431463845449" varName="node" />
     </scopeInfo>
@@ -618,15 +620,15 @@
       <varInfo nodeId="1094405431463844235" varName="editorContext" />
       <varInfo nodeId="1094405431463844235" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="120" startPosition="104" endLine="127" endPosition="24">
-      <varInfo nodeId="1094405431463844235" varName="editorCell" />
-      <varInfo nodeId="1094405431463844235" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="37" startPosition="89" endLine="45" endPosition="22">
       <varInfo nodeId="1094405431463844235" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="107" startPosition="96" endLine="115" endPosition="9" />
-    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="138" startPosition="91" endLine="146" endPosition="22">
+    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="140" startPosition="91" endLine="148" endPosition="22">
+      <varInfo nodeId="1094405431463844235" varName="editorCell" />
+      <varInfo nodeId="1094405431463844235" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="120" startPosition="104" endLine="129" endPosition="24">
       <varInfo nodeId="1094405431463844235" varName="editorCell" />
       <varInfo nodeId="1094405431463844235" varName="style" />
     </scopeInfo>
@@ -635,12 +637,7 @@
       <varInfo nodeId="1094405431463844235" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="106" startPosition="132" endLine="116" endPosition="7" />
-    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="119" startPosition="0" endLine="129" endPosition="0">
-      <varInfo nodeId="1094405431463844235" varName="editorContext" />
-      <varInfo nodeId="1094405431463844235" varName="nextNode" />
-      <varInfo nodeId="1094405431463844235" varName="prevNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="138" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="140" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="1094405431463844235" varName="editorContext" />
       <varInfo nodeId="1094405431463844235" varName="node" />
     </scopeInfo>
@@ -649,6 +646,11 @@
       <varInfo nodeId="1094405431463844235" varName="elementCell" />
       <varInfo nodeId="1094405431463844235" varName="elementNode" />
       <varInfo nodeId="1094405431463844235" varName="listOwner" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="119" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="1094405431463844235" varName="editorContext" />
+      <varInfo nodeId="1094405431463844235" varName="nextNode" />
+      <varInfo nodeId="1094405431463844235" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1094405431463845436" fileName="CellModel_DiagramNode_Editor.java" startLine="48" startPosition="87" endLine="65" endPosition="22">
       <varInfo nodeId="1094405431463845436" varName="attributeConcept" />
@@ -660,8 +662,410 @@
       <varInfo nodeId="1094405431463845436" varName="editorContext" />
       <varInfo nodeId="1094405431463845436" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="83" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor$parameterListHandler_5xszyv_c0" />
-    <unitInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="28" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor" />
+    <unitInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="83" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor$parameterListHandler_5xszyv_c0" />
+    <unitInfo nodeId="1094405431463844235" fileName="CellModel_DiagramNode_Editor.java" startLine="28" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor" />
+  </root>
+  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/6306886970785336040">
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="31" startPosition="99" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="36" startPosition="80" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="40" startPosition="89" endLine="41" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="41" startPosition="131" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="42" startPosition="34" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="43" startPosition="51" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="44" startPosition="40" endLine="45" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="45" startPosition="222" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="53" startPosition="47" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="58" startPosition="88" endLine="59" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="59" startPosition="87" endLine="60" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="60" startPosition="47" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="65" startPosition="87" endLine="66" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="66" startPosition="81" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="67" startPosition="30" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="68" startPosition="43" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="69" startPosition="26" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="71" startPosition="39" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="74" startPosition="15" endLine="75" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="76" startPosition="5" endLine="77" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="77" startPosition="73" endLine="78" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="78" startPosition="57" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="80" startPosition="35" endLine="81" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="81" startPosition="72" endLine="82" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="82" startPosition="78" endLine="83" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="84" startPosition="10" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_StyleClassItem_cellMenu_4kmnll_a0a0#()V" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="70" startPosition="58" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="73" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_4kmnll_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="79" startPosition="59" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_4kmnll_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_4kmnll_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="65" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_4kmnll_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="50" startPosition="62" endLine="50" endPosition="62" />
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" />
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" />
+    <scopeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="53" startPosition="47" endLine="54" endPosition="66" />
+    <scopeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="71" startPosition="39" endLine="72" endPosition="34" />
+    <scopeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="74" startPosition="15" endLine="75" endPosition="96" />
+    <scopeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="50" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6306886970785336040" varName="editorContext" />
+      <varInfo nodeId="6306886970785336040" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="80" startPosition="35" endLine="83" endPosition="105">
+      <varInfo nodeId="1221064737626" varName="manager" />
+      <varInfo nodeId="1221064737626" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="58" startPosition="88" endLine="62" endPosition="22">
+      <varInfo nodeId="6306886970789332651" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="40" startPosition="89" endLine="46" endPosition="22">
+      <varInfo nodeId="6306886970785336040" varName="editorCell" />
+      <varInfo nodeId="6306886970785336040" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970789332651" fileName="FigureColorStyleClassItem_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="6306886970789332651" varName="editorContext" />
+      <varInfo nodeId="6306886970789332651" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="30" startPosition="89" endLine="37" endPosition="22">
+      <varInfo nodeId="6306886970785336040" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="6306886970785336040" varName="editorContext" />
+      <varInfo nodeId="6306886970785336040" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6306886970785336040" varName="editorContext" />
+      <varInfo nodeId="6306886970785336040" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="65" startPosition="87" endLine="85" endPosition="22">
+      <varInfo nodeId="1221064737626" varName="attributeConcept" />
+      <varInfo nodeId="1221064737626" varName="attributeKind" />
+      <varInfo nodeId="1221064737626" varName="editorCell" />
+      <varInfo nodeId="1221064737626" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221064737626" fileName="FigureColorStyleClassItem_Editor.java" startLine="65" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1221064737626" varName="editorContext" />
+      <varInfo nodeId="1221064737626" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2886182022232400476" fileName="FigureColorStyleClassItem_Editor.java" startLine="49" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureColorStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_4kmnll_a0a0" />
+    <unitInfo nodeId="6306886970785336040" fileName="FigureColorStyleClassItem_Editor.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureColorStyleClassItem_Editor" />
+  </root>
+  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/6306886970790145512">
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="31" startPosition="99" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="36" startPosition="80" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="40" startPosition="89" endLine="41" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="41" startPosition="131" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="42" startPosition="34" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="43" startPosition="51" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="44" startPosition="40" endLine="45" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="45" startPosition="226" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="53" startPosition="47" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="58" startPosition="88" endLine="59" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="59" startPosition="87" endLine="60" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="60" startPosition="47" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="65" startPosition="87" endLine="66" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="66" startPosition="81" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="67" startPosition="30" endLine="68" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="68" startPosition="43" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="69" startPosition="26" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="71" startPosition="39" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="74" startPosition="15" endLine="75" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="76" startPosition="5" endLine="77" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="77" startPosition="73" endLine="78" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="78" startPosition="57" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="80" startPosition="35" endLine="81" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="81" startPosition="72" endLine="82" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="82" startPosition="78" endLine="83" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="84" startPosition="10" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_StyleClassItem_cellMenu_v28n3c_a0a0#()V" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="70" startPosition="58" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="73" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_v28n3c_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="79" startPosition="59" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_v28n3c_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_v28n3c_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="65" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_v28n3c_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="50" startPosition="62" endLine="50" endPosition="62" />
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" />
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="34" startPosition="82" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="80" />
+    <scopeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="53" startPosition="47" endLine="54" endPosition="66" />
+    <scopeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="71" startPosition="39" endLine="72" endPosition="34" />
+    <scopeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="74" startPosition="15" endLine="75" endPosition="96" />
+    <scopeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="50" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6306886970790145512" varName="editorContext" />
+      <varInfo nodeId="6306886970790145512" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="80" startPosition="35" endLine="83" endPosition="105">
+      <varInfo nodeId="6306886970790145540" varName="manager" />
+      <varInfo nodeId="6306886970790145540" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="58" startPosition="88" endLine="62" endPosition="22">
+      <varInfo nodeId="6306886970790145539" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="40" startPosition="89" endLine="46" endPosition="22">
+      <varInfo nodeId="6306886970790145512" varName="editorCell" />
+      <varInfo nodeId="6306886970790145512" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145539" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="6306886970790145539" varName="editorContext" />
+      <varInfo nodeId="6306886970790145539" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="30" startPosition="89" endLine="37" endPosition="22">
+      <varInfo nodeId="6306886970790145512" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="6306886970790145512" varName="editorContext" />
+      <varInfo nodeId="6306886970790145512" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="6306886970790145512" varName="editorContext" />
+      <varInfo nodeId="6306886970790145512" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="65" startPosition="87" endLine="85" endPosition="22">
+      <varInfo nodeId="6306886970790145540" varName="attributeConcept" />
+      <varInfo nodeId="6306886970790145540" varName="attributeKind" />
+      <varInfo nodeId="6306886970790145540" varName="editorCell" />
+      <varInfo nodeId="6306886970790145540" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970790145540" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="65" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="6306886970790145540" varName="editorContext" />
+      <varInfo nodeId="6306886970790145540" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="6306886970790145538" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="49" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureDimensionStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_v28n3c_a0a0" />
+    <unitInfo nodeId="6306886970790145512" fileName="FigureDimensionStyleClassItem_Editor.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureDimensionStyleClassItem_Editor" />
+  </root>
+  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/6306886970791072640">
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="42" startPosition="88" endLine="43" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="43" startPosition="93" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="44" startPosition="47" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="45" startPosition="34" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="49" startPosition="88" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="50" startPosition="87" endLine="51" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="51" startPosition="47" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="52" startPosition="34" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="57" startPosition="92" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="58" startPosition="47" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="59" startPosition="34" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="63" startPosition="87" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="64" startPosition="81" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="65" startPosition="30" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="66" startPosition="43" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="67" startPosition="26" endLine="68" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="68" startPosition="89" endLine="69" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="69" startPosition="58" endLine="70" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="70" startPosition="73" endLine="71" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="71" startPosition="57" endLine="72" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="73" startPosition="35" endLine="74" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="74" startPosition="72" endLine="75" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="75" startPosition="78" endLine="76" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="77" startPosition="10" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="82" startPosition="33" endLine="83" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="86" startPosition="69" endLine="87" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="90" startPosition="81" endLine="91" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="94" startPosition="92" endLine="95" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="95" startPosition="84" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="96" startPosition="31" endLine="97" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="97" startPosition="44" endLine="98" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="98" startPosition="33" endLine="99" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="99" startPosition="28" endLine="100" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="100" startPosition="60" endLine="101" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="102" startPosition="41" endLine="103" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="103" startPosition="42" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="105" startPosition="7" endLine="106" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="106" startPosition="75" endLine="107" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="107" startPosition="59" endLine="108" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="109" startPosition="37" endLine="110" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="110" startPosition="74" endLine="111" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="111" startPosition="80" endLine="112" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="113" startPosition="12" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="118" startPosition="88" endLine="119" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="119" startPosition="87" endLine="120" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="120" startPosition="47" endLine="121" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="121" startPosition="34" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="125" startPosition="91" endLine="126" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="126" startPosition="97" endLine="127" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="127" startPosition="50" endLine="128" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="128" startPosition="28" endLine="129" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="129" startPosition="34" endLine="130" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="130" startPosition="49" endLine="131" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="131" startPosition="40" endLine="132" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="131" startPosition="40" endLine="132" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="132" startPosition="82" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072784" fileName="CellModel_Diagram_Editor.java" startLine="136" startPosition="89" endLine="137" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6306886970791072784" fileName="CellModel_Diagram_Editor.java" startLine="137" startPosition="145" endLine="138" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_7br2q0_a3a#()V" />
+    <nodeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="101" startPosition="44" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970791072784" fileName="CellModel_Diagram_Editor.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_7br2q0_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7br2q0_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7br2q0_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7br2q0_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="72" startPosition="59" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="108" startPosition="61" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="118" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_7br2q0_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="125" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7br2q0_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_7br2q0_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="63" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_7br2q0_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="94" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_7br2q0_a0d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="65" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="81" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="81" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="80" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="37" startPosition="80" endLine="38" endPosition="81" />
+    <scopeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="82" startPosition="33" endLine="83" endPosition="14" />
+    <scopeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="86" startPosition="69" endLine="87" endPosition="67" />
+    <scopeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="90" startPosition="81" endLine="91" endPosition="66" />
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="131" startPosition="40" endLine="132" endPosition="82" />
+    <scopeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="102" startPosition="41" endLine="104" endPosition="36" />
+    <scopeInfo nodeId="6306886970791072784" fileName="CellModel_Diagram_Editor.java" startLine="136" startPosition="89" endLine="138" endPosition="22">
+      <varInfo nodeId="6306886970791072784" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6306886970791072640" varName="editorContext" />
+      <varInfo nodeId="6306886970791072640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6306886970791072640" varName="editorContext" />
+      <varInfo nodeId="6306886970791072640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="73" startPosition="35" endLine="76" endPosition="105">
+      <varInfo nodeId="6306886970791072640" varName="manager" />
+      <varInfo nodeId="6306886970791072640" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="6306886970791072746" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="6306886970791072746" varName="editorContext" />
+      <varInfo nodeId="6306886970791072746" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="109" startPosition="37" endLine="112" endPosition="107">
+      <varInfo nodeId="6306886970791072802" varName="manager" />
+      <varInfo nodeId="6306886970791072802" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="42" startPosition="88" endLine="46" endPosition="22">
+      <varInfo nodeId="6306886970791072701" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="49" startPosition="88" endLine="53" endPosition="22">
+      <varInfo nodeId="6306886970791072707" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="56" startPosition="88" endLine="60" endPosition="22">
+      <varInfo nodeId="6306886970791072733" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="118" startPosition="88" endLine="122" endPosition="22">
+      <varInfo nodeId="6306886970791072715" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072784" fileName="CellModel_Diagram_Editor.java" startLine="136" startPosition="0" endLine="140" endPosition="0">
+      <varInfo nodeId="6306886970791072784" varName="editorContext" />
+      <varInfo nodeId="6306886970791072784" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072701" fileName="CellModel_Diagram_Editor.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="6306886970791072701" varName="editorContext" />
+      <varInfo nodeId="6306886970791072701" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072707" fileName="CellModel_Diagram_Editor.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6306886970791072707" varName="editorContext" />
+      <varInfo nodeId="6306886970791072707" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072733" fileName="CellModel_Diagram_Editor.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6306886970791072733" varName="editorContext" />
+      <varInfo nodeId="6306886970791072733" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072715" fileName="CellModel_Diagram_Editor.java" startLine="118" startPosition="0" endLine="124" endPosition="0">
+      <varInfo nodeId="6306886970791072715" varName="editorContext" />
+      <varInfo nodeId="6306886970791072715" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="125" startPosition="91" endLine="133" endPosition="22">
+      <varInfo nodeId="6306886970791072640" varName="editorCell" />
+      <varInfo nodeId="6306886970791072640" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="30" startPosition="89" endLine="39" endPosition="22">
+      <varInfo nodeId="6306886970791072640" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="125" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="6306886970791072640" varName="editorContext" />
+      <varInfo nodeId="6306886970791072640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6306886970791072640" varName="editorContext" />
+      <varInfo nodeId="6306886970791072640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="63" startPosition="87" endLine="78" endPosition="22">
+      <varInfo nodeId="6306886970791072640" varName="attributeConcept" />
+      <varInfo nodeId="6306886970791072640" varName="attributeKind" />
+      <varInfo nodeId="6306886970791072640" varName="editorCell" />
+      <varInfo nodeId="6306886970791072640" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="63" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="6306886970791072640" varName="editorContext" />
+      <varInfo nodeId="6306886970791072640" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="94" startPosition="92" endLine="114" endPosition="24">
+      <varInfo nodeId="6306886970791072802" varName="attributeConcept" />
+      <varInfo nodeId="6306886970791072802" varName="attributeKind" />
+      <varInfo nodeId="6306886970791072802" varName="editorCell" />
+      <varInfo nodeId="6306886970791072802" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6306886970791072802" fileName="CellModel_Diagram_Editor.java" startLine="94" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="6306886970791072802" varName="editorContext" />
+      <varInfo nodeId="6306886970791072802" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="6306886970791072746" fileName="CellModel_Diagram_Editor.java" startLine="81" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_Editor$_Inline_7br2q0_a3a" />
+    <unitInfo nodeId="6306886970791072640" fileName="CellModel_Diagram_Editor.java" startLine="21" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_Editor" />
   </root>
 </debugInfo>
 

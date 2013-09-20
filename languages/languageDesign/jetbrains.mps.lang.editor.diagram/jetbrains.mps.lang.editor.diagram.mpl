@@ -63,6 +63,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(Jetpad.Editor)</dependency>
     <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
   </dependencies>
   <usedDevKits>

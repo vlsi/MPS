@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d5oajupvrkcpp0c6rswodxmm0dbpwks">
+<dependencies version="2" modelHash="dpixwjlp1f8um0jwnonsggtpcdiod2u">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8uwjsvoyc0jmxumo62dusu4gaxjguv8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-brl2bgkky74xjyauouufkoy6p3yk0z4" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="h0ie887vn8a57q45sy50dhmtlrb1kd">
+  <common hash="6iaq0s4vzohzm73bdlam478mtt7etbl">
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
@@ -15,35 +14,31 @@
     <dep root="1094405431463761863" />
     <dep root="1094405431463762199" />
     <dep root="1094405431463762240" />
+    <dep root="6306886970785259796" />
+    <dep root="6306886970785259805" />
+    <dep root="6306886970789271602" />
+    <dep root="6306886970790135647" />
+    <dep root="6306886970790145497" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-6av0u3t2xqimv3jtsbiw9oqau02yhkd">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1094405431463663051" name="ExternalFigureReference" hash="c393c4lffyvapnxn4kjhgmq0o6w9bxg">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1094405431463663056" name="ExternalFigureParameterReference" hash="-2vy2tpnsyl6jz7qwssobpshli40hj68">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1094405431463761863" name="AbstractFigureParameter" hash="2mi0w1lbbriemskptmbfzh5l70jzj97">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1094405431463762199" name="FigureParameterProperty" hash="4afw3ahdx3rhxo459ddhfu2rmeqfy9i">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1094405431463762240" name="FigureParameterLink" hash="-b3dk31lpaj07qklxngyik4iaa3hmpnp">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
+  <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-6av0u3t2xqimv3jtsbiw9oqau02yhkd" />
+  <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx" />
+  <source id="1094405431463663051" name="ExternalFigureReference" hash="c393c4lffyvapnxn4kjhgmq0o6w9bxg" />
+  <source id="1094405431463663056" name="ExternalFigureParameterReference" hash="-2vy2tpnsyl6jz7qwssobpshli40hj68" />
+  <source id="1094405431463761863" name="AbstractFigureParameter" hash="2mi0w1lbbriemskptmbfzh5l70jzj97" />
+  <source id="1094405431463762199" name="FigureParameterProperty" hash="4afw3ahdx3rhxo459ddhfu2rmeqfy9i" />
+  <source id="1094405431463762240" name="FigureParameterLink" hash="-b3dk31lpaj07qklxngyik4iaa3hmpnp" />
+  <source id="6306886970785259796" name="FigureColorStyleClassItem" hash="2a6pbj864ehc5nvo7d11zf31o58lrio" />
+  <source id="6306886970785259805" name="QueryFunction_Color" hash="4x1xy1dwc8wbeeo3iip3gj20ptn5p2i" />
+  <source id="6306886970789271602" name="JetpadEditorStyleItem" hash="5b8lipemx9wxlv5qmwkyrmprn8y3rxc" />
+  <source id="6306886970790135647" name="QueryFunction_Dimension" hash="-b31i48jwsh11onicbx9f10khepab9ah" />
+  <source id="6306886970790145497" name="FigureDimensionStyleClassItem" hash="-5gkg342t3xk9oyo5rhyp2d9oqduyaj" />
+  <source id="6306886970791033847" name="CellModel_Diagram" hash="-9l1gkratg7twry9etn97gngvehgfpw5" />
 </dependencies>
 

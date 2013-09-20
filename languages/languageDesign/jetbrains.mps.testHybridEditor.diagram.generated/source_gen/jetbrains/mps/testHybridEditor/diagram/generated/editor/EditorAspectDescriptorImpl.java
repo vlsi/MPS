@@ -16,6 +16,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Block_diagramGenerated_Editor());
+      case 1:
+        return Collections.<ConceptEditor>singletonList(new Diagram_diagramGenerated_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new InputPort_diagramGenerated_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new OutputPort_diagramGenerated_Editor());
       default:
     }
     return Collections.emptyList();
@@ -32,5 +38,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.testHybridEditor.structure.Block"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
 }

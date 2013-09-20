@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.geometry.Vector;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -28,11 +29,11 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
   private EditorCell createDiagramNode_70mnj_a(EditorContext editorContext, SNode node) {
     MPSBlockView view = new MPSBlockView();
-    GenericViewCell cell = GenericViewCell.createViewCell(editorContext, node, view);
+    GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
     view.setTextView(SPropertyOperations.getString(node, "name"));
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
       GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(child);
-      cell.addEditorCell(childCell);
+      editorCell.addEditorCell(childCell);
 
       if (childCell.getView().parent() != null) {
         childCell.getView().parent().children().remove(childCell.getView().parent().children().indexOf(childCell.getView()));
@@ -41,15 +42,27 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     }
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
       GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(child);
-      cell.addEditorCell(childCell);
+      editorCell.addEditorCell(childCell);
 
       if (childCell.getView().parent() != null) {
         childCell.getView().parent().children().remove(childCell.getView().parent().children().indexOf(childCell.getView()));
       }
       view.getOutputs().children().add(childCell.getView());
     }
+    view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
+    view.visible().set(true);
+    view.moveTo(new Vector(SPropertyOperations.getInteger(node, "x"), SPropertyOperations.getInteger(node, "y")));
+    return editorCell;
 
-    return cell;
+  }
 
+  private static Vector _StyleParameter_QueryFunction_70mnj_a0a(EditorContext editorContext, SNode node) {
+    return new Vector(75, 75);
   }
 }
