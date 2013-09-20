@@ -60,7 +60,8 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
 
   public void setBounds() {
     super.setBounds();
-    myComponent.setBounds(myX, myY, myWidth, myHeight);
+    //todo: hack! set normal bounds
+    myComponent.setBounds(0, 0, 1000, 1000);
   }
 
   @Override

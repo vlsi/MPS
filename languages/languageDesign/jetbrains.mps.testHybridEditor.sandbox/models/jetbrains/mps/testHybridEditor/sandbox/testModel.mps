@@ -12,6 +12,16 @@
     </node>
   </root>
   <root type="adck.Diagram" typeId="adck.725186580883451585" id="725186580883618058" nodeInfo="ng">
+    <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="6306886970793806903" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="asd" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="3524364213242493720" resolveInfo="port2" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="725186580883628367" resolveInfo="port10" />
+    </node>
+    <node role="connectors" roleId="adck.725186580883451866" type="adck.Connector" typeId="adck.725186580883451809" id="6306886970793807156" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="ad" />
+      <link role="inputPort" roleId="adck.725186580883451928" targetNodeId="725186580883628369" resolveInfo="port4" />
+      <link role="outputPort" roleId="adck.725186580883451924" targetNodeId="806334514635516139" resolveInfo="0" />
+    </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="806334514635516125" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="block0" />
       <property name="y" nameId="adck.6279035160242221911" value="300" />
