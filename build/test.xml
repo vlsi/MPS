@@ -58,27 +58,43 @@
 
   <target name="module-tests" depends="unpack">
     <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsGenerator.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsSModel.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsBaseLanguage.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsJava.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsBuild.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsActions.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
     <ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="build"/>
+      <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
   </target>
