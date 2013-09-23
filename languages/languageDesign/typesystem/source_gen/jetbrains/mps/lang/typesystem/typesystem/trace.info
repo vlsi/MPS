@@ -3670,94 +3670,205 @@
     <unitInfo nodeId="7799224375431419713" fileName="MeetType_comparable_with_arguments_ComparisonRule.java" startLine="13" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.MeetType_comparable_with_arguments_ComparisonRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/8030577887428929108">
-    <nodeInfo nodeId="5293313440027747665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="23" startPosition="169" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428961179" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="26" startPosition="5" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="34" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="34" startPosition="77" endLine="35" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="35" startPosition="210" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="36" startPosition="66" endLine="37" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8991952304890044830" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="38" startPosition="9" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="44" startPosition="207" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="169" endLine="48" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="169" endLine="48" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8991952304890044830" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="48" startPosition="139" endLine="49" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="51" startPosition="5" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="55" startPosition="27" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="60" startPosition="5" endLine="61" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="61" startPosition="133" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="67" startPosition="5" endLine="68" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="68" startPosition="135" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="73" startPosition="53" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="77" startPosition="55" endLine="78" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JoinType_supertypeOf_arguments_InequationReplacementRule#()V" />
-    <nodeInfo nodeId="5293313440027575443" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="79" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8991952304890030600" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="79" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="59" startPosition="71" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="66" startPosition="73" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8030577887428961159" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="97" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="169" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="45" startPosition="35" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="45" startPosition="35" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
-    <nodeInfo nodeId="8991952304890030600" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="31" startPosition="79" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
-    <nodeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="30" startPosition="253" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="30" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="18" startPosition="69" endLine="18" endPosition="69" />
-    <scopeInfo nodeId="5293313440027575446" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="23" startPosition="169" endLine="24" endPosition="20" />
-    <scopeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="169" endLine="48" endPosition="139" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="55" startPosition="27" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="73" startPosition="53" endLine="74" endPosition="59" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="77" startPosition="55" endLine="78" endPosition="62" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8991952304890030601" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="169" endLine="49" endPosition="14" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="60" startPosition="5" endLine="62" endPosition="45">
+    <nodeInfo nodeId="176833115774928743" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="24" startPosition="50" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1269166727599041977" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="29" startPosition="105" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="216062478518715046" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="34" startPosition="84" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5293313440027747665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="39" startPosition="169" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428961179" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="49" startPosition="9" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="50" startPosition="77" endLine="51" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="51" startPosition="209" endLine="52" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="52" startPosition="66" endLine="53" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="176833115774977722" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="54" startPosition="9" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="60" startPosition="9" endLine="61" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="61" startPosition="77" endLine="62" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="62" startPosition="210" endLine="63" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="63" startPosition="66" endLine="64" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1269166727599078008" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="65" startPosition="9" endLine="66" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="71" startPosition="9" endLine="72" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="72" startPosition="77" endLine="73" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="73" startPosition="210" endLine="74" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="74" startPosition="66" endLine="75" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="216062478518759976" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="76" startPosition="9" endLine="77" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="82" startPosition="9" endLine="83" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="83" startPosition="77" endLine="84" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="84" startPosition="210" endLine="85" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="85" startPosition="66" endLine="86" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8991952304890044830" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="87" startPosition="9" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="93" startPosition="207" endLine="94" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="96" startPosition="50" endLine="97" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="96" startPosition="50" endLine="97" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="176833115774977722" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="97" startPosition="139" endLine="98" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="102" startPosition="105" endLine="103" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="102" startPosition="105" endLine="103" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1269166727599078008" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="103" startPosition="139" endLine="104" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="108" startPosition="84" endLine="109" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="108" startPosition="84" endLine="109" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="216062478518759976" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="109" startPosition="139" endLine="110" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="114" startPosition="169" endLine="115" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="114" startPosition="169" endLine="115" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8991952304890044830" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="115" startPosition="139" endLine="116" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="118" startPosition="5" endLine="119" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="122" startPosition="27" endLine="123" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="127" startPosition="5" endLine="128" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="128" startPosition="133" endLine="129" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="134" startPosition="5" endLine="135" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="135" startPosition="135" endLine="136" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="140" startPosition="53" endLine="141" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="144" startPosition="55" endLine="145" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JoinType_supertypeOf_arguments_InequationReplacementRule#()V" />
+    <nodeInfo nodeId="176833115774928741" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="23" startPosition="79" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1269166727599041975" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="28" startPosition="79" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="216062478518715044" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="33" startPosition="79" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5293313440027575443" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="38" startPosition="79" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="176833115774972202" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="95" startPosition="79" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1269166727599068513" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="101" startPosition="79" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="216062478518759974" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="107" startPosition="79" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8991952304890030600" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="113" startPosition="79" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="126" startPosition="71" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="133" startPosition="73" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="176833115774928739" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="97" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1269166727599041973" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="27" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="216062478518715042" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030577887428961159" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="37" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="48" startPosition="50" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="59" startPosition="105" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="70" startPosition="84" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="81" startPosition="169" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="176833115774972200" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="94" startPosition="35" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1269166727599068511" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="100" startPosition="5" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="216062478518759972" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="106" startPosition="5" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="112" startPosition="5" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="126" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="133" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="176833115774972202" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="79" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1269166727599068513" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="58" startPosition="79" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="216062478518759974" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="69" startPosition="79" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8991952304890030600" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="80" startPosition="79" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="176833115774972200" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="253" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1269166727599068511" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="57" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="216062478518759972" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="68" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="79" startPosition="5" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="94" startPosition="35" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="93" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+    <nodeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="69" endLine="19" endPosition="69" />
+    <scopeInfo nodeId="176833115774928742" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="24" startPosition="50" endLine="25" endPosition="20" />
+    <scopeInfo nodeId="1269166727599041976" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="29" startPosition="105" endLine="30" endPosition="20" />
+    <scopeInfo nodeId="216062478518715045" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="34" startPosition="84" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="5293313440027575446" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="39" startPosition="169" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="96" startPosition="50" endLine="97" endPosition="139" />
+    <scopeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="102" startPosition="105" endLine="103" endPosition="139" />
+    <scopeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="108" startPosition="84" endLine="109" endPosition="139" />
+    <scopeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="114" startPosition="169" endLine="115" endPosition="139" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="122" startPosition="27" endLine="123" endPosition="16" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="140" startPosition="53" endLine="141" endPosition="59" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="144" startPosition="55" endLine="145" endPosition="62" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="176833115774972203" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="96" startPosition="50" endLine="98" endPosition="31" />
+    <scopeInfo nodeId="1269166727599068514" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="102" startPosition="105" endLine="104" endPosition="31" />
+    <scopeInfo nodeId="216062478518759975" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="108" startPosition="84" endLine="110" endPosition="31" />
+    <scopeInfo nodeId="8991952304890030601" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="114" startPosition="169" endLine="116" endPosition="14" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="127" startPosition="5" endLine="129" endPosition="45">
       <varInfo nodeId="8030577887428929108" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="67" startPosition="5" endLine="69" endPosition="45">
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="134" startPosition="5" endLine="136" endPosition="45">
       <varInfo nodeId="8030577887428929108" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428961160" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="79" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="33" startPosition="9" endLine="37" endPosition="117">
+    <scopeInfo nodeId="176833115774928740" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="23" startPosition="79" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="1269166727599041974" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="28" startPosition="79" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="216062478518715043" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="33" startPosition="79" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="8030577887428961160" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="38" startPosition="79" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="144" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="176833115774977717" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="49" startPosition="9" endLine="53" endPosition="117">
+      <varInfo nodeId="176833115774977717" varName="_info_12389875345" />
+      <varInfo nodeId="176833115774977717" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="1269166727599073781" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="60" startPosition="9" endLine="64" endPosition="117">
+      <varInfo nodeId="1269166727599073781" varName="_info_12389875345" />
+      <varInfo nodeId="1269166727599073781" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="4903733294584216031" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="71" startPosition="9" endLine="75" endPosition="117">
+      <varInfo nodeId="4903733294584216031" varName="_info_12389875345" />
+      <varInfo nodeId="4903733294584216031" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="8991952304890041665" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="82" startPosition="9" endLine="86" endPosition="117">
       <varInfo nodeId="8991952304890041665" varName="_info_12389875345" />
       <varInfo nodeId="8991952304890041665" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="8991952304890030599" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="79" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="59" startPosition="71" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="66" startPosition="73" endLine="70" endPosition="5" />
-    <scopeInfo nodeId="8030577887428961159" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="97" endLine="26" endPosition="5">
+    <scopeInfo nodeId="176833115774972201" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="95" startPosition="79" endLine="99" endPosition="7" />
+    <scopeInfo nodeId="1269166727599068512" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="101" startPosition="79" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="216062478518759973" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="107" startPosition="79" endLine="111" endPosition="7" />
+    <scopeInfo nodeId="8991952304890030599" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="113" startPosition="79" endLine="117" endPosition="7" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="126" startPosition="71" endLine="130" endPosition="5" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="133" startPosition="73" endLine="137" endPosition="5" />
+    <scopeInfo nodeId="176833115774928739" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="97" endLine="27" endPosition="5">
+      <varInfo nodeId="176833115774928752" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="1269166727599041973" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="27" startPosition="5" endLine="32" endPosition="5">
+      <varInfo nodeId="1269166727599041990" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="216062478518715042" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="5" endLine="37" endPosition="5">
+      <varInfo nodeId="216062478518715055" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030577887428961159" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="37" startPosition="5" endLine="42" endPosition="5">
       <varInfo nodeId="8030577887428961161" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428929139" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="97" endLine="27" endPosition="17" />
-    <scopeInfo nodeId="8030577887428929110" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="45" startPosition="35" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="45" startPosition="35" endLine="51" endPosition="5">
+    <scopeInfo nodeId="176833115774972200" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="94" startPosition="35" endLine="100" endPosition="5">
+      <varInfo nodeId="176833115774972209" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="1269166727599068511" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="100" startPosition="5" endLine="106" endPosition="5">
+      <varInfo nodeId="1269166727599068524" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="216062478518759972" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="106" startPosition="5" endLine="112" endPosition="5">
+      <varInfo nodeId="216062478518759981" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="112" startPosition="5" endLine="118" endPosition="5">
       <varInfo nodeId="8991952304890030607" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="126" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="8030577887428929108" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="133" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="8030577887428929108" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8991952304890030601" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="32" startPosition="169" endLine="39" endPosition="14" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="176833115774972203" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="48" startPosition="50" endLine="55" endPosition="15" />
+    <scopeInfo nodeId="1269166727599068514" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="59" startPosition="105" endLine="66" endPosition="15" />
+    <scopeInfo nodeId="216062478518759975" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="70" startPosition="84" endLine="77" endPosition="15" />
+    <scopeInfo nodeId="8991952304890030601" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="81" startPosition="169" endLine="88" endPosition="14" />
+    <scopeInfo nodeId="176833115774972201" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="47" startPosition="79" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="1269166727599068512" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="58" startPosition="79" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="216062478518759973" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="69" startPosition="79" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="8991952304890030599" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="80" startPosition="79" endLine="89" endPosition="7" />
+    <scopeInfo nodeId="176833115774972200" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="253" endLine="57" endPosition="5">
+      <varInfo nodeId="176833115774972209" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="1269166727599068511" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="57" startPosition="5" endLine="68" endPosition="5">
+      <varInfo nodeId="1269166727599068524" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="216062478518759972" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="68" startPosition="5" endLine="79" endPosition="5">
+      <varInfo nodeId="216062478518759981" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="79" startPosition="5" endLine="90" endPosition="5">
+      <varInfo nodeId="8991952304890030607" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="8030577887428929139" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="97" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8030577887428929108" varName="status" />
       <varInfo nodeId="8030577887428929108" varName="subtype" />
       <varInfo nodeId="8030577887428929108" varName="supertype" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="44" startPosition="207" endLine="52" endPosition="27">
+    <scopeInfo nodeId="8030577887428929110" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="94" startPosition="35" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="93" startPosition="207" endLine="119" endPosition="27">
       <varInfo nodeId="8030577887428929108" varName="result_14532009" />
     </scopeInfo>
-    <scopeInfo nodeId="8991952304890030599" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="31" startPosition="79" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="93" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="8030577887428929108" varName="equationInfo" />
       <varInfo nodeId="8030577887428929108" varName="inequalityIsLessThan" />
       <varInfo nodeId="8030577887428929108" varName="inequalityIsWeak" />
@@ -3765,11 +3876,8 @@
       <varInfo nodeId="8030577887428929108" varName="subtype" />
       <varInfo nodeId="8030577887428929108" varName="supertype" />
     </scopeInfo>
-    <scopeInfo nodeId="8030577887428929110" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="30" startPosition="253" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="8991952304890030598" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="30" startPosition="253" endLine="41" endPosition="5">
-      <varInfo nodeId="8991952304890030607" varName="arg" />
-    </scopeInfo>
-    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="30" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8030577887428929110" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="253" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="46" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="8030577887428929108" varName="equationInfo" />
       <varInfo nodeId="8030577887428929108" varName="inequalityIsLessThan" />
       <varInfo nodeId="8030577887428929108" varName="inequalityIsWeak" />
@@ -3778,7 +3886,7 @@
       <varInfo nodeId="8030577887428929108" varName="supertype" />
       <varInfo nodeId="8030577887428929108" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_arguments_InequationReplacementRule" />
+    <unitInfo nodeId="8030577887428929108" fileName="JoinType_supertypeOf_arguments_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.typesystem.typesystem.JoinType_supertypeOf_arguments_InequationReplacementRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/8030577887428961182" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)/8058965347377019251">
