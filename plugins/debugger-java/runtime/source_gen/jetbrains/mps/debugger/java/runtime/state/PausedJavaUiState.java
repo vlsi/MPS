@@ -5,18 +5,15 @@ package jetbrains.mps.debugger.java.runtime.state;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import java.util.List;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
+import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
-import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IStackFrame;
@@ -29,9 +26,7 @@ import com.sun.jdi.StackFrame;
 public class PausedJavaUiState extends JavaUiStateImpl {
   @NotNull
   private final Context myContext;
-  private final int myThreadIndex;
   private final int myStackFrameIndex;
-  private final List<JavaThread> myThreads = ListSequence.fromList(new ArrayList<JavaThread>());
   private final List<IWatchable> myWatchables = ListSequence.fromList(new ArrayList<IWatchable>());
 
   /*package*/ PausedJavaUiState(@NotNull Context context, @NotNull DebugSession debugSession) {
@@ -49,31 +44,20 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     });
 
     myStackFrameIndex = findStackFrameIndex();
-    check_vzg6vq_a01a5(getStackFrame(), this);
+    check_vzg6vq_a01a3(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
   /**
    * This constructor is called when user selects some thread from ui
    */
-  private PausedJavaUiState(@NotNull PausedJavaUiState previousState, DebugSession debugSession, int currentThreadIndex) {
-    super(debugSession);
-    myThreadIndex = currentThreadIndex;
-    assert currentThreadIndex >= 0;
-
-    initializeThreads();
-
+  /*package*/ PausedJavaUiState(@NotNull JavaUiStateImpl previousState, DebugSession debugSession, int currentThreadIndex) {
+    super(debugSession, currentThreadIndex);
     myContext = findContext(previousState);
     assert myContext != null;
 
-    ListSequence.fromList(getThreads()).visitAll(new IVisitor<JavaThread>() {
-      public void visit(JavaThread it) {
-        it.initializeFrames();
-      }
-    });
-
     myStackFrameIndex = findStackFrameIndex();
-    check_vzg6vq_a21a6(getStackFrame(), this);
+    check_vzg6vq_a5a4(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
@@ -95,23 +79,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     });
     getStackFrame().initializeWatchables();
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
-  }
-
-  private synchronized void initializeThreads() {
-    assert !(ModelAccess.instance().isInEDT());
-    assert getExecutionState().equals(AbstractDebugSession.ExecutionState.Paused);
-
-    for (ThreadReference threadReference : getEventProcessor().getVirtualMachine().allThreads()) {
-      if (threadReference.isSuspended()) {
-        ListSequence.fromList(myThreads).addElement(new JavaThread(threadReference));
-      }
-    }
-    assert myThreadIndex < ListSequence.fromList(myThreads).count();
-  }
-
-  @Nullable
-  public JavaThread getCurrentThread() {
-    return ListSequence.fromList(myThreads).getElement(myThreadIndex);
   }
 
   private int findThreadIndex() {
@@ -136,16 +103,9 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   public ObjectReference getThisObject() {
     JavaStackFrame javaStackFrame = getStackFrame();
     if (javaStackFrame != null) {
-      return check_vzg6vq_a0a1a11(javaStackFrame.getStackFrame());
+      return check_vzg6vq_a0a1a7(javaStackFrame.getStackFrame());
     }
     return null;
-  }
-
-  @Override
-  protected PausedJavaUiState selectThreadInternal(@Nullable IThread thread) {
-    int index = ListSequence.fromList(myThreads).indexOf(thread);
-    //  changes state on user selection 
-    return new PausedJavaUiState(this, myDebugSession, index);
   }
 
   @Override
@@ -154,18 +114,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
       return new PausedJavaUiState(this, frame, myDebugSession);
     }
     return this;
-  }
-
-  @Override
-  public void selectThread(@Nullable final IThread thread) {
-    myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        AbstractUiState newState = selectThreadInternal(thread);
-        if (newState != PausedJavaUiState.this) {
-          myAbstractDebugSession.trySetState(PausedJavaUiState.this, newState);
-        }
-      }
-    });
   }
 
   @Override
@@ -186,20 +134,9 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return myContext;
   }
 
-  @NotNull
-  @Override
-  public synchronized List<JavaThread> getThreads() {
-    return myThreads;
-  }
-
   @Override
   public boolean isPausedOnBreakpoint() {
     return getEventProcessor().getContextManager().isPausedOnEvent(myContext);
-  }
-
-  @Override
-  public synchronized JavaThread getThread() {
-    return (JavaThread) ListSequence.fromList(myThreads).getElement(myThreadIndex);
   }
 
   @Nullable
@@ -222,18 +159,14 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return thread.getFrame(index);
   }
 
-  private AbstractDebugSession.ExecutionState getExecutionState() {
-    return myDebugSession.getExecutionState();
-  }
-
   @NotNull
   private List<IWatchable> getAdditionalWatchables() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     if (myContext != null && myContext instanceof EventContext) {
       // todo move out 
       EventSet eventSet = ((EventContext) myContext).getEventSet();
-      String classFqName = check_vzg6vq_a0c0b0x(getStackFrame(), this);
-      ThreadReference threadReference = check_vzg6vq_a0d0b0x(getThread(), this);
+      String classFqName = check_vzg6vq_a0c0b0o(getStackFrame(), this);
+      ThreadReference threadReference = check_vzg6vq_a0d0b0o(getThread(), this);
       if (classFqName == null || threadReference == null) {
         return watchables;
       }
@@ -254,35 +187,35 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return watchables;
   }
 
-  private static void check_vzg6vq_a01a5(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static void check_vzg6vq_a01a3(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.initializeWatchables();
     }
 
   }
 
-  private static void check_vzg6vq_a21a6(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static void check_vzg6vq_a5a4(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.initializeWatchables();
     }
 
   }
 
-  private static ObjectReference check_vzg6vq_a0a1a11(StackFrame checkedDotOperand) {
+  private static ObjectReference check_vzg6vq_a0a1a7(StackFrame checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.thisObject();
     }
     return null;
   }
 
-  private static String check_vzg6vq_a0c0b0x(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static String check_vzg6vq_a0c0b0o(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassFqName();
     }
     return null;
   }
 
-  private static ThreadReference check_vzg6vq_a0d0b0x(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static ThreadReference check_vzg6vq_a0d0b0o(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

@@ -39,7 +39,6 @@ public abstract class AbstractUiState {
   protected abstract AbstractUiState selectFrameInternal(int frame);
 
   protected int findStackFrameIndex() {
-    // impl 
     IThread thread = getThread();
     if (thread == null) {
       return NO_FRAME;
