@@ -65,7 +65,7 @@
     <untar src="${artifacts.buildMpsB}/my.tar" dest="${build.tmp}/deps/buildMpsB/my.tar" compression="none" />
   </target>
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
