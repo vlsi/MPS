@@ -105,14 +105,26 @@ public class ContextManager {
 
   @Nullable
   public synchronized Context findContextForThread(final ThreadReference threadReference) {
-    if (myUserContext != null && eq_toclu7_a0a0a01(myUserContext.getThread(), threadReference)) {
-      return myUserContext;
-    }
-    return ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
+    EventContext context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
       public boolean accept(EventContext it) {
-        return eq_toclu7_a0a0a0a0a0b0k(it.getThread(), threadReference);
+        return eq_toclu7_a0a0a0a0a0a0a01(it.getThread(), threadReference);
       }
     });
+    if (context != null) {
+      return context;
+    }
+    context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
+      public boolean accept(EventContext it) {
+        return it.getSuspendPolicy() == EventRequest.SUSPEND_ALL;
+      }
+    });
+    if (context != null) {
+      return context;
+    }
+    if (myUserContext != null) {
+      return myUserContext;
+    }
+    return null;
   }
 
   public synchronized boolean isPausedOnEvent(Context context) {
@@ -143,14 +155,7 @@ public class ContextManager {
 
   protected static Logger LOG = LogManager.getLogger(ContextManager.class);
 
-  private static boolean eq_toclu7_a0a0a01(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_toclu7_a0a0a0a0a0b0k(Object a, Object b) {
+  private static boolean eq_toclu7_a0a0a0a0a0a0a01(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
