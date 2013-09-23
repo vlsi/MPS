@@ -19,7 +19,6 @@ public class GenerateTask extends MpsLoadTask {
   }
 
   public GenerateTask() {
-    setUsePropertiesAsMacro(true);
   }
 
   @Override
