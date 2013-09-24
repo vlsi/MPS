@@ -4,12 +4,9 @@ package jetbrains.mps.execution.lib.ui;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import java.util.Map;
+import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
@@ -35,7 +32,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   @Nullable
   private SNodeReference myNodePointer;
-  private final Map<IJavaNodeChangeListener, _FunctionTypes._void_P1_E0<? super SNode>> myLegacyListenersMap = MapSequence.fromMap(new HashMap<IJavaNodeChangeListener, _FunctionTypes._void_P1_E0<? super SNode>>());
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
   public AbstractMainNodeChooser() {
@@ -106,11 +102,11 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   protected abstract List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor);
 
   public SNode getNode() {
-    return check_wlpn4v_a0a7(((SNodePointer) this.myNodePointer), this);
+    return check_wlpn4v_a0a6(((SNodePointer) this.myNodePointer), this);
   }
 
   public void setNode(SNode node) {
-    if (check_wlpn4v_a0a0i(((SNodePointer) this.myNodePointer), this) == node) {
+    if (check_wlpn4v_a0a0h(((SNodePointer) this.myNodePointer), this) == node) {
       return;
     }
     if (node == null) {
@@ -139,29 +135,14 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     }
   }
 
-  public void addNodeChangeListener(@NotNull final IJavaNodeChangeListener listener) {
-    _FunctionTypes._void_P1_E0<? super SNode> function = new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(SNode node) {
-        listener.nodeChanged(node);
-      }
-    };
-    MapSequence.fromMap(myLegacyListenersMap).put(listener, function);
-    ListSequence.fromList(this.myListeners).addElement(function);
-  }
-
   public void addNodeChangeListener(@NotNull _FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(this.myListeners).addElement(listener);
-  }
-
-  public void removeNodeChangeListener(IJavaNodeChangeListener listener) {
-    ListSequence.fromList(this.myListeners).removeElement(MapSequence.fromMap(myLegacyListenersMap).get(listener));
-    MapSequence.fromMap(myLegacyListenersMap).removeKey(listener);
   }
 
   private void fireNodeChanged() {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
       public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
-        it.invoke(check_wlpn4v_a0a0a0a0a0n(((SNodePointer) AbstractMainNodeChooser.this.myNodePointer), AbstractMainNodeChooser.this));
+        it.invoke(check_wlpn4v_a0a0a0a0a0k(((SNodePointer) AbstractMainNodeChooser.this.myNodePointer), AbstractMainNodeChooser.this));
       }
     });
   }
@@ -172,21 +153,21 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     ListSequence.fromList(myListeners).clear();
   }
 
-  private static SNode check_wlpn4v_a0a7(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
+  private static SNode check_wlpn4v_a0a6(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
 
-  private static SNode check_wlpn4v_a0a0i(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
+  private static SNode check_wlpn4v_a0a0h(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
 
-  private static SNode check_wlpn4v_a0a0a0a0a0n(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
+  private static SNode check_wlpn4v_a0a0a0a0a0k(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
