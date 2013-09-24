@@ -31,7 +31,6 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createDiagramNode_70mnj_a(EditorContext editorContext, SNode node) {
     MPSBlockView view = new MPSBlockView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
-    view.setText(SPropertyOperations.getString(node, "name"));
     view.setX(SPropertyOperations.getInteger(node, "x"));
     view.setY(SPropertyOperations.getInteger(node, "y"));
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {

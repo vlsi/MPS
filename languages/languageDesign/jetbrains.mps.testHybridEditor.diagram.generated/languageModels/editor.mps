@@ -39,7 +39,7 @@
         <link role="figure" roleId="gbdf.1094405431463663379" targetNodeId="k80i.2178507174411843379" resolveInfo="MPSBlockView" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterProperty" typeId="gbdf.1094405431463762199" id="1094405431463945704" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="myText" />
+        <property name="name" nameId="tpck.1169194664001" value="myTextView" />
         <link role="property" roleId="gbdf.1094405431463762212" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterProperty" typeId="gbdf.1094405431463762199" id="6306886970793519330" nodeInfo="ng">
