@@ -42,7 +42,22 @@ public class ExternalFigureReference_Behavior {
     return result;
   }
 
+  public static SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, final String name) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "figure", false), "fields", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_eglddm_a0a0a0a0a0a0d(SPropertyOperations.getString(it, "name"), name);
+      }
+    });
+  }
+
   private static boolean eq_eglddm_a0a0a0a0a0a0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_eglddm_a0a0a0a0a0a0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

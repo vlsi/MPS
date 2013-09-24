@@ -18,4 +18,6 @@ public abstract class AbstractFigureReference_BehaviorDescriptor extends BaseCon
   public abstract SNode virtual_getMethodDeclaration_8322026508615817443(SNode thisNode, String name);
 
   public abstract List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode);
+
+  public abstract SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, String name);
 }
