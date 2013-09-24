@@ -10,6 +10,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 
@@ -45,6 +46,14 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
     view.visible().set(true);
     return editorCell;
 
+  }
+
+  private static void attach(View parent, View child) {
+    View oldParent = child.parent();
+    if (oldParent != null) {
+      oldParent.children().remove(oldParent.children().indexOf(child));
+    }
+    parent.children().add(child);
   }
 
   private static Color _StyleParameter_QueryFunction_cfffa6_a0a(EditorContext editorContext, SNode node) {

@@ -12,9 +12,12 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.jetpad.projectional.diagram.base.GridDirection;
-import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.model.property.Property;
+import jetbrains.jetpad.model.property.ValueProperty;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Rectangle;
 import java.util.List;
 import java.util.ArrayList;
@@ -28,6 +31,9 @@ public class MPSBlockView extends GroupView {
   private final GroupView myOutputs = new GroupView();
   private final Map<SNode, View> portToViewMap = MapSequence.fromMap(new HashMap<SNode, View>());
   private GridDirection myDir = GridDirection.RIGHT;
+  private Property<Integer> myX = new ValueProperty<Integer>(0);
+  private Property<Integer> myY = new ValueProperty<Integer>(0);
+  private Property<String> myText = new ValueProperty<String>("");
 
 
 
@@ -35,15 +41,34 @@ public class MPSBlockView extends GroupView {
     children().add(myInputs);
     children().add(myOutputs);
     createRectView();
-  }
-
-  public void setTextView(String name) {
-    myTextView.text().set(name);
     attach(this, myTextView);
+    Mapper<MPSBlockView, MPSBlockView> mapper = new Mapper<MPSBlockView, MPSBlockView>(this, this) {
+
+
+      @Override
+      protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+        configuration.add(Synchronizers.forProperty(getSource().myX, new Runnable() {
+          public void run() {
+            getTarget().moveTo(new Vector(getTarget().myX.get(), getTarget().myY.get()));
+          }
+        }));
+        configuration.add(Synchronizers.forProperty(getSource().myY, new Runnable() {
+          public void run() {
+            getTarget().moveTo(new Vector(getTarget().myX.get(), getTarget().myY.get()));
+          }
+        }));
+        configuration.add(Synchronizers.forProperty(getSource().myText, getSource().myTextView.text()));
+      }
+    };
+    mapper.attachRoot();
   }
 
-  public TextView getTextView() {
-    return myTextView;
+  public void setText(String text) {
+    myText.set(text);
+  }
+
+  public String getText() {
+    return myText.get();
   }
 
   public GroupView getInputs() {
@@ -52,6 +77,22 @@ public class MPSBlockView extends GroupView {
 
   public GroupView getOutputs() {
     return myOutputs;
+  }
+
+  public int getX() {
+    return myX.get();
+  }
+
+  public void setX(int x) {
+    myX.set(x);
+  }
+
+  public int getY() {
+    return myY.get();
+  }
+
+  public void setY(int y) {
+    myY.set(y);
   }
 
   private void createRectView() {

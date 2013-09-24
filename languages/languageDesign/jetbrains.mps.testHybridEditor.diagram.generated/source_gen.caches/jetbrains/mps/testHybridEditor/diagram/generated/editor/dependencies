@@ -6,6 +6,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.MPSBlockView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -58,6 +59,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -72,6 +74,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.RectView" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
