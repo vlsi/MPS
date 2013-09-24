@@ -27,7 +27,6 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramNode_cfffa6_a(EditorContext editorContext, SNode node) {
-
     RectView view = new RectView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
     view.background().set(InputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_cfffa6_a0a((editorCell == null ?
