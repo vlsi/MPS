@@ -6,13 +6,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.AbstractUiState;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.tree.DefaultTreeModel;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.log4j.Priority;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class WatchableNode extends AbstractWatchableNode {
   private volatile boolean myInitialized;
@@ -20,6 +25,7 @@ public class WatchableNode extends AbstractWatchableNode {
   private final IWatchable myWatchable;
   private final AbstractUiState myState;
   private final AtomicBoolean myInitializationInProgress = new AtomicBoolean(false);
+  private final List<_FunctionTypes._void_P0_E0> myCallbacks = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public WatchableNode(@NotNull IWatchable watchable, AbstractUiState state) {
     this(null, watchable, state);
@@ -84,9 +90,9 @@ public class WatchableNode extends AbstractWatchableNode {
       return;
     }
     if (!(isLeaf())) {
-      myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
-        public void invoke() {
-          if (myInitializationInProgress.compareAndSet(false, true)) {
+      if (myInitializationInProgress.compareAndSet(false, true)) {
+        myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
             try {
               myWatchable.getValue().initSubvalues();
               ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -100,6 +106,16 @@ public class WatchableNode extends AbstractWatchableNode {
                     updatePresentation();
                     myInitialized = true;
                     callback.invoke();
+                    for (_FunctionTypes._void_P0_E0 callback : ListSequence.fromList(myCallbacks)) {
+                      try {
+                        callback.invoke();
+                      } catch (Throwable t) {
+                        if (LOG.isEnabledFor(Priority.ERROR)) {
+                          LOG.error("", t);
+                        }
+                      }
+                    }
+                    ListSequence.fromList(myCallbacks).clear();
                     nodeChanged();
                   } finally {
                     myInitializationInProgress.set(false);
@@ -110,8 +126,13 @@ public class WatchableNode extends AbstractWatchableNode {
               myInitializationInProgress.set(false);
             }
           }
-        }
-      });
+        });
+      } else {
+        // callbacks are accessed from ui thread only 
+        ListSequence.fromList(myCallbacks).addElement(callback);
+      }
     }
   }
+
+  protected static Logger LOG = LogManager.getLogger(WatchableNode.class);
 }
