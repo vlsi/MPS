@@ -38,8 +38,8 @@
     <node role="fields" roleId="ny2.2178507174411801664" type="ny2.ExternalViewFigureParameter" typeId="ny2.2178507174411801606" id="2117021943022933279" nodeInfo="ng">
       <link role="fieldDeclaration" roleId="ny2.2178507174411801649" targetNodeId="7809000753938571518" resolveInfo="myOutputs" />
     </node>
-    <node role="fields" roleId="ny2.2178507174411801664" type="ny2.ExternalViewFigureParameter" typeId="ny2.2178507174411801606" id="2117021943022933283" nodeInfo="ng">
-      <link role="fieldDeclaration" roleId="ny2.2178507174411801649" targetNodeId="1865267285001232555" resolveInfo="myTextView" />
+    <node role="fields" roleId="ny2.2178507174411801664" type="ny2.ExternalViewFigureParameter" typeId="ny2.2178507174411801606" id="6382742553260520484" nodeInfo="ng">
+      <link role="fieldDeclaration" roleId="ny2.2178507174411801649" targetNodeId="1883330766647452991" resolveInfo="myText" />
     </node>
     <node role="fields" roleId="ny2.2178507174411801664" type="ny2.ExternalViewFigureParameter" typeId="ny2.2178507174411801606" id="1883330766647207652" nodeInfo="ng">
       <link role="fieldDeclaration" roleId="ny2.2178507174411801649" targetNodeId="1883330766646807381" resolveInfo="myX" />

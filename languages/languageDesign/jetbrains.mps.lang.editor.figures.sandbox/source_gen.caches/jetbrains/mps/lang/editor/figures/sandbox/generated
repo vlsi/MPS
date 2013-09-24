@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dl2r6kyg29etk2oor3hn44k78ppltmq">
+<dependencies version="2" modelHash="wbyszbta3jypx6w98qips1rzo1m87p">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -14,7 +14,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
   <common hash="cqyth87gnwijygm1zxj8fpo7dqmd79o" />
-  <source id="2178507174411843379" name="MPSBlockView" hash="19rw0g543f1uvaj349vqft7037gjt8h" />
+  <source id="2178507174411843379" name="MPSBlockView" hash="-3mz3rphn3fh8afuusswjio01m2pyb4t" />
   <source id="7944396626687717893" name="AbstractJetpadEditor" hash="3cdnwu6890gj0r5r9biwcrvf6lulbvu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractJetpadEditor.java" />

@@ -27,6 +27,7 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramNode_16y7ix_a(EditorContext editorContext, SNode node) {
+
     RectView view = new RectView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
     view.background().set(OutputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_16y7ix_a0a((editorCell == null ?
