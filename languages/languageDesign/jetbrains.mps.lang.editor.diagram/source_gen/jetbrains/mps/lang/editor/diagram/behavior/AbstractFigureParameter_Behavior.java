@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractFigureParameter_Behavior {
   public static void init(SNode thisNode) {
@@ -23,5 +24,9 @@ public class AbstractFigureParameter_Behavior {
       SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) :
       SPropertyOperations.getString(thisNode, "name")
     );
+  }
+
+  public static SNode call_getDiagramNodeCell_1491555030355957123(SNode thisNode) {
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode");
   }
 }

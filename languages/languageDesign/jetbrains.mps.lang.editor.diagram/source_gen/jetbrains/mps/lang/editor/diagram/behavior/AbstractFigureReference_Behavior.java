@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -17,7 +18,17 @@ public class AbstractFigureReference_Behavior {
   }
 
   @Deprecated
+  public static List<String> call_getFigureParameterNames_1491555030356445722(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), thisNode, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{});
+  }
+
+  @Deprecated
   public static SNode callSuper_getMethodDeclaration_8322026508615817443(SNode thisNode, String callerConceptFqName, String name) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference"), callerConceptFqName, "virtual_getMethodDeclaration_8322026508615817443", new Class[]{SNode.class, String.class}, new Object[]{name});
+  }
+
+  @Deprecated
+  public static List<String> callSuper_getFigureParameterNames_1491555030356445722(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<String>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference"), callerConceptFqName, "virtual_getFigureParameterNames_1491555030356445722", new Class[]{SNode.class}, new Object[]{});
   }
 }

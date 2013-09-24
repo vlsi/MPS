@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ExternalFigureReference_Behavior {
   public static void init(SNode thisNode) {
@@ -28,6 +30,16 @@ public class ExternalFigureReference_Behavior {
         return eq_eglddm_a0a0a0a0a0a0b(SPropertyOperations.getString(it, "name"), name);
       }
     });
+  }
+
+  public static List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "figure", false), "fields", true)).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }));
+    return result;
   }
 
   private static boolean eq_eglddm_a0a0a0a0a0a0b(Object a, Object b) {

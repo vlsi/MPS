@@ -10,8 +10,8 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -46,7 +46,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2117021943016126851(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode figureReference = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), "figure", true);
+    SNode figureReference = SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true);
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureReference, "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getSetterName_3748979635600013130(_context.getNode())});
   }
 
@@ -55,12 +55,12 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2117021943028789641(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode figureReference = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), "figure", true);
+    SNode figureReference = SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true);
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureReference, "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getGetterName_3748979635600013007(_context.getNode())});
   }
 
   public static Object referenceMacro_GetReferent_2117021943029825140(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode figureReference = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), "figure", true);
+    SNode figureReference = SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true);
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureReference, "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getGetterName_3748979635600013007(_context.getNode())});
   }
 
