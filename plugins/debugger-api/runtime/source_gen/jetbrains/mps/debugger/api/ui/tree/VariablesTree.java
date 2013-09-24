@@ -283,14 +283,17 @@ public class VariablesTree extends MPSTree implements DataProvider {
     }
   }
 
-  protected void selectPaths(List<String> paths) {
+  protected void selectPaths(final List<String> paths) {
     final List<TreePath> treePaths = new ArrayList<TreePath>();
-    for (String path : paths) {
-      stringToPath(path, new _FunctionTypes._void_P1_E0<TreePath>() {
+    for (int i = 0; i < paths.size(); i++) {
+      // yep, this line is required for the code to work %| 
+      final int j = i;
+      stringToPath(paths.get(i), new _FunctionTypes._void_P1_E0<TreePath>() {
         public void invoke(TreePath treePath) {
           treePaths.add(treePath);
-          // %| 
-          setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+          if (j == paths.size() - 1) {
+            setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+          }
         }
       });
     }

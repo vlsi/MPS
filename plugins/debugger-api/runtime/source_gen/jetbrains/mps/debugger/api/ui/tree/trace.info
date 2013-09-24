@@ -98,10 +98,11 @@
     <nodeInfo nodeId="3766037951090054181" fileName="VariablesTree.java" startLine="264" startPosition="11" endLine="265" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3766037951090361333" fileName="VariablesTree.java" startLine="268" startPosition="21" endLine="269" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3766037951089852949" fileName="VariablesTree.java" startLine="278" startPosition="33" endLine="279" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3766037951089855152" fileName="VariablesTree.java" startLine="286" startPosition="50" endLine="287" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3766037951090003935" fileName="VariablesTree.java" startLine="290" startPosition="47" endLine="291" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3766037951090032723" fileName="VariablesTree.java" startLine="291" startPosition="34" endLine="292" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3766037951089855168" fileName="VariablesTree.java" startLine="292" startPosition="16" endLine="293" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3766037951089855152" fileName="VariablesTree.java" startLine="286" startPosition="56" endLine="287" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6096751248736324729" fileName="VariablesTree.java" startLine="288" startPosition="44" endLine="289" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6096751248736217321" fileName="VariablesTree.java" startLine="289" startPosition="60" endLine="290" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3766037951090003935" fileName="VariablesTree.java" startLine="292" startPosition="47" endLine="293" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3766037951089855168" fileName="VariablesTree.java" startLine="294" startPosition="38" endLine="295" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083118052" fileName="VariablesTree.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUiState" />
     <nodeInfo nodeId="3766037951090095578" fileName="VariablesTree.java" startLine="261" startPosition="18" endLine="263" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4474271214083118587" fileName="VariablesTree.java" startLine="66" startPosition="64" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -121,6 +122,7 @@
     <nodeInfo nodeId="3766037951090090145" fileName="VariablesTree.java" startLine="257" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3766037951090360792" fileName="VariablesTree.java" startLine="267" startPosition="7" endLine="270" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3766037951089852940" fileName="VariablesTree.java" startLine="277" startPosition="47" endLine="280" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2298998749824815196" fileName="VariablesTree.java" startLine="293" startPosition="34" endLine="296" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083118120" fileName="VariablesTree.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUiState#(Ljetbrains/mps/debug/api/AbstractUiState;)V" />
     <nodeInfo nodeId="4474271214083118307" fileName="VariablesTree.java" startLine="107" startPosition="90" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083118249" fileName="VariablesTree.java" startLine="114" startPosition="112" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -132,29 +134,29 @@
     <nodeInfo nodeId="3766037951090306708" fileName="VariablesTree.java" startLine="230" startPosition="12" endLine="235" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3766037951090071337" fileName="VariablesTree.java" startLine="255" startPosition="48" endLine="260" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3766037951089995131" fileName="VariablesTree.java" startLine="277" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljavax/swing/tree/TreePath;)V" />
-    <nodeInfo nodeId="3766037951090003164" fileName="VariablesTree.java" startLine="290" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljavax/swing/tree/TreePath;)V" />
     <nodeInfo nodeId="4474271214083118412" fileName="VariablesTree.java" startLine="141" startPosition="56" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083118447" fileName="VariablesTree.java" startLine="154" startPosition="14" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8843354299459826444" fileName="VariablesTree.java" startLine="170" startPosition="49" endLine="176" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5203185718919230364" fileName="VariablesTree.java" startLine="230" startPosition="10" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3766037951090003164" fileName="VariablesTree.java" startLine="292" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljavax/swing/tree/TreePath;)V" />
     <nodeInfo nodeId="4474271214083118109" fileName="VariablesTree.java" startLine="64" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="3443113933323443805" fileName="VariablesTree.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupActionGroup#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Lcom/intellij/openapi/actionSystem/ActionGroup;" />
     <nodeInfo nodeId="3766037951089995885" fileName="VariablesTree.java" startLine="275" startPosition="31" endLine="282" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3766037951090003023" fileName="VariablesTree.java" startLine="288" startPosition="31" endLine="295" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3766037951090003023" fileName="VariablesTree.java" startLine="290" startPosition="22" endLine="298" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083118101" fileName="VariablesTree.java" startLine="62" startPosition="98" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083118441" fileName="VariablesTree.java" startLine="151" startPosition="93" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5203185718919192826" fileName="VariablesTree.java" startLine="227" startPosition="22" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3766037951090069685" fileName="VariablesTree.java" startLine="254" startPosition="40" endLine="263" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3766037951089852932" fileName="VariablesTree.java" startLine="274" startPosition="50" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3766037951089855157" fileName="VariablesTree.java" startLine="287" startPosition="63" endLine="296" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3766037951090054159" fileName="VariablesTree.java" startLine="253" startPosition="57" endLine="264" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3766037951089852927" fileName="VariablesTree.java" startLine="274" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expandPaths#(Ljava/util/List;)V" />
     <nodeInfo nodeId="4474271214083118237" fileName="VariablesTree.java" startLine="113" startPosition="12" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4474271214083118426" fileName="VariablesTree.java" startLine="149" startPosition="23" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8843354299459826435" fileName="VariablesTree.java" startLine="169" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyTree#()Ljetbrains/mps/ide/ui/tree/MPSTreeNode;" />
     <nodeInfo nodeId="4474271214083118510" fileName="VariablesTree.java" startLine="182" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findSelectedNode#()Ljetbrains/mps/debugger/api/ui/tree/AbstractWatchableNode;" />
-    <nodeInfo nodeId="3766037951089855146" fileName="VariablesTree.java" startLine="286" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectPaths#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="2298998749824815902" fileName="VariablesTree.java" startLine="287" startPosition="63" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="4474271214083118551" fileName="VariablesTree.java" startLine="197" startPosition="48" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3766037951089855146" fileName="VariablesTree.java" startLine="286" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectPaths#(Ljava/util/List;)V" />
     <nodeInfo nodeId="3766037951090054138" fileName="VariablesTree.java" startLine="250" startPosition="69" endLine="266" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214083118066" fileName="VariablesTree.java" startLine="57" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariablesTree#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debug/api/AbstractUiState;)V" />
     <nodeInfo nodeId="3766037951089737445" fileName="VariablesTree.java" startLine="220" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stringToPath#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
@@ -191,6 +193,7 @@
     <scopeInfo nodeId="3766037951090095579" fileName="VariablesTree.java" startLine="261" startPosition="20" endLine="262" endPosition="26" />
     <scopeInfo nodeId="3766037951090360795" fileName="VariablesTree.java" startLine="268" startPosition="21" endLine="269" endPosition="26" />
     <scopeInfo nodeId="3766037951089852945" fileName="VariablesTree.java" startLine="278" startPosition="33" endLine="279" endPosition="33" />
+    <scopeInfo nodeId="2298998749824815199" fileName="VariablesTree.java" startLine="294" startPosition="38" endLine="295" endPosition="81" />
     <scopeInfo nodeId="4474271214083118126" fileName="VariablesTree.java" startLine="84" startPosition="60" endLine="86" endPosition="24" />
     <scopeInfo nodeId="4474271214083118311" fileName="VariablesTree.java" startLine="108" startPosition="31" endLine="110" endPosition="74" />
     <scopeInfo nodeId="4474271214083118253" fileName="VariablesTree.java" startLine="115" startPosition="36" endLine="117" endPosition="84" />
@@ -207,7 +210,6 @@
     <scopeInfo nodeId="3766037951090315038" fileName="VariablesTree.java" startLine="232" startPosition="0" endLine="235" endPosition="0" />
     <scopeInfo nodeId="3766037951090090145" fileName="VariablesTree.java" startLine="257" startPosition="0" endLine="260" endPosition="0" />
     <scopeInfo nodeId="3766037951089995133" fileName="VariablesTree.java" startLine="277" startPosition="47" endLine="280" endPosition="11" />
-    <scopeInfo nodeId="3766037951090003166" fileName="VariablesTree.java" startLine="290" startPosition="47" endLine="293" endPosition="79" />
     <scopeInfo nodeId="4474271214083118582" fileName="VariablesTree.java" startLine="65" startPosition="50" endLine="69" endPosition="9">
       <varInfo nodeId="4474271214083118584" varName="selectedNode" />
     </scopeInfo>
@@ -223,6 +225,7 @@
     <scopeInfo nodeId="4474271214083118558" fileName="VariablesTree.java" startLine="198" startPosition="58" endLine="202" endPosition="7">
       <varInfo nodeId="4474271214083118560" varName="selectedNode" />
     </scopeInfo>
+    <scopeInfo nodeId="3766037951090003166" fileName="VariablesTree.java" startLine="292" startPosition="47" endLine="296" endPosition="11" />
     <scopeInfo nodeId="4474271214083118448" fileName="VariablesTree.java" startLine="154" startPosition="16" endLine="159" endPosition="41">
       <varInfo nodeId="4474271214083118450" varName="nodeTreeNode" />
     </scopeInfo>
@@ -231,14 +234,14 @@
     <scopeInfo nodeId="3766037951089995131" fileName="VariablesTree.java" startLine="277" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="3766037951089995131" varName="treePath" />
     </scopeInfo>
-    <scopeInfo nodeId="3766037951090003164" fileName="VariablesTree.java" startLine="290" startPosition="0" endLine="295" endPosition="0">
-      <varInfo nodeId="3766037951090003164" varName="treePath" />
-    </scopeInfo>
     <scopeInfo nodeId="4474271214083118298" fileName="VariablesTree.java" startLine="106" startPosition="25" endLine="112" endPosition="32">
       <varInfo nodeId="4474271214083118300" varName="orphanes" />
     </scopeInfo>
     <scopeInfo nodeId="418270182880555061" fileName="VariablesTree.java" startLine="203" startPosition="61" endLine="209" endPosition="7">
       <varInfo nodeId="418270182880555116" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3766037951090003164" fileName="VariablesTree.java" startLine="292" startPosition="0" endLine="298" endPosition="0">
+      <varInfo nodeId="3766037951090003164" varName="treePath" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083118109" fileName="VariablesTree.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="4474271214083118112" varName="e" />
@@ -247,7 +250,6 @@
       <varInfo nodeId="3443113933323443809" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3766037951089852934" fileName="VariablesTree.java" startLine="275" startPosition="31" endLine="282" endPosition="9" />
-    <scopeInfo nodeId="3766037951089855159" fileName="VariablesTree.java" startLine="288" startPosition="31" endLine="295" endPosition="9" />
     <scopeInfo nodeId="4474271214083118513" fileName="VariablesTree.java" startLine="183" startPosition="52" endLine="192" endPosition="16">
       <varInfo nodeId="4474271214083118526" varName="selectedNode" />
       <varInfo nodeId="4474271214083118515" varName="selectionPath" />
@@ -257,9 +259,6 @@
     <scopeInfo nodeId="3766037951089852932" fileName="VariablesTree.java" startLine="274" startPosition="50" endLine="283" endPosition="5">
       <varInfo nodeId="3766037951089852952" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="3766037951089855157" fileName="VariablesTree.java" startLine="287" startPosition="63" endLine="296" endPosition="5">
-      <varInfo nodeId="3766037951089855164" varName="path" />
-    </scopeInfo>
     <scopeInfo nodeId="4474271214083118432" fileName="VariablesTree.java" startLine="150" startPosition="71" endLine="160" endPosition="9">
       <varInfo nodeId="4474271214083118434" varName="watchablesWithNodes" />
     </scopeInfo>
@@ -267,8 +266,8 @@
       <varInfo nodeId="8843354299459826433" varName="messageNode" />
       <varInfo nodeId="8843354299459826434" varName="rootNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3766037951089855150" fileName="VariablesTree.java" startLine="286" startPosition="50" endLine="296" endPosition="5">
-      <varInfo nodeId="3766037951089855151" varName="treePaths" />
+    <scopeInfo nodeId="2298998749824815905" fileName="VariablesTree.java" startLine="288" startPosition="44" endLine="298" endPosition="9">
+      <varInfo nodeId="6096751248736217324" varName="j" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083118238" fileName="VariablesTree.java" startLine="113" startPosition="14" endLine="124" endPosition="67">
       <varInfo nodeId="4474271214083118240" varName="nodeToVarsMap" />
@@ -282,10 +281,16 @@
     </scopeInfo>
     <scopeInfo nodeId="8843354299459826435" fileName="VariablesTree.java" startLine="169" startPosition="0" endLine="181" endPosition="0" />
     <scopeInfo nodeId="4474271214083118510" fileName="VariablesTree.java" startLine="182" startPosition="0" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="3766037951089855146" fileName="VariablesTree.java" startLine="286" startPosition="0" endLine="298" endPosition="0">
-      <varInfo nodeId="3766037951089855147" varName="paths" />
+    <scopeInfo nodeId="2298998749824815902" fileName="VariablesTree.java" startLine="287" startPosition="63" endLine="299" endPosition="5">
+      <varInfo nodeId="2298998749824815908" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3766037951089855150" fileName="VariablesTree.java" startLine="286" startPosition="56" endLine="299" endPosition="5">
+      <varInfo nodeId="3766037951089855151" varName="treePaths" />
     </scopeInfo>
     <scopeInfo nodeId="3766037951090054149" fileName="VariablesTree.java" startLine="251" startPosition="94" endLine="265" endPosition="16" />
+    <scopeInfo nodeId="3766037951089855146" fileName="VariablesTree.java" startLine="286" startPosition="0" endLine="301" endPosition="0">
+      <varInfo nodeId="3766037951089855147" varName="paths" />
+    </scopeInfo>
     <scopeInfo nodeId="4474271214083118073" fileName="VariablesTree.java" startLine="57" startPosition="64" endLine="73" endPosition="30" />
     <scopeInfo nodeId="4474271214083118550" fileName="VariablesTree.java" startLine="197" startPosition="48" endLine="213" endPosition="16" />
     <scopeInfo nodeId="3766037951089737448" fileName="VariablesTree.java" startLine="220" startPosition="109" endLine="236" endPosition="5">
@@ -351,9 +356,9 @@
     <unitInfo nodeId="4474271214083118417" fileName="VariablesTree.java" startLine="142" startPosition="37" endLine="147" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$2" />
     <unitInfo nodeId="8843354299459826448" fileName="VariablesTree.java" startLine="171" startPosition="35" endLine="176" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$3" />
     <unitInfo nodeId="3766037951089995131" fileName="VariablesTree.java" startLine="276" startPosition="29" endLine="282" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$6" />
-    <unitInfo nodeId="3766037951090003164" fileName="VariablesTree.java" startLine="289" startPosition="29" endLine="295" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$7" />
+    <unitInfo nodeId="3766037951090003164" fileName="VariablesTree.java" startLine="291" startPosition="37" endLine="298" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$7" />
     <unitInfo nodeId="4474271214083118108" fileName="VariablesTree.java" startLine="63" startPosition="57" endLine="71" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree$1" />
-    <unitInfo nodeId="4474271214083118048" fileName="VariablesTree.java" startLine="49" startPosition="0" endLine="299" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
+    <unitInfo nodeId="4474271214083118048" fileName="VariablesTree.java" startLine="49" startPosition="0" endLine="302" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
   </root>
   <root nodeRef="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)/4474271214083118844">
     <nodeInfo nodeId="4474271214083118846" fileName="AbstractWatchableNode.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
