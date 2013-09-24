@@ -537,7 +537,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5002485985634050378(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false), "aspects", true)).findFirst(new IWhereFilter<SNode>() {
+    return SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "aspects", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMpsAspect");
       }
