@@ -6,10 +6,6 @@
       <modulePath path="$PROJECT_DIR$/readerConfigLanguage/jetbrains.mps.samples.readerConfigLanguage.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/readerFramework/readerFramework.msd" folder="" />
     </projectModules>
-    <genConfs>
-      <genConfModule name="myReaderConfiguration" moduleRef="myReaderConfiguration" />
-      <genConfModule name="readerConfigLanguage" moduleRef="jetbrains.mps.samples.readerConfigLanguage" />
-    </genConfs>
   </component>
 </project>
 
