@@ -792,6 +792,10 @@
       <property name="name" nameId="tpck.1169194664001" value="testGeneration" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5002485985633856504" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="excludes" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7981469545489178349" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="generationMaxHeapSizeInMb" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />

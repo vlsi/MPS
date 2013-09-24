@@ -28,7 +28,7 @@
     <unzip src="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip/withX.zip" dest="${build.tmp}/deps/buildA/withX.zip" />
   </target>
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />

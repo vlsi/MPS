@@ -24,7 +24,7 @@
     <unzip src="${artifacts.buildY}/AaLibs.zip" dest="${build.tmp}/deps/buildY/AaLibs.zip" />
   </target>
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
