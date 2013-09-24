@@ -18,10 +18,12 @@
   <id>jetbrains.mps.testing</id>
   <name>MPS Testing</name>
   <category>Custom Languages</category>
-  <description>MPS Core</description>
-  <version>3.0</version>
+  <description>Languages unit-testing java code and MPS aspects such as editor and typesystem</description>
+  <version>3.0.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="129.1" until-build="130.1"/>
+
+  <depends>jetbrains.mps.core</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages"/>

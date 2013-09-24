@@ -64,6 +64,7 @@ import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
+import org.jetbrains.jps.incremental.java.JavaBuilder;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
@@ -239,7 +240,8 @@ public class MPSMakeMediator {
             Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
         }
 
-        if (TraceInfoCache.TRACE_FILE_NAME.equals(file.getName())){
+        // all non-java files got to be copied
+        if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file)) {
           try {
             copyResource(target, file);
           }

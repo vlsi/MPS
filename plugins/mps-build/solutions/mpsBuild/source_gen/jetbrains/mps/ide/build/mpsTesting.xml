@@ -20,19 +20,9 @@
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/mps-testing" />
     <mkdir dir="${build.layout}/mps-testing/META-INF" />
-    <echoxml file="${build.layout}/mps-testing/META-INF/plugin.xml">
-      <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-        <id>jetbrains.mps.testing</id>
-        <name>MPS Testing</name>
-        <description>Languages unit-testing java code and MPS aspects such as editor and typesystem</description>
-        <version>${mpsBootstrapCore.version}</version>
-        <depends>jetbrains.mps.core</depends>
-        
-        <extensions defaultExtensionNs="com.intellij">
-          <mps.LanguageLibrary dir="/languages" />
-        </extensions>
-      </idea-plugin>
-    </echoxml>
+    <copy todir="${build.layout}/mps-testing/META-INF">
+      <fileset file="${mps_home}/plugins/mps-testing/META-INF/plugin.xml" />
+    </copy>
     <mkdir dir="${build.layout}/mps-testing/languages" />
     <mkdir dir="${build.layout}/mps-testing/languages/baseLanguage" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.jar" />

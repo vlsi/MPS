@@ -141,6 +141,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     assertGenerated(
         "models/Manifest.java",
           "models/Manifest2.java",
+          "models/manifest.xml",
           "models/trace.info",
           "models/trace.info",
           "mps-make/makeTests/source_gen.caches/code/dependencies",
