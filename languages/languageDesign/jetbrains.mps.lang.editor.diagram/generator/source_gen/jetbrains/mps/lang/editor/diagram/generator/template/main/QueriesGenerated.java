@@ -11,15 +11,14 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.tools.ant.util.StringUtils;
+import jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class QueriesGenerated {
@@ -44,39 +43,30 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2117021943018575970(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty"), "property", false);
+    return SLinkOperations.getTarget(_context.getNode(), "property", false);
   }
 
   public static Object referenceMacro_GetReferent_2117021943016126851(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), "figure", true), "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"), "figure", false), "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "name").equals("set" + StringUtils.removePrefix(SPropertyOperations.getString(_context.getNode(), "name"), "my"));
-      }
-    }), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    SNode figureReference = SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureReference, "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getSetterName_3748979635600013130(_context.getNode())});
   }
 
   public static Object referenceMacro_GetReferent_2117021943029078933(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink"), "link", false);
+    return SLinkOperations.getTarget(_context.getNode(), "link", false);
   }
 
-  public static Object referenceMacro_GetReferent_1883330766646229316(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), "figure", true), "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"), "figure", false), "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "name").equals("get" + StringUtils.removePrefix(SPropertyOperations.getString(_context.getNode(), "name"), "my"));
-      }
-    }), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+  public static Object referenceMacro_GetReferent_1883330766690496404(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode figureReference = SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureReference, "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getGetterName_3748979635600013007(_context.getNode())});
   }
 
-  public static Object referenceMacro_GetReferent_1883330766646347969(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode"), "figure", true), "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference"), "figure", false), "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "name").equals("get" + StringUtils.removePrefix(SPropertyOperations.getString(_context.getNode(), "name"), "my"));
-      }
-    }), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+  public static Object referenceMacro_GetReferent_1883330766684260797(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode figureReference = SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureReference, "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getGetterName_3748979635600013007(_context.getNode())});
   }
 
   public static Object referenceMacro_GetReferent_2117021943029825097(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink"), "link", false);
+    return SLinkOperations.getTarget(_context.getNode(), "link", false);
   }
 
   public static Object referenceMacro_GetReferent_6306886970790186890(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -114,7 +104,11 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_2117021943016177092(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "figure", true), "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getSetterName_3748979635600013130(it)}) != null;
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty");
       }
     });
   }
@@ -122,7 +116,15 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_2117021943029175139(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink") && LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink"), "link", false));
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "figure", true), "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getGetterName_3748979635600013007(it)}) != null;
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(it, "link", false));
       }
     });
   }
@@ -130,7 +132,15 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_2117021943029778437(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink") && !(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink"), "link", false)));
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink") && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "figure", true), "virtual_getMethodDeclaration_8322026508615817443", new Object[]{AbstractFigureParameter_Behavior.call_getGetterName_3748979635600013007(it)}) != null;
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(it, "link", false)));
       }
     });
   }

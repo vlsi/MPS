@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="AbstractFigureParameter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractFigureReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractFigureReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CellModel_DiagramNode_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Diagram_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
-  <unitInfo fileName="ExternalFigureReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
+  <unitInfo fileName="ExternalFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
   <unitInfo fileName="FigureColorStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureColorStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="FigureDimensionStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureDimensionStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="FigureParameterLink_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterLink_BehaviorDescriptor" />
@@ -54,6 +54,41 @@
     <unitInfo nodeId="3748979635599719630" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="17" endLine="28" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior$1" />
     <unitInfo nodeId="3748979635599774851" fileName="CellModel_DiagramNode_Behavior.java" startLine="31" startPosition="17" endLine="36" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior$2" />
     <unitInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
+  </root>
+  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599843644">
+    <nodeInfo nodeId="3748979635600310581" fileName="AbstractFigureParameter_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635600329525" fileName="AbstractFigureParameter_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635600266753" fileName="AbstractFigureParameter_Behavior.java" startLine="21" startPosition="75" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1491555030355961670" fileName="AbstractFigureParameter_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGetterName_3748979635600013007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSetterName_3748979635600013130#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDiagramNodeCell_1491555030355957123#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3748979635600239742" fileName="AbstractFigureParameter_Behavior.java" startLine="22" startPosition="25" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuffix_3748979635600238774#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="3748979635599843646" fileName="AbstractFigureParameter_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="3748979635600013010" fileName="AbstractFigureParameter_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="97" />
+    <scopeInfo nodeId="3748979635600013133" fileName="AbstractFigureParameter_Behavior.java" startLine="17" startPosition="79" endLine="18" endPosition="97" />
+    <scopeInfo nodeId="1491555030355957280" fileName="AbstractFigureParameter_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="138" />
+    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="3748979635599843644" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3748979635599843644" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3748979635599843644" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3748979635599843644" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748979635600238777" fileName="AbstractFigureParameter_Behavior.java" startLine="21" startPosition="75" endLine="26" endPosition="6">
+      <varInfo nodeId="3748979635600266756" varName="prefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3748979635599843644" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3748979635599843644" fileName="AbstractFigureParameter_Behavior.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior" />
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/6306886970785262220">
     <nodeInfo nodeId="8995034945243899345" fileName="QueryFunction_Color_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -110,6 +145,138 @@
     </scopeInfo>
     <scopeInfo nodeId="6306886970790135826" fileName="QueryFunction_Dimension_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="6306886970790137071" fileName="QueryFunction_Dimension_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_Behavior" />
+  </root>
+  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8322026508615561874">
+    <nodeInfo nodeId="8322026508616349673" fileName="ExternalFigureReference_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508616372637" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="37" endLine="26" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508616424118" fileName="ExternalFigureReference_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030356448919" fileName="ExternalFigureReference_Behavior.java" startLine="35" startPosition="98" endLine="36" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1491555030356615989" fileName="ExternalFigureReference_Behavior.java" startLine="38" startPosition="38" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030356457866" fileName="ExternalFigureReference_Behavior.java" startLine="41" startPosition="8" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030357172065" fileName="ExternalFigureReference_Behavior.java" startLine="47" startPosition="39" endLine="48" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8322026508616348555" fileName="ExternalFigureReference_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8322026508616372039" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8322026508616423822" fileName="ExternalFigureReference_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1491555030356614912" fileName="ExternalFigureReference_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1491555030357171343" fileName="ExternalFigureReference_Behavior.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8322026508616645680" fileName="ExternalFigureReference_Behavior.java" startLine="53" startPosition="70" endLine="57" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="60" startPosition="70" endLine="64" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1491555030356458431" fileName="ExternalFigureReference_Behavior.java" startLine="36" startPosition="73" endLine="41" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1491555030357125814" fileName="ExternalFigureReference_Behavior.java" startLine="45" startPosition="105" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508616645680" fileName="ExternalFigureReference_Behavior.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_eglddm_a0a0a0a0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_eglddm_a0a0a0a0a0a0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="8322026508615909693" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="107" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMethodDeclaration_8322026508615817443#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8322026508615571806" fileName="ExternalFigureReference_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="8322026508616348556" fileName="ExternalFigureReference_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="114" />
+    <scopeInfo nodeId="8322026508616372040" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="37" endLine="26" endPosition="106" />
+    <scopeInfo nodeId="8322026508616423823" fileName="ExternalFigureReference_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="88" />
+    <scopeInfo nodeId="1491555030356614913" fileName="ExternalFigureReference_Behavior.java" startLine="38" startPosition="38" endLine="39" endPosition="57" />
+    <scopeInfo nodeId="1491555030357171344" fileName="ExternalFigureReference_Behavior.java" startLine="47" startPosition="39" endLine="48" endPosition="88" />
+    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="8322026508615561874" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508616348555" fileName="ExternalFigureReference_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="8322026508616348555" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508616372039" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="8322026508616372039" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508616423822" fileName="ExternalFigureReference_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="8322026508616423822" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1491555030356614912" fileName="ExternalFigureReference_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1491555030356614912" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1491555030357171343" fileName="ExternalFigureReference_Behavior.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1491555030357171343" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508616645680" fileName="ExternalFigureReference_Behavior.java" startLine="53" startPosition="70" endLine="57" endPosition="6" />
+    <scopeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="60" startPosition="70" endLine="64" endPosition="6" />
+    <scopeInfo nodeId="1491555030357125568" fileName="ExternalFigureReference_Behavior.java" startLine="45" startPosition="105" endLine="50" endPosition="7" />
+    <scopeInfo nodeId="8322026508616645680" fileName="ExternalFigureReference_Behavior.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="8322026508616645680" varName="a" />
+      <varInfo nodeId="8322026508616645680" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1491555030357182160" varName="a" />
+      <varInfo nodeId="1491555030357182160" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1491555030356448557" fileName="ExternalFigureReference_Behavior.java" startLine="35" startPosition="98" endLine="42" endPosition="18">
+      <varInfo nodeId="1491555030356448922" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1491555030357125569" varName="name" />
+      <varInfo nodeId="8322026508615561874" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="8322026508615561874" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615853148" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="107" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8322026508615853149" varName="name" />
+      <varInfo nodeId="8322026508615561874" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8322026508616348555" fileName="ExternalFigureReference_Behavior.java" startLine="20" startPosition="189" endLine="24" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$1" />
+    <unitInfo nodeId="8322026508616372039" fileName="ExternalFigureReference_Behavior.java" startLine="24" startPosition="18" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$2" />
+    <unitInfo nodeId="8322026508616423822" fileName="ExternalFigureReference_Behavior.java" startLine="28" startPosition="21" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$3" />
+    <unitInfo nodeId="1491555030356614912" fileName="ExternalFigureReference_Behavior.java" startLine="37" startPosition="177" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$4" />
+    <unitInfo nodeId="1491555030357171343" fileName="ExternalFigureReference_Behavior.java" startLine="46" startPosition="145" endLine="50" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$5" />
+    <unitInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" />
+  </root>
+  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8322026508615817440">
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="16" startPosition="98" endLine="17" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="21" startPosition="95" endLine="22" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="26" startPosition="96" endLine="27" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="31" startPosition="131" endLine="32" endPosition="328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="36" startPosition="128" endLine="37" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="41" startPosition="129" endLine="42" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMethodDeclaration_8322026508615817443#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getMethodDeclaration_8322026508615817443#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8322026508615817442" fileName="AbstractFigureReference_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="16" startPosition="98" endLine="17" endPosition="165" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="21" startPosition="95" endLine="22" endPosition="171" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="26" startPosition="96" endLine="27" endPosition="163" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="31" startPosition="131" endLine="32" endPosition="328" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="36" startPosition="128" endLine="37" endPosition="320" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="41" startPosition="129" endLine="42" endPosition="326" />
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="8322026508615817621" varName="name" />
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1491555030357121118" varName="name" />
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8322026508615817440" varName="callerConceptFqName" />
+      <varInfo nodeId="8322026508615817621" varName="name" />
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="8322026508615817440" varName="callerConceptFqName" />
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="8322026508615817440" varName="callerConceptFqName" />
+      <varInfo nodeId="1491555030357121118" varName="name" />
+      <varInfo nodeId="8322026508615817440" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_Behavior" />
   </root>
 </debugInfo>
 
