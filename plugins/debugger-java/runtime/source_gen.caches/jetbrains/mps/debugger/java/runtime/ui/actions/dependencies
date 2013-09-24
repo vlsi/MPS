@@ -161,7 +161,6 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.HashSet" />
@@ -176,6 +175,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Action" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />

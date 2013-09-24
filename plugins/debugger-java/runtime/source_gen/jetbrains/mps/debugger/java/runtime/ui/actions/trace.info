@@ -30,90 +30,90 @@
     <unitInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="17" endPosition="14" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.plugin" />
   </root>
   <root nodeRef="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)/4225554808929802673">
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="33" startPosition="37" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="34" startPosition="25" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="35" startPosition="30" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="38" startPosition="27" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841902499" fileName="ViewAs_Group_ActionGroup.java" startLine="44" startPosition="9" endLine="45" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2060471381917243615" fileName="ViewAs_Group_ActionGroup.java" startLine="45" startPosition="48" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4225554808929829222" fileName="ViewAs_Group_ActionGroup.java" startLine="46" startPosition="0" endLine="47" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4225554808929829231" fileName="ViewAs_Group_ActionGroup.java" startLine="48" startPosition="62" endLine="49" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929858028" fileName="ViewAs_Group_ActionGroup.java" startLine="49" startPosition="50" endLine="50" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981609696259494663" fileName="ViewAs_Group_ActionGroup.java" startLine="51" startPosition="7" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6981609696259494580" fileName="ViewAs_Group_ActionGroup.java" startLine="52" startPosition="0" endLine="53" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981609696259495248" fileName="ViewAs_Group_ActionGroup.java" startLine="54" startPosition="33" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6981609696259494587" fileName="ViewAs_Group_ActionGroup.java" startLine="55" startPosition="50" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981609696259501202" fileName="ViewAs_Group_ActionGroup.java" startLine="57" startPosition="7" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6981609696259500847" fileName="ViewAs_Group_ActionGroup.java" startLine="58" startPosition="0" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4225554808929830903" fileName="ViewAs_Group_ActionGroup.java" startLine="59" startPosition="68" endLine="60" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6981609696259507300" fileName="ViewAs_Group_ActionGroup.java" startLine="62" startPosition="33" endLine="63" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981609696259494485" fileName="ViewAs_Group_ActionGroup.java" startLine="65" startPosition="9" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4225554808929858965" fileName="ViewAs_Group_ActionGroup.java" startLine="67" startPosition="56" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929858972" fileName="ViewAs_Group_ActionGroup.java" startLine="68" startPosition="50" endLine="69" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4225554808929981383" fileName="ViewAs_Group_ActionGroup.java" startLine="71" startPosition="74" endLine="72" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="74" startPosition="27" endLine="75" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="77" startPosition="70" endLine="78" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="82" startPosition="81" endLine="83" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="86" startPosition="29" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6981609696259507195" fileName="ViewAs_Group_ActionGroup.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="4225554808929943881" fileName="ViewAs_Group_ActionGroup.java" startLine="70" startPosition="7" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="76" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrict#()Z" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="36" startPosition="24" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4225554808929857258" fileName="ViewAs_Group_ActionGroup.java" startLine="47" startPosition="92" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981609696259494585" fileName="ViewAs_Group_ActionGroup.java" startLine="53" startPosition="82" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4225554808929856583" fileName="ViewAs_Group_ActionGroup.java" startLine="66" startPosition="0" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981609696259501598" fileName="ViewAs_Group_ActionGroup.java" startLine="60" startPosition="105" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ViewAs_Group_ActionGroup#()V" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="43" startPosition="45" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="43" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="37" startPosition="9" endLine="37" endPosition="9" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="38" startPosition="0" endLine="39" endPosition="39">
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="34" startPosition="37" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="35" startPosition="25" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="36" startPosition="30" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="39" startPosition="27" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841902499" fileName="ViewAs_Group_ActionGroup.java" startLine="45" startPosition="9" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2060471381917243615" fileName="ViewAs_Group_ActionGroup.java" startLine="46" startPosition="48" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4225554808929829222" fileName="ViewAs_Group_ActionGroup.java" startLine="47" startPosition="0" endLine="48" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4225554808929829231" fileName="ViewAs_Group_ActionGroup.java" startLine="49" startPosition="62" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929858028" fileName="ViewAs_Group_ActionGroup.java" startLine="50" startPosition="50" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981609696259494663" fileName="ViewAs_Group_ActionGroup.java" startLine="52" startPosition="7" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6981609696259494580" fileName="ViewAs_Group_ActionGroup.java" startLine="53" startPosition="0" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6981609696259495248" fileName="ViewAs_Group_ActionGroup.java" startLine="55" startPosition="33" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6981609696259494587" fileName="ViewAs_Group_ActionGroup.java" startLine="56" startPosition="50" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981609696259501202" fileName="ViewAs_Group_ActionGroup.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6981609696259500847" fileName="ViewAs_Group_ActionGroup.java" startLine="59" startPosition="0" endLine="60" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4225554808929830903" fileName="ViewAs_Group_ActionGroup.java" startLine="60" startPosition="68" endLine="61" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4381621564931149606" fileName="ViewAs_Group_ActionGroup.java" startLine="63" startPosition="66" endLine="64" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981609696259494485" fileName="ViewAs_Group_ActionGroup.java" startLine="66" startPosition="9" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4225554808929858965" fileName="ViewAs_Group_ActionGroup.java" startLine="68" startPosition="56" endLine="69" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929858972" fileName="ViewAs_Group_ActionGroup.java" startLine="69" startPosition="50" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4225554808929981383" fileName="ViewAs_Group_ActionGroup.java" startLine="72" startPosition="74" endLine="73" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="75" startPosition="27" endLine="76" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="78" startPosition="70" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="83" startPosition="81" endLine="84" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="87" startPosition="29" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6981609696259507195" fileName="ViewAs_Group_ActionGroup.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/internal/collections/runtime/ICollectionSequence;" />
+    <nodeInfo nodeId="4225554808929943881" fileName="ViewAs_Group_ActionGroup.java" startLine="71" startPosition="7" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="77" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPlace#(Ljetbrains/mps/workbench/ActionPlace;Lorg/jetbrains/mps/util/Condition;)V" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStrict#()Z" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="37" startPosition="24" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4225554808929857258" fileName="ViewAs_Group_ActionGroup.java" startLine="48" startPosition="92" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981609696259494585" fileName="ViewAs_Group_ActionGroup.java" startLine="54" startPosition="82" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4225554808929856583" fileName="ViewAs_Group_ActionGroup.java" startLine="67" startPosition="0" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981609696259501598" fileName="ViewAs_Group_ActionGroup.java" startLine="61" startPosition="105" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ViewAs_Group_ActionGroup#()V" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="44" startPosition="45" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="44" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="38" startPosition="9" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="39" startPosition="0" endLine="40" endPosition="39">
       <varInfo nodeId="4225554808929802673" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="38" startPosition="27" endLine="39" endPosition="39" />
-    <scopeInfo nodeId="6981609696259507196" fileName="ViewAs_Group_ActionGroup.java" startLine="62" startPosition="33" endLine="63" endPosition="138" />
-    <scopeInfo nodeId="4225554808929943887" fileName="ViewAs_Group_ActionGroup.java" startLine="71" startPosition="74" endLine="72" endPosition="153" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="74" startPosition="0" endLine="75" endPosition="39">
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="39" startPosition="27" endLine="40" endPosition="39" />
+    <scopeInfo nodeId="6981609696259507196" fileName="ViewAs_Group_ActionGroup.java" startLine="63" startPosition="66" endLine="64" endPosition="185" />
+    <scopeInfo nodeId="4225554808929943887" fileName="ViewAs_Group_ActionGroup.java" startLine="72" startPosition="74" endLine="73" endPosition="153" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="75" startPosition="0" endLine="76" endPosition="39">
       <varInfo nodeId="4225554808929802673" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="74" startPosition="27" endLine="75" endPosition="39" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="77" startPosition="70" endLine="78" endPosition="39" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="82" startPosition="81" endLine="83" endPosition="109" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="86" startPosition="29" endLine="87" endPosition="17" />
-    <scopeInfo nodeId="4225554808929857261" fileName="ViewAs_Group_ActionGroup.java" startLine="48" startPosition="62" endLine="50" endPosition="15" />
-    <scopeInfo nodeId="6981609696259494586" fileName="ViewAs_Group_ActionGroup.java" startLine="54" startPosition="33" endLine="56" endPosition="15" />
-    <scopeInfo nodeId="4225554808929856586" fileName="ViewAs_Group_ActionGroup.java" startLine="67" startPosition="56" endLine="69" endPosition="15" />
-    <scopeInfo nodeId="6981609696259507195" fileName="ViewAs_Group_ActionGroup.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="4225554808929943881" fileName="ViewAs_Group_ActionGroup.java" startLine="70" startPosition="7" endLine="73" endPosition="7">
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="75" startPosition="27" endLine="76" endPosition="39" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="78" startPosition="70" endLine="79" endPosition="39" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="83" startPosition="81" endLine="84" endPosition="109" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="87" startPosition="29" endLine="88" endPosition="17" />
+    <scopeInfo nodeId="4225554808929857261" fileName="ViewAs_Group_ActionGroup.java" startLine="49" startPosition="62" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="6981609696259494586" fileName="ViewAs_Group_ActionGroup.java" startLine="55" startPosition="33" endLine="57" endPosition="15" />
+    <scopeInfo nodeId="4225554808929856586" fileName="ViewAs_Group_ActionGroup.java" startLine="68" startPosition="56" endLine="70" endPosition="15" />
+    <scopeInfo nodeId="6981609696259507195" fileName="ViewAs_Group_ActionGroup.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="4225554808929943881" fileName="ViewAs_Group_ActionGroup.java" startLine="71" startPosition="7" endLine="74" endPosition="7">
       <varInfo nodeId="4225554808929943883" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="76" startPosition="5" endLine="79" endPosition="5">
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="77" startPosition="5" endLine="80" endPosition="5">
       <varInfo nodeId="4225554808929802673" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="4225554808929802673" varName="cond" />
       <varInfo nodeId="4225554808929802673" varName="place" />
     </scopeInfo>
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="33" startPosition="37" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="4225554808929822054" fileName="ViewAs_Group_ActionGroup.java" startLine="44" startPosition="9" endLine="73" endPosition="7">
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="34" startPosition="37" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="34" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4225554808929822054" fileName="ViewAs_Group_ActionGroup.java" startLine="45" startPosition="9" endLine="74" endPosition="7">
       <varInfo nodeId="6981609696259494581" varName="debugSession" />
       <varInfo nodeId="4225554808929830904" varName="factories" />
       <varInfo nodeId="6981609696259500848" varName="uiState" />
       <varInfo nodeId="4225554808929829223" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="43" startPosition="45" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="43" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="44" startPosition="45" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="44" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="4225554808929802673" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6981609696259507195" fileName="ViewAs_Group_ActionGroup.java" startLine="61" startPosition="48" endLine="65" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup$1" />
-    <unitInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="28" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup" />
+    <unitInfo nodeId="6981609696259507195" fileName="ViewAs_Group_ActionGroup.java" startLine="62" startPosition="48" endLine="66" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup$1" />
+    <unitInfo nodeId="4225554808929802673" fileName="ViewAs_Group_ActionGroup.java" startLine="29" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.ViewAs_Group_ActionGroup" />
   </root>
   <root nodeRef="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)/4225554808929945133">
     <nodeInfo nodeId="4225554808929945133" fileName="ViewAs_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
