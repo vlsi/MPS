@@ -5,9 +5,6 @@
       <modulePath path="$PROJECT_DIR$/languages/theSimplestLanguage/jetbrains.mps.samples.theSimplestLanguage.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="" />
     </projectModules>
-    <genConfs>
-      <genConfModule name="theSimplestLanguage" moduleRef="jetbrains.mps.samples.theSimplestLanguage" />
-    </genConfs>
   </component>
 </project>
 

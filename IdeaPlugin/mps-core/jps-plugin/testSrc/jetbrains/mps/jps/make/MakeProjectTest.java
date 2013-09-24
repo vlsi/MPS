@@ -59,6 +59,7 @@ public class MakeProjectTest extends MpsJpsBuildTestCase {
     assertGenerated(
       "models/Manifest.java",
       "models/Manifest2.java",
+      "models/manifest.xml",
       "models/trace.info",
       "models/trace.info",
       "mps-make/makeTests/source_gen.caches/code/dependencies",
@@ -86,6 +87,7 @@ public class MakeProjectTest extends MpsJpsBuildTestCase {
 
     assertGenerated(
       "models/Manifest.java",
+      "models/manifest.xml",
       "models/trace.info",
       "mps-make/makeTests/source_gen.caches/code/dependencies",
       "mps-make/makeTests/source_gen.caches/code/generated",

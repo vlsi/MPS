@@ -12,7 +12,6 @@
       <modulePath path="$PROJECT_DIR$/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/SampleJavaExtensions.sandbox/org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.msd" folder="" />
     </projectModules>
-    <genConfs />
   </component>
 </project>
 

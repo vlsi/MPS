@@ -5,9 +5,6 @@
       <modulePath path="$PROJECT_DIR$/languages/sampleXML/jetbrains.mps.sampleXML.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/sandbox/sampleXML.sandbox.msd" folder="" />
     </projectModules>
-    <genConfs>
-      <genConfModule name="sampleXML" moduleRef="jetbrains.mps.sampleXML" />
-    </genConfs>
   </component>
 </project>
 
