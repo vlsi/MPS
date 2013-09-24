@@ -21,15 +21,16 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import com.sun.jdi.InvocationException;
 import com.sun.jdi.InvalidTypeException;
+import com.sun.jdi.IncompatibleThreadStateException;
 import org.apache.log4j.Priority;
 import com.sun.jdi.ClassNotLoadedException;
-import com.sun.jdi.IncompatibleThreadStateException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public abstract class EvaluationUtils {
   protected static EvaluationUtils INSTANCE;
   protected static final Object LOCK = new Object();
+  public static final String JAVA_LANG_OBJECT = "Ljava/lang/Object;";
 
   public EvaluationUtils() {
   }
@@ -56,6 +57,9 @@ public abstract class EvaluationUtils {
 
   @Nullable
   public abstract ReferenceType findClassTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
+
+  @Nullable
+  public abstract Type findTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
 
   public abstract boolean instanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException;
 
@@ -123,6 +127,12 @@ public abstract class EvaluationUtils {
         throw new JdiRuntimeExceptionEvaluationException(e);
       }
       throw new EvaluationRuntimeException(e);
+    } catch (IncompatibleThreadStateException e) {
+      if (invocatable instanceof EvaluationUtils.ThreadInvocatable) {
+        throw new EvaluationException("Incompatible thread " + ((EvaluationUtils.ThreadInvocatable) invocatable).getCurrentThreadReference().name(), e);
+      } else {
+        throw new EvaluationException(e);
+      }
     } catch (Throwable t) {
       throw new EvaluationException(t);
     }

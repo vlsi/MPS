@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
@@ -72,7 +72,7 @@ public abstract class EvaluationUi extends JPanel {
             Evaluator evaluator = model.createEvaluatorInstance(clazz);
             IValueProxy evaluatedValue = evaluator.evaluate();
             if (evaluatedValue != null) {
-              JavaValue value = ValueUtil.getInstance().fromJDI(evaluatedValue.getJDIValue(), thread);
+              JavaValue value = CustomViewersManager.getInstance().fromJdi(evaluatedValue.getJDIValue(), thread);
               value.initSubvalues();
               setSuccess(value, model);
             } else {
@@ -165,7 +165,7 @@ public abstract class EvaluationUi extends JPanel {
         JavaUiStateImpl uiState = myDebugSession.getUiState();
         String unitName = check_4q63yg_a0b0a0b02(check_4q63yg_a0a1a0a1u(uiState.getStackFrame()));
         if ((unitName != null && unitName.length() > 0)) {
-          myTree.updateLocation(unitName, uiState.getThread().getThread());
+          myTree.updateLocation(uiState.getThread().getThread());
         }
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override

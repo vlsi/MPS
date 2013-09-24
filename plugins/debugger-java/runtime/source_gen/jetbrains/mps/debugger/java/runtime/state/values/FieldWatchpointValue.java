@@ -19,8 +19,8 @@ public class FieldWatchpointValue extends JavaValue implements IValue {
   private final JavaValue myNewValue;
   private final boolean myAccess;
 
-  public FieldWatchpointValue(Field field, boolean access, JavaValue currentValue, JavaValue newValue, String classFqName, ThreadReference threadReference) {
-    super(currentValue.getValue(), classFqName, threadReference);
+  public FieldWatchpointValue(Field field, boolean access, JavaValue currentValue, JavaValue newValue, ThreadReference threadReference) {
+    super(currentValue.getValue(), threadReference);
     myField = field;
     myCurrentValue = currentValue;
     myNewValue = newValue;
@@ -45,9 +45,9 @@ public class FieldWatchpointValue extends JavaValue implements IValue {
   @Override
   public List<IWatchable> calculateSubvalues() {
     List<IWatchable> result = new ArrayList<IWatchable>();
-    result.add(new JavaWatchpointValueWatchable(myCurrentValue, true, myClassFQName, myThreadReference));
+    result.add(new JavaWatchpointValueWatchable(myCurrentValue, true, myThreadReference));
     if (!(myAccess)) {
-      result.add(new JavaWatchpointValueWatchable(myNewValue, false, myClassFQName, myThreadReference));
+      result.add(new JavaWatchpointValueWatchable(myNewValue, false, myThreadReference));
     }
     return result;
   }

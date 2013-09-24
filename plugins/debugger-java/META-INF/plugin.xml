@@ -14,15 +14,21 @@
   <application-components>
     <!--api-->
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager</implementation-class>
+      <interface-class>jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager</interface-class>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl</implementation-class>
     </component>
-
     <!--runtime-->
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.state.customViewers.BaseLanguageCustomViewers</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.JavaDebugger</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer</implementation-class>
     </component>
   </application-components>
 

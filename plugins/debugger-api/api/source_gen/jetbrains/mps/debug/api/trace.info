@@ -384,9 +384,9 @@
     <nodeInfo nodeId="4474271214082914690" fileName="AbstractUiState.java" startLine="95" startPosition="43" endLine="96" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6204890546057488023" fileName="AbstractUiState.java" startLine="97" startPosition="29" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6204890546057488026" fileName="AbstractUiState.java" startLine="99" startPosition="5" endLine="100" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="654837219998587970" fileName="AbstractUiState.java" startLine="106" startPosition="13" endLine="107" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="109" startPosition="49" endLine="110" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="654837219998587970" fileName="AbstractUiState.java" startLine="115" startPosition="13" endLine="116" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="118" startPosition="49" endLine="119" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="126" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214082914426" fileName="AbstractUiState.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThread#()Ljetbrains/mps/debug/api/programState/IThread;" />
     <nodeInfo nodeId="4474271214082914431" fileName="AbstractUiState.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThreads#()Ljava/util/List;" />
     <nodeInfo nodeId="4474271214082914437" fileName="AbstractUiState.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFrame#()Ljetbrains/mps/debug/api/programState/IStackFrame;" />
@@ -399,19 +399,19 @@
     <nodeInfo nodeId="4474271214082914622" fileName="AbstractUiState.java" startLine="77" startPosition="33" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214082914648" fileName="AbstractUiState.java" startLine="87" startPosition="48" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214082914694" fileName="AbstractUiState.java" startLine="96" startPosition="45" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="108" startPosition="31" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="108" startPosition="31" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="31" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="31" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4474271214082914548" fileName="AbstractUiState.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectThread#(Ljetbrains/mps/debug/api/programState/IThread;)V" />
     <nodeInfo nodeId="4474271214082914571" fileName="AbstractUiState.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectFrame#(I)V" />
     <nodeInfo nodeId="4474271214082914614" fileName="AbstractUiState.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFramesCount#()I" />
-    <nodeInfo nodeId="654837219998587823" fileName="AbstractUiState.java" startLine="105" startPosition="25" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="654837219998587823" fileName="AbstractUiState.java" startLine="114" startPosition="25" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4474271214082914593" fileName="AbstractUiState.java" startLine="67" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFrames#()Ljava/util/List;" />
     <nodeInfo nodeId="4474271214082914685" fileName="AbstractUiState.java" startLine="94" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWatchables#()Ljava/util/List;" />
     <nodeInfo nodeId="4474271214082914633" fileName="AbstractUiState.java" startLine="84" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFrame#(I)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
-    <nodeInfo nodeId="3070226725409672081" fileName="AbstractUiState.java" startLine="105" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3070226725409672081" fileName="AbstractUiState.java" startLine="114" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4474271214082914515" fileName="AbstractUiState.java" startLine="41" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findStackFrameIndex#()I" />
-    <nodeInfo nodeId="3070226725409668931" fileName="AbstractUiState.java" startLine="103" startPosition="74" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654837219998558871" fileName="AbstractUiState.java" startLine="103" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeEvaluation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="3070226725409668931" fileName="AbstractUiState.java" startLine="112" startPosition="74" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="654837219998558871" fileName="AbstractUiState.java" startLine="103" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeEvaluation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
     <scopeInfo nodeId="4474271214082914421" fileName="AbstractUiState.java" startLine="22" startPosition="59" endLine="23" endPosition="37" />
     <scopeInfo nodeId="4474271214082914442" fileName="AbstractUiState.java" startLine="35" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="4474271214082914450" fileName="AbstractUiState.java" startLine="37" startPosition="0" endLine="38" endPosition="0">
@@ -428,19 +428,19 @@
     <scopeInfo nodeId="4474271214082914626" fileName="AbstractUiState.java" startLine="78" startPosition="25" endLine="79" endPosition="37" />
     <scopeInfo nodeId="4474271214082914654" fileName="AbstractUiState.java" startLine="88" startPosition="33" endLine="89" endPosition="18" />
     <scopeInfo nodeId="4474271214082914698" fileName="AbstractUiState.java" startLine="97" startPosition="29" endLine="98" endPosition="47" />
-    <scopeInfo nodeId="654837219998587824" fileName="AbstractUiState.java" startLine="106" startPosition="13" endLine="107" endPosition="27" />
-    <scopeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="109" startPosition="49" endLine="110" endPosition="29" />
+    <scopeInfo nodeId="654837219998587824" fileName="AbstractUiState.java" startLine="115" startPosition="13" endLine="116" endPosition="27" />
+    <scopeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="118" startPosition="49" endLine="119" endPosition="29" />
     <scopeInfo nodeId="4474271214082914426" fileName="AbstractUiState.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4474271214082914431" fileName="AbstractUiState.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4474271214082914437" fileName="AbstractUiState.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="4474271214082914416" fileName="AbstractUiState.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="4474271214082914419" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="654837219998587825" fileName="AbstractUiState.java" startLine="108" startPosition="0" endLine="111" endPosition="11">
+    <scopeInfo nodeId="654837219998587825" fileName="AbstractUiState.java" startLine="117" startPosition="0" endLine="120" endPosition="11">
       <varInfo nodeId="654837219998587826" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="654837219998587828" fileName="AbstractUiState.java" startLine="108" startPosition="31" endLine="111" endPosition="11" />
-    <scopeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="108" startPosition="31" endLine="111" endPosition="11" />
+    <scopeInfo nodeId="654837219998587828" fileName="AbstractUiState.java" startLine="117" startPosition="31" endLine="120" endPosition="11" />
+    <scopeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="31" endLine="120" endPosition="11" />
     <scopeInfo nodeId="4474271214082914554" fileName="AbstractUiState.java" startLine="53" startPosition="54" endLine="57" endPosition="5">
       <varInfo nodeId="4474271214082914556" varName="newState" />
     </scopeInfo>
@@ -466,7 +466,7 @@
       <varInfo nodeId="4474271214082914644" varName="frames" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082914614" fileName="AbstractUiState.java" startLine="76" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="3070226725409672082" fileName="AbstractUiState.java" startLine="105" startPosition="25" endLine="112" endPosition="9" />
+    <scopeInfo nodeId="3070226725409672082" fileName="AbstractUiState.java" startLine="114" startPosition="25" endLine="121" endPosition="9" />
     <scopeInfo nodeId="4474271214082914593" fileName="AbstractUiState.java" startLine="67" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="4474271214082914685" fileName="AbstractUiState.java" startLine="94" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="4474271214082914518" fileName="AbstractUiState.java" startLine="41" startPosition="39" endLine="50" endPosition="20">
@@ -475,14 +475,14 @@
     <scopeInfo nodeId="4474271214082914633" fileName="AbstractUiState.java" startLine="84" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="4474271214082914636" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="3070226725409672081" fileName="AbstractUiState.java" startLine="105" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="3070226725409672081" fileName="AbstractUiState.java" startLine="114" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="4474271214082914515" fileName="AbstractUiState.java" startLine="41" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="654837219998558875" fileName="AbstractUiState.java" startLine="103" startPosition="74" endLine="114" endPosition="7" />
-    <scopeInfo nodeId="654837219998558871" fileName="AbstractUiState.java" startLine="103" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="654837219998558875" fileName="AbstractUiState.java" startLine="112" startPosition="74" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="654837219998558871" fileName="AbstractUiState.java" startLine="103" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="654837219998586805" varName="command" />
     </scopeInfo>
-    <unitInfo nodeId="3070226725409672081" fileName="AbstractUiState.java" startLine="104" startPosition="66" endLine="114" endPosition="5" unitName="jetbrains.mps.debug.api.AbstractUiState$1" />
-    <unitInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractUiState" />
+    <unitInfo nodeId="3070226725409672081" fileName="AbstractUiState.java" startLine="113" startPosition="66" endLine="123" endPosition="5" unitName="jetbrains.mps.debug.api.AbstractUiState$1" />
+    <unitInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="18" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractUiState" />
   </root>
   <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913515">
     <nodeInfo nodeId="1331672133304148678" fileName="DebuggableFramesSelector.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />

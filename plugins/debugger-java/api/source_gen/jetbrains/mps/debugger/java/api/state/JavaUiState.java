@@ -23,8 +23,9 @@ public abstract class JavaUiState extends AbstractUiState {
   @Override
   public abstract JavaThread getThread();
 
+  /**
+   * Invokes evaluation while blocking current thread (must be EDT by the way) and showing a progress window.
+   */
   @Nullable
-  public abstract <R> R invokeEvaluationUnderProgress(_FunctionTypes._return_P0_E0<? extends R> command);
-
-
+  public abstract <R> R invokeEvaluationSynchronously(_FunctionTypes._return_P0_E0<? extends R> command);
 }

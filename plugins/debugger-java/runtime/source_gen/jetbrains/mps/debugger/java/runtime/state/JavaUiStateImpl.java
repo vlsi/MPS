@@ -72,7 +72,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
 
   @Override
   @Nullable
-  public <R> R invokeEvaluationUnderProgress(_FunctionTypes._return_P0_E0<? extends R> command) {
+  public <R> R invokeEvaluationSynchronously(_FunctionTypes._return_P0_E0<? extends R> command) {
     if (getContext() == null) {
       return null;
     }

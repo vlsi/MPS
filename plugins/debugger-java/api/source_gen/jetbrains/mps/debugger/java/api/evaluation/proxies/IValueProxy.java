@@ -6,6 +6,9 @@ import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 
 public /**
+ * Proxy for jdi values that allows to do operations with it.
+ * 
+ * some meaningless comment from old times:
  * This solution was introduced as the easiest of the two adequate solutions of MPS-9041
  */
 interface IValueProxy {
@@ -14,4 +17,5 @@ interface IValueProxy {
   @Nullable
   public Object getJavaValue();
   public boolean javaEquals(IValueProxy valueProxy);
+  public String getPresentation();
 }

@@ -232,14 +232,13 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     if (myContext != null && myContext instanceof EventContext) {
       // todo move out 
       EventSet eventSet = ((EventContext) myContext).getEventSet();
-      String classFqName = check_vzg6vq_a0c0b0x(getStackFrame(), this);
-      ThreadReference threadReference = check_vzg6vq_a0d0b0x(getThread(), this);
-      if (classFqName == null || threadReference == null) {
+      ThreadReference threadReference = check_vzg6vq_a0c0b0x(getThread(), this);
+      if (threadReference == null) {
         return watchables;
       }
       EventWatchablesCreator watchablesCreator = new EventWatchablesCreator();
       for (Event event : eventSet) {
-        watchablesCreator.addWatchablesFromEvent(event, watchables, classFqName, threadReference);
+        watchablesCreator.addWatchablesFromEvent(event, watchables, threadReference);
       }
     }
     return watchables;
@@ -275,14 +274,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return null;
   }
 
-  private static String check_vzg6vq_a0c0b0x(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassFqName();
-    }
-    return null;
-  }
-
-  private static ThreadReference check_vzg6vq_a0d0b0x(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static ThreadReference check_vzg6vq_a0c0b0x(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

@@ -6,7 +6,7 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -16,9 +16,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 /*package*/ class JavaReturnWatchable extends JavaWatchable {
   private final JavaValue myValue;
 
-  public JavaReturnWatchable(Value value, String classFQName, ThreadReference threadReference) {
-    super(classFQName, threadReference);
-    myValue = ValueUtil.getInstance().fromJDI(value, myClassFQName, threadReference);
+  public JavaReturnWatchable(Value value, ThreadReference threadReference) {
+    super(threadReference);
+    myValue = CustomViewersManager.getInstance().fromJdi(value, threadReference);
   }
 
   @Override
