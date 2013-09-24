@@ -68,8 +68,7 @@ public class ViewAs_Action extends BaseAction {
       if (value == null || !(value instanceof JavaValue)) {
         return;
       }
-      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewAs_Action.this.factory);
-      ((DebugSession) DebugActionsUtil.getDebugSession(event)).refresh();
+      CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewAs_Action.this.factory, (DebugSession) DebugActionsUtil.getDebugSession(event));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ViewAs", t);

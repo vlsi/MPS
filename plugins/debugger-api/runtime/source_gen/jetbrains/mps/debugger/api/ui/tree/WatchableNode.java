@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.api.ui.tree;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.AbstractUiState;
+import java.util.concurrent.atomic.AtomicBoolean;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -18,6 +19,7 @@ public class WatchableNode extends AbstractWatchableNode {
   @NotNull
   private final IWatchable myWatchable;
   private final AbstractUiState myState;
+  private final AtomicBoolean myInitializationInProgress = new AtomicBoolean(false);
 
   public WatchableNode(@NotNull IWatchable watchable, AbstractUiState state) {
     this(null, watchable, state);
@@ -81,24 +83,33 @@ public class WatchableNode extends AbstractWatchableNode {
       callback.invoke();
       return;
     }
-    removeAllChildren();
     if (!(isLeaf())) {
       myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          myWatchable.getValue().initSubvalues();
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            @Override
-            public void run() {
-              removeAllChildren();
-              for (IWatchable watchable : ListSequence.fromList(getValue().getSubvalues())) {
-                add(new WatchableNode(watchable, myState));
-              }
-              updatePresentation();
-              myInitialized = true;
-              callback.invoke();
-              nodeChanged();
+          if (myInitializationInProgress.compareAndSet(false, true)) {
+            try {
+              myWatchable.getValue().initSubvalues();
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                  try {
+                    removeAllChildren();
+                    for (IWatchable watchable : ListSequence.fromList(getValue().getSubvalues())) {
+                      add(new WatchableNode(watchable, myState));
+                    }
+                    updatePresentation();
+                    myInitialized = true;
+                    callback.invoke();
+                    nodeChanged();
+                  } finally {
+                    myInitializationInProgress.set(false);
+                  }
+                }
+              });
+            } catch (Throwable t) {
+              myInitializationInProgress.set(false);
             }
-          });
+          }
         }
       });
     }

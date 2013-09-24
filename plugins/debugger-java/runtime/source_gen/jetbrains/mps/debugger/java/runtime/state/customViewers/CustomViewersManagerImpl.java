@@ -140,14 +140,18 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     return factory.createValueWrapper(proxy, threadReference);
   }
 
-  public synchronized void setValueWrapper(@NotNull IValueProxy value, @NotNull ValueWrapperFactory factory) {
-    DebugSession session = getSession(value);
+  public synchronized void setValueWrapper(@NotNull IValueProxy value, @NotNull ValueWrapperFactory factory, @NotNull DebugSession session) {
     Map<Long, String> objectIdToFactory = MapSequence.fromMap(myObjectIdToFactory).get(session);
     if (objectIdToFactory == null) {
       objectIdToFactory = MapSequence.fromMap(new HashMap<Long, String>());
       MapSequence.fromMap(myObjectIdToFactory).put(session, objectIdToFactory);
     }
-    MapSequence.fromMap(objectIdToFactory).put(getValueId(value), factory.getClass().getName());
+    String oldFactory = MapSequence.fromMap(objectIdToFactory).get(getValueId(value));
+    String newFactory = factory.getClass().getName();
+    if (neq_2btpdq_a0e0n(oldFactory, newFactory)) {
+      MapSequence.fromMap(objectIdToFactory).put(getValueId(value), newFactory);
+      session.refresh();
+    }
   }
 
   public static CustomViewersManagerImpl getInstanceImpl() {
@@ -204,4 +208,11 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
   }
 
   protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
+
+  private static boolean neq_2btpdq_a0e0n(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
 }
