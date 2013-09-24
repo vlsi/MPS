@@ -70,11 +70,18 @@ public class WatchableNode extends AbstractWatchableNode {
 
   @Override
   protected void doInit() {
+    init(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+      }
+    });
+  }
+
+  public void init(final _FunctionTypes._void_P0_E0 callback) {
     if (myInitialized) {
+      callback.invoke();
       return;
     }
     removeAllChildren();
-    myInitialized = true;
     if (!(isLeaf())) {
       myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -82,13 +89,13 @@ public class WatchableNode extends AbstractWatchableNode {
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             @Override
             public void run() {
-              myInitialized = false;
               removeAllChildren();
               for (IWatchable watchable : ListSequence.fromList(getValue().getSubvalues())) {
                 add(new WatchableNode(watchable, myState));
               }
               updatePresentation();
               myInitialized = true;
+              callback.invoke();
               nodeChanged();
             }
           });

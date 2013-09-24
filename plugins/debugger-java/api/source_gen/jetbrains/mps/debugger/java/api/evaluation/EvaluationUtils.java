@@ -21,9 +21,9 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy;
 import com.sun.jdi.InvocationException;
 import com.sun.jdi.InvalidTypeException;
+import com.sun.jdi.IncompatibleThreadStateException;
 import org.apache.log4j.Priority;
 import com.sun.jdi.ClassNotLoadedException;
-import com.sun.jdi.IncompatibleThreadStateException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -127,6 +127,12 @@ public abstract class EvaluationUtils {
         throw new JdiRuntimeExceptionEvaluationException(e);
       }
       throw new EvaluationRuntimeException(e);
+    } catch (IncompatibleThreadStateException e) {
+      if (invocatable instanceof EvaluationUtils.ThreadInvocatable) {
+        throw new EvaluationException("Incompatible thread " + ((EvaluationUtils.ThreadInvocatable) invocatable).getCurrentThreadReference().name(), e);
+      } else {
+        throw new EvaluationException(e);
+      }
     } catch (Throwable t) {
       throw new EvaluationException(t);
     }

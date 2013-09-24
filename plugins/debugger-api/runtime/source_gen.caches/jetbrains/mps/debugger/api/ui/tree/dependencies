@@ -44,6 +44,7 @@
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
