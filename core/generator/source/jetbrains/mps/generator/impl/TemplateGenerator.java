@@ -176,7 +176,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(executionContext), getOperationContext(), myGenerationTracer);
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(executionContext));
         for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
           checkMonitorCanceled();
           applyCreateRoot(rule, environment);
@@ -187,14 +187,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // root mapping rules
     ttrace.push("root mappings", false);
+    ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
+    for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
+      checkMonitorCanceled();
+      applyRootRule(rule, rootsConsumed);
+    }
     ArrayList<SNode> rootsToCopy = new ArrayList<SNode>();
     for (SNode root : myInputModel.getRootNodes()) {
       rootsToCopy.add(root);
     }
-    for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
-      checkMonitorCanceled();
-      applyRootRule(rule, rootsToCopy);
-    }
+    rootsToCopy.removeAll(rootsConsumed);
     ttrace.pop();
 
     // copy roots
@@ -203,7 +205,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode rootToCopy : rootsToCopy) {
       QueryExecutionContext context = getExecutionContext(rootToCopy);
       if (context != null) {
-        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(context), getOperationContext(), myGenerationTracer);
+        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(context));
         copyRootInputNode(rootToCopy, rootenv);
       }
     }
@@ -226,7 +228,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
+  private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsConsumed) throws GenerationFailureException, GenerationCanceledException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
@@ -241,7 +243,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null) {
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(executionContext), getOperationContext(), myGenerationTracer);
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(executionContext));
         try {
           if (executionContext.isApplicable(rule, environment, new DefaultTemplateContext(inputNode))) {
             myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputNode));
@@ -249,7 +251,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             try {
               boolean copyRootOnFailure = false;
               if (inputNode.getModel() != null && inputNode.getParent() == null && !rule.keepSourceRoot()) {
-                rootsToCopy.remove(inputNode);
+                rootsConsumed.add(inputNode);
                 copyRootOnFailure = true;
               }
               createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
@@ -325,11 +327,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   protected void copyRootInputNode(@NotNull SNode inputRootNode, @NotNull TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
+    ttrace.push("drop root rules", false);
     for (TemplateDropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
       if (isApplicableDropRootRule(inputRootNode, dropRootRule, environment)) {
         return;
       }
     }
+    ttrace.pop();
 
     // copy
     myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
@@ -434,7 +438,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (conceptRules == null) {
         return null;
       }
-      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, reductionContext, getOperationContext(), getGenerationTracer());
+      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, reductionContext);
       for (TemplateReductionRule rule : conceptRules) {
         reductionRule = rule;
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, reductionContext)) {
@@ -489,7 +493,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  Collection<SNode> copySrc(String mappingName, SNodeReference templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  /**
+   * @return never null
+   */
+  Collection<SNode> copySrc(String mappingName, @Nullable SNodeReference templateNode, @Nullable String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     if (inputNode.getModel() != getInputModel() || inputNode.getModel() == null) {
 
       // adapt external node
@@ -530,6 +537,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private SNode copyInputNode(SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+    ttrace.push("copyInputNode:create copy", false);
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getQualifiedName());
@@ -547,7 +555,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
-
+    ttrace.pop();
+    ttrace.push("copyInputNode:references", false);
     for (SReference inputReference : inputNode.getReferences()) {
       if (inputNode.getModel() != null) {
         boolean external = true;
@@ -614,6 +623,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           GeneratorUtil.describeIfExists(inputNode, "input node"));
       }
     }
+    ttrace.pop();
 
     for (SNode inputChildNode : inputNode.getChildren()) {
       String childRole = inputChildNode.getRoleInParent();
@@ -622,6 +632,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       try {
         Collection<SNode> outputChildNodes = tryToReduce(new DefaultTemplateContext(inputChildNode), null, null, reductionContext);
         if (outputChildNodes != null) {
+          ttrace.push("copyInputNode:validateChild", false);
           changed[0] = true;
           for (SNode outputChildNode : outputChildNodes) {
             // check child
@@ -632,6 +643,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             }
             outputNode.addChild(childRole, outputChildNode);
           }
+          ttrace.pop();
         } else {
           outputNode.addChild(childRole, copyInputNode(inputChildNode, reductionContext, changed));
         }
@@ -740,5 +752,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public boolean isIncremental() {
     return myDependenciesBuilder instanceof IncrementalDependenciesBuilder;
+  }
+
+  public IPerformanceTracer getPerformanceTracer() {
+    return ttrace;
   }
 }

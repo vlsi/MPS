@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
@@ -59,29 +60,29 @@ public class DelayedChanges {
     return myExecuteMapSrcNodeMacroChanges.isEmpty() && myExecuteMapSrcNodeMacroPostProcChanges.isEmpty();
   }
 
-  public void addExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+  public void addExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
     jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
     synchronized (this) {
-      myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, reductionContext));
+      myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, execContext));
     }
   }
 
-  public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+  public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
     jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
-    myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, reductionContext));
+    myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, execContext));
   }
 
-  public void addExecuteMapSrcNodeMacroPostProcChange(SNode mapSrcMacro, SNode outputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+  public void addExecuteMapSrcNodeMacroPostProcChange(SNode mapSrcMacro, SNode outputNode, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
     SNode postMapperFunction = RuleUtil.getMapSrc_PostMapperFunction(mapSrcMacro);
     if (postMapperFunction == null) return;
     synchronized (this) {
-      myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputNode, context, reductionContext));
+      myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputNode, context, execContext));
     }
   }
 
-  public void addExecutePostProcessor(@NotNull PostProcessor processor, SNode outputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+  public void addExecutePostProcessor(@NotNull PostProcessor processor, SNode outputNode, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
     synchronized (this) {
-      myExecuteMapSrcNodeMacroPostProcChanges.add(new PostProcessorChange(processor, outputNode, context, reductionContext));
+      myExecuteMapSrcNodeMacroPostProcChanges.add(new PostProcessorChange(processor, outputNode, context, execContext));
     }
   }
 
@@ -103,12 +104,12 @@ public class DelayedChanges {
 
     protected final SNode myChildToReplace;
     protected final TemplateContext myContext;
-    protected final ReductionContext myReductionContext;
+    protected final QueryExecutionContext myExecContext;
 
-    private BaseMapNodeChange(SNode childToReplace, TemplateContext context, ReductionContext reductionContext) {
+    private BaseMapNodeChange(SNode childToReplace, TemplateContext context, QueryExecutionContext execContext) {
       myChildToReplace = childToReplace;
       myContext = context;
-      myReductionContext = reductionContext;
+      myExecContext = execContext;
     }
 
     @Override
@@ -154,7 +155,7 @@ public class DelayedChanges {
             }
             org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(myChildToReplace, child);
           }
-          myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
+          myGenerator.getGenerationTracer().replaceOutputNode(myChildToReplace, child);
 
           // post-processing
           postProcess(child);
@@ -200,8 +201,8 @@ public class DelayedChanges {
   private class ExecuteMapSrcNodeMacroChange extends BaseMapNodeChange {
     private final SNode myMapSrcMacro;
 
-    public ExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-      super(childToReplace, context, reductionContext);
+    public ExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
+      super(childToReplace, context, execContext);
       myMapSrcMacro = mapSrcMacro;
     }
 
@@ -212,12 +213,12 @@ public class DelayedChanges {
 
     @Override
     protected SNode mapNode() throws GenerationFailureException {
-      return myReductionContext.getQueryExecutor().executeMapSrcNodeMacro(myContext.getInput(), getMapSrcMacro(), myChildToReplace.getParent(), myContext);
+      return myExecContext.executeMapSrcNodeMacro(myContext.getInput(), getMapSrcMacro(), myChildToReplace.getParent(), myContext);
     }
 
     @Override
     protected void postProcess(SNode child) throws GenerationFailureException {
-      addExecuteMapSrcNodeMacroPostProcChange(myMapSrcMacro, child, myContext, myReductionContext);
+      addExecuteMapSrcNodeMacroPostProcChange(myMapSrcMacro, child, myContext, myExecContext);
     }
   }
 
@@ -225,8 +226,8 @@ public class DelayedChanges {
     private final NodeMapper myMapper;
     private final PostProcessor myProcessor;
 
-    public MapNodeChange(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-      super(childToReplace, context, reductionContext);
+    public MapNodeChange(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull QueryExecutionContext execContext) {
+      super(childToReplace, context, execContext);
       myMapper = mapper;
       myProcessor = processor;
     }
@@ -242,13 +243,13 @@ public class DelayedChanges {
 
     @Override
     protected SNode mapNode() throws GenerationFailureException {
-      return myReductionContext.getQueryExecutor().executeInContext(myChildToReplace, myContext, myMapper);
+      return myExecContext.executeInContext(myChildToReplace, myContext, myMapper);
     }
 
     @Override
     protected void postProcess(SNode child) throws GenerationFailureException {
       if (myProcessor != null) {
-        addExecutePostProcessor(myProcessor, child, myContext, myReductionContext);
+        addExecutePostProcessor(myProcessor, child, myContext, myExecContext);
       }
     }
   }
@@ -257,19 +258,19 @@ public class DelayedChanges {
     private final SNode myMapSrcMacro;
     private final SNode myOutputChild;
     private final TemplateContext myContext;
-    private ReductionContext myReductionContext;
+    private final QueryExecutionContext myExecContext;
 
-    public ExecuteMapSrcNodeMacroPostProcChange(SNode mapSrcMacro, SNode outputChild, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+    public ExecuteMapSrcNodeMacroPostProcChange(SNode mapSrcMacro, SNode outputChild, @NotNull TemplateContext context, @NotNull QueryExecutionContext executionContext) {
       myMapSrcMacro = mapSrcMacro;
       myOutputChild = outputChild;
       myContext = context;
-      myReductionContext = reductionContext;
+      myExecContext = executionContext;
     }
 
     @Override
     public void doChange() {
       try {
-        myReductionContext.getQueryExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
+        myExecContext.executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
@@ -281,19 +282,19 @@ public class DelayedChanges {
     private final PostProcessor myProcessor;
     private final SNode myOutputChild;
     private final TemplateContext myContext;
-    private ReductionContext myReductionContext;
+    private final QueryExecutionContext myExecContext;
 
-    public PostProcessorChange(PostProcessor processor, SNode outputChild, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+    public PostProcessorChange(PostProcessor processor, SNode outputChild, @NotNull TemplateContext context, @NotNull QueryExecutionContext executionContext) {
       myProcessor = processor;
       myOutputChild = outputChild;
       myContext = context;
-      myReductionContext = reductionContext;
+      myExecContext = executionContext;
     }
 
     @Override
     public void doChange() {
       try {
-        myReductionContext.getQueryExecutor().executeInContext(myOutputChild, myContext, myProcessor);
+        myExecContext.executeInContext(myOutputChild, myContext, myProcessor);
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myContext.getInput(), null, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);

@@ -17,9 +17,11 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,11 +46,22 @@ public interface TemplateExecutionEnvironment {
 
   IGenerationTracer getTracer();
 
+  IGeneratorLogger getLogger();
+
   @NotNull
   ReductionContext getReductionContext();
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
+  /**
+   * Copies nodes from input model, trying to apply reduction rules
+   * @param inputNodes nodes to copy
+   * @param templateNode element of output template model (e.g. one with attached COPY-SRC macro), or null if none
+   * @param templateNodeId same as previous, as a string representation of a reference
+   * @param mappingName
+   * @param templateContext
+   * @return copied nodes, or empty list if none copied
+   */
   Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodeReference templateNode, String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
@@ -79,4 +92,6 @@ public interface TemplateExecutionEnvironment {
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
   void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);
+
+  QueryExecutionContext getQueryExecutor();
 }

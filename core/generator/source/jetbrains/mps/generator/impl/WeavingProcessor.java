@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ public class WeavingProcessor {
         continue;
       }
       ReductionContext reductionContext = new ReductionContext(executionContext);
-      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, reductionContext, myGenerator.getOperationContext(), myGenerationTracer);
+      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, reductionContext);
 
       try {
         DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);

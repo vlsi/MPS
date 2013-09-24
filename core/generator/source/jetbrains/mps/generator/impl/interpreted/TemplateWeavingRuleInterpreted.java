@@ -182,7 +182,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     checkTemplateFragmentsForWeaving(template, templateFragments, environment.getGenerator());
 
     // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+    TemplateProcessor templateProcessor = new TemplateProcessor(environment);
     for (SNode templateFragment : templateFragments) {
       SNode templateFragmentNode = templateFragment.getParent();
       SNode contextParentNode = null;
@@ -254,7 +254,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       weaveTemplateDeclaration(outputContextNode,
-        GeneratorUtil.createConsequenceContext(context.getInput(), null, environment.getReductionContext(), consequenceNode, context.getInput(), environment.getGenerator()), environment);
+        GeneratorUtil.createConsequenceContext(context.getInput(), null, environment, consequenceNode), environment);
       return true;
     }
   }
@@ -274,13 +274,13 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         environment.getGenerator().showErrorMessage(context.getInput(), ruleNode, "weaving rule: cannot create list of source nodes");
         return false;
       }
-      Collection<SNode> queryNodes = environment.getReductionContext().getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
+      Collection<SNode> queryNodes = environment.getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
       if (queryNodes.isEmpty()) {
         return false;
       }
       for (SNode queryNode : queryNodes) {
         weaveTemplateDeclaration(outputContextNode,
-          GeneratorUtil.createConsequenceContext(queryNode, null, environment.getReductionContext(), consequenceNode, queryNode, environment.getGenerator()), environment);
+          GeneratorUtil.createConsequenceContext(queryNode, null, environment, consequenceNode), environment);
       }
 
       return true;

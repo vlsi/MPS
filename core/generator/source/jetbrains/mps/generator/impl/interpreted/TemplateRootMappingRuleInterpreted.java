@@ -101,8 +101,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     if (templateNode != null) {
-      return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-        .apply(ruleMappingName, templateNode, context);
+      return new TemplateProcessor(environment).apply(ruleMappingName, templateNode, context);
     } else {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "no template is defined for the rule");
     }

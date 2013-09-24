@@ -22,7 +22,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
@@ -135,16 +134,16 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(context.getInput(), context, environment.getReductionContext(), ruleConsequence, context.getInput(), environment.getGenerator());
+    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(context.getInput(), context, environment, ruleConsequence);
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, conseqContext, ruleNode, environment.getReductionContext(), environment.getGenerator());
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, conseqContext, ruleNode, environment);
     if (nodeAndMappingNamePairs == null) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleConsequence, "error processing reduction rule consequence");
       return null;
     }
 
     List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+    TemplateProcessor templateProcessor = new TemplateProcessor(environment);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;

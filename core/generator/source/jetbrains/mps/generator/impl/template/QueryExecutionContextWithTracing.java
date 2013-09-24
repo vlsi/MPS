@@ -108,7 +108,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("property macro", templateNode), true);
+      tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
       wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
     } finally {
       tracer.pop();
@@ -229,11 +229,8 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if(rule instanceof TemplateRootMappingRuleInterpreted) {
-      return wrapped.applyRule(rule, environment, context);
-    }
     try {
-      tracer.push(taskName("root mapping rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.applyRule(rule, environment,context);
     } finally {
       tracer.pop();
@@ -242,9 +239,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
-    if(rule instanceof TemplateCreateRootRuleInterpreted) {
-      return wrapped.applyRule(rule, environment);
-    }
     try {
       tracer.push(taskName("create root rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.applyRule(rule, environment);
@@ -266,7 +260,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void executeScript(TemplateMappingScript mappingScript, SModel model) {
     try {
-      tracer.push(taskName("mapping script", mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
       wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();

@@ -18,15 +18,21 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -55,6 +61,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   // these objects survive through all steps of generation
   private Set<String> myUsedNames = new ConcurrentHashSet<String>();
+  private final SAbstractConcept myNamedConcept;
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   IGenerationTracer generationTracer,
@@ -83,6 +90,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       mySessionObjects.clear();
       myUsedNames.clear();
     }
+    myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
   }
 
   public void clearTransientObjects() {
@@ -179,8 +187,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       // find topmost 'named' ancestor
       SNode topmostNamed = null;
       SNode node_ = contextNode;
+      final SAbstractConcept namedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
       while (node_ != null) {
-        if (node_.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept))) {
+        if (node_.getConcept().isSubConceptOf(namedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
@@ -209,50 +218,64 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return uniqueName;
   }
 
+  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
+
   public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
     if (useOldStyleUniqueName) {
       return createUniqueNameOldStyle(roughName, contextNode);
     }
 
-    String uniqueSuffix = null;
+    StringBuilder uniqueNameBuffer = new StringBuilder(50);
+    uniqueNameBuffer.append(roughName);
+    if (roughName.length() > 0 && roughName.charAt(roughName.length()-1) == '_') {
+      uniqueNameBuffer.setLength(roughName.length()-1);
+    }
 
     if (contextNode != null) {
       // find topmost 'named' ancestor
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept))) {
+        if (node_.getConcept().isSubConceptOf(myNamedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
       }
 
       if (topmostNamed != null) {
-        String name = topmostNamed.getName();
-        if (name != null) {
-          uniqueSuffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
+        String suffix = topToSuffix.get(topmostNamed);
+        if (suffix != null) {
+          uniqueNameBuffer.append('_');
+          uniqueNameBuffer.append(suffix);
+        } else {
+          String name = topmostNamed.getName();
+          if (name != null) {
+            suffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
+            topToSuffix.put(topmostNamed, suffix);
+            uniqueNameBuffer.append('_');
+            uniqueNameBuffer.append(suffix);
+          }
         }
       }
     } // if(contextNode != null)
 
     if (inputNode != null) {
-      if (uniqueSuffix == null) {
-        uniqueSuffix = nodeUniqueId(inputNode);
-      } else {
-        uniqueSuffix = uniqueSuffix + "_" + nodeUniqueId(inputNode);
-      }
+      final String nid = nodeUniqueId(inputNode);
+      uniqueNameBuffer.append('_');
+      uniqueNameBuffer.append(nid);
     }
 
-    if (uniqueSuffix != null) {
-      roughName = roughName.endsWith("_") ? roughName + uniqueSuffix : roughName + "_" + uniqueSuffix;
-    }
-    String uniqueName = roughName;
+    final boolean suffixAdded = roughName.length() < uniqueNameBuffer.length();
+    String uniqueName = uniqueNameBuffer.toString();
 
-    if (uniqueSuffix == null || myUsedNames.contains(uniqueName)) {
-      roughName += "_";
+    if (!suffixAdded || myUsedNames.contains(uniqueName)) {
+      uniqueNameBuffer.append('_');
+      final int trimPos = uniqueNameBuffer.length();
       for (int count = 0; ; count++) {
-        uniqueName = roughName + count;
+        uniqueNameBuffer.append(count);
+        uniqueName = uniqueNameBuffer.toString();
         if (!myUsedNames.contains(uniqueName)) break;
+        uniqueNameBuffer.setLength(trimPos);
       }
     }
     myUsedNames.add(uniqueName);
