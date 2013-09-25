@@ -29,6 +29,10 @@ public class QueriesGenerated {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }
 
+  public static Object propertyMacro_GetPropertyValue_6382742553261755325(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
+  }
+
   public static Object referenceMacro_GetReferent_6306886970790186890(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return "background";
   }

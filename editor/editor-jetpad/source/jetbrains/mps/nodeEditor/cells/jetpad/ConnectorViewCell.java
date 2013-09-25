@@ -30,30 +30,4 @@ public class ConnectorViewCell extends GenericViewCell {
   public void setConnection(PolylineConnection connection) {
     myConnection = connection;
   }
-//
-//  @Override
-//  protected void setBounds() {
-//    List<LineView> lines = myConnection.getLines();
-//    if (lines.isEmpty()) {
-//      return;
-//    }
-//    int minx = lines.get(0).start().get().x;
-//    int miny = lines.get(0).start().get().y;
-//    int maxx = lines.get(0).end().get().x;
-//    int maxy = lines.get(0).end().get().y;
-//    for (LineView line : lines) {
-//      int x = line.start().get().x;
-//      int y = line.start().get().y;
-//      int x1 = line.end().get().x;
-//      int y1 = line.end().get().y;
-//      minx = minx > x ? x : minx;
-//      miny = miny > y ? y : miny;
-//      maxx = maxx < x1 ? x1 : maxx;
-//      maxy = maxy < y1 ? y1 : maxy;
-//    }
-//    myX = minx;
-//    myY = miny;
-//    myWidth = maxx - minx;
-//    myHeight = maxy - miny;
-//  }
 }
