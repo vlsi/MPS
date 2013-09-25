@@ -35,14 +35,10 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     view.setX(SPropertyOperations.getInteger(node, "x"));
     view.setY(SPropertyOperations.getInteger(node, "y"));
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
-      GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(child);
-      editorCell.addEditorCell(childCell);
-      attach(view.getInputs(), childCell.getView());
+      createViewForChildNode(child, editorCell, view.getInputs(), editorContext);
     }
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
-      GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(child);
-      editorCell.addEditorCell(childCell);
-      attach(view.getOutputs(), childCell.getView());
+      createViewForChildNode(child, editorCell, view.getOutputs(), editorContext);
     }
     view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ?
       null :
@@ -56,12 +52,16 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
 
   }
 
-  private static void attach(View parent, View child) {
-    View oldParent = child.parent();
+  public static void createViewForChildNode(SNode childNode, GenericViewCell parentCell, View parentView, EditorContext editorContext) {
+    GenericViewCell childCell = (GenericViewCell) editorContext.createNodeCell(childNode);
+    parentCell.addEditorCell(childCell);
+
+    View childView = childCell.getView();
+    View oldParent = childView.parent();
     if (oldParent != null) {
-      oldParent.children().remove(oldParent.children().indexOf(child));
+      oldParent.children().remove(oldParent.children().indexOf(childView));
     }
-    parent.children().add(child);
+    parentView.children().add(childView);
   }
 
   private static Vector _StyleParameter_QueryFunction_70mnj_a0a(EditorContext editorContext, SNode node) {
