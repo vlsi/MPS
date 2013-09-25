@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -331,9 +332,10 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     fillOriginalNode(inputNode, outputNodeToWeave);
 
     // check child
-    RoleValidationStatus status = generator.validateChild(contextParentNode, childRole, outputNodeToWeave);
+    RoleValidator v = generator.getChildRoleValidator(contextParentNode, childRole);
+    RoleValidationStatus status = v.validate(outputNodeToWeave);
     if (status != null) {
-      status.reportProblem(false, "",
+      status.reportProblem(false, contextParentNode, "",
         GeneratorUtil.describe(inputNode, "input"),
         GeneratorUtil.describe(templateNode.resolve(MPSModuleRepository.getInstance()), "template"));
     }

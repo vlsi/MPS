@@ -22,6 +22,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
@@ -255,14 +256,15 @@ public final class TemplateProcessor {
           myGenerator.getPerformanceTracer().push("validateChild", false);
           SConcept originalConcept = templateChildNode.getConcept();
           String role = templateChildNode.getRoleInParent();
+          RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
           for (SNode outputChildNode : outputChildNodes) {
             // returned node is subconcept of template node => fine
             final boolean notSubConcept = !(outputChildNode.getConcept().isSubConceptOf(originalConcept));
             if (notSubConcept) {
               // check child
-              RoleValidationStatus status = myGenerator.validateChild(outputNode, role, outputChildNode);
+              RoleValidationStatus status = validator.validate(outputChildNode);
               if (status != null) {
-                status.reportProblem(false, "",
+                status.reportProblem(false, outputNode, "",
                     GeneratorUtil.describe(context.getInput(), "input"),
                     GeneratorUtil.describe(templateNode, "parent in template"),
                     GeneratorUtil.describe(templateChildNode, "child in template"));

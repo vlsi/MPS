@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -634,12 +634,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         if (outputChildNodes != null) {
           ttrace.push("copyInputNode:validateChild", false);
           changed[0] = true;
+          RoleValidator rv = getChildRoleValidator(outputNode, childRole);
           for (SNode outputChildNode : outputChildNodes) {
             // check child
-            RoleValidationStatus status = validateChild(outputNode, childRole, outputChildNode);
+            RoleValidationStatus status = rv.validate(outputChildNode);
             if (status != null) {
-              status.reportProblem(false, "",
-                GeneratorUtil.describe(inputNode, "input"));
+              status.reportProblem(false, outputNode, "", GeneratorUtil.describe(inputNode, "input"));
             }
             outputNode.addChild(childRole, outputChildNode);
           }

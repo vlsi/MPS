@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,9 +163,9 @@ public class PostponedReference extends SReference {
   }
 
   private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {
-    RoleValidationStatus status = myGenerator.validateReferent(outputNode, role, outputTargetNode);
+    RoleValidationStatus status = myGenerator.getReferentRoleValidator(outputNode, role).validate(outputTargetNode);
     if (status != null) {
-      status.reportProblem(true, "bad reference: ", myReferenceInfo.getErrorDescriptions());
+      status.reportProblem(true, outputNode, "bad reference: ", myReferenceInfo.getErrorDescriptions());
       return false;
     }
 

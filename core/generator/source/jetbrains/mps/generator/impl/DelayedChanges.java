@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidator;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.runtime.NodeMapper;
@@ -116,50 +117,52 @@ public class DelayedChanges {
     public void doChange() {
       try {
         SNode child = mapNode();
-        if (child != null) {
-          // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
-          // planning the generation steps.
-          Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
-          if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
-            if (!childLang.getGenerators().isEmpty()) {
-              myLogger.error(child, "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
-                GeneratorUtil.describe(myContext.getInput(), "input"),
-                GeneratorUtil.describe(getMapSrcMacro(), "template"),
-                new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
-            }
-          }
-
-          if (child.getModel() != null) {
-            // must be "in air"
-            child = CopyUtil.copy(child);
-          }
-          // replace references back to input model
-          validateReferences(child);
-
-          // check new child
-          SNode parent = myChildToReplace.getParent();
-          if (parent == null) {
-            // root?
-            if (myChildToReplace.getModel() != null && myChildToReplace.getParent() == null) {
-              myChildToReplace.getModel().addRootNode(child);
-              myChildToReplace.getModel().removeRootNode(myChildToReplace);
-              myGenerator.rootReplaced(myChildToReplace, child);
-            }
-          } else {
-            String childRole = myChildToReplace.getRoleInParent();
-            RoleValidationStatus status = myGenerator.validateChild(parent, childRole, child);
-            if (status != null) {
-              status.reportProblem(false, "",
-                GeneratorUtil.describe(myContext.getInput(), "input"),
-                GeneratorUtil.describe(getMapSrcMacro(), "template"));
-            }
-            org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(myChildToReplace, child);
-          }
-          myGenerator.getGenerationTracer().replaceOutputNode(myChildToReplace, child);
-
-          // post-processing
-          postProcess(child);
+        if (child == null) {
+          return;
         }
+        // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
+        // planning the generation steps.
+        Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
+        if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
+          if (!childLang.getGenerators().isEmpty()) {
+            myLogger.error(child, "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
+              GeneratorUtil.describe(myContext.getInput(), "input"),
+              GeneratorUtil.describe(getMapSrcMacro(), "template"),
+              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
+          }
+        }
+
+        if (child.getModel() != null) {
+          // must be "in air"
+          child = CopyUtil.copy(child);
+        }
+        // replace references back to input model
+        validateReferences(child);
+
+        // check new child
+        SNode parent = myChildToReplace.getParent();
+        if (parent == null) {
+          // root?
+          if (myChildToReplace.getModel() != null && myChildToReplace.getParent() == null) {
+            myChildToReplace.getModel().addRootNode(child);
+            myChildToReplace.getModel().removeRootNode(myChildToReplace);
+            myGenerator.rootReplaced(myChildToReplace, child);
+          }
+        } else {
+          String childRole = myChildToReplace.getRoleInParent();
+          final RoleValidator roleValidator = myGenerator.getChildRoleValidator(parent, childRole);
+          RoleValidationStatus status = roleValidator.validate(child);
+          if (status != null) {
+            status.reportProblem(false, parent, "",
+              GeneratorUtil.describe(myContext.getInput(), "input"),
+              GeneratorUtil.describe(getMapSrcMacro(), "template"));
+          }
+          org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(myChildToReplace, child);
+        }
+        myGenerator.getGenerationTracer().replaceOutputNode(myChildToReplace, child);
+
+        // post-processing
+        postProcess(child);
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myContext.getInput(), getMapSrcMacro(), "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
