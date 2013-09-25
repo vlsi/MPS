@@ -1,36 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.execution.lib.ui.BaseFieldWithButtonComponent" file="BaseFieldWithButtonComponent.java">
-    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.awt.event.KeyAdapter" />
-    <classNode dependClassName="java.awt.event.KeyEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.Disposable" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-  </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" file="FieldWithPathChooseDialog.java">
-    <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
     <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JTextField" />
-    <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseFieldWithButtonComponent" />
+    <classNode extendsClassName="com.intellij.openapi.ui.NoPathCompletion" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.ListPanel" file="ListPanel.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
@@ -198,18 +178,14 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" file="RawLineEditorComponent.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
-    <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="com.intellij.ui.InsertPathAction" />
-    <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JTextField" />
-    <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseFieldWithButtonComponent" />
+    <classNode extendsClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
   </dependency>
 </dependenciesRoot>
 
