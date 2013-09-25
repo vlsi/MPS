@@ -22,6 +22,7 @@ import com.sun.jdi.InvocationException;
 import com.sun.jdi.InvalidTypeException;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.IncompatibleThreadStateException;
+import com.sun.jdi.StringReference;
 
 /*package*/ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   private ClassType myReferenceType;
@@ -96,5 +97,12 @@ import com.sun.jdi.IncompatibleThreadStateException;
   @Override
   public boolean javaEquals(IValueProxy proxy) {
     return myValue.equals(proxy.getJDIValue());
+  }
+
+  public String getPresentation() {
+    if (myValue instanceof StringReference) {
+      return "\"" + ((StringReference) myValue).value() + "\"";
+    }
+    return (("{" + myValue.type().name() + "} ") + myValue.toString());
   }
 }

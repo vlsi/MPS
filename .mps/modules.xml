@@ -192,8 +192,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" folder="workbench.debugger" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" folder="workbench.debugger" />
+      <modulePath path="$PROJECT_DIR$/plugins/debugger-java/customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" folder="workbench.debugger" />

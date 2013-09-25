@@ -20,31 +20,31 @@ public class EventWatchablesCreator {
   public EventWatchablesCreator() {
   }
 
-  public void addWatchablesFromEvent(Event event, List<IWatchable> watchables, String classFqName, ThreadReference threadReference) {
+  public void addWatchablesFromEvent(Event event, List<IWatchable> watchables, ThreadReference threadReference) {
     if (event instanceof ExceptionEvent) {
       ObjectReference exception = ((ExceptionEvent) event).exception();
-      watchables.add(new JavaExceptionWatchable(exception, classFqName, threadReference));
+      watchables.add(new JavaExceptionWatchable(exception, threadReference));
     } else
     if (event instanceof MethodEntryEvent) {
       Method method = ((MethodEntryEvent) event).method();
-      watchables.add(new JavaMethodWatchable(method, true, classFqName, threadReference));
+      watchables.add(new JavaMethodWatchable(method, true, threadReference));
     } else
     if (event instanceof MethodExitEvent) {
       Method method = ((MethodExitEvent) event).method();
       Value value = ((MethodExitEvent) event).returnValue();
-      watchables.add(new JavaMethodWatchable(method, false, classFqName, threadReference));
-      watchables.add(new JavaReturnWatchable(value, classFqName, threadReference));
+      watchables.add(new JavaMethodWatchable(method, false, threadReference));
+      watchables.add(new JavaReturnWatchable(value, threadReference));
     } else
     if (event instanceof AccessWatchpointEvent) {
       Field field = ((AccessWatchpointEvent) event).field();
       Value value = ((AccessWatchpointEvent) event).valueCurrent();
-      watchables.add(new JavaWatchpointWatchable(field, value, classFqName, threadReference));
+      watchables.add(new JavaWatchpointWatchable(field, value, threadReference));
     } else
     if (event instanceof ModificationWatchpointEvent) {
       Field field = ((ModificationWatchpointEvent) event).field();
       Value currentValue = ((ModificationWatchpointEvent) event).valueCurrent();
       Value valueToBe = ((ModificationWatchpointEvent) event).valueToBe();
-      watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, classFqName, threadReference));
+      watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, threadReference));
     }
   }
 }

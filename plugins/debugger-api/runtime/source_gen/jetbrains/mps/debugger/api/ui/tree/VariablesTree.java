@@ -44,6 +44,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class VariablesTree extends MPSTree implements DataProvider {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "COMMAND_OPEN_NODE_IN_PROJECT";
@@ -206,11 +207,95 @@ public class VariablesTree extends MPSTree implements DataProvider {
           return ((WatchableNode) selectedNode).getValue();
         }
       }
+    } else if (dataId.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
+      return findSelectedNode();
     }
     return null;
   }
 
   public Project getProject() {
     return myProject;
+  }
+
+  private void stringToPath(String pathString, final _FunctionTypes._void_P1_E0<? super TreePath> callback) {
+    String[] components = pathString.split(MPSTree.TREE_PATH_SEPARATOR);
+    final List<Object> path = new ArrayList<Object>();
+    MPSTreeNode current = getRootNode();
+    if (!(current.isInitialized())) {
+      current.init();
+    }
+    path.add(current);
+    if (components.length == 0) {
+      callback.invoke(new TreePath(path.toArray()));
+    } else {
+      stringToPath(current, components, 0, path, new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          callback.invoke(new TreePath(path.toArray()));
+        }
+      });
+    }
+  }
+
+  private void stringToPath(MPSTreeNode current, final String[] path, final int index, final List<Object> result, final _FunctionTypes._void_P0_E0 callback) {
+    if (index >= path.length) {
+      callback.invoke();
+      return;
+    }
+    String component = path[index];
+    if ((component == null || component.length() == 0)) {
+      stringToPath(current, path, index + 1, result, callback);
+    } else {
+      boolean found = false;
+      for (int i = 0; i < current.getChildCount(); i++) {
+        final MPSTreeNode node = (MPSTreeNode) current.getChildAt(i);
+        if (node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-").equals(component)) {
+          found = true;
+          ListSequence.fromList(result).addElement(node);
+          if (!(node.isInitialized())) {
+            if (node instanceof WatchableNode) {
+              ((WatchableNode) node).init(new _FunctionTypes._void_P0_E0() {
+                public void invoke() {
+                  stringToPath(node, path, index + 1, result, callback);
+                }
+              });
+            } else {
+              node.init();
+            }
+          }
+          break;
+        }
+      }
+      if (!(found)) {
+        callback.invoke();
+      }
+    }
+  }
+
+  protected void expandPaths(List<String> paths) {
+    for (String path : paths) {
+      stringToPath(path, new _FunctionTypes._void_P1_E0<TreePath>() {
+        public void invoke(TreePath treePath) {
+          if (treePath != null) {
+            expandPath(treePath);
+          }
+        }
+      });
+    }
+  }
+
+  protected void selectPaths(final List<String> paths) {
+    final List<TreePath> treePaths = new ArrayList<TreePath>();
+    for (int i = 0; i < paths.size(); i++) {
+      // yep, this line is required for the code to work %| 
+      final int j = i;
+      stringToPath(paths.get(i), new _FunctionTypes._void_P1_E0<TreePath>() {
+        public void invoke(TreePath treePath) {
+          treePaths.add(treePath);
+          if (j == paths.size() - 1) {
+            setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+          }
+        }
+      });
+    }
   }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.calculator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -13,9 +14,9 @@ public class Calculator_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.calculator.structure.InputField")) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.calculator.structure.InputField") && ScopeUtils.comeFrom("outputField", thisNode, child)) {
       return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.calculator.structure.Calculator", "inputField"));
     }
-    return null;
+    return ScopeUtils.lazyParentScope(thisNode, kind);
   }
 }

@@ -334,6 +334,9 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-runtime-models">
       <fileset dir="${mps_home}/plugins/debugger-java/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-customViewers-models">
+      <fileset dir="${mps_home}/plugins/debugger-java/customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-debugger-java/lib/debugger-java.jar">
       <fileset dir="${build.tmp}/java/out/debugger-java" />
       <zipfileset file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" prefix="modules/jetbrains.mps.debugger.java.api" />
@@ -342,15 +345,8 @@
       <zipfileset file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" prefix="modules/jetbrains.mps.debugger.java.runtime" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-runtime-models" prefix="modules/jetbrains.mps.debugger.java.runtime/models" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-customViewers-models">
-      <fileset dir="${mps_home}/plugins/debugger-java-customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-java-customViewers.jar">
-      <fileset dir="${build.tmp}/java/out/debugger-java-customViewers" />
-      <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" prefix="META-INF" />
-      <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" prefix="modules/jetbrains.mps.debugger.java.customViewers.plugin" />
-      <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.customViewers.plugin" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" prefix="modules/jetbrains.mps.debugger.java.customViewers.plugin" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/customViewers" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.customViewers.plugin" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-customViewers-models" prefix="modules/jetbrains.mps.debugger.java.customViewers.plugin/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
@@ -365,14 +361,14 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, java.compile.debugger-java-customViewers, java.compile.jetbrains.mps.execution.settings, java.compile.jetbrains.mps.execution.settings#946964771156035778, java.compile.jetbrains.mps.execution.common, java.compile.jetbrains.mps.debugger.api.lang, java.compile.jetbrains.mps.debugger.api.lang#1270798772176052788, java.compile.jetbrains.mps.debugger.java.privateMembers, java.compile.jetbrains.mps.debugger.java.customViewers, java.compile.jetbrains.mps.debugger.java.customViewers#4089989733346806812, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.evaluation#1620955434532134778" />
+  <target name="compileJava" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, java.compile.jetbrains.mps.execution.settings, java.compile.jetbrains.mps.execution.settings#946964771156035778, java.compile.jetbrains.mps.execution.common, java.compile.jetbrains.mps.debugger.api.lang, java.compile.jetbrains.mps.debugger.api.lang#1270798772176052788, java.compile.jetbrains.mps.debugger.java.privateMembers, java.compile.jetbrains.mps.debugger.java.customViewers, java.compile.jetbrains.mps.debugger.java.customViewers#4089989733346806812, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.evaluation#1620955434532134778" />
   
   <target name="processResources" />
   
@@ -457,13 +453,15 @@
       </chunk>
       <chunk>
         <module file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
-        <module file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" />
+        <module file="${mps_home}/plugins/debugger-java/customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" />
         <module file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" />
         <module file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
+      <macro name="idea_home" path="${idea_home}" />
+      <macro name="mps_home" path="${mps_home}" />
     </generate>
   </target>
   
@@ -571,12 +569,14 @@
   <target name="java.compile.debugger-java" depends="java.compile.execution-api, java.compile.debugger-api, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/debugger-java/api/source_gen" />
     <mkdir dir="${mps_home}/plugins/debugger-java/runtime/source_gen" />
+    <mkdir dir="${mps_home}/plugins/debugger-java/customViewers/source_gen" />
     <mkdir dir="${build.tmp}/java/out/debugger-java" />
     <javac2 destdir="${build.tmp}/java/out/debugger-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/api/source_gen" />
         <path location="${mps_home}/plugins/debugger-java/runtime/source_gen" />
+        <path location="${mps_home}/plugins/debugger-java/customViewers/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/execution-api" />
@@ -608,47 +608,7 @@
     <copy todir="${build.tmp}/java/out/debugger-java">
       <fileset dir="${mps_home}/plugins/debugger-java/api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/debugger-java/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.debugger-java-customViewers" depends="java.compile.execution-api, java.compile.debugger-api, java.compile.debugger-java, fetchDependencies">
-    <mkdir dir="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/debugger-java-customViewers" />
-    <javac2 destdir="${build.tmp}/java/out/debugger-java-customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
-      </src>
-      <classpath>
-        <pathelement path="${build.tmp}/java/out/execution-api" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
-        <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-        <pathelement path="${build.tmp}/java/out/debugger-api" />
-        <pathelement path="${build.tmp}/java/out/debugger-java" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/tools.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/debugger-java-customViewers">
-      <fileset dir="${mps_home}/plugins/debugger-java-customViewers/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/debugger-java/customViewers/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1188,7 +1148,7 @@
     <delete dir="${mps_home}/plugins/execution-api/languages/settings/generator/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/api/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
+    <delete dir="${mps_home}/plugins/debugger-java/customViewers/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/runtime/source_gen" />

@@ -65,8 +65,10 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * evgeny, 1/25/13
@@ -372,6 +374,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       if (mpsPsiNode == null) continue;
       drop(mpsPsiNode);
     }
+    myNodes.clear();
     reload(sModel);
   }
 
@@ -398,8 +401,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         addChildLast(rootNode);
         if(rootNode.getChildren().length == 0)
           rootNode.addChildLast(convert(root));
-        else
+        else {
           rootNode.updateChildren();
+          fillNodes(rootNode);
+        }
       }
 
       enumerateNodes();
@@ -423,6 +428,22 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
           mySourceVirtualFile = ModelUtil.getFileByModel(myModelReference.resolve(MPSModuleRepository.getInstance()));
         }
       });*/
+    }
+  }
+
+  private void fillNodes(MPSPsiRootNode rootNode) {
+    Queue<MPSPsiNode> psiNodes = new LinkedList<MPSPsiNode>();
+    for (PsiElement element : rootNode.getChildren()) {
+      if(element instanceof MPSPsiNode)
+        psiNodes.add((MPSPsiNode) element);
+    }
+    while (!psiNodes.isEmpty()) {
+      MPSPsiNode mpsPsiNode = psiNodes.poll();
+      myNodes.put(mpsPsiNode.getId(), mpsPsiNode);
+      for (PsiElement element : mpsPsiNode.getChildren()) {
+        if(element instanceof MPSPsiNode)
+          psiNodes.add((MPSPsiNode) element);
+      }
     }
   }
 

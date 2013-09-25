@@ -15,8 +15,8 @@ public class JavaWatchpointValueWatchable extends JavaWatchable implements IWatc
   private final JavaValue myCachedValue;
   private final boolean myIsOld;
 
-  public JavaWatchpointValueWatchable(JavaValue value, boolean old, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaWatchpointValueWatchable(JavaValue value, boolean old, ThreadReference threadReference) {
+    super(threadReference);
     myCachedValue = value;
     myIsOld = old;
   }

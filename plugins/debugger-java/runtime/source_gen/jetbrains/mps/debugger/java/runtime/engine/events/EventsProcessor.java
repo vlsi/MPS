@@ -11,6 +11,10 @@ import jetbrains.mps.debugger.java.runtime.engine.SystemMessagesReporter;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import com.intellij.openapi.project.Project;
+import java.util.Map;
+import com.sun.jdi.ThreadReference;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -19,7 +23,6 @@ import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.event.StepEvent;
 import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
-import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.LocatableEvent;
 import jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequestor;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
@@ -55,6 +58,7 @@ public class EventsProcessor {
   private final BreakpointManagerComponent myBreakpointManager;
   private IDebuggableFramesSelector myFramesSelector;
   private final Project myProject;
+  private final Map<ThreadReference, Integer> myEvaluatedThreads = MapSequence.fromMap(new HashMap<ThreadReference, Integer>());
 
   public EventsProcessor(Project project, BreakpointManagerComponent breakpointsManagerComponent) {
     myProject = project;
@@ -196,7 +200,7 @@ public class EventsProcessor {
 
     // if inside evaluation, resume 
     final ThreadReference thread = event.thread();
-    if (myContextManager.isEvaluated(thread)) {
+    if (isEvaluated(thread)) {
       myContextManager.voteResume(context);
       return;
     }
@@ -239,11 +243,11 @@ public class EventsProcessor {
   public void scheduleEvaluation(final _FunctionTypes._void_P0_E0 evaluationCommand, final ThreadReference threadToEvaluateIn) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        myContextManager.startEvaluation(threadToEvaluateIn);
+        startEvaluation(threadToEvaluateIn);
         try {
           evaluationCommand.invoke();
         } finally {
-          myContextManager.finishEvaluation(threadToEvaluateIn);
+          finishEvaluation(threadToEvaluateIn);
         }
       }
     });
@@ -251,6 +255,8 @@ public class EventsProcessor {
 
   @Nullable
   public <R> R invokeEvaluationUnderProgress(final _FunctionTypes._return_P0_E0<? extends R> evaluationCommand, final ThreadReference threadToEvaluateIn) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+
     final AtomicReference<R> resultReference = new AtomicReference();
 
     final ProgressWindowWithNotification progress = new ProgressWindowWithNotification(true, false, myProject, null, null);
@@ -267,11 +273,11 @@ public class EventsProcessor {
         try {
           ProgressManager.getInstance().runProcess(new Runnable() {
             public void run() {
-              myContextManager.startEvaluation(threadToEvaluateIn);
+              startEvaluation(threadToEvaluateIn);
               try {
                 resultReference.set(evaluationCommand.invoke());
               } finally {
-                myContextManager.finishEvaluation(threadToEvaluateIn);
+                finishEvaluation(threadToEvaluateIn);
               }
             }
           }, progress);
@@ -336,6 +342,28 @@ public class EventsProcessor {
   public DebugProcessMulticaster getMulticaster() {
     // todo review all this getters, really 
     return myMulticaster;
+  }
+
+  private synchronized void startEvaluation(@NotNull ThreadReference threadReference) {
+    Integer evaluated = MapSequence.fromMap(myEvaluatedThreads).get(threadReference);
+    if (evaluated == null) {
+      evaluated = 0;
+    }
+    MapSequence.fromMap(myEvaluatedThreads).put(threadReference, evaluated + 1);
+  }
+
+  private synchronized void finishEvaluation(@NotNull ThreadReference threadReference) {
+    Integer evaluated = MapSequence.fromMap(myEvaluatedThreads).get(threadReference);
+    assert evaluated != null && evaluated > 0;
+    if (evaluated == 1) {
+      MapSequence.fromMap(myEvaluatedThreads).removeKey(threadReference);
+    } else {
+      MapSequence.fromMap(myEvaluatedThreads).put(threadReference, evaluated - 1);
+    }
+  }
+
+  private synchronized boolean isEvaluated(@NotNull ThreadReference threadReference) {
+    return MapSequence.fromMap(myEvaluatedThreads).containsKey(threadReference) && MapSequence.fromMap(myEvaluatedThreads).get(threadReference) > 0;
   }
 
   public static boolean isOnPooledThread() {

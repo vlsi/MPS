@@ -8,7 +8,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StackFrame;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -21,13 +21,13 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   private final JavaStackFrame myStackFrame;
   private final JavaValue myCachedValue;
 
-  public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, ThreadReference threadReference) {
+    super(threadReference);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
     StackFrame javaStackFrame = myStackFrame.getStackFrame();
     if (javaStackFrame != null) {
-      myCachedValue = ValueUtil.getInstance().fromJDI(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+      myCachedValue = CustomViewersManager.getInstance().fromJdi(javaStackFrame.getValue(myLocalVariable), threadReference);
     } else {
       myCachedValue = null;
     }

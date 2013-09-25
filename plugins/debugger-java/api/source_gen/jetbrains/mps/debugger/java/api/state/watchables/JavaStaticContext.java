@@ -18,8 +18,8 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
   private final ReferenceType myStaticType;
   private final JavaStaticContext.StaticContextValue myValue;
 
-  public JavaStaticContext(ReferenceType staticType, String classFqName, ThreadReference threadReference) {
-    super(classFqName, threadReference);
+  public JavaStaticContext(ReferenceType staticType, ThreadReference threadReference) {
+    super(threadReference);
     myStaticType = staticType;
     myValue = new JavaStaticContext.StaticContextValue();
   }
@@ -79,7 +79,7 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
         if (!(field.isStatic())) {
           continue;
         }
-        result.add(new JavaStaticField(field, myClassFQName, myThreadReference));
+        result.add(new JavaStaticField(field, myThreadReference));
       }
       return result;
     }
