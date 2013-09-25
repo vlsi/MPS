@@ -21,8 +21,10 @@ import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -33,7 +35,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   private static Logger LOG = LogManager.getLogger(ReferenceInfo_Macro.class);
 
   protected final TemplateContext myContext;
-  protected final ReductionContext myReductionContext;
+  protected final QueryExecutionContext myExecContext;
 
   // results of 'expandReferenceMacro'
   private boolean myMacroProcessed;
@@ -41,10 +43,10 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myOutputTargetNode;
   private SModelReference myExternalTargetModelReference;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, String role, TemplateContext context, ReductionContext reductionContext) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, String role, TemplateContext context, @NotNull QueryExecutionContext executionContext) {
     super(outputSourceNode, role, context.getInput());
     myContext = context;
-    myReductionContext = reductionContext;
+    myExecContext = executionContext;
   }
 
   @Override

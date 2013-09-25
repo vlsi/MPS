@@ -234,7 +234,7 @@ public final class TemplateProcessor {
           ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroNode(
               outputNode, templateChildNode,
               templateNode,
-              context, myEnv.getReductionContext()
+              context, myEnv.getQueryExecutor()
           );
           PostponedReference postponedReference = new PostponedReference(
               refInfo,

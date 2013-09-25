@@ -59,8 +59,7 @@ public class WeavingProcessor {
       if (executionContext == null) {
         continue;
       }
-      ReductionContext reductionContext = new ReductionContext(executionContext);
-      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, reductionContext);
+      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, executionContext);
 
       try {
         DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);

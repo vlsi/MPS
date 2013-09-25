@@ -45,10 +45,16 @@ import java.util.Iterator;
 public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnvironment {
   private final TemplateGenerator generator;
   private final ReductionContext reductionContext;
+  private final QueryExecutionContext myExecutionContext;
 
-  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull ReductionContext reductionContext) {
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext) {
+    this(generator, executionContext, new ReductionContext());
+  }
+
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext, @NotNull ReductionContext reductionContext) {
     this.generator = generator;
     this.reductionContext = reductionContext;
+    myExecutionContext = executionContext;
   }
 
   @Override
@@ -90,12 +96,12 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public QueryExecutionContext getQueryExecutor() {
-    return reductionContext.getQueryExecutor();
+    return myExecutionContext;
   }
 
   @Override
   public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return new TemplateExecutionEnvironmentImpl(generator, new ReductionContext(reductionContext, inputNode, rule));
+    return new TemplateExecutionEnvironmentImpl(generator, myExecutionContext, new ReductionContext(reductionContext, inputNode, rule));
   }
 
   @Override
@@ -107,7 +113,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
     while(it.hasNext()) {
       SNode newInputNode = it.next();
-      Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateNode, templateId, newInputNode, reductionContext);
+      Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateNode, templateId, newInputNode, this);
       assert _outputNodes != null; // copySrc contract
       // check node languages : prevent 'input node' query from returning node, which language was not counted when
       // planning the generation steps.
@@ -175,7 +181,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
-    Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
+    Collection<SNode> collection = generator.tryToReduce(switch_, context, mappingName, this);
     if (collection != null) {
       return collection;
     }
@@ -299,7 +305,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
       resolver, outputNode,
       role, context,
-      reductionContext);
+      getQueryExecutor());
     PostponedReference postponedReference = new PostponedReference(
       refInfo,
       generator

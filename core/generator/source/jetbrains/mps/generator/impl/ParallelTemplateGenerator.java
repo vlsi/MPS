@@ -83,7 +83,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.createRootNodeByRule(rule, environment);
       }
-    }, new Pair<SNode, SNodeReference>(null, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(null, rule.getRuleNode()), environment.getQueryExecutor());
   }
 
   @Override
@@ -93,7 +93,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
       }
-    }, new Pair<SNode, SNodeReference>(inputNode, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(inputNode, rule.getRuleNode()), environment.getQueryExecutor());
   }
 
   @Override
@@ -103,7 +103,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.copyRootInputNode(inputRootNode, environment);
       }
-    }, new Pair<SNode, SNodeReference>(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(inputRootNode, null), environment.getQueryExecutor());
   }
 
   @Override

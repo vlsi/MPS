@@ -187,7 +187,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       SNode templateFragmentNode = templateFragment.getParent();
       SNode contextParentNode = null;
       try {
-        contextParentNode = environment.getReductionContext().getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
+        contextParentNode = environment.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
       } catch (Exception e) {
         environment.getGenerator().getLogger().handleException(e);
       }

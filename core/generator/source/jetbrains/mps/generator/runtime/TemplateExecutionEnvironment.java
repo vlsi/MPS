@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,13 @@ public interface TemplateExecutionEnvironment {
   IGeneratorLogger getLogger();
 
   @NotNull
+  QueryExecutionContext getQueryExecutor();
+
+  /**
+   * ReductuionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
+   */
+  @Deprecated
+  @NotNull
   ReductionContext getReductionContext();
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
@@ -92,6 +99,4 @@ public interface TemplateExecutionEnvironment {
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
   void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);
-
-  QueryExecutionContext getQueryExecutor();
 }
