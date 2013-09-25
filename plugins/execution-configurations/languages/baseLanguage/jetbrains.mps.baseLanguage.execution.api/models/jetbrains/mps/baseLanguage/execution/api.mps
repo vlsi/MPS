@@ -949,9 +949,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1240470842553275409" nodeInfo="nn">
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553275410" nodeInfo="nn" />
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="1240470842553275411" nodeInfo="nn">
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4278380732218802485" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="1240470842553275411" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="rzqf.CommandParameterReference" typeId="rzqf.856705193941281756" id="1240470842553275412" nodeInfo="nn">
                         <link role="parameter" roleId="rzqf.856705193941281758" targetNodeId="1240470842553275379" resolveInfo="runParameters" />
                       </node>
@@ -959,6 +958,7 @@
                         <link role="component" roleId="cx9y.1239576542472" targetNodeId="1240470842553519918" resolveInfo="workingDirectory" />
                       </node>
                     </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.IsEmptyOperation" typeId="tpee.1225271369338" id="4278380732218820440" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
