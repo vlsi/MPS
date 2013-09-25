@@ -13,22 +13,26 @@ import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.progress.EmptyProgressMonitor;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -42,20 +46,24 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
       @Override
       public void actionPerformed(ActionEvent p0) {
         final FindUsagesFacade findUsegesManager = FindUsagesFacade.getInstance();
-        final ProgressMonitor progressAdapter = new EmptyProgressMonitor();
+        Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(NodeChooser.this));
 
         final Wrappers._T<List<SNodeReference>> toChooseFrom = new Wrappers._T<List<SNodeReference>>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            toChooseFrom.value = ListSequence.fromList(findToChooseFromOnInit(findUsegesManager, progressAdapter)).select(new ISelector<SNode, SNodeReference>() {
-              public SNodeReference select(SNode it) {
-                return ((SNodeReference) new SNodePointer(it));
+        ProgressManager.getInstance().run(new Task.Modal(project, "Searching for nodes", false) {
+          public void run(@NotNull final ProgressIndicator indicator) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                toChooseFrom.value = ListSequence.fromList(findToChooseFromOnInit(findUsegesManager, new ProgressMonitorAdapter(indicator))).select(new ISelector<SNode, SNodeReference>() {
+                  public SNodeReference select(SNode it) {
+                    return ((SNodeReference) new SNodePointer(it));
+                  }
+                }).toListSequence();
               }
-            }).toListSequence();
+            });
           }
         });
 
-        final NodeChooserDialog chooserDialog = new NodeChooserDialog(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(NodeChooser.this)), toChooseFrom.value);
+        final NodeChooserDialog chooserDialog = new NodeChooserDialog(project, toChooseFrom.value);
         chooserDialog.show();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

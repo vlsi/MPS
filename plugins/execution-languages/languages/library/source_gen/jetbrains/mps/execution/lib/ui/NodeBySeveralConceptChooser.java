@@ -70,7 +70,7 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
         String targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
         SAbstractConcept concept = SConceptRepository.getInstance().getConcept(targetConcept);
-        Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(concept), false, monitor);
+        Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(concept), false, monitor.subTask(10));
         if (function == null) {
           return instances;
         } else {
