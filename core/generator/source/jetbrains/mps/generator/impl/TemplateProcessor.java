@@ -375,6 +375,7 @@ public final class TemplateProcessor {
     macroImplMap.put(RuleUtil.concept_IncludeMacro, new IncludeMacro(this));
     macroImplMap.put(RuleUtil.concept_TemplateCallMacro, new CallMacro(this));
     macroImplMap.put(RuleUtil.concept_TraceMacro, new TraceMacro(this));
+    macroImplMap.put(RuleUtil.concept_NodeMacro, new NoMacro(this));
   }
 
   private static abstract class MacroImpl {

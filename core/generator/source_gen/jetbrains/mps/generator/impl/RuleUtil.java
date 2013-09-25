@@ -6,18 +6,14 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.DefaultScope;
-import org.jetbrains.mps.openapi.module.SModule;
-import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class RuleUtil {
@@ -61,34 +57,30 @@ public class RuleUtil {
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
 
-  public static final Set<String> ConcreteNodeMacroConcepts = SetSequence.fromSet(new HashSet<String>());
+
+  /**
+   * Alternative to isInstanceOf check in isNodeMacro: supported node macros are known at generation time,
+   * no reason to perform dynamic check where static check is possible.
+   * Plain NodeMacro, although abstract, is included as there were usages of abstract $$ macro to add a label
+   */
+  public static final Set<String> NodeMacroConcepts = SetSequence.fromSet(new HashSet<String>());
   static {
-    final SNode conceptNodeMacro = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro");
-    List<SNode> nodeMacroConcepts = SConceptOperations.getAllSubConcepts(conceptNodeMacro, SNodeOperations.getModel(conceptNodeMacro), new DefaultScope() {
-      protected Set<SModule> getInitialModules() {
-        return Collections.singleton(SNodeOperations.getModel(conceptNodeMacro).getModule());
-      }
-    });
-    for (SNode cnm : nodeMacroConcepts) {
-      if (!(SPropertyOperations.getBoolean(cnm, "abstract"))) {
-        ConcreteNodeMacroConcepts.add(NameUtil.nodeFQName(cnm));
-      }
-    }
-    ConcreteNodeMacroConcepts.add(concept_IfMacro);
-    ConcreteNodeMacroConcepts.add(concept_InsertMacro);
-    ConcreteNodeMacroConcepts.add(concept_LabelMacro);
-    ConcreteNodeMacroConcepts.add(concept_CopySrcListMacro);
-    ConcreteNodeMacroConcepts.add(concept_CopySrcNodeMacro);
-    ConcreteNodeMacroConcepts.add(concept_IncludeMacro);
-    ConcreteNodeMacroConcepts.add(concept_LoopMacro);
-    ConcreteNodeMacroConcepts.add(concept_MapSrcListMacro);
-    ConcreteNodeMacroConcepts.add(concept_MapSrcNodeMacro);
-    ConcreteNodeMacroConcepts.add(concept_SwitchMacro);
-    ConcreteNodeMacroConcepts.add(concept_TemplateCallMacro);
-    ConcreteNodeMacroConcepts.add(concept_TemplateSwitchMacro);
-    ConcreteNodeMacroConcepts.add(concept_TraceMacro);
-    ConcreteNodeMacroConcepts.add(concept_VarMacro);
-    ConcreteNodeMacroConcepts.add(concept_WeaveMacro);
+    NodeMacroConcepts.add(concept_IfMacro);
+    NodeMacroConcepts.add(concept_InsertMacro);
+    NodeMacroConcepts.add(concept_LabelMacro);
+    NodeMacroConcepts.add(concept_CopySrcListMacro);
+    NodeMacroConcepts.add(concept_CopySrcNodeMacro);
+    NodeMacroConcepts.add(concept_IncludeMacro);
+    NodeMacroConcepts.add(concept_LoopMacro);
+    NodeMacroConcepts.add(concept_MapSrcListMacro);
+    NodeMacroConcepts.add(concept_MapSrcNodeMacro);
+    NodeMacroConcepts.add(concept_SwitchMacro);
+    NodeMacroConcepts.add(concept_TemplateCallMacro);
+    NodeMacroConcepts.add(concept_TemplateSwitchMacro);
+    NodeMacroConcepts.add(concept_TraceMacro);
+    NodeMacroConcepts.add(concept_VarMacro);
+    NodeMacroConcepts.add(concept_WeaveMacro);
+    NodeMacroConcepts.add(concept_NodeMacro);
   }
 
 
@@ -98,7 +90,7 @@ public class RuleUtil {
 
 
   public static boolean isNodeMacro(SNode n) {
-    return ConcreteNodeMacroConcepts.contains(n.getConcept().getQualifiedName());
+    return NodeMacroConcepts.contains(n.getConcept().getQualifiedName());
   }
 
   private static String getMappingLabelName(SNode mappingLabelDeclaration) {
