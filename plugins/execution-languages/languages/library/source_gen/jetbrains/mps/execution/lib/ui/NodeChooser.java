@@ -59,7 +59,10 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
         chooserDialog.show();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            setNode(chooserDialog.getResultNode());
+            SNode resultNode = chooserDialog.getResultNode();
+            if (resultNode != null) {
+              setNode(resultNode);
+            }
           }
         });
       }
