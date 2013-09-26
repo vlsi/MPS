@@ -5,8 +5,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="8483375838963817287" name="main" hash="6pqz5dhw17r5jut9s94iedbmh6hkqep">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="8483375838963817287" name="main" hash="6pqz5dhw17r5jut9s94iedbmh6hkqep" />
 </dependencies>
 

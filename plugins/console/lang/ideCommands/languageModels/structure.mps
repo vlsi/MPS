@@ -155,5 +155,16 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7820875636625377576" resolveInfo="ModelReference" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3894227536041114995" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ClickableGenerator" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3894227536041893247" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="moduleId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3894227536041887886" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.2348043250037290416" resolveInfo="IClickable" />
+    </node>
+  </root>
 </model>
 

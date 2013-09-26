@@ -90,11 +90,8 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
     <property name="name" nameId="tpck.1169194664001" value="NodeWithClosure" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="497034489490439592" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="497034489490438927" resolveInfo="INodeWithClosure" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2348043250036170504" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2348043250036119213" resolveInfo="IClickableText" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3894227536041392962" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2348043250037290416" resolveInfo="IClickable" />
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8517397753921951830" nodeInfo="ig">
@@ -110,13 +107,6 @@
       <property name="role" nameId="tpce.1071599776563" value="node" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="497034489490438927" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="INodeWithClosure" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="497034489490438932" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8517397753921951830" resolveInfo="IActionHolder" />
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3939645998855102389" nodeInfo="ig">
@@ -170,20 +160,13 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3939645998855102389" resolveInfo="INodeWithReference" />
     </node>
   </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2348043250036119213" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="IClickableText" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2348043250036122669" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2348043250037310984" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2348043250037290416" resolveInfo="IClickable" />
-    </node>
-  </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2348043250037290416" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="IClickable" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="actionHolder" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3894227536041201194" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="text" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2348043250037290417" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8517397753921951830" resolveInfo="IActionHolder" />
     </node>
