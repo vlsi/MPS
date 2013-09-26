@@ -17,7 +17,7 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_pp9zo5_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryParameter_EditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, QueryParameter_Editor._StyleParameter_QueryFunction_pp9zo5_a0a((editorCell == null ?

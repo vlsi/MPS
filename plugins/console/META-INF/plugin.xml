@@ -11,6 +11,7 @@
 
   <depends>jetbrains.mps.core</depends>
   <depends>com.intellij.modules.mps</depends>
+  <depends>jetbrains.mps.ide.make</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir=""/>

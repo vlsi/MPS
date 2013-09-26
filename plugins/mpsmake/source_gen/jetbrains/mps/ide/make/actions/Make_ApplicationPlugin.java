@@ -53,7 +53,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RebuildSelectedModels_Action());
     addAction(new RebuildSelectedModules_Action());
     addAction(new RecompileProject_Action());
-    addAction(new ShowMappingsPartitioning_Action());
     addAction(new TextPreviewModel_Action());
     // groups 
     addGroup(new GenerateOptions_ActionGroup());
