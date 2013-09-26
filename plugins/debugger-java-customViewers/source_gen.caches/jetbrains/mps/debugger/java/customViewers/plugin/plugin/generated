@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7dn9ij5k2bgs2vb6skn7f9l2p2hj1u0">
+<dependencies version="2" modelHash="-q0avspyo0af86iqlx5e9ozileirfda">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(MPS.IDEA/com.intellij.openapi.extensions@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
@@ -69,7 +69,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CustomViewersInitializer_CustomApplicationPlugin.java" />
   </common>
-  <source id="5494815557703847191" name="BaseLanguage Debugger Support" hash="-2l0fhpjc9r0h7ddjd91szkqjtnk7ty9" dependsOnCreated="true">
+  <source id="5494815557703847191" name="BaseLanguage Debugger Support" hash="-8k047mx66yodjdfsl2lui6u24968986" dependsOnCreated="true">
     <dep root="2244048449136669030" />
     <dep root="2929731761237869234" />
     <dep root="2929731761237869240" />
