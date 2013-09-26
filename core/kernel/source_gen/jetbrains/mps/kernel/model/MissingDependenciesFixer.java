@@ -14,7 +14,10 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Arrays;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -51,7 +54,7 @@ public class MissingDependenciesFixer {
 
 
 
-  public static void fixDependencies(final SModel model) {
+  public static void fixDependencies(final SModel model, final boolean fixImplicit) {
     // TODO use repository.getModelAccess().executeCommand() 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -69,7 +72,15 @@ public class MissingDependenciesFixer {
         Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(module), new EmptyProgressMonitor());
 
         SearchScope moduleScope = module.getScope();
-        for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(model)) {
+        List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
+        if (fixImplicit) {
+          for (jetbrains.mps.smodel.SModel.ImportElement impElem : SModelOperations.getAllImportElements(model)) {
+            ListSequence.fromList(models).addElement(impElem.getModelReference());
+          }
+        } else {
+          ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.getImportedModelUIDs(model)));
+        }
+        for (SModelReference modelImport : models) {
           if (moduleScope.resolve(modelImport) != null) {
             continue;
           }
@@ -115,5 +126,9 @@ public class MissingDependenciesFixer {
         ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
       }
     });
+  }
+
+  public static void fixDependencies(SModel model) {
+    fixDependencies(model, false);
   }
 }
