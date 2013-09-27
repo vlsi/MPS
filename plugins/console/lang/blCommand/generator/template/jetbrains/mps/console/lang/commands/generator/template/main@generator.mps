@@ -2978,10 +2978,8 @@
                         </node>
                       </node>
                     </node>
-                    <node role="elementType" roleId="tp2q.1237721435807" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="3492877759611256120" nodeInfo="in">
-                      <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3492877759611266092" nodeInfo="in">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
-                      </node>
+                    <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6849901612476612309" nodeInfo="in">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
                     </node>
                   </node>
                 </node>
