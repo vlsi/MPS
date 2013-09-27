@@ -30,6 +30,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolylineConnection" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />

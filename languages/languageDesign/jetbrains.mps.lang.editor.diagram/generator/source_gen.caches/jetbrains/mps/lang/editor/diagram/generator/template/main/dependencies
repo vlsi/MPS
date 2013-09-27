@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.diagram.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -15,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
