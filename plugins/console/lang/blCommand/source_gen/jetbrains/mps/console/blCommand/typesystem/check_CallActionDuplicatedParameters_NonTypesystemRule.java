@@ -10,12 +10,12 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CallActionDuplicatedParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -24,16 +24,16 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
 
   public void applyRule(final SNode callAction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final Iterable<SNode> parameters = SLinkOperations.getTargets(callAction, "parameter", true);
-    Iterable<SNode> parameterConcepts = Sequence.fromIterable(parameters).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> parameterFields = Sequence.fromIterable(parameters).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "declaration", false);
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
       }
     }).distinct();
-    Iterable<? extends Iterable<SNode>> grouped = Sequence.fromIterable(parameterConcepts).select(new ISelector<SNode, ISequence<SNode>>() {
+    Iterable<? extends Iterable<SNode>> grouped = Sequence.fromIterable(parameterFields).select(new ISelector<SNode, ISequence<SNode>>() {
       public ISequence<SNode> select(final SNode c) {
         return Sequence.fromIterable(parameters).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode p) {
-            return SLinkOperations.getTarget(p, "declaration", false) == c;
+            return eq_7ie7o0_a0a0a0a0a0a0a0a0a0a2a1(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), p, "virtual_getParameterDeclaration_119903734736614698", new Object[]{}), c);
           }
         });
       }
@@ -44,7 +44,7 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
         for (SNode other : Sequence.fromIterable(group).tail(Sequence.fromIterable(group).count() - 1)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(other, "Duplicated parameter: " + SPropertyOperations.getString(SLinkOperations.getTarget(Sequence.fromIterable(group).first(), "declaration", false), "name"), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910213127662", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(other, "Duplicated parameter: " + BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), Sequence.fromIterable(group).first(), "virtual_getParameterDeclaration_119903734736614698", new Object[]{}), "virtual_getFqName_1213877404258", new Object[]{}), "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910213127662", null, errorTarget);
           }
         }
       }
@@ -64,5 +64,12 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
 
   public boolean overrides() {
     return false;
+  }
+
+  private static boolean eq_7ie7o0_a0a0a0a0a0a0a0a0a0a2a1(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

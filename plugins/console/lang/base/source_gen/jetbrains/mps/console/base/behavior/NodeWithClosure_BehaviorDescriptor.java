@@ -6,20 +6,16 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 
-public class NodeWithClosure_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INodeWithClosure_BehaviorDescriptor, IClickableText_BehaviorDescriptor {
+public class NodeWithClosure_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClickable_BehaviorDescriptor {
   public NodeWithClosure_BehaviorDescriptor() {
   }
 
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return INodeWithClosure_Behavior.virtual_canExecute_3282455643657932881(thisNode);
+    return NodeWithClosure_Behavior.virtual_canExecute_3282455643657932881(thisNode);
   }
 
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    INodeWithClosure_Behavior.virtual_execute_8517397753922085153(thisNode, project);
-  }
-
-  public String virtual_getText_2348043250037295218(SNode thisNode) {
-    return IClickableText_Behavior.virtual_getText_2348043250037295218(thisNode);
+    NodeWithClosure_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
 
   @Override

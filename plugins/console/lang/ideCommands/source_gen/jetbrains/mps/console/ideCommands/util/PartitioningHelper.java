@@ -20,6 +20,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.ArrayList;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 
@@ -75,18 +78,21 @@ public class PartitioningHelper {
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     }
     // show partitioning 
-    String text = "";
+    console.addText("---------------------  mappings partitioning  -----------------------------------\n\n");
     for (int step = 0; step < plan.getStepCount(); step++) {
       List<TemplateMappingConfiguration> mappingSet = plan.getMappingConfigurations(step);
-      text = text + " [ " + (step + 1) + " ]\n";
-      List<String> strings = GenerationPartitioningUtil.toStrings(mappingSet);
-      for (String string : strings) {
-        text = text + " " + string + "\n";
+      console.addText(" [ " + (step + 1) + " ]\n");
+      List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
+      for (Pair<String, TemplateMappingConfiguration> string : strings) {
+        SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ClickableGenerator", null);
+        SPropertyOperations.set(node, "moduleId", string.o2.getModel().getSModelReference().resolve(MPSModuleRepository.getInstance()).getModule().getModuleId().toString());
+        SPropertyOperations.set(node, "text", string.o1);
+        console.addText(" ");
+        console.addNode(node);
+        console.addText("\n");
       }
-      text += "\n";
+      console.addText("\n");
     }
-    console.addText("---------------------  mappings partitioning  -----------------------------------\n\n");
-    console.addText(text);
     console.addText("---------------------------------------------------------------------------------\n");
 
     // other 
