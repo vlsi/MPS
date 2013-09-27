@@ -3357,114 +3357,114 @@
     <unitInfo nodeId="6391517972808447593" fileName="Remote_Configuration_RunProfileState.java" startLine="32" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Remote_Configuration_RunProfileState" />
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6391517972808447783">
-    <nodeInfo nodeId="6391517972808447872" fileName="RemoteSettingsEditor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHostTextField" />
-    <nodeInfo nodeId="6391517972808447875" fileName="RemoteSettingsEditor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPortTextField" />
-    <nodeInfo nodeId="6391517972808447878" fileName="RemoteSettingsEditor.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLineTextField" />
-    <nodeInfo nodeId="6391517972808447881" fileName="RemoteSettingsEditor.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPort" />
-    <nodeInfo nodeId="6391517972808447884" fileName="RemoteSettingsEditor.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHost" />
-    <nodeInfo nodeId="6391517972808447887" fileName="RemoteSettingsEditor.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLine" />
-    <nodeInfo nodeId="6391517972808447894" fileName="RemoteSettingsEditor.java" startLine="30" startPosition="33" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6391517972808447897" fileName="RemoteSettingsEditor.java" startLine="31" startPosition="31" endLine="32" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6391517972808447902" fileName="RemoteSettingsEditor.java" startLine="32" startPosition="89" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447907" fileName="RemoteSettingsEditor.java" startLine="33" startPosition="39" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447912" fileName="RemoteSettingsEditor.java" startLine="34" startPosition="45" endLine="35" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6391517972808447917" fileName="RemoteSettingsEditor.java" startLine="35" startPosition="79" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447922" fileName="RemoteSettingsEditor.java" startLine="36" startPosition="37" endLine="37" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447927" fileName="RemoteSettingsEditor.java" startLine="37" startPosition="42" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447932" fileName="RemoteSettingsEditor.java" startLine="38" startPosition="38" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447938" fileName="RemoteSettingsEditor.java" startLine="39" startPosition="57" endLine="40" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447944" fileName="RemoteSettingsEditor.java" startLine="40" startPosition="65" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447949" fileName="RemoteSettingsEditor.java" startLine="41" startPosition="45" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447954" fileName="RemoteSettingsEditor.java" startLine="42" startPosition="46" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447959" fileName="RemoteSettingsEditor.java" startLine="43" startPosition="46" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447966" fileName="RemoteSettingsEditor.java" startLine="44" startPosition="67" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447971" fileName="RemoteSettingsEditor.java" startLine="45" startPosition="63" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447978" fileName="RemoteSettingsEditor.java" startLine="46" startPosition="67" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447983" fileName="RemoteSettingsEditor.java" startLine="47" startPosition="63" endLine="48" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447990" fileName="RemoteSettingsEditor.java" startLine="48" startPosition="96" endLine="49" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447999" fileName="RemoteSettingsEditor.java" startLine="52" startPosition="37" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448005" fileName="RemoteSettingsEditor.java" startLine="53" startPosition="39" endLine="54" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448013" fileName="RemoteSettingsEditor.java" startLine="54" startPosition="50" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448017" fileName="RemoteSettingsEditor.java" startLine="55" startPosition="44" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448026" fileName="RemoteSettingsEditor.java" startLine="59" startPosition="37" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448031" fileName="RemoteSettingsEditor.java" startLine="60" startPosition="36" endLine="61" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448036" fileName="RemoteSettingsEditor.java" startLine="61" startPosition="37" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448045" fileName="RemoteSettingsEditor.java" startLine="65" startPosition="42" endLine="66" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6391517972808448055" fileName="RemoteSettingsEditor.java" startLine="69" startPosition="55" endLine="70" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448061" fileName="RemoteSettingsEditor.java" startLine="70" startPosition="36" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448067" fileName="RemoteSettingsEditor.java" startLine="71" startPosition="32" endLine="72" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448071" fileName="RemoteSettingsEditor.java" startLine="72" startPosition="44" endLine="73" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448079" fileName="RemoteSettingsEditor.java" startLine="76" startPosition="55" endLine="77" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808448084" fileName="RemoteSettingsEditor.java" startLine="77" startPosition="33" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447800" fileName="RemoteSettingsEditor.java" startLine="86" startPosition="41" endLine="87" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447819" fileName="RemoteSettingsEditor.java" startLine="95" startPosition="57" endLine="96" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447846" fileName="RemoteSettingsEditor.java" startLine="106" startPosition="11" endLine="107" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6391517972808447838" fileName="RemoteSettingsEditor.java" startLine="108" startPosition="41" endLine="109" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6391517972808447863" fileName="RemoteSettingsEditor.java" startLine="115" startPosition="26" endLine="116" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6391517972808447865" fileName="RemoteSettingsEditor.java" startLine="117" startPosition="7" endLine="118" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6391517972808447790" fileName="RemoteSettingsEditor.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyKeyAdapter#()V" />
-    <nodeInfo nodeId="6391517972808447825" fileName="RemoteSettingsEditor.java" startLine="101" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDefaultFormatter#()V" />
-    <nodeInfo nodeId="6391517972808448041" fileName="RemoteSettingsEditor.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="formClientCommandLine#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6391517972808447858" fileName="RemoteSettingsEditor.java" startLine="114" startPosition="79" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6391517972808448073" fileName="RemoteSettingsEditor.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;)V" />
-    <nodeInfo nodeId="6391517972808447802" fileName="RemoteSettingsEditor.java" startLine="87" startPosition="27" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6391517972808447813" fileName="RemoteSettingsEditor.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyChange#(Ljava/beans/PropertyChangeEvent;)V" />
-    <nodeInfo nodeId="6391517972808448022" fileName="RemoteSettingsEditor.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateUiFromFields#()V" />
-    <nodeInfo nodeId="6391517972808447835" fileName="RemoteSettingsEditor.java" startLine="105" startPosition="68" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6391517972808447995" fileName="RemoteSettingsEditor.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateFieldsFromUi#()V" />
-    <nodeInfo nodeId="6391517972808448049" fileName="RemoteSettingsEditor.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reset#(Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;)V" />
-    <nodeInfo nodeId="6391517972808447851" fileName="RemoteSettingsEditor.java" startLine="113" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueToString#(Ljava/lang/Object;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6391517972808447794" fileName="RemoteSettingsEditor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="6391517972808447829" fileName="RemoteSettingsEditor.java" startLine="104" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stringToValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6391517972808447890" fileName="RemoteSettingsEditor.java" startLine="30" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoteSettingsEditor#()V" />
-    <scopeInfo nodeId="6391517972808447793" fileName="RemoteSettingsEditor.java" startLine="82" startPosition="28" endLine="82" endPosition="28" />
-    <scopeInfo nodeId="6391517972808447828" fileName="RemoteSettingsEditor.java" startLine="101" startPosition="34" endLine="101" endPosition="34" />
-    <scopeInfo nodeId="6391517972808448044" fileName="RemoteSettingsEditor.java" startLine="65" startPosition="42" endLine="66" endPosition="71" />
-    <scopeInfo nodeId="6391517972808447818" fileName="RemoteSettingsEditor.java" startLine="95" startPosition="57" endLine="96" endPosition="27" />
-    <scopeInfo nodeId="6391517972808447845" fileName="RemoteSettingsEditor.java" startLine="106" startPosition="11" endLine="107" endPosition="38" />
-    <scopeInfo nodeId="6391517972808447836" fileName="RemoteSettingsEditor.java" startLine="108" startPosition="0" endLine="109" endPosition="42">
+    <nodeInfo nodeId="6391517972808447872" fileName="RemoteSettingsEditor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHostTextField" />
+    <nodeInfo nodeId="6391517972808447875" fileName="RemoteSettingsEditor.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPortTextField" />
+    <nodeInfo nodeId="6391517972808447878" fileName="RemoteSettingsEditor.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLineTextField" />
+    <nodeInfo nodeId="6391517972808447881" fileName="RemoteSettingsEditor.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPort" />
+    <nodeInfo nodeId="6391517972808447884" fileName="RemoteSettingsEditor.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHost" />
+    <nodeInfo nodeId="6391517972808447887" fileName="RemoteSettingsEditor.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLine" />
+    <nodeInfo nodeId="6391517972808447894" fileName="RemoteSettingsEditor.java" startLine="31" startPosition="33" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6391517972808447897" fileName="RemoteSettingsEditor.java" startLine="32" startPosition="31" endLine="33" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6391517972808447902" fileName="RemoteSettingsEditor.java" startLine="33" startPosition="89" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447907" fileName="RemoteSettingsEditor.java" startLine="34" startPosition="39" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447912" fileName="RemoteSettingsEditor.java" startLine="35" startPosition="45" endLine="36" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6391517972808447917" fileName="RemoteSettingsEditor.java" startLine="36" startPosition="79" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447922" fileName="RemoteSettingsEditor.java" startLine="37" startPosition="37" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447927" fileName="RemoteSettingsEditor.java" startLine="38" startPosition="42" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447932" fileName="RemoteSettingsEditor.java" startLine="39" startPosition="38" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447938" fileName="RemoteSettingsEditor.java" startLine="40" startPosition="57" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447944" fileName="RemoteSettingsEditor.java" startLine="41" startPosition="65" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447949" fileName="RemoteSettingsEditor.java" startLine="42" startPosition="45" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447954" fileName="RemoteSettingsEditor.java" startLine="43" startPosition="46" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447959" fileName="RemoteSettingsEditor.java" startLine="44" startPosition="46" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447966" fileName="RemoteSettingsEditor.java" startLine="45" startPosition="67" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447971" fileName="RemoteSettingsEditor.java" startLine="46" startPosition="63" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447978" fileName="RemoteSettingsEditor.java" startLine="47" startPosition="67" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447983" fileName="RemoteSettingsEditor.java" startLine="48" startPosition="63" endLine="49" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447990" fileName="RemoteSettingsEditor.java" startLine="49" startPosition="96" endLine="50" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447999" fileName="RemoteSettingsEditor.java" startLine="53" startPosition="37" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448005" fileName="RemoteSettingsEditor.java" startLine="54" startPosition="39" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448013" fileName="RemoteSettingsEditor.java" startLine="55" startPosition="50" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448017" fileName="RemoteSettingsEditor.java" startLine="56" startPosition="44" endLine="57" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448026" fileName="RemoteSettingsEditor.java" startLine="60" startPosition="37" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448031" fileName="RemoteSettingsEditor.java" startLine="61" startPosition="36" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448036" fileName="RemoteSettingsEditor.java" startLine="62" startPosition="37" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448045" fileName="RemoteSettingsEditor.java" startLine="66" startPosition="42" endLine="67" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6391517972808448055" fileName="RemoteSettingsEditor.java" startLine="70" startPosition="55" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448061" fileName="RemoteSettingsEditor.java" startLine="71" startPosition="36" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448067" fileName="RemoteSettingsEditor.java" startLine="72" startPosition="32" endLine="73" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448071" fileName="RemoteSettingsEditor.java" startLine="73" startPosition="44" endLine="74" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448079" fileName="RemoteSettingsEditor.java" startLine="77" startPosition="55" endLine="78" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808448084" fileName="RemoteSettingsEditor.java" startLine="78" startPosition="33" endLine="79" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447800" fileName="RemoteSettingsEditor.java" startLine="87" startPosition="41" endLine="88" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447819" fileName="RemoteSettingsEditor.java" startLine="96" startPosition="57" endLine="97" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447846" fileName="RemoteSettingsEditor.java" startLine="107" startPosition="11" endLine="108" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6391517972808447838" fileName="RemoteSettingsEditor.java" startLine="109" startPosition="41" endLine="110" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6391517972808447863" fileName="RemoteSettingsEditor.java" startLine="116" startPosition="26" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6391517972808447865" fileName="RemoteSettingsEditor.java" startLine="118" startPosition="7" endLine="119" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6391517972808447790" fileName="RemoteSettingsEditor.java" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyKeyAdapter#()V" />
+    <nodeInfo nodeId="6391517972808447825" fileName="RemoteSettingsEditor.java" startLine="102" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDefaultFormatter#()V" />
+    <nodeInfo nodeId="6391517972808448041" fileName="RemoteSettingsEditor.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="formClientCommandLine#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6391517972808447858" fileName="RemoteSettingsEditor.java" startLine="115" startPosition="79" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6391517972808448073" fileName="RemoteSettingsEditor.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;)V" />
+    <nodeInfo nodeId="6391517972808447802" fileName="RemoteSettingsEditor.java" startLine="88" startPosition="27" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447813" fileName="RemoteSettingsEditor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyChange#(Ljava/beans/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="6391517972808448022" fileName="RemoteSettingsEditor.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateUiFromFields#()V" />
+    <nodeInfo nodeId="6391517972808447835" fileName="RemoteSettingsEditor.java" startLine="106" startPosition="68" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6391517972808447995" fileName="RemoteSettingsEditor.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateFieldsFromUi#()V" />
+    <nodeInfo nodeId="6391517972808448049" fileName="RemoteSettingsEditor.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reset#(Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;)V" />
+    <nodeInfo nodeId="6391517972808447851" fileName="RemoteSettingsEditor.java" startLine="114" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueToString#(Ljava/lang/Object;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6391517972808447794" fileName="RemoteSettingsEditor.java" startLine="86" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
+    <nodeInfo nodeId="6391517972808447829" fileName="RemoteSettingsEditor.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stringToValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6391517972808447890" fileName="RemoteSettingsEditor.java" startLine="31" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoteSettingsEditor#()V" />
+    <scopeInfo nodeId="6391517972808447793" fileName="RemoteSettingsEditor.java" startLine="83" startPosition="28" endLine="83" endPosition="28" />
+    <scopeInfo nodeId="6391517972808447828" fileName="RemoteSettingsEditor.java" startLine="102" startPosition="34" endLine="102" endPosition="34" />
+    <scopeInfo nodeId="6391517972808448044" fileName="RemoteSettingsEditor.java" startLine="66" startPosition="42" endLine="67" endPosition="71" />
+    <scopeInfo nodeId="6391517972808447818" fileName="RemoteSettingsEditor.java" startLine="96" startPosition="57" endLine="97" endPosition="27" />
+    <scopeInfo nodeId="6391517972808447845" fileName="RemoteSettingsEditor.java" startLine="107" startPosition="11" endLine="108" endPosition="38" />
+    <scopeInfo nodeId="6391517972808447836" fileName="RemoteSettingsEditor.java" startLine="109" startPosition="0" endLine="110" endPosition="42">
       <varInfo nodeId="6391517972808447843" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447837" fileName="RemoteSettingsEditor.java" startLine="108" startPosition="41" endLine="109" endPosition="42" />
-    <scopeInfo nodeId="6391517972808447862" fileName="RemoteSettingsEditor.java" startLine="115" startPosition="26" endLine="116" endPosition="20" />
-    <scopeInfo nodeId="6391517972808448078" fileName="RemoteSettingsEditor.java" startLine="76" startPosition="55" endLine="78" endPosition="29" />
-    <scopeInfo nodeId="6391517972808447790" fileName="RemoteSettingsEditor.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="6391517972808447825" fileName="RemoteSettingsEditor.java" startLine="101" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="6391517972808448025" fileName="RemoteSettingsEditor.java" startLine="59" startPosition="37" endLine="62" endPosition="50" />
-    <scopeInfo nodeId="6391517972808448041" fileName="RemoteSettingsEditor.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="6391517972808447998" fileName="RemoteSettingsEditor.java" startLine="52" startPosition="37" endLine="56" endPosition="50" />
-    <scopeInfo nodeId="6391517972808448054" fileName="RemoteSettingsEditor.java" startLine="69" startPosition="55" endLine="73" endPosition="25" />
-    <scopeInfo nodeId="6391517972808448073" fileName="RemoteSettingsEditor.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="6391517972808447837" fileName="RemoteSettingsEditor.java" startLine="109" startPosition="41" endLine="110" endPosition="42" />
+    <scopeInfo nodeId="6391517972808447862" fileName="RemoteSettingsEditor.java" startLine="116" startPosition="26" endLine="117" endPosition="20" />
+    <scopeInfo nodeId="6391517972808448078" fileName="RemoteSettingsEditor.java" startLine="77" startPosition="55" endLine="79" endPosition="29" />
+    <scopeInfo nodeId="6391517972808447790" fileName="RemoteSettingsEditor.java" startLine="83" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="6391517972808447825" fileName="RemoteSettingsEditor.java" startLine="102" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="6391517972808448025" fileName="RemoteSettingsEditor.java" startLine="60" startPosition="37" endLine="63" endPosition="50" />
+    <scopeInfo nodeId="6391517972808448041" fileName="RemoteSettingsEditor.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="6391517972808447998" fileName="RemoteSettingsEditor.java" startLine="53" startPosition="37" endLine="57" endPosition="50" />
+    <scopeInfo nodeId="6391517972808448054" fileName="RemoteSettingsEditor.java" startLine="70" startPosition="55" endLine="74" endPosition="25" />
+    <scopeInfo nodeId="6391517972808448073" fileName="RemoteSettingsEditor.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="6391517972808448076" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447813" fileName="RemoteSettingsEditor.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="6391517972808447813" fileName="RemoteSettingsEditor.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="6391517972808447816" varName="evt" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447857" fileName="RemoteSettingsEditor.java" startLine="114" startPosition="79" endLine="118" endPosition="47" />
-    <scopeInfo nodeId="6391517972808448022" fileName="RemoteSettingsEditor.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="6391517972808447799" fileName="RemoteSettingsEditor.java" startLine="86" startPosition="41" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="6391517972808447834" fileName="RemoteSettingsEditor.java" startLine="105" startPosition="68" endLine="110" endPosition="7" />
-    <scopeInfo nodeId="6391517972808447995" fileName="RemoteSettingsEditor.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6391517972808448049" fileName="RemoteSettingsEditor.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="6391517972808447857" fileName="RemoteSettingsEditor.java" startLine="115" startPosition="79" endLine="119" endPosition="47" />
+    <scopeInfo nodeId="6391517972808448022" fileName="RemoteSettingsEditor.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="6391517972808447799" fileName="RemoteSettingsEditor.java" startLine="87" startPosition="41" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="6391517972808447834" fileName="RemoteSettingsEditor.java" startLine="106" startPosition="68" endLine="111" endPosition="7" />
+    <scopeInfo nodeId="6391517972808447995" fileName="RemoteSettingsEditor.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="6391517972808448049" fileName="RemoteSettingsEditor.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="6391517972808448052" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447851" fileName="RemoteSettingsEditor.java" startLine="113" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="6391517972808447851" fileName="RemoteSettingsEditor.java" startLine="114" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="6391517972808447854" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447794" fileName="RemoteSettingsEditor.java" startLine="85" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="6391517972808447794" fileName="RemoteSettingsEditor.java" startLine="86" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="6391517972808447797" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447829" fileName="RemoteSettingsEditor.java" startLine="104" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="6391517972808447829" fileName="RemoteSettingsEditor.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="6391517972808447832" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447893" fileName="RemoteSettingsEditor.java" startLine="30" startPosition="33" endLine="49" endPosition="70">
+    <scopeInfo nodeId="6391517972808447893" fileName="RemoteSettingsEditor.java" startLine="31" startPosition="33" endLine="50" endPosition="70">
       <varInfo nodeId="6391517972808447913" varName="formatter" />
       <varInfo nodeId="6391517972808447898" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="6391517972808447890" fileName="RemoteSettingsEditor.java" startLine="30" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="6391517972808447786" fileName="RemoteSettingsEditor.java" startLine="81" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor$MyKeyAdapter" />
-    <unitInfo nodeId="6391517972808447822" fileName="RemoteSettingsEditor.java" startLine="100" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor$MyDefaultFormatter" />
-    <unitInfo nodeId="6391517972808447783" fileName="RemoteSettingsEditor.java" startLine="22" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor" />
+    <scopeInfo nodeId="6391517972808447890" fileName="RemoteSettingsEditor.java" startLine="31" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="6391517972808447786" fileName="RemoteSettingsEditor.java" startLine="82" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor$MyKeyAdapter" />
+    <unitInfo nodeId="6391517972808447822" fileName="RemoteSettingsEditor.java" startLine="101" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor$MyDefaultFormatter" />
+    <unitInfo nodeId="6391517972808447783" fileName="RemoteSettingsEditor.java" startLine="23" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor" />
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6883107143361156570">
     <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="30" startPosition="76" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
