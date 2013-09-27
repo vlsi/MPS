@@ -96,6 +96,9 @@ public class NodeChooserDialog extends DialogWrapper {
       return null;
     }
     BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
+    if (nodeItem == null) {
+      (BaseNodePointerItem) myChooser.getSelectedIndex();
+    }
     return (nodeItem != null ?
       nodeItem.getNode() :
       null

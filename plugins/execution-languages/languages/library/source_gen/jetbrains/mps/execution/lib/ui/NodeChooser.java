@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -137,15 +137,19 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
   }
 
   public String getFqName(SNode node) {
+    String modelName = SNodeOperations.getModel(node).getModelName();
+
+    String nodeName;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
+      nodeName = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     } else {
-      String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node));
-      if (longName.equals("")) {
-        return node.getNodeId().toString();
-      }
-      return longName + "." + node.getNodeId().toString();
+      nodeName = node.getNodeId().toString();
     }
+
+    if ((modelName == null || modelName.length() == 0)) {
+      return nodeName;
+    }
+    return modelName + "." + nodeName;
   }
 
   public void addNodeChangeListener(@NotNull _FunctionTypes._void_P1_E0<? super SNode> listener) {
