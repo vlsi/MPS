@@ -70,7 +70,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         editorCell.addEditorCell(connectorCell);
       }
     }
-    // <node> 
+    view.validate();
     editorCell.setCellId("Diagram_tb7paq_a");
     editorCell.setBig(true);
     return editorCell;

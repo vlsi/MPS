@@ -76,6 +76,7 @@
     </scopeInfo>
     <unitInfo nodeId="1793245865110344037" fileName="Block_diagramGenerated_Editor.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagramGenerated_Editor" />
   </root>
+  <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/3617227417380538354" />
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/6306886970785124034">
     <nodeInfo nodeId="6306886970785124034" fileName="InputPort_diagramGenerated_Editor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="6306886970785124034" fileName="InputPort_diagramGenerated_Editor.java" startLine="20" startPosition="47" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -198,8 +199,8 @@
     <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="65" startPosition="41" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="67" startPosition="76" endLine="68" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="69" startPosition="9" endLine="70" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="72" startPosition="5" endLine="73" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="73" startPosition="14" endLine="74" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="72" startPosition="5" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="73" startPosition="20" endLine="74" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="74" startPosition="45" endLine="75" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="75" startPosition="28" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6306886970791123622" fileName="Diagram_diagramGenerated_Editor.java" startLine="76" startPosition="22" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

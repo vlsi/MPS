@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.figures.sandbox;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.projectional.view.TextView;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.View;
@@ -26,7 +25,7 @@ import java.util.Iterator;
 
 public class MPSBlockView extends GroupView {
   private RectView myRectView;
-  private TextView myTextView = new MPSTextView(EditorSettings.getInstance().getDefaultEditorFont());
+  private TextView myTextView = new TextView();
   private final GroupView myInputs = new GroupView();
   private final GroupView myOutputs = new GroupView();
   private final Map<SNode, View> portToViewMap = MapSequence.fromMap(new HashMap<SNode, View>());
