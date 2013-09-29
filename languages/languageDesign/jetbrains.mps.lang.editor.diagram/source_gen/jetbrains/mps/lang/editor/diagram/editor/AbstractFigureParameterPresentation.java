@@ -9,6 +9,13 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractFigureParameterPresentation implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -20,8 +27,21 @@ public class AbstractFigureParameterPresentation implements ConceptEditorCompone
   }
 
   private EditorCell createError_ntmj6m_a(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "no presentation");
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no reference>");
     editorCell.setCellId("Error_ntmj6m_a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractFigureParameterPresentation.ReplaceWith_AbstractFigureParameter_cellMenu_ntmj6m_a0a()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_AbstractFigureParameter_cellMenu_ntmj6m_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractFigureParameter_cellMenu_ntmj6m_a0a() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter";
+    }
   }
 }
