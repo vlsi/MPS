@@ -48,6 +48,8 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       editorCell.getSNode()
     )));
     view.visible().set(true);
+    editorCell.setCellId("DiagramNode_70mnj_a");
+    editorCell.setBig(true);
     return editorCell;
 
   }

@@ -14,60 +14,53 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class CellModel_Diagram_Editor extends DefaultNodeEditor {
+public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7br2q0_a(editorContext, node);
+    return this.createCollection_rubh59_a(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7br2q0_a_0(editorContext, node);
-  }
-
-  private EditorCell createCollection_7br2q0_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rubh59_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7br2q0_a");
+    editorCell.setCellId("Collection_rubh59_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_7br2q0_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7br2q0_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7br2q0_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7br2q0_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7br2q0_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7br2q0_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7br2q0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rubh59_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rubh59_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rubh59_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_rubh59_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rubh59_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_rubh59_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rubh59_g0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7br2q0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
-    editorCell.setCellId("Constant_7br2q0_a0");
+  private EditorCell createConstant_rubh59_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "connector");
+    editorCell.setCellId("Constant_rubh59_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7br2q0_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rubh59_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_7br2q0_b0");
+    editorCell.setCellId("Constant_rubh59_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7br2q0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nodes:");
-    editorCell.setCellId("Constant_7br2q0_c0");
+  private EditorCell createConstant_rubh59_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input:");
+    editorCell.setCellId("Constant_rubh59_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_7br2q0_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_rubh59_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("nodes");
-    provider.setNoTargetText("<no nodes>");
+    provider.setRole("inputRole");
+    provider.setNoTargetText("<no inputRole>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a3a());
+    provider.setAuxiliaryCellProvider(new CellModel_DiagramConnector_Editor._Inline_rubh59_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -80,8 +73,8 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_7br2q0_a3a extends InlineCellProvider {
-    public _Inline_7br2q0_a3a() {
+  public static class _Inline_rubh59_a3a extends InlineCellProvider {
+    public _Inline_rubh59_a3a() {
       super();
     }
 
@@ -90,10 +83,10 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7br2q0_a0d0(editorContext, node);
+      return this.createProperty_rubh59_a0d0(editorContext, node);
     }
 
-    private EditorCell createProperty_7br2q0_a0d0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_rubh59_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -103,7 +96,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_role");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
-        editorCell.setRole("nodes");
+        editorCell.setRole("inputRole");
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -117,19 +110,19 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_7br2q0_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "connectors:");
-    editorCell.setCellId("Constant_7br2q0_e0");
+  private EditorCell createConstant_rubh59_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output:");
+    editorCell.setCellId("Constant_rubh59_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_7br2q0_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_rubh59_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("connectors");
-    provider.setNoTargetText("<no connectors>");
+    provider.setRole("outputRole");
+    provider.setNoTargetText("<no outputRole>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a5a());
+    provider.setAuxiliaryCellProvider(new CellModel_DiagramConnector_Editor._Inline_rubh59_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -142,8 +135,8 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_7br2q0_a5a extends InlineCellProvider {
-    public _Inline_7br2q0_a5a() {
+  public static class _Inline_rubh59_a5a extends InlineCellProvider {
+    public _Inline_rubh59_a5a() {
       super();
     }
 
@@ -152,10 +145,10 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7br2q0_a0f0(editorContext, node);
+      return this.createProperty_rubh59_a0f0(editorContext, node);
     }
 
-    private EditorCell createProperty_7br2q0_a0f0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_rubh59_a0f0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -165,7 +158,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_role_1");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
-        editorCell.setRole("connectors");
+        editorCell.setRole("outputRole");
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -179,26 +172,10 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_7br2q0_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rubh59_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_7br2q0_g0");
+    editorCell.setCellId("Constant_rubh59_g0");
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createCollection_7br2q0_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7br2q0_a_0");
-    editorCell.setBig(true);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createComponent_7br2q0_a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createComponent_7br2q0_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
 }

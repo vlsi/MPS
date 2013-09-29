@@ -43,6 +43,8 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
       editorCell.getSNode()
     )));
     view.visible().set(true);
+    editorCell.setCellId("DiagramNode_16y7ix_a");
+    editorCell.setBig(true);
     return editorCell;
 
   }

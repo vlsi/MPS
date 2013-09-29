@@ -1,122 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_Behavior" file="AbstractFigureParameter_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_BehaviorDescriptor" file="AbstractFigureParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_Behavior" file="AbstractFigureReference_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" file="AbstractFigureReference_BehaviorDescriptor.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureColorStyleClassItem_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureDimensionStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterLink_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterProperty_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Color_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterProperty_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureDimensionStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureColorStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" file="CellModel_DiagramConnector_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" file="CellModel_DiagramNode_Behavior.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.SimpleScope" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.SimpleScope" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" file="CellModel_DiagramNode_BehaviorDescriptor.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" file="CellModel_Diagram_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" file="ExternalFigureReference_Behavior.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" file="ExternalFigureReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.FigureColorStyleClassItem_BehaviorDescriptor" file="FigureColorStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.JetpadEditorStyleItem_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.JetpadEditorStyleItem_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.FigureDimensionStyleClassItem_BehaviorDescriptor" file="FigureDimensionStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.JetpadEditorStyleItem_BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.JetpadEditorStyleItem_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterLink_BehaviorDescriptor" file="FigureParameterLink_BehaviorDescriptor.java">
@@ -138,33 +145,33 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Color_Behavior" file="QueryFunction_Color_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Color_BehaviorDescriptor" file="QueryFunction_Color_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Color_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Color_Behavior" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_Behavior" file="QueryFunction_Dimension_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_BehaviorDescriptor" file="QueryFunction_Dimension_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

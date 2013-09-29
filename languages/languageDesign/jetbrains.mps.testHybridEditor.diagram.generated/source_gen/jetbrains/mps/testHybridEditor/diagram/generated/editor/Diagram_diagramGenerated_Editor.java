@@ -17,6 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
+import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
+import jetbrains.jetpad.projectional.view.LineView;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -45,7 +48,31 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       view.itemsView.children().add(blockView);
     }
     editorCell.addEditorCell(blockCollection);
+    for (SNode connectorNode : ListSequence.fromList(SLinkOperations.getTargets(node, "connectors", true))) {
+      final ConnectorViewCell connectorCell = (ConnectorViewCell) (editorContext.createNodeCell(connectorNode));
+      connectorCell.removeAllCells();
+      View connectorView = connectorCell.getView();
+      View fromView = connectorCell.getOutputView(editorCell);
+      View toView = connectorCell.getInputView(editorCell);
+      if (fromView != null && toView != null) {
+        PolylineConnection connection = connectorCell.getConnection();
+        if (connectorView.parent() != null) {
+          connectorView.parent().children().remove(connectorView.parent().children().indexOf(connectorView));
+        }
+        connection.view().invalidate();
+        connection.toView().set(toView);
+        connection.fromView().set(fromView);
+        view.connections.add(connection);
 
+        for (LineView line : ListSequence.fromList(connection.getLines())) {
+          connectorCell.addEditorCell(GenericViewCell.createViewCell(editorContext, connectorNode, line));
+        }
+        editorCell.addEditorCell(connectorCell);
+      }
+    }
+    // <node> 
+    editorCell.setCellId("Diagram_tb7paq_a");
+    editorCell.setBig(true);
     return editorCell;
 
   }

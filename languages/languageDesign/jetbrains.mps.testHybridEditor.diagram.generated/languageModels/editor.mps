@@ -151,8 +151,19 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="adck.725186580883451585" resolveInfo="Diagram" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="6306886970791123622" nodeInfo="ng">
       <link role="nodes" roleId="gbdf.6306886970791072633" targetNodeId="adck.725186580883451864" />
+      <link role="connectors" roleId="gbdf.6382742553261733204" targetNodeId="adck.725186580883451866" />
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="6306886970791123620" nodeInfo="ig">
+      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="7v6s.1793245865110343949" resolveInfo="diagramGenerated" />
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6970913567389678792" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="adck.725186580883451809" resolveInfo="Connector" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramConnector" typeId="gbdf.6382742553261733065" id="6970913567389695764" nodeInfo="ng">
+      <link role="inputRole" roleId="gbdf.6382742553261744668" targetNodeId="adck.725186580883451928" />
+      <link role="outputRole" roleId="gbdf.6382742553261744666" targetNodeId="adck.725186580883451924" />
+    </node>
+    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="6970913567389678798" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="7v6s.1793245865110343949" resolveInfo="diagramGenerated" />
     </node>
   </root>

@@ -43,6 +43,8 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
       editorCell.getSNode()
     )));
     view.visible().set(true);
+    editorCell.setCellId("DiagramNode_cfffa6_a");
+    editorCell.setBig(true);
     return editorCell;
 
   }
