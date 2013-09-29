@@ -129,7 +129,15 @@
     <property name="name" nameId="tpck.1169194664001" value="AbstractFigureParameterPresentation" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Error" typeId="tpc2.1075375595203" id="1094405431463763235" nodeInfo="ng">
-      <property name="text" nameId="tpc2.1075375595204" value="no presentation" />
+      <property name="text" nameId="tpc2.1075375595204" value="&lt;no reference&gt;" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="1497735617373149112" nodeInfo="nn">
+        <property name="tag" nameId="tpc2.1214320119174" value="ext_1_RTransform" />
+      </node>
+      <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1497735617373231912" nodeInfo="ng">
+        <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="1497735617373231915" nodeInfo="ng">
+          <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
+        </node>
+      </node>
     </node>
   </root>
   <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="1094405431463777301" nodeInfo="ng">
@@ -142,6 +150,11 @@
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1094405431463801092" nodeInfo="ng">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpce.1071599776563" resolveInfo="role" />
+          </node>
+        </node>
+        <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1497735617373306355" nodeInfo="ng">
+          <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="1497735617373306357" nodeInfo="ng">
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
           </node>
         </node>
       </node>
@@ -161,6 +174,11 @@
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1094405431463820022" nodeInfo="ng">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+        <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1497735617373306737" nodeInfo="ng">
+          <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="1497735617373306739" nodeInfo="ng">
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
           </node>
         </node>
       </node>

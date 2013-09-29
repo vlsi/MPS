@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -18,6 +20,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class FigureParameterLinkPresentation implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -42,7 +45,7 @@ public class FigureParameterLinkPresentation implements ConceptEditorComponent {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new FigureParameterLinkPresentation._Inline_wj8trg_a0a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FigureParameterLinkPresentation.ReplaceWith_AbstractFigureParameter_cellMenu_wj8trg_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -90,6 +93,15 @@ public class FigureParameterLinkPresentation implements ConceptEditorComponent {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+
+  public static class ReplaceWith_AbstractFigureParameter_cellMenu_wj8trg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractFigureParameter_cellMenu_wj8trg_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter";
     }
   }
 }
