@@ -10,12 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DiagramNodeParameters implements ParametersInformation<SNode> {
@@ -34,25 +35,32 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     styledText.append(SLinkOperations.getTarget(node, "figure", true).getPresentation());
     styledText.append("(");
     SNode selectedNode = editorContext.getSelectedNode();
-    Set<String> definedParameters = SetSequence.fromSetWithValues(new HashSet<String>(), BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), parameterObject, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{}));
+
+    List<String> definedParameters = ListSequence.fromListWithValues(new LinkedList<String>(), BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), parameterObject, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{}));
     Set<String> specifiedParameters = SetSequence.fromSet(new HashSet<String>());
+
+    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+      if (ListSequence.fromList(definedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, "name"))) {
+        SetSequence.fromSet(specifiedParameters).addElement(SPropertyOperations.getString(nextSpecifiedParameter, "name"));
+        ListSequence.fromList(definedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, "name"));
+      }
+    }
+
     boolean isEmpty = true;
-    for (SNode nextExistingParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
-      if (SetSequence.fromSet(definedParameters).contains(SPropertyOperations.getString(nextExistingParameter, "name")) && !(SetSequence.fromSet(specifiedParameters).contains(SPropertyOperations.getString(nextExistingParameter, "name")))) {
-        if (nextExistingParameter == selectedNode) {
-          styledText.setBold(true);
-        }
-        this.appendParameter(SPropertyOperations.getString(nextExistingParameter, "name"), styledText, isEmpty);
-        styledText.setBold(false);
-        SetSequence.fromSet(specifiedParameters).addElement(SPropertyOperations.getString(nextExistingParameter, "name"));
+    for (SNode nextSpecifiedParameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+      if (SetSequence.fromSet(specifiedParameters).contains(SPropertyOperations.getString(nextSpecifiedParameter, "name"))) {
+        SetSequence.fromSet(specifiedParameters).removeElement(SPropertyOperations.getString(nextSpecifiedParameter, "name"));
+        this.appendParameter(SPropertyOperations.getString(nextSpecifiedParameter, "name"), styledText, isEmpty, nextSpecifiedParameter == selectedNode);
+        isEmpty = false;
+      } else if (ListSequence.fromList(definedParameters).isNotEmpty()) {
+        this.appendParameter(ListSequence.fromList(definedParameters).removeElementAt(0), styledText, isEmpty, nextSpecifiedParameter == selectedNode);
         isEmpty = false;
       }
     }
-    for (String nextFigureParameter : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), parameterObject, "virtual_getFigureParameterNames_1491555030356445722", new Object[]{}))) {
-      if (!(SetSequence.fromSet(specifiedParameters).contains(nextFigureParameter))) {
-        this.appendParameter(nextFigureParameter, styledText, isEmpty);
-        isEmpty = false;
-      }
+
+    for (String nextDefinedParameter : ListSequence.fromList(definedParameters)) {
+      this.appendParameter(nextDefinedParameter, styledText, isEmpty, false);
+      isEmpty = false;
     }
     styledText.append(")");
   }
@@ -61,10 +69,12 @@ public class DiagramNodeParameters implements ParametersInformation<SNode> {
     return SLinkOperations.getTarget(node, "figure", true) == parameterObject;
   }
 
-  private void appendParameter(String parameterName, StyledTextPrinter styledText, boolean isEmpty) {
+  private void appendParameter(String parameterName, StyledTextPrinter styledText, boolean isEmpty, boolean isBold) {
     if (!(isEmpty)) {
       styledText.append(", ");
     }
+    styledText.setBold(isBold);
     styledText.append(parameterName);
+    styledText.setBold(false);
   }
 }
