@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6hjug41m4iscg90teh1rww4iaqx22hz">
+<dependencies version="2" modelHash="d5cj2vw6i8zhi2bt3jzzxw0dgp5k4qr">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
@@ -64,7 +64,7 @@
   <source id="6306886970790134555" name="JetpadStyleClassItemQueryMethods" hash="1bm40wjvf9rz134fwsfr5xp1pnijbm4" />
   <source id="6306886970790156279" name="JetpadViewMethodSwitch" hash="9dttyccs9yg8gxmr3624fcbdeoq14kf" />
   <source id="6306886970790605922" name="JetpadStyleClassItemValue" hash="2zrz7cswuj2q1r6ui0x6x5gj35y6ldr" />
-  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="4uxe9m3u67edkuc8iqkmzi4rajm362o" />
+  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-2a6lb08pmzq2ajk098maf3ce31fxmqp" />
   <source id="6382742553260818581" name="reduce_ExternalFigureReference" hash="-4fvo6dsd2izgl52czjn7l2ur2qwyzqk" />
   <source id="6382742553261116206" name="FigureParameterSwitchToStatement" hash="-51p01ed31i1o9o1vl2z6fe9wgg1hond" />
   <source id="5074650623945660148" name="createViewForChildNode" hash="-d07822tbtgo23klbq47wurz2l4syhk7" />

@@ -55,7 +55,7 @@ public class GenericViewCell extends EditorCell_Collection {
 
   @Override
   protected void relayoutImpl() {
-    super.relayoutImpl();
+    //super.relayoutImpl();
     setBounds();
   }
 

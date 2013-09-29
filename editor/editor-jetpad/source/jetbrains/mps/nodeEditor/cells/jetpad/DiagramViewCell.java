@@ -16,7 +16,9 @@
 package jetbrains.mps.nodeEditor.cells.jetpad;
 
 
+import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
@@ -27,6 +29,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
+import java.awt.Dimension;
 
 /**
  * Created with IntelliJ IDEA.
@@ -60,8 +63,7 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
 
   public void setBounds() {
     super.setBounds();
-    //todo: hack! set normal bounds
-    myComponent.setBounds(myView.bounds().get().origin.x, myView.bounds().get().origin.y, myView.bounds().get().dimension.x, myView.bounds().get().dimension.y);
+    myComponent.setBounds(myComponent.getX(), myComponent.getY(), myX + myWidth, myY + myHeight);
   }
 
   @Override
@@ -79,5 +81,29 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
   public void onRemove() {
     getEditor().getCellTracker().removeComponentCell(this);
     super.onRemove();
+  }
+
+  @Override
+  public void setX(int x) {
+    myComponent.setLocation(x, myComponent.getY());
+    super.setX(x);
+  }
+
+  @Override
+  public void setY(int y) {
+    myComponent.setLocation(myComponent.getX(), y);
+    super.setY(y);
+  }
+
+  @Override
+  public void moveTo(int x, int y) {
+    super.moveTo(x, y);
+    myComponent.setLocation(myX, myY);
+  }
+
+
+  @Override
+  public boolean isDrawBorder() {
+    return false;
   }
 }
