@@ -19,6 +19,7 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -43,7 +44,7 @@ public class GenericViewCell extends EditorCell_Collection {
   }
 
   public static GenericViewCell createViewCell(EditorContext editorContext, SNode node, View view) {
-    GenericViewCell cell = new GenericViewCell(editorContext, node, new CellLayout_Indent(), null);
+    GenericViewCell cell = new GenericViewCell(editorContext, node, new CellLayout_Horizontal(), null);
     cell.myView = view;
     return cell;
   }
@@ -55,7 +56,7 @@ public class GenericViewCell extends EditorCell_Collection {
 
   @Override
   protected void relayoutImpl() {
-    //super.relayoutImpl();
+    super.relayoutImpl();
     setBounds();
   }
 

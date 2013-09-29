@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells.jetpad;
 
 
+import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.projectional.view.View;
@@ -23,6 +24,7 @@ import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -49,7 +51,7 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
   }
 
   public static DiagramViewCell createViewCell(EditorContext editorContext, SNode node, DiagramView view) {
-    DiagramViewCell cell = new DiagramViewCell(editorContext, node, new CellLayout_Indent(), null);
+    DiagramViewCell cell = new DiagramViewCell(editorContext, node, new CellLayout_Horizontal(), null);
     cell.myView = view;
     cell.myComponent.container().root().children().add(cell.myView);
     return cell;
@@ -62,8 +64,12 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
 
 
   public void setBounds() {
-    super.setBounds();
-    myComponent.setBounds(myComponent.getX(), myComponent.getY(), myX + myWidth, myY + myHeight);
+    Rectangle bounds = myView.bounds().get();
+    myX = myComponent.getX();
+    myY = myComponent.getY();
+    myWidth = Math.abs(bounds.origin.x) + bounds.dimension.x;
+    myHeight = Math.abs(bounds.origin.y) + bounds.dimension.y;
+    myComponent.setBounds(myComponent.getX(), myComponent.getY(), myWidth, myHeight);
   }
 
   @Override
