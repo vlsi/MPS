@@ -12231,9 +12231,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2516382007746715892" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2516382007746866389" nodeInfo="nn">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="iwwu.4193578441192064991" resolveInfo="MissingDependenciesFixer" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwwu.3006632501001502774" resolveInfo="fixDependencies" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwwu.7461441435129612925" resolveInfo="fixDependencies" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2516382007746715895" nodeInfo="nn">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2874648801263308738" resolveInfo="model" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8985608951696552009" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580123138" value="true" />
             </node>
           </node>
         </node>
