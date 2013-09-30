@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -358,7 +358,7 @@ class GenerationSession {
       myLogger.info(
           "generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
     }
-    boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
+    boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager).o1;
     if (!somethingHasBeenGenerated) {
       SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
       myDependenciesBuilder.updateModel(currentOutputModel);
@@ -377,7 +377,9 @@ class GenerationSession {
       // apply mapping to the output model
       mySessionContext.clearTransientObjects();
       // probably we can forget about former input model here
-      recycleWasteModel(currentInputModel);
+      if (currentInputModel != currentOutputModel) {
+        recycleWasteModel(currentInputModel);
+      }
       currentInputModel = currentOutputModel;
       ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder();
 
@@ -387,7 +389,8 @@ class GenerationSession {
             currentInputModel.getReference().getModelName()) + "' --> '" + SModelStereotype.getStereotype(transientModel.getReference().getModelName()) + "'");
       }
       tracer.startTracing(currentInputModel, transientModel);
-      if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
+      final Pair<Boolean, SModel> applied = applyRules(currentInputModel, transientModel, false, ruleManager);
+      if (!applied.o1) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
@@ -398,12 +401,13 @@ class GenerationSession {
         }
         break;
       }
+      SModel realOutputModel = applied.o2;
 
       if (++secondaryMappingRepeatCount > 10) {
         myLogger.error("failed to generate output after 10 repeated mappings");
         if (tracer.isTracing()) {
           myLogger.error("last rules applied:");
-          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getReference());
+          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(realOutputModel.getReference());
           for (Pair<SNode, SNode> pair : pairs) {
             myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
                 GeneratorUtil.describe(pair.o2, "input"));
@@ -416,7 +420,7 @@ class GenerationSession {
       }
 
       // next iteration ...
-      currentOutputModel = transientModel;
+      currentOutputModel = realOutputModel;
     }
 
     // -----------------------
@@ -429,10 +433,11 @@ class GenerationSession {
     return currentOutputModel;
   }
 
-  private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
+  private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
       RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     boolean hasChanges;
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
+    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
     final TemplateGenerator tg =
         myGenerationOptions.isGenerateInParallel()
             ?
@@ -450,14 +455,16 @@ class GenerationSession {
     } else {
       hasChanges = tg.apply(isPrimary);
     }
+    ttrace.pop();
+    SModel outputModel = tg.getOutputModel();
     if (myNewCache != null && (isPrimary || hasChanges)) {
       ttrace.push("saving cache", false);
-      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, myDependenciesBuilder);
+      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(outputModel, myDependenciesBuilder);
       tg.getMappings().export(modelWithMetaInfo, myDependenciesBuilder);
       myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       ttrace.pop();
     }
-    return hasChanges;
+    return new Pair<Boolean, SModel>(hasChanges, outputModel);
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {

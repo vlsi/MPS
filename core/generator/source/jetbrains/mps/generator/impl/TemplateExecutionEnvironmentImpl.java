@@ -59,7 +59,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public IOperationContext getOperationContext() {
-    return generator.getOperationContext();
+    return generator.getGeneratorSessionContext();
   }
 
   @Override
@@ -113,7 +113,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
     while(it.hasNext()) {
       SNode newInputNode = it.next();
-      Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateNode, templateId, newInputNode, this);
+      if (templateId == null) {
+        SNode template = templateNode.resolve(MPSModuleRepository.getInstance());
+        templateId = GeneratorUtil.getTemplateNodeId(template);
+      }
+      Collection<SNode> _outputNodes = generator.copySrc(mappingName, templateId, newInputNode, this);
       assert _outputNodes != null; // copySrc contract
       // check node languages : prevent 'input node' query from returning node, which language was not counted when
       // planning the generation steps.
@@ -122,7 +126,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
           if (!outputNodeLang.getGenerators().isEmpty()) {
             SNode tNode = templateNode.resolve(MPSModuleRepository.getInstance());
-            generator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleName() + "' - this language did not show up when computing generation steps!",
+            getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleName() + "' - this language did not show up when computing generation steps!",
               GeneratorUtil.describe(tNode, "template"),
               GeneratorUtil.describe(templateContext.getInput(), "input"),
               new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
@@ -142,7 +146,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
       if (!childLang.getGenerators().isEmpty()) {
         SNode tNode = templateNode.resolve(MPSModuleRepository.getInstance());
-        generator.getLogger().error(child, "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
+        getLogger().error(child, "language of output node is '" + childLang.getModuleName() + "' - this language did not show up when computing generation steps!",
           GeneratorUtil.describe(tNode, "template"),
           GeneratorUtil.describe(templateContext.getInput(), "input"),
           new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName() + "'"));
@@ -203,7 +207,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   public Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException {
     TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
     if (templateModel == null) {
-      generator.getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
+      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
         GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
@@ -212,7 +216,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
     TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
     if (templateDeclarationInstance == null) {
-      generator.getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
+      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
         GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
@@ -226,7 +230,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException {
     TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
     if (templateModel == null) {
-      generator.getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
+      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
         GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
@@ -235,7 +239,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
     TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
     if (templateDeclarationInstance == null || !(templateDeclarationInstance instanceof TemplateDeclarationWeavingAware)) {
-      generator.getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
+      getLogger().error(templateNode.resolve(MPSModuleRepository.getInstance()), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.resolve(MPSModuleRepository.getInstance()), "template"),
         GeneratorUtil.describeIfExists(templateDeclaration.resolve(MPSModuleRepository.getInstance()), "template declaration"));
@@ -248,23 +252,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
-    GeneratorMappings mappings = generator.getMappings();
-    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
-    for (SNode historyInputNode : context.getInputHistory()) {
-      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNodeId, outputNode);
-    }
-    mappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
+    generator.nodeCopied(context, outputNode, templateNodeId);
   }
 
   @Override
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
-    generator.getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingLabel, outputNode);
+    generator.registerMappingLabel(inputNode, mappingLabel, outputNode);
   }
 
   @Override
   public void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel) {
     for (SNode outputNode : outputNodes) {
-      generator.getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingLabel, outputNode);
+      generator.registerMappingLabel(inputNode, mappingLabel, outputNode);
     }
   }
 

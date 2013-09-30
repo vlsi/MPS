@@ -28,7 +28,7 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -165,15 +166,14 @@ public final class TemplateProcessor {
 
     myGenerator.getPerformanceTracer().push("templateNode:create copy",  false);
     // templateNode has no unprocessed node-macros - create output instance for the template node
-    myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(templateNode));
+    final SNodePointer templateNodeReference = new SNodePointer(templateNode);
+    myTracer.pushTemplateNode(templateNodeReference);
     jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(templateNode.getConcept().getQualifiedName());
-    GeneratorMappings mappings = myGenerator.getMappings();
-    mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
-    for (SNode historyInputNode : context.getInputHistory()) {
-      mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
-    }
-    mappings.addOutputNodeByInputNodeAndMappingName(context.getInput(), mappingName, outputNode);
-    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
+
+    // use same env method as reduce_TemplateNode does
+    myEnv.nodeCopied(context, outputNode, GeneratorUtil.getTemplateNodeId(templateNode));
+    myGenerator.registerMappingLabel(context.getInput(), mappingName, outputNode); // XXX reduce_TemplateNode doesn't do that
+
     jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
     myGenerator.getPerformanceTracer().pop();
 
@@ -207,9 +207,12 @@ public final class TemplateProcessor {
         continue;
       }
       if (templateReferentNode.getModel() == templateModel) { // internal reference
-        ReferenceInfo_TemplateNode refInfo = new ReferenceInfo_TemplateNode(
-            outputNode,
-            reference,
+        // XXX same code is in TEEI.resolveInTemplateLater, needs refactoring
+        ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
+            outputNode, reference.getRole(),
+            templateNodeReference,
+            GeneratorUtil.getTemplateNodeId(templateReferentNode),
+            jetbrains.mps.util.SNodeOperations.getResolveInfo(templateReferentNode),
             context);
         PostponedReference postponedReference = new PostponedReference(
             refInfo,
@@ -277,7 +280,7 @@ public final class TemplateProcessor {
       }
     } finally {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
-      myTracer.closeTemplateNode(new jetbrains.mps.smodel.SNodePointer(templateNode));
+      myTracer.closeTemplateNode(templateNodeReference);
     }
     return Collections.singletonList(((SNode) outputNode));
   }
@@ -319,7 +322,7 @@ public final class TemplateProcessor {
     }
 
     // check fragments: all fragments with <default context> should have the same parent
-    TemplateWeavingRuleInterpreted.checkTemplateFragmentsForWeaving(template, templateFragments, myGenerator);
+    TemplateWeavingRuleInterpreted.checkTemplateFragmentsForWeaving(template, templateFragments, myGenerator.getLogger());
 
     // for each template fragment create output nodes
     TemplateProcessor templateProcessor = new TemplateProcessor(myEnv);
@@ -500,7 +503,7 @@ public final class TemplateProcessor {
         myTemplateProcessor.validateReferences(child, templateContext.getInput());
 
         // label
-        getGenerator().getMappings().addOutputNodeByInputNodeAndMappingName(templateContext.getInput(), mappingName, child);
+        getGenerator().registerMappingLabel(templateContext.getInput(), mappingName, child);
         return Collections.singletonList(child);
       }
       return Collections.emptyList();

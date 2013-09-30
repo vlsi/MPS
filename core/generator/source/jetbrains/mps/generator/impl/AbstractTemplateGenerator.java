@@ -16,8 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -38,21 +40,21 @@ import java.util.Set;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
-  private IOperationContext myOperationContext;
+  private GenerationSessionContext myOperationContext;
   private ProgressMonitor myProgressMonitor;
   protected final IGeneratorLogger myLogger;
 
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
 
-  protected final GeneratorMappings myMappings;
+  private final GeneratorMappings myMappings;
 
   private Set<SNode> myFailedRules = new ConcurrentHashSet<SNode>();
   private final boolean myShowBadChildWarning;
   private final RoleValidator successValidator = new RoleValidator();
   private final Map<String, Map<String, RoleValidator>> validators = new HashMap<String, Map<String, RoleValidator>>();
 
-  protected AbstractTemplateGenerator(IOperationContext operationContext,
+  protected AbstractTemplateGenerator(GenerationSessionContext operationContext,
       ProgressMonitor progressMonitor, IGeneratorLogger logger,
       SModel inputModel, SModel outputModel, boolean showBadChildWarning) {
     myOperationContext = operationContext;
@@ -64,7 +66,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myMappings = new GeneratorMappings(IterableUtil.asCollection(inputModel.getRootNodes()).size());
   }
 
-  public IOperationContext getOperationContext() {
+  @Override
+  public GenerationSessionContext getGeneratorSessionContext() {
     return myOperationContext;
   }
 
@@ -130,7 +133,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
    */
   @Override
   public SModel getSourceModel() {
-    return myInputModel;
+    return getInputModel();
   }
 
   @Override
@@ -143,7 +146,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
    */
   @Override
   public SModel getTargetModel() {
-    return myOutputModel;
+    return getOutputModel();
   }
 
   GeneratorMappings getMappings() {
@@ -153,10 +156,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   @Override
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
     myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-  }
-
-  public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
-    return myMappings.findOutputNodeByTemplateNodeUnique(templateNode);
   }
 
   public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
@@ -184,14 +183,26 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return outputNode;
   }
 
+  protected void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+    myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
+  }
+
+  protected void addOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId, SNode outputNode) {
+    myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, outputNode);
+  }
+
+  void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
+    addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
+    for (SNode historyInputNode : context.getInputHistory()) {
+      myMappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNodeId, outputNode);
+    }
+    myMappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
+  }
+
   public SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
     SNode node = findCopiedOutputNodeForInputNode(inputNode);
     if (myMappings.isInputNodeHasUniqueCopiedOutputNode(inputNode)) return node;
     return null;
-  }
-
-  public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
-    return myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId) {
@@ -199,7 +210,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {
-    return myOutputModel.getNode(nodeId);
+    return getOutputModel().getNode(nodeId);
   }
 
   public SNode findInputNodeById(SNodeId nodeId) {
