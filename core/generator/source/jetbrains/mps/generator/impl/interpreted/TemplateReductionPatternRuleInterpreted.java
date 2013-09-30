@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -83,7 +84,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   }
 
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, TemplateGenerator generator) throws GenerationFailureException {
+  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, ITemplateGenerator generator) throws GenerationFailureException {
     String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
     try {
       return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(

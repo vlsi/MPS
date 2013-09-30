@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.*;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -110,11 +111,11 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         new WeavingMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
         ruleNode.getModel());
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find context node query '" + methodName + "' : evaluate to null");
+      environment.getLogger().warning(ruleNode, "cannot find context node query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "cannot evaluate rule context query");
-      environment.getGenerator().getLogger().handleException(e);
+      environment.getLogger().handleException(e);
     }
     return null;
   }
@@ -133,12 +134,12 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      environment.getGenerator().getLogger().handleException(t);
-      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().handleException(t);
+      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -179,7 +180,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
 
     // check fragments: all fragments with <default context> should have the same parent
-    checkTemplateFragmentsForWeaving(template, templateFragments, environment.getGenerator());
+    checkTemplateFragmentsForWeaving(template, templateFragments, environment.getLogger());
 
     // for each template fragment create output nodes
     TemplateProcessor templateProcessor = new TemplateProcessor(environment);
@@ -189,7 +190,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       try {
         contextParentNode = environment.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
       } catch (Exception e) {
-        environment.getGenerator().getLogger().handleException(e);
+        environment.getLogger().handleException(e);
       }
       if (contextParentNode != null) {
         try {
@@ -205,7 +206,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         } catch (TemplateProcessingFailureException e) {
           // FIXME
           environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "error processing template fragment");
-          environment.getGenerator().getLogger().info(contextParentNode, " -- was output context node:");
+          environment.getLogger().info(contextParentNode, " -- was output context node:");
         }
       } else {
         environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "couldn't define 'context' for template fragment");
@@ -213,7 +214,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
   }
 
-  public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, TemplateGenerator generator) {
+  public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, IGeneratorLogger logger) {
 
     // all fragments with <default context> should have the same parent
     boolean sameParent = true;
@@ -236,7 +237,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
           list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
         }
       }
-      generator.getLogger().error(template, "all fragments with <default context> should have the same parent",
+      logger.error(template, "all fragments with <default context> should have the same parent",
         list.toArray(new ProblemDescription[list.size()]));
     }
   }

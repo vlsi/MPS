@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
@@ -96,7 +97,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
   }
 
-  private boolean checkCondition(SNode condition, boolean required, TemplateContext context, TemplateGenerator generator) throws GenerationFailureException {
+  private boolean checkCondition(SNode condition, boolean required, TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
         generator.showErrorMessage(context.getInput(), null, ruleNode, "rule condition required");
@@ -158,7 +159,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       } catch (GenerationCanceledException e) {
         throw e;
       } catch (Throwable t) {
-        environment.getGenerator().getLogger().handleException(t);
+        environment.getLogger().handleException(t);
         environment.getGenerator().showErrorMessage(context.getInput(), templateNode, ruleNode, "error processing reduction rule");
       }
     }
