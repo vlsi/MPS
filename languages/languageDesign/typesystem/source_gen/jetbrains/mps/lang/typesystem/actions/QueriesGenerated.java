@@ -6,10 +6,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -40,6 +41,9 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "leftExpression", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "rightExpression", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "nodeToCheck", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "nodeToCheck", true), true);
+      SPropertyOperations.set(_context.getNewNode(), "checkOnly", "" + (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "checkOnly")));
+      SLinkOperations.setTarget(_context.getNewNode(), "errorString", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "errorString", true), true);
+      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "helginsIntention", true)));
     }
   }
 
