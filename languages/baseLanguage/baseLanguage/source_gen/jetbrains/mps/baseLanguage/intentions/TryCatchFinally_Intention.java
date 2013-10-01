@@ -16,6 +16,12 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class TryCatchFinally_Intention implements IntentionFactory {
@@ -76,13 +82,29 @@ public class TryCatchFinally_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode tryStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TryStatement", null);
+      final SNode tryStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TryStatement", null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, tryStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(tryStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
       }
-      SNodeFactoryOperations.addNewChild(tryStatement, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
+      Set<SNode> uncaughtThrowables = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(tryStatement, "body", true), false);
+      if (SetSequence.fromSet(uncaughtThrowables).isNotEmpty()) {
+        SetSequence.fromSet(uncaughtThrowables).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            SNode clause = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
+            SLinkOperations.setTarget(clause, "throwable", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null), true);
+            SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+            SLinkOperations.setTarget(type, "classifier", it, false);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(clause, "throwable", true), "type", type, true);
+            SPropertyOperations.set(SLinkOperations.getTarget(clause, "throwable", true), "name", "e");
+            ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(clause);
+          }
+        });
+      } else {
+        SNodeFactoryOperations.addNewChild(tryStatement, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
+      }
+
       editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).first(), "throwable", true), "type", true));
     }
 
