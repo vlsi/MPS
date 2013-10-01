@@ -6,10 +6,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -25,8 +26,9 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.typesystem.typesystem.RulesUtil;
-import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -38,6 +40,9 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "leftExpression", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "rightExpression", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "nodeToCheck", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "nodeToCheck", true), true);
+      SPropertyOperations.set(_context.getNewNode(), "checkOnly", "" + (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "checkOnly")));
+      SLinkOperations.setTarget(_context.getNewNode(), "errorString", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "errorString", true), true);
+      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "helginsIntention", true)));
     }
   }
 
@@ -108,6 +113,39 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1201878705329(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return !(RulesUtil.withinInferenceItem(_context.getParentNode())) && !(RulesUtil.withinTypeManagingItem(_context.getParentNode()));
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7750890258732378172(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Iterable<String> queryResult = new Computable<Iterable<String>>() {
+          public Iterable<String> compute() {
+            return ListSequence.fromListAndArray(new ArrayList<String>(), "infer typeof", "check typeof");
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final String item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode rule = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
+                if ((item).equals("check typeof")) {
+                  SPropertyOperations.set(rule, "checkOnly", "" + (true));
+                }
+                return rule;
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_7750890258733139493(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null);
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
