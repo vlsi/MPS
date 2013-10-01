@@ -187,7 +187,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
   }
 
-  protected void addOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId, SNode outputNode) {
+  public void addOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId, SNode outputNode) {
     myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, outputNode);
   }
 

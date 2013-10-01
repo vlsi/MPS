@@ -214,6 +214,50 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
   }
 
+  /**
+   * For an imaginary model where X is translated to Class and there's weaving that adds a field to this class, of the context classifier type:
+   * <pre>
+   * RootMappingRule(X) ==> ClassConcept
+   * WeavingMappingRule(X).context = gencontext.getOutput(node); weave_InjectField(TemplateDeclarationReference)
+   *
+   * weave_InjectField got content node (TemplateDeclaration.contentNode) which is a fake class:
+   * content node:
+   * class AAA {
+   *   &lt;TF public AAA field; TF&gt;
+   * }
+   * </pre>
+   *
+   * To resolve AAA reference correctly, we need to know mapping of weaving rule's context to AAA template node. While in
+   * TemplateProcessor, we create a PostponedReference with ReferenceInfo_Template (reference to AAA classifier is reference inside template model).
+   * During resolution step, however, it's not clear how to find output node that corresponds to AAA template reference.
+   * Before this modest hack was introduced, there used to be ReferenceInfo_TemplateNode with an awkward hack that walked parents
+   * of reference source in output model and in template model simultaneously until template model element that matched the one from ReferenceInfo
+   * was found, and corresponding output node was treated as proper target. This was bit too much of assumption about output model structure, imo.
+   * Proposed alternative is not perfect, but at least clearly binds context of weaving rule to content node in weaving template, so that developers
+   * won't need to rely on parent walking heuristics.
+   *
+   * Note, neither approach deals with reference target that is not in ancestry or content node respectively, e.g.:
+   * <pre>
+   * content node:
+   * class AAA {
+   *   private AAA(int i) {
+   *
+   *   }
+   *   &lt;TF public static AAA field = new AAA(5); TF&gt;
+   * }
+   * </pre>
+   * Here, former approach of ReferenceInfo_TemplateNode would fail to find AAA cons as it's not in ancestry of field declaration. The mapping
+   * from the method below won't help either. I feel the case above is handled via indirect mapping and input history, but not sure.
+   *
+   * @param environment
+   * @param outputContextNode node from context query of WeavingMappingRule, element of output model we inject into
+   * @param inputNode source model element this weaving is applicable to (instance of WeavingMappingRule.applicableConcept)
+   */
+  void mapWeaveContentNodeToTemplateDeclarationContentNode(TemplateExecutionEnvironment environment, SNode outputContextNode, SNode inputNode) {
+    SNode contentNode = RuleUtil.getTemplateDeclaration_ContentNode(template);
+    environment.getGenerator().addOutputNodeByInputAndTemplateNode(inputNode, GeneratorUtil.getTemplateNodeId(contentNode), outputContextNode);
+  }
+
   public static void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, IGeneratorLogger logger) {
 
     // all fragments with <default context> should have the same parent
@@ -254,6 +298,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
+      mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       weaveTemplateDeclaration(outputContextNode,
         GeneratorUtil.createConsequenceContext(context.getInput(), null, environment, consequenceNode), environment);
       return true;
@@ -279,6 +324,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       if (queryNodes.isEmpty()) {
         return false;
       }
+      mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       for (SNode queryNode : queryNodes) {
         weaveTemplateDeclaration(outputContextNode,
           GeneratorUtil.createConsequenceContext(queryNode, null, environment, consequenceNode), environment);
