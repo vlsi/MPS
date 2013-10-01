@@ -38,7 +38,14 @@ public class SubTypingRelation extends AbstractRelation {
     SNode result = null;
     EquationInfo info = null;
     if (!leftTypes.isEmpty()) {
-      result = SubtypingUtil.createLeastCommonSupertype(new LinkedList<SNode>(leftTypes), state.getTypeCheckingContext());
+      final LinkedList<SNode> leftTypesList = new LinkedList<SNode>();
+      for (SNode lt: leftTypes) {
+        if (LatticeUtil.isMeet(lt)) {
+          lt = TypesUtil.cleanupMeet(lt);
+        }
+        leftTypesList.add(lt);
+      }
+      result = SubtypingUtil.createLeastCommonSupertype(leftTypesList, state.getTypeCheckingContext());
       if (LatticeUtil.isMeet(result)) {
         result = TypesUtil.cleanupMeet(result);
       }
