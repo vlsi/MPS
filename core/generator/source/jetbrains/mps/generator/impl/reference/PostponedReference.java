@@ -19,6 +19,8 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
@@ -88,7 +90,7 @@ public class PostponedReference extends SReference {
     }
 
     if (myReferenceInfo == null) {
-      return null; // allready processed
+      return null; // already processed
     }
 
     String role = myReferenceInfo.getReferenceRole();
@@ -103,7 +105,7 @@ public class PostponedReference extends SReference {
 //      } else {
 //        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
 //      }
-    } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
+    } else if (myReferenceInfo.isDynamicResolve(myGenerator.getLogger()) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
       DynamicReference dynamicReference = new DynamicReference(
         role,
         outputSourceNode,
