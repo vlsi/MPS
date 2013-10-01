@@ -352,10 +352,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     // check if can drop
     if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules())) {
-      // FIXME apparently, dropping a root constitutes a change, however,
-      // present MPS state doesn't handle these drops as model changes well.
-      // E.g. generator templates have DropRootRule
-//      setChanged();
+      setChanged();
       return;
     }
     copyProcessor.copyRootInputNode(inputRootNode);
