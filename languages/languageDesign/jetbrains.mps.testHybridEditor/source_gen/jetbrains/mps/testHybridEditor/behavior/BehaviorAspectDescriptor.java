@@ -12,10 +12,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 5:
-        return new RootConcept_BehaviorDescriptor();
-      case 6:
-        return new SimpleConcept_BehaviorDescriptor();
       case 2:
         return new Diagram_BehaviorDescriptor();
       case 0:
@@ -31,5 +27,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort", "jetbrains.mps.testHybridEditor.structure.RootConcept", "jetbrains.mps.testHybridEditor.structure.SimpleConcept"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
 }

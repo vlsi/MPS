@@ -12,9 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
@@ -42,32 +39,37 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_tb7paq_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tb7paq_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_tb7paq_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_tb7paq_b0(editorContext, node));
-    editorCell.addEditorCell(this.createDiagram_tb7paq_c0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_tb7paq_a0(editorContext, node));
+    editorCell.addEditorCell(this.createDiagram_tb7paq_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tb7paq_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_tb7paq_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_tb7paq_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_tb7paq_a0");
+    editorCell.addEditorCell(this.createConstant_tb7paq_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_tb7paq_b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_tb7paq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
-    editorCell.setCellId("Constant_tb7paq_a0");
+    editorCell.setCellId("Constant_tb7paq_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_tb7paq_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_tb7paq_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,7 +81,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createDiagram_tb7paq_b0(EditorContext editorContext, SNode node) {
     DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
@@ -117,8 +119,15 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       }
     }
     // <node> 
-    editorCell.setCellId("Diagram_tb7paq_c0");
+    editorCell.setCellId("Diagram_tb7paq_b0");
     return editorCell;
 
+  }
+
+  private EditorCell createConstant_tb7paq_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "asdasd");
+    editorCell.setCellId("Constant_tb7paq_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }

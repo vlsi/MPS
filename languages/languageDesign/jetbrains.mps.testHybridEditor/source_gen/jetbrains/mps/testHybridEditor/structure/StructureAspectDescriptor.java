@@ -23,14 +23,10 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.InputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.OutputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-      case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.RootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"myChildren"}, new boolean[]{false}).create();
-      case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.SimpleConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("intProperty", "boolProperty").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort", "jetbrains.mps.testHybridEditor.structure.RootConcept", "jetbrains.mps.testHybridEditor.structure.SimpleConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
 }

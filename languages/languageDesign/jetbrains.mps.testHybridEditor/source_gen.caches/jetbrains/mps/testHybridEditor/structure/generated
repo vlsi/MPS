@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-14ubusemoj6eftneug7pon5hy4014r6">
+<dependencies version="2" modelHash="-7opfwdyt2tusbicov2c1dpjma88russ">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="123ij2b44jl0zuf0cm74t4avcxioape">
+  <common hash="-6c4c6dtc576n22hve8fux84enpy6pai">
     <dep root="725186580883451585" />
     <dep root="725186580883451800" />
     <dep root="725186580883451809" />
     <dep root="725186580883451828" />
     <dep root="725186580883451839" />
-    <dep root="7298117218431625537" />
-    <dep root="7298117218431641371" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -20,8 +18,6 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="7298117218431625537" name="RootConcept" hash="-a86tvqugemt4xvrxfc07c6cfwronkwh" />
-  <source id="7298117218431641371" name="SimpleConcept" hash="-bgg1xydoq779zkot9a1fq4zkjsvtqfx" />
   <source id="725186580883451585" name="Diagram" hash="-6xeikskmvy7gwdj92gwv1w2rnv967mr" />
   <source id="725186580883451800" name="Block" hash="-9im4lzx8fvj5xqnc42q0qdlpamh1tsm" />
   <source id="725186580883451809" name="Connector" hash="-4bf84yr6guzlnhpallyhc8suh53d6kw" />
