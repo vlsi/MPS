@@ -93,18 +93,18 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t6d1qn_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_t6d1qn_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    DeleteStaticVolatile.setCellActions(editorCell, node, editorContext);
+    DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static boolean renderingCondition_t6d1qn_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVolatile");
+    return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
   private EditorCell createConstant_t6d1qn_f0(EditorContext editorContext, SNode node) {
@@ -123,18 +123,18 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_t6d1qn_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_t6d1qn_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    DeleteFinalInStaticField.setCellActions(editorCell, node, editorContext);
+    DeleteStaticVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static boolean renderingCondition_t6d1qn_a6a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
+    return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
   private EditorCell createRefNode_t6d1qn_h0(EditorContext editorContext, SNode node) {

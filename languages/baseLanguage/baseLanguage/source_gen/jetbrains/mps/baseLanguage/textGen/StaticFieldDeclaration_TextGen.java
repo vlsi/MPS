@@ -28,14 +28,14 @@ public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     this.append("static ");
+    if (SPropertyOperations.getBoolean(node, "isFinal")) {
+      this.append("final ");
+    }
     if (SPropertyOperations.getBoolean(node, "isTransient")) {
       this.append("transient ");
     }
     if (SPropertyOperations.getBoolean(node, "isVolatile")) {
       this.append("volatile ");
-    }
-    if (SPropertyOperations.getBoolean(node, "isFinal")) {
-      this.append("final ");
     }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
     this.append(" ");

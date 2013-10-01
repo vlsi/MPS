@@ -78,18 +78,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2sbeba_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_2sbeba_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    DeleteVolatile.setCellActions(editorCell, node, editorContext);
+    DeleteFinalInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static boolean renderingCondition_2sbeba_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVolatile");
+    return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
   private EditorCell createConstant_2sbeba_e0(EditorContext editorContext, SNode node) {
@@ -108,18 +108,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2sbeba_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_2sbeba_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    DeleteFinalInField.setCellActions(editorCell, node, editorContext);
+    DeleteVolatile.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
+    return SPropertyOperations.getBoolean(node, "isVolatile");
   }
 
   private EditorCell createRefNode_2sbeba_g0(EditorContext editorContext, SNode node) {

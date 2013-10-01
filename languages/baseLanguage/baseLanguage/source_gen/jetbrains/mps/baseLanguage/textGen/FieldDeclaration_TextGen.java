@@ -27,13 +27,22 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
-    if (SPropertyOperations.getBoolean(node, "isVolatile")) {
-      this.append("volatile ");
-    }
     if (SPropertyOperations.getBoolean(node, "isTransient")) {
       this.append("transient ");
     }
-    BaseLanguageTextGen.variableDeclaration(node, this);
+    if (SPropertyOperations.getBoolean(node, "isVolatile")) {
+      this.append("volatile ");
+    }
+    if (SPropertyOperations.getBoolean(node, "isFinal")) {
+      this.append("final ");
+    }
+    TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
+    this.append(" ");
+    this.append(SPropertyOperations.getString(node, "name"));
+    if ((SLinkOperations.getTarget(node, "initializer", true) != null)) {
+      this.append(" = ");
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "initializer", true), this.getSNode());
+    }
     this.append(";");
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
