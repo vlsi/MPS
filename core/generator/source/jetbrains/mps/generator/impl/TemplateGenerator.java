@@ -328,8 +328,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
       if (copyRootOnFailure && inputNode.getModel() != null && inputNode.getParent() == null) {
-        new FullCopyFacility(this, environment).copyInputNode(inputNode);
-        setChanged();
+        final FullCopyFacility copyFacility = new FullCopyFacility(this, environment);
+        copyFacility.copyRootInputNode(inputNode);
+        if (copyFacility.hasChanges()) {
+          setChanged();
+        }
       }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "couldn't create root node");
@@ -349,7 +352,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     // check if can drop
     if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules())) {
-      setChanged();
+      // FIXME apparently, dropping a root constitutes a change, however,
+      // present MPS state doesn't handle these drops as model changes well.
+      // E.g. generator templates have DropRootRule
+//      setChanged();
       return;
     }
     copyProcessor.copyRootInputNode(inputRootNode);
