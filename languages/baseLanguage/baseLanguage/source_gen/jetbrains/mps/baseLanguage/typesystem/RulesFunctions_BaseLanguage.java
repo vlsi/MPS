@@ -656,13 +656,43 @@ __switch__:
         errorString = errorString + " " + exc;
       }
       if (useQuickfix && supportsCheckedExceptions) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", null, errorTarget);
+        if ((SNodeOperations.getAncestor(mainNode, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false) != null)) {
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
-            intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
-            _reporter_2309309498.addIntentionProvider(intentionProvider);
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6468716278896138869", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
+              intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix", false);
+              intentionProvider.putArgument("throwableTypes", throwTypes);
+              intentionProvider.putArgument("createNew", true);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix", false);
+              intentionProvider.putArgument("throwableTypes", throwTypes);
+              intentionProvider.putArgument("createNew", false);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+          }
+        } else {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
+              intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix", false);
+              intentionProvider.putArgument("throwableTypes", throwTypes);
+              intentionProvider.putArgument("createNew", true);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
           }
         }
       } else {
