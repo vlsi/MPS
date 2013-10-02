@@ -108,7 +108,7 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 7:
-                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConceptFunction") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IStatementListContainer") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Quotation")) {
+                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConceptFunction") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IStatementListContainer") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Quotation")) {
                         this.__CP__ = 8;
                         break;
                       }
@@ -138,6 +138,7 @@ __switch__:
                     case 8:
                       // don't look inside closures and other code-blocks 
                       // don't look inside commented statements 
+                      // don't look inside single-line comments 
                       // don't look inside anything that implements IStatementListContainer (for extensibility) 
                       // don't look inside anonymous classes 
                       this.__CP__ = 1;
