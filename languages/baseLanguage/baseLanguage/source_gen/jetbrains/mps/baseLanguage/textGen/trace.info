@@ -2437,61 +2437,71 @@
     <nodeInfo nodeId="1237560684186" fileName="StaticFieldDeclaration_TextGen.java" startLine="28" startPosition="104" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992733" fileName="StaticFieldDeclaration_TextGen.java" startLine="30" startPosition="58" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992733" fileName="StaticFieldDeclaration_TextGen.java" startLine="30" startPosition="58" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="32" startPosition="5" endLine="33" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="32" startPosition="5" endLine="33" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="33" startPosition="146" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="34" startPosition="21" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="73" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="37" startPosition="25" endLine="38" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="37" startPosition="25" endLine="38" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="39" startPosition="5" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="40" startPosition="21" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="43" startPosition="7" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="45" startPosition="13" endLine="46" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="48" startPosition="49" endLine="49" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="51" startPosition="9" endLine="52" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="73" endLine="38" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="39" startPosition="5" endLine="41" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278899486999" fileName="StaticFieldDeclaration_TextGen.java" startLine="33" startPosition="62" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278899486999" fileName="StaticFieldDeclaration_TextGen.java" startLine="33" startPosition="62" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278899498019" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="61" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278899498019" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="61" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="38" startPosition="5" endLine="39" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="38" startPosition="5" endLine="39" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="39" startPosition="146" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="40" startPosition="21" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="42" startPosition="73" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="43" startPosition="25" endLine="44" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="43" startPosition="25" endLine="44" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="45" startPosition="5" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="46" startPosition="21" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="49" startPosition="7" endLine="50" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="51" startPosition="13" endLine="52" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="54" startPosition="49" endLine="55" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="57" startPosition="9" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="42" startPosition="73" endLine="44" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="45" startPosition="5" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="42" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4021391592916578525" fileName="StaticFieldDeclaration_TextGen.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1237560684186" fileName="StaticFieldDeclaration_TextGen.java" startLine="26" startPosition="5" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1235581130435" fileName="StaticFieldDeclaration_TextGen.java" startLine="29" startPosition="27" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="32" startPosition="5" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="47" startPosition="31" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="47" startPosition="31" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237560834775" fileName="StaticFieldDeclaration_TextGen.java" startLine="35" startPosition="61" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="44" startPosition="38" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="42" startPosition="44" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="41" startPosition="25" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6468716278899473800" fileName="StaticFieldDeclaration_TextGen.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6468716278899498017" fileName="StaticFieldDeclaration_TextGen.java" startLine="35" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="38" startPosition="5" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="53" startPosition="31" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="53" startPosition="31" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237560834775" fileName="StaticFieldDeclaration_TextGen.java" startLine="41" startPosition="61" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="50" startPosition="38" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="48" startPosition="44" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="47" startPosition="25" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="21" startPosition="44" endLine="22" endPosition="61" />
     <scopeInfo nodeId="4021391592916578526" fileName="StaticFieldDeclaration_TextGen.java" startLine="24" startPosition="163" endLine="25" endPosition="245" />
     <scopeInfo nodeId="4021391592916578527" fileName="StaticFieldDeclaration_TextGen.java" startLine="24" startPosition="163" endLine="25" endPosition="245" />
     <scopeInfo nodeId="1235581130439" fileName="StaticFieldDeclaration_TextGen.java" startLine="30" startPosition="58" endLine="31" endPosition="28" />
     <scopeInfo nodeId="1237463992733" fileName="StaticFieldDeclaration_TextGen.java" startLine="30" startPosition="58" endLine="31" endPosition="28" />
-    <scopeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="32" startPosition="5" endLine="33" endPosition="146" />
-    <scopeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="37" startPosition="25" endLine="38" endPosition="155" />
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="45" startPosition="13" endLine="46" endPosition="232" />
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="48" startPosition="49" endLine="49" endPosition="88" />
-    <scopeInfo nodeId="1237560834776" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="73" endLine="38" endPosition="155" />
-    <scopeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="73" endLine="38" endPosition="155" />
-    <scopeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="39" startPosition="5" endLine="41" endPosition="25" />
+    <scopeInfo nodeId="6468716278899473803" fileName="StaticFieldDeclaration_TextGen.java" startLine="33" startPosition="62" endLine="34" endPosition="32" />
+    <scopeInfo nodeId="6468716278899486999" fileName="StaticFieldDeclaration_TextGen.java" startLine="33" startPosition="62" endLine="34" endPosition="32" />
+    <scopeInfo nodeId="6468716278899498018" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="61" endLine="37" endPosition="31" />
+    <scopeInfo nodeId="6468716278899498019" fileName="StaticFieldDeclaration_TextGen.java" startLine="36" startPosition="61" endLine="37" endPosition="31" />
+    <scopeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="38" startPosition="5" endLine="39" endPosition="146" />
+    <scopeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="43" startPosition="25" endLine="44" endPosition="155" />
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="51" startPosition="13" endLine="52" endPosition="232" />
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="54" startPosition="49" endLine="55" endPosition="88" />
+    <scopeInfo nodeId="1237560834776" fileName="StaticFieldDeclaration_TextGen.java" startLine="42" startPosition="73" endLine="44" endPosition="155" />
+    <scopeInfo nodeId="1237560837404" fileName="StaticFieldDeclaration_TextGen.java" startLine="42" startPosition="73" endLine="44" endPosition="155" />
+    <scopeInfo nodeId="1237560852485" fileName="StaticFieldDeclaration_TextGen.java" startLine="45" startPosition="5" endLine="47" endPosition="25" />
     <scopeInfo nodeId="1237560684186" fileName="StaticFieldDeclaration_TextGen.java" startLine="26" startPosition="5" endLine="29" endPosition="27" />
-    <scopeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="32" startPosition="5" endLine="35" endPosition="61" />
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="47" startPosition="0" endLine="50" endPosition="11">
+    <scopeInfo nodeId="1237463992646" fileName="StaticFieldDeclaration_TextGen.java" startLine="38" startPosition="5" endLine="41" endPosition="61" />
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="53" startPosition="0" endLine="56" endPosition="11">
       <varInfo nodeId="1235131598665" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="47" startPosition="31" endLine="50" endPosition="11" />
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="43" startPosition="7" endLine="52" endPosition="80">
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="53" startPosition="31" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="49" startPosition="7" endLine="58" endPosition="80">
       <varInfo nodeId="1235131598665" varName="traceableProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="42" startPosition="44" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="42" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="48" startPosition="44" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="42" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1235131598665" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticFieldDeclaration_TextGen" />
+    <unitInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticFieldDeclaration_TextGen" />
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131688885">
     <nodeInfo nodeId="1237463992353" fileName="StaticFieldReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4048,54 +4058,73 @@
     <nodeInfo nodeId="4021391592916578510" fileName="FieldDeclaration_TextGen.java" startLine="24" startPosition="163" endLine="25" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237559735743" fileName="FieldDeclaration_TextGen.java" startLine="26" startPosition="5" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237559735743" fileName="FieldDeclaration_TextGen.java" startLine="27" startPosition="48" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240305478724" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="61" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240305478724" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="61" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8606350594693687981" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="62" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8606350594693687981" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="62" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="34" startPosition="5" endLine="35" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="35" startPosition="56" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="36" startPosition="21" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="39" startPosition="7" endLine="40" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="41" startPosition="13" endLine="42" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="44" startPosition="49" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="47" startPosition="9" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8606350594693687981" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="62" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8606350594693687981" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="62" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240305478724" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="61" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240305478724" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="61" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278906983785" fileName="FieldDeclaration_TextGen.java" startLine="35" startPosition="58" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278906983785" fileName="FieldDeclaration_TextGen.java" startLine="35" startPosition="58" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="37" startPosition="5" endLine="38" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="37" startPosition="5" endLine="38" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="38" startPosition="146" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="39" startPosition="21" endLine="40" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278906983799" fileName="FieldDeclaration_TextGen.java" startLine="41" startPosition="73" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6468716278906983799" fileName="FieldDeclaration_TextGen.java" startLine="42" startPosition="25" endLine="43" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278906983799" fileName="FieldDeclaration_TextGen.java" startLine="42" startPosition="25" endLine="43" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="44" startPosition="5" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="45" startPosition="21" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="48" startPosition="7" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="50" startPosition="13" endLine="51" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="53" startPosition="49" endLine="54" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="56" startPosition="9" endLine="57" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1237559735743" fileName="FieldDeclaration_TextGen.java" startLine="26" startPosition="5" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6468716278906983799" fileName="FieldDeclaration_TextGen.java" startLine="41" startPosition="73" endLine="43" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="44" startPosition="5" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="42" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4021391592916578508" fileName="FieldDeclaration_TextGen.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240305463723" fileName="FieldDeclaration_TextGen.java" startLine="28" startPosition="104" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8606350594693687979" fileName="FieldDeclaration_TextGen.java" startLine="31" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="34" startPosition="5" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="43" startPosition="31" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="43" startPosition="31" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="40" startPosition="38" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="38" startPosition="44" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="37" startPosition="25" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8606350594693687979" fileName="FieldDeclaration_TextGen.java" startLine="28" startPosition="104" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240305463723" fileName="FieldDeclaration_TextGen.java" startLine="31" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6468716278906983780" fileName="FieldDeclaration_TextGen.java" startLine="34" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="37" startPosition="5" endLine="40" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="52" startPosition="31" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="52" startPosition="31" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6468716278906983797" fileName="FieldDeclaration_TextGen.java" startLine="40" startPosition="61" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="49" startPosition="38" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="47" startPosition="44" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="46" startPosition="25" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="21" startPosition="44" endLine="22" endPosition="61" />
     <scopeInfo nodeId="4021391592916578509" fileName="FieldDeclaration_TextGen.java" startLine="24" startPosition="163" endLine="25" endPosition="245" />
     <scopeInfo nodeId="4021391592916578510" fileName="FieldDeclaration_TextGen.java" startLine="24" startPosition="163" endLine="25" endPosition="245" />
-    <scopeInfo nodeId="1240305463724" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="61" endLine="30" endPosition="31" />
-    <scopeInfo nodeId="1240305478724" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="61" endLine="30" endPosition="31" />
-    <scopeInfo nodeId="8606350594693687980" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="62" endLine="33" endPosition="32" />
-    <scopeInfo nodeId="8606350594693687981" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="62" endLine="33" endPosition="32" />
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="41" startPosition="13" endLine="42" endPosition="232" />
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="44" startPosition="49" endLine="45" endPosition="88" />
+    <scopeInfo nodeId="8606350594693687980" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="62" endLine="30" endPosition="32" />
+    <scopeInfo nodeId="8606350594693687981" fileName="FieldDeclaration_TextGen.java" startLine="29" startPosition="62" endLine="30" endPosition="32" />
+    <scopeInfo nodeId="1240305463724" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="61" endLine="33" endPosition="31" />
+    <scopeInfo nodeId="1240305478724" fileName="FieldDeclaration_TextGen.java" startLine="32" startPosition="61" endLine="33" endPosition="31" />
+    <scopeInfo nodeId="6468716278906983784" fileName="FieldDeclaration_TextGen.java" startLine="35" startPosition="58" endLine="36" endPosition="28" />
+    <scopeInfo nodeId="6468716278906983785" fileName="FieldDeclaration_TextGen.java" startLine="35" startPosition="58" endLine="36" endPosition="28" />
+    <scopeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="37" startPosition="5" endLine="38" endPosition="146" />
+    <scopeInfo nodeId="6468716278906983799" fileName="FieldDeclaration_TextGen.java" startLine="42" startPosition="25" endLine="43" endPosition="155" />
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="50" startPosition="13" endLine="51" endPosition="232" />
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="53" startPosition="49" endLine="54" endPosition="88" />
     <scopeInfo nodeId="1237559735743" fileName="FieldDeclaration_TextGen.java" startLine="26" startPosition="5" endLine="28" endPosition="104" />
-    <scopeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="34" startPosition="5" endLine="37" endPosition="25" />
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="43" startPosition="0" endLine="46" endPosition="11">
+    <scopeInfo nodeId="6468716278906983798" fileName="FieldDeclaration_TextGen.java" startLine="41" startPosition="73" endLine="43" endPosition="155" />
+    <scopeInfo nodeId="6468716278906983799" fileName="FieldDeclaration_TextGen.java" startLine="41" startPosition="73" endLine="43" endPosition="155" />
+    <scopeInfo nodeId="1240305392394" fileName="FieldDeclaration_TextGen.java" startLine="44" startPosition="5" endLine="46" endPosition="25" />
+    <scopeInfo nodeId="6468716278906983787" fileName="FieldDeclaration_TextGen.java" startLine="37" startPosition="5" endLine="40" endPosition="61" />
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="52" startPosition="0" endLine="55" endPosition="11">
       <varInfo nodeId="1235741237980" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="43" startPosition="31" endLine="46" endPosition="11" />
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="39" startPosition="7" endLine="48" endPosition="80">
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="52" startPosition="31" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="48" startPosition="7" endLine="57" endPosition="80">
       <varInfo nodeId="1235741237980" varName="traceableProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="38" startPosition="44" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="42" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="47" startPosition="44" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="42" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1235741237980" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="19" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FieldDeclaration_TextGen" />
+    <unitInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FieldDeclaration_TextGen" />
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741309022">
     <nodeInfo nodeId="1235741361611" fileName="FloatingPointConstant_TextGen.java" startLine="11" startPosition="63" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
