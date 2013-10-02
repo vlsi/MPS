@@ -42,7 +42,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
-import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
@@ -3951,9 +3950,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "template", false), "parameter", true);
   }
 
-  public static SNode mapSrcMacro_mapper_7169934365845181940(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    _context.putSessionObject("QueriesGenerated", _context.getParentOutputNode());
-    return null;
+  public static void mapSrcMacro_post_mapper_6167221525261851732(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    _context.putSessionObject("QueriesGenerated", _context.getOutputNode());
   }
 
   public static void mapSrcMacro_post_mapper_5070605274413823725(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
@@ -4143,8 +4141,6 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_238835255332430271(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "actualArgument", true)).iterator();
   }
-
-
 
   public static boolean isEmpty_x583g4_a0a0sh(String str) {
     return str == null || str.length() == 0;
