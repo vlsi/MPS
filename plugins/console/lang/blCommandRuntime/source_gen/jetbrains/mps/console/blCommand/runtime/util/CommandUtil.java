@@ -138,6 +138,19 @@ public class CommandUtil {
 
 
 
+  public static void printSequence(ConsoleStream console, final Project project, final SearchResults results, int resultsCount, String resultDescription) {
+    CommandUtil.printClosure(console, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        CommandUtil.show(project, results);
+      }
+    }, (resultsCount == 0 ?
+      "empty sequence" :
+      resultsCount + " " + resultDescription
+    ));
+  }
+
+
+
   public static SearchResults nodesToResults(Iterable<SNode> nodes) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
     Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
