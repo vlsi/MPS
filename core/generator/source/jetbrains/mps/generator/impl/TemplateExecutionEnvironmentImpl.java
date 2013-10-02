@@ -317,7 +317,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   */
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
-    SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(mapper.getConceptFqName(), generator.getOutputModel(), generator.getScope(), false);
+    SNode childToReplaceLater = new jetbrains.mps.smodel.SNode(mapper.getConceptFqName());
     getTracer().pushOutputNodeToReplaceLater(childToReplaceLater);
     generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
     return childToReplaceLater;
