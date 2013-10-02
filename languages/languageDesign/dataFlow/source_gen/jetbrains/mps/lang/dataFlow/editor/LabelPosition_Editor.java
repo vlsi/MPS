@@ -32,7 +32,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xi88on_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after label");
     editorCell.setCellId("Constant_xi88on_a0");
     Style style = new StyleImpl();
     DataFlow_StyleSheet.applyPosition(style, editorCell);

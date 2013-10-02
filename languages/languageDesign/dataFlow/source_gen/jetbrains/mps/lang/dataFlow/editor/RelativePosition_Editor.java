@@ -11,8 +11,18 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class RelativePosition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -45,7 +55,7 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("relativeTo");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new RelativePosition_Editor.RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0(), new RelativePosition_Editor.RelativePosition_customReplace_cellMenu_wv5dgr_b0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -54,5 +64,31 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0 extends PrimaryReplaceChildMenuCellMenuPart {
+    public RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0() {
+    }
+  }
+
+  public static class RelativePosition_customReplace_cellMenu_wv5dgr_b0b0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public RelativePosition_customReplace_cellMenu_wv5dgr_b0b0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "label");
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public SNode createReplacementNode_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.LabelPosition", null);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 }
