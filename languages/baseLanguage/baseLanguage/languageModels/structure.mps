@@ -526,6 +526,14 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="static field" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6468716278899126575" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="isVolatile" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6468716278899125786" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="isTransient" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178291753349" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
