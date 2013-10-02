@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandHolder_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -25,7 +27,17 @@ public class CommandHolder_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (eq_5bkq2_a0a0d1(editorContext.getSelectedNode(), SLinkOperations.getTarget(node, "command", true))) {
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "command", true));
+      }
       // do nothing to prevent node deleting 
+    }
+
+    private static boolean eq_5bkq2_a0a0d1(Object a, Object b) {
+      return (a != null ?
+        a.equals(b) :
+        a == b
+      );
     }
   }
 }
