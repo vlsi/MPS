@@ -12,6 +12,8 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
+import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
 import jetbrains.jetpad.projectional.view.View;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.geometry.Rectangle;
@@ -62,8 +64,8 @@ public class MPSBlockView extends GroupView {
     myText.set(text);
   }
 
-  public String getText() {
-    return myText.get();
+  public Property<String> getText() {
+    return myText;
   }
 
   public GroupView getInputs() {
@@ -74,16 +76,16 @@ public class MPSBlockView extends GroupView {
     return myOutputs;
   }
 
-  public int getX() {
-    return myX.get();
+  public Property<Integer> getX() {
+    return myX;
   }
 
   public void setX(int x) {
     myX.set(x);
   }
 
-  public int getY() {
-    return myY.get();
+  public Property<Integer> getY() {
+    return myY;
   }
 
   public void setY(int y) {
@@ -96,6 +98,18 @@ public class MPSBlockView extends GroupView {
     myRectView.visible().set(true);
     myRectView.dimension().set(new Vector(75, 75));
     attach(this, myRectView);
+    this.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
+      public void move(Vector delta) {
+        myX.set(myX.get() + delta.x);
+        myY.set(myY.get() + delta.y);
+        MPSBlockView.this.invalidate();
+      }
+    });
+
+  }
+
+  public RectView getRectView() {
+    return myRectView;
   }
 
   public GroupView getInputView() {

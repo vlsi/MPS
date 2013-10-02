@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d5cj2vw6i8zhi2bt3jzzxw0dgp5k4qr">
+<dependencies version="2" modelHash="6z3jh2zb4brcn9xbc1t3ujzdejz7vz5">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
@@ -23,7 +23,7 @@
   <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="brqzpn708c5p2xk248xr8xeo9ecp6nu" />
   <dep model="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" hash="9yc7nee7xjehrov7da3majacjnxzo1k" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-6wlk36tjd3czwt465g6q4xk43le3yvz" />
-  <common hash="-dv9yhmagliwjy1pqg9m7r4626f8w9eh">
+  <common hash="-1jra66s64n5jf6omgvx3j0v38ik5gfy">
     <dep root="1094405431463447767" />
     <dep root="298790604438333184" />
     <dep root="5170495790389304146" />
@@ -34,6 +34,7 @@
     <dep root="6382742553260818581" />
     <dep root="6382742553261116206" />
     <dep root="6382742553261752705" />
+    <dep root="864432975299306361" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
@@ -60,15 +61,16 @@
     <file name="QueriesGenerated.java" />
   </common>
   <source id="1094405431463447767" name="main" hash="74fqhpxi1va6o08j5ve6zqpg29aajfm" />
-  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="6ucp77urdt60gq8sf0kagfuzb3m9bgo" />
+  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="c0ith0l2elsc0wi4sje3ko92up23azj" />
   <source id="6306886970790134555" name="JetpadStyleClassItemQueryMethods" hash="1bm40wjvf9rz134fwsfr5xp1pnijbm4" />
   <source id="6306886970790156279" name="JetpadViewMethodSwitch" hash="9dttyccs9yg8gxmr3624fcbdeoq14kf" />
   <source id="6306886970790605922" name="JetpadStyleClassItemValue" hash="2zrz7cswuj2q1r6ui0x6x5gj35y6ldr" />
-  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-2a6lb08pmzq2ajk098maf3ce31fxmqp" />
-  <source id="6382742553260818581" name="reduce_ExternalFigureReference" hash="-4fvo6dsd2izgl52czjn7l2ur2qwyzqk" />
-  <source id="6382742553261116206" name="FigureParameterSwitchToStatement" hash="-51p01ed31i1o9o1vl2z6fe9wgg1hond" />
-  <source id="5074650623945660148" name="createViewForChildNode" hash="-d07822tbtgo23klbq47wurz2l4syhk7" />
-  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="-4hjl0vu727lygt2olyxqd8v9200p7w1" />
-  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-7p5wopqr91vca4u5135620oemm0398q" />
+  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-cpjujz3qdohcwroew8zstb1ljcfsdon" />
+  <source id="6382742553260818581" name="reduce_ExternalFigureReference" hash="-bkdy5ny97ixdq8tcavcergbt3yiiekh" />
+  <source id="6382742553261116206" name="FigureParameterSwitchToStatement_SetView" hash="-94n86nku7dfxre0kay9scybx3u3gosj" />
+  <source id="5074650623945660148" name="createViewForChildNode" hash="dy2rrfn2s0xi0w6x8dub2la2vlpzguo" />
+  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="-d3me95szx39cpxlmcvbjeflvc074y47" />
+  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-awf6m5dvoigu2meeibt8w0uw1pwga31" />
+  <source id="864432975299306361" name="FigureParameterSwitchToStatement_SetNode" hash="2saqm4q17fanazru9mxkjvyp5zi8add" />
 </dependencies>
 

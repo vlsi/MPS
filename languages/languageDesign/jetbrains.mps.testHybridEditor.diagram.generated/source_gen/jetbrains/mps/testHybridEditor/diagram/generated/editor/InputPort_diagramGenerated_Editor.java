@@ -10,6 +10,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.MouseEvent;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 
@@ -25,8 +31,8 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
     return this.createDiagramNode_cfffa6_a(editorContext, node);
   }
 
-  private EditorCell createDiagramNode_cfffa6_a(EditorContext editorContext, SNode node) {
-    RectView view = new RectView();
+  private EditorCell createDiagramNode_cfffa6_a(final EditorContext editorContext, final SNode node) {
+    final RectView view = new RectView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
     view.background().set(InputPort_diagramGenerated_Editor._StyleParameter_QueryFunction_cfffa6_a0a((editorCell == null ?
       null :
@@ -42,6 +48,16 @@ public class InputPort_diagramGenerated_Editor extends DefaultNodeEditor {
       null :
       editorCell.getSNode()
     )));
+    view.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+      @Override
+      public void handle(View v, MouseEvent e) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+          }
+        }, editorContext.getOperationContext().getProject());
+      }
+    }).build());
+
     view.visible().set(true);
     editorCell.setCellId("DiagramNode_cfffa6_a");
     editorCell.setBig(true);

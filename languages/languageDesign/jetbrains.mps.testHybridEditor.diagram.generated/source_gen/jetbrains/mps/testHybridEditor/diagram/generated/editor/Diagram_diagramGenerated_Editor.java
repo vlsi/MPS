@@ -81,7 +81,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createDiagram_tb7paq_b0(final EditorContext editorContext, SNode node) {
     DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);

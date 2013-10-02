@@ -19,8 +19,10 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
+import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.projectional.view.ViewContainer;
+import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.jetpad.projectional.view.awt.ViewContainerComponent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -48,6 +50,7 @@ public class DiagramViewCell extends GenericViewCell implements EditorCell_WithC
     super(editorContext, node, cellLayout, handler);
     myComponent = new ViewContainerComponent();
     myComponent.container(new ViewContainer());
+    myComponent.container().root().addTrait(RootTrait.ROOT_TRAIT);
   }
 
   public static DiagramViewCell createViewCell(EditorContext editorContext, SNode node, DiagramView view) {

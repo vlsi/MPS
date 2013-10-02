@@ -13,7 +13,12 @@ import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
+import jetbrains.jetpad.projectional.view.ViewEvents;
+import jetbrains.jetpad.projectional.view.ViewEventHandler;
+import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.jetpad.geometry.Vector;
 
 public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -28,8 +33,8 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
     return this.createDiagramNode_70mnj_a(editorContext, node);
   }
 
-  private EditorCell createDiagramNode_70mnj_a(EditorContext editorContext, SNode node) {
-    MPSBlockView view = new MPSBlockView();
+  private EditorCell createDiagramNode_70mnj_a(final EditorContext editorContext, final SNode node) {
+    final MPSBlockView view = new MPSBlockView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
     view.setText(SPropertyOperations.getString(node, "name"));
     view.setX(SPropertyOperations.getInteger(node, "x"));
@@ -47,6 +52,19 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       null :
       editorCell.getSNode()
     )));
+    view.addTrait(new ViewTraitBuilder().on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+      @Override
+      public void handle(View v, MouseEvent e) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            SPropertyOperations.set(node, "name", view.getText().get());
+            SPropertyOperations.set(node, "x", "" + (view.getX().get()));
+            SPropertyOperations.set(node, "y", "" + (view.getY().get()));
+          }
+        }, editorContext.getOperationContext().getProject());
+      }
+    }).build());
+
     view.visible().set(true);
     editorCell.setCellId("DiagramNode_70mnj_a");
     editorCell.setBig(true);
