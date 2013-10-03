@@ -39,10 +39,12 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     if (SNodeOperations.isInstanceOf(myAssignment, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true));
       SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
-    } else {
+    } else if (SNodeOperations.isInstanceOf(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true));
       SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
       this.optimizeAssignment(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), variable);
+    } else {
+      return myAssignment;
     }
     this.optimizeDeclaration(variable);
     return nodeToSelect;
