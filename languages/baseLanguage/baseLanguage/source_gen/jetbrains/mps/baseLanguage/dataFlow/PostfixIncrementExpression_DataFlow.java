@@ -5,16 +5,20 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class PostfixIncrementExpression_DataFlow extends DataFlowBuilder {
   public PostfixIncrementExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
-    _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580636000244");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+      _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1503494305073292440");
+    } else {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    }
   }
 }

@@ -39010,5 +39010,149 @@
       </node>
     </node>
   </root>
+  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7528226091632192589" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="check_PostfixIncrementExpression" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7528226091632192590" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="7528226091632192629" nodeInfo="nn">
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7528226091632192630" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="variable expected" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632192631" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091632194684" nodeInfo="nn">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091632192592" resolveInfo="postfixIncrementExpression" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632192633" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+          </node>
+        </node>
+        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632192634" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632192635" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091632194447" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091632192592" resolveInfo="postfixIncrementExpression" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632192637" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7528226091632192638" nodeInfo="nn">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877519786" resolveInfo="isLValue" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7528226091632192592" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="postfixIncrementExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1214918800624" resolveInfo="PostfixIncrementExpression" />
+    </node>
+  </root>
+  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7528226091632211441" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="check_PrefixDecrementExpression" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7528226091632211442" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="7528226091632211481" nodeInfo="nn">
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7528226091632211482" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="variable expected" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632211483" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091632211826" nodeInfo="nn">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091632211444" resolveInfo="prefixDecrementExpression" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632211485" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+          </node>
+        </node>
+        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632211486" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632211487" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091632212043" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091632211444" resolveInfo="prefixDecrementExpression" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632211489" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7528226091632211490" nodeInfo="nn">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877519786" resolveInfo="isLValue" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7528226091632211444" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="prefixDecrementExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1239709577448" resolveInfo="PrefixDecrementExpression" />
+    </node>
+  </root>
+  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7528226091632213045" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="check_PrefixIncrementExpression" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7528226091632213046" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="7528226091632213085" nodeInfo="nn">
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7528226091632213086" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="variable expected" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632213087" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091632213667" nodeInfo="nn">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091632213048" resolveInfo="prefixIncrementExpression" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632213089" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+          </node>
+        </node>
+        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632213090" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632213091" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091632213430" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091632213048" resolveInfo="prefixIncrementExpression" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632213093" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7528226091632213094" nodeInfo="nn">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877519786" resolveInfo="isLValue" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7528226091632213048" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="prefixIncrementExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1239709250944" resolveInfo="PrefixIncrementExpression" />
+    </node>
+  </root>
+  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7528226091639928234" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="check_PostfixDecrementExpression" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions.prefix/postfix" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7528226091639928235" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="7528226091632153215" nodeInfo="nn">
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7528226091632153785" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="variable expected" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632154635" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091639929504" nodeInfo="nn">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091639928237" resolveInfo="postfixDecrementExpression" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632157173" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+          </node>
+        </node>
+        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632149455" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7528226091632144501" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7528226091639929643" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7528226091639928237" resolveInfo="postfixDecrementExpression" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7528226091632146869" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1239714902950" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7528226091632152340" nodeInfo="nn">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877519786" resolveInfo="isLValue" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7528226091639928237" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="postfixDecrementExpression" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1214918975462" resolveInfo="PostfixDecrementExpression" />
+    </node>
+  </root>
 </model>
 
