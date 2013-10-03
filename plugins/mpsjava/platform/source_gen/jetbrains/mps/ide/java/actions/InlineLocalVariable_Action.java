@@ -45,7 +45,26 @@ public class InlineLocalVariable_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    boolean result = SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+    boolean result = SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+    if (!(result)) {
+      if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+        SNode assignment = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", false, false);
+        if ((assignment != null)) {
+          if (eq_7stbw3_a0a0b0a0b0d(SLinkOperations.getTarget(assignment, "lValue", true), ((SNode) MapSequence.fromMap(_params).get("node")))) {
+            return false;
+          }
+        }
+
+        SNode unaryExpression = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", false, false);
+        if ((unaryExpression != null)) {
+          if (eq_7stbw3_a0a0e0a0b0d(SLinkOperations.getTarget(unaryExpression, "expression", true), ((SNode) MapSequence.fromMap(_params).get("node")))) {
+            return false;
+          }
+        }
+
+        result = true;
+      }
+    }
     return result && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
@@ -155,4 +174,18 @@ public class InlineLocalVariable_Action extends BaseAction {
   }
 
   protected static Logger LOG = LogManager.getLogger(InlineLocalVariable_Action.class);
+
+  private static boolean eq_7stbw3_a0a0b0a0b0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_7stbw3_a0a0e0a0b0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }
