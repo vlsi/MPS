@@ -1354,15 +1354,27 @@
           </node>
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="6519915829969195430" nodeInfo="nn">
-        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6519915829969195434" nodeInfo="nn">
-          <property name="value" nameId="tpee.1070475926801" value="Non-abstract concept should have editor declaration" />
-        </node>
-        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6519915829969195433" nodeInfo="nn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.InfoStatement" typeId="tpd4.1224760201579" id="2823239769520680200" nodeInfo="nn">
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2823239769520681787" nodeInfo="nn">
           <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6519915829969160817" resolveInfo="conceptDeclaration" />
         </node>
-        <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyMessageTarget" typeId="tpd4.1227096498176" id="6519915829969195435" nodeInfo="ng">
-          <link role="propertyDeclaration" roleId="tpd4.1227096521710" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        <node role="infoText" roleId="tpd4.1224760230762" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2823239769521183950" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2823239769521185865" nodeInfo="nn">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2823239769521187085" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2823239769521185944" nodeInfo="nn">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6519915829969160817" resolveInfo="conceptDeclaration" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2823239769521194990" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2823239769521183956" nodeInfo="nn">
+              <property name="value" nameId="tpee.1070475926801" value="Editor for concept " />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2823239769521183958" nodeInfo="nn">
+            <property name="value" nameId="tpee.1070475926801" value=" is not defined. Default editor will be used." />
+          </node>
         </node>
       </node>
     </node>
@@ -1404,7 +1416,7 @@
           </node>
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7588428831943478137" nodeInfo="nn">
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcn.7588821453550280407" resolveInfo="AttributeDesignTimeOperations" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isApplicableAttribute" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isAttributeDeclaration" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7588428831943478159" nodeInfo="nn">
               <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7588428831943028642" resolveInfo="conceptDeclaration" />
             </node>
@@ -1442,7 +1454,7 @@
           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7588428831943636904" nodeInfo="nn">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7588428831943636961" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcn.7588821453550280407" resolveInfo="AttributeDesignTimeOperations" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isApplicableAttribute" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isAttributeDeclaration" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7588428831943636995" nodeInfo="nn">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7588428831943028642" resolveInfo="conceptDeclaration" />
               </node>
@@ -1513,7 +1525,7 @@
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7588428831943501970" nodeInfo="nn">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcn.7588821453550280407" resolveInfo="AttributeDesignTimeOperations" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isApplicableAttribute" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isAttributeDeclaration" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7588428831943506858" nodeInfo="nn">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7588428831943505766" resolveInfo="conceptDeclaration" />
               </node>
@@ -1556,7 +1568,7 @@
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7588428831943618124" nodeInfo="nn">
               <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7588428831943618126" nodeInfo="nn">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpcn.7588821453550280407" resolveInfo="AttributeDesignTimeOperations" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isApplicableAttribute" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7588428831943411767" resolveInfo="isAttributeDeclaration" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7588428831943618127" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7588428831943505766" resolveInfo="conceptDeclaration" />
                 </node>
