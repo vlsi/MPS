@@ -31,6 +31,10 @@ import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,8 +43,11 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 
@@ -170,8 +177,21 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
   }
 
   @Override
-  public void navigate(boolean requestFocus) {
-    super.navigate(requestFocus);    //To change body of overridden methods use File | Settings | File Templates.
+  public void navigate(final boolean requestFocus) {
+    final SRepository repository = getProjectRepository();
+    repository.getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        SModel model = myModel.getSModelReference().resolve(repository);
+        if (model == null) return;
+
+        SNode node = model.getNode(myNodeId);
+        if (node == null) return;
+
+        IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
+        NavigationSupport.getInstance().openNode(context, node, requestFocus, false);
+      }
+    });
   }
 
   @Override
