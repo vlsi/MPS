@@ -44,6 +44,7 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
       this.optimizeAssignment(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), variable);
     } else {
+      // ATM we do not inline if the last update was through a++ nor a+=1 type-of expressions 
       return myAssignment;
     }
     this.optimizeDeclaration(variable);
@@ -62,7 +63,11 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       for (Instruction nodeInstruction : ListSequence.fromList(program.getInstructionsFor(currentStatement))) {
         for (WriteInstruction instruction : SetSequence.fromSet(definitions.get(nodeInstruction))) {
           if (instruction.getVariable() == variable) {
-            myAssignment = ((SNode) instruction.getSource());
+            SNode assignmentNode = (SNode) instruction.getSource();
+            // We need to avoid inlining a self-assignment 
+            if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).contains(assignmentNode))) {
+              myAssignment = (assignmentNode);
+            }
           }
         }
       }
