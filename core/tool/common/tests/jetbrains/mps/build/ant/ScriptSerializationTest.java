@@ -27,7 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 
-public class WhatToDoSerializationConsistencyTest extends TestCase {
+public class ScriptSerializationTest extends TestCase {
 
 //  public void testCloningConcistencyWithProjects() {
 //    Script toDo = new Script();
