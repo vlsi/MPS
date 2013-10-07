@@ -328,7 +328,7 @@ class GenerationSession {
         return o1.getName().compareTo(o2.getName());
       }
     });
-    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations);
+    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {
@@ -468,23 +468,11 @@ class GenerationSession {
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
-    List<TemplateMappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
-    if (preMappingScripts.isEmpty()) {
+    if (!ruleManager.getScripts().preprocessing()) {
       return currentInputModel;
     }
 
-    // need to clone input model?
-    boolean needToCloneInputModel = !myDiscardTransients;  // clone model if save transients (needed for tracing)
-    if (!needToCloneInputModel) {
-      for (TemplateMappingScript preMappingScript : preMappingScripts) {
-        if (preMappingScript.getKind() == TemplateMappingScript.PREPROCESS) {
-          if (preMappingScript.modifiesModel()) {
-            needToCloneInputModel = true;
-            break;
-          }
-        }
-      }
-    }
+    final boolean needToCloneInputModel = ruleManager.getScripts().needModelCloneToPreprocess(currentInputModel, !myDiscardTransients);
     SModel toRecycle = null;
     if (needToCloneInputModel) {
       ttrace.push("model clone", false);
@@ -496,23 +484,18 @@ class GenerationSession {
       CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
 
-      if (!myDiscardTransients) { // tracing
-        mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
-      }
+      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getScripts().getPreMappingScripts());
 
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
       currentInputModel = currentInputModel_clone;
-      myDependenciesBuilder.scriptApplied(currentInputModel);
+      myDependenciesBuilder.scriptApplied(currentInputModel); // WTF? why scriptApplied for a blank copy?
+    } else {
+      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getScripts().getPreMappingScripts());
     }
 
     boolean preProcessed = false;
-    for (TemplateMappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
-        myLogger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
-            "skip script " + preMappingScript.getLongName() + " - wrong script kind");
-        continue;
-      }
+    for (TemplateMappingScript preMappingScript : ruleManager.getScripts().getPreMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
       }
@@ -543,12 +526,11 @@ class GenerationSession {
   }
 
   private SModel postProcessModel(RuleManager ruleManager, SModel currentModel) throws GenerationFailureException {
-    List<TemplateMappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
-    if (postMappingScripts.isEmpty()) {
+    if (!ruleManager.getScripts().postprocessing()) {
       return currentModel;
     }
 
-    boolean needToCloneModel = !myDiscardTransients; // clone model - needed for tracing
+    boolean needToCloneModel = ruleManager.getScripts().needModelCloneToPostprocess(currentModel, !myDiscardTransients);
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone", false);
@@ -559,19 +541,16 @@ class GenerationSession {
       CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, postMappingScripts);
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getScripts().getPostMappingScripts());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
+    } else {
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getScripts().getPostMappingScripts());
     }
 
     boolean postProcessed = false;
-    for (TemplateMappingScript postMappingScript : postMappingScripts) {
-      if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
-        myLogger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
-            "skip script " + postMappingScript.getLongName() + " - wrong script kind");
-        continue;
-      }
+    for (TemplateMappingScript postMappingScript : ruleManager.getScripts().getPostMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
       }
