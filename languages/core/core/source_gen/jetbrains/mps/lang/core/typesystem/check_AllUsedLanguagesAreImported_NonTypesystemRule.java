@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.extapi.model.SModelBase;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -30,9 +30,11 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     if (SNodeOperations.getContainingRoot(root) != root) {
       return;
     }
-
+    if (!(SNodeOperations.getModel(root) instanceof SModelBase)) {
+      return;
+    }
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
-    for (SModuleReference importedLanguageReference : CollectionSequence.fromCollection(new ModelDependenciesManager(SNodeOperations.getModel(root)).getAllImportedLanguages())) {
+    for (SModuleReference importedLanguageReference : CollectionSequence.fromCollection(((SModelBase) SNodeOperations.getModel(root)).getModelDepsManager().getAllImportedLanguages())) {
       SLanguage language = SConceptRepository.getInstance().getLanguage(importedLanguageReference.getModuleName());
       importedLanguages.add(language);
     }
