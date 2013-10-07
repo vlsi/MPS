@@ -123,5 +123,7 @@
     <scopeInfo nodeId="3257040239274145638" fileName="ClosureHoldingNodeUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="3257040239274145603" fileName="ClosureHoldingNodeUtil.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.console.actions.ClosureHoldingNodeUtil" />
   </root>
+  <root nodeRef="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)/3366942412399973391" />
+  <root nodeRef="r:ab572aa6-6e4f-43f3-8bc9-ad4a8ae29372(jetbrains.mps.console.actions)/4045134570814076822" />
 </debugInfo>
 

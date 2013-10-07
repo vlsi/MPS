@@ -6,10 +6,13 @@
     </modelRoot>
   </models>
   <facets>
-    <facet pluginId="jetbrains.mps.execution.languages" type="ideaPlugin" />
     <facet type="tests" />
     <facet type="java" />
     <facet pluginId="jetbrains.mps.execution.languages" type="ideaPlugin" />
+    <facet pluginId="jetbrains.mps.execution.languages" type="ideaPlugin" />
+    <facet type="tests" />
+    <facet pluginId="jetbrains.mps.execution.languages" type="ideaPlugin" />
+    <facet type="java" />
   </facets>
   <sourcePath />
   <dependencies>

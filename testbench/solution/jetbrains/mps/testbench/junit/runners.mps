@@ -5282,7 +5282,32 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6132171475558101548" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4470267393704961814" nodeInfo="nn">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4470267393704961843" nodeInfo="nn">
-            <property name="text" nameId="tpee.6329021646629104958" value="todo: ask Julia why without plugins?" />
+            <property name="text" nameId="tpee.6329021646629104958" value="plugins are already loaded into plugin.path property used by idea plugin manager" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4543865055330895503" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4543865055330895550" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="so we do not do anything with plugins here" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4543865055330895629" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4543865055330895678" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="I know that this is so incredibly breakable" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4543865055330895897" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4543865055330895950" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="it already broke once, it will break again" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4543865055330896227" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4543865055330896282" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="this is why MPS is not a &quot;product&quot; after all these years" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4543865055330895759" nodeInfo="nn">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4543865055330895810" nodeInfo="nn">
+            <property name="text" nameId="tpee.6329021646629104958" value="I'm sorry for that, it's all my fault:(" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6132171475558103981" nodeInfo="nn">

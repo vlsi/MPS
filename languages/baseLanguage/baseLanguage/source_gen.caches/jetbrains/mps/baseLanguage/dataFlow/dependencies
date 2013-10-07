@@ -211,6 +211,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NotExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParameterDeclaration_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.PostfixDecrementExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.PostfixIncrementExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.PrefixDecrementExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.PrefixIncrementExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
@@ -489,6 +493,38 @@
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" file="ParenthesizedExpression_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.PostfixDecrementExpression_DataFlow" file="PostfixDecrementExpression_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.PostfixIncrementExpression_DataFlow" file="PostfixIncrementExpression_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.PrefixDecrementExpression_DataFlow" file="PrefixDecrementExpression_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.PrefixIncrementExpression_DataFlow" file="PrefixIncrementExpression_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />

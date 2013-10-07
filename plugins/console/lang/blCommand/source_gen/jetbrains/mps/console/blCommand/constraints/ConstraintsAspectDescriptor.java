@@ -15,12 +15,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new QueryExpression_Constraints();
       case 0:
-        return new ActionCallParameter_Constraints();
+        return new ActionCallDeclaredParameter_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.ActionCallParameter", "jetbrains.mps.console.blCommand.structure.QueryExpression"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.blCommand.structure.QueryExpression"};
 }

@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
+public class NodeBySeveralConceptChooser extends NodeChooser {
   @NotNull
   private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargetConcepts = ListSequence.fromList(new ArrayList<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>());
   private final ModulesWithLanguagesScope myScope;
@@ -70,7 +70,7 @@ public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
         String targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
         SAbstractConcept concept = SConceptRepository.getInstance().getConcept(targetConcept);
-        Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(concept), false, monitor);
+        Set<SNode> instances = manager.findInstances(myScope, Collections.singleton(concept), false, monitor.subTask(10));
         if (function == null) {
           return instances;
         } else {
@@ -109,8 +109,5 @@ public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
         }) != null;
       }
     });
-  }
-
-  public static void main(String[] args) {
   }
 }

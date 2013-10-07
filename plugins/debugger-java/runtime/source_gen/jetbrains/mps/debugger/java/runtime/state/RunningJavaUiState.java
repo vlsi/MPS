@@ -4,13 +4,7 @@ package jetbrains.mps.debugger.java.runtime.state;
 
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
-import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
-import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.debug.api.programState.IThread;
-import java.util.Collections;
 import jetbrains.mps.debug.api.AbstractUiState;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 
 /**
@@ -19,6 +13,10 @@ import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 public class RunningJavaUiState extends JavaUiStateImpl {
   public RunningJavaUiState(DebugSession session) {
     super(session);
+  }
+
+  /*package*/ RunningJavaUiState(DebugSession debugSession, int currentThreadIndex) {
+    super(debugSession, currentThreadIndex);
   }
 
   @Override
@@ -32,24 +30,8 @@ public class RunningJavaUiState extends JavaUiStateImpl {
   }
 
   @Override
-  public JavaThread getThread() {
-    return null;
-  }
-
-  @NotNull
-  @Override
-  public List<? extends IThread> getThreads() {
-    return Collections.emptyList();
-  }
-
-  @Override
   public boolean isPausedOnBreakpoint() {
     return false;
-  }
-
-  @Override
-  protected AbstractUiState selectThreadInternal(@Nullable IThread thread) {
-    return this;
   }
 
   @Override

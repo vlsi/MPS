@@ -1124,112 +1124,6 @@
     </scopeInfo>
     <unitInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Options_Action" />
   </root>
-  <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/3366942412399973391">
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="27" startPosition="44" endLine="28" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="28" startPosition="50" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="29" startPosition="35" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973414" fileName="ShowMappingsPartitioning_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="44" startPosition="7" endLine="45" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="45" startPosition="60" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="49" startPosition="45" endLine="50" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="51" startPosition="7" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="69" startPosition="60" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="61" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="77" startPosition="60" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="80" startPosition="158" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="82" startPosition="5" endLine="83" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973398" fileName="ShowMappingsPartitioning_Action.java" startLine="87" startPosition="9" endLine="88" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="90" startPosition="45" endLine="91" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="60" startPosition="89" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="64" startPosition="86" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="68" startPosition="86" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="72" startPosition="88" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="86" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="79" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="89" startPosition="27" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="89" startPosition="27" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowMappingsPartitioning_Action#()V" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="75" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="86" startPosition="96" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="86" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="56" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="3366942412399973413" fileName="ShowMappingsPartitioning_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="83" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="49" startPosition="45" endLine="50" endPosition="99" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="69" startPosition="60" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="61" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="77" startPosition="60" endLine="78" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="80" startPosition="158" endLine="81" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="87" startPosition="9" endLine="88" endPosition="274" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="90" startPosition="45" endLine="91" endPosition="98" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
-      <varInfo nodeId="3366942412399973391" varName="enabled" />
-    </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="27" startPosition="44" endLine="30" endPosition="41" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="3366942412399973391" varName="_params" />
-      <varInfo nodeId="3366942412399973391" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="89" startPosition="0" endLine="92" endPosition="7">
-      <varInfo nodeId="3366942412399973391" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="89" startPosition="27" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="0" endLine="52" endPosition="44">
-      <varInfo nodeId="3366942412399973391" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="48" startPosition="27" endLine="52" endPosition="44" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="75" startPosition="5" endLine="82" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="86" startPosition="96" endLine="93" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="86" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="3366942412399973391" varName="_params" />
-      <varInfo nodeId="3366942412399973391" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="42" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="3366942412399973391" varName="_params" />
-      <varInfo nodeId="3366942412399973391" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="56" startPosition="95" endLine="83" endPosition="16" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="56" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="3366942412399973391" varName="_params" />
-      <varInfo nodeId="3366942412399973391" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="24" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.make.actions.ShowMappingsPartitioning_Action" />
-  </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/459403722178709461">
     <nodeInfo nodeId="459403722178709461" fileName="BuildAllIntentions_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="459403722178709461" fileName="BuildAllIntentions_Action.java" startLine="31" startPosition="38" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2212,55 +2106,54 @@
     <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="52" startPosition="50" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="53" startPosition="50" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="54" startPosition="51" endLine="55" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="55" startPosition="45" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="56" startPosition="53" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="57" startPosition="45" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="58" startPosition="14" endLine="59" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="59" startPosition="48" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="60" startPosition="43" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="61" startPosition="50" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="62" startPosition="45" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="63" startPosition="37" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="64" startPosition="46" endLine="65" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="65" startPosition="54" endLine="66" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="66" startPosition="44" endLine="67" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="67" startPosition="52" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="68" startPosition="49" endLine="69" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="72" startPosition="37" endLine="73" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="73" startPosition="92" endLine="74" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="74" startPosition="145" endLine="75" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="75" startPosition="151" endLine="76" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="76" startPosition="117" endLine="77" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="77" startPosition="153" endLine="78" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="78" startPosition="131" endLine="79" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="79" startPosition="117" endLine="80" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="80" startPosition="128" endLine="81" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="81" startPosition="109" endLine="82" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="82" startPosition="140" endLine="83" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="83" startPosition="100" endLine="84" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="84" startPosition="116" endLine="85" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="85" startPosition="142" endLine="86" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="89" startPosition="48" endLine="90" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="90" startPosition="92" endLine="91" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="91" startPosition="71" endLine="92" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="55" startPosition="45" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="56" startPosition="45" endLine="57" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="57" startPosition="14" endLine="58" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="58" startPosition="48" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="59" startPosition="43" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="60" startPosition="50" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="61" startPosition="45" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="62" startPosition="37" endLine="63" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="63" startPosition="46" endLine="64" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="64" startPosition="54" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="65" startPosition="44" endLine="66" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="66" startPosition="52" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="67" startPosition="49" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="71" startPosition="37" endLine="72" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="72" startPosition="92" endLine="73" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="73" startPosition="145" endLine="74" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="74" startPosition="151" endLine="75" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="75" startPosition="117" endLine="76" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="76" startPosition="153" endLine="77" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="77" startPosition="131" endLine="78" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="78" startPosition="117" endLine="79" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="79" startPosition="128" endLine="80" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="80" startPosition="109" endLine="81" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="81" startPosition="140" endLine="82" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="82" startPosition="100" endLine="83" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="83" startPosition="116" endLine="84" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="84" startPosition="142" endLine="85" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="88" startPosition="48" endLine="89" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="89" startPosition="92" endLine="90" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="90" startPosition="71" endLine="91" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Make_ApplicationPlugin#()V" />
     <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initKeymaps#()Ljava/util/List;" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="72" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="29" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initKeymaps#()Ljava/util/List;" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="71" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="29" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
     <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="22" startPosition="35" endLine="22" endPosition="35" />
     <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="25" startPosition="27" endLine="26" endPosition="16" />
     <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="89" startPosition="48" endLine="92" endPosition="15">
+    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="88" startPosition="48" endLine="91" endPosition="15">
       <varInfo nodeId="7162597690968054079" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="89" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="72" startPosition="37" endLine="86" endPosition="83" />
-    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="72" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="29" startPosition="30" endLine="69" endPosition="44" />
-    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="29" startPosition="0" endLine="71" endPosition="0" />
-    <unitInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
+    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="88" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="71" startPosition="37" endLine="85" endPosition="83" />
+    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="71" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="29" startPosition="30" endLine="68" endPosition="44" />
+    <scopeInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="29" startPosition="0" endLine="70" endPosition="0" />
+    <unitInfo nodeId="7162597690968054079" fileName="Make_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/721478377485341571">
     <nodeInfo nodeId="7550858217961932795" fileName="TransientModelBallonDisplayer.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -3223,24 +3116,33 @@
     <unitInfo nodeId="8610665572788515237" fileName="MakeActionImpl.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeActionImpl" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515362">
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="13" startPosition="41" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="14" startPosition="34" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515364" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084699805054913149" fileName="TextPreviewGroup_ActionGroup.java" startLine="18" startPosition="108" endLine="19" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="16" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewGroup_ActionGroup#()V" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL_ID_other" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="41" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="18" startPosition="34" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="19" startPosition="30" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515364" fileName="TextPreviewGroup_ActionGroup.java" startLine="21" startPosition="9" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4045134570814154915" fileName="TextPreviewGroup_ActionGroup.java" startLine="23" startPosition="7" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4045134570814154915" fileName="TextPreviewGroup_ActionGroup.java" startLine="24" startPosition="96" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4045134570814154915" fileName="TextPreviewGroup_ActionGroup.java" startLine="25" startPosition="66" endLine="26" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4045134570814154915" fileName="TextPreviewGroup_ActionGroup.java" startLine="26" startPosition="97" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="29" startPosition="27" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4045134570814154915" fileName="TextPreviewGroup_ActionGroup.java" startLine="22" startPosition="108" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="20" startPosition="25" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPreviewGroup_ActionGroup#()V" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="39">
       <varInfo nodeId="8610665572788515362" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="19" endPosition="116" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="13" startPosition="41" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="29" startPosition="27" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="4045134570814154915" fileName="TextPreviewGroup_ActionGroup.java" startLine="23" startPosition="7" endLine="27" endPosition="60">
+      <varInfo nodeId="4045134570814154915" varName="action" />
+      <varInfo nodeId="4045134570814154915" varName="manager" />
+    </scopeInfo>
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="21" startPosition="9" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="41" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="17" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="8610665572788515362" fileName="TextPreviewGroup_ActionGroup.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788515366">
     <nodeInfo nodeId="8610665572788515366" fileName="NamespaceMake_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -60,7 +60,12 @@ public class MpsTestsSuite extends Suite {
 
 
   private static void initEnvironment() {
-    // todo: ask Julia why without plugins? 
+    // plugins are already loaded into plugin.path property used by idea plugin manager 
+    // so we do not do anything with plugins here 
+    // I know that this is so incredibly breakable 
+    // it already broke once, it will break again 
+    // this is why MPS is not a "product" after all these years 
+    // I'm sorry for that, it's all my fault:( 
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     for (IMapping<String, File> lib : MapSequence.fromMap(loadLibraries())) {
       config = config.addLib(lib.key(), lib.value());

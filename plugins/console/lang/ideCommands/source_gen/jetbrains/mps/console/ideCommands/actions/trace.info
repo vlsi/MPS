@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PasteWrappers.java" startLine="17" startPosition="49" endLine="31" endPosition="5" unitName="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
+  <unitInfo fileName="PasteWrappers.java" startLine="32" startPosition="49" endLine="46" endPosition="5" unitName="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
+  <unitInfo fileName="PasteWrappers.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
   <unitInfo fileName="QueriesGenerated.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" />
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2087237500476328199">
     <nodeInfo nodeId="2087237500476347103" fileName="QueriesGenerated.java" startLine="10" startPosition="163" endLine="11" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8,6 +11,21 @@
     <scopeInfo nodeId="2087237500476328252" fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="2087237500476328252" varName="_context" />
       <varInfo nodeId="2087237500476328252" varName="operationContext" />
+    </scopeInfo>
+  </root>
+  <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2755216049128262286" />
+  <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/6961633949328001911">
+    <nodeInfo nodeId="6961633949329748703" fileName="PasteWrappers.java" startLine="26" startPosition="55" endLine="27" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6961633949329748709" fileName="PasteWrappers.java" startLine="27" startPosition="133" endLine="28" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6961633949329748715" fileName="PasteWrappers.java" startLine="28" startPosition="84" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6961633949328078376" fileName="PasteWrappers.java" startLine="41" startPosition="55" endLine="42" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6961633949328086842" fileName="PasteWrappers.java" startLine="42" startPosition="133" endLine="43" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6961633949328133481" fileName="PasteWrappers.java" startLine="43" startPosition="84" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6961633949329748702" fileName="PasteWrappers.java" startLine="26" startPosition="55" endLine="29" endPosition="22">
+      <varInfo nodeId="6961633949329748704" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="6961633949328073115" fileName="PasteWrappers.java" startLine="41" startPosition="55" endLine="44" endPosition="22">
+      <varInfo nodeId="6961633949328078379" varName="result" />
     </scopeInfo>
   </root>
 </debugInfo>

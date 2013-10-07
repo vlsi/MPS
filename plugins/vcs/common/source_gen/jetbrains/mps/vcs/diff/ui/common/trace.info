@@ -2370,7 +2370,7 @@
     <nodeInfo nodeId="2874648801263342168" fileName="DiffModelUtil.java" startLine="33" startPosition="64" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2874648801263342153" fileName="DiffModelUtil.java" startLine="34" startPosition="59" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2874648801263342161" fileName="DiffModelUtil.java" startLine="35" startPosition="57" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2516382007746715892" fileName="DiffModelUtil.java" startLine="36" startPosition="45" endLine="37" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2516382007746715892" fileName="DiffModelUtil.java" startLine="36" startPosition="45" endLine="37" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2874648801263408263" fileName="DiffModelUtil.java" startLine="40" startPosition="52" endLine="41" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2874648801263408269" fileName="DiffModelUtil.java" startLine="41" startPosition="84" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2874648801263408281" fileName="DiffModelUtil.java" startLine="43" startPosition="30" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2478,7 +2478,7 @@
     <scopeInfo nodeId="2761975718097156239" fileName="DiffModelUtil.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="2761975718097166499" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="2874648801263299289" fileName="DiffModelUtil.java" startLine="29" startPosition="75" endLine="37" endPosition="52">
+    <scopeInfo nodeId="2874648801263299289" fileName="DiffModelUtil.java" startLine="29" startPosition="75" endLine="37" endPosition="58">
       <varInfo nodeId="2874648801263342150" varName="mo" />
       <varInfo nodeId="2874648801263342154" varName="module" />
     </scopeInfo>

@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class NodeByConceptChooser extends AbstractMainNodeChooser {
+public class NodeByConceptChooser extends NodeChooser {
   @NotNull
   private String myTargetConcept;
   @Nullable

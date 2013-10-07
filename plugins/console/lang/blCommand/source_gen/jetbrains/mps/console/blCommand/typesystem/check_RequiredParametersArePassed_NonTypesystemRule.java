@@ -12,11 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_RequiredParametersArePassed_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -32,21 +32,21 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
           }
         });
       }
-    });
-    Iterable<SNode> passedParameters = ListSequence.fromList(SLinkOperations.getTargets(callAction, "parameter", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "declaration", false) != null);
-      }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "declaration", false);
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
+      }
+    });
+    Iterable<SNode> passedParameters = ListSequence.fromList(SLinkOperations.getTargets(callAction, "parameter", true)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterDeclaration_119903734736614698", new Object[]{});
       }
     });
     Iterable<SNode> missed = Sequence.fromIterable(requiredParameters).subtract(Sequence.fromIterable(passedParameters));
     if (Sequence.fromIterable(missed).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(callAction, "Parameter " + SPropertyOperations.getString(Sequence.fromIterable(missed).first(), "name") + " is required", "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910214329644", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(callAction, "Parameter " + BehaviorReflection.invokeVirtual(String.class, Sequence.fromIterable(missed).first(), "virtual_getFqName_1213877404258", new Object[]{}) + " is required", "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)", "2284201910214329644", null, errorTarget);
       }
     }
   }

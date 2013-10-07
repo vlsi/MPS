@@ -98,6 +98,7 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModelChooser" file="ModelChooser.java">
+    <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
@@ -118,9 +119,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
-    <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseChooserComponent" />
+    <classNode extendsClassName="com.intellij.openapi.ui.NoPathCompletion" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModuleChooser" file="ModuleChooser.java">
+    <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
@@ -142,7 +144,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseChooserComponent" />
+    <classNode extendsClassName="com.intellij.openapi.ui.NoPathCompletion" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel" file="TestListPanel.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />

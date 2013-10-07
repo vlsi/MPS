@@ -182,12 +182,14 @@
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.baseLanguage.regexp.examples.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.baseLanguage.regexp.sandbox.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd" folder="core.baseLanguage.regexp" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/actions/jetbrains.mps.console.actions.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommandRuntime/jetbrains.mps.console.blCommand.runtime.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/migration/jetbrains.mps.console.migration.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" folder="workbench.debugger" />
@@ -264,7 +266,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="platform.mpsjava" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/mpsmake/jetbrains.mps.ide.make.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" folder="platform.vcs" />

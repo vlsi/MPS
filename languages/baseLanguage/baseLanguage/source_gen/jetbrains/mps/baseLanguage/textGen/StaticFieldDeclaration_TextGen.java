@@ -30,6 +30,12 @@ public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
       this.append("final ");
     }
+    if (SPropertyOperations.getBoolean(node, "isTransient")) {
+      this.append("transient ");
+    }
+    if (SPropertyOperations.getBoolean(node, "isVolatile")) {
+      this.append("volatile ");
+    }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "type", true), this.getSNode());
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));

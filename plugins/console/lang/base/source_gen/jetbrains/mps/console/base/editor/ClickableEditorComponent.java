@@ -8,17 +8,16 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ClickableEditorComponent implements ConceptEditorComponent {
@@ -27,24 +26,16 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createReadOnlyModelAccessor_k1kh9z_a(editorContext, node);
+    return this.createProperty_k1kh9z_a(editorContext, node);
   }
 
-  private EditorCell createReadOnlyModelAccessor_k1kh9z_a(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getText_2348043250037295218", new Object[]{});
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_k1kh9z_a");
+  private EditorCell createProperty_k1kh9z_a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("text");
+    provider.setNoTargetText("<no text>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_text");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(ClickableEditorComponent._StyleParameter_QueryFunction_k1kh9z_a0a((editorCell == null ?
       null :
@@ -61,6 +52,14 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
       editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -19,7 +20,6 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 
@@ -36,6 +36,18 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "object", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"), "object", true), true);
     }
+  }
+
+  public static void nodeFactory_NodeSetup_ModulesScope_3492877759608901831(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.addNewChild(_context.getNewNode(), "module", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression");
+  }
+
+  public static void nodeFactory_NodeSetup_ModelScope_3492877759608986171(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.addNewChild(_context.getNewNode(), "model", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression");
+  }
+
+  public static void nodeFactory_NodeSetup_CustomScope_3492877759609298946(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "scope", "jetbrains.mps.baseLanguage.structure.GenericNewExpression");
   }
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Command_3786816536599613947(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

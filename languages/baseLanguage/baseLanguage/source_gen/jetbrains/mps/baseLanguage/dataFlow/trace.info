@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206454554507">
     <nodeInfo nodeId="1206454560120" fileName="IfStatement_DataFlow.java" startLine="18" startPosition="102" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220014062836" fileName="IfStatement_DataFlow.java" startLine="20" startPosition="161" endLine="21" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2767,5 +2767,83 @@
     </scopeInfo>
     <unitInfo nodeId="7718715537694335441" fileName="RuleWhileNotNull.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleWhileNotNull" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580634161341" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580635952572">
+    <nodeInfo nodeId="1503494305073290568" fileName="PrefixDecrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073290572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="18" startPosition="109" endLine="19" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073290587" fileName="PrefixDecrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7953345580635952572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrefixDecrementExpression_DataFlow#()V" />
+    <nodeInfo nodeId="1503494305073290585" fileName="PrefixDecrementExpression_DataFlow.java" startLine="20" startPosition="10" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1503494305073290566" fileName="PrefixDecrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7953345580635952572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7953345580635952572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="13" startPosition="47" endLine="13" endPosition="47" />
+    <scopeInfo nodeId="1503494305073290586" fileName="PrefixDecrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" />
+    <scopeInfo nodeId="7953345580635952572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1503494305073290567" fileName="PrefixDecrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="19" endPosition="341" />
+    <scopeInfo nodeId="7953345580635952574" fileName="PrefixDecrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="7953345580635952572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7953345580635952572" varName="_context" />
+      <varInfo nodeId="7953345580635952572" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7953345580635952572" fileName="PrefixDecrementExpression_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.PrefixDecrementExpression_DataFlow" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580635962927">
+    <nodeInfo nodeId="1503494305073257619" fileName="PrefixIncrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073257623" fileName="PrefixIncrementExpression_DataFlow.java" startLine="18" startPosition="109" endLine="19" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073257642" fileName="PrefixIncrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7953345580635962927" fileName="PrefixIncrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrefixIncrementExpression_DataFlow#()V" />
+    <nodeInfo nodeId="1503494305073257636" fileName="PrefixIncrementExpression_DataFlow.java" startLine="20" startPosition="10" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1503494305073257605" fileName="PrefixIncrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7953345580635962927" fileName="PrefixIncrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7953345580635962927" fileName="PrefixIncrementExpression_DataFlow.java" startLine="13" startPosition="47" endLine="13" endPosition="47" />
+    <scopeInfo nodeId="1503494305073257637" fileName="PrefixIncrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" />
+    <scopeInfo nodeId="7953345580635962927" fileName="PrefixIncrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1503494305073257606" fileName="PrefixIncrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="19" endPosition="341" />
+    <scopeInfo nodeId="7953345580635962929" fileName="PrefixIncrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="7953345580635962927" fileName="PrefixIncrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7953345580635962927" varName="_context" />
+      <varInfo nodeId="7953345580635962927" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7953345580635962927" fileName="PrefixIncrementExpression_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.PrefixIncrementExpression_DataFlow" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580635998630">
+    <nodeInfo nodeId="1503494305073298169" fileName="PostfixDecrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073298173" fileName="PostfixDecrementExpression_DataFlow.java" startLine="18" startPosition="109" endLine="19" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073298188" fileName="PostfixDecrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7953345580635998630" fileName="PostfixDecrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PostfixDecrementExpression_DataFlow#()V" />
+    <nodeInfo nodeId="1503494305073298186" fileName="PostfixDecrementExpression_DataFlow.java" startLine="20" startPosition="10" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1503494305073298167" fileName="PostfixDecrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7953345580635998630" fileName="PostfixDecrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7953345580635998630" fileName="PostfixDecrementExpression_DataFlow.java" startLine="13" startPosition="48" endLine="13" endPosition="48" />
+    <scopeInfo nodeId="1503494305073298187" fileName="PostfixDecrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" />
+    <scopeInfo nodeId="7953345580635998630" fileName="PostfixDecrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1503494305073298168" fileName="PostfixDecrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="19" endPosition="341" />
+    <scopeInfo nodeId="7953345580635998632" fileName="PostfixDecrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="7953345580635998630" fileName="PostfixDecrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7953345580635998630" varName="_context" />
+      <varInfo nodeId="7953345580635998630" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7953345580635998630" fileName="PostfixDecrementExpression_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.PostfixDecrementExpression_DataFlow" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580636000125">
+    <nodeInfo nodeId="1503494305073292436" fileName="PostfixIncrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073292440" fileName="PostfixIncrementExpression_DataFlow.java" startLine="18" startPosition="109" endLine="19" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1503494305073292455" fileName="PostfixIncrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PostfixIncrementExpression_DataFlow#()V" />
+    <nodeInfo nodeId="1503494305073292453" fileName="PostfixIncrementExpression_DataFlow.java" startLine="20" startPosition="10" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1503494305073292434" fileName="PostfixIncrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <scopeInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="13" startPosition="48" endLine="13" endPosition="48" />
+    <scopeInfo nodeId="1503494305073292454" fileName="PostfixIncrementExpression_DataFlow.java" startLine="20" startPosition="12" endLine="21" endPosition="109" />
+    <scopeInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="1503494305073292435" fileName="PostfixIncrementExpression_DataFlow.java" startLine="17" startPosition="164" endLine="19" endPosition="341" />
+    <scopeInfo nodeId="7953345580636000127" fileName="PostfixIncrementExpression_DataFlow.java" startLine="16" startPosition="102" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="16" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7953345580636000125" varName="_context" />
+      <varInfo nodeId="7953345580636000125" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7953345580636000125" fileName="PostfixIncrementExpression_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.PostfixIncrementExpression_DataFlow" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7953345580636977027" />
 </debugInfo>
 

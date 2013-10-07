@@ -48,6 +48,10 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.NotExpression", new NotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new ParameterDeclaration_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", new ParenthesizedExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", new PostfixDecrementExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", new PostfixIncrementExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", new PrefixDecrementExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", new PrefixIncrementExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.RemarkStatement", new RemarkStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ReturnStatement", new ReturnStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.StatementList", new StatementList_DataFlow());
