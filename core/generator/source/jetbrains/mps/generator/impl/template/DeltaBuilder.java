@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.generator.impl.template;
 
+import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -84,10 +88,10 @@ public class DeltaBuilder {
     }
   }
 
-  public void registerSubTree(@NotNull SNode inputNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
+  public void registerSubTree(@NotNull SNode replacedNode, @NotNull String roleInParent, @NotNull Collection<SNode> subTree) {
     if (myNestedCopyRoots.isEmpty()) {
       assert myCurrentRoot != null;
-      myCurrentFragments.add(new SubTree(inputNode, roleInParent, subTree));
+      myCurrentFragments.add(new SubTree(replacedNode, roleInParent, subTree));
     }
   }
 
@@ -105,6 +109,67 @@ public class DeltaBuilder {
     return false;
   }
 
+  public void applyInplace(SModel inputModel, TemplateGenerator generator) {
+    HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
+    for (CopyRoot root : roots) {
+      if (!root.deleted) {
+        allReplacedNodes.addAll(root.getReplacedNodes());
+      }
+    }
+    for (CopyRoot root : roots) {
+      if (root.deleted) {
+        assert root.myRoot.getModel() == inputModel;
+        inputModel.removeRootNode(root.myRoot);
+        continue;
+      }
+      // update references
+      final SModelReference inputModelRef = inputModel.getReference();
+      final Set<SNode> replacedNodes = root.getReplacedNodes();
+      TreeIterator<SNode> it = (TreeIterator<SNode>) SNodeUtil.getDescendants(root.myRoot).iterator();
+      while (it.hasNext()) {
+        SNode next = it.next();
+        if (replacedNodes.contains(next)) {
+          // nodes under replaced already have PostponedReferences
+          it.skipChildren();
+          continue;
+        }
+        for (SReference reference : next.getReferences()) {
+          if (reference instanceof PostponedReference) {
+            System.out.println("!!! unexpected PostponedReference in the input model");
+          }
+          if (!inputModelRef.equals(reference.getTargetSModelReference())) {
+            continue;
+          }
+          SNode target = reference.getTargetNode();
+          while (target != null) {
+            if (allReplacedNodes.contains(target)) {
+              // reference points elsewhere in this model under a replaced node.
+              // reference needs update, its target is among replaced nodes
+              ReferenceInfo refInfo = new ReferenceInfo_CopiedInputNode(reference.getRole(), next, reference.getSourceNode(), target);
+              PostponedReference pr = new PostponedReference(refInfo, generator);
+              next.setReference(pr.getRole(), pr);
+              break; // while target
+            }
+            target = target.getParent();
+          }
+        }
+      }
+      // replace nodes
+      for (SubTree tree : root.mySubTrees) {
+        if (tree.isCopySrcRoot()) {
+          continue;
+        }
+        assert tree.myInputNode.getModel() == inputModel;
+        SNode inputParentNode = tree.myInputNode.getParent();
+        SNode anchor = tree.myInputNode.getNextSibling();
+        inputParentNode.removeChild(tree.myInputNode);
+        for (SNode replacement : tree.mySubTree) {
+          inputParentNode.insertChildBefore(tree.myRoleInParent, replacement, anchor);
+        }
+      }
+    }
+  }
+
   public void dump() {
     for (CopyRoot root : roots) {
       char c = root.deleted ? '-' : (root.mySubTrees.length > 0 ? '+' : '~');
@@ -118,6 +183,12 @@ public class DeltaBuilder {
       }
     }
     if (hasChanges()) {
+      HashSet<SNode> allReplacedNodes = new HashSet<SNode>();
+      for (CopyRoot root : roots) {
+        if (!root.deleted) {
+          allReplacedNodes.addAll(root.getReplacedNodes());
+        }
+      }
       for (CopyRoot root : roots) {
         if (root.deleted) {
           continue;
@@ -140,8 +211,8 @@ public class DeltaBuilder {
             }
             SNode target = reference.getTargetNode();
             while (target != null) {
-              if (replacedNodes.contains(target)) {
-                System.out.printf("--> Reference needs update, it's target is among replaced nodes: %s\n", reference);
+              if (allReplacedNodes.contains(target)) {
+                System.out.printf("--> Reference in '%s' needs update, its target %s is among replaced nodes\n", reference.getRole(), target.getName());
                 break;
               }
               target = target.getParent();

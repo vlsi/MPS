@@ -101,6 +101,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final DependenciesBuilder myDependenciesBuilder;
 
   private DeltaBuilder myDeltaBuilder;
+  private boolean myInplaceModelChange = false;
+  private WeavingProcessor myWeavingProcessor;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -124,13 +126,27 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
     myAreMappingsReady = false;
+    if (hasPostponedReference(myInputModel.getRootNodes())) {
+      System.out.println("PostponedReference in the input!!!");
+    }
+    // prepare weaving
+    ttrace.push("weavings", false);
+    myWeavingProcessor = new WeavingProcessor(this);
+    myWeavingProcessor.prepareWeavingRules(getInputModel(), myRuleManager.getWeaving_MappingRules());
+    ttrace.pop();
+
 
     ttrace.push("reductions", false);
     applyReductions(isPrimary);
     ttrace.pop();
 
     if (myDeltaBuilder != null) {
-      myDeltaBuilder.dump();
+//      myDeltaBuilder.dump();
+      myInplaceModelChange = true;
+      if (myDeltaBuilder.hasChanges()) {
+        myDeltaBuilder.applyInplace(getInputModel(), this);
+      }
+      myOutputRoots.clear();
       myDeltaBuilder = null;
     }
 
@@ -142,19 +158,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return false;
     }
 
-    // publish roots
-    for (SNode outputRoot : myOutputRoots) {
-      myOutputModel.addRootNode(outputRoot);
-    }
+    if (!myInplaceModelChange) {
+      // publish roots
+      for (SNode outputRoot : myOutputRoots) {
+        myOutputModel.addRootNode(outputRoot);
+      }
 
-    // reload "required" roots from cache
-    ttrace.push("reloading roots from cache", false);
-    myDependenciesBuilder.reloadRequired(getMappings());
-    ttrace.pop();
+      // reload "required" roots from cache
+      ttrace.push("reloading roots from cache", false);
+      myDependenciesBuilder.reloadRequired(getMappings());
+      ttrace.pop();
+    } // XXX if in-place change, every required root has been reloaded on previous step, imo
 
     // weaving
     ttrace.push("weavings", false);
-    applyWeaving_MappingRules();
+    myWeavingProcessor.apply();
+    myWeavingProcessor = null;
     ttrace.pop();
 
     // optimization: no changes? quit
@@ -176,6 +195,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
+    }
+    if (hasPostponedReference(getOutputModel().getRootNodes())) {
+      System.out.println("PostponedReference in the output model!!!");
     }
     return myChanged;
   }
@@ -210,8 +232,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     rootsToCopy.removeAll(rootsConsumed);
     ttrace.pop();
 
-    if (!isPrimary && !myChanged && !isIncremental() && Boolean.FALSE.booleanValue()) {
-      myDeltaBuilder = new DeltaBuilder();
+    if (!isPrimary && !myChanged && rootsConsumed.isEmpty()) {
+      if (myWeavingProcessor.hasWeavingRulesToApply()) {
+        System.out.println("Could have had delta builder here, but can't due to active weavings");
+      } else {
+        myDeltaBuilder = new DeltaBuilder();
+      }
     }
     // copy roots
     checkMonitorCanceled();
@@ -361,15 +387,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
-    WeavingProcessor wp = new WeavingProcessor(this);
-    for (TemplateWeavingRule rule : myRuleManager.getWeaving_MappingRules()) {
-      checkMonitorCanceled();
-      wp.apply(rule);
-    }
-  }
-
-
   @Override
   public boolean isDirty(SNode node) {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
@@ -381,7 +398,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Override
   public SModel getOutputModel() {
-    if (myDeltaBuilder != null) {
+    if (myDeltaBuilder != null || myInplaceModelChange) {
       return getInputModel();
     }
     return super.getOutputModel();
@@ -559,7 +576,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
-    for (SNode root : myOutputModel.getRootNodes()) {
+    for (SNode root : getOutputModel().getRootNodes()) {
       checkMonitorCanceled();
       revalidateAllReferences(root);
     }
@@ -571,9 +588,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ((PostponedReference) ref).validateAndReplace();
     }
 
-    for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+    for (SNode child : node.getChildren()) {
       revalidateAllReferences(child);
     }
+  }
+
+  private static boolean hasPostponedReference(Iterable<? extends SNode> nodes) {
+    for (SNode n : nodes) {
+      for (SReference r : n.getReferences()) {
+        if (r instanceof PostponedReference) {
+          return true;
+        }
+      }
+      if (hasPostponedReference(n.getChildren())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -708,15 +739,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private class PartialCopyFacility extends  NodeCopyFacility {
     private final TemplateGenerator myGenerator;
     private final DeltaBuilder myDeltaBuilder;
+    private final IGenerationTracer myTracer; // FIXME provisional, shall refactor GenerationTracer first
 
     public PartialCopyFacility(TemplateGenerator generator, TemplateExecutionEnvironment environment, @NotNull DeltaBuilder deltaBuilder) {
       super(environment);
+      myTracer = environment.getTracer();
       myGenerator = generator;
       myDeltaBuilder = deltaBuilder;
     }
 
     @Override
     protected void drop(SNode inputRootNode, TemplateDropRootRule rule) {
+      // FIXME unless I know what to do with GenerationTracer, duplicate from 'complete' alternative
+      myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
+      myTracer.pushRule(rule.getRuleNode());
+      myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
+
+      //
       myDeltaBuilder.enterInputRoot(inputRootNode);
       myDeltaBuilder.deleteInputRoot(inputRootNode);
       myDeltaBuilder.leaveInputRoot(inputRootNode);
@@ -725,21 +764,32 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     @Override
     public void copyRootInputNode(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
       myDeltaBuilder.enterInputRoot(inputRootNode);
+      myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
       try {
         visitInputNode(inputRootNode);
+        myGenerator.registerRoot(inputRootNode, inputRootNode, null, true); // weaving rules need myNewToOldRoot mapping
       } finally {
+        myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputRootNode));
         myDeltaBuilder.leaveInputRoot(inputRootNode);
       }
     }
 
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+      myGenerator.blockReductionsForCopiedNode(inputNode, inputNode, myEnvironment.getReductionContext()); // prevent infinite applying of the same reduction to the 'same' node.
       for (SNode inputChildNode : inputNode.getChildren()) {
         String childRole = inputChildNode.getRoleInParent();
         assert childRole != null;
-        Collection<SNode> outputChildNodes = myGenerator.tryToReduce(inputChildNode, myEnvironment);
-        if (outputChildNodes != null) {
-          myDeltaBuilder.registerSubTree(inputNode, childRole, outputChildNodes);
-          myIsChanged = true;
+        myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
+        try {
+          Collection<SNode> outputChildNodes = myGenerator.tryToReduce(inputChildNode, myEnvironment);
+          if (outputChildNodes != null) {
+            myDeltaBuilder.registerSubTree(inputChildNode, childRole, outputChildNodes);
+            myIsChanged = true;
+          } else {
+            visitInputNode(inputChildNode);
+          }
+        } finally {
+          myTracer.popInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
         }
       }
     }
