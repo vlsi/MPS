@@ -7,16 +7,19 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,46 +31,66 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_7br2q0_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7br2q0_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_7br2q0_a0(editorContext, node));
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createComponent_7br2q0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7br2q0_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7br2q0_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7br2q0_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7br2q0_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7br2q0_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7br2q0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7br2q0_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_7br2q0_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7br2q0_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_7br2q0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7br2q0_h0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_7br2q0_i0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7br2q0_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
-    editorCell.setCellId("Constant_7br2q0_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createComponent_7br2q0_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createConstant_7br2q0_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
     editorCell.setCellId("Constant_7br2q0_b0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_7br2q0_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nodes:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_7br2q0_c0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyLeftParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_7br2q0_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7br2q0_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nodes:");
+    editorCell.setCellId("Constant_7br2q0_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefCell_7br2q0_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("nodes");
     provider.setNoTargetText("<no nodes>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a3a());
+    provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -80,8 +103,8 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_7br2q0_a3a extends InlineCellProvider {
-    public _Inline_7br2q0_a3a() {
+  public static class _Inline_7br2q0_a4a extends InlineCellProvider {
+    public _Inline_7br2q0_a4a() {
       super();
     }
 
@@ -90,10 +113,10 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7br2q0_a0d0(editorContext, node);
+      return this.createProperty_7br2q0_a0e0(editorContext, node);
     }
 
-    private EditorCell createProperty_7br2q0_a0d0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7br2q0_a0e0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -117,19 +140,19 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_7br2q0_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7br2q0_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "connectors:");
-    editorCell.setCellId("Constant_7br2q0_e0");
+    editorCell.setCellId("Constant_7br2q0_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_7br2q0_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7br2q0_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("connectors");
     provider.setNoTargetText("<no connectors>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a5a());
+    provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a6a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -142,8 +165,8 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_7br2q0_a5a extends InlineCellProvider {
-    public _Inline_7br2q0_a5a() {
+  public static class _Inline_7br2q0_a6a extends InlineCellProvider {
+    public _Inline_7br2q0_a6a() {
       super();
     }
 
@@ -152,10 +175,10 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7br2q0_a0f0(editorContext, node);
+      return this.createProperty_7br2q0_a0g0(editorContext, node);
     }
 
-    private EditorCell createProperty_7br2q0_a0f0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7br2q0_a0g0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -179,10 +202,21 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_7br2q0_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7br2q0_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_7br2q0_g0");
+    editorCell.setCellId("Constant_7br2q0_h0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createComponent_7br2q0_i0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -193,11 +227,11 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createComponent_7br2q0_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_7br2q0_a0_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_7br2q0_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_7br2q0_a0_0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }

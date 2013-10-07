@@ -4,12 +4,20 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
-import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
 public class CellModel_DiagramNode_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
   public CellModel_DiagramNode_BehaviorDescriptor() {
+  }
+
+  public String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return CellModel_DiagramNode_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  }
+
+  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return CellModel_DiagramNode_Behavior.virtual_getOpeningText_1220339714057(thisNode);
   }
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {

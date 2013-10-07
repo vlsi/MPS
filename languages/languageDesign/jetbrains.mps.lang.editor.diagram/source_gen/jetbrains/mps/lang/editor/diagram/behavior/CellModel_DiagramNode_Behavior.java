@@ -41,4 +41,12 @@ public class CellModel_DiagramNode_Behavior {
   public static SNode call_getAbstractComponent_3748979635599411054(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
   }
+
+  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+    return "{";
+  }
+
+  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+    return "}";
+  }
 }
