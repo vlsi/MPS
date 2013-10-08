@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="mpscore.build" uuid="98ee23dd-b806-4fbe-a43b-c3b7cd9af29e" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot contentPath="${module}/models" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

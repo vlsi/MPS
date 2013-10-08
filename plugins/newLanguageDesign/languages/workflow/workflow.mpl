@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.core.workflow" uuid="78c70cc5-3e2a-478b-9524-f2d47690ac85" doNotGenerateAdapters="true">
+<language namespace="jetbrains.mps.core.workflow" uuid="78c70cc5-3e2a-478b-9524-f2d47690ac85">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot contentPath="${module}/languageModels" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators />
