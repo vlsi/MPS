@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -31,7 +30,7 @@ public class MacroQueries {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.template.structure.MtlNodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, nodeMacro);
     } else {
-      ListSequence.fromList(AttributeOperations.getAttributeList(applyToNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlNodeMacro")))).addElement(nodeMacro);
+      ListSequence.fromList(AttributeOperations.getAttributeList(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.core.template.structure.MtlNodeMacro"))).addElement(nodeMacro);
     }
     return nodeMacro;
   }
@@ -47,7 +46,7 @@ public class MacroQueries {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.template.structure.MtlNodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, labelMacro);
     } else {
-      AttributeOperations.setAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlLabelNodeMacro")), labelMacro);
+      AttributeOperations.setAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.core.template.structure.MtlLabelNodeMacro"), labelMacro);
     }
     return labelMacro;
   }

@@ -17,7 +17,7 @@ public class SAllTermsSelector_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_seiiqy_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.BACKGROUND_COLOR, (Color) null);

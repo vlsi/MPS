@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class attributes extends KeyMapImpl {
@@ -80,7 +79,7 @@ public class attributes extends KeyMapImpl {
           return !(SNodeOperations.isAttribute(it));
         }
       }).first();
-      SNodeFactoryOperations.setNewAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlTemplateRoot")), "jetbrains.mps.core.template.structure.MtlTemplateRoot");
+      SNodeFactoryOperations.setNewAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.core.template.structure.MtlTemplateRoot"), "jetbrains.mps.core.template.structure.MtlTemplateRoot");
     }
 
     public String getKeyStroke() {
@@ -183,13 +182,13 @@ public class attributes extends KeyMapImpl {
       if (propertyName == null) {
         return false;
       }
-      return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlPropertyMacro"), propertyName)) == null;
+      return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.core.template.structure.MtlPropertyMacro", propertyName)) == null;
 
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       String propertyName = MacroQueries.getEditedPropertyName(editorContext.getSelectedCell());
-      SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlPropertyMacro"), propertyName), "jetbrains.mps.core.template.structure.MtlPropertyMacro");
+      SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.core.template.structure.MtlPropertyMacro", propertyName), "jetbrains.mps.core.template.structure.MtlPropertyMacro");
 
       editorContext.selectAndSetCaret(propertyMacro, 0);
     }
@@ -245,14 +244,14 @@ public class attributes extends KeyMapImpl {
         return false;
       }
       SNode referentNode = MacroQueries.getEditedLinkReferentNode(cell);
-      return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlReferenceMacro"), linkRole)) == null;
+      return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.core.template.structure.MtlReferenceMacro", linkRole)) == null;
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell cell = editorContext.getSelectedCell();
       String linkRole = MacroQueries.getEditedLinkRole(cell);
       SNode referentNode = MacroQueries.getEditedLinkReferentNode(cell);
-      SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.template.structure.MtlReferenceMacro"), linkRole), "jetbrains.mps.core.template.structure.MtlReferenceMacro");
+      SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.core.template.structure.MtlReferenceMacro", linkRole), "jetbrains.mps.core.template.structure.MtlReferenceMacro");
     }
 
     public String getKeyStroke() {

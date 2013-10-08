@@ -94,6 +94,8 @@ public class SNotationUnorderedGroup_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FIRST_POSITION_ALLOWED, true);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
   }
