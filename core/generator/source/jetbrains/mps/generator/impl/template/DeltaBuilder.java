@@ -145,7 +145,7 @@ public abstract class DeltaBuilder {
   public void deleteInputRoot(@NotNull SNode node) {
     assert getCurrentRoot() != null;
     assert getCurrentFragments().isEmpty();
-    if (getCurrentRoot().myRoot != node || getCurrentFragments().isEmpty()) {
+    if (getCurrentRoot().myRoot != node || !getCurrentFragments().isEmpty()) {
       throw new IllegalStateException();
     }
     getCurrentRoot().deleted = true;
