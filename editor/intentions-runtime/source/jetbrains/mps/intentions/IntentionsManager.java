@@ -442,7 +442,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
     SModelBase model = (SModelBase) node.getModel();
-    if (model == null) return true;
+    if (model == null || model.isDisposed()) return true;
     Collection<SModuleReference> languages = model.getModelDepsManager().getAllImportedLanguages();
     Set<String> langNames = new HashSet<String>();
     for (SModuleReference l : languages) {
