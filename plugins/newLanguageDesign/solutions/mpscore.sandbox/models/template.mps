@@ -190,105 +190,7 @@
     </node>
     <node role="queries" roleId="bwy9.6762883159245048633" type="bwy9.MqlQuery" typeId="bwy9.6762883159245048009" id="2268293679705614739" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="testComma" />
-      <node role="body" roleId="bwy9.6762883159245048634" type=".jetbrains.mps.core.query.structure.MqlComma" id="2268293679705627779" nodeInfo="ng">
-        <node role="right" type=".jetbrains.mps.core.query.structure.MqlComma" id="3435983127247167780" nodeInfo="ng">
-          <node role="right" type=".jetbrains.mps.core.query.structure.MqlComma" id="2268293679705663629" nodeInfo="ng">
-            <node role="right" type=".jetbrains.mps.core.query.structure.MqlComma" id="2268293679705663641" nodeInfo="ng">
-              <node role="right" type=".jetbrains.mps.core.query.structure.MqlComma" id="2852142168179579027" nodeInfo="ng">
-                <node role="right" type="bwy9.MqlTriplex" typeId="bwy9.6762883159245048058" id="2852142168179579055" nodeInfo="ng">
-                  <node role="thenexpr" roleId="bwy9.6762883159245048060" type="bwy9.MqlBoolLiteral" typeId="bwy9.6762883159245048056" id="2852142168179579059" nodeInfo="ng">
-                    <property name="value" nameId="bwy9.6762883159245048057" value="true" />
-                  </node>
-                  <node role="elseexpr" roleId="bwy9.6762883159245048061" type="bwy9.MqlParentheses" typeId="bwy9.6762883159245048022" id="2852142168179598253" nodeInfo="ng">
-                    <node role="expr" roleId="bwy9.6762883159245048023" type=".jetbrains.mps.core.query.structure.MqlComma" id="2852142168179598250" nodeInfo="ng">
-                      <node role="right" type="bwy9.MqlNoContextQueryCall" typeId="bwy9.2059702675525965924" id="2852142168179598254" nodeInfo="ng">
-                        <link role="query" roleId="bwy9.2059702675525965925" targetNodeId="228266671027848216" resolveInfo="getProperties" />
-                        <node role="arguments" roleId="bwy9.2059702675525965926" type="bwy9.MqlNullLiteral" typeId="bwy9.6762883159245048062" id="2852142168179609475" nodeInfo="ng" />
-                        <node role="arguments" roleId="bwy9.2059702675525965926" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2852142168179609471" nodeInfo="ng">
-                          <property name="value" nameId="bwy9.6762883159245048053" value="12" />
-                        </node>
-                      </node>
-                      <node role="left" type="bwy9.MqlBoolLiteral" typeId="bwy9.6762883159245048056" id="2852142168179579060" nodeInfo="ng" />
-                    </node>
-                  </node>
-                  <node role="condition" roleId="bwy9.6762883159245048059" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2852142168179579030" nodeInfo="ng">
-                    <property name="value" nameId="bwy9.6762883159245048053" value="1" />
-                  </node>
-                </node>
-                <node role="left" type="bwy9.MqlParentheses" typeId="bwy9.6762883159245048022" id="2268293679705663645" nodeInfo="ng">
-                  <node role="expr" roleId="bwy9.6762883159245048023" type=".jetbrains.mps.core.query.structure.MqlComma" id="2268293679705663647" nodeInfo="ng">
-                    <node role="right" type=".jetbrains.mps.core.query.structure.MqlComma" id="2852142168179422949" nodeInfo="ng">
-                      <node role="right" type=".jetbrains.mps.core.query.structure.MqlComma" id="2852142168179325850" nodeInfo="ng">
-                        <node role="right" type="bwy9.MqlTriplex" typeId="bwy9.6762883159245048058" id="2852142168179422812" nodeInfo="ng">
-                          <node role="thenexpr" roleId="bwy9.6762883159245048060" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2852142168179422816" nodeInfo="ng">
-                            <property name="value" nameId="bwy9.6762883159245048053" value="1" />
-                          </node>
-                          <node role="elseexpr" roleId="bwy9.6762883159245048061" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2852142168179422817" nodeInfo="ng">
-                            <property name="value" nameId="bwy9.6762883159245048053" value="3" />
-                          </node>
-                          <node role="condition" roleId="bwy9.6762883159245048059" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2268293679705663654" nodeInfo="ng">
-                            <property name="value" nameId="bwy9.6762883159245048053" value="42" />
-                          </node>
-                        </node>
-                        <node role="left" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="2852142168179422952" nodeInfo="ng">
-                          <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2852142168179422953" nodeInfo="ng">
-                            <property name="value" nameId="bwy9.6762883159245048053" value="5" />
-                          </node>
-                          <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="3435983127247139178" nodeInfo="ng">
-                            <property name="name" nameId="tpck.1169194664001" value="wew" />
-                          </node>
-                        </node>
-                      </node>
-                      <node role="left" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2852142168179325853" nodeInfo="ng">
-                        <property name="value" nameId="bwy9.6762883159245048053" value="21" />
-                      </node>
-                    </node>
-                    <node role="left" type="bwy9.MqlTriplex" typeId="bwy9.6762883159245048058" id="2268293679705663662" nodeInfo="ng">
-                      <node role="thenexpr" roleId="bwy9.6762883159245048060" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2268293679705663666" nodeInfo="ng">
-                        <property name="value" nameId="bwy9.6762883159245048053" value="34" />
-                      </node>
-                      <node role="elseexpr" roleId="bwy9.6762883159245048061" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2268293679705663670" nodeInfo="ng">
-                        <property name="value" nameId="bwy9.6762883159245048053" value="34" />
-                      </node>
-                      <node role="condition" roleId="bwy9.6762883159245048059" type="bwy9.MqlBoolLiteral" typeId="bwy9.6762883159245048056" id="2268293679705666595" nodeInfo="ng">
-                        <property name="value" nameId="bwy9.6762883159245048057" value="true" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="left" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2268293679705663640" nodeInfo="ng">
-                <property name="value" nameId="bwy9.6762883159245048053" value="32" />
-              </node>
-            </node>
-            <node role="left" type="bwy9.MqlArithmetic" typeId="bwy9.6762883159245048040" id="2852142168179572804" nodeInfo="ng">
-              <property name="kind" nameId="bwy9.6762883159245048047" value="1" />
-              <node role="right" roleId="bwy9.6762883159245048021" type="bwy9.MqlVariableReference" typeId="bwy9.3435983127247055506" id="3435983127247242871" nodeInfo="ng">
-                <link role="var" roleId="bwy9.3435983127247055512" targetNodeId="3435983127247139175" resolveInfo="aaFirst" />
-              </node>
-              <node role="left" roleId="bwy9.6762883159245048020" type="bwy9.MqlNoContextQueryCall" typeId="bwy9.2059702675525965924" id="3435983127247242611" nodeInfo="ng">
-                <link role="query" roleId="bwy9.2059702675525965925" targetNodeId="2268293679705614739" resolveInfo="testComma" />
-              </node>
-            </node>
-          </node>
-          <node role="left" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="2268293679705627783" nodeInfo="ng">
-            <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2268293679705627784" nodeInfo="ng">
-              <property name="value" nameId="bwy9.6762883159245048053" value="6" />
-            </node>
-            <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="3435983127247139176" nodeInfo="ng">
-              <property name="name" nameId="tpck.1169194664001" value="aaSecond" />
-            </node>
-          </node>
-        </node>
-        <node role="left" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="2268293679705627754" nodeInfo="ng">
-          <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="2268293679705627787" nodeInfo="ng">
-            <property name="value" nameId="bwy9.6762883159245048053" value="2" />
-          </node>
-          <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="3435983127247139175" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="aaFirst" />
-          </node>
-        </node>
-      </node>
+      <node role="body" roleId="bwy9.6762883159245048634" type="bwy9.MqlNullLiteral" typeId="bwy9.6762883159245048062" id="2486372104242404249" nodeInfo="ng" />
     </node>
     <node role="queries" roleId="bwy9.6762883159245048633" type="bwy9.MqlQuery" typeId="bwy9.6762883159245048009" id="641202304629570248" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="testToLower" />
@@ -301,14 +203,7 @@
     </node>
     <node role="queries" roleId="bwy9.6762883159245048633" type="bwy9.MqlQuery" typeId="bwy9.6762883159245048009" id="5433095484313962434" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="temporary" />
-      <node role="body" roleId="bwy9.6762883159245048634" type=".jetbrains.mps.core.query.structure.MqlComma" id="5433095484313962437" nodeInfo="ng">
-        <node role="right" type="bwy9.MqlNoContextQueryCall" typeId="bwy9.2059702675525965924" id="5433095484313962440" nodeInfo="ng">
-          <link role="query" roleId="bwy9.2059702675525965925" targetNodeId="228266671027811804" resolveInfo="getInt" />
-        </node>
-        <node role="left" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="5433095484313962436" nodeInfo="ng">
-          <property name="value" nameId="bwy9.6762883159245048053" value="1" />
-        </node>
-      </node>
+      <node role="body" roleId="bwy9.6762883159245048634" type="bwy9.MqlNullLiteral" typeId="bwy9.6762883159245048062" id="2486372104242404265" nodeInfo="ng" />
     </node>
     <node role="imports" roleId="bwy9.5109194352282852233" type="bwy9.MqlImport" typeId="bwy9.5109194352282839186" id="5109194352282893027" nodeInfo="ng">
       <link role="target" roleId="bwy9.5109194352282839188" targetNodeId="5109194352282883599" resolveInfo="util" />
@@ -328,20 +223,7 @@
         </node>
         <node role="entities" roleId="h0os.212212067812118757" type="h0os.MtlQuery" typeId="h0os.212212067812118743" id="9160962589444181895" nodeInfo="ng">
           <property name="name" nameId="tpck.1169194664001" value="b" />
-          <node role="body" roleId="bwy9.6762883159245048634" type=".jetbrains.mps.core.query.structure.MqlComma" id="9160962589444199060" nodeInfo="ng">
-            <node role="right" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="9160962589444199063" nodeInfo="ng">
-              <property name="value" nameId="bwy9.6762883159245048053" value="44" />
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="h0os.MtlPropertyMacro" typeId="h0os.4273915927700364672" id="4273915927700610021" nodeInfo="ng">
-                <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
-                <node role="query" roleId="h0os.4273915927700364674" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="4273915927700610023" nodeInfo="ng">
-                  <property name="value" nameId="bwy9.6762883159245048053" value="123" />
-                </node>
-              </node>
-            </node>
-            <node role="left" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="9160962589444199059" nodeInfo="ng">
-              <property name="value" nameId="bwy9.6762883159245048053" value="2" />
-            </node>
-          </node>
+          <node role="body" roleId="bwy9.6762883159245048634" type="bwy9.MqlNullLiteral" typeId="bwy9.6762883159245048062" id="2486372104242423180" nodeInfo="ng" />
         </node>
       </node>
       <node role="contextNode" roleId="h0os.212212067812118810" type="xsnc.MqlNodeType" typeId="xsnc.4260762357825047862" id="6960281617114628963" nodeInfo="ng">
@@ -625,25 +507,7 @@
     </node>
     <node role="entities" roleId="h0os.212212067812118757" type="h0os.MtlQuery" typeId="h0os.212212067812118743" id="212212067812146075" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getZero" />
-      <node role="body" roleId="bwy9.6762883159245048634" type=".jetbrains.mps.core.query.structure.MqlComma" id="212212067812147807" nodeInfo="ng">
-        <node role="right" type="bwy9.MqlArithmetic" typeId="bwy9.6762883159245048040" id="212212067812147811" nodeInfo="ng">
-          <property name="kind" nameId="bwy9.6762883159245048047" value="2" />
-          <node role="right" roleId="bwy9.6762883159245048021" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="212212067812147814" nodeInfo="ng">
-            <property name="value" nameId="bwy9.6762883159245048053" value="6" />
-          </node>
-          <node role="left" roleId="bwy9.6762883159245048020" type="bwy9.MqlVariableReference" typeId="bwy9.3435983127247055506" id="3435983127247184270" nodeInfo="ng">
-            <link role="var" roleId="bwy9.3435983127247055512" targetNodeId="3435983127247184266" resolveInfo="rr" />
-          </node>
-        </node>
-        <node role="left" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="3435983127247184265" nodeInfo="ng">
-          <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="3435983127247184266" nodeInfo="ng">
-            <property name="name" nameId="tpck.1169194664001" value="rr" />
-          </node>
-          <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="3435983127247184269" nodeInfo="ng">
-            <property name="value" nameId="bwy9.6762883159245048053" value="7" />
-          </node>
-        </node>
-      </node>
+      <node role="body" roleId="bwy9.6762883159245048634" type="bwy9.MqlNullLiteral" typeId="bwy9.6762883159245048062" id="2486372104242423203" nodeInfo="ng" />
     </node>
   </root>
   <root type="e5td.WflowExecutable" typeId="e5td.3373821274546687033" id="3373821274546690914" nodeInfo="ng">
