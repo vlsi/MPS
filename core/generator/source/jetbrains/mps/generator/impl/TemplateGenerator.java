@@ -196,9 +196,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // advance blocked reduction data
       getBlockedReductionsData().advanceStep();
     }
-    if (hasPostponedReference(getOutputModel().getRootNodes())) {
-      System.out.println("PostponedReference in the output model!!!");
-    }
+//    if (hasPostponedReference(getOutputModel().getRootNodes())) {
+//      System.out.println("PostponedReference in the output model!!!");
+//    }
     return myChanged;
   }
 
@@ -234,7 +234,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     if (!isPrimary && !myChanged && rootsConsumed.isEmpty()) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
-        System.out.println("Could have had delta builder here, but can't due to active weavings");
+        myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
         myDeltaBuilder = new DeltaBuilder();
       }
