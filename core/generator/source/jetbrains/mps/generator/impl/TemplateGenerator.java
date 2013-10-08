@@ -236,7 +236,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
-        myDeltaBuilder = new DeltaBuilder();
+        myDeltaBuilder = createDeltaBuilder();
       }
     }
     // copy roots
@@ -433,6 +433,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
     return myExecutionContext;
+  }
+
+  protected DeltaBuilder createDeltaBuilder() {
+    return DeltaBuilder.newSingleThreadDeltaBuilder();
   }
 
   @Nullable

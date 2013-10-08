@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
@@ -129,6 +130,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       }
     }
     return super.getDefaultExecutionContext(inputNode);
+  }
+
+  @Override
+  protected DeltaBuilder createDeltaBuilder() {
+    return DeltaBuilder.newConcurrentDeltaBuilder();
   }
 
   private void pushTask(RootGenerationTask task, Pair<SNode, SNodeReference> pair, QueryExecutionContext executionContext) {
