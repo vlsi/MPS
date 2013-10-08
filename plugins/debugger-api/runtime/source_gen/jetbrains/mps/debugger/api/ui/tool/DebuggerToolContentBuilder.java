@@ -103,7 +103,7 @@ public class DebuggerToolContentBuilder implements Disposable {
   private ActionGroup createActionToolbar(RunnerLayoutUi ui, RunContentDescriptor contentDescriptor) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
     //  TODO use context to get data to the action 
-    RestartAction restartAction = new RestartAction(myExecutor, myRunner, myExecutionResult.getProcessHandler(), contentDescriptor, myEnvironment);
+    RestartAction restartAction = new RestartAction(myExecutor, myRunner, contentDescriptor, myEnvironment);
     restartAction.registerShortcut(ui.getComponent());
     actionGroup.add(restartAction);
     actionGroup.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup")));

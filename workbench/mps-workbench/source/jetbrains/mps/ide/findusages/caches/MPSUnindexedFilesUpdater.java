@@ -52,7 +52,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   @Override
   public VirtualFile[] queryNeededFiles(ProgressIndicator indicator) {
-    final CollectingContentIterator finder = myIndex.createContentIterator(indicator, myProject);
+    final CollectingContentIterator finder = myIndex.createContentIterator(indicator);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override

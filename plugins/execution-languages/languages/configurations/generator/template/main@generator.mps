@@ -2146,8 +2146,8 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="666608846720245929" nodeInfo="nn" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="666608846720245930" nodeInfo="in">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k39q.~SettingsEditor" resolveInfo="SettingsEditor" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="666608846720245931" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8d8y.~JDOMExternalizable" resolveInfo="JDOMExternalizable" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3007626430849631741" nodeInfo="in">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jj9h.~ConfigurationPerRunnerSettings" resolveInfo="ConfigurationPerRunnerSettings" />
           </node>
         </node>
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="666608846720245932" nodeInfo="ir">
@@ -2169,8 +2169,8 @@
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="666608846720245950" nodeInfo="igu">
         <property name="name" nameId="tpck.1169194664001" value="createRunnerSettings" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="666608846720245951" nodeInfo="nn" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="666608846720245952" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8d8y.~JDOMExternalizable" resolveInfo="JDOMExternalizable" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3007626430849636537" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jj9h.~ConfigurationPerRunnerSettings" resolveInfo="ConfigurationPerRunnerSettings" />
         </node>
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="666608846720245953" nodeInfo="ir">
           <property name="name" nameId="tpck.1169194664001" value="provider" />
