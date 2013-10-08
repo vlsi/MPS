@@ -6,10 +6,10 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="q5nm" modelUID="r:230b4cda-f32b-40d2-b83d-99b1e4b9eb9b(jetbrains.mps.core.syntax.structure)" version="-1" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075242991059" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SSource" />
+    <property name="rootable" nameId="tpce.1096454100552" value="true" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <property name="name" nameId="tpck.1169194664001" value="SSource" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5073985075243149403" nodeInfo="ig">
@@ -41,10 +41,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243001587" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SLexem" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SLexem" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Lexer" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5073985075243238823" resolveInfo="SLexerPart" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5073985075243001591" nodeInfo="ig">
@@ -70,10 +70,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243001589" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SSymbol" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SSymbol" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5989029785191985488" nodeInfo="ig">
@@ -87,10 +87,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243001592" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SRule" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SRule" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5073985075243001599" nodeInfo="ig">
@@ -101,10 +101,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243001593" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SNonTerm" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SNonTerm" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="non-term" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3135327435335338954" resolveInfo="SGrammarPart" />
@@ -125,10 +125,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243001597" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SSymbolRef" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SSymbolRef" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5073985075243002163" nodeInfo="ig">
@@ -153,10 +153,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243001601" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SRegex" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SRegex" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="/regexp/" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Lexer" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -166,10 +166,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243002170" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SNamedPattern" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SNamedPattern" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Lexer" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5073985075243238823" resolveInfo="SLexerPart" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5073985075243144273" nodeInfo="ig">
@@ -186,10 +186,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243002176" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SAction" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SAction" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Target" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5989029785192054926" nodeInfo="ig">
@@ -197,18 +197,18 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243144311" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SType" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Target" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243144313" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SPrio" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SPrio" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="%prio" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3135327435335338954" resolveInfo="SGrammarPart" />
@@ -224,10 +224,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243144320" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SReference" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SReference" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5073985075243144321" nodeInfo="ig">
@@ -238,10 +238,10 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243144347" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SInputRef" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SInputRef" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Lexer" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5073985075243144349" nodeInfo="ig">
@@ -256,19 +256,19 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5073985075243238823" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SLexerPart" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SLexerPart" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;empty&gt;" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Lexer" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2481283025450046972" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SLineComment" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SLineComment" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Lexer" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5073985075243238823" resolveInfo="SLexerPart" />
@@ -278,19 +278,19 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3135327435335338954" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SGrammarPart" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SGrammarPart" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;empty&gt;" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4242261035235310866" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="STargetLanguage" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="STargetLanguage" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Target" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
@@ -299,26 +299,26 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
   </root>
   <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5073985075243144315" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="SPrioKind" />
     <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="custom" />
     <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="SPrioKind" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Grammar" />
     <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="5073985075243144316" />
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5073985075243144316" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="LEFT" />
       <property name="internalValue" nameId="tpce.1083923523171" value="LEFT" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="LEFT" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="LEFT" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5073985075243144317" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="RIGHT" />
       <property name="internalValue" nameId="tpce.1083923523171" value="RIGHT" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="RIGHT" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="RIGHT" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5073985075243144318" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="NONASSOC" />
       <property name="internalValue" nameId="tpce.1083923523171" value="NONASSOC" />
       <property name="javaIdentifier" nameId="tpce.1192116978809" value="NONASSOC" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="NONASSOC" />
     </node>
   </root>
 </model>

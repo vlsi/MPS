@@ -176,6 +176,8 @@ public class SNonTerm_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
       style.set(StyleAttributes.SELECTABLE, false);
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
   }
@@ -257,6 +259,8 @@ public class SNonTerm_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
   }
