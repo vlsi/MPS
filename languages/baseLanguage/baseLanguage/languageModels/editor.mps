@@ -14468,6 +14468,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4898614932449980389" nodeInfo="nn">
+      <property name="text" nameId="tpc2.1073389577007" value="A deprecated type of empty line. Run migrations or use PlaceholderMember instead." />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="4898614932449980390" nodeInfo="nn">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>

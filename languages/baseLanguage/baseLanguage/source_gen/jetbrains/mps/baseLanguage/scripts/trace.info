@@ -2522,6 +2522,47 @@
     </scopeInfo>
     <unitInfo nodeId="7159297221554223394" fileName="MigrateLocalStaticFieldReference_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticFieldReference_MigrationScript" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/7416165818498990440">
+    <nodeInfo nodeId="7416165818498990440" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="12" startPosition="98" endLine="13" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7416165818499014522" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7416165818499048214" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="7416165818498990440" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="13" startPosition="73" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="13" startPosition="73" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7416165818498990440" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="12" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplacePlaceholderMethodDeclaration_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="104" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="83" />
+    <scopeInfo nodeId="7416165818499013840" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="127" />
+    <scopeInfo nodeId="7416165818499013835" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="108" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="7416165818499013833" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="7416165818499013833" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="13" startPosition="73" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="7416165818498990440" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="12" startPosition="98" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="7416165818498990440" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="12" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7416165818498990440" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7416165818499013833" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ReplacePlaceholderMethodDeclaration_MigrationScript$1" />
+    <unitInfo nodeId="7416165818498990440" fileName="ReplacePlaceholderMethodDeclaration_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ReplacePlaceholderMethodDeclaration_MigrationScript" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/842610415962474204">
     <nodeInfo nodeId="842610415962474211" fileName="SModelMethodMigration.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sourceConcept" />
     <nodeInfo nodeId="842610415962474217" fileName="SModelMethodMigration.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="smodelFunctionConcept" />

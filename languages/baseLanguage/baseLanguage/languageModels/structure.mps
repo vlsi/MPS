@@ -3284,10 +3284,12 @@
     <property name="name" nameId="tpck.1169194664001" value="PlaceholderMethodDeclaration" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="empty line" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Use PlaceholderMember instead" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4448365440074377935" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7416165818501617259" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6329021646629104957" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TextCommentPart" />
