@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3muxx2qr6p8tsdgymw7wmgk348x9zzw">
+<dependencies version="2" modelHash="3fruebk2np5087908guv778h7t8tkrl">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.cellProviders(MPS.Editor/jetbrains.mps.lang.editor.cellProviders@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.lang.editor.generator.internal(MPS.Editor/jetbrains.mps.lang.editor.generator.internal@java_stub)" />
@@ -508,7 +508,7 @@
     <dep model="r:73e15084-90ca-4883-8020-50a625923cba(jetbrains.mps.core.notation.structure)" />
     <file name="SNotationPredicate_Editor.java" />
   </source>
-  <source id="2038289530662958224" name="SNotationStylesImport_Editor" hash="-b8ay9bpxyrmimd0tj0kgy3sgw8u5ip0">
+  <source id="2038289530662958224" name="SNotationStylesImport_Editor" hash="a1j2jw9dtlk1jqwbw02ykj07c3w70co">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -519,7 +519,7 @@
     <dep model="r:73e15084-90ca-4883-8020-50a625923cba(jetbrains.mps.core.notation.structure)" />
     <file name="SNotationStylesImport_Editor.java" />
   </source>
-  <source id="3712611346756435646" name="SNotationStyle_Editor" hash="7x7vaktjhhltb97t96u8gv2lob81vh4">
+  <source id="3712611346756435646" name="SNotationStyle_Editor" hash="-ym2zum9928nlyuevn9zll00oh90bkc">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellProviders(MPS.Editor/jetbrains.mps.nodeEditor.cellProviders@java_stub)" />
@@ -556,7 +556,7 @@
     <dep model="r:73e15084-90ca-4883-8020-50a625923cba(jetbrains.mps.core.notation.structure)" />
     <file name="SNotationStyleSelector_Editor.java" />
   </source>
-  <source id="3712611346757647580" name="SAllNotationsSelector_Editor" hash="7el18bqzgiagnnjkdzq8tqcf2oxpo9">
+  <source id="3712611346757647580" name="SAllNotationsSelector_Editor" hash="7frgwb7zua14i5uxt4w1gp5dwjdy23o">
     <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
@@ -564,7 +564,7 @@
     <dep model="r:73e15084-90ca-4883-8020-50a625923cba(jetbrains.mps.core.notation.structure)" />
     <file name="SAllNotationsSelector_Editor.java" />
   </source>
-  <source id="3712611346757945909" name="SAllTermsSelector_Editor" hash="19gig0k2jjsxzh0iiekjp20cfw7o8xg">
+  <source id="3712611346757945909" name="SAllTermsSelector_Editor" hash="51oa4hcg5f9kryk7cdgm2sj79sb2ash">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -747,7 +747,7 @@
     <dep model="r:73e15084-90ca-4883-8020-50a625923cba(jetbrains.mps.core.notation.structure)" />
     <file name="STokenType_Editor.java" />
   </source>
-  <source id="65776729174748176" name="SNamedPattern_Editor" hash="cg9ynqgc1ej8ywqdc1gic5harone03i">
+  <source id="65776729174748176" name="SNamedPattern_Editor" hash="8ufj3cat1mluc5qaw9pk93j5wiqlcgl">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
