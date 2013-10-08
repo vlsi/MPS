@@ -538,6 +538,24 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-core/languages/languageDesign/table/runtime/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mps-language-design">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/gen.transform/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/query/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/solutions/jetbrains.mps.core.util/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/smodel/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/gen.transform/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/syntax/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/template/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/syntaxJava/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/notation/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/workflow/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/workflow/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/smodel/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/structure/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/gen/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/metadata/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-language-design/languages/structure/solutions/pluginSolution/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-testing">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/source_gen" isTestSource="false" />
