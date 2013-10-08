@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.UIEditorComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.Language;
@@ -104,7 +105,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
   public ConsoleTool(Project project) {
-    super(project, "Console", -1, IconContainer.ICON_d0a61, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Console", -1, MPSIcons.ToolWindows.OpenTerminal_13x13, ToolWindowAnchor.BOTTOM, false);
   }
 
 
