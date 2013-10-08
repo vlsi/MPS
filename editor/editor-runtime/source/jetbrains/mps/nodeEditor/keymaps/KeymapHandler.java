@@ -34,14 +34,12 @@ import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -113,9 +111,8 @@ public abstract class KeymapHandler<E> {
       keymapOwnerCell = keymapOwnerCell.getParent();
     }
 
-    SNode node = editorContext.getEditorComponent().getEditedNode();
-    if (node != null) {
-      SModel model = node.getModel();
+    SModel model = editorContext.getModel();
+    if (model != null) {
 
       Set<SModuleReference> importedAndExtendedLanguages = new HashSet<SModuleReference>();
       for (SModuleReference langRef : SModelOperations.getAllImportedLanguages(model)) {
