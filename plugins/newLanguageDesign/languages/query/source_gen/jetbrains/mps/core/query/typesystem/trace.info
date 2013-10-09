@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/228266671027905045">
     <nodeInfo nodeId="228266671027905055" fileName="typeof_MqlExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="228266671027905055" fileName="typeof_MqlExpression_InferenceRule.java" startLine="20" startPosition="55" endLine="21" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -391,6 +391,58 @@
       <varInfo nodeId="5804859299351493537" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="5804859299351493537" fileName="check_Unary_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_Unary_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/8194562227701095827">
+    <nodeInfo nodeId="8194562227701150760" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="23" startPosition="110" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701200305" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="26" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="30" startPosition="62" endLine="31" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="46" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="42" startPosition="5" endLine="43" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="43" startPosition="130" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_CollectionElementTypes_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="8194562227701115046" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="28" startPosition="267" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8194562227701237218" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="27" startPosition="119" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8194562227701151925" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="26" startPosition="254" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="19" startPosition="59" endLine="19" endPosition="59" />
+    <scopeInfo nodeId="8194562227701115047" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="23" startPosition="110" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="46" endLine="38" endPosition="69" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="31" endPosition="264">
+      <varInfo nodeId="8194562227701262117" varName="_reporter_2309309498" />
+      <varInfo nodeId="8194562227701262117" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="42" startPosition="5" endLine="44" endPosition="45">
+      <varInfo nodeId="8194562227701095827" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8194562227701237219" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="28" startPosition="267" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8194562227701151931" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="27" startPosition="119" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="8194562227701095827" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701151925" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="26" startPosition="254" endLine="34" endPosition="5">
+      <varInfo nodeId="8194562227701151927" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095828" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="34" endPosition="5">
+      <varInfo nodeId="8194562227701200308" varName="firstElementType" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8194562227701095827" varName="mqlCollectionLiteral" />
+      <varInfo nodeId="8194562227701095827" varName="status" />
+      <varInfo nodeId="8194562227701095827" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_CollectionElementTypes_NonTypesystemRule" />
   </root>
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/8595827001410591240">
     <nodeInfo nodeId="8595827001410591251" fileName="check_BinaryExpr_NonTypesystemRule.java" startLine="21" startPosition="126" endLine="22" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

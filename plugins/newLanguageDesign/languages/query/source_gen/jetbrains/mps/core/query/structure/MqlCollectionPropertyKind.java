@@ -13,7 +13,8 @@ public enum MqlCollectionPropertyKind {
   IS_EMPTY("isEmpty", 4),
   IS_NOT_EMPTY("isNotEmpty", 5),
   SORT("sort", 6),
-  REVERSE("reverse", 7);
+  REVERSE("reverse", 7),
+  TOSET("toSet", 8);
 
   private String myName;
 
@@ -34,6 +35,7 @@ public enum MqlCollectionPropertyKind {
     ListSequence.fromList(list).addElement(MqlCollectionPropertyKind.IS_NOT_EMPTY);
     ListSequence.fromList(list).addElement(MqlCollectionPropertyKind.SORT);
     ListSequence.fromList(list).addElement(MqlCollectionPropertyKind.REVERSE);
+    ListSequence.fromList(list).addElement(MqlCollectionPropertyKind.TOSET);
     return list;
   }
 
@@ -65,6 +67,9 @@ public enum MqlCollectionPropertyKind {
     }
     if (value.equals(MqlCollectionPropertyKind.REVERSE.getValueAsString())) {
       return MqlCollectionPropertyKind.REVERSE;
+    }
+    if (value.equals(MqlCollectionPropertyKind.TOSET.getValueAsString())) {
+      return MqlCollectionPropertyKind.TOSET;
     }
     return MqlCollectionPropertyKind.getDefault();
   }

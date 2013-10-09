@@ -4,7 +4,7 @@ package jetbrains.mps.core.query.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class MqlSetLiteral_BehaviorDescriptor extends MqlExpression_BehaviorDescriptor {
+public class MqlSetLiteral_BehaviorDescriptor extends MqlCollectionLiteral_BehaviorDescriptor {
   public MqlSetLiteral_BehaviorDescriptor() {
   }
 
