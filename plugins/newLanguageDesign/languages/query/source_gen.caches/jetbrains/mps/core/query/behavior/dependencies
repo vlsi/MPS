@@ -19,6 +19,8 @@
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlCollectionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlCondition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlDotExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlEmptyList_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlEmptySet_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlFunctionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlImport_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlIntLiteral_BehaviorDescriptor" />
@@ -411,6 +413,40 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.MqlEmptyCollection_BehaviorDescriptor" file="MqlEmptyCollection_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlExpression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.MqlEmptyList_Behavior" file="MqlEmptyList_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.MqlEmptyList_BehaviorDescriptor" file="MqlEmptyList_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlEmptyCollection_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlEmptyList_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.MqlEmptySet_Behavior" file="MqlEmptySet_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.MqlEmptySet_BehaviorDescriptor" file="MqlEmptySet_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlEmptyCollection_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlEmptySet_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.query.behavior.MqlExpression_Behavior" file="MqlExpression_Behavior.java">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="MqlArithmetic_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlArithmetic_BehaviorDescriptor" />
   <unitInfo fileName="MqlAssignment_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlAssignment_BehaviorDescriptor" />
   <unitInfo fileName="MqlBinaryExpr_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlBinaryExpr_BehaviorDescriptor" />
@@ -20,6 +20,9 @@
   <unitInfo fileName="MqlCollectionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCollectionType_BehaviorDescriptor" />
   <unitInfo fileName="MqlCondition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCondition_BehaviorDescriptor" />
   <unitInfo fileName="MqlDotExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlDotExpression_BehaviorDescriptor" />
+  <unitInfo fileName="MqlEmptyCollection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlEmptyCollection_BehaviorDescriptor" />
+  <unitInfo fileName="MqlEmptyList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlEmptyList_BehaviorDescriptor" />
+  <unitInfo fileName="MqlEmptySet_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlEmptySet_BehaviorDescriptor" />
   <unitInfo fileName="MqlExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlExpression_BehaviorDescriptor" />
   <unitInfo fileName="MqlFunctionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlFunctionType_BehaviorDescriptor" />
   <unitInfo fileName="MqlImport_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlImport_BehaviorDescriptor" />
@@ -1998,6 +2001,42 @@
       <varInfo nodeId="6601450967974124778" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6601450967974124778" fileName="MqlCondition_Behavior.java" startLine="15" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCondition_Behavior" />
+  </root>
+  <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/6727112993806787856">
+    <nodeInfo nodeId="6727112993806791997" fileName="MqlEmptyList_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993806792987" fileName="MqlEmptyList_Behavior.java" startLine="15" startPosition="110" endLine="16" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6727112993806805455" fileName="MqlEmptyList_Behavior.java" startLine="16" startPosition="139" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727112993806787856" fileName="MqlEmptyList_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6727112993806787856" fileName="MqlEmptyList_Behavior.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027861783#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="6727112993806787858" fileName="MqlEmptyList_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="6727112993806787856" fileName="MqlEmptyList_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="6727112993806787856" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6727112993806791116" fileName="MqlEmptyList_Behavior.java" startLine="14" startPosition="74" endLine="17" endPosition="20">
+      <varInfo nodeId="6727112993806792000" varName="listType" />
+    </scopeInfo>
+    <scopeInfo nodeId="6727112993806787856" fileName="MqlEmptyList_Behavior.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="6727112993806787856" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6727112993806787856" fileName="MqlEmptyList_Behavior.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlEmptyList_Behavior" />
+  </root>
+  <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/6727112993809074360">
+    <nodeInfo nodeId="6727112993809074578" fileName="MqlEmptySet_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993809074584" fileName="MqlEmptySet_Behavior.java" startLine="15" startPosition="116" endLine="16" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6727112993809074594" fileName="MqlEmptySet_Behavior.java" startLine="16" startPosition="139" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727112993809074360" fileName="MqlEmptySet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6727112993809074360" fileName="MqlEmptySet_Behavior.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027861783#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="6727112993809074362" fileName="MqlEmptySet_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="6727112993809074360" fileName="MqlEmptySet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="6727112993809074360" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6727112993809074369" fileName="MqlEmptySet_Behavior.java" startLine="14" startPosition="74" endLine="17" endPosition="20">
+      <varInfo nodeId="6727112993809074579" varName="listType" />
+    </scopeInfo>
+    <scopeInfo nodeId="6727112993809074360" fileName="MqlEmptySet_Behavior.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="6727112993809074360" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6727112993809074360" fileName="MqlEmptySet_Behavior.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlEmptySet_Behavior" />
   </root>
   <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/7862448911997365756">
     <nodeInfo nodeId="7862448911997365869" fileName="MqlListLiteral_Behavior.java" startLine="22" startPosition="131" endLine="23" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

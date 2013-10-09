@@ -657,6 +657,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getType_228266671027861783", new Object[]{}), "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true);
   }
 
+  public static SNode sourceNodeQuery_6727112993807715326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "elementType", true);
+  }
+
+  public static SNode sourceNodeQuery_6727112993810608820(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "elementType", true);
+  }
+
   public static SNode sourceNodeQuery_5343139407541224607(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expr", true);
   }
