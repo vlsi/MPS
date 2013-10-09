@@ -20,7 +20,7 @@ public class SNonTerm_Behavior {
   }
 
   public static boolean virtual_isList_1030525575875844509(final SNode thisNode) {
-    return (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).count() == 2 && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).count() == 2 && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "parts", true);
       }

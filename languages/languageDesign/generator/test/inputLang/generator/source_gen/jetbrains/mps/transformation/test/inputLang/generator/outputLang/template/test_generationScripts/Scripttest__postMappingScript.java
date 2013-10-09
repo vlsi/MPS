@@ -28,7 +28,7 @@ public class Scripttest__postMappingScript implements TemplateMappingScript {
   }
 
   public int getKind() {
-    return TemplateMappingScript.POSTPROCESS;
+    return POSTPROCESS;
   }
 
   public void apply(SModel model, ITemplateGenerator generator) {

@@ -26,7 +26,7 @@
     <unitInfo nodeId="4242261035235369535" fileName="STargetJava_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.syntax.java.behavior.STargetJava_Behavior" />
   </root>
   <root nodeRef="r:d0dfddbb-a939-4a44-b1d9-0b2ff7fa1ba6(jetbrains.mps.core.syntax.java.behavior)/5989029785192081029">
-    <nodeInfo nodeId="2028958085265258490" fileName="SJavaAction_Behavior.java" startLine="16" startPosition="109" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028958085265258490" fileName="SJavaAction_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237539799089" fileName="SJavaAction_Behavior.java" startLine="18" startPosition="115" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2028958085265278515" fileName="SJavaAction_Behavior.java" startLine="21" startPosition="168" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5989029785192081114" fileName="SJavaAction_Behavior.java" startLine="23" startPosition="7" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -48,7 +48,7 @@
     <scopeInfo nodeId="5989029785192081029" fileName="SJavaAction_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5989029785192081029" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5989029785192081102" fileName="SJavaAction_Behavior.java" startLine="16" startPosition="109" endLine="24" endPosition="18">
+    <scopeInfo nodeId="5989029785192081102" fileName="SJavaAction_Behavior.java" startLine="16" startPosition="103" endLine="24" endPosition="18">
       <varInfo nodeId="2028958085265258491" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="5989029785192081035" fileName="SJavaAction_Behavior.java" startLine="15" startPosition="75" endLine="26" endPosition="103" />

@@ -28,7 +28,7 @@ public class Scripttest__preMappingScript implements TemplateMappingScript {
   }
 
   public int getKind() {
-    return TemplateMappingScript.PREPROCESS;
+    return PREPROCESS;
   }
 
   public void apply(SModel model, ITemplateGenerator generator) {
