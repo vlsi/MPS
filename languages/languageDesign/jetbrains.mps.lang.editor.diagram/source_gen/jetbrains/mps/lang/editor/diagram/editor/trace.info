@@ -310,25 +310,25 @@
     <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="60" startPosition="33" endLine="61" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="64" startPosition="69" endLine="65" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="68" startPosition="81" endLine="69" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="92" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="73" startPosition="84" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="74" startPosition="31" endLine="75" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="75" startPosition="44" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="76" startPosition="33" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="77" startPosition="28" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="78" startPosition="60" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="80" startPosition="41" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="81" startPosition="42" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="83" startPosition="7" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="84" startPosition="36" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="85" startPosition="54" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="86" startPosition="42" endLine="87" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="87" startPosition="75" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="88" startPosition="59" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="90" startPosition="37" endLine="91" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="91" startPosition="74" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="92" startPosition="80" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="94" startPosition="12" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="92" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="73" startPosition="84" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="74" startPosition="31" endLine="75" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="75" startPosition="44" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="76" startPosition="33" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="77" startPosition="28" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="78" startPosition="60" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="80" startPosition="41" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="81" startPosition="42" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="83" startPosition="7" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="84" startPosition="36" endLine="85" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="85" startPosition="55" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="86" startPosition="42" endLine="87" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="87" startPosition="75" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="88" startPosition="59" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="90" startPosition="37" endLine="91" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="91" startPosition="74" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="92" startPosition="80" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="94" startPosition="12" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="103" startPosition="47" endLine="104" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="100" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_AbstractFigureParameter_cellMenu_wj8trg_a0a0#()V" />
     <nodeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
@@ -337,12 +337,12 @@
     <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="79" startPosition="44" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="79" startPosition="49" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_wj8trg_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="50" startPosition="59" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="89" startPosition="61" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="89" startPosition="61" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="41" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_wj8trg_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_wj8trg_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_wj8trg_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="100" startPosition="71" endLine="100" endPosition="71" />
     <scopeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="26" startPosition="47" endLine="27" endPosition="35" />
     <scopeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="30" startPosition="79" endLine="31" endPosition="63" />
@@ -351,7 +351,7 @@
     <scopeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="64" startPosition="69" endLine="65" endPosition="67" />
     <scopeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="68" startPosition="81" endLine="69" endPosition="66" />
     <scopeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="103" startPosition="47" endLine="104" endPosition="83" />
-    <scopeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="80" startPosition="41" endLine="82" endPosition="35" />
+    <scopeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="80" startPosition="41" endLine="82" endPosition="35" />
     <scopeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="100" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
@@ -370,9 +370,9 @@
       <varInfo nodeId="1094405431463781512" varName="editorContext" />
       <varInfo nodeId="1094405431463781512" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="90" startPosition="37" endLine="93" endPosition="107">
-      <varInfo nodeId="1094405431463781512" varName="manager" />
-      <varInfo nodeId="1094405431463781512" varName="opContext" />
+    <scopeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="90" startPosition="37" endLine="93" endPosition="107">
+      <varInfo nodeId="1094405431463801092" varName="manager" />
+      <varInfo nodeId="1094405431463801092" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="1094405431463777301" fileName="FigureParameterLinkPresentation.java" startLine="34" startPosition="89" endLine="38" endPosition="22">
@@ -392,16 +392,16 @@
       <varInfo nodeId="1094405431463777301" varName="editorContext" />
       <varInfo nodeId="1094405431463777301" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="92" endLine="95" endPosition="24">
-      <varInfo nodeId="1094405431463781512" varName="attributeConcept" />
-      <varInfo nodeId="1094405431463781512" varName="attributeKind" />
-      <varInfo nodeId="1094405431463781512" varName="editorCell" />
-      <varInfo nodeId="1094405431463781512" varName="provider" />
-      <varInfo nodeId="1094405431463781512" varName="style" />
+    <scopeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="92" endLine="95" endPosition="24">
+      <varInfo nodeId="1094405431463801092" varName="attributeConcept" />
+      <varInfo nodeId="1094405431463801092" varName="attributeKind" />
+      <varInfo nodeId="1094405431463801092" varName="editorCell" />
+      <varInfo nodeId="1094405431463801092" varName="provider" />
+      <varInfo nodeId="1094405431463801092" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="1094405431463781512" varName="editorContext" />
-      <varInfo nodeId="1094405431463781512" varName="node" />
+    <scopeInfo nodeId="1094405431463801092" fileName="FigureParameterLinkPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1094405431463801092" varName="editorContext" />
+      <varInfo nodeId="1094405431463801092" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1497735617373306357" fileName="FigureParameterLinkPresentation.java" startLine="99" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterLinkPresentation$ReplaceWith_AbstractFigureParameter_cellMenu_wj8trg_a0a0" />
     <unitInfo nodeId="1094405431463781512" fileName="FigureParameterLinkPresentation.java" startLine="59" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterLinkPresentation$_Inline_wj8trg_a0a" />
@@ -431,25 +431,25 @@
     <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="60" startPosition="33" endLine="61" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="64" startPosition="69" endLine="65" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="68" startPosition="81" endLine="69" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="92" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="73" startPosition="84" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="74" startPosition="31" endLine="75" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="75" startPosition="44" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="76" startPosition="33" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="77" startPosition="28" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="78" startPosition="60" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="80" startPosition="41" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="81" startPosition="42" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="83" startPosition="7" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="84" startPosition="36" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="85" startPosition="54" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="86" startPosition="42" endLine="87" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="87" startPosition="75" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="88" startPosition="59" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="90" startPosition="37" endLine="91" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="91" startPosition="74" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="92" startPosition="80" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="94" startPosition="12" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="92" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="73" startPosition="84" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="74" startPosition="31" endLine="75" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="75" startPosition="44" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="76" startPosition="33" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="77" startPosition="28" endLine="78" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="78" startPosition="60" endLine="79" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="80" startPosition="41" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="81" startPosition="42" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="83" startPosition="7" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="84" startPosition="36" endLine="85" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="85" startPosition="55" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="86" startPosition="42" endLine="87" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="87" startPosition="75" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="88" startPosition="59" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="90" startPosition="37" endLine="91" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="91" startPosition="74" endLine="92" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="92" startPosition="80" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="94" startPosition="12" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="103" startPosition="47" endLine="104" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="100" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_AbstractFigureParameter_cellMenu_t0ecyi_a0a0#()V" />
     <nodeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
@@ -458,12 +458,12 @@
     <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReplacementConceptName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="79" startPosition="44" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="79" startPosition="49" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_t0ecyi_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="50" startPosition="59" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="89" startPosition="61" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="89" startPosition="61" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="41" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_t0ecyi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_t0ecyi_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_t0ecyi_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="100" startPosition="71" endLine="100" endPosition="71" />
     <scopeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="26" startPosition="47" endLine="27" endPosition="35" />
     <scopeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="30" startPosition="79" endLine="31" endPosition="63" />
@@ -472,7 +472,7 @@
     <scopeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="64" startPosition="69" endLine="65" endPosition="67" />
     <scopeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="68" startPosition="81" endLine="69" endPosition="66" />
     <scopeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="103" startPosition="47" endLine="104" endPosition="83" />
-    <scopeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="80" startPosition="41" endLine="82" endPosition="39" />
+    <scopeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="80" startPosition="41" endLine="82" endPosition="39" />
     <scopeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="100" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
@@ -491,9 +491,9 @@
       <varInfo nodeId="1094405431463819909" varName="editorContext" />
       <varInfo nodeId="1094405431463819909" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="90" startPosition="37" endLine="93" endPosition="107">
-      <varInfo nodeId="1094405431463819909" varName="manager" />
-      <varInfo nodeId="1094405431463819909" varName="opContext" />
+    <scopeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="90" startPosition="37" endLine="93" endPosition="107">
+      <varInfo nodeId="1094405431463820022" varName="manager" />
+      <varInfo nodeId="1094405431463820022" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="1094405431463819848" fileName="FigureParameterPropertyPresentation.java" startLine="34" startPosition="89" endLine="38" endPosition="22">
@@ -513,16 +513,16 @@
       <varInfo nodeId="1094405431463819848" varName="editorContext" />
       <varInfo nodeId="1094405431463819848" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="92" endLine="95" endPosition="24">
-      <varInfo nodeId="1094405431463819909" varName="attributeConcept" />
-      <varInfo nodeId="1094405431463819909" varName="attributeKind" />
-      <varInfo nodeId="1094405431463819909" varName="editorCell" />
-      <varInfo nodeId="1094405431463819909" varName="provider" />
-      <varInfo nodeId="1094405431463819909" varName="style" />
+    <scopeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="92" endLine="95" endPosition="24">
+      <varInfo nodeId="1094405431463820022" varName="attributeConcept" />
+      <varInfo nodeId="1094405431463820022" varName="attributeKind" />
+      <varInfo nodeId="1094405431463820022" varName="editorCell" />
+      <varInfo nodeId="1094405431463820022" varName="provider" />
+      <varInfo nodeId="1094405431463820022" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="1094405431463819909" varName="editorContext" />
-      <varInfo nodeId="1094405431463819909" varName="node" />
+    <scopeInfo nodeId="1094405431463820022" fileName="FigureParameterPropertyPresentation.java" startLine="72" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1094405431463820022" varName="editorContext" />
+      <varInfo nodeId="1094405431463820022" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1497735617373306739" fileName="FigureParameterPropertyPresentation.java" startLine="99" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterPropertyPresentation$ReplaceWith_AbstractFigureParameter_cellMenu_t0ecyi_a0a0" />
     <unitInfo nodeId="1094405431463819909" fileName="FigureParameterPropertyPresentation.java" startLine="59" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterPropertyPresentation$_Inline_t0ecyi_a0a" />
@@ -1737,5 +1737,7 @@
     <unitInfo nodeId="6382742553261745560" fileName="CellModel_DiagramConnector_Editor.java" startLine="160" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor$_Inline_rubh59_a6a" />
     <unitInfo nodeId="6382742553261744676" fileName="CellModel_DiagramConnector_Editor.java" startLine="24" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor" />
   </root>
+  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8288068497636527978" />
+  <root nodeRef="r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)/8288068497637957392" />
 </debugInfo>
 
