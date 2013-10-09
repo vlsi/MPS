@@ -104,7 +104,6 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.ConceptPropertiesHelper" file="ConceptPropertiesHelper.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -118,7 +117,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
     <classNode dependClassName="jetbrains.mps.ide.mpsmigration.migration30.MigrationUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
