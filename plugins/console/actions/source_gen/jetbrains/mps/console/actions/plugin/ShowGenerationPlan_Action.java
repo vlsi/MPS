@@ -11,7 +11,9 @@ import org.apache.log4j.Priority;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,7 +31,7 @@ public class ShowGenerationPlan_Action extends BaseAction {
   public ShowGenerationPlan_Action() {
     super("Show Generation Plan", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -65,12 +67,17 @@ public class ShowGenerationPlan_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode command = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ShowGenPlan", null);
-      SLinkOperations.setTarget(command, "targetModel", SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ModelReference", null), true);
-      SPropertyOperations.set(SLinkOperations.getTarget(command, "targetModel", true), "fqName", ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
-      SPropertyOperations.set(SLinkOperations.getTarget(command, "targetModel", true), "name", SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
-      SPropertyOperations.set(SLinkOperations.getTarget(command, "targetModel", true), "stereotype", SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command);
+      final Wrappers._T<SNode> command = new Wrappers._T<SNode>();
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          command.value = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ShowGenPlan", null);
+          SLinkOperations.setTarget(command.value, "targetModel", SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ModelReference", null), true);
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "fqName", ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "name", SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
+          SPropertyOperations.set(SLinkOperations.getTarget(command.value, "targetModel", true), "stereotype", SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
+        }
+      });
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).executeCommand(command.value, null);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Priority.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowGenerationPlan", t);

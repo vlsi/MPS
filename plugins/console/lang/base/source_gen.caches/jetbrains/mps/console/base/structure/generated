@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9b1mkzsjmu1bvahp1o1bwtfm6q63k0a">
+<dependencies version="2" modelHash="wgwqeiq1xltr1rv55oo8yuwdevzaba">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-2b7a2rppfq1uhvwub5utjsuj27e8nm" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="-ad59z7wjh91ctwpbve1f4w40gh8l1ra">
+  <common hash="-5d8x3pvpk8nr9mrxiecq43y99me3894">
     <dep root="1111629987770987206" />
     <dep root="1583916890557930028" />
     <dep root="1769790395579407461" />
     <dep root="1769790395579407473" />
+    <dep root="2197843344733553097" />
+    <dep root="2197843344733570260" />
+    <dep root="2197843344734522794" />
     <dep root="2348043250036118117" />
     <dep root="2348043250037290416" />
     <dep root="2348043250037383180" />
@@ -59,5 +62,8 @@
   <source id="473081947980701568" name="HelpCommand" hash="-nycqdzzz6aa72ve36h2bhga0vhboxn" />
   <source id="473081947981012231" name="ConsoleHelpProvider" hash="-3mt4kyk78vwo7h6g7a445yhpixjxubp" />
   <source id="1583916890557930028" name="ConsoleRoot" hash="1h1zaivgfywkci8fdca6cdi3cyifvjm" />
+  <source id="2197843344733553097" name="ConsoleDump" hash="jl87z94v2eij0aik4c83pdism299h8" />
+  <source id="2197843344733570260" name="AbstractConsoleScript" hash="8obwa2omf4jctvqgxr7w4m5aej5hej6" />
+  <source id="2197843344734522794" name="ConsoleScript" hash="46dic8xso6hj9v0137zacz26xwb17gz" />
 </dependencies>
 
