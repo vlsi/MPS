@@ -16,7 +16,7 @@ import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.project.Project;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
 import org.apache.log4j.Logger;
@@ -64,7 +64,7 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }

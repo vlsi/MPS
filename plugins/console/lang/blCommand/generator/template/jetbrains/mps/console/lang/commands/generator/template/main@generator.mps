@@ -2816,7 +2816,7 @@
         </node>
       </node>
       <node role="parameter" roleId="3xdn.9149301274757091504" type="3xdn.ActionCallGlobalParameter" typeId="3xdn.119903734736599867" id="119903734739745364" nodeInfo="ng">
-        <link role="declaration" roleId="3xdn.119903734736608658" targetNodeId="nx1.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+        <link role="declaration" roleId="3xdn.119903734736608658" targetNodeId="nx1.~CommonDataKeys%dPROJECT" resolveInfo="PROJECT" />
         <node role="value" roleId="3xdn.9149301274757091506" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="119903734739745365" nodeInfo="nn">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pt5l.~ProjectHelper%dtoIdeaProject(jetbrains%dmps%dproject%dProject)%ccom%dintellij%dopenapi%dproject%dProject" resolveInfo="toIdeaProject" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="pt5l.~ProjectHelper" resolveInfo="ProjectHelper" />

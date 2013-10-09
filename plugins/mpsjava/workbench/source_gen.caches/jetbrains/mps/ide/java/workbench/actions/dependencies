@@ -79,7 +79,7 @@
   <dependency className="jetbrains.mps.ide.java.workbench.actions.JavaWorkbenchActions" file="JavaWorkbenchActions.xml" />
   <dependency className="jetbrains.mps.ide.java.workbench.actions.NewModelFromSource_Action" file="NewModelFromSource_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
