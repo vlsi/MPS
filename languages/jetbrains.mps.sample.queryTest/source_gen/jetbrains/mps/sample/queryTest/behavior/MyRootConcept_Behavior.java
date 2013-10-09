@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -40,6 +41,9 @@ public class MyRootConcept_Behavior {
         final Set<SNode> s2 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).intersect(SetSequence.fromSet(s)));
         final Set<SNode> s3 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s2).disjunction(SetSequence.fromSet(s2)));
         final Set<SNode> s4 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s3).union(Sequence.fromIterable(Sequence.<SNode>singleton(null))));
+        final Iterable<Integer> emptyList = Sequence.fromIterable(Collections.<Integer>emptyList());
+        final Set<String> emptySet = SetSequence.fromSet(new LinkedHashSet<String>());
+        final Iterable<Integer> newList = Sequence.fromIterable(emptyList).concat(Sequence.fromIterable(ArrayUtils.fromIntegerArray(new int[]{1, 2})));
         return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))));
       }
     }.invoke();
