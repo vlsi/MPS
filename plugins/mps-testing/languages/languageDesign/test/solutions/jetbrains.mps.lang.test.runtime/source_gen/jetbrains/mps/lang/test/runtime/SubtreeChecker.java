@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
@@ -51,8 +50,8 @@ public class SubtreeChecker {
         typeCheckingContext.checkIfNotChecked(node, true);
         for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
           boolean isError = false;
-          if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer"))) != null) {
-            SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")));
+          if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer")) != null) {
+            SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"));
             for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
               if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
                 SNode type1 = typeCheckingContext.getTypeDontCheck(child);
@@ -109,8 +108,8 @@ public class SubtreeChecker {
     AnalysisResult<VarSet> initialized = program.analyze(new InitializedVariablesAnalyzer());
     AnalysisResult<VarSet> live = program.analyze(new LivenessAnalyzer());
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-      if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer"))) != null) {
-        SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")));
+      if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer")) != null) {
+        SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"));
         for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           Instruction instruction;
           List<Instruction> instructions = program.getInstructionsFor(child);
@@ -143,8 +142,8 @@ public class SubtreeChecker {
   public static void performOperations(SNode node) {
     for (SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (nodeToCheck != null) {
-        if (AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer"))) != null) {
-          for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer"))), "operations", true)) {
+        if (AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) != null) {
+          for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")), "operations", true)) {
             BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_1215601182156", new Object[]{nodeToCheck});
           }
         }

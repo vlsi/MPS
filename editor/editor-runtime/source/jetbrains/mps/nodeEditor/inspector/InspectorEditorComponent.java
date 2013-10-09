@@ -40,6 +40,13 @@ public class InspectorEditorComponent extends EditorComponent {
     rebuildEditorContent();
   }
 
+  public void editNode(final SNode node) {
+    if (myNode == node) {
+      return;
+    }
+    super.editNode(node);
+  }
+
   @Override
   protected boolean notifiesCreation() {
     return true;

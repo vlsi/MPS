@@ -16,8 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 
-import com.intellij.openapi.editor.colors.EditorColors;
-import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -42,7 +40,8 @@ import java.util.Set;
 public class TextLine {
   // COLORS: Remove hardcoded color
   private static final Color ERROR_COLOR =
-      StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 220, 220);
+      StyleRegistry.getInstance() != null && StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() :
+          new Color(255, 220, 220);
 
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
   private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
@@ -89,9 +88,9 @@ public class TextLine {
   private int myMinimalLength = 0;
 
   private double myLineSpacing = EditorSettings.getInstance().getLineSpacing();
-  private Color mySelectedTextColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
-  private Color myTextSelectedTextColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
-  private Color myTextSelectedBackgroundColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
+  private Color mySelectedTextColor = EditorSettings.getInstance().getSelectionForegroundColor();
+  private Color myTextSelectedTextColor = EditorSettings.getInstance().getSelectionForegroundColor();
+  private Color myTextSelectedBackgroundColor = EditorSettings.getInstance().getSelectionBackgroundColor();
 
   private Color myErrorColor = Color.red;
 
@@ -355,7 +354,7 @@ public class TextLine {
   public Color getTextColor() {
     init();
     if (myControlOvered) {
-      return EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.REFERENCE_HYPERLINK_COLOR).getForegroundColor();
+      return EditorSettings.getInstance().getHyperlinkColor();
     }
 
     if (!myNull && myTextColor != null) {
@@ -537,7 +536,7 @@ public class TextLine {
     if (getCaretPosition() != 0) {
       x--;
     }
-    g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_COLOR));
+    g.setColor(EditorSettings.getInstance().getCaretColor());
     g.drawRect(x, shiftY, 1, myTextHeight - 1);
   }
 

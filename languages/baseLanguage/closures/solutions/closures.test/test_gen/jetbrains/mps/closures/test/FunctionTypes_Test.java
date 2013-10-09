@@ -298,6 +298,9 @@ __switch__:
     };
   }
 
+  public FunctionTypes_Test() {
+  }
+
   public void accept_int(_FunctionTypes._return_P0_E0<? extends Integer> fun) {
   }
 

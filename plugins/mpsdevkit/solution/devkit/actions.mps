@@ -379,8 +379,8 @@
     <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
     <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     <property name="name" nameId="tpck.1169194664001" value="MPS Languages DevKit" />
-    <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
-    <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
+    <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="129.1" />
+    <property name="version" nameId="tp4k.5023285075122009369" value="3.1" />
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5883033498657755836" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ProjectNewActionsEx" />
@@ -2971,11 +2971,14 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1936689137035744531" resolveInfo="editorManager" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1936689137035744543" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vriy.~FileEditorManager%dopenFile(com%dintellij%dopenapi%dvfs%dVirtualFile,boolean)%ccom%dintellij%dopenapi%dfileEditor%dFileEditor[]" resolveInfo="openFile" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vriy.~FileEditorManager%dopenFile(com%dintellij%dopenapi%dvfs%dVirtualFile,boolean,boolean)%ccom%dintellij%dopenapi%dfileEditor%dFileEditor[]" resolveInfo="openFile" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363101102" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1936689137035744524" resolveInfo="file" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1936689137035744545" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7060329295092218218" nodeInfo="nn">
                   <property name="value" nameId="tpee.1068580123138" value="true" />
                 </node>
               </node>

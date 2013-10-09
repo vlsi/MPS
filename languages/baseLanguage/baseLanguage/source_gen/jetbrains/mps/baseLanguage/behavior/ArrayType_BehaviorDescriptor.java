@@ -11,6 +11,10 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor implem
   public ArrayType_BehaviorDescriptor() {
   }
 
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    return ArrayType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  }
+
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }

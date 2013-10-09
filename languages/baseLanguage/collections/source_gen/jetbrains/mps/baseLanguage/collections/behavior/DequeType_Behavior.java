@@ -28,6 +28,13 @@ public class DequeType_Behavior {
     return res;
   }
 
+  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+    if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.ListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.QueueType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SetType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SortedSetType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.MapType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SortedMapType".equals(conceptFqName)) {
+      return false;
+    }
+    return true;
+  }
+
   @Deprecated
   public static List<SNode> call_getAbstractCreators_7602110602933345651(SNode thisNode, SModel targetModel) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});

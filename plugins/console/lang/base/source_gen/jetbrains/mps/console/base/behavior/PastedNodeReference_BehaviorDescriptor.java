@@ -23,8 +23,8 @@ public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpre
     return PastedNodeReference_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
   }
 
-  public SNode virtual_getTargetNode_6322385757200662712(SNode thisNode) {
-    return PastedNodeReference_Behavior.virtual_getTargetNode_6322385757200662712(thisNode);
+  public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
+    return PastedNodeReference_Behavior.virtual_getTextWhenBroken_328850564593858078(thisNode);
   }
 
   @Override

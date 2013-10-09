@@ -92,14 +92,14 @@ public class NewRootAction extends AnAction {
             for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
               if (virtualFiles[0].getPath().startsWith(sourceRoot)) {
                 useModelRoot = root;
-                useSourceRoot = sourceRoot.endsWith(File.separator) ? sourceRoot : sourceRoot + File.separator;
+                useSourceRoot = sourceRoot.endsWith("/") ? sourceRoot : sourceRoot + "/";
                 break;
               }
             }
           }
           if(useModelRoot == null) return null;
 
-          final String modelName = virtualFiles[0].getPath().replace(useSourceRoot,"").replace(File.separator, ".");
+          final String modelName = virtualFiles[0].getPath().replace(useSourceRoot,"").replace("/", ".");
           EditableSModel descriptor = SModuleOperations.createModelWithAdjustments(modelName, useModelRoot,
             PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
           descriptor.save();

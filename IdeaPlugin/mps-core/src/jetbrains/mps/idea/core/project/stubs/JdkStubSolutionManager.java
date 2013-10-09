@@ -189,17 +189,22 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
 
     // first we check that this idea sdk uses the right jdk
     Sdk jdk = guessJdk(sdk);
-    assert jdk != null;
-    if (myJavaSdk != null && !myJavaSdk.equals(jdk)) {
-      // TODO specify that idea sdk didn't match jdk, not just difference
-      throw new DifferentSdkException(myJavaSdk, jdk);
+
+    // jdk can be null if user has specifically removed jdk jars from idea sdk
+    if (jdk != null) {
+      if (myJavaSdk != null && !myJavaSdk.equals(jdk)) {
+        // TODO specify that idea sdk didn't match jdk, not just difference
+        throw new DifferentSdkException(myJavaSdk, jdk);
+      }
+
+      if (myJavaSdk == null) setUpJdk(jdk);
     }
 
-    if (myJavaSdk == null) setUpJdk(jdk);
-
-    // we exclude jdk roots
+    // we exclude jdk roots (if jdk used)
     Set<VirtualFile> jdkRoots = new HashSet<VirtualFile>();
-    Collections.addAll(jdkRoots, jdk.getRootProvider().getFiles(OrderRootType.CLASSES));
+    if (jdk != null) {
+      Collections.addAll(jdkRoots, jdk.getRootProvider().getFiles(OrderRootType.CLASSES));
+    }
 
     // we exclude jars that are in MPS.Platform, they stay there
     List<String> excludedPaths = new ArrayList<String>();

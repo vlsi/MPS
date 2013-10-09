@@ -18,6 +18,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
+import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -137,6 +138,9 @@ public class OverrideImplementMethodsHelper {
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
         String name = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{})).first();
+        if (IdentifierConstraintsUtil.isJavaReserved(name)) {
+          name = "a" + NameUtil.capitalize(NameUtil.toValidIdentifier(name));
+        }
         if (MapSequence.fromMap(usedNames).containsKey(name)) {
           int i = MapSequence.fromMap(usedNames).get(name);
           i = i + 1;

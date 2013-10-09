@@ -15,32 +15,46 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new AbstractPrintStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new AbstractPrintExpression_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionCallDeclaredParameter_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
+        return Collections.<ConceptEditor>singletonList(new ActionCallGlobalParameter_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BLCommand_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new ModelsExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new BLExpression_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new ModelsShowable_Editor());
+        return Collections.<ConceptEditor>singletonList(new CallActionExpression_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new ModulesExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConsoleModelExpression_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new ModulesShowable_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomScope_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new NodesExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExceptionHolder_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new NodesShowable_Editor());
+        return Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new ProjectExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelProperties_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new RefsShowable_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelScope_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new ShowStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModuleProperties_Editor());
       case 13:
+        return Collections.<ConceptEditor>singletonList(new ModulesScope_Editor());
+      case 14:
+        return Collections.<ConceptEditor>singletonList(new QueryExpression_Editor());
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
+      case 16:
+        return Collections.<ConceptEditor>singletonList(new QueryParameterList_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new QueryParameterScope_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new ScopeParameter_Editor());
+      case 19:
+        return Collections.<ConceptEditor>singletonList(new ShowExpression_Editor());
+      case 20:
         return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
       default:
     }
@@ -48,6 +62,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.console.blCommand.editor.QueryExpression_EditorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new QueryExpression_EditorComponent());
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
@@ -58,5 +80,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintStatement", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModelsShowable", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.ModulesShowable", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.NodesShowable", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.RefsShowable", "jetbrains.mps.console.blCommand.structure.ShowStatement", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.blCommand.structure.ActionCallGlobalParameter", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.CallActionExpression", "jetbrains.mps.console.blCommand.structure.ConsoleModelExpression", "jetbrains.mps.console.blCommand.structure.CustomScope", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelProperties", "jetbrains.mps.console.blCommand.structure.ModelScope", "jetbrains.mps.console.blCommand.structure.ModuleProperties", "jetbrains.mps.console.blCommand.structure.ModulesScope", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ScopeParameter", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.blCommand.structure.QueryExpression"};
 }

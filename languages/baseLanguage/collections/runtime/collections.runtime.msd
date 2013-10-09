@@ -4,7 +4,6 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
     </modelRoot>
-    <modelRoot path="${module}/classes" type="java_classes" />
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.command.CommandProcessorEx;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
@@ -69,7 +69,7 @@ public class MigrationScript_ConvertSModule_Action extends BaseAction {
       SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)", "1537259975114071251");
 
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Convert SModule in methods", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
+      if (ModelAccess.instance().canWrite()) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
         executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));

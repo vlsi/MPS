@@ -526,6 +526,14 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="static field" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6468716278899126575" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="isVolatile" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6468716278899125786" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="isTransient" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178291753349" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
@@ -3276,10 +3284,12 @@
     <property name="name" nameId="tpck.1169194664001" value="PlaceholderMethodDeclaration" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="empty line" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Use PlaceholderMember instead" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4448365440074377935" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7416165818501617259" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6329021646629104957" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TextCommentPart" />
@@ -3714,6 +3724,12 @@
       <property name="role" nameId="tpce.1071599776563" value="entries" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="28358707492436943" resolveInfo="JavaImport" />
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758943" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="javaImports" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1262857012849338817" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1107461130800" resolveInfo="Classifier" />
+      </node>
     </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6528213125912070246" nodeInfo="ig">

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaratio
 import jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior;
+import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
 
 @Generated
 public class QueriesGenerated {
@@ -67,10 +67,6 @@ public class QueriesGenerated {
     return BaseToolDeclaration_Behavior.call_getGeneratedClassFQName_6547237850567463438(SLinkOperations.getTarget(_context.getNode(), "tool", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_4911466715314111435(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PreferencesComponentDeclaration_Behavior.call_getGeneratedClassFQName_4911466715314111449(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1215266495353(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PluginNameUtils.getApplicationPluginName(PluginNameUtils.getOriginalModule(_context));
   }
@@ -103,6 +99,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_954695933596677589(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ApplicationPluginConstructor");
+  }
+
+  public static Object referenceMacro_GetReferent_2327078090439497230(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false), "map_PreferenceComponentClass");
   }
 
   public static Object referenceMacro_GetReferent_8540716876878811475(final IOperationContext operationContext, final ReferenceMacroContext _context) {

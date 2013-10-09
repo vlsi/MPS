@@ -2,103 +2,107 @@
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/1392391688313307201">
-    <nodeInfo nodeId="1392391688313307240" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313364576" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1392391688313364586" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1392391688313365259" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313365251" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="36" startPosition="45" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="40" startPosition="62" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="41" startPosition="61" endLine="42" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313364612" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="39" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1392391688313364654" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="50" startPosition="9" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313364680" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="52" startPosition="206" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="57" startPosition="62" endLine="58" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="58" startPosition="60" endLine="59" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="65" startPosition="46" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="70" startPosition="5" endLine="71" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="71" startPosition="130" endLine="72" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="30" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_IdeaPlugin_Dependencies_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1392391688313364665" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="51" startPosition="45" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="28" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="55" startPosition="28" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1392391688313365265" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="37" startPosition="105" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1392391688313365099" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="54" startPosition="7" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="26" startPosition="83" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="22" startPosition="60" endLine="22" endPosition="60" />
-    <scopeInfo nodeId="1392391688313364575" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="111" />
-    <scopeInfo nodeId="1392391688313364585" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="103" />
-    <scopeInfo nodeId="1392391688313364611" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="39" endLine="48" endPosition="110" />
-    <scopeInfo nodeId="1392391688313364666" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="52" startPosition="206" endLine="53" endPosition="62" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="65" startPosition="46" endLine="66" endPosition="67" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="30" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="70" startPosition="5" endLine="72" endPosition="45">
+    <nodeInfo nodeId="3562028609769848950" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="248" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3562028609769829357" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1392391688313307240" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313364576" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="34" startPosition="39" endLine="35" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364586" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="37" endLine="39" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313365259" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="41" startPosition="9" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313365251" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="42" startPosition="45" endLine="43" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="9" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="46" startPosition="62" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="61" endLine="48" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313364612" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="53" startPosition="39" endLine="54" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364654" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313364680" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="58" startPosition="206" endLine="59" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="62" startPosition="9" endLine="63" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="63" startPosition="62" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="64" startPosition="60" endLine="65" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="71" startPosition="46" endLine="72" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="5" endLine="77" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="77" startPosition="130" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="82" startPosition="30" endLine="83" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_IdeaPlugin_Dependencies_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="3562028609769848948" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="119" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313364665" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="57" startPosition="45" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="75" startPosition="68" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="44" startPosition="28" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="61" startPosition="28" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1392391688313365265" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="43" startPosition="105" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313365099" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="60" startPosition="7" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="51" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="83" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="24" endPosition="60" />
+    <scopeInfo nodeId="3562028609769848949" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="248" endLine="29" endPosition="13" />
+    <scopeInfo nodeId="1392391688313364575" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="34" startPosition="39" endLine="35" endPosition="111" />
+    <scopeInfo nodeId="1392391688313364585" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="37" endLine="39" endPosition="103" />
+    <scopeInfo nodeId="1392391688313364611" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="53" startPosition="39" endLine="54" endPosition="110" />
+    <scopeInfo nodeId="1392391688313364666" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="58" startPosition="206" endLine="59" endPosition="62" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="71" startPosition="46" endLine="72" endPosition="67" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="82" startPosition="30" endLine="83" endPosition="17" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="5" endLine="78" endPosition="45">
       <varInfo nodeId="1392391688313307201" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1392391688313364574" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1392391688313364584" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="42" endPosition="227">
+    <scopeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="9" endLine="48" endPosition="227">
       <varInfo nodeId="1392391688313365267" varName="_reporter_2309309498" />
       <varInfo nodeId="1392391688313365267" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1392391688313364610" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364665" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="51" startPosition="45" endLine="54" endPosition="7">
+    <scopeInfo nodeId="1392391688313364665" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="57" startPosition="45" endLine="60" endPosition="7">
       <varInfo nodeId="1392391688313364667" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="59" endPosition="310">
+    <scopeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="62" startPosition="9" endLine="65" endPosition="310">
       <varInfo nodeId="1392391688313365157" varName="_reporter_2309309498" />
       <varInfo nodeId="1392391688313365157" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="1392391688313365266" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="28" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="1392391688313365100" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="55" startPosition="28" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="75" startPosition="68" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1392391688313365266" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="44" startPosition="28" endLine="49" endPosition="9" />
+    <scopeInfo nodeId="1392391688313365100" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="61" startPosition="28" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="75" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="1392391688313307201" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364567" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="44" endPosition="7">
+    <scopeInfo nodeId="1392391688313364567" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="41" startPosition="9" endLine="50" endPosition="7">
       <varInfo nodeId="1392391688313365260" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364603" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="50" startPosition="9" endLine="61" endPosition="7">
+    <scopeInfo nodeId="1392391688313364603" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="67" endPosition="7">
       <varInfo nodeId="1392391688313364655" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="62" endPosition="5">
+    <scopeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="51" startPosition="5" endLine="68" endPosition="5">
       <varInfo nodeId="1392391688313364601" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="26" startPosition="83" endLine="45" endPosition="5">
+    <scopeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="83" endLine="51" endPosition="5">
       <varInfo nodeId="1392391688313364565" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313307202" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="62" endPosition="5">
+    <scopeInfo nodeId="1392391688313307202" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="119" endLine="68" endPosition="5">
       <varInfo nodeId="1392391688313307241" varName="helper" />
     </scopeInfo>
-    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1392391688313307201" varName="plugin" />
       <varInfo nodeId="1392391688313307201" varName="status" />
       <varInfo nodeId="1392391688313307201" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="109" endLine="31" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$1" />
-    <unitInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="31" startPosition="18" endLine="35" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$2" />
-    <unitInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="46" startPosition="108" endLine="50" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$3" />
-    <unitInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule" />
+    <unitInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="33" startPosition="109" endLine="37" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$1" />
+    <unitInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="37" startPosition="18" endLine="41" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$2" />
+    <unitInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="52" startPosition="108" endLine="56" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$3" />
+    <unitInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule" />
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/1392391688313307204">
     <nodeInfo nodeId="1392391688313307212" fileName="IdeaPluginDependenciesHelper.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="plugin" />

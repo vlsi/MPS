@@ -5,6 +5,7 @@ package jetbrains.mps.console.ideCommands;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.console.ideCommands.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -14,7 +15,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)";
-  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.console.base", "jetbrains.mps.lang.smodel"};
+  private static String[] EXTENDED_LANGUAGE_IDS = new String[]{"jetbrains.mps.lang.smodel", "jetbrains.mps.console.base"};
   private EditorAspectDescriptorImpl myEditorAspectDescriptor;
 
   public Language() {
@@ -33,7 +34,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public IHelginsDescriptor getTypesystem() {
-    return null;
+    return new TypesystemDescriptor();
   }
 
   @Override

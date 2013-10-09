@@ -19,27 +19,27 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ModelsHolder implements IHolder<List<SModel>> {
-  private List<SModel> myModelDescriptors = new ArrayList<SModel>();
+public class ModelsHolder implements IHolder<List<SModelReference>> {
+  private List<SModelReference> myModelReferences = new ArrayList<SModelReference>();
   private IOperationContext myOperationContext = null;
 
-  public ModelsHolder(List<SModel> modelDescriptors, IOperationContext operationContext) {
-    myModelDescriptors = modelDescriptors;
+  public ModelsHolder(List<SModelReference> modelReferences, IOperationContext operationContext) {
+    myModelReferences = modelReferences;
     myOperationContext = operationContext;
   }
 
   @Override
-  public List<SModel> getObject() {
-    return Collections.unmodifiableList(myModelDescriptors);
+  public List<SModelReference> getObject() {
+    return Collections.unmodifiableList(myModelReferences);
   }
 
   public IOperationContext getOperationContext() {
@@ -49,7 +49,7 @@ public class ModelsHolder implements IHolder<List<SModel>> {
   @Override
   @NotNull
   public String getCaption() {
-    return NameUtil.formatNumericalString(myModelDescriptors.size(), "model");
+    return NameUtil.formatNumericalString(myModelReferences.size(), "model");
   }
 
   @Override
@@ -61,6 +61,4 @@ public class ModelsHolder implements IHolder<List<SModel>> {
   public void write(Element element, Project project) throws CantSaveSomethingException {
     throw new UnsupportedOperationException();
   }
-
-
 }

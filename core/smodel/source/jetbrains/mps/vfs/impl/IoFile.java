@@ -142,6 +142,7 @@ public class IoFile implements IFileEx {
   }
 
   @Override
+  @NotNull
   public IFile getDescendant(String suffix) {
     return new IoFile(new File(myFile, suffix));
   }

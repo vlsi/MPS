@@ -73,7 +73,7 @@ public class GoToRulesHelper {
       }
     }).toListSequence();
 
-    List<SNode> overriding = ListSequence.fromList(rules).where(new IWhereFilter<SNode>() {
+    final List<SNode> overriding = ListSequence.fromList(rules).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.typesystem.structure.InferenceRule");
       }
@@ -91,7 +91,7 @@ public class GoToRulesHelper {
       final SNode subConcept = getApplicableConcept(SLinkOperations.getTarget(overridingRule, "applicableNode", true));
       ListSequence.fromList(rules).removeWhere(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return getApplicableConcept(SLinkOperations.getTarget(it, "applicableNode", true)) == subConcept;
+          return getApplicableConcept(SLinkOperations.getTarget(it, "applicableNode", true)) == subConcept && !(ListSequence.fromList(overriding).contains(it));
         }
       });
     }

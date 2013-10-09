@@ -34,6 +34,9 @@ import jetbrains.mps.idea.java.trace.MpsSourcePosition;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
+import java.util.Set;
+
 public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponentEx<DebuggerSession> implements ProjectComponent {
   private DebuggerManagerEx myDebuggerManager;
   private final DebuggerManagerListener myDebuggerManagerListener = new MyDebuggerManagerListener();
@@ -89,6 +92,11 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
     return myDebuggerManager.getSession(myDebuggerManager.getDebugProcess(selectedContent.getProcessHandler()));
   }
 
+  @Override
+  protected Collection<? extends DebuggerSession> getAllSessions() {
+    return myDebuggerManager.getSessions();
+  }
+
   private class MyDebuggerManagerListener implements DebuggerManagerListener {
     @Override
     public void sessionCreated(DebuggerSession session) {
@@ -112,7 +120,7 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
     @Override
     public void changeEvent(DebuggerContextImpl newContext, int event) {
       if (event != DebuggerSession.EVENT_REFRESH_VIEWS_ONLY && event != DebuggerSession.EVENT_THREADS_REFRESH) {
-        reAttachPainter(newContext.getDebuggerSession());
+        reAttachPainter(newContext.getDebuggerSession(), true);
       }
     }
   }

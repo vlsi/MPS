@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.impl.RuleUtil;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -16,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
@@ -24,6 +25,22 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_NodeMacro_1207674454117(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.NodeMacro")) {
       SLinkOperations.setTarget(_context.getNewNode(), "mappingLabel", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.NodeMacro"), "mappingLabel", false), false);
+      SNode sourceNodeQuery = RuleUtil.getSourceNodeQuery(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.generator.structure.NodeMacro"));
+      if ((sourceNodeQuery != null)) {
+        if (SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
+          SLinkOperations.setTarget(SNodeOperations.cast(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", sourceNodeQuery, true);
+        } else if (SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
+          SLinkOperations.setTarget(SNodeOperations.cast(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", sourceNodeQuery, true);
+        } else if (SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.SwitchMacro")) {
+          SLinkOperations.setTarget(SNodeOperations.cast(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", sourceNodeQuery, true);
+        } else if (SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.IncludeMacro")) {
+          SLinkOperations.setTarget(SNodeOperations.cast(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.IncludeMacro"), "sourceNodeQuery", sourceNodeQuery, true);
+        } else if (SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.TemplateCallMacro")) {
+          SLinkOperations.setTarget(SNodeOperations.cast(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", sourceNodeQuery, true);
+        } else if (SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.TraceMacro")) {
+          SLinkOperations.setTarget(SNodeOperations.cast(_context.getNewNode(), "jetbrains.mps.lang.generator.structure.TraceMacro"), "sourceNodeQuery", sourceNodeQuery, true);
+        }
+      }
     }
   }
 

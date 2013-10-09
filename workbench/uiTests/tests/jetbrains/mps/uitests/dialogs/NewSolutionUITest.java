@@ -17,10 +17,10 @@ package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 
 import javax.swing.JTextField;

@@ -340,7 +340,7 @@ public class JavaParser {
             SNodeOperations.replaceWithAnother(unkNode, theRightNode);
 
             // FIXME maybe it's better to re-use auto model import 
-            Sequence.fromIterable(MultipleFilesParser.deepReferences(theRightNode)).where(new IWhereFilter<SReference>() {
+            Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).where(new IWhereFilter<SReference>() {
               public boolean accept(SReference it) {
                 return (SReference) it instanceof StaticReference;
               }

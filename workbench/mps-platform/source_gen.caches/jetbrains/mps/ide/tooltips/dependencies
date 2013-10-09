@@ -25,6 +25,7 @@
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.tooltips.ToolTip" file="ToolTip.java">
+    <classNode dependClassName="com.intellij.codeInsight.hint.HintUtil" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />

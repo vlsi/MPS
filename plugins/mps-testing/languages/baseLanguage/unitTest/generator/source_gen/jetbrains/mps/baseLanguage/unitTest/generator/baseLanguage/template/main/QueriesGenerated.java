@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -164,20 +163,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 
-  public static Iterable sourceNodesQuery_1171986734537(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Classifier_Behavior.call_staticFields_5292274854859223538(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_4326291070220018649(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ClassConcept_Behavior.call_fields_5292274854859383272(_context.getNode());
-  }
-
   public static Iterable sourceNodesQuery_1171932074411(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "testMethodList", true), "testMethod", true);
   }
 
   public static Iterable sourceNodesQuery_1171985035236(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Classifier_Behavior.call_methods_5292274854859311639(_context.getNode());
+    return Classifier_Behavior.call_members_1465982738252129704(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_9110034126561076473(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

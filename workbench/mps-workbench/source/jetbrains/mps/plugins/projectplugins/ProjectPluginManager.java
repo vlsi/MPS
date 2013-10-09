@@ -23,10 +23,10 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
+import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
@@ -36,12 +36,9 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.plugins.PluginContributor;
-import jetbrains.mps.plugins.PluginUtil;
-import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -49,27 +46,25 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import sun.swing.SwingUtilities2;
 
 import java.util.*;
 
 @State(
-  name = "ProjectPluginManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
+    name = "ProjectPluginManager",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$WORKSPACE_FILE$"
+        )
+    }
 )
-public class ProjectPluginManager implements ProjectComponent, PersistentStateComponent<PluginsState> {
+public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> implements ProjectComponent, PersistentStateComponent<PluginsState> {
   private static final Logger LOG = LogManager.getLogger(ProjectPluginManager.class);
 
   private EditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
 
-  private final Object myPluginsLock = new Object();
-  private List<BaseProjectPlugin> mySortedPlugins = new ArrayList<BaseProjectPlugin>();
   private PluginsState myState = new PluginsState();
-  private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private FileEditorManager myManager;
 
@@ -85,13 +80,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   @Override
   public void projectClosed() {
-
   }
 
   @Nullable
   public <T extends BaseGeneratedTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : mySortedPlugins) {
+      for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseGeneratedTool> tools = plugin.getTools();
         for (BaseGeneratedTool tool : tools) {
           if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
@@ -103,7 +97,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
     synchronized (myPluginsLock) {
-      for (BaseProjectPlugin plugin : mySortedPlugins) {
+      for (BaseProjectPlugin plugin : getPlugins()) {
         List<BaseProjectPrefsComponent> components = plugin.getPrefsComponents();
         for (BaseProjectPrefsComponent component : components) {
           if (component.getClass().getName().equals(componentClass.getName())) return (T) component;
@@ -116,7 +110,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public List<RelationDescriptor> getTabDescriptors() {
     synchronized (myPluginsLock) {
       List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
-      for (BaseProjectPlugin plugin : mySortedPlugins) {
+      for (BaseProjectPlugin plugin : getPlugins()) {
         result.addAll(plugin.getTabDescriptors());
       }
       return result;
@@ -133,71 +127,48 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     return result;
   }
 
-  //----------------RELOAD STUFF---------------------  
+  //----------------RELOAD STUFF---------------------
+  @Override
+  protected BaseProjectPlugin createPlugin(PluginContributor contributor) {
+    BaseProjectPlugin plugin = contributor.createProjectPlugin();
+    if (plugin == null) return null;
 
-  public void loadPlugins() {
-    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
-    assert !myProject.isDisposed();
-    if (myLoaded) return;
+    plugin.init(myProject);
 
-    synchronized (myPluginsLock) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          mySortedPlugins = new ArrayList<BaseProjectPlugin>();
-
-          Set<SModule> modules = new HashSet<SModule>();
-          modules.addAll(PluginUtil.collectPluginModules());
-          mySortedPlugins.addAll(PluginUtil.createPlugins(modules, new ProjectPluginCreator()));
-
-          Collection<PluginContributor> pluginContributors = PluginUtil.getPluginContributors();
-          for (PluginContributor c : pluginContributors) {
-            BaseProjectPlugin plugin = c.createProjectPlugin();
-            if (plugin == null) continue;
-            mySortedPlugins.add(plugin);
-          }
-
-          for (BaseProjectPlugin plugin : mySortedPlugins) {
-            try {
-              plugin.init(myProject);
-            } catch (Throwable t1) {
-              LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
-            }
-          }
-          spreadState(mySortedPlugins);
-        }
-      });
-    }
-
-    recreateTabbedEditors();
-
-    myLoaded = true;
+    return plugin;
   }
 
-  public void disposePlugins() {
-    assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
-    assert !myProject.isDisposed();
-    if (!myLoaded) return;
-
-    synchronized (myPluginsLock) {
-      Collections.reverse(mySortedPlugins);
-      collectState(mySortedPlugins);
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (BaseProjectPlugin plugin : mySortedPlugins) {
-            try {
-              plugin.dispose();
-            } catch (Throwable t) {
-              LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
-            }
-          }
-        }
-      });
-      mySortedPlugins.clear();
+  @Override
+  protected void afterPluginsCreated(List<BaseProjectPlugin> plugins) {
+    spreadState(plugins);
+    for (BaseProjectPlugin plugin : plugins) {
+      if (!plugin.getTabDescriptors().isEmpty()) {
+        recreateTabbedEditors();
+        break;
+      }
     }
-    myLoaded = false;
+  }
+
+  @Override
+  protected void beforePluginsDisposed(List<BaseProjectPlugin> plugins) {
+    collectState(plugins);
+  }
+
+  @Override
+  protected void disposePlugin(BaseProjectPlugin plugin) {
+    plugin.dispose();
+  }
+
+  @Override
+  public void loadPlugins(List<PluginContributor> contributors) {
+    assert !myProject.isDisposed();
+    super.loadPlugins(contributors);
+  }
+
+  @Override
+  public void unloadPlugins(List<PluginContributor> contributors) {
+    assert !myProject.isDisposed();
+    super.unloadPlugins(contributors);
   }
 
   public EditorOpenHandler getEditorOpenHandler() {
@@ -210,24 +181,22 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "MPS Plugin Manager";
+    return ProjectPluginManager.class.getName();
   }
 
   @Override
   public void initComponent() {
-
   }
 
   @Override
   public void disposeComponent() {
-
   }
 
   //----------------STATE STUFF------------------------
 
   @Override
   public PluginsState getState() {
-    collectState(mySortedPlugins);
+    collectState(getPlugins());
     return myState;
   }
 
@@ -237,11 +206,13 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   protected void collectState(List<BaseProjectPlugin> plugins) {
-    myState.pluginsState.clear();
+//    myState.pluginsState.clear();
     for (BaseProjectPlugin plugin : plugins) {
       PluginState state = plugin.getState();
       if (state != null) {
         myState.pluginsState.put(plugin.getClass().getName(), state);
+      } else {
+        myState.pluginsState.remove(plugin.getClass().getName());
       }
     }
   }
@@ -262,7 +233,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //--------------ADDITIONAL----------------
 
-  public void recreateTabbedEditors() {
+  private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -275,17 +246,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
             editor.recreateEditor();
           } else if (editor.getNodeEditor() instanceof NodeEditor) {
             //and this is to make non-tabbed editors tabbed if they need to
-            ArrayList<BaseProjectPlugin> plugins;
-            synchronized (myPluginsLock) {
-              plugins = new ArrayList<BaseProjectPlugin>(mySortedPlugins);
-            }
-            for (BaseProjectPlugin p : plugins) {
-              for (RelationDescriptor tab : p.getTabDescriptors()) {
-                SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(MPSModuleRepository.getInstance());
-                if (tab.getBaseNode(node) != null) {
-                  editor.recreateEditor();
-                  continue editors;
-                }
+            for (RelationDescriptor tab : getTabDescriptors()) {
+              SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(MPSModuleRepository.getInstance());
+              if (tab.getBaseNode(node) != null) {
+                editor.recreateEditor();
+                continue editors;
               }
             }
           }

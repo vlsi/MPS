@@ -4,11 +4,11 @@ package jetbrains.mps.make.unittest;
 
 import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
-import jetbrains.mps.make.facet.IFacet;
 import org.junit.Test;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.IScript;
 import junit.framework.Assert;
@@ -22,8 +22,6 @@ import org.jmock.Expectations;
 
 @RunWith(JMock.class)
 public class ScriptBuilder_Test extends MockTestCase {
-  private IFacet[] facets;
-
   @Test
   public void test_make() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -78,6 +76,11 @@ public class ScriptBuilder_Test extends MockTestCase {
     Assert.assertFalse(sc.isValid());
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).count() == 1);
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).first().toString().contains("target not found: none"));
+  }
+
+  private IFacet[] facets;
+
+  public ScriptBuilder_Test() {
   }
 
   @After

@@ -27,8 +27,6 @@ import javax.swing.JTable;
 import com.intellij.ui.table.JBTable;
 import java.awt.GridLayout;
 import com.intellij.ui.components.JBScrollPane;
-import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.execution.process.ProcessListener;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -115,11 +113,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     JPanel tablePanel = new JPanel(new GridLayout(1, 1));
     tablePanel.add(new JBScrollPane(statisticsTable));
     return tablePanel;
-  }
-
-  public Icon getIcon(String iconName) {
-    String pathToIcon = getLanguage().getModuleSourceDir().getDescendant("icons").getDescendant(iconName).getPath();
-    return IconManager.loadIcon(pathToIcon, true);
   }
 
   public ProcessListener getProcessListener() {
@@ -226,7 +219,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
         if (currentNode == null) {
           return null;
         }
-        return new MPSLocation(myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNode());
+        return new MPSLocation(myProject, ((ITestNodeWrapper) currentNode.getUserObject()).getNodePointer());
       }
       return null;
     }

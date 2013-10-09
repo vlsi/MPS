@@ -172,6 +172,8 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   public final void save() {
     ModelAccess.assertLegalWrite();
 
+    // probably should be changed to assert
+    // see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
     if (!isLoaded()) return;
 
     //we must be in command since model save might change model by adding model/language imports

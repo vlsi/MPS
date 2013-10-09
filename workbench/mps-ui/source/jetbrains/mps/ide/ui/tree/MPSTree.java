@@ -534,7 +534,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return new TreePath(path.toArray());
   }
 
-  private void expandPaths(List<String> paths) {
+  protected void expandPaths(List<String> paths) {
     for (String path : paths) {
       TreePath treePath = stringToPath(path);
       if (treePath != null) {
@@ -553,7 +553,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
   }
 
-  private void selectPaths(List<String> paths) {
+  protected void selectPaths(List<String> paths) {
     List<TreePath> treePaths = new ArrayList<TreePath>();
     for (String path : paths) {
       treePaths.add(stringToPath(path));

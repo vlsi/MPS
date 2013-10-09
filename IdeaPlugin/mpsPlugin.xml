@@ -206,7 +206,7 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
@@ -282,6 +282,11 @@
       <chunk>
         <module file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
+      <macro name="idea_home" path="${idea_home}" />
+      <macro name="mps_home" path="${mps_home}" />
     </generate>
   </target>
   
@@ -313,6 +318,7 @@
   </target>
   
   <target name="java.compile.mps-common" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/src" />
     <mkdir dir="${build.tmp}/java/out/mps-common" />
     <javac2 destdir="${build.tmp}/java/out/mps-common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -343,6 +349,7 @@
   </target>
   
   <target name="java.compile.mps-jps-plugin" depends="java.compile.mps-common, fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin" />
     <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -376,6 +383,7 @@
   </target>
   
   <target name="java.compile.mps-plugin" depends="java.compile.mps-common, fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-core/src" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin" />
     <javac2 destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -415,6 +423,7 @@
   </target>
   
   <target name="java.compile.mps-vcs-core" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/vcs-core/core/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-vcs-core" />
     <javac2 destdir="${build.tmp}/java/out/mps-vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -445,6 +454,9 @@
   </target>
   
   <target name="java.compile.mps-vcs-platform" depends="java.compile.mps-vcs-core, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/vcs/common/source" />
+    <mkdir dir="${mps_home}/plugins/vcs/common/source_gen" />
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-vcs/source" />
     <mkdir dir="${build.tmp}/java/out/mps-vcs-platform" />
     <javac2 destdir="${build.tmp}/java/out/mps-vcs-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -485,6 +497,8 @@
   </target>
   
   <target name="java.compile.mps-java" depends="java.compile.mps-java-jps-plugin, java.compile.mps-common, java.compile.mps-plugin, fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-java/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mpsjava/platform/source" />
     <mkdir dir="${build.tmp}/java/out/mps-java" />
     <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -539,6 +553,7 @@
   </target>
   
   <target name="java.compile.mps-java-jps-plugin" depends="java.compile.mps-common, java.compile.mps-jps-plugin, fetchDependencies">
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-java-jps-plugin" />
     <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -572,6 +587,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.ide.vcs.modelmetadata" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -597,8 +613,16 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

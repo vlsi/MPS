@@ -275,4 +275,7 @@ __switch__:
     });
     Assert.assertEquals(0, Sequence.fromIterable(s2).count());
   }
+
+  public Mapping_Test1_Test() {
+  }
 }

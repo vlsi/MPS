@@ -19,7 +19,7 @@
     <unzip src="${artifacts.buildZ}/Aa/AaLibs.zip" dest="${build.tmp}/deps/buildY/AaLibs.zip" />
   </target>
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
@@ -37,6 +37,7 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.ZZ" depends="fetchDependencies">
+    <mkdir dir="${basedir}/buildD/src" />
     <mkdir dir="${build.tmp}/java/out/ZZ" />
     <javac destdir="${build.tmp}/java/out/ZZ" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

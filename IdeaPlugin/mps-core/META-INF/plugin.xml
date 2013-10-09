@@ -19,11 +19,15 @@
   <name>MPS Core</name>
   <category>Custom Languages</category>
   <description>MPS Core</description>
-  <version>3.0</version>
+  <version>3.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="123.1" />
+  <idea-version since-build="129.1" until-build="130.1"/>
 
   <application-components>
+    <component>
+      <interface-class>jetbrains.mps.ide.vfs.FileSystemProviderComponent</interface-class>
+      <implementation-class>jetbrains.mps.ide.vfs.IdeaFileSystemProvider</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>

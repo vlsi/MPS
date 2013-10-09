@@ -36,12 +36,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import com.intellij.openapi.vcs.FileStatusListener;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelAdapter;
 import java.util.List;
@@ -294,10 +296,14 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   @Nullable
   private static FileStatus getModelFileStatus(@NotNull EditableSModel ed, @NotNull Project project) {
-    if (!(ed.getSource() instanceof FileDataSource)) {
-      return null;
+    DataSource ds = ed.getSource();
+    IFile file = null;
+    if (ds instanceof FileDataSource) {
+      file = ((FileDataSource) ds).getFile();
+    } else if (ds instanceof FilePerRootDataSource) {
+      file = ((FilePerRootDataSource) ds).getFile(FilePerRootDataSource.HEADER_FILE);
     }
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) ed.getSource()).getFile());
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(file);
     return (vf == null ?
       null :
       FileStatusManager.getInstance(project).getStatus(vf)

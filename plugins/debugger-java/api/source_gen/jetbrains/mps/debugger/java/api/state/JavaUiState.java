@@ -7,6 +7,8 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class JavaUiState extends AbstractUiState {
   protected JavaUiState(AbstractDebugSession debugSession) {
@@ -20,4 +22,10 @@ public abstract class JavaUiState extends AbstractUiState {
 
   @Override
   public abstract JavaThread getThread();
+
+  /**
+   * Invokes evaluation while blocking current thread (must be EDT by the way) and showing a progress window.
+   */
+  @Nullable
+  public abstract <R> R invokeEvaluationSynchronously(_FunctionTypes._return_P0_E0<? extends R> command);
 }

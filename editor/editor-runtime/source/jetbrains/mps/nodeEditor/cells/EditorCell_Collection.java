@@ -1106,6 +1106,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
     @Override
     public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      if (oldSelection == newSelection) {
+        return;
+      }
       if (myClosingBrace.isSelected() || myOpeningBrace.isSelected()) {
         enableBraces();
         return;

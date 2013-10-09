@@ -1,14 +1,34 @@
+/*
+ * Copyright 2003-2013 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package jetbrains.mps.idea.java.convert;
 
 import com.intellij.facet.FacetManager;
+import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.impl.scopes.ModuleWithDependentsScope;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiClass;
@@ -19,27 +39,20 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
-import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.refactoring.NodePtr;
-import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
@@ -56,6 +69,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -73,18 +87,53 @@ public class ConvertPackageToModel extends AnAction {
   }
 
   @Override
+  public void update(AnActionEvent e) {
+    PsiElement[] elements = e.getData(LangDataKeys.PSI_ELEMENT_ARRAY);
+    Module module = e.getData(LangDataKeys.MODULE);
+
+    if (elements == null
+      || module == null
+      || FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID) == null
+      || !containsJavaThings(elements)) {
+
+      e.getPresentation().setVisible(false);
+      e.getPresentation().setEnabled(false);
+    }
+  }
+
+  @Override
   public void actionPerformed(final AnActionEvent e) {
 
-    final PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
+    final PsiElement[] elements = e.getData(LangDataKeys.PSI_ELEMENT_ARRAY);
     final Module module = e.getData(LangDataKeys.MODULE);
+    final Project project = e.getData(PlatformDataKeys.PROJECT);
 
     MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
     SModule mpsModule = facet.getSolution();
     MPSProject mpsProject = e.getProject().getComponent(MPSProject.class);
 
-    final MultipleFilesParser parser = new MultipleFilesParser(mpsModule, mpsProject.getRepository(), true);
-    final List<IFile> javaFiles = new ArrayList<IFile>();
-    collectJavaFiles((PsiDirectory) element, javaFiles);
+    List<PsiJavaFile> psiJavaFiles = JavaConverterHelper.getFilesFromSelection(JavaConverterHelper.liftToFiles(Arrays.asList(elements)));
+
+    Collection<Module> modulesWithoutFacet = JavaConverterHelper.getModulesThatNeedMPSFacet(psiJavaFiles);
+
+    if (!modulesWithoutFacet.isEmpty()) {
+      final AddFacetToModulesDialog dialog = new AddFacetToModulesDialog(project, module.getName(), modulesWithoutFacet);
+      dialog.show();
+      if (dialog.getExitCode() == DialogWrapper.OK_EXIT_CODE) {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            for(Module moduleToAddFacet : dialog.getResult()) {
+              FacetManager.getInstance(moduleToAddFacet).addFacet(
+                FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID), "", null);
+            }
+          }
+        });
+      }
+    }
+
+    final JavaToMpsConverter parser = new JavaToMpsConverter(mpsModule, mpsProject.getRepository(), true, true);
+    final List<IFile> javaFiles = toIFiles(psiJavaFiles);
 
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       @Override
@@ -194,22 +243,16 @@ public class ConvertPackageToModel extends AnAction {
     });
   }
 
-  @Override
-  public void update(AnActionEvent e) {
-    PsiElement element = e.getData(LangDataKeys.PSI_ELEMENT);
-    Module module = e.getData(LangDataKeys.MODULE);
-
-    if (element == null
-      || !(element instanceof PsiDirectory)
-      || element instanceof MPSPsiModel
-      || module == null
-      || FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID) == null
-      || !containsJavaFiles((PsiDirectory) element)) {
-
-      e.getPresentation().setVisible(false);
-      e.getPresentation().setEnabled(false);
+  private boolean containsJavaThings(PsiElement[] elements) {
+    for (PsiElement e : elements) {
+      if (e instanceof PsiJavaFile) return true;
+      if (e instanceof PsiClass && !(e instanceof MPSPsiNode)) return true;
     }
-
+    for (PsiElement e : elements) {
+      if (!(e instanceof PsiDirectory)) continue;
+      if (containsJavaFiles((PsiDirectory) e)) return true;
+    }
+    return false;
   }
 
   private boolean containsJavaFiles(PsiDirectory dir) {
@@ -222,18 +265,19 @@ public class ConvertPackageToModel extends AnAction {
     return false;
   }
 
-  private void collectJavaFiles(PsiDirectory dir, List<IFile> result) {
-    for (PsiFile f : dir.getFiles()) {
-      if (f instanceof PsiJavaFile) {
-        VirtualFile vfile = f.getVirtualFile();
-        IFile ifile = new IdeaFileSystemProvider().getFile(vfile.getPath());
-        result.add(ifile);
-      }
+  private List<IFile> toIFiles(List<? extends PsiFile> psiFiles) {
+    List<IFile> result = new ArrayList<IFile>(psiFiles.size());
+
+    for (PsiFile file : psiFiles) {
+      VirtualFile vfile = file.getVirtualFile();
+      IFile ifile = new IdeaFileSystemProvider().getFile(vfile.getPath());
+      result.add(ifile);
     }
-    for (PsiDirectory d : dir.getSubdirectories()) {
-      collectJavaFiles(d, result);
-    }
+
+    return result;
   }
+
+
 
   private Set<PsiClass> getPsiClasses(List<IFile> javaFiles, PsiManager psiManager) {
     Set<PsiClass> result = new HashSet<PsiClass>();

@@ -5,24 +5,19 @@ package jetbrains.mps.debugger.java.runtime.engine.events;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
-import com.sun.jdi.ThreadReference;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.request.EventRequest;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.Nullable;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class ContextManager {
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
-  private Set<ThreadReference> myEvaluatedThreads = SetSequence.fromSet(new HashSet<ThreadReference>());
   private UserContext myUserContext;
 
   public ContextManager() {
@@ -105,42 +100,35 @@ public class ContextManager {
 
   @Nullable
   public synchronized Context findContextForThread(final ThreadReference threadReference) {
-    if (myUserContext != null && eq_toclu7_a0a0a01(myUserContext.getThread(), threadReference)) {
-      return myUserContext;
-    }
-    return ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
+    EventContext context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
       public boolean accept(EventContext it) {
-        return eq_toclu7_a0a0a0a0a0b0k(it.getThread(), threadReference);
+        return eq_toclu7_a0a0a0a0a0a0a9(it.getThread(), threadReference);
       }
     });
+    if (context != null) {
+      return context;
+    }
+    context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
+      public boolean accept(EventContext it) {
+        return it.getSuspendPolicy() == EventRequest.SUSPEND_ALL;
+      }
+    });
+    if (context != null) {
+      return context;
+    }
+    if (myUserContext != null) {
+      return myUserContext;
+    }
+    return null;
   }
 
   public synchronized boolean isPausedOnEvent(Context context) {
     return ListSequence.fromList(mySuspendedContexts).contains(context);
   }
 
-  public synchronized void startEvaluation(@NotNull ThreadReference threadReference) {
-    SetSequence.fromSet(myEvaluatedThreads).addElement(threadReference);
-  }
-
-  public synchronized void finishEvaluation(@NotNull ThreadReference threadReference) {
-    SetSequence.fromSet(myEvaluatedThreads).removeElement(threadReference);
-  }
-
-  public synchronized boolean isEvaluated(@NotNull ThreadReference threadReference) {
-    return SetSequence.fromSet(myEvaluatedThreads).contains(threadReference);
-  }
-
   protected static Logger LOG = LogManager.getLogger(ContextManager.class);
 
-  private static boolean eq_toclu7_a0a0a01(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_toclu7_a0a0a0a0a0b0k(Object a, Object b) {
+  private static boolean eq_toclu7_a0a0a0a0a0a0a9(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

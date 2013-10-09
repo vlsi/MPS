@@ -8,5 +8,31 @@
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
+  <dependency className="jetbrains.mps.console.ideCommands.util.PartitioningHelper" file="PartitioningHelper.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.GenerationPlan" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingPriorityRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
+    <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.messages.Message" />
+    <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
 </dependenciesRoot>
 

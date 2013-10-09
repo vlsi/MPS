@@ -95,13 +95,13 @@ public abstract class ListPanel<T> extends JPanel {
   }
 
   public void clear() {
-    ListSequence.fromList(myValues).removeSequence(ListSequence.fromList(myValues));
+    ListSequence.fromList(myValues).clear();
     myListComponent.updateUI();
   }
 
-  public void init(List<? extends T> nodes) {
+  public void setData(List<? extends T> data) {
     ListSequence.fromList(myValues).clear();
-    ListSequence.fromList(myValues).addSequence(ListSequence.fromList(nodes));
+    ListSequence.fromList(myValues).addSequence(ListSequence.fromList(data));
     myListComponent.updateUI();
   }
 

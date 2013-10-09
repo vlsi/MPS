@@ -15,12 +15,14 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.project.ModuleContext;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -37,7 +39,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -56,12 +57,12 @@ public class EvaluationContainer implements IEvaluationContainer {
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
 
-  public EvaluationContainer(Project project, DebugSession session, SModuleReference containerModule, final List<SNodeReference> nodesToImport) {
+  public EvaluationContainer(Project project, DebugSession session, @NotNull SModuleReference containerModule, final List<SNodeReference> nodesToImport, final _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     myProject = project;
     myDebugSession = session;
     myContainerModule = containerModule;
     myUiState = myDebugSession.getUiState();
-    ModelAccess modelAccess = project.getRepository().getModelAccess();
+    final ModelAccess modelAccess = project.getRepository().getModelAccess();
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
@@ -70,9 +71,15 @@ public class EvaluationContainer implements IEvaluationContainer {
         myContext = new ModuleContext(containerModule, myProject);
       }
     });
-    modelAccess.executeCommandInEDT(new Runnable() {
+
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        setUpNode(nodesToImport);
+        modelAccess.executeCommand(new Runnable() {
+          public void run() {
+            setUpNode(nodesToImport);
+          }
+        });
+        onNodeSetUp.invoke(EvaluationContainer.this);
       }
     });
   }
@@ -97,9 +104,9 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
   @Override
-  public IEvaluationContainer copy(boolean isWatch) {
+  public IEvaluationContainer copy(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     final SNodeReference reference = myNode;
-    return new EvaluationContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>())) {
+    return new EvaluationContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), onNodeSetUp) {
       @Override
       protected SNode createEvaluatorNode() {
         return (SNode) CopyUtil.copyAndPreserveId(reference.resolve(myDebuggerRepository), true);
@@ -159,7 +166,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected SNode createEvaluatorNode() {
     SNode evaluator = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.Evaluator", null);
-    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluator, "code", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
+    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluator, "code", true), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluator;
   }
 

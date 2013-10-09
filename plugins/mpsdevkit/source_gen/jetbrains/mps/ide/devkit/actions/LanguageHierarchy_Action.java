@@ -74,7 +74,7 @@ public class LanguageHierarchy_Action extends BaseAction {
       Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
       FileEditorManager editorManager = FileEditorManager.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
-      FileEditor[] res = editorManager.openFile(file, true);
+      FileEditor[] res = editorManager.openFile(file, true, true);
       MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();
     } catch (Throwable t) {

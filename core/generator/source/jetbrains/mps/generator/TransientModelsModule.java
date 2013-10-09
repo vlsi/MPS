@@ -66,7 +66,8 @@ public class TransientModelsModule extends AbstractModule {
   //the module's models to be disposed
 
   public TransientModelsModule(SModule original, TransientModelsProvider component) {
-    assert !(original instanceof TransientModelsModule);
+    assert !(original instanceof TransientModelsModule) :
+        "create TransientModelsModule based on another TransientModelsModule with name " + original.getModuleName();
     myComponent = component;
     myOriginalModule = original;
     String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();

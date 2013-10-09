@@ -16,11 +16,14 @@
 package org.jetbrains.mps.openapi.language;
 
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Represents a concept
  */
 public interface SConcept extends SAbstractConcept {
 
+  @Nullable
   SConcept getSuperConcept();
 
   Iterable<SInterfaceConcept> getSuperInterfaces();

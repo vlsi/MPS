@@ -2,4 +2,6 @@
   <extensions defaultExtensionNs="com.intellij">
     <mps.facetTabFactory facetType="ideaPlugin" className="jetbrains.mps.ide.project.facets.ui.IdeaPluginModuleFacetTabFactory"/>
   </extensions>
+
+
 </components>

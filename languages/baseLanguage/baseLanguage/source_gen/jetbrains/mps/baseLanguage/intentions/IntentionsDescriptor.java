@@ -20,7 +20,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddFinalModifierToAny_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMainMethod_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddModifiers_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddOverrideAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRuntimeExceptionToMethodSignature_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddStaticFieldModifier_Intention());
@@ -61,6 +60,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MakeMultiLiner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeOneLiner_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeParameterFinal_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeStaticFieldTransient_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeStaticFieldVolatile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeSynchronized_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MergeStringConcatenation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MigrateString_Intention());

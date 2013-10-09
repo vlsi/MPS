@@ -22,7 +22,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -305,13 +304,11 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
         for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
           Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
           MyTypesReadListener typesReadListener = new MyTypesReadListener();
-          MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
           if (incrementalMode) {
             if (myCheckedNodes.contains(nodeAndRule)) continue;
             nodesReadListener.clear();
             NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
             TypeChecker.getInstance().addTypesReadListener(typesReadListener);
-            LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
             myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
           }
           try {
@@ -319,7 +316,6 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
           } finally {
             myRuleAndNodeBeingChecked = null;
             if (incrementalMode) {
-              LanguageHierarchyCache.getInstance().removeReadAccessListener();
               TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
               NodeReadEventsCaster.removeNodesReadListener();
             }
@@ -329,12 +325,6 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
             addDependentNodes(node, rule.o1, new THashSet<SNode>(nodesReadListener.getAccessedNodes()));
             addDependentProperties(node, rule.o1, new THashSet<Pair<SNode, String>>(nodesReadListener.getAccessedProperties()));
             nodesReadListener.setAccessReport(false);
-
-            languageCachesReadListener.setAccessReport(true);
-            if (languageCachesReadListener.isCacheAccessed()) {
-              addCacheDependentNodesNonTypesystem(node, rule.o1);
-            }
-            languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
             addDependentTypeTerms(node, rule.o1, typesReadListener.getAccessedNodes());

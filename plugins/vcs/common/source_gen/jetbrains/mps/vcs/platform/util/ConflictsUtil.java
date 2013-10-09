@@ -4,58 +4,89 @@ package jetbrains.mps.vcs.platform.util;
 
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ConflictsUtil {
   public ConflictsUtil() {
   }
 
   public static boolean isModelOrModuleConflicting(EditableSModel emd, Project project) {
-    return getModelFileIfConflicting(emd, project) != null || getModuleFileIfConflicting((emd != null ?
+    return ListSequence.fromList(getConflictingModelFiles(emd, project)).isNotEmpty() || ListSequence.fromList(getConflictingModuleFiles((emd != null ?
       emd.getModule() :
       null
-    ), project) != null;
+    ), project)).isNotEmpty();
   }
 
-  @Nullable
-  public static VirtualFile getModelFileIfConflicting(@Nullable SModel md, @NotNull Project project) {
-    if (md instanceof EditableSModel && md.getSource() instanceof FileDataSource) {
-      VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) md.getSource()).getFile());
-      if (vf != null) {
-        FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
-        if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {
-          return vf;
-        }
-      }
+  @NotNull
+  public static List<VirtualFile> getConflictingModelFiles(@Nullable SModel model, @NotNull Project project) {
+    if (!(model instanceof EditableSModel)) {
+      return ListSequence.fromList(new ArrayList<VirtualFile>());
     }
-    return null;
+    DataSource ds = model.getSource();
+    Iterable<IFile> filesToCheck = Sequence.fromIterable(Collections.<IFile>emptyList());
+    if (ds instanceof FileDataSource) {
+      filesToCheck = Sequence.<IFile>singleton(((FileDataSource) ds).getFile());
+    } else if (ds instanceof FilePerRootDataSource) {
+      final FilePerRootDataSource ds1 = (FilePerRootDataSource) ds;
+      filesToCheck = Sequence.fromIterable(((Iterable<String>) ds1.getAvailableStreams())).select(new ISelector<String, IFile>() {
+        public IFile select(String it) {
+          return ds1.getFile(it);
+        }
+      });
+    }
+    return getConflictingFiles(filesToCheck, project);
   }
 
-  @Nullable
-  public static VirtualFile getModuleFileIfConflicting(@Nullable SModule module, @NotNull Project project) {
+  @NotNull
+  public static List<VirtualFile> getConflictingModuleFiles(@Nullable SModule module, @NotNull Project project) {
+    Iterable<IFile> filesToCheck = Sequence.fromIterable(Collections.<IFile>emptyList());
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    if (!(module instanceof AbstractModule)) {
-      return null;
+    if (module instanceof AbstractModule) {
+      filesToCheck = Sequence.<IFile>singleton(((AbstractModule) module).getDescriptorFile());
     }
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(((AbstractModule) module).getDescriptorFile());
-    if (vf != null) {
-      FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
-      if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {
-        return vf;
+    return getConflictingFiles(filesToCheck, project);
+  }
+
+  private static boolean isConflictedFile(IFile file, @NotNull Project project) {
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(file);
+    if (vf == null) {
+      return false;
+    }
+    FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
+    return FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status;
+  }
+
+  private static List<VirtualFile> getConflictingFiles(Iterable<IFile> files, final Project project) {
+    return Sequence.fromIterable(files).where(new IWhereFilter<IFile>() {
+      public boolean accept(IFile f) {
+        return isConflictedFile(f, project);
       }
-    }
-    return null;
+    }).select(new ISelector<IFile, VirtualFile>() {
+      public VirtualFile select(IFile f) {
+        return VirtualFileUtils.getVirtualFile(f);
+      }
+    }).toListSequence();
   }
 }

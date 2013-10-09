@@ -22,8 +22,6 @@ import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.apache.log4j.LogManager;
 
@@ -77,7 +75,7 @@ public class SNodeFactoryOperations {
       Iterable<? extends SNode> ch = node.getChildren(role);
       SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
-      SNodeEditorUtil.setSingleChild(node,role,newChild);
+      SNodeEditorUtil.setSingleChild(node, role, newChild);
       return newChild;
     }
     return null;
@@ -114,26 +112,14 @@ public class SNodeFactoryOperations {
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
-      String role = attribute.getRoleInParent();
-      if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
-        String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-        if (SModelSearchUtil.findPropertyDeclaration(((jetbrains.mps.smodel.SNode) newChild).getConceptDeclarationNode(), propertyName) == null) {
-          // no such property in new child : don't copy the attribute
-          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
-          continue;
-        }
-      }
-      if (AttributesRolesUtil.isLinkAttributeRole(role)) {
-        String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-        if (SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) newChild).getConceptDeclarationNode(), linkRole) == null) {
-          // no such link in new child : don't copy the attribute
-          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
-          continue;
-        }
-      }
+      // todo: should we create check like this?
+      // no such property in new child : don't copy the attribute
+//          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
+      // no such link in new child : don't copy the attribute
+//          LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
 
       SNode newAttribute = CopyUtil.copy(attribute);
-      newChild.addChild(role, newAttribute);
+      newChild.addChild(attribute.getRoleInParent(), newAttribute);
     }
   }
 

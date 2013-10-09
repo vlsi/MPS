@@ -36,7 +36,7 @@ public class IdeaLibLoader implements ProjectComponent {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             // todo: WHAT THE HACK???
-            SModelRootClassesListener.INSTANCE.onClassesLoad(SetSequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
+            SModelRootClassesListener.INSTANCE.afterClassesLoaded(SetSequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
           }
         });
       }

@@ -18,6 +18,9 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
+/**
+ * hashCode() and equals() must be overridden for PluginContributor!
+ */
 public class PluginContributor extends AbstractPluginFactory {
   public PluginContributor() {
   }
@@ -49,7 +52,6 @@ public class PluginContributor extends AbstractPluginFactory {
   }
 
   private static class AbstractPluginFactoryAdapter extends PluginContributor {
-
     private final AbstractPluginFactory myFactory;
 
     public AbstractPluginFactoryAdapter(AbstractPluginFactory factory) {
@@ -69,6 +71,21 @@ public class PluginContributor extends AbstractPluginFactory {
     @Override
     public <T> T create(Class<T> klass) {
       return myFactory.create(klass);
+    }
+
+    @Override
+    public int hashCode() {
+      return myFactory.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      return o instanceof AbstractPluginFactoryAdapter && (((AbstractPluginFactoryAdapter) o).myFactory == myFactory);
+    }
+
+    @Override
+    public String toString() {
+      return myFactory + " adapter";
     }
   }
 }

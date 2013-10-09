@@ -401,7 +401,7 @@ public class QueriesGenerated {
       }
     })) {
       SNode ref = _quotation_createNode_x583g4_a0a0b0ed(_context.getOutputNodeByInputNodeAndMappingLabel(argument, "CommandParameterAssignmentToLocalVariable"));
-      AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter")), "jetbrains.mps.execution.commands.structure.BuilderParameter");
+      AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderParameter"), "jetbrains.mps.execution.commands.structure.BuilderParameter");
 
       String name = CommandParameterDeclaration_Behavior.call_getSetterLongName_3754131050835964459(SLinkOperations.getTarget(argument, "parameterDeclaration", false));
       expression = _quotation_createNode_x583g4_a0e0b0ed(expression, ref, name);
@@ -415,7 +415,7 @@ public class QueriesGenerated {
     SNode expression = _quotation_createNode_x583g4_a0a0fd();
     for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "commandPart", true))) {
       SNode ref = _quotation_createNode_x583g4_a0a0b0fd(_context.getOutputNodeByInputNodeAndMappingLabel(part, "CommandPartToLocalVariableDeclaration"));
-      AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter")), "jetbrains.mps.execution.commands.structure.BuilderParameter");
+      AttributeOperations.createAndSetAttrbiute(ref, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderParameter"), "jetbrains.mps.execution.commands.structure.BuilderParameter");
       expression = _quotation_createNode_x583g4_a0c0b0fd(expression, ref);
     }
     return expression;
@@ -428,7 +428,7 @@ public class QueriesGenerated {
       }
     }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter"))) != null);
+        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderParameter")) != null);
       }
     });
     for (SNode ref : Sequence.fromIterable(references)) {
@@ -438,7 +438,7 @@ public class QueriesGenerated {
         SNodeOperations.deleteNode(parent);
       }
     }
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderBlockStatement")), "jetbrains.mps.execution.commands.structure.BuilderBlockStatement");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"), "jetbrains.mps.execution.commands.structure.BuilderBlockStatement");
   }
 
   public static void mapSrcMacro_post_mapper_8980950851470008721(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
@@ -451,7 +451,7 @@ public class QueriesGenerated {
       }
     }).toListSequence().where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderParameter"))) != null);
+        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderParameter")) != null);
       }
     });
     for (SNode ref : Sequence.fromIterable(references)) {
@@ -461,7 +461,7 @@ public class QueriesGenerated {
         SNodeOperations.deleteNode(parent);
       }
     }
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderBlockStatement")), "jetbrains.mps.execution.commands.structure.BuilderBlockStatement");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"), "jetbrains.mps.execution.commands.structure.BuilderBlockStatement");
   }
 
   public static void mappingScript_CodeBlock_865001690840234106(final IOperationContext operationContext, final MappingScriptContext _context) {
@@ -474,7 +474,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_865001690840234128(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode blockStatement : ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BlockStatement")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.BuilderBlockStatement"))) != null);
+        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.commands.structure.BuilderBlockStatement")) != null);
       }
     })) {
       SNodeOperations.replaceWithAnother(blockStatement, SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(blockStatement, "statements", true), "statement", true)).where(new IWhereFilter<SNode>() {

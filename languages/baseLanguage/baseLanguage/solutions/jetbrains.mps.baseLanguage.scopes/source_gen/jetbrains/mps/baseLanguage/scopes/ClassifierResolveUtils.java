@@ -23,14 +23,16 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -236,6 +238,19 @@ public class ClassifierResolveUtils {
     });
   }
 
+  public static SNode resolveAndCache(final String refText, final SNode contextNode, final IScope moduleScope, final ModelPlusImportedScope modelPlusImported, final boolean includeAncestors) {
+
+    SNode claz = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    Pair<SNode, String> key = new Pair(claz, refText);
+    ResolveResult result = RepositoryStateCacheUtils.getFromCache("Classifiers_scope", key, new _FunctionTypes._return_P0_E0<ResolveResult>() {
+      public ResolveResult invoke() {
+        return new ResolveResult(resolve(refText, contextNode, moduleScope, modelPlusImported, includeAncestors));
+      }
+    });
+
+    return SNodeOperations.cast(result.getResult(), "jetbrains.mps.baseLanguage.structure.Classifier");
+  }
+
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
     // The algorithm: 
     // - split refText into tokens A.B.C (separated by dot) 
@@ -300,7 +315,7 @@ public class ClassifierResolveUtils {
     }
 
     SNode root = Sequence.fromIterable(getPathToRoot(ourClass)).last();
-    SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
+    SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports"));
 
     if (javaImports == null) {
 

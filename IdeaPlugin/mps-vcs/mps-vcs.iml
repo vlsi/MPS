@@ -19,6 +19,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="library" name="ideaVcs" level="project" />
+    <orderEntry type="library" name="mps.MPS.Platform" level="project" />
+    <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
+    <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
+    <orderEntry type="library" name="mps.MPS.Editor" level="project" />
   </component>
 </module>
 

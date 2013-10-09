@@ -4,6 +4,7 @@ package jetbrains.mps.refactoring.framework;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface IRefactoring {
@@ -14,5 +15,6 @@ public interface IRefactoring {
   public void refactor(RefactoringContext refactoringContext);
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext);
   public void doWhenDone(RefactoringContext refactoringContext);
+  @Nullable
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
+import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelListener;
@@ -103,7 +103,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
     }
 
     if (includeInherited) {
-      Set<String> allDescendantsOfConcept = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName);
+      Set<String> allDescendantsOfConcept = ConceptDescendantsCache.getInstance().getDescendants(conceptFqName);
       final List<SNode>[] nodesOfConcept = new List[allDescendantsOfConcept.size()];
       int i = 0, cnt = 0;
       for (String d : allDescendantsOfConcept) {

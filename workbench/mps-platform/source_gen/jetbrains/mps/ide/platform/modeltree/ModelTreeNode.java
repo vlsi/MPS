@@ -20,15 +20,15 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
 
   public ModelTreeNode(String label, Icon icon, Object data) {
     super(data);
-    ModelTreeNode.this.setText(label);
+    setText(label);
     myCollapsedIcon = icon;
-    ModelTreeNode.this.setLeaf(false);
-    ModelTreeNode.this.setInitialized(true);
+    setLeaf(false);
+    setInitialized(true);
   }
 
   @Override
   public boolean isLeaf() {
-    if (!(ModelTreeNode.this.getLeaf()) && children == null) {
+    if (!(getLeaf()) && children == null) {
       return false;
     }
     return super.isLeaf();
@@ -36,7 +36,7 @@ public class ModelTreeNode extends DefaultMutableTreeNode {
 
   @Override
   public String toString() {
-    return ModelTreeNode.this.getText();
+    return getText();
   }
 
   public Icon getIcon(boolean expanded) {

@@ -17,7 +17,39 @@ package jetbrains.mps;
 
 public class InternalFlag {
 
-  public static boolean isInternalMode() {
+  private static InternalFlag myInstance;
+
+  private boolean internalFlag;
+
+  private InternalFlag() {
+    internalFlag = isSystemInternal();
+  }
+
+  public static InternalFlag getInstance() {
+    if (myInstance == null) {
+      myInstance = new InternalFlag();
+    }
+    return myInstance;
+  }
+
+  public static boolean isSystemInternal() {
     return "true".equals(System.getProperty("mps.internal"));
   }
+
+  public static boolean isInternalMode() {
+    if (myInstance == null) {
+      return isSystemInternal();
+    } else {
+      return myInstance.getInternalFlag();
+    }
+  }
+
+  public boolean getInternalFlag() {
+    return internalFlag;
+  }
+
+  public void setInternalFlag(boolean flag) {
+    internalFlag = flag;
+  }
+
 }

@@ -30,6 +30,24 @@
   </dependency>
   <dependency className="jetbrains.mps.watching.WatchedRoots" file="WatchedRoots.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.watching.WatchedRootsUpdater" file="WatchedRootsUpdater.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManagerAdapter" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
@@ -48,6 +66,7 @@
     <classNode dependClassName="jetbrains.mps.library.LibraryManager" />
     <classNode dependClassName="jetbrains.mps.library.ProjectLibraryManager" />
     <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
+    <classNode dependClassName="jetbrains.mps.watching.WatchedRoots" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>

@@ -266,6 +266,10 @@ public class ContentEntriesEditor implements Disposable {
     return modelRoots;
   }
 
+  public Collection<ModelRootEntryContainer> getModelRootsEntries() {
+    return myModelRootEntries;
+  }
+
   public JComponent getComponent() {
     return myMainPanel;
   }

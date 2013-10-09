@@ -40,7 +40,7 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
@@ -70,6 +70,7 @@
   </target>
   
   <target name="java.compile.modX">
+    <mkdir dir="${basedir}/buildA/src" />
     <mkdir dir="${build.tmp}/java/out/modX" />
     <javac destdir="${build.tmp}/java/out/modX" fork="true" memorymaximumsize="512m" nowarn="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />

@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import static java.lang.String.format;
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
 
 /**
@@ -87,9 +88,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.languagesUnloaded(languages);
+        l.beforeLanguagesUnloaded(languages);
       } catch (Exception ex) {
-        LOG.error(ex);
+        LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
       }
     }
     myConceptRegistry.languagesUnloaded(languages);
@@ -101,25 +102,16 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     myConceptRegistry.languagesLoaded(languages);
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.languagesLoaded(languages);
+        l.afterLanguagesLoaded(languages);
       } catch (Exception ex) {
-        LOG.error(ex);
+        LOG.error(format("Exception on language loading; languages: %s; listener: %s", languages, l), ex);
       }
     }
   }
 
-  private static LanguageRuntime createRuntime(Language l, boolean tryToLoad) {
-    // TODO FIXME hack to avoid errors in LOG
-    LanguageRuntime languageRuntime = null;
-    try {
-      languageRuntime = getObjectByClassNameForLanguage(l.getModuleName() + ".Language", LanguageRuntime.class, l, tryToLoad);
-    } catch (RuntimeException unexpected) {
-      LOG.error("Exception loading language: " + unexpected);
-    }
-    if (languageRuntime == null) {
-      languageRuntime = new LanguageRuntimeInterpreted(l);
-    }
-    return languageRuntime;
+  @Nullable
+  private static LanguageRuntime createRuntime(Language l) {
+    return getObjectByClassNameForLanguage(l.getModuleName() + ".Language", LanguageRuntime.class, l);
   }
 
   public String toString() {
@@ -153,31 +145,37 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   // MPSClassesListener part
   @Override
-  public void onClassesUnload(Set<SModule> unloadedModules) {
-    Set<LanguageRuntime> unloadedRuntimes = new HashSet<LanguageRuntime>();
+  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+    Set<LanguageRuntime> languagesToUnload = new HashSet<LanguageRuntime>();
     for (SModule module : unloadedModules) {
       if (module instanceof Language) {
         String namespace = module.getModuleName();
         if (myLanguages.containsKey(namespace)) {
-          unloadedRuntimes.add(myLanguages.get(namespace));
-          myLanguages.remove(namespace);
+          languagesToUnload.add(myLanguages.get(namespace));
         }
       }
     }
+
+    notifyUnload(languagesToUnload);
+
+    for (LanguageRuntime languageRuntime : languagesToUnload) {
+      myLanguages.remove(languageRuntime.getNamespace());
+    }
     reinitialize();
-    notifyUnload(unloadedRuntimes);
   }
 
   @Override
-  public void onClassesLoad(Set<SModule> loadedModules) {
+  public void afterClassesLoaded(Set<SModule> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
         String namespace = module.getModuleName();
         if (!myLanguages.containsKey(namespace)) {
-          LanguageRuntime runtime = createRuntime((Language) module, false);
-          myLanguages.put(namespace, runtime);
-          loadedRuntimes.add(runtime);
+          LanguageRuntime runtime = createRuntime((Language) module);
+          if (runtime != null) {
+            myLanguages.put(namespace, runtime);
+            loadedRuntimes.add(runtime);
+          }
         } else {
           // todo: move this check to ClassLoaderManager
           throw new IllegalStateException();

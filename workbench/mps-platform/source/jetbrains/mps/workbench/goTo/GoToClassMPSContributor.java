@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.goTo;
 
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -65,6 +66,8 @@ public class GoToClassMPSContributor implements GotoClassContributor {
 
           Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getRootNodes(), cond);
           for (SNode node : iter){
+            ProgressManager.checkCanceled();
+
             nodes.add(new jetbrains.mps.smodel.SNodePointer(node));
           }
         }

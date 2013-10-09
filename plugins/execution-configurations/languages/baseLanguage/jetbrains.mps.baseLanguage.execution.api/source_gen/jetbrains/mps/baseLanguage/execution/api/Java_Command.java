@@ -175,7 +175,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
-    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((check_yvpt_a0a4a0a0e(runParameters) == null ?
+    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmpty_kk96hj_a0a0a0a0a91(check_yvpt_a0a4a0a0e(runParameters)) ?
       null :
       new File(check_yvpt_a0a0e0a0a4(runParameters))
     )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
@@ -434,6 +434,10 @@ public class Java_Command {
     quotedNode_5.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_5);
     return quotedNode_1;
+  }
+
+  public static boolean isEmpty_kk96hj_a0a0a0a0a91(String str) {
+    return str == null || str.length() == 0;
   }
 
   public static boolean isNotEmpty_kk96hj_a0a0v(String str) {

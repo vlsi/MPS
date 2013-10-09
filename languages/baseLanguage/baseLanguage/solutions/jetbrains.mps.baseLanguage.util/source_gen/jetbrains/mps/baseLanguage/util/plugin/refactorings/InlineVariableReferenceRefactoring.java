@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
@@ -12,7 +14,6 @@ import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class InlineVariableReferenceRefactoring extends InlineVariableRefactoring {
@@ -30,7 +31,7 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
 
   @Override
   public SNode doRefactoring() {
-    SNode variable = SLinkOperations.getTarget(this.myReference, "variableDeclaration", false);
+    final SNode variable = SLinkOperations.getTarget(this.myReference, "variableDeclaration", false);
     SNode nodeToSelect;
     if (myAssignment == null) {
       nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(this.myReference, "variableDeclaration", false), "initializer", true));
@@ -39,10 +40,21 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     if (SNodeOperations.isInstanceOf(myAssignment, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true));
       SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
-    } else {
+    } else if (SNodeOperations.isInstanceOf(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_uj3i4l_a0a0a0a0a0a0a0a2a3(SLinkOperations.getTarget(it, "variableDeclaration", false), variable);
+        }
+      }).isNotEmpty()) {
+        // Assigments referring to the variable from their right side should not be inlined, since the resulting code will have different semantics than the original 
+        return myAssignment;
+      }
       nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true));
       SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
       this.optimizeAssignment(SNodeOperations.cast(myAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), variable);
+    } else {
+      // ATM we do not inline if the last update was through a++ nor a+=1 type-of expressions 
+      return myAssignment;
     }
     this.optimizeDeclaration(variable);
     return nodeToSelect;
@@ -60,7 +72,11 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       for (Instruction nodeInstruction : ListSequence.fromList(program.getInstructionsFor(currentStatement))) {
         for (WriteInstruction instruction : SetSequence.fromSet(definitions.get(nodeInstruction))) {
           if (instruction.getVariable() == variable) {
-            myAssignment = ((SNode) instruction.getSource());
+            SNode assignmentNode = (SNode) instruction.getSource();
+            // We need to avoid inlining a self-assignment 
+            if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).contains(assignmentNode))) {
+              myAssignment = (assignmentNode);
+            }
           }
         }
       }
@@ -74,5 +90,12 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       curParent = SNodeOperations.getParent(curParent);
     }
     return SNodeOperations.cast(curParent, "jetbrains.mps.baseLanguage.structure.Statement");
+  }
+
+  private static boolean eq_uj3i4l_a0a0a0a0a0a0a0a2a3(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

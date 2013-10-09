@@ -53,7 +53,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     myTree.addModel(myEvaluationModel);
     if (myDebugSession.isPaused()) {
-      myTree.updateLocation(myDebugSession.getUiState().getStackFrame().getLocation().getUnitName(), myDebugSession.getUiState().getThread().getThread());
+      myTree.updateLocation(myDebugSession.getUiState().getThread().getThread());
     }
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);

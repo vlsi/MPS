@@ -69,7 +69,7 @@ public class CommentHelper {
           trimok = trimok && line.startsWith(prefix);
         }
       }
-      ListIterator<String> iter = result.listIterator();
+      ListIterator<String> iter = ((List<String>) result).listIterator();
       while (iter.hasNext()) {
         String line = iter.next();
         iter.set((trimok && (line != null && line.length() > 0) ?

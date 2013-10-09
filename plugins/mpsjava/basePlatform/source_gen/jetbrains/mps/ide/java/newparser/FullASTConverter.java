@@ -1360,10 +1360,10 @@ public class FullASTConverter extends ASTConverter {
     private CompilationUnitDeclaration cud;
 
     public CodeBlock(SNode n, CompilationUnitDeclaration d, int s, int e) {
-      CodeBlock.this.setStatementList(n);
+      setStatementList(n);
       cud = d;
-      CodeBlock.this.setStartPos(s);
-      CodeBlock.this.setEndPos(e);
+      setStartPos(s);
+      setEndPos(e);
     }
 
     private SNode myStatementList;

@@ -129,7 +129,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" folder="core.languages.pattern" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/languages/testLang/jetbrains.mps.lang.pattern.testLang.mpl" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/solutions/test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" folder="core.aspects.plugin" />
@@ -175,22 +174,20 @@
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.baseLanguage.regexp.examples.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.baseLanguage.regexp.sandbox.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd" folder="core.baseLanguage.regexp" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/jetbrains.mps.uiLanguage.mpl" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.samples.msd" folder="platform.uiLanguage" />
-      <modulePath path="$PROJECT_DIR$/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" folder="platform.uiLanguage" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/actions/jetbrains.mps.console.actions.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommandRuntime/jetbrains.mps.console.blCommand.runtime.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/ideCommands/jetbrains.mps.console.ideCommands.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommands/jetbrains.mps.console.internalCommands.mpl" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/migration/jetbrains.mps.console.migration.mpl" folder="platform.console" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="platform.debugger" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" folder="platform.debugger" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" folder="platform.debugger" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" folder="platform.debugger" />
-      <modulePath path="$PROJECT_DIR$/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" folder="platform.debugger" />
+      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" folder="workbench.debugger" />
+      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" folder="workbench.debugger" />
+      <modulePath path="$PROJECT_DIR$/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" folder="workbench.debugger" />
+      <modulePath path="$PROJECT_DIR$/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" folder="workbench.debugger" />
+      <modulePath path="$PROJECT_DIR$/plugins/debugger-java/customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" folder="workbench.debugger" />
       <modulePath path="$PROJECT_DIR$/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" folder="workbench.debugger" />
@@ -240,6 +237,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.mpl" folder="core.baseLanguage.unitTest" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="core.baseLanguage.unitTest" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/editorTest/jetbrains.mps.lang.editor.editorTest.mpl" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/patternTest/jetbrains.mps.lang.pattern.testLang.mpl" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/smodelTests/jetbrains.mps.lang.smodelTests.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/jetbrains.mps.lang.test.mpl" folder="core.languages.test" />
@@ -260,8 +258,26 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="platform.mpsjava" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/mpsmake/jetbrains.mps.ide.make.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/gen.transform/transform.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/gen/gen.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/metadata/metadata.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/notation/notation.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/query/query.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/smodel/smodel.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/smodel/solutions/pluginSolution/pluginSolution.msd" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/structure/solutions/pluginSolution/pluginSolution.msd" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/structure/structure.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/syntax/syntax.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/syntaxJava/java.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/template/template.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution/pluginSolution.msd" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/workflow/workflow.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/solutions/core.stubs/jetbrains.mps.core.stubs.msd" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/util.msd" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/solutions/mpscore.build/mpscore.build.msd" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/solutions/mpscore.sandbox/mpscore.sandbox.msd" folder="newLanguageDesign" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />

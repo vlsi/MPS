@@ -18,6 +18,7 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -76,8 +77,8 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   @Override
   public SNode getRoleAttribute() {
-    SNode node = getSNode();
-    return AttributeOperations.getPropertyAttribute(node, null, myPropertyName);
+    // todo: why only first?
+    return IterableUtils.first(AttributeOperations.getPropertyAttributes(getSNode(), myPropertyName));
   }
 
   // gets a kind of attributes possibly hanging on this provider's role

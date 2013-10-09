@@ -63,6 +63,12 @@ public abstract class MpsLoadTask extends Task {
     myFork = fork;
   }
 
+  public void addConfiguredExclude(ExcludeNested excludeInner) {
+    for (File file : excludeInner.getExcludedFromDiffFiles()) {
+      myWhatToDo.excludeFileFromDiff(file);
+    }
+  }
+
   public void addConfiguredMacro(Macro macro) {
     myWhatToDo.addMacro(macro.getName(), macro.getPath().getAbsolutePath());
   }

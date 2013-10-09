@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d5d9w8abuqtq2rr8fp0jyiyuwa1qbm7">
+<dependencies version="2" modelHash="-djj6r3naag4wj86y0ogelt4k13g5l4a">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8he8jux7qalbw33m2tcd7ucej0ikmq3" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -69,7 +69,7 @@
   <source id="2769948622284768359" name="BwfAntStatement" hash="dvajm0r2xkjp1qg6ynbwr78rxc0d89m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4755209551904389307" name="BwfJavaModule" hash="8kjyxv1bsmypmc4djv5gqr646ygrrp1">
+  <source id="4755209551904389307" name="BwfJavaModule" hash="70hk8xu32poscwk2chrmos1gmc6ynqj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4755209551904389316" name="BwfJavaModuleReference" hash="cqa9qedp0zpwobgln50zdqsv6zdf6bo">

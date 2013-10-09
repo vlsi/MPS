@@ -17,6 +17,9 @@ public class Util_Test extends TestCase {
   public void test_dummy() throws Exception {
   }
 
+  public Util_Test() {
+  }
+
   public void assertIterableEquals(Iterable exp, Iterable test) {
     Iterator expIt = exp.iterator();
     Iterator testIt = test.iterator();

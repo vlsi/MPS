@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.ide.java.newparser.MultipleFilesParser;
+import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.newparser.JavaConvertUtil;
@@ -100,7 +100,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
         ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
       }
 
-      final MultipleFilesParser parser = new MultipleFilesParser(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
+      final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
       final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(sourcePaths)).toListSequence();
 
       ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {

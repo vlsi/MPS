@@ -10,7 +10,7 @@
   <import index="caxt" modelUID="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" version="-1" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963817983" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="UnloadModelsCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="unload models" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#unload models" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7820875636624659323" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -18,7 +18,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8483375838963818242" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="RebuildProjectCommand" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="rebuild project" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#rebuild project" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="clean and make" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8483375838963818243" nodeInfo="ig">
@@ -35,7 +35,7 @@
     <property name="name" nameId="tpck.1169194664001" value="StatCommand" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="stat" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#stat" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="stat" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7490254719522675891" nodeInfo="ig">
@@ -93,7 +93,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2087237500458009228" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ShowBrokenReferences" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="show broken references" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#showBrokenRefs" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2087237500458009229" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -126,6 +126,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7820875636625377576" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="stat" />
     <property name="name" nameId="tpck.1169194664001" value="ModelReference" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.559557797393017698" resolveInfo="ModelReferenceExpression" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7820875636625654703" nodeInfo="ig">
@@ -133,6 +134,37 @@
     <property name="name" nameId="tpck.1169194664001" value="NodeReference" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1219352745532" resolveInfo="NodeRefExpression" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="473081947985174289" nodeInfo="ig">
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="IDECommandHelp" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="473081947985174368" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7057947030097724900" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ShowGenPlan" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#showGenPlan" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="eynw.1769790395579407461" resolveInfo="InterpretedCommand" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7057947030097725050" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="targetModel" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7820875636625377576" resolveInfo="ModelReference" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3894227536041114995" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ClickableGenerator" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3894227536041893247" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="moduleId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3894227536041887886" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.2348043250037290416" resolveInfo="IClickable" />
+    </node>
   </root>
 </model>
 

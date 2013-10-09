@@ -36,7 +36,7 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_898x9g_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.addKeyMap(new XMLSAXBreakReturn());
     return editorCell;
   }

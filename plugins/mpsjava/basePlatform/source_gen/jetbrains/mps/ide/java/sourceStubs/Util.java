@@ -9,10 +9,13 @@ import org.jetbrains.mps.openapi.model.SModelId;
 
 public class Util {
   public static SModelReference makeModelReference(String packageName, SModule mpsModule) {
-    String stereotype = "java_stub";
+    // default package is not handled by MPS; classes in default pkg can be referenced only 
+    // from the default pkg as well, but there are no models that correspond to it 
     if (packageName.length() == 0) {
-      packageName = "<default package>";
+      return null;
     }
+
+    String stereotype = "java_stub";
     String mpsModuleId = mpsModule.getModuleId().toString();
 
     SModelFqName fqName = new SModelFqName(packageName, stereotype);

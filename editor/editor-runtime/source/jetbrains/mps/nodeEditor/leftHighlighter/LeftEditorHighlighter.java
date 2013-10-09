@@ -23,8 +23,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.editor.colors.EditorColors;
-import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
@@ -39,6 +37,7 @@ import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -80,7 +79,6 @@ import java.util.TreeSet;
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
   private static final Logger LOG = LogManager.getLogger(LeftEditorHighlighter.class);
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
-  private static final Color BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
 
   private static final int MIN_LEFT_TEXT_WIDTH = 0;
   private static final int MIN_ICON_RENDERERS_WIDTH = 14;
@@ -124,7 +122,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private boolean myRightToLeft;
 
   public LeftEditorHighlighter(@NotNull EditorComponent editorComponent, boolean rightToLeft) {
-    setBackground(BACKGROUND_COLOR);
+    setBackground(EditorSettings.getInstance().getLeftHighlighterBackgroundColor());
     myEditorComponent = editorComponent;
     myRightToLeft = rightToLeft;
     addMouseListener(new MouseAdapter() {
@@ -306,15 +304,15 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       int selectedCellY = deepestCell.getY();
       int selectedCellHeight = deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset();
       if (g.hitClip(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight)) {
-        g.setColor(EditorComponent.CARET_ROW_COLOR);
+        g.setColor(EditorSettings.getInstance().getCaretRowColor());
         g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
         // Drawing folding line
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(),
-            EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
-        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR,
-            EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+            EditorSettings.getInstance().getLeftHighlighterTearLineColor());
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorSettings.getInstance().getCaretRowColor(),
+            EditorSettings.getInstance().getLeftHighlighterTearLineColor());
         UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(),
-            EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+            EditorSettings.getInstance().getLeftHighlighterTearLineColor());
         return;
       }
     }

@@ -186,6 +186,9 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("<42>", s.getSample());
   }
 
+  public NamedTuples_Test() {
+  }
+
   public String getString(Pair<String, String>... tuples) {
     return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<Pair<String, String>, String>() {
       public String select(Pair<String, String> t) {

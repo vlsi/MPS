@@ -39,7 +39,7 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_tqq191_a0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);

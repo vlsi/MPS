@@ -55,7 +55,15 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    // todo: temporary disabled, see MPS-18470 
+    return false;
   }
 
   public SNodeReference getIntentionNodeReference() {

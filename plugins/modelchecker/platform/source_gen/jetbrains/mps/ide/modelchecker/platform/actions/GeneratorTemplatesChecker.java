@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -45,7 +44,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
           if (progressMonitor.isCanceled()) {
             return;
           }
-          if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
+          if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null) {
             scanTemplateNode(root);
           }
         }
@@ -62,7 +61,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
             if (progressMonitor.isCanceled()) {
               return;
             }
-            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
+            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", SLinkOperations.getRole(ref))) != null)) {
               continue;
             }
             SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
@@ -73,7 +72,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
               continue;
             }
             SNode root = SNodeOperations.getContainingRoot(target);
-            if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null) {
+            if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) == null) {
               continue;
             }
             if (root == SNodeOperations.getContainingRoot(node)) {

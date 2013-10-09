@@ -40,6 +40,7 @@ import org.jetbrains.annotations.Nullable;
   @Nullable
   public static SNode getNodeForBreakpoint(BreakpointWithHighlighter breakpoint) {
     SourcePosition sourcePosition = breakpoint.getSourcePosition();
+    if (sourcePosition == null) return null;
 
     String className = null;
     PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);

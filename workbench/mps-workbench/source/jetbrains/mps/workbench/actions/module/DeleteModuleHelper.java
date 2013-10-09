@@ -21,6 +21,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -35,14 +37,25 @@ public class DeleteModuleHelper {
 
   public static void deleteModule(Project project, SModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
+      if (module instanceof Language) {
+        for (SModule m : ((Language) module).getGenerators()) {
+          safeDelete(project, m, deleteFiles);
+        }
+      }
       safeDelete(project, module, deleteFiles);
     } else {
+      if (module instanceof Language) {
+        for (SModule m : ((Language) module).getGenerators()) {
+          delete(project, m, deleteFiles);
+        }
+      }
       delete(project, module, deleteFiles);
     }
   }
 
   private static void delete(Project project, SModule module, boolean deleteFiles) {
-    if (!project.isProjectModule(module) && !deleteFiles) {
+    //HACK: generator module is not project module, so need to check it separately
+    if (!project.isProjectModule(module instanceof Generator ? ((Generator) module).getSourceLanguage() : module) && !deleteFiles) {
       throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");
     }
 
@@ -73,14 +86,19 @@ public class DeleteModuleHelper {
         String outputPath = curModule.getOutputPath().getPath();
         deleteFile(outputPath);
         deleteFile(FileGenerationUtil.getCachesPath(outputPath));
-        curModule.getDescriptorFile().delete();
-        if (curModule.getModuleSourceDir().getChildren().isEmpty()) {
+
+        if(curModule.getDescriptorFile() != null)
+          curModule.getDescriptorFile().delete();
+
+        if (curModule.getModuleSourceDir() != null && curModule.getModuleSourceDir().getChildren().isEmpty()) {
           deleteFile(curModule.getModuleSourceDir().getPath());
         }
 
-        IFile moduleFolder = curModule.getDescriptorFile().getParent();
-        if (deleteDirIfEmpty(moduleFolder))
-          moduleFolder.delete();
+        if(curModule.getDescriptorFile() != null) {
+          IFile moduleFolder = curModule.getDescriptorFile().getParent();
+          if (deleteDirIfEmpty(moduleFolder))
+            moduleFolder.delete();
+        }
       }
     }
 

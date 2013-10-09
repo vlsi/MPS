@@ -9,6 +9,9 @@ import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import com.intellij.util.messages.MessageBusConnection;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import java.util.Collection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -17,14 +20,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.nodeEditor.AdditionalPainter;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public abstract class CurrentLinePositionComponentEx<S> {
   private FileEditorManager myFileEditorManager;
@@ -32,6 +39,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   protected final Project myProject;
   private final EditorComponentCreateListener myEditorComponentCreationHandler = new CurrentLinePositionComponentEx.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
+  private final SRepositoryListener myRepositoryListener = new CurrentLinePositionComponentEx.MyRepositoryListener();
 
   public CurrentLinePositionComponentEx(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
@@ -41,13 +49,17 @@ public abstract class CurrentLinePositionComponentEx<S> {
   protected void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
+    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
   }
 
   protected void dispose() {
+    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
     myMessageBusConnection.disconnect();
   }
 
   protected abstract S getCurrentSession();
+
+  protected abstract Collection<? extends S> getAllSessions();
 
   private List<CurrentLinePainter> getAllPainters() {
     synchronized (mySessionToContextPainterMap) {
@@ -62,10 +74,9 @@ public abstract class CurrentLinePositionComponentEx<S> {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (EditorComponentUtil.isNodeShownInTheComponent(editorComponent, painter.getSNode())) {
-          if (!(editorComponent.getAdditionalPainters().contains(painter))) {
-            editorComponent.addAdditionalPainter(painter);
-          }
+        SNode node = painter.getSNode();
+        if (node != null && EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
+          editorComponent.addAdditionalPainter(painter);
           editorComponent.repaint();
         }
       }
@@ -77,7 +88,8 @@ public abstract class CurrentLinePositionComponentEx<S> {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (EditorComponentUtil.isNodeShownInTheComponent(editorComponent, painter.getSNode())) {
+        SNode node = painter.getSNode();
+        if (node == null || EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
           editorComponent.removeAdditionalPainter(painter);
           editorComponent.repaint();
         }
@@ -86,7 +98,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   }
 
   @Nullable
-  protected Runnable attachPainterRunnable(final S debugSession) {
+  protected Runnable attachPainterRunnable(final S debugSession, final boolean focus) {
     final CurrentLinePainter newPainter = ModelAccess.instance().runReadAction(new Computable<CurrentLinePainter>() {
       @Override
       public CurrentLinePainter compute() {
@@ -107,31 +119,26 @@ public abstract class CurrentLinePositionComponentEx<S> {
           @Override
           public void run() {
             ModelAccess.assertLegalWrite();
-            if (visible) {
-              attachPainterAndOpenEditor(newPainter);
-            } else {
-              attachPainter(newPainter);
+            SNode node = newPainter.getSNode();
+            if (node != null) {
+              if (visible && focus) {
+                EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
+                currentEditorComponent = EditorComponentUtil.scrollToNode(node, currentEditorComponent, myFileEditorManager);
+                if (currentEditorComponent != null) {
+                  attach(newPainter, currentEditorComponent);
+                }
+              }
+
+              List<EditorComponent> components = EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
+              for (EditorComponent component : ListSequence.fromList(components)) {
+                attach(newPainter, component);
+              }
             }
           }
         };
       }
     }
     return null;
-  }
-
-  private void attachPainterAndOpenEditor(@NotNull CurrentLinePainter painter) {
-    EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(painter.getSNode(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
-    currentEditorComponent = EditorComponentUtil.scrollToNode(painter.getSNode(), currentEditorComponent, myFileEditorManager);
-    if (currentEditorComponent != null) {
-      attach(painter, currentEditorComponent);
-    }
-  }
-
-  private void attachPainter(@NotNull CurrentLinePainter painter) {
-    List<EditorComponent> components = EditorComponentUtil.findComponentForNode(painter.getSNode(), myFileEditorManager);
-    for (EditorComponent component : ListSequence.fromList(components)) {
-      attach(painter, component);
-    }
   }
 
   protected abstract SNode getNode(S session);
@@ -147,17 +154,13 @@ public abstract class CurrentLinePositionComponentEx<S> {
       return new Runnable() {
         @Override
         public void run() {
-          detachPainter(painter);
+          for (EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
+            detach(painter, editor);
+          }
         }
       };
     }
     return null;
-  }
-
-  private void detachPainter(@NotNull CurrentLinePainter painter) {
-    for (EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
-      detach(painter, editor);
-    }
   }
 
   protected void detachPainter(S session) {
@@ -168,9 +171,9 @@ public abstract class CurrentLinePositionComponentEx<S> {
     ApplicationManager.getApplication().invokeLater(detachPainterRunnable);
   }
 
-  protected void reAttachPainter(S session) {
+  protected void reAttachPainter(S session, boolean focus) {
     final Runnable detachSession = detachPainterRunnable(session);
-    final Runnable attachSession = attachPainterRunnable(session);
+    final Runnable attachSession = attachPainterRunnable(session, focus);
     if (detachSession != null || attachSession != null) {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
@@ -218,8 +221,20 @@ public abstract class CurrentLinePositionComponentEx<S> {
 
     @Override
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
-      for (CurrentLinePainter p : ListSequence.fromList(getAllPainters())) {
-        detach(p, editorComponent);
+      List<AdditionalPainter> additionalPainters = editorComponent.getAdditionalPainters();
+      for (AdditionalPainter painter : ListSequence.fromList(additionalPainters)) {
+        if (painter instanceof CurrentLinePainter) {
+          editorComponent.removeAdditionalPainter(painter);
+        }
+      }
+    }
+  }
+
+  private class MyRepositoryListener extends SRepositoryAdapter {
+    @Override
+    public void commandFinished(SRepository repository) {
+      for (S session : CollectionSequence.fromCollection(getAllSessions())) {
+        reAttachPainter(session, false);
       }
     }
   }

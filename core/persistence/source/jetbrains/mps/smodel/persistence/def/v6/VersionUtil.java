@@ -159,7 +159,7 @@ public class VersionUtil {
     ParseResult res = parseWithoutCheck(src, hasmodel);
 
     // check integrity except concepts and attribute roles
-    if (hasmodel && !AttributeOperations.isOldAttributeRole(res.text)) {
+    if (hasmodel) { // && !AttributeOperations.isOldAttributeRole(res.text)) { // todo: ? remove this persistence?
       ImportElement elem = myImports.get(getSModelReference(res.modelID));
       if (elem == null || res.version != myImports.get(getSModelReference(res.modelID)).getUsedVersion()) {
         LOG.error("wrong version of " + src + ", model=" + getSModelReference(res.modelID) + ". Possible reason: merge conflict was not resolved.");

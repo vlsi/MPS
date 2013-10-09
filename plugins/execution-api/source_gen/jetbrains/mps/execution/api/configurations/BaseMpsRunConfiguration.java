@@ -24,6 +24,10 @@ public abstract class BaseMpsRunConfiguration extends RunConfigurationBase imple
 
   @Override
   public String suggestedName() {
-    return getName();
+    String name = getName();
+    if (name == null) {
+      return this.getClass().toString();
+    }
+    return name;
   }
 }

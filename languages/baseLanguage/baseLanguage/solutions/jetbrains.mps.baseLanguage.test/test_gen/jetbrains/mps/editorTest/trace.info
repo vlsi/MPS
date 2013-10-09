@@ -1756,6 +1756,54 @@
     <unitInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="28" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
     <unitInfo nodeId="2345623147105465521" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2350996240757282911">
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="18" startPosition="72" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350996240757380622" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LT_PlusExpressionWithCaretOnPlus_Test#()V" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LT_PlusExpressionWithCaretOnPlus#()V" />
+    <nodeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="14" startPosition="50" endLine="14" endPosition="50" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="18" startPosition="72" endLine="20" endPosition="113" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="59">
+      <varInfo nodeId="2350996240757282911" varName="editor" />
+      <varInfo nodeId="2350996240757282911" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_PlusExpressionWithCaretOnPlus_Test$TestBody" />
+    <unitInfo nodeId="2350996240757282911" fileName="LT_PlusExpressionWithCaretOnPlus_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_PlusExpressionWithCaretOnPlus_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2350996240757380702">
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="18" startPosition="72" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2350996240757380720" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RT_PlusExpressionWithCaretOnPlus_Test#()V" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RT_PlusExpressionWithCaretOnPlus#()V" />
+    <nodeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="14" startPosition="50" endLine="14" endPosition="50" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="18" startPosition="72" endLine="20" endPosition="113" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="59">
+      <varInfo nodeId="2350996240757380702" varName="editor" />
+      <varInfo nodeId="2350996240757380702" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.RT_PlusExpressionWithCaretOnPlus_Test$TestBody" />
+    <unitInfo nodeId="2350996240757380702" fileName="RT_PlusExpressionWithCaretOnPlus_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.RT_PlusExpressionWithCaretOnPlus_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2671731496587878888">
     <nodeInfo nodeId="2671731496587878888" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="20" startPosition="69" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2671731496587878888" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="21" startPosition="107" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

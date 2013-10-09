@@ -71,6 +71,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class UsagesView implements IExternalizeable {
@@ -198,11 +199,11 @@ public abstract class UsagesView implements IExternalizeable {
 
   //----RESULTS MANIPUALTION STUFF----
 
-  public List<SModel> getIncludedModels() {
+  public Set<SModel> getIncludedModels() {
     return myTreeComponent.getIncludedModels();
   }
 
-  public List<SModel> getAllModels() {
+  public Set<SModel> getAllModels() {
     return myTreeComponent.getAllModels();
   }
 

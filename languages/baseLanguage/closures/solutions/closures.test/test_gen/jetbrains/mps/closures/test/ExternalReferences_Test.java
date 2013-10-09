@@ -249,6 +249,9 @@ __switch__:
     Assert.assertTrue((foo).getClass() == String.class);
   }
 
+  public ExternalReferences_Test() {
+  }
+
   public <T> T mps10242_helper(T t, final _FunctionTypes._return_P1_E0<? extends T, ? super T> fun) {
     final Wrappers._T<T> _t = new Wrappers._T<T>(t);
     new _FunctionTypes._return_P0_E0<T>() {

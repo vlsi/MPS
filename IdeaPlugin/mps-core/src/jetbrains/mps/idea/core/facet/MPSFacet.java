@@ -68,12 +68,6 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
             SolutionDescriptor solutionDescriptor = getConfiguration().getBean().getSolutionDescriptor();
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
 
-//            for (ModelRoot root: myContributedModelRoots) {
-//              ((SolutionIdea)solution).addModelRoot(root);
-//              ((ModelRootBase)root).setModule(solution);
-//              ((ModelRootBase)root).attach();
-//            }
-
             com.intellij.openapi.project.Project project = getModule().getProject();
             myMpsProject = ProjectHelper.toMPSProject(project);
 

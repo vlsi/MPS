@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,7 +24,6 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
   }
 
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Q: is there a better way for this? 
     if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(varRef), "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
       return;
     }
@@ -37,16 +37,14 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
       return;
     }
 
-    // now check whether it's in another class 
-    SNode thisClass = SNodeOperations.getAncestor(varRef, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    // it should be ok to use ==, I think 
-    if (thisClass == thatClass) {
-      // same class, such local method call is ok in baseLanguage 
+    Scope varScope = Scope.getScope(varRef, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+    if (varScope.contains(target)) {
+      // it's ok, no need to worry 
       return;
     }
 
-    // different class, let's make this reference non-local, but qualified 
+    // out of scope, let's make this reference non-local, but qualified 
+    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     SNode sfr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
     SLinkOperations.setTarget(sfr, "classifier", thatClass, false);
     SLinkOperations.setTarget(sfr, "variableDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), false);

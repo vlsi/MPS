@@ -184,6 +184,19 @@
     </scopeInfo>
     <unitInfo nodeId="644116965567343729" fileName="CodeStyleSettingsRegistry.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry" />
   </root>
+  <root nodeRef="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)/7698188144358741148">
+    <nodeInfo nodeId="748086721413444233" fileName="IdentifierConstraintsUtil.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="javaKeywordsAndConstants" />
+    <nodeInfo nodeId="748086721413444221" fileName="IdentifierConstraintsUtil.java" startLine="15" startPosition="50" endLine="16" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7698188144358746148" fileName="IdentifierConstraintsUtil.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdentifierConstraintsUtil#()V" />
+    <nodeInfo nodeId="748086721413435667" fileName="IdentifierConstraintsUtil.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isJavaReserved#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="7698188144358746151" fileName="IdentifierConstraintsUtil.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
+    <scopeInfo nodeId="748086721413435670" fileName="IdentifierConstraintsUtil.java" startLine="15" startPosition="50" endLine="16" endPosition="69" />
+    <scopeInfo nodeId="7698188144358746148" fileName="IdentifierConstraintsUtil.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="748086721413435667" fileName="IdentifierConstraintsUtil.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="748086721413444136" varName="s" />
+    </scopeInfo>
+    <unitInfo nodeId="7698188144358741148" fileName="IdentifierConstraintsUtil.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil" />
+  </root>
   <root nodeRef="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)/8432634623182691821">
     <nodeInfo nodeId="8432634623182692263" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingToOverridenMethodsMap" />
     <nodeInfo nodeId="8432634623182692283" fileName="OverridingMethodsFinder.java" startLine="30" startPosition="51" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />

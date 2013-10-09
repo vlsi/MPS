@@ -584,6 +584,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_ListType_ClassifierTypeList_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_QueueType_ClassiType_Queue_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -593,6 +597,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SetType_ClassifierTypeSet_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {

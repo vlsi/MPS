@@ -90,7 +90,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     cacheParameters(node, editorContext);
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
-    addLabel(mySNode.getConcept() != null ? camelToLabel(mySNode.getConcept().getName()) : mySNode.getPresentation());
+    addLabel(camelToLabel(mySNode.getConcept().getName()));
     if (myNameProperty != null) {
       addPropertyCell(myNameProperty);
     }
@@ -128,14 +128,12 @@ public class DefaultEditor extends DefaultNodeEditor {
   private void cacheParameters(SNode node, EditorContext editorContext) {
     myEditorContext = editorContext;
     mySNode = node;
-    SConcept concept = node.getConcept();
-    String qualifiedName = null;
-    if (concept != null) {
-      qualifiedName = concept.getQualifiedName();
-    }
+    String qualifiedName = node.getConcept().getQualifiedName();
     myConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
 
-    if (concept == null || myConceptDescriptor instanceof IllegalConceptDescriptor) {
+    //todo: remove getConceptDeclarationNode() check when editor doesn't need concept node
+    if (myConceptDescriptor instanceof IllegalConceptDescriptor ||
+        !(mySNode instanceof jetbrains.mps.smodel.SNode) || ((jetbrains.mps.smodel.SNode) mySNode).getConceptDeclarationNode() == null) {
       myNullConcept = true;
     }
 

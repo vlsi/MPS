@@ -98,6 +98,9 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertTrue(DequeSequence.fromDeque(d).isEmpty());
   }
 
+  public QueueDequeStack_Test() {
+  }
+
   private static boolean eq_5js43w_a0a5a0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

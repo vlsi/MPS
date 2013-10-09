@@ -49,6 +49,9 @@ import java.util.*;
 
 public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemComponent> {
 
+  private static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
+  private static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
+
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private List<SModel> myReplacedModels = new ArrayList<SModel>();
 
@@ -340,6 +343,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     private void markReferenceTargetsInvalid(List<SReference> references) {
       for (SReference reference : references) {
+        // MPS-18585 IncrementalTypecheking doesn't invalidate target nodes of dynamic refs if source node has been detached from model
         if (reference instanceof DynamicReference) {
           // the problem was in a more strict case:
           // dynamic reference from a detached node (its getTargetNode() seems to be non-sensible)
@@ -355,8 +359,13 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     @Override
     public void visitReferenceEvent(SModelReferenceEvent event) {
-      markInvalid(event.getReference().getSourceNode());
+      SReference ref = event.getReference();
+      markInvalid(ref.getSourceNode());
       if (!event.isAdded()) return;
+      // MPS-18585 IncrementalTypecheking doesn't invalidate target nodes of dynamic refs if source node has been detached from model
+      if (ref instanceof DynamicReference && ref.getSourceNode().getModel() == null) {
+        return;
+      }
       SNode node = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference());
       if (node == null) return;
       markDependentNodesForInvalidation(node, myNonTypeSystemComponent);
@@ -364,6 +373,9 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     @Override
     public void visitPropertyEvent(SModelPropertyEvent event) {
+      if (LEFT_TRANSFORM_HINT.equals(event.getPropertyName()) || RIGHT_TRANSFORM_HINT.equals(event.getPropertyName())) {
+        return;
+      }
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 

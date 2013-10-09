@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -73,7 +74,10 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       } else {
         setText(nodePointer.toString());
       }
-      setAdditionalText("" + nodePointer.getModelReference().getModelName());
+      SModelReference modelRef = nodePointer.getModelReference();
+      if (modelRef != null) {
+        setAdditionalText(modelRef.getModelName());
+      }
     } else {
       setText("<" + kind + ">");
     }

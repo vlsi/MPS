@@ -173,9 +173,8 @@ public class Equations {
     }
 
     SNode type = getRepresentativeNoShortenPaths(node);
-    while (finalExpansion && LatticeUtil.isMeet(type)) {
-      // Dirty hack to avoid meet type to appear inside fully reified type
-      type = LatticeUtil.getMeetArguments(type).get(0);
+    if (finalExpansion && LatticeUtil.isMeet(type)) {
+      type = TypesUtil.cleanupMeet(type);
     }
 
     if (type != node) {

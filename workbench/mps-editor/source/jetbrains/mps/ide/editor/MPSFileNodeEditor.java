@@ -27,14 +27,19 @@ import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,8 +47,10 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.beans.PropertyChangeListener;
@@ -61,6 +68,40 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
     this(ProjectHelper.toIdeaProject(context.getProject()), file, context);
+  }
+
+  public MPSFileNodeEditor(final Project project, final VirtualFile file) {
+    this(project, null);
+    final SRepositoryContentAdapter adapter = new SRepositoryContentAdapter(){
+      @Override
+      protected void startListening(final SModel model) {
+        MPSNodeVirtualFile mpsNodeVirtualFile = ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
+          @Override
+          public MPSNodeVirtualFile compute() {
+            SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
+            if (descr != null && descr.equals(model)) {
+              for (SNode node : descr.getRootNodes()) {
+                if (node.getName().equals(file.getNameWithoutExtension()) || node.getNodeId().toString().equals(file.getNameWithoutExtension())) {
+                  return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+                }
+              }
+            }
+            return null;
+          }
+        });
+        if(mpsNodeVirtualFile != null) {
+          myFile = mpsNodeVirtualFile;
+          MPSFileNodeEditor.this.recreateEditor();
+          SRepositoryRegistry.getInstance().removeGlobalListener(this);
+        }
+      }
+    };
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SRepositoryRegistry.getInstance().addGlobalListener(adapter);
+      }
+    });
   }
 
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
@@ -99,7 +140,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @Override
   @Nullable
   public JComponent getPreferredFocusedComponent() {
-    return isDisposed() ? null : (JComponent) myNodeEditor.getCurrentEditorComponent();
+    JPanel panel = new JPanel(new BorderLayout());
+    JLabel label = new JLabel("Loading...");
+    label.setFont(label.getFont().deriveFont(label.getFont().getSize()*2));
+    panel.add(label, BorderLayout.CENTER);
+    return isDisposed() ? null : ( myNodeEditor == null ? panel : (JComponent) myNodeEditor.getCurrentEditorComponent() );
   }
 
   @Override
@@ -209,7 +254,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public void dispose() {
-    myNodeEditor.dispose();
+    if (myNodeEditor != null) {
+      myNodeEditor.dispose();
+    }
     myComponent.removeAll();
     myDisposed = true;
   }

@@ -1,8 +1,24 @@
+/*
+ * Copyright 2003-2013 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.ide.typesystem.trace;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.ui.JBColor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -29,6 +45,7 @@ import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
@@ -153,7 +170,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       public void doUpdatePresentation() {
         super.doUpdatePresentation();
         if (!(showNode)) {
-          setColor(Color.LIGHT_GRAY);
+          setColor(JBColor.GRAY);
         }
       }
     };
@@ -401,7 +418,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     private jetbrains.mps.openapi.editor.cells.EditorCell myCell;
 
     public SelectedNodeEditorMessage(EditorCell cell, String message) {
-      super(cell.getSNode(), new Color(192, 255, 255), message, myMessageOwner);
+      super(cell.getSNode(), StyleRegistry.getInstance().getSimpleColor(new Color(192, 255, 255)), message, myMessageOwner);
       this.myCell = cell;
     }
 
@@ -502,7 +519,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
             public void doUpdatePresentation() {
               super.doUpdatePresentation();
               if (!(showNode)) {
-                setColor(Color.LIGHT_GRAY);
+                setColor(JBColor.BLACK);
               }
             }
           };

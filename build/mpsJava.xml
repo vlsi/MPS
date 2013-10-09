@@ -42,7 +42,7 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
@@ -116,6 +116,11 @@
         <module file="${mps_home}/plugins/mpsjava/basePlatform/jetbrains.mps.ide.java.basePlatform.msd" />
         <module file="${mps_home}/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
+      <macro name="mps_home" path="${mps_home}" />
+      <macro name="idea_home" path="${idea_home}" />
     </generate>
   </target>
   
@@ -131,6 +136,8 @@
   </target>
   
   <target name="java.compile.mps-java-common" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-java-common" />
     <javac destdir="${build.tmp}/java/out/mps-java-common" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

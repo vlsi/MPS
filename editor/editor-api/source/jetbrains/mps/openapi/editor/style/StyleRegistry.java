@@ -23,6 +23,9 @@ public abstract class StyleRegistry {
   protected static StyleRegistry ourInstance;
 
   public static StyleRegistry getInstance() {
+    if (ourInstance == null) {
+      ourInstance = new DummyStyleRegistry();
+    }
     return ourInstance;
   }
 
@@ -80,5 +83,84 @@ public abstract class StyleRegistry {
     ourColorMap.clear();
     ourStyleAttributesMap.clear();
     ourStyleMap.clear();
+  }
+
+  private static class DummyStyleRegistry extends StyleRegistry {
+    @Override
+    public Color getEditorBackground() {
+      return Color.white;
+    }
+
+    @Override
+    public Color getEditorForeground() {
+      return Color.DARK_GRAY;
+    }
+
+    @Override
+    public String getEditorFontName() {
+      return null;
+    }
+
+    @Override
+    public void setEditorFontName(String fontName) {
+    }
+
+    @Override
+    public int getEditorFontSize() {
+      return 0;
+    }
+
+    @Override
+    public void setEditorFontSize(int fontSize) {
+    }
+
+    @Override
+    public float getEditorLineSpacing() {
+      return 0;
+    }
+
+    @Override
+    public void setEditorLineSpacing(float lineSpacing) {
+    }
+
+    @Override
+    public String getConsoleFontName() {
+      return null;
+    }
+
+    @Override
+    public void setConsoleFontName(String fontName) {
+    }
+
+    @Override
+    public int getConsoleFontSize() {
+      return 0;
+    }
+
+    @Override
+    public void setConsoleFontSize(int fontSize) {
+    }
+
+    @Override
+    public float getConsoleLineSpacing() {
+      return 0;
+    }
+
+    @Override
+    public void setConsoleLineSpacing(float lineSpacing) {
+    }
+
+    @Override
+    public void setColor(String key, Color color) {
+    }
+
+    @Override
+    public void setAttributes(String key, StyleAttribute attributes) {
+    }
+
+    @Override
+    public boolean isDarkTheme() {
+      return false;
+    }
   }
 }

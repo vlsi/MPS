@@ -35,7 +35,7 @@ public class QueriesGenerated {
           public Iterable<SNode> compute() {
             return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+                return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
               }
             }).toListSequence();
           }
@@ -74,7 +74,7 @@ public class QueriesGenerated {
           public Iterable<SNode> compute() {
             return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.settings.structure.PersistentConfiguration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+                return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
               }
             }).toListSequence();
           }

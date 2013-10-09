@@ -125,4 +125,7 @@ public class Iterator_Test extends Util_Test {
     }
     Assert.assertEquals(2 * (1 + 2 + 3 + 4 + 5), sum);
   }
+
+  public Iterator_Test() {
+  }
 }

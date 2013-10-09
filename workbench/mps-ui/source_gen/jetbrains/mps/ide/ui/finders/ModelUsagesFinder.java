@@ -8,9 +8,9 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.ModelsOnlyScope;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -34,11 +34,10 @@ public class ModelUsagesFinder implements IFinder {
     SearchResults searchResults = new SearchResults();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof ModelHolder;
-    SModel model = ((ModelHolder) holder).getObject();
-    searchResults.getSearchedNodes().add(model);
-    SModelReference modelReference = model.getReference();
+    SModelReference modelReference = ((ModelHolder) holder).getObject();
+    searchResults.getSearchedNodes().add(modelReference);
     if (query.getScope() instanceof ModelsOnlyScope) {
-      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0g0b(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
+      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0f0b(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -62,7 +61,7 @@ public class ModelUsagesFinder implements IFinder {
       }
     } else if (false && query.getScope() instanceof ModulesOnlyScope) {
       // TODO: implement model search in Module Scope 
-      for (SModel scopeModel : (as_s8v3jk_a0a0b0a6a1(query.getScope(), ModulesOnlyScope.class)).getModels()) {
+      for (SModel scopeModel : (as_s8v3jk_a0a0b0a5a1(query.getScope(), ModulesOnlyScope.class)).getModels()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -102,14 +101,14 @@ public class ModelUsagesFinder implements IFinder {
     return searchResults;
   }
 
-  private static <T> T as_s8v3jk_a0a0a0g0b(Object o, Class<T> type) {
+  private static <T> T as_s8v3jk_a0a0a0f0b(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_s8v3jk_a0a0b0a6a1(Object o, Class<T> type) {
+  private static <T> T as_s8v3jk_a0a0b0a5a1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

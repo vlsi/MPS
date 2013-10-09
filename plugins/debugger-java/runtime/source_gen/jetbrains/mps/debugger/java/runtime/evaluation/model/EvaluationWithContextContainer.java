@@ -5,9 +5,12 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -24,16 +27,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import org.apache.log4j.Priority;
@@ -66,8 +68,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   private boolean myVariablesInitialized = false;
   protected final EvaluationContext myEvaluationContext;
 
-  public EvaluationWithContextContainer(Project project, DebugSession session, SModuleReference containerModule, List<SNodeReference> nodesToImport, boolean isInWatch) {
-    super(project, session, containerModule, nodesToImport);
+  public EvaluationWithContextContainer(Project project, DebugSession session, @NotNull SModuleReference containerModule, List<SNodeReference> nodesToImport, boolean isInWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
+    super(project, session, containerModule, nodesToImport, onNodeSetUp);
     myIsInWatch = isInWatch;
     myEvaluationContext = new StackFrameContext(session.getUiState());
   }
@@ -117,7 +119,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected SNode createEvaluatorNode() {
     SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", null);
     SPropertyOperations.set(evaluatorConcept, "isShowContext", "" + (myIsInWatch));
-    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
+    AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
   }
 
@@ -246,9 +248,9 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
 
   @Override
-  public EvaluationWithContextContainer copy(final boolean isInWatch) {
+  public EvaluationWithContextContainer copy(final boolean isInWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     final SNodeReference reference = myNode;
-    return new EvaluationWithContextContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isInWatch) {
+    return new EvaluationWithContextContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isInWatch, onNodeSetUp) {
       @Override
       protected SNode createEvaluatorNode() {
         SNode newEvaluator = (SNode) CopyUtil.copyAndPreserveId(reference.resolve(myDebuggerRepository), true);

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions" file="JavaConfigurationOptions.java">
+    <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
+    <classNode dependClassName="com.intellij.ui.components.JBLabel" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.awt.event.ActionListener" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" file="JavaRunParameters.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.NullPointerException" />
@@ -33,8 +46,8 @@
   <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" file="JavaRunParameters_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>

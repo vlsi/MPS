@@ -180,7 +180,7 @@ public final class TemplateProcessor {
     myGenerator.getPerformanceTracer().push("templateNode.references",  false);
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
-      if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
+      if (GeneratorUtilEx.getReferenceMacro(templateNode, reference.getRole()) != null) {
         continue;
       }
 

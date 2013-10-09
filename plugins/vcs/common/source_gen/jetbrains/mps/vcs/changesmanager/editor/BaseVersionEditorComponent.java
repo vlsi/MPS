@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -40,8 +41,14 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   public BaseVersionEditorComponent(SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
-    myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel), true);
+    final jetbrains.mps.smodel.SModel[] baseModel = new jetbrains.mps.smodel.SModel[1];
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        baseModel[0] = as_i3w5ys_a0a0a0a0a0a0c0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
+      }
+    });
+    myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel[0]), true);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffModelUtil.renameModelAndRegister(myBaseModel, null);
@@ -53,7 +60,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
         SNode baseRooot = myBaseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
         editNode(baseRooot);
 
-        setBackground(EditorComponent.CARET_ROW_COLOR);
+        setBackground(EditorSettings.getInstance().getCaretRowColor());
 
         Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
           public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
@@ -113,7 +120,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     return myScrollPane;
   }
 
-  private static <T> T as_i3w5ys_a0a0b0c(Object o, Class<T> type) {
+  private static <T> T as_i3w5ys_a0a0a0a0a0a0c0c(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

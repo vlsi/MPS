@@ -6,9 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MethodDocComment_Behavior {
   public static void init(SNode thisNode) {
@@ -16,15 +13,5 @@ public class MethodDocComment_Behavior {
 
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "param", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsTag", true)).isEmpty() && (SLinkOperations.getTarget(thisNode, "return", true) == null);
-  }
-
-  public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
-    return "methodDocComment";
-  }
-
-  public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "virtual_getAttributed_3044950653914717013", new Object[]{});
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068580123132"));
-    return result;
   }
 }

@@ -16,23 +16,22 @@ import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.ide.java.newparser.FeatureKind;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.ide.java.newparser.FeatureKind;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
@@ -56,21 +55,34 @@ public class Utils {
     return (String) res.getResult();
   }
 
-  /**
-   * Currently doesn't work very well: DynamicReference resolving doesn't seem to happen.
-   */
-  public static void checkString(String code, SNode expected) {
+
+
+  public static void checkStringStubs(String code, SNode expected) {
+    checkString(code, expected, true);
+  }
+
+
+
+  public static void checkString(String code, SNode expected, boolean onlyStubs) {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
       mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
-      List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, null, true).getNodes();
+      FeatureKind howToParse = (onlyStubs ?
+        FeatureKind.CLASS_STUB :
+        FeatureKind.CLASS
+      );
+      List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
       SNode result = SNodeOperations.cast(res.get(0), "jetbrains.mps.baseLanguage.structure.Classifier");
       SModelOperations.addRootNode(mdl, result);
 
-      NodePatcher.removeStatements(expected);
+      if (onlyStubs) {
+        NodePatcher.removeStatements(expected);
+      } else {
+        JavaParser.tryResolveUnknowns(Sequence.<SNode>singleton(result));
+      }
       NodePatcher.fixNonStatic(expected);
       NodePatcher.fixNonStatic(result);
       NodePatcher.copyImportAttrs(result, expected);
@@ -84,11 +96,6 @@ public class Utils {
     } catch (JavaParseException e) {
       throw new RuntimeException(e);
     }
-  }
-
-  public static void checkFileAsString(File source, SNode expected) {
-    String code = FileUtil.read(source);
-    checkString(code, expected);
   }
 
   public static void checkFile(String path, SNode expected) {
@@ -133,19 +140,10 @@ public class Utils {
       ListSequence.fromList(models).addElement(m);
     }
 
-    // FIXME removeSModelAttrs is temporary (testImports2 started to have problems) 
-
-    for (SModel m : ListSequence.fromList(models)) {
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
-        NodePatcher.removeSModelAttrs(root);
-      }
-    }
-
     for (SModel m : ListSequence.fromList(expected)) {
       for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
         NodePatcher.removeStatements(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"));
-        NodePatcher.removeSModelAttrs(root);
-        // <node> 
+        NodePatcher.fixNonStatic(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"));
       }
     }
 
@@ -163,6 +161,10 @@ public class Utils {
       List<SModel> parsedModels = dirParser.getAffectedModels();
       assert ListSequence.fromList(parsedModels).count() == 1;
       SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
+
+      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(expected, null))) {
+        NodePatcher.fixNonStatic(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      }
 
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildModelNodeMap(resultModel, expected, referentMap);
@@ -217,7 +219,7 @@ public class Utils {
       // <node> 
 
       SModel zzz = m;
-      srcModelsX.add(zzz);
+      ListSequence.fromList(srcModelsX).addElement(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {
         NodePatcher.fixNonStatic(srcRoot);
@@ -354,6 +356,7 @@ public class Utils {
     }
 
     for (SNode leftMthd : ListSequence.fromList(leftMethods)) {
+      MapSequence.fromMap(nodeMap).put(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, "name")));
       buildMethodBodyNodeMap(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, "name")), nodeMap);
       // <node> 
     }

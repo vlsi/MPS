@@ -23,6 +23,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.matcher.DifferanceItem" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.matcher.NodesMatcher" file="NodesMatcher.java">
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -36,9 +37,9 @@
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodeDifference" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.PropertyDifferense" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.ReferenceDifferense" />
-    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.matcher.PropertyDifferense" file="PropertyDifferense.java">
     <classNode dependClassName="java.lang.Object" />

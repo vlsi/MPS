@@ -276,7 +276,7 @@ class GenerationSession {
       }
       return inputModel;
     }
-    if (myGenerationTracer.isTracing() && myLogger.needsInfo()) {
+    if (myLogger.needsInfo()) {
       printGenerationStepData(inputModel);
     }
 
@@ -659,9 +659,9 @@ class GenerationSession {
 //    }
 
     myLogger.info("apply mapping configurations:");
-    List<String> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
-    for (String message : messages) {
-      myLogger.info("    " + message);
+    List<Pair<String, TemplateMappingConfiguration>> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
+    for (Pair<String, TemplateMappingConfiguration> message : messages) {
+      myLogger.info("    " + message.o1);
     }
   }
 

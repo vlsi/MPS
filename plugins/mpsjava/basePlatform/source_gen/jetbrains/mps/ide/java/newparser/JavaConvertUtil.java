@@ -6,18 +6,16 @@ import jetbrains.mps.vfs.IFile;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vfs.IFileUtils;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class JavaConvertUtil {
   public static Iterable<IFile> openDirs(Iterable<IFile> filesAndDirs) {
     Set<IFile> result = SetSequence.fromSet(new HashSet<IFile>());
 
-    for (IFile entry : ListSequence.fromList(onlyLeaves(filesAndDirs))) {
+    for (IFile entry : Sequence.fromIterable(onlyLeaves(filesAndDirs))) {
       if (!(entry.isDirectory()) && accept(entry)) {
         SetSequence.fromSet(result).addElement(entry);
         continue;
@@ -41,22 +39,21 @@ public class JavaConvertUtil {
 
 
 
-  private static List<IFile> onlyLeaves(Iterable<IFile> all) {
-    List<IFile> result = ListSequence.fromListWithValues(new ArrayList<IFile>(), all);
+  private static Iterable<IFile> onlyLeaves(Iterable<IFile> all) {
     Set<IFile> dirs = SetSequence.fromSetWithValues(new HashSet<IFile>(), Sequence.fromIterable(all).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile it) {
         return it.isDirectory();
       }
     }));
+    Set<IFile> excluded = SetSequence.fromSet(new HashSet<IFile>());
 
     for (IFile item : Sequence.fromIterable(all)) {
       IFile parent = item.getParent();
       if (SetSequence.fromSet(dirs).contains(parent)) {
-        ListSequence.fromList(result).removeElement(parent);
+        SetSequence.fromSet(excluded).addElement(parent);
       }
     }
 
-    return result;
-
+    return Sequence.fromIterable(all).subtract(SetSequence.fromSet(excluded));
   }
 }

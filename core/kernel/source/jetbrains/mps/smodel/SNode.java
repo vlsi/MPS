@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.AbstractImmutableList;
+import jetbrains.mps.util.AbstractSequentialList;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
@@ -172,36 +172,32 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void showDisposedMessage() {
-    SModelDescriptor model = internal_getModel();
+    org.jetbrains.mps.openapi.model.SModel model = getModel();
     String modelName = model == null ? "null" : jetbrains.mps.util.SNodeOperations.getModelLongName(model);
     if (ourErroredModels.add(modelName)) {
 //      LOG.error(new IllegalModelAccessError("Accessing disposed node in model " + modelName));
     }
   }
 
-
   @Override
   public SNodeId getNodeId() {
-    nodeRead();
-
-    fireNodeReadAccess();
+    assertCanRead();
     return myId;
   }
 
   @Override
   @NotNull
   public SNode getContainingRoot() {
-    nodeRead();
+    assertCanRead();
 
     SNode current = this;
 
     while (true) {
+      if (current.treeParent() == null) return current;
+
+      current = current.treeParent();
+      current.nodeRead();
       current.fireNodeReadAccess();
-      if (current.treeParent() == null) {
-        return current;
-      } else {
-        current = current.treeParent();
-      }
     }
   }
 
@@ -302,12 +298,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   final public SNode getParent() {
-    nodeRead();
+    assertCanRead();
 
-    //todo: ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return treeParent();
+    SNode parent = treeParent();
+
+    if (parent!=null){
+      parent.nodeRead();
+      parent.fireNodeReadAccess();
+      parent.fireNodeUnclassifiedReadAccess();
+    }
+    return parent;
   }
 
   @Override
@@ -318,15 +318,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
     SNode firstChild = firstChild();
 
     if (role != null) {
-      while (firstChild != null && !firstChild.getRoleInParent().equals(role)) {
+      while (firstChild != null && !firstChild.myRoleInParent.equals(role)) {
         firstChild = firstChild.treeNext();
       }
     }
@@ -493,8 +488,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String getPresentation() {
-    nodeRead();
-
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
@@ -544,7 +537,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
               "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
-    if (getTopmostAncestor() == child) {
+    if (getContainingRoot() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
     }
 
@@ -556,13 +549,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
                 "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
         );
       }
-//      if (!role.equals(anchor.getRoleInParent())){
-//        throw new RuntimeException(
-//            "anchor has a different role" + " | " +
-//                "role: " + role + " | " +
-//                "anchor role: " + anchor.getRoleInParent()
-//        );
-//      }
     }
 
     children_insertBefore(((SNode) anchor), schild);
@@ -615,11 +601,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
     // Note: during indexing we invoke `node.getConcept().getQualifiedName()`
     // 1) without read action 2) we must not use deployed version of the concept
     // ?? may be we need a separate getConceptQualifiedName() method here
@@ -716,39 +697,58 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getFirstChild() {
-    nodeRead();
-    fireNodeReadAccess();
-    return firstChild();
+    assertCanRead();
+
+    SNode child = firstChild();
+    if (child!=null){
+      child.nodeRead();
+      child.fireNodeReadAccess();
+    }
+    return child;
   }
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getLastChild() {
-    nodeRead();
-    fireNodeReadAccess();
-    return firstChild().treePrevious();
+    SNode fc = firstChild();
+    if (fc == null) return null;
+
+    SNode lc = fc.treePrevious();
+    if (lc != null) {
+      lc.nodeRead();
+      lc.fireNodeReadAccess();
+    }
+    return lc;
   }
 
   @Override
   public SNode getPrevSibling() {
-    nodeRead();
-    fireNodeReadAccess();
+    assertCanRead();
 
     SNode p = getParent();
     if (p == null) return null;
 
     SNode tp = treePrevious();
-    return tp.next == null ? null : tp;
+    SNode ps = tp.next == null ? null : tp;
+    if (ps!=null){
+      ps.nodeRead();
+      ps.fireNodeReadAccess();
+    }
+    return ps;
   }
 
   @Override
   public SNode getNextSibling() {
-    nodeRead();
-    fireNodeReadAccess();
+    assertCanRead();
 
     SNode p = getParent();
     if (p == null) return null;
 
-    return treeNext();
+    SNode tn = treeNext();
+    if (tn != null){
+      tn.nodeRead();
+      tn.fireNodeReadAccess();
+    }
+    return tn;
   }
 
   @Override
@@ -799,11 +799,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    nodeRead();
-
-    fireNodeReadAccess();
-
-    return internal_getModel();
+    return myModel == null ? null : myModel.getModelDescriptor();
   }
 
   //this method is for internal checks in SReferenceBase only
@@ -823,7 +819,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return (SModelBase) modelDescriptor;
   }
 
-  private void nodeRead() {
+  void nodeRead() {
     assertCanRead();
     SModelBase md = getRealModel();
     if (md == null) return;
@@ -986,10 +982,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //--------------
 
-  private SModelDescriptor internal_getModel() {
-    return myModel == null ? null : myModel.getModelDescriptor();
-  }
-
   //--------seems these methods are not needed-------
 
   private void clearModel() {
@@ -1063,7 +1055,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //--------private-------
 
-  private void fireNodeUnclassifiedReadAccess() {
+  void fireNodeUnclassifiedReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
     if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
       try {
@@ -1075,7 +1067,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  private void fireNodeReadAccess() {
+  void fireNodeReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
     if (ourReadAccessHandlingInProgress.get() != Boolean.TRUE) {
       try {
@@ -1137,48 +1129,82 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //--------private classes-------
 
-  private class ChildrenList extends AbstractImmutableList<SNode> {
+  private static class ChildrenList extends AbstractSequentialList<SNode> {
     @Nullable
-    private String myRole;
+    private final String myRole;
 
     public ChildrenList(SNode first, @Nullable String role) {
       super(first);
       myRole = role;
     }
 
-    public ChildrenList(SNode first, @Nullable String role, int size) {
-      super(first, size);
-      myRole = role;
+    @Override
+    protected AbstractSequentialIterator<SNode> createIterator(SNode first) {
+      return new ChildrenIterator(first, myRole);
     }
 
+    @NotNull
     @Override
-    protected SNode next(SNode node) {
-      if (myRole == null) return node.nextSibling();
-
-      do {
-        node = node.nextSibling();
-      } while (node != null && !node.getRoleInParent().equals(myRole));
-      return node;
+    public List<SNode> subList(int fromIndex, int toIndex) {
+      if (fromIndex < toIndex) {
+        return new ChildrenList(get(fromIndex), myRole);
+      } else {
+        return Collections.emptyList();
+      }
     }
 
-    @Override
-    protected SNode prev(SNode node) {
-      if (getParent() == null) return null;
-      if (myRole == null) return node.prevSibling();
+    private class ChildrenIterator extends AbstractSequentialIterator<SNode> {
+      @Nullable
+      private String myRole;
 
-      SNode first = getParent().firstChild();
-      if (node == first) return null;
+      public ChildrenIterator(@NotNull SNode first, @Nullable String role) {
+        super(first);
+        myRole = role;
+      }
 
-      do {
-        node = node.prevSibling();
-      } while (node != first && !node.getRoleInParent().equals(myRole));
+      @Override
+      protected SNode getNext(SNode node) {
+        if (myRole == null) return node.treeNext();
 
-      return node.getRoleInParent().equals(myRole) ? node : null;
-    }
+        do {
+          node = node.treeNext();
+        } while (node != null && !node.myRoleInParent.equals(myRole));
+        return node;
+      }
 
-    @Override
-    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
-      return new ChildrenList(elem, myRole, size);
+      @Override
+      protected SNode getPrev(SNode node) {
+        if (node.treeParent() == null) return null;
+        SNode fc = node.treeParent().firstChild();
+
+        if (node == fc) return null;
+        if (myRole == null) return node.treePrevious();
+
+        do {
+          node = node.treePrevious();
+        } while (node != fc && !node.myRoleInParent.equals(myRole));
+
+        return node.myRoleInParent.equals(myRole) ? node : null;
+      }
+
+      @Override
+      protected SNode getCurrent() {
+        return readNode(super.getCurrent());
+      }
+
+      @Override
+      protected SNode getPrev() {
+        return readNode(super.getPrev());
+      }
+
+      private SNode readNode(SNode node) {
+        if (node != null) {
+          node.nodeRead();
+          node.fireNodeReadAccess();
+          node.fireNodeUnclassifiedReadAccess();
+        }
+        return node;
+      }
     }
   }
 
@@ -2084,8 +2110,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @Deprecated in 3.0
    */
   public SNode prevSibling() {
-    if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : treePrevious();
+    return (treeParent() == null|| treeParent().firstChild() == this) ? null : treePrevious();
   }
 
   @Deprecated

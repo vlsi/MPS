@@ -41,6 +41,7 @@ import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -189,7 +190,11 @@ public abstract class ModelCheckerViewer extends JPanel {
 
   public void prepareAndCheckModels(List<SModel> modelDescriptors, String taskTargetTitle, Icon taskIcon, ModelCheckerIssueFinder issueFinder) {
     IResultProvider resultProvider = FindUtils.makeProvider(issueFinder);
-    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(ListSequence.fromList(modelDescriptors).toListSequence(), myOperationContext), myProject.getComponent(MPSProject.class).getScope());
+    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(ListSequence.fromList(modelDescriptors).select(new ISelector<SModel, SModelReference>() {
+      public SModelReference select(SModel it) {
+        return it.getReference();
+      }
+    }).toListSequence(), myOperationContext), myProject.getComponent(MPSProject.class).getScope());
     myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, true, true));
 
     myCheckProgressTitle = "Checking " + taskTargetTitle;

@@ -22,7 +22,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -54,8 +53,19 @@ public class QueriesGenerated {
     return TransformatorBuilder.getInstance().getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_6108369403998007551(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return TransformatorBuilder.getInstance().getJniSignatureFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+  }
+
   public static Object propertyMacro_GetPropertyValue_264293128390879124(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "Wrapper";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_110763052829785268(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (isNotEmpty_x583g4_a0a0h(SPropertyOperations.getString(_context.getNode(), "alias"))) {
+      return SPropertyOperations.getString(_context.getNode(), "alias");
+    }
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_264293128390879201(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -75,7 +85,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0k(SPropertyOperations.getString(_context.getNode(), "iconPath"));
+    return isNotEmpty_x583g4_a0a0m(SPropertyOperations.getString(_context.getNode(), "iconPath"));
   }
 
   public static boolean ifMacro_Condition_5493844864801812989(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -86,7 +96,19 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
   }
 
+  public static boolean ifMacro_Condition_7641086563651327895(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_7641086563651401072(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
+  }
+
   public static boolean ifMacro_Condition_264293128390879160(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_4912660572983350113(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
   }
 
@@ -147,60 +169,60 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_721063219978402837(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod"), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod"), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405039(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod"), "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_1123500463147192694(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
-  public static void mapSrcMacro_post_mapper_9218072571024216449(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+  public static void mapSrcMacro_post_mapper_7129857096177916887(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_4838833313499857358(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_4838833313499857371(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_4838833313499857381(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_1464575230816145950(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_8256349518541671180(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
     ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), null, false, new String[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+        AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
       }
     });
   }
 
   public static void mapSrcMacro_post_mapper_1855642807426525752(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode classConcept : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      if (eq_x583g4_a0a0a0a93(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a0nb(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
+      if (eq_x583g4_a0a0a0a44(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a0sb(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
         for (SNode method : ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod"))) != null);
+            return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod")) != null);
           }
         })) {
           if ((method == null)) {
@@ -221,7 +243,7 @@ public class QueriesGenerated {
     }
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0a0a0nb() {
+  private static SNode _quotation_createNode_x583g4_a0a0a0a0sb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -229,11 +251,15 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0k(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0h(String str) {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0a0a93(Object a, Object b) {
+  public static boolean isNotEmpty_x583g4_a0a0m(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  private static boolean eq_x583g4_a0a0a0a44(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

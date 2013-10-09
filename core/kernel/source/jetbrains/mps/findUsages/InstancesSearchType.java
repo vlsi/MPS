@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
@@ -51,9 +51,9 @@ class InstancesSearchType extends SearchType<SNode, SAbstractConcept> {
       Set<SAbstractConcept> queryConcepts = new HashSet<SAbstractConcept>(elements);
       if (!myExact) {
         for (SAbstractConcept concept : elements) {
-          Set<String> desc = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getQualifiedName());
+          Set<String> desc = ConceptDescendantsCache.getInstance().getDescendants(concept.getQualifiedName());
           for (String cName : desc) {
-            queryConcepts.add(SConceptRepository.getInstance().getConcept(cName));
+            queryConcepts.add(SConceptRepository.getInstance().getInstanceConcept(cName));
           }
         }
       }

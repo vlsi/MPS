@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -42,7 +41,7 @@ public class QueriesUtil {
     if (propertyName == null) {
       return false;
     }
-    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro"), propertyName)) == null;
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", propertyName)) == null;
   }
 
   public static boolean isReferenceMacroApplicable(SNode node, EditorCell cell) {
@@ -57,7 +56,7 @@ public class QueriesUtil {
       return false;
     }
     SNode referentNode = QueriesUtil.getEditedLinkReferentNode(cell);
-    return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), linkRole)) == null;
+    return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole)) == null;
   }
 
   private static boolean isAnyMacroApplicable(SNode node) {
@@ -75,7 +74,7 @@ public class QueriesUtil {
       return false;
     }
     // inside 'root template' 
-    if (AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
+    if (AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null) {
       return true;
     }
     //  inside template declaration  
@@ -102,7 +101,7 @@ public class QueriesUtil {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, nodeMacro);
     } else {
-      ListSequence.fromList(AttributeOperations.getAttributeList(applyToNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).addElement(nodeMacro);
+      ListSequence.fromList(AttributeOperations.getAttributeList(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"))).addElement(nodeMacro);
     }
     return nodeMacro;
   }
@@ -115,7 +114,7 @@ public class QueriesUtil {
       }
     }
     String propertyName = QueriesUtil.getEditedPropertyName(cell);
-    SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro"), propertyName), "jetbrains.mps.lang.generator.structure.PropertyMacro");
+    SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", propertyName), "jetbrains.mps.lang.generator.structure.PropertyMacro");
     return propertyMacro;
   }
 
@@ -128,21 +127,21 @@ public class QueriesUtil {
         QueriesUtil.createTemplateFragment(referentNode);
       }
     }
-    SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), linkRole), "jetbrains.mps.lang.generator.structure.ReferenceMacro");
+    SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole), "jetbrains.mps.lang.generator.structure.ReferenceMacro");
     return referenceMacro;
   }
 
   public static boolean isInsideTemplateFragment(SNode node) {
     Iterable<SNode> ancestorTFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
+        return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
       }
     });
     return Sequence.fromIterable(ancestorTFs).isNotEmpty();
   }
 
   public static void createTemplateFragment(final SNode node) {
-    SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment")), "jetbrains.mps.lang.generator.structure.TemplateFragment");
+    SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"), "jetbrains.mps.lang.generator.structure.TemplateFragment");
     // remove subordinate template fragments 
     Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -157,9 +156,9 @@ public class QueriesUtil {
       });
     }
     // re append all macros to make them go 'after' the <TF> 
-    ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro")))).addElement(it);
+        ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"))).addElement(it);
       }
     });
   }

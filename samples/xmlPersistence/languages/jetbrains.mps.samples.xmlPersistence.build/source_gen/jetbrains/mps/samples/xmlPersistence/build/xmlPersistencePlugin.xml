@@ -106,7 +106,7 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
@@ -188,6 +188,11 @@
         <module file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" />
         <module file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
+      <macro name="mps_dist" path="${mps_dist}" />
+      <macro name="idea_home" path="${idea_home}" />
     </generate>
   </target>
   
@@ -198,6 +203,8 @@
   <target name="makeDependents" />
   
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" />
+    <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -242,6 +249,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence.build">
+    <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -253,6 +261,7 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.samples.xmlPersistence.ideaPlugin">
+    <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />

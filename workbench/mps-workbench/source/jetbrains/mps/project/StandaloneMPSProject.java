@@ -15,41 +15,47 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.components.StoragePathMacros;
-import com.intellij.openapi.components.StorageScheme;
-import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.mps.openapi.module.SModule;
-
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.components.StoragePathMacros;
+import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.watching.WatchedRoots;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 11/10/11
@@ -123,6 +129,12 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   private void initProject() {
+    // important to have it before all init procedures,
+    // otherwise performance will be bad, as we will create a new watch request pretty much
+    // for every FileSystem.addListener() call. Very many of such creations will result in updating
+    // fs watcher process state, via feeding text to its stdin.
+    startWatching();
+
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
@@ -130,7 +142,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
       ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
     }
     init(descriptor);
-    if (url != null) {
+    if (getFileToListen() != null) {
       FileSystem.getInstance().addListener(this);
     }
   }
@@ -285,6 +297,16 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         ProjectUtil.closeAndDispose(myProject);
       }
     }
+
+    stopWatching();
+  }
+
+  private void startWatching() {
+    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addProjectWatch(myProject);
+  }
+
+  private void stopWatching() {
+    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeProjectWatch(myProject);
   }
 
   private Path getPathForModule(SModule module) {

@@ -332,6 +332,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_OfConceptOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_OperationParm_Concept_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -365,6 +369,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ReadConceptReferenceExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_RefConcept_Reference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -513,6 +521,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_ListType_ListType_elementSNode_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_ListType_SNodeList_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {

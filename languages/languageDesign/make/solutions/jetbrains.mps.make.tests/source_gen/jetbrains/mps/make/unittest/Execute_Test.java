@@ -474,4 +474,7 @@ public class Execute_Test extends MockTestCase {
     Assert.assertNotNull(res.output());
     Assert.assertEquals("FUBAR", vars[0]);
   }
+
+  public Execute_Test() {
+  }
 }

@@ -185,7 +185,7 @@ public class MPSEditorOpener {
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
-    FileEditor fileEditor = editorManager.openFile(file, focus)[0];
+    FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
 
     MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
 

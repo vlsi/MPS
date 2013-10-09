@@ -39,7 +39,7 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
     // this is a guard against the situation when our directory has been removed      
     // we don't notify our listeners about anything in this case 
     // they should be removed anyways 
-    if (!(myDirectory.isValid())) {
+    if (!(isValid())) {
       return;
     }
 
@@ -109,10 +109,16 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
 
 
   public Iterable<PsiJavaFile> getJavaFiles() {
-    if (!(myDirectory.isValid())) {
+    if (!(isValid())) {
       return Sequence.fromIterable(Collections.<PsiJavaFile>emptyList());
     }
     return Sequence.fromIterable(Sequence.fromArray(myDirectory.getFiles())).ofType(PsiJavaFile.class);
+  }
+
+
+
+  private boolean isValid() {
+    return myDirectory.isValid() && !(myModule.getProject().isDisposed());
   }
 
 

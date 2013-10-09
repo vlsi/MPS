@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 
 public class PrecedenceUtil {
   public PrecedenceUtil() {
@@ -151,6 +152,33 @@ public class PrecedenceUtil {
       return PrecedenceUtil.Precedence.J_15;
     }
     return PrecedenceUtil.Precedence.DEFAULT;
+  }
+
+  public static SNode processLeftTransform(SNode sourceNode, SNode result) {
+    SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(sourceNode, result);
+    // since BinaryOperations are left-associative we should perform complex LT then 
+    // BinaryOperations is "rightExpression" child of another BinaryOperations with same priority 
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SNodeOperations.getContainingLinkDeclaration(nodeToProcess) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) {
+      SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      if (PrecedenceUtil.isSamePriority(parentBinaryOperation, result)) {
+        SNodeOperations.replaceWithAnother(parentBinaryOperation, result);
+        // <node> 
+        SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
+        SLinkOperations.setTarget(result, "leftExpression", parentBinaryOperation, true);
+        return result;
+      }
+    }
+    SNodeOperations.replaceWithAnother(nodeToProcess, result);
+    SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
+    PrecedenceUtil.parenthesiseIfNecessary(result);
+    return result;
+  }
+
+  public static SNode processRightTransform(SNode sourceNode, SNode result) {
+    SNodeOperations.replaceWithAnother(sourceNode, result);
+    SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
+    ParenthesisUtil.checkOperationWRTPriority(result);
+    return result;
   }
 
   private static   enum Precedence {

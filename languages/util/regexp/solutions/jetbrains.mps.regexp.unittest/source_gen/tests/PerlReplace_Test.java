@@ -49,6 +49,9 @@ public class PerlReplace_Test extends TestCase {
     Assert.assertEquals("\r", REPLREGEXP_a21a5a.matcher("a").replaceFirst("\r"));
   }
 
+  public PerlReplace_Test() {
+  }
+
   private static Pattern REPLREGEXP_a1a0a = Pattern.compile("(\\w)\\1*(?:\\s*)", 0);
   private static Pattern REPLREGEXP_a2a0a = Pattern.compile("(\\w)\\1*(?:\\s*)", 0);
   private static Pattern REPLREGEXP_a0a1a = Pattern.compile("\\s*(\\w+)\\s+(\\w+)", 0);

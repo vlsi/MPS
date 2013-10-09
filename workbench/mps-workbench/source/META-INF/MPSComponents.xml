@@ -11,6 +11,10 @@
 
   <application-components>
     <component>
+      <interface-class>jetbrains.mps.ide.vfs.FileSystemProviderComponent</interface-class>
+      <implementation-class>jetbrains.mps.ide.vfs.WatchingIdeaFileSystemProvider</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>
@@ -29,6 +33,12 @@
       <implementation-class>jetbrains.mps.ide.platform.watching.ReloadManagerComponent</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.WatchedRootsUpdater</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
     </component>
     <component>
@@ -37,9 +47,6 @@
     <component>
       <!-- depends on BootstrapLibContributor -->
       <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
@@ -143,10 +150,6 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.messages.MessageViewLoggingHandler</implementation-class>
-      <skipForDummyProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.workbench.output.OutputViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
     <component>

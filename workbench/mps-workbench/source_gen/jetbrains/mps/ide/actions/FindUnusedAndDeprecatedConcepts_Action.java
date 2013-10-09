@@ -16,7 +16,7 @@ import java.util.HashSet;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -76,7 +76,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
       final Set<String> usedConcepts = SetSequence.fromSet(new HashSet<String>());
       InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("ideaProject")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode node) {
-          SetSequence.fromSet(usedConcepts).addSequence(SetSequence.fromSet(LanguageHierarchyCache.getAncestorsNames(node.getConcept().getQualifiedName())));
+          SetSequence.fromSet(usedConcepts).addSequence(SetSequence.fromSet(ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getAncestorsNames()));
         }
       });
 

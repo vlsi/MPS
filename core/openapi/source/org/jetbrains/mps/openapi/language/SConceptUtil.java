@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -22,31 +24,29 @@ import java.util.Set;
  * A set of helper functions
  */
 public class SConceptUtil {
-
-  public static Set<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept, boolean includeBaseConcept) {
+  public static Set<SAbstractConcept> getAllSuperConcepts(@NotNull SAbstractConcept concept) {
     Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
-    if (concept == null) {
-      return result;
-    }
-    if (!includeBaseConcept && concept.getQualifiedName().equals("jetbrains.mps.lang.core.structure.BaseConcept")) {
-      return result;
-    }
-    result.add(concept);
-    if (concept instanceof SConcept) {
-      for (SInterfaceConcept interfaceConcept : ((SConcept) concept).getSuperInterfaces()) {
-        result.addAll(getAllSuperConcepts(interfaceConcept));
-      }
-      result.addAll(getAllSuperConcepts(((SConcept) concept).getSuperConcept()));
-    } else if (concept instanceof SInterfaceConcept) {
-      for (SInterfaceConcept interfaceConcept : ((SInterfaceConcept) concept).getSuperInterfaces()) {
-        result.addAll(getAllSuperConcepts(interfaceConcept));
-      }
-    }
-
+    collectSuperConcepts(concept, result);
     return result;
   }
 
-  public static Set<SAbstractConcept> getAllSuperConcepts(SAbstractConcept concept) {
-    return getAllSuperConcepts(concept, false);
+  private static void collectSuperConcepts(@NotNull SAbstractConcept concept, @NotNull Set<SAbstractConcept> container) {
+    if (container.contains(concept)) {
+      return;
+    }
+    container.add(concept);
+    if (concept instanceof SConcept) {
+      for (SInterfaceConcept interfaceConcept : ((SConcept) concept).getSuperInterfaces()) {
+        collectSuperConcepts(interfaceConcept, container);
+      }
+      SConcept superConcept = ((SConcept) concept).getSuperConcept();
+      if (superConcept != null) {
+        collectSuperConcepts(superConcept, container);
+      }
+    } else if (concept instanceof SInterfaceConcept) {
+      for (SInterfaceConcept interfaceConcept : ((SInterfaceConcept) concept).getSuperInterfaces()) {
+        collectSuperConcepts(interfaceConcept, container);
+      }
+    }
   }
 }

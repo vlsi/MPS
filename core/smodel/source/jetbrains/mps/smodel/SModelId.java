@@ -69,7 +69,7 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     if (id.startsWith(RelativePathSModelId.TYPE + ":")) {
       return new RelativePathSModelId(id.substring(1 + RelativePathSModelId.TYPE.length()));
     }
-    throw new IllegalArgumentException();
+    throw new IllegalArgumentException("wrong id " + id);
   }
 
   private SModelId() {

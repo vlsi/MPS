@@ -102,9 +102,9 @@ public class SNodeOperation_Behavior {
     }
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
-    if (nodeType != null) {
-      return SLinkOperations.getTarget(nodeType, "concept", false);
-    }
-    return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+    return ((SLinkOperations.getTarget(nodeType, "concept", false) != null) ?
+      SLinkOperations.getTarget(nodeType, "concept", false) :
+      SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")
+    );
   }
 }

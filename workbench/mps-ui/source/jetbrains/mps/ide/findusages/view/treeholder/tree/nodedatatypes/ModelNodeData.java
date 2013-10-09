@@ -52,10 +52,9 @@ public class ModelNodeData extends BaseNodeData {
     myModelReference = ((SModel) result.getPathObject()).getReference();
   }
 
-  public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
-    super(role, SNodeOperations.getModelLongName(model) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ?
-        "@" + jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
-    myModelReference = model.getReference();
+  public ModelNodeData(PathItemRole role, SModelReference modelReference, boolean isResult, boolean resultsSection) {
+    super(role, modelReference.getModelName(), "", false, isResult, resultsSection);
+    myModelReference = modelReference;
   }
 
   public ModelNodeData(Element element, Project project) throws CantLoadSomethingException {

@@ -65,4 +65,7 @@ public class NotMake_Test extends TestCase {
       }
     });
   }
+
+  public NotMake_Test() {
+  }
 }

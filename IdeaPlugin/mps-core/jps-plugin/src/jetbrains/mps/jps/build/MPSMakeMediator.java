@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.ForeignPathsProvider;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -46,12 +47,8 @@ import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.jps.model.module.JpsModuleSourceRoot;
-import org.jetbrains.jps.util.JpsPathUtil;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
@@ -67,18 +64,25 @@ import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
+import org.jetbrains.jps.incremental.java.JavaBuilder;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
 import org.jetbrains.jps.incremental.messages.FileGeneratedEvent;
 import org.jetbrains.jps.incremental.storage.BuildDataManager;
+import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.jps.model.module.JpsModuleSourceRoot;
+import org.jetbrains.jps.util.JpsPathUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -94,6 +98,7 @@ public class MPSMakeMediator {
 
   private final JpsMPSProject myProject;
   private Map<SModel, ModuleBuildTarget> myToMake;
+  private Map<ModuleBuildTarget, File> myOutputRootsPerTarget = new HashMap<ModuleBuildTarget, File>();
   private final MPSCompilerContext myContext;
   private MPSIdeaRefreshComponent myRefreshComponent;
   private OutputConsumer myOutputConsumer;
@@ -136,12 +141,14 @@ public class MPSMakeMediator {
       File outputTmpRoot = getTmpOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
       File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
       boolean useTransientOutputFolder = mpsModule.getConfiguration().isUseTransientOutputFolder();
-      File generatorOutputRoot = new File (mpsModule.getConfiguration().getGeneratorOutputPath());
       myRedirects.addRedirects(outputPaths, outputTmpRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
+
+      File generatorOutputRoot = new File (mpsModule.getConfiguration().getGeneratorOutputPath());
+      File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
+      myOutputRootsPerTarget.put(target, outputRoot);
 
       if (useTransientOutputFolder || !isGenOutputUnderSourceRoot(target, mpsModule)) {
         BuildRootIndex buildRootIndex = myContext.getCompileContext().getProjectDescriptor().getBuildRootIndex();
-        File outputRoot = useTransientOutputFolder ? outputTmpRoot : generatorOutputRoot;
         buildRootIndex.associateTempRoot(myContext.getCompileContext(), target,
           new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
       }
@@ -218,19 +225,37 @@ public class MPSMakeMediator {
     }
 
     for (String writtenFile : makeFacetConfiguration.getWrittenFiles()) {
+      // TODO: this seems unnecessary
       myContext.getCompileContext().processMessage(new FileGeneratedEvent());
+
       try {
-        FSOperations.markDirty(myContext.getCompileContext(), new File(writtenFile));
+        SModel source = makeFacetConfiguration.getSource(writtenFile);
+        ModuleBuildTarget target = myToMake.get(source);
+        File file = new File(writtenFile);
+
+        if (source != null && source.getSource() instanceof FileDataSource) {
+          myOutputConsumer.registerOutputFile(
+            target,
+            file,
+            Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
+        }
+
+        // all non-java files got to be copied
+        if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file)) {
+          try {
+            copyResource(target, file);
+          }
+          catch (IOException e) {
+            myContext.getCompileContext().processMessage(
+              new CompilerMessage("MPS resources", Kind.ERROR, e.getMessage(), FileUtil.toSystemIndependentName(file.getParent())));
+          }
+          success = false;
+        }
+
+        FSOperations.markDirty(myContext.getCompileContext(), file);
 
         myRefreshComponent.refresh(writtenFile);
 
-        SModel source = makeFacetConfiguration.getSource(writtenFile);
-        if (source != null && source.getSource() instanceof FileDataSource) {
-            myOutputConsumer.registerOutputFile(
-              myToMake.get(source),
-              new File(writtenFile),
-              Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
-        }
       } catch (IOException e) {
         reportError(e);
         success = false;
@@ -273,6 +298,20 @@ public class MPSMakeMediator {
     }
     myRefreshComponent.removed(makeFacetConfiguration.getDeletedFiles());
     return success;
+  }
+
+  private void copyResource(ModuleBuildTarget target, File file) throws IOException {
+    // the file is created in the output directory, which may have been redirected to a "hidden" location
+    File root = myOutputRootsPerTarget.get(target);
+    final String relativePath = FileUtil.toSystemIndependentName(FileUtil.getRelativePath(root, file));
+
+    final String outputRootUrl = JpsJavaExtensionService.getInstance().getOutputUrl(target.getModule(), target.isTests());
+    final String targetPath = JpsPathUtil.urlToPath(outputRootUrl) + '/' + relativePath;
+
+
+    final File targetFile = new File(targetPath).getCanonicalFile();
+    FileUtil.copyContent(file, targetFile);
+    myOutputConsumer.registerOutputFile(target, targetFile, Collections.singletonList(file.getPath()));
   }
 
   private void reportError(Throwable e) {

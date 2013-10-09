@@ -14,6 +14,7 @@ import jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings;
 import java.awt.event.KeyAdapter;
 import java.beans.PropertyChangeListener;
 import java.awt.event.KeyEvent;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import java.beans.PropertyChangeEvent;
 import java.text.ParseException;
@@ -86,7 +87,7 @@ public class RemoteSettingsEditor extends JPanel {
     public void keyReleased(KeyEvent e) {
       updateFieldsFromUi();
       myPortTextField.setForeground((myPortTextField.isEditValid() ?
-        Color.BLACK :
+        StyleRegistry.getInstance().getEditorForeground() :
         Color.RED
       ));
     }

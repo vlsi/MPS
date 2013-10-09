@@ -7,4 +7,4 @@
 -XX:+HeapDumpOnOutOfMemoryError
 -Dfile.encoding=UTF-8
 -Dapple.awt.graphics.UseQuartz=true
--Didea.paths.selector=MPS30
+-Didea.paths.selector=MPS31

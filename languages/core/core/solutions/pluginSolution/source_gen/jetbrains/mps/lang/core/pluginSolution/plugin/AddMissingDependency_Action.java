@@ -19,6 +19,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.log4j.Logger;
@@ -79,6 +80,10 @@ public class AddMissingDependency_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
@@ -93,7 +98,7 @@ public class AddMissingDependency_Action extends BaseAction {
         SModelReference uid = ref.getTargetSModelReference();
         if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
           SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-          ((AbstractModule) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getModule()).addDependency(sm.getModule().getModuleReference(), false);
+          ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).addDependency(sm.getModule().getModuleReference(), false);
         }
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

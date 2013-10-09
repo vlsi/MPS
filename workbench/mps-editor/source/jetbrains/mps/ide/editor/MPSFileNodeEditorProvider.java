@@ -26,7 +26,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.EditorState;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
@@ -69,7 +68,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
         return null;
       }
     });
-    return new MPSFileNodeEditor(project, mpsNodeVirtualFile);
+    return mpsNodeVirtualFile != null ? new MPSFileNodeEditor(project,  mpsNodeVirtualFile) : new MPSFileNodeEditor(project,  file);
   }
 
   @Override

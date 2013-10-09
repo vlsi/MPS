@@ -27,5 +27,8 @@ public class Test_Test extends TestCase {
     System.err.println("teardown test!!");
   }
 
+  public Test_Test() {
+  }
+
   protected static Logger LOG = LogManager.getLogger(Test_Test.class);
 }

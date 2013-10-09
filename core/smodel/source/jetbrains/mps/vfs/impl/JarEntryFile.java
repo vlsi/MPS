@@ -17,6 +17,7 @@ package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -79,6 +80,7 @@ public class JarEntryFile implements IFileEx {
   }
 
   @Override
+  @NotNull
   public IFile getDescendant(String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path);

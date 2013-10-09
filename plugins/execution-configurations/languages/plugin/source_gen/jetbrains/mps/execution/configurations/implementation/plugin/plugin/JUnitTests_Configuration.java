@@ -33,7 +33,7 @@ import org.apache.log4j.LogManager;
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
-  private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration();
+  private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration(this.getProject());
   private JavaRunParameters_Configuration myJavaRunParameters = new JavaRunParameters_Configuration();
 
   public void checkConfiguration() throws RuntimeConfigurationException {

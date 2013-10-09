@@ -40,12 +40,6 @@
         <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="7306485738221390885" resolveInfo="test" />
       </node>
     </node>
-    <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="7306485738221408319" nodeInfo="ng">
-      <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="7306485738221408317" resolveInfo="build" />
-      <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="7306485738221455027" nodeInfo="ng">
-        <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="7306485738221390881" resolveInfo="check" />
-      </node>
-    </node>
     <node role="imports" roleId="8xvf.7306485738221455030" type="8xvf.BwfTaskLibraryDependency" typeId="8xvf.7306485738221471031" id="7306485738221487426" nodeInfo="ng">
       <link role="target" roleId="8xvf.7306485738221471032" targetNodeId="7306485738221408315" resolveInfo="common" />
     </node>

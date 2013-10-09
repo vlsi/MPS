@@ -41,6 +41,17 @@ import java.util.List;
 )
 public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
+  private static final Color DEFAULT_CARET_ROW_COLOR = new Color(255, 255, 215);
+  private static final Color DEFAULT_CARET_COLOR = Color.BLACK;
+
+  private static final Color DEFAULT_LEFT_HIGHLIGHTER_BACKGROUND_COLOR = Color.WHITE;
+  private static final Color DEFAULT_LEFT_HIGHLIGHTER_TEAR_LINE_COLOR = Color.gray;
+
+  private static final Color DEFAULT_SELECTION_BACKGROUND_COLOR = new Color(82, 109, 165);
+  private static final Color DEFAULT_SELECTION_FOREGROUND_COLOR = Color.WHITE;
+  private static final Color DEFAULT_HYPERLINK_COLOR = Color.BLUE;
+
+  private final EditorColorsManager myColorsManager;
 
   public static EditorSettings getInstance() {
     return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);
@@ -60,12 +71,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
   private CaretBlinker myCaretBlinker;
 
-  public EditorSettings(CaretBlinker caretBlinker) {
+  public EditorSettings(CaretBlinker caretBlinker, EditorColorsManager colorsManager) {
     myCaretBlinker = caretBlinker;
+    myColorsManager = colorsManager;
     updateCachedValue();
   }
 
   private EditorSettings() {
+    myColorsManager = null;
     updateCachedValue();
   }
 
@@ -146,6 +159,34 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
   }
 
+  public Color getCaretRowColor() {
+    return myColorsManager == null ? DEFAULT_CARET_ROW_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
+  }
+
+  public Color getLeftHighlighterBackgroundColor() {
+    return myColorsManager == null ? DEFAULT_LEFT_HIGHLIGHTER_BACKGROUND_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
+  }
+
+  public Color getLeftHighlighterTearLineColor() {
+    return myColorsManager == null ? DEFAULT_LEFT_HIGHLIGHTER_TEAR_LINE_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR);
+  }
+
+  public Color getSelectionBackgroundColor() {
+    return myColorsManager == null ? DEFAULT_SELECTION_BACKGROUND_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
+  }
+
+  public Color getSelectionForegroundColor() {
+    return myColorsManager == null ? DEFAULT_SELECTION_FOREGROUND_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
+  }
+
+  public Color getHyperlinkColor() {
+    return myColorsManager == null ? DEFAULT_HYPERLINK_COLOR : myColorsManager.getGlobalScheme().getAttributes(EditorColors.REFERENCE_HYPERLINK_COLOR).getForegroundColor();
+  }
+
+  public Color getCaretColor() {
+    return myColorsManager == null ? DEFAULT_CARET_COLOR : myColorsManager.getGlobalScheme().getColor(EditorColors.CARET_COLOR);
+  }
+
   public int getSpacesWidth(int size) {
     if (mySpaceWidth == -1) {
       TextLine textLine = new TextLine(" ");
@@ -202,10 +243,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   void updateCachedValue() {
     myDefaultEditorFont = new Font(myState.myFontFamily, 0, myState.myFontSize);
     mySpaceWidth = -1;
-  }
-
-  public Color getSelectionBackgroundColor() {
-    return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
   }
 
   public static class MyState {

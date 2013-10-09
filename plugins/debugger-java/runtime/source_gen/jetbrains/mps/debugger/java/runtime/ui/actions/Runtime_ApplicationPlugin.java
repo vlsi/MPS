@@ -25,11 +25,13 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RemoveWatchAction_Action());
     // groups 
     addGroup(new JavaWatchableNodeActions_ActionGroup());
+    addGroup(new ViewAs_Group_ActionGroup());
     addGroup(new WatchesToolbarActions_ActionGroup());
     addGroup(new WatchesTreeActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(ViewAs_Group_ActionGroup.ID, JavaWatchableNodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(JavaWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.LABEL_ID_extentions);
   }
 }

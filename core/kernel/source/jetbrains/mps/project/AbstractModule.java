@@ -52,6 +52,7 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -390,13 +391,24 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return getStubPaths(getModuleDescriptor());
   }
 
-  //----classpath
-  //todo check this code. Wy not to do it where we add jars?
-  protected void updatePackagedDescriptorClasspath() {
+  // todo: remove, should be done in module packing
+  protected void updatePackagedDescriptor() {
+    // things to do:
+    // 1) load/prepare stub libraries (getAdditionalJavaStubPaths) from sources descriptor
+    // 2) load/prepare stub model roots from sources descriptor
+    // 3) load libraries from deployment descriptor (/classes_gen ?)
+
+    // possible cases:
+    // 1) without deployment descriptor (nothing to do; todo: ?)
+    // 2) with dd, without sources (to do: 3)
+    // 3) with dd, with sources (to do: 1,2,3)
+
     if (!isPackaged()) return;
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
+    DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
+    if (dd == null) return;
 
     final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
     if (bundleHomeFile == null) return;
@@ -404,64 +416,46 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-    String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
-
-    boolean addBundleAsModelRoot = false;
-    final DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
-    String libPath = dd == null ? FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase() : null;
-
-    // stub libraries
-    List<String> toRemovePaths = new ArrayList<String>();
-    for (String path : descriptor.getAdditionalJavaStubPaths()) {
-      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
-      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
-        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
-      }
-      if (dd == null && canonicalPath.startsWith(libPath)) {
-        continue;
-      }
-      toRemovePaths.add(path);
+    IFile sourcesDescriptorFile = ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
+    if (sourcesDescriptorFile == null) {
+      // todo: for now it's impossible
+      assert descriptor instanceof DeploymentDescriptor;
+    } else {
+      assert !(descriptor instanceof DeploymentDescriptor);
     }
-    descriptor.getAdditionalJavaStubPaths().removeAll(toRemovePaths);
 
-    // stub model roots
-    List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
-    for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
-      if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
-      String path = mrd.getMemento().get("path");
-      String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
+    // 1 && 2
+    if (sourcesDescriptorFile != null) {
+      // stub libraries
+      // todo: looks like module.xml contains info about model libs
+      // ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
+//      Set<String> libPaths = new LinkedHashSet<String>();
+//      for (String path : descriptor.getAdditionalJavaStubPaths()) {
+//        String converted = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+//        if (converted != null) {
+//          libPaths.add(converted);
+//        }
+//      }
+      descriptor.getAdditionalJavaStubPaths().clear();
+//      descriptor.getAdditionalJavaStubPaths().addAll(libPaths);
 
-      String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
-      if (canonicalPath.endsWith(suffix)) {
-        IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(this);
-        if (dd != null && parent != null) {
-          parent = parent.getParent();
+      // stub model roots
+      List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
+      for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
+        if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
+        String path = mrd.getMemento().get("path");
+        String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+
+        if (convertedPath != null) {
+          mrd.getMemento().put("path", convertedPath);
+        } else {
+          toRemove.add(mrd);
         }
-        IFile classes = parent != null ? parent.getDescendant(suffix) : null;
-        addBundleAsModelRoot = classes != null && FileUtil.getCanonicalPath(classes.getPath()).equalsIgnoreCase(canonicalPath);
-      } else if (FileUtil.getCanonicalPath(bundleHomeFile.getPath()).equalsIgnoreCase(canonicalPath)) {
-        addBundleAsModelRoot = true;
       }
-
-      if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
-        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
-      }
-      if (dd == null && canonicalPath.startsWith(libPath)) {
-        continue;
-      }
-      toRemove.add(mrd);
-    }
-    descriptor.getModelRootDescriptors().removeAll(toRemove);
-
-    if (addBundleAsModelRoot) {
-      descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(bundleHomeFile.getPath()));
-    }
-    if (dd == null) {
-      return;
+      descriptor.getModelRootDescriptors().removeAll(toRemove);
     }
 
+    // 3
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
@@ -471,6 +465,45 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         descriptor.getAdditionalJavaStubPaths().add(path);
         descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
       }
+    }
+  }
+
+  /**
+   * Convert path from sources module descriptor for using on distribution
+   * /classes && /classes_gen converts to bundle home path
+   *
+   * @param originalPath Original path from sources module descriptor
+   * @return Converted path, null if path meaningless on packaged module
+   */
+  @Nullable
+  private String convertPath(String originalPath, IFile bundleHome, IFile sourcesDescriptorFile, ModuleDescriptor descriptor) {
+    MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
+
+    String canonicalPath = FileUtil.getCanonicalPath(originalPath).toLowerCase();
+
+    // /classes && /classes_gen hack
+    String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
+    if (canonicalPath.endsWith(suffix)) {
+      // MacrosFactory based on original descriptor file because we use original descriptor file for ModuleDescriptor reading, so all paths expanded to original descriptor file
+      String classes = macroHelper.expandPath("${module}/" + suffix);
+      if (FileUtil.getCanonicalPath(classes).equalsIgnoreCase(canonicalPath)) {
+        return bundleHome.getPath();
+      }
+    } else if (FileUtil.getCanonicalPath(bundleHome.getPath()).equalsIgnoreCase(canonicalPath)) {
+      return bundleHome.getPath();
+    }
+
+    // ${mps_home}/lib
+    String mpsHomeLibPath = FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase();
+    if (canonicalPath.startsWith(mpsHomeLibPath)) {
+      return canonicalPath;
+    }
+
+    if (MacrosFactory.containsNonMPSMacros(macroHelper.shrinkPath(originalPath))) {
+      return originalPath;
+    } else {
+      // ignore paths starts from ${module}/${project} etc
+      return null;
     }
   }
 
@@ -485,7 +518,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   // do not use, used only from ModuleRepositoryFacade
   public void reloadAfterDescriptorChange() {
-    updatePackagedDescriptorClasspath();
+    updatePackagedDescriptor();
     updateFacets();
     updateModelsSet();
   }

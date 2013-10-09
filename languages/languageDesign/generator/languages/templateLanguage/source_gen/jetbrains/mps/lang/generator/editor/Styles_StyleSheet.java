@@ -76,6 +76,21 @@ public class Styles_StyleSheet {
     return style;
   }
 
+  @Deprecated
+  public static Style getMappingRuleDeclaration(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getMappingRuleReference(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(Styles_StyleSheet.getMappingRuleDeclaration(editorCell));
+    return style;
+  }
+
   public static void applyGeneratorKeyWord(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -115,5 +130,14 @@ public class Styles_StyleSheet {
   public static void applyMacroDescriptionText(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.LIGHT_BLUE)));
+  }
+
+  public static void applyMappingRuleDeclaration(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange)));
+  }
+
+  public static void applyMappingRuleReference(Style style, EditorCell editorCell) {
+    Styles_StyleSheet.applyMappingRuleDeclaration(style, editorCell);
   }
 }

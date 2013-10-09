@@ -9,6 +9,7 @@ import java.io.File;
 import org.apache.tools.ant.util.FirstMatchMapper;
 import org.apache.tools.ant.util.GlobPatternMapper;
 import org.apache.tools.ant.util.IdentityMapper;
+import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.BuildException;
 import jetbrains.mps.build.ant.MPSClasspathUtil;
 import java.util.List;
@@ -60,8 +61,18 @@ public class ConvertToBinaryTask extends Copy {
 
 
   @Override
+  public void addFileset(FileSet set) {
+    set.setErrorOnMissingDir(false);
+    super.addFileset(set);
+  }
+
+  @Override
   public void execute() throws BuildException {
     super.execute();
+    // create output dir in any case, dest dir used in src packaging and fails if models dir not exists 
+    if (destDir != null) {
+      destDir.mkdirs();
+    }
     if (!(toConvert.isEmpty())) {
       Iterable<File> classPaths = MPSClasspathUtil.buildClasspath(getProject(), mpsHome, false);
       List<URL> classPathUrls = new ArrayList<URL>();

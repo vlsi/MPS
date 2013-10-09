@@ -5,6 +5,7 @@ package jetbrains.mps.typesystemEngine.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.util.NameUtil;
 
 public class CoerceUtil {
   public CoerceUtil() {
@@ -18,5 +19,9 @@ public class CoerceUtil {
       BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_canBeCoerced_6321644624958501287", new Object[]{conceptFqName}) :
       true
     );
+  }
+
+  public static boolean canBeCoerced(SNode type, SNode conceptNode) {
+    return canBeCoerced(type, NameUtil.nodeFQName(conceptNode));
   }
 }

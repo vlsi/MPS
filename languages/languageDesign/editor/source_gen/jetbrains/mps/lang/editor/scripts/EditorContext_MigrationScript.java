@@ -506,9 +506,6 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorComponent.EDITOR_POPUP_MENU_ACTIONS").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorComponent.CARET_ROW_COLOR").equals(targetNodeId)) {
-          return true;
-        }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorComponent.SCROLL_GAP").equals(targetNodeId)) {
           return true;
         }

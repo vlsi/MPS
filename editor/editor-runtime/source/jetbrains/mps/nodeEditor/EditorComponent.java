@@ -221,7 +221,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorComponent.class));
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
-  public static final Color CARET_ROW_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
 
   private static final int SCROLL_GAP = 15;
 
@@ -715,6 +714,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getSelectionManager().addSelectionListener(new SelectionListener() {
       @Override
       public void selectionChanged(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        if (oldSelection == newSelection) {
+          return;
+        }
         deactivateSubstituteChooser();
         updateStatusBarMessage();
       }
@@ -1019,17 +1021,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        assert node == null || SNodeUtil.isAccessible(node, myRepository) : "editNode() accepts nodes from its own repository only";
-      }
-    });
+        assert
+            node == null || SNodeUtil.isAccessible(node, myRepository) :
+            "editNode() accepts nodes from its own repository only (model = " + node.getModel() +
+                (node.getModel() != null ? ", repository = " + node.getModel().getRepository() : "") + ")";
 
-    if (myNode != null && notifiesCreation()) {
-      notifyDisposal();
-    }
+        if (myNode != null && notifiesCreation()) {
+          notifyDisposal();
+        }
 
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
         final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
         if (needNewTypecheckingContext) {
           disposeTypeCheckingContext();
@@ -1055,12 +1055,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         rebuildEditorContent();
+
+        if (myNode != null && notifiesCreation()) {
+          notifyCreation();
+        }
       }
     });
-
-    if (myNode != null && notifiesCreation()) {
-      notifyCreation();
-    }
   }
 
   public void addAdditionalPainter(AdditionalPainter additionalPainter) {
@@ -1283,7 +1283,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private EditorContext createEditorContextForActions() {
-    return new EditorContext(this, null, myRepository);
+    return new EditorContext(this, getEditedNode() != null ? getEditedNode().getModel() : null, myRepository);
   }
 
   private void selectComponentCell(Component component) {
@@ -1524,9 +1524,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository)) {
-      assert myModelDescriptorsWithListener.contains(
-          myNode.getModel()) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository) && !myModelDescriptorsWithListener.contains(myNode.getModel())) {
+      String message = "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+      message += "\n modelId: " + myNode.getModel().getModelId().toString();
+      message += "\n" + "models with listeners:";
+      for (SModel model : myModelDescriptorsWithListener) {
+        message += "\n\t" + model.getModelId().toString();
+      }
+      assert false : message;
     }
 
     revalidate();
@@ -2275,6 +2280,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   protected void paintComponent(Graphics gg) {
+    EditorSettings setting = EditorSettings.getInstance();
     Graphics2D g = (Graphics2D) gg;
 
     turnOnAliasingIfPossible(g);
@@ -2288,7 +2294,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
-      g.setColor(CARET_ROW_COLOR);
+      g.setColor(setting.getCaretRowColor());
       g.fillRect(0, deepestCell.getY(), getWidth(),
           deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
@@ -2307,7 +2313,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
-      EditorSettings setting = EditorSettings.getInstance();
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());

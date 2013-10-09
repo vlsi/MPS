@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -100,7 +99,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention implements Intenti
       // ------ 
       SNode oldTemplate = TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(node);
       SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.fromList(TFs).first()));
-      SNode TFtoDelete = AttributeOperations.getAttribute(fragmentToSet, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment")));
+      SNode TFtoDelete = AttributeOperations.getAttribute(fragmentToSet, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"));
       SNodeOperations.deleteNode(TFtoDelete);
       SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
       SLinkOperations.setTarget(inlineTemplate, "templateNode", fragmentToSet, true);

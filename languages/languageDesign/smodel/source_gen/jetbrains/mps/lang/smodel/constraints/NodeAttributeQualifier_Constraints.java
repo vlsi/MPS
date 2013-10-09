@@ -12,13 +12,10 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -47,12 +44,20 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) _context.getParameterNode()))), "virtual_getRole_1262430001741497900", new Object[]{});
+            try {
+              String role = AttributeDesignTimeOperations.getAttributeRole(_context.getParameterNode());
+              if (role != null) {
+                return role;
+              }
+            } catch (Exception ex) {
+              // ignore 
+            }
+            return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return AttributeQualifier_Behavior.call_getApplicableRoles_959482772563105834(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.AttributeQualifier"))), _context.getEnclosingNode(), "jetbrains.mps.lang.core.structure.NodeAttribute", _context.getModel(), operationContext.getScope());
+            return AttributeDesignTimeOperations.getApplicableAttributes(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.AttributeAccess"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "3364660638048049748"));
           }
 
           @Override

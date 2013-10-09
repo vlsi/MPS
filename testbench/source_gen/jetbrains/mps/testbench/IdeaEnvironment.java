@@ -79,21 +79,26 @@ public class IdeaEnvironment implements Environment {
     System.setProperty("idea.no.jre.check", "true");
     // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors() 
     System.setProperty("idea.platform.prefix", "Idea");
-    StringBuffer pluginPath = new StringBuffer();
-    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
-    if (pluginDir.listFiles() != null) {
-      for (File pluginFolder : pluginDir.listFiles()) {
-        if (pluginPath.length() > 0) {
-          pluginPath.append(File.pathSeparator);
+
+    // do not overwrite plugin.path if set 
+    if (isEmpty_8e5t8e_a0w0h(System.getProperty("plugin.path"))) {
+      StringBuffer pluginPath = new StringBuffer();
+      File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
+      if (pluginDir.listFiles() != null) {
+        for (File pluginFolder : pluginDir.listFiles()) {
+          if (pluginPath.length() > 0) {
+            pluginPath.append(File.pathSeparator);
+          }
+          pluginPath.append(pluginFolder.getPath());
         }
-        pluginPath.append(pluginFolder.getPath());
+      }
+      System.setProperty("plugin.path", pluginPath.toString());
+      // Value of this property is comma-separated list of plugin IDs intended to load by platform 
+      if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
+        System.setProperty("idea.load.plugins.id", IterableUtils.join(config.plugins(), ","));
       }
     }
-    System.setProperty("plugin.path", pluginPath.toString());
-    // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-    if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
-      System.setProperty("idea.load.plugins.id", IterableUtils.join(config.plugins(), ","));
-    }
+
     if (!(cachesInvalidated)) {
       FSRecords.invalidateCaches();
       cachesInvalidated = true;
@@ -294,5 +299,9 @@ public class IdeaEnvironment implements Environment {
     if (canonicalFile.exists() && canonicalFile.isDirectory()) {
       PathMacros.getInstance().setMacro(macroName, canonicalPath);
     }
+  }
+
+  public static boolean isEmpty_8e5t8e_a0w0h(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -5,7 +5,7 @@ package jetbrains.mps.editor.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -24,7 +24,7 @@ public class ExtractComponentUtil {
 
   public static void extractComponent(final SNode node, EditorContext editorContext) {
     final SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
-    final String componentName = JOptionPane.showInputDialog(ProjectHelper.toMainFrame(editorContext.getOperationContext().getProject()), "Enter a component name:", "");
+    final String componentName = Messages.showInputDialog(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()), "Enter a component name:", "", null);
     if (componentName == null) {
       return;
     }

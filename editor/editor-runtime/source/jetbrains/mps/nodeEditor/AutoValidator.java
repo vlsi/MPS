@@ -35,6 +35,9 @@ class AutoValidator {
   private class MyCellSelectionListener implements SelectionListener {
     @Override
     public void selectionChanged(final jetbrains.mps.openapi.editor.EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      if (oldSelection == newSelection) {
+        return;
+      }
       final EditorComponent editorComponentInternal = (EditorComponent) editorComponent;
       if (!(oldSelection instanceof SingularSelection)) {
         return;

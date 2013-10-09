@@ -20,8 +20,9 @@
         </option>
         <modelRoots>
           <modelRoot type="default">
-            <settings contentPath="$MODULE_DIR$/models" type="default">
-              <sourceRoot location="." />
+            <settings contentPath="$MODULE_DIR$" type="default">
+              <sourceRoot location="models" />
+              <sourceRoot location="src" />
             </settings>
           </modelRoot>
         </modelRoots>
@@ -52,12 +53,13 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="module" module-name="mps-java-common" />
-    <orderEntry type="library" name="MPS-core" level="project" />
     <orderEntry type="library" name="mps.Annotations_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.ide.java.basePlatform" level="project" />
+    <orderEntry type="library" name="mps.MPS.Platform" level="project" />
+    <orderEntry type="library" name="mps.MPS.Editor" level="project" />
+    <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
   </component>
 </module>
 

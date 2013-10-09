@@ -436,7 +436,7 @@
     <nodeInfo nodeId="3608835296802635845" fileName="ModelsToResources.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
     <nodeInfo nodeId="3608835296802635824" fileName="ModelsToResources.java" startLine="24" startPosition="80" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3608835296802635848" fileName="ModelsToResources.java" startLine="25" startPosition="25" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3608835296802635832" fileName="ModelsToResources.java" startLine="29" startPosition="59" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3608835296802635832" fileName="ModelsToResources.java" startLine="29" startPosition="59" endLine="30" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3608835296802635781" fileName="ModelsToResources.java" startLine="32" startPosition="41" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2098458047196775592" fileName="ModelsToResources.java" startLine="36" startPosition="20" endLine="37" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3608835296802635815" fileName="ModelsToResources.java" startLine="38" startPosition="5" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -508,7 +508,7 @@
     <nodeInfo nodeId="3608835296802640753" fileName="ModelsToResources.java" startLine="73" startPosition="27" endLine="77" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3608835296802640755" fileName="ModelsToResources.java" startLine="80" startPosition="28" endLine="84" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3608835296802640790" fileName="ModelsToResources.java" startLine="87" startPosition="28" endLine="91" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3608835296802635773" fileName="ModelsToResources.java" startLine="30" startPosition="35" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3608835296802635773" fileName="ModelsToResources.java" startLine="30" startPosition="69" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7219626660275509691" fileName="ModelsToResources.java" startLine="29" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#(Z)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="53" startPosition="20" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="51" startPosition="46" endLine="136" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />

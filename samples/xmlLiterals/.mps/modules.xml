@@ -5,9 +5,6 @@
       <modulePath path="$PROJECT_DIR$/languages/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/jetbrains.mps.samples.xmlLiterals.sandbox.msd" folder="" />
     </projectModules>
-    <genConfs>
-      <genConfModule name="xmlLiterals language" moduleRef="jetbrains.mps.samples.xmlLiterals" />
-    </genConfs>
   </component>
 </project>
 

@@ -77,7 +77,7 @@ public class MigrationAssistant extends AbstractProjectComponent {
       public void run() {
         for (SModule module : ProjectHelper.toMPSProject(myProject).getModulesWithGenerators()) {
           for (SModel md : module.getModels()) {
-            if (md instanceof EditableSModel) {
+            if (md instanceof EditableSModel && !(md.isReadOnly())) {
               ((EditableSModel) md).reloadFromSource();
             }
           }

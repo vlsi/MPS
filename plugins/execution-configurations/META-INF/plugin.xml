@@ -3,15 +3,21 @@
   <id>jetbrains.mps.execution.configurations</id>
   <name>Execution Configurations</name>
   <description>Execution configurations for MPS</description>
-  <version>3.0</version>
+  <version>3.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="123.1" />
+  <idea-version since-build="129.1" until-build="130.1"/>
 
   <depends>jetbrains.mps.execution.languages</depends>
   <depends>jetbrains.mps.debugger.java</depends>
   <depends>jetbrains.mps.debugger.api</depends>
   <depends>jetbrains.mps.core</depends>
   <depends>com.intellij.modules.mps</depends>
+
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_PluginInitializer</implementation-class>
+    </component>
+  </application-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/" />

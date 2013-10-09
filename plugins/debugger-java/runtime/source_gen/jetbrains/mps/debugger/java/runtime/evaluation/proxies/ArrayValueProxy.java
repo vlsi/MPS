@@ -92,4 +92,8 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
     }
     return myValue.equals(proxy.getJDIValue());
   }
+
+  public String getPresentation() {
+    return (("{" + myValue.type().name() + "} ") + myValue.toString());
+  }
 }

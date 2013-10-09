@@ -35,4 +35,18 @@ public abstract class AbstractSideTransformHintSubstituteAction extends Abstract
   public AbstractSideTransformHintSubstituteAction(SNode concept, Object parameterNode, SNode sourceNode) {
     super(concept, parameterNode, sourceNode);
   }
+
+  @Override
+  public boolean canSubstituteStrictly(String pattern) {
+    return isEnabled() && super.canSubstituteStrictly(pattern);
+  }
+
+  @Override
+  public boolean canSubstitute(String pattern) {
+    return isEnabled() && super.canSubstitute(pattern);
+  }
+
+  protected boolean isEnabled() {
+    return true;
+  }
 }

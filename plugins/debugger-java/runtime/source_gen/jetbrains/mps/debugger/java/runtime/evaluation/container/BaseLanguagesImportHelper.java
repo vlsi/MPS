@@ -83,7 +83,7 @@ public abstract class BaseLanguagesImportHelper {
     }
   }
 
-  private void transformNode(final SNode node, final SModel containerModel) {
+  private void transformNode(SNode node, final SModel containerModel) {
     // try to resolve variables 
     ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -91,7 +91,7 @@ public abstract class BaseLanguagesImportHelper {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        transformNodeToProperVariableReference(node, containerModel);
+        transformNodeToProperVariableReference(it, containerModel);
       }
     });
     // all links to subs -> to debugger stubs 

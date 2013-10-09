@@ -94,6 +94,7 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
     );
 
     final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
+    configurable.setParentForCallBack(dialog);
 
     SwingUtilities.invokeLater(new Runnable() {
       @Override

@@ -15,6 +15,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.util.MacroHelper;
 import javax.swing.ImageIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -45,7 +46,11 @@ public class IconResource_Behavior {
     if (!(module instanceof AbstractModule)) {
       return false;
     }
-    String path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, "path"));
+    MacroHelper macroHelper = MacrosFactory.forModule((AbstractModule) module);
+    if (macroHelper == null) {
+      return false;
+    }
+    String path = macroHelper.expandPath(SPropertyOperations.getString(thisNode, "path"));
     if (path == null) {
       return false;
     }

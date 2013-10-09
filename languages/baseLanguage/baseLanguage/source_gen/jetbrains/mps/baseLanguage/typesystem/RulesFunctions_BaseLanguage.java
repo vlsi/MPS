@@ -108,7 +108,7 @@ __switch__:
                       this.__CP__ = 7;
                       break;
                     case 7:
-                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConceptFunction") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IStatementListContainer") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Quotation")) {
+                      if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConceptFunction") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.SingleLineComment") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IStatementListContainer") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Quotation")) {
                         this.__CP__ = 8;
                         break;
                       }
@@ -138,6 +138,7 @@ __switch__:
                     case 8:
                       // don't look inside closures and other code-blocks 
                       // don't look inside commented statements 
+                      // don't look inside single-line comments 
                       // don't look inside anything that implements IStatementListContainer (for extensibility) 
                       // don't look inside anonymous classes 
                       this.__CP__ = 1;
@@ -656,13 +657,43 @@ __switch__:
         errorString = errorString + " " + exc;
       }
       if (useQuickfix && supportsCheckedExceptions) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", null, errorTarget);
+        if ((SNodeOperations.getAncestor(mainNode, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false, false) != null)) {
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
-            intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
-            _reporter_2309309498.addIntentionProvider(intentionProvider);
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6468716278896138869", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
+              intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix", false);
+              intentionProvider.putArgument("throwableTypes", throwTypes);
+              intentionProvider.putArgument("createNew", true);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix", false);
+              intentionProvider.putArgument("throwableTypes", throwTypes);
+              intentionProvider.putArgument("createNew", false);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+          }
+        } else {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", null, errorTarget);
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
+              intentionProvider.putArgument("throwableType", ListSequence.fromList(throwTypes).first());
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
+            {
+              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SurroundExceptionWithTryCatch_QuickFix", false);
+              intentionProvider.putArgument("throwableTypes", throwTypes);
+              intentionProvider.putArgument("createNew", true);
+              _reporter_2309309498.addIntentionProvider(intentionProvider);
+            }
           }
         }
       } else {

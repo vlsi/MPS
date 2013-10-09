@@ -236,6 +236,9 @@ __switch__:
     }));
   }
 
+  public Find_Test() {
+  }
+
   public Iterable<IInterface> interfaces() {
     return null;
   }

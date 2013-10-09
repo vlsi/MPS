@@ -138,7 +138,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ka3b3c_d0a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractInequationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a()}));
     return editorCell;
   }
@@ -252,7 +252,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_ka3b3c_c1a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.AliasEditorComponent");
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, (Color) null);
     editorCell.getStyle().putAll(style);

@@ -14,7 +14,6 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -58,7 +57,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1223379424268(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     /*
-      if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Processed"))) != null)) {
+      if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.Processed")) != null)) {
         return false;
       }
       List<SNode> annotationInstances = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "annotation", true);
@@ -73,7 +72,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1223379447210(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     /*
-      if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Processed"))) != null)) {
+      if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.Processed")) != null)) {
         return false;
       }
       List<SNode> annotationInstances = SLinkOperations.getTargets(_context.getNode(), "annotation", true);
@@ -388,11 +387,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1186391633357(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_1186391637493(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_1195058342956(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -471,16 +470,16 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811230(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811238(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_2365227504094215391(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(_context.getNode(), "quickFix", false);
-    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")));
+    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
     String smodelId;
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
@@ -520,16 +519,16 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811187(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811195(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_2365227504094215533(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(_context.getNode(), "quickFix", false);
-    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")));
+    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
     String smodelId;
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
@@ -620,11 +619,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1205764543396(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_1205764543406(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_1227280101336(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -733,16 +732,16 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811146(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811154(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_2365227504094215674(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(_context.getNode(), "quickFix", false);
-    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")));
+    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
     String smodelId;
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
@@ -771,11 +770,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1707333141173511689(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_1707333141173511700(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_1707333141173511711(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -787,7 +786,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1707333141173511739(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(_context.getNode(), "quickFix", false);
-    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")));
+    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
     String smodelId;
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
@@ -889,16 +888,16 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811105(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "modelId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "modelId");
   }
 
   public static Object propertyMacro_GetPropertyValue_5360587928437811113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"))), "nodeId");
+    return SPropertyOperations.getString(AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "nodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_2365227504094215286(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(_context.getNode(), "quickFix", false);
-    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")));
+    SNode id = AttributeOperations.getAttribute(quickFix, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"));
     String smodelId;
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
@@ -2192,14 +2191,14 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1223374838180(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode methodDeclaration = SNodeOperations.copyNode(_context.getNode());
     ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).insertElement(0, _quotation_createNode_x583g4_a0a1a514());
-    AttributeOperations.createAndSetAttrbiute(methodDeclaration, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Processed")), "jetbrains.mps.lang.typesystem.structure.Processed");
+    AttributeOperations.createAndSetAttrbiute(methodDeclaration, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.Processed"), "jetbrains.mps.lang.typesystem.structure.Processed");
     return methodDeclaration;
   }
 
   public static SNode sourceNodeQuery_1223378950940(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode methodCall = SNodeOperations.copyNode(_context.getNode());
     ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, _quotation_createNode_x583g4_a0a1a614());
-    AttributeOperations.createAndSetAttrbiute(methodCall, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Processed")), "jetbrains.mps.lang.typesystem.structure.Processed");
+    AttributeOperations.createAndSetAttrbiute(methodCall, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.Processed"), "jetbrains.mps.lang.typesystem.structure.Processed");
     return methodCall;
   }
 
@@ -2555,7 +2554,7 @@ parametersLoop:
         originalModel.getReference().toString()
       );
       String nodeId = _context.getOriginalCopiedInputNode(node).getNodeId().toString();
-      SNode annotation = AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
+      SNode annotation = AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.OriginalNodeId"), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
       SPropertyOperations.set(annotation, "nodeId", nodeId);
       SPropertyOperations.set(annotation, "modelId", modelId);
     }

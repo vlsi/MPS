@@ -70,7 +70,7 @@ public class AddToNewFavoritesList_Action extends BaseAction {
       final String name = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {
         @Override
         public boolean checkInput(String p0) {
-          return true;
+          return (p0 != null && p0.length() > 0);
         }
 
         @Override
@@ -78,6 +78,9 @@ public class AddToNewFavoritesList_Action extends BaseAction {
           return true;
         }
       });
+      if ((name == null || name.length() == 0)) {
+        return;
+      }
       favoritesManager.addNewFavoritesList(name);
       FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
       List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));

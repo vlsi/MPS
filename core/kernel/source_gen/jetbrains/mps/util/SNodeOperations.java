@@ -102,7 +102,7 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static SAbstractConcept getConcept(String name) {
-    return SConceptRepository.getInstance().getConcept(name);
+    return SConceptRepository.getInstance().getInstanceConcept(name);
   }
 
   /**

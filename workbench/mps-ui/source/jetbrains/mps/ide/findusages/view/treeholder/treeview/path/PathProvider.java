@@ -17,12 +17,16 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -52,9 +56,17 @@ public class PathProvider {
     }
 
     if (o instanceof SModel) {
-      SModel model = (SModel) o;
+      res.add(new PathItem(PathItemRole.ROLE_MODEL, ((SModel) o).getReference()));
+      o = ((SModel) o).getModule();
+    }
+
+    if (o instanceof SModelReference) {
+      SModelReference model = (SModelReference) o;
       res.add(new PathItem(PathItemRole.ROLE_MODEL, model));
-      o = model.getModule();
+      SModuleReference moduleReference = model.getModuleReference();
+      if (moduleReference != null) {
+        o = MPSModuleRepository.getInstance().getModule(moduleReference.getModuleId());
+      }
     }
 
     if (o instanceof SModule) {

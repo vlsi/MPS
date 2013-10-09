@@ -221,12 +221,7 @@ public class IntelligentInputUtil {
     jetbrains.mps.openapi.editor.cells.EditorCell selectableChild = CellFinderUtil.findLastSelectableLeaf(cellForNewNode, true);
     CellAction rtAction = selectableChild != null ? editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(selectableChild, jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM) : null;
 
-    boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
-      }
-    });
+    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
 
     if (rtAction == null || !hasSideActions) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
@@ -246,13 +241,7 @@ public class IntelligentInputUtil {
     if (rtHintCell != null) {
       final SubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
-      List<SubstituteAction> rtMatchingActions =
-        TypeContextManager.getInstance().runResolveAction(new Computable<List<SubstituteAction>>() {
-          @Override
-          public List<SubstituteAction> compute() {
-            return rtSubstituteInfo.getMatchingActions(tail, true);
-          }
-        });
+      List<SubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
@@ -345,12 +334,7 @@ public class IntelligentInputUtil {
   private static boolean applyLeftTransform(jetbrains.mps.openapi.editor.EditorContext editorContext, final String head, String smallPattern, final EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(CellFinderUtil.findFirstSelectableLeaf(cellForNewNode,
         true), jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM);
-    boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return hasSideActions(cellForNewNode, CellSide.LEFT, head);
-      }
-    });
+    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
 
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();

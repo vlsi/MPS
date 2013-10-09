@@ -204,6 +204,7 @@
     <nodeInfo nodeId="8128243960970299036" fileName="SplitCommandInParts_Test.java" startLine="28" startPosition="54" endLine="29" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970299052" fileName="SplitCommandInParts_Test.java" startLine="32" startPosition="59" endLine="33" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8128243960970299067" fileName="SplitCommandInParts_Test.java" startLine="36" startPosition="57" endLine="37" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8128243960970298961" fileName="SplitCommandInParts_Test.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SplitCommandInParts_Test#()V" />
     <nodeInfo nodeId="8128243960970298966" fileName="SplitCommandInParts_Test.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_withoutSpaces#()V" />
     <nodeInfo nodeId="8128243960970298980" fileName="SplitCommandInParts_Test.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_withSpaces#()V" />
     <nodeInfo nodeId="8128243960970298996" fileName="SplitCommandInParts_Test.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_javaProperties#()V" />
@@ -211,6 +212,7 @@
     <nodeInfo nodeId="8128243960970299032" fileName="SplitCommandInParts_Test.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_quotsInCommand#()V" />
     <nodeInfo nodeId="8128243960970299048" fileName="SplitCommandInParts_Test.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_quotsInCommandStart#()V" />
     <nodeInfo nodeId="8128243960970299063" fileName="SplitCommandInParts_Test.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_quotsInCommandEnd#()V" />
+    <scopeInfo nodeId="8128243960970298964" fileName="SplitCommandInParts_Test.java" startLine="40" startPosition="37" endLine="40" endPosition="37" />
     <scopeInfo nodeId="8128243960970298969" fileName="SplitCommandInParts_Test.java" startLine="12" startPosition="53" endLine="13" endPosition="194" />
     <scopeInfo nodeId="8128243960970298983" fileName="SplitCommandInParts_Test.java" startLine="16" startPosition="50" endLine="17" endPosition="199" />
     <scopeInfo nodeId="8128243960970298999" fileName="SplitCommandInParts_Test.java" startLine="20" startPosition="54" endLine="21" endPosition="236" />
@@ -218,6 +220,7 @@
     <scopeInfo nodeId="8128243960970299035" fileName="SplitCommandInParts_Test.java" startLine="28" startPosition="54" endLine="29" endPosition="244" />
     <scopeInfo nodeId="8128243960970299051" fileName="SplitCommandInParts_Test.java" startLine="32" startPosition="59" endLine="33" endPosition="205" />
     <scopeInfo nodeId="8128243960970299066" fileName="SplitCommandInParts_Test.java" startLine="36" startPosition="57" endLine="37" endPosition="221" />
+    <scopeInfo nodeId="8128243960970298961" fileName="SplitCommandInParts_Test.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="8128243960970298966" fileName="SplitCommandInParts_Test.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
     <scopeInfo nodeId="8128243960970298980" fileName="SplitCommandInParts_Test.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="8128243960970298996" fileName="SplitCommandInParts_Test.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
@@ -225,7 +228,7 @@
     <scopeInfo nodeId="8128243960970299032" fileName="SplitCommandInParts_Test.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="8128243960970299048" fileName="SplitCommandInParts_Test.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="8128243960970299063" fileName="SplitCommandInParts_Test.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="8128243960970298959" fileName="SplitCommandInParts_Test.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" />
+    <unitInfo nodeId="8128243960970298959" fileName="SplitCommandInParts_Test.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.tests.commands.SplitCommandInParts_Test" />
   </root>
   <root nodeRef="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)/8128243960970299735">
     <nodeInfo nodeId="8128243960970299784" fileName="CheckTestStateListener.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccessExpected" />
