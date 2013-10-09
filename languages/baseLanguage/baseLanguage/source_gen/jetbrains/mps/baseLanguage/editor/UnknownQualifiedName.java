@@ -50,7 +50,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     provider.setNoTargetText("<no tokens>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_tokens");
+    editorCell.setCellId("UQN_property_tokens");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));

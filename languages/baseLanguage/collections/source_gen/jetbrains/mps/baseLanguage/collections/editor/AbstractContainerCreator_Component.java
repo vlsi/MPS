@@ -203,7 +203,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
   private EditorCell createRefNodeList_jky4mt_b2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractContainerCreator_Component.initValueListHandler_jky4mt_b2a(node, "initValue", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_initValue");
+    editorCell.setCellId("ACCC_refNodeList_initValue");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

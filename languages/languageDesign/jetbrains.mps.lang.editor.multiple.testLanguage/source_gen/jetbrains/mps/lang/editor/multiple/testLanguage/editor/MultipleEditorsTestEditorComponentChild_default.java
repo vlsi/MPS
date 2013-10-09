@@ -53,7 +53,7 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+    editorCell.setCellId("METECC_property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -102,7 +102,7 @@ public class MultipleEditorsTestEditorComponentChild_default implements ConceptE
     provider.setNoTargetText("<no defaultProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_defaultProperty");
+    editorCell.setCellId("METECC_property_defaultProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

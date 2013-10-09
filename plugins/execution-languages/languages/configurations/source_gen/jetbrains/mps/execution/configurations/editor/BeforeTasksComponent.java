@@ -86,7 +86,7 @@ public class BeforeTasksComponent implements ConceptEditorComponent {
   private EditorCell createRefNodeList_3w3ux3_b1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BeforeTasksComponent.beforeTaskListHandler_3w3ux3_b1b0(node, "beforeTask", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_beforeTask");
+    editorCell.setCellId("BTC_refNodeList_beforeTask");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

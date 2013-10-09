@@ -56,7 +56,7 @@ public class SNotationPartListBody implements ConceptEditorComponent {
   private EditorCell createRefNodeList_2lgk78_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new SNotationPartListBody.partsListHandler_2lgk78_a0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_parts");
+    editorCell.setCellId("SNPLB_refNodeList_parts");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -122,7 +122,7 @@ public class SNotationPartListBody implements ConceptEditorComponent {
   private EditorCell createRefNodeList_2lgk78_a0_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new SNotationPartListBody.partsListHandler_2lgk78_a0_0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_parts_1");
+    editorCell.setCellId("SNPLB_refNodeList_parts_1");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

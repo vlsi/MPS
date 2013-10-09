@@ -40,7 +40,7 @@ public class SNotationStyleClasses implements ConceptEditorComponent {
   private EditorCell createRefNodeList_hu0sdh_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new SNotationStyleClasses.styleClassListHandler_hu0sdh_a0(node, "styleClass", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_styleClass");
+    editorCell.setCellId("SNSC_refNodeList_styleClass");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);

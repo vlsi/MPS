@@ -106,7 +106,7 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
   private EditorCell createRefNodeList_n84rmm_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ReplaceableAliasAndParms_Comp.parameterListHandler_n84rmm_b1a(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_parameter");
+    editorCell.setCellId("RAAPC_refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
