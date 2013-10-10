@@ -56,7 +56,9 @@ public class AbstractFigureParameter_Editor extends DefaultNodeEditor {
       null :
       editorCell.getSNode()
     )));
+    style.set(StyleAttributes.AUTO_DELETABLE, true);
     editorCell.getStyle().putAll(style);
+    AbstractFigureParameterName_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AbstractFigureParameter_Editor.AbstractFigureParameter_generic_cellMenu_ook5es_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
