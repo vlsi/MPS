@@ -92,6 +92,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a4a());
     editorCell = provider.createEditorCell(editorContext);
+    CellModel_Diagram_nodes_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -128,6 +129,9 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
         editorCell.setReferenceCell(true);
         editorCell.setRole("nodes");
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -154,6 +158,7 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CellModel_Diagram_Editor._Inline_7br2q0_a6a());
     editorCell = provider.createEditorCell(editorContext);
+    CellModel_Diagram_connectors_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -190,6 +195,9 @@ public class CellModel_Diagram_Editor extends DefaultNodeEditor {
         editorCell.setReferenceCell(true);
         editorCell.setRole("connectors");
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.AUTO_DELETABLE, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
