@@ -252,17 +252,14 @@
               <property name="name" nameId="tpck.1169194664001" value="newList" />
             </node>
             <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="6727112993807585721" nodeInfo="ng">
-              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlVariableReference" typeId="bwy9.3435983127247055506" id="6727112993807585474" nodeInfo="ng">
-                <link role="var" roleId="bwy9.3435983127247055512" targetNodeId="6727112993805440268" resolveInfo="emptyList" />
+              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlVariableReference" typeId="bwy9.3435983127247055506" id="6727112993818976032" nodeInfo="ng">
+                <link role="var" roleId="bwy9.3435983127247055512" targetNodeId="6727112993809986945" resolveInfo="emptySet" />
               </node>
               <node role="right" roleId="bwy9.6762883159245048089" type="bwy9.MqlCollectionConcatOp" typeId="bwy9.5272233748012107007" id="6727112993807585785" nodeInfo="ng">
-                <property name="kind" nameId="bwy9.5272233748012144105" value="1" />
-                <node role="argument" roleId="bwy9.5272233748012107003" type="bwy9.MqlListLiteral" typeId="bwy9.7862448911997365751" id="6727112993808961797" nodeInfo="ng">
-                  <node role="elements" roleId="bwy9.8194562227701279912" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="6727112993818425650" nodeInfo="ng">
-                    <property name="value" nameId="bwy9.6762883159245048053" value="1" />
-                  </node>
-                  <node role="elements" roleId="bwy9.8194562227701279912" type="bwy9.MqlIntLiteral" typeId="bwy9.6762883159245048052" id="6727112993818425691" nodeInfo="ng">
-                    <property name="value" nameId="bwy9.6762883159245048053" value="2" />
+                <property name="kind" nameId="bwy9.5272233748012144105" value="2" />
+                <node role="argument" roleId="bwy9.5272233748012107003" type="bwy9.MqlListLiteral" typeId="bwy9.7862448911997365751" id="6727112993818976172" nodeInfo="ng">
+                  <node role="elements" roleId="bwy9.8194562227701279912" type="bwy9.MqlStringLiteral" typeId="bwy9.6762883159245048054" id="6727112993818976226" nodeInfo="ng">
+                    <property name="value" nameId="bwy9.6762883159245048055" value="adasd" />
                   </node>
                 </node>
               </node>

@@ -43,7 +43,7 @@ public class MyRootConcept_Behavior {
         final Set<SNode> s4 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s3).union(Sequence.fromIterable(Sequence.<SNode>singleton(null))));
         final Iterable<Integer> emptyList = Sequence.fromIterable(Collections.<Integer>emptyList());
         final Set<String> emptySet = SetSequence.fromSet(new LinkedHashSet<String>());
-        final Iterable<Integer> newList = Sequence.fromIterable(emptyList).concat(Sequence.fromIterable(ArrayUtils.fromIntegerArray(new int[]{1, 2})));
+        final Set<String> newList = SetSequence.fromSetWithValues(new LinkedHashSet<String>(), SetSequence.fromSet(emptySet).union(Sequence.fromIterable(Sequence.fromArray(new String[]{"adasd"}))));
         return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))));
       }
     }.invoke();
