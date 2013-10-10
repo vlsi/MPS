@@ -775,12 +775,12 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5476958923832863120" nodeInfo="nn">
               <property name="value" nameId="tpee.1068580320021" value="1" />
             </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5476958923832863125" nodeInfo="ng">
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="274946636421921834" nodeInfo="ng">
               <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
               <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+              <property name="cellId" nameId="tp5g.1229194968595" value="VDNCC_property_name" />
             </node>
           </node>
         </node>
@@ -834,12 +834,12 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5476958923832863151" nodeInfo="nn">
               <property name="value" nameId="tpee.1068580320021" value="0" />
             </node>
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5476958923832863152" nodeInfo="ng">
-              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-              <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
-              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="274946636421921768" nodeInfo="ng">
               <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
               <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+              <property name="cellId" nameId="tp5g.1229194968595" value="VDNCC_property_name" />
             </node>
           </node>
         </node>
