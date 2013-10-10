@@ -22,7 +22,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").references("outputRole", "inputRole").alias("diagram connector", "").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"figure", "parameter"}, new boolean[]{false, true}).alias("diagram node", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"figure", "parameter"}, new boolean[]{false, true}).alias("diagram node", "").create();
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").references("figure").create();
       case 6:

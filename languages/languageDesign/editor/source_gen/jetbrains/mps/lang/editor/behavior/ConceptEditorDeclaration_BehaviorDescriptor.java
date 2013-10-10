@@ -4,12 +4,14 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.scope.Scope;
 
-public class ConceptEditorDeclaration_BehaviorDescriptor extends BaseEditorComponent_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
+public class ConceptEditorDeclaration_BehaviorDescriptor extends BaseEditorComponent_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ConceptEditorDeclaration_BehaviorDescriptor() {
   }
 
@@ -23,6 +25,10 @@ public class ConceptEditorDeclaration_BehaviorDescriptor extends BaseEditorCompo
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return ConceptEditorDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
