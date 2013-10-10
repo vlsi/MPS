@@ -80,7 +80,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
   private EditorCell createRefNodeList_1xd1xh_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ITemplateCall_actualArguments.actualArgumentListHandler_1xd1xh_b0a(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_actualArgument");
+    editorCell.setCellId("ITCA_refNodeList_actualArgument");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new TemplateDeclarationParameterInformationQuery());
     editorCell.getStyle().putAll(style);

@@ -180,7 +180,7 @@ public class Common_Component implements ConceptEditorComponent {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("CC_property_name");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("actionMap");
@@ -263,7 +263,7 @@ public class Common_Component implements ConceptEditorComponent {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name_1");
+      editorCell.setCellId("CC_property_name_1");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("keyMap");
@@ -355,7 +355,7 @@ public class Common_Component implements ConceptEditorComponent {
     provider.setNoTargetText("<no attractsFocus>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_attractsFocus");
+    editorCell.setCellId("CC_property_attractsFocus");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);

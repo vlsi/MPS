@@ -153,7 +153,7 @@ public class AbstractEquationInspector implements ConceptEditorComponent {
     provider.setNoTargetText("<no checkOnly>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_checkOnly");
+    editorCell.setCellId("AEI_property_checkOnly");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -196,7 +196,7 @@ public class AbstractEquationInspector implements ConceptEditorComponent {
   private EditorCell createRefNodeList_gj4y2c_g0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractEquationInspector.helginsIntentionListHandler_gj4y2c_g0(node, "helginsIntention", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_helginsIntention");
+    editorCell.setCellId("AEI_refNodeList_helginsIntention");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

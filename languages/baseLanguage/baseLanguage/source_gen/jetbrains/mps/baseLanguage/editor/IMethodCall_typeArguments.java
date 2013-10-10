@@ -77,7 +77,7 @@ public class IMethodCall_typeArguments implements ConceptEditorComponent {
   private EditorCell createRefNodeList_q1hswy_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new IMethodCall_typeArguments.typeArgumentListHandler_q1hswy_b0a(node, "typeArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_typeArgument");
+    editorCell.setCellId("IMCA_refNodeList_typeArgument");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

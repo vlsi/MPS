@@ -63,7 +63,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
   private EditorCell createRefNodeList_arlg9k_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new IMethodCall_actualArguments.actualArgumentListHandler_arlg9k_b0(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_actualArgument");
+    editorCell.setCellId("IMCA_refNodeList_actualArgument");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
     editorCell.getStyle().putAll(style);

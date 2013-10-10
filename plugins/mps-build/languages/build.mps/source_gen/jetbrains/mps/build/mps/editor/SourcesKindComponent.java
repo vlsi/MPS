@@ -101,7 +101,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     provider.setNoTargetText("<no sourcesKind>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_sourcesKind");
+    editorCell.setCellId("SKC_property_sourcesKind");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);

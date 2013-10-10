@@ -67,7 +67,7 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     provider.setNoTargetText("<no precisionSetting>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_precisionSetting");
+    editorCell.setCellId("MCEP_property_precisionSetting");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -108,7 +108,7 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     provider.setNoTargetText("<no roundingMode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_roundingMode");
+    editorCell.setCellId("MCEP_property_roundingMode");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -149,7 +149,7 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     provider.setNoTargetText("<no precision>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_precision");
+    editorCell.setCellId("MCEP_property_precision");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

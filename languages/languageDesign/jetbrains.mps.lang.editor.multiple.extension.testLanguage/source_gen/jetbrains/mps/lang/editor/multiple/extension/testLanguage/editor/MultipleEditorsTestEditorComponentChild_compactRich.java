@@ -45,7 +45,7 @@ public class MultipleEditorsTestEditorComponentChild_compactRich implements Conc
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+    editorCell.setCellId("METECCR_property_name");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -66,7 +66,7 @@ public class MultipleEditorsTestEditorComponentChild_compactRich implements Conc
     provider.setNoTargetText("<no richCompactProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_richCompactProperty");
+    editorCell.setCellId("METECCR_property_richCompactProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);

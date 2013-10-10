@@ -37,7 +37,7 @@ public class PersistentMethodsComponent implements ConceptEditorComponent {
   private EditorCell createRefNodeList_55zktd_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new PersistentMethodsComponent.methodsListHandler_55zktd_a0(node, "methods", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_methods");
+    editorCell.setCellId("PMC_refNodeList_methods");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

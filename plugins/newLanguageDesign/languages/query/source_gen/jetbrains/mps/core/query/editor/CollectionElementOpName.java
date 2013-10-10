@@ -28,7 +28,7 @@ public class CollectionElementOpName implements ConceptEditorComponent {
     provider.setNoTargetText("<no kind>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_kind");
+    editorCell.setCellId("CEON_property_kind");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

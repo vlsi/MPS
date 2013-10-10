@@ -4,6 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import java.util.Set;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,10 +24,22 @@ public class EditorComponentDeclaration_Behavior {
   }
 
   public static SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "conceptDeclaration", false) != null ?
-      SLinkOperations.getTarget(thisNode, "conceptDeclaration", false) :
-      BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overridenEditorComponent", true), "editorComponent", false), "virtual_getConceptDeclaration_7055725856388417603", new Object[]{})
-    );
+    return EditorComponentDeclaration_Behavior.call_getConceptDeclaration_8288068497639818367(thisNode, SetSequence.fromSet(new HashSet<SNode>()));
+  }
+
+  public static SNode call_getConceptDeclaration_8288068497639818367(SNode thisNode, Set<SNode> visitedEditorComponents) {
+    if (SLinkOperations.getTarget(thisNode, "conceptDeclaration", false) != null) {
+      return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
+    }
+
+    if (SetSequence.fromSet(visitedEditorComponents).contains(thisNode)) {
+      return null;
+    }
+    SetSequence.fromSet(visitedEditorComponents).addElement(thisNode);
+    if (SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overridenEditorComponent", true), "editorComponent", false) != null) {
+      return EditorComponentDeclaration_Behavior.call_getConceptDeclaration_8288068497639818367(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overridenEditorComponent", true), "editorComponent", false), visitedEditorComponents);
+    }
+    return null;
   }
 
   @Deprecated

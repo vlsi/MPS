@@ -35,7 +35,7 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
     provider.setNoTargetText("<no text>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_text");
+    editorCell.setCellId("CEC_property_text");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(ClickableEditorComponent._StyleParameter_QueryFunction_k1kh9z_a0a((editorCell == null ?
       null :
