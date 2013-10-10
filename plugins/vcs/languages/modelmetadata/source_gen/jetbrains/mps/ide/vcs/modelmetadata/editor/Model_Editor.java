@@ -196,7 +196,7 @@ public class Model_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pyq9q9_g3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imorted languages");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "imported languages");
     editorCell.setCellId("Constant_pyq9q9_g3a");
     Style style = new StyleImpl();
     ProjectStructure_StyleSheet.applyKeyWord(style, editorCell);

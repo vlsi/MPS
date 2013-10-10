@@ -66,7 +66,7 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1057680424125015164" nodeInfo="nn">
-          <property name="text" nameId="tpc2.1073389577007" value="imorted languages" />
+          <property name="text" nameId="tpc2.1073389577007" value="imported languages" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="wr1s.269654322145162290" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1057680424125015165" nodeInfo="nn">
