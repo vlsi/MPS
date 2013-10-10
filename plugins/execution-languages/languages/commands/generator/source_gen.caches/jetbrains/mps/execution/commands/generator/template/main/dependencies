@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.CommandParameterDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroContext" />

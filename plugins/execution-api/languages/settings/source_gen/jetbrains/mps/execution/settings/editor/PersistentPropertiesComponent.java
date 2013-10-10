@@ -99,7 +99,7 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
   private EditorCell createRefNodeList_42zii1_b1b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new PersistentPropertiesComponent.persistentPropertyListHandler_42zii1_b1b0a(node, "persistentProperty", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_persistentProperty");
+    editorCell.setCellId("PPC_refNodeList_persistentProperty");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

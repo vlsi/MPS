@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -152,9 +153,14 @@ public class GenerateConstructor_Action extends BaseAction {
           SNode invocation = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
           SLinkOperations.setTarget(invocation, "baseMethodDeclaration", selectedSuperConstructor, false);
           for (SNode superParam : SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)) {
-            SNode parameter = SNodeFactoryOperations.addNewChild(constructor, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+            final SNode parameter = SNodeFactoryOperations.addNewChild(constructor, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
             SPropertyOperations.set(parameter, "name", SPropertyOperations.getString(superParam, "name"));
             SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(superParam, "type", true)), true);
+            ListSequence.fromList(SLinkOperations.getTargets(superParam, "annotation", true)).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode it) {
+                ListSequence.fromList(SLinkOperations.getTargets(parameter, "annotation", true)).addElement(SNodeOperations.copyNode(it));
+              }
+            });
             SNode paramReference = SNodeFactoryOperations.addNewChild(invocation, "actualArgument", "jetbrains.mps.baseLanguage.structure.VariableReference");
             SLinkOperations.setTarget(paramReference, "variableDeclaration", parameter, false);
           }

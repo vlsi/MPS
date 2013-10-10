@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -25,8 +26,10 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -38,6 +41,8 @@ import java.util.LinkedList;
  * Date: 4/24/13
  */
 public class EditorCellFactoryImpl implements EditorCellFactory {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCellFactoryImpl.class));
+
   private static final EditorCellContext DEFAULT_CELL_CONTEXT = new EditorCellContext() {
     @Override
     public Collection<String> getHints() {
@@ -60,8 +65,23 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
-    ConceptEditor editor = loadEditor(node);
-    EditorCell result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName());
+    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
+
+    EditorCell result = null;
+    if (editor != null) {
+      try {
+        result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+      } catch (RuntimeException e) {
+        LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
+      }
+    }
+
+    if (result == null) {
+      editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : new DefaultEditor();
+      result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+    }
+
     result.setCellContext(getCellContext());
     return result;
   }
@@ -120,31 +140,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     myCellContextStack.getLast().removeHints(hints);
   }
 
-  private ConceptEditor loadEditor(SNode node) {
-    SConcept concept = node.getConcept();
-    boolean isInterface = false;
-    boolean isAbstract = false;
-    if (concept != null) {
-      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
-      ConceptEditor conceptEditor = myConceptEditorRegistry.getEditor(conceptDescriptor);
-      if (conceptEditor != null) {
-        return conceptEditor;
-      }
-      isInterface = conceptDescriptor.isInterfaceConcept();
-      isAbstract = conceptDescriptor.isAbstract();
-    }
-
-    return isInterface || isAbstract ? new DefaultInterfaceEditor() : new DefaultEditor();
-  }
-
   private ConceptEditorComponent loadEditorComponent(SNode node, String editorComponentId) {
     SConcept concept = node.getConcept();
-    if (concept != null) {
-      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
-      ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(conceptDescriptor);
-      if (conceptEditorComponent != null) {
-        return conceptEditorComponent;
-      }
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+    ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(conceptDescriptor);
+    if (conceptEditorComponent != null) {
+      return conceptEditorComponent;
     }
 
     return new DefaultEditorComponent(editorComponentId);

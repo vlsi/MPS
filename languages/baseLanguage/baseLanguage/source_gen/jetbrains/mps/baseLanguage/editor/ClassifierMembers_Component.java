@@ -41,7 +41,7 @@ public class ClassifierMembers_Component implements ConceptEditorComponent {
   private EditorCell createRefNodeList_gjudtn_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ClassifierMembers_Component.memberListHandler_gjudtn_a0(node, "member", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_member");
+    editorCell.setCellId("CMC_refNodeList_member");
     Style style = new StyleImpl();
     style.set(StyleAttributes.POSITION_CHILDREN, "indented");
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

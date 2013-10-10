@@ -399,7 +399,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 191:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PlaceholderMember").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").create();
       case 192:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("empty line", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("empty line", "Use PlaceholderMember instead").create();
       case 193:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression").super_("jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression").parents("jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression").alias("+=", "").staticScope(StaticScope.NONE).create();
       case 194:

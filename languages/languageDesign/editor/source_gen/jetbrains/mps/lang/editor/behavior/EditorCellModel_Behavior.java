@@ -34,13 +34,37 @@ public class EditorCellModel_Behavior {
     }
     String defaultCellId = EditorCellModel_Behavior.call_getDefaultCellId_4539255030934103845(thisNode);
     if (defaultCellId != null) {
-      return defaultCellId;
+      return EditorCellModel_Behavior.call_getUniqueCellIdPrefix_8288068497638798229(thisNode) + defaultCellId;
     }
     return gc.createUniqueName(EditorCellModel_Behavior.call_getCellModelKind_1216811674575(thisNode) + "_", thisNode);
   }
 
   public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return null;
+  }
+
+  public static String call_getUniqueCellIdPrefix_8288068497638798229(SNode thisNode) {
+    SNode containingNode = SNodeOperations.getContainingRoot(thisNode);
+    if (SNodeOperations.isInstanceOf(containingNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
+      return "";
+    }
+    if (SNodeOperations.isInstanceOf(containingNode, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")) {
+      return EditorCellModel_Behavior.call_getAbbreviation_8288068497639139061(thisNode, SNodeOperations.cast(containingNode, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration")) + "_";
+    }
+    return containingNode.getNodeId().toString();
+  }
+
+  public static String call_getAbbreviation_8288068497639139061(SNode thisNode, SNode editorComponent) {
+    String name = SPropertyOperations.getString(editorComponent, "name");
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < name.length(); i++) {
+      if (i == 0) {
+        sb.append(Character.toUpperCase(name.charAt(i)));
+      } else if (Character.isUpperCase(name.charAt(i))) {
+        sb.append(name.charAt(i));
+      }
+    }
+    return sb.toString();
   }
 
   public static String call_getFactoryMethodName_1216812165609(SNode thisNode, TemplateQueryContext cg) {

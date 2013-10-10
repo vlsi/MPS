@@ -115,7 +115,7 @@ public class Style_Component implements ConceptEditorComponent {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("SC_property_name");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("styleClass");
@@ -161,7 +161,7 @@ public class Style_Component implements ConceptEditorComponent {
   private EditorCell createRefNodeList_zdjsuv_b1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Style_Component.styleItemListHandler_zdjsuv_b1b0(node, "styleItem", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_styleItem");
+    editorCell.setCellId("SC_refNodeList_styleItem");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

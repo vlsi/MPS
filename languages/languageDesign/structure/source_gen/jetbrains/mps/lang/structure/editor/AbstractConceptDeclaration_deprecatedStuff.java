@@ -100,7 +100,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
   private EditorCell createRefNodeList_za92a3_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptPropertyListHandler_za92a3_b0a(node, "conceptProperty", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_conceptProperty");
+    editorCell.setCellId("ACDS_refNodeList_conceptProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -173,7 +173,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
   private EditorCell createRefNodeList_za92a3_e0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptLinkListHandler_za92a3_e0a(node, "conceptLink", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_conceptLink");
+    editorCell.setCellId("ACDS_refNodeList_conceptLink");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -265,7 +265,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
   private EditorCell createRefNodeList_za92a3_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptPropertyDeclarationListHandler_za92a3_b1a(node, "conceptPropertyDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_conceptPropertyDeclaration");
+    editorCell.setCellId("ACDS_refNodeList_conceptPropertyDeclaration");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -338,7 +338,7 @@ public class AbstractConceptDeclaration_deprecatedStuff implements ConceptEditor
   private EditorCell createRefNodeList_za92a3_e1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptLinkDeclarationListHandler_za92a3_e1a(node, "conceptLinkDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_conceptLinkDeclaration");
+    editorCell.setCellId("ACDS_refNodeList_conceptLinkDeclaration");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);

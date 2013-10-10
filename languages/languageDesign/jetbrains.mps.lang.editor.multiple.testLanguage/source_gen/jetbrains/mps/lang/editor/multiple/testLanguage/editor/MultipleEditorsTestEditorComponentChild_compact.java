@@ -46,7 +46,7 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+    editorCell.setCellId("METECC_property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,7 +77,7 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     provider.setNoTargetText("<no compactProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_compactProperty");
+    editorCell.setCellId("METECC_property_compactProperty");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

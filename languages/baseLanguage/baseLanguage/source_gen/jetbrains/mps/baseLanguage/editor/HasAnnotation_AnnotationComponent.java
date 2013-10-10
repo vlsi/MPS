@@ -53,7 +53,7 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
   private EditorCell createRefNodeList_85xxz0_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new HasAnnotation_AnnotationComponent.annotationListHandler_85xxz0_a0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_annotation");
+    editorCell.setCellId("HAAC_refNodeList_annotation");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);

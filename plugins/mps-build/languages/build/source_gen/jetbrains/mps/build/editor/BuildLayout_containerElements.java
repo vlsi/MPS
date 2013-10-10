@@ -51,7 +51,7 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
   private EditorCell createRefNodeList_hdw7mg_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildLayout_containerElements.childrenListHandler_hdw7mg_a0(node, "children", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_children");
+    editorCell.setCellId("BLE_refNodeList_children");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);

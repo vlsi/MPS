@@ -60,7 +60,7 @@ public class _GenericDeclaration_TypeVariables_Component implements ConceptEdito
   private EditorCell createRefNodeList_k0lfun_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_k0lfun_b0(node, "typeVariableDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_typeVariableDeclaration");
+    editorCell.setCellId("_GDTVC_refNodeList_typeVariableDeclaration");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -142,7 +142,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("NM_property_name");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("mappingLabel");
@@ -173,7 +173,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_comment");
+    editorCell.setCellId("NM_property_comment");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyMacroDescriptionText(style, editorCell);
     editorCell.getStyle().putAll(style);
