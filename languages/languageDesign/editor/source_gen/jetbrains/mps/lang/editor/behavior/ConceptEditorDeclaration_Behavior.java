@@ -64,6 +64,22 @@ public class ConceptEditorDeclaration_Behavior {
         }
       };
     }
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind")) {
+      return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false))) {
+        @Nullable
+        public String getReferenceText(@NotNull SNode target) {
+          return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
+        }
+      };
+    }
+    if (SConceptOperations.isExactly(kind, "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind")) {
+      return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false))) {
+        @Nullable
+        public String getReferenceText(@NotNull SNode target) {
+          return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
+        }
+      };
+    }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/1491555030355943098">
     <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="14" startPosition="48" endLine="15" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1491555030355943098" fileName="AbstractFigureParameter_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -195,6 +195,79 @@
     <unitInfo nodeId="5717188120684762327" fileName="CellModel_Diagram_Constraints.java" startLine="30" startPosition="32" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_Diagram_Constraints$1" />
     <unitInfo nodeId="5717188120684762327" fileName="CellModel_Diagram_Constraints.java" startLine="58" startPosition="37" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_Diagram_Constraints$2" />
     <unitInfo nodeId="5717188120684762327" fileName="CellModel_Diagram_Constraints.java" startLine="22" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_Diagram_Constraints" />
+  </root>
+  <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/5717188120685503707">
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="23" startPosition="51" endLine="24" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="60" startPosition="44" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="69" startPosition="63" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="75" startPosition="13" endLine="76" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="85" startPosition="7" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="89" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_zepr9w_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_zepr9w_a0a0a0a0a1a0b0a2a1" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellModel_DiagramConnector_Constraints#()V" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="48" startPosition="247" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="76" startPosition="247" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="74" startPosition="122" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="66" startPosition="56" endLine="83" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="64" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="29" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="57" startPosition="7" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="27" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="23" startPosition="51" endLine="24" endPosition="84" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="60" startPosition="44" endLine="61" endPosition="20" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="69" startPosition="63" endLine="70" endPosition="58" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="47" startPosition="13" endLine="52" endPosition="16">
+      <varInfo nodeId="5717188120685503707" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="75" startPosition="13" endLine="80" endPosition="16">
+      <varInfo nodeId="5717188120685503707" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="46" startPosition="122" endLine="53" endPosition="13" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="74" startPosition="122" endLine="81" endPosition="13" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="45" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5717188120685503707" varName="_context" />
+      <varInfo nodeId="5717188120685503707" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="5717188120685503707" varName="_context" />
+      <varInfo nodeId="5717188120685503707" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="38" startPosition="56" endLine="55" endPosition="10" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="66" startPosition="56" endLine="83" endPosition="10" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="36" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="64" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="28" startPosition="83" endLine="86" endPosition="22">
+      <varInfo nodeId="5717188120685503707" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="27" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="39" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints$2" />
+    <unitInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="67" startPosition="19" endLine="83" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints$3" />
+    <unitInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="30" startPosition="37" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints$1" />
+    <unitInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="58" startPosition="36" endLine="85" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints$2" />
+    <unitInfo nodeId="5717188120685503707" fileName="CellModel_DiagramConnector_Constraints.java" startLine="22" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.CellModel_DiagramConnector_Constraints" />
+  </root>
+  <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/5717188120687546858">
+    <unitInfo nodeId="5717188120687546858" fileName="VisibleReferencesScope.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.constraints.VisibleReferencesScope" />
   </root>
   <root nodeRef="r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)/6306886970785371648">
     <nodeInfo nodeId="6306886970785371648" fileName="CellModel_DiagramNode_Constraints.java" startLine="14" startPosition="46" endLine="15" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
