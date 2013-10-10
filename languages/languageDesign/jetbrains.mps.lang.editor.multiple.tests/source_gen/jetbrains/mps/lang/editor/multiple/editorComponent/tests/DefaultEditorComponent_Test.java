@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class DefultEditorComponent_Test extends BaseTransformationTest4 {
-  public DefultEditorComponent_Test() {
+public class DefaultEditorComponent_Test extends BaseTransformationTest4 {
+  public DefaultEditorComponent_Test() {
   }
 
   @Test
-  public void test_DefultEditorComponent() throws Throwable {
+  public void test_DefaultEditorComponent() throws Throwable {
     this.initTest("${mps_home}", "r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)");
-    this.runTest("jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefultEditorComponent_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
