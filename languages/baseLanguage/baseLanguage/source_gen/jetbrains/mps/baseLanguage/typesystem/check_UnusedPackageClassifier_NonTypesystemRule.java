@@ -7,9 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -19,19 +20,19 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_UnusedPrivateClassifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_UnusedPrivateClassifier_NonTypesystemRule() {
+public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_UnusedPackageClassifier_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      if (!(ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(classifier), "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})).translate(new ITranslator2<SNode, SReference>() {
+    if ((SLinkOperations.getTarget(classifier, "visibility", true) == null)) {
+      if (!(ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(classifier), null)).translate(new ITranslator2<SNode, SReference>() {
         public Iterable<SReference> translate(SNode it) {
           return SNodeOperations.getReferences(it);
         }
       }).any(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
-          return eq_kryfz9_a0a0a0a0a0a0a0a1(SLinkOperations.getTargetNode(it), classifier);
+          return eq_oirmva_a0a0a0a0a0a0a0a1(SLinkOperations.getTargetNode(it), classifier);
         }
       }))) {
         String msg;
@@ -46,7 +47,7 @@ public class check_UnusedPrivateClassifier_NonTypesystemRule extends AbstractNon
         }
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(classifier, "The " + msg + " is never used.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "210678645607100783", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(classifier, "The " + msg + " is never used in its model.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8263928360994499386", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedPrivateClassifier_QuickFix", false);
             intentionProvider.putArgument("classifier", classifier);
@@ -73,7 +74,7 @@ public class check_UnusedPrivateClassifier_NonTypesystemRule extends AbstractNon
     return false;
   }
 
-  private static boolean eq_kryfz9_a0a0a0a0a0a0a0a1(Object a, Object b) {
+  private static boolean eq_oirmva_a0a0a0a0a0a0a0a1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
