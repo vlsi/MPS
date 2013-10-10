@@ -22,7 +22,7 @@ public class check_UnusedPrivateEnumClasses_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode enumClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(enumClass, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    if (false && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(enumClass, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       if (!(ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(enumClass), "jetbrains.mps.baseLanguage.structure.EnumConstantReference", false, new String[]{})).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_pul9ht_a0a0a0a0a0a0a0a1(SLinkOperations.getTarget(it, "enumClass", false), enumClass);
@@ -32,8 +32,8 @@ public class check_UnusedPrivateEnumClasses_NonTypesystemRule extends AbstractNo
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(enumClass, "The enum class is never used.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7896137183557229546", null, errorTarget);
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedEnumClass_QuickFix", false);
-            intentionProvider.putArgument("enumClass", enumClass);
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedPrivateClassifier_QuickFix", false);
+            intentionProvider.putArgument("classifier", enumClass);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
