@@ -60,10 +60,6 @@ public class MPSBlockView extends GroupView {
     mapper.attachRoot();
   }
 
-  public void setText(String text) {
-    myText.set(text);
-  }
-
   public Property<String> getText() {
     return myText;
   }
@@ -80,16 +76,8 @@ public class MPSBlockView extends GroupView {
     return myX;
   }
 
-  public void setX(int x) {
-    myX.set(x);
-  }
-
   public Property<Integer> getY() {
     return myY;
-  }
-
-  public void setY(int y) {
-    myY.set(y);
   }
 
   private void createRectView() {

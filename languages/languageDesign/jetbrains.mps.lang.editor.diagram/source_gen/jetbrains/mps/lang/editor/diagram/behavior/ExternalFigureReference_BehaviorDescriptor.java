@@ -17,10 +17,6 @@ public class ExternalFigureReference_BehaviorDescriptor extends AbstractFigureRe
     return ExternalFigureReference_Behavior.virtual_getFigureParameter_1491555030357120840(thisNode, name);
   }
 
-  public SNode virtual_getMethodDeclaration_8322026508615817443(SNode thisNode, String name) {
-    return ExternalFigureReference_Behavior.virtual_getMethodDeclaration_8322026508615817443(thisNode, name);
-  }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference";

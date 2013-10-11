@@ -18,6 +18,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new ExternalViewFigure_Editor());
       case 1:
         return Collections.<ConceptEditor>singletonList(new ExternalViewFigureParameter_Editor());
+      case 2:
+        return Collections.<ConceptEditor>singletonList(new FigureAttribute_Editor());
+      case 3:
+        return Collections.<ConceptEditor>singletonList(new FigureParameterAttribute_Editor());
       default:
     }
     return Collections.emptyList();
@@ -34,5 +38,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.FigureAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"};
 }
