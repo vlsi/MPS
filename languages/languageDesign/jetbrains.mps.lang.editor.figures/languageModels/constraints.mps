@@ -54,5 +54,9 @@
       </node>
     </node>
   </root>
+  <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5422656561916216335" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ExternalViewClassifierScope" />
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5422656561916216336" nodeInfo="nn" />
+  </root>
 </model>
 

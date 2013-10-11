@@ -66,5 +66,8 @@
     <unitInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigureParameter_Constraints$1" />
     <unitInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigureParameter_Constraints" />
   </root>
+  <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/5422656561916216335">
+    <unitInfo nodeId="5422656561916216335" fileName="ExternalViewClassifierScope.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewClassifierScope" />
+  </root>
 </debugInfo>
 
