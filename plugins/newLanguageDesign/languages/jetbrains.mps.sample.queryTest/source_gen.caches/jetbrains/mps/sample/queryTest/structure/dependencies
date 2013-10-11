@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.sample.queryTest.structure.MyKind" file="MyKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+  </dependency>
+  <dependency className="jetbrains.mps.sample.queryTest.structure.MyKind_PropertySupport" file="MyKind_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.sample.queryTest.structure.MyKind" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
   <dependency className="jetbrains.mps.sample.queryTest.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />

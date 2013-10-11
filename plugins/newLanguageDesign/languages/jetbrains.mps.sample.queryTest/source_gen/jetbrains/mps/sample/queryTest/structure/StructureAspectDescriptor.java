@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyRootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("number", "isGood", "name").children(new String[]{"child", "child2", "z"}, new boolean[]{false, false, false}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MySubConcept").super_("jetbrains.mps.sample.queryTest.structure.MyRootConcept").parents("jetbrains.mps.sample.queryTest.structure.MyRootConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MySubConcept").super_("jetbrains.mps.sample.queryTest.structure.MyRootConcept").parents("jetbrains.mps.sample.queryTest.structure.MyRootConcept").properties("kind").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       default:

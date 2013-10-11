@@ -14,9 +14,10 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MyRootConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -38,15 +39,22 @@ public class MyRootConcept_Behavior {
     return new _FunctionTypes._return_P0_E0<ISetSequence<SNode>>() {
       public ISetSequence<SNode> invoke() {
         final Set<SNode> s = SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), thisNode, SLinkOperations.getTarget(thisNode, "child", true));
+        final String string = "sdasdasd";
         final Set<SNode> s2 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).intersect(SetSequence.fromSet(s)));
         final Set<SNode> s3 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s2).disjunction(SetSequence.fromSet(s2)));
         final Set<SNode> s4 = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s3).union(Sequence.fromIterable(Sequence.<SNode>singleton(null))));
         final Iterable<Integer> emptyList = Sequence.fromIterable(Collections.<Integer>emptyList());
         final Set<String> emptySet = SetSequence.fromSet(new LinkedHashSet<String>());
         final Set<String> newList = SetSequence.fromSetWithValues(new LinkedHashSet<String>(), SetSequence.fromSet(emptySet).union(Sequence.fromIterable(Sequence.fromArray(new String[]{"adasd"}))));
-        return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))));
+        final Set<SNode> z = SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), thisNode))));
+        final SNode x = SNodeOperations.getParent(thisNode);
+        return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SNodeOperations.ofConcept(SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))));
       }
     }.invoke();
+  }
+
+  public static boolean virtual_q_3868630583602426896(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(thisNode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "child", true))));
   }
 
   @Deprecated
@@ -70,6 +78,11 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
+  public static boolean call_q_3868630583602426896(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_q_3868630583602426896", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean callSuper_longName_8194562227700484009(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_longName_8194562227700484009", new Class[]{SNode.class}, new Object[]{});
   }
@@ -87,5 +100,10 @@ public class MyRootConcept_Behavior {
   @Deprecated
   public static Set<SNode> callSuper_complexQuery_6727112993714328752(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<Set<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_complexQuery_6727112993714328752", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static boolean callSuper_q_3868630583602426896(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_q_3868630583602426896", new Class[]{SNode.class}, new Object[]{});
   }
 }

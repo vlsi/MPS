@@ -36,7 +36,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4260762357825047863" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="concept" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="ydsw.6195190339581756310" resolveInfo="SAbstractConcept" />
     </node>
   </root>
@@ -129,13 +129,13 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5343139407539241386" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
     <property name="name" nameId="tpck.1169194664001" value="IsInstanceOf" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="is" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isOfConcept" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="bwy9.6762883159245048087" resolveInfo="MqlSelector" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5343139407539241463" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="concept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1389772202491538904" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="argument" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="ydsw.6195190339581756310" resolveInfo="SAbstractConcept" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1389772202491535446" resolveInfo="ArgConcept" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5343139407540209770" nodeInfo="ig">
@@ -170,6 +170,77 @@
       <property name="role" nameId="tpce.1071599776563" value="target" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="ydsw.7581772527307852674" resolveInfo="SEnumerationMember" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1389772202491521471" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
+    <property name="name" nameId="tpck.1169194664001" value="ConceptExpr" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="expr:" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1389772202491535446" resolveInfo="ArgConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1389772202491521472" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="expression" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="bwy9.6762883159245048012" resolveInfo="MqlExpression" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1389772202491535446" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
+    <property name="name" nameId="tpck.1169194664001" value="ArgConcept" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1389772202491538888" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
+    <property name="name" nameId="tpck.1169194664001" value="SConceptRef" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1389772202491535446" resolveInfo="ArgConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1389772202491538889" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="concept" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="ydsw.6195190339581756310" resolveInfo="SAbstractConcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6645666184791620092" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
+    <property name="name" nameId="tpck.1169194664001" value="OfConceptSelector" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ofConcept" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="bwy9.6762883159245048087" resolveInfo="MqlSelector" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6645666184791620093" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="argument" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1389772202491535446" resolveInfo="ArgConcept" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3868630583607352071" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
+    <property name="name" nameId="tpck.1169194664001" value="MqlNodeNoArgOperation" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="bwy9.6762883159245048087" resolveInfo="MqlSelector" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3868630583607362197" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="kind" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="3868630583607362190" resolveInfo="MqlNodeNoArgOperationKind" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3868630583607782472" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+  </root>
+  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="3868630583607362190" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="smodel" />
+    <property name="name" nameId="tpck.1169194664001" value="MqlNodeNoArgOperationKind" />
+    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+    <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="custom" />
+    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3868630583607362191" nodeInfo="ig">
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="CONCEPT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="concept" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3868630583607362192" nodeInfo="ig">
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="PARENT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="parent" />
     </node>
   </root>
 </model>

@@ -26,6 +26,10 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return MyRootConcept_Behavior.virtual_mySet_8194562227700484021(thisNode);
   }
 
+  public boolean virtual_q_3868630583602426896(SNode thisNode) {
+    return MyRootConcept_Behavior.virtual_q_3868630583602426896(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.sample.queryTest.structure.MyRootConcept";

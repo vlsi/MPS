@@ -852,11 +852,6 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="8194562227701279718" resolveInfo="MqlCollectionLiteral" />
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7499632464782057224" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
-    <property name="name" nameId="tpck.1169194664001" value="MqlCollectionSortSelector" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="6762883159245048087" resolveInfo="MqlSelector" />
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5272233748012075785" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="collections" />
     <property name="name" nameId="tpck.1169194664001" value="MqlCollectionOneArgOp" />

@@ -7,17 +7,17 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="526" modelUID="r:3f71a9ca-cfc6-445e-98ca-be6cc5953666(jetbrains.mps.sample.queryTest.structure)" version="-1" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6727112993714453250" nodeInfo="ig">
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="MyUnrelatedConcept" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="MyUnrelatedConcept" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8194562227700235546" nodeInfo="ig">
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="MyRootConcept" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="MyRootConcept" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8194562227700235547" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="number" />
@@ -51,11 +51,31 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8194562227700484005" nodeInfo="ig">
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="MySubConcept" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="MySubConcept" />
+    <property name="rootable" nameId="tpce.1096454100552" value="false" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="8194562227700235546" resolveInfo="MyRootConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3868630583602426546" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="kind" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="3868630583602426547" resolveInfo="MyKind" />
+    </node>
+  </root>
+  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="3868630583602426547" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="MyKind" />
+    <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="custom" />
+    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3868630583602426548" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="ONE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="ONE" />
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="ONE" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="3868630583602426549" nodeInfo="ig">
+      <property name="externalValue" nameId="tpce.1083923523172" value="TWO" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="TWO" />
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="TWO" />
+    </node>
   </root>
 </model>
 

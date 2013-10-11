@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="MqlArithmetic_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlArithmetic_BehaviorDescriptor" />
   <unitInfo fileName="MqlAssignment_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlAssignment_BehaviorDescriptor" />
   <unitInfo fileName="MqlBinaryExpr_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlBinaryExpr_BehaviorDescriptor" />
@@ -16,7 +16,6 @@
   <unitInfo fileName="MqlCollectionSelectorVarRef_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCollectionSelectorVarRef_BehaviorDescriptor" />
   <unitInfo fileName="MqlCollectionSelectorVar_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCollectionSelectorVar_BehaviorDescriptor" />
   <unitInfo fileName="MqlCollectionSelector_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCollectionSelector_BehaviorDescriptor" />
-  <unitInfo fileName="MqlCollectionSortSelector_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCollectionSortSelector_BehaviorDescriptor" />
   <unitInfo fileName="MqlCollectionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCollectionType_BehaviorDescriptor" />
   <unitInfo fileName="MqlCondition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlCondition_BehaviorDescriptor" />
   <unitInfo fileName="MqlDotExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlDotExpression_BehaviorDescriptor" />
