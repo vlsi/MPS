@@ -2,7 +2,40 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExternalViewFigureParameter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_BehaviorDescriptor" />
-  <unitInfo fileName="ExternalViewFigure_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_BehaviorDescriptor" />
+  <unitInfo fileName="ExternalViewFigure_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_BehaviorDescriptor" />
   <unitInfo fileName="Figure_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.behavior.Figure_BehaviorDescriptor" />
+  <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/5422656561918019432">
+    <nodeInfo nodeId="5422656561923470179" fileName="ExternalViewFigure_Behavior.java" startLine="25" startPosition="41" endLine="26" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561923537806" fileName="ExternalViewFigure_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561918019658" fileName="ExternalViewFigure_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561918019432" fileName="ExternalViewFigure_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5422656561923468238" fileName="ExternalViewFigure_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5422656561923530141" fileName="ExternalViewFigure_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5422656561923375260" fileName="ExternalViewFigure_Behavior.java" startLine="23" startPosition="170" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561918019966" fileName="ExternalViewFigure_Behavior.java" startLine="22" startPosition="101" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5422656561918019432" fileName="ExternalViewFigure_Behavior.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="5422656561918019585" fileName="ExternalViewFigure_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="5422656561923468239" fileName="ExternalViewFigure_Behavior.java" startLine="25" startPosition="41" endLine="26" endPosition="107" />
+    <scopeInfo nodeId="5422656561923530142" fileName="ExternalViewFigure_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="99" />
+    <scopeInfo nodeId="5422656561918019432" fileName="ExternalViewFigure_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="5422656561918019432" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561923468238" fileName="ExternalViewFigure_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="5422656561923468238" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561923530141" fileName="ExternalViewFigure_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5422656561923530141" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561918019969" fileName="ExternalViewFigure_Behavior.java" startLine="23" startPosition="170" endLine="32" endPosition="28" />
+    <scopeInfo nodeId="5422656561918019647" fileName="ExternalViewFigure_Behavior.java" startLine="22" startPosition="101" endLine="34" endPosition="183" />
+    <scopeInfo nodeId="5422656561918019432" fileName="ExternalViewFigure_Behavior.java" startLine="22" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5422656561918019650" varName="child" />
+      <varInfo nodeId="5422656561918019648" varName="kind" />
+      <varInfo nodeId="5422656561918019432" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5422656561923468238" fileName="ExternalViewFigure_Behavior.java" startLine="24" startPosition="417" endLine="28" endPosition="7" unitName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior$1" />
+    <unitInfo nodeId="5422656561923530141" fileName="ExternalViewFigure_Behavior.java" startLine="28" startPosition="20" endLine="32" endPosition="7" unitName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior$2" />
+    <unitInfo nodeId="5422656561918019432" fileName="ExternalViewFigure_Behavior.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_Behavior" />
+  </root>
 </debugInfo>
 
