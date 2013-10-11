@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.core.gen.transform.generator.main.util.ResolveUtil" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlSelector_Behavior" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlVariable_Behavior" />
     <classNode dependClassName="jetbrains.mps.core.structure.behavior.SCardinality_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />

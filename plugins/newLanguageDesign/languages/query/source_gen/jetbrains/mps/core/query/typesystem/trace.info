@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/228266671027905045">
     <nodeInfo nodeId="228266671027905055" fileName="typeof_MqlExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="228266671027905055" fileName="typeof_MqlExpression_InferenceRule.java" startLine="20" startPosition="55" endLine="21" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -191,80 +191,74 @@
     <unitInfo nodeId="3530118130426588121" fileName="any_type_supertypeof_MqlNullType_InequationReplacementRule.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.any_type_supertypeof_MqlNullType_InequationReplacementRule" />
   </root>
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/5272233748014714433">
-    <nodeInfo nodeId="5272233748014725769" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="23" startPosition="124" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9173039802026110797" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="25" startPosition="28" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9173039802026110801" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="27" startPosition="5" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5272233748014732730" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="29" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9173039802026134682" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="30" startPosition="32" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9173039802026134686" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5272233748014750010" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="34" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="36" startPosition="7" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="37" startPosition="60" endLine="38" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014775545" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="39" startPosition="7" endLine="40" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="44" startPosition="60" endLine="45" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014798809" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="50" startPosition="7" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="51" startPosition="60" endLine="52" endPosition="629" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="46" endLine="58" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="63" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="63" startPosition="130" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="68" startPosition="30" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_MqlCollectionConcatOp_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="9173039802026103920" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="24" startPosition="167" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9173039802026127172" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="29" startPosition="175" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="35" startPosition="107" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="42" startPosition="111" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="49" startPosition="301" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5272233748014782462" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="5272233748014766056" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="34" startPosition="204" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5272233748014751306" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="41" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="20" startPosition="58" endLine="20" endPosition="58" />
-    <scopeInfo nodeId="9173039802026103923" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="25" startPosition="28" endLine="26" endPosition="13" />
-    <scopeInfo nodeId="9173039802026127175" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="30" startPosition="32" endLine="31" endPosition="13" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="46" endLine="58" endPosition="70" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="68" startPosition="30" endLine="69" endPosition="17" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="36" startPosition="7" endLine="38" endPosition="300">
+    <nodeInfo nodeId="5272233748014732730" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="25" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9173039802026134682" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="26" startPosition="32" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9173039802026134686" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="28" startPosition="5" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5272233748014750010" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="30" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="32" startPosition="7" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="33" startPosition="60" endLine="34" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014775545" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="35" startPosition="7" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727112993818904146" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="38" startPosition="178" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="41" startPosition="60" endLine="42" endPosition="399" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="47" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="47" startPosition="60" endLine="48" endPosition="629" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="53" startPosition="46" endLine="54" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="58" startPosition="5" endLine="59" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="59" startPosition="130" endLine="60" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="64" startPosition="30" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_MqlCollectionConcatOp_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="9173039802026127172" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="25" startPosition="175" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="31" startPosition="107" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="39" startPosition="40" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="45" startPosition="301" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="68" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5272233748014782462" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="44" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="5272233748014766056" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="30" startPosition="204" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5272233748014751306" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="37" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="21" startPosition="58" endLine="21" endPosition="58" />
+    <scopeInfo nodeId="9173039802026127175" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="26" startPosition="32" endLine="27" endPosition="13" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="53" startPosition="46" endLine="54" endPosition="70" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="64" startPosition="30" endLine="65" endPosition="17" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="5272233748014771040" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="32" startPosition="7" endLine="34" endPosition="300">
       <varInfo nodeId="5272233748014771040" varName="_reporter_2309309498" />
       <varInfo nodeId="5272233748014771040" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="43" startPosition="7" endLine="45" endPosition="317">
+    <scopeInfo nodeId="5272233748014775565" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="40" startPosition="7" endLine="42" endPosition="399">
       <varInfo nodeId="5272233748014775565" varName="_reporter_2309309498" />
       <varInfo nodeId="5272233748014775565" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="50" startPosition="7" endLine="52" endPosition="629">
+    <scopeInfo nodeId="5272233748014798829" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="46" startPosition="7" endLine="48" endPosition="629">
       <varInfo nodeId="5272233748014798829" varName="_reporter_2309309498" />
       <varInfo nodeId="5272233748014798829" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="64" endPosition="45">
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="58" startPosition="5" endLine="60" endPosition="45">
       <varInfo nodeId="5272233748014714433" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5272233748014782465" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="49" startPosition="301" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="5272233748014766059" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="35" startPosition="107" endLine="40" endPosition="13" />
-    <scopeInfo nodeId="5272233748014751309" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="42" startPosition="111" endLine="47" endPosition="13" />
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5272233748014782465" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="45" startPosition="301" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="68" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="5272233748014766059" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="31" startPosition="107" endLine="36" endPosition="13" />
+    <scopeInfo nodeId="5272233748014751309" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="38" startPosition="178" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="5272233748014714433" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="5272233748014714434" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="23" startPosition="124" endLine="54" endPosition="5">
+    <scopeInfo nodeId="5272233748014714434" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="50" endPosition="5">
       <varInfo nodeId="5272233748014750013" varName="argType" />
-      <varInfo nodeId="5272233748014725772" varName="dotExpr" />
       <varInfo nodeId="5272233748014732733" varName="operandType" />
     </scopeInfo>
-    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5272233748014714433" varName="mqlConcatOp" />
       <varInfo nodeId="5272233748014714433" varName="status" />
       <varInfo nodeId="5272233748014714433" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_MqlCollectionConcatOp_NonTypesystemRule" />
+    <unitInfo nodeId="5272233748014714433" fileName="check_MqlCollectionConcatOp_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_MqlCollectionConcatOp_NonTypesystemRule" />
   </root>
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/5280308256730662789">
     <nodeInfo nodeId="5280308256730689699" fileName="check_CollectionSelector_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -391,6 +385,58 @@
       <varInfo nodeId="5804859299351493537" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="5804859299351493537" fileName="check_Unary_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_Unary_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/8194562227701095827">
+    <nodeInfo nodeId="8194562227701150760" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="23" startPosition="110" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701200305" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="25" startPosition="5" endLine="26" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="30" startPosition="62" endLine="31" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="46" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="42" startPosition="5" endLine="43" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="43" startPosition="130" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_CollectionElementTypes_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="8194562227701115046" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="28" startPosition="267" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8194562227701237218" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="27" startPosition="119" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8194562227701151925" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="26" startPosition="254" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="19" startPosition="59" endLine="19" endPosition="59" />
+    <scopeInfo nodeId="8194562227701115047" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="23" startPosition="110" endLine="24" endPosition="13" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="46" endLine="38" endPosition="69" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8194562227701262117" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="31" endPosition="264">
+      <varInfo nodeId="8194562227701262117" varName="_reporter_2309309498" />
+      <varInfo nodeId="8194562227701262117" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="42" startPosition="5" endLine="44" endPosition="45">
+      <varInfo nodeId="8194562227701095827" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8194562227701237219" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="28" startPosition="267" endLine="32" endPosition="9" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8194562227701151931" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="27" startPosition="119" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="8194562227701095827" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701151925" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="26" startPosition="254" endLine="34" endPosition="5">
+      <varInfo nodeId="8194562227701151927" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095828" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="34" endPosition="5">
+      <varInfo nodeId="8194562227701200308" varName="firstElementType" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="8194562227701095827" varName="mqlCollectionLiteral" />
+      <varInfo nodeId="8194562227701095827" varName="status" />
+      <varInfo nodeId="8194562227701095827" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="8194562227701095827" fileName="check_CollectionElementTypes_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.core.query.typesystem.check_CollectionElementTypes_NonTypesystemRule" />
   </root>
   <root nodeRef="r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)/8595827001410591240">
     <nodeInfo nodeId="8595827001410591251" fileName="check_BinaryExpr_NonTypesystemRule.java" startLine="21" startPosition="126" endLine="22" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
