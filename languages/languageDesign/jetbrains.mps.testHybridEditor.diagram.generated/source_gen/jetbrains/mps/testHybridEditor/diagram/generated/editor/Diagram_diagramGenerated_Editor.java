@@ -86,6 +86,9 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.addEditorCell(blockCollection);
+    editorCell.addEditorCell(connectorCollection);
     List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
     for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "blocks", true))) {
       EditorCell contentCell = editorContext.createNodeCell(contentNode);
@@ -127,7 +130,6 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         view.itemsView.children().add(blockView);
       }
     }
-    editorCell.addEditorCell(blockCollection);
     for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
       View connectorView = connectorCell.getView();
       View fromView = connectorCell.getOutputView(editorCell);
@@ -141,7 +143,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         connection.toView().set(toView);
         connection.fromView().set(fromView);
         view.connections.add(connection);
-        editorCell.addEditorCell(connectorCell);
+        connectorCollection.addEditorCell(connectorCell);
       }
     }
     editorCell.setCellId("Diagram_tb7paq_b0");
