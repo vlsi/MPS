@@ -24,11 +24,13 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new CellModel_Diagram_Constraints();
       case 2:
         return new CellModel_DiagramConnector_Constraints();
+      case 6:
+        return new LinkDeclarationReference_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference"};
 }

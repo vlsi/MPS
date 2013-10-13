@@ -162,9 +162,13 @@
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         </node>
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="6306886970791123622" nodeInfo="ng">
-        <link role="nodes" roleId="gbdf.6306886970791072633" targetNodeId="adck.725186580883451864" />
-        <link role="connectors" roleId="gbdf.6382742553261733204" targetNodeId="adck.725186580883451866" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="8686738938027760963" nodeInfo="ng">
+        <node role="content" roleId="gbdf.8686738938027501457" type="gbdf.LinkDeclarationReference" typeId="gbdf.8686738938027260610" id="8686738938027760977" nodeInfo="ng">
+          <link role="link" roleId="gbdf.8686738938027261134" targetNodeId="adck.725186580883451864" />
+        </node>
+        <node role="content" roleId="gbdf.8686738938027501457" type="gbdf.LinkDeclarationReference" typeId="gbdf.8686738938027260610" id="8686738938027760982" nodeInfo="ng">
+          <link role="link" roleId="gbdf.8686738938027261134" targetNodeId="adck.725186580883451866" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7140846024012140202" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="asdasd" />

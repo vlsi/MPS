@@ -30,6 +30,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new FigureColorStyleClassItem_Editor());
       case 7:
         return Collections.<ConceptEditor>singletonList(new FigureDimensionStyleClassItem_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new LinkDeclarationReference_Editor());
       default:
     }
     return Collections.emptyList();
@@ -64,6 +66,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty"};
 }

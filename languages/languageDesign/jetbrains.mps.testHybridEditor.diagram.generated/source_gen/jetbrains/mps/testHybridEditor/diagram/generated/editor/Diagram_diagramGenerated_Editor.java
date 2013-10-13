@@ -18,13 +18,14 @@ import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
+import java.util.List;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
-import jetbrains.jetpad.projectional.view.LineView;
 
 public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -85,20 +86,49 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
-    for (SNode blockNode : ListSequence.fromList(SLinkOperations.getTargets(node, "blocks", true))) {
-      GenericViewCell blockCell = (GenericViewCell) editorContext.createNodeCell(blockNode);
-      View blockView = blockCell.getView();
-      blockCollection.addEditorCell(blockCell);
-      View oldParent = blockView.parent();
-      if (oldParent != null) {
-        oldParent.children().remove(oldParent.children().indexOf(blockView));
+    List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
+    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "blocks", true))) {
+      EditorCell contentCell = editorContext.createNodeCell(contentNode);
+      if (!(contentCell instanceof GenericViewCell)) {
+        continue;
       }
-      view.itemsView.children().add(blockView);
+      GenericViewCell genericContentCell = (GenericViewCell) editorContext.createNodeCell(contentNode);
+      if (genericContentCell instanceof ConnectorViewCell) {
+        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
+        connectorCell.removeAllCells();
+        ListSequence.fromList(connectorCellList).addElement(connectorCell);
+      } else {
+        View blockView = genericContentCell.getView();
+        blockCollection.addEditorCell(genericContentCell);
+        View oldParent = blockView.parent();
+        if (oldParent != null) {
+          oldParent.children().remove(oldParent.children().indexOf(blockView));
+        }
+        view.itemsView.children().add(blockView);
+      }
+    }
+    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "connectors", true))) {
+      EditorCell contentCell = editorContext.createNodeCell(contentNode);
+      if (!(contentCell instanceof GenericViewCell)) {
+        continue;
+      }
+      GenericViewCell genericContentCell = (GenericViewCell) editorContext.createNodeCell(contentNode);
+      if (genericContentCell instanceof ConnectorViewCell) {
+        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
+        connectorCell.removeAllCells();
+        ListSequence.fromList(connectorCellList).addElement(connectorCell);
+      } else {
+        View blockView = genericContentCell.getView();
+        blockCollection.addEditorCell(genericContentCell);
+        View oldParent = blockView.parent();
+        if (oldParent != null) {
+          oldParent.children().remove(oldParent.children().indexOf(blockView));
+        }
+        view.itemsView.children().add(blockView);
+      }
     }
     editorCell.addEditorCell(blockCollection);
-    for (SNode connectorNode : ListSequence.fromList(SLinkOperations.getTargets(node, "connectors", true))) {
-      final ConnectorViewCell connectorCell = (ConnectorViewCell) (editorContext.createNodeCell(connectorNode));
-      connectorCell.removeAllCells();
+    for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
       View connectorView = connectorCell.getView();
       View fromView = connectorCell.getOutputView(editorCell);
       View toView = connectorCell.getInputView(editorCell);
@@ -111,14 +141,9 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         connection.toView().set(toView);
         connection.fromView().set(fromView);
         view.connections.add(connection);
-
-        for (LineView line : ListSequence.fromList(connection.getLines())) {
-          connectorCell.addEditorCell(GenericViewCell.createViewCell(editorContext, connectorNode, line));
-        }
         editorCell.addEditorCell(connectorCell);
       }
     }
-    // <node> 
     editorCell.setCellId("Diagram_tb7paq_b0");
     return editorCell;
 

@@ -22,9 +22,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new FigureParameterLink_BehaviorDescriptor();
       case 5:
         return new FigureColorStyleClassItem_BehaviorDescriptor();
-      case 9:
-        return new QueryFunction_Color_BehaviorDescriptor();
       case 10:
+        return new QueryFunction_Color_BehaviorDescriptor();
+      case 11:
         return new QueryFunction_Dimension_BehaviorDescriptor();
       case 6:
         return new FigureDimensionStyleClassItem_BehaviorDescriptor();
@@ -34,10 +34,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CellModel_DiagramConnector_BehaviorDescriptor();
       case 0:
         return new AttributedFigureReference_BehaviorDescriptor();
+      case 9:
+        return new LinkDeclarationReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension"};
 }

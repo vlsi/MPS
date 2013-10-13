@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").references("figureAttribute").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").references("nodes", "connectors").alias("diagram", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"content"}, new boolean[]{true}).alias("diagram", "").create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").references("outputRole", "inputRole").alias("diagram connector", "").create();
       case 5:
@@ -38,13 +38,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").abstract_().create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("link").create();
       case 13:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").create();
+      case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.JetpadEditorStyleItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension"};
 }
