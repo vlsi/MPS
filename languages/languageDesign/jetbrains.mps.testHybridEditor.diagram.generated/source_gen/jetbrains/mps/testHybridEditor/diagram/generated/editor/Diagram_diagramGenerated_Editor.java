@@ -92,7 +92,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       if (!(contentCell instanceof GenericViewCell)) {
         continue;
       }
-      GenericViewCell genericContentCell = (GenericViewCell) editorContext.createNodeCell(contentNode);
+      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
       if (genericContentCell instanceof ConnectorViewCell) {
         final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
         connectorCell.removeAllCells();
@@ -112,7 +112,7 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       if (!(contentCell instanceof GenericViewCell)) {
         continue;
       }
-      GenericViewCell genericContentCell = (GenericViewCell) editorContext.createNodeCell(contentNode);
+      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
       if (genericContentCell instanceof ConnectorViewCell) {
         final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
         connectorCell.removeAllCells();
