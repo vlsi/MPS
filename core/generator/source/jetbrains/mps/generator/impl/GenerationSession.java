@@ -646,29 +646,14 @@ class GenerationSession {
     for (String reference : references) {
       myLogger.info("    " + reference);
     }
-//    List<Generator> generators = stepController.getGenerators();
-//    Collections.sort(generators, new Comparator<Generator>() {
-//      public int compare(Generator o1, Generator o2) {
-//        if (o1 == o2) return 0;
-//        return o1.getAlias().compareTo(o2.getAlias());
-//      }
-//    });
-//    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
-//    for (Generator generator : generators) {
-//      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
-//    }
-
-    myLogger.info("apply mapping configurations:");
-    List<Pair<String, TemplateMappingConfiguration>> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
-    for (Pair<String, TemplateMappingConfiguration> message : messages) {
-      myLogger.info("    " + message.o1);
-    }
+    printMappingConfigurations("apply mapping configurations:", myGenerationPlan.getMappingConfigurations(myMajorStep));
   }
 
   private void printMappingConfigurations(String title, List<TemplateMappingConfiguration> mc) {
     myLogger.info(title);
-    for (TemplateMappingConfiguration c : mc) {
-      myLogger.info(String.format("    %s.%s", c.getModel().getLongName(), c.getName()));
+    List<Pair<String, TemplateMappingConfiguration>> messages = GenerationPartitioningUtil.toStrings(mc);
+    for (Pair<String, TemplateMappingConfiguration> message : messages) {
+      myLogger.info(String.format("    %s", message.o1));
     }
   }
 
