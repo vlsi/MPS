@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
@@ -61,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316721(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("isNotEmpty", SNodeOperations.getContainingRoot(_context.getNode()));
+    return String.valueOf(_context.getSessionObject("IsNotEmptyString"));
   }
 
   public static Object propertyMacro_GetPropertyValue_3987319776542716753(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -81,7 +82,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316688(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("isEmpty", SNodeOperations.getContainingRoot(_context.getNode()));
+    return String.valueOf(_context.getSessionObject("IsEmptyString"));
+  }
+
+  public static Object referenceMacro_GetReferent_2241002959597790075(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return String.valueOf(_context.getSessionObject("IsNotEmptyString"));
+  }
+
+  public static Object referenceMacro_GetReferent_2241002959597786333(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return String.valueOf(_context.getSessionObject("IsEmptyString"));
+  }
+
+  public static boolean ifMacro_Condition_2241002959597281202(final IOperationContext operationContext, final IfMacroContext _context) {
+    if (_context.getSessionObject("IsNotEmptyString") == null) {
+      _context.putSessionObject("IsNotEmptyString", "isNotEmptyString");
+      return true;
+    }
+    return false;
   }
 
   public static boolean ifMacro_Condition_3987319776542716768(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -112,7 +129,19 @@ public class QueriesGenerated {
     return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.SubstringExpression").isEmpty());
   }
 
+  public static boolean ifMacro_Condition_2241002959596659389(final IOperationContext operationContext, final IfMacroContext _context) {
+    if (_context.getSessionObject("IsEmptyString") == null) {
+      _context.putSessionObject("IsEmptyString", "isEmptyString");
+      return true;
+    }
+    return false;
+  }
+
   public static SNode sourceNodeQuery_4592826945244850127(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_2241002959597789621(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
@@ -189,6 +218,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4592826945244850077(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_2241002959597785712(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 }
