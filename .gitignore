@@ -33,6 +33,9 @@ plugins/mpsjava/lib/*.jar
 plugins/execution-languages/lib/*.jar
 plugins/execution-configurations/lib/*.jar
 plugins/mps-execution-deprecated/lib/*.jar
+plugins/jetpadEditorRuntime/lib/*.jar
+plugins/jetpadEditorRuntime/lib/*.war
+plugins/jetpadEditorRuntime/lib/jetpadBuildNumber.txt
 lib/*
 plugins/cvsIntegration/lib/*
 plugins/git4idea/lib/*.jar
