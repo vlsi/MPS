@@ -73,7 +73,7 @@ public class ModificationsEditor implements ConceptEditorComponent {
   private EditorCell createRefNodeList_jfpqgy_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ModificationsEditor.modifierListHandler_jfpqgy_b1a(node, "modifier", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_modifier");
+    editorCell.setCellId("ME_refNodeList_modifier");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

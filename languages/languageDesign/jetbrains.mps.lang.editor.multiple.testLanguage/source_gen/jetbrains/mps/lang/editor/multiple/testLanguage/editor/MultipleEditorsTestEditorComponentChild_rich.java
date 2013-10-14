@@ -82,7 +82,7 @@ public class MultipleEditorsTestEditorComponentChild_rich implements ConceptEdit
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+    editorCell.setCellId("METECC_property_name");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -122,7 +122,7 @@ public class MultipleEditorsTestEditorComponentChild_rich implements ConceptEdit
     provider.setNoTargetText("<no richProperty>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_richProperty");
+    editorCell.setCellId("METECC_property_richProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

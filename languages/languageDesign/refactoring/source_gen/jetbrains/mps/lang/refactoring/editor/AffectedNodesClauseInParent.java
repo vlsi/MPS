@@ -76,7 +76,7 @@ public class AffectedNodesClauseInParent implements ConceptEditorComponent {
     provider.setNoTargetText("<no refactorImmediatelyIfNoUsages>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_refactorImmediatelyIfNoUsages");
+    editorCell.setCellId("ANCIP_property_refactorImmediatelyIfNoUsages");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -61,7 +61,7 @@ public class Position implements ConceptEditorComponent {
     provider.setNoTargetText("<no row>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_row");
+    editorCell.setCellId("P_property_row");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -86,7 +86,7 @@ public class Position implements ConceptEditorComponent {
     provider.setNoTargetText("<no col>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_col");
+    editorCell.setCellId("P_property_col");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

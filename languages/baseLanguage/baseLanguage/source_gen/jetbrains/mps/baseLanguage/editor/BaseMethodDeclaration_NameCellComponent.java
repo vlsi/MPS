@@ -52,7 +52,7 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+    editorCell.setCellId("BMDNCC_property_name");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
     style.set(StyleAttributes.STRIKE_OUT, BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((editorCell == null ?

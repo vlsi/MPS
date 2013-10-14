@@ -60,7 +60,7 @@ public class RefactoringTarget implements ConceptEditorComponent {
     provider.setNoTargetText("<no allowMultiple>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_allowMultiple");
+    editorCell.setCellId("RT_property_allowMultiple");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

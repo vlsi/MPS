@@ -76,7 +76,7 @@ public class _CellKeyMapLnk_Component implements ConceptEditorComponent {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("_CKMLC_property_name");
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
         editorCell.setRole("keyMap");

@@ -232,8 +232,8 @@
     <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFieldRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
