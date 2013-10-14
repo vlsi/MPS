@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5b05kkby8l863idoptdk6v126ydlr6z">
+<dependencies version="2" modelHash="924efqwkj4uwjz81mdeyk3tq3e1y30z">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
@@ -21,6 +21,9 @@
     <dep root="1206152999436" />
     <dep root="1206154637872" />
     <dep root="1224072707336" />
+    <dep root="4540508509676720565" />
+    <dep root="4540508509677199925" />
+    <dep root="4540508509690482999" />
     <dep root="5862977038373365416" />
     <dep root="5862977038373397976" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -40,7 +43,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1201381967720" name="mc_baseLanguage" hash="-dg91a9xk7m3cnh05bl7dd4frnu2ipzw">
+  <source id="1201381967720" name="mc_baseLanguage" hash="-8mue1neiq3xeeoje9plyjqy0zgl6cq6">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
@@ -69,6 +72,18 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5862977038373397976" name="reduce_AssignmentExpression_localPropertySet" hash="48tjalr4bgxbuap8ggeugclidp090n6">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="4540508509676720565" name="reduce_OperationAssignmentExpression_propertySet" hash="33ugd0a0pofy8fh0h2g8lhhhmho9pn5">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="4540508509677199925" name="OperationAssignmentRValueSwitch" hash="54jswkes6o22c47tvs7eu9m5ej7l4es">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="4540508509690482999" name="reduce_OperationAssignmentExpression_localPropertySet" hash="-5g1syjrdh8ct2uyvyp845y6ew9qj4x5">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
