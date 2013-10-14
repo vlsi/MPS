@@ -177,7 +177,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0o(source.getNamespace()) ?
+    SPropertyOperations.set(generator, "namespace", (isNotEmptyString(source.getNamespace()) ?
       source.getNamespace() :
       null
     ));
@@ -260,7 +260,7 @@ public abstract class ProjectStructureBuilder {
 
   public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 
-  public static boolean isNotEmpty_5cil7k_a0a0e0o(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

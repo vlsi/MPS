@@ -108,7 +108,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_nnob7w_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "template", false) != null) && isNotEmpty_nnob7w_a0a0a6(SPropertyOperations.getString(SLinkOperations.getTarget(node, "template", false), "name"));
+    return (SLinkOperations.getTarget(node, "template", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "template", false), "name"));
   }
 
   private EditorCell createComponent_nnob7w_c0(EditorContext editorContext, SNode node) {
@@ -469,7 +469,7 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isNotEmpty_nnob7w_a0a0a6(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }
