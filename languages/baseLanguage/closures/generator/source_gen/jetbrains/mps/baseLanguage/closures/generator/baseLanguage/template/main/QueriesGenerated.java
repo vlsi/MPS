@@ -3837,6 +3837,27 @@ public class QueriesGenerated {
     }
   }
 
+  public static boolean mappingConfiguration_Condition_5055396488948953918(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    if (ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration")).isNotEmpty()) {
+      return true;
+    }
+    if (ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement")).isNotEmpty()) {
+      return true;
+    }
+    List<SNode> closures = SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    if (ListSequence.fromList(closures).isEmpty()) {
+      return false;
+    }
+    for (SNode cl : closures) {
+      for (SNode thisExpr : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})) {
+        if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) == null)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   public static Object insertMacro_varValue_4640248974485794769(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
