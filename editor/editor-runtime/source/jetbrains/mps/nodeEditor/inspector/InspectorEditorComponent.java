@@ -57,6 +57,14 @@ public class InspectorEditorComponent extends EditorComponent {
     }
   }
 
+  @Override
+  public void editNode(final SNode node) {
+    if (myNode == node) {
+      return;
+    }
+    super.editNode(node);
+  }
+
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
     //never used
     inspectNode(semanticNode, operationContext);
