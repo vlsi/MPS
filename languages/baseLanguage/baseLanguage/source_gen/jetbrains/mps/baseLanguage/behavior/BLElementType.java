@@ -20,7 +20,7 @@ public enum BLElementType {
   },
   METHOD() {
     public boolean accept(SNode target) {
-      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.Class");
     }
 
   },
