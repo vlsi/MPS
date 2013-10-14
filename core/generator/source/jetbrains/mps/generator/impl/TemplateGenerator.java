@@ -103,6 +103,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private DeltaBuilder myDeltaBuilder;
   private boolean myInplaceModelChange = false;
   private WeavingProcessor myWeavingProcessor;
+  private final boolean myInplaceChangeEnabled;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
@@ -120,7 +121,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
       : new DefaultQueryExecutionContext(this);
-
+    myInplaceChangeEnabled = options.applyTransformationsInplace();
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
@@ -232,7 +233,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     rootsToCopy.removeAll(rootsConsumed);
     ttrace.pop();
 
-    if (!isPrimary && !myChanged && rootsConsumed.isEmpty()) {
+    if (myInplaceChangeEnabled && !isPrimary && !myChanged && rootsConsumed.isEmpty()) {
       if (myWeavingProcessor.hasWeavingRulesToApply()) {
         myLogger.info("Could have had delta builder here, but can't due to active weavings");
       } else {
