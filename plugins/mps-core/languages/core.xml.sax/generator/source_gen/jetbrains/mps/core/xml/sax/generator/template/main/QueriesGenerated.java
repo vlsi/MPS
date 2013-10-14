@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4720003541484956176(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "check" + ((isNotEmpty_x583g4_a0a0a0a0a21(SPropertyOperations.getString(_context.getNode(), "tagName")) ?
+    return "check" + ((isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "tagName")) ?
       SPropertyOperations.getString(_context.getNode(), "tagName") :
       SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "rule", false), "name")
     )) + "_" + _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "condition", true)).getNodeId();
@@ -432,7 +432,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a0a0a21(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

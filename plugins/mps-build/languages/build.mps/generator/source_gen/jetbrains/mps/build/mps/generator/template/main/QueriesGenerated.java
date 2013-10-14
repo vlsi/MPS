@@ -430,21 +430,21 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111130(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (isNotEmpty_x583g4_a0a0oc(((String) _context.getVariable("var:mpsBackend")))) {
+    if (isNotEmptyString(((String) _context.getVariable("var:mpsBackend")))) {
       return ((String) _context.getVariable("var:mpsBackend"));
     }
     return _context.getTemplateValue();
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111187(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (isNotEmpty_x583g4_a0a0pc(((String) _context.getVariable("var:jdom")))) {
+    if (isNotEmptyString(((String) _context.getVariable("var:jdom")))) {
       return ((String) _context.getVariable("var:jdom"));
     }
     return _context.getTemplateValue();
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111196(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (isNotEmpty_x583g4_a0a0qc(((String) _context.getVariable("var:log4j")))) {
+    if (isNotEmptyString(((String) _context.getVariable("var:log4j")))) {
       return ((String) _context.getVariable("var:log4j"));
     }
     return _context.getTemplateValue();
@@ -471,7 +471,7 @@ public class QueriesGenerated {
 
     int heapSize;
     // 0 as default value and 0 as heap size should be distinguished 
-    if ((mpsAspect != null) && (isNotEmpty_x583g4_a0a0e0uc(mpsAspect.getProperty("generationMaxHeapSizeInMb")))) {
+    if ((mpsAspect != null) && (isNotEmptyString(mpsAspect.getProperty("generationMaxHeapSizeInMb")))) {
       heapSize = SPropertyOperations.getInteger(mpsAspect, "generationMaxHeapSizeInMb");
     } else {
       // default size 
@@ -520,7 +520,7 @@ public class QueriesGenerated {
 
     int heapSize;
     // 0 as default value and 0 as heap size should be distinguished 
-    if ((mpsAspect != null) && (isNotEmpty_x583g4_a0a0e0bd(mpsAspect.getProperty("generationMaxHeapSizeInMb")))) {
+    if ((mpsAspect != null) && (isNotEmptyString(mpsAspect.getProperty("generationMaxHeapSizeInMb")))) {
       heapSize = SPropertyOperations.getInteger(mpsAspect, "generationMaxHeapSizeInMb");
     } else {
       // default size 
@@ -708,7 +708,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7832771629085134029(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0re(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "url"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "url"));
   }
 
   public static boolean ifMacro_Condition_7832771629085133811(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -716,7 +716,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7832771629085133713(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true) != null) && isNotEmpty_x583g4_a0a0a321(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "name"));
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "name"));
   }
 
   public static boolean ifMacro_Condition_2339934328870304024(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -769,7 +769,7 @@ public class QueriesGenerated {
     if ((ba == null)) {
       return false;
     }
-    return isNotEmpty_x583g4_a0c0df(SPropertyOperations.getString(SNodeOperations.cast(ba, "jetbrains.mps.build.mps.structure.BuildMpsAspect"), "excludes"));
+    return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(ba, "jetbrains.mps.build.mps.structure.BuildMpsAspect"), "excludes"));
   }
 
   public static boolean ifMacro_Condition_3239569521490198041(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1756,23 +1756,7 @@ public class QueriesGenerated {
     );
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0oc(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0pc(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0qc(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0e0uc(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0e0bd(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
@@ -1781,17 +1765,5 @@ public class QueriesGenerated {
       a.equals(b) :
       a == b
     ));
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0re(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a321(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0c0df(String str) {
-    return str != null && str.length() > 0;
   }
 }
