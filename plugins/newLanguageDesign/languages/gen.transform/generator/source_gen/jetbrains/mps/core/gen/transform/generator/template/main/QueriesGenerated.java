@@ -497,6 +497,22 @@ public class QueriesGenerated {
     return ResolveUtil.resolveConcept(_context, SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
 
+  public static Object referenceMacro_GetReferent_6166572974640752945(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ResolveUtil.resolveEnum(_context, SLinkOperations.getTarget(_context.getNode(), "enum", false));
+  }
+
+  public static Object referenceMacro_GetReferent_6166572974641629228(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "target", false), "enumMember");
+  }
+
+  public static Object referenceMacro_GetReferent_6166572974641610701(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode enumeration = SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "target", false)), "jetbrains.mps.core.structure.structure.SEnumeration");
+    if ((enumeration == null)) {
+      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "target", false), "Enumeration member's parent is not SEnumeration");
+    }
+    return ResolveUtil.resolveEnum(_context, enumeration);
+  }
+
   public static Object referenceMacro_GetReferent_7951806551972992784(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", false), "conceptMethod");
   }
@@ -935,6 +951,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_9087630951858915720(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "elements", true);
+  }
+
+  public static Iterable sourceNodesQuery_2628050024349721384(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
 
   public static Iterable sourceNodesQuery_5400632665800855880(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

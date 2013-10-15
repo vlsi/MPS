@@ -1,119 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="MyRootConcept_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.MyRootConcept_BehaviorDescriptor" />
+  <unitInfo fileName="MyRootConcept_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.MyRootConcept_BehaviorDescriptor" />
   <unitInfo fileName="MySubConcept_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.MySubConcept_BehaviorDescriptor" />
   <unitInfo fileName="MyUnrelatedConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.MyUnrelatedConcept_BehaviorDescriptor" />
   <root nodeRef="r:9020b46b-5418-4e25-8896-673e11556ed2(jetbrains.mps.sample.queryTest.behavior)/8194562227700484006">
-    <nodeInfo nodeId="8194562227700484013" fileName="MyRootConcept_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484026" fileName="MyRootConcept_Behavior.java" startLine="30" startPosition="79" endLine="31" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484044" fileName="MyRootConcept_Behavior.java" startLine="34" startPosition="86" endLine="35" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6727112993714328761" fileName="MyRootConcept_Behavior.java" startLine="40" startPosition="43" endLine="41" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993714328769" fileName="MyRootConcept_Behavior.java" startLine="41" startPosition="147" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993796964439" fileName="MyRootConcept_Behavior.java" startLine="42" startPosition="41" endLine="43" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993796964450" fileName="MyRootConcept_Behavior.java" startLine="43" startPosition="146" endLine="44" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993799407787" fileName="MyRootConcept_Behavior.java" startLine="44" startPosition="150" endLine="45" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993805445894" fileName="MyRootConcept_Behavior.java" startLine="45" startPosition="175" endLine="46" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993808895399" fileName="MyRootConcept_Behavior.java" startLine="46" startPosition="100" endLine="47" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6727112993809992305" fileName="MyRootConcept_Behavior.java" startLine="47" startPosition="86" endLine="48" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3868630583602426864" fileName="MyRootConcept_Behavior.java" startLine="48" startPosition="198" endLine="49" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3868630583602426878" fileName="MyRootConcept_Behavior.java" startLine="49" startPosition="205" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3868630583608685939" fileName="MyRootConcept_Behavior.java" startLine="50" startPosition="60" endLine="51" endPosition="412" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3868630583602426900" fileName="MyRootConcept_Behavior.java" startLine="56" startPosition="71" endLine="57" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="61" startPosition="75" endLine="62" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="66" startPosition="76" endLine="67" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="71" startPosition="83" endLine="72" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="76" startPosition="82" endLine="77" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="81" startPosition="68" endLine="82" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="86" startPosition="108" endLine="87" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="91" startPosition="109" endLine="92" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="96" startPosition="116" endLine="97" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="101" startPosition="115" endLine="102" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="106" startPosition="101" endLine="107" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_longName_8194562227700484009#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_mySet_8194562227700484021#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_myList_8194562227700484039#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_q_3868630583602426896#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_longName_8194562227700484009#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_mySet_8194562227700484021#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_myList_8194562227700484039#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_complexQuery_6727112993714328752#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_q_3868630583602426896#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_longName_8194562227700484009#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_mySet_8194562227700484021#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Set;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_myList_8194562227700484039#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_complexQuery_6727112993714328752#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Set;" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_q_3868630583602426896#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6727112993714328759" fileName="MyRootConcept_Behavior.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
-    <nodeInfo nodeId="6727112993714328757" fileName="MyRootConcept_Behavior.java" startLine="38" startPosition="91" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="38" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_complexQuery_6727112993714328752#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <scopeInfo nodeId="8194562227700484008" fileName="MyRootConcept_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
-    <scopeInfo nodeId="8194562227700484012" fileName="MyRootConcept_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="73" />
-    <scopeInfo nodeId="8194562227700484025" fileName="MyRootConcept_Behavior.java" startLine="30" startPosition="79" endLine="31" endPosition="219" />
-    <scopeInfo nodeId="8194562227700484043" fileName="MyRootConcept_Behavior.java" startLine="34" startPosition="86" endLine="35" endPosition="167" />
-    <scopeInfo nodeId="3868630583602426899" fileName="MyRootConcept_Behavior.java" startLine="56" startPosition="71" endLine="57" endPosition="162" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="61" startPosition="75" endLine="62" endPosition="124" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="66" startPosition="76" endLine="67" endPosition="152" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="71" startPosition="83" endLine="72" endPosition="159" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="76" startPosition="82" endLine="77" endPosition="158" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="81" startPosition="68" endLine="82" endPosition="117" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="86" startPosition="108" endLine="87" endPosition="260" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="91" startPosition="109" endLine="92" endPosition="288" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="96" startPosition="116" endLine="97" endPosition="295" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="101" startPosition="115" endLine="102" endPosition="294" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="106" startPosition="101" endLine="107" endPosition="253" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="23" startPosition="0" endLine="25" endPosition="0">
+    <nodeInfo nodeId="8194562227700484013" fileName="MyRootConcept_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484026" fileName="MyRootConcept_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484044" fileName="MyRootConcept_Behavior.java" startLine="35" startPosition="86" endLine="36" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6727112993714328761" fileName="MyRootConcept_Behavior.java" startLine="41" startPosition="43" endLine="42" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993714328769" fileName="MyRootConcept_Behavior.java" startLine="42" startPosition="147" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993796964439" fileName="MyRootConcept_Behavior.java" startLine="43" startPosition="41" endLine="44" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993796964450" fileName="MyRootConcept_Behavior.java" startLine="44" startPosition="146" endLine="45" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993799407787" fileName="MyRootConcept_Behavior.java" startLine="45" startPosition="150" endLine="46" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993805445894" fileName="MyRootConcept_Behavior.java" startLine="46" startPosition="175" endLine="47" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993808895399" fileName="MyRootConcept_Behavior.java" startLine="47" startPosition="100" endLine="48" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6727112993809992305" fileName="MyRootConcept_Behavior.java" startLine="48" startPosition="86" endLine="49" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3868630583602426864" fileName="MyRootConcept_Behavior.java" startLine="49" startPosition="198" endLine="50" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3868630583602426878" fileName="MyRootConcept_Behavior.java" startLine="50" startPosition="205" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3868630583608685939" fileName="MyRootConcept_Behavior.java" startLine="51" startPosition="60" endLine="52" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6166572974641188481" fileName="MyRootConcept_Behavior.java" startLine="52" startPosition="300" endLine="53" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6166572974641188487" fileName="MyRootConcept_Behavior.java" startLine="53" startPosition="150" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2628050024355835217" fileName="MyRootConcept_Behavior.java" startLine="54" startPosition="77" endLine="55" endPosition="454" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6166572974639653888" fileName="MyRootConcept_Behavior.java" startLine="60" startPosition="71" endLine="61" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6166572974641188531" fileName="MyRootConcept_Behavior.java" startLine="64" startPosition="70" endLine="65" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6166572974641341652" fileName="MyRootConcept_Behavior.java" startLine="68" startPosition="96" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="73" startPosition="75" endLine="74" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="78" startPosition="76" endLine="79" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="83" startPosition="83" endLine="84" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="88" startPosition="82" endLine="89" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="93" startPosition="68" endLine="94" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="98" startPosition="67" endLine="99" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="103" startPosition="93" endLine="104" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="108" startPosition="108" endLine="109" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="113" startPosition="109" endLine="114" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="118" startPosition="116" endLine="119" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="123" startPosition="115" endLine="124" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="128" startPosition="101" endLine="129" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="133" startPosition="100" endLine="134" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="138" startPosition="126" endLine="139" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_longName_8194562227700484009#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_mySet_8194562227700484021#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_myList_8194562227700484039#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_q_3868630583602426896#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_ch_6166572974641188527#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_queryWithParam_6166572974641188535#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_longName_8194562227700484009#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_mySet_8194562227700484021#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_myList_8194562227700484039#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_complexQuery_6727112993714328752#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_q_3868630583602426896#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_ch_6166572974641188527#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_queryWithParam_6166572974641188535#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_longName_8194562227700484009#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_mySet_8194562227700484021#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Set;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_myList_8194562227700484039#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_complexQuery_6727112993714328752#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/Set;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_q_3868630583602426896#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_ch_6166572974641188527#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_queryWithParam_6166572974641188535#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6727112993714328759" fileName="MyRootConcept_Behavior.java" startLine="41" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/internal/collections/runtime/ISetSequence;" />
+    <nodeInfo nodeId="6727112993714328757" fileName="MyRootConcept_Behavior.java" startLine="39" startPosition="91" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="39" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_complexQuery_6727112993714328752#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <scopeInfo nodeId="8194562227700484008" fileName="MyRootConcept_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
+    <scopeInfo nodeId="8194562227700484012" fileName="MyRootConcept_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="73" />
+    <scopeInfo nodeId="8194562227700484025" fileName="MyRootConcept_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="219" />
+    <scopeInfo nodeId="8194562227700484043" fileName="MyRootConcept_Behavior.java" startLine="35" startPosition="86" endLine="36" endPosition="167" />
+    <scopeInfo nodeId="3868630583602426899" fileName="MyRootConcept_Behavior.java" startLine="60" startPosition="71" endLine="61" endPosition="162" />
+    <scopeInfo nodeId="6166572974641188530" fileName="MyRootConcept_Behavior.java" startLine="64" startPosition="70" endLine="65" endPosition="62" />
+    <scopeInfo nodeId="6166572974641188540" fileName="MyRootConcept_Behavior.java" startLine="68" startPosition="96" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="73" startPosition="75" endLine="74" endPosition="124" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="78" startPosition="76" endLine="79" endPosition="152" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="83" startPosition="83" endLine="84" endPosition="159" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="88" startPosition="82" endLine="89" endPosition="158" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="93" startPosition="68" endLine="94" endPosition="117" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="98" startPosition="67" endLine="99" endPosition="143" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="103" startPosition="93" endLine="104" endPosition="134" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="108" startPosition="108" endLine="109" endPosition="260" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="113" startPosition="109" endLine="114" endPosition="288" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="118" startPosition="116" endLine="119" endPosition="295" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="123" startPosition="115" endLine="124" endPosition="294" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="128" startPosition="101" endLine="129" endPosition="253" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="133" startPosition="100" endLine="134" endPosition="279" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="138" startPosition="126" endLine="139" endPosition="283" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="24" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="6166572974641188536" varName="kind" />
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="8194562227700484006" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="8194562227700484006" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="8194562227700484006" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="6166572974641188536" varName="kind" />
+      <varInfo nodeId="8194562227700484006" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="122" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6727112993714328760" fileName="MyRootConcept_Behavior.java" startLine="40" startPosition="43" endLine="51" endPosition="412">
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
+      <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
+      <varInfo nodeId="8194562227700484006" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="8194562227700484006" varName="callerConceptFqName" />
+      <varInfo nodeId="6166572974641188536" varName="kind" />
+      <varInfo nodeId="8194562227700484006" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6727112993714328760" fileName="MyRootConcept_Behavior.java" startLine="41" startPosition="43" endLine="55" endPosition="454">
       <varInfo nodeId="3868630583602426835" varName="emptyList" />
       <varInfo nodeId="3868630583602426842" varName="emptySet" />
       <varInfo nodeId="3868630583602426849" varName="newList" />
@@ -122,16 +166,19 @@
       <varInfo nodeId="3868630583602426810" varName="s3" />
       <varInfo nodeId="3868630583602426821" varName="s4" />
       <varInfo nodeId="3868630583602426795" varName="string" />
+      <varInfo nodeId="2628050024355835212" varName="unr" />
       <varInfo nodeId="3868630583608685934" varName="x" />
+      <varInfo nodeId="6166572974641188476" varName="y" />
+      <varInfo nodeId="2628050024355835205" varName="yy" />
       <varInfo nodeId="3868630583602426865" varName="z" />
     </scopeInfo>
-    <scopeInfo nodeId="6727112993714328759" fileName="MyRootConcept_Behavior.java" startLine="40" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6727112993714328756" fileName="MyRootConcept_Behavior.java" startLine="38" startPosition="91" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="38" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="6727112993714328759" fileName="MyRootConcept_Behavior.java" startLine="41" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6727112993714328756" fileName="MyRootConcept_Behavior.java" startLine="39" startPosition="91" endLine="57" endPosition="15" />
+    <scopeInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="39" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="8194562227700484006" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="6727112993714328759" fileName="MyRootConcept_Behavior.java" startLine="39" startPosition="15" endLine="53" endPosition="5" unitName="jetbrains.mps.sample.queryTest.behavior.MyRootConcept_Behavior$1" />
-    <unitInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="22" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.MyRootConcept_Behavior" />
+    <unitInfo nodeId="6727112993714328759" fileName="MyRootConcept_Behavior.java" startLine="40" startPosition="15" endLine="57" endPosition="5" unitName="jetbrains.mps.sample.queryTest.behavior.MyRootConcept_Behavior$1" />
+    <unitInfo nodeId="8194562227700484006" fileName="MyRootConcept_Behavior.java" startLine="23" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.sample.queryTest.behavior.MyRootConcept_Behavior" />
   </root>
 </debugInfo>
 

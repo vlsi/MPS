@@ -45,6 +45,11 @@
           <property name="isRequired" nameId="ydsw.7581772527307895409" value="true" />
         </node>
       </node>
+      <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SConceptMemberEmptyLine" typeId="ydsw.7581772527307844356" id="4031651930684044799" nodeInfo="ng" />
+      <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SReference" typeId="ydsw.6195190339581766759" id="4031651930684046263" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="refr" />
+        <link role="target" roleId="ydsw.7581772527307862085" targetNodeId="6727112993714451448" resolveInfo="MyUnrelatedConcept" />
+      </node>
       <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SConceptMemberEmptyLine" typeId="ydsw.7581772527307844356" id="6727112993794587526" nodeInfo="ng" />
       <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SChildLink" typeId="ydsw.7581772527307862083" id="6727112993794587923" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="z" />
@@ -197,7 +202,12 @@
             <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.OfConceptSelector" typeId="xsnc.6645666184791620092" id="3868630583617914595" nodeInfo="ng">
               <node role="argument" roleId="xsnc.6645666184791620093" type="xsnc.ConceptExpr" typeId="xsnc.1389772202491521471" id="3868630583617977095" nodeInfo="ng">
                 <node role="expression" roleId="xsnc.1389772202491521472" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="3868630583618028019" nodeInfo="ng">
-                  <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="3868630583617977527" nodeInfo="ng" />
+                  <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930682988216" nodeInfo="ng">
+                    <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="3868630583617977527" nodeInfo="ng" />
+                    <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930682988838" nodeInfo="ng">
+                      <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="6727112993714450581" resolveInfo="child" />
+                    </node>
+                  </node>
                   <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlNodeNoArgOperation" typeId="xsnc.3868630583607352071" id="3868630583618028487" nodeInfo="ng">
                     <property name="kind" nameId="xsnc.3868630583607362197" value="1" />
                   </node>
@@ -312,6 +322,43 @@
               </node>
             </node>
           </node>
+          <node role="bindings" roleId="bwy9.4562783364485753721" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="4031651930683311827" nodeInfo="ng">
+            <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="4031651930683311828" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="y" />
+            </node>
+            <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930683319985" nodeInfo="ng">
+              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930683319968" nodeInfo="ng" />
+              <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.SConceptQueryCall" typeId="xsnc.535637396506608313" id="4031651930683320018" nodeInfo="ng">
+                <link role="query" roleId="xsnc.535637396506608314" targetNodeId="4031651930683310998" resolveInfo="queryWithParam" />
+                <node role="arguments" roleId="xsnc.2059702675525965926" type="xsnc.SEnumLiteralRef" typeId="xsnc.2198415040519604873" id="4031651930683320058" nodeInfo="ng">
+                  <link role="target" roleId="xsnc.2198415040519606082" targetNodeId="1389772202489985012" resolveInfo="TWO" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="bindings" roleId="bwy9.4562783364485753721" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="2628050024355832665" nodeInfo="ng">
+            <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="2628050024355832666" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="yy" />
+            </node>
+            <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="2628050024355833306" nodeInfo="ng">
+              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="2628050024355833288" nodeInfo="ng" />
+              <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.SConceptQueryCall" typeId="xsnc.535637396506608313" id="2628050024355833339" nodeInfo="ng">
+                <link role="query" roleId="xsnc.535637396506608314" targetNodeId="4031651930683310998" resolveInfo="queryWithParam" />
+                <node role="arguments" roleId="xsnc.2059702675525965926" type="bwy9.MqlNullLiteral" typeId="bwy9.6762883159245048062" id="2628050024355833363" nodeInfo="ng" />
+              </node>
+            </node>
+          </node>
+          <node role="bindings" roleId="bwy9.4562783364485753721" type="bwy9.MqlAssignment" typeId="bwy9.5322644393894740272" id="4031651930684047108" nodeInfo="ng">
+            <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="4031651930684047109" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="unr" />
+            </node>
+            <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930684047696" nodeInfo="ng">
+              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930684047678" nodeInfo="ng" />
+              <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930684047729" nodeInfo="ng">
+                <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="4031651930684046263" resolveInfo="refr" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="members" roleId="ydsw.6195190339581766761" type="xsnc.SConceptQuery" typeId="xsnc.5270931306887544473" id="1389772202491924164" nodeInfo="ng">
@@ -336,6 +383,32 @@
           </node>
         </node>
       </node>
+      <node role="members" roleId="ydsw.6195190339581766761" type="xsnc.SConceptQuery" typeId="xsnc.5270931306887544473" id="4031651930683102360" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="ch" />
+        <node role="type" roleId="xsnc.4366849661834287896" type="xsnc.MqlNodeType" typeId="xsnc.4260762357825047862" id="4031651930683102364" nodeInfo="ng">
+          <link role="concept" roleId="xsnc.4260762357825047863" targetNodeId="8194562227697157149" resolveInfo="MyRootConcept" />
+        </node>
+        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930683728616" nodeInfo="ng">
+          <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930683103133" nodeInfo="ng" />
+          <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930683728681" nodeInfo="ng">
+            <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="6727112993714450581" resolveInfo="child" />
+          </node>
+        </node>
+      </node>
+      <node role="members" roleId="ydsw.6195190339581766761" type="xsnc.SConceptQuery" typeId="xsnc.5270931306887544473" id="4031651930683310998" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="queryWithParam" />
+        <node role="parameters" roleId="bwy9.1992172484410518817" type="bwy9.MqlParameter" typeId="bwy9.6762883159245048635" id="4031651930683311800" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="kind" />
+          <node role="type" roleId="bwy9.6762883159245086405" type="xsnc.MqlEnumType" typeId="xsnc.8024238796508611960" id="4031651930683952592" nodeInfo="ng">
+            <link role="enum" roleId="xsnc.8024238796508611995" targetNodeId="1389772202489917296" resolveInfo="MyKind" />
+          </node>
+        </node>
+        <node role="type" roleId="xsnc.4366849661834287896" type="bwy9.MqlBoolType" typeId="bwy9.6762883159245048072" id="4031651930683311004" nodeInfo="ng" />
+        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlBoolLiteral" typeId="bwy9.6762883159245048056" id="4031651930683311814" nodeInfo="ng">
+          <property name="value" nameId="bwy9.6762883159245048057" value="true" />
+        </node>
+      </node>
+      <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SConceptMemberEmptyLine" typeId="ydsw.7581772527307844356" id="4031651930683318344" nodeInfo="ng" />
       <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SConceptMemberEmptyLine" typeId="ydsw.7581772527307844356" id="1389772202492385831" nodeInfo="ng" />
     </node>
     <node role="structure" roleId="ydsw.6195190339581766884" type="ydsw.SStructureEmptyLine" typeId="ydsw.6195190339581962051" id="8194562227700482020" nodeInfo="ng" />
