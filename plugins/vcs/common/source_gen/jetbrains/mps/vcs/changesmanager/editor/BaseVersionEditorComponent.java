@@ -108,7 +108,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   @Override
   public void dispose() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         DiffModelUtil.unregisterModel(myBaseModel);
       }
