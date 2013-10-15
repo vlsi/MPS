@@ -352,15 +352,10 @@
             <node role="var" roleId="bwy9.3435983127247056179" type="bwy9.MqlVariable" typeId="bwy9.3435983127247044629" id="4031651930684047109" nodeInfo="ng">
               <property name="name" nameId="tpck.1169194664001" value="unr" />
             </node>
-            <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="2628050024368056943" nodeInfo="ng">
-              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930684047696" nodeInfo="ng">
-                <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930684047678" nodeInfo="ng" />
-                <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930684047729" nodeInfo="ng">
-                  <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="4031651930684046263" resolveInfo="refr" />
-                </node>
-              </node>
-              <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlNodeNoArgOperation" typeId="xsnc.3868630583607352071" id="7992433658602916896" nodeInfo="ng">
-                <property name="kind" nameId="xsnc.3868630583607362197" value="1" />
+            <node role="value" roleId="bwy9.5322644393894740275" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930684047696" nodeInfo="ng">
+              <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930684047678" nodeInfo="ng" />
+              <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930684047729" nodeInfo="ng">
+                <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="4031651930684046263" resolveInfo="refr" />
               </node>
             </node>
           </node>
