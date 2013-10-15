@@ -10,6 +10,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
@@ -55,5 +57,28 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5233164016162061064(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+  }
+
+  public static boolean mappingConfiguration_Condition_6847351214607238415(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    for (SNode node : SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+      SNode le = SLinkOperations.getTarget(node, "leftExpression", true);
+      SNode re = SLinkOperations.getTarget(node, "rightExpression", true);
+      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(le, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(le, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
+        return true;
+      }
+      if (SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(re, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(re, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
+        return true;
+      }
+      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression")) {
+        return true;
+      }
+      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.collections.structure.MapElement")) {
+        return true;
+      }
+      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression") || SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression")) {
+        return true;
+      }
+    }
+    return false;
   }
 }

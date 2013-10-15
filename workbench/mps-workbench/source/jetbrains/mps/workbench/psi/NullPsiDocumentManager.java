@@ -18,10 +18,13 @@ package jetbrains.mps.workbench.psi;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.impl.DocumentImpl;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Collection;
 
 public class NullPsiDocumentManager extends PsiDocumentManager {
   @Override
@@ -96,6 +99,11 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
   @Override
   public <T> T commitAndRunReadAction(@NotNull Computable<T> computation) {
     return null;
+  }
+
+  @Override
+  public void reparseFiles(@NotNull Collection<VirtualFile> files, boolean includeOpenFiles) {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override

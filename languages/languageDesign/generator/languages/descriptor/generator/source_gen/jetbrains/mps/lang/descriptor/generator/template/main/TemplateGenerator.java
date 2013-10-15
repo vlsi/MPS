@@ -640,7 +640,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                               tnode47.setReference("classConcept", SReference.create("classConcept", tnode47, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
 
                               {
-                                final List<SNode> tlist48 = new ArrayList();
+                                final List<SNode> tlist48 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2);
                                   final Iterable<SNode> loopList48 = QueriesGenerated.sourceNodesQuery_1820665478710839750(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a4a1a5a1a21a1a2, context, environment.getGenerator()));
@@ -769,7 +769,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 // TODO validate child 
                               }
                               {
-                                final List<SNode> tlist58 = new ArrayList();
+                                final List<SNode> tlist58 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
                                   final Iterable<SNode> loopList58 = QueriesGenerated.sourceNodesQuery_3829836699771395556(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2, context, environment.getGenerator()));
@@ -900,7 +900,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                               tnode67.setReference("classConcept", SReference.create("classConcept", tnode67, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
 
                               {
-                                final List<SNode> tlist68 = new ArrayList();
+                                final List<SNode> tlist68 = new ArrayList<SNode>();
                                 try {
                                   environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2);
                                   final Iterable<SNode> loopList68 = QueriesGenerated.sourceNodesQuery_1250389701475344450(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a1a1a6a1a5a1a21a1a2, context, environment.getGenerator()));
@@ -1027,7 +1027,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                           tnode76.setReference("classConcept", SReference.create("classConcept", tnode76, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
 
                           {
-                            final List<SNode> tlist77 = new ArrayList();
+                            final List<SNode> tlist77 = new ArrayList<SNode>();
                             try {
                               environment.getTracer().pushMacro(loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2);
                               final Iterable<SNode> loopList77 = QueriesGenerated.sourceNodesQuery_1250389701475431822(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_g5r92k_a0a0a1a5a1a4a1a3a1a7a1a5a1a21a1a2, context, environment.getGenerator()));

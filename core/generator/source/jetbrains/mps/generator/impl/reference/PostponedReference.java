@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
@@ -88,7 +90,7 @@ public class PostponedReference extends SReference {
     }
 
     if (myReferenceInfo == null) {
-      return null; // allready processed
+      return null; // already processed
     }
 
     String role = myReferenceInfo.getReferenceRole();
@@ -103,7 +105,7 @@ public class PostponedReference extends SReference {
 //      } else {
 //        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
 //      }
-    } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
+    } else if (myReferenceInfo.isDynamicResolve(myGenerator.getLogger()) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
       DynamicReference dynamicReference = new DynamicReference(
         role,
         outputSourceNode,
@@ -163,9 +165,9 @@ public class PostponedReference extends SReference {
   }
 
   private boolean checkResolvedTarget(SNode outputNode, String role, SNode outputTargetNode) {
-    RoleValidationStatus status = myGenerator.validateReferent(outputNode, role, outputTargetNode);
+    RoleValidationStatus status = myGenerator.getReferentRoleValidator(outputNode, role).validate(outputTargetNode);
     if (status != null) {
-      status.reportProblem(true, "bad reference: ", myReferenceInfo.getErrorDescriptions());
+      status.reportProblem(true, outputNode, "bad reference: ", myReferenceInfo.getErrorDescriptions());
       return false;
     }
 

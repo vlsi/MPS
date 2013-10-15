@@ -79,7 +79,7 @@ public class MPSCompilerComponent implements ProjectComponent {
         final CompileScope compileScope = context.getCompileScope();
         if (compileScope == null) return true;
 
-        if (!CompilerWorkspaceConfiguration.getInstance(project).USE_COMPILE_SERVER) {
+        if (!CompilerWorkspaceConfiguration.getInstance(project).USE_OUT_OF_PROCESS_BUILD) {
           final VirtualFile[] files = compileScope.getFiles(MPSFileTypeFactory.MPS_FILE_TYPE, true);
           final VirtualFile[] rootFiles = compileScope.getFiles(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE, true);
           if (files.length > 0 || rootFiles.length > 0) {

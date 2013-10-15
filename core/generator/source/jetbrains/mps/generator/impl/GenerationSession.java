@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -275,7 +276,7 @@ class GenerationSession {
       }
       return inputModel;
     }
-    if (myGenerationTracer.isTracing() && myLogger.needsInfo()) {
+    if (myLogger.needsInfo()) {
       printGenerationStepData(inputModel);
     }
 
@@ -288,10 +289,12 @@ class GenerationSession {
     Iterator<TemplateMappingConfiguration> it = mappingConfigurations.iterator();
     TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, null, inputModel, null, myGenerationOptions,
         myDependenciesBuilder, ttrace);
+    LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
     while (it.hasNext()) {
       TemplateMappingConfiguration c = it.next();
       try {
         if (!c.isApplicable(templateGenerator)) {
+          drop.add(c);
           it.remove();
         }
       } catch (GenerationException e) {
@@ -302,6 +305,9 @@ class GenerationSession {
         }
         throw (GenerationFailureException) e;
       }
+    }
+    if (!drop.isEmpty()) {
+      printMappingConfigurations("drop mapping configurations (not applicable):", drop);
     }
 
     if (mappingConfigurations.isEmpty()) {
@@ -322,7 +328,7 @@ class GenerationSession {
         return o1.getName().compareTo(o2.getName());
       }
     });
-    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations);
+    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {
@@ -352,7 +358,7 @@ class GenerationSession {
       myLogger.info(
           "generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
     }
-    boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
+    boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager).o1;
     if (!somethingHasBeenGenerated) {
       SModelOperations.validateLanguagesAndImports(currentOutputModel, false, false);
       myDependenciesBuilder.updateModel(currentOutputModel);
@@ -371,7 +377,9 @@ class GenerationSession {
       // apply mapping to the output model
       mySessionContext.clearTransientObjects();
       // probably we can forget about former input model here
-      recycleWasteModel(currentInputModel);
+      if (currentInputModel != currentOutputModel) {
+        recycleWasteModel(currentInputModel);
+      }
       currentInputModel = currentOutputModel;
       ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder();
 
@@ -381,7 +389,8 @@ class GenerationSession {
             currentInputModel.getReference().getModelName()) + "' --> '" + SModelStereotype.getStereotype(transientModel.getReference().getModelName()) + "'");
       }
       tracer.startTracing(currentInputModel, transientModel);
-      if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
+      final Pair<Boolean, SModel> applied = applyRules(currentInputModel, transientModel, false, ruleManager);
+      if (!applied.o1) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
@@ -392,12 +401,13 @@ class GenerationSession {
         }
         break;
       }
+      SModel realOutputModel = applied.o2;
 
       if (++secondaryMappingRepeatCount > 10) {
         myLogger.error("failed to generate output after 10 repeated mappings");
         if (tracer.isTracing()) {
           myLogger.error("last rules applied:");
-          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getReference());
+          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(realOutputModel.getReference());
           for (Pair<SNode, SNode> pair : pairs) {
             myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
                 GeneratorUtil.describe(pair.o2, "input"));
@@ -410,7 +420,7 @@ class GenerationSession {
       }
 
       // next iteration ...
-      currentOutputModel = transientModel;
+      currentOutputModel = realOutputModel;
     }
 
     // -----------------------
@@ -423,10 +433,11 @@ class GenerationSession {
     return currentOutputModel;
   }
 
-  private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
+  private Pair<Boolean, SModel> applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
       RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     boolean hasChanges;
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
+    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
     final TemplateGenerator tg =
         myGenerationOptions.isGenerateInParallel()
             ?
@@ -444,34 +455,24 @@ class GenerationSession {
     } else {
       hasChanges = tg.apply(isPrimary);
     }
+    ttrace.pop();
+    SModel outputModel = tg.getOutputModel();
     if (myNewCache != null && (isPrimary || hasChanges)) {
       ttrace.push("saving cache", false);
-      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, myDependenciesBuilder);
+      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(outputModel, myDependenciesBuilder);
       tg.getMappings().export(modelWithMetaInfo, myDependenciesBuilder);
       myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       ttrace.pop();
     }
-    return hasChanges;
+    return new Pair<Boolean, SModel>(hasChanges, outputModel);
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
-    List<TemplateMappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
-    if (preMappingScripts.isEmpty()) {
+    if (!ruleManager.getScripts().preprocessing()) {
       return currentInputModel;
     }
 
-    // need to clone input model?
-    boolean needToCloneInputModel = !myDiscardTransients;  // clone model if save transients (needed for tracing)
-    if (!needToCloneInputModel) {
-      for (TemplateMappingScript preMappingScript : preMappingScripts) {
-        if (preMappingScript.getKind() == TemplateMappingScript.PREPROCESS) {
-          if (preMappingScript.modifiesModel()) {
-            needToCloneInputModel = true;
-            break;
-          }
-        }
-      }
-    }
+    final boolean needToCloneInputModel = ruleManager.getScripts().needModelCloneToPreprocess(currentInputModel, !myDiscardTransients);
     SModel toRecycle = null;
     if (needToCloneInputModel) {
       ttrace.push("model clone", false);
@@ -483,23 +484,18 @@ class GenerationSession {
       CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
 
-      if (!myDiscardTransients) { // tracing
-        mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
-      }
+      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getScripts().getPreMappingScripts());
 
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
       currentInputModel = currentInputModel_clone;
-      myDependenciesBuilder.scriptApplied(currentInputModel);
+      myDependenciesBuilder.scriptApplied(currentInputModel); // WTF? why scriptApplied for a blank copy?
+    } else {
+      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getScripts().getPreMappingScripts());
     }
 
     boolean preProcessed = false;
-    for (TemplateMappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
-        myLogger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
-            "skip script " + preMappingScript.getLongName() + " - wrong script kind");
-        continue;
-      }
+    for (TemplateMappingScript preMappingScript : ruleManager.getScripts().getPreMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
       }
@@ -530,12 +526,11 @@ class GenerationSession {
   }
 
   private SModel postProcessModel(RuleManager ruleManager, SModel currentModel) throws GenerationFailureException {
-    List<TemplateMappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
-    if (postMappingScripts.isEmpty()) {
+    if (!ruleManager.getScripts().postprocessing()) {
       return currentModel;
     }
 
-    boolean needToCloneModel = !myDiscardTransients; // clone model - needed for tracing
+    boolean needToCloneModel = ruleManager.getScripts().needModelCloneToPostprocess(currentModel, !myDiscardTransients);
     SModel toRecycle = null;
     if (needToCloneModel) {
       ttrace.push("model clone", false);
@@ -546,19 +541,16 @@ class GenerationSession {
       CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, postMappingScripts);
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getScripts().getPostMappingScripts());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
+    } else {
+      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getScripts().getPostMappingScripts());
     }
 
     boolean postProcessed = false;
-    for (TemplateMappingScript postMappingScript : postMappingScripts) {
-      if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
-        myLogger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
-            "skip script " + postMappingScript.getLongName() + " - wrong script kind");
-        continue;
-      }
+    for (TemplateMappingScript postMappingScript : ruleManager.getScripts().getPostMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
       }
@@ -654,22 +646,14 @@ class GenerationSession {
     for (String reference : references) {
       myLogger.info("    " + reference);
     }
-//    List<Generator> generators = stepController.getGenerators();
-//    Collections.sort(generators, new Comparator<Generator>() {
-//      public int compare(Generator o1, Generator o2) {
-//        if (o1 == o2) return 0;
-//        return o1.getAlias().compareTo(o2.getAlias());
-//      }
-//    });
-//    addMessage(new Message(MessageKind.INFORMATION, "engaged generators:"));
-//    for (Generator generator : generators) {
-//      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
-//    }
+    printMappingConfigurations("apply mapping configurations:", myGenerationPlan.getMappingConfigurations(myMajorStep));
+  }
 
-    myLogger.info("apply mapping configurations:");
-    List<Pair<String, TemplateMappingConfiguration>> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
+  private void printMappingConfigurations(String title, List<TemplateMappingConfiguration> mc) {
+    myLogger.info(title);
+    List<Pair<String, TemplateMappingConfiguration>> messages = GenerationPartitioningUtil.toStrings(mc);
     for (Pair<String, TemplateMappingConfiguration> message : messages) {
-      myLogger.info("    " + message.o1);
+      myLogger.info(String.format("    %s", message.o1));
     }
   }
 

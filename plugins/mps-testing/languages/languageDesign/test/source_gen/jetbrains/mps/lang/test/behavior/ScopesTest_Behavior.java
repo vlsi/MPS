@@ -28,7 +28,7 @@ public class ScopesTest_Behavior {
   }
 
   public static boolean call_isSimple_5449224527592395483(SAbstractConcept thisConcept, SNode node) {
-    return (int) ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1;
+    return ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1;
   }
 
   public static boolean call_isApplicable_5449224527592368025(SAbstractConcept thisConcept, SNode node) {

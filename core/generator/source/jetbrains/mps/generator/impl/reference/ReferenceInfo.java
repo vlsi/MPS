@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -76,4 +80,27 @@ public abstract class ReferenceInfo {
   }
 
   public abstract ProblemDescription[] getErrorDescriptions();
+
+  /**
+   * @return true if reference needs dynamic resolution (based on IResolveInfo target)
+   */
+  public boolean isDynamicResolve(IGeneratorLogger errorLog) {
+    String role = getReferenceRole();
+    SNode sourceNode = getOutputSourceNode();
+
+    SNode link = new ConceptAndSuperConceptsScope(
+        ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
+    if (link == null) {
+      errorLog.error(sourceNode, "couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getQualifiedName() + "'");
+      return false;
+    }
+
+    SNode target = SModelUtil.getLinkDeclarationTarget(link);
+    if (target == null) {
+      errorLog.error(link, "link target is not defined");
+      return false;
+    }
+
+    return SModelUtil.isAssignableConcept(target, jetbrains.mps.smodel.SNodeUtil.concept_IResolveInfo);
+  }
 }

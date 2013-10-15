@@ -23,9 +23,11 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
+ * @deprecated Remove as there are no usages for this class left
  * Igor Alshannikov
  * Dec 18, 2007
  */
+@Deprecated
 public class SReferenceUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SReferenceUtil.class));
 
@@ -48,6 +50,6 @@ public class SReferenceUtil {
       return false;
     }
 
-    return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(target), SNodeUtil.concept_IResolveInfo);
+    return SModelUtil.isAssignableConcept(target, SNodeUtil.concept_IResolveInfo);
   }
 }

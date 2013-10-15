@@ -834,7 +834,6 @@
     </scopeInfo>
     <unitInfo nodeId="1901504820902746966" fileName="RightTransformActionDeprecated_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.RightTransformActionDeprecated_NonTypesystemRule" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/2412132804004536449" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/2735767332089496671">
     <nodeInfo nodeId="1747303154073920795" fileName="typeof_TransactionPropertyHandler_oldValue_InferenceRule.java" startLine="20" startPosition="118" endLine="21" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2735767332089496685" fileName="typeof_TransactionPropertyHandler_oldValue_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1343,7 +1342,6 @@
     </scopeInfo>
     <unitInfo nodeId="4310268853341507745" fileName="typeof_ConceptFunctionParameter_prevNode_InferenceRule.java" startLine="20" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_ConceptFunctionParameter_prevNode_InferenceRule" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/4461169032989040240" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/4510086454773585041">
     <nodeInfo nodeId="4510086454773591219" fileName="typeof_PropertyExpressionCellSelector_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4510086454773591219" fileName="typeof_PropertyExpressionCellSelector_InferenceRule.java" startLine="23" startPosition="120" endLine="24" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1932,7 +1930,7 @@
     </scopeInfo>
     <unitInfo nodeId="6246554009628995222" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="58" startPosition="192" endLine="62" endPosition="5" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$1" />
     <unitInfo nodeId="6246554009626402554" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="81" startPosition="221" endLine="85" endPosition="9" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$2" />
-    <unitInfo nodeId="6246554009628608088" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="87" startPosition="316" endLine="91" endPosition="13" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$4" />
+    <unitInfo nodeId="6246554009628608088" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="87" startPosition="304" endLine="91" endPosition="13" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$4" />
     <unitInfo nodeId="6246554009630101019" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="104" startPosition="114" endLine="108" endPosition="13" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$4" />
     <unitInfo nodeId="6246554009630311164" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="108" startPosition="30" endLine="112" endPosition="13" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$5" />
     <unitInfo nodeId="6246554009628035200" fileName="check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule.java" startLine="85" startPosition="21" endLine="93" endPosition="9" unitName="jetbrains.mps.lang.editor.typesystem.check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule$3" />

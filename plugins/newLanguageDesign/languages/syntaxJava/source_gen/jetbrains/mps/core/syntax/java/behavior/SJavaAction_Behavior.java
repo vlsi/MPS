@@ -13,7 +13,7 @@ public class SJavaAction_Behavior {
   }
 
   public static boolean call_isInline_5989029785192081032(SNode thisNode) {
-    if ((int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statements", true)).count() == 1) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statements", true)).count() == 1) {
       SNode statement = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statements", true)).first();
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
         return false;

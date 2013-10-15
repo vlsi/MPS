@@ -108,14 +108,18 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-        for (SNode child : root.getChildren()) {
-          addToCache(child);
-        }
-
-        String conceptFqName = root.getConcept().getQualifiedName();
-        add(conceptFqName, root);
+        doAddToCache(root);
       }
     });
+  }
+
+  private void doAddToCache(SNode root) {
+    for (SNode child : root.getChildren()) {
+      doAddToCache(child);
+    }
+
+    String conceptFqName = root.getConcept().getQualifiedName();
+    add(conceptFqName, root);
   }
 
   private void removeFromCache(final SNode root) {
@@ -134,7 +138,6 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   }
 
   private void add(String conceptFqName, SNode node) {
-
     Set<SNode> set = myNodes.get(conceptFqName);
     if (set == null) {
       set = new THashSet<SNode>(1);

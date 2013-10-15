@@ -83,12 +83,12 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       SNode classifier = SNodeOperations.cast(classifier_, "jetbrains.mps.baseLanguage.structure.Classifier");
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         List<SNode> constructors = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), (SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).toListSequence();
-        if ((int) ListSequence.fromList(constructors).count() == 1) {
+        if (ListSequence.fromList(constructors).count() == 1) {
           return ListSequence.fromList(constructors).first();
         } else
         if (ListSequence.fromList(constructors).count() > 1) {
           constructors = (List<SNode>) MethodResolveUtil.selectByParmCount(constructors, myActualArgs);
-          if ((int) ListSequence.fromList(constructors).count() == 1) {
+          if (ListSequence.fromList(constructors).count() == 1) {
             return ListSequence.fromList(constructors).first();
           } else {
             Iterator<SNode> typeParms = (Iterator<SNode>) myTypeParms.iterator();

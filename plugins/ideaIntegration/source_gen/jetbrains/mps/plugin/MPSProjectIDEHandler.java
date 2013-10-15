@@ -190,7 +190,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         });
         SNode method = Sequence.fromIterable(allMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return methodName.equals(SPropertyOperations.getString(it, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == parameterCount;
+            return methodName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == parameterCount;
           }
         });
         if (method == null) {

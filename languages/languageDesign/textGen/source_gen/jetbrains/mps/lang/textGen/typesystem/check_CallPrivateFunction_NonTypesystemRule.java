@@ -28,7 +28,7 @@ public class check_CallPrivateFunction_NonTypesystemRule extends AbstractNonType
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
       b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
     } else {
-      b = (int) ListSequence.fromList(parameterDeclarations).count() == (int) ListSequence.fromList(actualArguments).count();
+      b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
     }
     if (!(b)) {
       {

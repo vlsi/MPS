@@ -159,7 +159,7 @@ public class Utils {
       dirParser.parseDirs();
 
       List<SModel> parsedModels = dirParser.getAffectedModels();
-      assert (int) ListSequence.fromList(parsedModels).count() == 1;
+      assert ListSequence.fromList(parsedModels).count() == 1;
       SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
       for (SNode root : ListSequence.fromList(SModelOperations.getRoots(expected, null))) {

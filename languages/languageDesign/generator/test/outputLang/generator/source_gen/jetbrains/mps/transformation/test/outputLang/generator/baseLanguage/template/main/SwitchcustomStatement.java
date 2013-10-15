@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import java.util.Collections;
 import jetbrains.mps.generator.GenerationTracerUtil;
@@ -63,7 +63,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809088659(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_68cped_a0a3h, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809088659(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3h, environment.getGenerator())))) {
         return null;
       }
 
@@ -110,7 +110,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809090605(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_68cped_a0a3i, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8371596541809090605(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_68cped_a0a3i, environment.getGenerator())))) {
         return null;
       }
 

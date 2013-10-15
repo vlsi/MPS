@@ -182,6 +182,8 @@
   <projectService serviceInterface="com.intellij.ide.errorTreeView.impl.ErrorTreeViewConfiguration"
                   serviceImplementation="com.intellij.ide.errorTreeView.impl.ErrorTreeViewConfiguration"/>
 
+    <projectService serviceInterface="com.intellij.ui.docking.DockManager"
+                    serviceImplementation="com.intellij.ui.docking.impl.DockManagerImpl"/>
   <projectService serviceInterface="com.intellij.ide.SelectInEditorManager"
                   serviceImplementation="com.intellij.ide.impl.SelectInEditorManagerImpl"/>
   <projectService serviceInterface="com.intellij.ui.RecentsManager"
@@ -320,10 +322,10 @@
 
   <iconLayerProvider implementation="com.intellij.ide.LockedIconLayerProvider"/>
 
-  <applicationService serviceInterface="org.jetbrains.ide.WebServerManager" serviceImplementation="org.jetbrains.ide.WebServerManagerImpl"/>
+  <applicationService serviceInterface="org.jetbrains.ide.BuiltInServerManager" serviceImplementation="org.jetbrains.ide.BuiltInServerManagerImpl"/>
   <applicationService serviceInterface="com.intellij.ide.XmlRpcServer" serviceImplementation="com.intellij.ide.XmlRpcServerImpl"/>
   <httpRequestHandler implementation="com.intellij.ide.XmlRpcServerImpl$XmlRpcRequestHandler"/>
-  <postStartupActivity implementation="org.jetbrains.ide.WebServerManagerImpl$MyPostStartupActivity"/>
+  <postStartupActivity implementation="org.jetbrains.ide.BuiltInServerManagerImpl$MyPostStartupActivity"/>
 
   <frameEditorComponentProvider implementation="com.intellij.openapi.wm.ex.DefaultFrameEditorComponentProvider"/>
 </extensions>

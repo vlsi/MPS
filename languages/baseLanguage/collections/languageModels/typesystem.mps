@@ -5787,6 +5787,10 @@
     <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
     <property name="name" nameId="tpck.1169194664001" value="ClassifierType_Set_weakSupertypeOf_set" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="set" />
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="360223900468253990" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="setType" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1226511727824" resolveInfo="SetType" />
+    </node>
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="1226599215754" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1193947530695" nodeInfo="nn">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1193947530696" nodeInfo="nr">
@@ -5864,10 +5868,6 @@
           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1193947530696" resolveInfo="result" />
         </node>
       </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="360223900468253990" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="setType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.1226511727824" resolveInfo="SetType" />
     </node>
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1226934632457" nodeInfo="ng">
@@ -12698,6 +12698,37 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6481445890964431321" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="typeof_MapAsSequenceVarRef" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="impl" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6481445890964431322" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="6481445890964433860" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6481445890964433985" nodeInfo="ng">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="6481445890964433981" nodeInfo="nn">
+            <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6481445890964434464" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6481445890964434014" nodeInfo="nn">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6481445890964431324" resolveInfo="mapAsSequenceVarRef" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6481445890964477342" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tp2q.6481445890964252459" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6481445890964433863" nodeInfo="ng">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="6481445890964433909" nodeInfo="nn">
+            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6481445890964433910" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6481445890964431324" resolveInfo="mapAsSequenceVarRef" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6481445890964431324" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="mapAsSequenceVarRef" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.6481445890964205296" resolveInfo="MapAsSequenceVarRef" />
     </node>
   </root>
   <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="360223900469176654" nodeInfo="ng">

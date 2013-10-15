@@ -69,7 +69,7 @@ public class VisibleClassConstructorsScope extends Scope {
 
     // resolve only by name 
     List<SNode> constructors = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).toListSequence();
-    if ((int) ListSequence.fromList(constructors).count() == 1) {
+    if (ListSequence.fromList(constructors).count() == 1) {
       return ListSequence.fromList(constructors).first();
     }
 

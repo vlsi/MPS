@@ -56,8 +56,8 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-              return SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "parameter", true);
+            if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.generator.structure.IParameterizedTemplate")) {
+              return SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.generator.structure.IParameterizedTemplate"), "parameter", true);
             }
             return new ArrayList<SNode>();
           }

@@ -207,7 +207,7 @@ public class Java_Command {
           LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
         }
         return null;
-      } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
+      } else if (Sequence.fromIterable(unitNames).count() == 1) {
         return Sequence.fromIterable(unitNames).first();
       } else {
         return TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {

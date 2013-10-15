@@ -13,11 +13,11 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.project.Project;
-import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
 import org.jetbrains.annotations.Nullable;
+import com.intellij.execution.Executor;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
@@ -70,9 +70,9 @@ public class MPSDebugRunner extends GenericProgramRunner {
   }
 
   @Override
-  protected RunContentDescriptor doExecute(final Project project, final Executor executor, final RunProfileState state, final RunContentDescriptor contentToReuse, final ExecutionEnvironment env) throws ExecutionException {
+  protected RunContentDescriptor doExecute(final Project project, final RunProfileState state, final RunContentDescriptor contentToReuse, final ExecutionEnvironment env) throws ExecutionException {
     //  FileDocumentManager.getInstance().saveAllDocuments(); 
-    return createContentDescriptor(project, executor, state, contentToReuse, env);
+    return createContentDescriptor(project, env.getExecutor(), state, contentToReuse, env);
   }
 
   @Nullable

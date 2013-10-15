@@ -73,7 +73,7 @@ public abstract class BaseMethodsScope extends Scope {
   public abstract String getSignatureForOverriding(SNode method, SNode contextClassifier);
 
   public Iterable<SNode> getMethodsFromGroup(Iterable<SNode> groupWithEqualSignature) {
-    if ((int) Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
+    if (Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.Classifier");
       }

@@ -70,7 +70,7 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
             }
             List<SNode> methods = new ArrayList<SNode>();
             for (SNode method : Members.visibleInstanceMethods(classifierType, _context.getEnclosingNode())) {
-              if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && BeanPropertyBuilder_Behavior.call_getPropertyName_2679357232284040711(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"))), SPropertyOperations.getString(method, "name")) != null) {
+              if (ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && BeanPropertyBuilder_Behavior.call_getPropertyName_2679357232284040711(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder"))), SPropertyOperations.getString(method, "name")) != null) {
                 ListSequence.fromList(methods).addElement(method);
               }
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -72,7 +73,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if (!checkCondition(baseRuleCondition, false, context.getInput(), environment.getGenerator())) {
+    if (!checkCondition(baseRuleCondition, false, context, environment.getGenerator())) {
       return null;
     }
 
@@ -96,10 +97,10 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
   }
 
-  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, TemplateGenerator generator) throws GenerationFailureException {
+  private boolean checkCondition(SNode condition, boolean required, TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
-        generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
+        generator.showErrorMessage(context.getInput(), null, ruleNode, "rule condition required");
         return false;
       }
       return true;
@@ -110,7 +111,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new BaseMappingRuleContext(inputNode, ruleNode, generator),
+        new ReductionRuleQueryContext(context, ruleNode, generator),
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
@@ -134,16 +135,16 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(context.getInput(), context, environment.getReductionContext(), ruleConsequence, context.getInput(), environment.getGenerator());
+    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(context.getInput(), context, environment, ruleConsequence);
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, context.getInput(), ruleNode, environment.getReductionContext(), environment.getGenerator());
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, conseqContext, ruleNode, environment);
     if (nodeAndMappingNamePairs == null) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleConsequence, "error processing reduction rule consequence");
       return null;
     }
 
     List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+    TemplateProcessor templateProcessor = new TemplateProcessor(environment);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
@@ -158,7 +159,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       } catch (GenerationCanceledException e) {
         throw e;
       } catch (Throwable t) {
-        environment.getGenerator().getLogger().handleException(t);
+        environment.getLogger().handleException(t);
         environment.getGenerator().showErrorMessage(context.getInput(), templateNode, ruleNode, "error processing reduction rule");
       }
     }
