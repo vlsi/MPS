@@ -41,7 +41,7 @@ public class LanguageModelsMerger {
       @Override
       protected SNode merge(SNode existing, SNode node, SModel newmodel) {
         SNode merged = super.merge(existing, node, newmodel);
-        if (isNotEmpty_mx80dq_a0b0a0a0a1a6(SPropertyOperations.getString(SNodeOperations.cast(existing, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"))) {
+        if (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(existing, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"))) {
           SPropertyOperations.set(SNodeOperations.cast(merged, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage", SPropertyOperations.getString(SNodeOperations.cast(existing, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
         }
         return merged;
@@ -100,7 +100,7 @@ public class LanguageModelsMerger {
     session.apply();
   }
 
-  public static boolean isNotEmpty_mx80dq_a0b0a0a0a1a6(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

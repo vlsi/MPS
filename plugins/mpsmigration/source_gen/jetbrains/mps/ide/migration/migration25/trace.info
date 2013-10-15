@@ -1937,7 +1937,7 @@
     <nodeInfo nodeId="907016400873578002" fileName="PluginMoveHelper.java" startLine="85" startPosition="34" endLine="86" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5318937080028131208" fileName="PluginMoveHelper.java" startLine="91" startPosition="61" endLine="92" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5318937080028151877" fileName="PluginMoveHelper.java" startLine="92" startPosition="51" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028151910" fileName="PluginMoveHelper.java" startLine="95" startPosition="43" endLine="96" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5318937080028151910" fileName="PluginMoveHelper.java" startLine="95" startPosition="43" endLine="96" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5318937080028204350" fileName="PluginMoveHelper.java" startLine="99" startPosition="39" endLine="100" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5318937080028204375" fileName="PluginMoveHelper.java" startLine="100" startPosition="87" endLine="101" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5318937080028204400" fileName="PluginMoveHelper.java" startLine="102" startPosition="31" endLine="103" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1997,7 +1997,7 @@
     <nodeInfo nodeId="8004978336433012706" fileName="PluginMoveHelper.java" startLine="198" startPosition="130" endLine="199" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8004978336433012712" fileName="PluginMoveHelper.java" startLine="199" startPosition="150" endLine="200" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8004978336433033253" fileName="PluginMoveHelper.java" startLine="203" startPosition="66" endLine="204" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="207" startPosition="76" endLine="208" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="207" startPosition="55" endLine="208" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8004978336432944891" fileName="PluginMoveHelper.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginMoveHelper#(Ljetbrains/mps/project/MPSProject;)V" />
     <nodeInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
     <nodeInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
@@ -2015,7 +2015,7 @@
     <nodeInfo nodeId="8004978336433092341" fileName="PluginMoveHelper.java" startLine="166" startPosition="16" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8004978336433033229" fileName="PluginMoveHelper.java" startLine="203" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makePluginSolutionName#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="207" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="207" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1161420610164992200" fileName="PluginMoveHelper.java" startLine="183" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8004978336433033196" fileName="PluginMoveHelper.java" startLine="53" startPosition="71" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8004978336433033298" fileName="PluginMoveHelper.java" startLine="58" startPosition="7" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2042,7 +2042,7 @@
     <scopeInfo nodeId="8004978336433033396" fileName="PluginMoveHelper.java" startLine="72" startPosition="28" endLine="73" endPosition="52" />
     <scopeInfo nodeId="8004978336433092135" fileName="PluginMoveHelper.java" startLine="76" startPosition="24" endLine="77" endPosition="15" />
     <scopeInfo nodeId="1855937925843864859" fileName="PluginMoveHelper.java" startLine="81" startPosition="59" endLine="82" endPosition="26" />
-    <scopeInfo nodeId="5318937080028151906" fileName="PluginMoveHelper.java" startLine="95" startPosition="43" endLine="96" endPosition="135" />
+    <scopeInfo nodeId="5318937080028151906" fileName="PluginMoveHelper.java" startLine="95" startPosition="43" endLine="96" endPosition="113" />
     <scopeInfo nodeId="5318937080028204388" fileName="PluginMoveHelper.java" startLine="102" startPosition="31" endLine="103" endPosition="21" />
     <scopeInfo nodeId="2800974637747464730" fileName="PluginMoveHelper.java" startLine="114" startPosition="35" endLine="115" endPosition="21" />
     <scopeInfo nodeId="4076419548984269336" fileName="PluginMoveHelper.java" startLine="129" startPosition="46" endLine="130" endPosition="19" />
@@ -2057,7 +2057,7 @@
     <scopeInfo nodeId="3178711211098725026" fileName="PluginMoveHelper.java" startLine="174" startPosition="39" endLine="175" endPosition="38" />
     <scopeInfo nodeId="1161420610164992203" fileName="PluginMoveHelper.java" startLine="184" startPosition="25" endLine="185" endPosition="86" />
     <scopeInfo nodeId="8004978336433033232" fileName="PluginMoveHelper.java" startLine="203" startPosition="66" endLine="204" endPosition="42" />
-    <scopeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="207" startPosition="76" endLine="208" endPosition="43" />
+    <scopeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="207" startPosition="55" endLine="208" endPosition="43" />
     <scopeInfo nodeId="4076419548984269375" fileName="PluginMoveHelper.java" startLine="140" startPosition="9" endLine="142" endPosition="18" />
     <scopeInfo nodeId="8004978336432944891" fileName="PluginMoveHelper.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="8004978336433012765" varName="p" />

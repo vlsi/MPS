@@ -25,7 +25,7 @@ public class HTMLElement_Behavior {
 
     if (Sequence.fromIterable(lines).isEmpty()) {
       SNode prev = SNodeOperations.getPrevSibling(thisNode);
-      if (isNotEmpty_5xz1u8_a0b0h0b(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+      if (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
         caret = SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
       }
       SNodeOperations.deleteNode(thisNode);
@@ -74,7 +74,7 @@ public class HTMLElement_Behavior {
     return new NodeCaretPair(nodeToSelect, caret);
   }
 
-  public static boolean isNotEmpty_5xz1u8_a0b0h0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

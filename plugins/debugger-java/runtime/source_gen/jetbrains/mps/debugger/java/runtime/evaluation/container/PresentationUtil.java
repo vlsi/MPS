@@ -70,7 +70,7 @@ public class PresentationUtil {
     if (operation == null) {
       return "????";
     }
-    if (isNotEmpty_6aa0xa_a0b0c(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias"))) {
       return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), "conceptAlias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
@@ -86,7 +86,7 @@ public class PresentationUtil {
     return BehaviorReflection.invokeVirtual(String.class, operation, "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
-  public static boolean isNotEmpty_6aa0xa_a0b0c(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

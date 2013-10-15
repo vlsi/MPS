@@ -93,7 +93,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wbyfib_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a7(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private EditorCell createConstant_wbyfib_a2a(EditorContext editorContext, SNode node) {
@@ -335,7 +335,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wbyfib_a0a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a02(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private EditorCell createConstant_wbyfib_a0a(EditorContext editorContext, SNode node) {
@@ -375,7 +375,7 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmpty_wbyfib_a0a0a42(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
   }
 
   private EditorCell createConstant_wbyfib_a1a(EditorContext editorContext, SNode node) {
@@ -444,15 +444,11 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isEmpty_wbyfib_a0a0a0a7(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_wbyfib_a0a0a0a02(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isNotEmpty_wbyfib_a0a0a42(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

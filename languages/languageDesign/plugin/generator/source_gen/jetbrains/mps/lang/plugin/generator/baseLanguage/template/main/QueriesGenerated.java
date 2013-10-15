@@ -813,7 +813,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6976585500163304387(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0mg(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_1215866113039(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -962,7 +962,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8024349686116085130(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0th(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "toolIcon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "toolIcon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_5508914264443135906(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -978,7 +978,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8024349686116895532(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0xh(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_2386275659558735404(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -986,7 +986,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6769912430829078916(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0zh(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
   }
 
   public static boolean ifMacro_Condition_3038738109029045717(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1030,7 +1030,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2264311582633519880(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0ki(SPropertyOperations.getString(_context.getNode(), "vendorLogo"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "vendorLogo"));
   }
 
   public static boolean ifMacro_Condition_2264311582633520068(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1054,7 +1054,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2264311582633534291(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && isNotEmpty_x583g4_a0a0a422(SPropertyOperations.getString(_context.getNode(), "caption"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "caption"));
   }
 
   public static boolean ifMacro_Condition_2264311582633534279(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1835,7 +1835,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0mg(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
@@ -1851,25 +1851,5 @@ public class QueriesGenerated {
       a.equals(b) :
       a == b
     );
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0th(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0xh(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0zh(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0ki(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a422(String str) {
-    return str != null && str.length() > 0;
   }
 }

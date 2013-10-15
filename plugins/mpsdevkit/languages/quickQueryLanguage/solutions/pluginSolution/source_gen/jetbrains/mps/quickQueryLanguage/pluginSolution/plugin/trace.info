@@ -640,7 +640,7 @@
     <nodeInfo nodeId="7176542018559497235" fileName="QuickQueryUtils.java" startLine="91" startPosition="45" endLine="92" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559497293" fileName="QuickQueryUtils.java" startLine="93" startPosition="45" endLine="94" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7176542018559454881" fileName="QuickQueryUtils.java" startLine="95" startPosition="5" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018560357979" fileName="QuickQueryUtils.java" startLine="102" startPosition="54" endLine="103" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018560357979" fileName="QuickQueryUtils.java" startLine="102" startPosition="47" endLine="103" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7176542018560370362" fileName="QuickQueryUtils.java" startLine="104" startPosition="12" endLine="105" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7289758734946014299" fileName="QuickQueryUtils.java" startLine="112" startPosition="49" endLine="113" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7289758734946012671" fileName="QuickQueryUtils.java" startLine="113" startPosition="76" endLine="114" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -655,9 +655,9 @@
     <nodeInfo nodeId="4363391901358250420" fileName="QuickQueryUtils.java" startLine="131" startPosition="40" endLine="132" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4107795503521934431" fileName="QuickQueryUtils.java" startLine="133" startPosition="38" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4107795503521873549" fileName="QuickQueryUtils.java" startLine="136" startPosition="5" endLine="137" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="61" endLine="141" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="55" endLine="141" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7176542018560314553" fileName="QuickQueryUtils.java" startLine="104" startPosition="10" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_465b23_a0a0g#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7289758734946002821" fileName="QuickQueryUtils.java" startLine="111" startPosition="73" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1757086175614073366" fileName="QuickQueryUtils.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
     <nodeInfo nodeId="7176542018560314535" fileName="QuickQueryUtils.java" startLine="101" startPosition="96" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -683,7 +683,7 @@
       <varInfo nodeId="7176542018559314693" varName="ignore" />
     </scopeInfo>
     <scopeInfo nodeId="7176542018559314695" fileName="QuickQueryUtils.java" startLine="93" startPosition="45" endLine="94" endPosition="53" />
-    <scopeInfo nodeId="7176542018560314536" fileName="QuickQueryUtils.java" startLine="102" startPosition="54" endLine="103" endPosition="113" />
+    <scopeInfo nodeId="7176542018560314536" fileName="QuickQueryUtils.java" startLine="102" startPosition="47" endLine="103" endPosition="113" />
     <scopeInfo nodeId="7176542018560314554" fileName="QuickQueryUtils.java" startLine="104" startPosition="12" endLine="105" endPosition="36" />
     <scopeInfo nodeId="1757086175614073374" fileName="QuickQueryUtils.java" startLine="120" startPosition="64" endLine="121" endPosition="37" />
     <scopeInfo nodeId="4107795503521898643" fileName="QuickQueryUtils.java" startLine="129" startPosition="11" endLine="130" endPosition="42" />
@@ -695,7 +695,7 @@
       <varInfo nodeId="4107795503521919625" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="4107795503521919627" fileName="QuickQueryUtils.java" startLine="133" startPosition="38" endLine="134" endPosition="21" />
-    <scopeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="61" endLine="141" endPosition="43" />
+    <scopeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="55" endLine="141" endPosition="43" />
     <scopeInfo nodeId="7289758734946002824" fileName="QuickQueryUtils.java" startLine="112" startPosition="49" endLine="114" endPosition="19" />
     <scopeInfo nodeId="7176542018560803877" fileName="QuickQueryUtils.java" startLine="140" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="7176542018560803877" varName="str" />

@@ -72,7 +72,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
         } else if (exitcode < 0) {
           Assert.fail("Process running too long.");
         }
-        if (isNotEmpty_16es9m_a0k0a0c2(checkListener.getMessages())) {
+        if (isNotEmptyString(checkListener.getMessages())) {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {
@@ -98,7 +98,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
       return result;
     }
 
-    public static boolean isNotEmpty_16es9m_a0k0a0c2(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
 

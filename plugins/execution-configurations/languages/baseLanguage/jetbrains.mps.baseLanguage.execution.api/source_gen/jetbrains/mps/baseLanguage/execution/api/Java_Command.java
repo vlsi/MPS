@@ -175,7 +175,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
-    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmpty_kk96hj_a0a0a0a0a91(check_yvpt_a0a4a0a0e(runParameters)) ?
+    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a4a0a0e(runParameters)) ?
       null :
       new File(check_yvpt_a0a0e0a0a4(runParameters))
     )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
@@ -186,7 +186,7 @@ public class Java_Command {
   }
 
   public static boolean isUnitNode(SNode node) {
-    return isNotEmpty_kk96hj_a0a0v(Java_Command.getClassName(node));
+    return isNotEmptyString(Java_Command.getClassName(node));
   }
 
   private static String getClassName(SNode node) {
@@ -301,7 +301,7 @@ public class Java_Command {
     if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
       ListSequence.fromList(homes).addElement(systemJdkHome);
     }
-    if (isNotEmpty_kk96hj_a0e0fb(System.getenv("JAVA_HOME"))) {
+    if (isNotEmptyString(System.getenv("JAVA_HOME"))) {
       ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
     ListSequence.fromList(homes).addElement(systemJavaHome);
@@ -436,11 +436,11 @@ public class Java_Command {
     return quotedNode_1;
   }
 
-  public static boolean isEmpty_kk96hj_a0a0a0a0a91(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_kk96hj_a0a0v(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
@@ -456,9 +456,5 @@ public class Java_Command {
       a.equals(b) :
       a == b
     );
-  }
-
-  public static boolean isNotEmpty_kk96hj_a0e0fb(String str) {
-    return str != null && str.length() > 0;
   }
 }

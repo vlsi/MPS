@@ -131,7 +131,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_4hcgjd_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_4hcgjd_a0a0i(SPropertyOperations.getString(node, "name"));
+    return isEmptyString(SPropertyOperations.getString(node, "name"));
   }
 
   private EditorCell createComponent_4hcgjd_f0(EditorContext editorContext, SNode node) {
@@ -585,7 +585,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isEmpty_4hcgjd_a0a0i(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

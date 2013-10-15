@@ -10351,14 +10351,14 @@
     <nodeInfo nodeId="4998818250317618649" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="86" startPosition="110" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4998818250317625958" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="89" startPosition="31" endLine="90" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4998818250317626000" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="92" startPosition="63" endLine="93" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2574746063622359007" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="93" startPosition="54" endLine="94" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2574746063622359007" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="93" startPosition="54" endLine="94" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4998818250317610835" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="98" startPosition="13" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4998818250317610838" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="100" startPosition="32" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4998818250317625922" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="102" startPosition="11" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4998818250317610941" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="108" startPosition="84" endLine="109" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="117" startPosition="45" endLine="118" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="123" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4998818250317626014" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="125" startPosition="87" endLine="126" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4998818250317626014" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="125" startPosition="52" endLine="126" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="63" startPosition="95" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -10367,7 +10367,7 @@
     <nodeInfo nodeId="4998818250317610836" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="99" startPosition="0" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="116" startPosition="27" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="116" startPosition="27" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4998818250317626014" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a2a0a5#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4998818250317626014" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -10396,8 +10396,8 @@
     <scopeInfo nodeId="4998818250317610837" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="100" startPosition="32" endLine="101" endPosition="19" />
     <scopeInfo nodeId="4998818250317610934" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="108" startPosition="84" endLine="109" endPosition="46" />
     <scopeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="117" startPosition="45" endLine="118" endPosition="106" />
-    <scopeInfo nodeId="4998818250317626014" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="125" startPosition="87" endLine="126" endPosition="44" />
-    <scopeInfo nodeId="4998818250317625999" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="92" startPosition="63" endLine="94" endPosition="176">
+    <scopeInfo nodeId="4998818250317626014" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="125" startPosition="52" endLine="126" endPosition="44" />
+    <scopeInfo nodeId="4998818250317625999" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="92" startPosition="63" endLine="94" endPosition="140">
       <varInfo nodeId="4998818250317626001" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4998818250317603956" fileName="FindRootableConceptsWithoutIcons_Action.java" startLine="41" startPosition="52" endLine="44" endPosition="40" />
