@@ -9,12 +9,12 @@ import jetbrains.jetpad.projectional.diagram.base.GridDirection;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
-import jetbrains.jetpad.projectional.view.View;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.geometry.Rectangle;
 import java.util.List;
@@ -39,19 +39,19 @@ public class MPSBlockView extends GroupView {
     children().add(myOutputs);
     createRectView();
     attach(this, myTextView);
-    Mapper<MPSBlockView, MPSBlockView> mapper = new Mapper<MPSBlockView, MPSBlockView>(this, this) {
+    Mapper<MPSBlockView, View> mapper = new Mapper<MPSBlockView, View>(this, this) {
 
 
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         configuration.add(Synchronizers.forProperty(getSource().myX, new Runnable() {
           public void run() {
-            getTarget().moveTo(new Vector(getTarget().myX.get(), getTarget().myY.get()));
+            getTarget().moveTo(new Vector(getSource().myX.get(), getSource().myY.get()));
           }
         }));
         configuration.add(Synchronizers.forProperty(getSource().myY, new Runnable() {
           public void run() {
-            getTarget().moveTo(new Vector(getTarget().myX.get(), getTarget().myY.get()));
+            getTarget().moveTo(new Vector(getSource().myX.get(), getSource().myY.get()));
           }
         }));
         configuration.add(Synchronizers.forProperty(getSource().myText, getSource().myTextView.text()));
