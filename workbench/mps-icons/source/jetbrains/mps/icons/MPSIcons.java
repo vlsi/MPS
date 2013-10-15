@@ -158,6 +158,7 @@ public class MPSIcons {
     public static final Icon Default = IconLoader.getIcon("/toolWindows/default.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/toolWindows/modelChecker.png");
     public static final Icon ModelRepositoryViewer = IconLoader.getIcon("/toolWindows/modelRepositoryViewer.png");
+    public static final Icon OpenTerminal_13x13 =  IconLoader.getIcon("/toolWindows/OpenTerminal_13x13.png");
     public static final Icon OutputView = IconLoader.getIcon("/toolWindows/outputView.png");
     public static final Icon TypeTraceView = IconLoader.getIcon("/toolWindows/typeTraceView.png");
   }

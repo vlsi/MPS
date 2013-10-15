@@ -6281,11 +6281,10 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="262412979073677893" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="262412979073677894" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="262412979073677895" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw6w.~Logger%dsetFactory(com%dintellij%dopenapi%ddiagnostic%dLogger$Factory)%cvoid" resolveInfo="setFactory" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bw6w.~Logger" resolveInfo="Logger" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="262412979073677896" nodeInfo="nn">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="gwoa.~LoggerFactory" resolveInfo="LoggerFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gwoa.~LoggerFactory%dgetInstance()%ccom%dintellij%didea%dLoggerFactory" resolveInfo="getInstance" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bw6w.~Logger%dsetFactory(java%dlang%dClass)%cvoid" resolveInfo="setFactory" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="6533322179692509662" nodeInfo="nn">
+              <link role="classifier" roleId="tpee.1116615189566" targetNodeId="gwoa.~LoggerFactory" resolveInfo="LoggerFactory" />
             </node>
           </node>
         </node>

@@ -21,6 +21,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
@@ -160,7 +161,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       // nooooooooo 
       element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
     }
-    for (Object child : element.getChildren()) {
+    for (Element child : ListSequence.fromList(element.getChildren())) {
       if (child instanceof Element) {
         replacePathMacro((Element) child, project);
       }
