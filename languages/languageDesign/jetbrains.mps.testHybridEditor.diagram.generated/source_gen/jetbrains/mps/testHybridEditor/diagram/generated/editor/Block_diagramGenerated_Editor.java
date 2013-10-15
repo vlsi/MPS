@@ -8,7 +8,7 @@ import java.util.Arrays;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.figures.sandbox.MPSBlockView;
+import jetbrains.mps.lang.editor.figures.sandbox.AttributedMPSBlockView;
 import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,16 +34,16 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createDiagramNode_70mnj_a(final EditorContext editorContext, final SNode node) {
-    final MPSBlockView view = new MPSBlockView();
+    final AttributedMPSBlockView view = new AttributedMPSBlockView();
     GenericViewCell editorCell = GenericViewCell.createViewCell(editorContext, node, view);
-    view.getText().set(SPropertyOperations.getString(node, "name"));
-    view.getX().set(SPropertyOperations.getInteger(node, "x"));
-    view.getY().set(SPropertyOperations.getInteger(node, "y"));
+    view.text.set(SPropertyOperations.getString(node, "name"));
+    view.x.set(SPropertyOperations.getInteger(node, "x"));
+    view.y.set(SPropertyOperations.getInteger(node, "y"));
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "inputPorts", true))) {
-      createViewForChildNode(child, editorCell, view.getInputs(), editorContext);
+      createViewForChildNode(child, editorCell, view.inputs, editorContext);
     }
     for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(node, "outputPorts", true))) {
-      createViewForChildNode(child, editorCell, view.getOutputs(), editorContext);
+      createViewForChildNode(child, editorCell, view.outputs, editorContext);
     }
     view.dimension().set(Block_diagramGenerated_Editor._StyleParameter_QueryFunction_70mnj_a0a((editorCell == null ?
       null :
@@ -57,9 +57,9 @@ public class Block_diagramGenerated_Editor extends DefaultNodeEditor {
       public void handle(View v, MouseEvent e) {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
-            SPropertyOperations.set(node, "name", view.getText().get());
-            SPropertyOperations.set(node, "x", "" + (view.getX().get()));
-            SPropertyOperations.set(node, "y", "" + (view.getY().get()));
+            SPropertyOperations.set(node, "name", view.text.get());
+            SPropertyOperations.set(node, "x", "" + (view.x.get()));
+            SPropertyOperations.set(node, "y", "" + (view.y.get()));
           }
         }, editorContext.getOperationContext().getProject());
       }

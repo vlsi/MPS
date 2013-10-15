@@ -18,6 +18,9 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1793245865110344037" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="adck.725186580883451800" resolveInfo="Block" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramNode" typeId="gbdf.1094405431463454433" id="1094405431463941876" nodeInfo="ng">
+      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="9026300686792243995" nodeInfo="ng">
+        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.5422656561930130870" />
+      </node>
       <node role="styleItem" roleId="tpc2.1219418656006" type="gbdf.FigureDimensionStyleClassItem" typeId="gbdf.6306886970790145497" id="6306886970790768096" nodeInfo="ng">
         <node role="query" roleId="gbdf.6306886970790145498" type="gbdf.QueryFunction_Dimension" typeId="gbdf.6306886970790135647" id="6306886970790768098" nodeInfo="ng">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6306886970790768100" nodeInfo="sn">
@@ -37,27 +40,24 @@
           </node>
         </node>
       </node>
-      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.ExternalFigureReference" typeId="gbdf.1094405431463663051" id="1094405431463943153" nodeInfo="ng">
-        <link role="figure" roleId="gbdf.1094405431463663379" targetNodeId="k80i.2178507174411843379" resolveInfo="MPSBlockView" />
-      </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterProperty" typeId="gbdf.1094405431463762199" id="2547454759988340644" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="myText" />
+        <property name="name" nameId="tpck.1169194664001" value="text" />
         <link role="property" roleId="gbdf.1094405431463762212" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterProperty" typeId="gbdf.1094405431463762199" id="6306886970793519330" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="myX" />
+        <property name="name" nameId="tpck.1169194664001" value="x" />
         <link role="property" roleId="gbdf.1094405431463762212" targetNodeId="adck.6279035160242221415" resolveInfo="x" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterProperty" typeId="gbdf.1094405431463762199" id="6306886970793519345" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="myY" />
+        <property name="name" nameId="tpck.1169194664001" value="y" />
         <link role="property" roleId="gbdf.1094405431463762212" targetNodeId="adck.6279035160242221911" resolveInfo="y" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterLink" typeId="gbdf.1094405431463762240" id="1094405431463946984" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="myInputs" />
+        <property name="name" nameId="tpck.1169194664001" value="inputs" />
         <link role="link" roleId="gbdf.1094405431463762255" targetNodeId="adck.725186580883451902" />
       </node>
       <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterLink" typeId="gbdf.1094405431463762240" id="1094405431463946991" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="myOutputs" />
+        <property name="name" nameId="tpck.1169194664001" value="outputs" />
         <link role="link" roleId="gbdf.1094405431463762255" targetNodeId="adck.725186580883451904" />
       </node>
     </node>

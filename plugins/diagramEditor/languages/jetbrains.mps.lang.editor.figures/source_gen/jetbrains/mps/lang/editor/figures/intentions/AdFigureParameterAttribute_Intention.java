@@ -58,8 +58,11 @@ public class AdFigureParameterAttribute_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
+      return false;
+    }
     SNode classifierType = SNodeOperations.as(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    return classifierType != null && SLinkOperations.getTarget(classifierType, "classifier", false) != null && SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(Jetpad.Editor/jetbrains.jetpad.model.property@java_stub)", "~Property"));
+    return classifierType != null && SLinkOperations.getTarget(classifierType, "classifier", false) != null && (SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(Jetpad.Editor/jetbrains.jetpad.model.property@java_stub)", "~Property")) || SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(Jetpad.Editor/jetbrains.jetpad.projectional.view@java_stub)", "~GroupView")));
   }
 
   public SNodeReference getIntentionNodeReference() {
