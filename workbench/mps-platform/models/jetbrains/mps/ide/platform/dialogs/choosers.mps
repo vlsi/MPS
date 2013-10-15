@@ -4355,7 +4355,7 @@
                         <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="121110127371515145" nodeInfo="nn">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="121110127371515146" nodeInfo="nn">
                             <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nx1.~PlatformDataKeys" resolveInfo="PlatformDataKeys" />
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nx1.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nx1.~CommonDataKeys%dPROJECT" resolveInfo="PROJECT" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="121110127371515147" nodeInfo="nn">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nx1.~DataKey%dis(java%dlang%dString)%cboolean" resolveInfo="is" />
@@ -4376,7 +4376,7 @@
                         <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="121110127371515153" nodeInfo="nn">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="121110127371515154" nodeInfo="nn">
                             <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nx1.~LangDataKeys" resolveInfo="LangDataKeys" />
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nx1.~LangDataKeys%dPSI_ELEMENT" resolveInfo="PSI_ELEMENT" />
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nx1.~CommonDataKeys%dPSI_ELEMENT" resolveInfo="PSI_ELEMENT" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="121110127371515155" nodeInfo="nn">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nx1.~DataKey%dis(java%dlang%dString)%cboolean" resolveInfo="is" />

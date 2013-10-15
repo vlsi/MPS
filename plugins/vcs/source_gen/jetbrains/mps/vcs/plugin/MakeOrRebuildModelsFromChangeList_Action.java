@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Priority;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -75,7 +75,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("virtualFiles", event.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY));
+    MapSequence.fromMap(_params).put("virtualFiles", event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY));
     if (MapSequence.fromMap(_params).get("virtualFiles") == null) {
       return false;
     }

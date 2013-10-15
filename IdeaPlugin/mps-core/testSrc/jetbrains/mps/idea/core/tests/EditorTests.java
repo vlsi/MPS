@@ -100,7 +100,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
       }
     });
     // restore test logger factory
-    Logger.setFactory(TestLoggerFactory.getInstance());
+    Logger.setFactory(TestLoggerFactory.class);
     if (thrown[0] != null) throw thrown[0];
   }
 

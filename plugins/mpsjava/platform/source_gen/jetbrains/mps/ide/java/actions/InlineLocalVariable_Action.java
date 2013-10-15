@@ -52,7 +52,7 @@ public class InlineLocalVariable_Action extends BaseAction {
         if (SNodeOperations.hasRole(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "lValue")) {
           return false;
         }
-        if (SNodeOperations.hasRole(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "expression")) {
+        if (SNodeOperations.hasRole(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "expression") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.UnaryMinus"))) {
           return false;
         }
 
