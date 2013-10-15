@@ -51,7 +51,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {
       public boolean accept(VcsDirectoryMapping m) {
-        return isNotEmpty_6wdzvw_a0a0a0a0a0b0d(m.getVcs());
+        return isNotEmptyString(m.getVcs());
       }
     });
   }
@@ -149,7 +149,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(ReportModelMergeProblem_Action.class);
 
-  public static boolean isNotEmpty_6wdzvw_a0a0a0a0a0b0d(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -45,7 +45,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
           }
         }
       });
-      if (isNotEmpty_8tyej6_a0c0a0b(errorText.value)) {
+      if (isNotEmptyString(errorText.value)) {
         throw new RuntimeConfigurationException(errorText.value);
       }
     }
@@ -179,7 +179,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
 
   protected static Logger LOG = LogManager.getLogger(NodeBySeveralConcepts_Configuration.class);
 
-  public static boolean isNotEmpty_8tyej6_a0c0a0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

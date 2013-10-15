@@ -101,7 +101,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
-      if (debuggerType != null && isNotEmpty_vi48ux_a0a1a1f(SPropertyOperations.getString(debuggerType, "name"))) {
+      if (debuggerType != null && isNotEmptyString(SPropertyOperations.getString(debuggerType, "name"))) {
         IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
         if (provider != null) {
           return (List<IBreakpointKind>) provider.getAllKinds();
@@ -131,7 +131,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       return parameterObject.getPresentation();
     }
 
-    public static boolean isNotEmpty_vi48ux_a0a1a1f(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }

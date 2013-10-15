@@ -120,7 +120,7 @@
     <nodeInfo nodeId="5294483648489408594" fileName="IdeaEnvironment.java" startLine="80" startPosition="107" endLine="81" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4543865055330814863" fileName="IdeaEnvironment.java" startLine="81" startPosition="55" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4543865055330815742" fileName="IdeaEnvironment.java" startLine="82" startPosition="0" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5294483648489408600" fileName="IdeaEnvironment.java" startLine="84" startPosition="66" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5294483648489408600" fileName="IdeaEnvironment.java" startLine="84" startPosition="59" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5294483648489408604" fileName="IdeaEnvironment.java" startLine="85" startPosition="51" endLine="86" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5294483648489408630" fileName="IdeaEnvironment.java" startLine="89" startPosition="40" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5294483648489408636" fileName="IdeaEnvironment.java" startLine="91" startPosition="11" endLine="92" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -223,7 +223,7 @@
     <nodeInfo nodeId="5460949978726935807" fileName="IdeaEnvironment.java" startLine="296" startPosition="89" endLine="297" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5460949978726935813" fileName="IdeaEnvironment.java" startLine="297" startPosition="69" endLine="298" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5460949978726935825" fileName="IdeaEnvironment.java" startLine="299" startPosition="64" endLine="300" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4543865055330813810" fileName="IdeaEnvironment.java" startLine="304" startPosition="58" endLine="305" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4543865055330813810" fileName="IdeaEnvironment.java" startLine="304" startPosition="52" endLine="305" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5294483648489408623" fileName="IdeaEnvironment.java" startLine="88" startPosition="57" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5294483648489408652" fileName="IdeaEnvironment.java" startLine="96" startPosition="99" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2770012171664462610" fileName="IdeaEnvironment.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -237,7 +237,7 @@
     <nodeInfo nodeId="5294483648489407996" fileName="IdeaEnvironment.java" startLine="262" startPosition="72" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5294483648489408095" fileName="IdeaEnvironment.java" startLine="285" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5460949978726935817" fileName="IdeaEnvironment.java" startLine="298" startPosition="49" endLine="301" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4543865055330813810" fileName="IdeaEnvironment.java" startLine="304" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_8e5t8e_a0w0h#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="4543865055330813810" fileName="IdeaEnvironment.java" startLine="304" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="5294483648489408579" fileName="IdeaEnvironment.java" startLine="74" startPosition="60" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5294483648489408677" fileName="IdeaEnvironment.java" startLine="101" startPosition="0" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5294483648489408069" fileName="IdeaEnvironment.java" startLine="279" startPosition="7" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -295,7 +295,7 @@
     <scopeInfo nodeId="5294483648489408058" fileName="IdeaEnvironment.java" startLine="275" startPosition="31" endLine="276" endPosition="21" />
     <scopeInfo nodeId="5294483648489408096" fileName="IdeaEnvironment.java" startLine="285" startPosition="25" endLine="286" endPosition="138" />
     <scopeInfo nodeId="5460949978726935824" fileName="IdeaEnvironment.java" startLine="299" startPosition="64" endLine="300" endPosition="66" />
-    <scopeInfo nodeId="4543865055330813810" fileName="IdeaEnvironment.java" startLine="304" startPosition="58" endLine="305" endPosition="44" />
+    <scopeInfo nodeId="4543865055330813810" fileName="IdeaEnvironment.java" startLine="304" startPosition="52" endLine="305" endPosition="44" />
     <scopeInfo nodeId="5294483648489408681" fileName="IdeaEnvironment.java" startLine="102" startPosition="31" endLine="104" endPosition="31" />
     <scopeInfo nodeId="2099495074362151675" fileName="IdeaEnvironment.java" startLine="250" startPosition="0" endLine="252" endPosition="18">
       <varInfo nodeId="2099495074362151677" varName="e" />
@@ -350,7 +350,7 @@
       <varInfo nodeId="5460949978726935448" varName="macroName" />
     </scopeInfo>
     <scopeInfo nodeId="2770012171664462592" fileName="IdeaEnvironment.java" startLine="118" startPosition="9" endLine="128" endPosition="9" />
-    <scopeInfo nodeId="4543865055330719354" fileName="IdeaEnvironment.java" startLine="84" startPosition="66" endLine="99" endPosition="7">
+    <scopeInfo nodeId="4543865055330719354" fileName="IdeaEnvironment.java" startLine="84" startPosition="59" endLine="99" endPosition="7">
       <varInfo nodeId="5294483648489408603" varName="pluginDir" />
       <varInfo nodeId="5294483648489408599" varName="pluginPath" />
     </scopeInfo>

@@ -102,4 +102,8 @@ public class ModelRoot_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
 }

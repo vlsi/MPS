@@ -447,4 +447,8 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
+
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
 }

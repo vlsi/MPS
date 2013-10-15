@@ -135,7 +135,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0g(editorCellLabel.getText()))) {
+      if (editorCellLabel.isErrorState() && !(isEmptyString(editorCellLabel.getText()))) {
         return editorCellLabel;
       }
     }
@@ -144,7 +144,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(AddModelImportByRoot_Action.class);
 
-  public static boolean isEmpty_3mx29z_a0a0b0c0g(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -32,10 +32,10 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (isEmpty_l71583_a0a0a0b(this.getConfigurationPath())) {
+    if (isEmptyString(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if (isEmpty_l71583_a0b0a0b(this.getSystemPath())) {
+    if (isEmptyString(this.getSystemPath())) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -229,11 +229,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
 
   protected static Logger LOG = LogManager.getLogger(MpsStartupSettings_Configuration.class);
 
-  public static boolean isEmpty_l71583_a0a0a0b(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_l71583_a0b0a0b(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

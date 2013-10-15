@@ -99,7 +99,7 @@ public class QuickQueryUtils {
 
 
   public static SearchQuery createNodeInstancesSearchQuery(Query query, FindUsagesScope scope) {
-    if (isNotEmpty_465b23_a0a0g(query.getConcept())) {
+    if (isNotEmptyString(query.getConcept())) {
       return new SearchQuery(new NodeHolder(SModelUtil.findConceptDeclaration(query.getConcept(), null)), scope);
     } else {
       return new SearchQuery(scope);
@@ -137,7 +137,7 @@ public class QuickQueryUtils {
     return false;
   }
 
-  public static boolean isNotEmpty_465b23_a0a0g(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }
