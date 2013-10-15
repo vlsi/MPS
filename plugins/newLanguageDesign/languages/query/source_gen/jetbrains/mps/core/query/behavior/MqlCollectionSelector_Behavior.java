@@ -37,7 +37,7 @@ public class MqlCollectionSelector_Behavior {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.query.structure.MqlListType")) {
         return node;
       }
-      return createMqlListType_6kvg7a_a2a1a0a(node);
+      return createMqlListType_6kvg7a_a2a1a0a(SNodeOperations.copyNode(node));
     }
     return MqlSelector_Behavior.call_getContainerType_228266671027861723(thisNode);
   }

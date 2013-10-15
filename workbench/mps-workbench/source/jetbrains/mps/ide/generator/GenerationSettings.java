@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ import javax.swing.JComponent;
     )
   }
 )
-public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IGenerationSettings, IModifiableGenerationSettings {
+public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable, IModifiableGenerationSettings {
 
   public static GenerationSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
@@ -318,6 +318,16 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myShowBadChildWarning = showBadChildWarning;
   }
 
+  @Override
+  public void enableInplaceTransformations(boolean enabled) {
+    myState.myActiveInplaceTransform = enabled;
+  }
+
+  @Override
+  public boolean useInplaceTransofrmations() {
+    return myState.myActiveInplaceTransform;
+  }
+
   public enum GenerateRequirementsPolicy {
     ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
 
@@ -354,5 +364,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myGenerateDebugInfo = true;
     public boolean myShowBadChildWarning = true;
     public boolean myDebugIncrementalDependencies = false;
+    public boolean myActiveInplaceTransform = true;
   }
 }

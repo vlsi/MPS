@@ -74,7 +74,7 @@ public class ScriptBuilder_Test extends MockTestCase {
     IScript sc = scb.toScript();
     Assert.assertNotNull(sc);
     Assert.assertFalse(sc.isValid());
-    Assert.assertTrue((int) Sequence.fromIterable(sc.validationErrors()).count() == 1);
+    Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).count() == 1);
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).first().toString().contains("target not found: none"));
   }
 

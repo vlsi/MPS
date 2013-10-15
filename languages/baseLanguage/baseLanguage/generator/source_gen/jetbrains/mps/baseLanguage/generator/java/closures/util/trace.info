@@ -138,7 +138,7 @@
     <nodeInfo nodeId="1238940574984" fileName="ClosuresUtil.java" startLine="40" startPosition="23" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6163537227498187201" fileName="ClosuresUtil.java" startLine="46" startPosition="48" endLine="47" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6163537227498181604" fileName="ClosuresUtil.java" startLine="48" startPosition="11" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7706854513804994802" fileName="ClosuresUtil.java" startLine="50" startPosition="9" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7706854513804994802" fileName="ClosuresUtil.java" startLine="50" startPosition="9" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238940852493" fileName="ClosuresUtil.java" startLine="56" startPosition="105" endLine="57" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238940873811" fileName="ClosuresUtil.java" startLine="57" startPosition="64" endLine="58" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238940962008" fileName="ClosuresUtil.java" startLine="61" startPosition="117" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -344,7 +344,7 @@
     <scopeInfo nodeId="1238944802681" fileName="ClosuresUtil.java" startLine="206" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="1238944815704" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="7706854513804994801" fileName="ClosuresUtil.java" startLine="44" startPosition="35" endLine="51" endPosition="50" />
+    <scopeInfo nodeId="7706854513804994801" fileName="ClosuresUtil.java" startLine="44" startPosition="35" endLine="51" endPosition="63" />
     <scopeInfo nodeId="6017788484734288475" fileName="ClosuresUtil.java" startLine="96" startPosition="41" endLine="103" endPosition="29">
       <varInfo nodeId="6017788484734288413" varName="closureContexts" />
       <varInfo nodeId="6017788484734288412" varName="sessionContext" />

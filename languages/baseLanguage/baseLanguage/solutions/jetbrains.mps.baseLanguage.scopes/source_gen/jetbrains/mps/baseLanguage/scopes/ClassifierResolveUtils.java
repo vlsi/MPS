@@ -62,7 +62,7 @@ public class ClassifierResolveUtils {
     // try to resolve as nested name in current model 
     Iterable<SNode> result = resolveClassifierByNestedName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(result).count() == 1 ?
+      return (Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
         null
       );
@@ -71,7 +71,7 @@ public class ClassifierResolveUtils {
     // try to resolve as fq name in current model 
     result = resolveClassifierByFqName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(result).count() == 1 ?
+      return (Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
         null
       );
@@ -85,7 +85,7 @@ public class ClassifierResolveUtils {
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(resolveClassifierByNestedName(model, classifierName)));
     }
     if (ListSequence.fromList(res).isNotEmpty()) {
-      return ((int) ListSequence.fromList(res).count() == 1 ?
+      return (ListSequence.fromList(res).count() == 1 ?
         ListSequence.fromList(res).first() :
         null
       );
@@ -97,7 +97,7 @@ public class ClassifierResolveUtils {
         return it.getModels();
       }
     }), classifierName);
-    return ((int) Sequence.fromIterable(result).count() == 1 ?
+    return (Sequence.fromIterable(result).count() == 1 ?
       Sequence.fromIterable(result).first() :
       null
     );
@@ -106,7 +106,7 @@ public class ClassifierResolveUtils {
   public static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
     Iterable<SNode> sameModelResult = resolveClassifierByFqName(sourceModel, classifierFqName);
     if (Sequence.fromIterable(sameModelResult).isNotEmpty()) {
-      return ((int) Sequence.fromIterable(sameModelResult).count() == 1 ?
+      return (Sequence.fromIterable(sameModelResult).count() == 1 ?
         Sequence.fromIterable(sameModelResult).first() :
         null
       );
@@ -117,7 +117,7 @@ public class ClassifierResolveUtils {
     if (modelScope != null) {
       Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, modelScope);
       if (Sequence.fromIterable(result).isNotEmpty()) {
-        return ((int) Sequence.fromIterable(result).count() == 1 ?
+        return (Sequence.fromIterable(result).count() == 1 ?
           Sequence.fromIterable(result).first() :
           null
         );
@@ -125,7 +125,7 @@ public class ClassifierResolveUtils {
     }
 
     Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, GlobalScope.getInstance());
-    return ((int) Sequence.fromIterable(result).count() == 1 ?
+    return (Sequence.fromIterable(result).count() == 1 ?
       Sequence.fromIterable(result).first() :
       null
     );
@@ -345,7 +345,7 @@ public class ClassifierResolveUtils {
         // and about to be deleted) before the newly created model (which is the right one) 
 
         Iterable<SNode> matches = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), fqName);
-        return ((int) Sequence.fromIterable(matches).count() == 1 ?
+        return (Sequence.fromIterable(matches).count() == 1 ?
           construct(Sequence.fromIterable(matches).first(), tokenizer) :
           null
         );
@@ -599,7 +599,7 @@ public class ClassifierResolveUtils {
       if (SPropertyOperations.getBoolean(imp, "onDemand")) {
         String className = SPropertyOperations.getString(imp, "tokens");
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
-        SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
+        SNode containingClas = (Sequence.fromIterable(classes).count() == 1 ?
           Sequence.fromIterable(classes).first() :
           null
         );
@@ -621,7 +621,7 @@ public class ClassifierResolveUtils {
 
         Iterable<SNode> classes = resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), className);
 
-        SNode containingClas = ((int) Sequence.fromIterable(classes).count() == 1 ?
+        SNode containingClas = (Sequence.fromIterable(classes).count() == 1 ?
           Sequence.fromIterable(classes).first() :
           null
         );

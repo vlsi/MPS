@@ -48,7 +48,7 @@ public class ClosuresUtil {
           }
           return false;
         }
-        return isClosureContextOwner(((SNode) n));
+        return ClosuresUtil.isClosureContextOwner(((SNode) n));
       }
     }));
   }

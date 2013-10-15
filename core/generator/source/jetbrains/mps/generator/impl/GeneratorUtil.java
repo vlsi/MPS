@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -60,16 +61,18 @@ public class GeneratorUtil {
   }
 
   @NotNull
-  public static TemplateContext createConsequenceContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence, SNode newInputNode, ITemplateGenerator generator) {
+  public static TemplateContext createConsequenceContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env,
+      @NotNull SNode consequence) {
     if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
-      return createTemplateCallContext(inputNode, outerContext, reductionContext, consequence, newInputNode, generator);
+      return createTemplateCallContext(inputNode, outerContext, env, consequence, inputNode);
     }
-    return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);
+    return outerContext != null ? outerContext : new DefaultTemplateContext(inputNode);
   }
 
   @NotNull
-  static TemplateContext createTemplateCallContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, SNode templateCall, SNode newInputNode, ITemplateGenerator generator) {
+  static TemplateContext createTemplateCallContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
     final SNode[] arguments = getArguments(templateCall);
+    final ITemplateGenerator generator = env.getGenerator();
     final String[] parameters = getParameters(templateCall, generator);
 
     if (arguments == null && parameters == null) {
@@ -104,7 +107,7 @@ public class GeneratorUtil {
       } else {
         if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
           SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
-          value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
+          value = env.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
         } else {
           try {
             value = RuleUtil.evaluateBaseLanguageExpression(exprNode);

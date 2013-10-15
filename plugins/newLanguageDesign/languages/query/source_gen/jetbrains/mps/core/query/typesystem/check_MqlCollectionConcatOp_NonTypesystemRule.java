@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_MqlCollectionConcatOp_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,11 +22,6 @@ public class check_MqlCollectionConcatOp_NonTypesystemRule extends AbstractNonTy
   }
 
   public void applyRule(final SNode mqlConcatOp, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode dotExpr = SNodeOperations.as(MqlSelector_Behavior.call_getContainer_5280308256730689747(mqlConcatOp), "jetbrains.mps.core.query.structure.MqlDotExpression");
-    if ((dotExpr == null)) {
-      return;
-    }
-
     SNode operandType = SNodeOperations.as(MqlSelector_Behavior.call_getContainerType_228266671027861723(mqlConcatOp), "jetbrains.mps.core.query.structure.MqlCollectionType");
     if ((operandType == null)) {
       return;
@@ -39,12 +35,12 @@ public class check_MqlCollectionConcatOp_NonTypesystemRule extends AbstractNonTy
       }
       return;
     }
-    if (SNodeOperations.getConceptDeclaration(operandType) != SNodeOperations.getConceptDeclaration(argType)) {
+    if (!(SPropertyOperations.hasValue(mqlConcatOp, "kind", "1", null)) && !(SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.core.query.structure.MqlOrderedSetType"))) {
+      // FIXME show kind's presentation 
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mqlConcatOp, "argument", true), "Argument must of the same collection type as operand", "r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)", "5272233748014775565", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(mqlConcatOp), "jetbrains.mps.core.query.structure.MqlDotExpression"), "left", true), "Operation is applicable only to sets", "r:efe0605f-fbe2-49dd-8c71-c87a67c06b2c(jetbrains.mps.core.query.typesystem)", "5272233748014775565", null, errorTarget);
       }
-      return;
     }
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(argType, "jetbrains.mps.core.query.structure.MqlCollectionType"), "inner", true), "virtual_isSubtypeOf_2852142168179579064", new Object[]{SLinkOperations.getTarget(operandType, "inner", true)}))) {
       {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -25,12 +26,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Evgeny Gryaznov, 11/18/10
  */
-public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro{
+public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro {
 
   private final ReferenceResolver myResolver;
 
-  public ReferenceInfo_MacroResolver(ReferenceResolver resolver, SNode outputSourceNode, String role, TemplateContext context, ReductionContext reductionContext) {
-    super(outputSourceNode, role, context, reductionContext);
+  public ReferenceInfo_MacroResolver(ReferenceResolver resolver, SNode outputSourceNode, String role, TemplateContext context, QueryExecutionContext executionContext) {
+    super(outputSourceNode, role, context, executionContext);
     myResolver = resolver;
   }
 

@@ -17,7 +17,9 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.InternUtil;
 
@@ -29,8 +31,8 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
   private final SNode myTemplateReferenceNode;
   private final SNode myReferenceMacro;
 
-  public ReferenceInfo_MacroNode(SNode outputSourceNode, SNode macro, SNode templateReferenceNode, TemplateContext context, ReductionContext reductionContext) {
-    super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context, reductionContext);
+  public ReferenceInfo_MacroNode(SNode outputSourceNode, SNode macro, SNode templateReferenceNode, TemplateContext context,  @NotNull QueryExecutionContext executionContext) {
+    super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context, executionContext);
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
   }
@@ -51,6 +53,6 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
 
   @Override
   protected Object resolveReference() {
-    return myReductionContext.getQueryExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
+    return myExecContext.getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
   }
 }

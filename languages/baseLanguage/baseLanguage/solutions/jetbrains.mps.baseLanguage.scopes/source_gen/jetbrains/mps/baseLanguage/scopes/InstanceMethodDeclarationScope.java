@@ -63,7 +63,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     });
     if (Sequence.fromIterable(nonAbstractMethods).isNotEmpty()) {
       // todo: is it right? 
-      return ((int) Sequence.fromIterable(nonAbstractMethods).count() == 1 ?
+      return (Sequence.fromIterable(nonAbstractMethods).count() == 1 ?
         nonAbstractMethods :
         Sequence.fromIterable(nonAbstractMethods).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

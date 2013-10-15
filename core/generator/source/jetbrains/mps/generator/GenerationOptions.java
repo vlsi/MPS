@@ -38,6 +38,7 @@ public class GenerationOptions {
   public static /*final*/ boolean USE_PARALLEL_POOL = true;
 
   private final boolean mySaveTransientModels;
+  private final boolean myActiveInplaceTransform;
   private final boolean myStrictMode;
   private final boolean myRebuildAll;
 
@@ -60,7 +61,7 @@ public class GenerationOptions {
 
   private IGenerationTracer myGenerationTracer;
 
-  private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll,
+  private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean useInplaceTransformations,
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
@@ -68,6 +69,7 @@ public class GenerationOptions {
                             Map<SModel, ModelGenerationPlan> customPlans,
                             boolean debugIncrementalDependencies) {
     mySaveTransientModels = saveTransientModels;
+    myActiveInplaceTransform = useInplaceTransformations;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
     myRebuildAll = rebuildAll;
@@ -118,6 +120,10 @@ public class GenerationOptions {
     return myNumberOfThreads;
   }
 
+  public boolean applyTransformationsInplace() {
+    return myActiveInplaceTransform;
+  }
+
   public int getTracingMode() {
     if (isGenerateInParallel() && myTracingMode > TRACE_STEPS) {
       return TRACE_STEPS;
@@ -159,7 +165,8 @@ public class GenerationOptions {
 
   public static OptionsBuilder fromSettings(IGenerationSettings settings) {
     return new OptionsBuilder().
-      strictMode(settings.isStrictMode()).
+      strictMode(settings.isStrictMode()).saveTransientModels(settings.isSaveTransientModels()).
+      useInplaceTransformations(settings.useInplaceTransofrmations()).
       generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
       reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).
       showBadChildWarning(settings.isShowBadChildWarning()).debugIncrementalDependencies(settings.isDebugIncrementalDependencies());
@@ -222,6 +229,7 @@ public class GenerationOptions {
 
     private boolean myKeepOutputModel;
     private boolean myDebugIncrementalDependencies = false;
+    private boolean myUseInplace;
 
     private OptionsBuilder() {
     }
@@ -231,7 +239,7 @@ public class GenerationOptions {
         throw new IllegalArgumentException("incremental strategy is not set");
       }
 
-      return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll,
+      return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
         myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
@@ -261,6 +269,11 @@ public class GenerationOptions {
 
     public OptionsBuilder debugIncrementalDependencies(boolean value) {
       myDebugIncrementalDependencies = value;
+      return this;
+    }
+
+    public OptionsBuilder useInplaceTransformations(boolean use) {
+      myUseInplace = use;
       return this;
     }
 

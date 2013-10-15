@@ -309,7 +309,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_SequenceType_7246115176735615124(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
-    if ((int) ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
     }
@@ -317,28 +317,28 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CollectionType_7886927014685056896(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
-    if ((int) ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_ListType_7246115176735618986(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if ((int) ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_SetType_7246115176735619033(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if ((int) ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
     }
   }
 
   public static void nodeFactory_NodeSetup_SortedSetType_7246115176735619080(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if ((int) ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
     }

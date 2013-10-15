@@ -19,7 +19,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   private Project myProject;
 
   public BaseTransformationTest4() {
-    Logger.setFactory(LoggerFactory.getInstance());
+    Logger.setFactory(LoggerFactory.class);
   }
 
   public BaseTransformationTest4(Project project, SModel modelDescriptor) {

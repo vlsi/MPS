@@ -10,21 +10,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
-  private FieldInitializationPlace myFieldInitialization;
-
-  public IntroduceFieldRefactoring() {
-  }
-
+public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring {
   public void run() {
   }
 
@@ -33,16 +25,16 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     this.findDuplicates();
     SNode newDeclaration;
     if (myFieldInitialization == FieldInitializationPlace.FIELD) {
-      newDeclaration = _quotation_createNode_baxqxe_a0a0c0d(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
+      newDeclaration = _quotation_createNode_baxqxe_a0a0c0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
     } else {
-      newDeclaration = _quotation_createNode_baxqxe_a0a0a2a3(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
+      newDeclaration = _quotation_createNode_baxqxe_a0a0a2a1(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
     if (myIsFinal) {
       SPropertyOperations.set(newDeclaration, "isFinal", "" + (true));
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     MemberInsertingUtils.insertClassifierMemberInBestPlace(classConcept, newDeclaration);
-    SNode assignStatement = _quotation_createNode_baxqxe_a0g0d(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
+    SNode assignStatement = _quotation_createNode_baxqxe_a0g0b(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));
     }
@@ -68,32 +60,10 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
 
   @Override
   public void replaceNode(SNode node, SNode declaration) {
-    SNodeOperations.replaceWithAnother(node, _quotation_createNode_baxqxe_a0a0a4(declaration));
+    SNodeOperations.replaceWithAnother(node, _quotation_createNode_baxqxe_a0a0a2(declaration));
   }
 
-  public void setFieldInitializationPlace(FieldInitializationPlace place) {
-    this.myFieldInitialization = place;
-  }
-
-  public boolean isInitialyzeInFieldAvailable() {
-    final Wrappers._boolean result = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        result.value = ListSequence.fromList(SNodeOperations.getDescendants(IntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{})).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-          }
-        }).toListSequence().isEmpty();
-      }
-    });
-    return result.value;
-  }
-
-  public static boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
-  }
-
-  private static SNode _quotation_createNode_baxqxe_a0a0c0d(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_baxqxe_a0a0c0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -116,7 +86,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_5;
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0a0a2a3(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_baxqxe_a0a0a2a1(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -134,7 +104,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_4;
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0g0d(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_baxqxe_a0g0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -159,7 +129,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0a0a4(Object parameter_1) {
+  private static SNode _quotation_createNode_baxqxe_a0a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

@@ -29,7 +29,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
   }
 
   protected Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final List<SNode> tlist1 = new ArrayList();
+    final List<SNode> tlist1 = new ArrayList<SNode>();
     try {
       environment.getTracer().pushMacro(loopMacroRef_b8tv7e_a0a0a1a2);
       final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_b8tv7e_a0a0a1a2, context, environment.getGenerator()));

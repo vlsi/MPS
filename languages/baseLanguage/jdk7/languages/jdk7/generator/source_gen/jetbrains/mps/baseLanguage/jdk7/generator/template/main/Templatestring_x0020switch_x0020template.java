@@ -39,7 +39,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
       environment.nodeCopied(context, tnode1, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422210");
 
       {
-        final List<SNode> tlist2 = new ArrayList();
+        final List<SNode> tlist2 = new ArrayList<SNode>();
         try {
           environment.getTracer().pushMacro(loopMacroRef_wjpymb_a0a0a1a3a1a2);
           final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_400642802550422240(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_wjpymb_a0a0a1a3a1a2, context, environment.getGenerator()));

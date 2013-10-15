@@ -12,6 +12,10 @@ import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ClosureArgReference_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ClosureControlStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

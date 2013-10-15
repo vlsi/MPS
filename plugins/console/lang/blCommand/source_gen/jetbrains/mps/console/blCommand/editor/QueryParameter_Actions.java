@@ -31,7 +31,7 @@ public class QueryParameter_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.console.blCommand.structure.QueryParameterList");
-      if (parameterList != null && (int) ListSequence.fromList(SLinkOperations.getTargets(parameterList, "parameter", true)).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
+      if (parameterList != null && ListSequence.fromList(SLinkOperations.getTargets(parameterList, "parameter", true)).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.console.blCommand.structure.QueryParameter");
         return;
       }

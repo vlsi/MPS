@@ -88,7 +88,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     List<SNode> collection = new ArrayList<SNode>();
     try {
-      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), environment.getReductionContext(), environment.getGenerator());
+      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context, templateSwitch.resolve(MPSModuleRepository.getInstance()), environment);
       if (nodeAndMappingNamePairs == null) {
         environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), defaultConsequence, "error processing $SWITCH$/default");
         return null;
@@ -98,7 +98,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
         SNode altTemplateNode = nodeAndMappingNamePair.o1;
         String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
         try {
-          TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+          TemplateProcessor templateProcessor = new TemplateProcessor(environment);
           collection.addAll(templateProcessor.apply(innerMappingName, altTemplateNode, context));
         } catch (TemplateProcessingFailureException e) {
           environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), "error processing template fragment");

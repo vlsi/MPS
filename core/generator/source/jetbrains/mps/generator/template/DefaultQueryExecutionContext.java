@@ -75,6 +75,36 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
+  public boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException {
+    if (condition == null) {
+      if (required) {
+        generator.showErrorMessage(templateContext.getInput(), null, ruleNode, "rule condition required");
+        return false;
+      }
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(
+          methodName,
+          generator.getGeneratorSessionContext(),
+          new ReductionRuleQueryContext(templateContext, ruleNode, generator),
+          ruleNode.getModel(),
+          true);
+    } catch (ClassNotFoundException e) {
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (NoSuchMethodException e) {
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (Throwable t) {
+      generator.getLogger().handleException(t);
+      generator.getLogger().error(condition, "error executing condition " + methodName + ", exception was thrown");
+      throw new GenerationFailureException(t);
+    }
+    return false;
+  }
+
+  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
     if (function == null) {

@@ -77,8 +77,8 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
       Collection<SNode> outputNodes = new ArrayList<SNode>();
       for (SNode fragment : fragments) {
         SNode templateForInclude = fragment.getParent();
-        String mappingName = GeneratorUtilEx.getMappingName(fragment, null);
-        TemplateProcessor p = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+        String mappingName = GeneratorUtilEx.getMappingName_TemplateFragment(fragment, null);
+        TemplateProcessor p = new TemplateProcessor(environment);
         try {
           outputNodes.addAll(p.apply(mappingName, templateForInclude, context.subContext(mappingName)));
         } catch (TemplateProcessingFailureException ex) {
@@ -87,8 +87,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
       }
       return outputNodes;
     } else {
-      return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-        .apply(null, myTemplateNode, applyContext);
+      return new TemplateProcessor(environment).apply(null, myTemplateNode, applyContext);
     }
   }
 

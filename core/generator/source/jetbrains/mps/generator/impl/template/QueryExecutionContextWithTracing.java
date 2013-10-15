@@ -52,14 +52,24 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     if (ruleNode == null || ruleNode.getModel() == null) {
       return name;
     }
-    return "query in " + getRulePackage(ruleNode); //name;
+    return name + ':' + getRulePackage(ruleNode); //name;
   }
 
   @Override
   public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check condition", ruleNode), true);
+      tracer.push(taskName("check condition(no context)", ruleNode), true);
       return wrapped.checkCondition(condition, required, inputNode, ruleNode);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check condition(with context)", ruleNode), true);
+      return wrapped.checkCondition(condition, required, templateContext, ruleNode);
     } finally {
       tracer.pop();
     }
@@ -98,7 +108,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("property macro", templateNode), true);
+      tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
       wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
     } finally {
       tracer.pop();
@@ -178,7 +188,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
     try {
-      tracer.push("query in " + processor.getClass().getCanonicalName(), true);
+      tracer.push("query in postprocessor" + processor.getClass().getCanonicalName(), true);
       wrapped.executeInContext(outputNode, context, processor);
     } finally {
       tracer.pop();
@@ -188,7 +198,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
     try {
-      tracer.push("query in " + mapper.getClass().getCanonicalName(), true);
+      tracer.push("query in nodemapper" + mapper.getClass().getCanonicalName(), true);
       return wrapped.executeInContext(outputNode, context, mapper);
     } finally {
       tracer.pop();
@@ -198,7 +208,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
-      tracer.push(taskName("trying to apply rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
+      SNode ruleNode = rule.getRuleNode().resolve(MPSModuleRepository.getInstance());
+      String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), ruleNode);
+      tracer.push(taskName, true);
       return wrapped.tryToApply(rule, environment, context);
     } finally {
       tracer.pop();
@@ -217,11 +229,8 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if(rule instanceof TemplateRootMappingRuleInterpreted) {
-      return wrapped.applyRule(rule, environment, context);
-    }
     try {
-      tracer.push(taskName("root mapping rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.applyRule(rule, environment,context);
     } finally {
       tracer.pop();
@@ -230,9 +239,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
-    if(rule instanceof TemplateCreateRootRuleInterpreted) {
-      return wrapped.applyRule(rule, environment);
-    }
     try {
       tracer.push(taskName("create root rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.applyRule(rule, environment);
@@ -254,7 +260,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void executeScript(TemplateMappingScript mappingScript, SModel model) {
     try {
-      tracer.push(taskName("mapping script", mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
       wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();

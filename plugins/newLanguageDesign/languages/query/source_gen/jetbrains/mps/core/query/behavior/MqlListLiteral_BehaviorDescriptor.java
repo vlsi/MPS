@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.query.runtime.EvaluationEnvironment;
 import jetbrains.mps.core.query.runtime.EvaluationContext;
 
-public class MqlListLiteral_BehaviorDescriptor extends MqlExpression_BehaviorDescriptor {
+public class MqlListLiteral_BehaviorDescriptor extends MqlCollectionLiteral_BehaviorDescriptor {
   public MqlListLiteral_BehaviorDescriptor() {
   }
 

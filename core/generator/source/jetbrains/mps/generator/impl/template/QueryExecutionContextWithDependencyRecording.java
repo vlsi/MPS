@@ -54,6 +54,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
+  public boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.checkCondition(condition, required, templateContext, ruleNode);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);

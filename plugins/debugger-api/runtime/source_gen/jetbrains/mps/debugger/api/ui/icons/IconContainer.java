@@ -12,7 +12,7 @@ public class IconContainer {
   protected static Icon ICON_a11 = MPSIcons.Actions.GroupByModel;
   protected static Icon ICON_a21 = MPSIcons.Actions.GroupByModule;
   protected static Icon ICON_a31 = MPSIcons.Actions.GroupByRoot;
-  protected static Icon ICON_a41 = AllIcons.Actions.ShowSource;
+  protected static Icon ICON_a41 = AllIcons.Actions.ShowViewer;
   protected static Icon ICON_a51 = AllIcons.Actions.ShowAsTree;
   protected static Icon ICON_a0 = AllIcons.Debugger.Db_set_breakpoint;
   protected static Icon ICON_a1 = AllIcons.Debugger.Db_invalid_breakpoint;

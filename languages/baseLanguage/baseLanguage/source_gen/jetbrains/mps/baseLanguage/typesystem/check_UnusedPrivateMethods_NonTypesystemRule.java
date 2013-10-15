@@ -37,7 +37,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
           }
           if (matches_sl9v9q_a0a0a) {
             {
-              if (SNodeOperations.isInstanceOf(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty() && (int) Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.as(SNodeOperations.getParent(matchedNode_sl9v9q_a0a0), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).count() == 1) {
+              if (SNodeOperations.isInstanceOf(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.as(SNodeOperations.getParent(matchedNode_sl9v9q_a0a0), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).count() == 1) {
                 // an idiom - uninstantiable class 
                 return;
               }
