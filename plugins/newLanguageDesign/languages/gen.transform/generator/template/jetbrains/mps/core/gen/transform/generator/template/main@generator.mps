@@ -5247,6 +5247,30 @@
             <node role="templateNode" roleId="tpf8.1177093586806" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="3868630583608391799" nodeInfo="nn" />
           </node>
         </node>
+        <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="2628050024366345452" nodeInfo="ng">
+          <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="2628050024366345453" nodeInfo="nn">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2628050024366345454" nodeInfo="sn">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2628050024366506263" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2628050024366546926" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2628050024366511643" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2628050024366506262" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2628050024366534260" nodeInfo="nn">
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="xsnc.3868630583607362197" resolveInfo="kind" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="2628050024366604124" nodeInfo="nn">
+                    <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="2628050024366604126" nodeInfo="nn">
+                      <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="xsnc.2628050024365715550" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2628050024366777839" nodeInfo="ng">
+            <node role="templateNode" roleId="tpf8.1177093586806" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="2628050024367159174" nodeInfo="nn" />
+          </node>
+        </node>
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="3868630583608367635" nodeInfo="ng">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="3868630583608367636" nodeInfo="nn">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3868630583608367637" nodeInfo="sn">
