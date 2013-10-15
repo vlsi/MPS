@@ -51,7 +51,7 @@ public class MyRootConcept_Behavior {
         final SNode x = SNodeOperations.getParent(thisNode);
         final boolean y = BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_queryWithParam_6166572974641188535", new Object[]{SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:3f71a9ca-cfc6-445e-98ca-be6cc5953666(jetbrains.mps.sample.queryTest.structure)", "MyKind"), "TWO")});
         final boolean yy = BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_queryWithParam_6166572974641188535", new Object[]{null});
-        final SNode unr = SLinkOperations.getTarget(thisNode, "refr", false);
+        final SNode unr = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "refr", false));
         return SetSequence.fromSetWithValues(new LinkedHashSet<SNode>(), SNodeOperations.ofConcept(SetSequence.fromSet(s).union(SetSequence.fromSet(SetSequence.fromSetAndArray(new LinkedHashSet<SNode>(), SLinkOperations.getTarget(thisNode, "z", true), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "z", true), "z", true)))), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "child", true)))));
       }
     }.invoke();

@@ -358,12 +358,14 @@
                         </node>
                       </node>
                     </node>
-                    <node role="left" roleId="bwy9.6762883159245048020" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="5343139407539956800" nodeInfo="ng">
+                    <node role="left" roleId="bwy9.6762883159245048020" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="8982157191765791555" nodeInfo="ng">
                       <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlCollectionSelectorVarRef" typeId="bwy9.5280308256730768480" id="5343139407539219405" nodeInfo="ng">
                         <link role="var" roleId="bwy9.5280308256730768481" targetNodeId="5343139407539217773" resolveInfo="it" />
                       </node>
-                      <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.IsInstanceOf" typeId="xsnc.5343139407539241386" id="5343139407539956906" nodeInfo="ng">
-                        <link role="concept" roleId="xsnc.5343139407539241463" targetNodeId="2024350793560676006" resolveInfo="SSymbolRef" />
+                      <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.IsInstanceOf" typeId="xsnc.5343139407539241386" id="8982157191765791608" nodeInfo="ng">
+                        <node role="argument" roleId="xsnc.1389772202491538904" type="xsnc.SConceptRef" typeId="xsnc.1389772202491538888" id="8982157191765791624" nodeInfo="ng">
+                          <link role="concept" roleId="xsnc.1389772202491538889" targetNodeId="2024350793560676006" resolveInfo="SSymbolRef" />
+                        </node>
                       </node>
                     </node>
                   </node>

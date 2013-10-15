@@ -242,6 +242,11 @@
       <property name="internalValue" nameId="tpce.1083923523171" value="2" />
       <property name="externalValue" nameId="tpce.1083923523172" value="parent" />
     </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2628050024365715550" nodeInfo="ig">
+      <property name="javaIdentifier" nameId="tpce.1192116978809" value="CONTAININGROOT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="3" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="containingRoot" />
+    </node>
   </root>
 </model>
 

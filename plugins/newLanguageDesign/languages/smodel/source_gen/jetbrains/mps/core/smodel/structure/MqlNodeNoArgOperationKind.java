@@ -8,7 +8,8 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum MqlNodeNoArgOperationKind {
   CONCEPT("concept", 1),
-  PARENT("parent", 2);
+  PARENT("parent", 2),
+  CONTAININGROOT("containingRoot", 3);
 
   private String myName;
 
@@ -24,6 +25,7 @@ public enum MqlNodeNoArgOperationKind {
     List<MqlNodeNoArgOperationKind> list = ListSequence.fromList(new LinkedList<MqlNodeNoArgOperationKind>());
     ListSequence.fromList(list).addElement(MqlNodeNoArgOperationKind.CONCEPT);
     ListSequence.fromList(list).addElement(MqlNodeNoArgOperationKind.PARENT);
+    ListSequence.fromList(list).addElement(MqlNodeNoArgOperationKind.CONTAININGROOT);
     return list;
   }
 
@@ -40,6 +42,9 @@ public enum MqlNodeNoArgOperationKind {
     }
     if (value.equals(MqlNodeNoArgOperationKind.PARENT.getValueAsString())) {
       return MqlNodeNoArgOperationKind.PARENT;
+    }
+    if (value.equals(MqlNodeNoArgOperationKind.CONTAININGROOT.getValueAsString())) {
+      return MqlNodeNoArgOperationKind.CONTAININGROOT;
     }
     return MqlNodeNoArgOperationKind.getDefault();
   }
