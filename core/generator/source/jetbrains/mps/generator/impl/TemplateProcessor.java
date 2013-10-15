@@ -164,7 +164,6 @@ public final class TemplateProcessor {
       }
     }
 
-    myGenerator.getPerformanceTracer().push("templateNode:create copy",  false);
     // templateNode has no unprocessed node-macros - create output instance for the template node
     final SNodePointer templateNodeReference = new SNodePointer(templateNode);
     myTracer.pushTemplateNode(templateNodeReference);
@@ -175,9 +174,7 @@ public final class TemplateProcessor {
     myGenerator.registerMappingLabel(context.getInput(), mappingName, outputNode); // XXX reduce_TemplateNode doesn't do that
 
     jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
-    myGenerator.getPerformanceTracer().pop();
 
-    myGenerator.getPerformanceTracer().push("templateNode.references",  false);
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferences()) {
       if (GeneratorUtilEx.getReferenceMacro(templateNode, reference.getRole()) != null) {
@@ -223,9 +220,7 @@ public final class TemplateProcessor {
         outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
     }
-    myGenerator.getPerformanceTracer().pop();
 
-    myGenerator.getPerformanceTracer().push("children:collect", false);
     // process property and reference macros
     List<SNode> templateChildNodes = new ArrayList<SNode>();
     for (SNode templateChildNode : templateNode.getChildren()) {
@@ -249,14 +244,12 @@ public final class TemplateProcessor {
         templateChildNodes.add(templateChildNode);
       }
     }
-    myGenerator.getPerformanceTracer().pop();
 
     // process children
     try {
       for (SNode templateChildNode : templateChildNodes) {
         List<SNode> outputChildNodes = applyTemplate(null, templateChildNode, context, null);
         if (outputChildNodes != null) {
-          myGenerator.getPerformanceTracer().push("validateChild", false);
           SConcept originalConcept = templateChildNode.getConcept();
           String role = templateChildNode.getRoleInParent();
           RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
@@ -275,7 +268,6 @@ public final class TemplateProcessor {
             }
             outputNode.addChild(role, outputChildNode);
           }
-          myGenerator.getPerformanceTracer().pop();
         }
       }
     } finally {
