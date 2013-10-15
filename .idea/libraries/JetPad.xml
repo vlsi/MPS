@@ -1,33 +1,33 @@
 <component name="libraryTable">
   <library name="JetPad">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/base-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/core-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/diagram-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/domUtil-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/event-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/geometry-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/grammar-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/mapper-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/model-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/values-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/view-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/dataflow-1.0-SNAPSHOT.war!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.war!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/base-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/core-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/diagram-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/domUtil-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/event-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/geometry-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/grammar-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/mapper-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/model-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/values-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/view-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpadEditorRuntime/lib/dataflow-1.0-SNAPSHOT.war!/WEB-INF/classes" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/core-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.war!/WEB-INF/classes" />
     </SOURCES>
   </library>
 </component>

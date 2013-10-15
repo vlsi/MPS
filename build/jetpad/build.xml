@@ -26,12 +26,12 @@
 
   <target name="checkFileExist">
     <condition property="buildTxtExist" value="true" else="false">
-      <available file="../../plugins/jetpadEditorRuntime/lib/jetpadBuildNumber.txt"/>
+      <available file="../../plugins/jetpad/lib/jetpadBuildNumber.txt"/>
     </condition>
   </target>
 
   <target name="readFile" depends="checkFileExist" if="${buildTxtExist}">
-    <loadfile property="currentVersion" srcfile="../../plugins/jetpadEditorRuntime/lib/jetpadBuildNumber.txt">
+    <loadfile property="currentVersion" srcfile="../../plugins/jetpad/lib/jetpadBuildNumber.txt">
       <filterchain>
         <striplinebreaks/>
       </filterchain>
@@ -39,7 +39,7 @@
   </target>
 
   <target name="force-resolve" depends="install-ivy">
-    <ivy:retrieve pattern="../../plugins/jetpadEditorRuntime/lib/[artifact].[ext]" overwritemode="different" />
+    <ivy:retrieve pattern="../../plugins/jetpad/lib/[artifact].[ext]" overwritemode="different" />
   </target>
 
   <target name="resolve" depends="checkIsUpToDate" description="--> Retreive dependencies with ivy if changed" if="${needsUpdate}">
