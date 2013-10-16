@@ -34,6 +34,14 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return MyRootConcept_Behavior.virtual_q_3868630583602426896(thisNode);
   }
 
+  public String virtual_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, SNode x) {
+    return MyRootConcept_Behavior.virtual_queryWithComplexIfaceParam_6925357446497561822(thisNode, x);
+  }
+
+  public String virtual_queryWithIfaceParam_6925357446497561814(SNode thisNode, SNode named) {
+    return MyRootConcept_Behavior.virtual_queryWithIfaceParam_6925357446497561814(thisNode, named);
+  }
+
   public boolean virtual_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {
     return MyRootConcept_Behavior.virtual_queryWithParam_6166572974641188535(thisNode, kind);
   }

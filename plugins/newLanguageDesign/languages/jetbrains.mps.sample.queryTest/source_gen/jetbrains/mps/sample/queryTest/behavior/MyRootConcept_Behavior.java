@@ -62,11 +62,19 @@ public class MyRootConcept_Behavior {
   }
 
   public static boolean virtual_ch_6166572974641188527(SNode thisNode) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "child", true), "child", true), "isGood");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "child", true), "child", true), "name").length() > 1;
   }
 
   public static boolean virtual_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {
     return true;
+  }
+
+  public static String virtual_queryWithIfaceParam_6925357446497561814(SNode thisNode, SNode named) {
+    return "";
+  }
+
+  public static String virtual_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, SNode x) {
+    return "";
   }
 
   @Deprecated
@@ -105,6 +113,16 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
+  public static String call_queryWithIfaceParam_6925357446497561814(SNode thisNode, SNode named) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_queryWithIfaceParam_6925357446497561814", new Object[]{named});
+  }
+
+  @Deprecated
+  public static String call_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, SNode x) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_queryWithComplexIfaceParam_6925357446497561822", new Object[]{x});
+  }
+
+  @Deprecated
   public static boolean callSuper_longName_8194562227700484009(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_longName_8194562227700484009", new Class[]{SNode.class}, new Object[]{});
   }
@@ -137,5 +155,15 @@ public class MyRootConcept_Behavior {
   @Deprecated
   public static boolean callSuper_queryWithParam_6166572974641188535(SNode thisNode, String callerConceptFqName, SNode kind) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithParam_6166572974641188535", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
+  }
+
+  @Deprecated
+  public static String callSuper_queryWithIfaceParam_6925357446497561814(SNode thisNode, String callerConceptFqName, SNode named) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithIfaceParam_6925357446497561814", new Class[]{SNode.class, SNode.class}, new Object[]{named});
+  }
+
+  @Deprecated
+  public static String callSuper_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, String callerConceptFqName, SNode x) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithComplexIfaceParam_6925357446497561822", new Class[]{SNode.class, SNode.class}, new Object[]{x});
   }
 }
