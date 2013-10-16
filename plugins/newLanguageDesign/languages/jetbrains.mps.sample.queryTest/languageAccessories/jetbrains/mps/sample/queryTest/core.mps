@@ -8,7 +8,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="ydsw" modelUID="r:c11a239c-3061-4b62-b5dd-6749678497d7(jetbrains.mps.core.structure.structure)" version="-1" implicit="yes" />
   <import index="xsnc" modelUID="r:e3b9700d-5825-4641-895a-925f28591c5b(jetbrains.mps.core.smodel.structure)" version="-1" implicit="yes" />
-  <import index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="1" implicit="yes" />
+  <import index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="4" implicit="yes" />
   <root type="ydsw.SStructureContainer" typeId="ydsw.6195190339581766868" id="8194562227697157146" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="AllLanguage" />
     <node role="structure" roleId="ydsw.6195190339581766884" type="ydsw.SConcept" typeId="ydsw.6195190339581766741" id="8194562227697157149" nodeInfo="ng">
@@ -404,7 +404,7 @@
           </node>
         </node>
         <node role="type" roleId="xsnc.4366849661834287896" type="bwy9.MqlBoolType" typeId="bwy9.6762883159245048072" id="4031651930683311004" nodeInfo="ng" />
-        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlBoolLiteral" typeId="bwy9.6762883159245048056" id="4031651930683311814" nodeInfo="ng">
+        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlBoolLiteral" typeId="bwy9.6762883159245048056" id="8982157191776772636" nodeInfo="ng">
           <property name="value" nameId="bwy9.6762883159245048057" value="true" />
         </node>
       </node>

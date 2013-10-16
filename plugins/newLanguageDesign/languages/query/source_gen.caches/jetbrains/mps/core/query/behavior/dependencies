@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.ExpressionSwitchBranch_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlArithmetic_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlAssignment_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlBoolLiteral_BehaviorDescriptor" />
@@ -48,9 +49,18 @@
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlUnary_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlVariableReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlVariable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.SwitchExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.ExpressionSwitchBranch_BehaviorDescriptor" file="ExpressionSwitchBranch_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.SwitchBranch_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.query.behavior.MqlArithmetic_Behavior" file="MqlArithmetic_Behavior.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -1097,6 +1107,28 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.SwitchBranch_BehaviorDescriptor" file="SwitchBranch_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.SwitchExpression_Behavior" file="SwitchExpression_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.core.query.behavior.SwitchExpression_BehaviorDescriptor" file="SwitchExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.MqlExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.query.behavior.SwitchExpression_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

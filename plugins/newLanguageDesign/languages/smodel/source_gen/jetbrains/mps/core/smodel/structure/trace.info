@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.core.smodel.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.core.smodel.structure.StructureAspectDescriptor" />
   <root nodeRef="r:e3b9700d-5825-4641-895a-925f28591c5b(jetbrains.mps.core.smodel.structure)/3868630583607362190">
     <nodeInfo nodeId="3868630583607362190" fileName="MqlNodeNoArgOperationKind.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="3868630583607362190" fileName="MqlNodeNoArgOperationKind.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
