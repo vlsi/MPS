@@ -19,6 +19,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @Generated
 public class QueriesGenerated {
@@ -227,10 +228,21 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_6269300764715623918(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "name") + ".IsNotEmptyStringMethod";
+    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
+      }
+    }).first(), "name") + ".IsNotEmptyStringMethod";
   }
 
   public static Object insertMacro_varValue_6269300764714539646(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last(), "name") + ".IsEmptyStringMethod";
+    // ExtractStaticMethodExpression looks for first non static class 
+    // and as long as there's no alternative to ESME, this code shall 
+    // respect the way ContextUtil.getContextForMethod works 
+    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
+      }
+    }).first(), "name") + ".IsEmptyStringMethod";
   }
 }
