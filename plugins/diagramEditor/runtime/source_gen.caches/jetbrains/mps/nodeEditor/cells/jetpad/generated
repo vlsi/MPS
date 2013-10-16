@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-9xpvjb5zn7u2t3fx11alfjhzrpna8j">
+  <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
+  <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.geometry(Jetpad.Editor/jetbrains.jetpad.geometry@java_stub)" />
+  <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.diagram.view(Jetpad.Editor/jetbrains.jetpad.projectional.diagram.view@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
+  <common hash="-619d2zcxhhuqsab1iw6jrkbmw3937i0" />
+  <source id="6277411742335784369" name="JetpadUtils" hash="-4kv06jral9mxejwarlsmovd12j5er6r">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JetpadUtils.java" />
+  </source>
+  <source id="6277411742335784392" name="ConnectorViewCell" hash="-7w9pmac8b4sl565bmis42k1pomwutfx">
+    <file name="ConnectorViewCell.java" />
+  </source>
+  <source id="6277411742335784468" name="GenericViewCell" hash="-8xoyj0uh4sgil8hqjhtfm1loih685nw">
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="GenericViewCell.java" />
+  </source>
+  <source id="6277411742335784604" name="DiagramViewCell" hash="emr9rurugdfagqwh7thzx2cay8b6bwo">
+    <dep root="6277411742335784468" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
+    <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.diagram.view(Jetpad.Editor/jetbrains.jetpad.projectional.diagram.view@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="DiagramViewCell.java" />
+  </source>
+  <source id="6277411742335784840" name="BlockViewPortLayouter" hash="8q91woa4dc62loc18ez0rmt8zv3n2jy">
+    <dep model="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.geometry(Jetpad.Editor/jetbrains.jetpad.geometry@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="BlockViewPortLayouter.java" />
+  </source>
+</dependencies>
+
