@@ -5,6 +5,7 @@ package jetbrains.mps.core.smodel.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.core.structure.util.ConceptUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IMapSequence;
 import java.util.Map;
@@ -23,15 +24,13 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.core.structure.behavior.SConceptMember_Behavior;
 import java.util.Iterator;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ConceptQueryUtil {
   public ConceptQueryUtil() {
   }
 
   public static Iterable<SNode> getQueriesToOverride(final SNode forConcept) {
-    return Sequence.fromIterable(MapSequence.fromMap(traverse(forConcept, new _FunctionTypes._return_P2_E0<IMapSequence<String, SNode>, SNode, Iterable<Map<String, SNode>>>() {
+    return Sequence.fromIterable(MapSequence.fromMap(ConceptUtil.traverse(forConcept, new _FunctionTypes._return_P2_E0<IMapSequence<String, SNode>, SNode, Iterable<Map<String, SNode>>>() {
       public IMapSequence<String, SNode> invoke(final SNode concept, Iterable<Map<String, SNode>> inherited) {
         final Map<String, SNode> result = MapSequence.fromMap(new HashMap<String, SNode>());
         Sequence.fromIterable(inherited).visitAll(new IVisitor<Map<String, SNode>>() {
@@ -70,7 +69,7 @@ public class ConceptQueryUtil {
   }
 
   public static Iterable<SNode> getAvailableQueries(SNode forConcept, @Nullable final String name) {
-    return MapSequence.fromMap(traverse(forConcept, new _FunctionTypes._return_P2_E0<IMapSequence<String, SNode>, SNode, Iterable<Map<String, SNode>>>() {
+    return MapSequence.fromMap(ConceptUtil.traverse(forConcept, new _FunctionTypes._return_P2_E0<IMapSequence<String, SNode>, SNode, Iterable<Map<String, SNode>>>() {
       public IMapSequence<String, SNode> invoke(SNode concept, Iterable<Map<String, SNode>> inherited) {
         final Map<String, SNode> result = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
         Sequence.fromIterable(inherited).visitAll(new IVisitor<Map<String, SNode>>() {
@@ -101,7 +100,7 @@ public class ConceptQueryUtil {
 
   public static SNode getOverriddenQuery(final SNode query) {
     final String signature = SConceptQuery_Behavior.call_getSignature_270269450479785542(query);
-    return traverse(SConceptMember_Behavior.call_getContainingConcept_4125821269968947769(query), new _FunctionTypes._return_P2_E0<SNode, SNode, Iterable<SNode>>() {
+    return ConceptUtil.traverse(SConceptMember_Behavior.call_getContainingConcept_4125821269968947769(query), new _FunctionTypes._return_P2_E0<SNode, SNode, Iterable<SNode>>() {
       public SNode invoke(SNode concept, Iterable<SNode> inherited) {
         SNode result = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(concept, "members", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -131,7 +130,7 @@ public class ConceptQueryUtil {
   }
 
   public static SNode resolveQuery(SNode type, final String name, final Iterable<SNode> arguments) {
-    return traverse(type, new _FunctionTypes._return_P2_E0<SNode, SNode, Iterable<SNode>>() {
+    return ConceptUtil.traverse(type, new _FunctionTypes._return_P2_E0<SNode, SNode, Iterable<SNode>>() {
       public SNode invoke(SNode concept, Iterable<SNode> inherited) {
         SNode result = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(concept, "members", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -144,47 +143,5 @@ public class ConceptQueryUtil {
         return result;
       }
     });
-  }
-
-  private static <T> T traverse(SNode node, final _FunctionTypes._return_P2_E0<? extends T, ? super SNode, ? super Iterable<T>> handler) {
-    Iterable<T> inherited = Sequence.fromIterable(Collections.<T>emptyList());
-    Iterable<SNode> interfaces;
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.structure.structure.SConcept")) {
-      if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SConcept"), "extends", false) != null)) {
-        inherited = Sequence.<T>singleton(traverse(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SConcept"), "extends", false), handler));
-      }
-      interfaces = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SConcept"), "implements", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "target", false) != null);
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "target", false);
-        }
-      });
-
-    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.structure.structure.SInterfaceConcept")) {
-      interfaces = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.core.structure.structure.SInterfaceConcept"), "extends", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "target", false) != null);
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "target", false);
-        }
-      });
-    } else {
-      interfaces = Sequence.fromIterable(Collections.<SNode>emptyList());
-    }
-    inherited = Sequence.fromIterable(inherited).concat(Sequence.fromIterable(interfaces).select(new ISelector<SNode, T>() {
-      public T select(SNode it) {
-        return traverse(it, handler);
-      }
-    }));
-    return handler.invoke(node, Sequence.fromIterable(inherited).where(new IWhereFilter<T>() {
-      public boolean accept(T it) {
-        return it != null;
-      }
-    }));
   }
 }

@@ -5,6 +5,7 @@
   <language namespace="108fa93e-8fe0-4be9-a8e5-d6725b9eb9b9(jetbrains.mps.core.gen.transform)" />
   <language namespace="41a590b4-0cca-40d1-9a11-d9ef253734cc(jetbrains.mps.core.smodel)" />
   <language namespace="c898d4a2-ef8e-481f-aff5-15e46db05e03(jetbrains.mps.core.query)" />
+  <import index="tql1" modelUID="r:7828b85a-5771-4321-a557-44fc5258c152(jetbrains.mps.core.stubs)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="ydsw" modelUID="r:c11a239c-3061-4b62-b5dd-6749678497d7(jetbrains.mps.core.structure.structure)" version="-1" implicit="yes" />
   <import index="xsnc" modelUID="r:e3b9700d-5825-4641-895a-925f28591c5b(jetbrains.mps.core.smodel.structure)" version="-1" implicit="yes" />
@@ -388,9 +389,14 @@
         <node role="type" roleId="xsnc.4366849661834287896" type="xsnc.MqlNodeType" typeId="xsnc.4260762357825047862" id="4031651930683102364" nodeInfo="ng">
           <link role="concept" roleId="xsnc.4260762357825047863" targetNodeId="8194562227697157149" resolveInfo="MyRootConcept" />
         </node>
-        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930683728616" nodeInfo="ng">
-          <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930683103133" nodeInfo="ng" />
-          <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930683728681" nodeInfo="ng">
+        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="8982157191780862954" nodeInfo="ng">
+          <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlDotExpression" typeId="bwy9.6762883159245048085" id="4031651930683728616" nodeInfo="ng">
+            <node role="left" roleId="bwy9.6762883159245048086" type="bwy9.MqlThis" typeId="bwy9.6762883159245048067" id="4031651930683103133" nodeInfo="ng" />
+            <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="4031651930683728681" nodeInfo="ng">
+              <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="6727112993714450581" resolveInfo="child" />
+            </node>
+          </node>
+          <node role="right" roleId="bwy9.6762883159245048089" type="xsnc.MqlLinkSelector" typeId="xsnc.4260762357824841781" id="8982157191780863032" nodeInfo="ng">
             <link role="link" roleId="xsnc.4260762357824841782" targetNodeId="6727112993714450581" resolveInfo="child" />
           </node>
         </node>

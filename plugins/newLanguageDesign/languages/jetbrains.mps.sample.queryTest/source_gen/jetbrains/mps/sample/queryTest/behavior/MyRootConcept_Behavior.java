@@ -62,7 +62,7 @@ public class MyRootConcept_Behavior {
   }
 
   public static SNode virtual_ch_6166572974641188527(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "child", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "child", true), "child", true);
   }
 
   public static boolean virtual_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {

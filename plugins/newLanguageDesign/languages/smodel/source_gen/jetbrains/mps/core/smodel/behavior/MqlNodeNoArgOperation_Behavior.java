@@ -4,6 +4,7 @@ package jetbrains.mps.core.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.core.structure.util.ConceptUtil;
 import jetbrains.mps.core.query.behavior.MqlSelector_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,7 +19,8 @@ public class MqlNodeNoArgOperation_Behavior {
   public static SNode virtual_getType_228266671027867010(SNode thisNode) {
     // FIXME think what to put inside, node<AnyConcept> or node<BaseConcept> or null 
     if (SPropertyOperations.hasValue(thisNode, "kind", "2", null)) {
-      return createMqlNodeType_2o35pm_a0a1a0();
+      return createMqlNodeType_2o35pm_a0a1a0(ConceptUtil.getBaseConcept());
+
     } else if (SPropertyOperations.hasValue(thisNode, "kind", "1", null)) {
       SNode nodeType = MqlSelector_Behavior.call_getContainerType_228266671027861723(thisNode);
       SNode concept = SLinkOperations.getTarget(SNodeOperations.as(nodeType, "jetbrains.mps.core.smodel.structure.MqlNodeType"), "concept", false);
@@ -28,9 +30,10 @@ public class MqlNodeNoArgOperation_Behavior {
     return null;
   }
 
-  private static SNode createMqlNodeType_2o35pm_a0a1a0() {
+  private static SNode createMqlNodeType_2o35pm_a0a1a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeType", null, GlobalScope.getInstance(), false);
+    n1.setReferenceTarget("concept", (SNode) p0);
     return n1;
   }
 
