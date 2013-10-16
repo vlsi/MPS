@@ -38,6 +38,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
@@ -201,6 +202,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 //      System.out.println("PostponedReference in the output model!!!");
 //    }
     return myChanged;
+  }
+
+  public void executeScript(TemplateMappingScript script) throws GenerationFailureException {
+    try {
+      getDefaultExecutionContext(null).executeScript(script, myInputModel);
+    } catch (Exception t) {
+      myLogger.handleException(t);
+      myLogger.error(script.getScriptNode().resolve(MPSModuleRepository.getInstance()), String.format("error executing script %s (see exception)", script.getLongName()));
+      throw new GenerationFailureException(t);
+    }
   }
 
   protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
