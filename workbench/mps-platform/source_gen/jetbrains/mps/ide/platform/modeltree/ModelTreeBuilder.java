@@ -32,7 +32,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     Object lastNode = event.getPath().getLastPathComponent();
     if (lastNode instanceof ModelTreeNode) {
       ModelTreeNode expandedNode = ((ModelTreeNode) lastNode);
-      if (!(expandedNode.getInitialized())) {
+      if (!(expandedNode.isInitialized())) {
         initTreeNode(expandedNode);
         expandedNode.setInitialized(true);
       }

@@ -36,7 +36,7 @@ public class Extension_Test extends TestCase {
     TestObject to = ext.get();
     TEST_OBJECT = to;
     Assert.assertEquals("foobar", to.getValue());
-    Assert.assertFalse(to.getShutDown());
+    Assert.assertFalse(to.isShutDown());
   }
 
   @MPSLaunch
@@ -59,11 +59,11 @@ public class Extension_Test extends TestCase {
   }
 
   public void tearDown() {
-    Assert.assertFalse(TEST_OBJECT.getShutDown());
+    Assert.assertFalse(TEST_OBJECT.isShutDown());
     ApplicationManagerEx.getApplicationEx().addApplicationListener(new ApplicationAdapter() {
       @Override
       public void applicationExiting() {
-        if (!(Extension_Test.TEST_OBJECT.getShutDown())) {
+        if (!(Extension_Test.TEST_OBJECT.isShutDown())) {
           throw new RuntimeException("!TestObject.shutDown");
         }
       }

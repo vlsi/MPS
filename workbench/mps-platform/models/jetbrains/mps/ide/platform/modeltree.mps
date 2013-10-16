@@ -925,7 +925,7 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="4288082098349208052" nodeInfo="igu">
-      <property name="propertyName" nameId="tpee.1201371481316" value="leaf" />
+      <property name="propertyName" nameId="tpee.1201371481316" value="leafPosition" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4288082098349208053" nodeInfo="nn" />
       <node role="type" roleId="tpee.1201371521209" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4288082098349208054" nodeInfo="in" />
       <node role="propertyImplementation" roleId="tpee.1201372378714" type="tpee.DefaultPropertyImplementation" typeId="tpee.1201372606839" id="4288082098349208055" nodeInfo="ng">

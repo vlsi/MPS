@@ -44,7 +44,10 @@ public class Property_Behavior {
   }
 
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
-    return "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode);
+    return (check_9xvv7i_a0a0e(SLinkOperations.getTarget(thisNode, "type", true)) ?
+      "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) :
+      "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode)
+    );
   }
 
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
@@ -130,6 +133,13 @@ public class Property_Behavior {
   @Deprecated
   public static Icon callSuper_getAdditionalIcon_8884554759541381539(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  private static boolean check_9xvv7i_a0a0e(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.BooleanType");
+    }
+    return false;
   }
 
   private static boolean eq_9xvv7i_a0a0i0i(Object a, Object b) {
