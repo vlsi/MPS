@@ -57,7 +57,7 @@ public class MqlLinkSelector_Constraints extends BaseConstraintsDescriptor {
             if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.core.smodel.structure.MqlNodeType")) {
               SNode decl = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.core.smodel.structure.MqlNodeType"), "concept", false);
               if ((decl != null)) {
-                ListSequence.fromList(result).addSequence(Sequence.fromIterable(ConceptUtil.getAvailableLinks(decl, null)));
+                ListSequence.fromList(result).addSequence(Sequence.fromIterable(ConceptUtil.getAvailableLinks(decl)));
                 // <node> 
               }
             }

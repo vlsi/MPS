@@ -10,7 +10,7 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   public MyRootConcept_BehaviorDescriptor() {
   }
 
-  public SNode virtual_ch_6166572974641188527(SNode thisNode) {
+  public boolean virtual_ch_6166572974641188527(SNode thisNode) {
     return MyRootConcept_Behavior.virtual_ch_6166572974641188527(thisNode);
   }
 

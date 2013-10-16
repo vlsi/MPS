@@ -219,7 +219,9 @@ public class ConceptUtil {
     }));
   }
 
-  public static Iterable<SNode> getAvailableProperties(SNode forConcept, final String name) {
+
+
+  public static Iterable<SNode> getAvailableProperties(SNode forConcept) {
     return ConceptUtil.traverse(forConcept, new _FunctionTypes._return_P2_E0<List<SNode>, SNode, Iterable<Iterable<SNode>>>() {
       public List<SNode> invoke(SNode concept, Iterable<Iterable<SNode>> inherited) {
         final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
@@ -228,17 +230,13 @@ public class ConceptUtil {
             ListSequence.fromList(result).addSequence(Sequence.fromIterable(it));
           }
         });
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(concept, "members", true), "jetbrains.mps.core.structure.structure.SProperty")).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return name == null || name.equals(SPropertyOperations.getString(it, "name"));
-          }
-        }));
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(concept, "members", true), "jetbrains.mps.core.structure.structure.SProperty")));
         return result;
       }
     });
   }
 
-  public static Iterable<SNode> getAvailableLinks(SNode forConcept, final String name) {
+  public static Iterable<SNode> getAvailableLinks(SNode forConcept) {
     return ConceptUtil.traverse(forConcept, new _FunctionTypes._return_P2_E0<List<SNode>, SNode, Iterable<Iterable<SNode>>>() {
       public List<SNode> invoke(SNode concept, Iterable<Iterable<SNode>> inherited) {
         final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
@@ -247,11 +245,7 @@ public class ConceptUtil {
             ListSequence.fromList(result).addSequence(Sequence.fromIterable(it));
           }
         });
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(concept, "members", true), "jetbrains.mps.core.structure.structure.SAbstractLink")).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return name == null || name.equals(SPropertyOperations.getString(it, "name"));
-          }
-        }));
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(concept, "members", true), "jetbrains.mps.core.structure.structure.SAbstractLink")));
         return result;
       }
     });

@@ -61,8 +61,8 @@ public class MyRootConcept_Behavior {
     return SNodeOperations.isInstanceOf(thisNode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "child", true))));
   }
 
-  public static SNode virtual_ch_6166572974641188527(SNode thisNode) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "child", true), "child", true);
+  public static boolean virtual_ch_6166572974641188527(SNode thisNode) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "child", true), "child", true), "isGood");
   }
 
   public static boolean virtual_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {
@@ -95,8 +95,8 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
-  public static SNode call_ch_6166572974641188527(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_ch_6166572974641188527", new Object[]{});
+  public static boolean call_ch_6166572974641188527(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_ch_6166572974641188527", new Object[]{});
   }
 
   @Deprecated
@@ -130,8 +130,8 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_ch_6166572974641188527(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_ch_6166572974641188527", new Class[]{SNode.class}, new Object[]{});
+  public static boolean callSuper_ch_6166572974641188527(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_ch_6166572974641188527", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
