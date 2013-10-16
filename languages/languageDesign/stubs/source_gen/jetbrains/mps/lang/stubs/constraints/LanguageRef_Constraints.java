@@ -33,7 +33,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "languageFqName";
         {
-          if (isEmpty_bmor1l_a0a0b0b0a1a0b0b(SPropertyOperations.getString(node, "languageId"))) {
+          if (isEmptyString(SPropertyOperations.getString(node, "languageId"))) {
             return null;
           }
 
@@ -54,7 +54,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
     return properties;
   }
 
-  public static boolean isEmpty_bmor1l_a0a0b0b0a1a0b0b(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

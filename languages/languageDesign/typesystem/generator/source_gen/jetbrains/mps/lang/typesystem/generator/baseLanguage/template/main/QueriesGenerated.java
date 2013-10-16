@@ -221,7 +221,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4197825331980858388(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return isEmpty_x583g4_a0a0fb(SPropertyOperations.getString(_context.getNode(), "fqName"));
+    return isEmptyString(SPropertyOperations.getString(_context.getNode(), "fqName"));
   }
 
   public static boolean baseMappingRule_Condition_1175150707078(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -2895,7 +2895,7 @@ parametersLoop:
     return quotedNode_1;
   }
 
-  public static boolean isEmpty_x583g4_a0a0fb(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

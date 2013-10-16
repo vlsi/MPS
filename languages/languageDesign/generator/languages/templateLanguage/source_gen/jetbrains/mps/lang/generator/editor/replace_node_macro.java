@@ -67,14 +67,14 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     }
 
     public String getDescriptionText_internal(SNode parameterObject) {
-      if (isNotEmpty_f12orh_a0a0i1(SPropertyOperations.getString(parameterObject, "conceptShortDescription"))) {
+      if (isNotEmptyString(SPropertyOperations.getString(parameterObject, "conceptShortDescription"))) {
         return SPropertyOperations.getString(parameterObject, "conceptShortDescription");
       } else {
         return SPropertyOperations.getString(parameterObject, "conceptAlias");
       }
     }
 
-    public static boolean isNotEmpty_f12orh_a0a0i1(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }

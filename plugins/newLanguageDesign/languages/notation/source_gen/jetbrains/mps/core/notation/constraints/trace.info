@@ -166,10 +166,10 @@
     <nodeInfo nodeId="2976314093282212786" fileName="SConcreteNotationSelector_Constraints.java" startLine="40" startPosition="185" endLine="41" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2976314093282180928" fileName="SConcreteNotationSelector_Constraints.java" startLine="46" startPosition="20" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2976314093282150301" fileName="SConcreteNotationSelector_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="78" endLine="57" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="55" endLine="57" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2976314093282178575" fileName="SConcreteNotationSelector_Constraints.java" startLine="46" startPosition="18" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2976314093282150301" fileName="SConcreteNotationSelector_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SConcreteNotationSelector_Constraints#()V" />
-    <nodeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_acsz20_a0a1a0a1a0a0a0a0b0a1a1#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2976314093282150301" fileName="SConcreteNotationSelector_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPresentation#()Z" />
     <nodeInfo nodeId="2976314093282460309" fileName="SConcreteNotationSelector_Constraints.java" startLine="41" startPosition="189" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2976314093282151176" fileName="SConcreteNotationSelector_Constraints.java" startLine="39" startPosition="128" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -181,7 +181,7 @@
     <scopeInfo nodeId="2976314093282150301" fileName="SConcreteNotationSelector_Constraints.java" startLine="21" startPosition="50" endLine="22" endPosition="77" />
     <scopeInfo nodeId="2976314093282150301" fileName="SConcreteNotationSelector_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="24" />
     <scopeInfo nodeId="2976314093282178576" fileName="SConcreteNotationSelector_Constraints.java" startLine="46" startPosition="20" endLine="47" endPosition="57" />
-    <scopeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="78" endLine="57" endPosition="43" />
+    <scopeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="55" endLine="57" endPosition="43" />
     <scopeInfo nodeId="2976314093282150301" fileName="SConcreteNotationSelector_Constraints.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="2976314093282397458" fileName="SConcreteNotationSelector_Constraints.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="2976314093282397458" varName="str" />

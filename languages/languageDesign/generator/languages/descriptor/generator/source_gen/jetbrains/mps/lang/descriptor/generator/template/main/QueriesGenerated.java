@@ -149,7 +149,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a22(SPropertyOperations.getString(_context.getNode(), "name")) ?
+    return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmptyString(SPropertyOperations.getString(_context.getNode(), "name")) ?
       "<no name>" :
       SPropertyOperations.getString(_context.getNode(), "name")
     ));
@@ -396,7 +396,7 @@ public class QueriesGenerated {
     return new TemplateModelImpl(module);
   }
 
-  public static boolean isEmpty_x583g4_a0a0a1a22(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 

@@ -100,7 +100,7 @@ __switch__:
   }
 
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return isNotEmpty_cte1s_a0a0c(SPropertyOperations.getString(thisNode, "moduleId"));
+    return isNotEmptyString(SPropertyOperations.getString(thisNode, "moduleId"));
   }
 
   private static SRepository check_cte1s_a0a0a0(jetbrains.mps.project.Project checkedDotOperand) {
@@ -110,7 +110,7 @@ __switch__:
     return null;
   }
 
-  public static boolean isNotEmpty_cte1s_a0a0c(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

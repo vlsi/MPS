@@ -12,26 +12,6 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 public class NaiveSetOperations_Test extends TestCase {
-  public void test_union() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
-    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
-  }
-
-  public void test_exclude() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
-    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
-    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
-  }
-
-  public void test_intersect() throws Exception {
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(ccc).intersect(Sequence.fromIterable(cc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
-    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
-  }
-
   private static Iterable<String> aabbcc = Sequence.fromClosure(new ISequenceClosure<String>() {
     public Iterable<String> iterable() {
       return new Iterable<String>() {
@@ -563,6 +543,26 @@ __switch__:
       };
     }
   });
+
+  public void test_union() throws Exception {
+    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
+    this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
+  }
+
+  public void test_exclude() throws Exception {
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
+    this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
+    this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
+  }
+
+  public void test_intersect() throws Exception {
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(ccc).intersect(Sequence.fromIterable(cc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
+    this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
+  }
 
   public NaiveSetOperations_Test() {
   }

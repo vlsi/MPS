@@ -93,7 +93,7 @@ public class PluginMoveHelper {
         SModel m = ListSequence.fromList(models).first();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (it != null) && isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4(SPropertyOperations.getString(it, "path")) && !(isValid(it));
+            return (it != null) && isNotEmptyString(SPropertyOperations.getString(it, "path")) && !(isValid(it));
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -204,7 +204,7 @@ public class PluginMoveHelper {
     return l.getModuleName() + "." + name;
   }
 
-  public static boolean isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

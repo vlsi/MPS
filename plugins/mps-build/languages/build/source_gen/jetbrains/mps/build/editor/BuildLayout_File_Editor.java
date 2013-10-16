@@ -103,7 +103,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1ol6d0_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_1ol6d0_a0a0a6(SPropertyOperations.getString(node, "filemode")) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
+    return isNotEmptyString(SPropertyOperations.getString(node, "filemode")) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
   }
 
   private EditorCell createConstant_1ol6d0_a2a(EditorContext editorContext, SNode node) {
@@ -271,7 +271,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static boolean isNotEmpty_1ol6d0_a0a0a6(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

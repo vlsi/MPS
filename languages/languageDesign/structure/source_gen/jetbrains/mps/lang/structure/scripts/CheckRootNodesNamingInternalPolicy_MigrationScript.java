@@ -36,7 +36,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        if (isEmpty_rkab70_a0c0d0a0a0a0b0a(SPropertyOperations.getString(node, "conceptAlias"))) {
+        if (isEmptyString(SPropertyOperations.getString(node, "conceptAlias"))) {
           return false;
         }
         return !(SPropertyOperations.getString(node, "conceptAlias").equals(NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias"))));
@@ -75,7 +75,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        return isEmpty_rkab70_a0c0d0a0a0a0c0a(SPropertyOperations.getString(node, "conceptAlias"));
+        return isEmptyString(SPropertyOperations.getString(node, "conceptAlias"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -97,11 +97,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
     });
   }
 
-  public static boolean isEmpty_rkab70_a0c0d0a0a0a0b0a(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_rkab70_a0c0d0a0a0a0c0a(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }
