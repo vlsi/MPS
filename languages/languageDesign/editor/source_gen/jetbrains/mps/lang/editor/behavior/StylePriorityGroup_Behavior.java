@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.log4j.Priority;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -26,6 +27,21 @@ public class StylePriorityGroup_Behavior {
       }
     }
     return i;
+  }
+
+  public static String call_getPriorityConstName_3918924352676970752(SNode thisNode) {
+    StringBuffer bufferName = new StringBuffer();
+    bufferName.append("PRIORITY_");
+    for (int i = 0; i < SPropertyOperations.getString(thisNode, "name").length(); i++) {
+      char ch = SPropertyOperations.getString(thisNode, "name").charAt(i);
+      if (Character.isUpperCase(ch)) {
+        bufferName.append('_');
+        bufferName.append(Character.toUpperCase(ch));
+      } else {
+        bufferName.append(Character.toUpperCase(ch));
+      }
+    }
+    return bufferName.toString();
   }
 
   protected static Logger LOG = LogManager.getLogger(StylePriorityGroup_Behavior.class);

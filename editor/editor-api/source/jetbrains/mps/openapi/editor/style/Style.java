@@ -16,8 +16,10 @@
 package jetbrains.mps.openapi.editor.style;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -34,6 +36,10 @@ public interface Style {
   void putAll(@NotNull Style style);
 
   <T> void set(StyleAttribute<T> attribute, T value);
+
+  void addPriorityGroup(int priority, @NotNull Style style);
+
+  Iterable<Pair<Integer, Style>> getPriorityGroups();
 
   /**
    * Deprecated: should be removed after MPS 3.0

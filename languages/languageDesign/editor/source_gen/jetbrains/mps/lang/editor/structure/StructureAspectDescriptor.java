@@ -293,7 +293,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 138:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleContainer").interface_().children(new String[]{"styleItem"}, new boolean[]{true}).create();
       case 139:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleSheetMember").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleSheetMember").interface_().parents("jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").create();
       case 140:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IdSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").properties("cellId").create();
       case 141:
@@ -433,13 +433,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 208:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleKeyPack").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"styleKey"}, new boolean[]{true}).create();
       case 209:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StylePriorityGroup").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IStyleSheetMember").children(new String[]{"extendedGroup"}, new boolean[]{false}).alias("priority group", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StylePriorityGroup").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember").children(new String[]{"extendedGroup"}, new boolean[]{false}).alias("priority group", "").create();
       case 210:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StylePriorityGroupReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("stylePriorityGroup").create();
       case 211:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"styleClass"}, new boolean[]{true}).alias("Stylesheet", "").create();
       case 212:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheetClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IStyleSheetMember").children(new String[]{"extendedClass"}, new boolean[]{false}).alias("style", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheetClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember").children(new String[]{"extendedClass"}, new boolean[]{false}).alias("style", "").create();
       case 213:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheetClassReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("styleSheetClass").create();
       case 214:

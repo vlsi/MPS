@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -31,9 +32,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  * User: shatalin
@@ -48,6 +54,12 @@ public class StyleImpl implements Style {
   private List<StyleListener> myStyleListeners = null;
   private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
   private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
+  private SortedSet<Pair<Integer, Style>> myPriorityGroups = new TreeSet<Pair<Integer, Style>>(new Comparator<Pair<Integer, Style>>() {
+    @Override
+    public int compare(Pair<Integer, Style> a, Pair<Integer, Style> b) {
+      return a.o1.compareTo(b.o1);
+    }
+  });
 
   private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
     return Collections.singleton(sa);
@@ -79,8 +91,32 @@ public class StyleImpl implements Style {
         addedNotSimple.add(attribute);
       }
     }
+    for (Pair<Integer, Style> priorityGroup : style.getPriorityGroups()) {
+      Style priorityGroupStyle = priorityGroup.o2;
+      Integer priority = priorityGroup.o1;
+      for (StyleAttribute attribute : priorityGroupStyle.getSpecifiedAttributes()) {
+        myAttributeValues[attribute.getIndex()] = priorityGroupStyle.rawGet(attribute);
+        if (StyleAttributes.isSimple(attribute)) {
+          myCachedAttributeValues[attribute.getIndex()] = null;
+          addedSimple.add(attribute);
+        } else {
+          addedNotSimple.add(attribute);
+        }
+      }
+    }
     updateCache(addedNotSimple);
     fireStyleChanged(new StyleChangeEvent(this, addedSimple));
+  }
+
+  @Override
+  public Iterable<Pair<Integer, Style>> getPriorityGroups() {
+    return myPriorityGroups;
+  }
+
+  @Override
+  public void addPriorityGroup(int priority, Style priorityGroup) {
+    myPriorityGroups.add(new Pair<Integer, Style>(priority, priorityGroup));
+
   }
 
   @Override
