@@ -13,6 +13,7 @@
   <dependency className="jetbrains.mps.ide.build.mpsCore" file="mpsCore.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDebuggerPlugin" file="mpsDebuggerPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDevKit" file="mpsDevKit.xml" />
+  <dependency className="jetbrains.mps.ide.build.mpsDiagramEditor" file="mpsDiagramEditor.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDistribution" file="mpsDistribution.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsExecutionPlugin" file="mpsExecutionPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsJava" file="mpsJava.xml" />
