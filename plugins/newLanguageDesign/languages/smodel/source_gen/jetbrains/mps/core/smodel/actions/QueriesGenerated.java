@@ -24,7 +24,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.smodel.behavior.SConceptQuery_Behavior;
 import jetbrains.mps.core.structure.behavior.SConceptMember_Behavior;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +33,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.ModelActions;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SConceptQuery_270269450479642833(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -85,20 +89,37 @@ public class QueriesGenerated {
     return concept != null;
   }
 
-  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IsInstanceOf_7737135436000191535(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MqlSelector_7737135436000191535(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          List<SNode> result = ListSequence.fromList(new ArrayList<SNode>(2));
-          ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.smodel.structure.IsInstanceOf"));
-          ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.smodel.structure.SNodeCast"));
-          return result;
-        }
-      }.compute();
-      if (queryResult != null) {
-        for (SNode item : queryResult) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeNoArgOperation");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
+            return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:e3b9700d-5825-4641-895a-925f28591c5b(jetbrains.mps.core.smodel.structure)", "MqlNodeNoArgOperationKind"));
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return createMqlNodeNoArgOperation_o90ukn_a0a0a0a(SEnumOperations.getEnumMemberValue((item)));
+              }
+
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:e3b9700d-5825-4641-895a-925f28591c5b(jetbrains.mps.core.smodel.structure)", "3868630583607362190"), "member", true)).findFirst(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return SPropertyOperations.getString(it, "internalValue").equals(SEnumOperations.getEnumMemberValue((item)));
+                  }
+                }), "externalValue");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
+              }
+            });
+          }
         }
       }
     }
@@ -349,5 +370,12 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_MqlModelQuery_4363371899537413600(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "contextNode", true) == null);
+  }
+
+  private static SNode createMqlNodeNoArgOperation_o90ukn_a0a0a0a(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.smodel.structure.MqlNodeNoArgOperation", null, GlobalScope.getInstance(), false);
+    n1.setProperty("kind", (String) p0);
+    return n1;
   }
 }
