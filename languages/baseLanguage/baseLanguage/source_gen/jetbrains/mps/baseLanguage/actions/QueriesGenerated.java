@@ -1180,6 +1180,27 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", null);
+            SPropertyOperations.set(decl, "transient", "" + (true));
+            return decl;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "transient";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", null);
             SPropertyOperations.set(decl, "final", "" + (true));
             return decl;
           }
@@ -2006,7 +2027,7 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "volatile")) {
+            if (SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "transient")) {
               return null;
             }
             if (!((pattern == null || pattern.length() == 0))) {
@@ -2045,12 +2066,14 @@ public class QueriesGenerated {
             }
             SNode result;
             if (SPropertyOperations.getBoolean(current, "static")) {
-              result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
+              SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
+              SPropertyOperations.set(decl, "isVolatile", "" + (SPropertyOperations.getBoolean(current, "volatile")));
+              SPropertyOperations.set(decl, "isTransient", "" + (SPropertyOperations.getBoolean(current, "transient")));
+              result = decl;
             } else {
               SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
               SPropertyOperations.set(decl, "isVolatile", "" + (SPropertyOperations.getBoolean(current, "volatile")));
-              // TODO transient 
-              SPropertyOperations.set(decl, "isTransient", "" + (false));
+              SPropertyOperations.set(decl, "isTransient", "" + (SPropertyOperations.getBoolean(current, "transient")));
               result = decl;
             }
             SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", SLinkOperations.getTarget(current, "visibility", true), true);
@@ -2124,7 +2147,7 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "volatile") || SLinkOperations.getTarget(curr, "type", true) != null) {
+            if (SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "transient") || SPropertyOperations.getBoolean(curr, "volatile") || SLinkOperations.getTarget(curr, "type", true) != null) {
               return null;
             }
             return "class";
@@ -2257,7 +2280,7 @@ public class QueriesGenerated {
 
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.as(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (curr != null && (SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "static") || (SLinkOperations.getTarget(curr, "type", true) != null))) {
+            if (curr != null && (SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "transient") || SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "static") || (SLinkOperations.getTarget(curr, "type", true) != null))) {
               return null;
             }
             SNode clNode = SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -2313,16 +2336,16 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ClassifierMember_459106287061180094(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    SNode target = SNodeOperations.as(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-    if (target == null) {
+    SNode curr = SNodeOperations.as(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
+    if (curr == null) {
       return false;
     }
 
-    if (SPropertyOperations.getBoolean(target, "abstract") || SPropertyOperations.getBoolean(target, "synchronized") || SPropertyOperations.getBoolean(target, "final") || SPropertyOperations.getBoolean(target, "volatile") || SLinkOperations.getTarget(target, "type", true) != null || SLinkOperations.getTarget(target, "visibility", true) != null) {
+    if (SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "transient") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "volatile") || SLinkOperations.getTarget(curr, "type", true) != null || SLinkOperations.getTarget(curr, "visibility", true) != null) {
       return false;
     }
 
-    return SPropertyOperations.getBoolean(target, "static");
+    return SPropertyOperations.getBoolean(curr, "static");
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -5151,6 +5174,37 @@ __switch__:
     return SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false;
   }
 
+  public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_6348240317717608076(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "transient", "" + (true));
+        return _context.getSourceNode();
+      }
+
+      public String getMatchingText(String pattern) {
+        return "transient";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), null));
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_6348240317717608090(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SPropertyOperations.getBoolean(_context.getSourceNode(), "transient") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false;
+  }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_3731731823337580877(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), _context.getSourceNode()) {
@@ -5179,7 +5233,7 @@ __switch__:
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_3731731823337580891(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "volatile") == false;
+    return SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "volatile") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "transient") == false;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_3731731823337920299(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -5210,7 +5264,7 @@ __switch__:
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_3731731823337920313(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false;
+    return SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "transient") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_3731731823337832813(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -5716,7 +5770,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a042(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a242(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -5992,7 +6046,7 @@ __switch__:
     return str == null || str.length() == 0;
   }
 
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a042(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a242(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
