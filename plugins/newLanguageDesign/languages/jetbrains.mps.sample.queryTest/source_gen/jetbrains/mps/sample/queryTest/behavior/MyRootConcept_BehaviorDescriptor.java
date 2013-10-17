@@ -46,6 +46,10 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return MyRootConcept_Behavior.virtual_queryWithParam_6166572974641188535(thisNode, kind);
   }
 
+  public boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
+    return MyRootConcept_Behavior.virtual_useQueryTest2_6925357446547284154(thisNode, param);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.sample.queryTest.structure.MyRootConcept";

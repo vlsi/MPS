@@ -70,11 +70,15 @@ public class MyRootConcept_Behavior {
   }
 
   public static String virtual_queryWithIfaceParam_6925357446497561814(SNode thisNode, SNode named) {
-    return "";
+    return SPropertyOperations.getString(named, "name");
   }
 
   public static String virtual_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, SNode x) {
-    return "";
+    return SPropertyOperations.getString(x, "alias");
+  }
+
+  public static boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, param, "virtual_qt2query_6925357446544699852", new Object[]{});
   }
 
   @Deprecated
@@ -123,6 +127,11 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
+  public static boolean call_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useQueryTest2_6925357446547284154", new Object[]{param});
+  }
+
+  @Deprecated
   public static boolean callSuper_longName_8194562227700484009(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_longName_8194562227700484009", new Class[]{SNode.class}, new Object[]{});
   }
@@ -165,5 +174,10 @@ public class MyRootConcept_Behavior {
   @Deprecated
   public static String callSuper_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, String callerConceptFqName, SNode x) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithComplexIfaceParam_6925357446497561822", new Class[]{SNode.class, SNode.class}, new Object[]{x});
+  }
+
+  @Deprecated
+  public static boolean callSuper_useQueryTest2_6925357446547284154(SNode thisNode, String callerConceptFqName, SNode param) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_useQueryTest2_6925357446547284154", new Class[]{SNode.class, SNode.class}, new Object[]{param});
   }
 }

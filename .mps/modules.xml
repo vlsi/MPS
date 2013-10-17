@@ -263,6 +263,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/gen.transform/transform.mpl" folder="newLanguageDesign" />
       <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/gen/gen.mpl" folder="newLanguageDesign" />
       <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/jetbrains.mps.sample.queryTest/jetbrains.mps.sample.queryTest.mpl" folder="newLanguageDesign" />
+      <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/jetbrains.mps.sample.queryTest2/jetbrains.mps.sample.queryTest2.mpl" folder="newLanguageDesign" />
       <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/metadata/metadata.mpl" folder="newLanguageDesign" />
       <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/notation/notation.mpl" folder="newLanguageDesign" />
       <modulePath path="$PROJECT_DIR$/plugins/newLanguageDesign/languages/query/query.mpl" folder="newLanguageDesign" />
