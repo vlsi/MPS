@@ -258,4 +258,6 @@
   <usageContextPanelProvider implementation="com.intellij.usages.impl.UsagePreviewPanel$Provider"/>
   <usageContextPanelProvider implementation="com.intellij.usageView.impl.UsageContextCallHierarchyPanel$Provider"/>
   -->
+  <applicationService serviceInterface="com.intellij.codeInsight.FileModificationService"
+                      serviceImplementation="com.intellij.codeInsight.CodeInsightUtilBase"/>
 </extensions>
