@@ -522,7 +522,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7951806551972992784(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", false), "conceptMethod");
+    return ResolveUtil.resolveConceptQuery(_context, SLinkOperations.getTarget(_context.getNode(), "query", false));
   }
 
   public static Object referenceMacro_GetReferent_5343139407529981998(final IOperationContext operationContext, final ReferenceMacroContext _context) {

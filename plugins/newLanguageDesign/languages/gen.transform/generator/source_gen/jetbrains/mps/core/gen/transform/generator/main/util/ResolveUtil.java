@@ -14,6 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ResolveUtil {
   public ResolveUtil() {
@@ -47,9 +51,36 @@ public class ResolveUtil {
     return SNodeOperations.as(SModelUtil.findNodeByFQName(qualifiedName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), GlobalScope.getInstance()), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
 
+
+
   public static SNode resolveConceptLink(TemplateQueryContext genContext, SNode link) {
-    return null;
+    if ((link == null)) {
+      return null;
+    }
+    SNode local = genContext.getOutputNodeByInputNodeAndMappingLabel(link, "conceptLink");
+    if (local != null) {
+      return local;
+    }
+
+    final String name = SPropertyOperations.getString(link, "name");
+    if (name == null) {
+      return null;
+    }
+
+    SNode concept = SNodeOperations.cast(SNodeOperations.getParent(link), "jetbrains.mps.core.structure.structure.SAbstractConcept");
+    SNode cd = resolveConcept(genContext, concept);
+    if (cd == null) {
+      return null;
+    }
+
+    return ListSequence.fromList(SLinkOperations.getTargets(cd, "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return name.equals(SPropertyOperations.getString(it, "role"));
+      }
+    }).first();
   }
+
+
 
   public static SNode resolveConceptProperty(TemplateQueryContext genContext, SNode property) {
     if ((property == null)) {
@@ -65,13 +96,53 @@ public class ResolveUtil {
       return null;
     }
 
-    SNode concept = SNodeOperations.getAncestor(property, "jetbrains.mps.core.structure.structure.SAbstractConcept", false, false);
+    SNode concept = SNodeOperations.cast(SNodeOperations.getParent(property), "jetbrains.mps.core.structure.structure.SAbstractConcept");
     SNode cd = resolveConcept(genContext, concept);
     if (cd == null) {
       return null;
     }
 
     return ListSequence.fromList(SLinkOperations.getTargets(cd, "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return name.equals(SPropertyOperations.getString(it, "name"));
+      }
+    }).first();
+  }
+
+
+
+  public static SNode resolveConceptQuery(TemplateQueryContext genContext, SNode query) {
+    if ((query == null)) {
+      return null;
+    }
+    SNode local = genContext.getOutputNodeByInputNodeAndMappingLabel(query, "conceptMethod");
+    if (local != null) {
+      return local;
+    }
+
+    final String name = SPropertyOperations.getString(query, "name");
+    if (name == null) {
+      return null;
+    }
+
+    SNode concept = SNodeOperations.cast(SNodeOperations.getParent(query), "jetbrains.mps.core.structure.structure.SAbstractConcept");
+    final SNode cd = resolveConcept(genContext, concept);
+    if (cd == null) {
+      return null;
+    }
+
+    SModelUtil.getDeclaringLanguage(cd);
+    // FIXME do this in a way that uses exisiting utility classes 
+    String languageFqName = NameUtil.namespaceFromConceptFQName(SAbstractConcept_Behavior.call_getQualifiedName_7891765471710491510(concept));
+    String behaviorModelName = languageFqName + ".behavior";
+    SModel behaviorModel = SModelRepository.getInstance().getModelDescriptor(behaviorModelName);
+
+    SNode cb = ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "concept", false) == cd;
+      }
+    }).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(cb, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return name.equals(SPropertyOperations.getString(it, "name"));
       }
