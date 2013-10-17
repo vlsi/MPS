@@ -2065,7 +2065,11 @@ public class QueriesGenerated {
 
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
-            SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL);
+            if ((SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == null)) {
+              SelectionUtil.selectCell(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), SelectionManager.LAST_EDITABLE_CELL);
+            } else {
+              SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL);
+            }
             return null;
           }
 
