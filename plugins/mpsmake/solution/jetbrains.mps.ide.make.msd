@@ -4,7 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/mpsmake/classes" type="java_classes" />
+    <modelRoot contentPath="${mps_home}/plugins/mpsmake" type="java_classes">
+      <sourceRoot location="classes" />
+    </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
