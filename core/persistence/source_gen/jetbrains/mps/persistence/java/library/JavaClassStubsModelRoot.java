@@ -61,19 +61,22 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     final Collection<String> files = getFiles(FileBasedModelRoot.SOURCE_ROOTS);
     final Collection<String> excludedFiles = getFiles(FileBasedModelRoot.EXCLUDED);
     for (String file : files) {
-      findAndAddModels(file, result);
+      findAndAddModels(file, result, excludedFiles);
     }
     return result;
   }
 
-  private void findAndAddModels(String file, final List<SModel> result) {
+  private void findAndAddModels(String file, final List<SModel> result, final Collection<String> excludedFiles) {
+    if (excludedFiles.contains(file)) {
+      return;
+    }
     IClassPathItem cp = create(file);
     getModelDescriptors(result, file, cp, "", LanguageID.JAVA, getModule());
     final IFile fileByPath = FileSystem.getInstance().getFileByPath(file);
     if (fileByPath.isDirectory()) {
       for (IFile child : fileByPath.getChildren()) {
         if (child.getName().endsWith(".jar") || child.isDirectory()) {
-          findAndAddModels(child.getPath(), result);
+          findAndAddModels(child.getPath(), result, excludedFiles);
         }
       }
     }
@@ -121,7 +124,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           smd.setModelRoot(this);
           ListSequence.fromList(result).addElement(smd);
         }
-        ((FolderSetDataSource) smd.getSource()).addPath(child(startPath, subpackage), this);
+        smd.getSource().addPath(child(startPath, subpackage), this);
       }
       getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
     }

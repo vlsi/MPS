@@ -34,7 +34,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public static final String SOURCE_ROOTS = "sourceRoot";
 
   private String contentRoot;
-  protected Map<String, List<String>> filesForKind = new HashMap<String, List<String>>();
+  protected Map<String, List<String>> filesForKind = new LinkedHashMap<String, List<String>>();
   private final List<PathListener> myListeners = new ArrayList<PathListener>();
 
   protected FileBasedModelRoot() {
@@ -113,7 +113,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public String getPresentation() {
-    return (getContentRoot() != null ? getContentRoot() : "no path") + " (" + getType() + ")";
+    return "(" + getType() + ") " + (getContentRoot() != null ? getContentRoot() : "no path");
   }
 
   public boolean supportsFiles(String kind) {
