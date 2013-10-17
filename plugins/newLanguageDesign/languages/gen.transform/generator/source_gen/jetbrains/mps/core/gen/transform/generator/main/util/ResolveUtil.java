@@ -10,6 +10,10 @@ import jetbrains.mps.core.structure.behavior.SEnumeration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ResolveUtil {
   public ResolveUtil() {
@@ -41,5 +45,36 @@ public class ResolveUtil {
 
     String qualifiedName = SEnumeration_Behavior.call_getQualifiedName_2541782749654946768(enumeration);
     return SNodeOperations.as(SModelUtil.findNodeByFQName(qualifiedName, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), GlobalScope.getInstance()), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
+  }
+
+  public static SNode resolveConceptLink(TemplateQueryContext genContext, SNode link) {
+    return null;
+  }
+
+  public static SNode resolveConceptProperty(TemplateQueryContext genContext, SNode property) {
+    if ((property == null)) {
+      return null;
+    }
+    SNode local = genContext.getOutputNodeByInputNodeAndMappingLabel(property, "conceptProperty");
+    if (local != null) {
+      return local;
+    }
+
+    final String name = SPropertyOperations.getString(property, "name");
+    if (name == null) {
+      return null;
+    }
+
+    SNode concept = SNodeOperations.getAncestor(property, "jetbrains.mps.core.structure.structure.SAbstractConcept", false, false);
+    SNode cd = resolveConcept(genContext, concept);
+    if (cd == null) {
+      return null;
+    }
+
+    return ListSequence.fromList(SLinkOperations.getTargets(cd, "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return name.equals(SPropertyOperations.getString(it, "name"));
+      }
+    }).first();
   }
 }

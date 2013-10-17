@@ -493,6 +493,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "var", false), "name");
   }
 
+  public static Object referenceMacro_GetReferent_6925357446509990427(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "name");
+  }
+
   public static Object referenceMacro_GetReferent_3564725181394967855(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ResolveUtil.resolveConcept(_context, SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
@@ -530,7 +534,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5343139407530180932(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "property", false), "conceptProperty");
+    return ResolveUtil.resolveConceptProperty(_context, SLinkOperations.getTarget(_context.getNode(), "property", false));
   }
 
   public static Object referenceMacro_GetReferent_6925357446502978452(final IOperationContext operationContext, final ReferenceMacroContext _context) {
