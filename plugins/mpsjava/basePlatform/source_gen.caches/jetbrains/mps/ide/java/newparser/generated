@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eeaaddn0yv1k2ubaxm1ahl9pnudab27">
+<dependencies version="2" modelHash="3t5v1qeldoxvn9m4y2z4ims3sjmrawo">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -186,7 +186,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CommentHelper.java" />
   </source>
-  <source id="3356342729940974921" name="JavaToMpsConverter" hash="-ek6my21y88peuzu844j28unsopguki9">
+  <source id="3356342729940974921" name="JavaToMpsConverter" hash="-amnxlkqviztgvqi6yu37q1h1amdmkns">
     <dep root="3493766494546492050" />
     <dep root="3493766494546492073" />
     <dep root="5646944109420325187" />
