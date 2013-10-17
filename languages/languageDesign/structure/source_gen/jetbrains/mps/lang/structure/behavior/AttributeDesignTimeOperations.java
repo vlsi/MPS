@@ -41,7 +41,7 @@ public class AttributeDesignTimeOperations {
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // todo: why not getAttributeRole? 
-        return isNotEmpty_ripaa1_a0a1a0a0a0a4a0(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role")) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
+        return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role")) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SConceptOperations.isSubConceptOf(nodeConcept, NameUtil.nodeFQName(it));
           }
@@ -72,7 +72,7 @@ public class AttributeDesignTimeOperations {
     }
     return SPropertyOperations.getString(AttributeOperations.getAttribute(SetSequence.fromSet(getSuperConcepts(attributeDeclaration)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return isNotEmpty_ripaa1_a0a0a0a0a0a0b0d(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role"));
+        return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role"));
       }
     }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role");
   }
@@ -111,11 +111,7 @@ public class AttributeDesignTimeOperations {
     return concepts;
   }
 
-  public static boolean isNotEmpty_ripaa1_a0a1a0a0a0a4a0(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_ripaa1_a0a0a0a0a0a0b0d(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -53,7 +53,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "optionsName";
-        return isEmpty_c7ipzi_a0a0a1a1a0b0a1a3((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
+        return isEmptyString((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;
@@ -69,7 +69,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
 
-  public static boolean isEmpty_c7ipzi_a0a0a1a1a0b0a1a3(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

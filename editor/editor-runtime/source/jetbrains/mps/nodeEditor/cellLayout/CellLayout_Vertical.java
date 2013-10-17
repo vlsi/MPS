@@ -63,7 +63,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     int width = 0;
     int height = 0;
     for (EditorCell editorCell : cells) {
-      editorCell.moveTo(x, y + height);      
+      editorCell.moveTo(x, y + height + editorCell.getTopInset());
       editorCell.relayout();
       int cellHeight = editorCell.getHeight();
       int indent = getBracesIndent(editorCell);

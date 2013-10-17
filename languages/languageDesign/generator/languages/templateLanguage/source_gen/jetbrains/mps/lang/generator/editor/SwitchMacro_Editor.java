@@ -109,7 +109,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_31t0mi_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "templateSwitch", false) != null) && isNotEmpty_31t0mi_a0a0a6(SPropertyOperations.getString(SLinkOperations.getTarget(node, "templateSwitch", false), "name"));
+    return (SLinkOperations.getTarget(node, "templateSwitch", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "templateSwitch", false), "name"));
   }
 
   private EditorCell createComponent_31t0mi_c0(EditorContext editorContext, SNode node) {
@@ -457,7 +457,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static boolean isNotEmpty_31t0mi_a0a0a6(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

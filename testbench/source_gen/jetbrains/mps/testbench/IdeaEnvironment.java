@@ -81,7 +81,7 @@ public class IdeaEnvironment implements Environment {
     System.setProperty("idea.platform.prefix", "Idea");
 
     // do not overwrite plugin.path if set 
-    if (isEmpty_8e5t8e_a0w0h(System.getProperty("plugin.path"))) {
+    if (isEmptyString(System.getProperty("plugin.path"))) {
       StringBuffer pluginPath = new StringBuffer();
       File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
       if (pluginDir.listFiles() != null) {
@@ -301,7 +301,7 @@ public class IdeaEnvironment implements Environment {
     }
   }
 
-  public static boolean isEmpty_8e5t8e_a0w0h(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -9,6 +9,9 @@
   <accessoryModels />
   <generators />
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">c79685c0-f0f5-44ce-8c36-9ec48f392de5(jetbrains.mps.core.stubs)</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguage>b41c6a7f-afe7-4a3b-a53f-2288592bbea0(jetbrains.mps.core.gen)</usedLanguage>
     <usedLanguage>c898d4a2-ef8e-481f-aff5-15e46db05e03(jetbrains.mps.core.query)</usedLanguage>

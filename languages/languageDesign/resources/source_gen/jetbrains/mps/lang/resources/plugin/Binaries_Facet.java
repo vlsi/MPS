@@ -119,7 +119,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         ListSequence.fromList(deltaList).addElement(fd);
                         return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return isNotEmpty_rhbawb_a0a0a0a0a0a0a0i0a0a0a0a1a0a0a0a0b0c0a2a0a0a0a4j(SPropertyOperations.getString(it, "path"));
+                            return isNotEmptyString(SPropertyOperations.getString(it, "path"));
                           }
                         }).select(new ISelector<SNode, String>() {
                           public String select(SNode bin) {
@@ -240,7 +240,7 @@ public class Binaries_Facet extends IFacet.Stub {
       return 100;
     }
 
-    public static boolean isNotEmpty_rhbawb_a0a0a0a0a0a0a0i0a0a0a0a1a0a0a0a0b0c0a2a0a0a0a4j(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }

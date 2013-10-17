@@ -21,7 +21,7 @@
     <nodeInfo nodeId="8169228734285724803" fileName="XmlSignature.java" startLine="55" startPosition="22" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8169228734285724810" fileName="XmlSignature.java" startLine="57" startPosition="5" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8169228734285724819" fileName="XmlSignature.java" startLine="60" startPosition="101" endLine="61" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8169228734285724835" fileName="XmlSignature.java" startLine="62" startPosition="244" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8169228734285724835" fileName="XmlSignature.java" startLine="62" startPosition="233" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8169228734285724829" fileName="XmlSignature.java" startLine="64" startPosition="14" endLine="65" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8169228734285724853" fileName="XmlSignature.java" startLine="67" startPosition="5" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8169228734285724858" fileName="XmlSignature.java" startLine="68" startPosition="20" endLine="69" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -46,7 +46,7 @@
     <nodeInfo nodeId="8169228734285725018" fileName="XmlSignature.java" startLine="104" startPosition="5" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8169228734285725029" fileName="XmlSignature.java" startLine="108" startPosition="29" endLine="109" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8169228734285725054" fileName="XmlSignature.java" startLine="112" startPosition="30" endLine="113" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8169228734285724847" fileName="XmlSignature.java" startLine="116" startPosition="62" endLine="117" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8169228734285724847" fileName="XmlSignature.java" startLine="116" startPosition="52" endLine="117" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8169228734285724735" fileName="XmlSignature.java" startLine="35" startPosition="10" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8169228734285724780" fileName="XmlSignature.java" startLine="49" startPosition="14" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8169228734285724827" fileName="XmlSignature.java" startLine="64" startPosition="12" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -57,7 +57,7 @@
     <nodeInfo nodeId="8169228734285724979" fileName="XmlSignature.java" startLine="95" startPosition="128" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8169228734285725025" fileName="XmlSignature.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljava/lang/String;" />
     <nodeInfo nodeId="8169228734285725050" fileName="XmlSignature.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasErrors#()Z" />
-    <nodeInfo nodeId="8169228734285724847" fileName="XmlSignature.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_sz4ke8_a0a0a0f0e#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8169228734285724847" fileName="XmlSignature.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="8169228734285724796" fileName="XmlSignature.java" startLine="53" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8169228734285724765" fileName="XmlSignature.java" startLine="45" startPosition="82" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8169228734285724977" fileName="XmlSignature.java" startLine="94" startPosition="61" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -77,7 +77,7 @@
     <scopeInfo nodeId="8169228734285724736" fileName="XmlSignature.java" startLine="35" startPosition="12" endLine="36" endPosition="23" />
     <scopeInfo nodeId="8169228734285724781" fileName="XmlSignature.java" startLine="49" startPosition="16" endLine="50" endPosition="27" />
     <scopeInfo nodeId="8169228734285724818" fileName="XmlSignature.java" startLine="60" startPosition="101" endLine="61" endPosition="90" />
-    <scopeInfo nodeId="8169228734285724834" fileName="XmlSignature.java" startLine="62" startPosition="244" endLine="63" endPosition="18" />
+    <scopeInfo nodeId="8169228734285724834" fileName="XmlSignature.java" startLine="62" startPosition="233" endLine="63" endPosition="18" />
     <scopeInfo nodeId="8169228734285724828" fileName="XmlSignature.java" startLine="64" startPosition="14" endLine="65" endPosition="25" />
     <scopeInfo nodeId="8169228734285724950" fileName="XmlSignature.java" startLine="87" startPosition="105" endLine="88" endPosition="18" />
     <scopeInfo nodeId="8169228734285724961" fileName="XmlSignature.java" startLine="91" startPosition="122" endLine="92" endPosition="26" />
@@ -85,7 +85,7 @@
     <scopeInfo nodeId="8169228734285725008" fileName="XmlSignature.java" startLine="101" startPosition="14" endLine="102" endPosition="25" />
     <scopeInfo nodeId="8169228734285725028" fileName="XmlSignature.java" startLine="108" startPosition="29" endLine="109" endPosition="25" />
     <scopeInfo nodeId="8169228734285725053" fileName="XmlSignature.java" startLine="112" startPosition="30" endLine="113" endPosition="21" />
-    <scopeInfo nodeId="8169228734285724847" fileName="XmlSignature.java" startLine="116" startPosition="62" endLine="117" endPosition="44" />
+    <scopeInfo nodeId="8169228734285724847" fileName="XmlSignature.java" startLine="116" startPosition="52" endLine="117" endPosition="44" />
     <scopeInfo nodeId="8169228734285724766" fileName="XmlSignature.java" startLine="46" startPosition="98" endLine="48" endPosition="100" />
     <scopeInfo nodeId="8169228734285724797" fileName="XmlSignature.java" startLine="54" startPosition="96" endLine="56" endPosition="18" />
     <scopeInfo nodeId="8169228734285725034" fileName="XmlSignature.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />

@@ -10,18 +10,18 @@ public class BuildMps_Solution_Behavior {
   }
 
   public static boolean call_hasTestsSources_7354447573575923452(SNode thisNode) {
-    return isNotEmpty_skcazx_a0a0a1(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) && (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("tests"));
+    return isNotEmptyString(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) && (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("tests"));
   }
 
   public static boolean call_hasSources_7354447573576714831(SNode thisNode) {
-    return isEmpty_skcazx_a0a0a2(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) || (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources"));
+    return isEmptyString(SPropertyOperations.getString_def(thisNode, "sourcesKind", null)) || (SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources and tests") || SPropertyOperations.getString_def(thisNode, "sourcesKind", null).equals("sources"));
   }
 
-  public static boolean isNotEmpty_skcazx_a0a0a1(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_skcazx_a0a0a2(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

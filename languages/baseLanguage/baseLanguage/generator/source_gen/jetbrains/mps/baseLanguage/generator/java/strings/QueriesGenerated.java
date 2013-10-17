@@ -15,8 +15,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @Generated
 public class QueriesGenerated {
@@ -61,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316721(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("isNotEmpty", SNodeOperations.getContainingRoot(_context.getNode()));
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
   }
 
   public static Object propertyMacro_GetPropertyValue_3987319776542716753(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -81,7 +84,23 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316688(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("isEmpty", SNodeOperations.getContainingRoot(_context.getNode()));
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
+  }
+
+  public static Object referenceMacro_GetReferent_2241002959597790075(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
+  }
+
+  public static Object referenceMacro_GetReferent_6269300764714521734(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
+  }
+
+  public static boolean ifMacro_Condition_6269300764715607368(final IOperationContext operationContext, final IfMacroContext _context) {
+    if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {
+      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), "isNotEmptyString");
+      return true;
+    }
+    return false;
   }
 
   public static boolean ifMacro_Condition_3987319776542716768(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -112,7 +131,19 @@ public class QueriesGenerated {
     return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.SubstringExpression").isEmpty());
   }
 
+  public static boolean ifMacro_Condition_6269300764714516440(final IOperationContext operationContext, final IfMacroContext _context) {
+    if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {
+      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), "isEmptyString");
+      return true;
+    }
+    return false;
+  }
+
   public static SNode sourceNodeQuery_4592826945244850127(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_2241002959597789621(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
@@ -190,5 +221,28 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4592826945244850077(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_6269300764714521727(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+  }
+
+  public static Object insertMacro_varValue_6269300764715623918(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
+      }
+    }).first(), "name") + ".IsNotEmptyStringMethod";
+  }
+
+  public static Object insertMacro_varValue_6269300764714539646(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    // ExtractStaticMethodExpression looks for first non static class 
+    // and as long as there's no alternative to ESME, this code shall 
+    // respect the way ContextUtil.getContextForMethod works 
+    return SPropertyOperations.getString(ListSequence.fromList(SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
+      }
+    }).first(), "name") + ".IsEmptyStringMethod";
   }
 }

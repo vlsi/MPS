@@ -67,8 +67,8 @@
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="725186580883628362" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Block3" />
-      <property name="x" nameId="adck.6279035160242221415" value="124" />
-      <property name="y" nameId="adck.6279035160242221911" value="488" />
+      <property name="x" nameId="adck.6279035160242221415" value="203" />
+      <property name="y" nameId="adck.6279035160242221911" value="478" />
       <node role="outputPorts" roleId="adck.725186580883451904" type="adck.OutputPort" typeId="adck.725186580883451839" id="725186580883628367" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="outputPort3" />
       </node>

@@ -76,7 +76,7 @@ public class Junit_Command {
     return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ?
       javaRunParameters.jrePath() :
       null
-    )).setWorkingDirectory_File((isEmpty_yo2c7x_a0a0a0a0a9(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
+    )).setWorkingDirectory_File((isEmptyString(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
       null :
       new File(javaRunParameters.workingDirectory())
     )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
@@ -155,7 +155,7 @@ public class Junit_Command {
         }), " ");
       }
     });
-    if (isNotEmpty_yo2c7x_a0h0n(skipped.value)) {
+    if (isNotEmptyString(skipped.value)) {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("All tests could not be executed together. Skipped " + skipped.value);
       }
@@ -216,7 +216,7 @@ public class Junit_Command {
     return null;
   }
 
-  public static boolean isEmpty_yo2c7x_a0a0a0a0a9(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 
@@ -234,7 +234,7 @@ public class Junit_Command {
     ));
   }
 
-  public static boolean isNotEmpty_yo2c7x_a0h0n(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -221,7 +221,7 @@
     <nodeInfo nodeId="7486055250764314873" fileName="RenameDialog.java" startLine="21" startPosition="7" endLine="22" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1685972956014334006" fileName="RenameDialog.java" startLine="25" startPosition="27" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5105675557153724678" fileName="RenameDialog.java" startLine="29" startPosition="25" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5105675557153710883" fileName="RenameDialog.java" startLine="31" startPosition="74" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5105675557153710883" fileName="RenameDialog.java" startLine="31" startPosition="67" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6393017501907738587" fileName="RenameDialog.java" startLine="32" startPosition="47" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6393017501907738617" fileName="RenameDialog.java" startLine="34" startPosition="12" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5105675557153710887" fileName="RenameDialog.java" startLine="35" startPosition="43" endLine="36" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -229,10 +229,10 @@
     <nodeInfo nodeId="1685972956014334024" fileName="RenameDialog.java" startLine="41" startPosition="81" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1685972956014334032" fileName="RenameDialog.java" startLine="42" startPosition="67" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1685972956014334036" fileName="RenameDialog.java" startLine="43" startPosition="18" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6393017501907738539" fileName="RenameDialog.java" startLine="47" startPosition="58" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6393017501907738539" fileName="RenameDialog.java" startLine="47" startPosition="52" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1685972956014334003" fileName="RenameDialog.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="6393017501907738615" fileName="RenameDialog.java" startLine="34" startPosition="10" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6393017501907738539" fileName="RenameDialog.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_x29nvn_a0b0d#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6393017501907738539" fileName="RenameDialog.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6393017501907737343" fileName="RenameDialog.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
     <nodeInfo nodeId="5105675557153724675" fileName="RenameDialog.java" startLine="51" startPosition="55" endLine="55" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1685972956014334015" fileName="RenameDialog.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewName#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
@@ -243,8 +243,8 @@
     <nodeInfo nodeId="6393017501907737355" fileName="RenameDialog.java" startLine="29" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
     <scopeInfo nodeId="6393017501907737348" fileName="RenameDialog.java" startLine="18" startPosition="52" endLine="19" endPosition="17" />
     <scopeInfo nodeId="1685972956014334005" fileName="RenameDialog.java" startLine="25" startPosition="27" endLine="26" endPosition="26" />
-    <scopeInfo nodeId="6393017501907738539" fileName="RenameDialog.java" startLine="47" startPosition="58" endLine="48" endPosition="44" />
-    <scopeInfo nodeId="6393017501907737366" fileName="RenameDialog.java" startLine="31" startPosition="74" endLine="33" endPosition="44" />
+    <scopeInfo nodeId="6393017501907738539" fileName="RenameDialog.java" startLine="47" startPosition="52" endLine="48" endPosition="44" />
+    <scopeInfo nodeId="6393017501907737366" fileName="RenameDialog.java" startLine="31" startPosition="67" endLine="33" endPosition="44" />
     <scopeInfo nodeId="6393017501907738616" fileName="RenameDialog.java" startLine="34" startPosition="12" endLine="36" endPosition="25" />
     <scopeInfo nodeId="1685972956014334003" fileName="RenameDialog.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1685972956014334023" fileName="RenameDialog.java" startLine="41" startPosition="81" endLine="44" endPosition="33">

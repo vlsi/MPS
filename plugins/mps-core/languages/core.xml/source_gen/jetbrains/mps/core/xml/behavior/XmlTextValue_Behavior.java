@@ -22,23 +22,19 @@ public class XmlTextValue_Behavior {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlValuePart")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlValuePart");
-      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlTextValue") || isEmpty_spl4qa_a0a0b0b0d(SPropertyOperations.getString(thisNode, "text")) && (SNodeOperations.getNextSibling(thisNode) == null);
+      return SNodeOperations.isInstanceOf(leftContent, "jetbrains.mps.core.xml.structure.XmlTextValue") || isEmptyString(SPropertyOperations.getString(thisNode, "text")) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }
 
   public static boolean virtual_hasNewLineAfter_3080189811177340429(SNode thisNode) {
-    if (isEmpty_spl4qa_a0a0a4(SPropertyOperations.getString(thisNode, "text")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, "text")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlValuePart_Behavior.call_onNewLine_3080189811177340422(thisNode));
     }
     return false;
   }
 
-  public static boolean isEmpty_spl4qa_a0a0b0b0d(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_spl4qa_a0a0a4(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

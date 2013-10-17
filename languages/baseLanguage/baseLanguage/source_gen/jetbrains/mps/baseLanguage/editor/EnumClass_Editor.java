@@ -109,7 +109,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_y68cfu_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_y68cfu_a0a0g(SPropertyOperations.getString(node, "name"));
+    return isEmptyString(SPropertyOperations.getString(node, "name"));
   }
 
   private EditorCell createComponent_y68cfu_e0(EditorContext editorContext, SNode node) {
@@ -726,7 +726,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isEmpty_y68cfu_a0a0g(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }
