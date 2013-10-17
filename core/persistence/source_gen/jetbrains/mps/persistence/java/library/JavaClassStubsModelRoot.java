@@ -69,16 +69,17 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
   private void findAndAddModels(String file, final List<SModel> result) {
     IClassPathItem cp = create(file);
     getModelDescriptors(result, file, cp, "", LanguageID.JAVA, getModule());
-
     final IFile fileByPath = FileSystem.getInstance().getFileByPath(file);
-    if(fileByPath.isDirectory()) {
-      for(IFile child : fileByPath.getChildren()) {
-        if(child.getName().endsWith(".jar") || child.isDirectory()) {
+    if (fileByPath.isDirectory()) {
+      for (IFile child : fileByPath.getChildren()) {
+        if (child.getName().endsWith(".jar") || child.isDirectory()) {
           findAndAddModels(child.getPath(), result);
         }
       }
     }
   }
+
+
 
   @Override
   public boolean canCreateModels() {

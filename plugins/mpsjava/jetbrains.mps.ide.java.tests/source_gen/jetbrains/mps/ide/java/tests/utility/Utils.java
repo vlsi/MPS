@@ -189,7 +189,7 @@ public class Utils {
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
     JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot();
     binSRoot.setModule(mod1);
-    binSRoot.setPath(binPath);
+    binSRoot.setContentRoot(binPath);
     Iterable<SModel> binStubModels = binSRoot.loadModels();
     for (SModel md : Sequence.fromIterable(binStubModels)) {
       SModel m = md;
