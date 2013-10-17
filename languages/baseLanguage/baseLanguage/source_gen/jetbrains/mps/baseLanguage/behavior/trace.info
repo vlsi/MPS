@@ -196,10 +196,10 @@
   <unitInfo fileName="PlaceholderMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlaceholderMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PlusAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlusAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="PlusExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PlusExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PostfixDecrementExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PostfixIncrementExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PrefixDecrementExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PrefixIncrementExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PostfixDecrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PostfixIncrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PrefixDecrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_BehaviorDescriptor" />
+  <unitInfo fileName="PrefixIncrementExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_BehaviorDescriptor" />
   <unitInfo fileName="PrimitiveClassExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrimitiveClassExpression_BehaviorDescriptor" />
   <unitInfo fileName="PrimitiveType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrimitiveType_BehaviorDescriptor" />
   <unitInfo fileName="PrivateVisibility_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrivateVisibility_BehaviorDescriptor" />
@@ -11284,11 +11284,11 @@
     <unitInfo nodeId="1239355135682" fileName="ExpressionStatement_Behavior.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1239714994837">
-    <nodeInfo nodeId="1239714999029" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239714999029" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1239714994839" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1239714999028" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="1239714999028" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="17" />
     <scopeInfo nodeId="1239714994837" fileName="AbstractUnaryNumberOperation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1239714994837" varName="thisNode" />
     </scopeInfo>
@@ -13226,6 +13226,62 @@
       <varInfo nodeId="6148840541591395424" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6148840541591395424" fileName="Tokens_Behavior.java" startLine="8" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Tokens_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904814046">
+    <nodeInfo nodeId="6155185097904814168" fileName="PostfixDecrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="6155185097904814048" fileName="PostfixDecrementExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6155185097904814055" fileName="PostfixDecrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="6155185097904814046" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6155185097904814046" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6155185097904814046" fileName="PostfixDecrementExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixDecrementExpression_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904815822">
+    <nodeInfo nodeId="6155185097904815944" fileName="PostfixIncrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="6155185097904815824" fileName="PostfixIncrementExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6155185097904815831" fileName="PostfixIncrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="6155185097904815822" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6155185097904815822" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6155185097904815822" fileName="PostfixIncrementExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PostfixIncrementExpression_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904817598">
+    <nodeInfo nodeId="6155185097904817720" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="6155185097904817600" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6155185097904817607" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="6155185097904817598" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6155185097904817598" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6155185097904817598" fileName="PrefixDecrementExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixDecrementExpression_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6155185097904819374">
+    <nodeInfo nodeId="6155185097904819496" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="6155185097904819376" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6155185097904819383" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="6155185097904819374" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="6155185097904819374" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6155185097904819374" fileName="PrefixIncrementExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PrefixIncrementExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/6307653274956830892">
     <nodeInfo nodeId="6307653274956830908" fileName="ParenthesizedExpression_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
