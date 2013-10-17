@@ -13180,7 +13180,7 @@
     <nodeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_HasSuperConstructorCall_NonTypesystemRule#()V" />
     <nodeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="2782601603365247587" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="23" startPosition="37" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2782601603365247587" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="23" startPosition="159" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7152041109751609253" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="22" startPosition="139" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -13199,7 +13199,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7152041109751609254" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="23" startPosition="37" endLine="27" endPosition="9" />
+    <scopeInfo nodeId="7152041109751609254" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="23" startPosition="159" endLine="27" endPosition="9" />
     <scopeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" />
     <scopeInfo nodeId="2782601603365239753" fileName="check_HasSuperConstructorCall_NonTypesystemRule.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="2782601603365239753" varName="argument" />
