@@ -25,7 +25,7 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -34,6 +34,7 @@ import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -177,7 +178,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_8900764248744322639(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), reductionRule_417xrn_a0a3s, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_8900764248744322639(environment.getOperationContext(), new ReductionRuleQueryContext(context, reductionRule_417xrn_a0a3s, environment.getGenerator())))) {
         return null;
       }
 
@@ -1172,7 +1173,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
-      final List<SNode> tlist1 = new ArrayList();
+      final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6fb);
       Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), weavingConseq_417xrn_a0a1a6fb, null, context, environment.getGenerator()));
       for (SNode itnode1 : weaveEachList1) {

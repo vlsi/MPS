@@ -93,90 +93,92 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 38:
         return Collections.<ConceptEditor>singletonList(new ListType_Editor());
       case 39:
-        return Collections.<ConceptEditor>singletonList(new MapClearOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapAsSequenceVarRef_Editor());
       case 40:
-        return Collections.<ConceptEditor>singletonList(new MapElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapClearOperation_Editor());
       case 41:
-        return Collections.<ConceptEditor>singletonList(new MapEntry_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapElement_Editor());
       case 42:
-        return Collections.<ConceptEditor>singletonList(new MapInitializer_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapEntry_Editor());
       case 43:
-        return Collections.<ConceptEditor>singletonList(new MapOperationExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapInitializer_Editor());
       case 44:
-        return Collections.<ConceptEditor>singletonList(new MapRemoveOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapOperationExpression_Editor());
       case 45:
-        return Collections.<ConceptEditor>singletonList(new MapType_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapRemoveOperation_Editor());
       case 46:
-        return Collections.<ConceptEditor>singletonList(new MappingType_Editor());
+        return Collections.<ConceptEditor>singletonList(new MapType_Editor());
       case 47:
-        return Collections.<ConceptEditor>singletonList(new MappingsSetOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingType_Editor());
       case 48:
-        return Collections.<ConceptEditor>singletonList(new MultiForEachPair_Editor());
+        return Collections.<ConceptEditor>singletonList(new MappingsSetOperation_Editor());
       case 49:
-        return Collections.<ConceptEditor>singletonList(new MultiForEachStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultiForEachPair_Editor());
       case 50:
-        return Collections.<ConceptEditor>singletonList(new MultiForEachVariable_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultiForEachStatement_Editor());
       case 51:
-        return Collections.<ConceptEditor>singletonList(new MultiForEachVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultiForEachVariable_Editor());
       case 52:
-        return Collections.<ConceptEditor>singletonList(new NoArgumentsSequenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new MultiForEachVariableReference_Editor());
       case 53:
-        return Collections.<ConceptEditor>singletonList(new OfTypeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new NoArgumentsSequenceOperation_Editor());
       case 54:
-        return Collections.<ConceptEditor>singletonList(new PageOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new OfTypeOperation_Editor());
       case 55:
-        return Collections.<ConceptEditor>singletonList(new PutAllOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new PageOperation_Editor());
       case 56:
-        return Collections.<ConceptEditor>singletonList(new RemoveAllSetElementsOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new PutAllOperation_Editor());
       case 57:
-        return Collections.<ConceptEditor>singletonList(new RemoveAtElementOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveAllSetElementsOperation_Editor());
       case 58:
-        return Collections.<ConceptEditor>singletonList(new RemoveSetElementOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveAtElementOperation_Editor());
       case 59:
-        return Collections.<ConceptEditor>singletonList(new SequenceCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new RemoveSetElementOperation_Editor());
       case 60:
-        return Collections.<ConceptEditor>singletonList(new SequenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SequenceCreator_Editor());
       case 61:
-        return Collections.<ConceptEditor>singletonList(new SequenceType_Editor());
+        return Collections.<ConceptEditor>singletonList(new SequenceOperation_Editor());
       case 62:
-        return Collections.<ConceptEditor>singletonList(new SetElementOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SequenceType_Editor());
       case 63:
-        return Collections.<ConceptEditor>singletonList(new SetType_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetElementOperation_Editor());
       case 64:
-        return Collections.<ConceptEditor>singletonList(new SingleArgumentSequenceOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SetType_Editor());
       case 65:
-        return Collections.<ConceptEditor>singletonList(new SingletonSequenceCreator_Editor());
+        return Collections.<ConceptEditor>singletonList(new SingleArgumentSequenceOperation_Editor());
       case 66:
-        return Collections.<ConceptEditor>singletonList(new SkipOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SingletonSequenceCreator_Editor());
       case 67:
-        return Collections.<ConceptEditor>singletonList(new SkipStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new SkipOperation_Editor());
       case 68:
-        return Collections.<ConceptEditor>singletonList(new SmartClosureParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new SkipStatement_Editor());
       case 69:
-        return Collections.<ConceptEditor>singletonList(new SortDirection_Editor());
+        return Collections.<ConceptEditor>singletonList(new SmartClosureParameterDeclaration_Editor());
       case 70:
-        return Collections.<ConceptEditor>singletonList(new SortOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SortDirection_Editor());
       case 71:
-        return Collections.<ConceptEditor>singletonList(new StopStatement_Editor());
+        return Collections.<ConceptEditor>singletonList(new SortOperation_Editor());
       case 72:
-        return Collections.<ConceptEditor>singletonList(new SubListOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new StopStatement_Editor());
       case 73:
-        return Collections.<ConceptEditor>singletonList(new SubMapOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubListOperation_Editor());
       case 74:
-        return Collections.<ConceptEditor>singletonList(new SubSetOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubMapOperation_Editor());
       case 75:
-        return Collections.<ConceptEditor>singletonList(new TailListOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubSetOperation_Editor());
       case 76:
-        return Collections.<ConceptEditor>singletonList(new TailMapOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new TailListOperation_Editor());
       case 77:
-        return Collections.<ConceptEditor>singletonList(new TailSetOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new TailMapOperation_Editor());
       case 78:
-        return Collections.<ConceptEditor>singletonList(new TakeOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new TailSetOperation_Editor());
       case 79:
-        return Collections.<ConceptEditor>singletonList(new ToIteratorOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new TakeOperation_Editor());
       case 80:
-        return Collections.<ConceptEditor>singletonList(new ToListOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ToIteratorOperation_Editor());
       case 81:
+        return Collections.<ConceptEditor>singletonList(new ToListOperation_Editor());
+      case 82:
         return Collections.<ConceptEditor>singletonList(new TreeSetCreator_Editor());
       default:
     }
@@ -212,6 +214,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AllConstant", "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", "jetbrains.mps.baseLanguage.collections.structure.CustomContainers", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation", "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation", "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.IteratorType", "jetbrains.mps.baseLanguage.collections.structure.JoinOperation", "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", "jetbrains.mps.baseLanguage.collections.structure.ListType", "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", "jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.collections.structure.MapEntry", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer", "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.MapType", "jetbrains.mps.baseLanguage.collections.structure.MappingType", "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation", "jetbrains.mps.baseLanguage.collections.structure.PageOperation", "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceType", "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SetType", "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SkipOperation", "jetbrains.mps.baseLanguage.collections.structure.SkipStatement", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.collections.structure.SortOperation", "jetbrains.mps.baseLanguage.collections.structure.StopStatement", "jetbrains.mps.baseLanguage.collections.structure.SubListOperation", "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TailListOperation", "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TakeOperation", "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.ToListOperation", "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.AllConstant", "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", "jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", "jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", "jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", "jetbrains.mps.baseLanguage.collections.structure.CustomContainers", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation", "jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation", "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", "jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.IteratorType", "jetbrains.mps.baseLanguage.collections.structure.JoinOperation", "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", "jetbrains.mps.baseLanguage.collections.structure.ListType", "jetbrains.mps.baseLanguage.collections.structure.MapAsSequenceVarRef", "jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", "jetbrains.mps.baseLanguage.collections.structure.MapElement", "jetbrains.mps.baseLanguage.collections.structure.MapEntry", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer", "jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", "jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", "jetbrains.mps.baseLanguage.collections.structure.MapType", "jetbrains.mps.baseLanguage.collections.structure.MappingType", "jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation", "jetbrains.mps.baseLanguage.collections.structure.PageOperation", "jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SequenceType", "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", "jetbrains.mps.baseLanguage.collections.structure.SetType", "jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", "jetbrains.mps.baseLanguage.collections.structure.SkipOperation", "jetbrains.mps.baseLanguage.collections.structure.SkipStatement", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", "jetbrains.mps.baseLanguage.collections.structure.SortDirection", "jetbrains.mps.baseLanguage.collections.structure.SortOperation", "jetbrains.mps.baseLanguage.collections.structure.StopStatement", "jetbrains.mps.baseLanguage.collections.structure.SubListOperation", "jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", "jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TailListOperation", "jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", "jetbrains.mps.baseLanguage.collections.structure.TakeOperation", "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", "jetbrains.mps.baseLanguage.collections.structure.ToListOperation", "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"};
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"};
 }

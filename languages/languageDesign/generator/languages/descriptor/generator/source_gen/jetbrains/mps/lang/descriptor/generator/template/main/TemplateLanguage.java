@@ -170,7 +170,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                     // TODO validate child 
                   }
                   {
-                    final List<SNode> tlist12 = new ArrayList();
+                    final List<SNode> tlist12 = new ArrayList<SNode>();
                     try {
                       environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a4a1a3a1a5a1a7a1a2);
                       final Iterable<SNode> loopList12 = QueriesGenerated.sourceNodesQuery_2229091780083588954(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_gw04jt_a0a0a1a4a1a3a1a5a1a7a1a2, context, environment.getGenerator()));
@@ -284,7 +284,7 @@ public class TemplateLanguage implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final List<SNode> tlist18 = new ArrayList();
+        final List<SNode> tlist18 = new ArrayList<SNode>();
         try {
           environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a8a1a2);
           final Iterable<SNode> loopList18 = QueriesGenerated.sourceNodesQuery_1570228009930646079(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_gw04jt_a0a0a1a8a1a2, context, environment.getGenerator()));
@@ -1067,7 +1067,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                           tnode73.setReference("classConcept", SReference.create("classConcept", tnode73, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
 
                           {
-                            final List<SNode> tlist74 = new ArrayList();
+                            final List<SNode> tlist74 = new ArrayList<SNode>();
                             try {
                               environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a5a1a1a1a3a1a3a1a6a1a41a1a2);
                               final Iterable<SNode> loopList74 = QueriesGenerated.sourceNodesQuery_5554116809065233223(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_gw04jt_a0a0a1a5a1a1a1a3a1a3a1a6a1a41a1a2, context, environment.getGenerator()));
@@ -1372,7 +1372,7 @@ public class TemplateLanguage implements TemplateDeclaration {
               environment.nodeCopied(context, tnode92, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8131497994928068358");
 
               {
-                final List<SNode> tlist93 = new ArrayList();
+                final List<SNode> tlist93 = new ArrayList<SNode>();
                 try {
                   environment.getTracer().pushMacro(loopMacroRef_gw04jt_a0a0a1a3a1a9a1a51a1a2);
                   final Iterable<SNode> loopList93 = QueriesGenerated.sourceNodesQuery_8131497994928406547(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), null, loopMacroRef_gw04jt_a0a0a1a3a1a9a1a51a1a2, context, environment.getGenerator()));

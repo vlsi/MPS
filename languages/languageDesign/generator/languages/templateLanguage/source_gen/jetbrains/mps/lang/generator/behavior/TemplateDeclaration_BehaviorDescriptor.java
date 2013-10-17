@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class TemplateDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
+public class TemplateDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, IParameterizedTemplate_BehaviorDescriptor {
   public TemplateDeclaration_BehaviorDescriptor() {
   }
 

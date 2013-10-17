@@ -75,7 +75,7 @@
     <scopeInfo nodeId="1030525575875839453" fileName="SNonTerm_Behavior.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1030525575875839453" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5166780373695978511" fileName="SNonTerm_Behavior.java" startLine="23" startPosition="203" endLine="27" endPosition="5" unitName="jetbrains.mps.core.syntax.behavior.SNonTerm_Behavior$1" />
+    <unitInfo nodeId="5166780373695978511" fileName="SNonTerm_Behavior.java" startLine="23" startPosition="191" endLine="27" endPosition="5" unitName="jetbrains.mps.core.syntax.behavior.SNonTerm_Behavior$1" />
     <unitInfo nodeId="1030525575875865469" fileName="SNonTerm_Behavior.java" startLine="27" startPosition="17" endLine="31" endPosition="5" unitName="jetbrains.mps.core.syntax.behavior.SNonTerm_Behavior$2" />
     <unitInfo nodeId="1030525575875839453" fileName="SNonTerm_Behavior.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.core.syntax.behavior.SNonTerm_Behavior" />
   </root>

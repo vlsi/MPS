@@ -90,7 +90,7 @@ public class AddOperationParameter_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
-      if ((int) ListSequence.fromList(applicableParms).count() == 1) {
+      if (ListSequence.fromList(applicableParms).count() == 1) {
         ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
       } else {
         SNodeFactoryOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");

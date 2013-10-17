@@ -42,7 +42,7 @@ public class GenerationContextOp_ParameterRef_Constraints extends BaseConstraint
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> result = new ArrayList<SNode>();
-            SNode templDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false);
+            SNode templDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.generator.structure.IParameterizedTemplate", false, false);
             if ((templDeclaration != null) && ListSequence.fromList(SLinkOperations.getTargets(templDeclaration, "parameter", true)).isNotEmpty()) {
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(templDeclaration, "parameter", true)));
             }

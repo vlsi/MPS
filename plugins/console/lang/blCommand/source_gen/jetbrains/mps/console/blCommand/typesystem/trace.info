@@ -1789,7 +1789,7 @@
     <nodeInfo nodeId="119903734737896588" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="30" startPosition="7" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="119903734737896588" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="31" startPosition="63" endLine="32" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="119903734737896588" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="32" startPosition="209" endLine="33" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="119903734738796448" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="36" startPosition="603" endLine="37" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="119903734738796448" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="36" startPosition="597" endLine="37" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="119903734739053502" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="38" startPosition="7" endLine="39" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="119903734739053502" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="39" startPosition="105" endLine="40" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="119903734739053502" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="40" startPosition="209" endLine="41" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1851,7 +1851,7 @@
       <varInfo nodeId="119903734737897141" varName="facade" />
       <varInfo nodeId="119903734737897141" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="119903734738717213" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="36" startPosition="603" endLine="42" endPosition="7">
+    <scopeInfo nodeId="119903734738717213" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="36" startPosition="597" endLine="42" endPosition="7">
       <varInfo nodeId="119903734738796451" varName="typeParameter" />
     </scopeInfo>
     <scopeInfo nodeId="9149301274757091527" fileName="typeof_ActionCallParameter_InferenceRule.java" startLine="55" startPosition="0" endLine="61" endPosition="0">

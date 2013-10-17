@@ -42,7 +42,7 @@ public class ExtractMethodFactory {
   public static boolean isRefactoringAvailable(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
     boolean hasProperContainer = (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) != null) || (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false) != null);
-    return (((int) ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression")) || SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Statement")) && hasProperContainer;
+    return ((ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression")) || SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Statement")) && hasProperContainer;
   }
 
   public static String getErrors(List<SNode> nodes) {

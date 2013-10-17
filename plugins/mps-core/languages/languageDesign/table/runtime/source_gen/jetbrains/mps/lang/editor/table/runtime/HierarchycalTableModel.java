@@ -29,7 +29,7 @@ public class HierarchycalTableModel extends AbstractTableModel {
     myRowCount = ListSequence.fromList(getRows()).count();
     myColumnCount = ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).first())).count();
     for (SNode row : ListSequence.fromList(getRows())) {
-      assert myColumnCount == (int) ListSequence.fromList(getColumns(row)).count();
+      assert myColumnCount == ListSequence.fromList(getColumns(row)).count();
     }
   }
 

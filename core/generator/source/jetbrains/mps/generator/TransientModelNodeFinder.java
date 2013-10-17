@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -33,11 +34,10 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   private final Object myLock = new Object();
 
   private SModel myModel;
-  private boolean myInitialized;
 
-  private final Map<String, List<SNode>> myNodes = new ConcurrentHashMap<String, List<SNode>>();
+  private Map<String, List<SNode>> myNodes;
 
-  private SModelChangeListener myChangeListener = new SModelChangeListener() {
+  private final SModelChangeListener myChangeListener = new SModelChangeListener() {
     @Override
     public void nodeAdded(SModel model, SNode node, String role, SNode child) {
       clearCache();
@@ -77,15 +77,13 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   }
 
   private void clearCache() {
-    myNodes.clear();
-    myInitialized=false;
+    myNodes = null;
   }
 
-  private void initCache() {
-    for (SNode root : myModel.getRootNodes()) {
-      addToCache(root);
-    }
-    myInitialized = true;
+  private Map<String, List<SNode>> initCache() {
+    HashMap<String, List<SNode>> allNodes = new HashMap<String, List<SNode>>(1000);
+    addToCache(allNodes, myModel.getRootNodes());
+    return allNodes;
   }
 
   @Override
@@ -93,42 +91,52 @@ public class TransientModelNodeFinder implements FastNodeFinder {
     // notify 'model nodes read access'
     myModel.getRootNodes().iterator();
 
-    synchronized (myLock) {
-      if (!myInitialized) {
-        initCache();
+    Map<String, List<SNode>> nodes = myNodes;
+
+    if (nodes == null) {
+      synchronized (myLock) {
+        if (myNodes == null) {
+          myNodes = initCache();
+        }
+        nodes = myNodes;
       }
     }
 
     if (includeInherited) {
-      final List<SNode> result = new ArrayList<SNode>();
-      for (String d : ConceptDescendantsCache.getInstance().getDescendants(conceptFqName)) {
-        List<SNode> nodes = myNodes.get(d);
-        if (nodes!=null) {
-          result.addAll(nodes);
+      Set<String> allDescendantsOfConcept = ConceptDescendantsCache.getInstance().getDescendants(conceptFqName);
+      final List<SNode>[] nodesOfConcept = new List[allDescendantsOfConcept.size()];
+      int i = 0, cnt = 0;
+      for (String d : allDescendantsOfConcept) {
+        List<SNode> n = nodes.get(d);
+        if (n == null) {
+          n = Collections.<SNode>emptyList();
         }
+        nodesOfConcept[i++] = n;
+        cnt += n.size();
+      }
+      final ArrayList<SNode> result = new ArrayList<SNode>(cnt);
+      for (i = 0; i < nodesOfConcept.length; i++) {
+        result.addAll(nodesOfConcept[i]);
       }
       return result;
     } else {
-      List<SNode> nodes = myNodes.get(conceptFqName);
-      if (nodes!=null) {
-        return nodes;
+      List<SNode> n = nodes.get(conceptFqName);
+      if (n != null) {
+        return n;
       }
       return Collections.emptyList();
     }
   }
 
-  private void addToCache(final SNode root) {
-    String conceptFqName = root.getConcept().getQualifiedName();
-    List<SNode> set = myNodes.get(conceptFqName);
-    if (set == null) {
-      set = new ArrayList<SNode>();
-      myNodes.put(conceptFqName, set);
-    }
-    set.add(root);
-
-    for (SNode child : root.getChildren()) {
-      addToCache(child);
+  private static void addToCache(final Map<String, List<SNode>> allNodes, final Iterable<? extends SNode> roots) {
+    for (SNode root : roots) {
+      String conceptFqName = root.getConcept().getQualifiedName();
+      List<SNode> set = allNodes.get(conceptFqName);
+      if (set == null) {
+        allNodes.put(conceptFqName, set = new ArrayList<SNode>());
+      }
+      set.add(root);
+      addToCache(allNodes, root.getChildren());
     }
   }
-
 }

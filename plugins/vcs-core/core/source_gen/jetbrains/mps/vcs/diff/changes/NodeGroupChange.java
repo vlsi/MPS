@@ -171,7 +171,7 @@ public class NodeGroupChange extends ModelChange {
     }
     if (myEnd == myBegin) {
       if (verbose) {
-        String addedOrInserted = (myResultEnd == (int) ListSequence.fromList(newChildren).count() ?
+        String addedOrInserted = (myResultEnd == ListSequence.fromList(newChildren).count() ?
           "Added" :
           "Inserted"
         );

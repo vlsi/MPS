@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myFail;
   private boolean myGenerateDebugInfo;
   private boolean myShowBadChildWarning;
+  private boolean myActiveInplaceTransorm;
 
   @Override
   public boolean isSaveTransientModels() {
@@ -191,5 +192,15 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   @Override
   public void setShowBadChildWarning(boolean showBadChildWarning) {
     myShowBadChildWarning = showBadChildWarning;
+  }
+
+  @Override
+  public void enableInplaceTransformations(boolean enabled) {
+    myActiveInplaceTransorm = enabled;
+  }
+
+  @Override
+  public boolean useInplaceTransofrmations() {
+    return myActiveInplaceTransorm;
   }
 }

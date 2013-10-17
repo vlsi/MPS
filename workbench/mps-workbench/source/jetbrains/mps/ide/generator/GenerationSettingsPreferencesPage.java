@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ class GenerationSettingsPreferencesPage {
   private JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
   private JCheckBox myIncremental = new JCheckBox("Incremental generation");
   private JCheckBox myIncrementalCache = new JCheckBox("Cache intermediate models");
+  private JCheckBox myInplaceTransform = new JCheckBox("Apply transformations in place");
   private JCheckBox myDebugIncrementalDependencies = new JCheckBox("Debug generation dependencies");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
@@ -121,6 +122,8 @@ class GenerationSettingsPreferencesPage {
     if (InternalFlag.isInternalMode()) {
       optionsPanel.add(myDebugIncrementalDependencies, c);
     }
+    c.insets.left = 0;
+    optionsPanel.add(myInplaceTransform, c);
     final ChangeListener listener = new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent e) {
@@ -266,6 +269,7 @@ class GenerationSettingsPreferencesPage {
     if (InternalFlag.isInternalMode()) {
       myGenerationSettings.setDebugIncrementalDependencies(myDebugIncrementalDependencies.isSelected());
     }
+    myGenerationSettings.enableInplaceTransformations(myInplaceTransform.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
   }
@@ -299,7 +303,9 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.isIncrementalUseCache() == myIncrementalCache.isSelected() &&
       (!InternalFlag.isInternalMode() || myGenerationSettings.isDebugIncrementalDependencies() == myDebugIncrementalDependencies.isSelected()) &&
       myGenerationSettings.isFailOnMissingTextGen() == myFailOnMissingTextgen.isSelected() &&
-      myGenerationSettings.isGenerateDebugInfo() == myGenerateDebugInfo.isSelected());
+      myGenerationSettings.isGenerateDebugInfo() == myGenerateDebugInfo.isSelected() &&
+      myGenerationSettings.useInplaceTransofrmations() == myInplaceTransform.isSelected()
+    );
   }
 
   public void update() {
@@ -313,6 +319,7 @@ class GenerationSettingsPreferencesPage {
       myDebugIncrementalDependencies.setSelected(myGenerationSettings.isDebugIncrementalDependencies());
       myDebugIncrementalDependencies.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
     }
+    myInplaceTransform.setSelected(myGenerationSettings.useInplaceTransofrmations());
 
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());

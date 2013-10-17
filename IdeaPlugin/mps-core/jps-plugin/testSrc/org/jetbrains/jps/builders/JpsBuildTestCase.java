@@ -267,7 +267,7 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
 
   protected BuildResult doBuild(final ProjectDescriptor descriptor, CompileScopeTestBuilder scopeBuilder) {
     Map<String, String> builderParams = getBuilderParams();
-    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null);
+    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null, false);
     BuildResult result = new BuildResult();
     builder.addMessageHandler(result);
     try {

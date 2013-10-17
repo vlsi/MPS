@@ -14,7 +14,7 @@ public class PatternGeneratorUtil {
 
   public static SNode get(TemplateQueryContext genContext, SNode var) {
     List<SNode> nodes = genContext.getAllOutputNodesByInputNodeAndMappingLabel(var, "patternVarField");
-    if ((int) ListSequence.fromList(nodes).count() == 1) {
+    if (ListSequence.fromList(nodes).count() == 1) {
       return ListSequence.fromList(nodes).first();
     }
     SNode varPattern = SNodeOperations.getAncestor(var, "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false);

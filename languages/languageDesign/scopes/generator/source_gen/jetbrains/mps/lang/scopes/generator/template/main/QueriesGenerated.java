@@ -28,7 +28,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_8077936094962965078(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true);
     // kind & child 
-    return (int) ListSequence.fromList(parameters).count() == 2;
+    return ListSequence.fromList(parameters).count() == 2;
   }
 
   public static SNode sourceNodeQuery_4819084825497330060(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

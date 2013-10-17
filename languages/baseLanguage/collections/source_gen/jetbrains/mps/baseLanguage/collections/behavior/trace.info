@@ -19,7 +19,7 @@
   <unitInfo fileName="AsSequenceOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AsSequenceOperation_BehaviorDescriptor" />
   <unitInfo fileName="AsSynchronizedOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AsSynchronizedOperation_BehaviorDescriptor" />
   <unitInfo fileName="AsUnmodifiableOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AsUnmodifiableOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BinaryOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.BinaryOperation_BehaviorDescriptor" />
   <unitInfo fileName="ChunkOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ChunkOperation_BehaviorDescriptor" />
   <unitInfo fileName="ClearAllElementsOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ClearAllElementsOperation_BehaviorDescriptor" />
@@ -95,6 +95,7 @@
   <unitInfo fileName="ListCreatorWithInit_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_BehaviorDescriptor" />
   <unitInfo fileName="ListElementAccessExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListElementAccessExpression_BehaviorDescriptor" />
   <unitInfo fileName="ListType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_BehaviorDescriptor" />
+  <unitInfo fileName="MapAsSequenceVarRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapAsSequenceVarRef_BehaviorDescriptor" />
   <unitInfo fileName="MapClearOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapClearOperation_BehaviorDescriptor" />
   <unitInfo fileName="MapElement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapElement_BehaviorDescriptor" />
   <unitInfo fileName="MapEntry_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapEntry_BehaviorDescriptor" />
@@ -1527,7 +1528,7 @@
     <nodeInfo nodeId="1576845966387098685" fileName="CustomContainersUtil.java" startLine="50" startPosition="11" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1576845966387098646" fileName="CustomContainersUtil.java" startLine="55" startPosition="40" endLine="56" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1576845966387098652" fileName="CustomContainersUtil.java" startLine="56" startPosition="136" endLine="57" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1576845966387106089" fileName="CustomContainersUtil.java" startLine="58" startPosition="123" endLine="59" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1576845966387106089" fileName="CustomContainersUtil.java" startLine="58" startPosition="117" endLine="59" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576845966387098658" fileName="CustomContainersUtil.java" startLine="60" startPosition="11" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9034802358628472466" fileName="CustomContainersUtil.java" startLine="69" startPosition="40" endLine="70" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1331913329176269839" fileName="CustomContainersUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomContainersUtil#()V" />
@@ -1545,7 +1546,7 @@
     <nodeInfo nodeId="1331913329176269843" fileName="CustomContainersUtil.java" startLine="22" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containerCreators#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="1331913329176269842" fileName="CustomContainersUtil.java" startLine="19" startPosition="33" endLine="19" endPosition="33" />
     <scopeInfo nodeId="1434634659124149351" fileName="CustomContainersUtil.java" startLine="46" startPosition="24" endLine="47" endPosition="38" />
-    <scopeInfo nodeId="1279588871815509431" fileName="CustomContainersUtil.java" startLine="58" startPosition="123" endLine="59" endPosition="195" />
+    <scopeInfo nodeId="1279588871815509431" fileName="CustomContainersUtil.java" startLine="58" startPosition="117" endLine="59" endPosition="195" />
     <scopeInfo nodeId="9034802358628472465" fileName="CustomContainersUtil.java" startLine="69" startPosition="40" endLine="70" endPosition="155" />
     <scopeInfo nodeId="1331913329176269839" fileName="CustomContainersUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1434634659124149399" fileName="CustomContainersUtil.java" startLine="40" startPosition="23" endLine="42" endPosition="24" />

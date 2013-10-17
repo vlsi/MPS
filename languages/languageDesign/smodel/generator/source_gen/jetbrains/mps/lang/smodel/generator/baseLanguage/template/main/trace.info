@@ -1221,7 +1221,6 @@
     <scopeInfo nodeId="7035995069105868455" fileName="QueriesGenerated.java" startLine="1847" startPosition="150" endLine="1848" endPosition="74" />
     <scopeInfo nodeId="7035995069108031056" fileName="QueriesGenerated.java" startLine="1851" startPosition="150" endLine="1852" endPosition="209" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/473081947981647319" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/5079980551111235342">
     <nodeInfo nodeId="2157413812205440695" fileName="QueriesGenerated.java" startLine="781" startPosition="154" endLine="782" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2157413812205440723" fileName="QueriesGenerated.java" startLine="785" startPosition="154" endLine="786" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

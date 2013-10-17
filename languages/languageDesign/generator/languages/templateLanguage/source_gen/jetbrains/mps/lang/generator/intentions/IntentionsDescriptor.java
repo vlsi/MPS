@@ -27,6 +27,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertClassConceptToExtract_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertInlineTemplateToTemplateFragment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertLoopWithCopySrc_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertSwitchToParameterized_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertTemplateDeclRefToInlineTemplate_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateScript_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new NewCreateRootRule_Intention());

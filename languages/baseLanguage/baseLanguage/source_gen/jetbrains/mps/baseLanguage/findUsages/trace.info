@@ -798,8 +798,8 @@
     <nodeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1204121124763" fileName="ConstructorUsages_Finder.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1204127398190" fileName="ConstructorUsages_Finder.java" startLine="66" startPosition="214" endLine="73" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1204122736277" fileName="ConstructorUsages_Finder.java" startLine="86" startPosition="210" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1204127398190" fileName="ConstructorUsages_Finder.java" startLine="66" startPosition="202" endLine="73" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1204122736277" fileName="ConstructorUsages_Finder.java" startLine="86" startPosition="198" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1204127398188" fileName="ConstructorUsages_Finder.java" startLine="65" startPosition="135" endLine="77" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1204122488945" fileName="ConstructorUsages_Finder.java" startLine="85" startPosition="41" endLine="97" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1204121808317" fileName="ConstructorUsages_Finder.java" startLine="83" startPosition="29" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -846,14 +846,14 @@
       <varInfo nodeId="1204122736280" varName="actualArgument" />
       <varInfo nodeId="1204122736290" varName="formalArgument" />
     </scopeInfo>
-    <scopeInfo nodeId="1204127398190" fileName="ConstructorUsages_Finder.java" startLine="66" startPosition="214" endLine="73" endPosition="15">
+    <scopeInfo nodeId="1204127398190" fileName="ConstructorUsages_Finder.java" startLine="66" startPosition="202" endLine="73" endPosition="15">
       <varInfo nodeId="1204127398226" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1204122736277" fileName="ConstructorUsages_Finder.java" startLine="86" startPosition="210" endLine="93" endPosition="13">
+    <scopeInfo nodeId="1204122736277" fileName="ConstructorUsages_Finder.java" startLine="86" startPosition="198" endLine="93" endPosition="13">
       <varInfo nodeId="1204122736313" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1204127398189" fileName="ConstructorUsages_Finder.java" startLine="66" startPosition="214" endLine="76" endPosition="15" />
-    <scopeInfo nodeId="1204122488946" fileName="ConstructorUsages_Finder.java" startLine="86" startPosition="210" endLine="96" endPosition="13" />
+    <scopeInfo nodeId="1204127398189" fileName="ConstructorUsages_Finder.java" startLine="66" startPosition="202" endLine="76" endPosition="15" />
+    <scopeInfo nodeId="1204122488946" fileName="ConstructorUsages_Finder.java" startLine="86" startPosition="198" endLine="96" endPosition="13" />
     <scopeInfo nodeId="1204121808320" fileName="ConstructorUsages_Finder.java" startLine="84" startPosition="118" endLine="97" endPosition="11">
       <varInfo nodeId="1204122060222" varName="thisConstructor" />
     </scopeInfo>

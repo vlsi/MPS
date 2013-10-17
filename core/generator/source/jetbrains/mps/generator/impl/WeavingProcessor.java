@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,113 +20,161 @@ import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Feb 15, 2010
  */
 public class WeavingProcessor {
-
-  private IGenerationTracer myGenerationTracer;
-  private TemplateGenerator myGenerator;
-  private FastNodeFinder myFastNodeFinder;
+  private final TemplateGenerator myGenerator;
+  private final List<ArmedWeavingRule> myReadyRules;
 
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
-    myGenerationTracer = myGenerator.getGenerationTracer();
-    myFastNodeFinder = ((jetbrains.mps.smodel.SModelInternal) myGenerator.getInputModel()).getFastNodeFinder();
+    myReadyRules = new ArrayList<ArmedWeavingRule>();
   }
 
-  public void apply(TemplateWeavingRule rule)
-    throws GenerationFailureException, GenerationCanceledException {
-
-    String applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      myGenerator.showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
-      return;
-    }
-
-    boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
-    for (SNode applicableNode : nodes) {
-      QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
-      if (executionContext == null) {
+  public void prepareWeavingRules(SModel inputModel, Iterable<TemplateWeavingRule> rules) throws GenerationCanceledException, GenerationFailureException {
+    myReadyRules.clear();
+    final FastNodeFinder nodeFinder = ((jetbrains.mps.smodel.SModelInternal) inputModel).getFastNodeFinder();
+    for (TemplateWeavingRule rule : rules) {
+      String applicableConcept = rule.getApplicableConcept();
+      if (applicableConcept == null) {
+        myGenerator.showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
         continue;
       }
-      ReductionContext reductionContext = new ReductionContext(executionContext);
-      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, reductionContext, myGenerator.getOperationContext(), myGenerationTracer);
-
-      try {
-        DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);
-        if (executionContext.isApplicable(rule, environment, context)) {
-          SNode outputContextNode = executionContext.getContextNode(rule, environment, context);
-          if (!checkContext(rule, applicableNode, outputContextNode)) {
-            continue;
-          }
-          myGenerator.setChanged();
-
-          boolean someOutputGenerated = true;
-          myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(applicableNode));
-          myGenerationTracer.pushRule(rule.getRuleNode());
-          try {
-            someOutputGenerated = rule.apply(environment, context, outputContextNode);
-
-          } catch (DismissTopMappingRuleException e) {
-            environment.getGenerator().showErrorMessage(context.getInput(), null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "wrong template: dismission of weaving rule is not supported");
-          } catch (TemplateProcessingFailureException e) {
-            environment.getGenerator().showErrorMessage(context.getInput(), null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "weaving rule: error processing template fragment");
-          } finally {
-            if (someOutputGenerated) {
-              myGenerationTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(applicableNode));
-            } else {
-              myGenerationTracer.popInputNode(GenerationTracerUtil.getSNodePointer(applicableNode));
-            }
-          }
+      boolean includeInheritors = rule.applyToInheritors();
+      for (SNode applicableNode : nodeFinder.getNodes(applicableConcept, includeInheritors)) {
+        QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
+        if (executionContext == null) {
+          continue;
         }
-      } catch (GenerationException e) {
-        if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
-        if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-        myGenerator.showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, executionContext);
+        try {
+          DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);
+          if (executionContext.isApplicable(rule, environment, context)) {
+            // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
+            // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
+            myReadyRules.add(new ArmedWeavingRule(rule, environment,applicableNode));
+          }
+
+        } catch (GenerationCanceledException ex) {
+          throw ex;
+        } catch (GenerationFailureException ex) {
+          throw ex;
+        } catch (GenerationException ex) {
+          myGenerator.showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + ex.toString());
+        }
       }
     }
   }
 
-  private boolean checkContext(TemplateWeavingRule rule, SNode applicableNode, SNode contextNode) {
-    if (contextNode == null) {
-      myGenerator.showErrorMessage(applicableNode, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "weaving rule: cannot find context node");
-      return false;
-    }
-
-    // Additional check - context should be generated from the same root
-    SNode contextRoot = contextNode.getContainingRoot();
-    SModel model = contextRoot.getModel();
-    if (model == null) {
-      myGenerator.showErrorIfStrict(rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "bad context for weaving rule: no root for context " + contextNode);
-      return !myGenerator.isStrict();
-    }
-
-    SNode originalContextRoot = myGenerator.getOriginalRootByGenerated(contextRoot);
-    if (originalContextRoot == null) {
-      myGenerator.showErrorIfStrict(rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "bad context for weaving rule: " + contextRoot + " is generated by 'create root' rule");
-      return !myGenerator.isStrict();
-    }
-
-    if (applicableNode.getModel() == null) return true;
-
-    SNode inputRoot = applicableNode.getContainingRoot();
-    if (originalContextRoot != inputRoot) {
-      myGenerator.showErrorIfStrict(rule.getRuleNode().resolve(MPSModuleRepository.getInstance()),
-        "bad context for weaving rule: " + contextRoot.toString() + " is generated from " + originalContextRoot.toString()
-          + ", while input node is from " + inputRoot.toString());
-      return !myGenerator.isStrict();
-    }
-
-    return true;
+  public boolean hasWeavingRulesToApply() {
+    return !myReadyRules.isEmpty();
   }
-}
+
+  public void apply() throws GenerationFailureException, GenerationCanceledException {
+    for (ArmedWeavingRule rule : myReadyRules) {
+      if (rule.apply(myGenerator.getGenerationTracer())) {
+        myGenerator.setChanged();
+      }
+    }
+  }
+
+  private static class ArmedWeavingRule {
+    @NotNull
+    private final TemplateWeavingRule myRule;
+    @NotNull
+    private final TemplateExecutionEnvironment myEnv;
+    @NotNull
+    private final SNode myApplicableNode;
+
+    public ArmedWeavingRule(TemplateWeavingRule rule, TemplateExecutionEnvironment env, SNode applicableNode) {
+      myRule = rule;
+      myEnv = env;
+      myApplicableNode = applicableNode;
+    }
+
+    public boolean apply(IGenerationTracer tracer) throws GenerationFailureException, GenerationCanceledException {
+      try {
+        DefaultTemplateContext context = new DefaultTemplateContext(myApplicableNode);
+        SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
+        if (!checkContext(outputContextNode)) {
+          return false;
+        }
+
+        boolean someOutputGenerated = true;
+        tracer.pushInputNode(GenerationTracerUtil.getSNodePointer(myApplicableNode));
+        tracer.pushRule(myRule.getRuleNode());
+        try {
+          someOutputGenerated = myRule.apply(myEnv, context, outputContextNode);
+
+        } catch (DismissTopMappingRuleException e) {
+          myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "wrong template: dismission of weaving rule is not supported");
+        } catch (TemplateProcessingFailureException e) {
+          myEnv.getGenerator().showErrorMessage(context.getInput(), null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "weaving rule: error processing template fragment");
+        } finally {
+          if (someOutputGenerated) {
+           tracer.closeInputNode(GenerationTracerUtil.getSNodePointer(myApplicableNode));
+          } else {
+            tracer.popInputNode(GenerationTracerUtil.getSNodePointer(myApplicableNode));
+          }
+        }
+      } catch (GenerationCanceledException ex) {
+        throw ex;
+      } catch (GenerationFailureException ex) {
+        throw ex;
+      } catch (GenerationException e) {
+        myEnv.getGenerator().showErrorMessage(null, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
+      }
+      return true; // original code did myGenerator.setChanged once checkContext had passed.
+    }
+
+    private boolean checkContext(SNode contextNode) {
+      ITemplateGenerator generatorIface = myEnv.getGenerator();
+      TemplateGenerator generator = myEnv.getGenerator();
+
+      if (contextNode == null) {
+        generatorIface.showErrorMessage(myApplicableNode, myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "weaving rule: cannot find context node");
+        return false;
+      }
+      // Additional check - context should be generated from the same root
+      SNode contextRoot = contextNode.getContainingRoot();
+      SModel model = contextRoot.getModel();
+      if (model == null) {
+        generator.showErrorIfStrict(myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "bad context for weaving rule: no root for context " + contextNode);
+        return !generatorIface.isStrict();
+      }
+
+      SNode originalContextRoot = generator.getOriginalRootByGenerated(contextRoot);
+      if (originalContextRoot == null) {
+        generator.showErrorIfStrict(myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "bad context for weaving rule: " + contextRoot + " is generated by 'create root' rule");
+        return !generatorIface.isStrict();
+      }
+
+      if (myApplicableNode.getModel() == null) return true;
+
+      SNode inputRoot = myApplicableNode.getContainingRoot();
+      if (originalContextRoot != inputRoot) {
+        generator.showErrorIfStrict(myRule.getRuleNode().resolve(MPSModuleRepository.getInstance()),
+            "bad context for weaving rule: " + contextRoot.toString() + " is generated from " + originalContextRoot.toString()
+                + ", while input node is from " + inputRoot.toString());
+        return !generatorIface.isStrict();
+      }
+
+      return true;
+    }
+  }
+ }

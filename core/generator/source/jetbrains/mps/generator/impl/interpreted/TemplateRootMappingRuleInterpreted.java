@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,12 +87,12 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      environment.getGenerator().getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
+      environment.getLogger().warning(ruleNode, "cannot find condition method '" + conditionMethod + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      environment.getGenerator().getLogger().handleException(t);
-      environment.getGenerator().getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
+      environment.getLogger().handleException(t);
+      environment.getLogger().error(ruleNode, "error executing condition " + conditionMethod + " (see exception)");
       throw new GenerationFailureException(t);
     }
     return false;
@@ -101,8 +101,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     if (templateNode != null) {
-      return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-        .apply(ruleMappingName, templateNode, context);
+      return new TemplateProcessor(environment).apply(ruleMappingName, templateNode, context);
     } else {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "no template is defined for the rule");
     }

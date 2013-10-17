@@ -29,7 +29,7 @@
     <property name="caption" nameId="tp4k.1205250923097" value="Show Generation Plan" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3366942412399973392" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="project" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="nx1.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
+      <link role="key" roleId="tp4k.1217252646389" targetNodeId="nx1.~CommonDataKeys%dPROJECT" resolveInfo="PROJECT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448210490" nodeInfo="ng" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="561032641968524798" nodeInfo="ng">
@@ -43,12 +43,12 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="561032641967744119" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="command" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="561032641967744114" nodeInfo="in">
-              <link role="concept" roleId="tp25.1138405853777" targetNodeId="caxt.7057947030097724900" resolveInfo="ShowMappingPartitioning" />
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="caxt.7057947030097724900" resolveInfo="ShowGenPlan" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="561032641967746334" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="561032641967746328" nodeInfo="nn">
                 <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="561032641967746329" nodeInfo="in">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="caxt.7057947030097724900" resolveInfo="ShowMappingPartitioning" />
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="caxt.7057947030097724900" resolveInfo="ShowGenPlan" />
                 </node>
               </node>
             </node>

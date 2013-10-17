@@ -22258,8 +22258,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399164722" resolveInfo="IntroduceFieldRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4038232163187008797" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4038232163187008798" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399164726" resolveInfo="IntroduceFieldRefactoring" />
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="3539862368273911456" nodeInfo="nn">
+                <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="89o2.8492459591399164722" resolveInfo="IntroduceFieldRefactoring" />
               </node>
             </node>
           </node>
@@ -22310,7 +22310,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4038232163187008795" resolveInfo="refactoring" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4038232163187009391" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399164896" resolveInfo="setFieldInitializationPlace" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.2315910000642821207" resolveInfo="setFieldInitializationPlace" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="4038232163187009393" nodeInfo="nn">
                 <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="89o2.8492459591399173328" resolveInfo="FIELD" />
                 <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="89o2.8492459591399173316" resolveInfo="FieldInitializationPlace" />

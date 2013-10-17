@@ -156,7 +156,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.FixBrokenReferences_Action" file="FixBrokenReferences_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -200,7 +200,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.FixMissingImportsInProject_Action" file="FixMissingImportsInProject_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -237,7 +237,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.ImportModelsWithUsedClassifiers_Action" file="ImportModelsWithUsedClassifiers_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -318,7 +318,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeAccess_Action" file="MigrateToNewSNodeAccess_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -339,7 +339,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToNewSNodeMethods_Action" file="MigrateToNewSNodeMethods_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -360,7 +360,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelDescriptorOpenAPI_Action" file="MigrateToSModelDescriptorOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -380,7 +380,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelIdOpenAPI_Action" file="MigrateToSModelIdOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -400,7 +400,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelOpenAPI_Action" file="MigrateToSModelOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -420,7 +420,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModelReferenceOpenAPI_Action" file="MigrateToSModelReferenceOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -440,7 +440,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleIdOpenAPI_Action" file="MigrateToSModuleIdOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -460,7 +460,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleOpenAPI_Action" file="MigrateToSModuleOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -480,7 +480,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSModuleReferenceOpenAPI_Action" file="MigrateToSModuleReferenceOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -500,7 +500,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeIdOpenAPI_Action" file="MigrateToSNodeIdOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -520,7 +520,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeOpenAPI_Action" file="MigrateToSNodeOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -540,7 +540,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSNodeReferenceOpenAPI_Action" file="MigrateToSNodeReferenceOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -560,7 +560,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrateToSReferenceOpenAPI_Action" file="MigrateToSReferenceOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -581,7 +581,7 @@
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.Migration30Actions" file="Migration30Actions.xml" />
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModel_Action" file="MigrationScript_ConvertSModel_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -607,7 +607,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSModule_Action" file="MigrationScript_ConvertSModule_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -633,7 +633,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_ConvertSNode_Action" file="MigrationScript_ConvertSNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -659,7 +659,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_EditorContext_Action" file="MigrationScript_EditorContext_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -685,7 +685,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixJDKTools_Action" file="MigrationScript_FixJDKTools_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -711,7 +711,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixMPSClasspath_Action" file="MigrationScript_FixMPSClasspath_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -737,7 +737,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_FixPluginKindForMPSTestCases_Action" file="MigrationScript_FixPluginKindForMPSTestCases_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -763,7 +763,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateAbstractConceptDeclarationMethodOnConceptVariable_Action" file="MigrationScript_MigrateAbstractConceptDeclarationMethodOnConceptVariable_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -789,7 +789,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateAttributesConceptPropertiesAndLinks_Action" file="MigrationScript_MigrateAttributesConceptPropertiesAndLinks_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -815,7 +815,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateClassifierMemberNodes_Action" file="MigrationScript_MigrateClassifierMemberNodes_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -841,7 +841,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateClassifierMembersSModelUsages_Action" file="MigrationScript_MigrateClassifierMembersSModelUsages_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -867,7 +867,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateIModuleCastToAbstractModuleCast_Action" file="MigrationScript_MigrateIModuleCastToAbstractModuleCast_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -893,7 +893,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalInstanceFieldReference_Action" file="MigrationScript_MigrateLocalInstanceFieldReference_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -919,7 +919,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalInstanceMethodCall_Action" file="MigrationScript_MigrateLocalInstanceMethodCall_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -945,7 +945,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalStaticFieldReference_Action" file="MigrationScript_MigrateLocalStaticFieldReference_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -971,7 +971,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalStaticMethodCall_Action" file="MigrationScript_MigrateLocalStaticMethodCall_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -997,7 +997,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateLocalVariableReference_Action" file="MigrationScript_MigrateLocalVariableReference_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -1023,7 +1023,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterReference_Action" file="MigrationScript_MigrateParameterReference_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -1049,7 +1049,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateParameterizedIntentionDeclaration_Action" file="MigrationScript_MigrateParameterizedIntentionDeclaration_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -1075,7 +1075,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_MigrateStaticConceptMethodDeclaration_Action" file="MigrationScript_MigrateStaticConceptMethodDeclaration_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -1101,7 +1101,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.MigrationScript_RemoveDirectCallProperty_Action" file="MigrationScript_RemoveDirectCallProperty_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Frame" />
@@ -1160,7 +1160,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.mpsmigration.migration30.RemoveConceptProperties_Action" file="RemoveConceptProperties_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

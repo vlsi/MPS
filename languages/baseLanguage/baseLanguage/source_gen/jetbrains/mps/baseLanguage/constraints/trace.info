@@ -1848,7 +1848,7 @@
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="67" startPosition="13" endLine="68" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="77" startPosition="7" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2580416627845364495" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="82" startPosition="110" endLine="83" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2580416627845385303" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="167" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2580416627845385303" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="161" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2580416627845385307" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="89" startPosition="5" endLine="90" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="94" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_b29p6n_a0a0a0a0a1a0b0a1a3" />
@@ -1874,7 +1874,7 @@
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="40" startPosition="51" endLine="41" endPosition="67" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="52" startPosition="44" endLine="53" endPosition="20" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="61" startPosition="63" endLine="62" endPosition="58" />
-    <scopeInfo nodeId="2580416627845364504" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="167" endLine="86" endPosition="22" />
+    <scopeInfo nodeId="2580416627845364504" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="85" startPosition="161" endLine="86" endPosition="22" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2580416627846492977" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="84" startPosition="110" endLine="87" endPosition="9" />
     <scopeInfo nodeId="2580416627845354229" fileName="ImplicitAnnotationInstanceValue_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
@@ -2605,10 +2605,6 @@
     <unitInfo nodeId="7812454656619472116" fileName="LocalMethodCall_Constraints.java" startLine="30" startPosition="48" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.LocalMethodCall_Constraints$1" />
     <unitInfo nodeId="7812454656619472116" fileName="LocalMethodCall_Constraints.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.LocalMethodCall_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7953345580635456143" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7953345580635752455" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7953345580635756580" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/7953345580635758404" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/9048361382548188116">
     <nodeInfo nodeId="9048361382548188116" fileName="EnumValueOfExpression_Constraints.java" startLine="14" startPosition="46" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9048361382548188116" fileName="EnumValueOfExpression_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

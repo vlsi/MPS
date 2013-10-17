@@ -328,7 +328,7 @@
     <nodeInfo nodeId="2897370900776711710" fileName="ScopePositionInfo.java" startLine="76" startPosition="51" endLine="77" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8468072632688977322" fileName="ScopePositionInfo.java" startLine="81" startPosition="40" endLine="82" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8468072632688977366" fileName="ScopePositionInfo.java" startLine="83" startPosition="22" endLine="84" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1265402574540502739" fileName="ScopePositionInfo.java" startLine="86" startPosition="147" endLine="87" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1265402574540502739" fileName="ScopePositionInfo.java" startLine="86" startPosition="135" endLine="87" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1265402574540502788" fileName="ScopePositionInfo.java" startLine="87" startPosition="101" endLine="88" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1265402574540504437" fileName="ScopePositionInfo.java" startLine="89" startPosition="30" endLine="90" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1265402574540504446" fileName="ScopePositionInfo.java" startLine="90" startPosition="54" endLine="91" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -446,7 +446,7 @@
     <scopeInfo nodeId="2897370900776711620" fileName="ScopePositionInfo.java" startLine="54" startPosition="47" endLine="65" endPosition="5">
       <varInfo nodeId="2897370900776711622" varName="varName" />
     </scopeInfo>
-    <scopeInfo nodeId="1265402574540453387" fileName="ScopePositionInfo.java" startLine="86" startPosition="147" endLine="97" endPosition="15">
+    <scopeInfo nodeId="1265402574540453387" fileName="ScopePositionInfo.java" startLine="86" startPosition="135" endLine="97" endPosition="15">
       <varInfo nodeId="1265402574540502789" varName="theirvars" />
       <varInfo nodeId="1265402574540502740" varName="vars" />
     </scopeInfo>

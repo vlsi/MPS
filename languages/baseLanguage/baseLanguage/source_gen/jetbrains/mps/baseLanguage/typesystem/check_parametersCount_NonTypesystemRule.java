@@ -29,7 +29,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
         isOk = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
       } else {
-        isOk = (int) ListSequence.fromList(parameterDeclarations).count() == (int) ListSequence.fromList(actualArguments).count();
+        isOk = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
       }
       if (!(isOk)) {
         {

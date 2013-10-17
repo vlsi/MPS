@@ -43,7 +43,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       return;
     }
 
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).isEmpty() || (int) ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(creator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1216200944338", null, errorTarget);
