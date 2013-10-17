@@ -77,34 +77,24 @@ public class Launcher {
       builder.append(url.getPath());
       builder.append(File.pathSeparator);
     }
-    builder.deleteCharAt(builder.lastIndexOf(File.pathSeparator));
-    return builder.toString();
+    if(builder.lastIndexOf(File.pathSeparator) > 0)
+      builder.deleteCharAt(builder.lastIndexOf(File.pathSeparator));
+    return builder.toString().trim();
   }
 
   private static List<URL> getAdditionalMPSClasspath() {
     List<URL> result = new ArrayList<URL>();
     String homePath = PathManager.getHomePath();
     try {
-      addMPSBootstrapJars(result, homePath);
-
-      if (result.isEmpty()) {
-        // we're probably running from the sources, let's add the class dirs to the classpath
-        Class<Bootstrap> clazz = Bootstrap.class;
-        String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
-        URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
+      // we're probably running from the sources, let's add the class dirs to the classpath
+      Class<Bootstrap> clazz = Bootstrap.class;
+      String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
+      URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
         addMPSBootstrapClassFolders(result, homePath, selfRootUrl);
-      }
     } catch (MalformedURLException e) {
 
     }
     return result;
-  }
-
-  private static void addMPSBootstrapJars(List<URL> classPath, String homePath) throws MalformedURLException {
-    File mpsJar = new File(homePath + File.separator + "lib" + File.separator + "mps.jar");
-    if (mpsJar.exists()) {
-      classPath.add(mpsJar.toURI().toURL());
-    }
   }
 
   private static void addMPSBootstrapClassFolders(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
