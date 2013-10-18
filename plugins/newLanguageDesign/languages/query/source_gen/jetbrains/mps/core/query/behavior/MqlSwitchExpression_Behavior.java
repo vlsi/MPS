@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class SwitchExpression_Behavior {
+public class MqlSwitchExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 

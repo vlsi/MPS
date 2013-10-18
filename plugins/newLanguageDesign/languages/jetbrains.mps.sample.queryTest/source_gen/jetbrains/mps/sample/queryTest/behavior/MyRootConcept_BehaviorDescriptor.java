@@ -46,6 +46,10 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return MyRootConcept_Behavior.virtual_queryWithParam_6166572974641188535(thisNode, kind);
   }
 
+  public String virtual_switchTest_6900882940023046358(SNode thisNode) {
+    return MyRootConcept_Behavior.virtual_switchTest_6900882940023046358(thisNode);
+  }
+
   public boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
     return MyRootConcept_Behavior.virtual_useQueryTest2_6925357446547284154(thisNode, param);
   }

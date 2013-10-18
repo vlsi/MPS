@@ -10,7 +10,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="ydsw" modelUID="r:c11a239c-3061-4b62-b5dd-6749678497d7(jetbrains.mps.core.structure.structure)" version="-1" implicit="yes" />
   <import index="xsnc" modelUID="r:e3b9700d-5825-4641-895a-925f28591c5b(jetbrains.mps.core.smodel.structure)" version="-1" implicit="yes" />
-  <import index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="4" implicit="yes" />
+  <import index="bwy9" modelUID="r:f9198ffd-e084-425c-aa82-f2db8289f5eb(jetbrains.mps.core.query.structure)" version="5" implicit="yes" />
   <root type="ydsw.SStructureContainer" typeId="ydsw.6195190339581766868" id="8194562227697157146" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="AllLanguage" />
     <node role="structure" roleId="ydsw.6195190339581766884" type="ydsw.SConcept" typeId="ydsw.6195190339581766741" id="8194562227697157149" nodeInfo="ng">
@@ -468,6 +468,11 @@
             <link role="parameter" roleId="bwy9.6762883159245086408" targetNodeId="559063416355209586" resolveInfo="x" />
           </node>
         </node>
+      </node>
+      <node role="members" roleId="ydsw.6195190339581766761" type="xsnc.SConceptQuery" typeId="xsnc.5270931306887544473" id="6900882940023342531" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="switchTest" />
+        <node role="type" roleId="xsnc.4366849661834287896" type="bwy9.MqlStringType" typeId="bwy9.6762883159245048070" id="6900882940023342537" nodeInfo="ng" />
+        <node role="body" roleId="xsnc.6762883159245048634" type="bwy9.MqlStringLiteral" typeId="bwy9.6762883159245048054" id="6900882940023343451" nodeInfo="ng" />
       </node>
       <node role="members" roleId="ydsw.6195190339581766761" type="ydsw.SConceptMemberEmptyLine" typeId="ydsw.7581772527307844356" id="6925357446544712081" nodeInfo="ng" />
       <node role="members" roleId="ydsw.6195190339581766761" type="xsnc.SConceptQuery" typeId="xsnc.5270931306887544473" id="6925357446544714261" nodeInfo="ng">

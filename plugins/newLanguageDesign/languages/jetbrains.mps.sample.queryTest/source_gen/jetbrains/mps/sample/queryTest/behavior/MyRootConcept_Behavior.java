@@ -77,6 +77,10 @@ public class MyRootConcept_Behavior {
     return SPropertyOperations.getString(x, "alias");
   }
 
+  public static String virtual_switchTest_6900882940023046358(SNode thisNode) {
+    return "";
+  }
+
   public static boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, param, "virtual_qt2query_6925357446544699852", new Object[]{});
   }
@@ -127,6 +131,11 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
+  public static String call_switchTest_6900882940023046358(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_switchTest_6900882940023046358", new Object[]{});
+  }
+
+  @Deprecated
   public static boolean call_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useQueryTest2_6925357446547284154", new Object[]{param});
   }
@@ -174,6 +183,11 @@ public class MyRootConcept_Behavior {
   @Deprecated
   public static String callSuper_queryWithComplexIfaceParam_6925357446497561822(SNode thisNode, String callerConceptFqName, SNode x) {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_queryWithComplexIfaceParam_6925357446497561822", new Class[]{SNode.class, SNode.class}, new Object[]{x});
+  }
+
+  @Deprecated
+  public static String callSuper_switchTest_6900882940023046358(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_switchTest_6900882940023046358", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

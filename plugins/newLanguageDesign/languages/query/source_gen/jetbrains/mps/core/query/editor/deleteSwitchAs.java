@@ -7,19 +7,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class deleteScrutinee {
+public class deleteSwitchAs {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new deleteScrutinee.deleteScrutinee_DELETE(node));
+    editorCell.setAction(CellActionType.DELETE, new deleteSwitchAs.deleteSwitchAs_DELETE(node));
   }
 
-  public static class deleteScrutinee_DELETE extends AbstractCellAction {
+  public static class deleteSwitchAs_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
-    public deleteScrutinee_DELETE(SNode node) {
+    public deleteSwitchAs_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -28,8 +28,9 @@ public class deleteScrutinee {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "scrutinee", true));
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "ALIAS_EDITOR_COMPONENT", -1);
+      SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlSwitchScrutinee", null);
+      SLinkOperations.setTarget(newNode, "expression", SLinkOperations.getTarget(node, "expression", true), true);
+      SNodeOperations.replaceWithAnother(node, newNode);
     }
   }
 }
