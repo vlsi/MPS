@@ -76,6 +76,8 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
       } catch (AssertionError e) {
         LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
+      } catch (NoClassDefFoundError e) {
+        LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
       }
     }
 
