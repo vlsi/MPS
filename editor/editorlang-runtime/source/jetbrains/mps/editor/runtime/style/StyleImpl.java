@@ -82,6 +82,7 @@ public class StyleImpl implements Style {
   public void putAll(@NotNull Style style) {
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
+    Set<StyleAttribute> forcedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
       myAttributeValues[attribute.getIndex()] = style.rawGet(attribute);
       if (StyleAttributes.isSimple(attribute)) {
@@ -92,17 +93,7 @@ public class StyleImpl implements Style {
       }
     }
     for (Pair<Integer, Style> priorityGroup : style.getPriorityGroups()) {
-      Style priorityGroupStyle = priorityGroup.o2;
-      Integer priority = priorityGroup.o1;
-      for (StyleAttribute attribute : priorityGroupStyle.getSpecifiedAttributes()) {
-        myAttributeValues[attribute.getIndex()] = priorityGroupStyle.rawGet(attribute);
-        if (StyleAttributes.isSimple(attribute)) {
-          myCachedAttributeValues[attribute.getIndex()] = null;
-          addedSimple.add(attribute);
-        } else {
-          addedNotSimple.add(attribute);
-        }
-      }
+      addPriorityGroup(priorityGroup.o1, priorityGroup.o2);
     }
     updateCache(addedNotSimple);
     fireStyleChanged(new StyleChangeEvent(this, addedSimple));
@@ -114,9 +105,33 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public void addPriorityGroup(int priority, Style priorityGroup) {
+  public void addPriorityGroup(int priority, @NotNull Style priorityGroup) {
     myPriorityGroups.add(new Pair<Integer, Style>(priority, priorityGroup));
+    applyPriorityGroups();
+  }
 
+  private void applyPriorityGroups() {
+    for (Pair<Integer, Style> group : myPriorityGroups) {
+      Style priorityGroup = group.o2;
+      Set<StyleAttribute> addedSimple = new StyleAttributeSet();
+      Set<StyleAttribute> forcedNotSimple = new StyleAttributeSet();
+      for (StyleAttribute attribute : priorityGroup.getSpecifiedAttributes()) {
+        myAttributeValues[attribute.getIndex()] = priorityGroup.rawGet(attribute);
+        if (StyleAttributes.isSimple(attribute)) {
+          myCachedAttributeValues[attribute.getIndex()] = null;
+          addedSimple.add(attribute);
+        } else {
+          forcedNotSimple.add(attribute);
+        }
+      }
+      forceUpdateCache(forcedNotSimple);
+      fireStyleChanged(new StyleChangeEvent(this, addedSimple));
+      if (myChildren != null) {
+        for (Style style : myChildren) {
+          style.setParent(this, new StyleAttributeSet());
+        }
+      }
+    }
   }
 
   @Override
@@ -247,6 +262,9 @@ public class StyleImpl implements Style {
   public void setParent(Style parent, Collection<StyleAttribute> inheritedAttributes) {
     myParent = parent;
     updateCache(inheritedAttributes);
+    for (Pair<Integer, Style> priorityGroup : parent.getPriorityGroups()) {
+      addPriorityGroup(priorityGroup.o1, priorityGroup.o2);
+    }
   }
 
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
@@ -261,6 +279,35 @@ public class StyleImpl implements Style {
 
   private Style getParentStyle() {
     return myParent;
+  }
+
+  private void forceUpdateCache(Collection<StyleAttribute> attributes) {
+    if (attributes.isEmpty()) {
+      return;
+    }
+
+    Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
+    for (StyleAttribute attribute : attributes) {
+      Object currentValue = myAttributeValues[attribute.getIndex()];
+      Object oldValue = myCachedAttributeValues[attribute.getIndex()];
+
+      if (!EqualUtil.equals(currentValue, oldValue)) {
+        changedAttributes.add(attribute);
+      }
+      myCachedAttributeValues[attribute.getIndex()] = currentValue;
+
+    }
+
+    if (!changedAttributes.isEmpty()) {
+      if (myChildren != null) {
+        for (Style style : myChildren) {
+          style.setParent(this, changedAttributes);
+        }
+      }
+
+      fireStyleChanged(new StyleChangeEvent(this, changedAttributes));
+    }
+
   }
 
   private void updateCache(Collection<StyleAttribute> attributes) {
