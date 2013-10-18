@@ -25,13 +25,17 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Collections.<ConceptEditor>singletonList(new CellModel_DiagramNode_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConnectionEndQualifier_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new FigureColorStyleClassItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExternalFigureReference_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new FigureDimensionStyleClassItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new FigureColorStyleClassItem_Editor());
       case 8:
+        return Collections.<ConceptEditor>singletonList(new FigureDimensionStyleClassItem_Editor());
+      case 9:
         return Collections.<ConceptEditor>singletonList(new LinkDeclarationReference_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
       default:
     }
     return Collections.emptyList();
@@ -46,10 +50,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         break;
       case 1:
         if ("jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameterPresentation".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new FigureParameterLinkPresentation());
+          return Collections.<ConceptEditorComponent>singletonList(new FigureParameterBLQueryPresentation());
         }
         break;
       case 2:
+        if ("jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameterPresentation".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new FigureParameterLinkPresentation());
+        }
+        break;
+      case 3:
         if ("jetbrains.mps.lang.editor.diagram.editor.AbstractFigureParameterPresentation".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new FigureParameterPropertyPresentation());
         }
@@ -66,6 +75,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndQualifier", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty"};
 }

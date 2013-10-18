@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/1491555030356781789">
     <nodeInfo nodeId="1491555030356827125" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="26" startPosition="7" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1491555030356827125" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -42,6 +42,67 @@
       <varInfo nodeId="1491555030356781789" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="1491555030356781789" fileName="CheckAbstractFigureParameter_exists_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.CheckAbstractFigureParameter_exists_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/3229274890674900516">
+    <nodeInfo nodeId="3229274890675121746" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="22" startPosition="117" endLine="23" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3229274890674900829" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="25" startPosition="7" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3229274890674900829" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="26" startPosition="48" endLine="27" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3229274890674900829" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="27" startPosition="212" endLine="28" endPosition="448" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="39" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="39" startPosition="130" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="48" startPosition="81" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="49" startPosition="63" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="51" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="51" startPosition="159" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="52" startPosition="85" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_EditorNodeExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3229274890674900829" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="24" startPosition="34" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="3229274890674980226" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="23" startPosition="149" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_zhw4c5_a0a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="19" startPosition="54" endLine="19" endPosition="54" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="33" startPosition="46" endLine="34" endPosition="82" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="3229274890674900516" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="50" startPosition="30" endLine="52" endPosition="85" />
+    <scopeInfo nodeId="3229274890674900829" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="25" startPosition="7" endLine="28" endPosition="448">
+      <varInfo nodeId="3229274890674900829" varName="_info_12389875345" />
+      <varInfo nodeId="3229274890674900829" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="3229274890674980229" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="24" startPosition="34" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="48" startPosition="81" endLine="53" endPosition="24">
+      <varInfo nodeId="3229274890674900848" varName="facade" />
+      <varInfo nodeId="3229274890674900848" varName="quotedNode_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="3229274890674900516" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229274890674900848" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="3229274890674900848" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229274890674900517" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="22" startPosition="117" endLine="30" endPosition="5">
+      <varInfo nodeId="3229274890675121747" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3229274890674900516" varName="node" />
+      <varInfo nodeId="3229274890674900516" varName="status" />
+      <varInfo nodeId="3229274890674900516" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="3229274890674900516" fileName="typeof_EditorNodeExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.typeof_EditorNodeExpression_InferenceRule" />
   </root>
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/4088443785018266987">
     <nodeInfo nodeId="6377978676692179609" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="30" startPosition="213" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

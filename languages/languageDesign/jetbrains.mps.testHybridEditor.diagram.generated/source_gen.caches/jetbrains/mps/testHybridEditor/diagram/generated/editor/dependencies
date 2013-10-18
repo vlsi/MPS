@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagramGenerated_Editor" file="BlockInstance_diagramGenerated_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.BlockInstanceView" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagramGenerated_Editor" file="Block_diagramGenerated_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -23,6 +46,23 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagramGenerated_Editor" file="ConnectorInstance_diagramGenerated_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.PolylineConnection" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Connector_diagramGenerated_Editor" file="Connector_diagramGenerated_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -32,13 +72,11 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagramGenerated_Editor" file="Diagram_diagramGenerated_Editor.java">
@@ -80,7 +118,9 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagramGenerated_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagramGenerated_Editor" />
+    <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagramGenerated_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Connector_diagramGenerated_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagramGenerated_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagramGenerated_Editor" />

@@ -44,8 +44,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_tb7paq_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_tb7paq_a0(editorContext, node));
-    editorCell.addEditorCell(this.createDiagram_tb7paq_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_tb7paq_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tb7paq_b0(editorContext, node));
+    editorCell.addEditorCell(this.createDiagram_tb7paq_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tb7paq_d0(editorContext, node));
+    editorCell.addEditorCell(this.createDiagram_tb7paq_e0(editorContext, node));
     return editorCell;
   }
 
@@ -82,7 +84,14 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createDiagram_tb7paq_b0(final EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_tb7paq_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version-1:");
+    editorCell.setCellId("Constant_tb7paq_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createDiagram_tb7paq_c0(final EditorContext editorContext, SNode node) {
     DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
     DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
@@ -146,15 +155,84 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         connectorCollection.addEditorCell(connectorCell);
       }
     }
-    editorCell.setCellId("Diagram_tb7paq_b0");
+    editorCell.setCellId("Diagram_tb7paq_c0");
     return editorCell;
 
   }
 
-  private EditorCell createConstant_tb7paq_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "asdasd");
-    editorCell.setCellId("Constant_tb7paq_c0");
+  private EditorCell createConstant_tb7paq_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version-2:");
+    editorCell.setCellId("Constant_tb7paq_d0");
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private EditorCell createDiagram_tb7paq_e0(final EditorContext editorContext, SNode node) {
+    DiagramView view = new ConnectionRoutingView(new OrthogonalRouter());
+    DiagramViewCell editorCell = DiagramViewCell.createViewCell(editorContext, node, view);
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection blockCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection connectorCollection = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.addEditorCell(blockCollection);
+    editorCell.addEditorCell(connectorCollection);
+    List<ConnectorViewCell> connectorCellList = ListSequence.fromList(new ArrayList<ConnectorViewCell>());
+    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "newBlocks", true))) {
+      EditorCell contentCell = editorContext.createNodeCell(contentNode);
+      if (!(contentCell instanceof GenericViewCell)) {
+        continue;
+      }
+      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
+      if (genericContentCell instanceof ConnectorViewCell) {
+        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
+        connectorCell.removeAllCells();
+        ListSequence.fromList(connectorCellList).addElement(connectorCell);
+      } else {
+        View blockView = genericContentCell.getView();
+        blockCollection.addEditorCell(genericContentCell);
+        View oldParent = blockView.parent();
+        if (oldParent != null) {
+          oldParent.children().remove(oldParent.children().indexOf(blockView));
+        }
+        view.itemsView.children().add(blockView);
+      }
+    }
+    for (SNode contentNode : ListSequence.fromList(SLinkOperations.getTargets(node, "newConnectors", true))) {
+      EditorCell contentCell = editorContext.createNodeCell(contentNode);
+      if (!(contentCell instanceof GenericViewCell)) {
+        continue;
+      }
+      GenericViewCell genericContentCell = (GenericViewCell) contentCell;
+      if (genericContentCell instanceof ConnectorViewCell) {
+        final ConnectorViewCell connectorCell = (ConnectorViewCell) (genericContentCell);
+        connectorCell.removeAllCells();
+        ListSequence.fromList(connectorCellList).addElement(connectorCell);
+      } else {
+        View blockView = genericContentCell.getView();
+        blockCollection.addEditorCell(genericContentCell);
+        View oldParent = blockView.parent();
+        if (oldParent != null) {
+          oldParent.children().remove(oldParent.children().indexOf(blockView));
+        }
+        view.itemsView.children().add(blockView);
+      }
+    }
+    for (ConnectorViewCell connectorCell : ListSequence.fromList(connectorCellList)) {
+      View connectorView = connectorCell.getView();
+      View fromView = connectorCell.getOutputView(editorCell);
+      View toView = connectorCell.getInputView(editorCell);
+      if (fromView != null && toView != null) {
+        PolylineConnection connection = connectorCell.getConnection();
+        if (connectorView.parent() != null) {
+          connectorView.parent().children().remove(connectorView.parent().children().indexOf(connectorView));
+        }
+        connection.view().invalidate();
+        connection.toView().set(toView);
+        connection.fromView().set(fromView);
+        view.connections.add(connection);
+        connectorCollection.addEditorCell(connectorCell);
+      }
+    }
+    editorCell.setCellId("Diagram_tb7paq_e0");
+    return editorCell;
+
   }
 }

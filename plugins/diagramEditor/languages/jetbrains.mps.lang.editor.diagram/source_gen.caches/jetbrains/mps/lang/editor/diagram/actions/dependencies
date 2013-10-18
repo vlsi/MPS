@@ -25,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.IChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSetupContext" />

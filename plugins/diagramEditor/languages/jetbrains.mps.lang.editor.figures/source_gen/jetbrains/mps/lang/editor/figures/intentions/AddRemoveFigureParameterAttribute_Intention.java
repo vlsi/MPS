@@ -10,8 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -20,10 +21,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AdFigureParameterAttribute_Intention implements IntentionFactory {
+public class AddRemoveFigureParameterAttribute_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public AdFigureParameterAttribute_Intention() {
+  public AddRemoveFigureParameterAttribute_Intention() {
   }
 
   public String getConcept() {
@@ -31,11 +32,11 @@ public class AdFigureParameterAttribute_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "AdFigureParameterAttribute";
+    return "AddRemoveFigureParameterAttribute";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.editor.figures.intentions.AdFigureParameterAttribute_Intention";
+    return "jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttribute_Intention";
   }
 
   public String getLanguageFqName() {
@@ -62,7 +63,18 @@ public class AdFigureParameterAttribute_Intention implements IntentionFactory {
       return false;
     }
     SNode classifierType = SNodeOperations.as(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    return classifierType != null && SLinkOperations.getTarget(classifierType, "classifier", false) != null && (SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(Jetpad.Editor/jetbrains.jetpad.model.property@java_stub)", "~Property")) || SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false))).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(Jetpad.Editor/jetbrains.jetpad.projectional.view@java_stub)", "~GroupView")));
+    if (classifierType == null && SLinkOperations.getTarget(classifierType, "classifier", false) == null) {
+      return false;
+    }
+
+    Set<SNode> allExtendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false));
+    if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(Jetpad.Editor/jetbrains.jetpad.model.property@java_stub)", "~Property")) || SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(Jetpad.Editor/jetbrains.jetpad.projectional.view@java_stub)", "~GroupView"))) {
+      return true;
+    }
+    if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.collections(Jetpad.Editor/jetbrains.jetpad.model.collections@java_stub)", "~ObservableCollection"))) {
+      return true;
+    }
+    return false;
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -75,7 +87,7 @@ public class AdFigureParameterAttribute_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AdFigureParameterAttribute_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveFigureParameterAttribute_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -100,7 +112,7 @@ public class AdFigureParameterAttribute_Intention implements IntentionFactory {
     }
 
     public IntentionDescriptor getDescriptor() {
-      return AdFigureParameterAttribute_Intention.this;
+      return AddRemoveFigureParameterAttribute_Intention.this;
     }
   }
 }

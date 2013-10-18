@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1fgd3x1mwd4it2pu26hrheluxa1agpq">
+<dependencies version="2" modelHash="-b68tb5n27r5awfsshmmj44h2qb27oi7">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.keymaps(MPS.Editor/jetbrains.mps.nodeEditor.keymaps@java_stub)" />
@@ -932,7 +932,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="FontSizeStyleClassItem_Editor.java" />
   </source>
-  <source id="1194569476147" name="Styles" hash="-c0tcreyfhe673jrdlkkwmde5dpy2afj">
+  <source id="1194569476147" name="Styles" hash="-892kqtwvgls8kbinr647bgdydpwnwr7">
     <dep root="4088443785012970517" />
     <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -1895,6 +1895,6 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="CellIdReferenceSelector_Editor.java" />
   </source>
-  <source id="4088443785012970517" name="EditorLanguageKeyPack" hash="by2nhyharx0tv21f76kzqt3a6hu04bz" />
+  <source id="4088443785012970517" name="EditorLanguageKeyPack" hash="-4e9qt46jiaghsczjh2jmxpsglc30wxy" />
 </dependencies>
 

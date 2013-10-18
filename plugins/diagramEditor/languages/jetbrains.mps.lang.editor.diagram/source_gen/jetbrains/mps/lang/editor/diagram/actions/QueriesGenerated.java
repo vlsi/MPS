@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_FigureParameterProperty_1497735617372820937(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -40,6 +41,12 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_FigureParameterLink_1497735617372821041(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_FigureParameterBLQuery_3229274890672234104(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept")) {
       SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
     }
@@ -83,7 +90,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     final boolean hasName = new Computable<Boolean>() {
       public Boolean compute() {
-        return SPropertyOperations.getString(_context.getCurrentTargetNode(), "name") != null && !(isEmpty_x583g4_a0a0a0a0a0a0b0d(SPropertyOperations.getString(_context.getCurrentTargetNode(), "name")));
+        return SPropertyOperations.getString(_context.getCurrentTargetNode(), "name") != null && !(isEmpty_x583g4_a0a0a0a0a0a0b0e(SPropertyOperations.getString(_context.getCurrentTargetNode(), "name")));
       }
     }.compute();
     {
@@ -180,10 +187,38 @@ public class QueriesGenerated {
         }
       }
     }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery", _context.getCurrentTargetNode());
+          }
+
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            if (hasName) {
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+              return null;
+            }
+            return createdNode;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "#<expression>";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
     return result;
   }
 
-  public static boolean isEmpty_x583g4_a0a0a0a0a0a0b0d(String str) {
+  public static boolean isEmpty_x583g4_a0a0a0a0a0a0b0e(String str) {
     return str == null || str.length() == 0;
   }
 }

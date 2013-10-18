@@ -7565,6 +7565,12 @@
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>
     </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="3229274890674099465" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="KeyWord" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PreDefinedStyleClassItem" typeId="tpc2.4151393920404716535" id="3229274890674103102" nodeInfo="nn">
+        <link role="key" roleId="tpc2.4151393920404978387" targetNodeId="3229274890673979101" />
+      </node>
+    </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1198252342172" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
@@ -12044,6 +12050,9 @@
     <property name="name" nameId="tpck.1169194664001" value="EditorLanguageKeyPack" />
     <node role="styleKey" roleId="tpc2.4151393920375014512" type="tpc2.StyleKey" typeId="tpc2.4151393920374910634" id="4088443785013017821" nodeInfo="ng">
       <property name="value" nameId="tpee.1070475926801" value="PARENTH" />
+    </node>
+    <node role="styleKey" roleId="tpc2.4151393920375014512" type="tpc2.StyleKey" typeId="tpc2.4151393920374910634" id="3229274890673979101" nodeInfo="ng">
+      <property name="value" nameId="tpee.1070475926801" value="KEYWORD" />
     </node>
   </root>
 </model>

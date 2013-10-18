@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bthagqkx07slhb634bnu3g2pem602jw">
+<dependencies version="2" modelHash="-cjzblcthqie3xdxh7604lc1mnk0toli">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5npsvsyrn9wjxm8chqeqoks9rzxsct3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22f15b4ute0vhiiz0lbov8lucesqchu" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-3pota01c1xtxt0lu6pl0mw5opatv9hm" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-cng60gwjd8nfkret78zysb03xky5zcp" />
-  <common hash="6iaq0s4vzohzm73bdlam478mtt7etbl">
+  <common hash="-e70tji75kjty2iezycrvguyobw59pt0">
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
     <dep root="1094405431463761863" />
     <dep root="1094405431463762199" />
     <dep root="1094405431463762240" />
+    <dep root="1220375669566347117" />
+    <dep root="3229274890672018080" />
+    <dep root="3229274890673749551" />
     <dep root="5422656561926747342" />
     <dep root="6306886970785259796" />
     <dep root="6306886970785259805" />
@@ -27,6 +31,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
@@ -42,8 +47,11 @@
   <source id="6306886970790135647" name="QueryFunction_Dimension" hash="-b31i48jwsh11onicbx9f10khepab9ah" />
   <source id="6306886970790145497" name="FigureDimensionStyleClassItem" hash="-5gkg342t3xk9oyo5rhyp2d9oqduyaj" />
   <source id="6306886970791033847" name="CellModel_Diagram" hash="6lppj52efv01q9ygvw2x8gfblzwwmha" />
-  <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="-es12hnz70shcp9oeiu14voimzqe72mo" />
+  <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="9hnibm1vc8hpyf7ozecr2kk1fur64iy" />
   <source id="5422656561926747342" name="AttributedFigureReference" hash="-ev7w954cu4avvpgslqxq86e5124tx67" />
   <source id="8686738938027260610" name="LinkDeclarationReference" hash="-2atrjzxrjre5kacdusrob7prrm8br1p" />
+  <source id="3229274890672018080" name="FigureParameterBLQuery" hash="-alfkubx015kx5asej6kcmufp9i0l5ao" />
+  <source id="3229274890673749551" name="ThisEditorNodeExpression" hash="-icf5x80xsvz2q12vq9c6jjd6hnkfw5" />
+  <source id="1220375669566347117" name="ConnectionEndQualifier" hash="5e6rkeilphwb8hbx2ud338zhe3vkukh" />
 </dependencies>
 

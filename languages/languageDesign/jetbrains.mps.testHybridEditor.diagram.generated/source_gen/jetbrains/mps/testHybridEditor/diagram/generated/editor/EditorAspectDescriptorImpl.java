@@ -17,12 +17,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Block_diagramGenerated_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new Connector_diagramGenerated_Editor());
+        return Collections.<ConceptEditor>singletonList(new BlockInstance_diagramGenerated_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Diagram_diagramGenerated_Editor());
+        return Collections.<ConceptEditor>singletonList(new Connector_diagramGenerated_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new InputPort_diagramGenerated_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConnectorInstance_diagramGenerated_Editor());
       case 4:
+        return Collections.<ConceptEditor>singletonList(new Diagram_diagramGenerated_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new InputPort_diagramGenerated_Editor());
+      case 6:
         return Collections.<ConceptEditor>singletonList(new OutputPort_diagramGenerated_Editor());
       default:
     }
@@ -40,5 +44,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.BlockInstance", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.ConnectorInstance", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
 }

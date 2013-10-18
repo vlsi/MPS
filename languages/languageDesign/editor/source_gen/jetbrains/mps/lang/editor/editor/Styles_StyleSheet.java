@@ -171,6 +171,13 @@ public class Styles_StyleSheet {
     return style;
   }
 
+  @Deprecated
+  public static Style getKeyWord(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
+    return style;
+  }
+
   public static void applyRootCellModelStyle(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
       null :
@@ -277,6 +284,10 @@ public class Styles_StyleSheet {
   public static void applyLeftParenAfterName(Style style, EditorCell editorCell) {
     Styles_StyleSheet.applyLeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+  }
+
+  public static void applyKeyWord(Style style, EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
   }
 
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {

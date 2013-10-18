@@ -65,14 +65,17 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureColorStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureDimensionStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterBLQuery_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterLink_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterProperty_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.LinkDeclarationReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Color_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
@@ -113,6 +116,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndQualifier_BehaviorDescriptor" file="ConnectionEndQualifier_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" file="ExternalFigureReference_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -143,6 +152,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.JetpadEditorStyleItem_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterBLQuery_BehaviorDescriptor" file="FigureParameterBLQuery_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterLink_BehaviorDescriptor" file="FigureParameterLink_BehaviorDescriptor.java">
@@ -197,6 +212,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.QueryFunction_Dimension_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" file="ThisEditorNodeExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

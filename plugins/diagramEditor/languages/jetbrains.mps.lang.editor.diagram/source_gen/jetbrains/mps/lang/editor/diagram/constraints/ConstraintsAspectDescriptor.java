@@ -14,9 +14,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 3:
         return new CellModel_DiagramNode_Constraints();
-      case 5:
+      case 6:
         return new FigureParameterProperty_Constraints();
-      case 4:
+      case 5:
         return new FigureParameterLink_Constraints();
       case 0:
         return new AbstractFigureParameter_Constraints();
@@ -24,13 +24,17 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new CellModel_Diagram_Constraints();
       case 2:
         return new CellModel_DiagramConnector_Constraints();
-      case 6:
+      case 7:
         return new LinkDeclarationReference_Constraints();
+      case 4:
+        return new ConnectionEndQualifier_Constraints();
+      case 8:
+        return new ThisEditorNodeExpression_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndQualifier", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
 }

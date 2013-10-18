@@ -14,19 +14,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 3:
         return new CellModel_DiagramNode_BehaviorDescriptor();
-      case 4:
-        return new ExternalFigureReference_BehaviorDescriptor();
-      case 8:
-        return new FigureParameterProperty_BehaviorDescriptor();
-      case 7:
-        return new FigureParameterLink_BehaviorDescriptor();
       case 5:
-        return new FigureColorStyleClassItem_BehaviorDescriptor();
+        return new ExternalFigureReference_BehaviorDescriptor();
       case 10:
-        return new QueryFunction_Color_BehaviorDescriptor();
-      case 11:
-        return new QueryFunction_Dimension_BehaviorDescriptor();
+        return new FigureParameterProperty_BehaviorDescriptor();
+      case 9:
+        return new FigureParameterLink_BehaviorDescriptor();
       case 6:
+        return new FigureColorStyleClassItem_BehaviorDescriptor();
+      case 12:
+        return new QueryFunction_Color_BehaviorDescriptor();
+      case 13:
+        return new QueryFunction_Dimension_BehaviorDescriptor();
+      case 7:
         return new FigureDimensionStyleClassItem_BehaviorDescriptor();
       case 1:
         return new CellModel_Diagram_BehaviorDescriptor();
@@ -34,12 +34,18 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CellModel_DiagramConnector_BehaviorDescriptor();
       case 0:
         return new AttributedFigureReference_BehaviorDescriptor();
-      case 9:
+      case 11:
         return new LinkDeclarationReference_BehaviorDescriptor();
+      case 8:
+        return new FigureParameterBLQuery_BehaviorDescriptor();
+      case 14:
+        return new ThisEditorNodeExpression_BehaviorDescriptor();
+      case 4:
+        return new ConnectionEndQualifier_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndQualifier", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureColorStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureDimensionStyleClassItem", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterLink", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.LinkDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.diagram.structure.QueryFunction_Dimension", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
 }

@@ -87,18 +87,6 @@
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5717188120685503707" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.6382742553261733065" resolveInfo="CellModel_DiagramConnector" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="5717188120685503794" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.6382742553261744666" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="5717188120688941084" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.5717188120689018936" resolveInfo="ReferenceLinkDeclartionScopeKind" />
-      </node>
-    </node>
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="5717188120685503796" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.6382742553261744668" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="5717188120685503967" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.5717188120689018936" resolveInfo="ReferenceLinkDeclartionScopeKind" />
-      </node>
-    </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5717188120687546858" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="VisibleReferencesScope" />
@@ -110,6 +98,41 @@
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.8686738938027261134" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="5717188120684762464" nodeInfo="ng">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
+    </node>
+  </root>
+  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1220375669566700360" nodeInfo="ng">
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndQualifier" />
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1220375669566700453" nodeInfo="ng">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.1220375669566347229" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1220375669566704501" nodeInfo="ng">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpce.5717188120689018936" resolveInfo="ReferenceLinkDeclartionScopeKind" />
+      </node>
+    </node>
+  </root>
+  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1220375669567134075" nodeInfo="ng">
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.3229274890673749551" resolveInfo="ThisEditorNodeExpression" />
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="1220375669567134127" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1220375669567134128" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1220375669567141668" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1220375669567188793" nodeInfo="nn">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1220375669567190358" nodeInfo="nn" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669567142196" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="1220375669567141667" nodeInfo="nn" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorsOperation" typeId="tp25.1173122760281" id="1220375669567144634" nodeInfo="nn">
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_ConceptList" typeId="tp25.1154546920561" id="1220375669567171901" nodeInfo="ng">
+                  <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1220375669567174530" nodeInfo="ng">
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.3229274890672018080" resolveInfo="FigureParameterBLQuery" />
+                  </node>
+                  <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1220375669567182121" nodeInfo="ng">
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndQualifier" />
+                  </node>
+                </node>
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1220375669567158259" nodeInfo="ng" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>

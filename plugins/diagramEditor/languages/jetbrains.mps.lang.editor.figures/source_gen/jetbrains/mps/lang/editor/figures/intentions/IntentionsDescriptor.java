@@ -13,7 +13,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AdFigureParameterAttribute_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveFigureAttribute_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveFigureParameterAttribute_Intention());
   }
 }

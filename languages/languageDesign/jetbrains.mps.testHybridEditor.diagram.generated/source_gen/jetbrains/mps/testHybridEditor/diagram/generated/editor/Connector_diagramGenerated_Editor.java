@@ -11,11 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.cells.jetpad.GenericViewCell;
 
 public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
@@ -32,37 +30,20 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
   private EditorCell createDiagramConnector_9iys9b_a(final EditorContext editorContext, final SNode node) {
     PolylineConnection connection = new PolylineConnection();
     final ConnectorViewCell editorCell = new ConnectorViewCell(editorContext, node) {
-      public View getInputView(EditorCell rootCell) {
-        final SNode port = ListSequence.fromList(SLinkOperations.getTargets(node, "inputPort", false)).first();
-        if (port == null) {
+      public View getInputView(DiagramViewCell diagramCell) {
+        final SNode connectionEnd = ListSequence.fromList(SLinkOperations.getTargets(node, "inputPort", false)).first();
+        if (connectionEnd == null) {
           return null;
         }
-        EditorCell cell = CellFinderUtil.findChildByCondition(rootCell, new Condition<EditorCell>() {
-          public boolean met(EditorCell foundCell) {
-            return foundCell.isBig() && foundCell.getSNode().equals(port);
-          }
-        }, true);
-        if (cell instanceof GenericViewCell) {
-          return ((GenericViewCell) cell).getView();
-        }
-        return null;
+        return findConnectionEnd(diagramCell, connectionEnd, null);
       }
 
-      public View getOutputView(EditorCell rootCell) {
-        final SNode port = ListSequence.fromList(SLinkOperations.getTargets(node, "outputPort", false)).first();
-        if (port == null) {
+      public View getOutputView(DiagramViewCell diagramCell) {
+        final SNode connectionEnd = ListSequence.fromList(SLinkOperations.getTargets(node, "outputPort", false)).first();
+        if (connectionEnd == null) {
           return null;
         }
-        EditorCell cell = CellFinderUtil.findChildByCondition(rootCell, new Condition<EditorCell>() {
-          public boolean met(EditorCell foundCell) {
-            return foundCell.isBig() && foundCell.getSNode().equals(port);
-          }
-        }, true);
-
-        if (cell instanceof GenericViewCell) {
-          return ((GenericViewCell) cell).getView();
-        }
-        return null;
+        return findConnectionEnd(diagramCell, connectionEnd, null);
       }
     };
     editorCell.setConnection(connection);
