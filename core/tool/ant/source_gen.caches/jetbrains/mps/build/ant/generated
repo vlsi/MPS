@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6bb3ou0x7qobwgctfd7suni8pkd3ptf">
+<dependencies version="2" modelHash="-1t9nzp07ugpecm50zkerqd2smwb6lb4">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#847a3235-09f9-403c-b6a9-1c294a212e92#org.apache.tools.ant(Ant/org.apache.tools.ant@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9unc9gvm0qs24lv6mjqlmcf6j09w62" />
@@ -19,7 +19,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JvmArgs.java" />
   </source>
-  <source id="4003657351907890310" name="MpsLoadTask" hash="-4ck6h19luzxxd4ot4zvs3d4sbam56jo">
+  <source id="4003657351907890310" name="MpsLoadTask" hash="8e6chqp1r4yy1fbaetdplujogieppg7">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#847a3235-09f9-403c-b6a9-1c294a212e92#org.apache.tools.ant(Ant/org.apache.tools.ant@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -33,7 +33,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MPSClasspathUtil.java" />
   </source>
-  <source id="3449270742160220910" name="ExcludeNested" hash="-3j83rc0adpzf6rvq4vfsmbu4emmoqh">
+  <source id="3449270742160220910" name="ExcludeNested" hash="130z1xxnjqjs6vvsmwhahnh0uumuz3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ExcludeNested.java" />
   </source>
