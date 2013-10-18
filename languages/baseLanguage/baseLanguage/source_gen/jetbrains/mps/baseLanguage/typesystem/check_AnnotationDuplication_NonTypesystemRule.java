@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -33,19 +32,7 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_qq1g71_a0a0a0a0a0a0a2a1(SLinkOperations.getTarget(it, "annotation", false), SLinkOperations.getTarget(annotationInstance, "annotation", false)) && ListSequence.fromList(SLinkOperations.getTargets(it, "value", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).count();
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode otherAnnotation) {
-        return ListSequence.fromList(SLinkOperations.getTargets(otherAnnotation, "value", true)).all(new IWhereFilter<SNode>() {
-          public boolean accept(final SNode otherValue) {
-            return ListSequence.fromList(SLinkOperations.getTargets(annotationInstance, "value", true)).any(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return eq_qq1g71_a0a0a0a0a0a0a0a0a0a0a0a0a0a0c0b(SLinkOperations.getTarget(it, "key", false), SLinkOperations.getTarget(otherValue, "key", false)) && ((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(otherValue, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral") && SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(it, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(otherValue, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"))) || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "value", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(otherValue, "value", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant") && SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(it, "value", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value") == SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(otherValue, "value", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value")));
-              }
-            });
-          }
-        });
+        return eq_qq1g71_a0a0a0a0a0a2a1(SLinkOperations.getTarget(it, "annotation", false), SLinkOperations.getTarget(annotationInstance, "annotation", false));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -72,14 +59,7 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
     return false;
   }
 
-  private static boolean eq_qq1g71_a0a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_qq1g71_a0a0a0a0a0a0a0a0a0a0a0a0a0a0c0b(Object a, Object b) {
+  private static boolean eq_qq1g71_a0a0a0a0a0a2a1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
