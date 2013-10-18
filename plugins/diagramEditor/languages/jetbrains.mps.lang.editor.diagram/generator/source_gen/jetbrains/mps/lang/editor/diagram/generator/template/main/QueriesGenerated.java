@@ -72,14 +72,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "link", false);
   }
 
-  public static Object referenceMacro_GetReferent_3610575687178907906(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "input", true), "link", false);
-  }
-
-  public static Object referenceMacro_GetReferent_3610575687178976919(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "output", true), "link", false);
-  }
-
   public static Object referenceMacro_GetReferent_5422656561934240229(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "property", false);
   }
@@ -110,14 +102,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_5074650623947389976(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(_context.getNode(), "link", false)));
-  }
-
-  public static boolean ifMacro_Condition_5367330549195268662(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "input", true), "pointID", true) == null;
-  }
-
-  public static boolean ifMacro_Condition_5367330549195273926(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "output", true), "pointID", true) == null;
   }
 
   public static boolean ifMacro_Condition_5170495790389308453(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -176,16 +160,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
   }
 
-  public static SNode sourceNodeQuery_5367330549195364088(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "input", true), "pointID", true);
+  public static SNode sourceNodeQuery_2915596886892998791(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "input", true);
   }
 
-  public static SNode sourceNodeQuery_5367330549195324947(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "output", true), "pointID", true);
+  public static SNode sourceNodeQuery_2915596886893131605(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "output", true);
   }
 
   public static SNode sourceNodeQuery_5422656561935909109(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(AbstractFigureParameter_Behavior.call_getDiagramNodeCell_1491555030355957123(_context.getNode()), "figure", true), "virtual_getFigureParameter_1491555030357120840", new Object[]{SPropertyOperations.getString(_context.getNode(), "name")});
+  }
+
+  public static SNode sourceNodeQuery_2915596886893067028(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "targetNode", true);
+  }
+
+  public static SNode sourceNodeQuery_2915596886893245297(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "pointID", true);
   }
 
   public static Iterable sourceNodesQuery_6306886970789042347(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

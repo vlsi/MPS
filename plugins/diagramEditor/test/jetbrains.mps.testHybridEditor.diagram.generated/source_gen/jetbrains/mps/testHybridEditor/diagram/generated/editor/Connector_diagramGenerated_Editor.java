@@ -12,7 +12,6 @@ import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
@@ -31,19 +30,19 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
     PolylineConnection connection = new PolylineConnection();
     final ConnectorViewCell editorCell = new ConnectorViewCell(editorContext, node) {
       public View getInputView(DiagramViewCell diagramCell) {
-        final SNode connectionEnd = ListSequence.fromList(SLinkOperations.getTargets(node, "inputPort", false)).first();
+        final SNode connectionEnd = SLinkOperations.getTarget(node, "inputPort", false);
         if (connectionEnd == null) {
           return null;
         }
-        return findConnectionEnd(diagramCell, connectionEnd, null);
+        return findConnectionEnd(diagramCell, connectionEnd);
       }
 
       public View getOutputView(DiagramViewCell diagramCell) {
-        final SNode connectionEnd = ListSequence.fromList(SLinkOperations.getTargets(node, "outputPort", false)).first();
+        final SNode connectionEnd = SLinkOperations.getTarget(node, "outputPort", false);
         if (connectionEnd == null) {
           return null;
         }
-        return findConnectionEnd(diagramCell, connectionEnd, null);
+        return findConnectionEnd(diagramCell, connectionEnd);
       }
     };
     editorCell.setConnection(connection);

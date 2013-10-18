@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -17,11 +18,11 @@ public class ConnectorEditor extends AbstractJetpadEditor {
   @Override
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     ConnectorViewCell cell = new ConnectorViewCell(context, node) {
-      public View getInputView(EditorCell p0) {
+      public View getInputView(DiagramViewCell p0) {
         return null;
       }
 
-      public View getOutputView(EditorCell p0) {
+      public View getOutputView(DiagramViewCell p0) {
         return null;
       }
     };

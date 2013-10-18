@@ -19,10 +19,14 @@
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
     <node role="newConnectors" roleId="adck.2353136177974093280" type="adck.ConnectorInstance" typeId="adck.2353136177974088982" id="2353136177974097424" nodeInfo="ng">
-      <link role="inBlock" roleId="adck.2353136177974089013" targetNodeId="2353136177974088621" resolveInfo="ProducerBlockInstance" />
-      <link role="outBlock" roleId="adck.2353136177974089015" targetNodeId="2353136177974088758" resolveInfo="ConsumerBlockInstance" />
-      <link role="inPort" roleId="adck.2353136177974089050" targetNodeId="1220375669565734577" resolveInfo="producerOutput" />
-      <link role="outPort" roleId="adck.2353136177974089087" targetNodeId="1220375669565734591" resolveInfo="consumerInput" />
+      <node role="source" roleId="adck.5288989961863964096" type="adck.ConnectorEndInstance" typeId="adck.5288989961863963745" id="6668665838456235888" nodeInfo="ng">
+        <link role="block" roleId="adck.5288989961863964092" targetNodeId="2353136177974088621" resolveInfo="ProducerBlockInstance" />
+        <link role="metaPort" roleId="adck.5288989961863964093" targetNodeId="1220375669565734577" resolveInfo="producerOutput" />
+      </node>
+      <node role="target" roleId="adck.5288989961863964102" type="adck.ConnectorEndInstance" typeId="adck.5288989961863963745" id="6668665838456235916" nodeInfo="ng">
+        <link role="block" roleId="adck.5288989961863964092" targetNodeId="2353136177974088758" resolveInfo="ConsumerBlockInstance" />
+        <link role="metaPort" roleId="adck.5288989961863964093" targetNodeId="1220375669565734591" resolveInfo="consumerInput" />
+      </node>
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.Block" typeId="adck.725186580883451800" id="8686738938029019071" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="a" />

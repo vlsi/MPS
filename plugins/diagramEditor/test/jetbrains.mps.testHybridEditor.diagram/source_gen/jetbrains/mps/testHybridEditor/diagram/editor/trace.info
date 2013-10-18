@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)/1865267285000595485">
-    <nodeInfo nodeId="1865267285000745551" fileName="ConnectorEditor.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConnection" />
-    <nodeInfo nodeId="6970913567389363430" fileName="ConnectorEditor.java" startLine="20" startPosition="47" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6970913567389363461" fileName="ConnectorEditor.java" startLine="24" startPosition="48" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6970913567389367195" fileName="ConnectorEditor.java" startLine="27" startPosition="6" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6970913567389393749" fileName="ConnectorEditor.java" startLine="28" startPosition="37" endLine="29" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="806334514634006185" fileName="ConnectorEditor.java" startLine="29" startPosition="38" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1865267285000745633" fileName="ConnectorEditor.java" startLine="34" startPosition="47" endLine="35" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6970913567389362390" fileName="ConnectorEditor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputView#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/jetpad/projectional/view/View;" />
-    <nodeInfo nodeId="6970913567389362398" fileName="ConnectorEditor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputView#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/jetpad/projectional/view/View;" />
-    <nodeInfo nodeId="1865267285000745628" fileName="ConnectorEditor.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="6970913567389265828" fileName="ConnectorEditor.java" startLine="18" startPosition="73" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1865267285000745556" fileName="ConnectorEditor.java" startLine="17" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="6970913567389362396" fileName="ConnectorEditor.java" startLine="20" startPosition="47" endLine="21" endPosition="20" />
-    <scopeInfo nodeId="6970913567389362404" fileName="ConnectorEditor.java" startLine="24" startPosition="48" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="1865267285000745632" fileName="ConnectorEditor.java" startLine="34" startPosition="47" endLine="35" endPosition="98" />
-    <scopeInfo nodeId="6970913567389362390" fileName="ConnectorEditor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <nodeInfo nodeId="1865267285000745551" fileName="ConnectorEditor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConnection" />
+    <nodeInfo nodeId="6970913567389363430" fileName="ConnectorEditor.java" startLine="21" startPosition="52" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6970913567389363461" fileName="ConnectorEditor.java" startLine="25" startPosition="53" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6970913567389367195" fileName="ConnectorEditor.java" startLine="28" startPosition="6" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6970913567389393749" fileName="ConnectorEditor.java" startLine="29" startPosition="37" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="806334514634006185" fileName="ConnectorEditor.java" startLine="30" startPosition="38" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1865267285000745633" fileName="ConnectorEditor.java" startLine="35" startPosition="47" endLine="36" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6970913567389362390" fileName="ConnectorEditor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputView#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="6970913567389362398" fileName="ConnectorEditor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputView#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramViewCell;)Ljetbrains/jetpad/projectional/view/View;" />
+    <nodeInfo nodeId="1865267285000745628" fileName="ConnectorEditor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="6970913567389265828" fileName="ConnectorEditor.java" startLine="19" startPosition="73" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1865267285000745556" fileName="ConnectorEditor.java" startLine="18" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="6970913567389362396" fileName="ConnectorEditor.java" startLine="21" startPosition="52" endLine="22" endPosition="20" />
+    <scopeInfo nodeId="6970913567389362404" fileName="ConnectorEditor.java" startLine="25" startPosition="53" endLine="26" endPosition="20" />
+    <scopeInfo nodeId="1865267285000745632" fileName="ConnectorEditor.java" startLine="35" startPosition="47" endLine="36" endPosition="98" />
+    <scopeInfo nodeId="6970913567389362390" fileName="ConnectorEditor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="6970913567389362394" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6970913567389362398" fileName="ConnectorEditor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="6970913567389362398" fileName="ConnectorEditor.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6970913567389362402" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1865267285000745628" fileName="ConnectorEditor.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1865267285000745563" fileName="ConnectorEditor.java" startLine="18" startPosition="73" endLine="30" endPosition="16">
+    <scopeInfo nodeId="1865267285000745628" fileName="ConnectorEditor.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1865267285000745563" fileName="ConnectorEditor.java" startLine="19" startPosition="73" endLine="31" endPosition="16">
       <varInfo nodeId="6970913567389265829" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="1865267285000745556" fileName="ConnectorEditor.java" startLine="17" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="1865267285000745556" fileName="ConnectorEditor.java" startLine="18" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1865267285000745559" varName="context" />
       <varInfo nodeId="1865267285000745561" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6970913567389362207" fileName="ConnectorEditor.java" startLine="19" startPosition="33" endLine="27" endPosition="5" unitName="jetbrains.mps.testHybridEditor.diagram.editor.ConnectorEditor$1" />
-    <unitInfo nodeId="1865267285000595485" fileName="ConnectorEditor.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.ConnectorEditor" />
+    <unitInfo nodeId="6970913567389362207" fileName="ConnectorEditor.java" startLine="20" startPosition="33" endLine="28" endPosition="5" unitName="jetbrains.mps.testHybridEditor.diagram.editor.ConnectorEditor$1" />
+    <unitInfo nodeId="1865267285000595485" fileName="ConnectorEditor.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.editor.ConnectorEditor" />
   </root>
   <root nodeRef="r:df8018d5-ac0b-4b55-8ae5-c71d526a3b44(jetbrains.mps.testHybridEditor.diagram.editor)/1865267285001548195">
     <nodeInfo nodeId="1865267285001548196" fileName="MPSTextView.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFont" />

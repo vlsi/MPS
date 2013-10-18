@@ -195,11 +195,21 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6970913567389678792" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="adck.725186580883451809" resolveInfo="Connector" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramConnector" typeId="gbdf.6382742553261733065" id="6970913567389695764" nodeInfo="ng">
-      <node role="input" roleId="gbdf.1220375669566529919" type="gbdf.ConnectionEndQualifier" typeId="gbdf.1220375669566347117" id="1220375669566628847" nodeInfo="ng">
-        <link role="link" roleId="gbdf.1220375669566347229" targetNodeId="adck.725186580883451928" />
+      <node role="input" roleId="gbdf.1220375669566529919" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="1220375669566628847" nodeInfo="ng">
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2915596886892716714" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="2915596886892716492" nodeInfo="ng" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2915596886892760134" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.725186580883451928" />
+          </node>
+        </node>
       </node>
-      <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndQualifier" typeId="gbdf.1220375669566347117" id="1220375669566628849" nodeInfo="ng">
-        <link role="link" roleId="gbdf.1220375669566347229" targetNodeId="adck.725186580883451924" />
+      <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="1220375669566628849" nodeInfo="ng">
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2915596886892760412" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="2915596886892760228" nodeInfo="ng" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2915596886892762327" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.725186580883451924" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="6970913567389678798" nodeInfo="ig">
@@ -313,31 +323,61 @@
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="7v6s.1793245865110343949" resolveInfo="diagramGenerated" />
     </node>
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramConnector" typeId="gbdf.6382742553261733065" id="1220375669566628308" nodeInfo="ng">
-      <node role="input" roleId="gbdf.1220375669566529919" type="gbdf.ConnectionEndQualifier" typeId="gbdf.1220375669566347117" id="1220375669566628432" nodeInfo="ng">
-        <link role="link" roleId="gbdf.1220375669566347229" targetNodeId="adck.2353136177974089013" />
+      <node role="input" roleId="gbdf.1220375669566529919" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="1220375669566628432" nodeInfo="ng">
         <node role="pointID" roleId="gbdf.1220375669566421348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566715081" nodeInfo="nn">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566710585" nodeInfo="nn">
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1220375669566713423" nodeInfo="nn">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.2353136177974089050" />
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6668665838456297795" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566710585" nodeInfo="nn">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456296109" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964096" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="1220375669567133563" nodeInfo="ng" />
             </node>
-            <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="1220375669567133563" nodeInfo="ng" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456300756" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964093" />
+            </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1220375669566719011" nodeInfo="nn">
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6668665838456302825" nodeInfo="nn">
             <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
           </node>
         </node>
-      </node>
-      <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndQualifier" typeId="gbdf.1220375669566347117" id="1220375669566710327" nodeInfo="ng">
-        <link role="link" roleId="gbdf.1220375669566347229" targetNodeId="adck.2353136177974089015" />
-        <node role="pointID" roleId="gbdf.1220375669566421348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566724057" nodeInfo="nn">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566719561" nodeInfo="nn">
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1220375669566722399" nodeInfo="nn">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.2353136177974089087" />
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6668665838456287179" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2915596886892763025" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="2915596886892762885" nodeInfo="ng" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456285503" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964096" />
             </node>
-            <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="1220375669567133795" nodeInfo="ng" />
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1220375669566727987" nodeInfo="nn">
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456290137" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964092" />
+          </node>
+        </node>
+      </node>
+      <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="1220375669566710327" nodeInfo="ng">
+        <node role="pointID" roleId="gbdf.1220375669566421348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566724057" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6668665838456348718" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220375669566719561" nodeInfo="nn">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456347060" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964102" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="1220375669567133795" nodeInfo="ng" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456351684" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964093" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6668665838456353719" nodeInfo="nn">
             <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6668665838456342623" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2915596886892766079" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="2915596886892765939" nodeInfo="ng" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456341057" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964102" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6668665838456345559" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="adck.5288989961863964092" />
           </node>
         </node>
       </node>

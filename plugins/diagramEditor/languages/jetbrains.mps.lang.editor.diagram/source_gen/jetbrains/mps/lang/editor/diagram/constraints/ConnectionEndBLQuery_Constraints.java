@@ -19,15 +19,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class ConnectionEndQualifier_Constraints extends BaseConstraintsDescriptor {
-  public ConnectionEndQualifier_Constraints() {
-    super("jetbrains.mps.lang.editor.diagram.structure.ConnectionEndQualifier");
+public class ConnectionEndBLQuery_Constraints extends BaseConstraintsDescriptor {
+  public ConnectionEndBLQuery_Constraints() {
+    super("jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery");
   }
 
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
-    references.put("link", new BaseReferenceConstraintsDescriptor("link", this) {
+    references.put("", new BaseReferenceConstraintsDescriptor("", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -39,7 +39,7 @@ public class ConnectionEndQualifier_Constraints extends BaseConstraintsDescripto
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_le88si_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_wevsa4_a0a0a0a0a1a0b0a1a1;
           }
 
           @Override
@@ -58,5 +58,5 @@ public class ConnectionEndQualifier_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodePointer breakingNode_le88si_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1220375669566704501");
+  private static SNodePointer breakingNode_wevsa4_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1220375669566704501");
 }

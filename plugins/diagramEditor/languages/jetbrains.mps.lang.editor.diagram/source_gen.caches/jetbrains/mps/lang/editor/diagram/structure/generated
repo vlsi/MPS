@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cjzblcthqie3xdxh7604lc1mnk0toli">
+<dependencies version="2" modelHash="2uctu57lptxqyybkjhh52h5pf1jwrn">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-dfuhirfukpoaej61l094horlmrucf12" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="5a951t83i1onl07o5vxqv6e3anykii7" />
@@ -15,6 +15,7 @@
     <dep root="1094405431463762199" />
     <dep root="1094405431463762240" />
     <dep root="1220375669566347117" />
+    <dep root="2721249134706026944" />
     <dep root="3229274890672018080" />
     <dep root="3229274890673749551" />
     <dep root="5422656561926747342" />
@@ -47,11 +48,12 @@
   <source id="6306886970790135647" name="QueryFunction_Dimension" hash="-b31i48jwsh11onicbx9f10khepab9ah" />
   <source id="6306886970790145497" name="FigureDimensionStyleClassItem" hash="-5gkg342t3xk9oyo5rhyp2d9oqduyaj" />
   <source id="6306886970791033847" name="CellModel_Diagram" hash="6lppj52efv01q9ygvw2x8gfblzwwmha" />
-  <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="9hnibm1vc8hpyf7ozecr2kk1fur64iy" />
+  <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="2u355h8121srbu1uqizzhjznl50rx13" />
   <source id="5422656561926747342" name="AttributedFigureReference" hash="-ev7w954cu4avvpgslqxq86e5124tx67" />
   <source id="8686738938027260610" name="LinkDeclarationReference" hash="-2atrjzxrjre5kacdusrob7prrm8br1p" />
   <source id="3229274890672018080" name="FigureParameterBLQuery" hash="-alfkubx015kx5asej6kcmufp9i0l5ao" />
   <source id="3229274890673749551" name="ThisEditorNodeExpression" hash="-icf5x80xsvz2q12vq9c6jjd6hnkfw5" />
-  <source id="1220375669566347117" name="ConnectionEndQualifier" hash="5e6rkeilphwb8hbx2ud338zhe3vkukh" />
+  <source id="1220375669566347117" name="ConnectionEndBLQuery" hash="4oumoeo7pizq7rnjil70bxan0eo0ck3" />
+  <source id="2721249134706026944" name="ConnectionEnd" hash="-469vek3fxfedttycabals9adlpejgbj" />
 </dependencies>
 

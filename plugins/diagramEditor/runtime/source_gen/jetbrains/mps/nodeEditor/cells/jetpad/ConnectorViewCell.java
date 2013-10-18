@@ -36,6 +36,10 @@ public abstract class ConnectorViewCell extends GenericViewCell {
     myConnection = connection;
   }
 
+  protected View findConnectionEnd(DiagramViewCell diagramCell, final SNode node) {
+    return findConnectionEnd(diagramCell, node, null);
+  }
+
   protected View findConnectionEnd(DiagramViewCell diagramCell, final SNode node, String connectionPointName) {
     GenericViewCell cell = CellFinderUtil.findChildByConditionAndClass(diagramCell, new Condition<EditorCell>() {
       @Override

@@ -151,12 +151,10 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndQualifier_Editor" file="ConnectionEndQualifier_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_Editor" file="ConnectionEndBLQuery_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
@@ -169,7 +167,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.DiagramNodeParameters" file="DiagramNodeParameters.java">
     <classNode dependClassName="java.lang.Class" />
@@ -204,7 +201,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_Diagram_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndQualifier_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ConnectionEndBLQuery_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureColorStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureDimensionStyleClassItem_Editor" />
@@ -380,10 +377,8 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_Editor" file="ThisEditorNodeExpression_Editor.java">
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />

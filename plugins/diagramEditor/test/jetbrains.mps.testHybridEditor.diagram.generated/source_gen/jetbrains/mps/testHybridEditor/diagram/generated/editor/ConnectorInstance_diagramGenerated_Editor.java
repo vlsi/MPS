@@ -12,7 +12,6 @@ import jetbrains.jetpad.projectional.diagram.view.PolylineConnection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorViewCell;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramViewCell;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -32,19 +31,19 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
     PolylineConnection connection = new PolylineConnection();
     final ConnectorViewCell editorCell = new ConnectorViewCell(editorContext, node) {
       public View getInputView(DiagramViewCell diagramCell) {
-        final SNode connectionEnd = ListSequence.fromList(SLinkOperations.getTargets(node, "inBlock", false)).first();
+        final SNode connectionEnd = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "block", false);
         if (connectionEnd == null) {
           return null;
         }
-        return findConnectionEnd(diagramCell, connectionEnd, SPropertyOperations.getString(SLinkOperations.getTarget(node, "inPort", false), "name"));
+        return findConnectionEnd(diagramCell, connectionEnd, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "source", true), "metaPort", false), "name"));
       }
 
       public View getOutputView(DiagramViewCell diagramCell) {
-        final SNode connectionEnd = ListSequence.fromList(SLinkOperations.getTargets(node, "outBlock", false)).first();
+        final SNode connectionEnd = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "block", false);
         if (connectionEnd == null) {
           return null;
         }
-        return findConnectionEnd(diagramCell, connectionEnd, SPropertyOperations.getString(SLinkOperations.getTarget(node, "outPort", false), "name"));
+        return findConnectionEnd(diagramCell, connectionEnd, SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "target", true), "metaPort", false), "name"));
       }
     };
     editorCell.setConnection(connection);

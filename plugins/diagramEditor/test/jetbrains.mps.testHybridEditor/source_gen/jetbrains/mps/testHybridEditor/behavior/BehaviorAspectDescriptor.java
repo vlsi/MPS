@@ -12,28 +12,30 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 4:
+      case 5:
         return new Diagram_BehaviorDescriptor();
       case 0:
         return new Block_BehaviorDescriptor();
       case 2:
         return new Connector_BehaviorDescriptor();
-      case 5:
-        return new InputPort_BehaviorDescriptor();
-      case 8:
-        return new OutputPort_BehaviorDescriptor();
       case 6:
-        return new MetaBlock_BehaviorDescriptor();
+        return new InputPort_BehaviorDescriptor();
+      case 9:
+        return new OutputPort_BehaviorDescriptor();
       case 7:
+        return new MetaBlock_BehaviorDescriptor();
+      case 8:
         return new MetaPort_BehaviorDescriptor();
       case 1:
         return new BlockInstance_BehaviorDescriptor();
-      case 3:
+      case 4:
         return new ConnectorInstance_BehaviorDescriptor();
+      case 3:
+        return new ConnectorEndInstance_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.BlockInstance", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.ConnectorInstance", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.MetaBlock", "jetbrains.mps.testHybridEditor.structure.MetaPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.BlockInstance", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance", "jetbrains.mps.testHybridEditor.structure.ConnectorInstance", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.MetaBlock", "jetbrains.mps.testHybridEditor.structure.MetaPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
 }
