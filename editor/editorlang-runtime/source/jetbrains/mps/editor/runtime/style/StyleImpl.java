@@ -19,13 +19,10 @@ import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.style.AttributeCalculator;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleListener;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,8 +30,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -147,33 +142,11 @@ public class StyleImpl implements Style {
   }
 
   @Override
-  public <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
-    myAttributeValues[attribute.getIndex()] = valueCalculator;
-    Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
-    if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributeValues[attribute.getIndex()] = null;
-      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
-    } else {
-      updateCache(attributeSet);
-    }
-  }
-
-  @Override
   public <T> T get(StyleAttribute<T> attribute) {
     final int index = attribute.getIndex();
     if (StyleAttributes.isSimple(attribute)) {
       if (myCachedAttributeValues[index] == null) {
-        T value;
-        if (myAttributeValues[index] instanceof AttributeCalculator) {
-          value = ModelAccess.instance().runReadAction(new Computable<T>() {
-            @Override
-            public T compute() {
-              return (T) ((AttributeCalculator) myAttributeValues[index]).calculate(myEditorCell);
-            }
-          });
-        } else {
-          value = (T) myAttributeValues[index];
-        }
+        T value = (T) myAttributeValues[index];
         myCachedAttributeValues[index] = attribute.combine(null, value);
       }
       return (T) myCachedAttributeValues[index];
@@ -322,9 +295,6 @@ public class StyleImpl implements Style {
       Object oldValue = myCachedAttributeValues[attribute.getIndex()];
 
       if (parentValue != null || currentValue != null || oldValue != null) {
-        if (currentValue instanceof AttributeCalculator) {
-          currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
-        }
 
         Object newValue = attribute.combine(parentValue, currentValue);
 

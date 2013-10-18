@@ -41,12 +41,6 @@ public interface Style {
 
   Iterable<Pair<Integer, Style>> getPriorityGroups();
 
-  /**
-   * Deprecated: should be removed after MPS 3.0
-   */
-  @Deprecated
-  <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator);
-
   <T> T get(StyleAttribute<T> attribute);
 
   <T> boolean isSpecified(StyleAttribute<T> attribute);
