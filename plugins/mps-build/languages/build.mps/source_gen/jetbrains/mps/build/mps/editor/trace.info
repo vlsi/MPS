@@ -9402,7 +9402,7 @@
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="113" startPosition="72" endLine="114" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="114" startPosition="78" endLine="115" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="116" startPosition="10" endLine="117" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5328150611114166038" fileName="SourcesKindComponent.java" startLine="120" startPosition="111" endLine="121" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5328150611114166038" fileName="SourcesKindComponent.java" startLine="120" startPosition="111" endLine="121" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="124" startPosition="88" endLine="125" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="125" startPosition="93" endLine="126" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="126" startPosition="47" endLine="127" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -9412,7 +9412,7 @@
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="130" startPosition="40" endLine="131" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="131" startPosition="34" endLine="132" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="132" startPosition="209" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5328150611114294711" fileName="SourcesKindComponent.java" startLine="136" startPosition="111" endLine="137" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5328150611114294711" fileName="SourcesKindComponent.java" startLine="136" startPosition="111" endLine="137" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5328150611114975554" fileName="SourcesKindComponent.java" startLine="144" startPosition="134" endLine="145" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="148" startPosition="162" endLine="149" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5328150611114975559" fileName="SourcesKindComponent.java" startLine="152" startPosition="163" endLine="153" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9427,8 +9427,8 @@
     <nodeInfo nodeId="7354447573576732014" fileName="SourcesKindComponent.java" startLine="174" startPosition="54" endLine="175" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732014" fileName="SourcesKindComponent.java" startLine="175" startPosition="40" endLine="176" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7354447573576732014" fileName="SourcesKindComponent.java" startLine="176" startPosition="34" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5328150611114261487" fileName="SourcesKindComponent.java" startLine="180" startPosition="61" endLine="181" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5328150611114335386" fileName="SourcesKindComponent.java" startLine="184" startPosition="58" endLine="185" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5328150611114261487" fileName="SourcesKindComponent.java" startLine="180" startPosition="55" endLine="181" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5328150611114335386" fileName="SourcesKindComponent.java" startLine="184" startPosition="52" endLine="185" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7354447573576732036" fileName="SourcesKindComponent.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMps_Solution_generic_cellMenu_qubgco_a0a#()V" />
     <nodeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="141" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMps_Solution_generic_cellMenu_qubgco_a0c0#()V" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
@@ -9451,8 +9451,8 @@
     <nodeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReferentPresentation#()Z" />
     <nodeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="160" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#(Ljava/lang/Object;)Ljava/lang/String;" />
     <nodeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText_internal#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5328150611114261487" fileName="SourcesKindComponent.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_qubgco_a0a0g#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="5328150611114335386" fileName="SourcesKindComponent.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_qubgco_a0a0i#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5328150611114261487" fileName="SourcesKindComponent.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5328150611114335386" fileName="SourcesKindComponent.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="111" startPosition="59" endLine="117" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7354447573576732012" fileName="SourcesKindComponent.java" startLine="88" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qubgco_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="7354447573576732014" fileName="SourcesKindComponent.java" startLine="169" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qubgco_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -9473,16 +9473,16 @@
     <scopeInfo nodeId="7354447573576732036" fileName="SourcesKindComponent.java" startLine="75" startPosition="45" endLine="76" endPosition="19" />
     <scopeInfo nodeId="7354447573576732036" fileName="SourcesKindComponent.java" startLine="79" startPosition="59" endLine="80" endPosition="68" />
     <scopeInfo nodeId="7354447573576732053" fileName="SourcesKindComponent.java" startLine="83" startPosition="67" endLine="84" endPosition="81" />
-    <scopeInfo nodeId="5328150611114129535" fileName="SourcesKindComponent.java" startLine="120" startPosition="111" endLine="121" endPosition="97" />
-    <scopeInfo nodeId="5328150611114294703" fileName="SourcesKindComponent.java" startLine="136" startPosition="111" endLine="137" endPosition="94" />
+    <scopeInfo nodeId="5328150611114129535" fileName="SourcesKindComponent.java" startLine="120" startPosition="111" endLine="121" endPosition="90" />
+    <scopeInfo nodeId="5328150611114294703" fileName="SourcesKindComponent.java" startLine="136" startPosition="111" endLine="137" endPosition="87" />
     <scopeInfo nodeId="5328150611114975553" fileName="SourcesKindComponent.java" startLine="144" startPosition="134" endLine="145" endPosition="176" />
     <scopeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="148" startPosition="162" endLine="149" endPosition="107" />
     <scopeInfo nodeId="5328150611114975558" fileName="SourcesKindComponent.java" startLine="152" startPosition="163" endLine="153" endPosition="75" />
     <scopeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="156" startPosition="45" endLine="157" endPosition="19" />
     <scopeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="160" startPosition="59" endLine="161" endPosition="68" />
     <scopeInfo nodeId="5328150611114975567" fileName="SourcesKindComponent.java" startLine="164" startPosition="67" endLine="165" endPosition="81" />
-    <scopeInfo nodeId="5328150611114261487" fileName="SourcesKindComponent.java" startLine="180" startPosition="61" endLine="181" endPosition="43" />
-    <scopeInfo nodeId="5328150611114335386" fileName="SourcesKindComponent.java" startLine="184" startPosition="58" endLine="185" endPosition="44" />
+    <scopeInfo nodeId="5328150611114261487" fileName="SourcesKindComponent.java" startLine="180" startPosition="55" endLine="181" endPosition="43" />
+    <scopeInfo nodeId="5328150611114335386" fileName="SourcesKindComponent.java" startLine="184" startPosition="52" endLine="185" endPosition="44" />
     <scopeInfo nodeId="7354447573576732036" fileName="SourcesKindComponent.java" startLine="60" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="5328150611114975550" fileName="SourcesKindComponent.java" startLine="141" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="7354447573576732010" fileName="SourcesKindComponent.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />

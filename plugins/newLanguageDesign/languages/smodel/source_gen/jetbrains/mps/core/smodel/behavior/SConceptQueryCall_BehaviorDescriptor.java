@@ -16,6 +16,10 @@ public class SConceptQueryCall_BehaviorDescriptor extends MqlSelector_BehaviorDe
     return SConceptQueryCall_Behavior.virtual_evaluate_7862448911997337721(thisNode, object, env, context);
   }
 
+  public SNode virtual_getType_228266671027867010(SNode thisNode) {
+    return SConceptQueryCall_Behavior.virtual_getType_228266671027867010(thisNode);
+  }
+
   public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
     return SConceptQueryCall_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
   }

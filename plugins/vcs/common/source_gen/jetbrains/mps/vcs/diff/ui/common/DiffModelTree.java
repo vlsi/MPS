@@ -93,7 +93,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }, true).toListSequence();
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       DiffModelTree.TreeNode parentNode = modelNode;
-      if (isNotEmpty_5x0uld_a0b0c0e(rtn.myVirtualPackage)) {
+      if (isNotEmptyString(rtn.myVirtualPackage)) {
         for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
           Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
@@ -387,7 +387,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     return null;
   }
 
-  public static boolean isNotEmpty_5x0uld_a0b0c0e(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 

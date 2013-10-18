@@ -192,7 +192,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_uj0cpq_a7a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_uj0cpq_a0a0o(SPropertyOperations.getString(node, "name"));
+    return isEmptyString(SPropertyOperations.getString(node, "name"));
   }
 
   private EditorCell createComponent_uj0cpq_i0(EditorContext editorContext, SNode node) {
@@ -1248,7 +1248,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static boolean isEmpty_uj0cpq_a0a0o(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

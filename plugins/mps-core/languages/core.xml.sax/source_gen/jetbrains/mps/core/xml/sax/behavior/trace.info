@@ -92,7 +92,7 @@
     <unitInfo nodeId="2264311582634140588" fileName="XMLSAXNodeCreator_Behavior.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeCreator_Behavior" />
   </root>
   <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/2264311582634140607">
-    <nodeInfo nodeId="2264311582634140614" fileName="XMLSAXChildRule_Behavior.java" startLine="19" startPosition="343" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140614" fileName="XMLSAXChildRule_Behavior.java" startLine="19" startPosition="324" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140646" fileName="XMLSAXChildRule_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4720003541459664742" fileName="XMLSAXChildRule_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4720003541459664742" fileName="XMLSAXChildRule_Behavior.java" startLine="27" startPosition="24" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -111,8 +111,8 @@
     <nodeInfo nodeId="4720003541459859530" fileName="XMLSAXChildRule_Behavior.java" startLine="59" startPosition="40" endLine="60" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4720003541459859540" fileName="XMLSAXChildRule_Behavior.java" startLine="61" startPosition="35" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4720003541459842065" fileName="XMLSAXChildRule_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634140633" fileName="XMLSAXChildRule_Behavior.java" startLine="68" startPosition="63" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634140640" fileName="XMLSAXChildRule_Behavior.java" startLine="72" startPosition="61" endLine="73" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140633" fileName="XMLSAXChildRule_Behavior.java" startLine="68" startPosition="55" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140640" fileName="XMLSAXChildRule_Behavior.java" startLine="72" startPosition="52" endLine="73" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140607" fileName="XMLSAXChildRule_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2264311582634140612" fileName="XMLSAXChildRule_Behavior.java" startLine="18" startPosition="76" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4720003541459664742" fileName="XMLSAXChildRule_Behavior.java" startLine="28" startPosition="25" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -120,8 +120,8 @@
     <nodeInfo nodeId="4720003541459828080" fileName="XMLSAXChildRule_Behavior.java" startLine="41" startPosition="113" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4720003541472012164" fileName="XMLSAXChildRule_Behavior.java" startLine="49" startPosition="29" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4720003541459859535" fileName="XMLSAXChildRule_Behavior.java" startLine="60" startPosition="113" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2264311582634140633" fileName="XMLSAXChildRule_Behavior.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_twisza_a0a0a0b#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2264311582634140640" fileName="XMLSAXChildRule_Behavior.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_twisza_a0a0a0a1#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2264311582634140633" fileName="XMLSAXChildRule_Behavior.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2264311582634140640" fileName="XMLSAXChildRule_Behavior.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmptyString#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2264311582634140607" fileName="XMLSAXChildRule_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTagName_2264311582634140608#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="4720003541459770270" fileName="XMLSAXChildRule_Behavior.java" startLine="39" startPosition="101" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4720003541459859517" fileName="XMLSAXChildRule_Behavior.java" startLine="58" startPosition="112" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -132,7 +132,7 @@
     <nodeInfo nodeId="2264311582634140607" fileName="XMLSAXChildRule_Behavior.java" startLine="25" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getArgumentsScope_4720003541459735421#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="2264311582634140607" fileName="XMLSAXChildRule_Behavior.java" startLine="39" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="2264311582634140651" fileName="XMLSAXChildRule_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="2264311582634140613" fileName="XMLSAXChildRule_Behavior.java" startLine="19" startPosition="343" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="2264311582634140613" fileName="XMLSAXChildRule_Behavior.java" startLine="19" startPosition="324" endLine="20" endPosition="106" />
     <scopeInfo nodeId="4720003541459664742" fileName="XMLSAXChildRule_Behavior.java" startLine="29" startPosition="119" endLine="30" endPosition="32" />
     <scopeInfo nodeId="4720003541459666655" fileName="XMLSAXChildRule_Behavior.java" startLine="29" startPosition="119" endLine="30" endPosition="32" />
     <scopeInfo nodeId="4720003541459664742" fileName="XMLSAXChildRule_Behavior.java" startLine="32" startPosition="119" endLine="33" endPosition="201" />
@@ -141,8 +141,8 @@
     <scopeInfo nodeId="4720003541472012164" fileName="XMLSAXChildRule_Behavior.java" startLine="50" startPosition="123" endLine="51" endPosition="203" />
     <scopeInfo nodeId="4720003541472020247" fileName="XMLSAXChildRule_Behavior.java" startLine="50" startPosition="123" endLine="51" endPosition="203" />
     <scopeInfo nodeId="4720003541459859539" fileName="XMLSAXChildRule_Behavior.java" startLine="61" startPosition="35" endLine="62" endPosition="30" />
-    <scopeInfo nodeId="2264311582634140633" fileName="XMLSAXChildRule_Behavior.java" startLine="68" startPosition="63" endLine="69" endPosition="43" />
-    <scopeInfo nodeId="2264311582634140640" fileName="XMLSAXChildRule_Behavior.java" startLine="72" startPosition="61" endLine="73" endPosition="44" />
+    <scopeInfo nodeId="2264311582634140633" fileName="XMLSAXChildRule_Behavior.java" startLine="68" startPosition="55" endLine="69" endPosition="43" />
+    <scopeInfo nodeId="2264311582634140640" fileName="XMLSAXChildRule_Behavior.java" startLine="72" startPosition="52" endLine="73" endPosition="44" />
     <scopeInfo nodeId="2264311582634140607" fileName="XMLSAXChildRule_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2264311582634140607" varName="thisNode" />
     </scopeInfo>

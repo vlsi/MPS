@@ -64,7 +64,7 @@ public class BuildSimpleName_text extends KeyMapImpl {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildStringPart"))) {
         return false;
       }
-      return isNotEmpty_4bhgsw_a0c0f1(SPropertyOperations.getString(node, "text"));
+      return isNotEmptyString(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -90,7 +90,7 @@ public class BuildSimpleName_text extends KeyMapImpl {
       return " $";
     }
 
-    public static boolean isNotEmpty_4bhgsw_a0c0f1(String str) {
+    private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }

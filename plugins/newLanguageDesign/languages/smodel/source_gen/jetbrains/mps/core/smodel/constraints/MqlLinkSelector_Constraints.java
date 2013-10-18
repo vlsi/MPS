@@ -20,8 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.core.structure.util.ConceptUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -57,15 +57,8 @@ public class MqlLinkSelector_Constraints extends BaseConstraintsDescriptor {
             if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.core.smodel.structure.MqlNodeType")) {
               SNode decl = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.core.smodel.structure.MqlNodeType"), "concept", false);
               if ((decl != null)) {
-                ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(decl, "members", true)).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SNodeOperations.isInstanceOf(it, "jetbrains.mps.core.structure.structure.SAbstractLink");
-                  }
-                }).select(new ISelector<SNode, SNode>() {
-                  public SNode select(SNode it) {
-                    return SNodeOperations.cast(it, "jetbrains.mps.core.structure.structure.SAbstractLink");
-                  }
-                }));
+                ListSequence.fromList(result).addSequence(Sequence.fromIterable(ConceptUtil.getAvailableLinks(decl)));
+                // <node> 
               }
             }
             return result;

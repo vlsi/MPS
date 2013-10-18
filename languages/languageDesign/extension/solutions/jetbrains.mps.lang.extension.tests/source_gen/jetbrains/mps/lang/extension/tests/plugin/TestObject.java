@@ -9,7 +9,7 @@ public class TestObject {
 
   private boolean myShutDown;
 
-  public boolean getShutDown() {
+  public boolean isShutDown() {
     return this.myShutDown;
   }
 

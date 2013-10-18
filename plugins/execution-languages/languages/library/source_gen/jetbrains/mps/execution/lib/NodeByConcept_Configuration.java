@@ -40,7 +40,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
           }
         }
       });
-      if (isNotEmpty_trwdw3_a0c0a0b(errorText.value)) {
+      if (isNotEmptyString(errorText.value)) {
         throw new RuntimeConfigurationException(errorText.value);
       }
     }
@@ -161,7 +161,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return null;
   }
 
-  public static boolean isNotEmpty_trwdw3_a0c0a0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

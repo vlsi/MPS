@@ -11,7 +11,7 @@ public class XmlExternalId_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isPublic")) {
       this.append("PUBLIC");
       this.append(" ");
-      if (isNotEmpty_5invgw_a0a2a0a0(SPropertyOperations.getString(node, "publicId")) && SPropertyOperations.getString(node, "publicId").contains("'")) {
+      if (isNotEmptyString(SPropertyOperations.getString(node, "publicId")) && SPropertyOperations.getString(node, "publicId").contains("'")) {
         this.append("\"");
         this.append(SPropertyOperations.getString(node, "publicId"));
         this.append("\"");
@@ -24,7 +24,7 @@ public class XmlExternalId_TextGen extends SNodeTextGen {
       this.append("SYSTEM");
     }
     this.append(" ");
-    if (isNotEmpty_5invgw_a0a2a0(SPropertyOperations.getString(node, "systemId")) && SPropertyOperations.getString(node, "systemId").contains("'")) {
+    if (isNotEmptyString(SPropertyOperations.getString(node, "systemId")) && SPropertyOperations.getString(node, "systemId").contains("'")) {
       this.append("\"");
       this.append(SPropertyOperations.getString(node, "systemId"));
       this.append("\"");
@@ -36,11 +36,7 @@ public class XmlExternalId_TextGen extends SNodeTextGen {
 
   }
 
-  public static boolean isNotEmpty_5invgw_a0a2a0a0(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_5invgw_a0a2a0(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

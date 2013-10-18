@@ -308,7 +308,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       String expected = linkDeclarationTarget != null ? linkDeclarationTarget.getName() : "<unknown>";
       String was = targetNode.getConcept().getName();
       String relationKind = child ? "child" : "referent";
-      String msg = String.format("$s '$s' is expected for role '%s' but was '%s'", relationKind, expected, myRole, was);
+      String msg = String.format("%s '%s' is expected for role '%s' but was '%s'", relationKind, expected, myRole, was);
       return new RoleValidationStatus(myLogger, msg, GeneratorUtil.describe(targetNode, relationKind));
     }
   }

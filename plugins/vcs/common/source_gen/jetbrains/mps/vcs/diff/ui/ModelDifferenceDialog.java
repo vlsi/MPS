@@ -92,7 +92,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         title.value = SModelOperations.getModelName(oldModel);
-        if (isEmpty_vk52pz_a0b0a0a0a0g0v(title.value)) {
+        if (isEmptyString(title.value)) {
           title.value = SModelOperations.getModelName(newModel);
         }
 
@@ -459,7 +459,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     }
   }
 
-  public static boolean isEmpty_vk52pz_a0b0a0a0a0g0v(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

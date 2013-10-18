@@ -14,9 +14,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyRootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("number", "isGood", "name").children(new String[]{"child", "child2", "z"}, new boolean[]{false, false, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyRootConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("number", "isGood", "name").references("refr").children(new String[]{"child", "child2", "z"}, new boolean[]{false, false, false}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MySubConcept").super_("jetbrains.mps.sample.queryTest.structure.MyRootConcept").parents("jetbrains.mps.sample.queryTest.structure.MyRootConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MySubConcept").super_("jetbrains.mps.sample.queryTest.structure.MyRootConcept").parents("jetbrains.mps.sample.queryTest.structure.MyRootConcept").properties("kind").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.sample.queryTest.structure.MyUnrelatedConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       default:

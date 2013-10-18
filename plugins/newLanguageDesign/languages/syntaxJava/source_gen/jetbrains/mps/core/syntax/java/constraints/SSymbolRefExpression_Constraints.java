@@ -48,7 +48,7 @@ public class SSymbolRefExpression_Constraints extends BaseConstraintsDescriptor 
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            String name = (isNotEmpty_c3xnmz_a0a0a0b0a0a0b0a1a0b0b(SPropertyOperations.getString(_context.getParameterNode(), "refalias")) ?
+            String name = (isNotEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "refalias")) ?
               SPropertyOperations.getString(_context.getParameterNode(), "refalias") :
               ((SPropertyOperations.getBoolean(_context.getParameterNode(), "isOptional") ?
                 SPropertyOperations.getString(SLinkOperations.getTarget(_context.getParameterNode(), "ref", false), "name") + "opt" :
@@ -93,7 +93,7 @@ public class SSymbolRefExpression_Constraints extends BaseConstraintsDescriptor 
 
   private static SNodePointer breakingNode_c3xnmz_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:b3e7c899-8dbd-45d0-bafc-30e9150bdfeb(jetbrains.mps.core.syntax.java.constraints)", "5989029785192113731");
 
-  public static boolean isNotEmpty_c3xnmz_a0a0a0b0a0a0b0a1a0b0b(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

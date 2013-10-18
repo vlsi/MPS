@@ -90,7 +90,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     final boolean hasName = new Computable<Boolean>() {
       public Boolean compute() {
-        return SPropertyOperations.getString(_context.getCurrentTargetNode(), "name") != null && !(isEmpty_x583g4_a0a0a0a0a0a0b0e(SPropertyOperations.getString(_context.getCurrentTargetNode(), "name")));
+        return SPropertyOperations.getString(_context.getCurrentTargetNode(), "name") != null && !(isEmptyString(SPropertyOperations.getString(_context.getCurrentTargetNode(), "name")));
       }
     }.compute();
     {
@@ -218,7 +218,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static boolean isEmpty_x583g4_a0a0a0a0a0a0b0e(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

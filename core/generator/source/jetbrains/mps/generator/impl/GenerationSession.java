@@ -495,20 +495,13 @@ class GenerationSession {
     }
 
     boolean preProcessed = false;
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel,
+        currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
     for (TemplateMappingScript preMappingScript : ruleManager.getScripts().getPreMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
       }
-      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel,
-          currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      try {
-        templateGenerator.getDefaultExecutionContext(null).executeScript(preMappingScript, currentInputModel);
-      } catch (Exception t) {
-        myLogger.handleException(t);
-        myLogger.error(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
-            "error executing script " + preMappingScript.getLongName() + " (see exception)");
-        throw new GenerationFailureException(t);
-      }
+      templateGenerator.executeScript(preMappingScript);
       preProcessed = true;
     }
     if (needToCloneInputModel) {
@@ -550,20 +543,13 @@ class GenerationSession {
     }
 
     boolean postProcessed = false;
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel,
+        myGenerationOptions, myDependenciesBuilder, ttrace);
     for (TemplateMappingScript postMappingScript : ruleManager.getScripts().getPostMappingScripts()) {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
       }
-      TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel,
-          myGenerationOptions, myDependenciesBuilder, ttrace);
-      try {
-        templateGenerator.getDefaultExecutionContext(null).executeScript(postMappingScript, currentModel);
-      } catch (Exception t) {
-        myLogger.handleException(t);
-        myLogger.error(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()),
-            "error executing script " + postMappingScript.getLongName() + " (see exception)");
-        throw new GenerationFailureException(t);
-      }
+      templateGenerator.executeScript(postMappingScript);
       postProcessed = true;
     }
     if (needToCloneModel) {

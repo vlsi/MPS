@@ -76,14 +76,14 @@ public class BuildRelativePath_Behavior {
   }
 
   public static boolean call_isEmptyTail_8654221991637157686(SAbstractConcept thisConcept, SNode cp) {
-    return cp == null || isEmpty_wij6l5_a0a0a0g(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.call_isEmptyTail_8654221991637157686(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true));
+    return cp == null || isEmptyString(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.call_isEmptyTail_8654221991637157686(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true));
   }
 
   public static SNode call_next_8654221991637156927(SAbstractConcept thisConcept, SNode cp) {
     if ((SLinkOperations.getTarget(cp, "tail", true) == null)) {
       return null;
     }
-    if (isEmpty_wij6l5_a0b0h(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
+    if (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
       return BuildRelativePath_Behavior.call_next_8654221991637156927(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true));
     }
     return SLinkOperations.getTarget(cp, "tail", true);
@@ -99,11 +99,7 @@ public class BuildRelativePath_Behavior {
     return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", new Class[]{SNode.class, Context.class}, new Object[]{context});
   }
 
-  public static boolean isEmpty_wij6l5_a0a0a0g(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_wij6l5_a0b0h(String str) {
+  private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
 }

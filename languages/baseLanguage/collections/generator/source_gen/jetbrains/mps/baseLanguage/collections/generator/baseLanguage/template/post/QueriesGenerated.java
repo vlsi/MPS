@@ -42,7 +42,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696304732(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (isNotEmpty_x583g4_a0a0a4(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "label"))) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -56,7 +56,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696304802(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (isNotEmpty_x583g4_a0a0a6(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "label"))) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -70,7 +70,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696304886(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (isNotEmpty_x583g4_a0a0a8(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "label"))) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -84,7 +84,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1269198486696305020(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
-    } else if (isNotEmpty_x583g4_a0a0a01(SPropertyOperations.getString(_context.getNode(), "label"))) {
+    } else if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "label"))) {
       return SPropertyOperations.getString(_context.getNode(), "label");
     } else {
       return null;
@@ -218,19 +218,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a4(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a6(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a8(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_x583g4_a0a0a01(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }

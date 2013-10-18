@@ -173,10 +173,10 @@ public class LanguageConverter {
         }
       });
     }
-    if (isNotEmpty_hm9xms_a0i0k(SPropertyOperations.getString(concept, "conceptAlias"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(concept, "conceptAlias"))) {
       ListSequence.fromList(SLinkOperations.getTargets(result, "annotations", true)).addElement(_quotation_createNode_hm9xms_a0a0a8a01(SPropertyOperations.getString(concept, "conceptAlias")));
     }
-    if (isNotEmpty_hm9xms_a0j0k(SPropertyOperations.getString(concept, "conceptShortDescription"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(concept, "conceptShortDescription"))) {
       ListSequence.fromList(SLinkOperations.getTargets(result, "annotations", true)).addElement(_quotation_createNode_hm9xms_a0a0a9a01(SPropertyOperations.getString(concept, "conceptShortDescription")));
     }
     return result;
@@ -436,11 +436,7 @@ public class LanguageConverter {
     return quotedNode_3;
   }
 
-  public static boolean isNotEmpty_hm9xms_a0i0k(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  public static boolean isNotEmpty_hm9xms_a0j0k(String str) {
+  private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
 }
