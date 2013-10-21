@@ -613,6 +613,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "scrutinee", true) != null);
   }
 
+  public static boolean ifMacro_Condition_7488639813928951783(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "default", true) != null);
+  }
+
   public static SNode sourceNodeQuery_3564725181394973370(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
@@ -987,6 +991,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7488639813762827297(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_7488639813929047528(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "default", true), "result", true);
   }
 
   public static Object templateArgumentQuery_9164905593976801591(final IOperationContext operationContext, final TemplateQueryContext _context) {
