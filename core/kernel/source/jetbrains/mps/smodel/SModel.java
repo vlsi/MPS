@@ -1178,9 +1178,17 @@ public class SModel implements SModelData {
    */
   public static class FakeModelDescriptor extends SModelBase implements org.jetbrains.mps.openapi.model.SModel {
     private SModel myModel;
+    private volatile static boolean isNotified  = false;
 
     public FakeModelDescriptor(@NotNull SModel md) {
       super(md.getReference(), new NullDataSource());
+      if (!isNotified){
+          isNotified = true;
+        LOG.error("Fake model descriptor is created. " +
+            "This means that SModel leaked from persistence-related code and may lead to problems later. " +
+            "Fix the code using old SModel class, replace it with SModelDescriptor or SModel interface. " +
+            "The current code will fail with NPE in following releases", new Throwable());
+      }
       myModel = md;
     }
 
@@ -1206,12 +1214,12 @@ public class SModel implements SModelData {
 
     @Override
     public void addModelListener(@NotNull SModelListener listener) {
-      LOG.error("remove exception if excess", new Throwable());
+
     }
 
     @Override
     public void removeModelListener(@NotNull SModelListener listener) {
-      LOG.error("remove exception if excess", new Throwable());
+
     }
 
     @Override
