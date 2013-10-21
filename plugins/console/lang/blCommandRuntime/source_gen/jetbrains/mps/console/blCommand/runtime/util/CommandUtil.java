@@ -47,6 +47,10 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataContext;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.console.tool.ConsoleTool;
+import javax.swing.SwingUtilities;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -258,9 +262,40 @@ public class CommandUtil {
         return MapSequence.fromMap(parameters).get(key);
       }
     }));
+  }
 
+
+
+  public static void executeScript(ConsoleContext context, SNode script) {
+    final ConsoleTool consoleTool = check_1pinza_a0a0lb(ProjectHelper.toIdeaProject(context.getProject()));
+    final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), script, "virtual_getCommands_2197843344734463936", new Object[]{});
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        executeCommands(consoleTool, Sequence.fromIterable(commands).toListSequence(), 0);
+      }
+    });
+  }
+
+
+
+  public static void executeCommands(final ConsoleTool consoleTool, final List<SNode> commands, final int startWith) {
+    if (startWith == ListSequence.fromList(commands).count()) {
+      return;
+    }
+    consoleTool.executeCommand(ListSequence.fromList(commands).getElement(startWith), new Runnable() {
+      public void run() {
+        executeCommands(consoleTool, commands, startWith + 1);
+      }
+    });
   }
 
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
+
+  private static ConsoleTool check_1pinza_a0a0lb(com.intellij.openapi.project.Project checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent(ConsoleTool.class);
+    }
+    return null;
+  }
 }

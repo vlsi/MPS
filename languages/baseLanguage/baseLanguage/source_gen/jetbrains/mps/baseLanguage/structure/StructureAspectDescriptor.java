@@ -297,7 +297,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 140:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind").interface_().create();
       case 141:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("static", "final", "abstract", "synchronized", "volatile").children(new String[]{"type"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("static", "final", "abstract", "synchronized", "volatile", "transient").children(new String[]{"type"}, new boolean[]{false}).create();
       case 142:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.InstanceInitializer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.lang.core.structure.ImplementationPart").children(new String[]{"statementList"}, new boolean[]{false}).alias("{", "").create();
       case 143:

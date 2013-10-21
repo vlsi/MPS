@@ -373,13 +373,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
     @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      execute();
+      execute(null);
     }
   }
 
 
 
-  private void execute() {
+  private void execute(@Nullable final Runnable executeAfter) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         myCursor = null;
@@ -453,6 +453,7 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
                     setSelection();
                   }
                 });
+                check_xg3v07_a1a0a2a0a0d0a7a0a0ac(executeAfter);
               }
             });
           }
@@ -611,11 +612,23 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
 
 
 
-  public void executeCommand(SNode command) {
-    myNewCommand = SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, "commandHolder", true));
-    SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
-    execute();
-    SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+  public void executeCommand(final SNode command, @Nullable Runnable executeAfter) {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        myNewCommand = SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, "commandHolder", true));
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(command), true);
+      }
+    });
+    if (executeAfter == null) {
+      executeAfter = new Runnable() {
+        public void run() {
+          SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", SNodeOperations.copyNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), myNewCommand, "virtual_getCommandToEdit_691634242167796942", new Object[]{})), true);
+        }
+      };
+    } else {
+      myNewCommand = null;
+    }
+    execute(executeAfter);
   }
 
 
@@ -709,6 +722,13 @@ public class ConsoleTool extends BaseProjectTool implements PersistentStateCompo
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.base.structure.TextResultPart", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
+  }
+
+  private static void check_xg3v07_a1a0a2a0a0d0a7a0a0ac(Runnable checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.run();
+    }
+
   }
 
   private static SNode check_xg3v07_a0d0a0a5kc(SNodeReference checkedDotOperand) {

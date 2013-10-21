@@ -74,6 +74,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
       } catch (RuntimeException e) {
         LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
+      } catch (AssertionError e) {
+        LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
+      } catch (NoClassDefFoundError e) {
+        LOG.warning("Failed to create cell for node: " + SNodeUtil.getDebugText(node) + " using default editor", e, node);
       }
     }
 

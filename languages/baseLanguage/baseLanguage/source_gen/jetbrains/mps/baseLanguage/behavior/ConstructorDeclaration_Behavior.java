@@ -118,6 +118,19 @@ public class ConstructorDeclaration_Behavior {
     }
   }
 
+  public static boolean call_hasImplicitSuperDefaultConstructor_6155185097898257848(SNode thisNode) {
+    SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
+    if (classifierType == null) {
+      return true;
+    }
+    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+    if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return false;
+    }
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isEmpty();
+  }
+
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     if (SNodeOperations.getParent(thisNode) == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{})) {
       context.addMember(thisNode, null);
