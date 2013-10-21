@@ -11,6 +11,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">c79685c0-f0f5-44ce-8c36-9ec48f392de5(jetbrains.mps.core.stubs)</dependency>
+    <dependency reexport="false">ca122c23-8ed8-4d39-862a-b7bc25328ba7(jetbrains.mps.sample.queryTest2)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>b41c6a7f-afe7-4a3b-a53f-2288592bbea0(jetbrains.mps.core.gen)</usedLanguage>

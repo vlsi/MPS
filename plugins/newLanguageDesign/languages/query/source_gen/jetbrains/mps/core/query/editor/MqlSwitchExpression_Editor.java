@@ -12,12 +12,12 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -27,26 +27,26 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class SwitchExpression_Editor extends DefaultNodeEditor {
+public class MqlSwitchExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5a0qvk_a(editorContext, node);
+    return this.createCollection_d3fda4_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5a0qvk_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_d3fda4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5a0qvk_a");
+    editorCell.setCellId("Collection_d3fda4_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_5a0qvk_a0(editorContext, node));
-    if (renderingCondition_5a0qvk_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_5a0qvk_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_d3fda4_a0(editorContext, node));
+    if (renderingCondition_d3fda4_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_d3fda4_b0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_5a0qvk_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5a0qvk_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5a0qvk_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d3fda4_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_d3fda4_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d3fda4_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_5a0qvk_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_d3fda4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     MqlSS_StyleSheet.applyKeyword(style, editorCell);
@@ -57,35 +57,19 @@ public class SwitchExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_5a0qvk_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_d3fda4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5a0qvk_b0");
+    editorCell.setCellId("Collection_d3fda4_b0");
     deleteScrutinee.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_5a0qvk_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5a0qvk_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5a0qvk_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_d3fda4_a1a(editorContext, node));
     return editorCell;
   }
 
-  private static boolean renderingCondition_5a0qvk_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_d3fda4_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "scrutinee", true) != null);
   }
 
-  private EditorCell createConstant_5a0qvk_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_5a0qvk_a1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.MATCHING_LABEL, "scrutinee");
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    editorCell.getStyle().putAll(style);
-    deleteScrutinee.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5a0qvk_b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_d3fda4_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("scrutinee");
     provider.setNoTargetText("<no scrutinee>");
@@ -105,21 +89,9 @@ public class SwitchExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5a0qvk_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_5a0qvk_c1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.MATCHING_LABEL, "scrutinee");
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5a0qvk_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d3fda4_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_5a0qvk_c0");
+    editorCell.setCellId("Constant_d3fda4_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.MATCHING_LABEL, "switch");
@@ -128,16 +100,16 @@ public class SwitchExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5a0qvk_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new SwitchExpression_Editor.branchesListHandler_5a0qvk_d0(node, "branches", editorContext);
+  private EditorCell createRefNodeList_d3fda4_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MqlSwitchExpression_Editor.branchesListHandler_d3fda4_d0(node, "branches", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_branches");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class branchesListHandler_5a0qvk_d0 extends RefNodeListHandler {
-    public branchesListHandler_5a0qvk_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class branchesListHandler_d3fda4_d0 extends RefNodeListHandler {
+    public branchesListHandler_d3fda4_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -177,7 +149,7 @@ public class SwitchExpression_Editor extends DefaultNodeEditor {
 
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), branchesListHandler_5a0qvk_d0.this.getSeparatorText(editorContext, prevNode));
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), branchesListHandler_d3fda4_d0.this.getSeparatorText(editorContext, prevNode));
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
@@ -189,9 +161,9 @@ public class SwitchExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_5a0qvk_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d3fda4_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_5a0qvk_e0");
+    editorCell.setCellId("Constant_d3fda4_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.MATCHING_LABEL, "switch");

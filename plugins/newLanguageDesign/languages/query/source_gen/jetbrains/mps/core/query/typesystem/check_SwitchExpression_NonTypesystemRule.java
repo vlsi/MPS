@@ -17,7 +17,7 @@ public class check_SwitchExpression_NonTypesystemRule extends AbstractNonTypesys
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.core.query.structure.SwitchExpression";
+    return "jetbrains.mps.core.query.structure.MqlSwitchExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
