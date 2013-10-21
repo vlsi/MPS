@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bspdybkw0jpuk85f8hs6iw5szzscz27">
+<dependencies version="2" modelHash="-7kvy4t9rv9om5kn59wzef3d3c67touk">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -38,6 +38,7 @@
   <common hash="8g05harriw82tikmzjzwz03xvznsexl">
     <dep root="1200500758069669886" />
     <dep root="1200500758069681083" />
+    <dep root="3003531278886326726" />
     <dep root="3564725181394967533" />
     <dep root="3564725181395013949" />
     <dep root="4078963204516319320" />
@@ -105,7 +106,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1200500758069681083" name="expressions" hash="emf3kucnxxpiudlzbgh89xeqbi4gju5">
+  <source id="1200500758069681083" name="expressions" hash="ec1vp0108r2aqdbndeiqqiwvhaej6n5">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
@@ -134,6 +135,10 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="9164905593970388668" name="equalsClosure" hash="qpdzuhjf1clb560sj1i7pd549mdczt">
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3003531278886326726" name="SwitchExpression" hash="2okg0kn5arx4bndbw52al3exar79d4d">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
