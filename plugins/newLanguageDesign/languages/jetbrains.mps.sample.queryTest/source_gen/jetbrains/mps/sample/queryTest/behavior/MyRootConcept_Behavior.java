@@ -165,6 +165,39 @@ public class MyRootConcept_Behavior {
     return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), ListSequence.fromListAndArray(new ArrayList<Integer>(), 2))).count() > 0;
   }
 
+  public static int virtual_switchTest_7488639813761332399(SNode thisNode, final int x) {
+    return new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        int myAlias = x;
+        if (new _FunctionTypes._return_P2_E0<Boolean, Integer, Integer>() {
+          public Boolean invoke(Integer a, Integer b) {
+            return a == b;
+          }
+        }.invoke(myAlias, 1)) {
+          return 2;
+        } else if (myAlias > 1) {
+          return 3;
+        } else {
+          throw new RuntimeException("No default value in switch");
+        }
+      }
+    }.invoke();
+  }
+
+  public static int virtual_switchTest2_7488639813919989880(SNode thisNode, final int x) {
+    return new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        if (true || false) {
+          return 2;
+        } else if (x > 2) {
+          return 3;
+        } else {
+          return 777;
+        }
+      }
+    }.invoke();
+  }
+
   public static boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, param, "virtual_qt2query_6925357446544699852", new Object[]{});
   }
@@ -235,6 +268,16 @@ public class MyRootConcept_Behavior {
   }
 
   @Deprecated
+  public static int call_switchTest_7488639813761332399(SNode thisNode, int x) {
+    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_switchTest_7488639813761332399", new Object[]{x});
+  }
+
+  @Deprecated
+  public static int call_switchTest2_7488639813919989880(SNode thisNode, int x) {
+    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_switchTest2_7488639813919989880", new Object[]{x});
+  }
+
+  @Deprecated
   public static boolean call_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useQueryTest2_6925357446547284154", new Object[]{param});
   }
@@ -302,6 +345,16 @@ public class MyRootConcept_Behavior {
   @Deprecated
   public static boolean callSuper_listOfLists_1471063792878445848(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_listOfLists_1471063792878445848", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static int callSuper_switchTest_7488639813761332399(SNode thisNode, String callerConceptFqName, int x) {
+    return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_switchTest_7488639813761332399", new Class[]{SNode.class, Integer.TYPE}, new Object[]{x});
+  }
+
+  @Deprecated
+  public static int callSuper_switchTest2_7488639813919989880(SNode thisNode, String callerConceptFqName, int x) {
+    return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.sample.queryTest.structure.MyRootConcept"), callerConceptFqName, "virtual_switchTest2_7488639813919989880", new Class[]{SNode.class, Integer.TYPE}, new Object[]{x});
   }
 
   @Deprecated
