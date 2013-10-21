@@ -573,7 +573,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SwitchExpression_8982157191771551341(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MqlSwitchExpression_8982157191771551341(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
@@ -930,11 +930,13 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_SwitchExpression_8982157191771269066(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_MqlSwitchExpression_8982157191771269066(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.SwitchExpression"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return SLinkOperations.setTarget(_context.getSourceNode(), "scrutinee", SNodeFactoryOperations.createNewNode("jetbrains.mps.core.query.structure.MqlExpression", null), true);
+        SNode scrutinee = SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlSwitchScrutinee", null);
+        SLinkOperations.setTarget(scrutinee, "expression", SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlExpression", null), true);
+        return SLinkOperations.setTarget(_context.getSourceNode(), "scrutinee", scrutinee, true);
       }
 
       public String getMatchingText(String pattern) {
@@ -950,14 +952,83 @@ public class QueriesGenerated {
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.SwitchExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.SwitchExpression"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchExpression"), null));
       }
     });
     return result;
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SwitchExpression_8982157191771269069(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_MqlSwitchExpression_8982157191771269069(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "scrutinee", true) == null);
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_MqlSwitchScrutinee_7980557257045739745(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        // Senya's knowledge saved 
+        // <node> 
+
+        SNode var = SNodeFactoryOperations.createNewNode("jetbrains.mps.core.query.structure.MqlSwitchAliasVar", null);
+        SPropertyOperations.set(var, "name", "it");
+        SNode node = SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee", null);
+        SLinkOperations.setTarget(node, "expression", SLinkOperations.getTarget(_context.getSourceNode(), "expression", true), true);
+        SLinkOperations.setTarget(node, "aliasVar", var, true);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
+        return node;
+      }
+
+      public String getMatchingText(String pattern) {
+        return "as";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"), null));
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_MqlSwitchScrutinee_7980557257045739783(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.core.query.structure.MqlSwitchAliasedScrutinee"));
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_MqlSwitchExpression_7488639813933522195(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SLinkOperations.setTarget(_context.getSourceNode(), "default", SConceptOperations.createNewNode("jetbrains.mps.core.query.structure.DefaultSwitchBranch", null), true);
+      }
+
+      public String getMatchingText(String pattern) {
+        return "default";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.query.structure.MqlSwitchExpression"), null));
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_MqlSwitchExpression_7488639813933522601(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "default", true) == null);
   }
 
   private static SNode createExpressionSwitchBranch_s5rs0q_a0a0a0b(Object p0) {

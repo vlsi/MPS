@@ -33,7 +33,7 @@ public class check_ExpressionSwitchBranch_NonTypesystemRule extends AbstractNonT
 
     // bad: we do all this for every case branch 
     if (SPropertyOperations.hasValue(expressionSwitchBranch, "kind", "1", null)) {
-      SNode switchExp = SNodeOperations.as(SNodeOperations.getParent(expressionSwitchBranch), "jetbrains.mps.core.query.structure.SwitchExpression");
+      SNode switchExp = SNodeOperations.as(SNodeOperations.getParent(expressionSwitchBranch), "jetbrains.mps.core.query.structure.MqlSwitchExpression");
       // NOTE: example of going up the tree when typing branches 
       if ((switchExp == null)) {
         return;
@@ -41,7 +41,7 @@ public class check_ExpressionSwitchBranch_NonTypesystemRule extends AbstractNonT
       if ((SLinkOperations.getTarget(switchExp, "scrutinee", true) == null)) {
         return;
       }
-      SNode scrutineeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(switchExp, "scrutinee", true), "virtual_getType_228266671027861783", new Object[]{});
+      SNode scrutineeType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(switchExp, "scrutinee", true), "expression", true), "virtual_getType_228266671027861783", new Object[]{});
       SNode caseType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(expressionSwitchBranch, "test", true), "virtual_getType_228266671027861783", new Object[]{});
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, caseType, "virtual_isSubtypeOf_2852142168179579064", new Object[]{scrutineeType}))) {
         {
