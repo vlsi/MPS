@@ -7388,11 +7388,5 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="1471063792861913244" nodeInfo="ng" />
   </root>
-  <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9164905594008183163" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="EqualsUtil" />
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="9164905594008183175" nodeInfo="ngu" />
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9164905594008183164" nodeInfo="nn" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="9164905594008183165" nodeInfo="ng" />
-  </root>
 </model>
 
