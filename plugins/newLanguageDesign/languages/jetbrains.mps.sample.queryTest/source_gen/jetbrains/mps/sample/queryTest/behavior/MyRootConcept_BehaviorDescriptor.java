@@ -18,6 +18,22 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return MyRootConcept_Behavior.virtual_complexQuery_6727112993714328752(thisNode);
   }
 
+  public boolean virtual_equalsTest2_9164905593977810783(SNode thisNode) {
+    return MyRootConcept_Behavior.virtual_equalsTest2_9164905593977810783(thisNode);
+  }
+
+  public boolean virtual_equalsTest3_1471063792864117676(SNode thisNode) {
+    return MyRootConcept_Behavior.virtual_equalsTest3_1471063792864117676(thisNode);
+  }
+
+  public boolean virtual_equalsTest_9164905593977810753(SNode thisNode) {
+    return MyRootConcept_Behavior.virtual_equalsTest_9164905593977810753(thisNode);
+  }
+
+  public boolean virtual_listOfLists_1471063792878445848(SNode thisNode) {
+    return MyRootConcept_Behavior.virtual_listOfLists_1471063792878445848(thisNode);
+  }
+
   public boolean virtual_longName_8194562227700484009(SNode thisNode) {
     return MyRootConcept_Behavior.virtual_longName_8194562227700484009(thisNode);
   }
@@ -44,10 +60,6 @@ public class MyRootConcept_BehaviorDescriptor extends BaseConcept_BehaviorDescri
 
   public boolean virtual_queryWithParam_6166572974641188535(SNode thisNode, SNode kind) {
     return MyRootConcept_Behavior.virtual_queryWithParam_6166572974641188535(thisNode, kind);
-  }
-
-  public String virtual_switchTest_6900882940023046358(SNode thisNode) {
-    return MyRootConcept_Behavior.virtual_switchTest_6900882940023046358(thisNode);
   }
 
   public boolean virtual_useQueryTest2_6925357446547284154(SNode thisNode, SNode param) {
