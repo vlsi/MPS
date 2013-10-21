@@ -595,7 +595,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/workflow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/solutions/mpscore.build/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/solutions/mpscore.sandbox/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/gen.transform/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/gen.transform/generator/classes_gen" />
@@ -614,7 +613,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/workflow/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/solutions/mpscore.build/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/newLanguageDesign/solutions/mpscore.sandbox/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/vcs/languages">
