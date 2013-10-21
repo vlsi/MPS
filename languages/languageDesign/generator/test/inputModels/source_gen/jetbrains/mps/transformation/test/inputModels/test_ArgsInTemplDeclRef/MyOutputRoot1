@@ -1,0 +1,7 @@
+MyOutputRoot1 : text
+
+text from argument:constant
+
+text from argument:from expression
+
+text from argument:from within case of inline switch
