@@ -576,5 +576,15 @@
       </node>
     </node>
   </root>
+  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7488639813938175414" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="conditional" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="bwy9.6900882940023426341" resolveInfo="MqlSwitchAliasVarRef" />
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7488639813938175699" nodeInfo="ng">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="bwy9.6900882940023426559" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7488639813938213713" nodeInfo="ng">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="bwy9.2412275038721662281" resolveInfo="MqlSwitchAliasVar" />
+      </node>
+    </node>
+  </root>
 </model>
 
