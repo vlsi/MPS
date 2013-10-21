@@ -20,11 +20,9 @@
   </path>
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}" />
-    <mkdir dir="${build.tmp}/default/mpsNewLanguageDesign.zip" />
-    <mkdir dir="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign" />
-    <mkdir dir="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/META-INF" />
-    <echoxml file="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/META-INF/plugin.xml">
+    <mkdir dir="${build.layout}/mpsNewLanguageDesign" />
+    <mkdir dir="${build.layout}/mpsNewLanguageDesign/META-INF" />
+    <echoxml file="${build.layout}/mpsNewLanguageDesign/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>mpsNewLanguageDesign</id>
         <name>mpsNewLanguageDesign</name>
@@ -37,8 +35,8 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages" />
-    <mkdir dir="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign" />
+    <mkdir dir="${build.layout}/mpsNewLanguageDesign/languages" />
+    <mkdir dir="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.gen.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.core.gen.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.core.gen.jar/META-INF/module.xml">
@@ -60,7 +58,7 @@
         <sources jar="jetbrains.mps.core.gen-src.jar" descriptor="gen.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.gen" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/gen" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.gen.jar" />
@@ -68,7 +66,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-gen-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/gen/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/gen/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/gen/gen.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-gen-languageModels" prefix="module/languageModels" />
@@ -93,7 +91,7 @@
         <sources jar="jetbrains.mps.core.smodel-src.jar" descriptor="smodel.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.smodel" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/smodel" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.smodel.jar" />
@@ -104,7 +102,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-smodel-util">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/smodel/util" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/smodel/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/smodel/smodel.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-smodel-languageModels" prefix="module/languageModels" />
@@ -132,7 +130,7 @@
         <sources jar="jetbrains.mps.core.query-src.jar" descriptor="query.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.query.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.query.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.query" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/query" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.query.jar" />
@@ -140,7 +138,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-query-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/query/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.query-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.query-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/query/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/query/query.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-query-languageModels" prefix="module/languageModels" />
@@ -165,7 +163,7 @@
         <sources jar="jetbrains.mps.core.notation-src.jar" descriptor="notation.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.notation.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.notation.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.notation" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/notation" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.notation.jar" />
@@ -176,7 +174,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-notation-util">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/notation/util" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.notation-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.notation-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/notation/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/notation/notation.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-notation-languageModels" prefix="module/languageModels" />
@@ -202,7 +200,7 @@
         <sources jar="jetbrains.mps.core.smodel.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel.pluginSolution.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.smodel.pluginSolution" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/smodel/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.smodel.pluginSolution.jar" />
@@ -210,7 +208,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-smodel-solutions-pluginSolution-models">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/smodel/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.smodel.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/smodel/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/smodel/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-smodel-solutions-pluginSolution-models" prefix="module/models" />
@@ -236,7 +234,7 @@
         <sources jar="jetbrains.mps.core.workflow-src.jar" descriptor="workflow.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.workflow" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/workflow" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.workflow.jar" />
@@ -244,7 +242,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-workflow-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/workflow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/workflow/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/workflow/workflow.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-workflow-languageModels" prefix="module/languageModels" />
@@ -270,7 +268,7 @@
         <sources jar="jetbrains.mps.core.template-src.jar" descriptor="template.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.template.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.template.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.template" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/template" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.template.jar" />
@@ -278,7 +276,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-template-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/template/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.template-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.template-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/template/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/template/template.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-template-languageModels" prefix="module/languageModels" />
@@ -303,7 +301,7 @@
         <sources jar="jetbrains.mps.core.structure.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure.pluginSolution.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.structure.pluginSolution" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/structure/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.structure.pluginSolution.jar" />
@@ -311,7 +309,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-structure-solutions-pluginSolution-models">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/structure/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/structure/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/structure/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-structure-solutions-pluginSolution-models" prefix="module/models" />
@@ -330,7 +328,7 @@
         <sources jar="jetbrains.mps.core.util-src.jar" descriptor="util.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.util.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.util.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.util" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.util.jar" />
@@ -338,7 +336,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-solutions-jetbrains.mps.core.util-models">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.util-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.util-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/solutions/jetbrains.mps.core.util/util.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-solutions-jetbrains.mps.core.util-models" prefix="module/models" />
@@ -364,7 +362,7 @@
         <sources jar="jetbrains.mps.core.metadata-src.jar" descriptor="metadata.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.metadata.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.metadata.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.metadata" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/metadata" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.metadata.jar" />
@@ -372,7 +370,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-metadata-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/metadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.metadata-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.metadata-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/metadata/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/metadata/metadata.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-metadata-languageModels" prefix="module/languageModels" />
@@ -397,12 +395,12 @@
         <sources jar="jetbrains.mps.core.gen.transform-src.jar" descriptor="transform.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.transform.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.transform.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.gen.transform" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/gen.transform" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.gen.transform.jar" />
     </jar>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.transform-generator.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.transform-generator.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.gen.transform#710936335908852366" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-gen.transform-generator-template">
@@ -411,7 +409,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-gen.transform-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/gen.transform/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.transform-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.gen.transform-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/gen.transform/generator/source_gen" includes="**/*.java" />
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/gen.transform/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/gen.transform/transform.mpl" prefix="module" />
@@ -440,7 +438,7 @@
         <sources jar="jetbrains.mps.core.syntax-src.jar" descriptor="syntax.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.syntax" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/syntax" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.syntax.jar" />
@@ -451,7 +449,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-syntax-util">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/syntax/util" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/syntax/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/syntax/syntax.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-syntax-languageModels" prefix="module/languageModels" />
@@ -478,7 +476,7 @@
         <sources jar="jetbrains.mps.core.structure-src.jar" descriptor="structure.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.structure" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/structure" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.structure.jar" />
@@ -489,7 +487,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-structure-util">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/structure/util" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.structure-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/structure/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/structure/structure.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-structure-languageModels" prefix="module/languageModels" />
@@ -515,7 +513,7 @@
         <sources jar="jetbrains.mps.core.syntax.java-src.jar" descriptor="java.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax.java.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax.java.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.syntax.java" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/syntaxJava" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.syntax.java.jar" />
@@ -523,7 +521,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-syntaxJava-languageModels">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/syntaxJava/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax.java-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.syntax.java-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/syntaxJava/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/syntaxJava/java.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-syntaxJava-languageModels" prefix="module/languageModels" />
@@ -547,7 +545,7 @@
         <sources jar="jetbrains.mps.core.workflow.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow.pluginSolution.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.workflow.pluginSolution" />
       <fileset dir="${basedir}/plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.workflow.pluginSolution.jar" />
@@ -555,7 +553,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-workflow-solutions-pluginSolution-models">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.workflow.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/plugins/newLanguageDesign/languages/workflow/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-languages-workflow-solutions-pluginSolution-models" prefix="module/models" />
@@ -563,15 +561,15 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-solutions-core.stubs-models">
       <fileset dir="${mps_home}/plugins/newLanguageDesign/solutions/core.stubs/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/mpsNewLanguageDesign.zip/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.stubs.jar">
+    <jar destfile="${build.layout}/mpsNewLanguageDesign/languages/mpsNewLanguageDesign/jetbrains.mps.core.stubs.jar">
       <zipfileset file="${basedir}/plugins/newLanguageDesign/solutions/core.stubs/jetbrains.mps.core.stubs.msd" prefix="modules/jetbrains.mps.core.stubs" />
       <zipfileset dir="${basedir}/plugins/newLanguageDesign/solutions/core.stubs" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.core.stubs" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-newLanguageDesign-solutions-core.stubs-models" prefix="modules/jetbrains.mps.core.stubs/models" />
     </jar>
-    <zip destfile="${build.layout}/mpsNewLanguageDesign.zip">
-      <zipfileset file="${mps_home}/plugins/newLanguageDesign/languages/syntax/libs/textmapper-0.9.2.jar" prefix="mpsNewLanguageDesign/lib" />
-      <fileset dir="${build.tmp}/default/mpsNewLanguageDesign.zip" />
-    </zip>
+    <mkdir dir="${build.layout}/mpsNewLanguageDesign/lib" />
+    <copy todir="${build.layout}/mpsNewLanguageDesign/lib">
+      <fileset file="${mps_home}/plugins/newLanguageDesign/languages/syntax/libs/textmapper-0.9.2.jar" />
+    </copy>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
