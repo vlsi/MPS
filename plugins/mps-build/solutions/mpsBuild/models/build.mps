@@ -14028,7 +14028,7 @@
           <link role="target" roleId="3ior.841011766565753076" targetNodeId="618786790401897005" />
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="9021107314853251481" nodeInfo="ng">
-          <link role="target" roleId="3ior.841011766565753076" targetNodeId="6515501733571340838" resolveInfo="mpscore.zip" />
+          <link role="target" roleId="3ior.841011766565753076" targetNodeId="6515501733571340841" resolveInfo="mpsNewLanguageDesign" />
         </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="1890976590445582744" nodeInfo="ng">
