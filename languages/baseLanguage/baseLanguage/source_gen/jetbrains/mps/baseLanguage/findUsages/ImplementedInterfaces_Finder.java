@@ -46,8 +46,10 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
       for (SNode classNode : ListSequence.fromList(classNodes)) {
         for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
           SNode interfaceNode = (SNode) SLinkOperations.getTarget(implementedInterface, "classifier", false);
-          ListSequence.fromList(result).addElement(interfaceNode);
-          ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, monitor.subTask(1))));
+          if ((interfaceNode != null)) {
+            ListSequence.fromList(result).addElement(interfaceNode);
+            ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>) FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, monitor.subTask(1))));
+          }
         }
       }
       for (SNode interfaceNode : ListSequence.fromList(result)) {
