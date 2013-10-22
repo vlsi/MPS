@@ -40842,5 +40842,47 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1212685548494" resolveInfo="ClassCreator" />
     </node>
   </root>
+  <root type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="6880273274252462791" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="check_LocalPropertyReferenceNotUsedInUnaryNumericOperations" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext.property" />
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6880273274252462792" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="6880273274252479801" nodeInfo="nn">
+        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6880273274252479802" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6880273274252479803" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6880273274252484513" nodeInfo="nn">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6880273274252462794" resolveInfo="localPropertyReference" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="6880273274252479805" nodeInfo="nn">
+              <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_ConceptList" typeId="tp25.1154546920561" id="6880273274252479806" nodeInfo="ng">
+                <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="6880273274252479807" nodeInfo="ng">
+                  <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1239709577448" resolveInfo="PrefixDecrementExpression" />
+                </node>
+                <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="6880273274252479808" nodeInfo="ng">
+                  <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1239709250944" resolveInfo="PrefixIncrementExpression" />
+                </node>
+                <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="6880273274252479809" nodeInfo="ng">
+                  <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1214918975462" resolveInfo="PostfixDecrementExpression" />
+                </node>
+                <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="6880273274252479810" nodeInfo="ng">
+                  <link role="concept" roleId="tp25.1154546997487" targetNodeId="tpee.1214918800624" resolveInfo="PostfixIncrementExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="6880273274252479811" nodeInfo="nn" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6880273274252484665" nodeInfo="nn">
+          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6880273274252462794" resolveInfo="localPropertyReference" />
+        </node>
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6880273274252479813" nodeInfo="nn">
+          <property name="value" nameId="tpee.1070475926801" value="variable expected" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6880273274252462794" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="localPropertyReference" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
+    </node>
+  </root>
 </model>
 
