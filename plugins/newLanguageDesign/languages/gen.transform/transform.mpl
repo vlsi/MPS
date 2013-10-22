@@ -15,7 +15,6 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)</dependency>
         <dependency reexport="false">96edcf67-fb92-4a65-a193-b125e8994c8e(jetbrains.mps.core.metadata)</dependency>
         <dependency reexport="false">41a590b4-0cca-40d1-9a11-d9ef253734cc(jetbrains.mps.core.smodel)</dependency>
         <dependency reexport="false">c79685c0-f0f5-44ce-8c36-9ec48f392de5(jetbrains.mps.core.stubs)</dependency>
