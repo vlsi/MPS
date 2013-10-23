@@ -300,7 +300,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       weaveTemplateDeclaration(outputContextNode,
-        GeneratorUtil.createConsequenceContext(context.getInput(), null, environment, consequenceNode), environment);
+        GeneratorUtil.createConsequenceContext(context, environment, consequenceNode), environment);
       return true;
     }
   }
@@ -327,7 +327,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       for (SNode queryNode : queryNodes) {
         weaveTemplateDeclaration(outputContextNode,
-          GeneratorUtil.createConsequenceContext(queryNode, null, environment, consequenceNode), environment);
+          GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(queryNode), environment, consequenceNode), environment);
       }
 
       return true;
