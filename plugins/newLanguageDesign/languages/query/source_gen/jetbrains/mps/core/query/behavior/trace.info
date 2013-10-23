@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.core.query.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="DefaultSwitchBranch_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.core.query.behavior.DefaultSwitchBranch_BehaviorDescriptor" />
   <unitInfo fileName="ExpressionSwitchBranch_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.ExpressionSwitchBranch_BehaviorDescriptor" />
   <unitInfo fileName="MqlArithmetic_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlArithmetic_BehaviorDescriptor" />
   <unitInfo fileName="MqlAssignment_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlAssignment_BehaviorDescriptor" />
@@ -50,6 +51,11 @@
   <unitInfo fileName="MqlStringSelector_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlStringSelector_BehaviorDescriptor" />
   <unitInfo fileName="MqlStringType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlStringType_BehaviorDescriptor" />
   <unitInfo fileName="MqlSubstring_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSubstring_BehaviorDescriptor" />
+  <unitInfo fileName="MqlSwitchAliasVarRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchAliasVarRef_BehaviorDescriptor" />
+  <unitInfo fileName="MqlSwitchAliasVar_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchAliasVar_BehaviorDescriptor" />
+  <unitInfo fileName="MqlSwitchAliasedScrutinee_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchAliasedScrutinee_BehaviorDescriptor" />
+  <unitInfo fileName="MqlSwitchExpression_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchExpression_BehaviorDescriptor" />
+  <unitInfo fileName="MqlSwitchScrutinee_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchScrutinee_BehaviorDescriptor" />
   <unitInfo fileName="MqlThisProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlThisProvider_BehaviorDescriptor" />
   <unitInfo fileName="MqlThis_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlThis_BehaviorDescriptor" />
   <unitInfo fileName="MqlTriplex_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlTriplex_BehaviorDescriptor" />
@@ -59,7 +65,6 @@
   <unitInfo fileName="MqlVariableReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="MqlVariable_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlVariable_BehaviorDescriptor" />
   <unitInfo fileName="SwitchBranch_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.SwitchBranch_BehaviorDescriptor" />
-  <unitInfo fileName="SwitchExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.SwitchExpression_BehaviorDescriptor" />
   <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/2059702675525965903">
     <nodeInfo nodeId="2059702675525965911" fileName="MqlQuery_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1671449901154582612" fileName="MqlQuery_Behavior.java" startLine="24" startPosition="151" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -2040,6 +2045,37 @@
     </scopeInfo>
     <unitInfo nodeId="6727112993809074360" fileName="MqlEmptySet_Behavior.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlEmptySet_Behavior" />
   </root>
+  <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/6900882940023930580">
+    <nodeInfo nodeId="6900882940023930708" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6900882940023930580" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6900882940023930580" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027861783#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="6900882940023930582" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="6900882940023930589" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="122" />
+    <scopeInfo nodeId="6900882940023930580" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="6900882940023930580" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6900882940023930580" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="6900882940023930580" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6900882940023930580" fileName="MqlSwitchAliasVarRef_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchAliasVarRef_Behavior" />
+  </root>
+  <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/6900882940023945436">
+    <nodeInfo nodeId="6900882940023947128" fileName="MqlSwitchAliasVar_Behavior.java" startLine="15" startPosition="140" endLine="16" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6900882940023946021" fileName="MqlSwitchAliasVar_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6900882940023945436" fileName="MqlSwitchAliasVar_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6900882940023945993" fileName="MqlSwitchAliasVar_Behavior.java" startLine="14" startPosition="72" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6900882940023945436" fileName="MqlSwitchAliasVar_Behavior.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getType_6900882940023945439#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="6900882940023945438" fileName="MqlSwitchAliasVar_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="6900882940023945994" fileName="MqlSwitchAliasVar_Behavior.java" startLine="15" startPosition="140" endLine="16" endPosition="309" />
+    <scopeInfo nodeId="6900882940023945436" fileName="MqlSwitchAliasVar_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="6900882940023945436" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6900882940023945442" fileName="MqlSwitchAliasVar_Behavior.java" startLine="14" startPosition="72" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="6900882940023945436" fileName="MqlSwitchAliasVar_Behavior.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="6900882940023945436" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6900882940023945436" fileName="MqlSwitchAliasVar_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchAliasVar_Behavior" />
+  </root>
   <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/7862448911997365756">
     <nodeInfo nodeId="7862448911997365869" fileName="MqlListLiteral_Behavior.java" startLine="23" startPosition="131" endLine="24" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7862448911997365908" fileName="MqlListLiteral_Behavior.java" startLine="25" startPosition="79" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2092,19 +2128,43 @@
     <unitInfo nodeId="7862448911997365756" fileName="MqlListLiteral_Behavior.java" startLine="19" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlListLiteral_Behavior" />
   </root>
   <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/8982157191774045559">
-    <nodeInfo nodeId="8982157191774791965" fileName="SwitchExpression_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8982157191774045889" fileName="SwitchExpression_Behavior.java" startLine="15" startPosition="59" endLine="16" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8982157191774045559" fileName="SwitchExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8982157191774045559" fileName="SwitchExpression_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027861783#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="8982157191774045712" fileName="SwitchExpression_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="8982157191774045559" fileName="SwitchExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="8982157191774791965" fileName="MqlSwitchExpression_Behavior.java" startLine="22" startPosition="74" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8982157191774045889" fileName="MqlSwitchExpression_Behavior.java" startLine="23" startPosition="59" endLine="24" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6900882940023499319" fileName="MqlSwitchExpression_Behavior.java" startLine="29" startPosition="161" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6900882940023522725" fileName="MqlSwitchExpression_Behavior.java" startLine="30" startPosition="55" endLine="31" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6900882940023492109" fileName="MqlSwitchExpression_Behavior.java" startLine="33" startPosition="41" endLine="34" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6900882940023434519" fileName="MqlSwitchExpression_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6900882940023492107" fileName="MqlSwitchExpression_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_228266671027861783#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6900882940023490903" fileName="MqlSwitchExpression_Behavior.java" startLine="31" startPosition="239" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6900882940023452446" fileName="MqlSwitchExpression_Behavior.java" startLine="28" startPosition="183" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6900882940023433813" fileName="MqlSwitchExpression_Behavior.java" startLine="27" startPosition="101" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="27" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="8982157191774045712" fileName="MqlSwitchExpression_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="6900882940023492108" fileName="MqlSwitchExpression_Behavior.java" startLine="33" startPosition="41" endLine="34" endPosition="138" />
+    <scopeInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="8982157191774045559" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8982157191774045770" fileName="SwitchExpression_Behavior.java" startLine="14" startPosition="74" endLine="16" endPosition="267" />
-    <scopeInfo nodeId="8982157191774045559" fileName="SwitchExpression_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="8982157191774045770" fileName="MqlSwitchExpression_Behavior.java" startLine="22" startPosition="74" endLine="24" endPosition="267" />
+    <scopeInfo nodeId="6900882940023492107" fileName="MqlSwitchExpression_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6900882940023492107" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="8982157191774045559" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8982157191774045559" fileName="SwitchExpression_Behavior.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.core.query.behavior.SwitchExpression_Behavior" />
+    <scopeInfo nodeId="6900882940023452449" fileName="MqlSwitchExpression_Behavior.java" startLine="29" startPosition="161" endLine="36" endPosition="11">
+      <varInfo nodeId="6900882940023499322" varName="oneVarSeq" />
+    </scopeInfo>
+    <scopeInfo nodeId="6900882940023433814" fileName="MqlSwitchExpression_Behavior.java" startLine="28" startPosition="183" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="6900882940023433500" fileName="MqlSwitchExpression_Behavior.java" startLine="27" startPosition="101" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="27" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6900882940023433503" varName="child" />
+      <varInfo nodeId="6900882940023433501" varName="kind" />
+      <varInfo nodeId="8982157191774045559" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6900882940023492107" fileName="MqlSwitchExpression_Behavior.java" startLine="32" startPosition="56" endLine="36" endPosition="9" unitName="jetbrains.mps.core.query.behavior.MqlSwitchExpression_Behavior$1" />
+    <unitInfo nodeId="8982157191774045559" fileName="MqlSwitchExpression_Behavior.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.core.query.behavior.MqlSwitchExpression_Behavior" />
   </root>
   <root nodeRef="r:2eb00686-cf12-445a-b169-a375a4c25909(jetbrains.mps.core.query.behavior)/9087630951853383943">
     <nodeInfo nodeId="9087630951853400752" fileName="MqlOrderedSetType_Behavior.java" startLine="14" startPosition="93" endLine="15" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
