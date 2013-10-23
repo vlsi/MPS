@@ -110,30 +110,18 @@ public class check_PropertyNameUniqueness_NonTypesystemRule extends AbstractNonT
   }
 
   private static boolean neq_5f44vd_a0a0a0a0a0a0a1(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
+    return !((a != null ? a.equals(b) : a == b));
   }
 
   private static boolean eq_5f44vd_a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_5f44vd_a0a1a0a0a0a0h0b(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_5f44vd_a0a0b0a0a0a0a0a01a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

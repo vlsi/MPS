@@ -49,13 +49,7 @@ public class AssignmentExpression_Behavior {
     SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SLinkOperations.setNewChild(varDeclStmnt, "localVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference");
-    String name = (varName == null ?
-      ((SLinkOperations.getTarget(ref, "variableDeclaration", false) == null) ?
-        ((SReference) SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"))).getResolveInfo() :
-        SPropertyOperations.getString(SLinkOperations.getTarget(ref, "variableDeclaration", false), "name")
-      ) :
-      varName
-    );
+    String name = (varName == null ? ((SLinkOperations.getTarget(ref, "variableDeclaration", false) == null) ? ((SReference) SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"))).getResolveInfo() : SPropertyOperations.getString(SLinkOperations.getTarget(ref, "variableDeclaration", false), "name")) : varName);
     SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", name);
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "type", SNodeOperations.copyNode(varType), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "initializer", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "rValue", true)), true);

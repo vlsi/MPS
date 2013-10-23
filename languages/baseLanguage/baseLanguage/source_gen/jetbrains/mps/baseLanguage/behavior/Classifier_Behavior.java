@@ -396,10 +396,7 @@ public class Classifier_Behavior {
               return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name");
             }
           }));
-          return Scopes.forMethods(kind, (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") ?
-            staticMethods :
-            instanceMethods
-          ), new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(thisNode, kind)));
+          return Scopes.forMethods(kind, (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") ? staticMethods : instanceMethods), new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(thisNode, kind)));
         } else {
           return Scopes.forMethods(kind, BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getMembers_2201875424515824604", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")}), ScopeUtils.lazyParentScope(thisNode, kind));
         }
@@ -433,10 +430,7 @@ public class Classifier_Behavior {
               addition = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
             }
           }
-          return (addition != null ?
-            Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(thisNode, kind)) :
-            ScopeUtils.lazyParentScope(thisNode, kind)
-          );
+          return (addition != null ? Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(thisNode, kind)) : ScopeUtils.lazyParentScope(thisNode, kind));
         }
       }
     }

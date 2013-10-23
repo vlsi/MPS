@@ -57,10 +57,7 @@ public class Type_Behavior {
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     // all 'JavaType's should have getErasure() implemented 
     SNode javaType = Type_Behavior.call_getJavaType_1213877337345(thisNode);
-    return ((javaType == null) ?
-      null :
-      BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), javaType, "virtual_getErasure_702942408396803226", new Object[]{})
-    );
+    return ((javaType == null) ? null : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) (Object.class)), javaType, "virtual_getErasure_702942408396803226", new Object[]{}));
   }
 
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {

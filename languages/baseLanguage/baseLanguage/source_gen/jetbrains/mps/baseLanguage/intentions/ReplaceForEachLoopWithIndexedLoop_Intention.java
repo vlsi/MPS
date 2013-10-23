@@ -116,10 +116,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
           }
         }
       }
-      SPropertyOperations.set(forVariableDeclaration, "name", (nameSuffix == 0 ?
-        name :
-        name + nameSuffix
-      ));
+      SPropertyOperations.set(forVariableDeclaration, "name", (nameSuffix == 0 ? name : name + nameSuffix));
       SLinkOperations.setTarget(forVariableDeclaration, "type", _quotation_createNode_zgbvoa_a0a31a0(), true);
       SNodeFactoryOperations.setNewChild(forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
       SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(forVariableDeclaration, "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));

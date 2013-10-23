@@ -74,10 +74,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
           if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mcallop, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{}))) {
             for (SNode tvd : ListSequence.fromList(BaseMethodDeclaration_Behavior.call_getInferrableTypeVars_6848250892784543828(mdecl))) {
               // assume all unbound type vars outside an inference context are Object or its bound 
-              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ?
-                _quotation_createNode_ecn83h_a0a1a0a5a31a1() :
-                SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))
-              ));
+              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_ecn83h_a0a1a0a5a31a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
             }
           }
           if (ListSequence.fromList(SLinkOperations.getTargets(mcallop, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {

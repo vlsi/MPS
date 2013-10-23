@@ -44,10 +44,7 @@ public class Property_Behavior {
   }
 
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
-    return (check_9xvv7i_a0a0e(SLinkOperations.getTarget(thisNode, "type", true)) ?
-      "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) :
-      "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode)
-    );
+    return (check_9xvv7i_a0a0e(SLinkOperations.getTarget(thisNode, "type", true)) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
   }
 
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
@@ -143,16 +140,10 @@ public class Property_Behavior {
   }
 
   private static boolean eq_9xvv7i_a0a0i0i(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_9xvv7i_a0b0k0i(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

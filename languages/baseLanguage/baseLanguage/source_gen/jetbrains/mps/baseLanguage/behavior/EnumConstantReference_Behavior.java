@@ -37,10 +37,7 @@ public class EnumConstantReference_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return ((SLinkOperations.getTarget(thisNode, "enumClass", false) != null) ?
-      new NamedElementsScope(Members.visibleEnumConstants(SLinkOperations.getTarget(thisNode, "enumClass", false))) :
-      new EmptyScope()
-    );
+    return ((SLinkOperations.getTarget(thisNode, "enumClass", false) != null) ? new NamedElementsScope(Members.visibleEnumConstants(SLinkOperations.getTarget(thisNode, "enumClass", false))) : new EmptyScope());
   }
 
   private static SModule check_p8mh91_a0c0a(SModel checkedDotOperand) {

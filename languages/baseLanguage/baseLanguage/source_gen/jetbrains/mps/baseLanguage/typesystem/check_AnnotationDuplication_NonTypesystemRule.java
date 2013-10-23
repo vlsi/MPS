@@ -60,9 +60,6 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
   }
 
   private static boolean eq_qq1g71_a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    return (a != null ? a.equals(b) : a == b);
   }
 }

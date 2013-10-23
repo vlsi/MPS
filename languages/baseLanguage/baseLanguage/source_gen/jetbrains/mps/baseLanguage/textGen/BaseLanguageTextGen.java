@@ -232,10 +232,7 @@ public abstract class BaseLanguageTextGen {
             shortName = shortName.substring(lastDot + 1).replace('$', '.');
           } else {
             SModelReference sModelReference = classifierRef.getSourceNode().getModel().getReference();
-            packageName = (sModelReference != null ?
-              SModelStereotype.withoutStereotype(sModelReference.getModelName()) :
-              ""
-            );
+            packageName = (sModelReference != null ? SModelStereotype.withoutStereotype(sModelReference.getModelName()) : "");
           }
         }
         return MultiTuple.<String,String>from(packageName, shortName);
@@ -246,10 +243,7 @@ public abstract class BaseLanguageTextGen {
         textGen.foundError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
-      return MultiTuple.<String,String>from(SModelStereotype.withoutStereotype(targetNode.getModel().getReference().getModelName()), (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier") ?
-        SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName") :
-        jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)
-      ));
+      return MultiTuple.<String,String>from(SModelStereotype.withoutStereotype(targetNode.getModel().getReference().getModelName()), (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier") ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName") : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
     }
   }
 
